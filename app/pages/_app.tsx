@@ -32,7 +32,7 @@ class MyApp extends App {
 
   constructor(props) {
     super(props);
-    // process.browser && analytics.init();
+    (process as any).browser && analytics.init();
   }
 
   render() {

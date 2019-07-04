@@ -1,4 +1,4 @@
-import { combineEpics, createEpicMiddleware } from "redux-observable";
+import { combineEpics } from "redux-observable";
 import app, {
 //   showNotificationEpic,
 //   showConfirmationModalEpic,
@@ -124,6 +124,5 @@ const epics = [
 //   resendInvitationEpic,
 //   transferArticleToCommunityEpic,
 ];
-const epicMiddleware = createEpicMiddleware();
 
-export const rootEpic = epicMiddleware.run(combineEpics(...epics));
+export const rootEpic = combineEpics(...epics)

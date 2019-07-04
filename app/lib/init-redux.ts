@@ -1,67 +1,72 @@
-import { createStore, combineReducers, applyMiddleware, compose } from "redux";
-import { createEpicMiddleware } from "redux-observable";
-import fetch from "isomorphic-unfetch";
-import Web3 from "web3";
-import web3GetNetwork from "./web3-get-network";
-import web3PersonalSign, { personalSign } from "./web3-personal-sign";
-import { rootReducer, rootEpic } from "./root";
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
+import { createEpicMiddleware } from 'redux-observable'
+import fetch from 'isomorphic-unfetch'
+import Web3 from 'web3'
+import web3GetNetwork from './web3-get-network'
+import web3PersonalSign, { personalSign } from './web3-personal-sign'
+import { rootReducer, rootEpic } from './root'
 import apolloSubscriber, {
-  apolloChildHashesSubscriber,
-} from "./apollo-subscriber";
+    apolloChildHashesSubscriber,
+} from './apollo-subscriber'
 
 // Get the Redux DevTools extension and fallback to a no-op function
-let devtools = f => f;
+let devtools = f => f
 if (global.window && global.window.__REDUX_DEVTOOLS_EXTENSION__) {
-  devtools = global.window.__REDUX_DEVTOOLS_EXTENSION__();
+    devtools = global.window.__REDUX_DEVTOOLS_EXTENSION__()
 }
 
-function create (apollo: any, initialState = {}) {
-  const dependencies = {
-    web3: (global.window && global.window.web3) || new Web3(),
-    smartContracts: () => (global.window ? global.window.smartContracts : {}),
-    apolloClient: apollo,
-    fetch,
-    apolloSubscriber,
-    apolloChildHashesSubscriber,
-    web3PersonalSign,
-    web3GetNetwork,
-    personalSign,
-  };
+function create(apollo: any, initialState = {}) {
+    const dependencies = {
+        web3: (global.window && global.window.web3) || new Web3(),
+        smartContracts: () =>
+            global.window ? global.window.smartContracts : {},
+        apolloClient: apollo,
+        fetch,
+        apolloSubscriber,
+        apolloChildHashesSubscriber,
+        web3PersonalSign,
+        web3GetNetwork,
+        personalSign,
+    }
 
-  const combinedReducers = combineReducers({
-    ...rootReducer,
-  });
+    const combinedReducers = combineReducers({
+        ...rootReducer,
+    })
 
-  return createStore(
-    combinedReducers,
-    initialState, // Hydrate the store with server-side data
-    compose(
-      applyMiddleware(createEpicMiddleware(rootEpic, { dependencies })), // Add additional middleware here
-      devtools
+    const middleware = createEpicMiddleware()
+
+    const store = createStore(
+        combinedReducers,
+        initialState, // Hydrate the store with server-side data
+        compose(
+            applyMiddleware(middleware), // Add additional middleware here
+            devtools
+        )
     )
-  );
+
+    middleware.run(rootEpic,
+      // { dependencies }
+    )
+
+    return store
 }
 
 const mergeLocalStorageState = initialState => {
-  try {
-    const serializedState = window.localStorage.getItem("redux");
-    if (serializedState === null) {
-      return initialState;
+    try {
+        const serializedState = window.localStorage.getItem('redux')
+        if (serializedState === null) {
+            return initialState
+        }
+        return Object.assign(initialState, JSON.parse(serializedState))
+    } catch (err) {
+        return initialState
     }
-    return Object.assign(initialState, JSON.parse(serializedState));
-  } catch (err) {
-    return initialState;
-  }
-};
+}
 
-export default (apollo: any, initialState: any,) => {
-
-  // TODO - Ensure this simplification doesn't break stuff
-  if (!global.window) {
-    return create(apollo, initialState);
-  }
-  return create(
-    apollo,
-    mergeLocalStorageState(initialState)
-  );
+export default (apollo: any, initialState: any) => {
+    // TODO - Ensure this simplification doesn't break stuff
+    if (!global.window) {
+        return create(apollo, initialState)
+    }
+    return create(apollo, mergeLocalStorageState(initialState))
 }

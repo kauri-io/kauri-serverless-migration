@@ -2,7 +2,7 @@ import * as React from "react";
 import AlertView from "../../components/Modal/AlertView";
 import AddToCollectionModalContent from "./AddToCollectionModalContent";
 import { Query } from "react-apollo";
-import R from "ramda";
+import { path } from "ramda";
 import { ICollection } from "./CollectionsContent";
 import { ISection } from "./SectionsContent";
 import Loading from "../../components/Loading";
@@ -67,7 +67,7 @@ const Component: React.FunctionComponent<IProps> = ({
           props.data.searchCollections &&
           Array.isArray(props.data.searchCollections.content)
         ) {
-          const collections = R.path<ICollection[]>([
+          const collections = path<ICollection[]>([
             "searchCollections",
             "content",
           ])(props.data);
