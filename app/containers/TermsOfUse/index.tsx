@@ -113,10 +113,10 @@ const TermsOfUse = () => <section>
             the kauri team at <a href="info@kauri.io">info@kauri.io</a>.
             Company may suspend or terminate your access to the Site in
             accordance with Section 12.
-            <p>
-              Note: If your account is deleted by your choice or
-              otherwise, your contributions to Kauri will persist.
             </p>
+            <p>
+            Note: If your account is deleted by your choice or
+            otherwise, your contributions to Kauri will persist.
           </p>
         </li>
         <li>
@@ -569,7 +569,8 @@ const TermsOfUse = () => <section>
         copyrighted work or other intellectual property that you claim has
         been infringed, and (c) a description of where the material that
         you claim is infringing is located on the Site.
-        <p>
+      </p>
+      <p>
           <br />
           <span>Company can be reached at:</span>
           <br />
@@ -582,7 +583,6 @@ const TermsOfUse = () => <section>
           <br />
           <span>Subject Line: Copyright Notification</span>
         </p>
-      </p>
       <h3>Term and Termination</h3>
 
       <p>

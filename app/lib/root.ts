@@ -2,7 +2,7 @@ import { combineEpics } from "redux-observable";
 import app, {
 //   showNotificationEpic,
 //   showConfirmationModalEpic,
-  routeChangeEpic,
+  // routeChangeEpic,
   // ethUsdPriceEpic,
 //   userDetailsEpic,
 //   hideIntroBannerEpic,
@@ -78,7 +78,7 @@ const epics = [
 //   showNotificationEpic,
 //   registerEpic,
 //   showConfirmationModalEpic,
-  routeChangeEpic,
+  // routeChangeEpic,
 //   submitArticleEpic,
 //   submitArticleVersionEpic,
 //   editArticleEpic,

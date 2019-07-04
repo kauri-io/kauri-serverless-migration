@@ -247,64 +247,64 @@ export const ItoggleModalAction = ({
   footer,
 });
 
-export const userDetailsEpic = (
-  action$: Observable<IFetchUserDetailsAction>,
-  {},
-  { apolloClient }: IDependencies
+// export const userDetailsEpic = (
+//   action$: Observable<IFetchUserDetailsAction>,
+//   {},
+//   { apolloClient }: IDependencies
 
-) =>
-  action$
-    .ofType(FETCH_USER_DETAILS)
-    .take(1)
-    .mergeMap(() =>
-      apolloClient.query({
-        query: getMyProfile,
-        variables: {},
-      })
-    )
-    .map(({ data: { getMyProfile } }) => getMyProfile)
-    .map(user => setUserDetailsAction(user));
+// ) =>
+//   action$
+//     .ofType(FETCH_USER_DETAILS)
+//     .take(1)
+//     .mergeMap(() =>
+//       apolloClient.query({
+//         query: getMyProfile,
+//         variables: {},
+//       })
+//     )
+//     .map(({ data: { getMyProfile } }) => getMyProfile)
+//     .map(user => setUserDetailsAction(user));
 
-export const showNotificationEpic = (
-  action$: Observable<IShowNotificationAction>,
-  _: any,
-) =>
-  action$
-    .ofType(SHOW_NOTIFICATION)
-    .do(openNotificationWithIcon)
-    .ignoreElements();
+// export const showNotificationEpic = (
+//   action$: Observable<IShowNotificationAction>,
+//   _: any,
+// ) =>
+//   action$
+//     .ofType(SHOW_NOTIFICATION)
+//     .do(openNotificationWithIcon)
+//     .ignoreElements();
 
-export const showConfirmationModalEpic = (
-  action$: Observable<IShowConfirmationModalAction>,
-  _: any,
-) =>
-  action$
-    .ofType(SHOW_CONFIRMATION_MODAL)
-    .take(1)
-    .do(showConfirmationModal)
-    .ignoreElements();
+// export const showConfirmationModalEpic = (
+//   action$: Observable<IShowConfirmationModalAction>,
+//   _: any,
+// ) =>
+//   action$
+//     .ofType(SHOW_CONFIRMATION_MODAL)
+//     .take(1)
+//     .do(showConfirmationModal)
+//     .ignoreElements();
 
-export const routeChangeEpic = (
-  action$: Observable<IRouteChangeAction>,
-  _: any,
-) =>
-  action$
-    .ofType(ROUTE_CHANGE)
-    .do(({ payload }) => routeChange(payload))
-    .ignoreElements();
+// export const routeChangeEpic = (
+//   action$: Observable<IRouteChangeAction>,
+//   _: any,
+// ) =>
+//   action$
+//     .ofType(ROUTE_CHANGE)
+//     .do(({ payload }) => routeChange(payload))
+//     .ignoreElements();
 
-export const hideIntroBannerEpic = (
-  action$: Observable<IHideIntroBannerAction>,
-  _: any,
-) =>
-  action$
-    .ofType(HIDE_INTRO_BANNER)
-    .do(() => {
-      document.cookie = cookie.serialize("HIDE_INTRO_BANNER", "true", {
-        maxAge: 30 * 24 * 60 * 60 * 60, // 30 days
-      });
-    })
-    .mapTo({ type: HIDE_INTRO_BANNER_SUCCESS });
+// export const hideIntroBannerEpic = (
+//   action$: Observable<IHideIntroBannerAction>,
+//   _: any,
+// ) =>
+//   action$
+//     .ofType(HIDE_INTRO_BANNER)
+//     .do(() => {
+//       document.cookie = cookie.serialize("HIDE_INTRO_BANNER", "true", {
+//         maxAge: 30 * 24 * 60 * 60 * 60, // 30 days
+//       });
+//     })
+//     .mapTo({ type: HIDE_INTRO_BANNER_SUCCESS });
 
 const initialState: State = {
   modalOpen: false,

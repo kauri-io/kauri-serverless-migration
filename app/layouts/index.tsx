@@ -46,10 +46,10 @@ const Layout = ({ isModalOpen, children, maxWidthConstrained }: IProps) => {
         <body className={isModalOpen ? "overflow-hidden" : null} />
       </Head>
       <Modal />
-      <Grid item={true} className={classes.item}>
+      <Grid sm={12} item={true} className={classes.item}>
         <Navbar />
       </Grid>
-      <Grid item={true} className={classes.item}>
+      <Grid  sm={12} item={true} className={classes.item}>
         <div className={`${classes.root} ${maxWidthConstrained ? classes.constrained : ''}`}>{children}</div>
       </Grid>
       <StyledFooter />
