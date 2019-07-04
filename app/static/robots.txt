@@ -1,0 +1,8 @@
+Sitemap: https://kauri.io/sitemap
+
+User-agent: *
+Disallow: /login
+Disallow: /ipfs
+Disallow: /contracts
+Disallow: /build
+Disallow: public-profile/utils

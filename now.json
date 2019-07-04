@@ -1,0 +1,17 @@
+{
+    "version": 2,
+    "name": "kauri-serverless",
+    "alias": "dev.kauri.now.sh",
+    "build": {
+        "env": {
+            "config": "development-config"
+        }
+    },
+    "builds": [
+        { "src": "app/package.json", "use": "@now/next" }
+    ],
+    "routes": [
+        { "src": "/(.*)/(.*)/a", "dest": "/app/article?article_id=$2"},
+        { "src": "/(.*)", "dest": "/app/$1" }
+    ]
+}
