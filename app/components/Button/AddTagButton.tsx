@@ -1,12 +1,12 @@
 import * as React from "react";
-import styled, { css } from "../../lib/styled-components";
+import styled, { css } from "styled-components";
 import {
   space,
   fontSize as fontSizeSS,
   fontWeight as fontWeightSS,
 } from "styled-system";
 
-export const BaseButtonCss = css`
+export const BaseButtonCss = css<IProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +25,7 @@ export const BaseButtonCss = css`
   }
   ${fontWeightSS};
   ${fontSizeSS};
-  color: ${props => props.theme.colors[props.color]};
+  color: ${props => props.theme.colors[props.color || 'primary']};
   :hover {
     cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   }
@@ -35,7 +35,7 @@ interface IButtonProps {
   fontWeight: number;
   fontSize: number;
 }
-const AddTagButton = styled<IButtonProps, "button">("button")`
+const AddTagButton = styled.button<IButtonProps>`
   ${BaseButtonCss};
   :hover {
     border: 2px solid ${props => props.theme.colors[props.bg]};

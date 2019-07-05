@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -10,7 +9,7 @@ const chosenArticleCss = css`
   border: 2px solid ${props => props.theme.colors.primary};
 `;
 
-const BaseCard = styled.div`
+const BaseCard = styled.div<IProps>`
   display: flex;
   flex-direction: column;
   height: ${props => props.cardHeight}px;
@@ -24,15 +23,15 @@ const BaseCard = styled.div`
   ${props => Boolean(props.isChosenArticle) && chosenArticleCss};
 `;
 
-type Props = {
-  children: React.Node,
+interface IProps {
+  children: any,
   cardWidth: number,
   cardHeight: number,
   imageURL?: string,
   isChosenArticle?: boolean,
   handleMouseEnter?: () => void,
   handleMouseLeave?: () => void,
-  hoverAction?: ({ id: string, version: string }) => void,
+  hoverAction?: ({ id, version }: {id: string, version: string}) => void,
   toggledOn?: boolean,
 };
 
@@ -46,7 +45,7 @@ export default ({
   toggledOn,
   hoverAction,
   children,
-}: Props) => (
+}: IProps) => (
   <BaseCard
     onMouseEnter={hoverAction && handleMouseEnter}
     onMouseLeave={hoverAction && handleMouseLeave}

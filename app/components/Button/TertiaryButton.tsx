@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "../../lib/styled-components";
+import styled from "styled-components";
 import {
   fontSize as fontSizeSS,
   fontWeight as fontWeightSS,
@@ -10,10 +10,8 @@ import {
   FontWeightProps,
 } from "styled-system";
 
-const TertiaryButton = styled<
-  { disabled: boolean } & SpaceProps & FontSizeProps & FontWeightProps,
-  "button"
->("button")`
+const TertiaryButton = styled.button<
+  { disabled: boolean } & SpaceProps & FontSizeProps & FontWeightProps>`
   display: flex;
   align-items: center;
   border: none;

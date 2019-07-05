@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "../../lib/styled-components";
+import styled from "styled-components";
 import {
   fontSize as fontSizeSS,
   color as colorSS,
@@ -16,9 +16,7 @@ interface IButtonProps {
   disabled?: boolean;
 }
 
-const UploadLogoButton = styled<IButtonProps & BgColorProps, "button">(
-  "button"
-)`
+const UploadLogoButton = styled.button<IButtonProps & BgColorProps>`
   border: 1px solid
     ${({
       theme: {

@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "../../lib/styled-components";
+import styled from "styled-components";
 import Stack from "stack-styled";
 import theme from "../../lib/theme-config";
 
@@ -13,11 +13,7 @@ export const Content = styled.section`
   height: 100%;
 `;
 
-type Props = {
-  children: React.Node,
-};
-
-export default ({ children, setRef }: Props) => (
+export default ({ children, setRef }) => (
   <Content ref={ref => setRef && setRef(ref)}>
     <Stack
       justifyContent={["", "center"]}

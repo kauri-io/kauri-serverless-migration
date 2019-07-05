@@ -1,10 +1,8 @@
 import * as React from "react";
-import * as t from "io-ts";
-import { failure } from "io-ts/lib/PathReporter";
 import TertiaryButton from "../Button/TertiaryButton";
 import { Tooltip } from "react-tippy";
 import { ShareButtons } from "./ShareButtons";
-import styled from "../../lib/styled-components";
+import styled from "styled-components";
 import theme from "../../lib/theme-config";
 
 const containerWidth = 70;
@@ -55,14 +53,6 @@ const icon = (
   </svg>
 );
 
-const RuntimeProps = t.interface({
-  color: t.string,
-  title: t.string,
-  url: t.string,
-});
-
-type Props = t.TypeOf<typeof RuntimeProps>;
-
 export const Content: React.SFC<{ title: string; url: string }> = ({
   url,
   title,
@@ -73,12 +63,14 @@ export const Content: React.SFC<{ title: string; url: string }> = ({
   </TooltipContainer>
 );
 
-const Container: React.SFC<Props> = props => {
-  const { url, title, color } = RuntimeProps.decode(props).getOrElseL(
-    errors => {
-      throw new Error(failure(errors).join("\n"));
-    }
-  );
+interface IProps {
+  url: string;
+  title: string;
+  color: string;
+}
+
+const Container: React.SFC<IProps> = props => {
+  const { url, title, color } = props;
   return (
     <ReferenceContainer>
       <Tooltip

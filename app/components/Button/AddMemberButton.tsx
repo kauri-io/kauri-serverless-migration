@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "../../lib/styled-components";
+import styled from "styled-components";
 
 interface IButtonStyleProps {
   bg: string;
@@ -7,7 +7,7 @@ interface IButtonStyleProps {
   bgHover: string;
 }
 
-const AddMemberButton = styled<IButtonStyleProps, "img">("img")`
+const AddMemberButton = styled.img<IButtonStyleProps>`
   height: 30px;
   width: 30px;
   cursor: pointer;

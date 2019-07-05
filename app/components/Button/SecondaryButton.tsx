@@ -1,29 +1,15 @@
 import * as React from "react";
 import styled from "styled-components";
-import {
-  SpaceProps,
-  BackgroundProps,
-  FontSizeProps,
-  FontWeightProps,
-  ColorProps,
-} from "styled-system";
 import { BaseButtonCss } from "./PrimaryButton";
 
 interface ISecondaryButtonProps {
   border: string;
   borderHover: string;
   width: string | undefined;
+  mr: number;
 }
 
-const SecondaryButton = styled<
-  ISecondaryButtonProps &
-    SpaceProps &
-    BackgroundProps &
-    FontSizeProps &
-    FontWeightProps &
-    ColorProps,
-  "button"
->("button")`
+const SecondaryButton = styled.button<ISecondaryButtonProps>`
   ${BaseButtonCss};
   box-shadow: 0px 0px 0px 1px ${props => props.theme.colors[props.border]};
   :hover {

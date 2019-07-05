@@ -5,15 +5,10 @@ import {
   fontSize as fontSizeSS,
   fontWeight as fontWeightSS,
   background as backgroundSS,
-  color as colorSS,
-  FontWeightProps,
-  FontSizeProps,
-  BackgroundProps,
-  ColorProps,
-  SpaceProps,
+  color as colorSS
 } from "styled-system";
 
-export const BaseButtonCss = css`
+export const BaseButtonCss = css<IProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,20 +37,7 @@ export const BaseButtonCss = css`
   }
 `;
 
-interface IPrimaryButtonSSProps {
-  bgHover: string | undefined;
-  width: string | undefined;
-}
-
-const PrimaryButton = styled<
-  IPrimaryButtonSSProps &
-    FontWeightProps &
-    FontSizeProps &
-    BackgroundProps &
-    ColorProps &
-    SpaceProps,
-  "button"
->("button")`
+const PrimaryButton = styled.button<IProps>`
   ${BaseButtonCss};
   :hover {
     background-color: ${props =>
