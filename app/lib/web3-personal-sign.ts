@@ -1,5 +1,5 @@
-import {Observable} from "rxjs";
-import { showNotificationAction } from "./Module";
+import {Observable, of, from} from "rxjs";
+import showNotificationAction from "./Epics/ShowNotificationEpic";
 import apolloClient from "./init-apollo";
 import apolloSubscriber from "./apollo-subscriber";
 
@@ -7,8 +7,8 @@ const personalSign = data =>
   new Promise((resolve, reject) => {
     const web3 = global.window && global.window.web3;
     if (web3.eth.accounts && web3.eth.accounts.length < 1) {
-      window.ethereum &&
-        window.ethereum
+      global.window.ethereum &&
+        global.window.ethereum
           .enable()
           .then(result => {
             console.log("enabled result: ", result);
@@ -51,7 +51,7 @@ const personalSign = data =>
   });
 
 const loginPersonalSign = data =>
-  Observable.fromPromise(personalSign(data)).catch(err => {
+  from(personalSign(data)).catch(err => {
     console.error(err);
     if (err.message.includes("Metamask locked!")) {
       return Observable.throw(new Error("Metamask locked!"));
@@ -60,10 +60,10 @@ const loginPersonalSign = data =>
   });
 
 const web3PersonalSign = (id, data, gqlMutation) =>
-  window.web3.eth.accounts.length > 0
-    ? Observable.fromPromise(personalSign(data))
+  global.window.web3.eth.accounts.length > 0
+    ? from(personalSign(data))
       .flatMap(signature =>
-        apolloClient().mutate({
+        apolloClient({},{}).mutate({
           mutation: gqlMutation,
           variables: {
             id,
@@ -72,7 +72,7 @@ const web3PersonalSign = (id, data, gqlMutation) =>
         })
       )
       .flatMap(({ data }) =>
-        apolloSubscriber(data[gqlMutation.definitions["0"].name.value].hash)
+        apolloSubscriber(data[gqlMutation.definitions["0"].name.value].hash, {})
       )
       .catch(err => {
         console.error(err);
@@ -81,7 +81,7 @@ const web3PersonalSign = (id, data, gqlMutation) =>
         }
         return Observable.throw(new Error("Submission error"));
       })
-    : Observable.of(
+    : of(
       showNotificationAction({
         notificationType: "error",
         message: "Your wallet is locked!",

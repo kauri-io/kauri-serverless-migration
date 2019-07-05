@@ -57,15 +57,34 @@ interface ISetNavcolorOverrideAction {
     payload: ISetNavcolorOverridePayload
 }
 
-type State = {
-    userId?: string
-    modalTitle?: string
-    modalOpen: boolean
-    onOk?: () => any
-    onCancel?: () => any
-    showIntroBanner: boolean
-    funds: number
-}
+export interface ICommunity {
+    role: string;
+    community: {
+      id: string;
+      name: string;
+      members: Array<{
+        id: string;
+        role: string;
+      }>;
+    };
+  }
+  
+
+export interface IReduxState {
+    app: {
+      hostName?: string;
+      user?: {
+        id: string;
+        avatar: string;
+        username: string;
+        communities: ICommunity[];
+        status: string; // [NOT_REGISTERED|CREATED]EMAIL_VERIFIED]
+      };
+    };
+    modal: {
+      isModalOpen: boolean;
+    };
+  }
 
 export const SET_HOSTNAME: string = 'SET_HOSTNAME'
 
@@ -104,41 +123,40 @@ export const ItoggleModalAction = ({
     footer,
 })
 
-const initialState: State = {
-    modalOpen: false,
-    onOk: () => {},
-    onCancel: () => {},
-    showIntroBanner: true,
-    funds: 0,
+const initialState: IReduxState = {
+    app: {},
+    modal: {
+        isModalOpen: false
+    }
 }
 
 const handlers = {
     [SET_NAVCOLOR_OVERRIDE]: (
-        state: State,
+        state: IReduxState,
         action: ISetNavcolorOverrideAction
     ) => ({
         ...state,
         navcolorOverride: action.payload,
     }),
-    [SHOW_NOTIFICATION]: (state: State) => state,
-    [SHOW_CONFIRMATION_MODAL]: (state: State) => state,
-    [SET_HOSTNAME]: (state: State, action: ISetHostNameAction) =>
+    [SHOW_NOTIFICATION]: (state: IReduxState) => state,
+    [SHOW_CONFIRMATION_MODAL]: (state: IReduxState) => state,
+    [SET_HOSTNAME]: (state: IReduxState, action: ISetHostNameAction) =>
         typeof action.payload.hostName === 'string'
             ? { ...state, hostName: action.payload.hostName }
             : state,
-    [SET_USER_ID]: (state: State, action: ISetUserIdAction) =>
+    [SET_USER_ID]: (state: IReduxState, action: ISetUserIdAction) =>
         typeof action.userId === 'string'
             ? { ...state, userId: action.userId }
             : state,
-    [SET_USER_DETAILS]: (state: State, action: ISetUserDetailsAction) => ({
+    [SET_USER_DETAILS]: (state: IReduxState, action: ISetUserDetailsAction) => ({
         ...state,
         user: action.payload,
     }),
-    [HIDE_INTRO_BANNER_SUCCESS]: (state: State) => ({
+    [HIDE_INTRO_BANNER_SUCCESS]: (state: IReduxState) => ({
         ...state,
         showIntroBanner: false,
     }),
-    [TOGGLE_MODAL]: (state: State, action: IToggleModalAction) =>
+    [TOGGLE_MODAL]: (state: IReduxState, action: IToggleModalAction) =>
         (typeof action.modalTitle === 'string' ||
             typeof action.modalTitle === 'object') &&
         typeof action.modalChildren === 'object' &&
@@ -147,7 +165,7 @@ const handlers = {
         typeof action.footer === 'object'
             ? {
                   ...state,
-                  modalOpen: !state.modalOpen,
+                  modalOpen: !state.modal.isModalOpen,
                   modalTitle: action.modalTitle,
                   modalChildren: action.modalChildren,
                   onOk: action.onOk,

@@ -7,6 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "introspect-fragments": "node scripts/introspectionFragmentMatcher.js",
     "gqt": "npx apollo client:codegen --target=typescript --config=apollo.config.js && npm run introspect-fragments"
   },
   "engines": {
@@ -47,7 +48,8 @@
     "styled-components": "^4.3.2",
     "subscriptions-transport-ws": "^0.9.16",
     "superagent": "^5.1.0",
-    "web3": "0.20.1"
+    "web3": "0.20.1",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
     "@types/cookie": "^0.3.3",

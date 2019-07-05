@@ -15,6 +15,12 @@ export interface getCommunity_getCommunity_creator {
   name: string | null;
 }
 
+export interface getCommunity_getCommunity_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  type: ResourceTypeInput | null;
+  id: string | null;
+}
+
 export interface getCommunity_getCommunity_homepage_resourcesId {
   __typename: "ResourceIdentifier";
   id: string | null;
@@ -621,6 +627,7 @@ export interface getCommunity_getCommunity {
   avatar: string | null;
   social: any | null;
   tags: (string | null)[] | null;
+  resourceIdentifier: getCommunity_getCommunity_resourceIdentifier | null;
   attributes: any | null;
   homepage: (getCommunity_getCommunity_homepage | null)[] | null;
   members: (getCommunity_getCommunity_members | null)[] | null;

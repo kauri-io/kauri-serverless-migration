@@ -1,5 +1,5 @@
 import {Observable} from "rxjs";
-import { showNotificationAction } from "./Module";
+import showNotificationAction from "./Epics/ShowNotificationEpic";
 
 const networkNames = {
   1: "Main",
@@ -12,7 +12,7 @@ const networkNames = {
 
 const getNetwork = () =>
   new Promise((resolve, reject) => {
-    window.web3.version.getNetwork((err, netId) => {
+    global.window.web3.version.getNetwork((err, netId) => {
       const networkId = parseInt(netId, 10);
       if (err) {
         console.error(err);
@@ -29,7 +29,7 @@ const getNetwork = () =>
   });
 
 const web3GetNetwork = () =>
-  window.web3 && window.web3.version
+  global.window.web3 && global.window.web3.version
     ? Observable.fromPromise(getNetwork()).catch(err => {
       console.error(err);
       if (err.message.includes("Metamask locked!")) {

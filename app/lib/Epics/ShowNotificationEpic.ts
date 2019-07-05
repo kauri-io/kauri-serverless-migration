@@ -4,7 +4,14 @@ import { notification } from "antd";
 
 export const SHOW_NOTIFICATION: string = "SHOW_NOTIFICATION";
 
-interface IShowNotificationPayload {
+export const showNotificationAction = (
+  payload: IShowNotificationPayload
+): IShowNotificationAction => ({
+  type: SHOW_NOTIFICATION,
+  payload,
+});
+
+export interface IShowNotificationPayload {
   notificationType: "success" | "info" | "warning" | "error";
   message: string;
   description: FunctionStringCallback;
@@ -15,7 +22,7 @@ interface IShowNotificationAction {
   payload: IShowNotificationPayload,
 };
 
-export const openNotificationWithIcon = ({
+const openNotificationWithIcon = ({
   notificationType, message, description
 }: IShowNotificationPayload): void =>
   notification[notificationType]({

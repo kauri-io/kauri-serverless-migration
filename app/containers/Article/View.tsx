@@ -158,6 +158,4 @@ const ArticleComp = ({
     </>
   );
 };
-
-// export default withRouter(Article);
 export default ArticleComp;

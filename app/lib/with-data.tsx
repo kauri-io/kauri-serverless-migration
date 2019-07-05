@@ -13,10 +13,9 @@ import initRedux from "./init-redux";
 import initApollo from "./init-apollo";
 
 import {
-  fetchUserDetailsAction,
-  userDetailsEpic,
   setHostNameAction,
 } from "./Module";
+import userDetailsEpic, { fetchUserDetailsAction } from "./Epics/FetchUserDetailsEpic"
 import themeConfig from "./theme-config";
 
 // import "highlightjs/styles/vs2015.css";
@@ -29,7 +28,7 @@ const config = require("../config").default;
 
 const dispatchEpic = (epic, action, state = {}, dependencies = {}) => {
   const actions = new Subject();
-  const actions$ = new ActionsObservable(actions);
+  const actions$ = new ActionsObservable<any>(actions);
   const store = { getState: () => state };
 
   const promised = epic(actions$, store, dependencies).toPromise();
@@ -62,7 +61,7 @@ export default (ComposedComponent: any) =>
   class WithData extends React.Component<IProps> {
     apollo: any;
     redux: any;
-    static async getInitialProps (context, other) {
+    static async getInitialProps (context) {
       const url = { query: context.query, pathname: context.pathname };
       const hostName =
         (context.req && context.req.headers.host) ||

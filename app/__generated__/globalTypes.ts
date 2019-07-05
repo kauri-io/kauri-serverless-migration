@@ -73,88 +73,88 @@ export enum UserStatusInput {
 }
 
 export interface ArticleFilterInput {
-  checkpointEquals?: string | null;
-  fullText?: string | null;
   authorIdEquals?: string | null;
-  ownerIdIn?: (string | null)[] | null;
-  containsTag?: string | null;
-  versionGreaterThan?: number | null;
-  dateCreatedLessThan?: any | null;
-  latestVersion?: boolean | null;
-  versionIn?: (number | null)[] | null;
-  statusIn?: (ArticleStatusInput | null)[] | null;
   idEquals?: string | null;
-  dateCreatedGreaterThan?: any | null;
+  latestVersion?: boolean | null;
   ownerIdEquals?: string | null;
+  dateCreatedLessThan?: any | null;
+  containsTag?: string | null;
+  checkpointEquals?: string | null;
+  versionIn?: (number | null)[] | null;
+  fullText?: string | null;
+  versionGreaterThan?: number | null;
+  ownerIdIn?: (string | null)[] | null;
+  statusIn?: (ArticleStatusInput | null)[] | null;
+  dateCreatedGreaterThan?: any | null;
 }
 
 export interface CollectionFilterInput {
-  fullText?: string | null;
-  dateCreatedGreaterThan?: any | null;
-  containingArticleId?: string | null;
-  descriptionContains?: string | null;
-  resourcesCountGreaterThan?: number | null;
-  dateUpdatedGreaterThan?: any | null;
   ownerIdEquals?: string | null;
+  dateUpdatedGreaterThan?: any | null;
   nameContains?: string | null;
-  dateUpdatedLessThan?: any | null;
+  fullText?: string | null;
+  descriptionContains?: string | null;
   dateCreatedLessThan?: any | null;
+  containingArticleId?: string | null;
+  resourcesCountGreaterThan?: number | null;
+  dateCreatedGreaterThan?: any | null;
+  dateUpdatedLessThan?: any | null;
 }
 
 export interface CommunityFilterInput {
-  fullText?: string | null;
+  dateCreatedLessThan?: any | null;
+  dateUpdatedLessThan?: any | null;
   nameContain?: string | null;
-  statusIn?: (CommunityStatusInput | null)[] | null;
+  dateUpdatedGreaterThan?: any | null;
   membersIncludes?: string | null;
   dateCreatedGreaterThan?: any | null;
-  dateCreatedLessThan?: any | null;
-  dateUpdatedGreaterThan?: any | null;
-  dateUpdatedLessThan?: any | null;
+  statusIn?: (CommunityStatusInput | null)[] | null;
+  fullText?: string | null;
   nameContains?: string | null;
 }
 
 export interface CommunityResourceFilterInput {
-  resourceTypeEquals?: ResourceTypeInput | null;
   statusEquals?: CommunityResourceStatusInput | null;
+  resourceTypeEquals?: ResourceTypeInput | null;
 }
 
 export interface InvitationInput {
-  email?: string | null;
   secret?: string | null;
+  email?: string | null;
   role?: CommunityPermissionInput | null;
 }
 
 export interface ResourceIdentifierInput {
-  type?: ResourceTypeInput | null;
   id?: string | null;
   version?: number | null;
+  type?: ResourceTypeInput | null;
 }
 
 export interface SearchFilterInput {
-  dateUpdatedLessThan?: any | null;
-  type?: ResourceTypeInput | null;
-  mustIncludeUserId?: (string | null)[] | null;
-  dateCreatedLessThan?: any | null;
-  types?: (ResourceTypeInput | null)[] | null;
-  mustContainTag?: (string | null)[] | null;
-  mustNotIncludeUserId?: (string | null)[] | null;
   mustNotContainTag?: (string | null)[] | null;
+  mustNotIncludeUserId?: (string | null)[] | null;
   dateUpdatedGreaterThan?: any | null;
+  dateUpdatedLessThan?: any | null;
   dateCreatedGreaterThan?: any | null;
+  type?: ResourceTypeInput | null;
+  mustContainTag?: (string | null)[] | null;
+  mustIncludeUserId?: (string | null)[] | null;
+  types?: (ResourceTypeInput | null)[] | null;
+  dateCreatedLessThan?: any | null;
 }
 
 export interface SearchParameterInput {
-  highlightPostTag?: string | null;
+  scoringMode?: ScoringModeInput | null;
   highlightPreTag?: string | null;
   highlightEnable?: boolean | null;
-  scoringMode?: ScoringModeInput | null;
+  highlightPostTag?: string | null;
 }
 
 export interface SectionDTOInput {
   name?: string | null;
   resourcesId?: (ResourceIdentifierInput | null)[] | null;
-  description?: string | null;
   id?: string | null;
+  description?: string | null;
 }
 
 //==============================================================

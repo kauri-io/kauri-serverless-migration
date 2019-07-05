@@ -155,6 +155,10 @@ export const Community = gql`
     avatar
     social
     tags
+    resourceIdentifier {
+      type
+      id
+    }
     attributes
     homepage {
       name
