@@ -1,8 +1,7 @@
 import * as React from "react";
-import styled, { css } from "../../lib/styled-components";
+import styled, { css } from "styled-components";
 import BaseCard from "./BaseCard";
 import R from "ramda";
-import TextTruncate from "react-text-truncate";
 import { Label, Title2, H4, BodyCard } from "../Typography";
 import theme from "../../lib/theme-config";
 import SecondaryButton from "../Button/SecondaryButton";
@@ -16,7 +15,7 @@ import {
   hideDispatch,
   toggleDispatch,
   toggleInitialState,
-} from "../../../kauri-web/lib/use-toggle";
+} from "../../lib/use-toggle";
 import Date from "../HoverDateLabel";
 
 const DEFAULT_CARD_HEIGHT = 310;
@@ -62,7 +61,7 @@ const MoreOptionsIcon: React.FunctionComponent<{}> = () => (
   </svg>
 );
 
-const MoreOptions = styled<{ hasImageURL: boolean }, "div">("div")`
+const MoreOptions = styled.div<{ hasImageURL: boolean }>`
   display: flex;
   height: 20px;
   width: 20px;
@@ -98,7 +97,7 @@ interface IContentStyledComponentProps {
   imageURL: string | null;
 }
 
-const Content = styled<{}, "div">("div")`
+const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,7 +117,7 @@ const Content = styled<{}, "div">("div")`
   }
 `;
 
-const Footer = styled<IContentStyledComponentProps, "div">("div")`
+const Footer = styled.div<IContentStyledComponentProps>`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -128,7 +127,7 @@ const Footer = styled<IContentStyledComponentProps, "div">("div")`
   }
 `;
 
-const Count = styled<IContentStyledComponentProps, "div">("div")`
+const Count = styled.div<IContentStyledComponentProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -149,44 +148,6 @@ const Divider = styled.div`
   background-color: ${props => props.theme.colors.divider};
   height: 2px;
 `;
-
-const nameLineHeight = R.cond([
-  [
-    ({ cardHeight, imageURL }) =>
-      cardHeight <= DEFAULT_CARD_HEIGHT && typeof imageURL !== "string",
-    R.always(2),
-  ],
-  [
-    ({ cardHeight, imageURL }) =>
-      cardHeight > DEFAULT_CARD_HEIGHT && typeof imageURL !== "string",
-    R.always(3),
-  ],
-  [({ imageURL }) => typeof imageURL === "string", R.always(2)],
-]);
-
-const contentLineHeight = R.cond([
-  [
-    ({ cardWidth, imageURL }) =>
-      cardWidth > DEFAULT_CARD_WIDTH && typeof imageURL !== "string",
-    R.always(7),
-  ],
-  [
-    ({ cardHeight, imageURL }) =>
-      cardHeight <= DEFAULT_CARD_HEIGHT && typeof imageURL !== "string",
-    R.always(2),
-  ],
-  [
-    ({ cardHeight, imageURL }) =>
-      cardHeight > DEFAULT_CARD_HEIGHT && typeof imageURL !== "string",
-    R.always(7),
-  ],
-  [
-    ({ cardHeight, imageURL }) =>
-      cardHeight > DEFAULT_CARD_HEIGHT && typeof imageURL === "string",
-    R.always(6),
-  ],
-  [({ imageURL }) => typeof imageURL === "string", R.always(2)],
-]);
 
 interface IPublicProfileProps {
   username: string | null;
@@ -234,9 +195,6 @@ interface IBodyProps {
 
 const RenderBodyContent: React.SFC<IBodyProps> = ({
   name,
-  cardHeight,
-  cardWidth,
-  imageURL,
   description,
 }) => (
   <React.Fragment>
@@ -244,18 +202,10 @@ const RenderBodyContent: React.SFC<IBodyProps> = ({
       <Label textAlign="center">{"Collection"}</Label>
     </LabelContainer>
     <Title2 textAlign="center">
-      <TextTruncate
-        line={nameLineHeight({ cardHeight, imageURL })}
-        truncateText="…"
-        text={String(name)}
-      />
+      {name && name.length < 100 ? description : description && `${description.substring(0, 97)}...`}
     </Title2>
     <BodyCard textAlign="center">
-      <TextTruncate
-        line={contentLineHeight({ cardHeight, cardWidth, imageURL })}
-        truncateText="…"
-        text={description}
-      />
+      {description && description.length < 100 ? description : description && `${description.substring(0, 97)}...`}
     </BodyCard>
   </React.Fragment>
 );
@@ -454,7 +404,7 @@ const shiftMarginDueToNoImageURLCss = css`
   margin-left: -15px;
 `;
 
-const HoverContainer = styled<{ hasImageURL: boolean }, "div">("div")`
+const HoverContainer = styled.div<{ hasImageURL: boolean }>`
   display: flex;
   height: 100%;
   width: 100%;
@@ -640,10 +590,8 @@ const CollectionCard: React.FunctionComponent<IProps> = ({
   canAccessHoverChildren,
   resourceType,
 }) => {
-  const [{ toggledOn }, dispatch] = React.useReducer<
-    IToggleState,
-    IToggleAction
-  >(toggleReducer, toggleInitialState);
+  const [{ toggledOn }, dispatch] = React.useReducer<IToggleState, IToggleAction>(toggleReducer, toggleInitialState, {});
+
   return (
     <BaseCard
       imageURL={imageURL}

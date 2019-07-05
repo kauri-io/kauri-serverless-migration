@@ -5,7 +5,7 @@ export const apolloChildHashesSubscriber = childHashes =>
   childHashes.map(
     hash =>
       new Promise((resolve, reject) =>
-        apolloClient()
+        apolloClient({}, {})
           .subscribe({
             query: getEvent,
             variables: { hash },
@@ -21,7 +21,7 @@ export default (hash, filterName) => {
   // let count = 0;
   return new Promise((resolve, reject) =>
     filterName
-      ? apolloClient()
+      ? apolloClient({}, {})
         .subscribe({
           query: getEvent,
           variables: { hash: `${hash}-${filterName}` },
@@ -35,7 +35,7 @@ export default (hash, filterName) => {
           },
           error: err => reject(err),
         })
-      : apolloClient()
+      : apolloClient({}, {})
         .subscribe({
           query: getEvent,
           variables: { hash },

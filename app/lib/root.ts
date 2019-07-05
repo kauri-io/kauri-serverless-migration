@@ -1,12 +1,10 @@
 import { combineEpics } from "redux-observable";
-import app, {
-//   showNotificationEpic,
-//   showConfirmationModalEpic,
-  // routeChangeEpic,
-  // ethUsdPriceEpic,
-//   userDetailsEpic,
-//   hideIntroBannerEpic,
-} from "./Module";
+import userDetailsEpic from "./Epics/FetchUserDetailsEpic"
+import showNotificationEpic from "./Epics/ShowNotificationEpic"
+import showConfirmationModalEpic from "./Epics/ShowConfirmationModalEpic"
+import routeChangeEpic from "./Epics/RouteChangeEpic"
+import hideIntroBannerEpic from "./Epics/HideIntroBannerEpic"
+import app from "./Module";
 // import register, {
 //   registerEpic,
 // } from "../components/containers/LoginForm/Module";
@@ -75,17 +73,17 @@ export const rootReducer = {
 };
 
 const epics = [
-//   showNotificationEpic,
+  showNotificationEpic,
 //   registerEpic,
-//   showConfirmationModalEpic,
-  // routeChangeEpic,
+  showConfirmationModalEpic,
+  routeChangeEpic,
 //   submitArticleEpic,
 //   submitArticleVersionEpic,
 //   editArticleEpic,
 //   addCommentEpic,
-//   userDetailsEpic,
+  userDetailsEpic,
 //   // ethUsdPriceEpic,
-//   hideIntroBannerEpic,
+  hideIntroBannerEpic,
 //   tipArticleEpic,
 //   rejectArticleEpic,
 //   startDriverStepsEpic,
