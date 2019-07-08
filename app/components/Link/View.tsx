@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import slugify from "slugify";
 
-const A = styled.a`
+const A = styled.a<{fullWidth: boolean}>`
   text-decoration: none;
   color: inherit;
   ${props => props.fullWidth && "width: 100%;"};
@@ -20,7 +20,18 @@ const A = styled.a`
   }
 `;
 
-class Link extends React.Component {
+interface IProps {
+  routeChangeAction: (route: string) => void;
+  callback: any;
+  toSlug: string;
+  as: string;
+  href: string;
+  fullWidth: boolean;
+  useAnchorTag: boolean;
+  children: any;
+ }
+
+class Link extends React.Component<IProps> {
   handleClick = (e, url) => {
     if (
       e.metaKey ||

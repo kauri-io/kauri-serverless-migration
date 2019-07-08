@@ -62,6 +62,7 @@ interface IProps {
   text?: string;
   width?: string;
   className?: string;
+  mr?: number;
 }
 
 const PrimaryButtonComponent: React.SFC<IProps> = ({

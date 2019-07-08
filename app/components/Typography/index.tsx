@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-export const BodyCardCss = css<{ color: string | undefined }>`
+export const BodyCardCss = css<{ color?: string }>`
   font-size: 14px;
   font-weight: normal;
   letter-spacing: -0.1px;
@@ -67,9 +67,6 @@ const typographySpecifications: ITypography[] = [
     fontWeight: 500,
     name: "Title2",
   },
-  //
-  // Content
-  //
   {
     as: "span",
     fontSize: 16,
@@ -85,10 +82,7 @@ const typographySpecifications: ITypography[] = [
   },
   {
     component:
-      // Because Nelson
-      styled<{ color: string; textAlign: string; hoverColor?: string }, "span">(
-        "span"
-      )`
+      styled.span<{ color: string; textAlign: string; hoverColor?: string }>`
         font-size: 11px;
         font-weight: bold;
         text-transform: uppercase;
@@ -114,7 +108,6 @@ const typographySpecifications: ITypography[] = [
   },
   {
     component:
-      // Because Nelson
       styled.li`
         font-size: 14px;
         font-weight: bold;
@@ -125,7 +118,6 @@ const typographySpecifications: ITypography[] = [
   },
   {
     component:
-      // Because Nelson
       styled.li`
         font-size: 14px;
         font-weight: bold;
@@ -139,7 +131,6 @@ const typographySpecifications: ITypography[] = [
   },
   {
     component:
-      // Because Nelson
       styled.span`
         font-size: 17px;
         font-weight: normal;
@@ -150,8 +141,7 @@ const typographySpecifications: ITypography[] = [
   },
   {
     component:
-      // Because Nelson
-      styled<{ textAlign: string }, "span">("span")`
+      styled.span<{ textAlign: string }>`
         ${BodyCardCss};
         ${props =>
           typeof props.textAlign === "string" &&
@@ -186,7 +176,7 @@ typographySpecifications.map(
   }) => {
     const styledComponent =
       typeof as === "string"
-        ? styled<ITypographyProps, typeof as>(as)`
+        ? styled.span<ITypographyProps>`
             color: ${props => props.theme.colors[props.color || color]};
             margin: 0px;
             font-weight: ${fontWeight};

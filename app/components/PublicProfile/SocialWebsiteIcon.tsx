@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "../../lib/styled-components";
+import styled from "styled-components";
 
 const InvertSocialIcon = styled.img`
   filter: invert(100%);

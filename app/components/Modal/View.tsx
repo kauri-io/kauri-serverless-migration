@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled, { keyframes } from "styled-components";
 
-const ModalContainer = styled<{ open: boolean }, "div">("div")`
+const ModalContainer = styled.div<{ open: boolean }>`
   height: 100%;
   width: 100%;
   top: 0;

@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import {
-  // routeChangeAction,
   IReduxState } from "../../lib/Module";
 import React from "react";
 import { makeStyles, Theme } from "@material-ui/core/styles";
@@ -104,7 +103,7 @@ const useStyles = makeStyles((theme: Theme) => {
 });
 
 interface IProps {
-  user: {
+  user?: {
     id: string;
     username: string;
     avatar: string;
@@ -255,7 +254,6 @@ const PrimarySearchAppBar = ({ user }: IProps) => {
 
 const mapStateToProps = (state: IReduxState) => ({
   user: state.app.user,
-  userId: state.app.user && state.app.user.id,
 });
 
 export default connect(

@@ -1,19 +1,14 @@
 import React from "react";
 import { withApollo, compose } from "react-apollo";
 import withData from "../lib/with-data";
-import AppWithoutNavbar from "../layouts/AppWithoutNavbar";
-import EditProfileComp from "../components/containers/EditProfile";
+import App from "../layouts";
+import EditProfileComp from "../containers/EditProfile";
 import { withRouter } from "next/router";
 
-class EditProfile extends React.Component {
-  render() {
-    return (
-      <AppWithoutNavbar url={this.props.router}>
+const EditProfile = ({router}) =>
+      <App>
         <EditProfileComp router={this.props.router} />
-      </AppWithoutNavbar>
-    );
-  }
-}
+      </App>
 
 export default compose(
   withData,

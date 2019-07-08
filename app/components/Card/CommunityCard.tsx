@@ -152,7 +152,6 @@ const CommunityCard: React.SFC<IProps> = props => {
 
     return (
         <BaseCard
-            imageURL={null}
             cardWidth={DEFAULT_CARD_WIDTH}
             cardHeight={cardHeight}
         >

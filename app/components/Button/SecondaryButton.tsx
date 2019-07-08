@@ -7,6 +7,9 @@ interface ISecondaryButtonProps {
   borderHover: string;
   width: string | undefined;
   mr: number;
+  bg?: string;
+  fontSize?: number;
+  fontWeight?: number;
 }
 
 const SecondaryButton = styled.button<ISecondaryButtonProps>`

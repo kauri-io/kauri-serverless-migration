@@ -5,7 +5,7 @@ import CommunityCard from '../Card/CommunityCard'
 import slugify from 'slugify'
 import { Article } from '../../queries/Fragments/__generated__/Article'
 import { Community } from '../../queries/Fragments/__generated__/Community'
-import { Collection } from '../../queries/Fragments/__generated__/Collection'
+import { Collection, Collection_owner_PublicUserDTO, Collection_owner_CommunityDTO } from '../../queries/Fragments/__generated__/Collection'
 
 interface IRenderCardContentProps {
     fromAdmin: boolean
@@ -63,8 +63,13 @@ export const RenderCardContent = ({
                     return current
                 }, 0)
 
-            return card.owner && card.owner.__typename === "ArticleDTO" ? null : (
-                <CollectionCard
+                const typedOwner =
+                card &&
+                (card.owner as
+                  | Collection_owner_PublicUserDTO
+                  | Collection_owner_CommunityDTO);
+
+            return <CollectionCard
                     key={String(card.id)}
                     id={String(card.id)}
                     resourceType="CollectionDTO"
@@ -72,10 +77,12 @@ export const RenderCardContent = ({
                     date={moment(card.dateUpdated).format('D MMM YYYY')}
                     description={String(card.description)}
                     username={
-                        card.owner && (card.owner.name || card.owner.username)
-                    }
-                    userId={card.owner && card.owner.id}
-                    userAvatar={card.owner && card.owner.avatar}
+                        typedOwner && typedOwner.__typename === "PublicUserDTO"
+                          ? typedOwner.username
+                          : typedOwner && typedOwner.name
+                      }
+                    userId={String(typedOwner && typedOwner.id)}
+                    userAvatar={typedOwner && typedOwner.avatar}
                     articleCount={String(articleCount)}
                     collectionCount={String(collectionCount)}
                     imageURL={card.background}
@@ -112,7 +119,6 @@ export const RenderCardContent = ({
                         }
                     }}
                 />
-            )
             case 'CommunityDTO': {
                 return (
                     <CommunityCard

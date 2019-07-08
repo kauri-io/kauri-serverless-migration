@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "../../../routes";
+import Link from 'next/link'
 import styled from "styled-components";
 import Empty from "../PublicProfile/Empty";
 import {
@@ -117,10 +117,6 @@ const CollectionSection: React.SFC<IProps> = props => {
                     route: string
                   ) => (
                     <Link
-                      toSlug={
-                        route && route.includes("article") && article.title
-                      }
-                      useAnchorTag={true}
                       href={route}
                     >
                       {childrenProps}
@@ -238,13 +234,6 @@ const CollectionSection: React.SFC<IProps> = props => {
                     route: string
                   ) => (
                     <Link
-                      toSlug={
-                        route &&
-                        route.includes("collection") &&
-                        collection &&
-                        collection.name
-                      }
-                      useAnchorTag={true}
                       href={route}
                     >
                       {childrenProps}
