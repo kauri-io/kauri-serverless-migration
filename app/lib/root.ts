@@ -1,10 +1,10 @@
-import { combineEpics } from "redux-observable";
-import userDetailsEpic from "./Epics/FetchUserDetailsEpic"
-import showNotificationEpic from "./Epics/ShowNotificationEpic"
-import showConfirmationModalEpic from "./Epics/ShowConfirmationModalEpic"
-import routeChangeEpic from "./Epics/RouteChangeEpic"
-import hideIntroBannerEpic from "./Epics/HideIntroBannerEpic"
-import app from "./Module";
+import { combineEpics } from 'redux-observable'
+import userDetailsEpic from './Epics/FetchUserDetailsEpic'
+import showNotificationEpic from './Epics/ShowNotificationEpic'
+import showConfirmationModalEpic from './Epics/ShowConfirmationModalEpic'
+import routeChangeEpic from './Epics/RouteChangeEpic'
+import hideIntroBannerEpic from './Epics/HideIntroBannerEpic'
+import app from './Module'
 // import register, {
 //   registerEpic,
 // } from "../components/containers/LoginForm/Module";
@@ -22,9 +22,9 @@ import app from "./Module";
 // } from "../components/containers/SubmitArticleForm/Module";
 // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
 // import localStorage, {
-  // startDriverStepsEpic,
-  // persistStateToLocalStorageEpic,
-  // finishedDriverStepsEpic,
+// startDriverStepsEpic,
+// persistStateToLocalStorageEpic,
+// finishedDriverStepsEpic,
 // } from "./LocalStorageModule";
 // import {
 //   createCollectionEpic,
@@ -32,7 +32,7 @@ import app from "./Module";
 //   composeCollectionEpic,
 // } from "../components/containers/CreateCollectionForm/Module";
 // import { saveUserDetailsEpic } from "../components/common/EditProfile/Module";
-import modal from "../components/Modal/Module";
+import modal from '../components/Modal/Module'
 // import { checkpointArticlesEpic } from "../components/containers/CheckpointArticles/Module";
 // import { deleteDraftArticleEpic } from "../components/containers/ArticleDraft/DeleteDraftArticleModule";
 // import { addArticleToCollectionEpic } from "../components/connections/AddToCollection/Module";
@@ -66,61 +66,61 @@ import modal from "../components/Modal/Module";
 // } from "../components/containers/PublicProfile/Manage/TransferModule";
 
 export const rootReducer = {
-  app,
-  modal,
-  // register,
-  // localStorage,
-};
+    app,
+    modal,
+    // register,
+    // localStorage,
+}
 
 const epics = [
-  showNotificationEpic,
-//   registerEpic,
-  showConfirmationModalEpic,
-  routeChangeEpic,
-//   submitArticleEpic,
-//   submitArticleVersionEpic,
-//   editArticleEpic,
-//   addCommentEpic,
-  userDetailsEpic,
-//   // ethUsdPriceEpic,
-  hideIntroBannerEpic,
-//   tipArticleEpic,
-//   rejectArticleEpic,
-//   startDriverStepsEpic,
-//   persistStateToLocalStorageEpic,
-//   finishedDriverStepsEpic,
-//   createCollectionEpic,
-//   composeCollectionEpic,
-//   approveArticleEpic,
-//   draftArticleEpic,
-//   editCollectionEpic,
-//   checkpointArticlesEpic,
-//   saveUserDetailsEpic,
-//   // ReasonML epics
-//   publishArticleEpic,
-//   // Typescript epics
-//   deleteDraftArticleEpic,
-//   addArticleToCollectionEpic,
-//   verifyEmailEpic,
-//   resendEmailVerificationEpic,
-//   emailSubscribeEpic,
-//   voteEpic,
-//   createCommunityEpic,
-//   communityCreatedEpic,
-//   updateCommunityEpic,
-//   rejectArticleTransferEpic,
-//   acceptArticleTransferEpic,
-//   finaliseArticleTransferEpic,
-//   curateCommunityResourcesEpic,
-//   approveResourceEpic,
-//   sendCommunityInvitationEpic,
-//   acceptCommunityInvitationEpic,
-//   revokeInvitationEpic,
-//   removeMemberEpic,
-//   removeResourceEpic,
-//   changeMemberRoleEpic,
-//   resendInvitationEpic,
-//   transferArticleToCommunityEpic,
-];
+    showNotificationEpic,
+    //   registerEpic,
+    showConfirmationModalEpic,
+    routeChangeEpic,
+    //   submitArticleEpic,
+    //   submitArticleVersionEpic,
+    //   editArticleEpic,
+    //   addCommentEpic,
+    userDetailsEpic,
+    //   // ethUsdPriceEpic,
+    hideIntroBannerEpic,
+    //   tipArticleEpic,
+    //   rejectArticleEpic,
+    //   startDriverStepsEpic,
+    //   persistStateToLocalStorageEpic,
+    //   finishedDriverStepsEpic,
+    //   createCollectionEpic,
+    //   composeCollectionEpic,
+    //   approveArticleEpic,
+    //   draftArticleEpic,
+    //   editCollectionEpic,
+    //   checkpointArticlesEpic,
+    //   saveUserDetailsEpic,
+    //   // ReasonML epics
+    //   publishArticleEpic,
+    //   // Typescript epics
+    //   deleteDraftArticleEpic,
+    //   addArticleToCollectionEpic,
+    //   verifyEmailEpic,
+    //   resendEmailVerificationEpic,
+    //   emailSubscribeEpic,
+    //   voteEpic,
+    //   createCommunityEpic,
+    //   communityCreatedEpic,
+    //   updateCommunityEpic,
+    //   rejectArticleTransferEpic,
+    //   acceptArticleTransferEpic,
+    //   finaliseArticleTransferEpic,
+    //   curateCommunityResourcesEpic,
+    //   approveResourceEpic,
+    //   sendCommunityInvitationEpic,
+    //   acceptCommunityInvitationEpic,
+    //   revokeInvitationEpic,
+    //   removeMemberEpic,
+    //   removeResourceEpic,
+    //   changeMemberRoleEpic,
+    //   resendInvitationEpic,
+    //   transferArticleToCommunityEpic,
+]
 
 export const rootEpic = combineEpics(...epics)

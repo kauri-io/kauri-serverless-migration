@@ -1,6 +1,6 @@
-import input from './Input';
+import input from './Input'
 
-export const Input = input;
+export const Input = input
 
 export default {
     Input,

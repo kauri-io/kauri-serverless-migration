@@ -1,14 +1,13 @@
-import * as React from "react";
+import * as React from 'react'
 
-interface IProps {
-}
+interface IProps {}
 
 class LoadingComponent extends React.Component<IProps> {
-  render() {
-    return (
-      <React.Fragment>
-        <style type="text/css">
-          {`
+    render() {
+        return (
+            <React.Fragment>
+                <style type="text/css">
+                    {`
         .centered-wrapper{
           display: flex;
           flex: 1;
@@ -71,18 +70,18 @@ class LoadingComponent extends React.Component<IProps> {
           }
         }
         `}
-        </style>
-        <div className="centered-wrapper">
-          <div className="lds-ellipsis">
-            <div />
-            <div />
-            <div />
-            <div />
-          </div>
-        </div>
-      </React.Fragment>
-    );
-  }
+                </style>
+                <div className="centered-wrapper">
+                    <div className="lds-ellipsis">
+                        <div />
+                        <div />
+                        <div />
+                        <div />
+                    </div>
+                </div>
+            </React.Fragment>
+        )
+    }
 }
 
 export default LoadingComponent

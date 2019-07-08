@@ -1,38 +1,38 @@
-import React from "react";
-import Document, { Head, Main, NextScript } from "next/document";
-import { ServerStyleSheet } from "styled-components";
-import { ServerStyleSheets } from "@material-ui/styles";
+import React from 'react'
+import Document, { Head, Main, NextScript } from 'next/document'
+import { ServerStyleSheet } from 'styled-components'
+import { ServerStyleSheets } from '@material-ui/styles'
 
 // const config = require("../config").default;
 
 // const isProduction = process.env.config !== "development";
 
 export default class MyDocument extends Document {
-  static async getInitialProps({ renderPage }) {
-    const sheet = new ServerStyleSheet();
-    const styleTags = sheet.getStyleElement();
-    const sheets = new ServerStyleSheets();
-    const originalRenderPage = renderPage;
+    static async getInitialProps({ renderPage }) {
+        const sheet = new ServerStyleSheet()
+        const styleTags = sheet.getStyleElement()
+        const sheets = new ServerStyleSheets()
+        const originalRenderPage = renderPage
 
-    renderPage = () =>
-      originalRenderPage({
-        enhanceApp: App => props => sheets.collect(<App {...props} />),
-      });
+        renderPage = () =>
+            originalRenderPage({
+                enhanceApp: App => props => sheets.collect(<App {...props} />),
+            })
 
-    const page = renderPage();
+        const page = renderPage()
 
-    return {
-      ...page,
-      styleTags,
-      styles: <React.Fragment>{sheets.getStyleElement()}</React.Fragment>,
-    };
-  }
+        return {
+            ...page,
+            styleTags,
+            styles: <React.Fragment>{sheets.getStyleElement()}</React.Fragment>,
+        }
+    }
 
-  render() {
-    return (
-      <html lang="en">
-        <Head>
-          {/* {isProduction && process.browser && (
+    render() {
+        return (
+            <html lang="en">
+                <Head>
+                    {/* {isProduction && process.browser && (
             <script>
               `$
               {(function(h, o, t, j, a, r) {
@@ -56,28 +56,28 @@ export default class MyDocument extends Document {
               `
             </script>
           )} */}
-          <meta charSet="UTF-8" />
-          <link rel="icon" href="/favicon.ico" />
-          <link
-            rel="stylesheet"
-            href="https://transloadit.edgly.net/releases/uppy/v0.24.3/dist/uppy.min.css"
-          />
-          <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver" />
-          <script
-            defer
-            src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
-          />
-          <meta
-            name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
-          />
-          {this.props.styleTags}
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </html>
-    );
-  }
+                    <meta charSet="UTF-8" />
+                    <link rel="icon" href="/favicon.ico" />
+                    <link
+                        rel="stylesheet"
+                        href="https://transloadit.edgly.net/releases/uppy/v0.24.3/dist/uppy.min.css"
+                    />
+                    <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver" />
+                    <script
+                        defer
+                        src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
+                    />
+                    <meta
+                        name="viewport"
+                        content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+                    />
+                    {this.props.styleTags}
+                </Head>
+                <body>
+                    <Main />
+                    <NextScript />
+                </body>
+            </html>
+        )
+    }
 }

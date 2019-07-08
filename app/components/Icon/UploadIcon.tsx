@@ -1,7 +1,7 @@
-import * as React from "react";
+import * as React from 'react'
 
 const UploadIcon: React.FunctionComponent = () => (
-  <img src="https://png.icons8.com/color/50/000000/upload.png" />
-);
+    <img src="https://png.icons8.com/color/50/000000/upload.png" />
+)
 
-export default UploadIcon;
+export default UploadIcon

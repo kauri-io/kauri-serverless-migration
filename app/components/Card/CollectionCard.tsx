@@ -1,7 +1,7 @@
 import { useReducer } from 'react'
 import styled, { css } from 'styled-components'
 import BaseCard from './BaseCard'
-import { cond, always }from 'ramda'
+import { cond, always } from 'ramda'
 import { Label, Title2, H4, BodyCard } from '../Typography'
 import theme from '../../lib/theme-config'
 import SecondaryButton from '../Button/SecondaryButton'
@@ -591,7 +591,10 @@ const CollectionCard: React.FunctionComponent<IProps> = ({
     canAccessHoverChildren,
     resourceType,
 }) => {
-    const [{ toggledOn }, dispatch] = useReducer(toggleReducer, toggleInitialState)
+    const [{ toggledOn }, dispatch] = useReducer(
+        toggleReducer,
+        toggleInitialState
+    )
 
     return (
         <BaseCard

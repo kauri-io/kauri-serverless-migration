@@ -2,7 +2,7 @@ const withTypescript = require('@zeit/next-typescript')
 
 module.exports = withTypescript({
     env: {
-        config: process.env.config
+        config: process.env.config,
     },
-    target: 'serverless'
+    target: 'serverless',
 })

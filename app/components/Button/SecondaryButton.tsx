@@ -1,74 +1,74 @@
-import * as React from "react";
-import styled from "styled-components";
-import { BaseButtonCss } from "./PrimaryButton";
+import * as React from 'react'
+import styled from 'styled-components'
+import { BaseButtonCss } from './PrimaryButton'
 
 interface ISecondaryButtonProps {
-  border: string;
-  borderHover: string;
-  width: string | undefined;
-  mr: number;
-  bg?: string;
-  fontSize?: number;
-  fontWeight?: number;
+    border: string
+    borderHover: string
+    width: string | undefined
+    mr: number
+    bg?: string
+    fontSize?: number
+    fontWeight?: number
 }
 
 const SecondaryButton = styled.button<ISecondaryButtonProps>`
-  ${BaseButtonCss};
-  box-shadow: 0px 0px 0px 1px ${props => props.theme.colors[props.border]};
-  :hover {
-    box-shadow: 0px 0px 0px 2px
-      ${props => props.theme.colors[props.borderHover]};
-  }
-`;
+    ${BaseButtonCss};
+    box-shadow: 0px 0px 0px 1px ${props => props.theme.colors[props.border]};
+    :hover {
+        box-shadow: 0px 0px 0px 2px
+            ${props => props.theme.colors[props.borderHover]};
+    }
+`
 
 interface IProps {
-  icon?: React.ReactElement<any>;
-  onClick?: void | (() => void);
-  handleClick?: () => void;
-  disabled?: boolean;
-  fontWeight?: number;
-  fontSize?: number;
-  width?: string;
-  color?: string;
-  space?: number;
-  text?: string;
-  bg?: string;
-  border?: string;
-  borderHover?: string;
+    icon?: React.ReactElement<any>
+    onClick?: void | (() => void)
+    handleClick?: () => void
+    disabled?: boolean
+    fontWeight?: number
+    fontSize?: number
+    width?: string
+    color?: string
+    space?: number
+    text?: string
+    bg?: string
+    border?: string
+    borderHover?: string
 }
 
 const SecondaryButtonComponent: React.SFC<IProps> = ({
-  width,
-  border = "white",
-  borderHover = "primary",
-  bg = "transparent",
-  fontWeight = 700,
-  fontSize = 0,
-  color = "white",
-  space = 2,
-  onClick,
-  handleClick,
-  text = "",
-  children,
-  icon,
-  disabled,
+    width,
+    border = 'white',
+    borderHover = 'primary',
+    bg = 'transparent',
+    fontWeight = 700,
+    fontSize = 0,
+    color = 'white',
+    space = 2,
+    onClick,
+    handleClick,
+    text = '',
+    children,
+    icon,
+    disabled,
 }) => (
-  <SecondaryButton
-    type="button"
-    width={width}
-    disabled={disabled}
-    onClick={onClick || handleClick}
-    border={border}
-    borderHover={borderHover}
-    mr={space}
-    bg={bg}
-    color={color}
-    fontSize={fontSize}
-    fontWeight={fontWeight}
-  >
-    {icon}
-    {text || children}
-  </SecondaryButton>
-);
+    <SecondaryButton
+        type="button"
+        width={width}
+        disabled={disabled}
+        onClick={onClick || handleClick}
+        border={border}
+        borderHover={borderHover}
+        mr={space}
+        bg={bg}
+        color={color}
+        fontSize={fontSize}
+        fontWeight={fontWeight}
+    >
+        {icon}
+        {text || children}
+    </SecondaryButton>
+)
 
-export default SecondaryButtonComponent;
+export default SecondaryButtonComponent

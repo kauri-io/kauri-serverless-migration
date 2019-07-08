@@ -40,7 +40,7 @@ function create(apollo: any, initialState = {}) {
         initialState, // Hydrate the store with server-side data
         compose(
             applyMiddleware(middleware), // Add additional middleware here
-            devtools,
+            devtools
         )
     )
 

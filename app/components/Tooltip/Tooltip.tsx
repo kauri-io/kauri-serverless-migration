@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Container = styled.div`
     flex-direction: column;
@@ -7,8 +7,8 @@ const Container = styled.div`
     align-items: center;
     z-index: 999;
     > .header {
-      display: flex;
-      height: 100%;
+        display: flex;
+        height: 100%;
     }
     > *:not(.header) {
         opacity: 0;
@@ -20,7 +20,7 @@ const Container = styled.div`
             display: flex;
         }
     }
-`;
+`
 
 const UpArrow = styled.div`
     width: 14px;
@@ -30,7 +30,7 @@ const UpArrow = styled.div`
     top: 74%;
     background: white;
     border-radius: 2px;
-`;
+`
 
 const TooltipBody = styled.div`
     background: white;
@@ -41,21 +41,20 @@ const TooltipBody = styled.div`
     position: absolute;
     top: 80%;
     display: none;
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
-`;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+`
 
 interface IProps {
-    header?: any;
-    children: any;
+    header?: any
+    children: any
 }
 
-const Tooltip = (props: IProps) =>
-  <Container>
-    <div className='header'>{props.header}</div>
-    <UpArrow />
-    <TooltipBody className='tooltip-body'>
-      {props.children}
-    </TooltipBody>
-  </Container>;
+const Tooltip = (props: IProps) => (
+    <Container>
+        <div className="header">{props.header}</div>
+        <UpArrow />
+        <TooltipBody className="tooltip-body">{props.children}</TooltipBody>
+    </Container>
+)
 
-export default Tooltip;
+export default Tooltip

@@ -1,9 +1,9 @@
-import gql from "graphql-tag";
+import gql from 'graphql-tag'
 
 export const recordView = gql`
-  mutation recordView($resourceId: ResourceIdentifierInput) {
-    recordView(resourceId: $resourceId) {
-      hash
+    mutation recordView($resourceId: ResourceIdentifierInput) {
+        recordView(resourceId: $resourceId) {
+            hash
+        }
     }
-  }
-`;
+`

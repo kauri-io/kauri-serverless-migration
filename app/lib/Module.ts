@@ -58,33 +58,32 @@ interface ISetNavcolorOverrideAction {
 }
 
 export interface ICommunity {
-    role: string;
+    role: string
     community: {
-      id: string;
-      name: string;
-      members: Array<{
-        id: string;
-        role: string;
-      }>;
-    };
-  }
-  
+        id: string
+        name: string
+        members: Array<{
+            id: string
+            role: string
+        }>
+    }
+}
 
 export interface IReduxState {
     app: {
-      hostName?: string;
-      user?: {
-        id: string;
-        avatar: string;
-        username: string;
-        communities: ICommunity[];
-        status: string; // [NOT_REGISTERED|CREATED]EMAIL_VERIFIED]
-      };
-    };
+        hostName?: string
+        user?: {
+            id: string
+            avatar: string
+            username: string
+            communities: ICommunity[]
+            status: string // [NOT_REGISTERED|CREATED]EMAIL_VERIFIED]
+        }
+    }
     modal: {
-      isModalOpen: boolean;
-    };
-  }
+        isModalOpen: boolean
+    }
+}
 
 export const SET_HOSTNAME: string = 'SET_HOSTNAME'
 
@@ -126,8 +125,8 @@ export const ItoggleModalAction = ({
 const initialState: IReduxState = {
     app: {},
     modal: {
-        isModalOpen: false
-    }
+        isModalOpen: false,
+    },
 }
 
 const handlers = {
@@ -148,7 +147,10 @@ const handlers = {
         typeof action.userId === 'string'
             ? { ...state, userId: action.userId }
             : state,
-    [SET_USER_DETAILS]: (state: IReduxState, action: ISetUserDetailsAction) => ({
+    [SET_USER_DETAILS]: (
+        state: IReduxState,
+        action: ISetUserDetailsAction
+    ) => ({
         ...state,
         user: action.payload,
     }),

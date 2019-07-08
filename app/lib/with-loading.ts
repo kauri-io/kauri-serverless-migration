@@ -1,11 +1,14 @@
 import { branch, renderComponent } from 'recompose'
-import Loading from '../components/Loading';
+import Loading from '../components/Loading'
 
 interface IProps {
-  [propName: string]: {
-    loading: boolean;
-  };
+    [propName: string]: {
+        loading: boolean
+    }
 }
 
 export default (component = Loading, propName = 'data') =>
-  branch((props:IProps) => props[propName] && props[propName].loading, renderComponent(component))
+    branch(
+        (props: IProps) => props[propName] && props[propName].loading,
+        renderComponent(component)
+    )

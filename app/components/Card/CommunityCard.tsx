@@ -151,10 +151,7 @@ const CommunityCard: React.SFC<IProps> = props => {
     } = props
 
     return (
-        <BaseCard
-            cardWidth={DEFAULT_CARD_WIDTH}
-            cardHeight={cardHeight}
-        >
+        <BaseCard cardWidth={DEFAULT_CARD_WIDTH} cardHeight={cardHeight}>
             <Container cardHeight={cardHeight}>
                 <LabelContainer>
                     <Label textAlign="center">{'Community'}</Label>
