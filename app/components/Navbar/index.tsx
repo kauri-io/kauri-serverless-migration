@@ -192,7 +192,7 @@ const PrimarySearchAppBar = ({ user }: IProps) => {
               Collections
             </Typography>
           </Link>
-          <Link href="/commuLnities">
+          <Link href="/communities">
             <Typography className={classes.navlink} variant="button">
               Communities
             </Typography>

@@ -8,4 +8,6 @@ export default ({
     mixpanel: "627c5ccb5bf7da1d079aef2efaa807c2",
     ga: "UA-112179323-4",
   },
+  testingAccounts: [
+  ],
 })

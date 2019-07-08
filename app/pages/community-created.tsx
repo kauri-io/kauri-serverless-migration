@@ -1,8 +1,8 @@
 import React from "react";
 import { withApollo, compose } from "react-apollo";
 import withData from "../lib/with-data";
-import App from "../layouts/MaterialLayout";
-import CommunityCreated from "../components/containers/CommunityCreated";
+import App from "../layouts";
+import CommunityCreated from "../containers/CommunityCreated";
 import { withRouter } from "next/router";
 
 class CommunityCreatedPage extends React.Component<{ router: any }> {
