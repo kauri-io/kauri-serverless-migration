@@ -3,13 +3,13 @@ import {
     getCommunity_getCommunity,
     getCommunity_getCommunity_approved_CollectionDTO,
     getCommunity_getCommunity_approved_ArticleDTO,
-} from '../../../queries/__generated__/getCommunity'
-import { getCommunityAndPendingArticles_searchArticles } from '../../../queries/__generated__/getCommunityAndPendingArticles'
+} from '../../queries/__generated__/getCommunity'
+import { getCommunityAndPendingArticles_searchArticles } from '../../queries/__generated__/getCommunityAndPendingArticles'
 import CommunityHeader from './CommunityHeader'
-import Tabs from '../../../../kauri-components/components/Tabs'
+import Tabs from '../../components/Tabs'
 import DisplayResources from './DisplayResources'
 import Manage from './Manage'
-import R from 'ramda'
+import { propEq, path, any } from 'ramda'
 import {
     curateCommunityResourcesAction as curateCommunityResources,
     acceptCommunityInvitationAction as acceptCommunityInvitation,
@@ -17,18 +17,17 @@ import {
     transferArticleToCommunityAction as transferArticleToCommunity,
 } from './Module'
 import EmptyCollections from './EmptyStates/Collections'
-import AlertViewComponent from '../../../../kauri-components/components/Modal/AlertView'
-import AcceptCommunityInvitationModalContent from '../../../../kauri-components/components/Community/AcceptCommunityInvitationModalContent'
+import AlertViewComponent from '../../components/Modal/AlertView'
+import AcceptCommunityInvitationModalContent from './AcceptCommunityInvitationModalContent'
 import AddMemberModal from '../CreateCommunityForm/AddMemberModal'
-import { removeResourceVariables } from '../../../queries/__generated__/removeResource'
-import { recordView } from '../../../queries/Utils'
+import { removeResourceVariables } from '../../queries/__generated__/removeResource'
+import { recordView } from '../../queries/Utils'
 import ApolloClient from 'apollo-client'
 import HomepageResources from './HomepageResources'
-import {
-    routeChangeAction as routeChange,
-    showNotificationAction as showNotification,
-} from '../../../lib/Module'
-import { openModalAction as openModal } from '../../../../kauri-components/components/Modal/Module'
+
+import { routeChangeAction as routeChange } from '../../lib/Epics/RouteChangeEpic'
+import { showNotificationAction as showNotification } from '../../lib/Epics/ShowNotificationEpic'
+import { openModalAction as openModal } from '../../components/Modal/Module'
 
 interface IProps {
     client: ApolloClient<{}>
@@ -72,7 +71,7 @@ class CommunityConnection extends React.Component<IProps> {
 
         const isMember =
             isCreator ||
-            R.any(R.propEq('id', currentUser), getCommunity.members || [])
+            any(propEq('id', currentUser), getCommunity.members || [])
 
         if (typeof this.props.secret === 'string' && !isMember) {
             // AcceptCommunityInviteModal
@@ -128,7 +127,7 @@ class CommunityConnection extends React.Component<IProps> {
         const isCreator = getCommunity.creatorId === currentUser
         const isMember =
             isCreator ||
-            R.any(R.propEq('id', currentUser), getCommunity.members || [])
+            any(propEq('id', currentUser), getCommunity.members || [])
         const homepage = getCommunity.homepage
 
         const openAddMemberModal = () =>
@@ -150,7 +149,7 @@ class CommunityConnection extends React.Component<IProps> {
                 ),
             })
 
-        const firstCommunityHomepageSectionResources = R.path<any[]>([
+        const firstCommunityHomepageSectionResources = path<any[]>([
             0,
             'resources',
         ])(homepage)

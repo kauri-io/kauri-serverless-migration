@@ -1,15 +1,13 @@
-import { Observable } from 'rxjs/Observable'
+import Observable from 'rxjs/Observable'
 import { Epic } from 'redux-observable'
-import {
-    showNotificationAction,
-    routeChangeAction,
-    IDependencies,
-} from '../../../lib/Module'
-import generatePublishArticleHash from '../../../lib/generate-publish-article-hash'
-import { getEvent } from '../../../queries/Module'
-import { create } from '../../../lib/init-apollo'
-import { approveArticle, rejectArticle } from '../../../queries/Article'
-import analytics from '../../../lib/analytics'
+import { IDependencies } from '../../lib/Module'
+import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
+import { getEvent } from '../../queries/Module'
+import { create } from '../../lib/init-apollo'
+import { approveArticle, rejectArticle } from '../../queries/Article'
+import analytics from '../../lib/analytics'
 
 interface IApproveArticlePayload {
     id: string

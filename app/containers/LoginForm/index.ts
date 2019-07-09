@@ -1,9 +1,9 @@
 import { compose } from 'recompose'
 import { connect } from 'react-redux'
-import { registerAction, IRegisterAction } from './Module.js'
+import { registerAction, IRegisterAction } from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { withFormik } from 'formik'
-import View from './View.js'
+import View from './View'
 
 export type FormState = {
     email: string

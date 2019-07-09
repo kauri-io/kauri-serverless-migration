@@ -1,13 +1,16 @@
 import React from 'react'
-import styled from '../../../lib/styled-components'
-import ContentSection from '../../../../kauri-components/components/Section/ContentSection'
-import ResourceCategory from '../../../../kauri-components/components/ResourceCategory'
-import { IElementsBreakdown } from '../../../../kauri-components/components/Search/QuickSearch'
-import { Title2 } from '../../../../kauri-components/components/Typography'
+import styled from 'styled-components'
+import ContentSection from '../../components/Section/ContentSection'
+import ResourceCategory from '../../components/ResourceCategory'
+import { Title2 } from '../../components/Typography'
 import Empty from '../PublicProfile/Empty'
-import Loading from '../../common/Loading'
+import Loading from '../../components/Loading'
 import ResourceRows from './PaginatedResourceResults'
 import { searchResultCategories } from './index'
+
+interface IElementsBreakdown {
+    [key: string]: number
+}
 
 const CategorySection = styled.section`
     display: flex;

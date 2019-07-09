@@ -1,10 +1,10 @@
 import React from 'react'
 import { EditorState, ContentState } from 'draft-js'
-import SharedEditor from '../../common/SharedEditor'
+import SharedEditor from '../../components/SharedEditor'
 import styled from 'styled-components'
-import { CreateRequestContent as SubmitArticleFormContent } from '../../common/Legacy/CreateRequestContent'
+import { CreateRequestContent as SubmitArticleFormContent } from './Legacy/CreateRequestContent'
 
-import { CreateRequestContainer as SubmitArticleFormContainer } from '../../common/Legacy/CreateRequestContainer'
+import { CreateRequestContainer as SubmitArticleFormContainer } from './Legacy/CreateRequestContainer'
 
 import { ISubmitArticlePayload } from './Module'
 

@@ -5,10 +5,10 @@ import ResourceCategory from '../../../components/ResourceCategory'
 import Drafts from '../Drafts/View'
 import Awaiting from '../Awaiting/View'
 import Pending from '../Pending/View'
-import Transfers from '../../../components/Transfers'
-import MyCommunities from '../../../components/MyCommunities'
+import Transfers from './Transfers'
+import MyCommunities from './MyCommunities'
 import styled from 'styled-components'
-import R from 'ramda'
+import { path } from 'ramda'
 
 const categories = [
     'drafts',
@@ -40,11 +40,11 @@ const Manage: React.FunctionComponent<
         currentCategory: 'drafts',
     })
 
-    const communities = R.path(
+    const communities = path(
         ['ownProfile', 'getMyProfile', 'communities'],
         props
     )
-    const transfers = R.path(
+    const transfers = path(
         ['transfersQuery', 'getArticleTransfers', 'content'],
         props
     )

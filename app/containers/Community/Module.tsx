@@ -1,14 +1,11 @@
 import { Epic } from 'redux-observable'
-import { Observable } from 'rxjs/Observable'
-import R from 'ramda'
-import {
-    IReduxState,
-    IDependencies,
-    showNotificationAction,
-    Actions,
-    routeChangeAction,
-} from '../../../lib/Module'
-import analytics from '../../../lib/analytics'
+import Observable from 'rxjs/Observable'
+import { tail, compose, head, toUpper } from 'ramda'
+import { IReduxState, IDependencies } from '../../lib/Module'
+
+import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import analytics from '../../lib/analytics'
 import {
     curateCommunityResourcesMutation,
     approveResourceMutation,
@@ -25,74 +22,74 @@ import {
     prepareChangeMemberRoleQuery,
     resendInvitationMutation,
     initiateArticleTransferMutation,
-} from '../../../queries/Community'
+} from '../../queries/Community'
 import {
     curateCommunityResources,
     curateCommunityResourcesVariables,
-} from '../../../queries/__generated__/curateCommunityResources'
+} from '../../queries/__generated__/curateCommunityResources'
 import {
     approveResource,
     approveResourceVariables,
-} from '../../../queries/__generated__/approveResource'
+} from '../../queries/__generated__/approveResource'
 
 import {
     removeResource,
     removeResourceVariables,
-} from '../../../queries/__generated__/removeResource'
+} from '../../queries/__generated__/removeResource'
 
 import {
     sendInvitation,
     sendInvitationVariables,
-} from '../../../queries/__generated__/sendInvitation'
+} from '../../queries/__generated__/sendInvitation'
 import {
     prepareSendInvitation,
     prepareSendInvitationVariables,
-} from '../../../queries/__generated__/prepareSendInvitation'
+} from '../../queries/__generated__/prepareSendInvitation'
 import {
     prepareAcceptInvitation,
     prepareAcceptInvitationVariables,
-} from '../../../queries/__generated__/prepareAcceptInvitation'
+} from '../../queries/__generated__/prepareAcceptInvitation'
 import {
     acceptInvitation,
     acceptInvitationVariables,
-} from '../../../queries/__generated__/acceptInvitation'
+} from '../../queries/__generated__/acceptInvitation'
 import {
     prepareRevokeInvitation,
     prepareRevokeInvitationVariables,
-} from '../../../queries/__generated__/prepareRevokeInvitation'
+} from '../../queries/__generated__/prepareRevokeInvitation'
 import {
     revokeInvitation,
     revokeInvitationVariables,
-} from '../../../queries/__generated__/revokeInvitation'
+} from '../../queries/__generated__/revokeInvitation'
 import {
     prepareRemoveMember,
     prepareRemoveMemberVariables,
-} from '../../../queries/__generated__/prepareRemoveMember'
+} from '../../queries/__generated__/prepareRemoveMember'
 import {
     removeMember,
     removeMemberVariables,
-} from '../../../queries/__generated__/removeMember'
+} from '../../queries/__generated__/removeMember'
 import {
     prepareChangeMemberRole,
     prepareChangeMemberRoleVariables,
-} from '../../../queries/__generated__/prepareChangeMemberRole'
+} from '../../queries/__generated__/prepareChangeMemberRole'
 import {
     changeMemberRole,
     changeMemberRoleVariables,
-} from '../../../queries/__generated__/changeMemberRole'
+} from '../../queries/__generated__/changeMemberRole'
 import {
     resendInvitation,
     resendInvitationVariables,
-} from '../../../queries/__generated__/resendInvitation'
+} from '../../queries/__generated__/resendInvitation'
 import {
     initiateArticleTransfer,
     initiateArticleTransferVariables,
-} from '../../../queries/__generated__/initiateArticleTransfer'
+} from '../../queries/__generated__/initiateArticleTransfer'
 
 import { ISendInvitationCommandOutput } from '../CreateCommunityForm/Module'
-import { closeModalAction } from '../../../../kauri-components/components/Modal/Module'
-import generatePublishArticleHash from '../../../lib/generate-publish-article-hash'
-import { finaliseArticleTransfer } from '../../../queries/Article'
+import { closeModalAction } from '../../components/Modal/Module'
+import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
+import { finaliseArticleTransfer } from '../../queries/Article'
 
 interface ICurateCommunityResourcesAction {
     type: 'CURATE_COMMUNITY_RESOURCES'
@@ -331,10 +328,10 @@ interface IInitiateArticleTransferCommandOutput {
 }
 
 const capitalize = (s: string) =>
-    R.compose(
-        R.toUpper,
-        R.head
-    )(s) + R.tail(s)
+    compose(
+        toUpper,
+        head
+    )(s) + tail(s)
 
 export const curateCommunityResourcesEpic: Epic<
     any,

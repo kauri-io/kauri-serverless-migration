@@ -1,17 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import R from 'ramda'
-import { BodyCard } from '../../../../kauri-components/components/Typography'
-import PrimaryButton from '../../../../kauri-components/components/Button/PrimaryButton'
-import TertiaryButton from '../../../../kauri-components/components/Button/TertiaryButton'
-import ChooseArticleCard from '../../connections/ChooseArticleCard/View'
-import ModalHeader from '../../../../kauri-components/components/Headers/ModalHeader'
+import { find, filter, reduce, union } from 'ramda'
+import { BodyCard } from '../../components/Typography'
+import PrimaryButton from '../../components/Button/PrimaryButton'
+import TertiaryButton from '../../components/Button/TertiaryButton'
+import ChooseArticleCard from '../ChooseArticleCard/View'
+import ModalHeader from '../../components/Headers/ModalHeader'
 import ChooseResourceModalSearch from './ChooseResourceModalSearch'
 import { connect } from 'react-redux'
 import { compose, graphql } from 'react-apollo'
-import { searchApprovedArticles } from '../../../queries/Article'
-import withApolloError from '../../../lib/with-apollo-error'
-import { IReduxState } from '../../../lib/Module'
+import { searchApprovedArticles } from '../../queries/Article'
+import withApolloError from '../../lib/with-apollo-error'
+import { IReduxState } from '../../lib/Module'
 
 const articleSize = 12
 
@@ -133,14 +133,14 @@ class ChooseArticleModal extends React.Component<IProps, IState> {
             this.state.chosenArticles.length >= this.props.limit
         ) {
             if (
-                R.find(
+                find(
                     ({ id, version }) =>
                         chosenArticle.id === id &&
                         chosenArticle.version === version
                 )(this.state.chosenArticles)
             ) {
                 return this.setState({
-                    chosenArticles: R.filter<IArticle>(
+                    chosenArticles: filter<IArticle>(
                         ({ id, version }) =>
                             id !== chosenArticle.id &&
                             version !== chosenArticle.version
@@ -150,11 +150,11 @@ class ChooseArticleModal extends React.Component<IProps, IState> {
             return
         }
         this.setState({
-            chosenArticles: R.find(
+            chosenArticles: find(
                 ({ id, version }) =>
                     chosenArticle.id === id && chosenArticle.version === version
             )(this.state.chosenArticles)
-                ? R.reduce((current: any, next: IArticle) => {
+                ? reduce((current: any, next: IArticle) => {
                       if (
                           next.id === chosenArticle.id &&
                           next.version === chosenArticle.version
@@ -165,7 +165,7 @@ class ChooseArticleModal extends React.Component<IProps, IState> {
                           return current
                       }
                   }, [])(this.state.chosenArticles)
-                : R.union(this.state.chosenArticles, [chosenArticle]),
+                : union(this.state.chosenArticles, [chosenArticle]),
         })
     }
 

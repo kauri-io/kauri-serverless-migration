@@ -1,4 +1,4 @@
-import Collection from './View.jsx'
+import Collection from './View'
 import { compose, graphql, withApollo } from 'react-apollo'
 import { globalCollectionDetails } from '../../queries/Collection'
 import { connect } from 'react-redux'

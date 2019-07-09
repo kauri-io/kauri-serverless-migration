@@ -5,7 +5,7 @@ import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { loginPersonalSign } from '../../lib/web3-personal-sign'
 import superagent from 'superagent'
 import { IDependencies } from '../../lib/Module'
-const config = require('../../../config').default
+import config from '../../config'
 
 const request = superagent.agent()
 

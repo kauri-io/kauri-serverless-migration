@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
 import slugify from 'slugify'
-import R from 'ramda'
+import { path } from 'ramda'
 import CollectionHeader from '../../components/Headers/CollectionHeader'
 import CollectionSection from './CollectionSection'
 import Link from 'next/link'
@@ -105,7 +105,7 @@ class CollectionPage extends Component<Props> {
             lower: true,
         })}`
 
-        const resourceType = R.path([
+        const resourceType = path([
             'data',
             'getCollection',
             'owner',

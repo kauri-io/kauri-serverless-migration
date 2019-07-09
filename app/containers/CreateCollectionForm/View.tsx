@@ -1,9 +1,18 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { space, bg } from 'styled-system'
+import { space } from 'styled-system'
 import { Form, Field, FieldArray } from 'formik'
 import Stack from 'stack-styled'
-import R from 'ramda'
+import {
+    path,
+    remove,
+    pipe,
+    map,
+    reduce,
+    filter,
+    defaultTo,
+    concat,
+} from 'ramda'
 import ActionsSection from '../../components/Section/ActionsSection'
 import PrimaryHeaderSection from '../../components/Section/PrimaryHeaderSection'
 import CardContentSection from '../../components/Section/CardContentSection'
@@ -83,7 +92,6 @@ const ContentSection = styled.section`
     align-items: center;
     padding: ${props => props.theme.paddingTop} ${props => props.theme.padding};
     min-height: calc(100vh - 270px);
-    ${bg};
 `
 
 const CreateCollectionDetails = styled.div`
@@ -195,16 +203,16 @@ const renderResourceSection = (
     provided
 ) => (resource, resourceIndex) => (
     <ResourceSection key={resourceIndex} mt={3}>
-        {R.path(
+        {path(
             ['sections', index, mappingKey, resourceIndex, 'version'],
             values
         ) ? (
             <Draggable
                 index={resourceIndex}
-                draggableId={`${R.path(
+                draggableId={`${path(
                     ['sections', index, mappingKey, resourceIndex, 'id'],
                     values
-                )}-${R.path(
+                )}-${path(
                     ['sections', index, mappingKey, resourceIndex, 'version'],
                     values
                 )}`}
@@ -217,7 +225,7 @@ const renderResourceSection = (
                         id="article-card"
                     >
                         <ArticleCard
-                            id={R.path(
+                            id={path(
                                 [
                                     'sections',
                                     index,
@@ -228,7 +236,7 @@ const renderResourceSection = (
                                 values
                             )}
                             version={parseInt(
-                                R.path(
+                                path(
                                     [
                                         'sections',
                                         index,
@@ -245,10 +253,10 @@ const renderResourceSection = (
                 )}
             </Draggable>
         ) : (
-            R.path(['sections', index, mappingKey, resourceIndex], values) && (
+            path(['sections', index, mappingKey, resourceIndex], values) && (
                 <Draggable
                     index={resourceIndex}
-                    draggableId={`${R.path(
+                    draggableId={`${path(
                         ['sections', index, mappingKey, resourceIndex, 'id'],
                         values
                     )}`}
@@ -261,7 +269,7 @@ const renderResourceSection = (
                             id="collection-card"
                         >
                             <CollectionCard
-                                id={R.path(
+                                id={path(
                                     [
                                         'sections',
                                         index,
@@ -289,7 +297,7 @@ const renderResourceSection = (
                             ? section[mappingKey].length > 1
                                 ? section[mappingKey].splice(1)
                                 : []
-                            : R.remove(
+                            : remove(
                                   resourceIndex,
                                   resourceIndex,
                                   section[mappingKey]
@@ -458,11 +466,11 @@ export default ({
                                 statistics={[
                                     {
                                         name: 'Articles',
-                                        count: R.pipe(
-                                            R.map(
+                                        count: pipe(
+                                            map(
                                                 ({ resourcesId }) => resourcesId
                                             ),
-                                            R.reduce((current, next) => {
+                                            reduce((current, next) => {
                                                 const articlesInSection = next.filter(
                                                     ({ type }) =>
                                                         type.toLowerCase() ===
@@ -480,11 +488,11 @@ export default ({
                                     },
                                     {
                                         name: 'Collections',
-                                        count: R.pipe(
-                                            R.map(
+                                        count: pipe(
+                                            map(
                                                 ({ resourcesId }) => resourcesId
                                             ),
-                                            R.reduce((current, next) => {
+                                            reduce((current, next) => {
                                                 const collectionsInSection = next.filter(
                                                     ({ type }) =>
                                                         type.toLowerCase() ===
@@ -605,13 +613,13 @@ export default ({
 
                                             <SectionOptions
                                                 currentSectionIndex={index}
-                                                previousSectionHasArticles={R.pipe(
-                                                    R.path([
+                                                previousSectionHasArticles={pipe(
+                                                    path([
                                                         'sections',
                                                         index > 0 ? index : 0,
                                                         'resourcesId',
                                                     ]),
-                                                    R.defaultTo([]),
+                                                    defaultTo([]),
                                                     resourcesId =>
                                                         resourcesId.length,
                                                     Boolean
@@ -636,13 +644,13 @@ export default ({
                                                                         index !==
                                                                         sectionIndex
                                                                 )}
-                                                                chosenArticles={R.pipe(
-                                                                    R.path([
+                                                                chosenArticles={pipe(
+                                                                    path([
                                                                         'sections',
                                                                         index,
                                                                         'resourcesId',
                                                                     ]),
-                                                                    R.filter(
+                                                                    filter(
                                                                         ({
                                                                             type,
                                                                         }) =>
@@ -656,22 +664,22 @@ export default ({
                                                                 confirmModal={chosenArticles =>
                                                                     arrayHelpers.form.setFieldValue(
                                                                         `sections[${index}].resourcesId`,
-                                                                        R.pipe(
-                                                                            R.path(
+                                                                        pipe(
+                                                                            path(
                                                                                 [
                                                                                     'sections',
                                                                                     index,
                                                                                     'resourcesId',
                                                                                 ]
                                                                             ),
-                                                                            R.filter(
+                                                                            filter(
                                                                                 ({
                                                                                     type,
                                                                                 }) =>
                                                                                     type.toLowerCase() ===
                                                                                     'collection'
                                                                             ),
-                                                                            R.concat(
+                                                                            concat(
                                                                                 chosenArticles.map(
                                                                                     article => ({
                                                                                         ...article,
@@ -704,13 +712,13 @@ export default ({
                                                                         index !==
                                                                         sectionIndex
                                                                 )}
-                                                                chosenCollections={R.pipe(
-                                                                    R.path([
+                                                                chosenCollections={pipe(
+                                                                    path([
                                                                         'sections',
                                                                         index,
                                                                         'resourcesId',
                                                                     ]),
-                                                                    R.filter(
+                                                                    filter(
                                                                         ({
                                                                             type,
                                                                         }) =>
@@ -724,22 +732,22 @@ export default ({
                                                                 confirmModal={chosenCollections =>
                                                                     arrayHelpers.form.setFieldValue(
                                                                         `sections[${index}].resourcesId`,
-                                                                        R.pipe(
-                                                                            R.path(
+                                                                        pipe(
+                                                                            path(
                                                                                 [
                                                                                     'sections',
                                                                                     index,
                                                                                     'resourcesId',
                                                                                 ]
                                                                             ),
-                                                                            R.filter(
+                                                                            filter(
                                                                                 ({
                                                                                     type,
                                                                                 }) =>
                                                                                     type.toLowerCase() ===
                                                                                     'article'
                                                                             ),
-                                                                            R.concat(
+                                                                            concat(
                                                                                 chosenCollections.map(
                                                                                     collection => ({
                                                                                         ...collection,

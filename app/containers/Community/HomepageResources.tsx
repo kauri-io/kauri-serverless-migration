@@ -1,10 +1,10 @@
 import * as React from 'react'
-import styled from '../../../lib/styled-components'
-import { getCommunity_getCommunity_homepage } from '../../../queries/__generated__/getCommunity'
+import styled from 'styled-components'
+import { getCommunity_getCommunity_homepage } from '../../queries/__generated__/getCommunity'
 import CommunityHomepageEmptyState from './EmptyStates/Homepage'
-import { routeChangeAction as routeChange } from '../../../lib/Module'
+import { routeChangeAction as routeChange } from '../../lib/Epics/RouteChangeEpic'
 import CollectionSection from '../Collection/CollectionSection'
-import { openModalAction as openModal } from '../../../../kauri-components/components/Modal/Module'
+import { openModalAction as openModal } from '../../components/Modal/Module'
 
 const ContentContainer = styled.div`
     display: flex;

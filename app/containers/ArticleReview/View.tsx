@@ -1,12 +1,12 @@
 import React from 'react'
-import styled from '../../../lib/styled-components'
+import styled from 'styled-components'
 import Header from './Header'
-import Diffs from '../../../../kauri-components/components/DiffViewer'
-import { Label } from '../../../../kauri-components/components/Typography'
-import ScrollIndicator from '../../../../kauri-components/components/ScrollIndicator'
-import Loading from '../../common/Loading'
-import theme from '../../../../kauri-components/lib/theme-config'
-import { ICommunities } from '../../../lib/Module'
+import Diffs from '../../components/DiffViewer'
+import { Label } from '../../components/Typography'
+import ScrollIndicator from '../../components/ScrollIndicator'
+import Loading from '../../components/Loading'
+import theme from '../../lib/theme-config'
+import { ICommunities } from '../../lib/Module'
 
 const DEFAULT_CARD_WIDTH = theme.DEFAULT_CARD_WIDTH
 

@@ -1,10 +1,10 @@
 import Showdown from 'showdown'
-import styled from '../../../lib/styled-components'
-import TertiaryButton from '../../../../kauri-components/components/Button/TertiaryButton'
-import { BodyCard } from '../../../../kauri-components/components/Typography'
-import AlertView from '../../../../kauri-components/components/Modal/AlertView'
+import styled from 'styled-components'
+import TertiaryButton from '../../components/Button/TertiaryButton'
+import { BodyCard } from '../../components/Typography'
+import AlertView from '../../components/Modal/AlertView'
 import { useEffect } from 'react'
-import { hljs } from '../../../lib/hljs'
+import { hljs } from '../../lib/hljs'
 
 const ContentContainer = styled.div`
     display: flex;

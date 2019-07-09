@@ -1,7 +1,6 @@
 import React from 'react'
-import styled from '../../../lib/styled-components'
-import { IElementsBreakdown } from '../../../../kauri-components/components/Search/QuickSearch'
-import ResourceRowWithImage from '../../../../kauri-components/components/SearchResults/ResourceRowWithImage'
+import styled from 'styled-components'
+import ResourceRowWithImage from '../../components/SearchResults/ResourceRowWithImage'
 import {
     searchResultsAutocomplete_searchAutocomplete_content,
     searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO,
@@ -9,8 +8,8 @@ import {
     searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO,
     searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO,
     searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_CommunityDTO,
-} from '../../../queries/__generated__/searchResultsAutocomplete'
-import { Link } from '../../../routes'
+} from '../../queries/__generated__/searchResultsAutocomplete'
+import Link from '../../components/Link'
 
 const ResourceSection = styled.section`
     display: flex;
@@ -19,6 +18,9 @@ const ResourceSection = styled.section`
         margin-bottom: ${props => props.theme.space[2]}px;
     }
 `
+interface IElementsBreakdown {
+    [key: string]: number
+}
 
 const isArticleResource = (
     resource: any
@@ -57,9 +59,10 @@ class ResourceRows extends React.Component<
 > {
     render() {
         console.log(this.props.data)
-        return Object.values(this.props.totalElementsBreakdown).filter(
-            amount => amount > 0
-        ).length ? (
+        const values = Object.keys(this.props.totalElementsBreakdown).map(
+            key => this.props.totalElementsBreakdown[key]
+        )
+        return values.filter(amount => amount > 0).length ? (
             <ResourceSection>
                 {this.props.data &&
                     this.props.data.searchAutocomplete &&

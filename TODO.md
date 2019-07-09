@@ -2,6 +2,12 @@
 - Review all cards - need material rework anyway
 - Review Epics are working
 - Ensure it builds
+- Rework all epics
 - Fix route change epic and links
 - Fix notifications (or replace with material ui)
 - reinstate Hotjar
+- set "noImplicitAny": to true
+- Add capitalization to cards
+- improve capping of text
+- Prepare NOW routes
+- fix createcollectionform index

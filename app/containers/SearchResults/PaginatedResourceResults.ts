@@ -1,10 +1,10 @@
 import { compose, graphql } from 'react-apollo'
 import { connect } from 'react-redux'
 import ResourceRows from './ResourceRows'
-import { routeChangeAction } from '../../../lib/Module'
-import { searchResultsAutocomplete } from '../../../queries/Search'
-import withLoading from '../../../lib/with-loading'
-import withPagination from '../../../lib/with-pagination'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { searchResultsAutocomplete } from '../../queries/Search'
+import withLoading from '../../lib/with-loading'
+import withPagination from '../../lib/with-pagination'
 
 interface IState {
     app: {

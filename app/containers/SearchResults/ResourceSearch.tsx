@@ -1,16 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import ApolloClient from 'apollo-client'
-import { Subject } from 'rxjs/Subject'
-import { Subscription } from 'rxjs/Subscription'
+import Subject from 'rxjs/Subject'
 import { compose, withApollo } from 'react-apollo'
 import { connect } from 'react-redux'
-import { searchResultsAutocompleteTotalElementsBreakdown } from '../../../queries/Search'
-import { IElementsBreakdown } from '../../../../kauri-components/components/Search/QuickSearch'
-import { searchResultsAutocomplete_searchAutocomplete_content } from '../../../queries/__generated__/searchResultsAutocomplete'
+import { searchResultsAutocompleteTotalElementsBreakdown } from '../../queries/Search'
+import { searchResultsAutocomplete_searchAutocomplete_content } from '../../queries/__generated__/searchResultsAutocomplete'
 import { IProps as IQueryProps } from './index'
-import { routeChangeAction } from '../../../lib/Module'
-import analytics from '../../../lib/analytics'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import analytics from '../../lib/analytics'
 
 const SearchSVG = () => (
     <div className="certain-category-icon">
@@ -44,7 +42,7 @@ interface ISearchWrapperProps {
     collapsible: boolean
 }
 
-const SearchWrapper = styled<ISearchWrapperProps, 'div'>('div')`
+const SearchWrapper = styled.div<ISearchWrapperProps>`
     width: 300px;
     margin-bottom: 64px;
     margin-top: 19px;
@@ -64,6 +62,10 @@ const SearchWrapper = styled<ISearchWrapperProps, 'div'>('div')`
         right: 9px;
     }
 `
+
+interface IElementsBreakdown {
+    [key: string]: number
+}
 
 export interface IDataSource {
     results: searchResultsAutocomplete_searchAutocomplete_content[]

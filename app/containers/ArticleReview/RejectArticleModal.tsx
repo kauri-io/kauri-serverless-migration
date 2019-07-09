@@ -1,13 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import {
-    NavigationText,
-    BodyCard,
-} from '../../../../kauri-components/components/Typography'
-import PrimaryButton from '../../../../kauri-components/components/Button/PrimaryButton'
-import TertiaryButton from '../../../../kauri-components/components/Button/TertiaryButton'
-import ModalHeader from '../../../../kauri-components/components/Headers/ModalHeader'
-import Input from '../../../../kauri-components/components/Input/Input'
+import { NavigationText, BodyCard } from '../../components/Typography'
+import PrimaryButton from '../../components/Button/PrimaryButton'
+import TertiaryButton from '../../components/Button/TertiaryButton'
+import ModalHeader from '../../components/Headers/ModalHeader'
+import Input from '../../components/Input/Input'
 
 const TitleContainer = styled.div`
     display: flex;

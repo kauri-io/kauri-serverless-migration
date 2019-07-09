@@ -1,4 +1,4 @@
-import styled from '../../../lib/styled-components'
+import styled from 'styled-components'
 
 const ContentContainer = styled.div`
     display: flex;

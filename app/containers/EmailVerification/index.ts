@@ -2,7 +2,7 @@ import View from './View'
 import { connect } from 'react-redux'
 import { compose } from 'react-apollo'
 import { verifyEmailAction, resendEmailVerificationAction } from './Module'
-import { routeChangeAction } from '../../../lib/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 const mapStateToProps = () => ({})
 

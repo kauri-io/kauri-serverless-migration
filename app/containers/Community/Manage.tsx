@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import ResourceCategory from '../../../../kauri-components/components/ResourceCategory'
+import ResourceCategory from '../../components/ResourceCategory'
 import ManageMembers from '../CreateCommunityForm/ManageMembers'
 import { DisplayManagedResources } from './DisplayResources'
 import {
     getCommunity_getCommunity_pending,
     getCommunity_getCommunity_members,
-} from '../../../queries/__generated__/getCommunity'
+} from '../../queries/__generated__/getCommunity'
 import { IInvitation } from '../CreateCommunityForm/ManageMembers/FormInviteMembersPanel'
 
 const Container = styled.div`

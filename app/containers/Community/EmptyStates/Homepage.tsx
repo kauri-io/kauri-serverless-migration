@@ -1,9 +1,9 @@
 import * as React from 'react'
-import styled from '../../../../lib/styled-components'
-import { routeChangeAction } from '../../../../lib/Module'
-import { BodyCard } from '../../../../../kauri-components/components/Typography'
-import Input from '../../../../../kauri-components/components/Input/Input'
-import AddOptions from '../../../../../kauri-components/components/AddOptions'
+import styled from 'styled-components'
+import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
+import { BodyCard } from '../../../components/Typography'
+import Input from '../../../components/Input/Input'
+import AddOptions from '../../../components/AddOptions'
 
 const Container = styled.div`
     display: flex;

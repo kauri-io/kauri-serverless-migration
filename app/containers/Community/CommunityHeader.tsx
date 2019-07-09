@@ -1,32 +1,32 @@
-import styled from '../../../../kauri-components/lib/styled-components'
+import styled from 'styled-components'
 import {
     Title1,
     BodyCard,
     PageDescription,
     Label,
-} from '../../../../kauri-components/components/Typography'
-import Image from '../../../../kauri-components/components/Image'
-import { TagList } from '../../../../kauri-components/components/Tags'
-import SocialWebsiteIcon from '../../../../kauri-components/components/PublicProfile/SocialWebsiteIcon'
-import Statistics from '../../../../kauri-components/components/PublicProfile/StatisticsContainer'
+} from '../../components/Typography'
+import Image from '../../components/Image'
+import { TagList } from '../../components/Tags'
+import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
+import Statistics from '../../components/PublicProfile/StatisticsContainer'
 import anchorme from 'anchorme'
-import ShareCommunity from '../../../../kauri-components/components/Tooltip/ShareArticle'
-import UserAvatar from '../../../../kauri-components/components/UserAvatar'
+import ShareCommunity from '../../components/Tooltip/ShareArticle'
+import UserAvatar from '../../components/UserAvatar'
 // import { Tooltip } from "react-tippy";
-import PrimaryButtonComponent from '../../../../kauri-components/components/Button/PrimaryButton'
+import PrimaryButtonComponent from '../../components/Button/PrimaryButton'
 import ChooseArticleModal, {
     IArticle,
 } from '../CreateCollectionForm/ChooseArticleModal'
 import {
     getCommunity_getCommunity_approved_ArticleDTO,
     getCommunity_getCommunity_approved_CollectionDTO,
-} from '../../../queries/__generated__/getCommunity'
+} from '../../queries/__generated__/getCommunity'
 import {
     // curateCommunityResourcesAction as curateCommunityResources,
     acceptCommunityInvitationAction as acceptCommunityInvitation,
     transferArticleToCommunityAction as transferArticleToCommunity,
 } from './Module'
-import AddMemberButtonComponent from '../../../../kauri-components/components/Button/AddMemberButton'
+import AddMemberButtonComponent from '../../components/Button/AddMemberButton'
 
 const TooltipContainer = styled.section`
     display: flex;

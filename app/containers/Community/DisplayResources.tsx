@@ -1,16 +1,16 @@
-import ArticleCard from '../../../../kauri-components/components/Card/ArticleCard'
-import CollectionCard from '../../../../kauri-components/components/Card/CollectionCard'
-import { Link } from '../../../routes'
+import ArticleCard from '../../components/Card/ArticleCardMaterial'
+import CollectionCard from '../../components/Card/CollectionCard'
+import Link from '../../components/Link'
 import {
     Community_approved_CollectionDTO,
     Community_approved_ArticleDTO,
-} from '../../../queries/Fragments/__generated__/Community'
-import Masonry from '../../../../kauri-components/components/Layout/Masonry'
-import styled from '../../../lib/styled-components'
-import PrimaryButton from '../../../../kauri-components/components/Button/PrimaryButton'
-import AlertView from '../../../../kauri-components/components/Modal/AlertView'
-import { BodyCard } from '../../../../kauri-components/components/Typography'
-import { removeResourceVariables } from '../../../queries/__generated__/removeResource'
+} from '../../queries/Fragments/__generated__/Community'
+import Masonry from '../../components/Masonry'
+import styled from 'styled-components'
+import PrimaryButton from '../../components/Button/PrimaryButton'
+import AlertView from '../../components/Modal/AlertView'
+import { BodyCard } from '../../components/Typography'
+import { removeResourceVariables } from '../../queries/__generated__/removeResource'
 import ArticlesEmptyState from './EmptyStates/Articles'
 import CollectionsEmptyState from './EmptyStates/Collections'
 

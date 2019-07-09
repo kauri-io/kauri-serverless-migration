@@ -1,5 +1,5 @@
 import { ArrayHelpers, FormikActions } from 'formik'
-import R from 'ramda'
+import { path } from 'ramda'
 
 interface IDnDDragEndResult {
     destination: {
@@ -48,14 +48,14 @@ export default (
     ) {
         return
     }
-    const sourceResource = R.path<IResourceIdentifier>([
+    const sourceResource = path<IResourceIdentifier>([
         'sections',
         sectionIndex,
         'resourcesId',
         source.index,
     ])(values)
 
-    const destinationResource = R.path<IResourceIdentifier>([
+    const destinationResource = path<IResourceIdentifier>([
         'sections',
         sectionIndex,
         'resourcesId',

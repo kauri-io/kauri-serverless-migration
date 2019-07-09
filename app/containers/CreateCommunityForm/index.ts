@@ -11,7 +11,7 @@ import {
 import { createCommunityAction, updateCommunityAction } from './Module'
 import { withFormik } from 'formik'
 import * as Yup from 'yup'
-import R from 'ramda'
+import { map, dissocPath, pipe, path, defaultTo } from 'ramda'
 import { updateCommunityVariables } from '../../queries/__generated__/updateCommunity'
 import { IInvitation } from './ManageMembers/FormInviteMembersPanel'
 
@@ -64,18 +64,18 @@ export default compose(
                 /*
 
           // BACKEND FIX sections.resources -> sections.resourcesId :(
-          const reassignResourcesToResourcesId = R.pipe(
-            R.path(["sections"]),
-            R.map(section => ({
+          const reassignResourcesToResourcesId = pipe(
+            path(["sections"]),
+            map(section => ({
               ...section,
-              resourcesId: R.map(({ id, version, type }) => ({
+              resourcesId: map(({ id, version, type }) => ({
                 type: type.toUpperCase(),
                 id,
                 version,
               }))(section.resourcesId),
             })),
-            R.map(section => R.dissocPath(["resources"])(section)),
-            R.map(section => R.dissocPath(["__typename"])(section))
+            map(section => dissocPath(["resources"])(section)),
+            map(section => dissocPath(["__typename"])(section))
           );
 
           const payload = {
@@ -91,8 +91,8 @@ export default compose(
 
 */
 
-                const reassignResourcesToResourcesId = R.pipe(
-                    R.path<
+                const reassignResourcesToResourcesId = pipe(
+                    path<
                         [
                             {
                                 resourcesId: [
@@ -107,23 +107,23 @@ export default compose(
                     >(['homepage']),
                     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
                     // @ts-ignore
-                    R.defaultTo([]),
-                    R.map(
+                    defaultTo([]),
+                    map(
                         (section: {
                             resourcesId: [
                                 { id: string; version: number; type: string }
                             ]
                         }) => ({
                             ...section,
-                            resources: R.map(({ id, version, type }) => ({
+                            resources: map(({ id, version, type }) => ({
                                 id,
                                 type: type.toUpperCase(),
                                 version,
                             }))(section.resourcesId),
                         })
                     ),
-                    R.map(section => R.dissocPath(['resources'])(section)),
-                    R.map(section => R.dissocPath(['__typename'])(section))
+                    map(section => dissocPath(['resources'])(section)),
+                    map(section => dissocPath(['__typename'])(section))
                 )
 
                 const payload = {
@@ -143,17 +143,17 @@ export default compose(
             }
         },
         mapPropsToValues: ({ data, id }) => {
-            const homepage = R.path(['getCommunity', 'homepage'])(data)
-                ? R.pipe(
-                      R.path<[any]>(['getCommunity', 'homepage']),
+            const homepage = path(['getCommunity', 'homepage'])(data)
+                ? pipe(
+                      path<[any]>(['getCommunity', 'homepage']),
                       // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
                       // @ts-ignore
-                      R.defaultTo([]),
-                      R.map(section => ({
+                      defaultTo([]),
+                      map(section => ({
                           // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
                           // @ts-ignore
                           ...section,
-                          resourcesId: R.map(
+                          resourcesId: map(
                               ({ id: resourceId, version, __typename }) => ({
                                   id: resourceId,
                                   type: __typename
@@ -163,8 +163,8 @@ export default compose(
                               })
                           )(section.resources),
                       })),
-                      R.map(section => R.dissocPath(['resources'])(section)),
-                      R.map(section => R.dissocPath(['__typename'])(section))
+                      map(section => dissocPath(['resources'])(section)),
+                      map(section => dissocPath(['__typename'])(section))
                   )(data)
                 : [emptySection]
 

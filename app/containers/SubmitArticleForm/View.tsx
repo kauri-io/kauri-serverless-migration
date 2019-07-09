@@ -9,7 +9,7 @@ import PublishingSelector, {
     IOption,
 } from '../../containers/PublishingSelector'
 import analytics from '../../lib/analytics'
-import R from 'ramda'
+import { path } from 'ramda'
 
 import {
     IAttributesPayload,
@@ -129,7 +129,7 @@ class SubmitArticleForm extends React.Component<IProps> {
         } = this.props
 
         // Updating article from a community I am in
-        if (Number(R.path(['getArticle', 'version'])(data)) >= 1) {
+        if (Number(path(['getArticle', 'version'])(data)) >= 1) {
             return this.handleSubmit('submit/update')(null)
         }
         // Submitting fresh article and I potentially want to choose a community?

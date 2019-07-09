@@ -1,8 +1,8 @@
 import cookie from 'cookie'
-const Uppy = require('uppy/lib/core')
-const Url = require('uppy/lib/plugins/Url')
-const Dashboard = require('uppy/lib/plugins/Dashboard')
-const XHRUpload = require('uppy/lib/plugins/XHRUpload')
+const Uppy = require('@uppy/core')
+const Url = require('@uppy/url')
+const Dashboard = require('@uppy/dashboard')
+const XHRUpload = require('@uppy/xhr-upload')
 import request from 'superagent'
 import config from '../config'
 

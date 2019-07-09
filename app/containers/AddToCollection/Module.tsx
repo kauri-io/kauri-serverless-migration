@@ -1,18 +1,13 @@
 import { Epic } from 'redux-observable'
 import { Observable } from 'rxjs'
 import gql from 'graphql-tag'
-import {
-    IReduxState,
-    IDependencies,
-    IAction,
-    showNotificationAction,
-    routeChangeAction,
-    Actions,
-} from '../../lib/Module'
+import { IReduxState, IDependencies } from '../../lib/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import {
     getArticleTitle,
     getArticleTitleVariables,
-} from '../../containers/Article/__generated__/getArticleTitle'
+} from '../ArticleDraft/__generated__/getArticleTitle'
 import { getArticleTitleQuery } from '../../containers/ArticleDraft/DeleteDraftArticleModule'
 import { addArticleToCollection } from './__generated__/addArticleToCollection'
 import AlertViewComponent from '../../components/Modal/AlertView'

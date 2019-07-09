@@ -1,7 +1,7 @@
 import View from './View'
 import { connect } from 'react-redux'
 import { closeModalAction } from '../../components/Modal/Module'
-import { routeChangeAction } from '../../lib/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { addArticleToCollectionAction } from './Module'
 
 export default connect(

@@ -1,4 +1,4 @@
-import PublicProfile from './View.js'
+import PublicProfile from './View'
 import { compose, graphql } from 'react-apollo'
 import {
     searchPersonalArticles,

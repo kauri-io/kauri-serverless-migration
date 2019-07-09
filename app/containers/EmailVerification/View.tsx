@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import PrimaryButton from '../../../../kauri-components/components/Button/PrimaryButton'
-import { H1, H3 } from '../../../../kauri-components/components/Typography'
-import Loading from '../../common/Loading'
+import PrimaryButton from '../../components/Button/PrimaryButton'
+import { H1, H3 } from '../../components/Typography'
+import Loading from '../../components/Loading'
 
 const VerifyEmailContainer = styled.div`
     ${props => `

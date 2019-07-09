@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import SecondaryButton from './SecondaryButton'
 import TertiaryButton from './TertiaryButton'
+import config from '../../config'
 
 const Icon = styled.svg`
     height: 18px;
@@ -18,11 +19,10 @@ interface IProps {
 }
 
 const MediumImportButton = (props: IProps) => {
-    const config = require('../../../kauri-web/config').default
     return (
         <a
             target="_blank"
-            href={`https://import.${config.getApiURL().replace('api.', '')}`}
+            href={`https://import.${config.gateway.replace('api.', '')}`}
         >
             {props.border ? (
                 <SecondaryButton border="primary" color="textPrimary">

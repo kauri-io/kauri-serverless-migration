@@ -1,10 +1,6 @@
 import { Observable } from 'rxjs'
-import {
-    showNotificationAction,
-    IDependencies,
-    IReduxState,
-    Actions,
-} from '../../lib/Module'
+import { IDependencies, IReduxState } from '../../lib/Module'
+import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { Epic } from 'redux-observable'
 import { vote as voteMutation } from '../../queries/Article'
 import { vote, voteVariables } from '../../queries/__generated__/vote'

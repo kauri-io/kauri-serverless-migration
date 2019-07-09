@@ -1,10 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ResourceSearch, { IDataSource, emptyData } from './ResourceSearch'
-import {
-    Title1,
-    BodyCard,
-} from '../../../../kauri-components/components/Typography'
+import { Title1, BodyCard } from '../../components/Typography'
 import ResourceResults from './ResourceResults'
 
 const ArticlesHeader = styled.div`

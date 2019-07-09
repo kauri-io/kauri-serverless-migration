@@ -16,7 +16,7 @@ import {
     closeModalAction,
 } from '../../components/Modal/Module'
 import AddMemberModal from './AddMemberModal'
-import R from 'ramda'
+import { remove } from 'ramda'
 
 export interface IProps {
     id: string | null
@@ -73,7 +73,7 @@ const Component: React.SFC<
         props.setFieldValue(
             'invitations',
             (props.values.invitations &&
-                R.remove(index, 1, props.values.invitations)) ||
+                remove(index, 1, props.values.invitations)) ||
                 []
         )
 

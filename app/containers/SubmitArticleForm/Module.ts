@@ -1,20 +1,17 @@
-import { Observable } from 'rxjs/Observable'
+import Observable from 'rxjs/Observable'
 import { Epic } from 'redux-observable'
 import {
     submitArticleVersion,
     editArticle,
     getArticle as getArticleQuery,
     submitNewArticle,
-} from '../../../queries/Article'
-import {
-    showNotificationAction,
-    routeChangeAction,
-    IDependencies,
-    IReduxState,
-} from '../../../lib/Module'
+} from '../../queries/Article'
+import { IDependencies, IReduxState } from '../../lib/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { publishArticleAction, IOwnerPayload } from './PublishArticleModule'
-import { IOption } from '../../common/PublishingSelector'
-import analytics from '../../../lib/analytics'
+import { IOption } from '../../containers/PublishingSelector'
+import analytics from '../../lib/analytics'
 
 interface IGetArticleResult {
     getArticle: {

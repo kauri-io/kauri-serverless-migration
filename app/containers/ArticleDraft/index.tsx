@@ -2,15 +2,16 @@ import { compose, graphql } from 'react-apollo'
 import { connect } from 'react-redux'
 import { deleteDraftArticleAction } from './DeleteDraftArticleModule'
 import { publishArticleAction } from '../SubmitArticleForm/PublishArticleModule'
-import { getArticle } from '../../../queries/Article'
-import { routeChangeAction, IReduxState } from '../../../lib/Module'
-import withLoading from '../../../lib/with-loading'
-import withApolloError from '../../../lib/with-apollo-error'
+import { getArticle } from '../../queries/Article'
+import { IReduxState } from '../../lib/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import withLoading from '../../lib/with-loading'
+import withApolloError from '../../lib/with-apollo-error'
 import View from './View'
 import {
     closeModalAction,
     openModalAction,
-} from '../../../../kauri-components/components/Modal/Module'
+} from '../../components/Modal/Module'
 
 const mapStateToProps = (state: IReduxState) => {
     return {

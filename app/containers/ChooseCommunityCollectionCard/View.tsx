@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import CollectionCard from '../../../../kauri-components/components/Card/CollectionCard'
+import CollectionCard from '../../components/Card/CollectionCard'
 import ChooseCollectionContent, {
     Content,
-} from '../../../../kauri-components/components/Modal/ChooseCollectionContent'
-import PrimaryButton from '../../../../kauri-components/components/Button/PrimaryButton'
-import SecondaryButton from '../../../../kauri-components/components/Button/SecondaryButton'
-import Tabs from '../../../../kauri-components/components/Tabs'
-import withPagination from '../../../lib/with-pagination'
-import Loading from '../../common/Loading'
+} from '../../components/Modal/ChooseCollectionContent'
+import PrimaryButton from '../../components/Button/PrimaryButton'
+import SecondaryButton from '../../components/Button/SecondaryButton'
+import Tabs from '../../components/Tabs'
+import withPagination from '../../lib/with-pagination'
+import Loading from '../../components/Loading'
 
 const Container = styled.div`
     display: flex;

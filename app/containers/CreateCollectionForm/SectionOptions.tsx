@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import theme from '../../../lib/theme-config'
-import AddOptions from '../../../../kauri-components/components/AddOptions'
+import theme from '../../lib/theme-config'
+import AddOptions from '../../components/AddOptions'
 
 const TooltipContainer = styled.div`
     display: flex;

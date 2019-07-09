@@ -2,8 +2,8 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import theme from '../../lib/theme-config'
 import { IAttributesPayload } from './Module'
-import { CreateRequestSecondaryHeader as SubmitArticleFormHeader } from '../../common/Legacy/CreateRequestSecondaryHeader'
-import { TopicActionsContainer as SubmitArticleFormSubjectContainer } from '../../common/Legacy/TopicActionsContainer'
+import { CreateRequestSecondaryHeader as SubmitArticleFormHeader } from './Legacy/CreateRequestSecondaryHeader'
+import { TopicActionsContainer as SubmitArticleFormSubjectContainer } from './Legacy/TopicActionsContainer'
 import TagSelector from '../../components/TagSelector'
 
 interface IProps {

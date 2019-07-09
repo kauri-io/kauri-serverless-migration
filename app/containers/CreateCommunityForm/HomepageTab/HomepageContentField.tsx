@@ -4,10 +4,10 @@ import CardContentSection from '../../../components/Section/CardContentSection'
 import { FieldArray, Field } from 'formik'
 import { IFormValues, emptySection } from '../index'
 import Input from '../../../components/Input/Input'
-import ArticleCard from '../../../connections/ArticleCard'
-import CollectionCard from '../../../connections/CollectionCard'
+import ArticleCard from '../../../components/Card/ArticleCardMaterial'
+import CollectionCard from '../../../components/Card/CollectionCard'
 import { space, SpaceProps, background, BackgroundProps } from 'styled-system'
-import R from 'ramda'
+import { path, defaultTo, pipe, filter, remove, concat } from 'ramda'
 import TertiaryButtonComponent from '../../../components/Button/TertiaryButton'
 import SectionOptions from '../../CreateCollectionForm/SectionOptions'
 import {
@@ -64,16 +64,16 @@ const renderResourceSection = (
     mappingKey: string
 ) => (resource: any, resourceIndex: number) => (
     <ResourceSection key={resourceIndex} mt={3}>
-        {R.path(
+        {path(
             ['homepage', index, mappingKey, resourceIndex, 'version'],
             values
         ) ? (
             <Draggable
                 index={resourceIndex}
-                draggableId={`${R.path(
+                draggableId={`${path(
                     ['homepage', index, mappingKey, resourceIndex, 'id'],
                     values
-                )}-${R.path(
+                )}-${path(
                     ['homepage', index, mappingKey, resourceIndex, 'version'],
                     values
                 )}`}
@@ -88,7 +88,7 @@ const renderResourceSection = (
                         >
                             <ArticleCard
                                 isLoggedIn={true}
-                                id={R.path(
+                                id={path(
                                     [
                                         'homepage',
                                         index,
@@ -99,7 +99,7 @@ const renderResourceSection = (
                                     values
                                 )}
                                 version={parseInt(
-                                    R.path<string>(
+                                    path<string>(
                                         [
                                             'homepage',
                                             index,
@@ -118,10 +118,10 @@ const renderResourceSection = (
                 }}
             </Draggable>
         ) : (
-            R.path(['homepage', index, mappingKey, resourceIndex], values) && (
+            path(['homepage', index, mappingKey, resourceIndex], values) && (
                 <Draggable
                     index={resourceIndex}
-                    draggableId={`${R.path(
+                    draggableId={`${path(
                         ['homepage', index, mappingKey, resourceIndex, 'id'],
                         values
                     )}`}
@@ -134,7 +134,7 @@ const renderResourceSection = (
                             id="collection-card"
                         >
                             <CollectionCard
-                                id={R.path(
+                                id={path(
                                     [
                                         'homepage',
                                         index,
@@ -162,7 +162,7 @@ const renderResourceSection = (
                             ? section[mappingKey].length > 1
                                 ? section[mappingKey].splice(1)
                                 : []
-                            : R.remove(
+                            : remove(
                                   resourceIndex,
                                   resourceIndex,
                                   section[mappingKey]
@@ -262,7 +262,7 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                                 return
                                             }
 
-                                            const sourceResource = R.path<
+                                            const sourceResource = path<
                                                 IResourceIdentifier
                                             >([
                                                 'homepage',
@@ -271,7 +271,7 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                                 source.index,
                                             ])(values)
 
-                                            const destinationResource = R.path<
+                                            const destinationResource = path<
                                                 IResourceIdentifier
                                             >([
                                                 'homepage',
@@ -328,13 +328,13 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
 
                                     <SectionOptions
                                         currentSectionIndex={index}
-                                        previousSectionHasArticles={R.pipe(
-                                            R.path<any[]>([
+                                        previousSectionHasArticles={pipe(
+                                            path<any[]>([
                                                 'homepage',
                                                 index > 0 ? index : 0,
                                                 'resourcesId',
                                             ]),
-                                            R.defaultTo([]),
+                                            defaultTo([]),
                                             resourcesId => resourcesId.length,
                                             Boolean
                                         )(values)}
@@ -361,8 +361,8 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                                                     sectionIndex
                                                             )
                                                         }
-                                                        chosenArticles={R.pipe(
-                                                            R.path<
+                                                        chosenArticles={pipe(
+                                                            path<
                                                                 Array<{
                                                                     type: string
                                                                 }>
@@ -371,8 +371,8 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                                                 index,
                                                                 'resourcesId',
                                                             ]),
-                                                            R.defaultTo([]),
-                                                            R.filter(
+                                                            defaultTo([]),
+                                                            filter(
                                                                 (
                                                                     resourceId: any
                                                                 ) =>
@@ -394,8 +394,8 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                                         ) =>
                                                             arrayHelpers.form.setFieldValue(
                                                                 `homepage[${index}].resourcesId`,
-                                                                R.pipe(
-                                                                    R.path<
+                                                                pipe(
+                                                                    path<
                                                                         Array<{
                                                                             type: string
                                                                             id: string
@@ -408,12 +408,12 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                                                     ]),
                                                                     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
                                                                     // @ts-ignore
-                                                                    R.defaultTo(
+                                                                    defaultTo(
                                                                         []
                                                                     ),
                                                                     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
                                                                     // @ts-ignore
-                                                                    R.filter<
+                                                                    filter<
                                                                         Array<{
                                                                             type: string
                                                                             id: string
@@ -430,10 +430,10 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                                                             resourceId.type.toLowerCase() ===
                                                                                 'collection'
                                                                     ),
-                                                                    R.defaultTo(
+                                                                    defaultTo(
                                                                         []
                                                                     ),
-                                                                    R.concat(
+                                                                    concat(
                                                                         chosenArticles.map(
                                                                             article =>
                                                                                 article && {
@@ -470,18 +470,18 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                                                     sectionIndex
                                                             )
                                                         }
-                                                        chosenCollections={R.pipe(
-                                                            R.path([
+                                                        chosenCollections={pipe(
+                                                            path([
                                                                 'homepage',
                                                                 index,
                                                                 'resourcesId',
                                                             ]),
                                                             // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
                                                             // @ts-ignore
-                                                            R.defaultTo([]),
+                                                            defaultTo([]),
                                                             // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
                                                             // @ts-ignore
-                                                            R.filter<
+                                                            filter<
                                                                 Array<{
                                                                     type: string
                                                                     id: string
@@ -505,27 +505,27 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                                         ) =>
                                                             arrayHelpers.form.setFieldValue(
                                                                 `homepage[${index}].resourcesId`,
-                                                                R.pipe(
-                                                                    R.path([
+                                                                pipe(
+                                                                    path([
                                                                         'homepage',
                                                                         index,
                                                                         'resourcesId',
                                                                     ]),
                                                                     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
                                                                     // @ts-ignore
-                                                                    R.defaultTo(
+                                                                    defaultTo(
                                                                         []
                                                                     ),
                                                                     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
                                                                     // @ts-ignore
-                                                                    R.filter(
+                                                                    filter(
                                                                         ({
                                                                             type,
                                                                         }) =>
                                                                             type.toLowerCase() ===
                                                                             'article' // TODO: check?
                                                                     ),
-                                                                    R.concat(
+                                                                    concat(
                                                                         chosenCollections.map(
                                                                             collection => ({
                                                                                 ...collection,

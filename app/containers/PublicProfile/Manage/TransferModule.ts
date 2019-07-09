@@ -1,19 +1,16 @@
-import { Observable } from 'rxjs/Observable'
+import Observable from 'rxjs/Observable'
 import { Epic } from 'redux-observable'
-import {
-    showNotificationAction,
-    IDependencies,
-    IReduxState,
-} from '../../../../lib/Module'
+import { IDependencies, IReduxState } from '../../../lib/Module'
+import { showNotificationAction } from '../../../lib/Epics/ShowNotificationEpic'
 import {
     rejectArticleTransfer,
     acceptArticleTransfer,
     finaliseArticleTransfer,
-} from '../../../../queries/Article'
-import analytics from '../../../../lib/analytics'
-import generatePublishArticleHash from '../../../../lib/generate-publish-article-hash'
-import { create } from '../../../../lib/init-apollo'
-import { getEvent } from '../../../../queries/Module'
+} from '../../../queries/Article'
+import analytics from '../../../lib/analytics'
+import generatePublishArticleHash from '../../../lib/generate-publish-article-hash'
+import { create } from '../../../lib/init-apollo'
+import { getEvent } from '../../../queries/Module'
 
 interface IRejectArticleTransferPayload {
     id: string

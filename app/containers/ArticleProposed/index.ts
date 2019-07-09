@@ -1,4 +1,4 @@
-import ArticleProposed from './View.js'
+import ArticleProposed from './View'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { compose, graphql } from 'react-apollo'
 import { connect } from 'react-redux'

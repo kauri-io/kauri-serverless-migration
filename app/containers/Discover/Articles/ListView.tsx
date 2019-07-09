@@ -6,7 +6,6 @@ import Loading from '../../../components/Loading'
 import Masonry from '../../../components/Masonry'
 import PrimaryButton from '../../../components/Button/PrimaryButton'
 import AddToCollectionConnection from '../../../containers/AddToCollection'
-import R from 'ramda'
 import {
     searchAutocompleteArticles_searchAutocomplete,
     searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO,

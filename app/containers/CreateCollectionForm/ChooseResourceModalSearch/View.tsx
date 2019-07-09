@@ -1,9 +1,8 @@
 import React from 'react'
-import { IResult } from '../../../../../kauri-components/components/Search/QuickSearch'
 import styled from 'styled-components'
-import { Subject } from 'rxjs/Subject'
-import { Subscription } from 'rxjs/Subscription'
-import { Observable } from 'rxjs/Observable'
+import Observable from 'rxjs/Observable'
+import { Subscription } from 'rxjs/internal/Subscription'
+import { Subject } from 'rxjs'
 
 const SearchSVG = () => (
     <div className="certain-category-icon">
@@ -33,7 +32,7 @@ const SearchInput = styled.input`
     padding: 0 ${props => props.theme.space[1]}px;
 `
 
-const SearchWrapper = styled<{ type: string }, 'div'>('div')`
+const SearchWrapper = styled.div<{ type: string }>`
     width: ${props => (props.type === 'article' ? '330' : '357')}px;
     display: grid;
     position: relative;
@@ -50,6 +49,17 @@ const SearchWrapper = styled<{ type: string }, 'div'>('div')`
         right: 9px;
     }
 `
+
+interface IResult {
+    description: string
+    name: string
+    score: number
+    tags?: string[] | null
+    resourceIdentifier: {
+        type: string
+        id: string
+    }
+}
 
 interface ISearch {
     value: string

@@ -1,4 +1,4 @@
-import CollectionCreated from './View.jsx'
+import CollectionCreated from './View'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { getCollection } from '../../queries/Collection'
 import { connect } from 'react-redux'

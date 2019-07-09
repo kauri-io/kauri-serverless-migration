@@ -1,6 +1,5 @@
 import React from 'react'
-import analytics from '../../../lib/analytics'
-// import styled from "styled-components";
+import analytics from '../../lib/analytics'
 
 class NewsletterConfirmation extends React.Component<{}, {}> {
     componentDidMount() {

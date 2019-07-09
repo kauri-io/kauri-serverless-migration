@@ -5,7 +5,7 @@ import UploadLogoButton from '../../components/Button/UploadLogoButton'
 import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
 import EmailCheckbox from '../../components/Checkbox/EmailCheckbox'
 import TriggerImageUploader from '../ImageUploader'
-import R from 'ramda'
+import { pipe, assocPath, filter } from 'ramda'
 import EmailField from './EmailField'
 
 const InputsContainers = styled.div`
@@ -114,9 +114,9 @@ class EditableHeader extends Component<HeaderProps, HeaderState> {
     }
 
     saveUser(redirectURL: string | undefined, callback: any | undefined) {
-        const payload = R.pipe(
-            R.filter(val => typeof val !== 'undefined' || !!val),
-            R.assocPath(['redirectURL'], redirectURL)
+        const payload = pipe(
+            filter(val => typeof val !== 'undefined' || !!val),
+            assocPath(['redirectURL'], redirectURL)
         )(this.state)
 
         this.props.saveUserDetailsAction(payload, pendingSubmit => {
@@ -150,7 +150,7 @@ class EditableHeader extends Component<HeaderProps, HeaderState> {
             status,
         } = this.state
 
-        const oldEmail = R.path(
+        const oldEmail = path(
             ['OwnProfile', 'getMyProfile', 'email'],
             this.props
         )

@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import ReactMde, { DraftUtil } from '@rej156/react-mde'
 import Showdown from 'showdown'
 import { getDefaultCommands } from '@rej156/react-mde/lib/js/commands'
-import R from 'ramda'
+import { map } from 'ramda'
 import { hljs } from '../../lib/hljs'
 import uploadImageCommand from '../../lib/reactmde-commands/upload-image'
 import youtubeCommand from '../../lib/reactmde-commands/youtube'
@@ -78,7 +78,7 @@ export class SharedEditor extends React.Component<IProps> {
 
     componentDidUpdate() {
         if (document.querySelector('.mde-preview')) {
-            R.map(block => hljs.highlightBlock(block))(
+            map(block => hljs.highlightBlock(block))(
                 document.querySelectorAll('pre code')
             )
         }

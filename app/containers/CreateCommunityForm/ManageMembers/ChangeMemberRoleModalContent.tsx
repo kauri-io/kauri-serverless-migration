@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Select from '../../../components/Select'
 import { ChooseRoleOptions } from '../AddMemberModalContent'
 import { roles, IRole } from '../AddMemberModal'
-import R from 'ramda'
+import { pipe, find, path } from 'ramda'
 
 export const ChangeMemberRoleModalContainer = styled.section`
     display: flex;

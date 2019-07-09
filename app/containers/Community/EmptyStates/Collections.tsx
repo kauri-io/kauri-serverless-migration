@@ -1,8 +1,5 @@
-import styled from '../../../../lib/styled-components'
-import {
-    Title2,
-    BodyCard,
-} from '../../../../../kauri-components/components/Typography'
+import styled from 'styled-components'
+import { Title2, BodyCard } from '../../../components/Typography'
 
 const Container = styled.div`
     display: flex;

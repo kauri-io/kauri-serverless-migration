@@ -1,18 +1,15 @@
 import { compose, graphql } from 'react-apollo'
 import { connect } from 'react-redux'
 import { approveArticleAction, rejectArticleAction } from './Module'
-import { getArticle } from '../../../queries/Article'
-import {
-    routeChangeAction,
-    setNavcolorOverrideAction,
-    IReduxState,
-} from '../../../lib/Module'
-import withLoading from '../../../lib/with-loading'
+import { getArticle } from '../../queries/Article'
+import { IReduxState } from '../../lib/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import withLoading from '../../lib/with-loading'
 import View from './View'
 import {
     closeModalAction,
     openModalAction,
-} from '../../../../kauri-components/components/Modal/Module'
+} from '../../components/Modal/Module'
 
 const mapStateToProps = (
     state: IReduxState,
@@ -38,7 +35,6 @@ export default compose(
             openModalAction,
             rejectArticleAction,
             routeChangeAction,
-            setNavcolorOverrideAction,
         }
     ),
     graphql(getArticle, {

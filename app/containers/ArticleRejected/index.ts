@@ -1,4 +1,4 @@
-import ArticleRejected from './View.js'
+import ArticleRejected from './View'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { getArticle } from '../../queries/Article'
 import { connect } from 'react-redux'

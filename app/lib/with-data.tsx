@@ -22,6 +22,8 @@ import themeConfig from './theme-config'
 // import "@rej156/react-mde/lib/styles/css/react-mde-all.css";
 // import "../static/css/redraft-image.css";
 // import "draft-js-inline-toolbar-plugin/lib/plugin.css";
+// import '@uppy/core/dist/style.css'
+// import '@uppy/url/dist/style.css'
 import analytics from './analytics'
 
 const config = require('../config').default

@@ -1,14 +1,13 @@
-import styled from '../../../lib/styled-components'
+import styled from 'styled-components'
 import moment from 'moment'
-import { TagList } from '../../../../kauri-components/components/Tags'
-import {
-    Label,
-    Title1,
-} from '../../../../kauri-components/components/Typography'
-import Image from '../../../../kauri-components/components/Image'
-import PrimaryButton from '../../../../kauri-components/components/Button/PrimaryButton'
-import SecondaryButton from '../../../../kauri-components/components/Button/SecondaryButton'
-import PublishingSelector, { IOption } from '../../common/PublishingSelector'
+import { TagList } from '../../components/Tags'
+import { Label, Title1 } from '../../components/Typography'
+import Image from '../../components/Image'
+import PrimaryButton from '../../components/Button/PrimaryButton'
+import SecondaryButton from '../../components/Button/SecondaryButton'
+import PublishingSelector, {
+    IOption,
+} from '../../containers/PublishingSelector'
 
 const HeaderContainer = styled.div`
     display: flex;

@@ -1,17 +1,15 @@
 import View from './View'
 import { connect } from 'react-redux'
 import { graphql, compose, withApollo } from 'react-apollo'
-import { getCommunityAndPendingArticles } from '../../../queries/Community'
-import withLoading from '../../../lib/with-loading'
+import { getCommunityAndPendingArticles } from '../../queries/Community'
+import withLoading from '../../lib/with-loading'
 import {
     openModalAction,
     closeModalAction,
-} from '../../../../kauri-components/components/Modal/Module'
-import {
-    IReduxState,
-    routeChangeAction,
-    showNotificationAction,
-} from '../../../lib/Module'
+} from '../../components/Modal/Module'
+import { IReduxState } from '../../lib/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import {
     curateCommunityResourcesAction,
     acceptCommunityInvitationAction,

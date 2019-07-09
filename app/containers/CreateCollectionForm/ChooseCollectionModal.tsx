@@ -1,17 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import R from 'ramda'
-import { BodyCard } from '../../../../kauri-components/components/Typography'
-import PrimaryButton from '../../../../kauri-components/components/Button/PrimaryButton'
-import TertiaryButton from '../../../../kauri-components/components/Button/TertiaryButton'
-import ChooseCollectionCard from '../../connections/ChooseCollectionCard/View'
-import ModalHeader from '../../../../kauri-components/components/Headers/ModalHeader'
+import { find, reduce, union } from 'ramda'
+import { BodyCard } from '../../components/Typography'
+import PrimaryButton from '../../components/Button/PrimaryButton'
+import TertiaryButton from '../../components/Button/TertiaryButton'
+import ChooseCollectionCard from '../ChooseCollectionCard/View'
+import ModalHeader from '../../components/Headers/ModalHeader'
 import ChooseResourceModalSearch from './ChooseResourceModalSearch'
 import { compose, graphql } from 'react-apollo'
 import { connect } from 'react-redux'
-import withApolloError from '../../../lib/with-apollo-error'
-import { getCollectionsForUser } from '../../../queries/Collection'
-import { IReduxState } from '../../../lib/Module'
+import withApolloError from '../../lib/with-apollo-error'
+import { getCollectionsForUser } from '../../queries/Collection'
+import { IReduxState } from '../../lib/Module'
 
 const collectionSize = 12
 
@@ -123,10 +123,10 @@ class ChooseCollectionModal extends React.Component<IProps, IState> {
 
     chooseCollection = (chosenCollection: { id: string; version: string }) =>
         this.setState({
-            chosenCollections: R.find(({ id }) => chosenCollection.id === id)(
+            chosenCollections: find(({ id }) => chosenCollection.id === id)(
                 this.state.chosenCollections
             )
-                ? R.reduce((current: any, next: { id: string }) => {
+                ? reduce((current: any, next: { id: string }) => {
                       if (next.id === chosenCollection.id) {
                           return current
                       } else {
@@ -134,7 +134,7 @@ class ChooseCollectionModal extends React.Component<IProps, IState> {
                           return current
                       }
                   }, [])(this.state.chosenCollections)
-                : R.union(this.state.chosenCollections, [chosenCollection]),
+                : union(this.state.chosenCollections, [chosenCollection]),
         })
 
     render() {

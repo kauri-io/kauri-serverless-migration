@@ -2,7 +2,7 @@ import React from 'react'
 import List from './List'
 import Header from './Header'
 import styled from 'styled-components'
-// import Tabs from "../../../../../kauri-components/components/Tabs";
+// import Tabs from "../../../components/Tabs";
 
 const ContentContainer = styled.section`
     display: flex;
