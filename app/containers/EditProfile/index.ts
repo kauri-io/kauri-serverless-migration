@@ -2,8 +2,13 @@ import View from './View.jsx'
 import { connect } from 'react-redux'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
+import { IReduxState } from '../../lib/Module.js'
+import { WithRouterProps } from 'next/router'
+interface IProps {
+    router: WithRouterProps
+}
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: IReduxState, ownProps: IProps) => ({
     userId: state.app.user && state.app.user.id,
     user: state.app.user,
 })

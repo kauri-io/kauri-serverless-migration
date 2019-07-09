@@ -1,13 +1,13 @@
 import React from 'react'
 import { withApollo, compose } from 'react-apollo'
+import { withRouter } from 'next/router'
 import withData from '../lib/with-data'
 import App from '../layouts'
-import EditProfileComp from '../containers/EditProfile'
-import { withRouter } from 'next/router'
+import CreateCollectionConnection from '../containers/CreateCollection'
 
-const EditProfile = ({ router }) => (
+const UpdateCollection = () => (
     <App>
-        <EditProfileComp router={router} />
+        <CreateCollectionConnection id={this.props.router.query['id']} />
     </App>
 )
 
@@ -15,4 +15,4 @@ export default compose(
     withData,
     withApollo,
     withRouter
-)(EditProfile)
+)(UpdateCollection)

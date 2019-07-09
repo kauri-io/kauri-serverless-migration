@@ -4,7 +4,7 @@ export interface ICloseModalAction {
     type: 'CLOSE_MODAL'
 }
 
-interface IOpenModalPayload {
+export interface IOpenModalPayload {
     children: React.ReactElement<any>
 }
 

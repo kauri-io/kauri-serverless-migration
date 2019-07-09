@@ -3,3 +3,5 @@
 - Review Epics are working
 - Ensure it builds
 - Fix route change epic and links
+- Fix notifications (or replace with material ui)
+- reinstate Hotjar

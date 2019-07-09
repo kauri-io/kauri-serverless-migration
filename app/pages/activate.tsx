@@ -1,8 +1,8 @@
 import React from 'react'
 import { withApollo, compose } from 'react-apollo'
 import withData from '../lib/with-data'
-import AppWithoutNavbar from '../layouts/AppWithoutNavbar'
-import EmailVerification from '../components/containers/EmailVerification'
+import App from '../layouts'
+import EmailVerification from '../containers/EmailVerification'
 import { withRouter } from 'next/router'
 
 interface IProps {
@@ -13,16 +13,11 @@ interface IProps {
     }
 }
 
-class EmailVerificationPage extends React.Component<IProps, {}> {
-    render() {
-        return (
-            <AppWithoutNavbar>
-                <EmailVerification uuid={this.props.router.query.uuid} />
-            </AppWithoutNavbar>
-        )
-    }
-}
-
+const EmailVerificationPage = ({ router }) => (
+    <App>
+        <EmailVerification uuid={router.query.uuid} />
+    </App>
+)
 export default compose(
     withData,
     withApollo,

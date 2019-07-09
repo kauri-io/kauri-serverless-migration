@@ -12,4 +12,5 @@ export default {
         ga: 'UA-112179323-4',
     },
     testingAccounts: [],
+    environment: 'development',
 }

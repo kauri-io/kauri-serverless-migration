@@ -9,33 +9,29 @@ const config = require('../../../config').default
 
 const request = superagent.agent()
 
-type State = {}
-
-export type RegisterActionPayload = {
+export interface IRegisterActionPayload {
     type?: 'login' | 'register'
 }
-type RegisterAction = {
+export interface IRegisterAction {
     type: string
-    payload: RegisterActionPayload
+    payload: IRegisterActionPayload
     callback: any
 }
 
-type Action = RegisterAction
-
-const initialState: State = {}
+const initialState = {}
 
 const REGISTER: string = 'REGISTER'
 
 export const registerAction = (
-    payload: RegisterActionPayload,
+    payload: IRegisterActionPayload,
     callback: any
-): RegisterAction => ({
+): IRegisterAction => ({
     type: REGISTER,
     payload,
     callback,
 })
 
-type InitiateLoginResponse = {
+interface IInitiateLoginResponse {
     id: string
     sentence: string
     date_created: number
@@ -44,7 +40,7 @@ type InitiateLoginResponse = {
     active: boolean
 }
 
-type FinalLoginResponse = {
+interface IFinalLoginResponse {
     app_id: string
     client_id: string
     address: string
@@ -61,14 +57,14 @@ const registerSignaturePayload = (userId, signature, sentence_id) => ({
 })
 
 export const registerEpic = (
-    action$: Observable<RegisterAction>,
+    action$: Observable<IRegisterAction>,
     store: any,
     { fetch }: IDependencies
 ) =>
     action$
         .ofType(REGISTER)
         .switchMap(
-            ({ payload: { type = 'register' }, callback }: RegisterAction) =>
+            ({ payload: { type = 'register' }, callback }: IRegisterAction) =>
                 Observable.fromPromise(
                     window.ethereum
                         ? window.ethereum.enable()
@@ -83,7 +79,7 @@ export const registerEpic = (
                     )
                     .map(res => res.body)
                     .do(h => console.log(h))
-                    .switchMap(({ sentence, id }: InitiateLoginResponse) =>
+                    .switchMap(({ sentence, id }: IInitiateLoginResponse) =>
                         loginPersonalSign(sentence)
                             .map((signature: string) =>
                                 registerSignaturePayload(
@@ -102,7 +98,7 @@ export const registerEpic = (
                             .map(res => res.body)
                             .do(h => console.log(h))
                             .do(() => callback())
-                            .do(({ token }: FinalLoginResponse) => {
+                            .do(({ token }: IFinalLoginResponse) => {
                                 console.log(token)
                                 console.log(window.web3.eth.accounts[0])
                                 document.cookie = cookie.serialize(
@@ -184,7 +180,7 @@ export const registerEpic = (
         )
 
 const handlers = {
-    [REGISTER]: (state: State, action: Action) => ({
+    [REGISTER]: ({}, action: IRegisterAction) => ({
         ...state,
         hello: action.payload,
     }),

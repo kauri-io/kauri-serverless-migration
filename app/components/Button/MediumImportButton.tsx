@@ -14,7 +14,7 @@ const SVG = (
 )
 
 interface IProps {
-    border: boolean
+    border?: boolean
 }
 
 const MediumImportButton = (props: IProps) => {

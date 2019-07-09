@@ -16,4 +16,5 @@ export default {
         '5765d2d2fafb930132d72651f3f28c86371379b1',
         '27e77e164bc02788f347213b0a3e9a9a0cdf8d7a',
     ],
+    environment: 'production',
 }

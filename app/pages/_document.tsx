@@ -3,11 +3,13 @@ import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 import { ServerStyleSheets } from '@material-ui/styles'
 
-// const config = require("../config").default;
+// const isProduction = process.env.config === 'production'
 
-// const isProduction = process.env.config !== "development";
+interface IProps {
+    styleTags: any
+}
 
-export default class MyDocument extends Document {
+export default class MyDocument extends Document<IProps> {
     static async getInitialProps({ renderPage }) {
         const sheet = new ServerStyleSheet()
         const styleTags = sheet.getStyleElement()
@@ -32,10 +34,9 @@ export default class MyDocument extends Document {
         return (
             <html lang="en">
                 <Head>
-                    {/* {isProduction && process.browser && (
+                    {/* {isProduction && global.process.browser && (
             <script>
-              `$
-              {(function(h, o, t, j, a, r) {
+              `${(function(h, o, t, j, a, r) {
                 h.hj =
                   h.hj ||
                   function() {

@@ -11,7 +11,7 @@ export const showNotificationAction = (
     payload,
 })
 
-interface IShowNotificationPayload {
+export interface IShowNotificationPayload {
     notificationType: 'success' | 'info' | 'warning' | 'error'
     message: string
     description: FunctionStringCallback

@@ -6,7 +6,8 @@ import withLoading from '../../lib/with-loading'
 import withApolloError from '../../lib/with-apollo-error'
 import { voteAction } from './Module'
 import View from './View'
-import { IReduxState, routeChangeAction } from '../../lib/Module'
+import { IReduxState } from '../../lib/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import {
     closeModalAction,
     openModalAction,
