@@ -13,6 +13,7 @@ type PaginationDataQuery =
     | 'searchCommunities'
     | 'searchAutocompleteCollections'
     | 'searchArticles'
+    | 'searchArticles'
     | 'searchAutocomplete'
 
 interface IProps {

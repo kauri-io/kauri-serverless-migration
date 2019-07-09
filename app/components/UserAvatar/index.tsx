@@ -77,8 +77,8 @@ const Avatar = styled.div<IAvatarProps>`
 export interface IProps {
     color?: string
     avatar: string | null
-    username: string | null
-    userId: string
+    username?: string | null
+    userId?: string
     imageURL?: string | null
     fullWidth?: boolean
     variant?: 'white'

@@ -6,55 +6,55 @@
 // ====================================================
 
 export interface getUserCollections_searchCollections_content_sections_resources_CommunityDTO {
-  __typename:
-    | "CommunityDTO"
-    | "PublicUserDTO"
-    | "CommentDTO"
-    | "CommunityMemberDTO"
-    | "TemplateDTO"
-    | "CuratedListDTO"
-    | "CollectionDTO"
-    | "SearchResultDTO"
-    | "UserDTO";
+    __typename:
+        | 'CommunityDTO'
+        | 'PublicUserDTO'
+        | 'CommentDTO'
+        | 'CommunityMemberDTO'
+        | 'TemplateDTO'
+        | 'CuratedListDTO'
+        | 'CollectionDTO'
+        | 'SearchResultDTO'
+        | 'UserDTO'
 }
 
 export interface getUserCollections_searchCollections_content_sections_resources_ArticleDTO {
-  __typename: "ArticleDTO";
-  id: string | null;
-  version: number | null;
+    __typename: 'ArticleDTO'
+    id: string | null
+    version: number | null
 }
 
 export type getUserCollections_searchCollections_content_sections_resources =
-  | getUserCollections_searchCollections_content_sections_resources_CommunityDTO
-  | getUserCollections_searchCollections_content_sections_resources_ArticleDTO;
+    | getUserCollections_searchCollections_content_sections_resources_CommunityDTO
+    | getUserCollections_searchCollections_content_sections_resources_ArticleDTO
 
 export interface getUserCollections_searchCollections_content_sections {
-  __typename: "SectionDTO";
-  id: string | null;
-  name: string | null;
-  resources:
-    | (getUserCollections_searchCollections_content_sections_resources | null)[]
-    | null;
+    __typename: 'SectionDTO'
+    id: string | null
+    name: string | null
+    resources:
+        | (getUserCollections_searchCollections_content_sections_resources | null)[]
+        | null
 }
 
 export interface getUserCollections_searchCollections_content {
-  __typename: "CollectionDTO";
-  id: string | null;
-  name: string | null;
-  sections:
-    | (getUserCollections_searchCollections_content_sections | null)[]
-    | null;
+    __typename: 'CollectionDTO'
+    id: string | null
+    name: string | null
+    sections:
+        | (getUserCollections_searchCollections_content_sections | null)[]
+        | null
 }
 
 export interface getUserCollections_searchCollections {
-  __typename: "ResponsePage_CollectionDTO";
-  content: (getUserCollections_searchCollections_content | null)[] | null;
+    __typename: 'ResponsePage_CollectionDTO'
+    content: (getUserCollections_searchCollections_content | null)[] | null
 }
 
 export interface getUserCollections {
-  searchCollections: getUserCollections_searchCollections | null;
+    searchCollections: getUserCollections_searchCollections | null
 }
 
 export interface getUserCollectionsVariables {
-  userId?: string | null;
+    userId?: string | null
 }

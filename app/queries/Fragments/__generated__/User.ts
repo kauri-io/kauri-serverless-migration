@@ -7,7 +7,7 @@
 // ====================================================
 
 export interface User {
-  __typename: "PublicUserDTO";
-  id: string | null;
-  name: string | null;
+    __typename: 'PublicUserDTO'
+    id: string | null
+    name: string | null
 }

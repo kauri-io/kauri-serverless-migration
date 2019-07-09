@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-interface ICloseModalAction {
+export interface ICloseModalAction {
     type: 'CLOSE_MODAL'
 }
 
@@ -8,7 +8,7 @@ interface IOpenModalPayload {
     children: React.ReactElement<any>
 }
 
-interface IOpenModalAction {
+export interface IOpenModalAction {
     type: 'OPEN_MODAL'
     payload: IOpenModalPayload
 }

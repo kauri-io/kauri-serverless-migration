@@ -1,3 +1,46 @@
+// import ApolloClient from 'apollo-client'
+// import {
+//     InMemoryCache,
+//     IntrospectionFragmentMatcher,
+// } from 'apollo-cache-inmemory'
+// import { createHttpLink } from 'apollo-link-http'
+// import fetch from 'isomorphic-unfetch'
+// import introspectionQueryResultData from './fragmentTypes.json'
+// import config from '../config'
+
+// if (!process.browser) {
+//     global.fetch = fetch
+// }
+
+// const fragmentMatcher = new IntrospectionFragmentMatcher({
+//     introspectionQueryResultData,
+// })
+
+// export const create = (token: string) => {
+//     return new ApolloClient({
+//         cache: new InMemoryCache({
+//             fragmentMatcher,
+//         }),
+//         link: createHttpLink({
+//             uri: `http${
+//                 process.env.config === 'development'
+//                     ? 's'
+//                     : global.window
+//                     ? 's'
+//                     : ''
+//             }://${config.gateway}/graphql`,
+//             credentials: 'include',
+//             useGETForQueries: false,
+//             headers: {
+//                 'X-Auth-Token': token ? `Bearer ${token}` : null,
+//             },
+//         }),
+//         ssrMode: true,
+//     })
+// }
+
+// export default (token: string) => create(token)
+
 import fetch from 'isomorphic-unfetch'
 import { ApolloClient } from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'

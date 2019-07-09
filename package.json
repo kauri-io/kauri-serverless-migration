@@ -3,9 +3,5 @@
         "deploy-prod": "now -A prod.now.json --target production",
         "deploy-dev": "now -A now.json --target staging",
         "dev": "now dev"
-    },
-    "devDependencies": {},
-    "dependencies": {
-        "redux-observable": "^1.1.0"
     }
 }

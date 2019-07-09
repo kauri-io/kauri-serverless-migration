@@ -1,8 +1,8 @@
 import { ActionsObservable } from 'redux-observable'
-import { filter, ignoreElements, map } from 'rxjs/operators';
-import { Modal } from "antd";
+import { filter, ignoreElements, map } from 'rxjs/operators'
+import { Modal } from 'antd'
 
-const { confirm } = Modal;
+const { confirm } = Modal
 
 type ButtonType = 'primary' | 'ghost' | 'dashed' | 'danger'
 
@@ -21,9 +21,8 @@ type IShowConfirmationModalPayload = {
     okType?: ButtonType
 }
 
-const showConfirmationModal = (
-payload: IShowConfirmationModalPayload
-) => confirm(payload);
+const showConfirmationModal = (payload: IShowConfirmationModalPayload) =>
+    confirm(payload)
 export const showConfirmationModalAction = (
     payload: IShowConfirmationModalPayload
 ): IShowConfirmationModalAction => ({
@@ -37,6 +36,6 @@ export default (
 ) =>
     action$.pipe(
         filter(action => action.type === SHOW_CONFIRMATION_MODAL),
-        map(({payload}) => showConfirmationModal(payload)),
+        map(({ payload }) => showConfirmationModal(payload)),
         ignoreElements()
     )

@@ -1,211 +1,222 @@
-import { Epic } from "redux-observable";
-import { Observable } from "rxjs";
-import gql from "graphql-tag";
+import { Epic } from 'redux-observable'
+import { Observable } from 'rxjs'
+import gql from 'graphql-tag'
 import {
-  IReduxState,
-  IDependencies,
-  IAction,
-  showNotificationAction,
-  routeChangeAction,
-  Actions,
-} from "../../lib/Module";
+    IReduxState,
+    IDependencies,
+    IAction,
+    showNotificationAction,
+    routeChangeAction,
+    Actions,
+} from '../../lib/Module'
 import {
-  getArticleTitle,
-  getArticleTitleVariables,
-} from "../../containers/Article/__generated__/getArticleTitle";
-import { getArticleTitleQuery } from "../../containers/ArticleDraft/DeleteDraftArticleModule";
-import { addArticleToCollection } from "./__generated__/addArticleToCollection";
-import AlertViewComponent from "../../components/Modal/AlertView";
+    getArticleTitle,
+    getArticleTitleVariables,
+} from '../../containers/Article/__generated__/getArticleTitle'
+import { getArticleTitleQuery } from '../../containers/ArticleDraft/DeleteDraftArticleModule'
+import { addArticleToCollection } from './__generated__/addArticleToCollection'
+import AlertViewComponent from '../../components/Modal/AlertView'
 import {
-  closeModalAction,
-  openModalAction,
-} from "../../components/Modal/Module";
-import {
-  BodyCard,
-  H4,
-} from "../../components/Typography";
-import { getCollectionTitle } from "./__generated__/getCollectionTitle";
-import styled from "styled-components";
-import analytics from "../../lib/analytics";
+    closeModalAction,
+    openModalAction,
+} from '../../components/Modal/Module'
+import { BodyCard, H4 } from '../../components/Typography'
+import { getCollectionTitle } from './__generated__/getCollectionTitle'
+import styled from 'styled-components'
+import analytics from '../../lib/analytics'
 
 export const addArticleToCollectionMutation = gql`
-  mutation addArticleToCollection(
-    $id: String
-    $sectionId: String
-    $resourceId: ResourceIdentifierInput
-    $position: Int
-  ) {
-    addCollectionResource(
-      id: $id
-      sectionId: $sectionId
-      resourceId: $resourceId
-      position: $position
+    mutation addArticleToCollection(
+        $id: String
+        $sectionId: String
+        $resourceId: ResourceIdentifierInput
+        $position: Int
     ) {
-      hash
+        addCollectionResource(
+            id: $id
+            sectionId: $sectionId
+            resourceId: $resourceId
+            position: $position
+        ) {
+            hash
+        }
     }
-  }
-`;
+`
 
 export const getCollectionTitleQuery = gql`
-  query getCollectionTitle($id: String) {
-    getCollection(id: $id) {
-      name
+    query getCollectionTitle($id: String) {
+        getCollection(id: $id) {
+            name
+        }
     }
-  }
-`;
+`
 
 export interface IAddArticleToCollectionPayload {
-  id: string;
-  sectionId: string;
-  resourceId: {
-    id: string;
-    version: number;
-    type: "ARTICLE";
-  };
-  position: number;
+    id: string
+    sectionId: string
+    resourceId: {
+        id: string
+        version: number
+        type: 'ARTICLE'
+    }
+    position: number
 }
 
 export interface IAddArticleToCollectionAction extends IAction {
-  callback: () => void;
-  payload: IAddArticleToCollectionPayload;
-  type: "ADD_ARTICLE_TO_COLLECTION";
+    callback: () => void
+    payload: IAddArticleToCollectionPayload
+    type: 'ADD_ARTICLE_TO_COLLECTION'
 }
 
-const ADD_ARTICLE_TO_COLLECTION = "ADD_ARTICLE_TO_COLLECTION";
+const ADD_ARTICLE_TO_COLLECTION = 'ADD_ARTICLE_TO_COLLECTION'
 
 export const addArticleToCollectionAction = (
-  payload: IAddArticleToCollectionPayload,
-  callback: () => void
+    payload: IAddArticleToCollectionPayload,
+    callback: () => void
 ): IAddArticleToCollectionAction => ({
-  callback,
-  payload,
-  type: ADD_ARTICLE_TO_COLLECTION,
-});
+    callback,
+    payload,
+    type: ADD_ARTICLE_TO_COLLECTION,
+})
 
 interface IAddArticleToCollectionCommandOutput {
-  id: string;
-  version: number;
+    id: string
+    version: number
 }
 
 const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-  min-height: 130px;
-  align-items: center;
-  > :first-child {
-    margin-right: 3px;
-  }
-`;
+    display: flex;
+    flex-direction: row;
+    min-height: 130px;
+    align-items: center;
+    > :first-child {
+        margin-right: 3px;
+    }
+`
 
 export const addArticleToCollectionEpic: Epic<
-  Actions,
-  IReduxState,
-  IDependencies
+    Actions,
+    IReduxState,
+    IDependencies
 > = (action$, store, { apolloClient, apolloSubscriber }) =>
-  action$.ofType(ADD_ARTICLE_TO_COLLECTION).switchMap(actions =>
-    Observable.fromPromise(
-      apolloClient.mutate<addArticleToCollection>({
-        mutation: addArticleToCollectionMutation,
-        variables: (actions as IAddArticleToCollectionAction).payload,
-      })
-    )
-      .mergeMap(({ data: { addCollectionResource } }) =>
-        apolloSubscriber(addCollectionResource)
-      )
-      .mergeMap(() =>
-        apolloClient.query<getArticleTitle>({
-          query: getArticleTitleQuery,
-          variables: {
-            id: (actions as IAddArticleToCollectionAction).payload.resourceId
-              .id,
-            version: (actions as IAddArticleToCollectionAction).payload
-              .resourceId.version,
-          },
-        })
-      )
-      .map(
-        ({ data: { getArticle } }) => getArticle.title
-      )
-      .do(() => typeof actions.callback === "function" && actions.callback())
-      .do(() => {
-        analytics.track("Add To Collection", {
-          category: "collection_actions",
-          resourceId: "4e1a8de4dece4736bd0b9c33b9225c92",
-          resourceType: actions.payload.resourceId.type,
-        });
-      })
-      .switchMap(title =>
+    action$.ofType(ADD_ARTICLE_TO_COLLECTION).switchMap(actions =>
         Observable.fromPromise(
-          apolloClient.query<getCollectionTitle, getArticleTitleVariables>({
-            query: getCollectionTitleQuery,
-            variables: {
-              id: (actions as IAddArticleToCollectionAction).payload.id,
-            },
-          })
+            apolloClient.mutate<addArticleToCollection>({
+                mutation: addArticleToCollectionMutation,
+                variables: (actions as IAddArticleToCollectionAction).payload,
+            })
         )
-          .mergeMap(({ data: { getCollection } }) =>
-            Observable.merge(
-              Observable.of(
-                (showNotificationAction as any)({
-                  description: `The article "${title}" has been added to your collection!`,
-                  message: "Article added to collection",
-                  notificationType: "success",
-                })
-              ),
-              Observable.of(
-                openModalAction({
-                  children: (
-                    <AlertViewComponent
-                      title="Add to Collection"
-                      content={
-                        <Row>
-                          <BodyCard>Article successfully added to</BodyCard>
-                          <H4>{` ${getCollection &&
-                            getCollection.name} Collection`}</H4>
-                        </Row>
-                      }
-                      closeModalAction={() =>
-                        store.dispatch(closeModalAction())
-                      }
-                      confirmButtonText={"View Collection"}
-                      closeButtonText={"Close"}
-                      confirmButtonAction={() => {
-                        store.dispatch(closeModalAction());
-                        store.dispatch(
-                          routeChangeAction(
-                            `/collection/${
-                              (actions as IAddArticleToCollectionAction).payload
-                                .id
-                            }/update-collection`
-                          )
-                        );
-                      }}
-                    />
-                  ),
-                })
-              )
+            .mergeMap(({ data: { addCollectionResource } }) =>
+                apolloSubscriber(addCollectionResource)
             )
-          )
-          .do(() => apolloClient.resetStore())
-          .catch(err => {
-            console.error(err);
-            return Observable.of(
-              showNotificationAction({
-                description: "Please try again",
-                message: "Submission error",
-                notificationType: "error",
-              })
-            );
-          })
-      )
-      .catch(err => {
-        console.error(err);
-        return Observable.of(
-          showNotificationAction({
-            description: "Please try again",
-            message: "Submission error",
-            notificationType: "error",
-          })
-        );
-      })
-  );
+            .mergeMap(() =>
+                apolloClient.query<getArticleTitle>({
+                    query: getArticleTitleQuery,
+                    variables: {
+                        id: (actions as IAddArticleToCollectionAction).payload
+                            .resourceId.id,
+                        version: (actions as IAddArticleToCollectionAction)
+                            .payload.resourceId.version,
+                    },
+                })
+            )
+            .map(({ data: { getArticle } }) => getArticle.title)
+            .do(
+                () =>
+                    typeof actions.callback === 'function' && actions.callback()
+            )
+            .do(() => {
+                analytics.track('Add To Collection', {
+                    category: 'collection_actions',
+                    resourceId: '4e1a8de4dece4736bd0b9c33b9225c92',
+                    resourceType: actions.payload.resourceId.type,
+                })
+            })
+            .switchMap(title =>
+                Observable.fromPromise(
+                    apolloClient.query<
+                        getCollectionTitle,
+                        getArticleTitleVariables
+                    >({
+                        query: getCollectionTitleQuery,
+                        variables: {
+                            id: (actions as IAddArticleToCollectionAction)
+                                .payload.id,
+                        },
+                    })
+                )
+                    .mergeMap(({ data: { getCollection } }) =>
+                        Observable.merge(
+                            Observable.of(
+                                (showNotificationAction as any)({
+                                    description: `The article "${title}" has been added to your collection!`,
+                                    message: 'Article added to collection',
+                                    notificationType: 'success',
+                                })
+                            ),
+                            Observable.of(
+                                openModalAction({
+                                    children: (
+                                        <AlertViewComponent
+                                            title="Add to Collection"
+                                            content={
+                                                <Row>
+                                                    <BodyCard>
+                                                        Article successfully
+                                                        added to
+                                                    </BodyCard>
+                                                    <H4>{` ${getCollection &&
+                                                        getCollection.name} Collection`}</H4>
+                                                </Row>
+                                            }
+                                            closeModalAction={() =>
+                                                store.dispatch(
+                                                    closeModalAction()
+                                                )
+                                            }
+                                            confirmButtonText={
+                                                'View Collection'
+                                            }
+                                            closeButtonText={'Close'}
+                                            confirmButtonAction={() => {
+                                                store.dispatch(
+                                                    closeModalAction()
+                                                )
+                                                store.dispatch(
+                                                    routeChangeAction(
+                                                        `/collection/${
+                                                            (actions as IAddArticleToCollectionAction)
+                                                                .payload.id
+                                                        }/update-collection`
+                                                    )
+                                                )
+                                            }}
+                                        />
+                                    ),
+                                })
+                            )
+                        )
+                    )
+                    .do(() => apolloClient.resetStore())
+                    .catch(err => {
+                        console.error(err)
+                        return Observable.of(
+                            showNotificationAction({
+                                description: 'Please try again',
+                                message: 'Submission error',
+                                notificationType: 'error',
+                            })
+                        )
+                    })
+            )
+            .catch(err => {
+                console.error(err)
+                return Observable.of(
+                    showNotificationAction({
+                        description: 'Please try again',
+                        message: 'Submission error',
+                        notificationType: 'error',
+                    })
+                )
+            })
+    )

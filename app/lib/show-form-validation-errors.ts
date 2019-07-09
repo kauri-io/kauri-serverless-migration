@@ -1,5 +1,5 @@
-import R from 'ramda'
-import { showNotificationAction } from './Module'
+import { tail, compose, toUpper, head } from 'ramda'
+import { showNotificationAction } from './Epics/ShowNotificationEpic'
 
 type ValidateOnSubmit = (
     validateForm: any,
@@ -12,11 +12,11 @@ const validateOnSubmit: ValidateOnSubmit = (
     callback
 ) =>
     validateForm().then((errors: { [errKey: string]: string | unknown }) => {
-        const capitalize = (s: string) =>
-            R.compose(
-                R.toUpper,
-                R.head
-            )(s) + R.tail(s)
+        const capitalize = (str: string) =>
+            compose(
+                toUpper,
+                head
+            )(str) + tail(s)
 
         if (Object.keys(errors).length > 0) {
             return Object.keys(errors).map((errKey, i) => {

@@ -1,20 +1,20 @@
-import * as React from "react";
-import styled from "styled-components";
-import TabsComponent from "../../components/Tabs";
-import Manage from "../Community/Manage";
-import { IInvitation } from "./ManageMembers/FormInviteMembersPanel";
-import { getCommunity } from "../../queries/__generated__/getCommunity";
-import HomeContentSectionEmptyState from "./ContentSectionEmptyStates/HomeContentSectionEmptyState";
-import ArticlesContentSectionEmptyState from "./ContentSectionEmptyStates/ArticlesContentSectionEmptyState";
-import CollectionsContentSectionEmptyState from "./ContentSectionEmptyStates/CollectionsContentSectionEmptyState";
-import { IFormValues } from "./index";
-import HomepageContentField from "./HomepageTab/HomepageContentField";
+import * as React from 'react'
+import styled from 'styled-components'
+import TabsComponent from '../../components/Tabs'
+import Manage from '../Community/Manage'
+import { IInvitation } from './ManageMembers/FormInviteMembersPanel'
+import { getCommunity } from '../../queries/__generated__/getCommunity'
+import HomeContentSectionEmptyState from './ContentSectionEmptyStates/HomeContentSectionEmptyState'
+import ArticlesContentSectionEmptyState from './ContentSectionEmptyStates/ArticlesContentSectionEmptyState'
+import CollectionsContentSectionEmptyState from './ContentSectionEmptyStates/CollectionsContentSectionEmptyState'
+import { IFormValues } from './index'
+import HomepageContentField from './HomepageTab/HomepageContentField'
 import {
-  openModalAction,
-  closeModalAction,
-} from "../../components/Modal/Module";
+    openModalAction,
+    closeModalAction,
+} from '../../components/Modal/Module'
 
-const Container = styled.section``;
+const Container = styled.section``
 
 // const DisplayFormikState = (props: any) => (
 //   <div style={{ margin: "1rem 0", background: "#f6f8fa", padding: ".5rem" }}>
@@ -31,80 +31,80 @@ const Container = styled.section``;
 //   </div>
 // );
 interface IProps {
-  openAddMemberModal: () => void;
-  id: string | null;
-  cancelInvitation: (payload: { index: number }) => void;
-  formInvitations: IInvitation[] | null | undefined;
-  data: getCommunity | null;
-  isCommunityAdmin: boolean;
-  setFieldValue: (field: string, value: any) => void;
-  values: IFormValues;
-  openModalAction: typeof openModalAction;
-  closeModalAction: typeof closeModalAction;
+    openAddMemberModal: () => void
+    id: string | null
+    cancelInvitation: (payload: { index: number }) => void
+    formInvitations: IInvitation[] | null | undefined
+    data: getCommunity | null
+    isCommunityAdmin: boolean
+    setFieldValue: (field: string, value: any) => void
+    values: IFormValues
+    openModalAction: typeof openModalAction
+    closeModalAction: typeof closeModalAction
 }
 
 const Component: React.SFC<IProps> = props => (
-  <Container>
-    <TabsComponent
-      padContent={true}
-      dark={true}
-      tabs={[
-        {
-          name: "Home",
-        },
-        {
-          name: "Articles",
-        },
-        {
-          name: "Collections",
-        },
-        {
-          name: "Manage",
-        },
-        // process.env.NODE_ENV !== "production" && {
-        //   name: "DEBUG",
-        // },
-      ]}
-      panels={[
-        props.isCommunityAdmin ? (
-          <HomepageContentField
-            id={String(props.id)}
-            openModalAction={props.openModalAction}
-            closeModalAction={props.closeModalAction}
-            values={props.values}
-          />
-        ) : (
-          <HomeContentSectionEmptyState key="home" />
-        ),
-        <ArticlesContentSectionEmptyState key="articles" />,
-        <CollectionsContentSectionEmptyState key="collections" />,
-        <Manage
-          pageType={"CreateCommunityForm"}
-          openAddMemberModal={props.openAddMemberModal}
-          members={
-            (props.data &&
-              props.data.getCommunity &&
-              props.data.getCommunity.members) ||
-            null
-          }
-          pending={null}
-          pendingUpdates={null}
-          communityId={props.id}
-          key="manage"
-          formInvitations={props.formInvitations}
-          cancelInvitation={props.cancelInvitation}
-        />,
-        // <ContentSection key="collections">
-        //   <DisplayFormikState
-        //     touched={props.touched}
-        //     errors={props.errors}
-        //     values={props.values}
-        //     isSubmitting={props.isSubmitting}
-        //   />
-        // </ContentSection>,
-      ]}
-    />
-  </Container>
-);
+    <Container>
+        <TabsComponent
+            padContent={true}
+            dark={true}
+            tabs={[
+                {
+                    name: 'Home',
+                },
+                {
+                    name: 'Articles',
+                },
+                {
+                    name: 'Collections',
+                },
+                {
+                    name: 'Manage',
+                },
+                // process.env.NODE_ENV !== "production" && {
+                //   name: "DEBUG",
+                // },
+            ]}
+            panels={[
+                props.isCommunityAdmin ? (
+                    <HomepageContentField
+                        id={String(props.id)}
+                        openModalAction={props.openModalAction}
+                        closeModalAction={props.closeModalAction}
+                        values={props.values}
+                    />
+                ) : (
+                    <HomeContentSectionEmptyState key="home" />
+                ),
+                <ArticlesContentSectionEmptyState key="articles" />,
+                <CollectionsContentSectionEmptyState key="collections" />,
+                <Manage
+                    pageType={'CreateCommunityForm'}
+                    openAddMemberModal={props.openAddMemberModal}
+                    members={
+                        (props.data &&
+                            props.data.getCommunity &&
+                            props.data.getCommunity.members) ||
+                        null
+                    }
+                    pending={null}
+                    pendingUpdates={null}
+                    communityId={props.id}
+                    key="manage"
+                    formInvitations={props.formInvitations}
+                    cancelInvitation={props.cancelInvitation}
+                />,
+                // <ContentSection key="collections">
+                //   <DisplayFormikState
+                //     touched={props.touched}
+                //     errors={props.errors}
+                //     values={props.values}
+                //     isSubmitting={props.isSubmitting}
+                //   />
+                // </ContentSection>,
+            ]}
+        />
+    </Container>
+)
 
-export default Component;
+export default Component

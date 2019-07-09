@@ -1,4 +1,3 @@
-// @flow
 import React, { Fragment } from "react";
 import styled from "styled-components";
 import ArticleCard from "../../../../../kauri-components/components/Card/ArticleCard";

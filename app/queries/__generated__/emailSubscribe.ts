@@ -7,15 +7,15 @@
 // ====================================================
 
 export interface emailSubscribe_subscribe {
-  __typename: "MutationResponse";
-  hash: string | null;
+    __typename: 'MutationResponse'
+    hash: string | null
 }
 
 export interface emailSubscribe {
-  subscribe: emailSubscribe_subscribe | null;
+    subscribe: emailSubscribe_subscribe | null
 }
 
 export interface emailSubscribeVariables {
-  emailAddress?: string | null;
-  subscriptions?: any | null;
+    emailAddress?: string | null
+    subscriptions?: any | null
 }

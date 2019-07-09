@@ -7,16 +7,16 @@
 // ====================================================
 
 export interface approveArticle_approveArticle {
-  __typename: "MutationResponse";
-  hash: string | null;
+    __typename: 'MutationResponse'
+    hash: string | null
 }
 
 export interface approveArticle {
-  approveArticle: approveArticle_approveArticle | null;
+    approveArticle: approveArticle_approveArticle | null
 }
 
 export interface approveArticleVariables {
-  id?: string | null;
-  version?: number | null;
-  signature?: string | null;
+    id?: string | null
+    version?: number | null
+    signature?: string | null
 }

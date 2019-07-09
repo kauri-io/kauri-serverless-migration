@@ -1192,6 +1192,11 @@
     "@types/uglify-js" "*"
     source-map "^0.6.0"
 
+"@types/yup@^0.26.21":
+  version "0.26.21"
+  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.26.21.tgz#bfca27a02a0631495bfd25b6c63647a125e6944e"
+  integrity sha512-1C45M7hZrVsl8bXxYV01bitRp0r35djt+eX5HWFH3NdH+8ejqta3KM7rmQLRLrupkhF7jRkAtXl2EgDsriIqwA==
+
 "@types/zen-observable@^0.8.0":
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/@types/zen-observable/-/zen-observable-0.8.0.tgz#8b63ab7f1aa5321248aad5ac890a485656dcea4d"
@@ -1447,6 +1452,11 @@ amphtml-validator@1.0.23:
     colors "1.1.2"
     commander "2.9.0"
     promise "7.1.1"
+
+anchorme@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/anchorme/-/anchorme-1.1.2.tgz#86112384219e530a531e5b380f16b2fe54ada08a"
+  integrity sha1-hhEjhCGeUwpTHls4Dxay/lStoIo=
 
 ansi-colors@^3.0.0:
   version "3.2.4"

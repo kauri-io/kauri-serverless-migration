@@ -1,8 +1,8 @@
-import Router from 'next/router'
+// import Router from 'next/router'
 import { ActionsObservable } from 'redux-observable'
-import { filter, ignoreElements, map } from 'rxjs/operators';
+import { filter, ignoreElements, map } from 'rxjs/operators'
 
-export const ROUTE_CHANGE: string = "ROUTE_CHANGE";
+export const ROUTE_CHANGE: string = 'ROUTE_CHANGE'
 type IRouteChangePayload = string
 
 interface IRouteChangeAction {
@@ -23,10 +23,10 @@ export const routeChange = (payload: IRouteChangePayload): any => {
 
 export const routeChangeAction = (
     payload: IRouteChangePayload
-  ): IRouteChangeAction => ({
+): IRouteChangeAction => ({
     type: ROUTE_CHANGE,
     payload,
-  });
+})
 
 export default (action$: ActionsObservable<IRouteChangeAction>) =>
     action$.pipe(

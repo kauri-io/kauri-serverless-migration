@@ -3,10 +3,10 @@ const Uppy = require('uppy/lib/core')
 const Url = require('uppy/lib/plugins/Url')
 const Dashboard = require('uppy/lib/plugins/Dashboard')
 const XHRUpload = require('uppy/lib/plugins/XHRUpload')
-const request = require('superagent')
+import request from 'superagent'
 import config from '../config'
 
-export function parseCookies(ctx = {}, options = {}) {
+export function parseCookies(ctx, options) {
     let cookieToParse =
         ctx.req && ctx.req.headers.cookie && ctx.req.headers.cookie
     if (global.window) cookieToParse = window.document.cookie
@@ -63,7 +63,7 @@ class myXHR extends XHRUpload {
                 })
             }
 
-            xhr.upload.addEventListener('loadstart', ev => {
+            xhr.upload.addEventListener('loadstart', () => {
                 this.uppy.log('[XHRUpload] started uploading bundle')
                 timer.progress()
             })
@@ -84,8 +84,12 @@ class myXHR extends XHRUpload {
 
             xhr.addEventListener('load', ev => {
                 timer.done()
-
-                if (ev.target.status >= 200 && ev.target.status < 300) {
+                if (
+                    ev &&
+                    ev.target &&
+                    ev.target.status >= 200 &&
+                    ev.target.status < 300
+                ) {
                     const resp = this.opts.getResponseData(
                         xhr.responseText,
                         xhr
@@ -104,9 +108,8 @@ class myXHR extends XHRUpload {
                 return reject(error)
             })
 
-            xhr.addEventListener('error', ev => {
+            xhr.addEventListener('error', () => {
                 timer.done()
-
                 const error =
                     this.opts.getResponseError(xhr.responseText, xhr) ||
                     new Error('Upload error')
@@ -126,7 +129,7 @@ class myXHR extends XHRUpload {
 
             xhr.send(formData)
 
-            files.forEach(file => {
+            files.forEach((file: Blob) => {
                 this.uppy.emit('upload-started', file)
             })
         })
@@ -134,11 +137,7 @@ class myXHR extends XHRUpload {
 }
 
 const initUppy = options => {
-    const uppyConfig =
-        options && options.allowGifs === false
-            ? config.uppyConfig.restrictions.allowedFileTypes.pop()
-            : config.uppyConfig
-    const parsedToken = parseCookies({})['TOKEN']
+    const parsedToken = parseCookies({}, {})['TOKEN']
     const uppy = Uppy(config.uppyConfig)
         .use(Dashboard, {
             closeModalOnClickOutside: true,
@@ -168,7 +167,7 @@ const initUppy = options => {
         })
         .use(myXHR, {
             limit: 1,
-            endpoint: `https://${config.getApiURL()}:443/ipfs/`,
+            endpoint: `https://${config.gateway}:443/ipfs/`,
             method: 'post',
             formData: true,
             headers: {

@@ -7,8 +7,8 @@
 // ====================================================
 
 export interface UserFragment {
-  __typename: "PublicUserDTO";
-  id: string | null;
-  username: string | null;
-  avatar: string | null;
+    __typename: 'PublicUserDTO'
+    id: string | null
+    username: string | null
+    avatar: string | null
 }

@@ -7,16 +7,16 @@
 // ====================================================
 
 export interface rejectArticle_rejectArticle {
-  __typename: "MutationResponse";
-  hash: string | null;
+    __typename: 'MutationResponse'
+    hash: string | null
 }
 
 export interface rejectArticle {
-  rejectArticle: rejectArticle_rejectArticle | null;
+    rejectArticle: rejectArticle_rejectArticle | null
 }
 
 export interface rejectArticleVariables {
-  id?: string | null;
-  version?: number | null;
-  cause?: string | null;
+    id?: string | null
+    version?: number | null
+    cause?: string | null
 }

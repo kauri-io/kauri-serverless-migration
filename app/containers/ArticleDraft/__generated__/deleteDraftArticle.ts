@@ -7,15 +7,15 @@
 // ====================================================
 
 export interface deleteDraftArticle_cancelArticle {
-  __typename: "MutationResponse";
-  hash: string | null;
+    __typename: 'MutationResponse'
+    hash: string | null
 }
 
 export interface deleteDraftArticle {
-  cancelArticle: deleteDraftArticle_cancelArticle | null;
+    cancelArticle: deleteDraftArticle_cancelArticle | null
 }
 
 export interface deleteDraftArticleVariables {
-  id?: string | null;
-  version?: number | null;
+    id?: string | null
+    version?: number | null
 }

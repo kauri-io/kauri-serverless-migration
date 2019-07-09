@@ -1,2 +1,5 @@
 node_modules/**
 static/**
+.next
+yarn.lock
+__generated__

@@ -7,20 +7,20 @@
 // ====================================================
 
 export interface getUser_getUser {
-  __typename: "PublicUserDTO";
-  id: string | null;
-  username: string | null;
-  name: string | null;
-  title: string | null;
-  website: string | null;
-  avatar: string | null;
-  social: any | null;
+    __typename: 'PublicUserDTO'
+    id: string | null
+    username: string | null
+    name: string | null
+    title: string | null
+    website: string | null
+    avatar: string | null
+    social: any | null
 }
 
 export interface getUser {
-  getUser: getUser_getUser | null;
+    getUser: getUser_getUser | null
 }
 
 export interface getUserVariables {
-  userId?: string | null;
+    userId?: string | null
 }
