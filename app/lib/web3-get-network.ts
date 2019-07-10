@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs'
-import {showNotificationAction} from './Epics/ShowNotificationEpic'
+import { showNotificationAction } from './Epics/ShowNotificationEpic'
 
 const networkNames = {
     1: 'Main',

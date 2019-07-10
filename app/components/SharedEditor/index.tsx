@@ -54,8 +54,8 @@ interface IProps {
         draftEditorState: EditorState
         markdown: string
     }
-    setFieldsValue: any;
-    getFieldsValue: any;
+    setFieldsValue: any
+    getFieldsValue: any
     readOnly: boolean
     handleChange: (mdeState: MdeState) => void
 }

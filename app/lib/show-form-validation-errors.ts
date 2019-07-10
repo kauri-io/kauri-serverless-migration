@@ -12,9 +12,9 @@ const validateOnSubmit: ValidateOnSubmit = (
 ) =>
     validateForm().then((errors: { [errKey: string]: string | unknown }) => {
         const capitalize = (str: string) => {
-            const cap = str.toLowerCase();
-            cap.charAt(0).toUpperCase();
-            return cap;
+            const cap = str.toLowerCase()
+            cap.charAt(0).toUpperCase()
+            return cap
         }
 
         if (Object.keys(errors).length > 0) {
