@@ -8,6 +8,8 @@ declare namespace NodeJS {
         smartContracts: any
         __REDUX_DEVTOOLS_EXTENSION__: any
         encodeURI: any
+        setFieldsValue: any;
+        getFieldsValue: any;
     }
     interface Global {
         document: Document

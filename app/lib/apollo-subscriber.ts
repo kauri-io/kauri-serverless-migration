@@ -17,7 +17,7 @@ export const apolloChildHashesSubscriber = childHashes =>
             )
     )
 
-export default (hash, filterName) => {
+export default (hash: string, filterName) => {
     // let count = 0;
     return new Promise((resolve, reject) =>
         filterName

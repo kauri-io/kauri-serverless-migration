@@ -53,8 +53,10 @@ interface IProps {
     editorState: {
         draftEditorState: EditorState
         markdown: string
-        readOnly: boolean
     }
+    setFieldsValue: any;
+    getFieldsValue: any;
+    readOnly: boolean
     handleChange: (mdeState: MdeState) => void
 }
 
@@ -79,7 +81,7 @@ export class SharedEditor extends React.Component<IProps> {
     componentDidUpdate() {
         if (document.querySelector('.mde-preview')) {
             map(block => hljs.highlightBlock(block))(
-                document.querySelectorAll('pre code')
+                Array.from(document.querySelectorAll('pre code'))
             )
         }
     }
@@ -110,8 +112,8 @@ export class SharedEditor extends React.Component<IProps> {
         if (process.env.NODE_ENV !== 'development') {
             window.addEventListener('beforeunload', this.handleCloseBrowserTab)
         }
-        window.setFieldsValue = this.props.setFieldsValue
-        window.getFieldsValue = this.props.getFieldsValue
+        global.window.setFieldsValue = this.props.setFieldsValue
+        global.window.getFieldsValue = this.props.getFieldsValue
     }
 
     componentWillUnmount() {

@@ -110,7 +110,7 @@ interface IProps {
 }
 
 const PrimarySearchAppBar = ({ user }: IProps) => {
-    const classes = useStyles()
+    const classes = useStyles({})
     const [anchorEl, setAnchorEl] = React.useState<
         HTMLLIElement | HTMLButtonElement | null
     >(null)

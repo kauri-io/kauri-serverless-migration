@@ -33,16 +33,14 @@ const AdvancedSettingsButtonContent = connect(
                 props.openModalAction({
                     children: (
                         <AdvancedSettingsModal
-                            showNotificationAction={
-                                props.showNotificationAction
-                            }
+                            showNotificationAction={props.showNotificationAction}
                             confirmModal={origin_url => {
-                                window.setFieldsValue({
+                                global.window.setFieldsValue({
                                     attributes: {
-                                        ...(window.getFieldsValue([
+                                        ...(global.window.getFieldsValue([
                                             'attributes',
                                         ]) &&
-                                            window.getFieldsValue([
+                                            global.window.getFieldsValue([
                                                 'attributes',
                                             ]).attributes),
                                         origin_url,

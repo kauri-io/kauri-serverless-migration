@@ -53,7 +53,7 @@ export default ({
     href,
     className,
 }: IProps) => {
-    const classes = ArticleCardStyles()
+    const classes = ArticleCardStyles({})
     return (
         <Card className={`${classes.card} ${className ? className : ''}`}>
             <Link

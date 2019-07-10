@@ -47,7 +47,7 @@ const VoteWidget = ({
     loginFirstToVote,
     isLoggedIn,
 }: IProps) => {
-    const classes = VoteWidgetStyles()
+    const classes = VoteWidgetStyles({})
     return (
         <>
             <div
