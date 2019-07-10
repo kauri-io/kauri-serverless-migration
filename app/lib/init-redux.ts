@@ -33,9 +33,11 @@ function create(apollo: any, initialState = {}) {
         ...rootReducer,
     })
 
-    const middleware = createEpicMiddleware({ dependencies })
+    const middleware = createEpicMiddleware<any, any, any, any>({
+        dependencies,
+    })
 
-    const store = createStore(
+    const store = createStore<any, any, any, any>(
         combinedReducers,
         initialState, // Hydrate the store with server-side data
         compose(

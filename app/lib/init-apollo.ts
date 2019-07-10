@@ -43,8 +43,8 @@
 
 import fetch from 'isomorphic-unfetch'
 import { ApolloClient } from 'apollo-client'
-import { HttpLink } from 'apollo-link-http'
-import { ApolloLink, split } from 'apollo-link'
+import { createHttpLink } from 'apollo-link-http'
+import { split } from 'apollo-link'
 import { WebSocketLink } from 'apollo-link-ws'
 import {
     InMemoryCache,
@@ -55,8 +55,6 @@ import { getMainDefinition } from 'apollo-utilities'
 import config from '../config'
 
 import introspectionQueryResultData from './fragmentTypes.json'
-
-let apolloClient = null
 
 // Polyfill fetch() on the server (used by apollo-client)
 if (!global.window) {
@@ -69,28 +67,30 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 
 export function create(initialState, { getToken }) {
     const apiURL = config.gateway
-    let httpLink = new HttpLink({
+    // let httpLink = new HttpLink({
+    //     uri: `http${
+    //         process.env.config === 'development'
+    //             ? 's'
+    //             : global.window
+    //             ? 's'
+    //             : ''
+    //     }://${apiURL}/graphql`,
+    // })
+    const token = getToken()
+    let httpLink = createHttpLink({
         uri: `http${
             process.env.config === 'development'
                 ? 's'
                 : global.window
                 ? 's'
                 : ''
-        }://${apiURL}/graphql`,
+        }://${config.gateway}/graphql`,
+        credentials: 'include',
+        useGETForQueries: false,
+        headers: {
+            'X-Auth-Token': token ? `Bearer ${token}` : null,
+        },
     })
-    const token = getToken()
-    // console.log(token);
-    // console.log(apiURL);
-    const authMiddlewareLink = new ApolloLink((operation, next) => {
-        operation.setContext({
-            headers: {
-                'X-Auth-Token': token ? `Bearer ${token}` : null,
-            },
-        })
-        return next ? next(operation) : null
-    })
-
-    httpLink = authMiddlewareLink.concat(httpLink)
 
     let link = httpLink
 
@@ -109,10 +109,10 @@ export function create(initialState, { getToken }) {
         link = split(
             // split based on operation type
             ({ query }) => {
-                const { kind, operation } = getMainDefinition(query)
+                const def = getMainDefinition(query)
                 return (
-                    kind === 'OperationDefinition' &&
-                    operation === 'subscription'
+                    def.kind === 'OperationDefinition' &&
+                    def.operation === 'subscription'
                 )
             },
             wsLink,
@@ -125,7 +125,7 @@ export function create(initialState, { getToken }) {
         dataIdFromObject: object => {
             switch (object.__typename) {
                 case 'ArticleDTO':
-                    return object.id + object.version // use `key` as the primary key
+                    return object.id // + object.version // use `key` as the primary key
                 default:
                     return defaultDataIdFromObject(object)
             }
@@ -133,25 +133,15 @@ export function create(initialState, { getToken }) {
     })
 
     return new ApolloClient({
-        initialState,
+        // initialState,
         connectToDevTools: true,
-        ssrMode: !global.window, // Disables forceFetch on the server (so queries are only run once)
+        // ssrMode: !global.window, // Disables forceFetch on the server (so queries are only run once)
+        ssrMode: true,
         cache: cache.restore(initialState || {}),
         link,
     })
 }
 
 export default function initApollo(initialState, options) {
-    // Make sure to create a new client for every server-side request so that data
-    // isn't shared between connections (which would be bad)
-    if (!global.window) {
-        return create(initialState, options)
-    }
-
-    // Reuse client on the client-side
-    if (!apolloClient) {
-        apolloClient = create(initialState, options)
-    }
-
-    return apolloClient
+    return create(initialState, options)
 }

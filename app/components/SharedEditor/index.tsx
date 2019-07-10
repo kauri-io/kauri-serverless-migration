@@ -133,11 +133,11 @@ export class SharedEditor extends React.Component<IProps> {
                 </Head>
                 <ReactMde
                     commands={this.commands}
-                    editorKey="foobaz"
+                    // editorKey="foobaz"
                     layout="tabbed"
                     placeholder={'Write markdown content here!'}
                     readOnly={readOnly}
-                    spellCheck
+                    // spellCheck={true}
                     stickyToolbar
                     onChange={handleChange}
                     editorState={editorState}

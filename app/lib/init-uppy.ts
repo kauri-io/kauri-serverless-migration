@@ -82,7 +82,7 @@ class myXHR extends XHRUpload {
                 })
             })
 
-            xhr.addEventListener('load', ev => {
+            xhr.addEventListener('load', (ev: any) => {
                 timer.done()
                 if (
                     ev &&

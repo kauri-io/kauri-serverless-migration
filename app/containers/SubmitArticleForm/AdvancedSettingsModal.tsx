@@ -5,7 +5,10 @@ import PrimaryButton from '../../components/Button/PrimaryButton'
 import TertiaryButton from '../../components/Button/TertiaryButton'
 import ModalHeader from '../../components/Headers/ModalHeader'
 import Input from '../../components/Input/Input'
-import { IShowNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
+import {
+    IShowNotificationAction,
+    IShowNotificationPayload,
+} from '../../lib/Epics/ShowNotificationEpic'
 
 const TitleContainer = styled.div`
     display: flex;
@@ -76,7 +79,9 @@ const ContentContainer = styled.section`
 interface IProps {
     closeModalAction: () => void
     confirmModal: (canonicalURL: string) => void
-    showNotificationAction: IShowNotificationAction
+    showNotificationAction: (
+        payload: IShowNotificationPayload
+    ) => IShowNotificationAction
 }
 
 interface IState {

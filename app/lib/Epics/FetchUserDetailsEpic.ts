@@ -43,7 +43,7 @@ export const setUserDetailsAction = (
 
 export default (
     action$: ActionsObservable<IFetchUserDetailsAction>,
-    {},
+    _: any,
     { apolloClient }: IDependencies
 ) =>
     action$.pipe(

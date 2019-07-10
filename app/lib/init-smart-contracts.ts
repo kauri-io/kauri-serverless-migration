@@ -1,6 +1,6 @@
-import Observable from 'rxjs/Observable'
 import contract from 'truffle-contract'
 import superagent from 'superagent'
+import { of, forkJoin, from } from 'rxjs'
 const request = superagent.agent()
 const config = require('../config').default
 
@@ -15,7 +15,7 @@ export const initSmartContracts = (web3: Web3Props, cb: any) => {
         const smartContractNames = ['KauriCore', 'Wallet', 'Community']
         const smartContractFetchObservables = smartContractNames.map(
             smartContractName =>
-                Observable.fromPromise(
+                from(
                     request
                         .get(
                             `https://${config.gateway}/smartcontract/${smartContractName}/all`
@@ -25,7 +25,7 @@ export const initSmartContracts = (web3: Web3Props, cb: any) => {
         )
         const smartContracts = {}
 
-        Observable.forkJoin(smartContractFetchObservables)
+        forkJoin(smartContractFetchObservables)
             .map(abiJSONs =>
                 smartContractNames.map(smartContractName => {
                     const fetchedSmartContract = abiJSONs.find(
@@ -39,11 +39,11 @@ export const initSmartContracts = (web3: Web3Props, cb: any) => {
                 })
             )
             .mergeMap(smartContractsToDeploy =>
-                Observable.of(...smartContractsToDeploy.map(sc => sc))
+                of(...smartContractsToDeploy.map(sc => sc))
             )
             .combineAll()
             .map(arrayOfSmartContractsToDeploy => {
-                smartContractNames.map((smartContractName, index) => {
+                smartContractNames.map((_, index) => {
                     smartContracts[smartContractNames[index]] =
                         arrayOfSmartContractsToDeploy[index]
                 })
@@ -52,7 +52,7 @@ export const initSmartContracts = (web3: Web3Props, cb: any) => {
             .subscribe(
                 result => {
                     // console.log(result)
-                    window.smartContracts = result
+                    global.window.smartContracts = result
                     cb(result)
                     return result
                 },
