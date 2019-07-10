@@ -1,4 +1,4 @@
-import * as React from 'react'
+
 import AlertView from '../../components/Modal/AlertView'
 import AddToCollectionModalContent from './AddToCollectionModalContent'
 import { Query } from 'react-apollo'
@@ -14,6 +14,7 @@ import {
     getCollectionsForUser,
     getCollectionsForUserVariables,
 } from '../../queries/__generated__/getCollectionsForUser'
+import { useState } from 'react';
 
 interface IChosen {
     chosenCollection: ICollection | null
@@ -40,7 +41,7 @@ const Component: React.FunctionComponent<IProps> = ({
     version,
     addArticleToCollectionAction,
 }) => {
-    const [state, setState] = React.useState<IChosen>({
+    const [state, setState] = useState<IChosen>({
         chosenCollection: null,
         chosenSection: null,
     })

@@ -1,4 +1,4 @@
-import * as React from 'react'
+
 import styled from 'styled-components'
 import { Title2 } from '../Typography'
 import { RenderCardContent } from '../CuratedLists'

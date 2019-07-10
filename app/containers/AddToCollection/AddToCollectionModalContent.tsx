@@ -1,4 +1,4 @@
-import * as React from 'react'
+
 import styled from 'styled-components'
 import theme from '../../lib/theme-config'
 import Select from '../../components/Select'

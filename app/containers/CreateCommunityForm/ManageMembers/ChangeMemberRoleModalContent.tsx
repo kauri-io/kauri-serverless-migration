@@ -1,9 +1,10 @@
-import * as React from 'react'
+
 import styled from 'styled-components'
 import Select from '../../../components/Select'
 import { ChooseRoleOptions } from '../AddMemberModalContent'
 import { roles, IRole } from '../AddMemberModal'
 import { pipe, find, path } from 'ramda'
+import { useState } from 'react';
 
 export const ChangeMemberRoleModalContainer = styled.section`
     display: flex;
@@ -19,15 +20,15 @@ interface IProps {
 }
 
 const ChangeMemberRoleModalContent: React.FunctionComponent<IProps> = props => {
-    const [state, setRole] = React.useState<{ role: string | null }>({
+    const [state, setRole] = useState<{ role: string | null }>({
         role: null,
     })
 
     const chosenRole =
         typeof state.role === 'string'
-            ? R.pipe(
-                  R.find<IRole>(role => role.value === state.role),
-                  R.path<string>(['label'])
+            ? pipe(
+                  find<IRole>(role => role.value === state.role),
+                  path<string>(['label'])
               )(roles)
             : state.role
     return (

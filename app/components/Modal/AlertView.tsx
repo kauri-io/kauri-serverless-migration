@@ -1,4 +1,4 @@
-import * as React from 'react'
+
 import { Title2 } from '../Typography'
 import styled from 'styled-components'
 import PrimaryButton from '../Button/PrimaryButton'

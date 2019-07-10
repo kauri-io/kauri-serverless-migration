@@ -1,4 +1,4 @@
-import * as React from 'react'
+
 import { Tooltip } from 'react-tippy'
 import styled from 'styled-components'
 import theme from '../../lib/theme-config'

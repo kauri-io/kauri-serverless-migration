@@ -1,4 +1,4 @@
-import * as React from 'react'
+
 import styled from 'styled-components'
 import UserAvatarComponent, {
     IProps as UserAvatarComponentProps,
@@ -87,7 +87,7 @@ const FeaturedResource: React.FunctionComponent<
                 <ResourceDetailsContainer>
                     <Label>Featured</Label>
                     {linkComponent(
-                        <React.Fragment>
+                        <>
                             <Title2>
                                 {String(
                                     title && title.length < 30
@@ -107,7 +107,7 @@ const FeaturedResource: React.FunctionComponent<
                                               )}...`
                                 )}
                             </BodyCard>
-                        </React.Fragment>,
+                        </>,
                         resourceType === 'article'
                             ? `/${slug}/${id}/a`
                             : resourceType === 'collection'

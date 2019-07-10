@@ -1,6 +1,7 @@
-import * as React from 'react'
+
 import styled from 'styled-components'
 import theme from '../../lib/theme-config'
+import { Fragment } from 'react';
 
 const TooltipContainer = styled.div`
     display: flex;
@@ -61,12 +62,12 @@ const SectionsContent: React.FunctionComponent<IProps> = props => {
             {Array.isArray(props.sections) &&
                 props.sections.map((section, index) =>
                     index !== props.sections.length - 1 ? (
-                        <React.Fragment key={section.id}>
+                        <Fragment key={section.id}>
                             <Label onClick={() => props.handleClick(section)}>
                                 {section.name || 'Untitled section'}
                             </Label>
                             <Divider />
-                        </React.Fragment>
+                        </Fragment>
                     ) : (
                         <Label
                             key={section.id}

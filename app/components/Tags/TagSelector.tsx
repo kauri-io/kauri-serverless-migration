@@ -1,8 +1,9 @@
-import * as React from 'react'
+
 import TagInput from './TagInput'
 import Tag from './Tag'
 import { ITag } from './types'
 import styled from 'styled-components'
+import { Component } from 'react'
 
 const Container = styled.div`
     display: flex;
@@ -32,7 +33,7 @@ interface IState {
     currentSelectedTags: string[]
 }
 
-class TagSelector extends React.Component<IProps, IState> {
+class TagSelector extends Component<IProps, IState> {
     constructor(props: IProps) {
         super(props)
         this.state = {

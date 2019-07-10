@@ -1,4 +1,4 @@
-import * as React from 'react'
+
 import styled from 'styled-components'
 import { Input } from '../../components/Input'
 import { BodyCard, Label } from '../../components/Typography'
@@ -22,7 +22,6 @@ interface IProps {
     role: string
     roles: Array<{ value: string; label: string }>
 }
-const { Fragment } = React
 
 const StepOneContainer = styled.div`
     display: flex;
@@ -52,7 +51,7 @@ export const ChooseRoleOptions: React.FunctionComponent<{
                     {role.label}
                 </Label>
             ) : (
-                <Fragment>
+                <>
                     <Label
                         key={role.value}
                         onClick={() => handleRoleChange(role.value)}
@@ -60,7 +59,7 @@ export const ChooseRoleOptions: React.FunctionComponent<{
                         {role.label}
                     </Label>
                     <Divider key={`${role.value}-divider`} />
-                </Fragment>
+                </>
             )
         )}
     </TooltipContainer>
@@ -100,14 +99,14 @@ const AddMemberModalContent: React.FunctionComponent<IProps> = ({
                 </StepOneContainer>
             )}
             {currentStep === 2 && (
-                <Fragment>
+                <>
                     <BodyCard>
                         Moderator as been added and now pending.
                     </BodyCard>
                     <BodyCard>
                         You can manage all the moderators from the Manage tab.
                     </BodyCard>
-                </Fragment>
+                </>
             )}
         </AddMemberSection>
     )

@@ -1,11 +1,12 @@
-import * as React from 'react'
+import { Component } from "react";
+
 
 interface IProps {}
 
-class LoadingComponent extends React.Component<IProps> {
+class LoadingComponent extends Component<IProps> {
     render() {
         return (
-            <React.Fragment>
+            <>
                 <style type="text/css">
                     {`
         .centered-wrapper{
@@ -79,7 +80,7 @@ class LoadingComponent extends React.Component<IProps> {
                         <div />
                     </div>
                 </div>
-            </React.Fragment>
+            </>
         )
     }
 }

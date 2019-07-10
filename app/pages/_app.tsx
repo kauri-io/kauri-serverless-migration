@@ -20,19 +20,9 @@ const theme = createMuiTheme({
 })
 
 class MyApp extends App {
-    static async getInitialProps({ Component, router, ctx }) {
-        let pageProps = {}
-
-        if (Component.getInitialProps) {
-            pageProps = await Component.getInitialProps(ctx)
-        }
-
-        return { pageProps }
-    }
-
     constructor(props) {
-        super(props)
-        ;(process as any).browser && analytics.init()
+        super(props);
+        (process as any).browser && analytics.init()
     }
 
     render() {

@@ -1,9 +1,8 @@
-/* tslint:disable */
-import * as React from 'react'
 import { Input } from '../Input'
 import styled from 'styled-components'
 import Plus from './Plus'
 import { ITag } from './types'
+import { Component } from 'react'
 
 interface IProps {
     availableTags?: ITag[]
@@ -83,7 +82,7 @@ const Result = styled.div`
     }
 `
 
-class TagInput extends React.Component<IProps, IState> {
+class TagInput extends Component<IProps, IState> {
     private inputRef: any | null
 
     constructor(props: IProps) {

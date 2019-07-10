@@ -1,4 +1,4 @@
-import * as React from 'react'
+
 import styled from 'styled-components'
 import SecondaryButtonComponent from '../Button/SecondaryButton'
 import { Title2 } from '../Typography'

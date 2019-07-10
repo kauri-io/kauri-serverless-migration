@@ -1,7 +1,8 @@
-import * as React from 'react'
+
 import styled from 'styled-components'
 import theme from '../../lib/theme-config'
 import { ISection } from './SectionsContent'
+import { Fragment } from 'react';
 
 const TooltipContainer = styled.div`
     display: flex;
@@ -59,14 +60,14 @@ const CollectionsContent: React.FunctionComponent<IProps> = props => {
             {Array.isArray(props.collections) &&
                 props.collections.map((collection, index) =>
                     index !== props.collections.length - 1 ? (
-                        <React.Fragment key={collection.id}>
+                        <Fragment key={collection.id}>
                             <Label
                                 onClick={() => props.handleClick(collection)}
                             >
                                 {collection.name}
                             </Label>
                             <Divider />
-                        </React.Fragment>
+                        </Fragment>
                     ) : (
                         <Label
                             key={collection.id}

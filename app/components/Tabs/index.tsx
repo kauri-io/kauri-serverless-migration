@@ -1,6 +1,7 @@
-import * as React from 'react'
-import styled from 'styled-components'
 
+import styled from 'styled-components'
+import { Component } from 'react';
+ 
 interface ITheme {
     bg: { [val: string]: string }
     space: {
@@ -88,7 +89,7 @@ interface IState {
     selectedTabIndex: number
 }
 
-class TabsComponent extends React.Component<IProps, IState> {
+class TabsComponent extends Component<IProps, IState> {
     constructor(props: IProps) {
         super(props)
         this.state = {

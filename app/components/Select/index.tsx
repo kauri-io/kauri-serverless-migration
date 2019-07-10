@@ -1,8 +1,9 @@
-import * as React from 'react'
+
 import { Tooltip } from 'react-tippy'
 import styled from 'styled-components'
 import { Label } from '../Typography'
 import theme from '../../lib/theme-config'
+import { useEffect, ReactElement } from 'react'
 
 export const TooltipContainer = styled.div`
     display: flex;
@@ -126,12 +127,12 @@ const Select = styled.div`
 
 interface IProps {
     placeHolder: string
-    children: React.ReactElement<any>
+    children: ReactElement<any>
     value: string | null | undefined
 }
 
 export default ({ children, placeHolder, value }: IProps) => {
-    React.useEffect(() => {
+    useEffect(() => {
         const styleDOMNode = document.createElement('style')
         const newGlobalCss = '.tippy-tooltip { margin: 0px; }'
         const headDOMNode =

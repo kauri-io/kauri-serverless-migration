@@ -1,4 +1,4 @@
-import * as React from 'react'
+
 import styled from 'styled-components'
 import { getCommunity_getCommunity_homepage } from '../../queries/__generated__/getCommunity'
 import CommunityHomepageEmptyState from './EmptyStates/Homepage'

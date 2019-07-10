@@ -1,4 +1,4 @@
-import * as React from 'react'
+
 import styled from 'styled-components'
 import { Label, BodyCard, H4, Title2 } from '../Typography'
 import BaseCard from '../Card/BaseCard'
@@ -93,7 +93,7 @@ const CardContent: React.SFC<ICardContentProps> = ({
     name,
     logo,
 }) => (
-    <React.Fragment>
+    <>
         <Content>
             {logo ? (
                 <ImageContainer>
@@ -115,7 +115,7 @@ const CardContent: React.SFC<ICardContentProps> = ({
                 )}
             </BodyCard>
         </Content>
-    </React.Fragment>
+    </>
 )
 
 const LabelContainer = styled.div`

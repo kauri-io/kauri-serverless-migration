@@ -1,6 +1,7 @@
-import * as React from 'react'
+
 import styled from 'styled-components'
 import slugify from 'slugify'
+import { Component, cloneElement } from 'react';
 
 const A = styled.a<{ fullWidth: boolean }>`
     text-decoration: none;
@@ -32,7 +33,7 @@ interface IProps {
     children: any
 }
 
-class Link extends React.Component<IProps> {
+class Link extends Component<IProps> {
     handleClick = (e, url) => {
         if (
             e.metaKey ||
@@ -73,7 +74,7 @@ class Link extends React.Component<IProps> {
                 </A>
             )
         }
-        return React.cloneElement(this.props.children, {
+        return cloneElement(this.props.children, {
             onClick: e => this.handleClick(e, url),
         })
     }

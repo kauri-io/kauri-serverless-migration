@@ -1,5 +1,6 @@
-import * as React from 'react'
+
 import styled from 'styled-components'
+import { Component } from 'react';
 
 interface IInputProps {
     textAlign: string
@@ -73,7 +74,7 @@ const Wrapper = styled.div<IWrapperProps>`
   ${props => (props.textAlign === 'center' ? 'flex-direction: column;' : '')}
 `
 
-class Input extends React.Component<IWrapperProps, IInputState> {
+class Input extends Component<IWrapperProps, IInputState> {
     constructor(props: IWrapperProps) {
         super(props)
         this.state = {
