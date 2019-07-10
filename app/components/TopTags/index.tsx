@@ -1,4 +1,3 @@
-
 import { Title2 } from '../Typography'
 import TagList from '../Tags/TagList'
 import TopResourcesSection from '../Section/TopResourcesSection'

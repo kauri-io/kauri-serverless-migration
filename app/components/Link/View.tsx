@@ -1,7 +1,6 @@
-
 import styled from 'styled-components'
 import slugify from 'slugify'
-import { Component, cloneElement } from 'react';
+import { Component, cloneElement } from 'react'
 
 const A = styled.a<{ fullWidth: boolean }>`
     text-decoration: none;

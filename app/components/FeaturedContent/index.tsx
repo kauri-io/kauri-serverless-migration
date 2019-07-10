@@ -1,4 +1,3 @@
-
 import styled from 'styled-components'
 import ResourceRow from '../SearchResults/ResourceRowWithImage' // IProps as ResourceRowProps,
 import { Title2 } from '../Typography'

@@ -1,4 +1,3 @@
-
 import styled from 'styled-components'
 import { Title1, BodyCard } from '../Typography'
 import SecondaryButtonComponent from '../Button/SecondaryButton'

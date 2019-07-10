@@ -1,4 +1,3 @@
-
 import TagInput from './TagInput'
 import Tag from './Tag'
 import { ITag } from './types'

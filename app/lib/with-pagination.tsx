@@ -1,8 +1,7 @@
-
 import { findDOMNode } from 'react-dom'
 import Loading from '../components/Loading'
 import { DataValue } from 'react-apollo'
-import { Component } from 'react';
+import { Component } from 'react'
 
 interface IState {
     showLoading: boolean

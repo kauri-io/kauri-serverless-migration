@@ -1,10 +1,9 @@
-
 import styled from 'styled-components'
 import { Title2, BodyCard } from '../Typography'
 import { Input } from '../Input'
 import PrimaryButtonComponent from '../Button/PrimaryButton'
 import * as Yup from 'yup'
-import { useState, FunctionComponent } from 'react';
+import { useState, FunctionComponent } from 'react'
 
 const Container = styled.section`
     display: flex;

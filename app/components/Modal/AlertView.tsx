@@ -1,4 +1,3 @@
-
 import { Title2 } from '../Typography'
 import styled from 'styled-components'
 import PrimaryButton from '../Button/PrimaryButton'

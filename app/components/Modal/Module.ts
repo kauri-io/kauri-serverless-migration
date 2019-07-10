@@ -1,5 +1,3 @@
-
-
 export interface ICloseModalAction {
     type: 'CLOSE_MODAL'
 }

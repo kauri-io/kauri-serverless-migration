@@ -1,4 +1,3 @@
-
 import AlertView from '../../components/Modal/AlertView'
 import AddToCollectionModalContent from './AddToCollectionModalContent'
 import { Query } from 'react-apollo'
@@ -14,7 +13,7 @@ import {
     getCollectionsForUser,
     getCollectionsForUserVariables,
 } from '../../queries/__generated__/getCollectionsForUser'
-import { useState } from 'react';
+import { useState } from 'react'
 
 interface IChosen {
     chosenCollection: ICollection | null

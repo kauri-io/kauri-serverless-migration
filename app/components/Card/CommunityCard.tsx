@@ -1,4 +1,3 @@
-
 import styled from 'styled-components'
 import { Label, BodyCard, H4, Title2 } from '../Typography'
 import BaseCard from '../Card/BaseCard'

@@ -1,4 +1,3 @@
-
 import moment from 'moment'
 import styled from 'styled-components'
 import UserAvatar from '../UserAvatar'

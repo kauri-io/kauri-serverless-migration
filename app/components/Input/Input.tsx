@@ -1,6 +1,5 @@
-
 import styled from 'styled-components'
-import { Component } from 'react';
+import { Component } from 'react'
 
 interface IInputProps {
     textAlign: string

@@ -1,4 +1,3 @@
-
 import ManageMemberEmptyState from './ManageMemberEmptyState'
 import { getCommunity_getCommunity_members } from '../../../queries/__generated__/getCommunity'
 import MembersPanel from './MembersPanel'
@@ -15,7 +14,7 @@ import { prepareChangeMemberRoleVariables } from '../../../queries/__generated__
 import { openModalAction as openModal } from '../../../components/Modal/Module'
 import AlertViewComponent from '../../../components/Modal/AlertView'
 import ChangeMemberRoleModalContent from './ChangeMemberRoleModalContent'
-import { Component } from 'react';
+import { Component } from 'react'
 
 const ManageMembersContainer = styled.section`
     display: flex;

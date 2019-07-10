@@ -1,4 +1,3 @@
-
 import styled, { css } from 'styled-components'
 import Stack, { IStackStyledProps } from 'stack-styled'
 import { BackgroundProps } from 'styled-system'

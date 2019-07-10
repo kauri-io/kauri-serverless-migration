@@ -1,4 +1,3 @@
-
 import ActionsSection, {
     MiddleActionsStack,
     RightActionsRow,

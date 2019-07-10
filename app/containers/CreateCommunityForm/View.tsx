@@ -1,4 +1,3 @@
-
 import styled from 'styled-components'
 import Actions from './CreateCommunityFormActions'
 import Header from './CreateCommunityFormHeader'

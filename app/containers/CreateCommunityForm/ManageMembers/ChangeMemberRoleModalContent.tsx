@@ -1,10 +1,9 @@
-
 import styled from 'styled-components'
 import Select from '../../../components/Select'
 import { ChooseRoleOptions } from '../AddMemberModalContent'
 import { roles, IRole } from '../AddMemberModal'
 import { pipe, find, path } from 'ramda'
-import { useState } from 'react';
+import { useState } from 'react'
 
 export const ChangeMemberRoleModalContainer = styled.section`
     display: flex;

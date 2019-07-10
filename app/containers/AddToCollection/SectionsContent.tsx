@@ -1,7 +1,6 @@
-
 import styled from 'styled-components'
 import theme from '../../lib/theme-config'
-import { Fragment } from 'react';
+import { Fragment } from 'react'
 
 const TooltipContainer = styled.div`
     display: flex;

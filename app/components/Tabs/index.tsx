@@ -1,7 +1,6 @@
-
 import styled from 'styled-components'
-import { Component } from 'react';
- 
+import { Component } from 'react'
+
 interface ITheme {
     bg: { [val: string]: string }
     space: {

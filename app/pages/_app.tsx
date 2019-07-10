@@ -21,8 +21,8 @@ const theme = createMuiTheme({
 
 class MyApp extends App {
     constructor(props) {
-        super(props);
-        (process as any).browser && analytics.init()
+        super(props)
+        ;(process as any).browser && analytics.init()
     }
 
     render() {

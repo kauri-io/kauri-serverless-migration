@@ -1,4 +1,3 @@
-
 import styled from 'styled-components'
 import { Title2 } from '../Typography'
 import { RenderCardContent } from '../CuratedLists'

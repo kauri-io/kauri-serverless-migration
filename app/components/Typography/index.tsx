@@ -1,4 +1,3 @@
-
 import styled, { css } from 'styled-components'
 
 export const BodyCardCss = css<{ color?: string }>`
