@@ -14,7 +14,7 @@ const generatePublishArticleHash = (
     contributor: string,
     dateCreated: string
 ) => {
-    const web3 = global.window.web3
+    const web3 = global.window && global.window.web3
     const keccak256 = (...args) => {
         args = args.map(arg => {
             if (typeof arg === 'string') {

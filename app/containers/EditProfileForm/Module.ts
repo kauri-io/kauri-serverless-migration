@@ -1,33 +1,32 @@
-import Observable from 'rxjs/Observable'
 import { saveUserDetails, getOwnProfile } from '../../queries/User'
-import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
+import { showNotificationAction, IShowNotificationPayload } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
-import { IDependencies } from '../../../lib/Module'
+import { IDependencies } from '../../lib/Module'
 import analytics from '../../lib/analytics'
+import { merge, of, from, throwError } from 'rxjs'
+import { ActionsObservable } from 'redux-observable'
+import { filter, switchMap, catchError, tap, mergeMap } from 'rxjs/operators'
 
 export type SaveUserDetailActionType = {
     type: string
-    payload: HeaderState
+    payload: any
     callback: any
 }
 
-export const saveUserDetailsAction = (
-    payload: HeaderState,
-    callback?: any
-) => ({
+export const saveUserDetailsAction = (payload: any, callback?: any) => ({
     type: 'SAVE_USER_DETAILS',
     payload,
     callback,
 })
 
 export const saveUserDetailsEpic = (
-    action$: Observable<SaveUserDetailActionType>,
+    action$: ActionsObservable<SaveUserDetailActionType>,
     { getState }: any,
-    { apolloClient, smartContracts, web3, apolloSubscriber }: Dependencies
+    { apolloClient, smartContracts, web3, apolloSubscriber }: IDependencies
 ) =>
-    action$
-        .ofType('SAVE_USER_DETAILS')
-        .switchMap(
+    action$.pipe(
+        filter(x => x.type === 'SAVE_USER_DETAILS'),
+        switchMap(
             ({
                 payload: {
                     username,
@@ -43,7 +42,7 @@ export const saveUserDetailsEpic = (
                 },
                 callback,
             }) =>
-                Observable.fromPromise(
+                from(
                     apolloClient.mutate({
                         mutation: saveUserDetails,
                         variables: {
@@ -60,9 +59,9 @@ export const saveUserDetailsEpic = (
                             subscriptions,
                         },
                     })
-                )
-                    .do(() => callback && callback(true))
-                    .mergeMap(
+                ).pipe(
+                    tap(() => callback && callback(true)),
+                    mergeMap(
                         ({
                             data: {
                                 saveUser: { hash },
@@ -70,28 +69,28 @@ export const saveUserDetailsEpic = (
                         }: {
                             data: { saveUser: { hash: string } }
                         }) => apolloSubscriber(hash)
-                    )
-                    .mergeMap(({ data: { output } }) => {
+                    ),
+                    mergeMap(({ data: { output } }) => {
                         if (typeof output.error === 'string') {
-                            return Observable.throw(output.error)
+                            return throwError(output.error)
                         } else {
-                            return Observable.of({
+                            return of({
                                 type: 'UPDATE_USER_SUCCESS',
-                            })
-                                .do(() =>
+                            }).pipe(
+                                tap(() =>
                                     analytics.track('Edit Profile', {
                                         category: 'user_actions',
                                     })
-                                )
-                                .do(() => callback && callback(false))
-                                .mergeMap(() =>
+                                ),
+                                tap(() => callback && callback(false)),
+                                mergeMap(() =>
                                     apolloClient.query({
                                         query: getOwnProfile,
                                         variables: {},
                                         fetchPolicy: 'network-only',
                                     })
-                                )
-                                .mergeMap(() => {
+                                ),
+                                mergeMap(() => {
                                     let newRedirectURL
                                     if (typeof redirectURL === 'string') {
                                         newRedirectURL =
@@ -106,11 +105,9 @@ export const saveUserDetailsEpic = (
                                         }`
                                     }
 
-                                    return Observable.merge(
-                                        Observable.of(
-                                            routeChangeAction(newRedirectURL)
-                                        ),
-                                        Observable.of(
+                                    return merge(
+                                        of(routeChangeAction(newRedirectURL)),
+                                        of(
                                             showNotificationAction({
                                                 notificationType: 'success',
                                                 message:
@@ -118,21 +115,24 @@ export const saveUserDetailsEpic = (
                                                 description:
                                                     'You have successfully updated your profile',
                                             })
-                                        )
-                                    ).catch(err => {
-                                        console.error(err)
-                                        return Observable.of(
-                                            showNotificationAction({
-                                                notificationType: 'error',
-                                                message: 'Submission error',
-                                                description: 'Please try again',
-                                            })
-                                        )
-                                    })
+                                        ),
+                                        catchError(err => {
+                                            console.error(err)
+                                            return of(
+                                                showNotificationAction({
+                                                    notificationType: 'error',
+                                                    message: 'Submission error',
+                                                    description: 'Please try again',
+                                                })
+                                            )
+                                        })
+                                    )
                                 })
+
+                            )
                         }
-                    })
-                    .catch(err => {
+                    }),
+                    catchError(err => {
                         console.error(err)
                         const notificationPayload = err.includes(
                             'already uses this email'
@@ -148,8 +148,8 @@ export const saveUserDetailsEpic = (
                                   message: 'Submission error',
                                   description: 'Please try again',
                               }
-                        return Observable.of(
-                            showNotificationAction(notificationPayload)
-                        )
+                        return of(showNotificationAction(notificationPayload as IShowNotificationPayload))
                     })
+                )
         )
+    )

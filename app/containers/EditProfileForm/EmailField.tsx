@@ -5,7 +5,9 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import theme from '../../lib/theme-config'
 import { Label } from '../../components/Typography'
-import { Tooltip } from 'react-tippy'
+import {
+    Tooltip,
+  } from 'react-tippy';
 
 const Icon = styled.img`
     height: 20px;

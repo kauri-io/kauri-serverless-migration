@@ -19,7 +19,7 @@ function create(apollo: any, initialState = {}) {
     const dependencies = {
         web3:
             (global.window && global.window.web3) ||
-            new ethers.providers.Web3Provider(
+            global.window && new ethers.providers.Web3Provider(
                 global.window.web3.currentProvider
             ),
         smartContracts: () =>

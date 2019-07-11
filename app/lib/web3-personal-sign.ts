@@ -65,7 +65,7 @@ const loginPersonalSign = data =>
     })
 
 const web3PersonalSign = (id, data, gqlMutation) =>
-    global.window.web3.eth.accounts.length > 0
+    global.window && global.window.web3.eth.accounts.length > 0
         ? from(personalSign(data))
               .flatMap(signature =>
                   apolloClient({}, {}).mutate({

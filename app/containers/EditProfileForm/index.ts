@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { saveUserDetailsAction } from './Module'
 import { resendEmailVerificationAction } from '../EmailVerification/Module'
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     return {
         hostName: state.app && state.app.hostName,
         currentUser: state.app.userId && state.app.userId.substring(2),
@@ -23,8 +23,10 @@ export default compose(
         { withRef: true }
     ),
     graphql(getOwnProfile, {
-        fetchPolicy: 'network-only',
         name: 'OwnProfile',
         withRef: true,
+        options: {
+            fetchPolicy: 'network-only',
+        }
     })
 )(EditProfile)

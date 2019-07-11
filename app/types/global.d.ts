@@ -10,6 +10,7 @@ declare namespace NodeJS {
         encodeURI: any
         setFieldsValue: any
         getFieldsValue: any
+        ethereum: any;
     }
     interface Global {
         document: Document

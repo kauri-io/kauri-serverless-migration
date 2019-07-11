@@ -12,7 +12,7 @@ const networkNames = {
 
 const getNetwork = () =>
     new Promise((resolve, reject) => {
-        global.window.web3.version.getNetwork((err, netId) => {
+        global.window && global.window.web3.version.getNetwork((err, netId) => {
             const networkId = parseInt(netId, 10)
             if (err) {
                 console.error(err)

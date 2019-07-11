@@ -238,7 +238,7 @@ export default (ComposedComponent: any) =>
                         // User denied account access...
                     }
                     // Supports Metamask and Mist, and other wallets that provide 'web3'.
-                } else if (typeof global.window.web3 !== 'undefined') {
+                } else if (typeof global.window && global.window.web3 !== 'undefined') {
                     // Use the Mist/wallet provider.
                     ;(global.window.web3 = new ethers.providers.Web3Provider(
                         global.window.web3.currentProvider
