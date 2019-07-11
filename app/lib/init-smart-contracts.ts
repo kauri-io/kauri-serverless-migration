@@ -1,4 +1,4 @@
-import { ethers } from 'ethers';
+import { ethers } from 'ethers'
 import superagent from 'superagent'
 import { of, forkJoin, from } from 'rxjs'
 
@@ -32,7 +32,11 @@ export const initSmartContracts = (web3: Web3Props, cb: any) => {
                     const fetchedSmartContract = abiJSONs.find(
                         abiJSON => abiJSON.contractName === smartContractName
                     )
-                    const smartContractWithProvider = new ethers.Contract(smartContractName, fetchedSmartContract, ethers.getDefaultProvider());
+                    const smartContractWithProvider = new ethers.Contract(
+                        smartContractName,
+                        fetchedSmartContract,
+                        ethers.getDefaultProvider()
+                    )
                     return smartContractWithProvider.deployed()
                 })
             )
