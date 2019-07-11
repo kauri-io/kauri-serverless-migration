@@ -10,7 +10,7 @@ import { merge, of, from, throwError } from 'rxjs'
 import { ActionsObservable } from 'redux-observable'
 import { filter, switchMap, catchError, tap, mergeMap } from 'rxjs/operators'
 
-export type SaveUserDetailActionType = {
+export interface ISaveUserDetailActionType {
     type: string
     payload: any
     callback: any

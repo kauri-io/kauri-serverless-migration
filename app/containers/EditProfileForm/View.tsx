@@ -5,8 +5,10 @@ import UploadLogoButton from '../../components/Button/UploadLogoButton'
 import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
 import EmailCheckbox from '../../components/Checkbox/EmailCheckbox'
 import TriggerImageUploader from '../ImageUploader'
-import { pipe, assocPath, filter } from 'ramda'
+import { pipe, assocPath, filter, path } from 'ramda'
 import EmailField from './EmailField'
+import { getMyProfile } from '../../queries/__generated__/getMyProfile';
+import { ISaveUserDetailActionType } from './Module'
 
 const InputsContainers = styled.div`
     display: flex;
@@ -35,8 +37,30 @@ const Container = styled.div`
     flex-direction: row;
 `
 
-class EditableHeader extends Component<HeaderProps, HeaderState> {
-    constructor(props: HeaderProps) {
+interface IProps {
+    OwnProfile: getMyProfile
+    saveUserDetailsAction: (payload: any, callback: any) => ISaveUserDetailActionType
+    resendEmailVerificationAction: any
+}
+
+interface IState {
+    username: string;
+    title: string;
+    avatar: string
+    website: string;
+    name: string;
+    twitter: string;
+    github: string;
+    email:string;
+    status: string;
+    pendingSubmit: boolean;
+    subscriptions: {
+        newsletter?: boolean
+    }
+}
+
+class EditableHeader extends Component<IProps, IState> {
+    constructor(props: IProps) {
         super(props)
         if (!props.OwnProfile.getMyProfile) {
             this.state = {
@@ -119,7 +143,7 @@ class EditableHeader extends Component<HeaderProps, HeaderState> {
             assocPath(['redirectURL'], redirectURL)
         )(this.state)
 
-        this.props.saveUserDetailsAction(payload, pendingSubmit => {
+        this.props.saveUserDetailsAction(payload, (pendingSubmit: any) => {
             this.setState({ pendingSubmit })
             callback && callback()
         })

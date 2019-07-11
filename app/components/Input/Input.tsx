@@ -4,7 +4,7 @@ import { Component } from 'react'
 interface IInputProps {
     textAlign: string
     fontSize: number
-    fontWeight: number
+    fontWeight: number | string
     color: string
 }
 
@@ -51,7 +51,7 @@ const Underline = styled.span<IUnderline>`
 interface IWrapperProps {
     textAlign?: string
     fontSize?: number
-    fontWeight?: number
+    fontWeight?: number | string
     color?: string
     placeHolder?: string
     value?: string

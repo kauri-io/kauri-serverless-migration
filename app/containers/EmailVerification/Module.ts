@@ -1,5 +1,5 @@
 import { Epic } from 'redux-observable'
-import { Observable } from 'rxjs'
+import Observable from 'rxjs/Observable'
 import { IReduxState, IDependencies } from '../../lib/Module'
 
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
@@ -15,6 +15,7 @@ import {
     emailSubscribe,
     emailSubscribeVariables,
 } from '../../queries/__generated__/emailSubscribe'
+import { from } from 'rxjs';
 
 interface IVerifyEmailAction {
     callback: any
@@ -86,7 +87,7 @@ export const emailSubscribeEpic: Epic<any, IReduxState, IDependencies> = (
     action$
         .ofType(EMAIL_SUBSCRIBE)
         .switchMap(({ emailAddress }: IEmailSubscribeAction) =>
-            Observable.fromPromise(
+            from(
                 apolloClient.mutate<emailSubscribe, emailSubscribeVariables>({
                     mutation: emailSubscribeMutation,
                     variables: {
@@ -96,7 +97,7 @@ export const emailSubscribeEpic: Epic<any, IReduxState, IDependencies> = (
                 })
             )
                 .mergeMap(({ data: { subscribe: { hash } } }) =>
-                    Observable.fromPromise(
+                    from(
                         new Promise<{
                             data: { output: IEmailSubscribeOutput }
                         }>((resolve, reject) => {
@@ -146,7 +147,7 @@ export const verifyEmailEpic: Epic<any, IReduxState, IDependencies> = (
     action$
         .ofType(VERIFY_EMAIL)
         .switchMap(({ code, callback }: IVerifyEmailAction) =>
-            Observable.fromPromise(
+            from(
                 apolloClient.mutate<verifyEmail>({
                     mutation: verifyEmailMutation,
                     variables: {
@@ -155,7 +156,7 @@ export const verifyEmailEpic: Epic<any, IReduxState, IDependencies> = (
                 })
             )
                 .mergeMap(({ data: { verifyEmail: { hash } } }) =>
-                    Observable.fromPromise(
+                    from(
                         new Promise<{ data: { output: IVerifyEmailOutput } }>(
                             (resolve, reject) => {
                                 create(
@@ -228,7 +229,7 @@ export const resendEmailVerificationEpic: Epic<
     IDependencies
 > = (actions$, _, { apolloClient }) =>
     actions$.ofType('SEND_EMAIL_VERIFICATION').flatMap(() =>
-        Observable.fromPromise(
+        from(
             apolloClient.mutate<any>({
                 mutation: regenerateEmailVerificationCode,
             })
