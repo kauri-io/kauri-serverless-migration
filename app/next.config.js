@@ -2,5 +2,5 @@ module.exports = {
     env: {
         config: process.env.config,
     },
-    target: 'serverless',
+    target: "serverless"
 }

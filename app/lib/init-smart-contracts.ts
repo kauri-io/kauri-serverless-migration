@@ -1,6 +1,7 @@
-import contract from 'truffle-contract'
+import { ethers } from 'ethers';
 import superagent from 'superagent'
 import { of, forkJoin, from } from 'rxjs'
+
 const request = superagent.agent()
 const config = require('../config').default
 
@@ -31,10 +32,7 @@ export const initSmartContracts = (web3: Web3Props, cb: any) => {
                     const fetchedSmartContract = abiJSONs.find(
                         abiJSON => abiJSON.contractName === smartContractName
                     )
-                    const smartContractWithProvider = contract(
-                        fetchedSmartContract
-                    )
-                    smartContractWithProvider.setProvider(web3.currentProvider)
+                    const smartContractWithProvider = new ethers.Contract(smartContractName, fetchedSmartContract, ethers.getDefaultProvider());
                     return smartContractWithProvider.deployed()
                 })
             )

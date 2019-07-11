@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { Provider } from 'react-redux'
 import { ApolloProvider, getDataFromTree } from 'react-apollo'
 import { ThemeProvider } from 'styled-components'
-import Web3 from 'web3'
+import { ethers } from 'ethers';
 import { Subject } from 'rxjs'
 import { ActionsObservable } from 'redux-observable'
 import fetch from 'isomorphic-unfetch'
@@ -240,10 +240,7 @@ export default (ComposedComponent: any) =>
                     // Supports Metamask and Mist, and other wallets that provide 'web3'.
                 } else if (typeof global.window.web3 !== 'undefined') {
                     // Use the Mist/wallet provider.
-                    global.window.web3 = new Web3(
-                        global.window.web3.currentProvider
-                    )
-
+                    global.window.web3 = new ethers.providers.Web3Provider(global.window.web3.currentProvider),
                     // track web3 status
                     analytics.setWeb3Status(true)
                 } else {

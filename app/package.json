@@ -35,6 +35,7 @@
         "bs58": "^4.0.1",
         "cookie": "^0.4.0",
         "draft-js": "^0.10.5",
+        "ethers": "^4.0.33",
         "formik": "^1.5.7",
         "graphql": "^14.4.2",
         "graphql-tag": "^2.10.1",
@@ -67,8 +68,6 @@
         "styled-system": "^5.0.12",
         "subscriptions-transport-ws": "^0.9.16",
         "superagent": "^5.1.0",
-        "truffle-contract": "^3.0.1",
-        "web3": "0.20.1",
         "yup": "^0.27.0"
     },
     "devDependencies": {

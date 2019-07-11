@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import { createEpicMiddleware } from 'redux-observable'
 import fetch from 'isomorphic-unfetch'
-import Web3 from 'web3'
+import { ethers } from 'ethers';
 import web3GetNetwork from './web3-get-network'
 import web3PersonalSign, { personalSign } from './web3-personal-sign'
 import { rootReducer, rootEpic } from './root'
@@ -17,7 +17,7 @@ if (global.window && global.window.__REDUX_DEVTOOLS_EXTENSION__) {
 
 function create(apollo: any, initialState = {}) {
     const dependencies = {
-        web3: (global.window && global.window.web3) || new Web3(),
+        web3: (global.window && global.window.web3) || new ethers.providers.Web3Provider(global.window.web3.currentProvider),
         smartContracts: () =>
             global.window ? global.window.smartContracts : {},
         apolloClient: apollo,
