@@ -15,7 +15,7 @@ export default compose(
         {}
     ),
     graphql(getCollection, {
-        options: ({ id }: { id: string}) => ({
+        options: ({ id }: { id: string }) => ({
             variables: {
                 id,
             },

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ApolloClient from 'apollo-client'
-import { Subject } from 'rxjs';
+import { Subject } from 'rxjs'
 import { compose, withApollo } from 'react-apollo'
 import { connect } from 'react-redux'
 import { searchResultsAutocompleteTotalElementsBreakdown } from '../../queries/Search'
@@ -9,7 +9,7 @@ import { searchResultsAutocomplete_searchAutocomplete_content } from '../../quer
 import { IProps as IQueryProps } from './index'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import analytics from '../../lib/analytics'
-import { debounceTime, filter, tap, flatMap, map } from 'rxjs/operators';
+import { debounceTime, filter, tap, flatMap, map } from 'rxjs/operators'
 
 const SearchSVG = () => (
     <div className="certain-category-icon">
@@ -129,80 +129,79 @@ class Complete extends React.Component<
     }
 
     componentDidMount() {
-        const sub = handleSearch$.pipe(
-            debounceTime(300),
-            // filter(search: ISearch) => search.value !== ''),
-            tap(() =>
-                this.props.setSearchResults(
-                    emptyData,
-                    true,
-                    this.props.viewedSearchCategory
-                )
-            ),
-            flatMap(() =>
-                this.props.client.query<{
-                    searchAutocomplete: {
-                        content: searchResultsAutocomplete_searchAutocomplete_content[]
-                        totalElementsBreakdown: IElementsBreakdown
-                    }
-                }>({
-                    fetchPolicy: 'no-cache',
-                    query: searchResultsAutocompleteTotalElementsBreakdown,
-                    variables: {
-                        filter: {},
-                        page: 0,
-                        query: this.state.value,
-                        size: 100,
-                    },
-                })
-            ),
-            map(({ data: { searchAutocomplete } }) => ({
-                results: searchAutocomplete.content,
-                totalElementsBreakdown:
-                    searchAutocomplete.totalElementsBreakdown,
-            }))
-        ).subscribe((dataSource: any) => {
-            const newViewedSearchCategory =
-                this.props.query.default_category ||
-                Object.keys(dataSource.totalElementsBreakdown).filter(
-                    category =>
-                        dataSource.totalElementsBreakdown[category] > 0 &&
-                        category === this.props.viewedSearchCategory
-                )[0] ||
-                Object.keys(dataSource.totalElementsBreakdown)
-                    .filter(
-                        category =>
-                            dataSource.totalElementsBreakdown[category] > 0
+        const sub = handleSearch$
+            .pipe(
+                debounceTime(300),
+                // filter(search: ISearch) => search.value !== ''),
+                tap(() =>
+                    this.props.setSearchResults(
+                        emptyData,
+                        true,
+                        this.props.viewedSearchCategory
                     )
-                    .sort()[0]
-
-            this.props.setSearchResults(
-                Array.isArray(dataSource.results) &&
-                    dataSource.results.length === 0
-                    ? emptyData
-                    : dataSource,
-                false,
-                newViewedSearchCategory
+                ),
+                flatMap(() =>
+                    this.props.client.query<{
+                        searchAutocomplete: {
+                            content: searchResultsAutocomplete_searchAutocomplete_content[]
+                            totalElementsBreakdown: IElementsBreakdown
+                        }
+                    }>({
+                        fetchPolicy: 'no-cache',
+                        query: searchResultsAutocompleteTotalElementsBreakdown,
+                        variables: {
+                            filter: {},
+                            page: 0,
+                            query: this.state.value,
+                            size: 100,
+                        },
+                    })
+                ),
+                map(({ data: { searchAutocomplete } }) => ({
+                    results: searchAutocomplete.content,
+                    totalElementsBreakdown:
+                        searchAutocomplete.totalElementsBreakdown,
+                }))
             )
+            .subscribe((dataSource: any) => {
+                const newViewedSearchCategory =
+                    this.props.query.default_category ||
+                    Object.keys(dataSource.totalElementsBreakdown).filter(
+                        category =>
+                            dataSource.totalElementsBreakdown[category] > 0 &&
+                            category === this.props.viewedSearchCategory
+                    )[0] ||
+                    Object.keys(dataSource.totalElementsBreakdown)
+                        .filter(
+                            category =>
+                                dataSource.totalElementsBreakdown[category] > 0
+                        )
+                        .sort()[0]
 
-            this.setState({
-                ...this.state,
-                dataSource,
+                this.props.setSearchResults(
+                    Array.isArray(dataSource.results) &&
+                        dataSource.results.length === 0
+                        ? emptyData
+                        : dataSource,
+                    false,
+                    newViewedSearchCategory
+                )
+
+                this.setState({
+                    ...this.state,
+                    dataSource,
+                })
+
+                analytics.track('Search', {
+                    articles: dataSource.totalElementsBreakdown.ARTICLE,
+                    category: 'generic',
+                    collections: dataSource.totalElementsBreakdown.COLLECTION,
+                    communities: dataSource.totalElementsBreakdown.COMMUNITY,
+                    keyword: this.state.value,
+                })
+
+                this.setState({ ...this.state, sub })
             })
-
-            analytics.track('Search', {
-                articles: dataSource.totalElementsBreakdown.ARTICLE,
-                category: 'generic',
-                collections: dataSource.totalElementsBreakdown.COLLECTION,
-                communities: dataSource.totalElementsBreakdown.COMMUNITY,
-                keyword: this.state.value,
-            })
-
-            this.setState({ ...this.state, sub });
-        })
-
-
-
 
         if (this.props.query.q) {
             handleSearch$.next({ value: this.props.query.q })

@@ -1,5 +1,8 @@
 import { saveUserDetails, getOwnProfile } from '../../queries/User'
-import { showNotificationAction, IShowNotificationPayload } from '../../lib/Epics/ShowNotificationEpic'
+import {
+    showNotificationAction,
+    IShowNotificationPayload,
+} from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { IDependencies } from '../../lib/Module'
 import analytics from '../../lib/analytics'
@@ -122,13 +125,13 @@ export const saveUserDetailsEpic = (
                                                 showNotificationAction({
                                                     notificationType: 'error',
                                                     message: 'Submission error',
-                                                    description: 'Please try again',
+                                                    description:
+                                                        'Please try again',
                                                 })
                                             )
                                         })
                                     )
                                 })
-
                             )
                         }
                     }),
@@ -148,7 +151,11 @@ export const saveUserDetailsEpic = (
                                   message: 'Submission error',
                                   description: 'Please try again',
                               }
-                        return of(showNotificationAction(notificationPayload as IShowNotificationPayload))
+                        return of(
+                            showNotificationAction(
+                                notificationPayload as IShowNotificationPayload
+                            )
+                        )
                     })
                 )
         )

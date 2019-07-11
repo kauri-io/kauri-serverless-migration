@@ -12,20 +12,21 @@ const networkNames = {
 
 const getNetwork = () =>
     new Promise((resolve, reject) => {
-        global.window && global.window.web3.version.getNetwork((err, netId) => {
-            const networkId = parseInt(netId, 10)
-            if (err) {
-                console.error(err)
-                reject(err)
-            } else {
-                // console.log(netId);
-                if (networkNames[networkId] === 'Rinkeby') {
-                    resolve(true)
+        global.window &&
+            global.window.web3.version.getNetwork((err, netId) => {
+                const networkId = parseInt(netId, 10)
+                if (err) {
+                    console.error(err)
+                    reject(err)
                 } else {
-                    reject(new Error('Wrong network'))
+                    // console.log(netId);
+                    if (networkNames[networkId] === 'Rinkeby') {
+                        resolve(true)
+                    } else {
+                        reject(new Error('Wrong network'))
+                    }
                 }
-            }
-        })
+            })
     })
 
 const web3GetNetwork = () =>

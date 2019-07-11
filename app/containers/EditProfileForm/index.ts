@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { saveUserDetailsAction } from './Module'
 import { resendEmailVerificationAction } from '../EmailVerification/Module'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
         hostName: state.app && state.app.hostName,
         currentUser: state.app.userId && state.app.userId.substring(2),
@@ -27,6 +27,6 @@ export default compose(
         withRef: true,
         options: {
             fetchPolicy: 'network-only',
-        }
+        },
     })
 )(EditProfile)
