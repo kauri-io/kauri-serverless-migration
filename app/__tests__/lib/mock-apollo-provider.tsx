@@ -1,38 +1,38 @@
 /* tslint:disable */
-import { MockedProvider } from "react-apollo/test-utils";
+import { MockedProvider } from 'react-apollo/test-utils'
 import {
-  InMemoryCache,
-  IntrospectionFragmentMatcher,
-  defaultDataIdFromObject,
-} from "apollo-cache-inmemory";
+    InMemoryCache,
+    IntrospectionFragmentMatcher,
+    defaultDataIdFromObject,
+} from 'apollo-cache-inmemory'
 // @ts-ignore
-import introspectionQueryResultData from "../../fragmentTypes.json";
+import introspectionQueryResultData from '../../fragmentTypes.json'
 
 const fragmentMatcher = new IntrospectionFragmentMatcher({
-  introspectionQueryResultData,
-});
+    introspectionQueryResultData,
+})
 
 const cache = new InMemoryCache({
-  dataIdFromObject: object => {
-    switch (object.__typename) {
-      case "ArticleDTO":
-        // @ts-ignore
-        return object.id + object.version; // use `key` as the primary key
-      default:
-        return defaultDataIdFromObject(object);
-    }
-  },
-  fragmentMatcher,
-});
+    dataIdFromObject: object => {
+        switch (object.__typename) {
+            case 'ArticleDTO':
+                // @ts-ignore
+                return object.id + object.version // use `key` as the primary key
+            default:
+                return defaultDataIdFromObject(object)
+        }
+    },
+    fragmentMatcher,
+})
 
 const ApolloMockedProvider: React.FunctionComponent<{ mocks: any }> = ({
-  mocks,
-  children,
+    mocks,
+    children,
 }) => (
-  // @ts-ignore
-  <MockedProvider cache={cache.restore({})} mocks={mocks}>
-    {children}
-  </MockedProvider>
-);
+    // @ts-ignore
+    <MockedProvider cache={cache.restore({})} mocks={mocks}>
+        {children}
+    </MockedProvider>
+)
 
-export default ApolloMockedProvider;
+export default ApolloMockedProvider

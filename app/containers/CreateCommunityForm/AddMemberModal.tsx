@@ -2,11 +2,16 @@ import React from 'react'
 import AlertViewComponent from '../../components/Modal/AlertView'
 import AddMemberModalContent from './AddMemberModalContent'
 import * as Yup from 'yup'
-import { IShowNotificationAction, IShowNotificationPayload } from '../../lib/Epics/ShowNotificationEpic';
+import {
+    IShowNotificationAction,
+    IShowNotificationPayload,
+} from '../../lib/Epics/ShowNotificationEpic'
 
 interface IProps {
     closeModalAction: () => void
-    showNotificationAction: (payload: IShowNotificationPayload) => IShowNotificationAction
+    showNotificationAction: (
+        payload: IShowNotificationPayload
+    ) => IShowNotificationAction
     confirmButtonAction: (
         payload: { email: string; role: string },
         closeModalAction: () => void

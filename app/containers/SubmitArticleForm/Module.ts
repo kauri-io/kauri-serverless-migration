@@ -454,64 +454,54 @@ export const editArticleEpic: Epic<any, {}, IDependencies> = (
 
 export const draftArticleEpic = (
     action$: ActionsObservable<IDraftArticleAction>,
-    _:IReduxState,
+    _: IReduxState,
     { apolloClient, apolloSubscriber }: IDependencies
 ) =>
     action$
         .ofType(DRAFT_ARTICLE)
-        .switchMap(
-            ({
-                payload: { text, subject, tags, attributes },
-            }) =>
-                from(
-                    apolloClient.mutate({
-                        mutation: submitNewArticle,
-                        variables: {
-                            content: text,
-                            title: subject,
-                            tags,
-                            attributes,
+        .switchMap(({ payload: { text, subject, tags, attributes } }) =>
+            from(
+                apolloClient.mutate({
+                    mutation: submitNewArticle,
+                    variables: {
+                        content: text,
+                        title: subject,
+                        tags,
+                        attributes,
+                    },
+                })
+            )
+                .flatMap(
+                    ({
+                        data: {
+                            submitNewArticle: { hash },
                         },
-                    })
+                    }: {
+                        data: { submitNewArticle: { hash: string } }
+                    }) =>
+                        apolloSubscriber<{ id: string; version: number }>(hash)
                 )
-                    .flatMap(
-                        ({
-                            data: {
-                                submitNewArticle: { hash },
-                            },
-                        }: {
-                            data: { submitNewArticle: { hash: string } }
-                        }) =>
-                            apolloSubscriber<{ id: string; version: number }>(
-                                hash
-                            )
-                    )
-                    .do(() => apolloClient.resetStore())
-                    .do(() => {
-                        analytics.track('Create Draft', {
-                            category: 'article_actions',
-                        })
+                .do(() => apolloClient.resetStore())
+                .do(() => {
+                    analytics.track('Create Draft', {
+                        category: 'article_actions',
                     })
-                    .mergeMap<any, any>(
-                        ({
-                            data: {
-                                output: { id, version },
-                            },
-                        }) =>
-                            merge(
-                                of(
-                                    showNotificationAction({
-                                        description:
-                                            'The draft has just been saved. You can go back and submit it whenever you are ready.',
-                                        message: 'Draft Created',
-                                        notificationType: 'info',
-                                    })
-                                ),
-                                of(
-                                    routeChangeAction(
-                                        `/article/${id}/v${version}/article-drafted`
-                                    )
-                                )
+                })
+                .mergeMap<any, any>(({ data: { output: { id, version } } }) =>
+                    merge(
+                        of(
+                            showNotificationAction({
+                                description:
+                                    'The draft has just been saved. You can go back and submit it whenever you are ready.',
+                                message: 'Draft Created',
+                                notificationType: 'info',
+                            })
+                        ),
+                        of(
+                            routeChangeAction(
+                                `/article/${id}/v${version}/article-drafted`
                             )
+                        )
                     )
+                )
         )
