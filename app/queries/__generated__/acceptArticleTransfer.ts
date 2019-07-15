@@ -7,14 +7,14 @@
 // ====================================================
 
 export interface acceptArticleTransfer_acceptArticleTransfer {
-    __typename: 'MutationResponse'
-    hash: string | null
+  __typename: "MutationResponse";
+  hash: string ;
 }
 
 export interface acceptArticleTransfer {
-    acceptArticleTransfer: acceptArticleTransfer_acceptArticleTransfer | null
+  acceptArticleTransfer: acceptArticleTransfer_acceptArticleTransfer ;
 }
 
 export interface acceptArticleTransferVariables {
-    id?: string | null
+  id?: string ;
 }

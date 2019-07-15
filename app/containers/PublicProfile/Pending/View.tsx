@@ -38,7 +38,6 @@ const Articles = ({
     type,
     routeChangeAction,
     isOwner,
-    isLoggedIn,
 }: IArticlesProps) => {
     const articles = data.searchArticles && data.searchArticles.content
 
@@ -113,7 +112,6 @@ export default compose(
     graphql(searchPending, {
         options: ({
             userId,
-            communities,
         }: {
             userId: string
             communities: ICommunity[]

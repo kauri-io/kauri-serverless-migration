@@ -7,14 +7,14 @@
 // ====================================================
 
 export interface getTotalArticlesCount_searchArticles {
-    __typename: 'ResponsePage_ArticleDTO'
-    totalElements: any
+  __typename: "ResponsePage_ArticleDTO";
+  totalElements: any;
 }
 
 export interface getTotalArticlesCount {
-    searchArticles: getTotalArticlesCount_searchArticles | null
+  searchArticles: getTotalArticlesCount_searchArticles ;
 }
 
 export interface getTotalArticlesCountVariables {
-    category?: string | null
+  category?: string ;
 }

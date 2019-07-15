@@ -7,17 +7,17 @@
 // ====================================================
 
 export interface submitNewArticle_submitNewArticle {
-    __typename: 'MutationResponse'
-    hash: string | null
+  __typename: "MutationResponse";
+  hash: string ;
 }
 
 export interface submitNewArticle {
-    submitNewArticle: submitNewArticle_submitNewArticle | null
+  submitNewArticle: submitNewArticle_submitNewArticle ;
 }
 
 export interface submitNewArticleVariables {
-    title?: string | null
-    content?: string | null
-    tags?: (string | null)[] | null
-    attributes?: any | null
+  title?: string ;
+  content?: string ;
+  tags?: (string )[] ;
+  attributes?: any ;
 }

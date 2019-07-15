@@ -1,7 +1,6 @@
-import { Epic, ActionsObservable, ofType } from 'redux-observable'
+import { ActionsObservable, ofType } from 'redux-observable'
 import gql from 'graphql-tag'
-import { ApolloQueryResult } from 'apollo-client'
-import { IReduxState, IDependencies } from '../../lib/Module'
+import { IDependencies } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { publishArticle } from './__generated__/publishArticle'
@@ -63,11 +62,6 @@ export const publishArticleAction = (
     payload,
     type: PUBLISH_ARTICLE,
 })
-
-interface IPublishArticleCommandOutput {
-    id: string
-    version: number
-}
 
 export const publishArticleEpic = (
     action$: ActionsObservable<IPublishArticleAction>,

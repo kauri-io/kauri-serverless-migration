@@ -20,10 +20,9 @@ import {
     IOpenModalAction,
     ICloseModalAction,
 } from '../../components/Modal/Module'
-import { WithRouterProps } from 'next/router'
 
 interface IProps {
-    router: WithRouterProps
+    router: any
     userId: string
     UserQuery: getUser
     ArticlesQuery: searchPersonalArticles
@@ -88,7 +87,6 @@ class PublicProfile extends Component<IProps, IState> {
             acceptArticleTransferAction,
             closeModalAction,
             openModalAction,
-            isLoggedIn,
             hostName,
             removeMemberAction,
         } = this.props

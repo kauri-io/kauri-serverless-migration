@@ -2,22 +2,22 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { SectionDTOInput } from './../../__generated__/globalTypes'
+import { SectionDTOInput } from "./../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: composeCollection
 // ====================================================
 
 export interface composeCollection_composeCollection {
-    __typename: 'MutationResponse'
-    hash: string | null
+  __typename: "MutationResponse";
+  hash: string ;
 }
 
 export interface composeCollection {
-    composeCollection: composeCollection_composeCollection | null
+  composeCollection: composeCollection_composeCollection ;
 }
 
 export interface composeCollectionVariables {
-    id?: string | null
-    sections?: (SectionDTOInput | null)[] | null
+  id?: string ;
+  sections?: (SectionDTOInput )[] ;
 }

@@ -86,7 +86,7 @@ interface IEmailSubscribeOutput {
 
 export const emailSubscribeEpic = (
     action$: ActionsObservable<IEmailSubscribeAction>,
-    { getState }: any,
+    _: any,
     { apolloClient }: IDependencies
 ) =>
     action$.pipe(
@@ -146,7 +146,7 @@ export const emailSubscribeEpic = (
 
 export const verifyEmailEpic = (
     action$: ActionsObservable<IVerifyEmailAction>,
-    { getState }: any,
+    _: any,
     { apolloClient }: IDependencies
 ) =>
     action$.pipe(

@@ -7,15 +7,15 @@
 // ====================================================
 
 export interface finaliseArticleTransfer_finaliseArticleTransfer {
-    __typename: 'MutationResponse'
-    hash: string | null
+  __typename: "MutationResponse";
+  hash: string ;
 }
 
 export interface finaliseArticleTransfer {
-    finaliseArticleTransfer: finaliseArticleTransfer_finaliseArticleTransfer | null
+  finaliseArticleTransfer: finaliseArticleTransfer_finaliseArticleTransfer ;
 }
 
 export interface finaliseArticleTransferVariables {
-    id?: string | null
-    signature?: string | null
+  id?: string ;
+  signature?: string ;
 }

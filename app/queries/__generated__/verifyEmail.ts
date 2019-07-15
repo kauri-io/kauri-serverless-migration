@@ -7,14 +7,14 @@
 // ====================================================
 
 export interface verifyEmail_verifyEmail {
-    __typename: 'MutationResponse'
-    hash: string | null
+  __typename: "MutationResponse";
+  hash: string ;
 }
 
 export interface verifyEmail {
-    verifyEmail: verifyEmail_verifyEmail | null
+  verifyEmail: verifyEmail_verifyEmail ;
 }
 
 export interface verifyEmailVariables {
-    code?: string | null
+  code?: string ;
 }

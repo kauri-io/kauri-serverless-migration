@@ -7,16 +7,16 @@
 // ====================================================
 
 export interface revokeInvitation_revokeInvitation {
-    __typename: 'MutationResponse'
-    hash: string | null
+  __typename: "MutationResponse";
+  hash: string ;
 }
 
 export interface revokeInvitation {
-    revokeInvitation: revokeInvitation_revokeInvitation | null
+  revokeInvitation: revokeInvitation_revokeInvitation ;
 }
 
 export interface revokeInvitationVariables {
-    signature?: string | null
-    id?: string | null
-    invitationId?: string | null
+  signature?: string ;
+  id?: string ;
+  invitationId?: string ;
 }

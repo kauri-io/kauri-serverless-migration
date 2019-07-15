@@ -26,15 +26,15 @@ export const CheckpointArticlesIcon = () => (
 )
 
 interface IState {
-    activated: boolean;
+    activated: boolean
 }
 
 interface IProps {
-    pageType: string;
-    checkpointArticlesAction: () => void;
+    pageType: string
+    checkpointArticlesAction: () => void
 }
 
-class CTA extends Component<IProps,IState> {
+class CTA extends Component<IProps, IState> {
     constructor(props) {
         super(props)
         this.state = {

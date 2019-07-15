@@ -7,15 +7,15 @@
 // ====================================================
 
 export interface prepareRevokeInvitation_prepareRevokeInvitation {
-    __typename: 'PrepareCommandResponseDTO'
-    messageHash: string | null
+  __typename: "PrepareCommandResponseDTO";
+  messageHash: string ;
 }
 
 export interface prepareRevokeInvitation {
-    prepareRevokeInvitation: prepareRevokeInvitation_prepareRevokeInvitation | null
+  prepareRevokeInvitation: prepareRevokeInvitation_prepareRevokeInvitation ;
 }
 
 export interface prepareRevokeInvitationVariables {
-    id?: string | null
-    invitationId?: string | null
+  id?: string ;
+  invitationId?: string ;
 }

@@ -25,7 +25,7 @@ export const saveUserDetailsAction = (payload: any, callback?: any) => ({
 export const saveUserDetailsEpic = (
     action$: ActionsObservable<ISaveUserDetailActionType>,
     { getState }: any,
-    { apolloClient, smartContracts, web3, apolloSubscriber }: IDependencies
+    { apolloClient, apolloSubscriber }: IDependencies
 ) =>
     action$.pipe(
         filter(x => x.type === 'SAVE_USER_DETAILS'),

@@ -18,19 +18,19 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_main_AbstractCompon
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Categories_content {
     __typename: 'StaticContentElementDTO'
-    name: string | null
-    description: string | null
-    image: string | null
-    link: string | null
+    name: string 
+    description: string 
+    image: string 
+    link: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Categories {
     __typename: 'Categories'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
     content:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Categories_content | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Categories_content )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_PublicUserDTO {
@@ -60,31 +60,31 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_conte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_owner_PublicUserDTO {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_owner_CommunityDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_owner_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    name: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_owner_CommunityDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_owner_CommunityDTO_resourceIdentifier 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_owner =
@@ -94,8 +94,8 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_re
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resourcesId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_CommunityDTO {
@@ -114,8 +114,8 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_conte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO {
     __typename: 'ArticleDTO'
-    id: string | null
-    version: number | null
+    id: string 
+    version: number 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources =
@@ -124,59 +124,59 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_re
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections {
     __typename: 'SectionDTO'
-    id: string | null
-    name: string | null
-    description: string | null
+    id: string 
+    name: string 
+    description: string 
     resourcesId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resourcesId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resourcesId )[]
+        
     resources:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    type: ResourceTypeInput | null
-    id: string | null
+    type: ResourceTypeInput 
+    id: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO {
     __typename: 'CollectionDTO'
-    id: string | null
-    name: string | null
-    description: string | null
-    tags: (string | null)[] | null
-    background: string | null
-    dateUpdated: any | null
-    owner: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_owner | null
+    id: string 
+    name: string 
+    description: string 
+    tags: (string )[] 
+    background: string 
+    dateUpdated: any 
+    owner: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_owner 
     sections:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections | null)[]
-        | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_resourceIdentifier | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections )[]
+        
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
-    version: number | null
+    id: string 
+    type: ResourceTypeInput 
+    version: number 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_voteResult {
     __typename: 'VoteResultDTO'
-    sum: number | null
-    count: any | null
-    hasVoted: boolean | null
-    quantity: any | null
+    sum: number 
+    count: any 
+    hasVoted: boolean 
+    quantity: any 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_author {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_owner_ArticleDTO {
@@ -194,31 +194,31 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_conte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_owner_PublicUserDTO {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_owner_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    name: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_owner =
@@ -228,42 +228,42 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_re
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO {
     __typename: 'ArticleDTO'
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_resourceIdentifier | null
-    description: string | null
-    id: string | null
-    version: number | null
-    title: string | null
-    content: string | null
-    authorId: string | null
-    dateCreated: any | null
-    datePublished: any | null
-    attributes: any | null
-    contentHash: string | null
-    checkpoint: string | null
-    tags: (string | null)[] | null
-    voteResult: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_voteResult | null
-    author: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_author | null
-    owner: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_owner | null
-    updateComment: string | null
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_resourceIdentifier 
+    description: string 
+    id: string 
+    version: number 
+    title: string 
+    content: string 
+    authorId: string 
+    dateCreated: any 
+    datePublished: any 
+    attributes: any 
+    contentHash: string 
+    checkpoint: string 
+    tags: (string )[] 
+    voteResult: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_voteResult 
+    author: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_author 
+    owner: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_owner 
+    updateComment: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_creator {
     __typename: 'PublicUserDTO'
-    id: string | null
-    username: string | null
-    name: string | null
+    id: string 
+    username: string 
+    name: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_approvedId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_pendingId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_approved_CommunityDTO {
@@ -281,13 +281,13 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_conte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_approved_ArticleDTO {
     __typename: 'ArticleDTO'
-    id: string | null
-    version: number | null
+    id: string 
+    version: number 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_approved_CollectionDTO {
     __typename: 'CollectionDTO'
-    id: string | null
+    id: string 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_approved =
@@ -297,27 +297,27 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_re
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    dateCreated: any | null
-    dateUpdated: any | null
-    creatorId: string | null
-    creator: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_creator | null
-    name: string | null
-    description: string | null
-    website: string | null
-    avatar: string | null
-    social: any | null
-    tags: (string | null)[] | null
-    attributes: any | null
+    id: string 
+    dateCreated: any 
+    dateUpdated: any 
+    creatorId: string 
+    creator: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_creator 
+    name: string 
+    description: string 
+    website: string 
+    avatar: string 
+    social: any 
+    tags: (string )[] 
+    attributes: any 
     approvedId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_approvedId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_approvedId )[]
+        
     pendingId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_pendingId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_pendingId )[]
+        
     approved:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_approved | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_approved )[]
+        
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource =
@@ -328,66 +328,66 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_re
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content {
     __typename: 'ResourceIdentifier'
-    resource: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource | null
+    resource: HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content_resource 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Featured {
     __typename: 'Featured'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
     content:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Featured_content )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Actions_content {
     __typename: 'StaticContentElementDTO'
-    name: string | null
-    link: string | null
+    name: string 
+    link: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Actions {
     __typename: 'Actions'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
     content:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Actions_content | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Actions_content )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_TopTags_content {
     __typename: 'StaticContentElementDTO'
-    name: string | null
+    name: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_TopTags {
     __typename: 'TopTags'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
     content:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_TopTags_content | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_TopTags_content )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_TopContributors_content_user {
     __typename: 'PublicUserDTO'
-    id: string | null
-    username: string | null
-    avatar: string | null
+    id: string 
+    username: string 
+    avatar: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_TopContributors_content {
     __typename: 'ResourceIdentifier'
-    user: HomePageV2_getLatestHomepageDescriptor_rows_main_TopContributors_content_user | null
+    user: HomePageV2_getLatestHomepageDescriptor_rows_main_TopContributors_content_user 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_TopContributors {
     __typename: 'TopContributors'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
     content:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_TopContributors_content | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_TopContributors_content )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_PublicUserDTO {
@@ -417,31 +417,31 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_owner_PublicUserDTO {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_owner_CommunityDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_owner_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    name: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_owner_CommunityDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_owner_CommunityDTO_resourceIdentifier 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_owner =
@@ -451,8 +451,8 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resou
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resourcesId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_CommunityDTO {
@@ -471,8 +471,8 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO {
     __typename: 'ArticleDTO'
-    id: string | null
-    version: number | null
+    id: string 
+    version: number 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources =
@@ -481,59 +481,59 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resou
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections {
     __typename: 'SectionDTO'
-    id: string | null
-    name: string | null
-    description: string | null
+    id: string 
+    name: string 
+    description: string 
     resourcesId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resourcesId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resourcesId )[]
+        
     resources:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    type: ResourceTypeInput | null
-    id: string | null
+    type: ResourceTypeInput 
+    id: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO {
     __typename: 'CollectionDTO'
-    id: string | null
-    name: string | null
-    description: string | null
-    tags: (string | null)[] | null
-    background: string | null
-    dateUpdated: any | null
-    owner: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_owner | null
+    id: string 
+    name: string 
+    description: string 
+    tags: (string )[] 
+    background: string 
+    dateUpdated: any 
+    owner: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_owner 
     sections:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections | null)[]
-        | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_resourceIdentifier | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections )[]
+        
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
-    version: number | null
+    id: string 
+    type: ResourceTypeInput 
+    version: number 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_voteResult {
     __typename: 'VoteResultDTO'
-    sum: number | null
-    count: any | null
-    hasVoted: boolean | null
-    quantity: any | null
+    sum: number 
+    count: any 
+    hasVoted: boolean 
+    quantity: any 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_author {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_owner_ArticleDTO {
@@ -551,31 +551,31 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_owner_PublicUserDTO {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_owner_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    name: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_owner =
@@ -585,42 +585,42 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resou
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO {
     __typename: 'ArticleDTO'
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_resourceIdentifier | null
-    description: string | null
-    id: string | null
-    version: number | null
-    title: string | null
-    content: string | null
-    authorId: string | null
-    dateCreated: any | null
-    datePublished: any | null
-    attributes: any | null
-    contentHash: string | null
-    checkpoint: string | null
-    tags: (string | null)[] | null
-    voteResult: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_voteResult | null
-    author: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_author | null
-    owner: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_owner | null
-    updateComment: string | null
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_resourceIdentifier 
+    description: string 
+    id: string 
+    version: number 
+    title: string 
+    content: string 
+    authorId: string 
+    dateCreated: any 
+    datePublished: any 
+    attributes: any 
+    contentHash: string 
+    checkpoint: string 
+    tags: (string )[] 
+    voteResult: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_voteResult 
+    author: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_author 
+    owner: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_owner 
+    updateComment: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_creator {
     __typename: 'PublicUserDTO'
-    id: string | null
-    username: string | null
-    name: string | null
+    id: string 
+    username: string 
+    name: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_approvedId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_pendingId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_approved_CommunityDTO {
@@ -638,13 +638,13 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_approved_ArticleDTO {
     __typename: 'ArticleDTO'
-    id: string | null
-    version: number | null
+    id: string 
+    version: number 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_approved_CollectionDTO {
     __typename: 'CollectionDTO'
-    id: string | null
+    id: string 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_approved =
@@ -654,27 +654,27 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resou
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    dateCreated: any | null
-    dateUpdated: any | null
-    creatorId: string | null
-    creator: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_creator | null
-    name: string | null
-    description: string | null
-    website: string | null
-    avatar: string | null
-    social: any | null
-    tags: (string | null)[] | null
-    attributes: any | null
+    id: string 
+    dateCreated: any 
+    dateUpdated: any 
+    creatorId: string 
+    creator: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_creator 
+    name: string 
+    description: string 
+    website: string 
+    avatar: string 
+    social: any 
+    tags: (string )[] 
+    attributes: any 
     approvedId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_approvedId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_approvedId )[]
+        
     pendingId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_pendingId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_pendingId )[]
+        
     approved:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_approved | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_approved )[]
+        
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource =
@@ -685,16 +685,16 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resou
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content {
     __typename: 'ResourceIdentifier'
-    resource: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource | null
+    resource: HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content_resource 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Promo {
     __typename: 'Promo'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
     content:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_Promo_content )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_PublicUserDTO {
@@ -724,31 +724,31 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_owner_PublicUserDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_owner_PublicUserDTO {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_owner_PublicUserDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_owner_PublicUserDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_owner_CommunityDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_owner_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    name: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_owner_CommunityDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_owner_CommunityDTO_resourceIdentifier 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_owner =
@@ -758,8 +758,8 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_conte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resourcesId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_CommunityDTO {
@@ -778,8 +778,8 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO {
     __typename: 'ArticleDTO'
-    id: string | null
-    version: number | null
+    id: string 
+    version: number 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources =
@@ -788,59 +788,59 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_conte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections {
     __typename: 'SectionDTO'
-    id: string | null
-    name: string | null
-    description: string | null
+    id: string 
+    name: string 
+    description: string 
     resourcesId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resourcesId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resourcesId )[]
+        
     resources:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    type: ResourceTypeInput | null
-    id: string | null
+    type: ResourceTypeInput 
+    id: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO {
     __typename: 'CollectionDTO'
-    id: string | null
-    name: string | null
-    description: string | null
-    tags: (string | null)[] | null
-    background: string | null
-    dateUpdated: any | null
-    owner: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_owner | null
+    id: string 
+    name: string 
+    description: string 
+    tags: (string )[] 
+    background: string 
+    dateUpdated: any 
+    owner: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_owner 
     sections:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections | null)[]
-        | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_resourceIdentifier | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections )[]
+        
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
-    version: number | null
+    id: string 
+    type: ResourceTypeInput 
+    version: number 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_voteResult {
     __typename: 'VoteResultDTO'
-    sum: number | null
-    count: any | null
-    hasVoted: boolean | null
-    quantity: any | null
+    sum: number 
+    count: any 
+    hasVoted: boolean 
+    quantity: any 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_author {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_owner_ArticleDTO {
@@ -858,31 +858,31 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_owner_PublicUserDTO {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_owner_PublicUserDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_owner_PublicUserDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_owner_CommunityDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_owner_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    name: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_owner_CommunityDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_owner_CommunityDTO_resourceIdentifier 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_owner =
@@ -892,42 +892,42 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_conte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO {
     __typename: 'ArticleDTO'
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_resourceIdentifier | null
-    description: string | null
-    id: string | null
-    version: number | null
-    title: string | null
-    content: string | null
-    authorId: string | null
-    dateCreated: any | null
-    datePublished: any | null
-    attributes: any | null
-    contentHash: string | null
-    checkpoint: string | null
-    tags: (string | null)[] | null
-    voteResult: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_voteResult | null
-    author: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_author | null
-    owner: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_owner | null
-    updateComment: string | null
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_resourceIdentifier 
+    description: string 
+    id: string 
+    version: number 
+    title: string 
+    content: string 
+    authorId: string 
+    dateCreated: any 
+    datePublished: any 
+    attributes: any 
+    contentHash: string 
+    checkpoint: string 
+    tags: (string )[] 
+    voteResult: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_voteResult 
+    author: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_author 
+    owner: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_owner 
+    updateComment: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_creator {
     __typename: 'PublicUserDTO'
-    id: string | null
-    username: string | null
-    name: string | null
+    id: string 
+    username: string 
+    name: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_approvedId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_pendingId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_approved_CommunityDTO {
@@ -945,13 +945,13 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_approved_ArticleDTO {
     __typename: 'ArticleDTO'
-    id: string | null
-    version: number | null
+    id: string 
+    version: number 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_approved_CollectionDTO {
     __typename: 'CollectionDTO'
-    id: string | null
+    id: string 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_approved =
@@ -961,27 +961,27 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_conte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    dateCreated: any | null
-    dateUpdated: any | null
-    creatorId: string | null
-    creator: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_creator | null
-    name: string | null
-    description: string | null
-    website: string | null
-    avatar: string | null
-    social: any | null
-    tags: (string | null)[] | null
-    attributes: any | null
+    id: string 
+    dateCreated: any 
+    dateUpdated: any 
+    creatorId: string 
+    creator: HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_creator 
+    name: string 
+    description: string 
+    website: string 
+    avatar: string 
+    social: any 
+    tags: (string )[] 
+    attributes: any 
     approvedId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_approvedId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_approvedId )[]
+        
     pendingId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_pendingId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_pendingId )[]
+        
     approved:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_approved | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_approved )[]
+        
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content =
@@ -992,23 +992,23 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_conte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent {
     __typename: 'LatestContent'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
     content:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_main_LatestContent_content )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Newsletter {
     __typename: 'Newsletter'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_main_Import {
     __typename: 'Import'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_main =
@@ -1033,19 +1033,19 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_AbstractCom
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Categories_content {
     __typename: 'StaticContentElementDTO'
-    name: string | null
-    description: string | null
-    image: string | null
-    link: string | null
+    name: string 
+    description: string 
+    image: string 
+    link: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Categories {
     __typename: 'Categories'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
     content:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Categories_content | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Categories_content )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_PublicUserDTO {
@@ -1075,31 +1075,31 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_co
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_owner_PublicUserDTO {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_owner_CommunityDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_owner_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    name: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_owner_CommunityDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_owner_CommunityDTO_resourceIdentifier 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_owner =
@@ -1109,8 +1109,8 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resourcesId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_CommunityDTO {
@@ -1129,8 +1129,8 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_co
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO {
     __typename: 'ArticleDTO'
-    id: string | null
-    version: number | null
+    id: string 
+    version: number 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources =
@@ -1139,59 +1139,59 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections {
     __typename: 'SectionDTO'
-    id: string | null
-    name: string | null
-    description: string | null
+    id: string 
+    name: string 
+    description: string 
     resourcesId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resourcesId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resourcesId )[]
+        
     resources:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    type: ResourceTypeInput | null
-    id: string | null
+    type: ResourceTypeInput 
+    id: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO {
     __typename: 'CollectionDTO'
-    id: string | null
-    name: string | null
-    description: string | null
-    tags: (string | null)[] | null
-    background: string | null
-    dateUpdated: any | null
-    owner: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_owner | null
+    id: string 
+    name: string 
+    description: string 
+    tags: (string )[] 
+    background: string 
+    dateUpdated: any 
+    owner: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_owner 
     sections:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections | null)[]
-        | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_resourceIdentifier | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections )[]
+        
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
-    version: number | null
+    id: string 
+    type: ResourceTypeInput 
+    version: number 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_voteResult {
     __typename: 'VoteResultDTO'
-    sum: number | null
-    count: any | null
-    hasVoted: boolean | null
-    quantity: any | null
+    sum: number 
+    count: any 
+    hasVoted: boolean 
+    quantity: any 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_author {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_owner_ArticleDTO {
@@ -1209,31 +1209,31 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_co
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_owner_PublicUserDTO {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_owner_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    name: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_owner =
@@ -1243,42 +1243,42 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO {
     __typename: 'ArticleDTO'
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_resourceIdentifier | null
-    description: string | null
-    id: string | null
-    version: number | null
-    title: string | null
-    content: string | null
-    authorId: string | null
-    dateCreated: any | null
-    datePublished: any | null
-    attributes: any | null
-    contentHash: string | null
-    checkpoint: string | null
-    tags: (string | null)[] | null
-    voteResult: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_voteResult | null
-    author: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_author | null
-    owner: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_owner | null
-    updateComment: string | null
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_resourceIdentifier 
+    description: string 
+    id: string 
+    version: number 
+    title: string 
+    content: string 
+    authorId: string 
+    dateCreated: any 
+    datePublished: any 
+    attributes: any 
+    contentHash: string 
+    checkpoint: string 
+    tags: (string )[] 
+    voteResult: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_voteResult 
+    author: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_author 
+    owner: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_owner 
+    updateComment: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_creator {
     __typename: 'PublicUserDTO'
-    id: string | null
-    username: string | null
-    name: string | null
+    id: string 
+    username: string 
+    name: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_approvedId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_pendingId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_approved_CommunityDTO {
@@ -1296,13 +1296,13 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_co
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_approved_ArticleDTO {
     __typename: 'ArticleDTO'
-    id: string | null
-    version: number | null
+    id: string 
+    version: number 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_approved_CollectionDTO {
     __typename: 'CollectionDTO'
-    id: string | null
+    id: string 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_approved =
@@ -1312,27 +1312,27 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    dateCreated: any | null
-    dateUpdated: any | null
-    creatorId: string | null
-    creator: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_creator | null
-    name: string | null
-    description: string | null
-    website: string | null
-    avatar: string | null
-    social: any | null
-    tags: (string | null)[] | null
-    attributes: any | null
+    id: string 
+    dateCreated: any 
+    dateUpdated: any 
+    creatorId: string 
+    creator: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_creator 
+    name: string 
+    description: string 
+    website: string 
+    avatar: string 
+    social: any 
+    tags: (string )[] 
+    attributes: any 
     approvedId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_approvedId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_approvedId )[]
+        
     pendingId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_pendingId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_pendingId )[]
+        
     approved:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_approved | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_approved )[]
+        
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource =
@@ -1343,66 +1343,66 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content {
     __typename: 'ResourceIdentifier'
-    resource: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource | null
+    resource: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured {
     __typename: 'Featured'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
     content:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Featured_content )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Actions_content {
     __typename: 'StaticContentElementDTO'
-    name: string | null
-    link: string | null
+    name: string 
+    link: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Actions {
     __typename: 'Actions'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
     content:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Actions_content | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Actions_content )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_TopTags_content {
     __typename: 'StaticContentElementDTO'
-    name: string | null
+    name: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_TopTags {
     __typename: 'TopTags'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
     content:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_TopTags_content | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_TopTags_content )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_TopContributors_content_user {
     __typename: 'PublicUserDTO'
-    id: string | null
-    username: string | null
-    avatar: string | null
+    id: string 
+    username: string 
+    avatar: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_TopContributors_content {
     __typename: 'ResourceIdentifier'
-    user: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_TopContributors_content_user | null
+    user: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_TopContributors_content_user 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_TopContributors {
     __typename: 'TopContributors'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
     content:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_TopContributors_content | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_TopContributors_content )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_PublicUserDTO {
@@ -1432,31 +1432,31 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_conte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_owner_PublicUserDTO {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_owner_CommunityDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_owner_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    name: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_owner_CommunityDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_owner_CommunityDTO_resourceIdentifier 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_owner =
@@ -1466,8 +1466,8 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_re
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resourcesId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_CommunityDTO {
@@ -1486,8 +1486,8 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_conte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO {
     __typename: 'ArticleDTO'
-    id: string | null
-    version: number | null
+    id: string 
+    version: number 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources =
@@ -1496,59 +1496,59 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_re
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections {
     __typename: 'SectionDTO'
-    id: string | null
-    name: string | null
-    description: string | null
+    id: string 
+    name: string 
+    description: string 
     resourcesId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resourcesId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resourcesId )[]
+        
     resources:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    type: ResourceTypeInput | null
-    id: string | null
+    type: ResourceTypeInput 
+    id: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO {
     __typename: 'CollectionDTO'
-    id: string | null
-    name: string | null
-    description: string | null
-    tags: (string | null)[] | null
-    background: string | null
-    dateUpdated: any | null
-    owner: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_owner | null
+    id: string 
+    name: string 
+    description: string 
+    tags: (string )[] 
+    background: string 
+    dateUpdated: any 
+    owner: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_owner 
     sections:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections | null)[]
-        | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_resourceIdentifier | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections )[]
+        
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
-    version: number | null
+    id: string 
+    type: ResourceTypeInput 
+    version: number 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_voteResult {
     __typename: 'VoteResultDTO'
-    sum: number | null
-    count: any | null
-    hasVoted: boolean | null
-    quantity: any | null
+    sum: number 
+    count: any 
+    hasVoted: boolean 
+    quantity: any 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_author {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_owner_ArticleDTO {
@@ -1566,31 +1566,31 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_conte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_owner_PublicUserDTO {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_owner_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    name: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_owner =
@@ -1600,42 +1600,42 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_re
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO {
     __typename: 'ArticleDTO'
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_resourceIdentifier | null
-    description: string | null
-    id: string | null
-    version: number | null
-    title: string | null
-    content: string | null
-    authorId: string | null
-    dateCreated: any | null
-    datePublished: any | null
-    attributes: any | null
-    contentHash: string | null
-    checkpoint: string | null
-    tags: (string | null)[] | null
-    voteResult: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_voteResult | null
-    author: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_author | null
-    owner: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_owner | null
-    updateComment: string | null
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_resourceIdentifier 
+    description: string 
+    id: string 
+    version: number 
+    title: string 
+    content: string 
+    authorId: string 
+    dateCreated: any 
+    datePublished: any 
+    attributes: any 
+    contentHash: string 
+    checkpoint: string 
+    tags: (string )[] 
+    voteResult: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_voteResult 
+    author: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_author 
+    owner: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_owner 
+    updateComment: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_creator {
     __typename: 'PublicUserDTO'
-    id: string | null
-    username: string | null
-    name: string | null
+    id: string 
+    username: string 
+    name: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_approvedId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_pendingId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_approved_CommunityDTO {
@@ -1653,13 +1653,13 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_conte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_approved_ArticleDTO {
     __typename: 'ArticleDTO'
-    id: string | null
-    version: number | null
+    id: string 
+    version: number 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_approved_CollectionDTO {
     __typename: 'CollectionDTO'
-    id: string | null
+    id: string 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_approved =
@@ -1669,27 +1669,27 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_re
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    dateCreated: any | null
-    dateUpdated: any | null
-    creatorId: string | null
-    creator: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_creator | null
-    name: string | null
-    description: string | null
-    website: string | null
-    avatar: string | null
-    social: any | null
-    tags: (string | null)[] | null
-    attributes: any | null
+    id: string 
+    dateCreated: any 
+    dateUpdated: any 
+    creatorId: string 
+    creator: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_creator 
+    name: string 
+    description: string 
+    website: string 
+    avatar: string 
+    social: any 
+    tags: (string )[] 
+    attributes: any 
     approvedId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_approvedId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_approvedId )[]
+        
     pendingId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_pendingId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_pendingId )[]
+        
     approved:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_approved | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_approved )[]
+        
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource =
@@ -1700,16 +1700,16 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_re
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content {
     __typename: 'ResourceIdentifier'
-    resource: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource | null
+    resource: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo {
     __typename: 'Promo'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
     content:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Promo_content )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_PublicUserDTO {
@@ -1739,31 +1739,31 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestConte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_owner_PublicUserDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_owner_PublicUserDTO {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_owner_PublicUserDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_owner_PublicUserDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_owner_CommunityDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_owner_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    name: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_owner_CommunityDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_owner_CommunityDTO_resourceIdentifier 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_owner =
@@ -1773,8 +1773,8 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_co
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resourcesId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_CommunityDTO {
@@ -1793,8 +1793,8 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestConte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO {
     __typename: 'ArticleDTO'
-    id: string | null
-    version: number | null
+    id: string 
+    version: number 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources =
@@ -1803,59 +1803,59 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_co
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections {
     __typename: 'SectionDTO'
-    id: string | null
-    name: string | null
-    description: string | null
+    id: string 
+    name: string 
+    description: string 
     resourcesId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resourcesId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resourcesId )[]
+        
     resources:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    type: ResourceTypeInput | null
-    id: string | null
+    type: ResourceTypeInput 
+    id: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO {
     __typename: 'CollectionDTO'
-    id: string | null
-    name: string | null
-    description: string | null
-    tags: (string | null)[] | null
-    background: string | null
-    dateUpdated: any | null
-    owner: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_owner | null
+    id: string 
+    name: string 
+    description: string 
+    tags: (string )[] 
+    background: string 
+    dateUpdated: any 
+    owner: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_owner 
     sections:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections | null)[]
-        | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_resourceIdentifier | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections )[]
+        
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
-    version: number | null
+    id: string 
+    type: ResourceTypeInput 
+    version: number 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_voteResult {
     __typename: 'VoteResultDTO'
-    sum: number | null
-    count: any | null
-    hasVoted: boolean | null
-    quantity: any | null
+    sum: number 
+    count: any 
+    hasVoted: boolean 
+    quantity: any 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_author {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_owner_ArticleDTO {
@@ -1873,31 +1873,31 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestConte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_owner_PublicUserDTO {
     __typename: 'PublicUserDTO'
-    id: string | null
-    name: string | null
-    username: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_owner_PublicUserDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    username: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_owner_PublicUserDTO_resourceIdentifier 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_owner_CommunityDTO_resourceIdentifier {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_owner_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    name: string | null
-    avatar: string | null
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_owner_CommunityDTO_resourceIdentifier | null
+    id: string 
+    name: string 
+    avatar: string 
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_owner_CommunityDTO_resourceIdentifier 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_owner =
@@ -1907,42 +1907,42 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_co
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO {
     __typename: 'ArticleDTO'
-    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_resourceIdentifier | null
-    description: string | null
-    id: string | null
-    version: number | null
-    title: string | null
-    content: string | null
-    authorId: string | null
-    dateCreated: any | null
-    datePublished: any | null
-    attributes: any | null
-    contentHash: string | null
-    checkpoint: string | null
-    tags: (string | null)[] | null
-    voteResult: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_voteResult | null
-    author: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_author | null
-    owner: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_owner | null
-    updateComment: string | null
+    resourceIdentifier: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_resourceIdentifier 
+    description: string 
+    id: string 
+    version: number 
+    title: string 
+    content: string 
+    authorId: string 
+    dateCreated: any 
+    datePublished: any 
+    attributes: any 
+    contentHash: string 
+    checkpoint: string 
+    tags: (string )[] 
+    voteResult: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_voteResult 
+    author: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_author 
+    owner: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_owner 
+    updateComment: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_creator {
     __typename: 'PublicUserDTO'
-    id: string | null
-    username: string | null
-    name: string | null
+    id: string 
+    username: string 
+    name: string 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_approvedId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_pendingId {
     __typename: 'ResourceIdentifier'
-    id: string | null
-    type: ResourceTypeInput | null
+    id: string 
+    type: ResourceTypeInput 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_approved_CommunityDTO {
@@ -1960,13 +1960,13 @@ export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestConte
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_approved_ArticleDTO {
     __typename: 'ArticleDTO'
-    id: string | null
-    version: number | null
+    id: string 
+    version: number 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_approved_CollectionDTO {
     __typename: 'CollectionDTO'
-    id: string | null
+    id: string 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_approved =
@@ -1976,27 +1976,27 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_co
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO {
     __typename: 'CommunityDTO'
-    id: string | null
-    dateCreated: any | null
-    dateUpdated: any | null
-    creatorId: string | null
-    creator: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_creator | null
-    name: string | null
-    description: string | null
-    website: string | null
-    avatar: string | null
-    social: any | null
-    tags: (string | null)[] | null
-    attributes: any | null
+    id: string 
+    dateCreated: any 
+    dateUpdated: any 
+    creatorId: string 
+    creator: HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_creator 
+    name: string 
+    description: string 
+    website: string 
+    avatar: string 
+    social: any 
+    tags: (string )[] 
+    attributes: any 
     approvedId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_approvedId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_approvedId )[]
+        
     pendingId:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_pendingId | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_pendingId )[]
+        
     approved:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_approved | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_approved )[]
+        
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content =
@@ -2007,23 +2007,23 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_co
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent {
     __typename: 'LatestContent'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
     content:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Newsletter {
     __typename: 'Newsletter'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows_sidebar_Import {
     __typename: 'Import'
-    type: string | null
-    properties: any | null
+    type: string 
+    properties: any 
 }
 
 export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar =
@@ -2040,21 +2040,21 @@ export type HomePageV2_getLatestHomepageDescriptor_rows_sidebar =
 
 export interface HomePageV2_getLatestHomepageDescriptor_rows {
     __typename: 'HomepageRowDTO'
-    main: (HomePageV2_getLatestHomepageDescriptor_rows_main | null)[] | null
+    main: (HomePageV2_getLatestHomepageDescriptor_rows_main )[] 
     sidebar:
-        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar | null)[]
-        | null
+        | (HomePageV2_getLatestHomepageDescriptor_rows_sidebar )[]
+        
 }
 
 export interface HomePageV2_getLatestHomepageDescriptor {
     __typename: 'HomepageDescriptorDTO'
-    rows: (HomePageV2_getLatestHomepageDescriptor_rows | null)[] | null
+    rows: (HomePageV2_getLatestHomepageDescriptor_rows )[] 
 }
 
 export interface HomePageV2 {
-    getLatestHomepageDescriptor: HomePageV2_getLatestHomepageDescriptor | null
+    getLatestHomepageDescriptor: HomePageV2_getLatestHomepageDescriptor 
 }
 
 export interface HomePageV2Variables {
-    populate?: boolean | null
+    populate?: boolean 
 }

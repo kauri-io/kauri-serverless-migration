@@ -2,29 +2,29 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { InvitationInput } from './../../__generated__/globalTypes'
+import { InvitationInput } from "./../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: prepareCreateCommunity
 // ====================================================
 
 export interface prepareCreateCommunity_prepareCreateCommunity {
-    __typename: 'PrepareCommandResponseDTO'
-    messageHash: string | null
-    attributes: any | null
+  __typename: "PrepareCommandResponseDTO";
+  messageHash: string ;
+  attributes: any ;
 }
 
 export interface prepareCreateCommunity {
-    prepareCreateCommunity: prepareCreateCommunity_prepareCreateCommunity | null
+  prepareCreateCommunity: prepareCreateCommunity_prepareCreateCommunity ;
 }
 
 export interface prepareCreateCommunityVariables {
-    name?: string | null
-    description?: string | null
-    avatar?: string | null
-    website?: string | null
-    tags?: (string | null)[] | null
-    social?: any | null
-    attributes?: any | null
-    invitations?: (InvitationInput | null)[] | null
+  name?: string ;
+  description?: string ;
+  avatar?: string ;
+  website?: string ;
+  tags?: (string )[] ;
+  social?: any ;
+  attributes?: any ;
+  invitations?: (InvitationInput )[] ;
 }

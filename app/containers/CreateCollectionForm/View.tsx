@@ -534,7 +534,7 @@ export default ({
                 <FieldArray
                     name="sections"
                     render={arrayHelpers => (
-                        <React.Fragment>
+                        <>
                             {/* {console.log(arrayHelpers)} */}
                             {values.sections &&
                                 values.sections.length > 0 &&
@@ -773,7 +773,7 @@ export default ({
                                         </SectionSection>
                                     )
                                 )}
-                        </React.Fragment>
+                        </>
                     )}
                 />
 

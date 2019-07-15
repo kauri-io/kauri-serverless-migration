@@ -208,7 +208,7 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
             <FieldArray
                 name="homepage"
                 render={arrayHelpers => (
-                    <React.Fragment>
+                    <>
                         {values.homepage &&
                             values.homepage.length > 0 &&
                             values.homepage.map((section, index) => (
@@ -544,7 +544,7 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                     />
                                 </Section>
                             ))}
-                    </React.Fragment>
+                    </>
                 )}
             />
         </ContentSection>

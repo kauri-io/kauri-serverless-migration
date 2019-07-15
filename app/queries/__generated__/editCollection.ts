@@ -7,18 +7,18 @@
 // ====================================================
 
 export interface editCollection_createCollection {
-    __typename: 'MutationResponse'
-    hash: string | null
+  __typename: "MutationResponse";
+  hash: string ;
 }
 
 export interface editCollection {
-    createCollection: editCollection_createCollection | null
+  createCollection: editCollection_createCollection ;
 }
 
 export interface editCollectionVariables {
-    id?: string | null
-    name?: string | null
-    description?: string | null
-    background?: string | null
-    tags?: (string | null)[] | null
+  id?: string ;
+  name?: string ;
+  description?: string ;
+  background?: string ;
+  tags?: (string )[] ;
 }

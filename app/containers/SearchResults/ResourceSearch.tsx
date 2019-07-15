@@ -9,7 +9,7 @@ import { searchResultsAutocomplete_searchAutocomplete_content } from '../../quer
 import { IProps as IQueryProps } from './index'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import analytics from '../../lib/analytics'
-import { debounceTime, filter, tap, flatMap, map } from 'rxjs/operators'
+import { debounceTime, tap, flatMap, map } from 'rxjs/operators'
 
 const SearchSVG = () => (
     <div className="certain-category-icon">

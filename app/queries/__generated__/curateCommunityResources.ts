@@ -2,22 +2,22 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { ResourceIdentifierInput } from './../../__generated__/globalTypes'
+import { ResourceIdentifierInput } from "./../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: curateCommunityResources
 // ====================================================
 
 export interface curateCommunityResources_curateResources {
-    __typename: 'MutationResponse'
-    hash: string | null
+  __typename: "MutationResponse";
+  hash: string ;
 }
 
 export interface curateCommunityResources {
-    curateResources: curateCommunityResources_curateResources | null
+  curateResources: curateCommunityResources_curateResources ;
 }
 
 export interface curateCommunityResourcesVariables {
-    id?: string | null
-    resources?: (ResourceIdentifierInput | null)[] | null
+  id?: string ;
+  resources?: (ResourceIdentifierInput )[] ;
 }

@@ -7,16 +7,16 @@
 // ====================================================
 
 export interface acceptInvitation_acceptInvitation {
-    __typename: 'MutationResponse'
-    hash: string | null
+  __typename: "MutationResponse";
+  hash: string ;
 }
 
 export interface acceptInvitation {
-    acceptInvitation: acceptInvitation_acceptInvitation | null
+  acceptInvitation: acceptInvitation_acceptInvitation ;
 }
 
 export interface acceptInvitationVariables {
-    signature?: string | null
-    id?: string | null
-    secret?: string | null
+  signature?: string ;
+  id?: string ;
+  secret?: string ;
 }

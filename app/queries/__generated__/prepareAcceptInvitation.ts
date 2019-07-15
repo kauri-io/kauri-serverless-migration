@@ -7,15 +7,15 @@
 // ====================================================
 
 export interface prepareAcceptInvitation_prepareAcceptInvitation {
-    __typename: 'PrepareCommandResponseDTO'
-    messageHash: string | null
+  __typename: "PrepareCommandResponseDTO";
+  messageHash: string ;
 }
 
 export interface prepareAcceptInvitation {
-    prepareAcceptInvitation: prepareAcceptInvitation_prepareAcceptInvitation | null
+  prepareAcceptInvitation: prepareAcceptInvitation_prepareAcceptInvitation ;
 }
 
 export interface prepareAcceptInvitationVariables {
-    id?: string | null
-    secret?: string | null
+  id?: string ;
+  secret?: string ;
 }

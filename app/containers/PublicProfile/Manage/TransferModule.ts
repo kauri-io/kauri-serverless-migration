@@ -10,7 +10,7 @@ import analytics from '../../../lib/analytics'
 import generatePublishArticleHash from '../../../lib/generate-publish-article-hash'
 import { create } from '../../../lib/init-apollo'
 import { getEvent } from '../../../queries/Module'
-import { from, merge, of } from 'rxjs'
+import { from, of } from 'rxjs'
 import { mergeMap, flatMap, tap } from 'rxjs/operators'
 
 interface IRejectArticleTransferPayload {
@@ -89,8 +89,8 @@ export const acceptArticleTransferAction = (
 
 export const newEpic = (
     action$: ActionsObservable<IAcceptArticleTransferAction>,
-    state: IReduxState,
-    { apolloClient, apolloSubscriber, personalSign }: IDependencies
+    _: IReduxState,
+    { apolloClient }: IDependencies
 ) =>
     action$.pipe(
         ofType(ACCEPT_ARTICLE_TRANSFER),
@@ -173,7 +173,7 @@ export const finaliseArticleTransferEpic: Epic<
     any,
     IReduxState,
     IDependencies
-> = (action$, store, { apolloClient, apolloSubscriber, personalSign }) =>
+> = (action$, _, { apolloClient, apolloSubscriber, personalSign }) =>
     action$.pipe(
         ofType(FINALISE_ARTICLE_TRANSFER),
         mergeMap(

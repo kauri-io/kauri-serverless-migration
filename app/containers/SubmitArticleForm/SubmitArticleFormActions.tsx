@@ -7,7 +7,7 @@ import PrimaryButton from '../../components/Button/PrimaryButton'
 import SecondaryButton from '../../components/Button/SecondaryButton'
 import TertiaryButton from '../../components/Button/TertiaryButton'
 import ProposeUpdateModal from './ProposeUpdateModal'
-import { IShowNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
+import { IShowNotificationAction, IShowNotificationPayload } from '../../lib/Epics/ShowNotificationEpic'
 
 const UploadIcon = () => (
     <img src="https://png.icons8.com/color/50/000000/upload.png" />
@@ -53,7 +53,7 @@ interface IProps {
     status: string
     getFieldDecorator: (field: string, arg1: any) => any
     setFieldsValue: ({ text }: { text: string }) => void
-    showNotificationAction: IShowNotificationAction
+    showNotificationAction: (payload: IShowNotificationPayload) => IShowNotificationAction
     selectDestination: () => void
     communities: string[]
 }

@@ -7,16 +7,16 @@
 // ====================================================
 
 export interface removeMember_removeMember {
-    __typename: 'MutationResponse'
-    hash: string | null
+  __typename: "MutationResponse";
+  hash: string ;
 }
 
 export interface removeMember {
-    removeMember: removeMember_removeMember | null
+  removeMember: removeMember_removeMember ;
 }
 
 export interface removeMemberVariables {
-    signature?: string | null
-    id?: string | null
-    account?: string | null
+  signature?: string ;
+  id?: string ;
+  account?: string ;
 }

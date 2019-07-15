@@ -1,12 +1,11 @@
-import { Epic, ActionsObservable, ofType } from 'redux-observable'
+import {  ActionsObservable, ofType } from 'redux-observable'
 import { from, merge, of } from 'rxjs'
 import gql from 'graphql-tag'
-import { IReduxState, IDependencies } from '../../lib/Module'
+import { IDependencies } from '../../lib/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import {
     getArticleTitle,
-    getArticleTitleVariables,
 } from '../ArticleDraft/__generated__/getArticleTitle'
 import { getArticleTitleQuery } from '../../containers/ArticleDraft/DeleteDraftArticleModule'
 import { addArticleToCollection } from './__generated__/addArticleToCollection'
@@ -16,7 +15,6 @@ import {
     openModalAction,
 } from '../../components/Modal/Module'
 import { BodyCard, H4 } from '../../components/Typography'
-import { getCollectionTitle } from './__generated__/getCollectionTitle'
 import styled from 'styled-components'
 import analytics from '../../lib/analytics'
 import { tap, map, mergeMap, switchMap, catchError } from 'rxjs/operators'
@@ -74,11 +72,6 @@ export const addArticleToCollectionAction = (
     payload,
     type: ADD_ARTICLE_TO_COLLECTION,
 })
-
-interface IAddArticleToCollectionCommandOutput {
-    id: string
-    version: number
-}
 
 const Row = styled.div`
     display: flex;

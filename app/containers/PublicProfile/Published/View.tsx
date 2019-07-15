@@ -75,7 +75,7 @@ const Articles = ({
                                 : article.author.avatar
                         }
                         isLoggedIn={isLoggedIn}
-                        hoverChildren={({ hideDispatch }) => (
+                        hoverChildren={() => (
                             <PrimaryButton
                                 onClick={() =>
                                     openModalAction({

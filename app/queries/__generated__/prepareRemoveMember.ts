@@ -7,15 +7,15 @@
 // ====================================================
 
 export interface prepareRemoveMember_prepareRemoveMember {
-    __typename: 'PrepareCommandResponseDTO'
-    messageHash: string | null
+  __typename: "PrepareCommandResponseDTO";
+  messageHash: string ;
 }
 
 export interface prepareRemoveMember {
-    prepareRemoveMember: prepareRemoveMember_prepareRemoveMember | null
+  prepareRemoveMember: prepareRemoveMember_prepareRemoveMember ;
 }
 
 export interface prepareRemoveMemberVariables {
-    id?: string | null
-    account?: string | null
+  id?: string ;
+  account?: string ;
 }

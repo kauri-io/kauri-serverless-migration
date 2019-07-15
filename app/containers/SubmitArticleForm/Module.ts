@@ -1,5 +1,4 @@
-import Observable from 'rxjs/Observable'
-import { Epic } from 'redux-observable'
+import { Epic, ActionsObservable } from 'redux-observable'
 import {
     submitArticleVersion,
     editArticle,
@@ -453,9 +452,9 @@ export const editArticleEpic: Epic<any, {}, IDependencies> = (
                     )
         )
 
-export const draftArticleEpic: Epic<any, {}, IDependencies> = (
-    action$,
-    _,
+export const draftArticleEpic = (
+    action$: ActionsObservable<IDraftArticleAction>,
+    _:IReduxState,
     { apolloClient, apolloSubscriber }: IDependencies
 ) =>
     action$
@@ -463,7 +462,7 @@ export const draftArticleEpic: Epic<any, {}, IDependencies> = (
         .switchMap(
             ({
                 payload: { text, subject, tags, attributes },
-            }: IDraftArticleAction) =>
+            }) =>
                 from(
                     apolloClient.mutate({
                         mutation: submitNewArticle,

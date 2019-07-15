@@ -1,12 +1,12 @@
-import { render } from '../../../__tests__/lib/render'
+import { render } from '../../__tests__/lib/render'
 import RenderWithQuery, {
     mockVariables,
     mockResult,
-} from '../../../__tests__/mocks/SubmitArticleForm/getArticlePublished'
+} from '../../__tests__/mocks/SubmitArticleForm/getArticlePublished'
 import { Query } from 'react-apollo'
-import { getArticle } from '../../../queries/Article'
+import { getArticle } from '../../queries/Article'
 import wait from 'waait'
-import mockInitialState from '../../../__tests__/lib/mock-redux-initial-state'
+import mockInitialState from '../../__tests__/lib/mock-redux-initial-state'
 
 const Dog = () => (
     <Query<typeof mockResult['data'], typeof mockVariables>

@@ -7,21 +7,21 @@
 // ====================================================
 
 export interface saveUser_saveUser {
-    __typename: 'MutationResponse'
-    hash: string | null
+  __typename: "MutationResponse";
+  hash: string ;
 }
 
 export interface saveUser {
-    saveUser: saveUser_saveUser | null
+  saveUser: saveUser_saveUser ;
 }
 
 export interface saveUserVariables {
-    username?: string | null
-    name?: string | null
-    title?: string | null
-    website?: string | null
-    avatar?: string | null
-    email?: string | null
-    social?: any | null
-    subscriptions?: any | null
+  username?: string ;
+  name?: string ;
+  title?: string ;
+  website?: string ;
+  avatar?: string ;
+  email?: string ;
+  social?: any ;
+  subscriptions?: any ;
 }

@@ -1,16 +1,11 @@
 import React, { Component, Fragment } from 'react'
 import Head from 'next/head'
 import ArticleCard from '../../../components/Card/ArticleCardMaterial'
-import Link from 'next/link'
 import Loading from '../../../components/Loading'
 import Masonry from '../../../components/Masonry'
-import PrimaryButton from '../../../components/Button/PrimaryButton'
-import AddToCollectionConnection from '../../../containers/AddToCollection'
 import {
     searchAutocompleteArticles_searchAutocomplete,
     searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO,
-    searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_owner_CommunityDTO,
-    searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_owner_PublicUserDTO,
 } from '../../../queries/__generated__/searchAutocompleteArticles'
 import slugify from 'slugify'
 
@@ -32,7 +27,6 @@ class Articles extends Component<IProps> {
         } // TODO replace with an error message if exists
 
         const { searchAutocomplete } = this.props.ArticlesQuery
-        const { isLoggedIn, openModalAction } = this.props
         return (
             <Fragment>
                 <Head>

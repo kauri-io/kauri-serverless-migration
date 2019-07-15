@@ -7,10 +7,10 @@
 // ====================================================
 
 export interface regenerateEmailVerificationCode_regenerateEmailVerificationCode {
-    __typename: 'MutationResponse'
-    hash: string | null
+  __typename: "MutationResponse";
+  hash: string ;
 }
 
 export interface regenerateEmailVerificationCode {
-    regenerateEmailVerificationCode: regenerateEmailVerificationCode_regenerateEmailVerificationCode | null
+  regenerateEmailVerificationCode: regenerateEmailVerificationCode_regenerateEmailVerificationCode ;
 }
