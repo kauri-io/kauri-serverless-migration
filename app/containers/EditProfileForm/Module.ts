@@ -23,7 +23,7 @@ export const saveUserDetailsAction = (payload: any, callback?: any) => ({
 })
 
 export const saveUserDetailsEpic = (
-    action$: ActionsObservable<SaveUserDetailActionType>,
+    action$: ActionsObservable<ISaveUserDetailActionType>,
     { getState }: any,
     { apolloClient, smartContracts, web3, apolloSubscriber }: IDependencies
 ) =>

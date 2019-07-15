@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs'
+import { Observable, of, from } from 'rxjs'
 import cookie from 'cookie'
 import createReducer from '../../lib/createReducer'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
@@ -6,6 +6,8 @@ import { loginPersonalSign } from '../../lib/web3-personal-sign'
 import superagent from 'superagent'
 import { IDependencies } from '../../lib/Module'
 import config from '../../config'
+import { ofType } from 'redux-observable';
+import { switchMap, mergeMap, map, tap } from 'rxjs/operators';
 
 const request = superagent.agent()
 
@@ -61,25 +63,25 @@ export const registerEpic = (
     store: any,
     { fetch }: IDependencies
 ) =>
-    action$
-        .ofType(REGISTER)
-        .switchMap(
+    action$.pipe(
+        ofType(REGISTER),
+        switchMap(
             ({ payload: { type = 'register' }, callback }: IRegisterAction) =>
-                Observable.fromPromise(
+                from(
                     window.ethereum
                         ? window.ethereum.enable()
                         : new Promise((resolve, reject) => resolve())
-                )
-                    .mergeMap(() =>
+                ).pipe(
+                    mergeMap(() =>
                         request
                             // http://api.dev2.kauri.io/web3auth/api/login?app_id=kauri&client_id=kauri-gateway
                             .get(
                                 `https://${config.gateway}/web3auth/api/login?app_id=${config.appId}&client_id=${config.clientId}`
                             )
-                    )
-                    .map(res => res.body)
-                    .do(h => console.log(h))
-                    .switchMap(({ sentence, id }: IInitiateLoginResponse) =>
+                    ),
+                    map(res => res.body),
+                    tap(h => console.log(h)),
+                    switchMap(({ sentence, id }: IInitiateLoginResponse) =>
                         loginPersonalSign(sentence)
                             .map((signature: string) =>
                                 registerSignaturePayload(
@@ -100,7 +102,7 @@ export const registerEpic = (
                             .do(() => callback())
                             .do(({ token }: IFinalLoginResponse) => {
                                 console.log(token)
-                                console.log(window.web3.eth.accounts[0])
+                                console.log(global.window && global.window.web3.eth.accounts[0])
                                 document.cookie = cookie.serialize(
                                     'TOKEN',
                                     token,
@@ -133,7 +135,7 @@ export const registerEpic = (
                                 )
                             })
                             .mergeMapTo(
-                                Observable.of(
+                                of(
                                     showNotificationAction({
                                         notificationType: 'success',
                                         message:
@@ -148,18 +150,18 @@ export const registerEpic = (
                             .do(() =>
                                 window.localStorage.setItem(
                                     'login-tracking-pending',
-                                    true
+                                    "true"
                                 )
                             )
                             .delay(750)
                             .do(() => {
-                                window.location =
+                                window.location.href =
                                     '/edit-profile' + window.location.search
                             })
                             .catch(err => {
                                 console.error(err)
                                 if (err && err.message.includes('locked')) {
-                                    return Observable.of(
+                                    return of(
                                         showNotificationAction({
                                             notificationType: 'error',
                                             message: 'Your wallet is locked!',
@@ -168,7 +170,7 @@ export const registerEpic = (
                                         })
                                     )
                                 }
-                                return Observable.of(
+                                return of(
                                     showNotificationAction({
                                         notificationType: 'error',
                                         message: 'Submission error',
@@ -176,8 +178,10 @@ export const registerEpic = (
                                     })
                                 )
                             })
-                    )
+                    ),
+                )
         )
+    )
 
 const handlers = {
     [REGISTER]: ({}, action: IRegisterAction) => ({

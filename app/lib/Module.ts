@@ -18,7 +18,6 @@ export interface IDependencies {
     web3GetNetwork: any
     getGasPrice: any
     personalSign: any
-    getState: (input?: any) => any;
 }
 
 type ISetHostNamePayload = {

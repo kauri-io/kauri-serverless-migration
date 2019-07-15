@@ -73,7 +73,7 @@ export interface IProps {
     checked: boolean
     disabled: boolean
     onChange: (payload: any) => void
-    label: string
+    label?: string
 }
 
 const Component: React.SFC<IProps> = props => (

@@ -1,12 +1,12 @@
-import { Epic, ActionsObservable } from 'redux-observable'
-import { Observable } from 'rxjs'
+import { Epic, ActionsObservable, ofType } from 'redux-observable'
+import { Observable, merge, of, from } from 'rxjs'
 import gql from 'graphql-tag'
 import { ApolloClient } from 'apollo-client'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { deleteDraftArticle } from './__generated__/deleteDraftArticle'
 import analytics from '../../lib/analytics'
-import { switchMap, filter } from 'rxjs/operators'
+import { switchMap, filter, mergeMap, tap } from 'rxjs/operators'
 
 export const deleteDraftArticleMutation = gql`
     mutation deleteDraftArticle($id: String, $version: Int) {
@@ -76,47 +76,49 @@ interface IDeleteDraftArticleCommandOutput {
     version: number
 }
 
-export const deleteDraftArticleEpic: Epic<any, IReduxState, IDependencies> = (
-    action$,
-    store,
-    { apolloClient, apolloSubscriber }
+export const deleteDraftArticleEpic = (
+    action$: ActionsObservable<IDeleteDraftArticleAction>,
+    state: IReduxState,
+    { apolloClient, apolloSubscriber }: IDependencies
 ) =>
-    action$
-        .ofType(DELETE_DRAFT_ARTICLE)
-        .switchMap(
+    action$.pipe(
+        ofType(DELETE_DRAFT_ARTICLE),
+        switchMap(
             ({ payload: variables, callback }: IDeleteDraftArticleAction) =>
-                Observable.fromPromise(
+                from(
                     apolloClient.mutate<deleteDraftArticle>({
                         mutation: deleteDraftArticleMutation,
                         variables,
                     })
-                )
-                    .mergeMap(({ data: { cancelArticle } }) =>
-                        apolloSubscriber(cancelArticle)
-                    )
-                    .do(() => {
+                ).pipe(
+                    mergeMap(({ data: { cancelArticle } }) =>
+                        apolloSubscriber(cancelArticle.hash)
+                    ),
+                    tap(() => {
                         analytics.track('Delete Draft', {
                             category: 'article_actions',
                         })
                         apolloClient.resetStore()
                         return typeof callback === 'function' && callback()
-                    })
-                    .mergeMap(() =>
-                        Observable.merge(
-                            Observable.of(
+                    }),
+                    mergeMap(() =>
+                        merge(
+                            of(
                                 (showNotificationAction as any)({
                                     description: `Your draft article has been deleted!`,
                                     message: 'Draft article deleted',
                                     notificationType: 'success',
                                 })
                             ),
-                            Observable.of(
+                            of(
                                 routeChangeAction(
                                     `/public-profile/${
-                                        store.getState().app.user.id
+                                        state.app.user.id
                                     }`
                                 )
                             )
                         )
                     )
+                )
         )
+    )

@@ -1,4 +1,4 @@
-import View from '../CreateCollectionForm'
+import CreateCollectionForm from '../CreateCollectionForm'
 import { connect } from 'react-redux'
 import { graphql, compose } from 'react-apollo'
 import { globalCollectionDetails as getCollection } from '../../queries/Collection'
@@ -24,4 +24,4 @@ export default compose(
     }),
     withLoading(),
     withApolloError()
-)(View)
+)(CreateCollectionForm)

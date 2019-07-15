@@ -90,6 +90,7 @@ import { ISendInvitationCommandOutput } from '../CreateCommunityForm/Module'
 import { closeModalAction } from '../../components/Modal/Module'
 import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
 import { finaliseArticleTransfer } from '../../queries/Article'
+import { of, merge, from } from 'rxjs';
 
 interface ICurateCommunityResourcesAction {
     type: 'CURATE_COMMUNITY_RESOURCES'
@@ -341,7 +342,7 @@ export const curateCommunityResourcesEpic: Epic<
     action$
         .ofType(CURATE_COMMUNITY_RESOURCES)
         .switchMap(({ payload }: ICurateCommunityResourcesAction) =>
-            Observable.fromPromise(
+            from(
                 apolloClient.mutate<
                     curateCommunityResources,
                     curateCommunityResourcesVariables
@@ -357,14 +358,14 @@ export const curateCommunityResourcesEpic: Epic<
                 )
                 .mergeMap(({ data: { output: { error } } }) =>
                     error
-                        ? Observable.of(
+                        ? of(
                               showNotificationAction({
                                   description: 'Please try again',
                                   message: 'Submission Error',
                                   notificationType: 'error',
                               })
                           )
-                        : Observable.of(
+                        : of(
                               showNotificationAction({
                                   description: `They have been proposed to the community!`,
                                   message: `${payload.resources &&
@@ -388,7 +389,7 @@ export const approveResourceEpic: Epic<any, IReduxState, IDependencies> = (
     action$
         .ofType(APPROVE_RESOURCE)
         .switchMap(({ payload }: IApproveResourceAction) =>
-            Observable.fromPromise(
+            from(
                 apolloClient.mutate<approveResource, approveResourceVariables>({
                     mutation: approveResourceMutation,
                     variables: payload,
@@ -399,14 +400,14 @@ export const approveResourceEpic: Epic<any, IReduxState, IDependencies> = (
                 )
                 .mergeMap(({ data: { output: { error } } }) =>
                     error
-                        ? Observable.of(
+                        ? of(
                               showNotificationAction({
                                   description: 'Please try again',
                                   message: 'Submission Error',
                                   notificationType: 'error',
                               })
                           )
-                        : Observable.of(
+                        : of(
                               showNotificationAction({
                                   description: `The proposed resource has been added to the community`,
                                   message: `Resource approved`,
@@ -425,7 +426,7 @@ export const sendCommunityInvitationEpic: Epic<
     action$
         .ofType(SEND_COMMUNITY_INVITATION)
         .switchMap(({ payload }: ISendCommunityInvitationAction) =>
-            Observable.fromPromise(
+            from(
                 apolloClient.query<
                     prepareSendInvitation,
                     prepareSendInvitationVariables
@@ -434,7 +435,7 @@ export const sendCommunityInvitationEpic: Epic<
                     variables: payload,
                 })
             ).mergeMap(({ data: { prepareSendInvitation: result } }) =>
-                Observable.fromPromise(
+                from(
                     personalSign(result && result.messageHash)
                 )
                     .mergeMap(signedSignature =>
@@ -471,8 +472,8 @@ export const sendCommunityInvitationEpic: Epic<
                     )
                     .do(() => apolloClient.resetStore())
                     .mergeMap(() =>
-                        Observable.merge(
-                            Observable.of(
+                        merge(
+                            of(
                                 showNotificationAction({
                                     description: `The invitation ${payload.invitation &&
                                         payload.invitation
@@ -481,8 +482,8 @@ export const sendCommunityInvitationEpic: Epic<
                                     notificationType: 'success',
                                 })
                             ),
-                            Observable.of(invitationSentAction()),
-                            Observable.of(closeModalAction())
+                            of(invitationSentAction()),
+                            of(closeModalAction())
                         )
                     )
             )
@@ -497,7 +498,7 @@ export const acceptCommunityInvitationEpic: Epic<
         .ofType(ACCEPT_COMMUNITY_INVITATION)
         .switchMap(({ payload }: IAcceptCommunityInvitationAction) =>
             getState().app && getState().app.user && getState().app.user.id
-                ? Observable.fromPromise(
+                ? from(
                       apolloClient.query<
                           prepareAcceptInvitation,
                           prepareAcceptInvitationVariables
@@ -506,7 +507,7 @@ export const acceptCommunityInvitationEpic: Epic<
                           variables: payload,
                       })
                   ).mergeMap(({ data: { prepareAcceptInvitation: result } }) =>
-                      Observable.fromPromise<string>(
+                      from<string>(
                           personalSign(result && result.messageHash)
                       )
                           .mergeMap(signature =>
@@ -535,9 +536,9 @@ export const acceptCommunityInvitationEpic: Epic<
                           .mergeMap(({ data: { output: { error } } }) =>
                               typeof error === 'string' &&
                               error.includes('associated to another member')
-                                  ? Observable.merge(
-                                        Observable.of(closeModalAction()),
-                                        Observable.of(
+                                  ? merge(
+                                        of(closeModalAction()),
+                                        of(
                                             showNotificationAction({
                                                 description:
                                                     'This email invite is already associated with another member of the community!',
@@ -546,21 +547,21 @@ export const acceptCommunityInvitationEpic: Epic<
                                             })
                                         )
                                     )
-                                  : Observable.merge(
-                                        Observable.of(closeModalAction()),
-                                        Observable.of(
+                                  : merge(
+                                        of(closeModalAction()),
+                                        of(
                                             showNotificationAction({
                                                 description: `You are now a member of the community!`,
                                                 message: 'Invitation Accepted',
                                                 notificationType: 'success',
                                             })
                                         ),
-                                        Observable.of(
+                                        of(
                                             routeChangeAction(
                                                 `/community/${payload.id}`
                                             )
                                         ),
-                                        Observable.of(
+                                        of(
                                             invitationAcceptedAction()
                                         )
                                     )
@@ -568,9 +569,9 @@ export const acceptCommunityInvitationEpic: Epic<
                           .do(() => apolloClient.resetStore())
                           .catch(err => {
                               console.error(err)
-                              return Observable.merge(
-                                  Observable.of(closeModalAction()),
-                                  Observable.of(
+                              return merge(
+                                  of(closeModalAction()),
+                                  of(
                                       showNotificationAction({
                                           description:
                                               'Please try again or you may already be a member of the community!',
@@ -581,9 +582,9 @@ export const acceptCommunityInvitationEpic: Epic<
                               )
                           })
                   )
-                : Observable.merge(
-                      Observable.of(closeModalAction()),
-                      Observable.of(
+                : merge(
+                      of(closeModalAction()),
+                      of(
                           routeChangeAction(
                               `/login?r=/community/${payload.id}/approve?secret=${payload.secret}`
                           )
@@ -592,9 +593,9 @@ export const acceptCommunityInvitationEpic: Epic<
         )
         .catch(err => {
             console.error(err)
-            return Observable.merge(
-                Observable.of(closeModalAction()),
-                Observable.of(
+            return merge(
+                of(closeModalAction()),
+                of(
                     showNotificationAction({
                         description:
                             'Please try again or you may already be a member of the community!',
@@ -613,7 +614,7 @@ export const revokeInvitationEpic: Epic<Actions, IReduxState, IDependencies> = (
     action$
         .ofType(REVOKE_INVITATION)
         .switchMap(({ payload }: IRevokeInvitationAction) =>
-            Observable.fromPromise(
+            from(
                 apolloClient.query<
                     prepareRevokeInvitation,
                     prepareRevokeInvitationVariables
@@ -622,7 +623,7 @@ export const revokeInvitationEpic: Epic<Actions, IReduxState, IDependencies> = (
                     variables: payload,
                 })
             ).mergeMap(({ data: { prepareRevokeInvitation: result } }) =>
-                Observable.fromPromise<string>(
+                from<string>(
                     personalSign(result && result.messageHash)
                 )
                     .mergeMap(signature =>
@@ -649,16 +650,16 @@ export const revokeInvitationEpic: Epic<Actions, IReduxState, IDependencies> = (
                     )
                     .do(() => apolloClient.resetStore())
                     .mergeMap(() =>
-                        Observable.merge(
-                            Observable.of(closeModalAction()),
-                            Observable.of(
+                        merge(
+                            of(closeModalAction()),
+                            of(
                                 showNotificationAction({
                                     description: `That invitation to the community has been successfully revoked`,
                                     message: 'Invitation Revoked',
                                     notificationType: 'success',
                                 })
                             ),
-                            Observable.of(invitationRevokedAction())
+                            of(invitationRevokedAction())
                         )
                     )
             )
@@ -672,7 +673,7 @@ export const removeMemberEpic: Epic<Actions, IReduxState, IDependencies> = (
     action$
         .ofType(REMOVE_MEMBER)
         .switchMap(({ payload }: IRemoveMemberAction) =>
-            Observable.fromPromise(
+            from(
                 apolloClient.query<
                     prepareRemoveMember,
                     prepareRemoveMemberVariables
@@ -681,7 +682,7 @@ export const removeMemberEpic: Epic<Actions, IReduxState, IDependencies> = (
                     variables: payload,
                 })
             ).mergeMap(({ data: { prepareRemoveMember: result } }) =>
-                Observable.fromPromise<string>(
+                from<string>(
                     personalSign(result && result.messageHash)
                 )
                     .mergeMap(signature =>
@@ -714,9 +715,9 @@ export const removeMemberEpic: Epic<Actions, IReduxState, IDependencies> = (
                             if (error) {
                                 console.log(error)
                                 if (error.includes('cannot be removed')) {
-                                    return Observable.merge(
-                                        Observable.of(closeModalAction()),
-                                        Observable.of(
+                                    return merge(
+                                        of(closeModalAction()),
+                                        of(
                                             showNotificationAction({
                                                 description: `You cannot leave the community`,
                                                 message:
@@ -726,9 +727,9 @@ export const removeMemberEpic: Epic<Actions, IReduxState, IDependencies> = (
                                         )
                                     )
                                 }
-                                return Observable.merge(
-                                    Observable.of(closeModalAction()),
-                                    Observable.of(
+                                return merge(
+                                    of(closeModalAction()),
+                                    of(
                                         showNotificationAction({
                                             description: `Please try again`,
                                             message: 'Something went wrong',
@@ -737,16 +738,16 @@ export const removeMemberEpic: Epic<Actions, IReduxState, IDependencies> = (
                                     )
                                 )
                             }
-                            return Observable.merge(
-                                Observable.of(closeModalAction()),
-                                Observable.of(
+                            return merge(
+                                of(closeModalAction()),
+                                of(
                                     showNotificationAction({
                                         description: `That user has been successfully removed from the community`,
                                         message: 'Member removed',
                                         notificationType: 'success',
                                     })
                                 ),
-                                Observable.of(memberRemovedAction())
+                                of(memberRemovedAction())
                             )
                         }
                     )
@@ -762,7 +763,7 @@ export const changeMemberRoleEpic: Epic<Actions, IReduxState, IDependencies> = (
     action$
         .ofType(CHANGE_MEMBER_ROLE)
         .switchMap(({ payload }: IChangeMemberRoleAction) =>
-            Observable.fromPromise(
+            from(
                 apolloClient.query<
                     prepareChangeMemberRole,
                     prepareChangeMemberRoleVariables
@@ -771,7 +772,7 @@ export const changeMemberRoleEpic: Epic<Actions, IReduxState, IDependencies> = (
                     variables: payload,
                 })
             ).mergeMap(({ data: { prepareChangeMemberRole: result } }) =>
-                Observable.fromPromise<string>(
+                from<string>(
                     personalSign(result && result.messageHash)
                 )
                     .mergeMap(signature =>
@@ -798,16 +799,16 @@ export const changeMemberRoleEpic: Epic<Actions, IReduxState, IDependencies> = (
                     )
                     .do(() => apolloClient.resetStore())
                     .mergeMap(() =>
-                        Observable.merge(
-                            Observable.of(closeModalAction()),
-                            Observable.of(
+                        merge(
+                            of(closeModalAction()),
+                            of(
                                 showNotificationAction({
                                     description: `That user has had their role changed within the community`,
                                     message: 'Member role changed',
                                     notificationType: 'success',
                                 })
                             ),
-                            Observable.of(memberRoleChangedAction())
+                            of(memberRoleChangedAction())
                         )
                     )
             )
@@ -821,7 +822,7 @@ export const resendInvitationEpic: Epic<Actions, IReduxState, IDependencies> = (
     action$
         .ofType(RESEND_INVITATION)
         .switchMap(({ payload }: IResendInvitationAction) =>
-            Observable.fromPromise(
+            from(
                 apolloClient.mutate<
                     resendInvitation,
                     resendInvitationVariables
@@ -840,16 +841,16 @@ export const resendInvitationEpic: Epic<Actions, IReduxState, IDependencies> = (
                 )
                 .do(() => apolloClient.resetStore())
                 .mergeMap(() =>
-                    Observable.merge(
-                        Observable.of(closeModalAction()),
-                        Observable.of(
+                    merge(
+                        of(closeModalAction()),
+                        of(
                             showNotificationAction({
                                 description: `Another email invitation has been sent to that user to join the community`,
                                 message: 'Email resent',
                                 notificationType: 'success',
                             })
                         ),
-                        Observable.of(invitationResentAction())
+                        of(invitationResentAction())
                     )
                 )
         )
@@ -862,7 +863,7 @@ export const removeResourceEpic: Epic<any, IReduxState, IDependencies> = (
     action$
         .ofType(REMOVE_RESOURCE)
         .switchMap(({ payload }: IRemoveResourceAction) =>
-            Observable.fromPromise(
+            from(
                 apolloClient.mutate<removeResource, removeResourceVariables>({
                     mutation: removeResourceMutation,
                     variables: payload,
@@ -873,9 +874,9 @@ export const removeResourceEpic: Epic<any, IReduxState, IDependencies> = (
                 )
                 .mergeMap(({ data: { output: { error } } }) =>
                     error
-                        ? Observable.merge(
-                              Observable.of(closeModalAction()),
-                              Observable.of(
+                        ? merge(
+                              of(closeModalAction()),
+                              of(
                                   showNotificationAction({
                                       description: `There was an error removing the selected item, please try again.`,
                                       message: 'Error',
@@ -883,9 +884,9 @@ export const removeResourceEpic: Epic<any, IReduxState, IDependencies> = (
                                   })
                               )
                           )
-                        : Observable.merge(
-                              Observable.of(closeModalAction()),
-                              Observable.of(
+                        : merge(
+                              of(closeModalAction()),
+                              of(
                                   showNotificationAction({
                                       description: `Your selected resource was successfully removed from this community!`,
                                       message: 'Resource Removed',
@@ -905,7 +906,7 @@ export const transferArticleToCommunityEpic: Epic<
     action$
         .ofType(TRANSFER_ARTICLE_TO_COMMUNITY)
         .switchMap(({ payload }: ITransferArticleToCommunityAction) =>
-            Observable.fromPromise(
+            from(
                 apolloClient.mutate<
                     initiateArticleTransfer,
                     initiateArticleTransferVariables
@@ -939,11 +940,11 @@ export const transferArticleToCommunityEpic: Epic<
                             dateCreated
                         )
 
-                        return Observable.fromPromise(
+                        return from(
                             personalSign(signatureToSign)
                         )
                             .mergeMap(signature =>
-                                Observable.fromPromise(
+                                from(
                                     apolloClient.mutate({
                                         mutation: finaliseArticleTransfer,
                                         variables: {
@@ -976,9 +977,9 @@ export const transferArticleToCommunityEpic: Epic<
                             )
                             .mergeMap(({ data: { output: { error } } }) =>
                                 error
-                                    ? Observable.merge(
-                                          Observable.of(closeModalAction()),
-                                          Observable.of(
+                                    ? merge(
+                                          of(closeModalAction()),
+                                          of(
                                               showNotificationAction({
                                                   description: `There was an error transferring the article, please try again.`,
                                                   message: 'Error',
@@ -986,12 +987,12 @@ export const transferArticleToCommunityEpic: Epic<
                                               })
                                           )
                                       )
-                                    : Observable.merge(
-                                          Observable.of(
+                                    : merge(
+                                          of(
                                               articleTransferredToCommunityAction()
                                           ),
-                                          Observable.of(closeModalAction()),
-                                          Observable.of(
+                                          of(closeModalAction()),
+                                          of(
                                               showNotificationAction({
                                                   description: `Your selected article was successfully transferred to the community!`,
                                                   message:

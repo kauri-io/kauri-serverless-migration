@@ -39,7 +39,9 @@ import { IShowNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import {
     IOpenModalAction,
     ICloseModalAction,
+    IOpenModalPayload,
 } from '../../components/Modal/Module'
+import { ICommunity } from '../../lib/Module';
 
 const emptySection: Collection_sections = {
     id: null,
@@ -309,7 +311,8 @@ const renderResourceSection = (
     </ResourceSection>
 )
 
-interface IProps {
+export interface IProps {
+    communities?: ICommunity[],
     id?: string
     touched: {
         name: boolean
@@ -325,8 +328,10 @@ interface IProps {
     validateForm: () => Promise<any>
     showNotificationAction: IShowNotificationAction
     routeChangeAction: (route: string) => void
+    openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
+    editCollectionAction: any;
+    createCollectionAction: any;
     data?: { getCollection?: ICollection }
-    openModalAction: IOpenModalAction
     closeModalAction: ICloseModalAction
     userId: string
     username: string

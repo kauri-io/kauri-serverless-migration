@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Observable from 'rxjs/Observable'
 import { Subscription } from 'rxjs/internal/Subscription'
-import { Subject } from 'rxjs'
+import { Subject, from } from 'rxjs'
+import { debounceTime, flatMap, tap, map } from 'rxjs/operators';
 
 const SearchSVG = () => (
     <div className="certain-category-icon">
@@ -91,7 +91,7 @@ interface IProps {
 }
 
 const queryAllArticles = (refetchQuery: any, text: string) =>
-    Observable.fromPromise(
+    from(
         refetchQuery({
             page: 0,
             size: 8,
@@ -100,7 +100,7 @@ const queryAllArticles = (refetchQuery: any, text: string) =>
     )
 
 const queryAllCollections = (refetchQuery: any, text: string) =>
-    Observable.fromPromise(
+    from(
         refetchQuery({
             filter: {
                 fullText: text === '' ? null : text,
@@ -121,9 +121,9 @@ class Complete extends React.Component<IProps, IState> {
     }
 
     componentDidMount() {
-        const sub = handleSearch$
-            .debounceTime(200)
-            .flatMap(() =>
+        const sub = handleSearch$.pipe(
+            debounceTime(200),
+            flatMap(() =>
                 this.props.type === 'article'
                     ? queryAllArticles(
                           this.props.query.refetch,
@@ -133,21 +133,22 @@ class Complete extends React.Component<IProps, IState> {
                           this.props.query.refetch,
                           this.state.value
                       )
-            )
-            .do(() => this.props.changeTab(1))
-            .map(({ data }: any) => ({
+            ),
+            tap(() => this.props.changeTab(1)),
+            map(({ data }: any) => ({
                 results:
                     (data.searchCollections &&
                         data.searchCollections.content) ||
                     [],
             }))
-            .subscribe(
-                dataSource => {
-                    // console.log(dataSource);
-                    this.setState({ ...this.state, dataSource })
-                },
-                (err: string) => console.log(err)
-            )
+        ) .subscribe(
+            dataSource => {
+                // console.log(dataSource);
+                this.setState({ ...this.state, dataSource })
+            },
+            (err: string) => console.log(err)
+        )
+        
         this.setState({ ...this.state, sub })
     }
 

@@ -1,8 +1,10 @@
-import Observable from 'rxjs/Observable'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { checkpointArticles } from '../../queries/Article'
 import analytics from '../../lib/analytics'
 import { IDependencies } from '../../lib/Module'
+import { of, from } from 'rxjs';
+import { ActionsObservable, ofType } from 'redux-observable';
+import { switchMap, mergeMap, tap, mapTo, catchError } from 'rxjs/operators';
 
 const CHECKPOINT_ARTICLES = 'CHECKPOINT_ARTICLES'
 
@@ -27,7 +29,7 @@ export const checkpointArticlesAction: () => CheckpointArticlesAction = () => ({
 })
 
 export const checkpointArticlesEpic = (
-    action$: Observable<CheckpointArticlesAction>,
+    action$: ActionsObservable<CheckpointArticlesAction>,
     { dispatch }: any,
     {
         apolloClient,
@@ -38,9 +40,9 @@ export const checkpointArticlesEpic = (
         getGasPrice,
     }: IDependencies
 ) =>
-    action$
-        .ofType(CHECKPOINT_ARTICLES)
-        .switchMap((action: CheckpointArticlesAction) =>
+    action$.pipe(
+        ofType(CHECKPOINT_ARTICLES),
+        switchMap((action: CheckpointArticlesAction) =>
             web3GetNetwork()
                 .mergeMap(() =>
                     apolloClient.mutate({
@@ -49,7 +51,7 @@ export const checkpointArticlesEpic = (
                     })
                 )
                 .flatMap(({ data: { checkpointArticles: { hash } } }) =>
-                    Observable.fromPromise(apolloSubscriber(hash))
+                    from(apolloSubscriber(hash))
                 )
                 .do(h => console.log(h))
                 .switchMap(
@@ -64,8 +66,8 @@ export const checkpointArticlesEpic = (
                             },
                         },
                     }: CheckpointArticlesCommandResponse) =>
-                        Observable.fromPromise(getGasPrice())
-                            .mergeMap(gasPrice =>
+                        from(getGasPrice()).pipe(
+                            mergeMap(gasPrice =>
                                 smartContracts().KauriCore.checkpointArticles.sendTransaction(
                                     merkleRoot,
                                     checkpointHash,
@@ -79,8 +81,8 @@ export const checkpointArticlesEpic = (
                                         gasPrice,
                                     }
                                 )
-                            )
-                            .do((transactionHash: string) => {
+                            ),
+                            tap((transactionHash: string) => {
                                 dispatch(
                                     showNotificationAction({
                                         notificationType: 'info',
@@ -89,33 +91,33 @@ export const checkpointArticlesEpic = (
                                             'You will get another notification when the block is mined!',
                                     })
                                 )
-                            })
-                            .mergeMap((transactionHash: string) =>
+                            }),
+                            mergeMap((transactionHash: string) =>
                                 apolloSubscriber(
                                     transactionHash,
                                     'ArticlesCheckpointed'
                                 )
-                            )
-                            .do(() => apolloClient.resetStore())
-                            .mapTo(
+                            ),
+                            tap(() => apolloClient.resetStore()),
+                            mapTo(
                                 showNotificationAction({
                                     notificationType: 'success',
                                     message: 'Articles checkpointed!',
                                     description:
                                         'All Kauri platform articles are now On-chain!',
                                 })
-                            )
-                            .do(() => {
+                            ),
+                            tap(() => {
                                 analytics.track('Checkpoint', {
                                     category: 'generic',
                                 })
-                            })
-                            .catch(err => {
+                            }),
+                            catchError(err => {
                                 if (
                                     err.message &&
                                     err.message.includes('locked')
                                 ) {
-                                    return Observable.of(
+                                    return of(
                                         showNotificationAction({
                                             notificationType: 'error',
                                             message: 'Your wallet is locked!',
@@ -130,7 +132,7 @@ export const checkpointArticlesEpic = (
                                         )) ||
                                     err.message.includes('Wrong network')
                                 ) {
-                                    return Observable.of(
+                                    return of(
                                         showNotificationAction({
                                             notificationType: 'error',
                                             message: 'Wrong network',
@@ -144,7 +146,7 @@ export const checkpointArticlesEpic = (
                                         'Wrong metamask account'
                                     )
                                 ) {
-                                    return Observable.of(
+                                    return of(
                                         showNotificationAction({
                                             notificationType: 'error',
                                             message: 'Wrong metamask account',
@@ -154,7 +156,7 @@ export const checkpointArticlesEpic = (
                                     )
                                 }
                                 console.error(err)
-                                return Observable.of(
+                                return of(
                                     showNotificationAction({
                                         notificationType: 'error',
                                         message: 'Submission error',
@@ -162,10 +164,13 @@ export const checkpointArticlesEpic = (
                                     })
                                 )
                             })
+
+
+                        )
                 )
                 .catch(err => {
                     if (err.message && err.message.includes('locked')) {
-                        return Observable.of(
+                        return of(
                             showNotificationAction({
                                 notificationType: 'error',
                                 message: 'Your wallet is locked!',
@@ -177,7 +182,7 @@ export const checkpointArticlesEpic = (
                             err.message.includes("'KauriCore' of undefined")) ||
                         err.message.includes('Wrong network')
                     ) {
-                        return Observable.of(
+                        return of(
                             showNotificationAction({
                                 notificationType: 'error',
                                 message: 'Wrong network',
@@ -189,7 +194,7 @@ export const checkpointArticlesEpic = (
                         err.message &&
                         err.message.includes('Wrong metamask account')
                     ) {
-                        return Observable.of(
+                        return of(
                             showNotificationAction({
                                 notificationType: 'error',
                                 message: 'Wrong metamask account',
@@ -199,7 +204,7 @@ export const checkpointArticlesEpic = (
                         )
                     }
                     console.error(err)
-                    return Observable.of(
+                    return of(
                         showNotificationAction({
                             notificationType: 'error',
                             message: 'Submission error',
@@ -208,3 +213,5 @@ export const checkpointArticlesEpic = (
                     )
                 })
         )
+
+    )

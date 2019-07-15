@@ -1,4 +1,3 @@
-import Observable from 'rxjs/Observable'
 import {
     createCollection,
     editCollection,
@@ -9,37 +8,45 @@ import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import analytics from '../../lib/analytics'
 
 import { IDependencies } from '../../lib/Module'
+import { ActionsObservable, ofType } from 'redux-observable'
+import { from, of } from 'rxjs'
+import { ISection } from '../AddToCollection/SectionsContent'
+import { switchMap, mergeMap, tap, catchError, map } from 'rxjs/operators'
 
-export interface CreateCollectionPayload {
+export interface ICreateCollectionPayload {
     name: string
     background?: string
     description?: string
-    sections: Array<SectionDTO>
+    sections: Array<ISection>,
+    tags?: any;
+    destination?: {
+        id: string;
+        type: string;
+    }
 }
 
-export type EditCollectionPayload = CreateCollectionPayload & { id: string }
-
-export type ComposeCollectionPayload = {
+export interface IComposeCollectionPayload {
     id: string
-    sections: Array<SectionDTO>
-    updating?: boolean
+    sections: Array<ISection>
+    updating?: boolean,
+    tags?: any
 }
 
-type CreateCollectionAction = {
+interface ICreateCollectionAction {
     type: string
-    payload: CreateCollectionPayload
+    payload: ICreateCollectionPayload
     callback: any
 }
 
-type EditCollectionAction = {
+interface EditCollectionAction {
     type: string
-    payload: EditCollectionPayload
+    payload: ICreateCollectionPayload & { id: string }
     callback: any
 }
 
-type ComposeCollectionAction = {
+interface ComposeCollectionAction {
     type: string
-    payload: ComposeCollectionPayload
+    payload: IComposeCollectionPayload
     callback: any
 }
 
@@ -50,16 +57,16 @@ const EDIT_COLLECTION: string = 'EDIT_COLLECTION'
 const COMPOSE_COLLECTION: string = 'COMPOSE_COLLECTION'
 
 export const createCollectionAction = (
-    payload: CreateCollectionPayload,
+    payload: ICreateCollectionPayload,
     callback: any
-): CreateCollectionAction => ({
+): ICreateCollectionAction => ({
     type: CREATE_COLLECTION,
     payload,
     callback,
 })
 
 export const editCollectionAction = (
-    payload: EditCollectionPayload,
+    payload: ICreateCollectionPayload & { id: string },
     callback: any
 ): EditCollectionAction => ({
     type: EDIT_COLLECTION,
@@ -68,7 +75,7 @@ export const editCollectionAction = (
 })
 
 export const composeCollectionAction = (
-    payload: ComposeCollectionPayload,
+    payload: IComposeCollectionPayload,
     callback: any
 ): ComposeCollectionAction => ({
     type: COMPOSE_COLLECTION,
@@ -77,18 +84,18 @@ export const composeCollectionAction = (
 })
 
 export const composeCollectionEpic = (
-    action$: Observable<ComposeCollectionAction>,
-    { getState, dispatch }: any,
+    action$: ActionsObservable<ComposeCollectionAction>,
+    { getState, dispatch },
     { apolloClient, apolloSubscriber }: IDependencies
 ) =>
-    action$
-        .ofType(COMPOSE_COLLECTION)
-        .switchMap(
+    action$.pipe(
+        ofType(COMPOSE_COLLECTION),
+        switchMap(
             ({
                 payload: { id, sections, updating },
                 callback,
             }: ComposeCollectionAction) =>
-                Observable.fromPromise(
+                from(
                     apolloClient.mutate({
                         mutation: composeCollection,
                         variables: {
@@ -96,63 +103,66 @@ export const composeCollectionEpic = (
                             sections,
                         },
                     })
-                )
-                    .mergeMap(({ data: { composeCollection: { hash } } }) =>
-                        Observable.fromPromise(apolloSubscriber(hash))
-                    )
-                    .do(h => console.log(h))
-                    .do(() => {
-                        analytics.track(
-                            updating
-                                ? 'Update Collection'
-                                : 'Create Collection',
-                            {
-                                category: 'collection_actions',
-                                sections: sections.length,
-                                resources: sections.reduce(
-                                    (all, item) =>
-                                        (all += item.resourcesId.length),
-                                    0
-                                ),
-                            }
-                        )
-                    })
-                    .mergeMap(() =>
-                        Observable.of(
-                            showNotificationAction({
-                                notificationType: 'success',
-                                message:
-                                    typeof updating !== 'undefined'
-                                        ? 'Collection updated!'
-                                        : 'Collection created!',
-                                description:
-                                    'Your collection is now available for viewing!',
+                ).pipe(
+                    mergeMap(({ data: { composeCollection: { hash } } }) =>
+                        from(apolloSubscriber(hash)).pipe(
+                            tap(h => console.log(h)),
+                            tap(() => {
+                                analytics.track(
+                                    updating
+                                        ? 'Update Collection'
+                                        : 'Create Collection',
+                                    {
+                                        category: 'collection_actions',
+                                        sections: sections.length,
+                                        resources: sections.reduce(
+                                            (all, item) =>
+                                                (all +=
+                                                    item.resources.length),
+                                            0
+                                        ),
+                                    }
+                                )
                             }),
-                            routeChangeAction(
-                                `/collection/${id}/collection-${
-                                    typeof updating !== 'undefined'
-                                        ? 'updated'
-                                        : 'created'
-                                }`
-                            )
-                        )
-                    )
-                    .do(() => callback && callback())
-                    .do(() => apolloClient.resetStore())
-                    .catch(err => {
-                        console.error(err)
-                        return Observable.of(
-                            showNotificationAction({
-                                notificationType: 'error',
-                                message: 'Submission error',
-                                description: 'Please try again!',
+                            mergeMap(() =>
+                                of(
+                                    showNotificationAction({
+                                        notificationType: 'success',
+                                        message:
+                                            typeof updating !== 'undefined'
+                                                ? 'Collection updated!'
+                                                : 'Collection created!',
+                                        description:
+                                            'Your collection is now available for viewing!',
+                                    }),
+                                    routeChangeAction(
+                                        `/collection/${id}/collection-${
+                                            typeof updating !== 'undefined'
+                                                ? 'updated'
+                                                : 'created'
+                                        }`
+                                    )
+                                )
+                            ),
+                            tap(() => callback && callback()),
+                            tap(() => apolloClient.resetStore()),
+                            catchError(err => {
+                                console.error(err)
+                                return of(
+                                    showNotificationAction({
+                                        notificationType: 'error',
+                                        message: 'Submission error',
+                                        description: 'Please try again!',
+                                    })
+                                )
                             })
                         )
-                    })
+                    )
+                )
         )
-
+    )
 export const createCollectionEpic = (
-    action$: Observable<CreateCollectionAction>,
+    action$: ActionsObservable<ICreateCollectionAction>,
     { getState, dispatch }: any,
     {
         apolloClient,
@@ -161,11 +171,11 @@ export const createCollectionEpic = (
         apolloSubscriber,
         web3PersonalSign,
         getGasPrice,
-    }: Dependencies
+    }: IDependencies
 ) =>
-    action$
-        .ofType(CREATE_COLLECTION)
-        .switchMap(
+    action$.pipe(
+        ofType(CREATE_COLLECTION),
+        switchMap(
             ({
                 payload: {
                     name,
@@ -176,8 +186,8 @@ export const createCollectionEpic = (
                     destination,
                 },
                 callback,
-            }: CreateCollectionAction) => {
-                return Observable.fromPromise(
+            }) => {
+                return from(
                     apolloClient.mutate({
                         mutation: createCollection,
                         variables: {
@@ -191,40 +201,38 @@ export const createCollectionEpic = (
                             },
                         },
                     })
-                )
-                    .mergeMap(({ data: { createCollection: { hash } } }) =>
+                ).pipe(
+                    mergeMap(({ data: { createCollection: { hash } } }) =>
                         apolloSubscriber(hash)
-                    )
-                    .do(h => console.log(h))
-                    .map(({ data: { output: { id } } }) =>
+                    ),
+                    tap(h => console.log(h)),
+                    map(({ data: { output: { id } } }) =>
                         composeCollectionAction(
                             { id, sections, tags },
                             callback
                         )
                     )
+                )
             }
         )
+    )
 
 export const editCollectionEpic = (
-    action$: Observable<EditCollectionAction>,
-    { getState, dispatch }: any,
+    action$: ActionsObservable<EditCollectionAction>,
+    {},
     {
         apolloClient,
-        smartContracts,
-        web3,
         apolloSubscriber,
-        web3PersonalSign,
-        getGasPrice,
-    }: Dependencies
+    }: IDependencies
 ) =>
-    action$
-        .ofType(EDIT_COLLECTION)
-        .switchMap(
+    action$.pipe(
+        ofType(EDIT_COLLECTION),
+        switchMap(
             ({
                 payload: { id, name, background, description, sections, tags },
                 callback,
-            }: EditCollectionAction) => {
-                return Observable.fromPromise(
+            }) => {
+                return from(
                     apolloClient.mutate({
                         mutation: editCollection,
                         variables: {
@@ -235,16 +243,18 @@ export const editCollectionEpic = (
                             tags,
                         },
                     })
-                )
-                    .mergeMap(({ data: { createCollection: { hash } } }) =>
+                ).pipe(
+                    mergeMap(({ data: { createCollection: { hash } } }) =>
                         apolloSubscriber(hash)
-                    )
-                    .do(h => console.log(h))
-                    .map(({ data: { output: { id } } }) =>
+                    ),
+                    tap(h => console.log(h)),
+                    map(({ data: { output: { id } } }) =>
                         composeCollectionAction(
                             { id, sections, updating: true },
                             callback
                         )
                     )
+                )
             }
         )
+    )

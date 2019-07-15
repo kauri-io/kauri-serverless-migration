@@ -12,6 +12,7 @@ import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { publishArticleAction, IOwnerPayload } from './PublishArticleModule'
 import { IOption } from '../../containers/PublishingSelector'
 import analytics from '../../lib/analytics'
+import { merge, of, from } from 'rxjs';
 
 interface IGetArticleResult {
     getArticle: {
@@ -141,7 +142,7 @@ export const submitArticleEpic: Epic<any, {}, IDependencies> = (
                     destination,
                 },
             }) =>
-                Observable.fromPromise(
+                from(
                     apolloClient.mutate({
                         mutation: submitNewArticle,
                         variables: {
@@ -179,7 +180,7 @@ export const submitArticleEpic: Epic<any, {}, IDependencies> = (
                     .do(h => console.log(h))
                     .mergeMap<any, any>(({ data: { getArticle } }) =>
                         typeof selfPublish !== 'undefined'
-                            ? Observable.of(
+                            ? of(
                                   publishArticleAction({
                                       contentHash: getArticle.contentHash,
                                       contributor: getArticle.authorId,
@@ -197,13 +198,13 @@ export const submitArticleEpic: Epic<any, {}, IDependencies> = (
                                       version: getArticle.version,
                                   })
                               )
-                            : Observable.merge(
-                                  Observable.of(
+                            : merge(
+                                  of(
                                       routeChangeAction(
                                           `/article/${getArticle.id}/v${getArticle.version}/article-published`
                                       )
                                   ),
-                                  Observable.of(
+                                  of(
                                       showNotificationAction({
                                           description:
                                               'Your personal article has now been published!',
@@ -215,7 +216,7 @@ export const submitArticleEpic: Epic<any, {}, IDependencies> = (
                     )
                     .catch((err: string) => {
                         console.error(err)
-                        return Observable.of(
+                        return of(
                             showNotificationAction({
                                 description: 'Please try again!',
                                 message: 'Submission error',
@@ -244,7 +245,7 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                     updateComment,
                 },
             }) =>
-                Observable.fromPromise(
+                from(
                     apolloClient.mutate({
                         mutation: submitArticleVersion,
                         variables: {
@@ -283,7 +284,7 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                     .do(h => console.log(h))
                     .mergeMap<any, any>(({ data: { getArticle } }) =>
                         typeof selfPublish !== 'undefined'
-                            ? Observable.of(
+                            ? of(
                                   publishArticleAction({
                                       contentHash: getArticle.contentHash,
                                       contributor: getArticle.authorId,
@@ -294,8 +295,8 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                                       version: getArticle.version,
                                   })
                               )
-                            : Observable.merge(
-                                  Observable.of(
+                            : merge(
+                                  of(
                                       routeChangeAction(
                                           `/article/${getArticle.id}/v${
                                               getArticle.version
@@ -317,7 +318,7 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                                           }`
                                       )
                                   ),
-                                  Observable.of(
+                                  of(
                                       showNotificationAction({
                                           description:
                                               typeof selfPublish === 'undefined'
@@ -357,7 +358,7 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                     )
                     .catch(err => {
                         console.error(err)
-                        return Observable.of(
+                        return of(
                             showNotificationAction({
                                 description: 'Please try again!',
                                 message: 'Submission error',
@@ -386,7 +387,7 @@ export const editArticleEpic: Epic<any, {}, IDependencies> = (
                     selfPublish,
                 },
             }: IEditArticleAction) =>
-                Observable.fromPromise(
+                from(
                     apolloClient.mutate({
                         mutation: editArticle,
                         variables: {
@@ -424,7 +425,7 @@ export const editArticleEpic: Epic<any, {}, IDependencies> = (
                     )
                     .mergeMap<any, any>(({ data: { getArticle } }) =>
                         typeof selfPublish !== 'undefined'
-                            ? Observable.of(
+                            ? of(
                                   publishArticleAction({
                                       contentHash: getArticle.contentHash,
                                       contributor: getArticle.authorId,
@@ -434,13 +435,13 @@ export const editArticleEpic: Epic<any, {}, IDependencies> = (
                                       version: getArticle.version,
                                   })
                               )
-                            : Observable.merge(
-                                  Observable.of(
+                            : merge(
+                                  of(
                                       routeChangeAction(
                                           `/article/${id}/v${version}/article-updated`
                                       )
                                   ),
-                                  Observable.of(
+                                  of(
                                       showNotificationAction({
                                           description:
                                               'The article version has been updated!',
@@ -463,7 +464,7 @@ export const draftArticleEpic: Epic<any, {}, IDependencies> = (
             ({
                 payload: { text, subject, tags, attributes },
             }: IDraftArticleAction) =>
-                Observable.fromPromise(
+                from(
                     apolloClient.mutate({
                         mutation: submitNewArticle,
                         variables: {
@@ -498,8 +499,8 @@ export const draftArticleEpic: Epic<any, {}, IDependencies> = (
                                 output: { id, version },
                             },
                         }) =>
-                            Observable.merge(
-                                Observable.of(
+                            merge(
+                                of(
                                     showNotificationAction({
                                         description:
                                             'The draft has just been saved. You can go back and submit it whenever you are ready.',
@@ -507,7 +508,7 @@ export const draftArticleEpic: Epic<any, {}, IDependencies> = (
                                         notificationType: 'info',
                                     })
                                 ),
-                                Observable.of(
+                                of(
                                     routeChangeAction(
                                         `/article/${id}/v${version}/article-drafted`
                                     )

@@ -1,5 +1,5 @@
-import { Epic } from 'redux-observable'
-import { Observable } from 'rxjs'
+import { Epic, ActionsObservable, ofType } from 'redux-observable'
+import { from, merge, of } from 'rxjs'
 import gql from 'graphql-tag'
 import { IReduxState, IDependencies } from '../../lib/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
@@ -19,6 +19,7 @@ import { BodyCard, H4 } from '../../components/Typography'
 import { getCollectionTitle } from './__generated__/getCollectionTitle'
 import styled from 'styled-components'
 import analytics from '../../lib/analytics'
+import { tap, map, mergeMap, switchMap, catchError } from 'rxjs/operators';
 
 export const addArticleToCollectionMutation = gql`
     mutation addArticleToCollection(
@@ -57,7 +58,7 @@ export interface IAddArticleToCollectionPayload {
     position: number
 }
 
-export interface IAddArticleToCollectionAction extends IAction {
+export interface IAddArticleToCollectionAction {
     callback: () => void
     payload: IAddArticleToCollectionPayload
     type: 'ADD_ARTICLE_TO_COLLECTION'
@@ -89,129 +90,132 @@ const Row = styled.div`
     }
 `
 
-export const addArticleToCollectionEpic: Epic<
-    Actions,
-    IReduxState,
-    IDependencies
-> = (action$, store, { apolloClient, apolloSubscriber }) =>
-    action$.ofType(ADD_ARTICLE_TO_COLLECTION).switchMap(actions =>
-        Observable.fromPromise(
-            apolloClient.mutate<addArticleToCollection>({
-                mutation: addArticleToCollectionMutation,
-                variables: (actions as IAddArticleToCollectionAction).payload,
-            })
-        )
-            .mergeMap(({ data: { addCollectionResource } }) =>
-                apolloSubscriber(addCollectionResource)
-            )
-            .mergeMap(() =>
-                apolloClient.query<getArticleTitle>({
-                    query: getArticleTitleQuery,
-                    variables: {
-                        id: (actions as IAddArticleToCollectionAction).payload
-                            .resourceId.id,
-                        version: (actions as IAddArticleToCollectionAction)
-                            .payload.resourceId.version,
-                    },
+export const addArticleToCollectionEpic = (
+    action$: ActionsObservable<IAddArticleToCollectionAction>,
+    store: any,
+    { apolloClient, apolloSubscriber }: IDependencies
+) =>
+    action$.pipe(
+        ofType(ADD_ARTICLE_TO_COLLECTION),
+        switchMap(actions =>
+            from(
+                apolloClient.mutate<addArticleToCollection>({
+                    mutation: addArticleToCollectionMutation,
+                    variables: (actions as IAddArticleToCollectionAction).payload,
                 })
-            )
-            .map(({ data: { getArticle } }) => getArticle.title)
-            .do(
-                () =>
-                    typeof actions.callback === 'function' && actions.callback()
-            )
-            .do(() => {
-                analytics.track('Add To Collection', {
-                    category: 'collection_actions',
-                    resourceId: '4e1a8de4dece4736bd0b9c33b9225c92',
-                    resourceType: actions.payload.resourceId.type,
-                })
-            })
-            .switchMap(title =>
-                Observable.fromPromise(
-                    apolloClient.query<
-                        getCollectionTitle,
-                        getArticleTitleVariables
-                    >({
-                        query: getCollectionTitleQuery,
+            ).pipe(
+                mergeMap(({ data: { addCollectionResource } }) =>
+                    apolloSubscriber(addCollectionResource)
+                ),
+                mergeMap(() =>
+                    apolloClient.query<getArticleTitle>({
+                        query: getArticleTitleQuery,
                         variables: {
-                            id: (actions as IAddArticleToCollectionAction)
-                                .payload.id,
+                            id: (actions as IAddArticleToCollectionAction).payload
+                                .resourceId.id,
+                            version: (actions as IAddArticleToCollectionAction)
+                                .payload.resourceId.version,
                         },
                     })
-                )
-                    .mergeMap(({ data: { getCollection } }) =>
-                        Observable.merge(
-                            Observable.of(
-                                (showNotificationAction as any)({
-                                    description: `The article "${title}" has been added to your collection!`,
-                                    message: 'Article added to collection',
-                                    notificationType: 'success',
-                                })
-                            ),
-                            Observable.of(
-                                openModalAction({
-                                    children: (
-                                        <AlertViewComponent
-                                            title="Add to Collection"
-                                            content={
-                                                <Row>
-                                                    <BodyCard>
-                                                        Article successfully
-                                                        added to
-                                                    </BodyCard>
-                                                    <H4>{` ${getCollection &&
-                                                        getCollection.name} Collection`}</H4>
-                                                </Row>
-                                            }
-                                            closeModalAction={() =>
-                                                store.dispatch(
-                                                    closeModalAction()
-                                                )
-                                            }
-                                            confirmButtonText={
-                                                'View Collection'
-                                            }
-                                            closeButtonText={'Close'}
-                                            confirmButtonAction={() => {
-                                                store.dispatch(
-                                                    closeModalAction()
-                                                )
-                                                store.dispatch(
-                                                    routeChangeAction(
-                                                        `/collection/${
-                                                            (actions as IAddArticleToCollectionAction)
-                                                                .payload.id
-                                                        }/update-collection`
+                ),
+                map(({ data: { getArticle } }) => getArticle.title),
+                tap(
+                    () =>
+                        typeof actions.callback === 'function' && actions.callback()
+                ),
+                tap(() => {
+                    analytics.track('Add To Collection', {
+                        category: 'collection_actions',
+                        resourceId: '4e1a8de4dece4736bd0b9c33b9225c92',
+                        resourceType: actions.payload.resourceId.type,
+                    })
+                }),
+                switchMap(title =>
+                    from(
+                        apolloClient.query({
+                            query: getCollectionTitleQuery,
+                            variables: {
+                                id: (actions as IAddArticleToCollectionAction)
+                                    .payload.id,
+                            },
+                        })
+                    ).pipe(
+                        mergeMap(({ data: { getCollection } }) =>
+                            merge(
+                                of(
+                                    (showNotificationAction as any)({
+                                        description: `The article "${title}" has been added to your collection!`,
+                                        message: 'Article added to collection',
+                                        notificationType: 'success',
+                                    })
+                                ),
+                                of(
+                                    openModalAction({
+                                        children: (
+                                            <AlertViewComponent
+                                                title="Add to Collection"
+                                                content={
+                                                    <Row>
+                                                        <BodyCard>
+                                                            Article successfully
+                                                            added to
+                                                        </BodyCard>
+                                                        <H4>{` ${getCollection &&
+                                                            getCollection.name} Collection`}</H4>
+                                                    </Row>
+                                                }
+                                                closeModalAction={() =>
+                                                    store.dispatch(
+                                                        closeModalAction()
                                                     )
-                                                )
-                                            }}
-                                        />
-                                    ),
+                                                }
+                                                confirmButtonText={
+                                                    'View Collection'
+                                                }
+                                                closeButtonText={'Close'}
+                                                confirmButtonAction={() => {
+                                                    store.dispatch(
+                                                        closeModalAction()
+                                                    )
+                                                    store.dispatch(
+                                                        routeChangeAction(
+                                                            `/collection/${
+                                                                (actions as IAddArticleToCollectionAction)
+                                                                    .payload.id
+                                                            }/update-collection`
+                                                        )
+                                                    )
+                                                }}
+                                            />
+                                        ),
+                                    })
+                                )
+                            )
+                        ),
+                        tap(() => apolloClient.resetStore()),
+                        catchError(err => {
+                            console.error(err)
+                            return of(
+                                showNotificationAction({
+                                    description: 'Please try again',
+                                    message: 'Submission error',
+                                    notificationType: 'error',
                                 })
                             )
-                        )
+                        })
+
                     )
-                    .do(() => apolloClient.resetStore())
-                    .catch(err => {
-                        console.error(err)
-                        return Observable.of(
-                            showNotificationAction({
-                                description: 'Please try again',
-                                message: 'Submission error',
-                                notificationType: 'error',
-                            })
-                        )
-                    })
+                ),
+                catchError(err => {
+                    console.error(err)
+                    return of(
+                        showNotificationAction({
+                            description: 'Please try again',
+                            message: 'Submission error',
+                            notificationType: 'error',
+                        })
+                    )
+                })
             )
-            .catch(err => {
-                console.error(err)
-                return Observable.of(
-                    showNotificationAction({
-                        description: 'Please try again',
-                        message: 'Submission error',
-                        notificationType: 'error',
-                    })
-                )
-            })
+        )    
     )

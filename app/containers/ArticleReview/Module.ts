@@ -1,5 +1,4 @@
-import Observable from 'rxjs/Observable'
-import { Epic } from 'redux-observable'
+import { Epic, ActionsObservable, ofType } from 'redux-observable'
 import { IDependencies } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
@@ -8,6 +7,8 @@ import { getEvent } from '../../queries/Module'
 import { create } from '../../lib/init-apollo'
 import { approveArticle, rejectArticle } from '../../queries/Article'
 import analytics from '../../lib/analytics'
+import { from, merge, of } from 'rxjs';
+import { switchMap, mergeMap, tap, catchError, flatMap } from 'rxjs/operators';
 
 interface IApproveArticlePayload {
     id: string
@@ -40,16 +41,16 @@ interface IReduxState {
     }
 }
 
-export const approveArticleEpic: Epic<any, IReduxState, IDependencies> = (
-    action$,
-    { getState },
-    { apolloClient, personalSign }
+export const approveArticleEpic = (
+    action$ : ActionsObservable<IApproveArticleAction>,
+    { }: IReduxState,
+    { apolloClient, personalSign }: IDependencies
 ) =>
-    action$
-        .ofType(APPROVE_ARTICLE)
-        .switchMap(
+    action$.pipe(
+        ofType(APPROVE_ARTICLE),
+        switchMap(
             ({ payload: { id, version, contentHash, author, dateCreated } }) =>
-                Observable.fromPromise(
+                from(
                     personalSign(
                         generatePublishArticleHash(
                             id,
@@ -59,8 +60,8 @@ export const approveArticleEpic: Epic<any, IReduxState, IDependencies> = (
                             dateCreated
                         )
                     )
-                )
-                    .mergeMap(signature =>
+                ).pipe(
+                    mergeMap(signature =>
                         apolloClient.mutate({
                             mutation: approveArticle,
                             variables: {
@@ -69,16 +70,15 @@ export const approveArticleEpic: Epic<any, IReduxState, IDependencies> = (
                                 version,
                             },
                         })
-                    )
-                    .mergeMap(({ data: { approveArticle: { hash } } }) =>
-                        Observable.fromPromise(
+                    ),
+                    mergeMap(({ data: { approveArticle: { hash } } }) =>
+                        from(
                             new Promise<{ data: any }>((resolve, reject) => {
                                 create(
                                     {},
                                     {
                                         getToken: () =>
                                             'DUMMYVERIFICATIONTOKEN',
-                                        hostName: getState().app.hostName,
                                     }
                                 )
                                     .subscribe({
@@ -91,21 +91,21 @@ export const approveArticleEpic: Epic<any, IReduxState, IDependencies> = (
                                     })
                             })
                         )
-                    )
-                    .do(() =>
+                    ),
+                    tap(() =>
                         analytics.track('Article Update Approved', {
                             category: 'article_actions',
                         })
-                    )
-                    .do(() => apolloClient.resetStore())
-                    .mergeMap<any, any>(() =>
-                        Observable.merge(
-                            Observable.of(
+                    ),
+                    tap(() => apolloClient.resetStore()),
+                    mergeMap<any, any>(() =>
+                        merge(
+                            of(
                                 routeChangeAction(
                                     `/article/${id}/v${version}/article-${'published'}`
                                 )
                             ),
-                            Observable.of(
+                            of(
                                 showNotificationAction({
                                     description:
                                         'The update has been approved!',
@@ -114,10 +114,10 @@ export const approveArticleEpic: Epic<any, IReduxState, IDependencies> = (
                                 })
                             )
                         )
-                    )
-                    .catch(err => {
+                    ),
+                    catchError(err => {
                         console.error(err)
-                        return Observable.of(
+                        return of(
                             showNotificationAction({
                                 description: 'Please try again!',
                                 message: 'Approval error',
@@ -125,7 +125,10 @@ export const approveArticleEpic: Epic<any, IReduxState, IDependencies> = (
                             })
                         )
                     })
+
+                )
         )
+    )
 
 interface IRejectArticlePayload {
     id: string
@@ -147,22 +150,22 @@ export const rejectArticleAction = (
     type: REJECT_ARTICLE,
 })
 
-export const rejectArticleEpic: Epic<any, IReduxState, IDependencies> = (
-    action$,
-    _,
-    { apolloClient, apolloSubscriber }
+export const rejectArticleEpic = (
+    action$: ActionsObservable<IRejectArticleAction>,
+    _: IReduxState,
+    { apolloClient, apolloSubscriber }: IDependencies
 ) =>
-    action$
-        .ofType(REJECT_ARTICLE)
-        .switchMap(
-            ({ payload: { id, version, cause } }: IRejectArticleAction) =>
-                Observable.fromPromise(
+    action$.pipe(
+        ofType(REJECT_ARTICLE),
+        switchMap(
+            ({ payload: { id, version, cause } }) =>
+                from(
                     apolloClient.mutate({
                         mutation: rejectArticle,
                         variables: { id, version, cause },
                     })
-                )
-                    .flatMap(
+                ).pipe(
+                    flatMap(
                         ({
                             data: {
                                 rejectArticle: { hash },
@@ -170,21 +173,21 @@ export const rejectArticleEpic: Epic<any, IReduxState, IDependencies> = (
                         }: {
                             data: { rejectArticle: { hash: string } }
                         }) => apolloSubscriber(hash)
-                    )
-                    .do(() => apolloClient.resetStore())
-                    .do(() =>
+                    ),
+                    tap(() => apolloClient.resetStore()),
+                    tap(() =>
                         analytics.track('Article Update Rejected', {
                             category: 'article_actions',
                         })
-                    )
-                    .mergeMap<any, any>(() =>
-                        Observable.merge(
-                            Observable.of(
+                    ),
+                    mergeMap<any, any>(() =>
+                        merge(
+                            of(
                                 routeChangeAction(
                                     `/article/${id}/v${version}/article-rejected`
                                 )
                             ),
-                            Observable.of(
+                            of(
                                 showNotificationAction({
                                     description: `It will not show up in your approvals queue anymore!`,
                                     message: 'Article rejected!',
@@ -193,4 +196,6 @@ export const rejectArticleEpic: Epic<any, IReduxState, IDependencies> = (
                             )
                         )
                     )
+                )
         )
+    )

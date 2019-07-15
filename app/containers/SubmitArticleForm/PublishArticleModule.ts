@@ -1,5 +1,4 @@
-import { Epic } from 'redux-observable'
-import Observable from 'rxjs/Observable'
+import { Epic, ActionsObservable, ofType } from 'redux-observable'
 import gql from 'graphql-tag'
 import { ApolloQueryResult } from 'apollo-client'
 import { IReduxState, IDependencies } from '../../lib/Module'
@@ -8,6 +7,8 @@ import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { publishArticle } from './__generated__/publishArticle'
 import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
 import analytics from '../../lib/analytics'
+import { from, merge, of } from 'rxjs';
+import { switchMap, mergeMap, tap } from 'rxjs/operators';
 
 const publishArticleMutation = gql`
     mutation publishArticle(
@@ -68,14 +69,14 @@ interface IPublishArticleCommandOutput {
     version: number
 }
 
-export const publishArticleEpic: Epic<any, IReduxState, IDependencies> = (
-    action$,
-    { getState },
-    { apolloClient, apolloSubscriber, personalSign }
+export const publishArticleEpic = (
+    action$: ActionsObservable<IPublishArticleAction>,
+    { getState } : any,
+    { apolloClient, apolloSubscriber, personalSign }: IDependencies
 ) =>
-    action$
-        .ofType(PUBLISH_ARTICLE)
-        .switchMap(
+    action$.pipe(
+        ofType(PUBLISH_ARTICLE),
+        switchMap(
             ({
                 payload: {
                     id,
@@ -86,7 +87,7 @@ export const publishArticleEpic: Epic<any, IReduxState, IDependencies> = (
                     owner,
                     updateComment,
                 },
-            }: IPublishArticleAction) => {
+            } ) => {
                 const signatureToSign = generatePublishArticleHash(
                     id,
                     version,
@@ -110,11 +111,9 @@ export const publishArticleEpic: Epic<any, IReduxState, IDependencies> = (
                         ({ community }) => community.id
                     ).length > 0
 
-                return Observable.fromPromise(personalSign(signatureToSign))
-                    .mergeMap(signature =>
-                        Observable.fromPromise<
-                            ApolloQueryResult<publishArticle>
-                        >(
+                return from(personalSign(signatureToSign)).pipe(
+                    mergeMap(signature =>
+                        from(
                             apolloClient.mutate<publishArticle>({
                                 mutation: publishArticleMutation,
                                 variables: {
@@ -126,13 +125,13 @@ export const publishArticleEpic: Epic<any, IReduxState, IDependencies> = (
                                 },
                             })
                         )
-                    )
-                    .mergeMap(
+                    ),
+                    mergeMap(
                         ({ data: { publishArticle: publishArticleData } }) =>
                             apolloSubscriber(publishArticleData).hash
-                    )
-                    .do(() => apolloClient.resetStore())
-                    .do(() => {
+                    ),
+                    tap(() => apolloClient.resetStore()),
+                    tap(() => {
                         analytics.track(
                             canPublish
                                 ? 'Publish Article'
@@ -141,10 +140,10 @@ export const publishArticleEpic: Epic<any, IReduxState, IDependencies> = (
                                 category: 'article_actions',
                             }
                         )
-                    })
-                    .mergeMap(() =>
-                        Observable.merge(
-                            Observable.of(
+                    }),
+                    mergeMap(() =>
+                        merge(
+                            of(
                                 showNotificationAction({
                                     description: canPublish
                                         ? `Your article has been published.`
@@ -155,7 +154,7 @@ export const publishArticleEpic: Epic<any, IReduxState, IDependencies> = (
                                     notificationType: 'success',
                                 })
                             ),
-                            Observable.of(
+                            of(
                                 routeChangeAction(
                                     `/article/${id}/v${version}/${
                                         !owner ||
@@ -172,5 +171,9 @@ export const publishArticleEpic: Epic<any, IReduxState, IDependencies> = (
                             )
                         )
                     )
+
+                )
             }
         )
+
+    )

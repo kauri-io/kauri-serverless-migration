@@ -20,11 +20,9 @@ export default compose(
             resendEmailVerificationAction,
         },
         null,
-        { withRef: true }
     ),
     graphql(getOwnProfile, {
         name: 'OwnProfile',
-        withRef: true,
         options: {
             fetchPolicy: 'network-only',
         },

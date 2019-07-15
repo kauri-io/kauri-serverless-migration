@@ -13,4 +13,6 @@ export default {
     },
     testingAccounts: [],
     environment: 'development',
+    appId: "kauri",
+  clientId: "kauri-gateway",
 }

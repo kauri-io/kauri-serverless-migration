@@ -1,5 +1,4 @@
-import Observable from 'rxjs/Observable'
-import { Epic } from 'redux-observable'
+import { Epic, ofType, ActionsObservable } from 'redux-observable'
 import { IDependencies, IReduxState } from '../../../lib/Module'
 import { showNotificationAction } from '../../../lib/Epics/ShowNotificationEpic'
 import {
@@ -11,6 +10,8 @@ import analytics from '../../../lib/analytics'
 import generatePublishArticleHash from '../../../lib/generate-publish-article-hash'
 import { create } from '../../../lib/init-apollo'
 import { getEvent } from '../../../queries/Module'
+import { from, merge, of } from 'rxjs'
+import { mergeMap, flatMap, tap } from 'rxjs/operators'
 
 interface IRejectArticleTransferPayload {
     id: string
@@ -30,47 +31,43 @@ export const rejectArticleTransferAction = (
     type: REJECT_ARTICLE_TRANSFER,
 })
 
-export const rejectArticleTransferEpic: Epic<
-    any,
-    IReduxState,
-    IDependencies
-> = (action$, _, { apolloClient, apolloSubscriber }) =>
-    action$
-        .ofType(REJECT_ARTICLE_TRANSFER)
-        .switchMap(({ payload: { id } }: IRejectArticleTransferAction) =>
-            Observable.fromPromise(
-                apolloClient.mutate({
-                    mutation: rejectArticleTransfer,
-                    variables: { id },
+export const rejectArticleTransferEpic = (
+    action$: ActionsObservable<IRejectArticleTransferAction>,
+    _,
+    { apolloClient, apolloSubscriber }: IDependencies
+) =>
+    action$.pipe(
+        ofType(REJECT_ARTICLE_TRANSFER),
+        mergeMap(({ payload: { id } }) =>
+            apolloClient.mutate({
+                mutation: rejectArticleTransfer,
+                variables: { id },
+            })
+        ),
+        flatMap(
+            ({
+                data: {
+                    rejectArticleTransfer: { hash },
+                },
+            }: {
+                data: { rejectArticleTransfer: { hash: string } }
+            }) => apolloSubscriber(hash)
+        ),
+        tap(() => apolloClient.resetStore()),
+        tap(
+            () =>
+                showNotificationAction({
+                    description: `You successfully rejected the ownership of the article!`,
+                    message: 'Article Transfer Rejected!',
+                    notificationType: 'success',
+                }),
+            tap(() =>
+                analytics.track('Article Transfer Rejected', {
+                    category: 'article_actions',
                 })
             )
-                .flatMap(
-                    ({
-                        data: {
-                            rejectArticleTransfer: { hash },
-                        },
-                    }: {
-                        data: { rejectArticleTransfer: { hash: string } }
-                    }) => apolloSubscriber(hash)
-                )
-                .do(() => apolloClient.resetStore())
-                .mergeMap<any, any>(() =>
-                    Observable.merge(
-                        Observable.of(
-                            showNotificationAction({
-                                description: `You successfully rejected the ownership of the article!`,
-                                message: 'Article Transfer Rejected!',
-                                notificationType: 'success',
-                            })
-                        ),
-                        Observable.of(
-                            analytics.track('Article Transfer Rejected', {
-                                category: 'article_actions',
-                            })
-                        )
-                    )
-                )
         )
+    )
 
 interface IAcceptArticleTransferPayload {
     id: string
@@ -90,28 +87,27 @@ export const acceptArticleTransferAction = (
     type: ACCEPT_ARTICLE_TRANSFER,
 })
 
-export const acceptArticleTransferEpic: Epic<
-    any,
-    IReduxState,
-    IDependencies
-> = (action$, { getState }, { apolloClient }) =>
-    action$
-        .ofType(ACCEPT_ARTICLE_TRANSFER)
-        .switchMap(({ payload: { id } }: IAcceptArticleTransferAction) =>
-            Observable.fromPromise(
+export const newEpic = (
+    action$: ActionsObservable<IAcceptArticleTransferAction>,
+    state: IReduxState,
+    { apolloClient, apolloSubscriber, personalSign }: IDependencies
+) =>
+    action$.pipe(
+        ofType(ACCEPT_ARTICLE_TRANSFER),
+        mergeMap(({ payload: { id } }) =>
+            from(
                 apolloClient.mutate({
                     mutation: acceptArticleTransfer,
                     variables: { id },
                 })
-            )
-                .mergeMap(({ data: { acceptArticleTransfer: { hash } } }) =>
-                    Observable.fromPromise(
+            ).pipe(
+                mergeMap(({ data: { acceptArticleTransfer: { hash } } }) =>
+                    from(
                         new Promise<{ data: any }>((resolve, reject) => {
                             create(
                                 {},
                                 {
                                     getToken: () => 'DUMMYVERIFICATIONTOKEN',
-                                    hostName: getState().app.hostName,
                                 }
                             )
                                 .subscribe({
@@ -124,8 +120,8 @@ export const acceptArticleTransferEpic: Epic<
                                 })
                         })
                     )
-                )
-                .mergeMap(
+                ),
+                mergeMap(
                     ({
                         data: {
                             output: {
@@ -136,7 +132,7 @@ export const acceptArticleTransferEpic: Epic<
                             },
                         },
                     }) =>
-                        Observable.of(
+                        of(
                             finaliseArticleTransferAction({
                                 contentHash: hash,
                                 contributor: articleAuthor,
@@ -146,7 +142,9 @@ export const acceptArticleTransferEpic: Epic<
                             })
                         )
                 )
+            )
         )
+    )
 
 interface IFinaliseArticleTransferPayload {
     id: string
@@ -171,16 +169,17 @@ export const finaliseArticleTransferAction = (
 })
 
 export const finaliseArticleTransferEpic: Epic<
+    IFinaliseArticleTransferAction,
     any,
     IReduxState,
     IDependencies
-> = (action$, _, { apolloClient, apolloSubscriber, personalSign }) =>
-    action$
-        .ofType(FINALISE_ARTICLE_TRANSFER)
-        .switchMap(
+> = (action$, store, { apolloClient, apolloSubscriber, personalSign }) =>
+    action$.pipe(
+        ofType(FINALISE_ARTICLE_TRANSFER),
+        mergeMap(
             ({
                 payload: { id, version, contentHash, contributor, dateCreated },
-            }: IFinaliseArticleTransferAction) => {
+            }) => {
                 const signatureToSign = generatePublishArticleHash(
                     id,
                     version,
@@ -188,9 +187,9 @@ export const finaliseArticleTransferEpic: Epic<
                     contributor,
                     dateCreated
                 )
-                return Observable.fromPromise(personalSign(signatureToSign))
-                    .mergeMap(signature =>
-                        Observable.fromPromise(
+                return from(personalSign(signatureToSign)).pipe(
+                    mergeMap(signature =>
+                        from(
                             apolloClient.mutate({
                                 mutation: finaliseArticleTransfer,
                                 variables: {
@@ -199,8 +198,8 @@ export const finaliseArticleTransferEpic: Epic<
                                 },
                             })
                         )
-                    )
-                    .flatMap(
+                    ),
+                    flatMap(
                         ({
                             data: {
                                 finaliseArticleTransfer: { hash },
@@ -208,21 +207,21 @@ export const finaliseArticleTransferEpic: Epic<
                         }: {
                             data: { finaliseArticleTransfer: { hash: string } }
                         }) => apolloSubscriber(hash)
-                    )
-                    .do(() => apolloClient.resetStore())
-                    .do(() =>
+                    ),
+                    tap(() => apolloClient.resetStore()),
+                    tap(() =>
                         analytics.track('Article Transfer Accepted', {
                             category: 'article_actions',
                         })
+                    ),
+                    tap(() =>
+                        showNotificationAction({
+                            description: `You successfully approved the ownership of the article!`,
+                            message: 'Article Transfer Accepted!',
+                            notificationType: 'success',
+                        })
                     )
-                    .mergeMap(() =>
-                        Observable.of(
-                            showNotificationAction({
-                                description: `You successfully approved the ownership of the article!`,
-                                message: 'Article Transfer Accepted!',
-                                notificationType: 'success',
-                            })
-                        )
-                    )
+                )
             }
         )
+    )

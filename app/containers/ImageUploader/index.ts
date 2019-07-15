@@ -1,7 +1,7 @@
 import initUppy from '../../lib/init-uppy'
 const config = require('../../config').default
 
-const TriggerImageUploader = (setFieldsValue, fieldName, callback) => {
+const TriggerImageUploader = (setFieldsValue: any, fieldName: any, callback?: any) => {
     const uppy = initUppy({ allowGifs: false })
     uppy.run()
     uppy.on('upload-success', (file, { hash }) => {

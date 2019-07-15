@@ -1,10 +1,11 @@
-import { Observable } from 'rxjs'
+import { of, from } from 'rxjs'
 import { IDependencies, IReduxState } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
-import { Epic } from 'redux-observable'
+import { Epic, ofType } from 'redux-observable'
 import { vote as voteMutation } from '../../queries/Article'
 import { vote, voteVariables } from '../../queries/__generated__/vote'
 import analytics from '../../lib/analytics'
+import { switchMap, mergeMap, tap, catchError } from 'rxjs/operators'
 
 export interface IVoteAction {
     type: string
@@ -19,48 +20,56 @@ export const voteAction = (payload: voteVariables): IVoteAction => ({
     type: VOTE,
 })
 
-export const voteEpic: Epic<Actions, IReduxState, IDependencies> = (
+export const voteEpic: Epic<IVoteAction, any, IReduxState, IDependencies> = (
     action$,
     _: any,
     { apolloClient, apolloSubscriber }
 ) =>
-    action$.ofType(VOTE).switchMap(({ payload }: IVoteAction) =>
-        Observable.fromPromise(
-            apolloClient.mutate<vote, voteVariables>({
-                mutation: voteMutation,
-                variables: payload,
-            })
-        )
-            .mergeMap(({ data: { vote: { hash } } }) => apolloSubscriber(hash))
-            .do(() =>
-                analytics.track('Vote Content', {
-                    category: 'article_actions',
-                    type: payload.value === 1 ? 'Upvoted' : 'Downvoted',
+    action$.pipe(
+        ofType(VOTE),
+        switchMap(({ payload }: IVoteAction) =>
+            from(
+                apolloClient.mutate<vote, voteVariables>({
+                    mutation: voteMutation,
+                    variables: payload,
+                })
+            ).pipe(
+                mergeMap(({ data: { vote: { hash } } }) =>
+                    apolloSubscriber(hash)
+                ),
+                tap(() =>
+                    analytics.track('Vote Content', {
+                        category: 'article_actions',
+                        type: payload.value === 1 ? 'Upvoted' : 'Downvoted',
+                    })
+                ),
+
+                tap(() => apolloClient.resetStore()),
+                mergeMap(() =>
+                    of(
+                        showNotificationAction({
+                            description:
+                                (payload as voteVariables) &&
+                                typeof payload.value === 'number' &&
+                                payload.value > 0
+                                    ? 'Your vote has been counted! Thanks for your feedback!'
+                                    : 'Please leave a comment below with your feedback to the author to help them improve the article.',
+                            message: `Voted`,
+                            notificationType: 'success',
+                        })
+                    )
+                ),
+
+                catchError(err => {
+                    console.error(err)
+                    return of(
+                        showNotificationAction({
+                            description: 'Please try again!',
+                            message: 'Voting error',
+                            notificationType: 'error',
+                        })
+                    )
                 })
             )
-            .do(() => apolloClient.resetStore())
-            .mergeMap(() =>
-                Observable.of(
-                    showNotificationAction({
-                        description:
-                            (payload as voteVariables) &&
-                            typeof payload.value === 'number' &&
-                            payload.value > 0
-                                ? 'Your vote has been counted! Thanks for your feedback!'
-                                : 'Please leave a comment below with your feedback to the author to help them improve the article.',
-                        message: `Voted`,
-                        notificationType: 'success',
-                    })
-                )
-            )
-            .catch(err => {
-                console.error(err)
-                return Observable.of(
-                    showNotificationAction({
-                        description: 'Please try again!',
-                        message: 'Voting error',
-                        notificationType: 'error',
-                    })
-                )
-            })
+        )
     )

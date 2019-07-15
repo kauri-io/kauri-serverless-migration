@@ -7,7 +7,7 @@ import EmailCheckbox from '../../components/Checkbox/EmailCheckbox'
 import TriggerImageUploader from '../ImageUploader'
 import { pipe, assocPath, filter, path } from 'ramda'
 import EmailField from './EmailField'
-import { getMyProfile } from '../../queries/__generated__/getMyProfile';
+import { getMyProfile } from '../../queries/__generated__/getMyProfile'
 import { ISaveUserDetailActionType } from './Module'
 
 const InputsContainers = styled.div`
@@ -39,21 +39,24 @@ const Container = styled.div`
 
 interface IProps {
     OwnProfile: getMyProfile
-    saveUserDetailsAction: (payload: any, callback: any) => ISaveUserDetailActionType
+    saveUserDetailsAction: (
+        payload: any,
+        callback: any
+    ) => ISaveUserDetailActionType
     resendEmailVerificationAction: any
 }
 
 interface IState {
-    username: string;
-    title: string;
+    username: string
+    title: string
     avatar: string
-    website: string;
-    name: string;
-    twitter: string;
-    github: string;
-    email:string;
-    status: string;
-    pendingSubmit: boolean;
+    website: string
+    name: string
+    twitter: string
+    github: string
+    email: string
+    status: string
+    pendingSubmit: boolean
     subscriptions: {
         newsletter?: boolean
     }
@@ -102,7 +105,6 @@ class EditableHeader extends Component<IProps, IState> {
                 subscriptions,
             }
         }
-        this.handleChange = this.handleChange.bind(this)
     }
 
     componentDidUpdate(prevProps) {
@@ -150,17 +152,10 @@ class EditableHeader extends Component<IProps, IState> {
     }
 
     uploadImage() {
-        TriggerImageUploader(() => {}, '', (file, url: string) =>
+        TriggerImageUploader(() => {}, '', (_file: Blob, url: string) =>
             this.setState({ avatar: url })
         )
     }
-
-    handleChange(param: string, value: string) {
-        this.setState({
-            [param]: value,
-        })
-    }
-
     render() {
         const {
             username,
@@ -190,7 +185,7 @@ class EditableHeader extends Component<IProps, IState> {
                 <InputsContainers>
                     <Input
                         onChange={e =>
-                            this.handleChange('name', e.target.value)
+                            this.setState({'name': e.target.value})
                         }
                         fontWeight="normal"
                         fontSize={6}
@@ -199,7 +194,7 @@ class EditableHeader extends Component<IProps, IState> {
                     />
                     <Input
                         onChange={e =>
-                            this.handleChange('title', e.target.value)
+                            this.setState({'title': e.target.value})
                         }
                         fontWeight="normal"
                         fontSize={3}
@@ -208,7 +203,7 @@ class EditableHeader extends Component<IProps, IState> {
                     />
                     <Input
                         onChange={e =>
-                            this.handleChange('username', e.target.value)
+                            this.setState({'username': e.target.value})
                         }
                         fontWeight="normal"
                         fontSize={1}
@@ -217,7 +212,7 @@ class EditableHeader extends Component<IProps, IState> {
                     />
                     <Input
                         onChange={e =>
-                            this.handleChange('website', e.target.value)
+                            this.setState({'website': e.target.value})
                         }
                         fontWeight="normal"
                         fontSize={1}
@@ -228,7 +223,7 @@ class EditableHeader extends Component<IProps, IState> {
                         <SocialWebsiteIcon brand="twitter" />
                         <Input
                             onChange={e =>
-                                this.handleChange('twitter', e.target.value)
+                                this.setState({'twitter': e.target.value})
                             }
                             fontWeight="normal"
                             fontSize={1}
@@ -240,7 +235,7 @@ class EditableHeader extends Component<IProps, IState> {
                         <SocialWebsiteIcon brand="github" />
                         <Input
                             onChange={e =>
-                                this.handleChange('github', e.target.value)
+                                this.setState({'github': e.target.value})
                             }
                             fontWeight="normal"
                             fontSize={1}
@@ -254,7 +249,7 @@ class EditableHeader extends Component<IProps, IState> {
                         }
                         email={email}
                         oldEmail={oldEmail}
-                        handleChange={this.handleChange}
+                        handleChange={e => this.setState({'email': e.target.value})}
                         status={status}
                     />
                     <Offset margin={12}>
@@ -262,9 +257,9 @@ class EditableHeader extends Component<IProps, IState> {
                             disabled={!this.state.email}
                             checked={this.state.subscriptions.newsletter}
                             onChange={checked =>
-                                this.handleChange('subscriptions', {
+                                this.setState({'subscriptions': {
                                     newsletter: checked,
-                                })
+                                } })
                             }
                         />
                     </Offset>

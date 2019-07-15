@@ -1,29 +1,13 @@
-import { Epic } from 'redux-observable'
-import Observable from 'rxjs/Observable'
-import { IReduxState, IDependencies } from '../../lib/Module'
+import { ActionsObservable, ofType } from 'redux-observable'
+import { IDependencies } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
-import {
-    createCommunity,
-    createCommunityVariables,
-} from '../../queries/__generated__/createCommunity'
-import {
-    prepareCreateCommunity,
-    prepareCreateCommunityVariables,
-} from '../../queries/__generated__/prepareCreateCommunity'
+import { createCommunityVariables } from '../../queries/__generated__/createCommunity'
 import {
     updateCommunity,
     updateCommunityVariables,
 } from '../../queries/__generated__/updateCommunity'
-import {
-    prepareSendInvitation,
-    prepareSendInvitationVariables,
-} from '../../queries/__generated__/prepareSendInvitation'
-import {
-    sendInvitation,
-    sendInvitationVariables,
-} from '../../queries/__generated__/sendInvitation'
 import {
     createCommunityMutation,
     updateCommunityMutation,
@@ -31,32 +15,31 @@ import {
     prepareSendInvitationQuery,
     sendInvitationMutation,
 } from '../../queries/Community'
-import { ApolloQueryResult } from 'apollo-client'
 import { CommunityPermissionInput } from '../../__generated__/globalTypes'
+import { from, of, throwError, merge, forkJoin } from 'rxjs'
+import {
+    switchMap,
+    tap,
+    mergeMap,
+    catchError,
+    combineAll,
+} from 'rxjs/operators'
 
-export interface ICreateCommunityAction extends IAction {
+export interface ICreateCommunityAction {
     callback: () => void
     payload: createCommunityVariables
     type: 'CREATE_COMMUNITY'
 }
 
-interface IPrepareCreateCommunityAction extends IAction {
-    callback: () => void
-    payload: prepareCreateCommunityVariables
-    type: 'PREPARE_CREATE_COMMUNITY'
-}
-
 export interface IInvitationsPayload {
-    payload: {
-        invitations: Array<{
-            email: string
-            role: CommunityPermissionInput
-            secret: string
-        }>
-    }
+    invitations: Array<{
+        email: string
+        role: CommunityPermissionInput
+        secret: string
+    }>
 }
 
-export interface IUpdateCommunityAction extends IAction {
+export interface IUpdateCommunityAction {
     callback: () => void
     payload: updateCommunityVariables & IInvitationsPayload
     type: 'UPDATE_COMMUNITY'
@@ -66,12 +49,12 @@ interface ICommunityCreatedPayload {
     transactionHash: string
 }
 
-export interface ICommunityCreatedAction extends IAction {
+export interface ICommunityCreatedAction {
     payload: ICommunityCreatedPayload
     type: 'COMMUNITY_CREATED'
 }
 
-export interface ICommunityUpdatedAction extends IAction {
+export interface ICommunityUpdatedAction {
     payload: {}
     type: 'COMMUNITY_UPDATED'
 }
@@ -131,32 +114,32 @@ export interface ISendInvitationCommandOutput {
 
 type IUpdateCommunityCommandOutput = ICreateCommunityCommandOutput
 
-export const communityCreatedEpic: Epic<Actions, IReduxState, IDependencies> = (
-    action$,
-    _,
-    { apolloSubscriber }
+export const communityCreatedEpic = (
+    action$: ActionsObservable<ICommunityCreatedAction>,
+    {},
+    { apolloSubscriber }: IDependencies
 ) =>
-    action$
-        .ofType(COMMUNITY_CREATED)
-        .switchMap((action: ICommunityCreatedAction) =>
-            Observable.fromPromise(
+    action$.pipe(
+        ofType(COMMUNITY_CREATED),
+        switchMap((action: ICommunityCreatedAction) =>
+            from(
                 apolloSubscriber(action.payload.transactionHash, 'GroupCreated')
-            )
-                .do(console.log)
-                .mergeMap(({ data: { output: { error } } }) =>
+            ).pipe(
+                tap(console.log),
+                mergeMap(({ data: { output: { error } } }) =>
                     error
-                        ? Observable.throw(new Error('Submission error'))
-                        : Observable.of(
+                        ? throwError(new Error('Submission error'))
+                        : of(
                               showNotificationAction({
                                   description: `Your community has been created! You can start adding articles and collections now!`,
                                   message: 'Community Created',
                                   notificationType: 'success',
                               })
                           )
-                )
-                .catch(err => {
+                ),
+                catchError(err => {
                     console.error(err)
-                    return Observable.of(
+                    return of(
                         showNotificationAction({
                             description: 'Please try again',
                             message: 'Submission error',
@@ -164,10 +147,11 @@ export const communityCreatedEpic: Epic<Actions, IReduxState, IDependencies> = (
                         })
                     )
                 })
-        )
-        .catch(err => {
+            )
+        ),
+        catchError(err => {
             console.error(err)
-            return Observable.of(
+            return of(
                 showNotificationAction({
                     description: 'Please try again',
                     message: 'Submission error',
@@ -175,54 +159,45 @@ export const communityCreatedEpic: Epic<Actions, IReduxState, IDependencies> = (
                 })
             )
         })
+    )
 
-export const createCommunityEpic: Epic<Actions, IReduxState, IDependencies> = (
-    action$,
-    { getState },
+export const createCommunityEpic = (
+    action$: ActionsObservable<ICreateCommunityAction>,
+    state,
     { apolloClient, apolloSubscriber, personalSign }
 ) =>
-    action$
-        .ofType(CREATE_COMMUNITY)
-        .switchMap(actions =>
-            getState().app.user.status !== 'EMAIL_VERIFIED'
-                ? Observable.of(
+    action$.pipe(
+        ofType(CREATE_COMMUNITY),
+        switchMap(actions =>
+            state.app.user.status !== 'EMAIL_VERIFIED'
+                ? of(
                       showNotificationAction({
                           description: `Sorry but you need to verify your email address then refresh before creating your community!`,
                           message: 'Verify your email address',
                           notificationType: 'error',
                       })
                   )
-                : Observable.fromPromise(
-                      apolloClient.query<
-                          prepareCreateCommunity,
-                          prepareCreateCommunityVariables
-                      >({
+                : from(
+                      apolloClient.query({
                           query: prepareCreateCommunityQuery,
-                          variables: (actions as IPrepareCreateCommunityAction)
-                              .payload,
+                          variables: actions.payload,
                       })
-                  )
-                      .do(console.log)
-                      .switchMap<
-                          ApolloQueryResult<prepareCreateCommunity>,
-                          any
-                      >(
+                  ).pipe(
+                      tap(console.log),
+                      switchMap(
                           ({
                               data: {
                                   prepareCreateCommunity: prepareCreateCommunityResult,
                               },
                           }) =>
-                              Observable.fromPromise<string>(
+                              from<string>(
                                   prepareCreateCommunityResult &&
                                       personalSign(
                                           prepareCreateCommunityResult.messageHash
                                       )
-                              )
-                                  .mergeMap(signature =>
-                                      apolloClient.mutate<
-                                          createCommunity,
-                                          createCommunityVariables
-                                      >({
+                              ).pipe(
+                                  mergeMap(signature =>
+                                      apolloClient.mutate({
                                           mutation: createCommunityMutation,
                                           variables: {
                                               ...(actions as ICreateCommunityAction)
@@ -234,21 +209,19 @@ export const createCommunityEpic: Epic<Actions, IReduxState, IDependencies> = (
                                               signature,
                                           },
                                       })
-                                  )
-                                  .do(console.log)
-                                  .mergeMap(
+                                  ),
+                                  tap(console.log),
+                                  mergeMap(
                                       ({ data: { createCommunity: result } }) =>
-                                          apolloSubscriber<
-                                              ICreateCommunityCommandOutput
-                                          >(result.hash)
-                                  )
-                                  .do(console.log)
-                                  .do(
+                                          apolloSubscriber(result.hash)
+                                  ),
+                                  tap(console.log),
+                                  tap(
                                       () =>
                                           typeof actions.callback ===
                                               'function' && actions.callback()
-                                  )
-                                  .mergeMap(
+                                  ),
+                                  mergeMap(
                                       ({
                                           data: {
                                               output: {
@@ -259,13 +232,13 @@ export const createCommunityEpic: Epic<Actions, IReduxState, IDependencies> = (
                                           },
                                       }) =>
                                           error
-                                              ? Observable.throw(
+                                              ? throwError(
                                                     new Error(
                                                         'Submission error'
                                                     )
                                                 )
-                                              : Observable.merge(
-                                                    Observable.of(
+                                              : merge(
+                                                    of(
                                                         (showNotificationAction as any)(
                                                             {
                                                                 description: `Your community is being created! Once this is completed (within a few minutes), you will be able to add articles and collections`,
@@ -276,22 +249,22 @@ export const createCommunityEpic: Epic<Actions, IReduxState, IDependencies> = (
                                                             }
                                                         )
                                                     ),
-                                                    Observable.of(
+                                                    of(
                                                         communityCreatedAction({
                                                             transactionHash,
                                                         })
                                                     ),
-                                                    Observable.of(
+                                                    of(
                                                         routeChangeAction(
                                                             `/community/${id}/community-created`
                                                         )
                                                     )
                                                 )
-                                  )
-                                  .do(() => apolloClient.resetStore())
-                                  .catch(err => {
+                                  ),
+                                  tap(() => apolloClient.resetStore()),
+                                  catchError(err => {
                                       console.error(err)
-                                      return Observable.of(
+                                      return of(
                                           showNotificationAction({
                                               description: 'Please try again',
                                               message: 'Submission error',
@@ -299,11 +272,12 @@ export const createCommunityEpic: Epic<Actions, IReduxState, IDependencies> = (
                                           })
                                       )
                                   })
-                      )
-                      .do(() => apolloClient.resetStore())
-                      .catch(err => {
+                              )
+                      ),
+                      tap(() => apolloClient.resetStore()),
+                      catchError(err => {
                           console.error(err)
-                          return Observable.of(
+                          return of(
                               showNotificationAction({
                                   description: 'Please try again',
                                   message: 'Submission error',
@@ -311,10 +285,11 @@ export const createCommunityEpic: Epic<Actions, IReduxState, IDependencies> = (
                               })
                           )
                       })
-        )
-        .catch(err => {
+                  )
+        ),
+        catchError(err => {
             console.error(err)
-            return Observable.of(
+            return of(
                 showNotificationAction({
                     description: 'Please try again',
                     message: 'Submission error',
@@ -322,176 +297,170 @@ export const createCommunityEpic: Epic<Actions, IReduxState, IDependencies> = (
                 })
             )
         })
+    )
 
-export const updateCommunityEpic: Epic<Actions, IReduxState, IDependencies> = (
-    action$,
-    _,
-    { apolloClient, apolloSubscriber, personalSign }
+export const updateCommunityEpic = (
+    action$: ActionsObservable<IUpdateCommunityAction>,
+    {},
+    { apolloClient, apolloSubscriber, personalSign }: IDependencies
 ) =>
-    action$
-        .ofType(UPDATE_COMMUNITY)
-        .switchMap(actions =>
-            Observable.fromPromise(
+    action$.pipe(
+        ofType(UPDATE_COMMUNITY),
+        switchMap(actions =>
+            from(
                 apolloClient.mutate<updateCommunity, updateCommunityVariables>({
                     mutation: updateCommunityMutation,
-                    variables: (actions as IUpdateCommunityAction).payload,
+                    variables: actions.payload,
                 })
-            )
-                .do(() => console.log(actions.payload))
-                .do(console.log)
-                .mergeMap(({ data: { editCommunity: result } }) =>
-                    apolloSubscriber<IUpdateCommunityCommandOutput>(result.hash)
-                )
-                .do(console.log)
-                .switchMap(() =>
-                    (actions as IInvitationsPayload).payload.invitations.length
-                        ? Observable.forkJoin<
-                              [
-                                  {
-                                      data: {
-                                          prepareSendInvitation: IPrepareSendInvitationQueryResult
-                                      }
-                                  }
-                              ]
-                          >(
-                              (actions as IInvitationsPayload).payload.invitations.map(
-                                  invitation =>
-                                      apolloClient.query<
-                                          prepareSendInvitation,
-                                          prepareSendInvitationVariables
-                                      >({
+            ).pipe(
+                tap(() => console.log(actions.payload)),
+                tap(console.log),
+                mergeMap(({ data: { editCommunity: result } }) =>
+                    apolloSubscriber(result.hash)
+                ),
+                tap(console.log),
+                switchMap(
+                    () =>
+                        actions.payload.invitations.length
+                            ? forkJoin(
+                                  actions.payload.invitations.map(invitation =>
+                                      apolloClient.query({
                                           query: prepareSendInvitationQuery,
                                           variables: {
-                                              id: (actions as IUpdateCommunityAction)
-                                                  .payload.id,
+                                              id: actions.payload.id,
                                               invitation,
                                           },
                                       })
-                              )
-                          )
-                              .do(console.log)
-                              .mergeMap(prepareSendInvitationsResults =>
-                                  prepareSendInvitationsResults.map(
-                                      (
-                                          {
-                                              data: {
-                                                  prepareSendInvitation: result,
+                                  )
+                              ).pipe(
+                                  tap(console.log),
+                                  mergeMap(prepareSendInvitationsResults =>
+                                      prepareSendInvitationsResults.map(
+                                          (
+                                              {
+                                                  data: {
+                                                      prepareSendInvitation: result,
+                                                  },
                                               },
-                                          },
-                                          invitationIndex
-                                      ) =>
-                                          Observable.fromPromise<string>(
-                                              personalSign(result.messageHash)
-                                          )
-                                              .mergeMap(signedSignature =>
-                                                  apolloClient.mutate<
-                                                      sendInvitation,
-                                                      sendInvitationVariables
-                                                  >({
-                                                      mutation: sendInvitationMutation,
-                                                      variables: {
-                                                          id: (actions as IUpdateCommunityAction)
-                                                              .payload.id,
-                                                          invitation: {
-                                                              email: (actions as IInvitationsPayload)
-                                                                  .payload
-                                                                  .invitations[
-                                                                  invitationIndex
-                                                              ].email,
-                                                              role: (actions as IInvitationsPayload)
-                                                                  .payload
-                                                                  .invitations[
-                                                                  invitationIndex
-                                                              ].role,
-                                                              secret:
-                                                                  result
-                                                                      .attributes
-                                                                      .secret,
+                                              invitationIndex
+                                          ) =>
+                                              from(
+                                                  personalSign(
+                                                      result.messageHash
+                                                  )
+                                              ).pipe(
+                                                  mergeMap(signedSignature =>
+                                                      apolloClient.mutate({
+                                                          mutation: sendInvitationMutation,
+                                                          variables: {
+                                                              id:
+                                                                  actions
+                                                                      .payload
+                                                                      .id,
+                                                              invitation: {
+                                                                  email:
+                                                                      actions
+                                                                          .payload
+                                                                          .invitations[
+                                                                          invitationIndex
+                                                                      ].email,
+                                                                  role:
+                                                                      actions
+                                                                          .payload
+                                                                          .invitations[
+                                                                          invitationIndex
+                                                                      ].role,
+                                                                  secret:
+                                                                      result
+                                                                          .attributes
+                                                                          .secret,
+                                                              },
+                                                              signature: signedSignature,
                                                           },
-                                                          signature: signedSignature,
-                                                      },
-                                                  })
+                                                      })
+                                                  ),
+                                                  mergeMap(
+                                                      ({
+                                                          data: {
+                                                              sendInvitation: sendInvitationResult,
+                                                          },
+                                                      }: any) =>
+                                                          apolloSubscriber(
+                                                              sendInvitationResult.hash
+                                                          )
+                                                  )
                                               )
-                                              .mergeMap(
-                                                  ({
-                                                      data: {
-                                                          sendInvitation: sendInvitationResult,
-                                                      },
-                                                  }: any) =>
-                                                      apolloSubscriber<
-                                                          ISendInvitationCommandOutput
-                                                      >(
-                                                          sendInvitationResult.hash
-                                                      )
+                                      )
+                                  ),
+                                  combineAll(),
+                                  tap(signedSignatures =>
+                                      console.log(
+                                          'signedSignatures combined',
+                                          signedSignatures
+                                      )
+                                  ),
+                                  mergeMap(() =>
+                                      merge(
+                                          of(
+                                              showNotificationAction({
+                                                  description: `The community's details have been updated!`,
+                                                  message: 'Community updated',
+                                                  notificationType: 'success',
+                                              })
+                                          ),
+                                          of(communityUpdatedAction()),
+                                          of(
+                                              routeChangeAction(
+                                                  `/community/${
+                                                      (actions as IUpdateCommunityAction)
+                                                          .payload.id
+                                                  }/community-updated`
                                               )
-                                  )
-                              )
-                              .combineAll()
-                              .do(signedSignatures =>
-                                  console.log(
-                                      'signedSignatures combined',
-                                      signedSignatures
-                                  )
-                              )
-                              .mergeMap(() =>
-                                  Observable.merge(
-                                      Observable.of(
-                                          showNotificationAction({
-                                              description: `The community's details have been updated!`,
-                                              message: 'Community updated',
-                                              notificationType: 'success',
-                                          })
-                                      ),
-                                      Observable.of(communityUpdatedAction()),
-                                      Observable.of(
-                                          routeChangeAction(
-                                              `/community/${
-                                                  (actions as IUpdateCommunityAction)
-                                                      .payload.id
-                                              }/community-updated`
                                           )
                                       )
-                                  )
-                              )
-                              .do(() => apolloClient.resetStore())
-                              .do(
-                                  () =>
-                                      typeof actions.callback === 'function' &&
-                                      actions.callback()
-                              )
-                              .catch(err => {
-                                  console.error(err)
-                                  return Observable.of(
-                                      showNotificationAction({
-                                          description: 'Please try again',
-                                          message: 'Submission error',
-                                          notificationType: 'error',
-                                      })
-                                  )
-                              })
-                        : Observable.merge(
-                              Observable.of(
-                                  showNotificationAction({
-                                      description: `The community's details have been updated!`,
-                                      message: 'Community updated',
-                                      notificationType: 'success',
+                                  ),
+                                  tap(() => apolloClient.resetStore()),
+                                  tap(
+                                      () =>
+                                          typeof actions.callback ===
+                                              'function' && actions.callback()
+                                  ),
+                                  catchError(err => {
+                                      console.error(err)
+                                      return of(
+                                          showNotificationAction({
+                                              description: 'Please try again',
+                                              message: 'Submission error',
+                                              notificationType: 'error',
+                                          })
+                                      )
                                   })
-                              ),
-                              Observable.of(communityUpdatedAction()),
-                              Observable.of(
-                                  routeChangeAction(
-                                      `/community/${
-                                          (actions as IUpdateCommunityAction)
-                                              .payload.id
-                                      }/community-updated`
-                                  )
                               )
-                          ).do(() => apolloClient.resetStore())
+                            : merge(
+                                  of(
+                                      showNotificationAction({
+                                          description: `The community's details have been updated!`,
+                                          message: 'Community updated',
+                                          notificationType: 'success',
+                                      })
+                                  ),
+                                  of(communityUpdatedAction()),
+                                  of(
+                                      routeChangeAction(
+                                          `/community/${
+                                              (actions as IUpdateCommunityAction)
+                                                  .payload.id
+                                          }/community-updated`
+                                      )
+                                  )
+                              ),
+                    tap(() => apolloClient.resetStore())
                 )
-        )
-        .catch(err => {
+            )
+        ),
+        catchError(err => {
             console.error(err)
-            return Observable.of(
+            return of(
                 showNotificationAction({
                     description: 'Please try again',
                     message: 'Submission error',
@@ -499,3 +468,4 @@ export const updateCommunityEpic: Epic<Actions, IReduxState, IDependencies> = (
                 })
             )
         })
+    )
