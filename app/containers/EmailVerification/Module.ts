@@ -219,9 +219,8 @@ export const verifyEmailEpic = (
                                       )
                               )
                           ).pipe(
-                            map(() => emailVerifiedAction()),
-                            tap(() => apolloClient.resetStore())
-
+                              map(() => emailVerifiedAction()),
+                              tap(() => apolloClient.resetStore())
                           )
                         : of(emailVerificationFail())
                 ),

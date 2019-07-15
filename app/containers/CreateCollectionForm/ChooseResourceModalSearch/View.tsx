@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Subscription } from 'rxjs/internal/Subscription'
 import { Subject, from } from 'rxjs'
-import { debounceTime, flatMap, tap, map } from 'rxjs/operators';
+import { debounceTime, flatMap, tap, map } from 'rxjs/operators'
 
 const SearchSVG = () => (
     <div className="certain-category-icon">
@@ -121,34 +121,36 @@ class Complete extends React.Component<IProps, IState> {
     }
 
     componentDidMount() {
-        const sub = handleSearch$.pipe(
-            debounceTime(200),
-            flatMap(() =>
-                this.props.type === 'article'
-                    ? queryAllArticles(
-                          this.props.query.refetch,
-                          this.state.value
-                      )
-                    : queryAllCollections(
-                          this.props.query.refetch,
-                          this.state.value
-                      )
-            ),
-            tap(() => this.props.changeTab(1)),
-            map(({ data }: any) => ({
-                results:
-                    (data.searchCollections &&
-                        data.searchCollections.content) ||
-                    [],
-            }))
-        ) .subscribe(
-            dataSource => {
-                // console.log(dataSource);
-                this.setState({ ...this.state, dataSource })
-            },
-            (err: string) => console.log(err)
-        )
-        
+        const sub = handleSearch$
+            .pipe(
+                debounceTime(200),
+                flatMap(() =>
+                    this.props.type === 'article'
+                        ? queryAllArticles(
+                              this.props.query.refetch,
+                              this.state.value
+                          )
+                        : queryAllCollections(
+                              this.props.query.refetch,
+                              this.state.value
+                          )
+                ),
+                tap(() => this.props.changeTab(1)),
+                map(({ data }: any) => ({
+                    results:
+                        (data.searchCollections &&
+                            data.searchCollections.content) ||
+                        [],
+                }))
+            )
+            .subscribe(
+                dataSource => {
+                    // console.log(dataSource);
+                    this.setState({ ...this.state, dataSource })
+                },
+                (err: string) => console.log(err)
+            )
+
         this.setState({ ...this.state, sub })
     }
 

@@ -1,6 +1,7 @@
+import { Component } from 'react'
 import Loading from '../../components/Loading'
 import TertiaryButton from '../../components/Button/TertiaryButton'
-
+import { CheckpointArticlesAction } from './Module'
 export const CheckpointArticlesIcon = () => (
     <svg
         width="20"
@@ -24,7 +25,16 @@ export const CheckpointArticlesIcon = () => (
     </svg>
 )
 
-class CTA extends React.Component {
+interface IState {
+    activated: boolean;
+}
+
+interface IProps {
+    pageType: string;
+    checkpointArticlesAction: () => void;
+}
+
+class CTA extends Component<IProps,IState> {
     constructor(props) {
         super(props)
         this.state = {

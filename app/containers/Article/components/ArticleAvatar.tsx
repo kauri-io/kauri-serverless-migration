@@ -1,7 +1,7 @@
 import moment from 'moment'
 import Avatar from '@material-ui/core/Avatar'
 import Grid from '@material-ui/core/Grid'
-import { Article_author } from '../../../../queries/Fragments/__generated__/Article'
+import { Article_author } from '../../../queries/Fragments/__generated__/Article'
 import Typography from '@material-ui/core/Typography'
 
 interface IProps {

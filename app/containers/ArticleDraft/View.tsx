@@ -1,6 +1,6 @@
 import DraftArticleHeader from './DraftArticleHeader'
 import DraftArticleContent from './DraftArticleContent'
-import { IOption } from '../../common/PublishingSelector'
+import { IOption } from '../../containers/PublishingSelector'
 
 interface IProps {
     data: {

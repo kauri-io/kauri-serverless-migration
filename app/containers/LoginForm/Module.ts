@@ -6,8 +6,8 @@ import { loginPersonalSign } from '../../lib/web3-personal-sign'
 import superagent from 'superagent'
 import { IDependencies } from '../../lib/Module'
 import config from '../../config'
-import { ofType } from 'redux-observable';
-import { switchMap, mergeMap, map, tap } from 'rxjs/operators';
+import { ofType } from 'redux-observable'
+import { switchMap, mergeMap, map, tap } from 'rxjs/operators'
 
 const request = superagent.agent()
 
@@ -102,7 +102,10 @@ export const registerEpic = (
                             .do(() => callback())
                             .do(({ token }: IFinalLoginResponse) => {
                                 console.log(token)
-                                console.log(global.window && global.window.web3.eth.accounts[0])
+                                console.log(
+                                    global.window &&
+                                        global.window.web3.eth.accounts[0]
+                                )
                                 document.cookie = cookie.serialize(
                                     'TOKEN',
                                     token,
@@ -150,7 +153,7 @@ export const registerEpic = (
                             .do(() =>
                                 window.localStorage.setItem(
                                     'login-tracking-pending',
-                                    "true"
+                                    'true'
                                 )
                             )
                             .delay(750)
@@ -178,7 +181,7 @@ export const registerEpic = (
                                     })
                                 )
                             })
-                    ),
+                    )
                 )
         )
     )

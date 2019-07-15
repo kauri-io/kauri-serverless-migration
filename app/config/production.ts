@@ -17,6 +17,6 @@ export default {
         '27e77e164bc02788f347213b0a3e9a9a0cdf8d7a',
     ],
     environment: 'production',
-    appId: "kauri",
-  clientId: "kauri-gateway",
+    appId: 'kauri',
+    clientId: 'kauri-gateway',
 }

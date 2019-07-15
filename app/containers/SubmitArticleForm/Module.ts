@@ -12,7 +12,7 @@ import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { publishArticleAction, IOwnerPayload } from './PublishArticleModule'
 import { IOption } from '../../containers/PublishingSelector'
 import analytics from '../../lib/analytics'
-import { merge, of, from } from 'rxjs';
+import { merge, of, from } from 'rxjs'
 
 interface IGetArticleResult {
     getArticle: {

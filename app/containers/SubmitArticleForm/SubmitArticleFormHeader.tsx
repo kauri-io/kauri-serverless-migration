@@ -27,7 +27,7 @@ const handleKeyPress = (e: React.KeyboardEvent) => {
     }
 }
 
-export const InputWrapper = styled<{ maxlength: number }, 'div'>('div')`
+export const InputWrapper = styled.div<{ maxlength: number }>`
     margin-left: 10px;
     position: relative;
     align-self: auto;
@@ -45,7 +45,7 @@ const Overlay = styled.div`
     left: 0;
 `
 
-export const ArticleSubject = styled<{ hasErrors: boolean }, 'input'>('input')`
+export const ArticleSubject = styled.input<{ hasErrors: boolean }>`
     display: inline-block;
     margin-left: 0px;
     background: none;
@@ -82,7 +82,7 @@ export const ArticleSubject = styled<{ hasErrors: boolean }, 'input'>('input')`
 const articleUnderlineSpanCss = css`
     font-size: 26px !important;
 `
-export const UnderlineSpan = styled<{ type: string }, 'span'>('span')`
+export const UnderlineSpan = styled.span<{ type: string }>`
     user-select: none;
     border-top: 3px solid ${props => props.theme.primaryColor};
     left: 0;

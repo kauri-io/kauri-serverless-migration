@@ -7,8 +7,8 @@ import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { publishArticle } from './__generated__/publishArticle'
 import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
 import analytics from '../../lib/analytics'
-import { from, merge, of } from 'rxjs';
-import { switchMap, mergeMap, tap } from 'rxjs/operators';
+import { from, merge, of } from 'rxjs'
+import { switchMap, mergeMap, tap } from 'rxjs/operators'
 
 const publishArticleMutation = gql`
     mutation publishArticle(
@@ -71,7 +71,7 @@ interface IPublishArticleCommandOutput {
 
 export const publishArticleEpic = (
     action$: ActionsObservable<IPublishArticleAction>,
-    { getState } : any,
+    { getState }: any,
     { apolloClient, apolloSubscriber, personalSign }: IDependencies
 ) =>
     action$.pipe(
@@ -87,7 +87,7 @@ export const publishArticleEpic = (
                     owner,
                     updateComment,
                 },
-            } ) => {
+            }) => {
                 const signatureToSign = generatePublishArticleHash(
                     id,
                     version,
@@ -171,9 +171,7 @@ export const publishArticleEpic = (
                             )
                         )
                     )
-
                 )
             }
         )
-
     )

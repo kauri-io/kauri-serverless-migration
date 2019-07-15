@@ -2,13 +2,13 @@ import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { checkpointArticles } from '../../queries/Article'
 import analytics from '../../lib/analytics'
 import { IDependencies } from '../../lib/Module'
-import { of, from } from 'rxjs';
-import { ActionsObservable, ofType } from 'redux-observable';
-import { switchMap, mergeMap, tap, mapTo, catchError } from 'rxjs/operators';
+import { of, from } from 'rxjs'
+import { ActionsObservable, ofType } from 'redux-observable'
+import { switchMap, mergeMap, tap, mapTo, catchError } from 'rxjs/operators'
 
 const CHECKPOINT_ARTICLES = 'CHECKPOINT_ARTICLES'
 
-type CheckpointArticlesAction = {
+export interface CheckpointArticlesAction {
     type: string
 }
 
@@ -164,8 +164,6 @@ export const checkpointArticlesEpic = (
                                     })
                                 )
                             })
-
-
                         )
                 )
                 .catch(err => {
@@ -213,5 +211,4 @@ export const checkpointArticlesEpic = (
                     )
                 })
         )
-
     )

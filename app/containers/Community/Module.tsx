@@ -90,7 +90,7 @@ import { ISendInvitationCommandOutput } from '../CreateCommunityForm/Module'
 import { closeModalAction } from '../../components/Modal/Module'
 import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
 import { finaliseArticleTransfer } from '../../queries/Article'
-import { of, merge, from } from 'rxjs';
+import { of, merge, from } from 'rxjs'
 
 interface ICurateCommunityResourcesAction {
     type: 'CURATE_COMMUNITY_RESOURCES'
@@ -435,9 +435,7 @@ export const sendCommunityInvitationEpic: Epic<
                     variables: payload,
                 })
             ).mergeMap(({ data: { prepareSendInvitation: result } }) =>
-                from(
-                    personalSign(result && result.messageHash)
-                )
+                from(personalSign(result && result.messageHash))
                     .mergeMap(signedSignature =>
                         apolloClient.mutate<
                             sendInvitation,
@@ -507,9 +505,7 @@ export const acceptCommunityInvitationEpic: Epic<
                           variables: payload,
                       })
                   ).mergeMap(({ data: { prepareAcceptInvitation: result } }) =>
-                      from<string>(
-                          personalSign(result && result.messageHash)
-                      )
+                      from<string>(personalSign(result && result.messageHash))
                           .mergeMap(signature =>
                               apolloClient.mutate<
                                   acceptInvitation,
@@ -561,9 +557,7 @@ export const acceptCommunityInvitationEpic: Epic<
                                                 `/community/${payload.id}`
                                             )
                                         ),
-                                        of(
-                                            invitationAcceptedAction()
-                                        )
+                                        of(invitationAcceptedAction())
                                     )
                           )
                           .do(() => apolloClient.resetStore())
@@ -623,9 +617,7 @@ export const revokeInvitationEpic: Epic<Actions, IReduxState, IDependencies> = (
                     variables: payload,
                 })
             ).mergeMap(({ data: { prepareRevokeInvitation: result } }) =>
-                from<string>(
-                    personalSign(result && result.messageHash)
-                )
+                from<string>(personalSign(result && result.messageHash))
                     .mergeMap(signature =>
                         apolloClient.mutate<
                             revokeInvitation,
@@ -682,9 +674,7 @@ export const removeMemberEpic: Epic<Actions, IReduxState, IDependencies> = (
                     variables: payload,
                 })
             ).mergeMap(({ data: { prepareRemoveMember: result } }) =>
-                from<string>(
-                    personalSign(result && result.messageHash)
-                )
+                from<string>(personalSign(result && result.messageHash))
                     .mergeMap(signature =>
                         apolloClient.mutate<
                             removeMember,
@@ -772,9 +762,7 @@ export const changeMemberRoleEpic: Epic<Actions, IReduxState, IDependencies> = (
                     variables: payload,
                 })
             ).mergeMap(({ data: { prepareChangeMemberRole: result } }) =>
-                from<string>(
-                    personalSign(result && result.messageHash)
-                )
+                from<string>(personalSign(result && result.messageHash))
                     .mergeMap(signature =>
                         apolloClient.mutate<
                             changeMemberRole,
@@ -940,9 +928,7 @@ export const transferArticleToCommunityEpic: Epic<
                             dateCreated
                         )
 
-                        return from(
-                            personalSign(signatureToSign)
-                        )
+                        return from(personalSign(signatureToSign))
                             .mergeMap(signature =>
                                 from(
                                     apolloClient.mutate({

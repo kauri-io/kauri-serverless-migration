@@ -184,18 +184,14 @@ class EditableHeader extends Component<IProps, IState> {
                 />
                 <InputsContainers>
                     <Input
-                        onChange={e =>
-                            this.setState({'name': e.target.value})
-                        }
+                        onChange={e => this.setState({ name: e.target.value })}
                         fontWeight="normal"
                         fontSize={6}
                         value={name}
                         placeHolder="Add your full name"
                     />
                     <Input
-                        onChange={e =>
-                            this.setState({'title': e.target.value})
-                        }
+                        onChange={e => this.setState({ title: e.target.value })}
                         fontWeight="normal"
                         fontSize={3}
                         value={title}
@@ -203,7 +199,7 @@ class EditableHeader extends Component<IProps, IState> {
                     />
                     <Input
                         onChange={e =>
-                            this.setState({'username': e.target.value})
+                            this.setState({ username: e.target.value })
                         }
                         fontWeight="normal"
                         fontSize={1}
@@ -212,7 +208,7 @@ class EditableHeader extends Component<IProps, IState> {
                     />
                     <Input
                         onChange={e =>
-                            this.setState({'website': e.target.value})
+                            this.setState({ website: e.target.value })
                         }
                         fontWeight="normal"
                         fontSize={1}
@@ -223,7 +219,7 @@ class EditableHeader extends Component<IProps, IState> {
                         <SocialWebsiteIcon brand="twitter" />
                         <Input
                             onChange={e =>
-                                this.setState({'twitter': e.target.value})
+                                this.setState({ twitter: e.target.value })
                             }
                             fontWeight="normal"
                             fontSize={1}
@@ -235,7 +231,7 @@ class EditableHeader extends Component<IProps, IState> {
                         <SocialWebsiteIcon brand="github" />
                         <Input
                             onChange={e =>
-                                this.setState({'github': e.target.value})
+                                this.setState({ github: e.target.value })
                             }
                             fontWeight="normal"
                             fontSize={1}
@@ -249,7 +245,9 @@ class EditableHeader extends Component<IProps, IState> {
                         }
                         email={email}
                         oldEmail={oldEmail}
-                        handleChange={e => this.setState({'email': e.target.value})}
+                        handleChange={e =>
+                            this.setState({ email: e.target.value })
+                        }
                         status={status}
                     />
                     <Offset margin={12}>
@@ -257,9 +255,11 @@ class EditableHeader extends Component<IProps, IState> {
                             disabled={!this.state.email}
                             checked={this.state.subscriptions.newsletter}
                             onChange={checked =>
-                                this.setState({'subscriptions': {
-                                    newsletter: checked,
-                                } })
+                                this.setState({
+                                    subscriptions: {
+                                        newsletter: checked,
+                                    },
+                                })
                             }
                         />
                     </Offset>

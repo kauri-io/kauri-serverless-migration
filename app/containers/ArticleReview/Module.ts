@@ -7,8 +7,8 @@ import { getEvent } from '../../queries/Module'
 import { create } from '../../lib/init-apollo'
 import { approveArticle, rejectArticle } from '../../queries/Article'
 import analytics from '../../lib/analytics'
-import { from, merge, of } from 'rxjs';
-import { switchMap, mergeMap, tap, catchError, flatMap } from 'rxjs/operators';
+import { from, merge, of } from 'rxjs'
+import { switchMap, mergeMap, tap, catchError, flatMap } from 'rxjs/operators'
 
 interface IApproveArticlePayload {
     id: string
@@ -42,8 +42,8 @@ interface IReduxState {
 }
 
 export const approveArticleEpic = (
-    action$ : ActionsObservable<IApproveArticleAction>,
-    { }: IReduxState,
+    action$: ActionsObservable<IApproveArticleAction>,
+    {  }: IReduxState,
     { apolloClient, personalSign }: IDependencies
 ) =>
     action$.pipe(
@@ -125,7 +125,6 @@ export const approveArticleEpic = (
                             })
                         )
                     })
-
                 )
         )
     )
@@ -157,45 +156,44 @@ export const rejectArticleEpic = (
 ) =>
     action$.pipe(
         ofType(REJECT_ARTICLE),
-        switchMap(
-            ({ payload: { id, version, cause } }) =>
-                from(
-                    apolloClient.mutate({
-                        mutation: rejectArticle,
-                        variables: { id, version, cause },
+        switchMap(({ payload: { id, version, cause } }) =>
+            from(
+                apolloClient.mutate({
+                    mutation: rejectArticle,
+                    variables: { id, version, cause },
+                })
+            ).pipe(
+                flatMap(
+                    ({
+                        data: {
+                            rejectArticle: { hash },
+                        },
+                    }: {
+                        data: { rejectArticle: { hash: string } }
+                    }) => apolloSubscriber(hash)
+                ),
+                tap(() => apolloClient.resetStore()),
+                tap(() =>
+                    analytics.track('Article Update Rejected', {
+                        category: 'article_actions',
                     })
-                ).pipe(
-                    flatMap(
-                        ({
-                            data: {
-                                rejectArticle: { hash },
-                            },
-                        }: {
-                            data: { rejectArticle: { hash: string } }
-                        }) => apolloSubscriber(hash)
-                    ),
-                    tap(() => apolloClient.resetStore()),
-                    tap(() =>
-                        analytics.track('Article Update Rejected', {
-                            category: 'article_actions',
-                        })
-                    ),
-                    mergeMap<any, any>(() =>
-                        merge(
-                            of(
-                                routeChangeAction(
-                                    `/article/${id}/v${version}/article-rejected`
-                                )
-                            ),
-                            of(
-                                showNotificationAction({
-                                    description: `It will not show up in your approvals queue anymore!`,
-                                    message: 'Article rejected!',
-                                    notificationType: 'success',
-                                })
+                ),
+                mergeMap<any, any>(() =>
+                    merge(
+                        of(
+                            routeChangeAction(
+                                `/article/${id}/v${version}/article-rejected`
                             )
+                        ),
+                        of(
+                            showNotificationAction({
+                                description: `It will not show up in your approvals queue anymore!`,
+                                message: 'Article rejected!',
+                                notificationType: 'success',
+                            })
                         )
                     )
                 )
+            )
         )
     )

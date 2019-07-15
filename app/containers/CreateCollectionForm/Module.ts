@@ -17,18 +17,18 @@ export interface ICreateCollectionPayload {
     name: string
     background?: string
     description?: string
-    sections: Array<ISection>,
-    tags?: any;
+    sections: Array<ISection>
+    tags?: any
     destination?: {
-        id: string;
-        type: string;
+        id: string
+        type: string
     }
 }
 
 export interface IComposeCollectionPayload {
     id: string
     sections: Array<ISection>
-    updating?: boolean,
+    updating?: boolean
     tags?: any
 }
 
@@ -117,8 +117,7 @@ export const composeCollectionEpic = (
                                         sections: sections.length,
                                         resources: sections.reduce(
                                             (all, item) =>
-                                                (all +=
-                                                    item.resources.length),
+                                                (all += item.resources.length),
                                             0
                                         ),
                                     }
@@ -220,10 +219,7 @@ export const createCollectionEpic = (
 export const editCollectionEpic = (
     action$: ActionsObservable<EditCollectionAction>,
     {},
-    {
-        apolloClient,
-        apolloSubscriber,
-    }: IDependencies
+    { apolloClient, apolloSubscriber }: IDependencies
 ) =>
     action$.pipe(
         ofType(EDIT_COLLECTION),

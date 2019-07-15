@@ -41,7 +41,7 @@ import {
     ICloseModalAction,
     IOpenModalPayload,
 } from '../../components/Modal/Module'
-import { ICommunity } from '../../lib/Module';
+import { ICommunity } from '../../lib/Module'
 
 const emptySection: Collection_sections = {
     id: null,
@@ -312,7 +312,7 @@ const renderResourceSection = (
 )
 
 export interface IProps {
-    communities?: ICommunity[],
+    communities?: ICommunity[]
     id?: string
     touched: {
         name: boolean
@@ -329,8 +329,8 @@ export interface IProps {
     showNotificationAction: IShowNotificationAction
     routeChangeAction: (route: string) => void
     openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
-    editCollectionAction: any;
-    createCollectionAction: any;
+    editCollectionAction: any
+    createCollectionAction: any
     data?: { getCollection?: ICollection }
     closeModalAction: ICloseModalAction
     userId: string

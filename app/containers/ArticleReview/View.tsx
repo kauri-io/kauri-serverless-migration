@@ -6,7 +6,7 @@ import { Label } from '../../components/Typography'
 import ScrollIndicator from '../../components/ScrollIndicator'
 import Loading from '../../components/Loading'
 import theme from '../../lib/theme-config'
-import { ICommunities } from '../../lib/Module'
+import { ICommunity } from '../../lib/Module'
 
 const DEFAULT_CARD_WIDTH = theme.DEFAULT_CARD_WIDTH
 
@@ -31,7 +31,7 @@ interface IProps {
     userId: string
     id: string
     version: string
-    communities: ICommunities
+    communities: ICommunity[]
     CurrentArticle: any
     ProposedUpdate: any
     routeChangeAction: (route: string) => void

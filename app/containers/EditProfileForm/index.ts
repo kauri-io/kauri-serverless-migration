@@ -19,7 +19,7 @@ export default compose(
             saveUserDetailsAction,
             resendEmailVerificationAction,
         },
-        null,
+        null
     ),
     graphql(getOwnProfile, {
         name: 'OwnProfile',

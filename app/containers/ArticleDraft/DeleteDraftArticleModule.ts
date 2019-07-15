@@ -112,9 +112,7 @@ export const deleteDraftArticleEpic = (
                             ),
                             of(
                                 routeChangeAction(
-                                    `/public-profile/${
-                                        state.app.user.id
-                                    }`
+                                    `/public-profile/${state.app.user.id}`
                                 )
                             )
                         )

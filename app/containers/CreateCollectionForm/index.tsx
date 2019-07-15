@@ -18,7 +18,7 @@ import PublishingSelector from '../PublishingSelector'
 import { IReduxState } from '../../lib/Module'
 import { dissocPath, map, pipe, path } from 'ramda'
 import { Collection_sections } from '../../queries/Fragments/__generated__/Collection'
-import { SectionDTOInput } from '../../__generated__/globalTypes';
+import { SectionDTOInput } from '../../__generated__/globalTypes'
 
 export interface IFormState {
     name: string
@@ -77,7 +77,7 @@ export default compose(
                     : path(['getCollection', 'sections'])(data)
                     ? pipe(
                           path(['getCollection', 'sections']),
-                          map((section : Collection_sections) => ({
+                          map((section: Collection_sections) => ({
                               ...section,
                               resourcesId: map(
                                   ({ id, version, __typename }) => ({
@@ -118,68 +118,69 @@ export default compose(
                 })
             ),
         }),
-        handleSubmit: (values: IFormState,
-            { props, setSubmitting }: { props: IProps, setSubmitting: any}) => {
-            
-                if (props.communities && !props.data) {
-                //     props.openModalAction({
-                //         <PublishingSelector
-                //                 userId={props.userId}
-                //                 type="Collections"
-                //                 closeModalAction={() => {
-                //                     props.closeModalAction()
-                //                     setSubmitting(false)
-                //                 }}
-                //                 communities={props.communities.map(
-                //                     ({ community }) => ({
-                //                         ...community,
-                //                         type: 'COMMUNITY',
-                //                     })
-                //                 )}
-                //                 handleSubmit={destination => {
-                //                     values.destination = destination
-                //                     props.createCollectionAction(values, () => {
-                //                         props.closeModalAction()
-                //                         setSubmitting(false)
-                //                     })
-                //                 }}
-                //             />
-                //     })
-                } else {
-                    if (props.data) {
-                        // BACKEND FIX sections.resources -> sections.resourcesId :(
-                        const reassignResourcesToResourcesId = pipe(
-                            path(['sections']),
-                            map((section: Collection_sections) => ({
-                                ...section,
-                                resourcesId: map(({ id, version, type }) => ({
-                                    type: type.toUpperCase(),
-                                    id,
-                                    version,
-                                }))(section.resourcesId),
-                            })),
-                            map(section => dissocPath(['resources'])(section)),
-                            map(section => dissocPath(['__typename'])(section))
-                        )
+        handleSubmit: (
+            values: IFormState,
+            { props, setSubmitting }: { props: IProps; setSubmitting: any }
+        ) => {
+            if (props.communities && !props.data) {
+                    props.openModalAction({
+                        children: <PublishingSelector
+                                userId={props.userId}
+                                type="Collections"
+                                closeModalAction={() => {
+                                    props.closeModalAction()
+                                    setSubmitting(false)
+                                }}
+                                communities={props.communities.map(
+                                    ({ community }) => ({
+                                        ...community,
+                                        type: 'COMMUNITY',
+                                    })
+                                )}
+                                handleSubmit={destination => {
+                                    values.destination = destination
+                                    props.createCollectionAction(values, () => {
+                                        props.closeModalAction()
+                                        setSubmitting(false)
+                                    })
+                                }}
+                            />
+                    })
+            } else {
+                if (props.data) {
+                    // BACKEND FIX sections.resources -> sections.resourcesId :(
+                    const reassignResourcesToResourcesId = pipe(
+                        path(['sections']),
+                        map((section: Collection_sections) => ({
+                            ...section,
+                            resourcesId: map(({ id, version, type }) => ({
+                                type: type.toUpperCase(),
+                                id,
+                                version,
+                            }))(section.resourcesId),
+                        })),
+                        map(section => dissocPath(['resources'])(section)),
+                        map(section => dissocPath(['__typename'])(section))
+                    )
 
-                        const payload = {
-                            ...values,
-                            sections: reassignResourcesToResourcesId(values),
-                            id: props.data.variables.id,
-                            updating: true,
-                        }
-
-                        props.editCollectionAction(payload, () => {
-                            setSubmitting(false)
-                        })
-                        console.log('Editing')
-                    } else {
-                        props.createCollectionAction(values, () => {
-                            setSubmitting(false)
-                        })
-                        console.log('Creating')
+                    const payload = {
+                        ...values,
+                        sections: reassignResourcesToResourcesId(values),
+                        id: props.data.variables.id,
+                        updating: true,
                     }
+
+                    props.editCollectionAction(payload, () => {
+                        setSubmitting(false)
+                    })
+                    console.log('Editing')
+                } else {
+                    props.createCollectionAction(values, () => {
+                        setSubmitting(false)
+                    })
+                    console.log('Creating')
                 }
-        }
+            }
+        },
     })
 )(CreateCollectionForm)

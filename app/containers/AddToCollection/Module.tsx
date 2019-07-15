@@ -19,7 +19,7 @@ import { BodyCard, H4 } from '../../components/Typography'
 import { getCollectionTitle } from './__generated__/getCollectionTitle'
 import styled from 'styled-components'
 import analytics from '../../lib/analytics'
-import { tap, map, mergeMap, switchMap, catchError } from 'rxjs/operators';
+import { tap, map, mergeMap, switchMap, catchError } from 'rxjs/operators'
 
 export const addArticleToCollectionMutation = gql`
     mutation addArticleToCollection(
@@ -101,7 +101,8 @@ export const addArticleToCollectionEpic = (
             from(
                 apolloClient.mutate<addArticleToCollection>({
                     mutation: addArticleToCollectionMutation,
-                    variables: (actions as IAddArticleToCollectionAction).payload,
+                    variables: (actions as IAddArticleToCollectionAction)
+                        .payload,
                 })
             ).pipe(
                 mergeMap(({ data: { addCollectionResource } }) =>
@@ -111,8 +112,8 @@ export const addArticleToCollectionEpic = (
                     apolloClient.query<getArticleTitle>({
                         query: getArticleTitleQuery,
                         variables: {
-                            id: (actions as IAddArticleToCollectionAction).payload
-                                .resourceId.id,
+                            id: (actions as IAddArticleToCollectionAction)
+                                .payload.resourceId.id,
                             version: (actions as IAddArticleToCollectionAction)
                                 .payload.resourceId.version,
                         },
@@ -121,7 +122,8 @@ export const addArticleToCollectionEpic = (
                 map(({ data: { getArticle } }) => getArticle.title),
                 tap(
                     () =>
-                        typeof actions.callback === 'function' && actions.callback()
+                        typeof actions.callback === 'function' &&
+                        actions.callback()
                 ),
                 tap(() => {
                     analytics.track('Add To Collection', {
@@ -203,7 +205,6 @@ export const addArticleToCollectionEpic = (
                                 })
                             )
                         })
-
                     )
                 ),
                 catchError(err => {
@@ -217,5 +218,5 @@ export const addArticleToCollectionEpic = (
                     )
                 })
             )
-        )    
+        )
     )

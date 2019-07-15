@@ -1,14 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-
-const ActionsHeader = styled.section`
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 76px;
-    padding: 36px ${props => props.theme.padding};
-    background: ${props => props.theme.secondaryColor};
-`
 
 const Content = styled.section`
     padding: 0 ${props => props.theme.padding};
