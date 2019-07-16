@@ -630,3 +630,65 @@ export const finaliseArticleTransfer = gql`
         }
     }
 `
+
+export const addArticleToCollectionMutation = gql`
+    mutation addArticleToCollection(
+        $id: String
+        $sectionId: String
+        $resourceId: ResourceIdentifierInput
+        $position: Int
+    ) {
+        addCollectionResource(
+            id: $id
+            sectionId: $sectionId
+            resourceId: $resourceId
+            position: $position
+        ) {
+            hash
+        }
+    }
+`
+
+export const getCollectionTitleQuery = gql`
+    query getCollectionTitle($id: String) {
+        getCollection(id: $id) {
+            name
+        }
+    }
+`
+
+export const deleteDraftArticleMutation = gql`
+    mutation deleteDraftArticle($id: String, $version: Int) {
+        cancelArticle(id: $id, version: $version) {
+            hash
+        }
+    }
+`
+
+export const getArticleTitleQuery = gql`
+    query getArticleTitle($id: String, $version: Int) {
+        getArticle(id: $id, version: $version) {
+            title
+        }
+    }
+`
+
+export const publishArticleMutation = gql`
+mutation publishArticle(
+    $id: String
+    $version: Int
+    $owner: ResourceIdentifierInput
+    $signature: String
+    $updateComment: String
+) {
+    publishArticle(
+        id: $id
+        version: $version
+        owner: $owner
+        signature: $signature
+        updateComment: $updateComment
+    ) {
+        hash
+    }
+}
+`

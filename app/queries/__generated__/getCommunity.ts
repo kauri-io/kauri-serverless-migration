@@ -602,7 +602,7 @@ export interface getCommunity_getCommunity_pending_CollectionDTO {
   __typename: "CollectionDTO";
   id: string ;
   name: string ;
-  description: string;
+  description: string ;
   tags: (string )[] ;
   background: string ;
   dateUpdated: any ;

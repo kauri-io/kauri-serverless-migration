@@ -1,12 +1,9 @@
 import { ActionsObservable, ofType } from 'redux-observable'
 import { from, merge, of } from 'rxjs'
-import gql from 'graphql-tag'
 import { IDependencies } from '../../lib/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { getArticleTitle } from '../ArticleDraft/__generated__/getArticleTitle'
-import { getArticleTitleQuery } from '../../containers/ArticleDraft/DeleteDraftArticleModule'
-import { addArticleToCollection } from './__generated__/addArticleToCollection'
 import AlertViewComponent from '../../components/Modal/AlertView'
 import {
     closeModalAction,
@@ -16,32 +13,9 @@ import { BodyCard, H4 } from '../../components/Typography'
 import styled from 'styled-components'
 import analytics from '../../lib/analytics'
 import { tap, map, mergeMap, switchMap, catchError } from 'rxjs/operators'
+import { addArticleToCollectionMutation, getCollectionTitleQuery, getArticleTitleQuery } from '../../queries/Article';
 
-export const addArticleToCollectionMutation = gql`
-    mutation addArticleToCollection(
-        $id: String
-        $sectionId: String
-        $resourceId: ResourceIdentifierInput
-        $position: Int
-    ) {
-        addCollectionResource(
-            id: $id
-            sectionId: $sectionId
-            resourceId: $resourceId
-            position: $position
-        ) {
-            hash
-        }
-    }
-`
 
-export const getCollectionTitleQuery = gql`
-    query getCollectionTitle($id: String) {
-        getCollection(id: $id) {
-            name
-        }
-    }
-`
 
 export interface IAddArticleToCollectionPayload {
     id: string
@@ -90,7 +64,7 @@ export const addArticleToCollectionEpic = (
         ofType(ADD_ARTICLE_TO_COLLECTION),
         switchMap(actions =>
             from(
-                apolloClient.mutate<addArticleToCollection>({
+                apolloClient.mutate({
                     mutation: addArticleToCollectionMutation,
                     variables: (actions as IAddArticleToCollectionAction)
                         .payload,
@@ -110,7 +84,7 @@ export const addArticleToCollectionEpic = (
                         },
                     })
                 ),
-                map(({ data: { getArticle } }) => getArticle.title),
+                map(({ data: { getArticle } }) => getArticle && getArticle.title),
                 tap(
                     () =>
                         typeof actions.callback === 'function' &&

@@ -58,6 +58,7 @@ interface IProps {
     getFieldsValue: any
     readOnly: boolean
     handleChange: (mdeState: MdeState) => void
+    hasErrors?: boolean;
 }
 
 export class SharedEditor extends React.Component<IProps> {

@@ -263,7 +263,7 @@ export interface homepageContent_getLatestHomepageDescriptor_rows_main_Featured 
 export interface homepageContent_getLatestHomepageDescriptor_rows_main_Actions_content {
   __typename: "StaticContentElementDTO";
   name: string ;
-  link: string;
+  link: string ;
 }
 
 export interface homepageContent_getLatestHomepageDescriptor_rows_main_Actions {

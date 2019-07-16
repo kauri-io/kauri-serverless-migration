@@ -2,24 +2,24 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { ResourceIdentifierInput } from './../../../../__generated__/globalTypes'
+import { ResourceIdentifierInput } from "./../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL mutation operation: addArticleToCollection
 // ====================================================
 
 export interface addArticleToCollection_addCollectionResource {
-    __typename: 'MutationResponse'
-    hash: string | null
+  __typename: "MutationResponse";
+  hash: string ;
 }
 
 export interface addArticleToCollection {
-    addCollectionResource: addArticleToCollection_addCollectionResource | null
+  addCollectionResource: addArticleToCollection_addCollectionResource ;
 }
 
 export interface addArticleToCollectionVariables {
-    id?: string | null
-    sectionId?: string | null
-    resourceId?: ResourceIdentifierInput | null
-    position?: number | null
+  id?: string ;
+  sectionId?: string ;
+  resourceId?: ResourceIdentifierInput ;
+  position?: number ;
 }

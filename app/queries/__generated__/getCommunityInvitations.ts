@@ -24,7 +24,7 @@ export interface getCommunityInvitations_getCommunityInvitations {
   __typename: "ResponsePage_CommunityInvitationDTO";
   totalElements: any;
   totalPages: number;
-  content: (getCommunityInvitations_getCommunityInvitations_content )[];
+  content: (getCommunityInvitations_getCommunityInvitations_content )[] ;
 }
 
 export interface getCommunityInvitations {

@@ -14,7 +14,10 @@ import {
     IOpenModalPayload,
     ICloseModalAction,
 } from '../../../components/Modal/Module'
-import { IDeleteDraftArticleAction } from '../../ArticleDraft/DeleteDraftArticleModule'
+import {
+    IDeleteDraftArticleAction,
+    IDeleteDraftArticlePayload,
+} from '../../ArticleDraft/DeleteDraftArticleModule'
 
 interface IArticlesProps {
     data: searchPersonalArticles
@@ -24,7 +27,10 @@ interface IArticlesProps {
     isOwner: boolean
     openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
     closeModalAction: () => ICloseModalAction
-    deleteDraftArticleAction: (id: string) => IDeleteDraftArticleAction
+    deleteDraftArticleAction: (
+        payload: IDeleteDraftArticlePayload,
+        callback: () => void
+    ) => IDeleteDraftArticleAction
 }
 
 const Centered = styled.div`
@@ -43,93 +49,103 @@ const Articles = ({
     openModalAction,
 }: IArticlesProps) => {
     const articles = data.searchArticles && data.searchArticles.content
-    return articles.length > 0 ? (
+    return articles && articles.length > 0 ? (
         <Fragment>
             <Masonry withPadding={false}>
-                {articles.map(article => (
-                    <ArticleCard
-                        key={`${article.id}-${article.version}`}
-                        tags={article.tags}
-                        changeRoute={routeChangeAction}
-                        date={article.dateCreated}
-                        title={article.title}
-                        description={article.description}
-                        userId={
-                            type !== 'toBeApproved' && article.owner
-                                ? article.owner.id
-                                : article.author.id
-                        }
-                        username={
-                            type !== 'toBeApproved' && article.owner
-                                ? article.owner.username
-                                : article.author.username
-                        }
-                        userAvatar={
-                            type !== 'toBeApproved' && article.owner
-                                ? article.owner.avatar
-                                : article.author.avatar
-                        }
-                        id={article.id}
-                        version={article.version}
-                        imageURL={
-                            article.attributes && article.attributes.background
-                        }
-                        nfts={article.associatedNfts}
-                        linkComponent={(childrenProps, route) => (
-                            <Link
-                                toSlug={
-                                    route &&
-                                    route.includes('article') &&
-                                    article.title
+                {articles.map(
+                    article =>
+                        article && (
+                            <ArticleCard
+                                key={`${article.id}-${article.version}`}
+                                tags={article.tags}
+                                changeRoute={routeChangeAction}
+                                date={article.dateCreated}
+                                title={article.title}
+                                description={article.description}
+                                userId={
+                                    type !== 'toBeApproved' && article.owner
+                                        ? article.owner.id
+                                        : article.author.id
                                 }
-                                useAnchorTag
-                                href={`/draft/${article.id}/${article.version}`}
-                            >
-                                {childrenProps}
-                            </Link>
-                        )}
-                        status={'DRAFT'}
-                        isLoggedIn={isLoggedIn}
-                        hoverChildren={() => (
-                            <PrimaryButton
-                                onClick={() =>
-                                    openModalAction({
-                                        children: (
-                                            <AlertView
-                                                closeModalAction={() =>
-                                                    closeModalAction()
-                                                }
-                                                confirmButtonAction={() =>
-                                                    deleteDraftArticleAction(
-                                                        {
-                                                            id: article.id,
-                                                            version:
-                                                                article.version,
-                                                        },
-                                                        closeModalAction
-                                                    )
-                                                }
-                                                content={
-                                                    <div>
-                                                        <BodyCard>
-                                                            You won't be able to
-                                                            retrieve the draft
-                                                            article after
-                                                            deleting.
-                                                        </BodyCard>
-                                                    </div>
-                                                }
-                                                title={'Are you sure?'}
-                                            />
-                                        ),
-                                    })
+                                username={
+                                    type !== 'toBeApproved' && article.owner
+                                        ? article.owner.username
+                                        : article.author.username
                                 }
-                            >
-                                Delete draft
-                            </PrimaryButton>
-                        )}
-                    />
-                ))}
+                                userAvatar={
+                                    type !== 'toBeApproved' && article.owner
+                                        ? article.owner.avatar
+                                        : article.author.avatar
+                                }
+                                id={article.id}
+                                version={article.version}
+                                imageURL={
+                                    article.attributes &&
+                                    article.attributes.background
+                                }
+                                nfts={article.associatedNfts}
+                                linkComponent={(childrenProps, route) => (
+                                    <Link
+                                        toSlug={
+                                            route &&
+                                            route.includes('article') &&
+                                            article.title
+                                        }
+                                        useAnchorTag
+                                        href={`/draft/${article.id}/${article.version}`}
+                                    >
+                                        {childrenProps}
+                                    </Link>
+                                )}
+                                status={'DRAFT'}
+                                isLoggedIn={isLoggedIn}
+                                hoverChildren={() => (
+                                    <PrimaryButton
+                                        onClick={() =>
+                                            openModalAction({
+                                                children: (
+                                                    <AlertView
+                                                        closeModalAction={() =>
+                                                            closeModalAction()
+                                                        }
+                                                        confirmButtonAction={() =>
+                                                            deleteDraftArticleAction(
+                                                                {
+                                                                    id: String(
+                                                                        article.id
+                                                                    ),
+                                                                    version: Number(
+                                                                        article.version
+                                                                    ),
+                                                                },
+                                                                closeModalAction
+                                                            )
+                                                        }
+                                                        content={
+                                                            <div>
+                                                                <BodyCard>
+                                                                    You won't be
+                                                                    able to
+                                                                    retrieve the
+                                                                    draft
+                                                                    article
+                                                                    after
+                                                                    deleting.
+                                                                </BodyCard>
+                                                            </div>
+                                                        }
+                                                        title={'Are you sure?'}
+                                                    />
+                                                ),
+                                            })
+                                        }
+                                    >
+                                        Delete draft
+                                    </PrimaryButton>
+                                )}
+                            />
+                        )
+                )}
             </Masonry>
         </Fragment>
     ) : (

@@ -1,33 +1,12 @@
 import { ActionsObservable, ofType } from 'redux-observable'
-import gql from 'graphql-tag'
 import { IDependencies } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
-import { publishArticle } from './__generated__/publishArticle'
 import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
 import analytics from '../../lib/analytics'
 import { from, merge, of } from 'rxjs'
 import { switchMap, mergeMap, tap } from 'rxjs/operators'
-
-const publishArticleMutation = gql`
-    mutation publishArticle(
-        $id: String
-        $version: Int
-        $owner: ResourceIdentifierInput
-        $signature: String
-        $updateComment: String
-    ) {
-        publishArticle(
-            id: $id
-            version: $version
-            owner: $owner
-            signature: $signature
-            updateComment: $updateComment
-        ) {
-            hash
-        }
-    }
-`
+import { publishArticleMutation } from '../../queries/Article';
 
 interface IAction {
     type: string
@@ -108,7 +87,7 @@ export const publishArticleEpic = (
                 return from(personalSign(signatureToSign)).pipe(
                     mergeMap(signature =>
                         from(
-                            apolloClient.mutate<publishArticle>({
+                            apolloClient.mutate({
                                 mutation: publishArticleMutation,
                                 variables: {
                                     id,

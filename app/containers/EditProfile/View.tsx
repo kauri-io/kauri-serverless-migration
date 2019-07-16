@@ -5,6 +5,7 @@ import PrimaryButton from '../../components/Button/PrimaryButton'
 import Loading from '../../components/Loading'
 import analytics from '../../lib/analytics'
 import moment from 'moment'
+import { IShowNotificationPayload, IShowNotificationAction } from '../../lib/Epics/ShowNotificationEpic';
 
 const Page = styled.div`
     display: flex;
@@ -28,7 +29,27 @@ const ButtonWrapper = styled.div`
     width: 100%;
 `
 
-class OnboardingEditProfile extends Component {
+interface IProps {
+    showNotificationAction: (payload: IShowNotificationPayload) => IShowNotificationAction;
+    routeChangeAction: (route: string) => void;
+    router: {
+        query: {
+            redirected: boolean;
+            r: string;
+        }
+    }
+    user: {
+        name: string;
+        username: string;
+        email: string;
+        dateCreated: string;
+    }
+    userId: string;
+}
+
+class OnboardingEditProfile extends Component<IProps> {
+    login: any;
+
     handleSubmit() {
         const loginComp = this.login.getWrappedInstance().getWrappedInstance()
 
@@ -57,14 +78,8 @@ class OnboardingEditProfile extends Component {
             name,
             username,
             email,
-            avatar,
-            social,
-            title,
-            website,
             dateCreated,
         } = this.props.user
-        const github = social && social.github
-        const twitter = social && social.twitter
         const hasData = name && username && email
 
         const loginTrackingPending = window.localStorage.getItem(
@@ -100,13 +115,7 @@ class OnboardingEditProfile extends Component {
             name,
             username,
             email,
-            avatar,
-            social,
-            title,
-            website,
         } = this.props.user
-        const github = social && social.github
-        const twitter = social && social.twitter
         const hasData = name && username && email
         if (hasData) {
             return (

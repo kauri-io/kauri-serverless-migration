@@ -160,10 +160,7 @@ export const submitArticleEpic: Epic<any, {}, IDependencies> = (
                             },
                         }: {
                             data: { submitNewArticle: { hash: string } }
-                        }) =>
-                            apolloSubscriber<{ id: string; version: number }>(
-                                hash
-                            )
+                        }) => apolloSubscriber(hash)
                     )
                     .do(h => console.log(h))
                     .mergeMap(({ data: { output } }) =>
@@ -225,9 +222,9 @@ export const submitArticleEpic: Epic<any, {}, IDependencies> = (
                     })
         )
 
-export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
+export const submitArticleVersionEpic = (
     action$,
-    { getState },
+    { app }: IReduxState,
     { apolloClient, apolloSubscriber }: IDependencies
 ) =>
     action$
@@ -264,10 +261,7 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                             },
                         }: {
                             data: { submitArticleVersion: { hash: string } }
-                        }) =>
-                            apolloSubscriber<{ id: string; version: number }>(
-                                hash
-                            )
+                        }) => apolloSubscriber(hash)
                     )
                     .do(h => console.log(h))
                     .mergeMap(({ data: { output } }) =>
@@ -304,8 +298,7 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                                                   ? 'drafted'
                                                   : getArticle.owner.id ===
                                                         getArticle.authorId ||
-                                                    getState()
-                                                        .app.user.communities.map(
+                                                        app && app.user && app.user.communities.map(
                                                             ({ community }) =>
                                                                 community.id
                                                         )
@@ -324,8 +317,7 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                                                   ? 'Your article has now been drafted to be updated or published in the future'
                                                   : getArticle.owner.id ===
                                                         getArticle.authorId ||
-                                                    getState()
-                                                        .app.user.communities.map(
+                                                        app && app.user && app.user.communities.map(
                                                             ({ community }) =>
                                                                 community.id
                                                         )
@@ -339,8 +331,7 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                                                   ? 'drafted'
                                                   : getArticle.owner.id ===
                                                         getArticle.authorId ||
-                                                    getState()
-                                                        .app.user.communities.map(
+                                                        app && app.user && app.user.communities.map(
                                                             ({ community }) =>
                                                                 community.id
                                                         )
@@ -406,10 +397,7 @@ export const editArticleEpic: Epic<any, {}, IDependencies> = (
                             },
                         }: {
                             data: { editArticleVersion: { hash: string } }
-                        }) =>
-                            apolloSubscriber<{ id: string; version: number }>(
-                                hash
-                            )
+                        }) => apolloSubscriber(hash)
                     )
                     .do(h => console.log(h))
                     .mergeMap(({ data: { output } }) =>
@@ -461,15 +449,16 @@ export const draftArticleEpic = (
         .ofType(DRAFT_ARTICLE)
         .switchMap(({ payload: { text, subject, tags, attributes } }) =>
             from(
-                apolloClient.mutate({
-                    mutation: submitNewArticle,
-                    variables: {
-                        content: text,
-                        title: subject,
-                        tags,
-                        attributes,
-                    },
-                })
+                apolloClient.mutate >
+                    {
+                        mutation: submitNewArticle,
+                        variables: {
+                            content: text,
+                            title: subject,
+                            tags,
+                            attributes,
+                        },
+                    }
             )
                 .flatMap(
                     ({
@@ -478,8 +467,7 @@ export const draftArticleEpic = (
                         },
                     }: {
                         data: { submitNewArticle: { hash: string } }
-                    }) =>
-                        apolloSubscriber<{ id: string; version: number }>(hash)
+                    }) => apolloSubscriber(hash)
                 )
                 .do(() => apolloClient.resetStore())
                 .do(() => {
