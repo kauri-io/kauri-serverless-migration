@@ -674,21 +674,21 @@ export const getArticleTitleQuery = gql`
 `
 
 export const publishArticleMutation = gql`
-mutation publishArticle(
-    $id: String
-    $version: Int
-    $owner: ResourceIdentifierInput
-    $signature: String
-    $updateComment: String
-) {
-    publishArticle(
-        id: $id
-        version: $version
-        owner: $owner
-        signature: $signature
-        updateComment: $updateComment
+    mutation publishArticle(
+        $id: String
+        $version: Int
+        $owner: ResourceIdentifierInput
+        $signature: String
+        $updateComment: String
     ) {
-        hash
+        publishArticle(
+            id: $id
+            version: $version
+            owner: $owner
+            signature: $signature
+            updateComment: $updateComment
+        ) {
+            hash
+        }
     }
-}
 `

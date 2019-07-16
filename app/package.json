@@ -10,11 +10,12 @@
         "pretty": "prettier --write '**/*.{ts,tsx}'",
         "introspect-fragments": "node scripts/introspectionFragmentMatcher.js",
         "lint": "./node_modules/.bin/eslint --init",
+        "test": "jest --coverage --coverageDirectory=output/coverage/jest",
         "gqt": "npx apollo client:codegen --target=typescript --config=apollo.config.js && npm run introspect-fragments"
     },
     "husky": {
         "hooks": {
-            "pre-commit": "yarn pretty",
+            "pre-commit": "yarn pretty && git add .",
             "pre-push": ""
         }
     },
@@ -98,6 +99,8 @@
         "@zeit/next-source-maps": "^0.0.3",
         "babel-plugin-styled-components": "^1.10.6",
         "enzyme": "^3.10.0",
+        "enzyme-adapter-react-16": "^1.14.0",
+        "enzyme-to-json": "^3.3.5",
         "eslint": "^6.0.1",
         "eslint-config-prettier": "^6.0.0",
         "eslint-config-standard": "^13.0.0",

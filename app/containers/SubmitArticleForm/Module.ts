@@ -298,13 +298,19 @@ export const submitArticleVersionEpic = (
                                                   ? 'drafted'
                                                   : getArticle.owner.id ===
                                                         getArticle.authorId ||
-                                                        app && app.user && app.user.communities.map(
-                                                            ({ community }) =>
-                                                                community.id
-                                                        )
-                                                        .includes(
-                                                            getArticle.owner.id
-                                                        )
+                                                    (app &&
+                                                        app.user &&
+                                                        app.user.communities
+                                                            .map(
+                                                                ({
+                                                                    community,
+                                                                }) =>
+                                                                    community.id
+                                                            )
+                                                            .includes(
+                                                                getArticle.owner
+                                                                    .id
+                                                            ))
                                                   ? 'published'
                                                   : 'proposed'
                                           }`
@@ -317,13 +323,19 @@ export const submitArticleVersionEpic = (
                                                   ? 'Your article has now been drafted to be updated or published in the future'
                                                   : getArticle.owner.id ===
                                                         getArticle.authorId ||
-                                                        app && app.user && app.user.communities.map(
-                                                            ({ community }) =>
-                                                                community.id
-                                                        )
-                                                        .includes(
-                                                            getArticle.owner.id
-                                                        )
+                                                    (app &&
+                                                        app.user &&
+                                                        app.user.communities
+                                                            .map(
+                                                                ({
+                                                                    community,
+                                                                }) =>
+                                                                    community.id
+                                                            )
+                                                            .includes(
+                                                                getArticle.owner
+                                                                    .id
+                                                            ))
                                                   ? 'Your personal article has now been published!'
                                                   : 'Waiting for it to be reviewed!',
                                           message: `Article ${
@@ -331,13 +343,19 @@ export const submitArticleVersionEpic = (
                                                   ? 'drafted'
                                                   : getArticle.owner.id ===
                                                         getArticle.authorId ||
-                                                        app && app.user && app.user.communities.map(
-                                                            ({ community }) =>
-                                                                community.id
-                                                        )
-                                                        .includes(
-                                                            getArticle.owner.id
-                                                        )
+                                                    (app &&
+                                                        app.user &&
+                                                        app.user.communities
+                                                            .map(
+                                                                ({
+                                                                    community,
+                                                                }) =>
+                                                                    community.id
+                                                            )
+                                                            .includes(
+                                                                getArticle.owner
+                                                                    .id
+                                                            ))
                                                   ? 'published'
                                                   : 'proposed'
                                           }`,

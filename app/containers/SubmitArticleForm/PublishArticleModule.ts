@@ -6,7 +6,7 @@ import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
 import analytics from '../../lib/analytics'
 import { from, merge, of } from 'rxjs'
 import { switchMap, mergeMap, tap } from 'rxjs/operators'
-import { publishArticleMutation } from '../../queries/Article';
+import { publishArticleMutation } from '../../queries/Article'
 
 interface IAction {
     type: string

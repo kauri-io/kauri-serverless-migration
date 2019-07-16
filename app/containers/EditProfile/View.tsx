@@ -5,7 +5,10 @@ import PrimaryButton from '../../components/Button/PrimaryButton'
 import Loading from '../../components/Loading'
 import analytics from '../../lib/analytics'
 import moment from 'moment'
-import { IShowNotificationPayload, IShowNotificationAction } from '../../lib/Epics/ShowNotificationEpic';
+import {
+    IShowNotificationPayload,
+    IShowNotificationAction,
+} from '../../lib/Epics/ShowNotificationEpic'
 
 const Page = styled.div`
     display: flex;
@@ -30,25 +33,27 @@ const ButtonWrapper = styled.div`
 `
 
 interface IProps {
-    showNotificationAction: (payload: IShowNotificationPayload) => IShowNotificationAction;
-    routeChangeAction: (route: string) => void;
+    showNotificationAction: (
+        payload: IShowNotificationPayload
+    ) => IShowNotificationAction
+    routeChangeAction: (route: string) => void
     router: {
         query: {
-            redirected: boolean;
-            r: string;
+            redirected: boolean
+            r: string
         }
     }
     user: {
-        name: string;
-        username: string;
-        email: string;
-        dateCreated: string;
+        name: string
+        username: string
+        email: string
+        dateCreated: string
     }
-    userId: string;
+    userId: string
 }
 
 class OnboardingEditProfile extends Component<IProps> {
-    login: any;
+    login: any
 
     handleSubmit() {
         const loginComp = this.login.getWrappedInstance().getWrappedInstance()
@@ -74,12 +79,7 @@ class OnboardingEditProfile extends Component<IProps> {
     }
 
     componentDidMount() {
-        const {
-            name,
-            username,
-            email,
-            dateCreated,
-        } = this.props.user
+        const { name, username, email, dateCreated } = this.props.user
         const hasData = name && username && email
 
         const loginTrackingPending = window.localStorage.getItem(
@@ -111,11 +111,7 @@ class OnboardingEditProfile extends Component<IProps> {
     }
 
     render() {
-        const {
-            name,
-            username,
-            email,
-        } = this.props.user
+        const { name, username, email } = this.props.user
         const hasData = name && username && email
         if (hasData) {
             return (

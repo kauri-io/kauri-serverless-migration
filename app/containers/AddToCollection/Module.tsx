@@ -13,9 +13,11 @@ import { BodyCard, H4 } from '../../components/Typography'
 import styled from 'styled-components'
 import analytics from '../../lib/analytics'
 import { tap, map, mergeMap, switchMap, catchError } from 'rxjs/operators'
-import { addArticleToCollectionMutation, getCollectionTitleQuery, getArticleTitleQuery } from '../../queries/Article';
-
-
+import {
+    addArticleToCollectionMutation,
+    getCollectionTitleQuery,
+    getArticleTitleQuery,
+} from '../../queries/Article'
 
 export interface IAddArticleToCollectionPayload {
     id: string
@@ -84,7 +86,9 @@ export const addArticleToCollectionEpic = (
                         },
                     })
                 ),
-                map(({ data: { getArticle } }) => getArticle && getArticle.title),
+                map(
+                    ({ data: { getArticle } }) => getArticle && getArticle.title
+                ),
                 tap(
                     () =>
                         typeof actions.callback === 'function' &&

@@ -6,9 +6,7 @@ import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { deleteDraftArticle } from './__generated__/deleteDraftArticle'
 import analytics from '../../lib/analytics'
 import { switchMap, mergeMap, tap } from 'rxjs/operators'
-import { deleteDraftArticleMutation } from '../../queries/Article';
-
-
+import { deleteDraftArticleMutation } from '../../queries/Article'
 
 export interface IDependencies {
     apolloClient: ApolloClient<{}>
