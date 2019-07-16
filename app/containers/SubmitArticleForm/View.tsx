@@ -3,7 +3,7 @@ import Form from 'antd/lib/form'
 import SubmitArticleFormActions from './SubmitArticleFormActions'
 import SubmitArticleFormHeader from './SubmitArticleFormHeader'
 import SubmitArticleFormContent from './SubmitArticleFormContent'
-import { IShowNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
+import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import AlertView from '../../components/Modal/AlertView'
 import PublishingSelector, {
     IOption,
@@ -40,10 +40,10 @@ interface IProps {
     form: any
     handleFormChange: any
     routeChangeAction: any
-    showNotificationAction: IShowNotificationAction
     username: string
     userId: string
     userAvatar: string
+    showNotificationAction: typeof showNotificationAction;
     openModalAction: (children?: any) => void
     closeModalAction: () => void
     communities: Array<{ community: IOption }>

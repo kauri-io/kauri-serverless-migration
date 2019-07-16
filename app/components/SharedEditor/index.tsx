@@ -56,7 +56,7 @@ interface IProps {
     }
     setFieldsValue: any
     getFieldsValue: any
-    readOnly: boolean
+    hasErrors: boolean;
     handleChange: (mdeState: MdeState) => void
 }
 
@@ -121,7 +121,7 @@ export class SharedEditor extends React.Component<IProps> {
     }
 
     render() {
-        const { editorState, handleChange, readOnly } = this.props
+        const { editorState, handleChange } = this.props
 
         return (
             <div className="container">
@@ -136,7 +136,6 @@ export class SharedEditor extends React.Component<IProps> {
                     // editorKey="foobaz"
                     layout="tabbed"
                     placeholder={'Write markdown content here!'}
-                    readOnly={readOnly}
                     // spellCheck={true}
                     stickyToolbar
                     onChange={handleChange}

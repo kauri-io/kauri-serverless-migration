@@ -23,7 +23,7 @@ export const submitArticle = gql`
     }
 `
 
-export const submitNewArticle = gql`
+export const submitNewArticleMutation = gql`
     mutation submitNewArticle(
         $title: String
         $content: String
@@ -277,7 +277,7 @@ export const searchPersonalDrafts = gql`
     ${CommunityOwner}
 `
 
-export const submitArticleVersion = gql`
+export const submitArticleVersionMutation = gql`
     mutation submitArticleVersion(
         $id: String
         $subject: String

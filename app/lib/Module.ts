@@ -13,11 +13,17 @@ export interface IDependencies {
     smartContracts: any
     web3: any
     fetch: any
-    apolloSubscriber: any
+    apolloSubscriber: <T>(
+      hash: string,
+      filterName?: string
+    ) => Promise<{ data: { output: T } }>;
+    apolloChildHashesSubscriber: <T>(
+      childHashes: string[]
+    ) => Array<Promise<{ data: { output: T } }>>;
     web3PersonalSign: any
     web3GetNetwork: any
     getGasPrice: any
-    personalSign: any
+    personalSign: (data: string) => Promise<string>
 }
 
 type ISetHostNamePayload = {

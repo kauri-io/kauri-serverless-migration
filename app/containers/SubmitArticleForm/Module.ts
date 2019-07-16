@@ -1,18 +1,35 @@
-import Observable from 'rxjs/Observable'
-import { Epic } from 'redux-observable'
+import { Epic, ofType } from 'redux-observable'
 import {
-    submitArticleVersion,
+    submitArticleVersionMutation,
     editArticle,
     getArticle as getArticleQuery,
-    submitNewArticle,
+    submitNewArticleMutation,
 } from '../../queries/Article'
-import { IDependencies, IReduxState } from '../../lib/Module'
+import { IDependencies, IReduxState, ICommunity } from '../../lib/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { publishArticleAction, IOwnerPayload } from './PublishArticleModule'
 import { IOption } from '../../containers/PublishingSelector'
 import analytics from '../../lib/analytics'
 import { merge, of, from } from 'rxjs'
+import {
+    submitNewArticleVariables,
+    submitNewArticle,
+} from '../../queries/__generated__/submitNewArticle'
+import { tap, catchError, mergeMap, switchMap } from 'rxjs/operators'
+import path from 'ramda/es/path'
+import {
+    submitArticleVersion,
+    submitArticleVersionVariables,
+} from '../../queries/__generated__/submitArticleVersion'
+import {
+    getArticle,
+    getArticleVariables,
+} from '../../queries/__generated__/getArticle'
+import {
+    editArticleVersionVariables,
+    editArticleVersion,
+} from '../../queries/__generated__/editArticleVersion'
 
 interface IGetArticleResult {
     getArticle: {
@@ -124,14 +141,14 @@ export const draftArticleAction = (
     type: DRAFT_ARTICLE,
 })
 
-export const submitArticleEpic: Epic<any, {}, IDependencies> = (
+export const submitArticleEpic: Epic<any, any, IReduxState, IDependencies> = (
     action$,
     _,
-    { apolloClient, apolloSubscriber }: IDependencies
+    { apolloClient, apolloSubscriber }
 ) =>
-    action$
-        .ofType(SUBMIT_ARTICLE)
-        .switchMap(
+    action$.pipe(
+        ofType(SUBMIT_ARTICLE),
+        switchMap(
             ({
                 payload: {
                     text,
@@ -143,8 +160,11 @@ export const submitArticleEpic: Epic<any, {}, IDependencies> = (
                 },
             }) =>
                 from(
-                    apolloClient.mutate({
-                        mutation: submitNewArticle,
+                    apolloClient.mutate<
+                        submitNewArticle,
+                        submitNewArticleVariables
+                    >({
+                        mutation: submitNewArticleMutation,
                         variables: {
                             content: text,
                             title: subject,
@@ -152,23 +172,16 @@ export const submitArticleEpic: Epic<any, {}, IDependencies> = (
                             attributes,
                         },
                     })
-                )
-                    .do(h => console.log('submitNewArticle', h))
-                    .flatMap(
-                        ({
-                            data: {
-                                submitNewArticle: { hash },
-                            },
-                        }: {
-                            data: { submitNewArticle: { hash: string } }
-                        }) =>
-                            apolloSubscriber<{ id: string; version: number }>(
-                                hash
-                            )
-                    )
-                    .do(h => console.log(h))
-                    .mergeMap(({ data: { output } }) =>
-                        apolloClient.query<IGetArticleResult>({
+                ).pipe(
+                    mergeMap(({ data }) =>
+                        apolloSubscriber<{ id: string; version: number }>(
+                            path<string>(['submitNewArticle', 'hash'])(data) ||
+                                ''
+                        )
+                    ),
+                    tap(h => console.log(h)),
+                    mergeMap(({ data: { output } }) =>
+                        apolloClient.query<getArticle, getArticleVariables>({
                             fetchPolicy: 'network-only',
                             query: getArticleQuery,
                             variables: {
@@ -176,45 +189,53 @@ export const submitArticleEpic: Epic<any, {}, IDependencies> = (
                                 version: output.version,
                             },
                         })
-                    )
-                    .do(h => console.log(h))
-                    .mergeMap<any, any>(({ data: { getArticle } }) =>
-                        typeof selfPublish !== 'undefined'
-                            ? of(
-                                  publishArticleAction({
-                                      contentHash: getArticle.contentHash,
-                                      contributor: getArticle.authorId,
-                                      dateCreated: getArticle.dateCreated,
-                                      id: getArticle.id,
-                                      owner:
-                                          destination &&
-                                          destination.__typename ===
-                                              'CommunityDTO'
-                                              ? {
-                                                    type: 'COMMUNITY',
-                                                    id: destination.id,
-                                                }
-                                              : getArticle.owner,
-                                      version: getArticle.version,
-                                  })
-                              )
-                            : merge(
-                                  of(
-                                      routeChangeAction(
-                                          `/article/${getArticle.id}/v${getArticle.version}/article-published`
-                                      )
-                                  ),
-                                  of(
-                                      showNotificationAction({
-                                          description:
-                                              'Your personal article has now been published!',
-                                          message: 'Article published',
-                                          notificationType: 'success',
+                    ),
+                    tap(h => console.log(h)),
+                    mergeMap(({ data: { getArticle } }) => {
+                        if (getArticle) {
+                            return typeof selfPublish !== 'undefined'
+                                ? of(
+                                      publishArticleAction({
+                                          contentHash: String(
+                                              getArticle.contentHash
+                                          ),
+                                          contributor: String(
+                                              getArticle.author &&
+                                                  getArticle.author.id
+                                          ),
+                                          dateCreated: getArticle.dateCreated,
+                                          id: String(getArticle.id),
+                                          owner:
+                                              destination &&
+                                              destination.__typename ===
+                                                  'CommunityDTO'
+                                                  ? {
+                                                        type: 'COMMUNITY',
+                                                        id: destination.id,
+                                                    }
+                                                  : getArticle.owner,
+                                          version: Number(getArticle.version),
                                       })
                                   )
-                              )
-                    )
-                    .catch((err: string) => {
+                                : merge(
+                                      of(
+                                          routeChangeAction(
+                                              `/article/${getArticle.id}/v${getArticle.version}/article-published`
+                                          )
+                                      ),
+                                      of(
+                                          showNotificationAction({
+                                              description:
+                                                  'Your personal article has now been published!',
+                                              message: 'Article published',
+                                              notificationType: 'success',
+                                          })
+                                      )
+                                  )
+                        }
+                        throw new Error('GET ARITCLE WAS EMPTY')
+                    }),
+                    catchError((err: string) => {
                         console.error(err)
                         return of(
                             showNotificationAction({
@@ -224,16 +245,19 @@ export const submitArticleEpic: Epic<any, {}, IDependencies> = (
                             })
                         )
                     })
+                )
         )
+    )
 
-export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
-    action$,
-    { getState },
-    { apolloClient, apolloSubscriber }: IDependencies
-) =>
-    action$
-        .ofType(SUBMIT_ARTICLE_VERSION)
-        .switchMap(
+export const submitArticleVersionEpic: Epic<
+    any,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, state$, { apolloClient, apolloSubscriber }: IDependencies) =>
+    action$.pipe(
+        ofType(SUBMIT_ARTICLE_VERSION),
+        switchMap(
             ({
                 payload: {
                     text,
@@ -246,8 +270,11 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                 },
             }) =>
                 from(
-                    apolloClient.mutate({
-                        mutation: submitArticleVersion,
+                    apolloClient.mutate<
+                        submitArticleVersion,
+                        submitArticleVersionVariables
+                    >({
+                        mutation: submitArticleVersionMutation,
                         variables: {
                             attributes,
                             id,
@@ -256,22 +283,16 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                             text,
                         },
                     })
-                )
-                    .do(h => console.log(h))
-                    .flatMap(
-                        ({
-                            data: {
-                                submitArticleVersion: { hash },
-                            },
-                        }: {
-                            data: { submitArticleVersion: { hash: string } }
-                        }) =>
-                            apolloSubscriber<{ id: string; version: number }>(
-                                hash
-                            )
-                    )
-                    .do(h => console.log(h))
-                    .mergeMap(({ data: { output } }) =>
+                ).pipe(
+                    mergeMap(({ data }) =>
+                        apolloSubscriber<{ id: string; version: number }>(
+                            path<string>(['submitArticleVersion', 'hash'])(
+                                data
+                            ) || ''
+                        )
+                    ),
+                    tap(h => console.log(h)),
+                    mergeMap(({ data: { output } }) =>
                         apolloClient.query<IGetArticleResult>({
                             fetchPolicy: 'network-only',
                             query: getArticleQuery,
@@ -280,9 +301,9 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                                 version: output.version,
                             },
                         })
-                    )
-                    .do(h => console.log(h))
-                    .mergeMap<any, any>(({ data: { getArticle } }) =>
+                    ),
+                    tap(h => console.log(h)),
+                    mergeMap(({ data: { getArticle } }) =>
                         typeof selfPublish !== 'undefined'
                             ? of(
                                   publishArticleAction({
@@ -305,8 +326,15 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                                                   ? 'drafted'
                                                   : getArticle.owner.id ===
                                                         getArticle.authorId ||
-                                                    getState()
-                                                        .app.user.communities.map(
+                                                    (
+                                                        path<ICommunity[]>([
+                                                            'value',
+                                                            'app',
+                                                            'user',
+                                                            'communities',
+                                                        ])(state$) || []
+                                                    )
+                                                        .map(
                                                             ({ community }) =>
                                                                 community.id
                                                         )
@@ -325,8 +353,15 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                                                   ? 'Your article has now been drafted to be updated or published in the future'
                                                   : getArticle.owner.id ===
                                                         getArticle.authorId ||
-                                                    getState()
-                                                        .app.user.communities.map(
+                                                    (
+                                                        path<ICommunity[]>([
+                                                            'value',
+                                                            'app',
+                                                            'user',
+                                                            'communities',
+                                                        ])(state$) || []
+                                                    )
+                                                        .map(
                                                             ({ community }) =>
                                                                 community.id
                                                         )
@@ -340,8 +375,15 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                                                   ? 'drafted'
                                                   : getArticle.owner.id ===
                                                         getArticle.authorId ||
-                                                    getState()
-                                                        .app.user.communities.map(
+                                                    (
+                                                        path<ICommunity[]>([
+                                                            'value',
+                                                            'app',
+                                                            'user',
+                                                            'communities',
+                                                        ])(state$) || []
+                                                    )
+                                                        .map(
                                                             ({ community }) =>
                                                                 community.id
                                                         )
@@ -355,8 +397,8 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                                       })
                                   )
                               )
-                    )
-                    .catch(err => {
+                    ),
+                    catchError(err => {
                         console.error(err)
                         return of(
                             showNotificationAction({
@@ -366,16 +408,18 @@ export const submitArticleVersionEpic: Epic<any, IReduxState, IDependencies> = (
                             })
                         )
                     })
+                )
         )
+    )
 
-export const editArticleEpic: Epic<any, {}, IDependencies> = (
+export const editArticleEpic: Epic<any, any, IReduxState, IDependencies> = (
     action$,
     _,
     { apolloClient, apolloSubscriber }: IDependencies
 ) =>
-    action$
-        .ofType(EDIT_ARTICLE)
-        .switchMap(
+    action$.pipe(
+        ofType(EDIT_ARTICLE),
+        switchMap(
             ({
                 payload: {
                     id,
@@ -386,9 +430,12 @@ export const editArticleEpic: Epic<any, {}, IDependencies> = (
                     attributes,
                     selfPublish,
                 },
-            }: IEditArticleAction) =>
+            }) =>
                 from(
-                    apolloClient.mutate({
+                    apolloClient.mutate<
+                        editArticleVersion,
+                        editArticleVersionVariables
+                    >({
                         mutation: editArticle,
                         variables: {
                             id,
@@ -399,21 +446,16 @@ export const editArticleEpic: Epic<any, {}, IDependencies> = (
                             attributes,
                         },
                     })
-                )
-                    .flatMap(
-                        ({
-                            data: {
-                                editArticleVersion: { hash },
-                            },
-                        }: {
-                            data: { editArticleVersion: { hash: string } }
-                        }) =>
-                            apolloSubscriber<{ id: string; version: number }>(
-                                hash
-                            )
-                    )
-                    .do(h => console.log(h))
-                    .mergeMap(({ data: { output } }) =>
+                ).pipe(
+                    mergeMap(({ data }) =>
+                        apolloSubscriber<{ id: string; version: number }>(
+                            path<string>(['editArticleVersion', 'hash'])(
+                                data
+                            ) || ''
+                        )
+                    ),
+                    tap(h => console.log(h)),
+                    mergeMap(({ data: { output } }) =>
                         apolloClient.query<IGetArticleResult>({
                             fetchPolicy: 'network-only',
                             query: getArticleQuery,
@@ -422,8 +464,8 @@ export const editArticleEpic: Epic<any, {}, IDependencies> = (
                                 version: output.version,
                             },
                         })
-                    )
-                    .mergeMap<any, any>(({ data: { getArticle } }) =>
+                    ),
+                    mergeMap<any, any>(({ data: { getArticle } }) =>
                         typeof selfPublish !== 'undefined'
                             ? of(
                                   publishArticleAction({
@@ -451,68 +493,63 @@ export const editArticleEpic: Epic<any, {}, IDependencies> = (
                                   )
                               )
                     )
+                )
         )
+    )
 
-export const draftArticleEpic: Epic<any, {}, IDependencies> = (
+export const draftArticleEpic: Epic<any, any, {}, IDependencies> = (
     action$,
     _,
     { apolloClient, apolloSubscriber }: IDependencies
 ) =>
-    action$
-        .ofType(DRAFT_ARTICLE)
-        .switchMap(
-            ({
-                payload: { text, subject, tags, attributes },
-            }: IDraftArticleAction) =>
-                from(
-                    apolloClient.mutate({
-                        mutation: submitNewArticle,
-                        variables: {
-                            content: text,
-                            title: subject,
-                            tags,
-                            attributes,
-                        },
+    action$.pipe(
+        ofType(DRAFT_ARTICLE),
+        switchMap(({ payload: { text, subject, tags, attributes } }) =>
+            from(
+                apolloClient.mutate<
+                    submitNewArticle,
+                    submitNewArticleVariables
+                >({
+                    mutation: submitNewArticleMutation,
+                    variables: {
+                        content: text,
+                        title: subject,
+                        tags,
+                        attributes,
+                    },
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    apolloSubscriber<{ id: string; version: number }>(
+                        (data &&
+                            data.submitNewArticle &&
+                            data.submitNewArticle.hash) ||
+                            ''
+                    )
+                ),
+                tap(() => apolloClient.resetStore()),
+                tap(() => {
+                    analytics.track('Create Draft', {
+                        category: 'article_actions',
                     })
+                }),
+                mergeMap(({ data: { output: { id, version } } }) =>
+                    merge(
+                        of(
+                            showNotificationAction({
+                                description:
+                                    'The draft has just been saved. You can go back and submit it whenever you are ready.',
+                                message: 'Draft Created',
+                                notificationType: 'info',
+                            })
+                        ),
+                        of(
+                            routeChangeAction(
+                                `/article/${id}/v${version}/article-drafted`
+                            )
+                        )
+                    )
                 )
-                    .flatMap(
-                        ({
-                            data: {
-                                submitNewArticle: { hash },
-                            },
-                        }: {
-                            data: { submitNewArticle: { hash: string } }
-                        }) =>
-                            apolloSubscriber<{ id: string; version: number }>(
-                                hash
-                            )
-                    )
-                    .do(() => apolloClient.resetStore())
-                    .do(() => {
-                        analytics.track('Create Draft', {
-                            category: 'article_actions',
-                        })
-                    })
-                    .mergeMap<any, any>(
-                        ({
-                            data: {
-                                output: { id, version },
-                            },
-                        }) =>
-                            merge(
-                                of(
-                                    showNotificationAction({
-                                        description:
-                                            'The draft has just been saved. You can go back and submit it whenever you are ready.',
-                                        message: 'Draft Created',
-                                        notificationType: 'info',
-                                    })
-                                ),
-                                of(
-                                    routeChangeAction(
-                                        `/article/${id}/v${version}/article-drafted`
-                                    )
-                                )
-                            )
-                    )
+            )
         )
+    )
