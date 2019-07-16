@@ -1,11 +1,11 @@
 import AddOptions from './index'
-import { shallowWithTheme } from '../../setupTests'
+import { mountWithTheme  } from '../../setupTests'
 
 let props = {}
 
 describe('components/AddOptions', () => {
     it('snapshot should match', () => {
-        const wrapper = shallowWithTheme(
+        const wrapper = mountWithTheme (
             <AddOptions {...props}>
                 <div>test</div>
             </AddOptions>

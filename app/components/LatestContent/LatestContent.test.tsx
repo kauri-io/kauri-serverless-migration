@@ -1,6 +1,6 @@
 import LatestContent from './index'
 
-import { shallowWithTheme } from '../../setupTests'
+import { mountWithTheme  } from '../../setupTests'
 
 let props = {
     content: [
@@ -18,7 +18,7 @@ let props = {
 
 describe('components/LatestContent', () => {
     it('snapshot should match', () => {
-        const wrapper = shallowWithTheme(<LatestContent {...props} />)
+        const wrapper = mountWithTheme (<LatestContent {...props} />)
         expect(wrapper).toMatchSnapshot()
     })
 })

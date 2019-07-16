@@ -1,4 +1,4 @@
 app/node_modules
 app/.next
 .DS_Store
-output
+app/output

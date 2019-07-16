@@ -1,12 +1,12 @@
 import Loading from './index'
 
-import { shallowWithTheme } from '../../setupTests'
+import { mountWithTheme  } from '../../setupTests'
 
 let props = {}
 
 describe('components/Loading', () => {
     it('snapshot should match', () => {
-        const wrapper = shallowWithTheme(<Loading {...props} />)
+        const wrapper = mountWithTheme (<Loading {...props} />)
         expect(wrapper).toMatchSnapshot()
     })
 })

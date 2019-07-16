@@ -1,10 +1,10 @@
 import ImportYourContentBanner from './index'
 
-import { shallowWithTheme } from '../../setupTests'
+import { mountWithTheme  } from '../../setupTests'
 
 describe('components/ImportYourContentBanner', () => {
     it('snapshot should match', () => {
-        const wrapper = shallowWithTheme(<ImportYourContentBanner />)
+        const wrapper = mountWithTheme (<ImportYourContentBanner />)
         expect(wrapper).toMatchSnapshot()
     })
 })

@@ -1,10 +1,10 @@
 import { Input } from './index'
 
-import { shallowWithTheme } from '../../setupTests'
+import { mountWithTheme  } from '../../setupTests'
 
 describe('components/Input', () => {
     it('snapshot should match', () => {
-        const wrapper = shallowWithTheme(<Input />)
+        const wrapper = mountWithTheme (<Input />)
         expect(wrapper).toMatchSnapshot()
     })
 })

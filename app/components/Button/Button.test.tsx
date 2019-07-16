@@ -5,18 +5,18 @@ import AddMemberButton from './AddMemberButton'
 import MediumImportButton from './MediumImportButton'
 import UploadLogoButton from './UploadLogoButton'
 import AddTagButton from './AddTagButton'
-import { shallowWithTheme } from '../../setupTests'
+import { mountWithTheme  } from '../../setupTests'
 
 describe('components/PrimaryButton', () => {
     it('snapshot should match', () => {
-        const wrapper = shallowWithTheme(<PrimaryButton>Test</PrimaryButton>)
+        const wrapper = mountWithTheme (<PrimaryButton>Test</PrimaryButton>)
         expect(wrapper).toMatchSnapshot()
     })
 })
 
 describe('components/SecondaryButton', () => {
     it('snapshot should match', () => {
-        const wrapper = shallowWithTheme(
+        const wrapper = mountWithTheme (
             <SecondaryButton>Test</SecondaryButton>
         )
         expect(wrapper).toMatchSnapshot()
@@ -25,14 +25,14 @@ describe('components/SecondaryButton', () => {
 
 describe('components/TertiaryButton', () => {
     it('snapshot should match', () => {
-        const wrapper = shallowWithTheme(<TertiaryButton>Test</TertiaryButton>)
+        const wrapper = mountWithTheme (<TertiaryButton>Test</TertiaryButton>)
         expect(wrapper).toMatchSnapshot()
     })
 })
 
 describe('components/AddMemberButton', () => {
     it('snapshot should match', () => {
-        const wrapper = shallowWithTheme(
+        const wrapper = mountWithTheme (
             <AddMemberButton>Test</AddMemberButton>
         )
         expect(wrapper).toMatchSnapshot()
@@ -41,14 +41,14 @@ describe('components/AddMemberButton', () => {
 
 describe('components/MediumImportButton', () => {
     it('snapshot should match', () => {
-        const wrapper = shallowWithTheme(<MediumImportButton />)
+        const wrapper = mountWithTheme (<MediumImportButton />)
         expect(wrapper).toMatchSnapshot()
     })
 })
 
 describe('components/UploadLogoButton', () => {
     it('snapshot should match', () => {
-        const wrapper = shallowWithTheme(
+        const wrapper = mountWithTheme (
             <UploadLogoButton>Test</UploadLogoButton>
         )
         expect(wrapper).toMatchSnapshot()
@@ -57,7 +57,7 @@ describe('components/UploadLogoButton', () => {
 
 describe('components/AddTagButton', () => {
     it('snapshot should match', () => {
-        const wrapper = shallowWithTheme(
+        const wrapper = mountWithTheme (
             <AddTagButton bg="https://test.com/image.png" />
         )
         expect(wrapper).toMatchSnapshot()

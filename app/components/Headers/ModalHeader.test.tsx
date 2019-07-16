@@ -1,5 +1,5 @@
 import ModalHeader from './ModalHeader'
-import { shallowWithTheme } from '../../setupTests'
+import { mountWithTheme  } from '../../setupTests'
 
 let props = {
     title: <div>Test</div>,
@@ -8,7 +8,7 @@ let props = {
 
 describe('components/ModalHeader', () => {
     it('snapshot should match', () => {
-        const wrapper = shallowWithTheme(<ModalHeader {...props} />)
+        const wrapper = mountWithTheme (<ModalHeader {...props} />)
         expect(wrapper).toMatchSnapshot()
     })
 })

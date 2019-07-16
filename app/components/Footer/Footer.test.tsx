@@ -1,9 +1,9 @@
 import Footer from './index'
-import { shallowWithTheme } from '../../setupTests'
+import { mountWithTheme  } from '../../setupTests'
 
 describe('components/Footer', () => {
     it('snapshot should match', () => {
-        const wrapper = shallowWithTheme(<Footer />)
+        const wrapper = mountWithTheme (<Footer />)
         expect(wrapper).toMatchSnapshot()
     })
 })
