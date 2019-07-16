@@ -1,0 +1,279 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Input snapshot should match 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "DEFAULT_CARD_WIDTH": 288,
+      "MAIN_BODY_WIDTH": 1242,
+      "bg": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "bgPrimary": "#1E2428",
+      "bgSecondary": "#1E3D3B",
+      "borderTextArea": "#979797",
+      "breakpoints": Array [
+        "500px",
+        "52em",
+        "1242px",
+      ],
+      "colors": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+      "disabledBackgroundColor": "#D6D6D6",
+      "disabledTextColor": "#9B9B9B",
+      "divider": "#EBEBEB",
+      "errorRedColor": "#C03030",
+      "fontSizes": Array [
+        11,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22,
+        28,
+        32,
+      ],
+      "fontWeight": Array [
+        300,
+        "normal",
+        500,
+        700,
+      ],
+      "hoverTextColor": "#108E72",
+      "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+      "padding": "calc((100vw - 1242px) / 2)",
+      "paddingTop": "2.5em",
+      "primary": "#0BA986",
+      "primaryColor": "#0BA986",
+      "primaryDark": "#11856B",
+      "primaryTextColor": "#1E2428",
+      "secondary": "#11856B",
+      "secondaryBlue": "rgb(81, 123, 162, 1)",
+      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+      "secondaryColor": "#1E3D3B",
+      "secondaryTextColor": "#283035",
+      "space": Array [
+        0,
+        10,
+        15,
+        30,
+        60,
+      ],
+      "tertiaryBackgroundColor": "#F7F7F7",
+      "textPrimary": "#1E2428",
+      "white": "#FFFFFF",
+    }
+  }
+>
+  <Input>
+    <Input__Wrapper
+      textAlign="left"
+    >
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Input__Wrapper-sc-100s1kb-2",
+              "isStatic": false,
+              "lastClassName": "ekFmoA",
+              "rules": Array [
+                "display:flex;position:relative;align-self:auto;",
+                [Function],
+                " ",
+                [Function],
+                " ",
+                [Function],
+              ],
+            },
+            "displayName": "Input__Wrapper",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "Input__Wrapper-sc-100s1kb-2",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        textAlign="left"
+      >
+        <div
+          className="Input__Wrapper-sc-100s1kb-2 ekFmoA"
+        >
+          <Input__InputComp
+            color="white"
+            fontSize={3}
+            fontWeight={400}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyUp={[Function]}
+            textAlign="left"
+            value=""
+          >
+            <StyledComponent
+              color="white"
+              fontSize={3}
+              fontWeight={400}
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "Input__InputComp-sc-100s1kb-0",
+                    "isStatic": false,
+                    "lastClassName": "bkxOEW",
+                    "rules": Array [
+                      "text-align:",
+                      [Function],
+                      ";font-size:",
+                      [Function],
+                      "px;font-weight:",
+                      [Function],
+                      ";color:",
+                      [Function],
+                      ";background:transparent;width:100%;outline:none;border:none;::-webkit-input-placeholder{color:",
+                      [Function],
+                      ";}:focus::-webkit-input-placeholder{text-indent:-999px;}",
+                    ],
+                  },
+                  "displayName": "Input__InputComp",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "Input__InputComp-sc-100s1kb-0",
+                  "target": "input",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyUp={[Function]}
+              textAlign="left"
+              value=""
+            >
+              <input
+                className="Input__InputComp-sc-100s1kb-0 bkxOEW"
+                color="white"
+                fontSize={3}
+                fontWeight={400}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyUp={[Function]}
+                value=""
+              />
+            </StyledComponent>
+          </Input__InputComp>
+          <Input__Underline
+            fontSize={3}
+            textAlign="left"
+          >
+            <StyledComponent
+              fontSize={3}
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "Input__Underline-sc-100s1kb-1",
+                    "isStatic": false,
+                    "lastClassName": "bQpxWe",
+                    "rules": Array [
+                      "user-select:none;border-top:2px solid ",
+                      [Function],
+                      ";position:",
+                      [Function],
+                      " left:0;bottom:0;max-width:100%;height:0px;color:transparent;overflow:hidden;font-size:",
+                      [Function],
+                      "px;margin-left:2px;",
+                    ],
+                  },
+                  "displayName": "Input__Underline",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "Input__Underline-sc-100s1kb-1",
+                  "target": "span",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              textAlign="left"
+            >
+              <span
+                className="Input__Underline-sc-100s1kb-1 bQpxWe"
+                fontSize={3}
+              />
+            </StyledComponent>
+          </Input__Underline>
+        </div>
+      </StyledComponent>
+    </Input__Wrapper>
+  </Input>
+</ThemeProvider>
+`;

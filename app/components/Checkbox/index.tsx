@@ -84,7 +84,7 @@ const Component: React.SFC<IProps> = props => (
         <input
             disabled={props.disabled}
             type="checkbox"
-            checked={props.checked}
+            defaultChecked={props.checked}
         />
         <label>{props.label}</label>
     </Styled>

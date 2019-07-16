@@ -109,7 +109,6 @@ const RenderMobileFeaturedContent: React.FunctionComponent<IProps> = props => {
 
                 return (
                     <RenderedCard
-                        key={resource.id}
                         {...resource}
                         articleCount={articleCount}
                         collectionCount={collectionCount}

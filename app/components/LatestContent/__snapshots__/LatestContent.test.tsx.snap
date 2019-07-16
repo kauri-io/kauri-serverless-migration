@@ -1,0 +1,347 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/LatestContent snapshot should match 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "DEFAULT_CARD_WIDTH": 288,
+      "MAIN_BODY_WIDTH": 1242,
+      "bg": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "bgPrimary": "#1E2428",
+      "bgSecondary": "#1E3D3B",
+      "borderTextArea": "#979797",
+      "breakpoints": Array [
+        "500px",
+        "52em",
+        "1242px",
+      ],
+      "colors": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+      "disabledBackgroundColor": "#D6D6D6",
+      "disabledTextColor": "#9B9B9B",
+      "divider": "#EBEBEB",
+      "errorRedColor": "#C03030",
+      "fontSizes": Array [
+        11,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22,
+        28,
+        32,
+      ],
+      "fontWeight": Array [
+        300,
+        "normal",
+        500,
+        700,
+      ],
+      "hoverTextColor": "#108E72",
+      "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+      "padding": "calc((100vw - 1242px) / 2)",
+      "paddingTop": "2.5em",
+      "primary": "#0BA986",
+      "primaryColor": "#0BA986",
+      "primaryDark": "#11856B",
+      "primaryTextColor": "#1E2428",
+      "secondary": "#11856B",
+      "secondaryBlue": "rgb(81, 123, 162, 1)",
+      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+      "secondaryColor": "#1E3D3B",
+      "secondaryTextColor": "#283035",
+      "space": Array [
+        0,
+        10,
+        15,
+        30,
+        60,
+      ],
+      "tertiaryBackgroundColor": "#F7F7F7",
+      "textPrimary": "#1E2428",
+      "white": "#FFFFFF",
+    }
+  }
+>
+  <LatestContent
+    Link={[MockFunction]}
+    content={
+      Array [
+        Object {
+          "id": "123",
+          "resource": Object {
+            "__typename": "ArticleDTO",
+            "title": "test",
+          },
+        },
+      ]
+    }
+    linkComponent={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            <SecondaryButtonComponent
+              border="primary"
+              color="textPrimary"
+              width="140px"
+            >
+              All Articles
+            </SecondaryButtonComponent>,
+            "/articles",
+          ],
+          Array [
+            <SecondaryButtonComponent
+              border="primary"
+              color="textPrimary"
+              width="140px"
+            >
+              All Collections
+            </SecondaryButtonComponent>,
+            "/collections",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
+    <LatestContent__LatestContentSection>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "LatestContent__LatestContentSection-cuqkpj-0",
+              "isStatic": false,
+              "lastClassName": "kzScRU",
+              "rules": Array [
+                "display:flex;width:100%;flex-direction:column;",
+                [Function],
+                ";>:first-child{margin-bottom:",
+                [Function],
+                "px;}>:nth-child(2){margin-bottom:",
+                [Function],
+                "px;}@media (max-width:",
+                [Function],
+                "){padding:0px ",
+                [Function],
+                "px;}",
+              ],
+            },
+            "displayName": "LatestContent__LatestContentSection",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "LatestContent__LatestContentSection-cuqkpj-0",
+            "target": "section",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <section
+          className="LatestContent__LatestContentSection-cuqkpj-0 kzScRU"
+        >
+          <Typography__styledComponent>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                    "isStatic": false,
+                    "lastClassName": "eLGQne",
+                    "rules": Array [
+                      "color:",
+                      [Function],
+                      ";margin:0px;font-weight:",
+                      "500",
+                      ";",
+                      ";font-size:",
+                      "20",
+                      "px;text-transform:",
+                      [Function],
+                      ";text-align:",
+                      [Function],
+                      ";:hover{color:",
+                      [Function],
+                      ";cursor:",
+                      [Function],
+                      ";}",
+                    ],
+                  },
+                  "displayName": "Typography__styledComponent",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                  "target": "span",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <span
+                className="Typography__styledComponent-sc-36xkf6-5 eLGQne"
+              >
+                Latest Content
+              </span>
+            </StyledComponent>
+          </Typography__styledComponent>
+          <LatestContent__LatestContentCardContainer>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "LatestContent__LatestContentCardContainer-cuqkpj-1",
+                    "isStatic": false,
+                    "lastClassName": "jjHvUB",
+                    "rules": Array [
+                      "display:grid;grid-template-columns:repeat( auto-fill,minmax(",
+                      "288",
+                      "px,",
+                      "288",
+                      "px) );grid-gap:",
+                      [Function],
+                      "px ",
+                      [Function],
+                      "px;@media (max-width:",
+                      [Function],
+                      "){justify-content:center;}",
+                    ],
+                  },
+                  "displayName": "LatestContent__LatestContentCardContainer",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "LatestContent__LatestContentCardContainer-cuqkpj-1",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <div
+                className="LatestContent__LatestContentCardContainer-cuqkpj-1 jjHvUB"
+              />
+            </StyledComponent>
+          </LatestContent__LatestContentCardContainer>
+          <LatestContent__AllContentButtonsContainer>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "LatestContent__AllContentButtonsContainer-cuqkpj-2",
+                    "isStatic": false,
+                    "lastClassName": "eQZZGU",
+                    "rules": Array [
+                      "display:flex;width:100%;justify-content:center;align-items:center;>:not(:last-child){margin-right:",
+                      [Function],
+                      "px;}@media (max-width:",
+                      [Function],
+                      "){>:not(:last-child){margin-right:",
+                      [Function],
+                      "px;margin-bottom:",
+                      [Function],
+                      "px;}flex-direction:column;}",
+                    ],
+                  },
+                  "displayName": "LatestContent__AllContentButtonsContainer",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "LatestContent__AllContentButtonsContainer-cuqkpj-2",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <div
+                className="LatestContent__AllContentButtonsContainer-cuqkpj-2 eQZZGU"
+              />
+            </StyledComponent>
+          </LatestContent__AllContentButtonsContainer>
+        </section>
+      </StyledComponent>
+    </LatestContent__LatestContentSection>
+  </LatestContent>
+</ThemeProvider>
+`;
