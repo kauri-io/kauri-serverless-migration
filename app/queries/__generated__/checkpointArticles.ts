@@ -7,10 +7,10 @@
 // ====================================================
 
 export interface checkpointArticles_checkpointArticles {
-    __typename: 'MutationResponse'
-    hash: string | null
+  __typename: "MutationResponse";
+  hash: string | null;
 }
 
 export interface checkpointArticles {
-    checkpointArticles: checkpointArticles_checkpointArticles | null
+  checkpointArticles: checkpointArticles_checkpointArticles | null;
 }

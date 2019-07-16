@@ -123,29 +123,31 @@ export default compose(
             { props, setSubmitting }: { props: IProps; setSubmitting: any }
         ) => {
             if (props.communities && !props.data) {
-                    props.openModalAction({
-                        children: <PublishingSelector
-                                userId={props.userId}
-                                type="Collections"
-                                closeModalAction={() => {
+                props.openModalAction({
+                    children: (
+                        <PublishingSelector
+                            userId={props.userId}
+                            type="Collections"
+                            closeModalAction={() => {
+                                props.closeModalAction()
+                                setSubmitting(false)
+                            }}
+                            communities={props.communities.map(
+                                ({ community }) => ({
+                                    ...community,
+                                    type: 'COMMUNITY',
+                                })
+                            )}
+                            handleSubmit={destination => {
+                                values.destination = destination
+                                props.createCollectionAction(values, () => {
                                     props.closeModalAction()
                                     setSubmitting(false)
-                                }}
-                                communities={props.communities.map(
-                                    ({ community }) => ({
-                                        ...community,
-                                        type: 'COMMUNITY',
-                                    })
-                                )}
-                                handleSubmit={destination => {
-                                    values.destination = destination
-                                    props.createCollectionAction(values, () => {
-                                        props.closeModalAction()
-                                        setSubmitting(false)
-                                    })
-                                }}
-                            />
-                    })
+                                })
+                            }}
+                        />
+                    ),
+                })
             } else {
                 if (props.data) {
                     // BACKEND FIX sections.resources -> sections.resourcesId :(

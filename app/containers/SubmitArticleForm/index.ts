@@ -51,4 +51,4 @@ export default compose(
         skip: ({ id }) => !id,
     }),
     withLoading()
-)(withRouter(View))
+)(View)

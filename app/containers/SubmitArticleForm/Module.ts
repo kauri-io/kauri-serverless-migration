@@ -213,7 +213,7 @@ export const submitArticleEpic: Epic<any, any, IReduxState, IDependencies> = (
                                                         type: 'COMMUNITY',
                                                         id: destination.id,
                                                     }
-                                                  : getArticle.owner,
+                                                  : ((getArticle as any).owner),
                                           version: Number(getArticle.version),
                                       })
                                   )

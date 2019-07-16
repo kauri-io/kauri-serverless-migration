@@ -28,7 +28,6 @@ interface IOwner {
 }
 
 interface IProps {
-    router: any
     draftArticleAction: (payload: IDraftArticleActionPayload) => void
     submitArticleAction: (payload: ISubmitArticlePayload) => void
     submitArticleVersionAction: (payload: ISubmitArticleVersionPayload) => void
@@ -43,7 +42,7 @@ interface IProps {
     username: string
     userId: string
     userAvatar: string
-    showNotificationAction: typeof showNotificationAction;
+    showNotificationAction: typeof showNotificationAction
     openModalAction: (children?: any) => void
     closeModalAction: () => void
     communities: Array<{ community: IOption }>
@@ -66,14 +65,13 @@ class SubmitArticleForm extends React.Component<IProps> {
     componentDidMount() {
         const {
             userId,
-            router,
             routeChangeAction,
             communities,
             openModalAction,
             closeModalAction,
         } = this.props
         if (!userId) {
-            routeChangeAction(`/login?r=${router.asPath}&redirected=true`)
+            routeChangeAction(`/login?r=${window.location.pathname}&redirected=true`)
         } else {
             analytics.track('Write Article Start', {
                 category: 'generic',

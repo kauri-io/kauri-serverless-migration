@@ -22,7 +22,9 @@ declare namespace NodeJS {
 }
 
 declare global {
-    interface Window { web3: any; }
+    interface Window {
+        web3: any
+    }
 }
 
-window.web3 = window.web3 || {};
+window.web3 = window.web3 || {}

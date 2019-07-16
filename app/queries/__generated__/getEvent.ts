@@ -7,9 +7,9 @@
 // ====================================================
 
 export interface getEvent {
-    getEvent: boolean
+  getEvent: boolean;
 }
 
 export interface getEventVariables {
-    hash?: string | null
+  hash?: string | null;
 }
