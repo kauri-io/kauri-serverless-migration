@@ -1,5 +1,5 @@
 import CollectionHeader from './CollectionHeader'
-import { mountWithTheme } from '../../setupTests'
+import { shallowWithTheme } from '../../setupTests'
 
 let props = {
     articleCount: 2,
@@ -22,7 +22,7 @@ let props = {
 
 describe('components/CollectionHeader', () => {
     it('snapshot should match', () => {
-        const wrapper = mountWithTheme(<CollectionHeader {...props} />)
+        const wrapper = shallowWithTheme(<CollectionHeader {...props} />)
         expect(wrapper).toMatchSnapshot()
     })
 })

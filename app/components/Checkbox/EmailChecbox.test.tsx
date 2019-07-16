@@ -1,5 +1,5 @@
 import EmailCheckbox from './EmailCheckbox'
-import { mountWithTheme } from '../../setupTests'
+import { shallowWithTheme } from '../../setupTests'
 
 let props = {
     checked: true,
@@ -9,7 +9,7 @@ let props = {
 
 describe('components/EmailCheckbox', () => {
     it('snapshot should match', () => {
-        const wrapper = mountWithTheme(<EmailCheckbox {...props} />)
+        const wrapper = shallowWithTheme(<EmailCheckbox {...props} />)
         expect(wrapper).toMatchSnapshot()
     })
 })

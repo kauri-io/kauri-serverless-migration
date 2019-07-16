@@ -1,18 +1,18 @@
 import AddIcon from './AddIcon'
 import UploadIcon from './UploadIcon'
 
-import { mountWithTheme } from '../../setupTests'
+import { shallowWithTheme } from '../../setupTests'
 
 describe('components/AddIcon', () => {
     it('snapshot should match', () => {
-        const wrapper = mountWithTheme(<AddIcon />)
+        const wrapper = shallowWithTheme(<AddIcon />)
         expect(wrapper).toMatchSnapshot()
     })
 })
 
 describe('components/UploadIcon', () => {
     it('snapshot should match', () => {
-        const wrapper = mountWithTheme(<UploadIcon />)
+        const wrapper = shallowWithTheme(<UploadIcon />)
         expect(wrapper).toMatchSnapshot()
     })
 })

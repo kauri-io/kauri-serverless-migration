@@ -1,5 +1,5 @@
 import HoverDateLabel, { HoverDateStatus } from './index'
-import { mountWithTheme } from '../../setupTests'
+import { shallowWithTheme } from '../../setupTests'
 
 let props = {
     date: '2019-01-01',
@@ -8,7 +8,7 @@ let props = {
 
 describe('components/HoverDateLabel', () => {
     it('snapshot should match', () => {
-        const wrapper = mountWithTheme(<HoverDateLabel {...props} />)
+        const wrapper = shallowWithTheme(<HoverDateLabel {...props} />)
         expect(wrapper).toMatchSnapshot()
     })
 })
