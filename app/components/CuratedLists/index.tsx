@@ -148,3 +148,5 @@ export const RenderCardContent = ({
             return null
     }
 }
+
+export default RenderCardContent

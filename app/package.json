@@ -10,12 +10,12 @@
         "pretty": "prettier --write '**/*.{ts,tsx}'",
         "introspect-fragments": "node scripts/introspectionFragmentMatcher.js",
         "lint": "./node_modules/.bin/eslint --init",
-        "test": "jest --coverage --coverageDirectory=output/coverage/jest",
+        "test": "jest --coverageDirectory=output/coverage/jest",
         "gqt": "npx apollo client:codegen --target=typescript --config=apollo.config.js && npm run introspect-fragments"
     },
     "husky": {
         "hooks": {
-            "pre-commit": "yarn pretty && git add .",
+            "pre-commit": "yarn pretty && yarn test && git add .",
             "pre-push": ""
         }
     },
@@ -44,6 +44,7 @@
         "highlight.js": "^9.15.8",
         "highlightjs-solidity": "^1.0.6",
         "isomorphic-unfetch": "^3.0.0",
+        "jest-styled-components": "^6.3.3",
         "mixpanel-browser": "^2.29.0",
         "moment": "^2.24.0",
         "next": "^9.0.0",

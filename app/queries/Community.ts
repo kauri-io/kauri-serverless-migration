@@ -8,7 +8,7 @@ import {
 } from './Fragments'
 
 export const getCommunity = gql`
-    query getCommunity($id: String) {
+    query getCommunity($id: String!) {
         getCommunity(id: $id) {
             ...Community
         }
@@ -18,7 +18,7 @@ export const getCommunity = gql`
 
 export const getCommunityAndPendingArticles = gql`
     query getCommunityAndPendingArticles(
-        $id: String
+        $id: String!
         $size: Int = 8
         $page: Int = 0
     ) {
@@ -122,7 +122,7 @@ export const getAllCommunities = gql`
 
 export const prepareCreateCommunityQuery = gql`
     query prepareCreateCommunity(
-        $name: String
+        $name: String!
         $description: String
         $avatar: String
         $website: String
@@ -149,8 +149,8 @@ export const prepareCreateCommunityQuery = gql`
 
 export const createCommunityMutation = gql`
     mutation createCommunity(
-        $signature: String
-        $name: String
+        $signature: String!
+        $name: String!
         $description: String
         $avatar: String
         $website: String
@@ -177,8 +177,8 @@ export const createCommunityMutation = gql`
 
 export const updateCommunityMutation = gql`
     mutation updateCommunity(
-        $id: String
-        $name: String
+        $id: String!
+        $name: String!
         $description: String
         $avatar: String
         $website: String
@@ -205,8 +205,8 @@ export const updateCommunityMutation = gql`
 
 export const curateCommunityResourcesMutation = gql`
     mutation curateCommunityResources(
-        $id: String
-        $resources: [ResourceIdentifierInput]
+        $id: String!
+        $resources: [ResourceIdentifierInput]!
     ) {
         curateResources(id: $id, resources: $resources) {
             hash
@@ -215,7 +215,10 @@ export const curateCommunityResourcesMutation = gql`
 `
 
 export const approveResourceMutation = gql`
-    mutation approveResource($id: String, $resource: ResourceIdentifierInput) {
+    mutation approveResource(
+        $id: String!
+        $resource: ResourceIdentifierInput!
+    ) {
         approveResource(id: $id, resource: $resource) {
             hash
         }
@@ -223,7 +226,7 @@ export const approveResourceMutation = gql`
 `
 
 export const removeResourceMutation = gql`
-    mutation removeResource($id: String, $resource: ResourceIdentifierInput) {
+    mutation removeResource($id: String!, $resource: ResourceIdentifierInput!) {
         removeResource(id: $id, resource: $resource) {
             hash
         }
@@ -232,7 +235,7 @@ export const removeResourceMutation = gql`
 
 export const getCommunityArticleContent = gql`
     query getCommunityContent(
-        $id: String
+        $id: String!
         $page: Int = 0
         $size: Int = 12
         $filter: CommunityResourceFilterInput
@@ -264,7 +267,7 @@ export const getCommunityArticleContent = gql`
 `
 
 export const prepareSendInvitationQuery = gql`
-    query prepareSendInvitation($id: String, $invitation: InvitationInput) {
+    query prepareSendInvitation($id: String!, $invitation: InvitationInput!) {
         prepareSendInvitation(id: $id, invitation: $invitation) {
             messageHash
             attributes
@@ -274,9 +277,9 @@ export const prepareSendInvitationQuery = gql`
 
 export const sendInvitationMutation = gql`
     mutation sendInvitation(
-        $signature: String
-        $id: String
-        $invitation: InvitationInput
+        $signature: String!
+        $id: String!
+        $invitation: InvitationInput!
     ) {
         sendInvitation(
             signature: $signature
@@ -289,7 +292,7 @@ export const sendInvitationMutation = gql`
 `
 
 export const prepareAcceptInvitationQuery = gql`
-    query prepareAcceptInvitation($id: String, $secret: String) {
+    query prepareAcceptInvitation($id: String!, $secret: String!) {
         prepareAcceptInvitation(id: $id, secret: $secret) {
             messageHash
         }
@@ -298,9 +301,9 @@ export const prepareAcceptInvitationQuery = gql`
 
 export const acceptInvitationMutation = gql`
     mutation acceptInvitation(
-        $signature: String
-        $id: String
-        $secret: String
+        $signature: String!
+        $id: String!
+        $secret: String!
     ) {
         acceptInvitation(signature: $signature, id: $id, secret: $secret) {
             hash
@@ -309,7 +312,7 @@ export const acceptInvitationMutation = gql`
 `
 
 export const prepareRevokeInvitationQuery = gql`
-    query prepareRevokeInvitation($id: String, $invitationId: String) {
+    query prepareRevokeInvitation($id: String!, $invitationId: String!) {
         prepareRevokeInvitation(id: $id, invitationId: $invitationId) {
             messageHash
         }
@@ -318,9 +321,9 @@ export const prepareRevokeInvitationQuery = gql`
 
 export const revokeInvitationMutation = gql`
     mutation revokeInvitation(
-        $signature: String
-        $id: String
-        $invitationId: String
+        $signature: String!
+        $id: String!
+        $invitationId: String!
     ) {
         revokeInvitation(
             signature: $signature
@@ -334,7 +337,7 @@ export const revokeInvitationMutation = gql`
 
 export const getCommunityInvitationsQuery = gql`
     query getCommunityInvitations(
-        $id: String
+        $id: String!
         $page: Int = 0
         $size: Int = 500
         $sort: String
@@ -364,7 +367,7 @@ export const getCommunityInvitationsQuery = gql`
 `
 
 export const prepareRemoveMemberQuery = gql`
-    query prepareRemoveMember($id: String, $account: String) {
+    query prepareRemoveMember($id: String!, $account: String!) {
         prepareRemoveMember(id: $id, account: $account) {
             messageHash
         }
@@ -372,7 +375,11 @@ export const prepareRemoveMemberQuery = gql`
 `
 
 export const removeMemberMutation = gql`
-    mutation removeMember($signature: String, $id: String, $account: String) {
+    mutation removeMember(
+        $signature: String!
+        $id: String!
+        $account: String!
+    ) {
         removeMember(signature: $signature, id: $id, account: $account) {
             hash
         }
@@ -381,9 +388,9 @@ export const removeMemberMutation = gql`
 
 export const prepareChangeMemberRoleQuery = gql`
     query prepareChangeMemberRole(
-        $id: String
-        $account: String
-        $role: CommunityPermissionInput
+        $id: String!
+        $account: String!
+        $role: CommunityPermissionInput!
     ) {
         prepareChangeMemberRole(id: $id, account: $account, role: $role) {
             messageHash
@@ -393,10 +400,10 @@ export const prepareChangeMemberRoleQuery = gql`
 
 export const changeMemberRoleMutation = gql`
     mutation changeMemberRole(
-        $signature: String
-        $id: String
-        $account: String
-        $role: CommunityPermissionInput
+        $signature: String!
+        $id: String!
+        $account: String!
+        $role: CommunityPermissionInput!
     ) {
         changeMemberRole(
             signature: $signature
@@ -411,11 +418,11 @@ export const changeMemberRoleMutation = gql`
 
 export const resendInvitationMutation = gql`
     mutation resendInvitation(
-        $id: String
-        $invitationId: String
-        $email: String
+        $id: String!
+        $invitationId: String!
+        $email: String!
     ) {
-        resendInvitation(id: $id, invationId: $invitationId, email: $email) {
+        resendInvitation(id: $id, invitationId: $invitationId, email: $email) {
             hash
         }
     }
@@ -423,8 +430,8 @@ export const resendInvitationMutation = gql`
 
 export const initiateArticleTransferMutation = gql`
     mutation initiateArticleTransfer(
-        $id: String
-        $recipient: ResourceIdentifierInput
+        $id: String!
+        $recipient: ResourceIdentifierInput!
     ) {
         initiateArticleTransfer(id: $id, recipient: $recipient) {
             hash
@@ -434,7 +441,7 @@ export const initiateArticleTransferMutation = gql`
 
 export const getCommunityContentQuery = gql`
     query getCommunityContent(
-        $id: String
+        $id: String!
         $page: Int = 0
         $size: Int
         $filter: CommunityResourceFilterInput

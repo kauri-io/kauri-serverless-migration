@@ -7,15 +7,6 @@ let props = {
 }
 
 describe('components/Image', () => {
-    const observeMock = {
-        observe: () => null,
-        disconnect: () => null, // maybe not needed
-    }
-
-    beforeEach(async () => {
-        ;(window as any).IntersectionObserver = () => observeMock
-    })
-
     it('snapshot should match', () => {
         const wrapper = mount(<Image {...props} />)
         expect(wrapper).toMatchSnapshot()
