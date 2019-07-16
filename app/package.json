@@ -10,7 +10,8 @@
         "pretty": "prettier --write '**/*.{ts,tsx}'",
         "introspect-fragments": "node scripts/introspectionFragmentMatcher.js",
         "lint": "./node_modules/.bin/eslint --init",
-        "test": "jest --coverageDirectory=output/coverage/jest",
+        "test": "jest",
+        "test-coverage": "jest --coverageDirectory=output/coverage/jest",
         "gqt": "npx apollo client:codegen --target=typescript --config=apollo.config.js && npm run introspect-fragments"
     },
     "husky": {
