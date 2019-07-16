@@ -1,5 +1,5 @@
 import DiffViewer from './index'
-import { mountWithTheme  } from '../../setupTests'
+import { mountWithTheme } from '../../setupTests'
 
 let props = {
     current: '# this is a test',
@@ -8,7 +8,7 @@ let props = {
 
 describe('components/DiffViewer', () => {
     it('snapshot should match', () => {
-        const wrapper = mountWithTheme (<DiffViewer {...props} />)
+        const wrapper = mountWithTheme(<DiffViewer {...props} />)
         expect(wrapper).toMatchSnapshot()
     })
 })

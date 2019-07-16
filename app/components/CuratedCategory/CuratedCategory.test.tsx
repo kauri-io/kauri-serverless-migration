@@ -1,5 +1,5 @@
 import CuratedCategory from './index'
-import { mountWithTheme  } from '../../setupTests'
+import { mountWithTheme } from '../../setupTests'
 
 let props = {
     linkComponent: (e: any) => e,
@@ -10,7 +10,7 @@ let props = {
 
 describe('components/CuratedCategory', () => {
     it('snapshot should match', () => {
-        const wrapper = mountWithTheme (<CuratedCategory {...props} />)
+        const wrapper = mountWithTheme(<CuratedCategory {...props} />)
         expect(wrapper).toMatchSnapshot()
     })
 })

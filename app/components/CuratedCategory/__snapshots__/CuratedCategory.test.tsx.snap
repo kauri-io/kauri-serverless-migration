@@ -1,7 +1,406 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/CuratedCategory snapshot should match 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<ThemeProvider
+  theme={
+    Object {
+      "DEFAULT_CARD_WIDTH": 288,
+      "MAIN_BODY_WIDTH": 1242,
+      "bg": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "bgPrimary": "#1E2428",
+      "bgSecondary": "#1E3D3B",
+      "borderTextArea": "#979797",
+      "breakpoints": Array [
+        "500px",
+        "52em",
+        "1242px",
+      ],
+      "colors": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+      "disabledBackgroundColor": "#D6D6D6",
+      "disabledTextColor": "#9B9B9B",
+      "divider": "#EBEBEB",
+      "errorRedColor": "#C03030",
+      "fontSizes": Array [
+        11,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22,
+        28,
+        32,
+      ],
+      "fontWeight": Array [
+        300,
+        "normal",
+        500,
+        700,
+      ],
+      "hoverTextColor": "#108E72",
+      "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+      "padding": "calc((100vw - 1242px) / 2)",
+      "paddingTop": "2.5em",
+      "primary": "#0BA986",
+      "primaryColor": "#0BA986",
+      "primaryDark": "#11856B",
+      "primaryTextColor": "#1E2428",
+      "secondary": "#11856B",
+      "secondaryBlue": "rgb(81, 123, 162, 1)",
+      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+      "secondaryColor": "#1E3D3B",
+      "secondaryTextColor": "#283035",
+      "space": Array [
+        0,
+        10,
+        15,
+        30,
+        60,
+      ],
+      "tertiaryBackgroundColor": "#F7F7F7",
+      "textPrimary": "#1E2428",
+      "white": "#FFFFFF",
+    }
+  }
+>
+  <CuratedCategory
+    background="https://test.com/image.png"
+    category="test"
+    description="test"
+    linkComponent={[Function]}
+  >
+    <CuratedCategory__Container
+      background="https://test.com/image.png"
+    >
+      <StyledComponent
+        background="https://test.com/image.png"
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "CuratedCategory__Container-sc-7fcfjn-0",
+              "isStatic": false,
+              "lastClassName": "doQpHS",
+              "rules": Array [
+                "display:flex;z-index:1;position:relative;flex-direction:column;width:",
+                "288",
+                "px;height:90px;background:",
+                [Function],
+                ";border-radius:4px;@media (max-width:",
+                [Function],
+                "){height:60px;width:170px;> a{z-index:9001;}> a > div > *:last-child{display:none;}}",
+              ],
+            },
+            "displayName": "CuratedCategory__Container",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "CuratedCategory__Container-sc-7fcfjn-0",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <div
+          className="CuratedCategory__Container-sc-7fcfjn-0 doQpHS"
+        >
+          <Image
+            asBackground={true}
+            borderRadius="4px"
+            height="90px"
+            image="https://test.com/image.png"
+            mobileHeight="60px"
+            mobileWidth="170px"
+            overlay={
+              Object {
+                "color": "#1E2428",
+                "opacity": 0.7,
+              }
+            }
+            width="288px"
+          >
+            <InView
+              rootMargin="200px 0px"
+              threshold={0}
+              triggerOnce={true}
+            >
+              <Image__Img
+                asBackground={true}
+                borderRadius="4px"
+                height="90px"
+                image="https://test.com/image.png"
+                inView={false}
+                mobileHeight="60px"
+                mobileWidth="170px"
+                overlay={
+                  Object {
+                    "color": "#1E2428",
+                    "opacity": 0.7,
+                  }
+                }
+                width="288px"
+              >
+                <StyledComponent
+                  asBackground={true}
+                  borderRadius="4px"
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "Image__Img-sc-1jpuda7-0",
+                        "isStatic": false,
+                        "lastClassName": "jthmjD",
+                        "rules": Array [
+                          "height:",
+                          [Function],
+                          ";width:",
+                          [Function],
+                          ";",
+                          [Function],
+                          ";background:",
+                          [Function],
+                          ";background-size:cover;opacity:",
+                          [Function],
+                          ";transition:opacity ",
+                          [Function],
+                          "s;",
+                          [Function],
+                          ";",
+                          [Function],
+                          ";position:",
+                          [Function],
+                          ";",
+                          [Function],
+                          " ",
+                          [Function],
+                          ";",
+                        ],
+                      },
+                      "displayName": "Image__Img",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                      "target": "div",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={[Function]}
+                  height="90px"
+                  image="https://test.com/image.png"
+                  inView={false}
+                  mobileHeight="60px"
+                  mobileWidth="170px"
+                  overlay={
+                    Object {
+                      "color": "#1E2428",
+                      "opacity": 0.7,
+                    }
+                  }
+                  width="288px"
+                >
+                  <div
+                    className="Image__Img-sc-1jpuda7-0 jthmjD"
+                    height="90px"
+                    width="288px"
+                  />
+                </StyledComponent>
+              </Image__Img>
+            </InView>
+          </Image>
+          <CuratedCategory__Content>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "CuratedCategory__Content-sc-7fcfjn-1",
+                    "isStatic": false,
+                    "lastClassName": "kdSZBI",
+                    "rules": Array [
+                      "display:flex;z-index:9001;width:100%;position:absolute;flex-direction:column;text-overflow:ellipsis;padding:",
+                      [Function],
+                      "px;overflow-x:hidden;>:first-child{margin-bottom:",
+                      [Function],
+                      "px;}",
+                    ],
+                  },
+                  "displayName": "CuratedCategory__Content",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "CuratedCategory__Content-sc-7fcfjn-1",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <div
+                className="CuratedCategory__Content-sc-7fcfjn-1 kdSZBI"
+              >
+                <Typography__component
+                  color="white"
+                  textTransform="uppercase"
+                >
+                  <StyledComponent
+                    color="white"
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "Typography__component-sc-36xkf6-0",
+                          "isStatic": false,
+                          "lastClassName": "jMarAF",
+                          "rules": Array [
+                            "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                            [Function],
+                            ";text-align:",
+                            [Function],
+                            ";",
+                            [Function],
+                            " ",
+                            [Function],
+                          ],
+                        },
+                        "displayName": "Typography__component",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "Typography__component-sc-36xkf6-0",
+                        "target": "span",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    textTransform="uppercase"
+                  >
+                    <span
+                      className="Typography__component-sc-36xkf6-0 jMarAF"
+                      color="white"
+                    >
+                      test
+                    </span>
+                  </StyledComponent>
+                </Typography__component>
+                <Typography__component
+                  color="white"
+                >
+                  <StyledComponent
+                    color="white"
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "Typography__component-sc-36xkf6-4",
+                          "isStatic": false,
+                          "lastClassName": "dvuWvG",
+                          "rules": Array [
+                            "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
+                            [Function],
+                            "px;line-height:18px;color:",
+                            [Function],
+                            ";",
+                            ";",
+                            [Function],
+                            ";",
+                          ],
+                        },
+                        "displayName": "Typography__component",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "Typography__component-sc-36xkf6-4",
+                        "target": "span",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                  >
+                    <span
+                      className="Typography__component-sc-36xkf6-4 dvuWvG"
+                      color="white"
+                    >
+                      test
+                    </span>
+                  </StyledComponent>
+                </Typography__component>
+              </div>
+            </StyledComponent>
+          </CuratedCategory__Content>
+        </div>
+      </StyledComponent>
+    </CuratedCategory__Container>
+  </CuratedCategory>
+</ThemeProvider>
 `;

@@ -1,5 +1,5 @@
 import FeaturedContent from './index'
-import { mountWithTheme  } from '../../setupTests'
+import { mountWithTheme } from '../../setupTests'
 
 let props = {
     content: [
@@ -21,7 +21,7 @@ let props = {
 
 describe('components/FeaturedContent', () => {
     it('snapshot should match', () => {
-        const wrapper = mountWithTheme (<FeaturedContent {...props} />)
+        const wrapper = mountWithTheme(<FeaturedContent {...props} />)
         expect(wrapper).toMatchSnapshot()
     })
 })

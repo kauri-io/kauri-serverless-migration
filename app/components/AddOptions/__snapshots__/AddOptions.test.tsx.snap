@@ -1,7 +1,343 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/AddOptions snapshot should match 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<ThemeProvider
+  theme={
+    Object {
+      "DEFAULT_CARD_WIDTH": 288,
+      "MAIN_BODY_WIDTH": 1242,
+      "bg": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "bgPrimary": "#1E2428",
+      "bgSecondary": "#1E3D3B",
+      "borderTextArea": "#979797",
+      "breakpoints": Array [
+        "500px",
+        "52em",
+        "1242px",
+      ],
+      "colors": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+      "disabledBackgroundColor": "#D6D6D6",
+      "disabledTextColor": "#9B9B9B",
+      "divider": "#EBEBEB",
+      "errorRedColor": "#C03030",
+      "fontSizes": Array [
+        11,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22,
+        28,
+        32,
+      ],
+      "fontWeight": Array [
+        300,
+        "normal",
+        500,
+        700,
+      ],
+      "hoverTextColor": "#108E72",
+      "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+      "padding": "calc((100vw - 1242px) / 2)",
+      "paddingTop": "2.5em",
+      "primary": "#0BA986",
+      "primaryColor": "#0BA986",
+      "primaryDark": "#11856B",
+      "primaryTextColor": "#1E2428",
+      "secondary": "#11856B",
+      "secondaryBlue": "rgb(81, 123, 162, 1)",
+      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+      "secondaryColor": "#1E3D3B",
+      "secondaryTextColor": "#283035",
+      "space": Array [
+        0,
+        10,
+        15,
+        30,
+        60,
+      ],
+      "tertiaryBackgroundColor": "#F7F7F7",
+      "textPrimary": "#1E2428",
+      "white": "#FFFFFF",
+    }
+  }
+>
+  <AddOptions>
+    <Tooltip
+      animateFill={true}
+      animation="shift"
+      arrow={false}
+      arrowSize="regular"
+      className=""
+      delay={0}
+      disabled={false}
+      distance={10}
+      duration={375}
+      followCursor={false}
+      hideDelay={0}
+      hideDuration={375}
+      hideOnClick={true}
+      html={
+        <div>
+          test
+        </div>
+      }
+      inertia={false}
+      interactive={false}
+      interactiveBorder={2}
+      multiple={false}
+      offset={0}
+      onHidden={[Function]}
+      onHide={[Function]}
+      onRequestClose={[Function]}
+      onShow={[Function]}
+      onShown={[Function]}
+      popperOptions={Object {}}
+      position="bottom"
+      size="regular"
+      sticky={false}
+      stickyDuration={200}
+      style={Object {}}
+      theme="dark"
+      touchHold={false}
+      trigger="click"
+      unmountHTMLWhenHide={true}
+    >
+      <div
+        className=""
+        style={
+          Object {
+            "display": "inline",
+          }
+        }
+      >
+        <AddOptions__AddButton>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "AddOptions__AddButton-sc-1q8xpt7-0",
+                  "isStatic": false,
+                  "lastClassName": "jPyFLk",
+                  "rules": Array [
+                    "display:flex;cursor:pointer;align-items:center;>:first-child{margin-right:",
+                    [Function],
+                    "px;}",
+                  ],
+                },
+                "displayName": "AddOptions__AddButton",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "AddOptions__AddButton-sc-1q8xpt7-0",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="AddOptions__AddButton-sc-1q8xpt7-0 jPyFLk"
+            >
+              <AddIcon>
+                <svg
+                  fill="none"
+                  height="30"
+                  viewBox="0 0 30 30"
+                  width="30"
+                >
+                  <path
+                    clipRule="evenodd"
+                    d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30Z"
+                    fill="#0BA986"
+                    fillRule="evenodd"
+                  />
+                  <rect
+                    fill="url(#pattern0)"
+                    height="18"
+                    width="18"
+                    x="6"
+                    y="6"
+                  />
+                  <mask
+                    height="18"
+                    id="mask0"
+                    mask-type="alpha"
+                    maskUnits="userSpaceOnUse"
+                    width="18"
+                    x="6"
+                    y="6"
+                  >
+                    <rect
+                      fill="url(#pattern1)"
+                      height="18"
+                      width="18"
+                      x="6"
+                      y="6"
+                    />
+                  </mask>
+                  <g
+                    mask="url(#mask0)"
+                  >
+                    <rect
+                      fill="white"
+                      height="18"
+                      width="18"
+                      x="6"
+                      y="6"
+                    />
+                  </g>
+                  <defs>
+                    <pattern
+                      height="1"
+                      id="pattern0"
+                      patternContentUnits="objectBoundingBox"
+                      width="1"
+                    >
+                      <use
+                        transform="scale(0.00961538)"
+                        xlinkHref="#image0"
+                      />
+                    </pattern>
+                    <pattern
+                      height="1"
+                      id="pattern1"
+                      patternContentUnits="objectBoundingBox"
+                      width="1"
+                    >
+                      <use
+                        transform="scale(0.00961538)"
+                        xlinkHref="#image0"
+                      />
+                    </pattern>
+                    <image
+                      height="104"
+                      id="image0"
+                      width="104"
+                      xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAABoCAYAAAAdHLWhAAAAAXNSR0IArs4c6QAAAv5JREFUeAHtnUFOG0EQRXEkNkE5ELCAkyGRa0EUVsB9YjZh4VRLXnhhi6r+/iqP81pqEZmq+T3veSzRmnEuLhgQgAAEIAABCEAAAhCAAAQgAAEIQAACEIAABA4Q2Gw2tzGfY37E/Gqso2DU3hw4HC8fk0CAHnL+xqyO0YOkY8rYd6yA/KtqZqf+ad8xT/m11Skvbt/aAvY6Xr/a97vEa+vVavUjUXcyJUsUtFHohaBFnfM35WTp9RNAkJ+xlIAgCZ+/GUF+xlICgiR8/mYE+RlLCQiS8PmbEeRnLCUgSMLnb0aQn7GUgCAJn78ZQX7GUgKCJHz+ZgT5GUsJCJLw+ZsR5GcsJSBIwudvRpCfsZSAIAmfvxlBfsZSAoIkfP5mBPkZSwkIkvD5mxHkZywlIEjC529GkJ+xlIAgCZ+/eeo+5biB/TaW9hjzOuZ3/zIXnfARq3+P+RC3hb9Wz6QsaCvndwRdVsP+8/rPOP/7qqSZj7ifyJl6q4039PjUKY2ZK0h5Pqe0uDMsLj+fNCNIej7nDKGXTqn6fNLMR1xpQRRrBBCk8bN3I8iOWAtAkMbP3o0gO2ItAEEaP3s3guyItYAZQWNviTFHYPyRXxozgsbGH2OOQJndzE7C+EKil5hsltYkjc3Su9hJeKu0la+g7W7sfYQ8xyxfspXFnUntYDRYleWM8y9fQaOpc4xvrlLyq3thStYxestX0DFCOUaeAILyrFoqEdSCPR+KoDyrlkoEtWDPhyIoz6qlEkEt2POhCMqzaqlEUAv2fCiC8qxaKhHUgj0fiqA8q5ZKBLVgz4ciKM+qpRJBLdjzoQjKs2qpRFAL9nwogvKsWioR1II9H4qgPKuWSgS1YM+HIijPqqUSQS3Y86EIyrNqqURQC/Z8KILyrFoqEdSCPR+6REHK80mLu9l/iYLKz9jsvF+V3p3D8M+DBOLhhpuYs//Z+vh2LoabwFbSU/z8E/OrMWpGLXLcYjg+BCAAAQhAAAIQgAAEIAABCEAAAhCAAAQWTOAfqlxd4sUV9HUAAAAASUVORK5CYII="
+                    />
+                  </defs>
+                </svg>
+              </AddIcon>
+              <Typography__styledComponent
+                textTransform="uppercase"
+              >
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                        "isStatic": false,
+                        "lastClassName": "gECyyO",
+                        "rules": Array [
+                          "color:",
+                          [Function],
+                          ";margin:0px;font-weight:",
+                          "bold",
+                          ";",
+                          ";font-size:",
+                          "11",
+                          "px;text-transform:",
+                          [Function],
+                          ";text-align:",
+                          [Function],
+                          ";:hover{color:",
+                          [Function],
+                          ";cursor:",
+                          [Function],
+                          ";}",
+                        ],
+                      },
+                      "displayName": "Typography__styledComponent",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                      "target": "span",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                  textTransform="uppercase"
+                >
+                  <span
+                    className="Typography__styledComponent-sc-36xkf6-5 gECyyO"
+                  >
+                    Options
+                  </span>
+                </StyledComponent>
+              </Typography__styledComponent>
+            </div>
+          </StyledComponent>
+        </AddOptions__AddButton>
+      </div>
+    </Tooltip>
+  </AddOptions>
+</ThemeProvider>
 `;

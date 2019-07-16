@@ -1,5 +1,5 @@
 import Checkbox from './index'
-import { mountWithTheme  } from '../../setupTests'
+import { mountWithTheme } from '../../setupTests'
 
 let props = {
     checked: true,
@@ -9,7 +9,7 @@ let props = {
 
 describe('components/Checkbox', () => {
     it('snapshot should match', () => {
-        const wrapper = mountWithTheme (<Checkbox {...props} />)
+        const wrapper = mountWithTheme(<Checkbox {...props} />)
         expect(wrapper).toMatchSnapshot()
     })
 })

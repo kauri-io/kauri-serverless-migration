@@ -1,7 +1,587 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/Footer snapshot should match 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<ThemeProvider
+  theme={
+    Object {
+      "DEFAULT_CARD_WIDTH": 288,
+      "MAIN_BODY_WIDTH": 1242,
+      "bg": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "bgPrimary": "#1E2428",
+      "bgSecondary": "#1E3D3B",
+      "borderTextArea": "#979797",
+      "breakpoints": Array [
+        "500px",
+        "52em",
+        "1242px",
+      ],
+      "colors": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+      "disabledBackgroundColor": "#D6D6D6",
+      "disabledTextColor": "#9B9B9B",
+      "divider": "#EBEBEB",
+      "errorRedColor": "#C03030",
+      "fontSizes": Array [
+        11,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22,
+        28,
+        32,
+      ],
+      "fontWeight": Array [
+        300,
+        "normal",
+        500,
+        700,
+      ],
+      "hoverTextColor": "#108E72",
+      "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+      "padding": "calc((100vw - 1242px) / 2)",
+      "paddingTop": "2.5em",
+      "primary": "#0BA986",
+      "primaryColor": "#0BA986",
+      "primaryDark": "#11856B",
+      "primaryTextColor": "#1E2428",
+      "secondary": "#11856B",
+      "secondaryBlue": "rgb(81, 123, 162, 1)",
+      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+      "secondaryColor": "#1E3D3B",
+      "secondaryTextColor": "#283035",
+      "space": Array [
+        0,
+        10,
+        15,
+        30,
+        60,
+      ],
+      "tertiaryBackgroundColor": "#F7F7F7",
+      "textPrimary": "#1E2428",
+      "white": "#FFFFFF",
+    }
+  }
+>
+  <StyledFooter>
+    <Footer__NewFooter>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Footer__NewFooter-wussxj-0",
+              "isStatic": false,
+              "lastClassName": "fAOHvO",
+              "rules": Array [
+                "display:grid;grid-template-columns:1fr 2fr 1fr;grid-auto-columns:auto;width:100%;background-color:",
+                [Function],
+                ";padding:0px ",
+                [Function],
+                ";@media (max-width:500px){display:none;}",
+              ],
+            },
+            "displayName": "Footer__NewFooter",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "Footer__NewFooter-wussxj-0",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <div
+          className="Footer__NewFooter-wussxj-0 fAOHvO"
+        >
+          <_default>
+            <Email__Container>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Email__Container-nxd7qh-0",
+                      "isStatic": true,
+                      "lastClassName": "bkJUoo",
+                      "rules": Array [
+                        "display:flex;flex-direction:row;align-items:center;",
+                      ],
+                    },
+                    "displayName": "Email__Container",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "Email__Container-nxd7qh-0",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="Email__Container-nxd7qh-0 bkJUoo"
+                >
+                  <Email__EmailAddress
+                    href="mailto:info@kauri.io"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "Email__EmailAddress-nxd7qh-1",
+                            "isStatic": true,
+                            "lastClassName": "jReXyi",
+                            "rules": Array [
+                              "height:16px;width:82px;color:#0ba986;font-family:Roboto;font-size:12px;font-weight:bold;line-height:16px;",
+                            ],
+                          },
+                          "displayName": "Email__EmailAddress",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "Email__EmailAddress-nxd7qh-1",
+                          "target": "a",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                      href="mailto:info@kauri.io"
+                    >
+                      <a
+                        className="Email__EmailAddress-nxd7qh-1 jReXyi"
+                        href="mailto:info@kauri.io"
+                      >
+                        info@kauri.io
+                      </a>
+                    </StyledComponent>
+                  </Email__EmailAddress>
+                </div>
+              </StyledComponent>
+            </Email__Container>
+          </_default>
+          <_default>
+            <Logo__Container>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Logo__Container-yhmxu8-1",
+                      "isStatic": true,
+                      "lastClassName": "kPuFaV",
+                      "rules": Array [
+                        "display:flex;align-self:center;flex-direction:column;align-items:center;margin:auto;padding:10px;",
+                      ],
+                    },
+                    "displayName": "Logo__Container",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "Logo__Container-yhmxu8-1",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="Logo__Container-yhmxu8-1 kPuFaV"
+                >
+                  <Logo__LogoIcon
+                    src="/static/images/icons/footer-logo.png"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "Logo__LogoIcon-yhmxu8-0",
+                            "isStatic": true,
+                            "lastClassName": "kQopY",
+                            "rules": Array [
+                              "width:26px;height:25px;",
+                            ],
+                          },
+                          "displayName": "Logo__LogoIcon",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "Logo__LogoIcon-yhmxu8-0",
+                          "target": "img",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                      src="/static/images/icons/footer-logo.png"
+                    >
+                      <img
+                        className="Logo__LogoIcon-yhmxu8-0 kQopY"
+                        src="/static/images/icons/footer-logo.png"
+                      />
+                    </StyledComponent>
+                  </Logo__LogoIcon>
+                  <Logo__KauriCopy>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "Logo__KauriCopy-yhmxu8-2",
+                            "isStatic": true,
+                            "lastClassName": "kdcflv",
+                            "rules": Array [
+                              "color:#fff;line-height:12px;font-size:12px;",
+                            ],
+                          },
+                          "displayName": "Logo__KauriCopy",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "Logo__KauriCopy-yhmxu8-2",
+                          "target": "span",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <span
+                        className="Logo__KauriCopy-yhmxu8-2 kdcflv"
+                      >
+                        kauri
+                      </span>
+                    </StyledComponent>
+                  </Logo__KauriCopy>
+                </div>
+              </StyledComponent>
+            </Logo__Container>
+          </_default>
+          <_default>
+            <Consensys__Container>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Consensys__Container-sc-3l6ajh-0",
+                      "isStatic": true,
+                      "lastClassName": "hzIdEE",
+                      "rules": Array [
+                        "display:flex;flex-direction:row;align-items:center;>:nth-child(2){margin-left:15px;}>:last-child{margin-left:4px;}",
+                      ],
+                    },
+                    "displayName": "Consensys__Container",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "Consensys__Container-sc-3l6ajh-0",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="Consensys__Container-sc-3l6ajh-0 hzIdEE"
+                >
+                  <Consensys__ConsenSysLogoIcon>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
+                            "isStatic": true,
+                            "lastClassName": "iJDtiZ",
+                            "rules": Array [
+                              "color:#fff;font-weight:500;font-size:13px;",
+                            ],
+                          },
+                          "displayName": "Consensys__ConsenSysLogoIcon",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
+                          "target": "a",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <a
+                        className="Consensys__ConsenSysLogoIcon-sc-3l6ajh-2 iJDtiZ"
+                      >
+                        © Copyright 2019
+                      </a>
+                    </StyledComponent>
+                  </Consensys__ConsenSysLogoIcon>
+                  <Consensys__ConsenSysFormationIcon
+                    src="/static/images/icons/footer-consensys.png"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "Consensys__ConsenSysFormationIcon-sc-3l6ajh-1",
+                            "isStatic": true,
+                            "lastClassName": "gRtYkn",
+                            "rules": Array [
+                              "width:34px;",
+                            ],
+                          },
+                          "displayName": "Consensys__ConsenSysFormationIcon",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "Consensys__ConsenSysFormationIcon-sc-3l6ajh-1",
+                          "target": "img",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                      src="/static/images/icons/footer-consensys.png"
+                    >
+                      <img
+                        className="Consensys__ConsenSysFormationIcon-sc-3l6ajh-1 gRtYkn"
+                        src="/static/images/icons/footer-consensys.png"
+                      />
+                    </StyledComponent>
+                  </Consensys__ConsenSysFormationIcon>
+                  <Consensys__ConsenSysLogoIcon>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
+                            "isStatic": true,
+                            "lastClassName": "iJDtiZ",
+                            "rules": Array [
+                              "color:#fff;font-weight:500;font-size:13px;",
+                            ],
+                          },
+                          "displayName": "Consensys__ConsenSysLogoIcon",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
+                          "target": "a",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <a
+                        className="Consensys__ConsenSysLogoIcon-sc-3l6ajh-2 iJDtiZ"
+                      >
+                        ConsenSys Formation
+                      </a>
+                    </StyledComponent>
+                  </Consensys__ConsenSysLogoIcon>
+                  <Consensys__PrivacyPolicy
+                    href="/privacy-policy"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "Consensys__PrivacyPolicy-sc-3l6ajh-3",
+                            "isStatic": true,
+                            "lastClassName": "hDPWys",
+                            "rules": Array [
+                              "color:#fff;font-weight:500;font-size:13px;",
+                              "margin-left:10px;margin-right:3px;font-weight:normal;font-size:10px;",
+                            ],
+                          },
+                          "displayName": "Consensys__PrivacyPolicy",
+                          "foldedComponentIds": Array [
+                            "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
+                          ],
+                          "render": [Function],
+                          "styledComponentId": "Consensys__PrivacyPolicy-sc-3l6ajh-3",
+                          "target": "a",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                      href="/privacy-policy"
+                    >
+                      <a
+                        className="Consensys__ConsenSysLogoIcon-sc-3l6ajh-2 Consensys__PrivacyPolicy-sc-3l6ajh-3 hDPWys"
+                        href="/privacy-policy"
+                      >
+                        Privacy Policy 
+                      </a>
+                    </StyledComponent>
+                  </Consensys__PrivacyPolicy>
+                  <Consensys__ConsenSysLogoIcon>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
+                            "isStatic": true,
+                            "lastClassName": "iJDtiZ",
+                            "rules": Array [
+                              "color:#fff;font-weight:500;font-size:13px;",
+                            ],
+                          },
+                          "displayName": "Consensys__ConsenSysLogoIcon",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
+                          "target": "a",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <a
+                        className="Consensys__ConsenSysLogoIcon-sc-3l6ajh-2 iJDtiZ"
+                      >
+                        |
+                      </a>
+                    </StyledComponent>
+                  </Consensys__ConsenSysLogoIcon>
+                  <Consensys__TermsOfService
+                    href="/terms-of-use"
+                  >
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "Consensys__TermsOfService-sc-3l6ajh-4",
+                            "isStatic": true,
+                            "lastClassName": "hrfJKX",
+                            "rules": Array [
+                              "color:#fff;font-weight:500;font-size:13px;",
+                              "margin-left:10px;margin-right:3px;font-weight:normal;font-size:10px;",
+                              "margin-left:0px;",
+                            ],
+                          },
+                          "displayName": "Consensys__TermsOfService",
+                          "foldedComponentIds": Array [
+                            "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
+                            "Consensys__PrivacyPolicy-sc-3l6ajh-3",
+                          ],
+                          "render": [Function],
+                          "styledComponentId": "Consensys__TermsOfService-sc-3l6ajh-4",
+                          "target": "a",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                      href="/terms-of-use"
+                    >
+                      <a
+                        className="Consensys__ConsenSysLogoIcon-sc-3l6ajh-2 Consensys__PrivacyPolicy-sc-3l6ajh-3 Consensys__TermsOfService-sc-3l6ajh-4 hrfJKX"
+                        href="/terms-of-use"
+                      >
+                        Terms of Use
+                      </a>
+                    </StyledComponent>
+                  </Consensys__TermsOfService>
+                </div>
+              </StyledComponent>
+            </Consensys__Container>
+          </_default>
+        </div>
+      </StyledComponent>
+    </Footer__NewFooter>
+  </StyledFooter>
+</ThemeProvider>
 `;
