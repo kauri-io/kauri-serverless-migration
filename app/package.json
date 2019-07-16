@@ -11,7 +11,7 @@
         "introspect-fragments": "node scripts/introspectionFragmentMatcher.js",
         "lint": "./node_modules/.bin/eslint --init",
         "test": "jest",
-        "test-coverage": "jest --coverageDirectory=output/coverage/jest",
+        "test:coverage": "jest --coverage --coverageDirectory=output/coverage/jest",
         "gqt": "npx apollo client:codegen --target=typescript --config=apollo.config.js && npm run introspect-fragments"
     },
     "husky": {
