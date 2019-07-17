@@ -9,6 +9,7 @@ import moment from 'moment'
 import Link from '../Link'
 
 interface IProps {
+    id: string
     title: string | null
     author: {
         name: string | null
@@ -52,10 +53,14 @@ export default ({
     description,
     href,
     className,
+    id,
 }: IProps) => {
     const classes = ArticleCardStyles({})
     return (
-        <Card className={`${classes.card} ${className ? className : ''}`}>
+        <Card
+            key={id}
+            className={`${classes.card} ${className ? className : ''}`}
+        >
             <Link
                 useAnchorTag={true}
                 href={`/public-profile/${author && author.id}`}

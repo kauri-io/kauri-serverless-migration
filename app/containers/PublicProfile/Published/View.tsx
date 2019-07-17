@@ -75,7 +75,7 @@ const Articles: React.FC<IArticlesProps> = ({
                                 : article.author.avatar
                         }
                         isLoggedIn={isLoggedIn}
-                        hoverChildren={({ hideDispatch }) => (
+                        hoverChildren={() => (
                             <PrimaryButton
                                 onClick={() =>
                                     openModalAction({

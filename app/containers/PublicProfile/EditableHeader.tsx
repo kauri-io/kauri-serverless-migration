@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import PrimaryButton from '../../components/Button/PrimaryButton'
 import TertiaryButton from '../../components/Button/TertiaryButton'
 import EditProfile from '../EditProfileForm'
-import { WithRouterProps } from 'next/router'
 
 const HeaderContainer = styled.div`
     background-color: ${props => props.theme.colors.bgPrimary};

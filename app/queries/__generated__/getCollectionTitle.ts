@@ -7,14 +7,21 @@
 // ====================================================
 
 export interface getCollectionTitle_getCollection {
-    __typename: 'CollectionDTO'
-    name: string | null
+  __typename: "CollectionDTO";
+  /**
+   * Collection name
+   */
+  name: string;
 }
 
 export interface getCollectionTitle {
-    getCollection: getCollectionTitle_getCollection | null
+  /**
+   * Get a collection by ID
+   * This operation can be performed anonymously
+   */
+  getCollection: getCollectionTitle_getCollection | null;
 }
 
 export interface getCollectionTitleVariables {
-    id?: string | null
+  id: string;
 }

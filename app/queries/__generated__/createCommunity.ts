@@ -10,16 +10,23 @@ import { InvitationInput } from "./../../__generated__/globalTypes";
 
 export interface createCommunity_createCommunity {
   __typename: "MutationResponse";
+  /**
+   * hash associated to the mutation/command sent. Should be used to subscribe to the event
+   */
   hash: string | null;
 }
 
 export interface createCommunity {
+  /**
+   * Create a community (excute call).
+   * This operation can only be performed by a logged user
+   */
   createCommunity: createCommunity_createCommunity | null;
 }
 
 export interface createCommunityVariables {
-  signature?: string | null;
-  name?: string | null;
+  signature: string;
+  name: string;
   description?: string | null;
   avatar?: string | null;
   website?: string | null;

@@ -8,10 +8,17 @@
 
 export interface getTotalArticlesCount_searchArticles {
   __typename: "ResponsePage_ArticleDTO";
+  /**
+   * Total amount of elements.
+   */
   totalElements: any;
 }
 
 export interface getTotalArticlesCount {
+  /**
+   * Search articles with pagination, sorting and filters.
+   * This operation can be performed anonymously
+   */
   searchArticles: getTotalArticlesCount_searchArticles | null;
 }
 

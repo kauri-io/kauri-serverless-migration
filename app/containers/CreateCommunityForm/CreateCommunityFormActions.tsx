@@ -6,6 +6,10 @@ import PrimaryButtonComponent from '../../components/Button/PrimaryButton'
 import TertiaryButtonComponent from '../../components/Button/TertiaryButton'
 import UploadIcon from '../../components/Icon/UploadIcon'
 import showFormValidationErrors from '../../lib/show-form-validation-errors'
+import {
+    IShowNotificationAction,
+    IShowNotificationPayload,
+} from '../../lib/Epics/ShowNotificationEpic'
 
 interface IProps {
     id: string | null
@@ -14,6 +18,9 @@ interface IProps {
     isSubmitting: boolean
     background: null | string
     validateForm: () => Promise<any>
+    showNotificationAction: (
+        payload: IShowNotificationPayload
+    ) => IShowNotificationAction
 }
 
 const Component: React.FunctionComponent<IProps> = props => (

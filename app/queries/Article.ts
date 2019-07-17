@@ -4,11 +4,11 @@ import { CommunityOwner, UserOwner, Article } from './Fragments'
 export const submitArticle = gql`
     mutation submitArticle(
         $article_id: String
-        $text: String
-        $subject: String
+        $text: String!
+        $subject: String!
         $tags: [String]
         $attributes: Map_String_StringScalar
-        $version: Int
+        $version: Int!
     ) {
         submitArticle(
             id: $article_id
@@ -25,8 +25,8 @@ export const submitArticle = gql`
 
 export const submitNewArticleMutation = gql`
     mutation submitNewArticle(
-        $title: String
-        $content: String
+        $title: String!
+        $content: String!
         $tags: [String]
         $attributes: Map_String_StringScalar
     ) {
@@ -42,7 +42,7 @@ export const submitNewArticleMutation = gql`
 `
 
 export const getArticle = gql`
-    query getArticle($id: String, $version: Int, $published: Boolean = true) {
+    query getArticle($id: String!, $version: Int!, $published: Boolean = true) {
         getArticle(id: $id, version: $version, published: $published) {
             ...Article
         }
@@ -52,7 +52,11 @@ export const getArticle = gql`
 `
 
 export const getArticleForAnalytics = gql`
-    query getArticle($id: String, $version: Int, $published: Boolean = false) {
+    query getArticle(
+        $id: String!
+        $version: Int!
+        $published: Boolean = false
+    ) {
         getArticle(id: $id, version: $version, published: $published) {
             id
             version
@@ -81,10 +85,10 @@ export const getArticleForAnalytics = gql`
 
 export const editArticle = gql`
     mutation editArticleVersion(
-        $id: String
-        $version: Int
-        $text: String
-        $subject: String
+        $id: String!
+        $version: Int!
+        $text: String!
+        $subject: String!
         $tags: [String]
         $attributes: Map_String_StringScalar
     ) {
@@ -104,7 +108,7 @@ export const editArticle = gql`
 export const searchApprovedArticles = gql`
     query searchApprovedArticles(
         $size: Int = 500
-        $text: String
+        $text: String!
         $category: String
         $sort: String = "dateCreated"
         $page: Int = 0
@@ -188,7 +192,7 @@ export const searchPersonalArticles = gql`
         $userId: String
         $size: Int = 8
         $page: Int = 0
-        $text: String
+        $text: String!
     ) {
         searchArticles(
             size: $size
@@ -279,9 +283,9 @@ export const searchPersonalDrafts = gql`
 
 export const submitArticleVersionMutation = gql`
     mutation submitArticleVersion(
-        $id: String
-        $subject: String
-        $text: String
+        $id: String!
+        $subject: String!
+        $text: String!
         $tags: [String]
         $attributes: Map_String_StringScalar
     ) {
@@ -298,7 +302,7 @@ export const submitArticleVersionMutation = gql`
 `
 
 export const addComment = gql`
-    mutation addComment($parent: ResourceIdentifierInput, $body: String) {
+    mutation addComment($parent: ResourceIdentifierInput!, $body: String!) {
         addComment(parent: $parent, body: $body) {
             hash
         }
@@ -428,7 +432,7 @@ export const searchPending = gql`
 `
 
 export const approveArticle = gql`
-    mutation approveArticle($id: String, $version: Int, $signature: String) {
+    mutation approveArticle($id: String!, $version: Int!, $signature: String!) {
         approveArticle(id: $id, version: $version, signature: $signature) {
             hash
         }
@@ -436,7 +440,7 @@ export const approveArticle = gql`
 `
 
 export const rejectArticle = gql`
-    mutation rejectArticle($id: String, $version: Int, $cause: String) {
+    mutation rejectArticle($id: String!, $version: Int!, $cause: String) {
         rejectArticle(id: $id, version: $version, cause: $cause) {
             hash
         }
@@ -489,7 +493,7 @@ export const relatedArticles = gql`
     query relatedArticles(
         $page: Int
         $size: Int
-        $resourceId: ResourceIdentifierInput
+        $resourceId: ResourceIdentifierInput!
         $filter: SearchFilterInput
     ) {
         searchMoreLikeThis(
@@ -560,7 +564,7 @@ export const relatedArticles = gql`
 `
 
 export const vote = gql`
-    mutation vote($resourceId: ResourceIdentifierInput, $value: Float) {
+    mutation vote($resourceId: ResourceIdentifierInput!, $value: Float!) {
         vote(resourceId: $resourceId, value: $value) {
             hash
         }
@@ -571,7 +575,7 @@ export const getArticleTransfers = gql`
     query getArticleTransfers(
         $page: Int = 0
         $size: Int = 100
-        $recipient: String
+        $recipient: String!
         $sort: String = "id"
         $dir: DirectionInput = DESC
     ) {
@@ -608,7 +612,7 @@ export const getArticleTransfers = gql`
 `
 
 export const rejectArticleTransfer = gql`
-    mutation rejectArticleTransfer($id: String) {
+    mutation rejectArticleTransfer($id: String!) {
         rejectArticleTransfer(id: $id) {
             hash
         }
@@ -616,7 +620,7 @@ export const rejectArticleTransfer = gql`
 `
 
 export const acceptArticleTransfer = gql`
-    mutation acceptArticleTransfer($id: String) {
+    mutation acceptArticleTransfer($id: String!) {
         acceptArticleTransfer(id: $id) {
             hash
         }
@@ -624,8 +628,70 @@ export const acceptArticleTransfer = gql`
 `
 
 export const finaliseArticleTransfer = gql`
-    mutation finaliseArticleTransfer($id: String, $signature: String) {
+    mutation finaliseArticleTransfer($id: String!, $signature: String!) {
         finaliseArticleTransfer(id: $id, signature: $signature) {
+            hash
+        }
+    }
+`
+
+export const addArticleToCollectionMutation = gql`
+    mutation addArticleToCollection(
+        $id: String!
+        $sectionId: String!
+        $resourceId: ResourceIdentifierInput!
+        $position: Int
+    ) {
+        addCollectionResource(
+            id: $id
+            sectionId: $sectionId
+            resourceId: $resourceId
+            position: $position
+        ) {
+            hash
+        }
+    }
+`
+
+export const getCollectionTitleQuery = gql`
+    query getCollectionTitle($id: String!) {
+        getCollection(id: $id) {
+            name
+        }
+    }
+`
+
+export const deleteDraftArticleMutation = gql`
+    mutation deleteDraftArticle($id: String!, $version: Int!) {
+        cancelArticle(id: $id, version: $version) {
+            hash
+        }
+    }
+`
+
+export const getArticleTitleQuery = gql`
+    query getArticleTitle($id: String!, $version: Int!) {
+        getArticle(id: $id, version: $version) {
+            title
+        }
+    }
+`
+
+export const publishArticleMutation = gql`
+    mutation publishArticle(
+        $id: String!
+        $version: Int!
+        $owner: ResourceIdentifierInput
+        $signature: String!
+        $updateComment: String
+    ) {
+        publishArticle(
+            id: $id
+            version: $version
+            owner: $owner
+            signature: $signature
+            updateComment: $updateComment
+        ) {
             hash
         }
     }

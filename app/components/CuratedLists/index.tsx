@@ -75,7 +75,6 @@ export const RenderCardContent = ({
 
             return (
                 <CollectionCard
-                    key={String(card.id)}
                     id={String(card.id)}
                     resourceType="CollectionDTO"
                     name={String(card.name)}
@@ -130,7 +129,6 @@ export const RenderCardContent = ({
                 <CommunityCard
                     articleCount={''}
                     collectionCount={''}
-                    key={String(card.id)}
                     name={String(card.name)}
                     description={String(card.description)}
                     imageURL={card.attributes.background}
@@ -148,3 +146,5 @@ export const RenderCardContent = ({
             return null
     }
 }
+
+export default RenderCardContent

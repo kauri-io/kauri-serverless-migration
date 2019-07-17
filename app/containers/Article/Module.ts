@@ -3,7 +3,7 @@ import { IDependencies, IReduxState } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { Epic, ofType } from 'redux-observable'
 import { vote as voteMutation } from '../../queries/Article'
-import { vote, voteVariables } from '../../queries/__generated__/vote'
+import { voteVariables } from '../../queries/__generated__/vote'
 import analytics from '../../lib/analytics'
 import { switchMap, mergeMap, tap, catchError } from 'rxjs/operators'
 
@@ -29,7 +29,7 @@ export const voteEpic: Epic<IVoteAction, any, IReduxState, IDependencies> = (
         ofType(VOTE),
         switchMap(({ payload }: IVoteAction) =>
             from(
-                apolloClient.mutate<vote, voteVariables>({
+                apolloClient.mutate({
                     mutation: voteMutation,
                     variables: payload,
                 })

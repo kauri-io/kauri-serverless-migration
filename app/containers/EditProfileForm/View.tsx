@@ -253,7 +253,9 @@ class EditableHeader extends Component<IProps, IState> {
                     <Offset margin={12}>
                         <EmailCheckbox
                             disabled={!this.state.email}
-                            checked={this.state.subscriptions.newsletter}
+                            checked={Boolean(
+                                this.state.subscriptions.newsletter
+                            )}
                             onChange={checked =>
                                 this.setState({
                                     subscriptions: {

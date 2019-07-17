@@ -1,28 +1,12 @@
-import { Epic, ActionsObservable, ofType } from 'redux-observable'
-import { Observable, merge, of, from } from 'rxjs'
-import gql from 'graphql-tag'
+import { ActionsObservable, ofType } from 'redux-observable'
+import { merge, of, from } from 'rxjs'
 import { ApolloClient } from 'apollo-client'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { deleteDraftArticle } from './__generated__/deleteDraftArticle'
 import analytics from '../../lib/analytics'
-import { switchMap, filter, mergeMap, tap } from 'rxjs/operators'
-
-export const deleteDraftArticleMutation = gql`
-    mutation deleteDraftArticle($id: String, $version: Int) {
-        cancelArticle(id: $id, version: $version) {
-            hash
-        }
-    }
-`
-
-export const getArticleTitleQuery = gql`
-    query getArticleTitle($id: String, $version: Int) {
-        getArticle(id: $id, version: $version) {
-            title
-        }
-    }
-`
+import { switchMap, mergeMap, tap } from 'rxjs/operators'
+import { deleteDraftArticleMutation } from '../../queries/Article'
 
 export interface IDependencies {
     apolloClient: ApolloClient<{}>
@@ -41,7 +25,7 @@ interface IAction {
     payload?: {}
 }
 
-interface IDeleteDraftArticlePayload {
+export interface IDeleteDraftArticlePayload {
     id: string
     version: number
 }
@@ -71,11 +55,6 @@ export const deleteDraftArticleAction = (
     type: DELETE_DRAFT_ARTICLE,
 })
 
-interface IDeleteDraftArticleCommandOutput {
-    id: string
-    version: number
-}
-
 export const deleteDraftArticleEpic = (
     action$: ActionsObservable<IDeleteDraftArticleAction>,
     state: IReduxState,
@@ -86,7 +65,7 @@ export const deleteDraftArticleEpic = (
         switchMap(
             ({ payload: variables, callback }: IDeleteDraftArticleAction) =>
                 from(
-                    apolloClient.mutate<deleteDraftArticle>({
+                    apolloClient.mutate({
                         mutation: deleteDraftArticleMutation,
                         variables,
                     })

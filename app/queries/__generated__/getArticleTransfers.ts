@@ -19,56 +19,122 @@ export interface getArticleTransfers_getArticleTransfers_content_article_associa
 
 export interface getArticleTransfers_getArticleTransfers_content_article_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource version (article)
+   */
   version: number | null;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_voteResult {
   __typename: "VoteResultDTO";
-  sum: number | null;
-  count: any | null;
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
   hasVoted: boolean | null;
-  quantity: any | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_author {
   __typename: "PublicUserDTO";
-  id: string | null;
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
   name: string | null;
+  /**
+   * Username
+   */
   username: string | null;
+  /**
+   * User avatar URI
+   */
   avatar: string | null;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CommentDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "TemplateDTO" | "CollectionDTO" | "SearchResultDTO" | "UserDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "CollectionDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_owner_PublicUserDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_owner_PublicUserDTO {
   __typename: "PublicUserDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
   username: string | null;
+  /**
+   * User avatar URI
+   */
   avatar: string | null;
   resourceIdentifier: getArticleTransfers_getArticleTransfers_content_article_owner_PublicUserDTO_resourceIdentifier | null;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_owner_CommunityDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_owner_CommunityDTO {
   __typename: "CommunityDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
   avatar: string | null;
   resourceIdentifier: getArticleTransfers_getArticleTransfers_content_article_owner_CommunityDTO_resourceIdentifier | null;
 }
@@ -77,87 +143,217 @@ export type getArticleTransfers_getArticleTransfers_content_article_owner = getA
 
 export interface getArticleTransfers_getArticleTransfers_content_article_comments_content_author {
   __typename: "PublicUserDTO";
-  id: string | null;
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
   name: string | null;
+  /**
+   * Username
+   */
   username: string | null;
+  /**
+   * User avatar URI
+   */
   avatar: string | null;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_comments_content {
   __typename: "CommentDTO";
+  /**
+   * Comment author (full profile)
+   */
   author: getArticleTransfers_getArticleTransfers_content_article_comments_content_author | null;
-  posted: any | null;
-  body: string | null;
+  /**
+   * Date the comment was published
+   */
+  posted: any;
+  /**
+   * Comment
+   */
+  body: string;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_comments {
   __typename: "ResponsePage_CommentDTO";
-  content: (getArticleTransfers_getArticleTransfers_content_article_comments_content | null)[] | null;
+  /**
+   * Returns the page content.
+   */
+  content: (getArticleTransfers_getArticleTransfers_content_article_comments_content | null)[];
+  /**
+   * Number of total pages.
+   */
   totalPages: number;
+  /**
+   * Total amount of elements.
+   */
   totalElements: any;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article {
   __typename: "ArticleDTO";
+  /**
+   * NFTs associated with this article
+   */
   associatedNfts: (getArticleTransfers_getArticleTransfers_content_article_associatedNfts | null)[] | null;
   resourceIdentifier: getArticleTransfers_getArticleTransfers_content_article_resourceIdentifier | null;
+  /**
+   * Description of the article - First 500 characters of the plaintext content)
+   */
   description: string | null;
-  id: string | null;
-  version: number | null;
-  title: string | null;
-  content: string | null;
-  authorId: string | null;
-  dateCreated: any | null;
+  /**
+   * Article ID
+   */
+  id: string;
+  /**
+   * Article Version
+   */
+  version: number;
+  /**
+   * Title of article
+   */
+  title: string;
+  /**
+   * Content of the article (most likely to be plain markdown text)
+   */
+  content: string;
+  /**
+   * Author of the article (USER only)
+   */
+  authorId: string;
+  /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
+   * Date publication
+   */
   datePublished: any | null;
-  status: ArticleStatusInput | null;
+  /**
+   * Status of the article
+   */
+  status: ArticleStatusInput;
+  /**
+   * Set of optional attributes fields
+   */
   attributes: any | null;
-  contentHash: string | null;
+  /**
+   * IPFS Content hash
+   */
+  contentHash: string;
+  /**
+   * Checkpoint file (null if the article is not escalated on-chain)
+   */
   checkpoint: string | null;
+  /**
+   * Tags list
+   */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the article
+   */
   voteResult: getArticleTransfers_getArticleTransfers_content_article_voteResult | null;
+  /**
+   * Article author (full profile)
+   */
   author: getArticleTransfers_getArticleTransfers_content_article_author | null;
+  /**
+   * load the article owner (user or community resource type)
+   */
   owner: getArticleTransfers_getArticleTransfers_content_article_owner | null;
+  /**
+   * Get a paginated list of comments for this article
+   */
   comments: getArticleTransfers_getArticleTransfers_content_article_comments | null;
+  /**
+   * The comment describing this version update of the article
+   */
   updateComment: string | null;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_transferrer {
   __typename: "ResourceIdentifier";
-  type: ResourceTypeInput | null;
-  id: string | null;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource version (article)
+   */
   version: number | null;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_recipient {
   __typename: "ResourceIdentifier";
-  type: ResourceTypeInput | null;
-  id: string | null;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource version (article)
+   */
   version: number | null;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content {
   __typename: "ArticleTransferDTO";
+  /**
+   * ID of article
+   */
   id: string | null;
+  /**
+   * Article
+   */
   article: getArticleTransfers_getArticleTransfers_content_article | null;
+  /**
+   * Initiator of the transfer
+   */
   transferrer: getArticleTransfers_getArticleTransfers_content_transferrer | null;
+  /**
+   * Recipient of the transfer
+   */
   recipient: getArticleTransfers_getArticleTransfers_content_recipient | null;
 }
 
 export interface getArticleTransfers_getArticleTransfers {
   __typename: "ResponsePage_ArticleTransferDTO";
-  content: (getArticleTransfers_getArticleTransfers_content | null)[] | null;
+  /**
+   * Returns the page content.
+   */
+  content: (getArticleTransfers_getArticleTransfers_content | null)[];
+  /**
+   * Number of total pages.
+   */
   totalPages: number;
+  /**
+   * Total amount of elements.
+   */
   totalElements: any;
 }
 
 export interface getArticleTransfers {
+  /**
+   * Get Article transfers for a given recipient user account with pagination and sorting.
+   * This operation can be performed anonymously
+   */
   getArticleTransfers: getArticleTransfers_getArticleTransfers | null;
 }
 
 export interface getArticleTransfersVariables {
   page?: number | null;
   size?: number | null;
-  recipient?: string | null;
+  recipient: string;
   sort?: string | null;
   dir?: DirectionInput | null;
 }

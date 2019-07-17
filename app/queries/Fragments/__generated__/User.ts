@@ -8,6 +8,12 @@
 
 export interface User {
   __typename: "PublicUserDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
 }

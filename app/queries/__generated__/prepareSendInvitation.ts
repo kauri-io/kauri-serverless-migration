@@ -15,10 +15,14 @@ export interface prepareSendInvitation_prepareSendInvitation {
 }
 
 export interface prepareSendInvitation {
+  /**
+   * Send an invitation to join te community (prepare call, return a meta-tx hash to sign).
+   * This operation can only be performed by a community admin
+   */
   prepareSendInvitation: prepareSendInvitation_prepareSendInvitation | null;
 }
 
 export interface prepareSendInvitationVariables {
-  id?: string | null;
-  invitation?: InvitationInput | null;
+  id: string;
+  invitation: InvitationInput;
 }

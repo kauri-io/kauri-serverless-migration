@@ -2,7 +2,11 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
+<<<<<<< HEAD
 import { ResourceIdentifierInput } from "../../../__generated__/globalTypes";
+=======
+import { ResourceIdentifierInput } from "./../../../__generated__/globalTypes";
+>>>>>>> d861e60d171caefcf4c9a30a6868839cd0a6350a
 
 // ====================================================
 // GraphQL mutation operation: publishArticle

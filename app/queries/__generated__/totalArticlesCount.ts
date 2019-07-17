@@ -10,10 +10,17 @@ import { ArticleFilterInput } from "./../../__generated__/globalTypes";
 
 export interface totalArticlesCount_searchArticles {
   __typename: "ResponsePage_ArticleDTO";
+  /**
+   * Total amount of elements.
+   */
   totalElements: any;
 }
 
 export interface totalArticlesCount {
+  /**
+   * Search articles with pagination, sorting and filters.
+   * This operation can be performed anonymously
+   */
   searchArticles: totalArticlesCount_searchArticles | null;
 }
 

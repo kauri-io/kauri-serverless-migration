@@ -8,19 +8,41 @@
 
 export interface searchTags_searchTags_content {
   __typename: "TagResultDTO";
-  tag: string | null;
-  count: any | null;
+  /**
+   * Tag name
+   */
+  tag: string;
+  /**
+   * Tag occurrence
+   */
+  count: any;
+  /**
+   * Tag score
+   */
   score: number | null;
 }
 
 export interface searchTags_searchTags {
-  __typename: "Page_TagResultDTO";
+  __typename: "ResponsePage_TagResultDTO";
+  /**
+   * Total amount of elements.
+   */
   totalElements: any;
+  /**
+   * Number of total pages.
+   */
   totalPages: number;
-  content: (searchTags_searchTags_content | null)[] | null;
+  /**
+   * Returns the page content.
+   */
+  content: (searchTags_searchTags_content | null)[];
 }
 
 export interface searchTags {
+  /**
+   * Search tags
+   * This operation can be performed anonymously
+   */
   searchTags: searchTags_searchTags | null;
 }
 

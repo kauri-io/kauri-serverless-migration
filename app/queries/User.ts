@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 export const getUserDetails = gql`
-    query getUser($userId: String) {
+    query getUser($userId: String!) {
         getUser(id: $userId) {
             id
             username
@@ -52,7 +52,7 @@ export const saveUserDetails = gql`
         $avatar: String
         $email: String
         $social: Map_String_StringScalar
-        $subscriptions: Map_String_BooleanScalar
+        $subscriptions: Map_String_BooleanScalar!
     ) {
         saveUser(
             name: $name
@@ -78,7 +78,7 @@ export const regenerateEmailVerificationCode = gql`
 `
 
 export const verifyEmail = gql`
-    mutation verifyEmail($code: String) {
+    mutation verifyEmail($code: String!) {
         verifyEmail(code: $code) {
             hash
         }
@@ -87,8 +87,8 @@ export const verifyEmail = gql`
 
 export const emailSubscribe = gql`
     mutation emailSubscribe(
-        $emailAddress: String
-        $subscriptions: Map_String_BooleanScalar
+        $emailAddress: String!
+        $subscriptions: Map_String_BooleanScalar!
     ) {
         subscribe(email: $emailAddress, subscriptions: $subscriptions) {
             hash

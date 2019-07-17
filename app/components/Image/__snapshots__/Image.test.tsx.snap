@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Image snapshot should match 1`] = `
+<Image
+  image="http://test.com/image.png"
+  width={100}
+>
+  <InView
+    rootMargin="200px 0px"
+    threshold={0}
+    triggerOnce={true}
+  >
+    <Image__Img
+      image="http://test.com/image.png"
+      inView={false}
+      width={100}
+    >
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Image__Img-sc-1jpuda7-0",
+              "isStatic": false,
+              "lastClassName": "iqWPmg",
+              "rules": Array [
+                "height:",
+                [Function],
+                ";width:",
+                [Function],
+                ";",
+                [Function],
+                ";background:",
+                [Function],
+                ";background-size:cover;opacity:",
+                [Function],
+                ";transition:opacity ",
+                [Function],
+                "s;",
+                [Function],
+                ";",
+                [Function],
+                ";position:",
+                [Function],
+                ";",
+                [Function],
+                " ",
+                [Function],
+                ";",
+              ],
+            },
+            "displayName": "Image__Img",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "Image__Img-sc-1jpuda7-0",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={[Function]}
+        image="http://test.com/image.png"
+        inView={false}
+        width={100}
+      >
+        <div
+          className="Image__Img-sc-1jpuda7-0 iqWPmg"
+          width={100}
+        />
+      </StyledComponent>
+    </Image__Img>
+  </InView>
+</Image>
+`;

@@ -74,7 +74,7 @@ interface ITab {
 
 interface IProps {
     tabs: Array<ITab | null>
-    panels: Element[] | JSX.Element[]
+    panels: Array<Element | JSX.Element | false>
     padContent?: boolean
     centerTabs?: boolean
     bg?: string

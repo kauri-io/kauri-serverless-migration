@@ -10,15 +10,33 @@ import { ResourceTypeInput } from "./../../../__generated__/globalTypes";
 
 export interface UserOwner_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface UserOwner {
   __typename: "PublicUserDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
   username: string | null;
+  /**
+   * User avatar URI
+   */
   avatar: string | null;
   resourceIdentifier: UserOwner_resourceIdentifier | null;
 }

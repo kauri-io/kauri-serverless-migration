@@ -2,10 +2,12 @@ import React from 'react'
 import { Label } from '../Typography'
 import moment from 'moment'
 
+export type HoverDateStatus = 'PUBLISHED' | 'DRAFT'
+
 interface IDate {
     date: string
     hovered?: boolean
-    status: undefined | 'PUBLISHED' | 'DRAFT'
+    status?: HoverDateStatus
 }
 
 class Date extends React.Component<IDate, IDate> {

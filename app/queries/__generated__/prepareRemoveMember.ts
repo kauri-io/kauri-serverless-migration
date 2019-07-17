@@ -12,10 +12,14 @@ export interface prepareRemoveMember_prepareRemoveMember {
 }
 
 export interface prepareRemoveMember {
+  /**
+   * Remove a member from the community (prepare call, return a meta-tx hash to sign).
+   * This operation can only be performed by a community admin
+   */
   prepareRemoveMember: prepareRemoveMember_prepareRemoveMember | null;
 }
 
 export interface prepareRemoveMemberVariables {
-  id?: string | null;
-  account?: string | null;
+  id: string;
+  account: string;
 }

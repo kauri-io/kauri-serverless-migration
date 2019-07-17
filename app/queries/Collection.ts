@@ -2,7 +2,7 @@ import gql from 'graphql-tag'
 import { CommunityOwner, UserOwner, Article, Collection } from './Fragments'
 
 export const globalCollectionDetails = gql`
-    query getCollection($id: String) {
+    query getCollection($id: String!) {
         getCollection(id: $id) {
             id
             name
@@ -44,8 +44,8 @@ export const getCollectionForAnalytics = globalCollectionDetails
 
 export const createCollection = gql`
     mutation createCollection(
-        $name: String
-        $description: String
+        $name: String!
+        $description: String!
         $background: String
         $tags: [String]
         $owner: ResourceIdentifierInput
@@ -64,9 +64,9 @@ export const createCollection = gql`
 
 export const editCollection = gql`
     mutation editCollection(
-        $id: String
-        $name: String
-        $description: String
+        $id: String!
+        $name: String!
+        $description: String!
         $background: String
         $tags: [String]
     ) {
@@ -83,7 +83,7 @@ export const editCollection = gql`
 `
 
 export const composeCollection = gql`
-    mutation composeCollection($id: String, $sections: [SectionDTOInput]) {
+    mutation composeCollection($id: String!, $sections: [SectionDTOInput]!) {
         composeCollection(id: $id, sections: $sections) {
             hash
         }

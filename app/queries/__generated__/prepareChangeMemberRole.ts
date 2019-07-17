@@ -14,11 +14,15 @@ export interface prepareChangeMemberRole_prepareChangeMemberRole {
 }
 
 export interface prepareChangeMemberRole {
+  /**
+   * Change a member role within the community (prepare call, return a meta-tx hash to sign).
+   * This operation can only be performed by a community admin
+   */
   prepareChangeMemberRole: prepareChangeMemberRole_prepareChangeMemberRole | null;
 }
 
 export interface prepareChangeMemberRoleVariables {
-  id?: string | null;
-  account?: string | null;
-  role?: CommunityPermissionInput | null;
+  id: string;
+  account: string;
+  role: CommunityPermissionInput;
 }

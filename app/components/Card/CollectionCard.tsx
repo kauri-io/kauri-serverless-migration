@@ -598,6 +598,7 @@ const CollectionCard: React.FunctionComponent<IProps> = ({
 
     return (
         <BaseCard
+            key={String(id)}
             imageURL={String(imageURL)}
             cardWidth={calculateCardWidth({ cardWidth, imageURL })}
             cardHeight={calculateCardHeight({

@@ -10,15 +10,22 @@ import { InvitationInput } from "./../../__generated__/globalTypes";
 
 export interface sendInvitation_sendInvitation {
   __typename: "MutationResponse";
+  /**
+   * hash associated to the mutation/command sent. Should be used to subscribe to the event
+   */
   hash: string | null;
 }
 
 export interface sendInvitation {
+  /**
+   * Send an invitation to join te community (execute call).
+   * This operation can only be performed by a community admin
+   */
   sendInvitation: sendInvitation_sendInvitation | null;
 }
 
 export interface sendInvitationVariables {
-  signature?: string | null;
-  id?: string | null;
-  invitation?: InvitationInput | null;
+  signature: string;
+  id: string;
+  invitation: InvitationInput;
 }

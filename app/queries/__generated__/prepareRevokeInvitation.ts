@@ -12,10 +12,14 @@ export interface prepareRevokeInvitation_prepareRevokeInvitation {
 }
 
 export interface prepareRevokeInvitation {
+  /**
+   * Revoke a pending invitation (prepare call, return a meta-tx hash to sign).
+   * This operation can only be performed by a community admin
+   */
   prepareRevokeInvitation: prepareRevokeInvitation_prepareRevokeInvitation | null;
 }
 
 export interface prepareRevokeInvitationVariables {
-  id?: string | null;
-  invitationId?: string | null;
+  id: string;
+  invitationId: string;
 }

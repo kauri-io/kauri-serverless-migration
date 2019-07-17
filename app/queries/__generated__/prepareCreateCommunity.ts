@@ -15,11 +15,15 @@ export interface prepareCreateCommunity_prepareCreateCommunity {
 }
 
 export interface prepareCreateCommunity {
+  /**
+   * Create a community (prepare call, return a meta-tx hash to sign).
+   * This operation can only be performed by a logged user
+   */
   prepareCreateCommunity: prepareCreateCommunity_prepareCreateCommunity | null;
 }
 
 export interface prepareCreateCommunityVariables {
-  name?: string | null;
+  name: string;
   description?: string | null;
   avatar?: string | null;
   website?: string | null;

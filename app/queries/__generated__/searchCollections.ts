@@ -9,34 +9,67 @@ import { CollectionFilterInput, ResourceTypeInput } from "./../../__generated__/
 // ====================================================
 
 export interface searchCollections_searchCollections_content_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CommentDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "TemplateDTO" | "CollectionDTO" | "SearchResultDTO" | "UserDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "CollectionDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchCollections_searchCollections_content_owner_PublicUserDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface searchCollections_searchCollections_content_owner_PublicUserDTO {
   __typename: "PublicUserDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
   username: string | null;
+  /**
+   * User avatar URI
+   */
   avatar: string | null;
   resourceIdentifier: searchCollections_searchCollections_content_owner_PublicUserDTO_resourceIdentifier | null;
 }
 
 export interface searchCollections_searchCollections_content_owner_CommunityDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface searchCollections_searchCollections_content_owner_CommunityDTO {
   __typename: "CommunityDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
   avatar: string | null;
   resourceIdentifier: searchCollections_searchCollections_content_owner_CommunityDTO_resourceIdentifier | null;
 }
@@ -45,56 +78,120 @@ export type searchCollections_searchCollections_content_owner = searchCollection
 
 export interface searchCollections_searchCollections_content_sections_resourcesId {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
-export interface searchCollections_searchCollections_content_sections_resources_CommunityDTO {
-  __typename: "CommunityDTO" | "PublicUserDTO" | "CommentDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "TemplateDTO" | "CollectionDTO" | "SearchResultDTO" | "UserDTO" | "CuratedListDTO";
+export interface searchCollections_searchCollections_content_sections_resources_PublicUserDTO {
+  __typename: "PublicUserDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "CollectionDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchCollections_searchCollections_content_sections_resources_ArticleDTO {
   __typename: "ArticleDTO";
-  id: string | null;
-  version: number | null;
+  /**
+   * Article ID
+   */
+  id: string;
+  /**
+   * Article Version
+   */
+  version: number;
 }
 
-export type searchCollections_searchCollections_content_sections_resources = searchCollections_searchCollections_content_sections_resources_CommunityDTO | searchCollections_searchCollections_content_sections_resources_ArticleDTO;
+export type searchCollections_searchCollections_content_sections_resources = searchCollections_searchCollections_content_sections_resources_PublicUserDTO | searchCollections_searchCollections_content_sections_resources_ArticleDTO;
 
 export interface searchCollections_searchCollections_content_sections {
   __typename: "SectionDTO";
+  /**
+   * Section ID
+   */
   id: string | null;
+  /**
+   * Section name
+   */
   name: string | null;
+  /**
+   * Section descriptions
+   */
   description: string | null;
+  /**
+   * List of resource identifiers
+   */
   resourcesId: (searchCollections_searchCollections_content_sections_resourcesId | null)[] | null;
+  /**
+   * load the resources within this section
+   */
   resources: (searchCollections_searchCollections_content_sections_resources | null)[] | null;
 }
 
 export interface searchCollections_searchCollections_content_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  type: ResourceTypeInput | null;
-  id: string | null;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
 }
 
 export interface searchCollections_searchCollections_content {
   __typename: "CollectionDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * Collection ID
+   */
+  id: string;
+  /**
+   * Collection name
+   */
+  name: string;
+  /**
+   * Collection description
+   */
   description: string | null;
+  /**
+   * Tags
+   */
   tags: (string | null)[] | null;
+  /**
+   *  Background image
+   */
   background: string | null;
-  dateUpdated: any | null;
+  /**
+   * Last date updated
+   */
+  dateUpdated: any;
+  /**
+   * load the collection owner (user or community resource type)
+   */
   owner: searchCollections_searchCollections_content_owner | null;
+  /**
+   * Sections of the collections
+   */
   sections: (searchCollections_searchCollections_content_sections | null)[] | null;
   resourceIdentifier: searchCollections_searchCollections_content_resourceIdentifier | null;
 }
 
 export interface searchCollections_searchCollections {
   __typename: "ResponsePage_CollectionDTO";
-  content: (searchCollections_searchCollections_content | null)[] | null;
+  /**
+   * Returns the page content.
+   */
+  content: (searchCollections_searchCollections_content | null)[];
 }
 
 export interface searchCollections {
+  /**
+   * Search collections with pagination, sorting and filters.
+   * This operation can be performed anonymously
+   */
   searchCollections: searchCollections_searchCollections | null;
 }
 

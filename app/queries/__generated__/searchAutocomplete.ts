@@ -10,12 +10,25 @@ import { SearchFilterInput } from "./../../__generated__/globalTypes";
 
 export interface searchAutocomplete_searchAutocomplete {
   __typename: "ResponseBreakdownPage_SearchResultDTO";
+  /**
+   * Total amount of elements.
+   */
   totalElements: any;
+  /**
+   * Number of total pages.
+   */
   totalPages: number;
+  /**
+   * Total amount of elements per type.
+   */
   totalElementsBreakdown: any | null;
 }
 
 export interface searchAutocomplete {
+  /**
+   * Perform a parametrized global search query with autocomplete, pagination, sorting and filtering
+   * This operation can be performed anonymously
+   */
   searchAutocomplete: searchAutocomplete_searchAutocomplete | null;
 }
 

@@ -1,38 +1,18 @@
 import { Epic, ofType } from 'redux-observable'
-import gql from 'graphql-tag'
-import { IReduxState, IDependencies } from '../../lib/Module'
+import { IDependencies, IReduxState } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
-import {
-    publishArticle,
-    publishArticleVariables,
-} from './__generated__/publishArticle'
 import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
 import analytics from '../../lib/analytics'
 import { merge, of, from } from 'rxjs'
 import { switchMap, mergeMap, tap } from 'rxjs/operators'
 import path from 'ramda/es/path'
 import { ICommunity } from '../PublicProfile/Manage/MyCommunities'
-
-const publishArticleMutation = gql`
-    mutation publishArticle(
-        $id: String
-        $version: Int
-        $owner: ResourceIdentifierInput
-        $signature: String
-        $updateComment: String
-    ) {
-        publishArticle(
-            id: $id
-            version: $version
-            owner: $owner
-            signature: $signature
-            updateComment: $updateComment
-        ) {
-            hash
-        }
-    }
-`
+import { publishArticleMutation } from '../../queries/Article'
+import {
+    publishArticle,
+    publishArticleVariables,
+} from './__generated__/publishArticle'
 
 interface IAction {
     type: string

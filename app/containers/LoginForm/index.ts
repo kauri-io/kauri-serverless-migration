@@ -1,6 +1,10 @@
 import { compose } from 'recompose'
 import { connect } from 'react-redux'
-import { registerAction, IRegisterAction } from './Module'
+import {
+    registerAction,
+    IRegisterAction,
+    IRegisterActionPayload,
+} from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { withFormik } from 'formik'
 import View from './View'
@@ -12,7 +16,8 @@ export type FormState = {
 const mapStateToProps = () => ({})
 
 interface IProps {
-    registerAction: IRegisterAction
+    registerAction: (payload: IRegisterActionPayload) => IRegisterAction
+    callback?: any
 }
 
 interface IHandleSumit {

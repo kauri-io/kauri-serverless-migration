@@ -10,48 +10,90 @@ import { SearchFilterInput, ResourceTypeInput, ArticleStatusInput } from "./../.
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommentDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "TemplateDTO" | "SearchResultDTO" | "UserDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
-  sum: number | null;
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CommentDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "TemplateDTO" | "CollectionDTO" | "SearchResultDTO" | "UserDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "CollectionDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_owner_PublicUserDTO {
   __typename: "PublicUserDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
   username: string | null;
+  /**
+   * User avatar URI
+   */
   avatar: string | null;
   resourceIdentifier: searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier | null;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_owner_CommunityDTO {
   __typename: "CommunityDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
   avatar: string | null;
   resourceIdentifier: searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier | null;
 }
@@ -60,51 +102,126 @@ export type searchResultsAutocomplete_searchAutocomplete_content_resource_Articl
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO {
   __typename: "ArticleDTO";
-  id: string | null;
-  version: number | null;
-  title: string | null;
+  /**
+   * Article ID
+   */
+  id: string;
+  /**
+   * Article Version
+   */
+  version: number;
+  /**
+   * Title of article
+   */
+  title: string;
+  /**
+   * Description of the article - First 500 characters of the plaintext content)
+   */
   description: string | null;
-  authorId: string | null;
-  dateCreated: any | null;
+  /**
+   * Author of the article (USER only)
+   */
+  authorId: string;
+  /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
+   * Date publication
+   */
   datePublished: any | null;
-  status: ArticleStatusInput | null;
+  /**
+   * Status of the article
+   */
+  status: ArticleStatusInput;
+  /**
+   * Set of optional attributes fields
+   */
   attributes: any | null;
-  contentHash: string | null;
+  /**
+   * IPFS Content hash
+   */
+  contentHash: string;
+  /**
+   * Checkpoint file (null if the article is not escalated on-chain)
+   */
   checkpoint: string | null;
+  /**
+   * Tags list
+   */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the article
+   */
   voteResult: searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_voteResult | null;
+  /**
+   * load the article owner (user or community resource type)
+   */
   owner: searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_owner | null;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CommentDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "TemplateDTO" | "CollectionDTO" | "SearchResultDTO" | "UserDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "CollectionDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO {
   __typename: "PublicUserDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
   username: string | null;
+  /**
+   * User avatar URI
+   */
   avatar: string | null;
   resourceIdentifier: searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier | null;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_CommunityDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_CommunityDTO {
   __typename: "CommunityDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
   avatar: string | null;
   resourceIdentifier: searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_CommunityDTO_resourceIdentifier | null;
 }
@@ -113,32 +230,86 @@ export type searchResultsAutocomplete_searchAutocomplete_content_resource_Collec
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  type: ResourceTypeInput | null;
-  id: string | null;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO {
   __typename: "CollectionDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * Collection ID
+   */
+  id: string;
+  /**
+   * Collection name
+   */
+  name: string;
+  /**
+   * Collection description
+   */
   description: string | null;
+  /**
+   * Tags
+   */
   tags: (string | null)[] | null;
+  /**
+   *  Background image
+   */
   background: string | null;
-  dateUpdated: any | null;
+  /**
+   * Last date updated
+   */
+  dateUpdated: any;
+  /**
+   * load the collection owner (user or community resource type)
+   */
   owner: searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner | null;
   resourceIdentifier: searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_resourceIdentifier | null;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO {
   __typename: "CommunityDTO";
-  id: string | null;
-  dateCreated: any | null;
-  dateUpdated: any | null;
-  creatorId: string | null;
-  name: string | null;
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community date created
+   */
+  dateCreated: any;
+  /**
+   * Community last date updated
+   */
+  dateUpdated: any;
+  /**
+   * Community ID
+   */
+  creatorId: string;
+  /**
+   * Community Name
+   */
+  name: string;
+  /**
+   * Community Description
+   */
   description: string | null;
+  /**
+   * Community Website
+   */
   website: string | null;
+  /**
+   * Community avatar image URI
+   */
   avatar: string | null;
+  /**
+   * Community social data (twitter, github, etc.)
+   */
   social: any | null;
 }
 
@@ -147,18 +318,37 @@ export type searchResultsAutocomplete_searchAutocomplete_content_resource = sear
 export interface searchResultsAutocomplete_searchAutocomplete_content {
   __typename: "SearchResultDTO";
   resourceIdentifier: searchResultsAutocomplete_searchAutocomplete_content_resourceIdentifier | null;
+  /**
+   * load the resource associated to this search match
+   */
   resource: searchResultsAutocomplete_searchAutocomplete_content_resource | null;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete {
   __typename: "ResponseBreakdownPage_SearchResultDTO";
+  /**
+   * Total amount of elements.
+   */
   totalElements: any;
+  /**
+   * Number of total pages.
+   */
   totalPages: number;
+  /**
+   * Total amount of elements per type.
+   */
   totalElementsBreakdown: any | null;
-  content: (searchResultsAutocomplete_searchAutocomplete_content | null)[] | null;
+  /**
+   * Returns the page content.
+   */
+  content: (searchResultsAutocomplete_searchAutocomplete_content | null)[];
 }
 
 export interface searchResultsAutocomplete {
+  /**
+   * Perform a parametrized global search query with autocomplete, pagination, sorting and filtering
+   * This operation can be performed anonymously
+   */
   searchAutocomplete: searchResultsAutocomplete_searchAutocomplete | null;
 }
 

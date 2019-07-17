@@ -10,41 +10,86 @@ import { ResourceTypeInput, ArticleStatusInput } from "./../../__generated__/glo
 
 export interface searchArticles_searchArticles_content_author {
   __typename: "PublicUserDTO";
-  id: string | null;
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
   name: string | null;
+  /**
+   * Username
+   */
   username: string | null;
+  /**
+   * User avatar URI
+   */
   avatar: string | null;
 }
 
 export interface searchArticles_searchArticles_content_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CommentDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "TemplateDTO" | "CollectionDTO" | "SearchResultDTO" | "UserDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "CollectionDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchArticles_searchArticles_content_owner_PublicUserDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface searchArticles_searchArticles_content_owner_PublicUserDTO {
   __typename: "PublicUserDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
   username: string | null;
+  /**
+   * User avatar URI
+   */
   avatar: string | null;
   resourceIdentifier: searchArticles_searchArticles_content_owner_PublicUserDTO_resourceIdentifier | null;
 }
 
 export interface searchArticles_searchArticles_content_owner_CommunityDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface searchArticles_searchArticles_content_owner_CommunityDTO {
   __typename: "CommunityDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
   avatar: string | null;
   resourceIdentifier: searchArticles_searchArticles_content_owner_CommunityDTO_resourceIdentifier | null;
 }
@@ -53,64 +98,158 @@ export type searchArticles_searchArticles_content_owner = searchArticles_searchA
 
 export interface searchArticles_searchArticles_content_voteResult {
   __typename: "VoteResultDTO";
-  sum: number | null;
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
 }
 
 export interface searchArticles_searchArticles_content_comments_content_author {
   __typename: "PublicUserDTO";
-  id: string | null;
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
   name: string | null;
 }
 
 export interface searchArticles_searchArticles_content_comments_content {
   __typename: "CommentDTO";
-  posted: any | null;
+  /**
+   * Date the comment was published
+   */
+  posted: any;
+  /**
+   * Comment author (full profile)
+   */
   author: searchArticles_searchArticles_content_comments_content_author | null;
-  body: string | null;
+  /**
+   * Comment
+   */
+  body: string;
 }
 
 export interface searchArticles_searchArticles_content_comments {
   __typename: "ResponsePage_CommentDTO";
-  content: (searchArticles_searchArticles_content_comments_content | null)[] | null;
+  /**
+   * Returns the page content.
+   */
+  content: (searchArticles_searchArticles_content_comments_content | null)[];
+  /**
+   * Number of total pages.
+   */
   totalPages: number;
+  /**
+   * Total amount of elements.
+   */
   totalElements: any;
 }
 
 export interface searchArticles_searchArticles_content_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  type: ResourceTypeInput | null;
-  id: string | null;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource version (article)
+   */
   version: number | null;
 }
 
 export interface searchArticles_searchArticles_content {
   __typename: "ArticleDTO";
-  id: string | null;
-  version: number | null;
-  title: string | null;
+  /**
+   * Article ID
+   */
+  id: string;
+  /**
+   * Article Version
+   */
+  version: number;
+  /**
+   * Title of article
+   */
+  title: string;
+  /**
+   * Description of the article - First 500 characters of the plaintext content)
+   */
   description: string | null;
+  /**
+   * Tags list
+   */
   tags: (string | null)[] | null;
-  dateCreated: any | null;
+  /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
+   * Date publication
+   */
   datePublished: any | null;
+  /**
+   * Article author (full profile)
+   */
   author: searchArticles_searchArticles_content_author | null;
+  /**
+   * load the article owner (user or community resource type)
+   */
   owner: searchArticles_searchArticles_content_owner | null;
-  status: ArticleStatusInput | null;
+  /**
+   * Status of the article
+   */
+  status: ArticleStatusInput;
+  /**
+   * Set of optional attributes fields
+   */
   attributes: any | null;
-  contentHash: string | null;
+  /**
+   * IPFS Content hash
+   */
+  contentHash: string;
+  /**
+   * Checkpoint file (null if the article is not escalated on-chain)
+   */
   checkpoint: string | null;
+  /**
+   * Get vote result for the article
+   */
   voteResult: searchArticles_searchArticles_content_voteResult | null;
+  /**
+   * Get a paginated list of comments for this article
+   */
   comments: searchArticles_searchArticles_content_comments | null;
   resourceIdentifier: searchArticles_searchArticles_content_resourceIdentifier | null;
 }
 
 export interface searchArticles_searchArticles {
   __typename: "ResponsePage_ArticleDTO";
+  /**
+   * Total amount of elements.
+   */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
   isLast: boolean;
-  content: (searchArticles_searchArticles_content | null)[] | null;
+  /**
+   * Returns the page content.
+   */
+  content: (searchArticles_searchArticles_content | null)[];
 }
 
 export interface searchArticles {
+  /**
+   * Search articles with pagination, sorting and filters.
+   * This operation can be performed anonymously
+   */
   searchArticles: searchArticles_searchArticles | null;
 }
 

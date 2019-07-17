@@ -10,71 +10,182 @@ import { ResourceIdentifierInput, SearchFilterInput, ResourceTypeInput, ArticleS
 
 export interface relatedArticles_searchMoreLikeThis_content_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommentDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "TemplateDTO" | "SearchResultDTO" | "UserDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_author {
   __typename: "PublicUserDTO";
+  /**
+   * User full name
+   */
   name: string | null;
+  /**
+   * Username
+   */
   username: string | null;
-  id: string | null;
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User avatar URI
+   */
   avatar: string | null;
 }
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
-  sum: number | null;
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
 }
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO {
   __typename: "ArticleDTO";
-  id: string | null;
-  version: number | null;
-  title: string | null;
+  /**
+   * Article ID
+   */
+  id: string;
+  /**
+   * Article Version
+   */
+  version: number;
+  /**
+   * Title of article
+   */
+  title: string;
+  /**
+   * Description of the article - First 500 characters of the plaintext content)
+   */
   description: string | null;
+  /**
+   * Article author (full profile)
+   */
   author: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_author | null;
-  dateCreated: any | null;
+  /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
+   * Date publication
+   */
   datePublished: any | null;
-  status: ArticleStatusInput | null;
+  /**
+   * Status of the article
+   */
+  status: ArticleStatusInput;
+  /**
+   * Set of optional attributes fields
+   */
   attributes: any | null;
-  contentHash: string | null;
+  /**
+   * IPFS Content hash
+   */
+  contentHash: string;
+  /**
+   * Checkpoint file (null if the article is not escalated on-chain)
+   */
   checkpoint: string | null;
+  /**
+   * Tags list
+   */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the article
+   */
   voteResult: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_voteResult | null;
 }
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  type: ResourceTypeInput | null;
-  id: string | null;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
 }
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO {
   __typename: "CollectionDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * Collection ID
+   */
+  id: string;
+  /**
+   * Collection name
+   */
+  name: string;
+  /**
+   * Collection description
+   */
   description: string | null;
+  /**
+   * Tags
+   */
   tags: (string | null)[] | null;
+  /**
+   *  Background image
+   */
   background: string | null;
-  dateUpdated: any | null;
+  /**
+   * Last date updated
+   */
+  dateUpdated: any;
   resourceIdentifier: relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_resourceIdentifier | null;
 }
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_CommunityDTO {
   __typename: "CommunityDTO";
-  id: string | null;
-  dateCreated: any | null;
-  dateUpdated: any | null;
-  creatorId: string | null;
-  name: string | null;
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community date created
+   */
+  dateCreated: any;
+  /**
+   * Community last date updated
+   */
+  dateUpdated: any;
+  /**
+   * Community ID
+   */
+  creatorId: string;
+  /**
+   * Community Name
+   */
+  name: string;
+  /**
+   * Community Description
+   */
   description: string | null;
+  /**
+   * Community Website
+   */
   website: string | null;
+  /**
+   * Community avatar image URI
+   */
   avatar: string | null;
+  /**
+   * Community social data (twitter, github, etc.)
+   */
   social: any | null;
 }
 
@@ -83,24 +194,43 @@ export type relatedArticles_searchMoreLikeThis_content_resource = relatedArticle
 export interface relatedArticles_searchMoreLikeThis_content {
   __typename: "SearchResultDTO";
   resourceIdentifier: relatedArticles_searchMoreLikeThis_content_resourceIdentifier | null;
+  /**
+   * load the resource associated to this search match
+   */
   resource: relatedArticles_searchMoreLikeThis_content_resource | null;
 }
 
 export interface relatedArticles_searchMoreLikeThis {
   __typename: "ResponseBreakdownPage_SearchResultDTO";
+  /**
+   * Total amount of elements.
+   */
   totalElements: any;
+  /**
+   * Total amount of elements per type.
+   */
   totalElementsBreakdown: any | null;
+  /**
+   * Number of total pages.
+   */
   totalPages: number;
-  content: (relatedArticles_searchMoreLikeThis_content | null)[] | null;
+  /**
+   * Returns the page content.
+   */
+  content: (relatedArticles_searchMoreLikeThis_content | null)[];
 }
 
 export interface relatedArticles {
+  /**
+   * Perform a parametrized global search query to find related resources with pagination, sorting and filtering
+   * This operation can be performed anonymously
+   */
   searchMoreLikeThis: relatedArticles_searchMoreLikeThis | null;
 }
 
 export interface relatedArticlesVariables {
   page?: number | null;
   size?: number | null;
-  resourceId?: ResourceIdentifierInput | null;
+  resourceId: ResourceIdentifierInput;
   filter?: SearchFilterInput | null;
 }

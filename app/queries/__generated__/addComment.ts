@@ -10,14 +10,21 @@ import { ResourceIdentifierInput } from "./../../__generated__/globalTypes";
 
 export interface addComment_addComment {
   __typename: "MutationResponse";
+  /**
+   * hash associated to the mutation/command sent. Should be used to subscribe to the event
+   */
   hash: string | null;
 }
 
 export interface addComment {
+  /**
+   * Add a comment on a resource
+   * This operation can only be performed by a logged user.
+   */
   addComment: addComment_addComment | null;
 }
 
 export interface addCommentVariables {
-  parent?: ResourceIdentifierInput | null;
-  body?: string | null;
+  parent: ResourceIdentifierInput;
+  body: string;
 }

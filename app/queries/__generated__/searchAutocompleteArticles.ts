@@ -10,12 +10,18 @@ import { SearchFilterInput, SearchParameterInput, ResourceTypeInput, ArticleStat
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
-export interface searchAutocompleteArticles_searchAutocomplete_content_resource_CommunityDTO {
-  __typename: "CommunityDTO" | "PublicUserDTO" | "CommentDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "TemplateDTO" | "CollectionDTO" | "SearchResultDTO" | "UserDTO" | "CuratedListDTO";
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_PublicUserDTO {
+  __typename: "PublicUserDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "CollectionDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_associatedNfts {
@@ -29,56 +35,122 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource version (article)
+   */
   version: number | null;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
-  sum: number | null;
-  count: any | null;
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
   hasVoted: boolean | null;
-  quantity: any | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_author {
   __typename: "PublicUserDTO";
-  id: string | null;
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
   name: string | null;
+  /**
+   * Username
+   */
   username: string | null;
+  /**
+   * User avatar URI
+   */
   avatar: string | null;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CommentDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "TemplateDTO" | "CollectionDTO" | "SearchResultDTO" | "UserDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "CollectionDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_owner_PublicUserDTO {
   __typename: "PublicUserDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
   username: string | null;
+  /**
+   * User avatar URI
+   */
   avatar: string | null;
   resourceIdentifier: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier | null;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
-  id: string | null;
-  type: ResourceTypeInput | null;
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_owner_CommunityDTO {
   __typename: "CommunityDTO";
-  id: string | null;
-  name: string | null;
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
   avatar: string | null;
   resourceIdentifier: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier | null;
 }
@@ -87,67 +159,173 @@ export type searchAutocompleteArticles_searchAutocomplete_content_resource_Artic
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_comments_content_author {
   __typename: "PublicUserDTO";
-  id: string | null;
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
   name: string | null;
+  /**
+   * Username
+   */
   username: string | null;
+  /**
+   * User avatar URI
+   */
   avatar: string | null;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_comments_content {
   __typename: "CommentDTO";
+  /**
+   * Comment author (full profile)
+   */
   author: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_comments_content_author | null;
-  posted: any | null;
-  body: string | null;
+  /**
+   * Date the comment was published
+   */
+  posted: any;
+  /**
+   * Comment
+   */
+  body: string;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_comments {
   __typename: "ResponsePage_CommentDTO";
-  content: (searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_comments_content | null)[] | null;
+  /**
+   * Returns the page content.
+   */
+  content: (searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_comments_content | null)[];
+  /**
+   * Number of total pages.
+   */
   totalPages: number;
+  /**
+   * Total amount of elements.
+   */
   totalElements: any;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO {
   __typename: "ArticleDTO";
+  /**
+   * NFTs associated with this article
+   */
   associatedNfts: (searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_associatedNfts | null)[] | null;
   resourceIdentifier: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_resourceIdentifier | null;
+  /**
+   * Description of the article - First 500 characters of the plaintext content)
+   */
   description: string | null;
-  id: string | null;
-  version: number | null;
-  title: string | null;
-  content: string | null;
-  authorId: string | null;
-  dateCreated: any | null;
+  /**
+   * Article ID
+   */
+  id: string;
+  /**
+   * Article Version
+   */
+  version: number;
+  /**
+   * Title of article
+   */
+  title: string;
+  /**
+   * Content of the article (most likely to be plain markdown text)
+   */
+  content: string;
+  /**
+   * Author of the article (USER only)
+   */
+  authorId: string;
+  /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
+   * Date publication
+   */
   datePublished: any | null;
-  status: ArticleStatusInput | null;
+  /**
+   * Status of the article
+   */
+  status: ArticleStatusInput;
+  /**
+   * Set of optional attributes fields
+   */
   attributes: any | null;
-  contentHash: string | null;
+  /**
+   * IPFS Content hash
+   */
+  contentHash: string;
+  /**
+   * Checkpoint file (null if the article is not escalated on-chain)
+   */
   checkpoint: string | null;
+  /**
+   * Tags list
+   */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the article
+   */
   voteResult: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_voteResult | null;
+  /**
+   * Article author (full profile)
+   */
   author: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_author | null;
+  /**
+   * load the article owner (user or community resource type)
+   */
   owner: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_owner | null;
+  /**
+   * Get a paginated list of comments for this article
+   */
   comments: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_comments | null;
+  /**
+   * The comment describing this version update of the article
+   */
   updateComment: string | null;
 }
 
-export type searchAutocompleteArticles_searchAutocomplete_content_resource = searchAutocompleteArticles_searchAutocomplete_content_resource_CommunityDTO | searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO;
+export type searchAutocompleteArticles_searchAutocomplete_content_resource = searchAutocompleteArticles_searchAutocomplete_content_resource_PublicUserDTO | searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO;
 
 export interface searchAutocompleteArticles_searchAutocomplete_content {
   __typename: "SearchResultDTO";
   resourceIdentifier: searchAutocompleteArticles_searchAutocomplete_content_resourceIdentifier | null;
+  /**
+   * load the resource associated to this search match
+   */
   resource: searchAutocompleteArticles_searchAutocomplete_content_resource | null;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete {
   __typename: "ResponseBreakdownPage_SearchResultDTO";
+  /**
+   * Total amount of elements.
+   */
   totalElements: any;
+  /**
+   * Number of total pages.
+   */
   totalPages: number;
+  /**
+   * Returns true if this is the last page.
+   */
   isLast: boolean;
-  content: (searchAutocompleteArticles_searchAutocomplete_content | null)[] | null;
+  /**
+   * Returns the page content.
+   */
+  content: (searchAutocompleteArticles_searchAutocomplete_content | null)[];
 }
 
 export interface searchAutocompleteArticles {
+  /**
+   * Perform a parametrized global search query with autocomplete, pagination, sorting and filtering
+   * This operation can be performed anonymously
+   */
   searchAutocomplete: searchAutocompleteArticles_searchAutocomplete | null;
 }
 

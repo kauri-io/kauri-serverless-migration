@@ -125,6 +125,7 @@ const LabelContainer = styled.div`
 `
 
 interface IProps {
+    id: string
     articleCount: string
     cardHeight: number
     collectionCount: string
@@ -147,10 +148,15 @@ const CommunityCard: React.SFC<IProps> = props => {
         description,
         name,
         imageURL,
+        id,
     } = props
 
     return (
-        <BaseCard cardWidth={DEFAULT_CARD_WIDTH} cardHeight={cardHeight}>
+        <BaseCard
+            key={String(id)}
+            cardWidth={DEFAULT_CARD_WIDTH}
+            cardHeight={cardHeight}
+        >
             <Container cardHeight={cardHeight}>
                 <LabelContainer>
                     <Label textAlign="center">{'Community'}</Label>

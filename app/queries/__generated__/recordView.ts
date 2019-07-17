@@ -10,13 +10,20 @@ import { ResourceIdentifierInput } from "./../../__generated__/globalTypes";
 
 export interface recordView_recordView {
   __typename: "MutationResponse";
+  /**
+   * hash associated to the mutation/command sent. Should be used to subscribe to the event
+   */
   hash: string | null;
 }
 
 export interface recordView {
+  /**
+   * Record a view against a resource. A buffer prevents to record more than one view per IP and per hour and per resource.
+   * This operation can be performed anonymously.
+   */
   recordView: recordView_recordView | null;
 }
 
 export interface recordViewVariables {
-  resourceId?: ResourceIdentifierInput | null;
+  resourceId: ResourceIdentifierInput;
 }

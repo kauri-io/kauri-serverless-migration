@@ -12,10 +12,14 @@ export interface prepareAcceptInvitation_prepareAcceptInvitation {
 }
 
 export interface prepareAcceptInvitation {
+  /**
+   * Accept an invitation (prepare call, return a meta-tx hash to sign).
+   * This operation can only be performed by a logged user in possession of the invitation secret
+   */
   prepareAcceptInvitation: prepareAcceptInvitation_prepareAcceptInvitation | null;
 }
 
 export interface prepareAcceptInvitationVariables {
-  id?: string | null;
-  secret?: string | null;
+  id: string;
+  secret: string;
 }

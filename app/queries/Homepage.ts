@@ -32,7 +32,7 @@ export const homepageContentQuery = gql`
             }
             author {
                 id
-                name
+                publicUserName: name
                 username
                 avatar
             }
@@ -55,9 +55,9 @@ export const homepageContentQuery = gql`
             creator {
                 id
                 username
-                name
+                publicUserName: name
             }
-            name
+            communityName: name
             description
             website
             avatar
@@ -96,7 +96,7 @@ export const homepageContentQuery = gql`
             type
             properties
             content {
-                name
+                propertyName: name
                 description
                 image
                 link
@@ -115,7 +115,7 @@ export const homepageContentQuery = gql`
             type
             properties
             content {
-                name
+                actionName: name
                 link
             }
         }
@@ -123,7 +123,7 @@ export const homepageContentQuery = gql`
             type
             properties
             content {
-                name
+                tagName: name
             }
         }
         ... on TopContributors {
