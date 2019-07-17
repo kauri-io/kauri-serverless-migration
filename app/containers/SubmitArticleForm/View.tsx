@@ -71,7 +71,9 @@ class SubmitArticleForm extends React.Component<IProps> {
             closeModalAction,
         } = this.props
         if (!userId) {
-            routeChangeAction(`/login?r=${window.location.pathname}&redirected=true`)
+            routeChangeAction(
+                `/login?r=${window.location.pathname}&redirected=true`
+            )
         } else {
             analytics.track('Write Article Start', {
                 category: 'generic',

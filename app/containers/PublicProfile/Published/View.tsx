@@ -16,7 +16,7 @@ import {
     IOpenModalPayload,
 } from '../../../components/Modal/Module'
 
-interface IArticlesProps {
+export interface IArticlesProps {
     data: searchPersonalArticles
     type: string
     routeChangeAction: (route: string) => void
@@ -36,14 +36,14 @@ const DescriptionContainer = styled.div`
     flex-direction: column;
 `
 
-const Articles = ({
+const Articles: React.FC<IArticlesProps> = ({
     data,
     type,
     routeChangeAction,
     isLoggedIn,
     isOwner,
     openModalAction,
-}: IArticlesProps) => {
+}) => {
     const articles = data.searchArticles && data.searchArticles.content
     return articles.length > 0 ? (
         <Fragment>
@@ -154,4 +154,4 @@ const Articles = ({
     )
 }
 
-export default withPagination(Articles, 'searchArticles')
+export default withPagination<IArticlesProps>(Articles, 'searchArticles')

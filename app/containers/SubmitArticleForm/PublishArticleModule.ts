@@ -128,7 +128,7 @@ export const publishArticleEpic: Epic<any, any, IReduxState, IDependencies> = (
                             mutation: publishArticleMutation,
                             variables: {
                                 id,
-                                owner: articleOwner,
+                                owner: articleOwner as any,
                                 signature,
                                 updateComment,
                                 version,

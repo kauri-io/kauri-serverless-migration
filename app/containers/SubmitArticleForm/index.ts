@@ -13,7 +13,6 @@ import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { publishArticleAction } from './PublishArticleModule'
 import withLoading from '../../lib/with-loading'
 import View from './View'
-import { withRouter } from 'next/router'
 import {
     closeModalAction,
     openModalAction,
