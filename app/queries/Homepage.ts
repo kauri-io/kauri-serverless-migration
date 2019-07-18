@@ -32,7 +32,7 @@ export const homepageContentQuery = gql`
             }
             author {
                 id
-                publicUserName: name
+                publicUserName
                 username
                 avatar
             }
@@ -55,9 +55,9 @@ export const homepageContentQuery = gql`
             creator {
                 id
                 username
-                publicUserName: name
+                publicUserName
             }
-            communityName: name
+            communityName
             description
             website
             avatar

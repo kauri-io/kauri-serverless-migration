@@ -134,7 +134,7 @@ class ResourceRows extends React.Component<
                                                         typedOwner.__typename ===
                                                         'PublicUserDTO'
                                                             ? typedOwner.username
-                                                            : typedOwner.name
+                                                            : typedOwner.communityName
                                                     }
                                                     userAvatar={
                                                         typedOwner &&
@@ -217,7 +217,7 @@ class ResourceRows extends React.Component<
                                                         typedOwner.__typename ===
                                                         'PublicUserDTO'
                                                             ? typedOwner.username
-                                                            : typedOwner.name
+                                                            : typedOwner.communityName
                                                     }
                                                     ownerType={
                                                         typedOwner.resourceIdentifier

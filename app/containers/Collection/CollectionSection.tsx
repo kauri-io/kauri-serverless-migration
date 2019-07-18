@@ -45,7 +45,7 @@ const StyledDescription = styled(PageDescription)`
 
 interface IProps {
     resources: [Article | Collection]
-    currentUser: string | null
+    currentUser: string | undefined
     description: string | null
     isLoggedIn: boolean
     isOwnedByCurrentUser: boolean
@@ -85,14 +85,9 @@ const CollectionSection: React.SFC<IProps> = props => {
                                     title={String(article.title)}
                                     username={
                                         (owner &&
-                                        owner.resourceIdentifier &&
-                                        owner.resourceIdentifier.type &&
-                                        owner.resourceIdentifier.type.toLowerCase() ===
-                                            'community'
-                                            ? owner && owner.name
-                                            : owner &&
-                                              (owner as Article_owner_PublicUserDTO)
-                                                  .username) || null
+                                        owner.__typename === 'CommunityDTO'
+                                            ? owner && owner.communityName
+                                            : owner.username) || null
                                     }
                                     userId={
                                         owner
@@ -202,7 +197,8 @@ const CollectionSection: React.SFC<IProps> = props => {
                                               collection.owner.id ||
                                               'not_found',
                                           type: 'COMMUNITY',
-                                          username: collection.owner.name,
+                                          username:
+                                              collection.owner.communityName,
                                       }
                                     : {
                                           avatar: '',

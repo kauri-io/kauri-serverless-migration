@@ -139,7 +139,9 @@ const Articles: React.FC<IArticlesProps> = ({
                     )
                 }
                 title="No Articles Published"
-                secondaryButton={isOwner ? <MediumImportButton border /> : null}
+                secondaryButton={
+                    isOwner ? <MediumImportButton border /> : <div></div>
+                }
                 primaryButton={
                     isOwner ? (
                         <PrimaryButton
@@ -147,11 +149,13 @@ const Articles: React.FC<IArticlesProps> = ({
                         >
                             Create Article
                         </PrimaryButton>
-                    ) : null
+                    ) : (
+                        <div></div>
+                    )
                 }
             />
         </Centered>
     )
 }
 
-export default withPagination<IArticlesProps>(Articles, 'searchArticles')
+export default withPagination(Articles, 'searchArticles')

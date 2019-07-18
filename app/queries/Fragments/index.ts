@@ -3,14 +3,14 @@ import gql from 'graphql-tag'
 export const User = gql`
     fragment User on PublicUserDTO {
         id
-        publicUserName: name
+        publicUserName
     }
 `
 
 export const UserOwner = gql`
     fragment UserOwner on PublicUserDTO {
         id
-        publicUserName: name
+        publicUserName
         username
         avatar
         resourceIdentifier {
@@ -23,7 +23,7 @@ export const UserOwner = gql`
 export const CommunityOwner = gql`
     fragment CommunityOwner on CommunityDTO {
         id
-        communityName: name
+        communityName
         avatar
         resourceIdentifier {
             id
