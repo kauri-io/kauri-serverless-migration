@@ -39,17 +39,12 @@ const Centered = styled.div`
     margin-left: 100px;
 `
 
-const Articles = ({
+const Articles: React.FC<IArticlesProps> = ({
     data,
-    type,
     routeChangeAction,
-    isLoggedIn,
-    closeModalAction,
-    deleteDraftArticleAction,
-    openModalAction,
-}: IArticlesProps) => {
+}) => {
     const articles = data.searchArticles && data.searchArticles.content
-    return articles && articles.length > 0 ? (
+    if (articles) { return articles && articles.length > 0 ? (
         <Fragment>
             <Masonry withPadding={false}>
                 {articles.map(
@@ -57,92 +52,13 @@ const Articles = ({
                         article && (
                             <ArticleCard
                                 key={`${article.id}-${article.version}`}
-                                tags={article.tags}
-                                changeRoute={routeChangeAction}
-                                date={article.dateCreated}
-                                title={article.title}
-                                description={article.description}
-                                userId={
-                                    type !== 'toBeApproved' && article.owner
-                                        ? article.owner.id
-                                        : article.author.id
-                                }
-                                username={
-                                    type !== 'toBeApproved' && article.owner
-                                        ? article.owner.username
-                                        : article.author.username
-                                }
-                                userAvatar={
-                                    type !== 'toBeApproved' && article.owner
-                                        ? article.owner.avatar
-                                        : article.author.avatar
-                                }
                                 id={article.id}
                                 version={article.version}
-                                imageURL={
-                                    article.attributes &&
-                                    article.attributes.background
-                                }
-                                nfts={article.associatedNfts}
-                                linkComponent={(childrenProps, route) => (
-                                    <Link
-                                        toSlug={
-                                            route &&
-                                            route.includes('article') &&
-                                            article.title
-                                        }
-                                        useAnchorTag
-                                        href={`/draft/${article.id}/${article.version}`}
-                                    >
-                                        {childrenProps}
-                                    </Link>
-                                )}
-                                status={'DRAFT'}
-                                isLoggedIn={isLoggedIn}
-                                hoverChildren={() => (
-                                    <PrimaryButton
-                                        onClick={() =>
-                                            openModalAction({
-                                                children: (
-                                                    <AlertView
-                                                        closeModalAction={() =>
-                                                            closeModalAction()
-                                                        }
-                                                        confirmButtonAction={() =>
-                                                            deleteDraftArticleAction(
-                                                                {
-                                                                    id: String(
-                                                                        article.id
-                                                                    ),
-                                                                    version: Number(
-                                                                        article.version
-                                                                    ),
-                                                                },
-                                                                closeModalAction
-                                                            )
-                                                        }
-                                                        content={
-                                                            <div>
-                                                                <BodyCard>
-                                                                    You won't be
-                                                                    able to
-                                                                    retrieve the
-                                                                    draft
-                                                                    article
-                                                                    after
-                                                                    deleting.
-                                                                </BodyCard>
-                                                            </div>
-                                                        }
-                                                        title={'Are you sure?'}
-                                                    />
-                                                ),
-                                            })
-                                        }
-                                    >
-                                        Delete draft
-                                    </PrimaryButton>
-                                )}
+                                datePublished={article.datePublished}
+                                title={article.title}
+                                description={article.description}
+                                author={article.author}
+                                attributes={article.attributes}
                             />
                         )
                 )}
@@ -166,7 +82,8 @@ const Articles = ({
                 }
             />
         </Centered>
-    )
+    ) }
+    return null
 }
 
 export default withPagination(Articles, 'searchArticles')
