@@ -45,6 +45,12 @@ export enum DirectionInput {
   DESC = "DESC",
 }
 
+export enum EventStatusInput {
+  ERROR = "ERROR",
+  NOTHINGTODO = "NOTHINGTODO",
+  SUCCESS = "SUCCESS",
+}
+
 export enum ResourceTypeInput {
   ARTICLE = "ARTICLE",
   COLLECTION = "COLLECTION",
@@ -74,87 +80,87 @@ export enum UserStatusInput {
 
 export interface ArticleFilterInput {
   authorIdEquals?: string | null;
-  statusIn?: (ArticleStatusInput | null)[] | null;
-  latestVersion?: boolean | null;
-  idEquals?: string | null;
-  ownerIdEquals?: string | null;
-  dateCreatedLessThan?: any | null;
+  checkpointEquals?: string | null;
   containsTag?: string | null;
   dateCreatedGreaterThan?: any | null;
-  checkpointEquals?: string | null;
-  versionGreaterThan?: number | null;
+  dateCreatedLessThan?: any | null;
   fullText?: string | null;
+  idEquals?: string | null;
+  latestVersion?: boolean | null;
+  ownerIdEquals?: string | null;
   ownerIdIn?: (string | null)[] | null;
+  statusIn?: (ArticleStatusInput | null)[] | null;
+  versionGreaterThan?: number | null;
   versionIn?: (number | null)[] | null;
 }
 
 export interface CollectionFilterInput {
-  nameContains?: string | null;
+  containingArticleId?: string | null;
+  dateCreatedGreaterThan?: any | null;
   dateCreatedLessThan?: any | null;
   dateUpdatedGreaterThan?: any | null;
-  dateCreatedGreaterThan?: any | null;
-  containingArticleId?: string | null;
-  fullText?: string | null;
   dateUpdatedLessThan?: any | null;
   descriptionContains?: string | null;
-  resourcesCountGreaterThan?: number | null;
+  fullText?: string | null;
+  nameContains?: string | null;
   ownerIdEquals?: string | null;
+  resourcesCountGreaterThan?: number | null;
 }
 
 export interface CommunityFilterInput {
-  fullText?: string | null;
-  nameContains?: string | null;
-  membersIncludes?: string | null;
-  dateUpdatedLessThan?: any | null;
-  nameContain?: string | null;
   dateCreatedGreaterThan?: any | null;
-  statusIn?: (CommunityStatusInput | null)[] | null;
   dateCreatedLessThan?: any | null;
   dateUpdatedGreaterThan?: any | null;
+  dateUpdatedLessThan?: any | null;
+  fullText?: string | null;
+  membersIncludes?: string | null;
+  nameContain?: string | null;
+  nameContains?: string | null;
+  statusIn?: (CommunityStatusInput | null)[] | null;
 }
 
 export interface CommunityResourceFilterInput {
-  statusEquals?: CommunityResourceStatusInput | null;
   resourceTypeEquals?: ResourceTypeInput | null;
+  statusEquals?: CommunityResourceStatusInput | null;
 }
 
 export interface InvitationInput {
+  email: string;
+  role: CommunityPermissionInput;
   secret?: string | null;
-  email?: string | null;
-  role?: CommunityPermissionInput | null;
 }
 
 export interface ResourceIdentifierInput {
+  id: string;
+  type: ResourceTypeInput;
   version?: number | null;
-  id?: string | null;
-  type?: ResourceTypeInput | null;
 }
 
 export interface SearchFilterInput {
-  types?: (ResourceTypeInput | null)[] | null;
   dateCreatedGreaterThan?: any | null;
-  dateUpdatedGreaterThan?: any | null;
-  mustNotIncludeUserId?: (string | null)[] | null;
-  dateUpdatedLessThan?: any | null;
-  mustNotContainTag?: (string | null)[] | null;
-  mustIncludeUserId?: (string | null)[] | null;
   dateCreatedLessThan?: any | null;
+  dateUpdatedGreaterThan?: any | null;
+  dateUpdatedLessThan?: any | null;
   mustContainTag?: (string | null)[] | null;
+  mustIncludeUserId?: (string | null)[] | null;
+  mustNotContainTag?: (string | null)[] | null;
+  mustNotIncludeUserId?: (string | null)[] | null;
   type?: ResourceTypeInput | null;
+  types?: (ResourceTypeInput | null)[] | null;
 }
 
 export interface SearchParameterInput {
   highlightEnable?: boolean | null;
   highlightPostTag?: string | null;
-  scoringMode?: ScoringModeInput | null;
   highlightPreTag?: string | null;
+  scoringMode?: ScoringModeInput | null;
 }
 
 export interface SectionDTOInput {
   description?: string | null;
-  resourcesId?: (ResourceIdentifierInput | null)[] | null;
   id?: string | null;
   name?: string | null;
+  resourcesId?: (ResourceIdentifierInput | null)[] | null;
 }
 
 //==============================================================
