@@ -1,10 +1,6 @@
 import { compose } from 'recompose'
 import { connect } from 'react-redux'
-import {
-    registerAction,
-    IRegisterAction,
-    IRegisterActionPayload,
-} from './Module'
+import { registerAction, IRegisterAction } from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { withFormik } from 'formik'
 import View from './View'
@@ -16,7 +12,7 @@ export type FormState = {
 const mapStateToProps = () => ({})
 
 interface IProps {
-    registerAction: (payload: IRegisterActionPayload) => IRegisterAction
+    registerAction: (callback?: any) => IRegisterAction
     callback?: any
 }
 
@@ -25,20 +21,19 @@ interface IHandleSumit {
     resetForm: any
 }
 
-export default compose(
+export default compose<any, IProps>(
     connect(
         mapStateToProps,
         { registerAction, showNotificationAction }
     ),
     withFormik({
-        mapPropsToValues: () => ({}),
         handleSubmit: async (
             values: FormState,
             { props, resetForm }: IHandleSumit
         ) => {
             console.log(props)
             console.log('Received values of form: ', values)
-            return props.registerAction({ ...values }, resetForm)
+            return props.registerAction(resetForm)
         },
     })
 )(View)

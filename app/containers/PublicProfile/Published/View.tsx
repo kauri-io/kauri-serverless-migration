@@ -64,17 +64,19 @@ const Articles: React.FC<IArticlesProps> = ({
                                 userId={
                                     type !== 'toBeApproved' && article.owner
                                         ? article.owner.id
-                                        : article.author.id
+                                        : article.author && article.author.id
                                 }
                                 username={
                                     type !== 'toBeApproved' && article.owner
                                         ? article.owner.username
-                                        : article.author.username
+                                        : article.author &&
+                                          article.author.username
                                 }
                                 userAvatar={
                                     type !== 'toBeApproved' && article.owner
                                         ? article.owner.avatar
-                                        : article.author.avatar
+                                        : article.author &&
+                                          article.author.avatar
                                 }
                                 isLoggedIn={isLoggedIn}
                                 hoverChildren={() => (

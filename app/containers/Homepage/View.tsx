@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { homepageContentQuery as query } from '../../queries/Homepage'
+import { homePageContentQuery as query } from '../../queries/Homepage'
 import {
-    homepageContent,
-    homepageContentVariables,
+    homePageContent,
+    homePageContentVariables,
 } from '../../queries/__generated__/homePageContent'
 import { Query } from 'react-apollo'
 import Loading from '../../components/Loading'
@@ -79,7 +79,7 @@ interface IProps {
 
 const HomePageComponent: React.FunctionComponent<IProps> = props => {
     return (
-        <Query<homepageContent, homepageContentVariables>
+        <Query<homePageContent, homePageContentVariables>
             query={query}
             variables={{}}
         >
