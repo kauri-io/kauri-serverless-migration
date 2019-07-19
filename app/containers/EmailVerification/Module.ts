@@ -17,6 +17,7 @@ import {
 import { from, of, forkJoin } from 'rxjs'
 import { filter, mergeMap, tap, switchMap, map } from 'rxjs/operators'
 import { regenerateEmailVerificationCode } from '../../queries/__generated__/regenerateEmailVerificationCode'
+import { path } from 'ramda'
 
 interface IVerifyEmailAction {
     callback: any
@@ -102,7 +103,7 @@ export const emailSubscribeEpic = (
                 })
             )
         ),
-        mergeMap(({ data: { subscribe: { hash } } }) =>
+        mergeMap(({ data }) =>
             from(
                 new Promise<{
                     data: { output: IEmailSubscribeOutput }
@@ -116,7 +117,7 @@ export const emailSubscribeEpic = (
                     )
                         .subscribe({
                             query: getEvent,
-                            variables: { hash },
+                            variables: path(['subscribe', 'hash'], data),
                         })
                         .subscribe({
                             error: (err: Error) => reject(err),
@@ -160,7 +161,7 @@ export const verifyEmailEpic = (
                     },
                 })
             ).pipe(
-                mergeMap(({ data: { verifyEmail: { hash } } }) =>
+                mergeMap(({ data }) =>
                     from(
                         new Promise<{ data: { output: IVerifyEmailOutput } }>(
                             (resolve, reject) => {
@@ -174,7 +175,10 @@ export const verifyEmailEpic = (
                                 )
                                     .subscribe({
                                         query: getEvent,
-                                        variables: { hash },
+                                        variables: path(
+                                            ['verifyEmail', 'hash'],
+                                            data
+                                        ),
                                     })
                                     .subscribe({
                                         error: (err: Error) => reject(err),

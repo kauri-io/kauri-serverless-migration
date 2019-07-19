@@ -97,7 +97,7 @@ interface ICurateCommunityResourcesAction {
     payload: curateCommunityResourcesVariables
 }
 
-interface IRemoveMemberAction {
+export interface IRemoveMemberAction {
     type: 'REMOVE_MEMBER'
     payload: prepareRemoveMemberVariables
 }

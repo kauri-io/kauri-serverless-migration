@@ -12,7 +12,7 @@ import { publishArticleMutation } from '../../queries/Article'
 import {
     publishArticle,
     publishArticleVariables,
-} from './__generated__/publishArticle'
+} from '../../queries/__generated__/publishArticle'
 
 interface IAction {
     type: string

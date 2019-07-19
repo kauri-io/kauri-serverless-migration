@@ -23,7 +23,7 @@ interface IProps {
 }
 
 function withPagination<T>(
-    Paginated: React.FunctionComponent<any> | React.ComponentClass<any>,
+    Paginated: React.FunctionComponent<T> | React.ComponentClass<T>,
     key: PaginationDataQuery,
     queryName: string = 'data'
 ): React.FunctionComponent<any> {

@@ -4,10 +4,10 @@ import createReducer from '../../lib/createReducer'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { loginPersonalSign } from '../../lib/web3-personal-sign'
 import superagent from 'superagent'
-import { IDependencies } from '../../lib/Module'
 import config from '../../config'
 import { ofType } from 'redux-observable'
 import { switchMap, mergeMap, map, tap } from 'rxjs/operators'
+import { IReduxState } from '../../lib/Module'
 
 const request = superagent.agent()
 
@@ -58,11 +58,7 @@ const registerSignaturePayload = (userId, signature, sentence_id) => ({
     client_id: config.clientId,
 })
 
-export const registerEpic = (
-    action$: Observable<IRegisterAction>,
-    store: any,
-    { fetch }: IDependencies
-) =>
+export const registerEpic = (action$: Observable<IRegisterAction>) =>
     action$.pipe(
         ofType(REGISTER),
         switchMap(
@@ -70,7 +66,7 @@ export const registerEpic = (
                 from(
                     window.ethereum
                         ? window.ethereum.enable()
-                        : new Promise((resolve, reject) => resolve())
+                        : new Promise(resolve => resolve())
                 ).pipe(
                     mergeMap(() =>
                         request
@@ -187,7 +183,7 @@ export const registerEpic = (
     )
 
 const handlers = {
-    [REGISTER]: ({}, action: IRegisterAction) => ({
+    [REGISTER]: (state: IReduxState, action: IRegisterAction) => ({
         ...state,
         hello: action.payload,
     }),

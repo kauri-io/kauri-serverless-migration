@@ -56,7 +56,6 @@ interface IProps {
     }
     setFieldsValue: any
     getFieldsValue: any
-    hasErrors: boolean
     handleChange: (mdeState: MdeState) => void
     hasErrors?: boolean
 }

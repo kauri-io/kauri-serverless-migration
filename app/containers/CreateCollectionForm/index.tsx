@@ -18,20 +18,25 @@ import PublishingSelector from '../PublishingSelector'
 import { IReduxState } from '../../lib/Module'
 import { dissocPath, map, pipe, path } from 'ramda'
 import { Collection_sections } from '../../queries/Fragments/__generated__/Collection'
-import { SectionDTOInput } from '../../__generated__/globalTypes'
+import { ITag } from '../../components/Tags/types'
 
 export interface IFormState {
     name: string
     background?: string
     description?: string
-    sections: Collection_sections
+    sections: Collection_sections[]
+    destination?: {
+        id: string
+        type: string
+    }
+    tags: ITag[]
 }
 
 const emptySection: Collection_sections = {
     id: null,
     __typename: 'SectionDTO',
     name: '',
-    description: undefined,
+    description: null,
     resourcesId: [],
     resources: [],
 }

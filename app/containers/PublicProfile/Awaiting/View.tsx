@@ -45,49 +45,54 @@ const Articles = ({
     isOwner,
 }: IArticlesProps) => {
     const articles = data.searchArticles && data.searchArticles.content
-    return articles.length > 0 ? (
+    return articles && articles.length > 0 ? (
         <Fragment>
             {typeof type === 'string' && type === 'published' && isOwner && (
                 <CheckpointArticles isOwner={isOwner} articles={articles} />
             )}
             <Masonry withPadding={false}>
-                {articles.map(article => (
-                    <ArticleCard
-                        key={`${article.id}-${article.version}`}
-                        tags={article.tags}
-                        changeRoute={routeChangeAction}
-                        date={article.dateCreated}
-                        title={article.title}
-                        description={article.description}
-                        userId={
-                            type !== 'toBeApproved' && article.owner
-                                ? article.owner.id
-                                : article.author.id
-                        }
-                        username={
-                            type !== 'toBeApproved' && article.owner
-                                ? article.owner.username
-                                : article.author.username
-                        }
-                        userAvatar={
-                            type !== 'toBeApproved' && article.owner
-                                ? article.owner.avatar
-                                : article.author.avatar
-                        }
-                        id={article.id}
-                        version={article.version}
-                        imageURL={
-                            article.attributes && article.attributes.background
-                        }
-                        nfts={article.associatedNfts}
-                        destination={'review'}
-                        linkComponent={(childrenProps, route) => (
-                            <Link useAnchorTag href={route}>
-                                {childrenProps}
-                            </Link>
-                        )}
-                    />
-                ))}
+                {articles &&
+                    articles.map(
+                        article =>
+                            article && (
+                                <ArticleCard
+                                    key={`${article.id}-${article.version}`}
+                                    tags={article.tags}
+                                    changeRoute={routeChangeAction}
+                                    date={article.dateCreated}
+                                    title={article.title}
+                                    description={article.description}
+                                    userId={
+                                        type !== 'toBeApproved' && article.owner
+                                            ? article.owner.id
+                                            : article.author.id
+                                    }
+                                    username={
+                                        type !== 'toBeApproved' && article.owner
+                                            ? article.owner.username
+                                            : article.author.username
+                                    }
+                                    userAvatar={
+                                        type !== 'toBeApproved' && article.owner
+                                            ? article.owner.avatar
+                                            : article.author.avatar
+                                    }
+                                    id={article.id}
+                                    version={article.version}
+                                    imageURL={
+                                        article.attributes &&
+                                        article.attributes.background
+                                    }
+                                    nfts={article.associatedNfts}
+                                    destination={'review'}
+                                    linkComponent={(childrenProps, route) => (
+                                        <Link useAnchorTag href={route}>
+                                            {childrenProps}
+                                        </Link>
+                                    )}
+                                />
+                            )
+                    )}
             </Masonry>
         </Fragment>
     ) : (

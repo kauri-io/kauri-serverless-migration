@@ -44,71 +44,77 @@ const Collections = ({ data, routeChangeAction, isLoggedIn }: IProps) =>
     data.searchCollections && data.searchCollections.content.length > 0 ? (
         <Masonry>
             {data.searchCollections.content.map(collection => {
-                const articleCount =
-                    collection &&
-                    collection.sections &&
-                    collection.sections.reduce((current, next) => {
-                        if (next && Array.isArray(next.resourcesId)) {
-                            const articlesInSection = next.resourcesId.filter(
-                                sectionResource =>
-                                    sectionResource &&
-                                    sectionResource.type &&
-                                    sectionResource.type
-                                        .toLowerCase()
-                                        .includes('article')
-                            )
-                            current += articlesInSection.length
-                        }
-                        return current
-                    }, 0)
+                if (collection) {
+                    const articleCount =
+                        collection.sections &&
+                        collection.sections.reduce((current, next) => {
+                            if (next && Array.isArray(next.resourcesId)) {
+                                const articlesInSection = next.resourcesId.filter(
+                                    sectionResource =>
+                                        sectionResource &&
+                                        sectionResource.type &&
+                                        sectionResource.type
+                                            .toLowerCase()
+                                            .includes('article')
+                                )
+                                current += articlesInSection.length
+                            }
+                            return current
+                        }, 0)
 
-                const collectionCount =
-                    collection &&
-                    collection.sections &&
-                    collection.sections.reduce((current, next) => {
-                        if (next && Array.isArray(next.resourcesId)) {
-                            const collectionsInSection = next.resourcesId.filter(
-                                sectionResource =>
-                                    sectionResource &&
-                                    sectionResource.type &&
-                                    sectionResource.type
-                                        .toLowerCase()
-                                        .includes('collection')
-                            )
-                            current += collectionsInSection.length
-                        }
-                        return current
-                    }, 0)
-                return (
-                    <CollectionCard
-                        changeRoute={routeChangeAction}
-                        key={collection.id}
-                        id={collection.id}
-                        name={collection.name}
-                        date={collection.dateUpdated}
-                        description={collection.description}
-                        username={collection.owner && collection.owner.username}
-                        userId={collection.owner && collection.owner.id}
-                        userAvatar={collection.owner && collection.owner.avatar}
-                        articleCount={String(articleCount)}
-                        collectionCount={String(collectionCount)}
-                        imageURL={collection.background}
-                        cardHeight={310}
-                        linkComponent={(childrenProps, route) => (
-                            <Link
-                                toSlug={
-                                    route &&
-                                    route.includes('collection') &&
-                                    collection.name
-                                }
-                                useAnchorTag
-                                href={route}
-                            >
-                                {childrenProps}
-                            </Link>
-                        )}
-                    />
-                )
+                    const collectionCount =
+                        collection.sections &&
+                        collection.sections.reduce((current, next) => {
+                            if (next && Array.isArray(next.resourcesId)) {
+                                const collectionsInSection = next.resourcesId.filter(
+                                    sectionResource =>
+                                        sectionResource &&
+                                        sectionResource.type &&
+                                        sectionResource.type
+                                            .toLowerCase()
+                                            .includes('collection')
+                                )
+                                current += collectionsInSection.length
+                            }
+                            return current
+                        }, 0)
+                    return (
+                        <CollectionCard
+                            changeRoute={routeChangeAction}
+                            key={collection.id}
+                            id={collection.id}
+                            name={collection.name}
+                            date={collection.dateUpdated}
+                            description={String(collection.description)}
+                            username={
+                                collection.owner && collection.owner.username
+                            }
+                            userId={collection.owner && collection.owner.id}
+                            userAvatar={
+                                collection.owner && collection.owner.avatar
+                            }
+                            articleCount={String(articleCount)}
+                            collectionCount={String(collectionCount)}
+                            imageURL={collection.background}
+                            cardHeight={310}
+                            linkComponent={(childrenProps, route) => (
+                                <Link
+                                    toSlug={
+                                        route &&
+                                        route.includes('collection') &&
+                                        collection.name
+                                    }
+                                    useAnchorTag
+                                    href={route}
+                                >
+                                    {childrenProps}
+                                </Link>
+                            )}
+                        />
+                    )
+                } else {
+                    return null
+                }
             })}
         </Masonry>
     ) : (

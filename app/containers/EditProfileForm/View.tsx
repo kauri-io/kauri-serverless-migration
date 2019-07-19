@@ -139,7 +139,7 @@ class EditableHeader extends Component<IProps, IState> {
         }
     }
 
-    saveUser(redirectURL: string | undefined, callback: any | undefined) {
+    saveUser(redirectURL: string | undefined) {
         const payload = pipe(
             filter(val => typeof val !== 'undefined' || !!val),
             assocPath(['redirectURL'], redirectURL)
@@ -147,7 +147,6 @@ class EditableHeader extends Component<IProps, IState> {
 
         this.props.saveUserDetailsAction(payload, (pendingSubmit: any) => {
             this.setState({ pendingSubmit })
-            callback && callback()
         })
     }
 
