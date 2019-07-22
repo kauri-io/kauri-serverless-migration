@@ -42,7 +42,7 @@ export const checkpointArticlesEpic = (
 ) =>
     action$.pipe(
         ofType(CHECKPOINT_ARTICLES),
-        switchMap((action: CheckpointArticlesAction) =>
+        switchMap(() =>
             web3GetNetwork()
                 .mergeMap(() =>
                     apolloClient.mutate({
@@ -91,6 +91,7 @@ export const checkpointArticlesEpic = (
                                             'You will get another notification when the block is mined!',
                                     })
                                 )
+                                return transactionHash
                             }),
                             mergeMap((transactionHash: string) =>
                                 apolloSubscriber(

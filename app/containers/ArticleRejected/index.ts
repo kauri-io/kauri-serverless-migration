@@ -4,8 +4,9 @@ import { getArticle } from '../../queries/Article'
 import { connect } from 'react-redux'
 import { compose, graphql } from 'react-apollo'
 import withLoading from '../../lib/with-loading'
+import { IReduxState } from '../../lib/Module'
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state: IReduxState) => {
     return {
         userId: state.app && state.app.user && state.app.user.id,
     }

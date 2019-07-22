@@ -1,7 +1,6 @@
 import { Component } from 'react'
 import Loading from '../../components/Loading'
 import TertiaryButton from '../../components/Button/TertiaryButton'
-import { CheckpointArticlesAction } from './Module'
 export const CheckpointArticlesIcon = () => (
     <svg
         width="20"
@@ -47,7 +46,7 @@ class CTA extends Component<IProps, IState> {
 
     async loadWeb3() {
         const sm = await import('../../lib/init-smart-contracts')
-        sm.initSmartContracts(window.web3, (result, err) => {
+        sm.initSmartContracts(global.window.web3, (result, err) => {
             if (err) {
                 console.error(err)
                 this.setState({ activated: true })

@@ -99,7 +99,7 @@ class CollectionCreated extends React.Component<IProps> {
                       avatar: owner.avatar,
                       id: owner.id || 'not_found',
                       type: 'COMMUNITY',
-                      username: owner.name,
+                      username: owner.communityName,
                   }
                 : {
                       avatar: '',

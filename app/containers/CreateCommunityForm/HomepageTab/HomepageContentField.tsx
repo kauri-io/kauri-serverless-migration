@@ -88,15 +88,17 @@ const renderResourceSection = (
                         >
                             <ArticleCard
                                 isLoggedIn={true}
-                                id={path(
-                                    [
-                                        'homepage',
-                                        index,
-                                        mappingKey,
-                                        resourceIndex,
-                                        'id',
-                                    ],
-                                    values
+                                id={String(
+                                    path(
+                                        [
+                                            'homepage',
+                                            index,
+                                            mappingKey,
+                                            resourceIndex,
+                                            'id',
+                                        ],
+                                        values
+                                    )
                                 )}
                                 version={parseInt(
                                     path<string>(
@@ -134,15 +136,17 @@ const renderResourceSection = (
                             id="collection-card"
                         >
                             <CollectionCard
-                                id={path(
-                                    [
-                                        'homepage',
-                                        index,
-                                        mappingKey,
-                                        resourceIndex,
-                                        'id',
-                                    ],
-                                    values
+                                id={String(
+                                    path(
+                                        [
+                                            'homepage',
+                                            index,
+                                            mappingKey,
+                                            resourceIndex,
+                                            'id',
+                                        ],
+                                        values
+                                    )
                                 )}
                             />
                             {provided.placeholder}

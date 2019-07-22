@@ -25,10 +25,7 @@ import {
 import { curateCommunityResourcesVariables } from '../../queries/__generated__/curateCommunityResources'
 import { approveResourceVariables } from '../../queries/__generated__/approveResource'
 
-import {
-    removeResource,
-    removeResourceVariables,
-} from '../../queries/__generated__/removeResource'
+import { removeResourceVariables } from '../../queries/__generated__/removeResource'
 
 import {
     sendInvitation,
@@ -458,7 +455,7 @@ export const acceptCommunityInvitationEpic = (
                           variables: payload,
                       })
                   ).mergeMap(({ data: { prepareAcceptInvitation: result } }) =>
-                      from(personalSign(result && result.messageHash))
+                      from(personalSign(result.messageHash))
                           .mergeMap(signature =>
                               apolloClient.mutate({
                                   mutation: acceptInvitationMutation,
@@ -563,7 +560,7 @@ export const revokeInvitationEpic = (
                 variables: payload,
             })
         ).mergeMap(({ data: { prepareRevokeInvitation: result } }) =>
-            from<string>(personalSign(result && result.messageHash))
+            from<string>(personalSign(result.messageHash))
                 .mergeMap(signature =>
                     apolloClient.mutate<
                         revokeInvitation,
@@ -615,7 +612,7 @@ export const removeMemberEpic = (
                 variables: payload,
             })
         ).mergeMap(({ data: { prepareRemoveMember: result } }) =>
-            from<string>(personalSign(result && result.messageHash))
+            from<string>(personalSign(result.messageHash))
                 .mergeMap(signature =>
                     apolloClient.mutate<removeMember, removeMemberVariables>({
                         mutation: removeMemberMutation,
@@ -697,7 +694,7 @@ export const changeMemberRoleEpic = (
                 variables: payload,
             })
         ).mergeMap(({ data: { prepareChangeMemberRole: result } }) =>
-            from<string>(personalSign(result && result.messageHash))
+            from<string>(personalSign(result.messageHash))
                 .mergeMap(signature =>
                     apolloClient.mutate<
                         changeMemberRole,
@@ -778,7 +775,7 @@ export const removeResourceEpic = (
 ) =>
     action$.ofType(REMOVE_RESOURCE).switchMap(({ payload }) =>
         from(
-            apolloClient.mutate<removeResource, removeResourceVariables>({
+            apolloClient.mutate({
                 mutation: removeResourceMutation,
                 variables: payload,
             })

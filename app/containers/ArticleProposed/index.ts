@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { getArticle } from '../../queries/Article'
 import withLoading from '../../lib/with-loading'
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
     return {
         userId: state.app && state.app.user && state.app.user.id,
     }

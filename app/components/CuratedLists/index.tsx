@@ -2,7 +2,6 @@ import moment from 'moment'
 import ArticleCard from '../Card/ArticleCardMaterial'
 import CollectionCard from '../Card/CollectionCard'
 import CommunityCard from '../Card/CommunityCard'
-import slugify from 'slugify'
 import { Article } from '../../queries/Fragments/__generated__/Article'
 import { Community } from '../../queries/Fragments/__generated__/Community'
 import {

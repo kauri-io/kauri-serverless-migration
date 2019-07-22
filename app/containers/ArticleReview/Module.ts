@@ -1,4 +1,4 @@
-import { Epic, ActionsObservable, ofType } from 'redux-observable'
+import { ActionsObservable, ofType } from 'redux-observable'
 import { IDependencies } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
@@ -163,14 +163,8 @@ export const rejectArticleEpic = (
                     variables: { id, version, cause },
                 })
             ).pipe(
-                flatMap(
-                    ({
-                        data: {
-                            rejectArticle: { hash },
-                        },
-                    }: {
-                        data: { rejectArticle: { hash: string } }
-                    }) => apolloSubscriber(hash)
+                flatMap(({ data: { rejectArticle: { hash } } }) =>
+                    apolloSubscriber(hash)
                 ),
                 tap(() => apolloClient.resetStore()),
                 tap(() =>

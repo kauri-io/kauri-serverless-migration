@@ -1,6 +1,7 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import CTA, { CheckpointArticlesIcon } from './CTA'
+import { Article } from '../../queries/Fragments/__generated__/Article'
 
 const CheckpointArticlesCTAContainer = styled.section`
     display: flex;
@@ -21,11 +22,6 @@ export const AllArticlesOnMainnet = ({
     </CheckpointedArticlesContainer>
 )
 
-const publicProfileAlignmentCss = css`
-    justify-content: center;
-    align-items: center;
-`
-
 const CheckpointedArticlesContainer = styled.div`
     display: flex;
     > :first-child {
@@ -35,12 +31,10 @@ const CheckpointedArticlesContainer = styled.div`
     font-size: ${props => props.theme.fontSizes[0]}px;
     font-weight: ${props => props.theme.fontWeight[3]};
     text-transform: uppercase;
-    ${props =>
-        props.pageType === 'public-profile' && publicProfileAlignmentCss};
 `
 
-type Props = {
-    articles?: Array<ArticleDTO>
+interface IProps {
+    articles?: Article[]
     articleCheckpointed?: boolean
     checkpointArticlesAction: () => void
     pageType: 'public-profile' | 'approved-article'
@@ -53,7 +47,7 @@ export default ({
     articleCheckpointed,
     checkpointArticlesAction,
     pageType = 'public-profile',
-}: Props) =>
+}: IProps) =>
     pageType === 'public-profile' ? (
         <CheckpointArticlesCTAContainer>
             {Array.isArray(articles) &&
@@ -76,9 +70,5 @@ export default ({
             />
         )
     ) : (
-        <AllArticlesOnMainnet
-            checkpointArticlesAction={checkpointArticlesAction}
-            pageType={pageType}
-            text={'Article On-chain'}
-        />
+        <AllArticlesOnMainnet text={'Article On-chain'} />
     )
