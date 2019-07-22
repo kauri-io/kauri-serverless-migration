@@ -57,7 +57,6 @@ interface IProps {
     setFieldsValue: any
     getFieldsValue: any
     handleChange: (mdeState: MdeState) => void
-    hasErrors?: boolean
 }
 
 export class SharedEditor extends React.Component<IProps> {

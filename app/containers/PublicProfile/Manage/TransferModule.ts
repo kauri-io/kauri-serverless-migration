@@ -2,9 +2,9 @@ import { Epic, ofType, ActionsObservable } from 'redux-observable'
 import { IDependencies, IReduxState } from '../../../lib/Module'
 import { showNotificationAction } from '../../../lib/Epics/ShowNotificationEpic'
 import {
-    rejectArticleTransfer,
+    rejectArticleTransfer as rejectArticleTransferMutation,
     acceptArticleTransfer,
-    finaliseArticleTransfer,
+    finaliseArticleTransfer as finaliseArticleTransferMutation,
 } from '../../../queries/Article'
 import analytics from '../../../lib/analytics'
 import generatePublishArticleHash from '../../../lib/generate-publish-article-hash'
@@ -12,6 +12,14 @@ import { create } from '../../../lib/init-apollo'
 import { getEvent } from '../../../queries/Module'
 import { from, of } from 'rxjs'
 import { mergeMap, flatMap, tap } from 'rxjs/operators'
+import {
+    finaliseArticleTransferVariables,
+    finaliseArticleTransfer,
+} from '../../../queries/__generated__/finaliseArticleTransfer'
+import {
+    rejectArticleTransfer,
+    rejectArticleTransferVariables,
+} from '../../../queries/__generated__/rejectArticleTransfer'
 
 interface IRejectArticleTransferPayload {
     id: string
@@ -39,13 +47,21 @@ export const rejectArticleTransferEpic = (
     action$.pipe(
         ofType(REJECT_ARTICLE_TRANSFER),
         mergeMap(({ payload: { id } }) =>
-            apolloClient.mutate({
-                mutation: rejectArticleTransfer,
+            apolloClient.mutate<
+                rejectArticleTransfer,
+                rejectArticleTransferVariables
+            >({
+                mutation: rejectArticleTransferMutation,
                 variables: { id },
             })
         ),
-        flatMap(({ data: { rejectArticleTransfer: { hash } } }) =>
-            apolloSubscriber(hash)
+        flatMap(({ data }) =>
+            apolloSubscriber(
+                (data &&
+                    data.rejectArticleTransfer &&
+                    data.rejectArticleTransfer.hash) ||
+                    ''
+            )
         ),
         tap(() => apolloClient.resetStore()),
         tap(
@@ -184,8 +200,11 @@ export const finaliseArticleTransferEpic: Epic<
                 return from(personalSign(signatureToSign)).pipe(
                     mergeMap(signature =>
                         from(
-                            apolloClient.mutate({
-                                mutation: finaliseArticleTransfer,
+                            apolloClient.mutate<
+                                finaliseArticleTransfer,
+                                finaliseArticleTransferVariables
+                            >({
+                                mutation: finaliseArticleTransferMutation,
                                 variables: {
                                     id,
                                     signature,
@@ -193,8 +212,13 @@ export const finaliseArticleTransferEpic: Epic<
                             })
                         )
                     ),
-                    flatMap(({ data: { finaliseArticleTransfer: { hash } } }) =>
-                        apolloSubscriber(hash)
+                    flatMap(({ data }) =>
+                        apolloSubscriber<{ error?: string }>(
+                            (data &&
+                                data.finaliseArticleTransfer &&
+                                data.finaliseArticleTransfer.hash) ||
+                                ''
+                        )
                     ),
                     tap(() => apolloClient.resetStore()),
                     tap(() =>

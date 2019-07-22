@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import ArticleCard from '../../../components/Card/ArticleCardMaterial'
-import Link from '../../../components/Link'
 import CheckpointArticles from '../../CheckpointArticles'
 import withPagination from '../../../lib/with-pagination'
 import PrimaryButton from '../../../components/Button/PrimaryButton'
@@ -9,16 +8,11 @@ import MediumImportButton from '../../../components/Button/MediumImportButton'
 import Masonry from '../../../components/Masonry'
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
 import { BodyCard } from '../../../components/Typography'
-import AddToCollectionConnection from '../../../containers/AddToCollection'
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
 import {
     IOpenModalAction,
     IOpenModalPayload,
 } from '../../../components/Modal/Module'
-import {
-    Article_owner_CommunityDTO,
-    Article_owner_PublicUserDTO,
-} from '../../../queries/Fragments/__generated__/Article'
 
 export interface IArticlesProps {
     data: searchPersonalArticles
@@ -46,133 +40,83 @@ const Articles: React.FC<IArticlesProps> = ({
     routeChangeAction,
     isLoggedIn,
     isOwner,
-    openModalAction,
 }) => {
     const articles = data.searchArticles && data.searchArticles.content
-    return articles && articles.length > 0 ? (
-        <Fragment>
-            {typeof type === 'string' && type === 'published' && isOwner && (
-                <CheckpointArticles isOwner={isOwner} articles={articles} />
-            )}
-            <Masonry>
-                {articles.map(article => {
-                    if (!article) return null
-                    const owner = article.owner as
-                        | Article_owner_CommunityDTO
-                        | Article_owner_PublicUserDTO
-                    return (
-                        article && (
-                            <ArticleCard
-                                key={`${article.id}-${article.version}`}
-                                changeRoute={routeChangeAction}
-                                date={article.datePublished}
-                                title={article.title}
-                                description={article.description}
-                                tags={article.tags}
-                                userId={
-                                    type !== 'toBeApproved' && owner
-                                        ? owner.id
-                                        : article.author && article.author.id
-                                }
-                                username={
-                                    type !== 'toBeApproved' && owner
-                                        ? owner.__typename === 'PublicUserDTO'
-                                            ? (owner as Article_owner_PublicUserDTO)
-                                                  .username
-                                            : (owner as Article_owner_CommunityDTO)
-                                                  .communityName
-                                        : article.author &&
-                                          article.author.username
-                                }
-                                userAvatar={
-                                    type !== 'toBeApproved' && owner
-                                        ? owner.avatar
-                                        : article.author &&
-                                          article.author.avatar
-                                }
-                                isLoggedIn={isLoggedIn}
-                                hoverChildren={() => (
-                                    <PrimaryButton
-                                        onClick={() =>
-                                            openModalAction({
-                                                children: (
-                                                    <AddToCollectionConnection
-                                                        articleId={article.id}
-                                                        version={
-                                                            article.version
-                                                        }
-                                                    />
-                                                ),
-                                            })
-                                        }
-                                    >
-                                        Add To Collection
-                                    </PrimaryButton>
-                                )}
-                                id={article.id}
-                                version={article.version}
-                                imageURL={
-                                    article.attributes &&
-                                    article.attributes.background
-                                }
-                                nfts={article.associatedNfts}
-                                linkComponent={(childrenProps, route) => (
-                                    <Link
-                                        toSlug={
-                                            route &&
-                                            route.includes('article') &&
-                                            article.title
-                                        }
-                                        useAnchorTag
-                                        href={route}
-                                    >
-                                        {childrenProps}
-                                    </Link>
-                                )}
-                            />
+    if (articles) {
+        return articles.length > 0 ? (
+            <Fragment>
+                {typeof type === 'string' &&
+                    type === 'published' &&
+                    isOwner && (
+                        <CheckpointArticles
+                            isOwner={isOwner}
+                            articles={articles}
+                        />
+                    )}
+                <Masonry>
+                    {articles.map(
+                        article =>
+                            article && (
+                                <ArticleCard
+                                    key={`${article.id}-${article.version}`}
+                                    title={article.title}
+                                    description={article.description}
+                                    id={article.id}
+                                    version={article.version}
+                                    datePublished={article.datePublished}
+                                    author={article.author}
+                                    attributes={article.attributes}
+                                />
+                            )
+                    )}
+                </Masonry>
+            </Fragment>
+        ) : (
+            <Centered>
+                <PublicProfileEmptyState
+                    iconSrc={'/static/images/icons/no-published-articles.svg'}
+                    description={
+                        isLoggedIn ? (
+                            <DescriptionContainer>
+                                <BodyCard>
+                                    Any articles you've published on Kauri will
+                                    appear here.
+                                </BodyCard>
+                                <BodyCard>
+                                    Get started by creating a new draft below,
+                                    or importing one you've written on Medium!
+                                </BodyCard>
+                                <BodyCard>
+                                    Your draft articles will be shown in the
+                                    next tab until you publish them.
+                                </BodyCard>
+                            </DescriptionContainer>
+                        ) : (
+                            "The user hasn't published any articles yet. Once they do, they will appear here!"
                         )
-                    )
-                })}
-            </Masonry>
-        </Fragment>
-    ) : (
-        <Centered>
-            <PublicProfileEmptyState
-                iconSrc={'/static/images/icons/no-published-articles.svg'}
-                description={
-                    isLoggedIn ? (
-                        <DescriptionContainer>
-                            <BodyCard>
-                                Any articles you've published on Kauri will
-                                appear here.
-                            </BodyCard>
-                            <BodyCard>
-                                Get started by creating a new draft below, or
-                                importing one you've written on Medium!
-                            </BodyCard>
-                            <BodyCard>
-                                Your draft articles will be shown in the next
-                                tab until you publish them.
-                            </BodyCard>
-                        </DescriptionContainer>
-                    ) : (
-                        "The user hasn't published any articles yet. Once they do, they will appear here!"
-                    )
-                }
-                title="No Articles Published"
-                secondaryButton={isOwner ? <MediumImportButton border /> : null}
-                primaryButton={
-                    isOwner ? (
-                        <PrimaryButton
-                            onClick={() => routeChangeAction('/write-article')}
-                        >
-                            Create Article
-                        </PrimaryButton>
-                    ) : null
-                }
-            />
-        </Centered>
-    )
+                    }
+                    title="No Articles Published"
+                    secondaryButton={
+                        isOwner ? <MediumImportButton border /> : <div></div>
+                    }
+                    primaryButton={
+                        isOwner ? (
+                            <PrimaryButton
+                                onClick={() =>
+                                    routeChangeAction('/write-article')
+                                }
+                            >
+                                Create Article
+                            </PrimaryButton>
+                        ) : (
+                            <div></div>
+                        )
+                    }
+                />
+            </Centered>
+        )
+    }
+    return null
 }
 
-export default withPagination<IArticlesProps>(Articles, 'searchArticles')
+export default withPagination(Articles, 'searchArticles')
