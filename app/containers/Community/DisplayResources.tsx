@@ -47,21 +47,21 @@ const RenderResources = (
     openModalAction?: (payload: { children: any }) => void,
     closeModalAction?: () => void,
     removeResourceAction?: (payload: removeResourceVariables) => void
-) => (i: Community_approved_ArticleDTO | Community_approved_CollectionDTO) => {
+) => (article: Community_approved_ArticleDTO | Community_approved_CollectionDTO) => {
     const owner =
-        i.owner && i.owner.__typename === 'PublicUserDTO'
+        article.owner && article.owner.__typename === 'PublicUserDTO'
             ? {
-                  avatar: i.owner.avatar,
-                  id: i.owner.id || 'not_found',
+                  avatar: article.owner.avatar,
+                  id: article.owner.id || 'not_found',
                   type: 'USER',
-                  username: i.owner.username,
+                  username: article.owner.publicUserName,
               }
-            : i.owner && i.owner.__typename === 'CommunityDTO'
+            : article.owner && article.owner.__typename === 'CommunityDTO'
             ? {
-                  avatar: i.owner.avatar,
-                  id: i.owner.id || 'not_found',
+                  avatar: article.owner.avatar,
+                  id: article.owner.id || 'not_found',
                   type: 'COMMUNITY',
-                  username: i.owner.name,
+                  username: article.owner.communityName,
               }
             : {
                   avatar: '',
@@ -69,98 +69,23 @@ const RenderResources = (
 
                   username: '',
               }
-    if (i.__typename === 'ArticleDTO') {
+    if (article.__typename === 'ArticleDTO') {
         return (
             <ArticleCard
-                key={String(i.id)}
-                id={String(i.id)}
-                version={Number(i.version)}
-                description={i.description}
-                date={i.datePublished || i.dateCreated}
-                title={String(i.title)}
-                destination={destination ? 'review' : null}
-                imageURL={i.attributes && i.attributes.background}
-                cardHeight={310}
-                cardWidth={288}
-                username={i.author && i.author.username}
-                name={i.author && i.author.name}
-                userId={String(i.author && i.author.id)}
-                userAvatar={i.author && i.author.avatar}
-                isLoggedIn={isMember}
-                nfts={i.associatedNfts}
-                // resourceType={owner.type as "USER" | "COMMUNITY"}
-                resourceType="USER"
-                hoverChildren={() => (
-                    <PrimaryButton
-                        onClick={() =>
-                            openModalAction &&
-                            closeModalAction &&
-                            removeResourceAction &&
-                            openModalAction({
-                                children: (
-                                    <AlertView
-                                        closeModalAction={() =>
-                                            closeModalAction()
-                                        }
-                                        confirmButtonAction={() =>
-                                            removeResourceAction({
-                                                id: communityId,
-                                                resource: {
-                                                    id: String(
-                                                        i.resourceIdentifier &&
-                                                            i.resourceIdentifier
-                                                                .id
-                                                    ),
-                                                    type:
-                                                        i.resourceIdentifier &&
-                                                        i.resourceIdentifier
-                                                            .type,
-                                                },
-                                            })
-                                        }
-                                        content={
-                                            <div>
-                                                <BodyCard>
-                                                    If this article is removed,
-                                                    it will no longer appear in
-                                                    this community, or on the
-                                                    home page. This cannot be
-                                                    undone.
-                                                </BodyCard>
-                                            </div>
-                                        }
-                                        title={'Are you sure?'}
-                                    />
-                                ),
-                            })
-                        }
-                    >
-                        Remove Article
-                    </PrimaryButton>
-                )}
-                linkComponent={(
-                    childrenProps: React.ReactElement<any>,
-                    route: string
-                ) => (
-                    <Link
-                        useAnchorTag={true}
-                        href={
-                            destination
-                                ? `${route}`
-                                : destination === 'review'
-                                ? `${route}?proposed-community-id=${communityId}`
-                                : route
-                        }
-                    >
-                        {childrenProps}
-                    </Link>
-                )}
+                key={String(article.id)}
+                id={String(article.id)}
+                version={Number(article.version)}
+                description={article.description}
+                datePublished={article.datePublished || article.dateCreated}
+                title={String(article.title)}
+                attributes={article.attributes}
+                author={article.author}
             />
         )
-    } else if (i.__typename === 'CollectionDTO') {
+    } else if (article.__typename === 'CollectionDTO') {
         const counter =
-            i.sections &&
-            i.sections.reduce(
+            article.sections &&
+            article.sections.reduce(
                 (sum, section) => {
                     if (!section || !section.resources) {
                         return sum
@@ -186,15 +111,15 @@ const RenderResources = (
 
         return (
             <CollectionCard
-                key={String(i.id)}
-                id={String(i.id)}
-                description={i.description || ''}
-                date={i.dateUpdated}
-                name={i.name || ''}
+                key={String(article.id)}
+                id={String(article.id)}
+                description={article.description || ''}
+                date={article.dateUpdated}
+                name={article.name || ''}
                 username={owner.username}
                 userId={owner.id}
                 userAvatar={owner.avatar}
-                imageURL={i.background}
+                imageURL={article.background}
                 articleCount={counter ? counter.articles.toString() : '0'}
                 collectionCount={counter ? counter.collections.toString() : '0'}
                 cardHeight={310}
@@ -217,13 +142,13 @@ const RenderResources = (
                                                 id: communityId,
                                                 resource: {
                                                     id: String(
-                                                        i.resourceIdentifier &&
-                                                            i.resourceIdentifier
+                                                        article.resourceIdentifier &&
+                                                            article.resourceIdentifier
                                                                 .id
                                                     ),
                                                     type:
-                                                        i.resourceIdentifier &&
-                                                        i.resourceIdentifier
+                                                        article.resourceIdentifier &&
+                                                        article.resourceIdentifier
                                                             .type,
                                                 },
                                             })
