@@ -61,7 +61,7 @@ const RenderResources = (
                   avatar: i.owner.avatar,
                   id: i.owner.id || 'not_found',
                   type: 'COMMUNITY',
-                  username: i.owner.name,
+                  username: i.owner.communityName,
               }
             : {
                   avatar: '',
@@ -70,93 +70,7 @@ const RenderResources = (
                   username: '',
               }
     if (i.__typename === 'ArticleDTO') {
-        return (
-            <ArticleCard
-                key={String(i.id)}
-                id={String(i.id)}
-                version={Number(i.version)}
-                description={i.description}
-                date={i.datePublished || i.dateCreated}
-                title={String(i.title)}
-                destination={destination ? 'review' : null}
-                imageURL={i.attributes && i.attributes.background}
-                cardHeight={310}
-                cardWidth={288}
-                username={i.author && i.author.username}
-                name={i.author && i.author.name}
-                userId={String(i.author && i.author.id)}
-                userAvatar={i.author && i.author.avatar}
-                isLoggedIn={isMember}
-                nfts={i.associatedNfts}
-                // resourceType={owner.type as "USER" | "COMMUNITY"}
-                resourceType="USER"
-                hoverChildren={() => (
-                    <PrimaryButton
-                        onClick={() =>
-                            openModalAction &&
-                            closeModalAction &&
-                            removeResourceAction &&
-                            openModalAction({
-                                children: (
-                                    <AlertView
-                                        closeModalAction={() =>
-                                            closeModalAction()
-                                        }
-                                        confirmButtonAction={() =>
-                                            removeResourceAction({
-                                                id: communityId,
-                                                resource: {
-                                                    id: String(
-                                                        i.resourceIdentifier &&
-                                                            i.resourceIdentifier
-                                                                .id
-                                                    ),
-                                                    type:
-                                                        i.resourceIdentifier &&
-                                                        i.resourceIdentifier
-                                                            .type,
-                                                },
-                                            })
-                                        }
-                                        content={
-                                            <div>
-                                                <BodyCard>
-                                                    If this article is removed,
-                                                    it will no longer appear in
-                                                    this community, or on the
-                                                    home page. This cannot be
-                                                    undone.
-                                                </BodyCard>
-                                            </div>
-                                        }
-                                        title={'Are you sure?'}
-                                    />
-                                ),
-                            })
-                        }
-                    >
-                        Remove Article
-                    </PrimaryButton>
-                )}
-                linkComponent={(
-                    childrenProps: React.ReactElement<any>,
-                    route: string
-                ) => (
-                    <Link
-                        useAnchorTag={true}
-                        href={
-                            destination
-                                ? `${route}`
-                                : destination === 'review'
-                                ? `${route}?proposed-community-id=${communityId}`
-                                : route
-                        }
-                    >
-                        {childrenProps}
-                    </Link>
-                )}
-            />
-        )
+        return <ArticleCard {...i} />
     } else if (i.__typename === 'CollectionDTO') {
         const counter =
             i.sections &&
@@ -214,7 +128,7 @@ const RenderResources = (
                                         }
                                         confirmButtonAction={() =>
                                             removeResourceAction({
-                                                id: communityId,
+                                                id: String(communityId),
                                                 resource: {
                                                     id: String(
                                                         i.resourceIdentifier &&

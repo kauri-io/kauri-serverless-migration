@@ -262,7 +262,7 @@ const RenderActualContent: React.SFC<IActualContentProps> = ({
                 imageURL={imageURL}
                 userAvatar={userAvatar}
             />,
-            resourceType === 'COMMUNITY'
+            resourceType === 'CommunityDTO'
                 ? `/community/${userId}`
                 : `/public-profile/${userId}`
         )}

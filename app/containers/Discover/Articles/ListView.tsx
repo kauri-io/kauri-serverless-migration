@@ -7,7 +7,6 @@ import {
     searchAutocompleteArticles_searchAutocomplete,
     searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO,
 } from '../../../queries/__generated__/searchAutocompleteArticles'
-import slugify from 'slugify'
 
 interface IProps {
     ArticlesQuery: {
@@ -55,35 +54,7 @@ class Articles extends Component<IProps> {
                                 return <></>
                             }
 
-                            return (
-                                <ArticleCard
-                                    key={String(article.id)}
-                                    // nfts={article.associatedNfts}
-                                    // resourceType={
-                                    //   article.owner && article.owner.__typename === "CommunityDTO"
-                                    //     ? "COMMUNITY"
-                                    //     : "USER"
-                                    // }
-                                    // id={String(article.id)}
-                                    // version={Number(article.version)}
-                                    datePublished={
-                                        article.datePublished ||
-                                        article.dateCreated
-                                    }
-                                    title={String(article.title)}
-                                    description={String(article.description)}
-                                    author={article.author}
-                                    attributes={article.attributes}
-                                    // isLoggedIn={isLoggedIn}
-                                    href={
-                                        article.status === 'DRAFT'
-                                            ? `/draft/${article.id}/${article.version}`
-                                            : `/${slugify(article.title, {
-                                                  lower: true,
-                                              })}/${article.id}/a`
-                                    }
-                                />
-                            )
+                            return <ArticleCard {...article} />
                         })}
                     </Masonry>
                 ) : (

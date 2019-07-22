@@ -4,8 +4,6 @@ import ArticleCard from '../../components/Card/ArticleCardMaterial'
 import ChooseArticleContent, {
     Content,
 } from '../../components/Modal/ChooseArticleContent'
-import PrimaryButton from '../../components/Button/PrimaryButton'
-import SecondaryButton from '../../components/Button/SecondaryButton'
 import Tabs from '../../components/Tabs'
 import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
@@ -23,14 +21,7 @@ const Container = styled.div`
 `
 
 const ArticlesContent = props => {
-    const {
-        chooseArticle,
-        chosenArticles,
-        articles,
-        userId,
-        setRef,
-        allOtherChosenArticles,
-    } = props
+    const { articles, setRef, allOtherChosenArticles } = props
     if (!articles) {
         return null
     }
@@ -46,7 +37,7 @@ const ArticlesContent = props => {
                             allOtherChosenArticles.find(chosenArticle => {
                                 if (chosenArticle.resourcesId) {
                                     return chosenArticle.resourcesId.find(
-                                        ({ id, version }) => id === article.id
+                                        ({ id }) => id === article.id
                                     )
                                 }
                                 return chosenArticle.id === article.id
@@ -56,60 +47,7 @@ const ArticlesContent = props => {
                         }
                     }
 
-                    return (
-                        <ArticleCard
-                            key={article.id + article.version}
-                            id={article.id}
-                            version={article.version}
-                            description={article.description}
-                            date={article.datePublished}
-                            title={article.title}
-                            username={article.owner && article.owner.username}
-                            userAvatar={article.owner && article.owner.avatar}
-                            userId={article.owner && article.owner.id}
-                            imageURL={
-                                article.attributes &&
-                                article.attributes.background
-                            }
-                            cardHeight={310}
-                            isLoggedIn={!!userId}
-                            linkComponent={children => children}
-                            tags={article.tags}
-                            hoverChildren={({ hideDispatch }) => (
-                                <React.Fragment>
-                                    <PrimaryButton
-                                        onClick={() => {
-                                            chooseArticle({
-                                                id: article.id,
-                                                version: article.version,
-                                            })
-                                            hideDispatch()
-                                        }}
-                                    >
-                                        Choose
-                                    </PrimaryButton>
-                                    <SecondaryButton
-                                        onClick={() =>
-                                            window.open(
-                                                `${window.location.origin}/article/${article.id}/v${article.version}`,
-                                                '_blank'
-                                            )
-                                        }
-                                    >
-                                        View
-                                    </SecondaryButton>
-                                </React.Fragment>
-                            )}
-                            triggerHoverChildrenOnFullCardClick
-                            isChosenArticle={
-                                !!chosenArticles.find(
-                                    ({ id, version }) =>
-                                        article.id === id &&
-                                        article.version === version
-                                )
-                            }
-                        />
-                    )
+                    return <ArticleCard {...article} />
                 })}
             </ChooseArticleContent>
         </Container>

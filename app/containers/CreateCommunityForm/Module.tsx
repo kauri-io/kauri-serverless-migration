@@ -96,11 +96,6 @@ export const updateCommunityAction = (
     type: UPDATE_COMMUNITY,
 })
 
-interface ICreateCommunityCommandOutput {
-    id: string
-    error: string | undefined
-}
-
 export interface IPrepareSendInvitationQueryResult {
     messageHash: string
     attributes: {
@@ -111,8 +106,6 @@ export interface IPrepareSendInvitationQueryResult {
 export interface ISendInvitationCommandOutput {
     hash: string
 }
-
-type IUpdateCommunityCommandOutput = ICreateCommunityCommandOutput
 
 export const communityCreatedEpic = (
     action$: ActionsObservable<ICommunityCreatedAction>,

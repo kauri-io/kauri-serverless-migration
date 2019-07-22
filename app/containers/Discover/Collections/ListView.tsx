@@ -157,7 +157,8 @@ class Collections extends Component<IProps> {
                                                   'not_found',
                                               type: 'COMMUNITY',
                                               username:
-                                                  collectionResource.owner.name,
+                                                  collectionResource.owner
+                                                      .communityName,
                                           }
                                         : {
                                               avatar: '',
@@ -190,7 +191,8 @@ class Collections extends Component<IProps> {
                                             typedOwner.__typename ===
                                                 'PublicUserDTO'
                                                 ? typedOwner.username
-                                                : typedOwner && typedOwner.name
+                                                : typedOwner &&
+                                                  typedOwner.communityName
                                         }
                                         userId={String(
                                             typedOwner && typedOwner.id

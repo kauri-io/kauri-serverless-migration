@@ -23,14 +23,7 @@ export const RenderCardContent = ({
 }: IRenderCardContentProps) => (card: Article | Collection | Community) => {
     switch (card.__typename) {
         case 'ArticleDTO':
-            return (
-                <ArticleCard
-                    href={`/${slugify(String(card.title), { lower: true })}/${
-                        card.id
-                    }/a`}
-                    {...card}
-                />
-            )
+            return <ArticleCard {...card} />
         case 'CollectionDTO':
             const articleCount =
                 card.sections &&
@@ -83,7 +76,7 @@ export const RenderCardContent = ({
                     username={
                         typedOwner && typedOwner.__typename === 'PublicUserDTO'
                             ? typedOwner.username
-                            : typedOwner && typedOwner.communityName
+                            : typedOwner.communityName
                     }
                     userId={String(typedOwner && typedOwner.id)}
                     userAvatar={typedOwner && typedOwner.avatar}

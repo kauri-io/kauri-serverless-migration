@@ -4,22 +4,6 @@ import Head from 'next/head'
 import ArticleCard from '../../components/Card/ArticleCardMaterial'
 import PrimaryButton from '../../components/Button/PrimaryButton'
 import { Title2, BodyCard } from '../../components/Typography'
-import slugify from 'slugify'
-
-const Statement = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: #ffffff;
-    > :first-child {
-        margin-right: ${props => props.theme.space[1]}px;
-    }
-`
-
-const ProfileVisibilityStatement = styled(Statement)`
-    margin-top: ${props => props.theme.space[2]}px;
-    flex-direction: column;
-`
 
 const Container = styled.section`
     display: flex;
@@ -45,8 +29,6 @@ const ArticleProposed = ({
     routeChangeAction,
     userId,
 }) => {
-    const article = this.props.data.getArticle
-
     return (
         <Container>
             <Head>
@@ -58,36 +40,11 @@ const ArticleProposed = ({
                     Waiting for original author approval
                 </BodyCard>
             </SectionContainer>
-            <ArticleCard
-                key={String(getArticle.id)}
-                // nfts={article.associatedNfts}
-                // resourceType={
-                //   article.owner && article.owner.__typename === "CommunityDTO"
-                //     ? "COMMUNITY"
-                //     : "USER"
-                // }
-                // id={String(article.id)}
-                // version={Number(article.version)}
-                datePublished={getArticle.datePublished || article.dateCreated}
-                title={String(getArticle.title)}
-                description={String(getArticle.description)}
-                author={getArticle.author}
-                attributes={getArticle.attributes}
-                // isLoggedIn={!!userId}
-                href={
-                    getArticle.type === 'drafted'
-                        ? `/draft/${getArticle.id}/${getArticle.version}`
-                        : `/${slugify(getArticle.title, { lower: true })}/${
-                              getArticle.id
-                          }/a`
-                }
-            />
+            <ArticleCard {...getArticle} />
             <SectionContainer>
                 <PrimaryButton
                     onClick={() =>
-                        routeChangeAction(
-                            `/public-profile/${this.props.userId}`
-                        )
+                        routeChangeAction(`/public-profile/${userId}`)
                     }
                 >
                     My Articles
