@@ -48,8 +48,8 @@ interface IProps {
         childrenProps: React.ReactElement<any>
     ) => React.ReactElement<any>
     iconSrc: string | null
-    primaryButton: React.ReactElement<any> | null
-    secondaryButton: React.ReactElement<any> | null
+    primaryButton?: React.ReactElement<any> | null
+    secondaryButton?: React.ReactElement<any> | null
     moveIconLeftBecauseCSS?: boolean
 }
 

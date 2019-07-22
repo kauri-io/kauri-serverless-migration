@@ -54,7 +54,7 @@ interface IWrapperProps {
     fontWeight?: number | string
     color?: string
     placeHolder?: string
-    value?: string
+    value?: string | null
     hideUnderline?: boolean
     name?: string
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void

@@ -3,13 +3,7 @@ import styled from 'styled-components'
 import Empty from '../PublicProfile/Empty'
 import { Title2, PageDescription } from '../../components/Typography'
 import ArticleCard from '../../components/Card/ArticleCardMaterial'
-import PrimaryButton from '../../components/Button/PrimaryButton'
-import AddToCollectionConnection from '../../containers/AddToCollection'
-import {
-    Article,
-    Article_owner_PublicUserDTO,
-    Article_owner_CommunityDTO,
-} from '../../queries/Fragments/__generated__/Article'
+import { Article } from '../../queries/Fragments/__generated__/Article'
 import {
     Collection,
     Collection_owner_PublicUserDTO,
@@ -54,14 +48,7 @@ interface IProps {
 }
 
 const CollectionSection: React.SFC<IProps> = props => {
-    const {
-        name,
-        description,
-        resources,
-        isLoggedIn,
-        openModalAction,
-        isOwnedByCurrentUser,
-    } = props
+    const { name, description, resources } = props
     if (resources) {
         return (
             <Container>
@@ -69,80 +56,8 @@ const CollectionSection: React.SFC<IProps> = props => {
                 <StyledDescription>{description}</StyledDescription>
                 <ResourcesSection>
                     {resources.map(resource => {
-                        const owner = resource.owner as
-                            | Article_owner_PublicUserDTO
-                            | Article_owner_CommunityDTO
-
                         if (resource.__typename === 'ArticleDTO') {
-                            const article = resource
-                            return (
-                                <ArticleCard
-                                    key={String(article.id)}
-                                    id={String(article.id)}
-                                    version={Number(article.version)}
-                                    description={article.description}
-                                    date={article.datePublished}
-                                    title={String(article.title)}
-                                    username={
-                                        (owner &&
-                                        owner.__typename === 'CommunityDTO'
-                                            ? owner && owner.communityName
-                                            : owner.username) || null
-                                    }
-                                    userId={
-                                        owner
-                                            ? typeof owner.id === 'string'
-                                                ? owner.id
-                                                : 'Anoymous'
-                                            : 'Anonymous'
-                                    }
-                                    userAvatar={(owner && owner.avatar) || null}
-                                    nfts={article.associatedNfts}
-                                    tags={article.tags as string[]}
-                                    imageURL={
-                                        (article.attributes &&
-                                            typeof article.attributes
-                                                .background === 'string' &&
-                                            article.attributes.background) ||
-                                        null
-                                    }
-                                    linkComponent={(
-                                        childrenProps: React.ReactElement<any>,
-                                        route: string
-                                    ) => (
-                                        <Link href={route}>
-                                            {childrenProps}
-                                        </Link>
-                                    )}
-                                    resourceType={'USER'}
-                                    cardHeight={310}
-                                    isLoggedIn={isLoggedIn}
-                                    hoverChildren={
-                                        isOwnedByCurrentUser
-                                            ? null
-                                            : () => (
-                                                  <PrimaryButton
-                                                      onClick={() =>
-                                                          openModalAction({
-                                                              children: (
-                                                                  <AddToCollectionConnection
-                                                                      articleId={String(
-                                                                          article.id
-                                                                      )}
-                                                                      version={Number(
-                                                                          article.version
-                                                                      )}
-                                                                  />
-                                                              ),
-                                                          })
-                                                      }
-                                                  >
-                                                      Add To Collection
-                                                  </PrimaryButton>
-                                              )
-                                    }
-                                />
-                            )
+                            return <ArticleCard {...resource} />
                         } else if (resource.__typename === 'CollectionDTO') {
                             const collection = resource
                             const articleCount =
@@ -230,7 +145,7 @@ const CollectionSection: React.SFC<IProps> = props => {
                                     username={
                                         collection.owner &&
                                         (collection.owner as Collection_owner_PublicUserDTO)
-                                            .name
+                                            .username
                                     }
                                     userAvatar={
                                         collection.owner &&

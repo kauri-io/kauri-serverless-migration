@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { fontSize as fontSizeSS, color as colorSS, space } from 'styled-system'
 
 interface IButtonProps {
-    bg?: string
+    bg?: string | null
     height?: string
     width?: string
     fontSize?: number

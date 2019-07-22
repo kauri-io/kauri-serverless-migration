@@ -8,6 +8,10 @@ import { BodyCard } from '../../components/Typography'
 import withPagination from '../../lib/with-pagination'
 import Masonry from '../../components/Masonry'
 import { getCollectionsForUser } from '../../queries/__generated__/getCollectionsForUser'
+import {
+    Collection_owner_CommunityDTO,
+    Collection_owner_PublicUserDTO,
+} from '../../queries/Fragments/__generated__/Collection'
 
 const Centered = styled.div`
     display: flex;
@@ -78,21 +82,27 @@ const Collections = ({ data, routeChangeAction, isLoggedIn }: IProps) =>
                             }
                             return current
                         }, 0)
+
+                    const owner = collection.owner as
+                        | Collection_owner_CommunityDTO
+                        | Collection_owner_PublicUserDTO
                     return (
                         <CollectionCard
-                            changeRoute={routeChangeAction}
                             key={collection.id}
                             id={collection.id}
                             name={collection.name}
                             date={collection.dateUpdated}
                             description={String(collection.description)}
+                            resourceType={owner.__typename}
                             username={
-                                collection.owner && collection.owner.username
+                                owner.__typename === 'PublicUserDTO'
+                                    ? (owner as Collection_owner_PublicUserDTO)
+                                          .username
+                                    : (owner as Collection_owner_CommunityDTO)
+                                          .communityName
                             }
-                            userId={collection.owner && collection.owner.id}
-                            userAvatar={
-                                collection.owner && collection.owner.avatar
-                            }
+                            userId={owner && owner.id}
+                            userAvatar={owner && owner.avatar}
                             articleCount={String(articleCount)}
                             collectionCount={String(collectionCount)}
                             imageURL={collection.background}

@@ -47,7 +47,9 @@ const RenderResources = (
     openModalAction?: (payload: { children: any }) => void,
     closeModalAction?: () => void,
     removeResourceAction?: (payload: removeResourceVariables) => void
-) => (article: Community_approved_ArticleDTO | Community_approved_CollectionDTO) => {
+) => (
+    article: Community_approved_ArticleDTO | Community_approved_CollectionDTO
+) => {
     const owner =
         article.owner && article.owner.__typename === 'PublicUserDTO'
             ? {
@@ -139,16 +141,18 @@ const RenderResources = (
                                         }
                                         confirmButtonAction={() =>
                                             removeResourceAction({
-                                                id: communityId,
+                                                id: String(communityId),
                                                 resource: {
                                                     id: String(
                                                         article.resourceIdentifier &&
-                                                            article.resourceIdentifier
+                                                            article
+                                                                .resourceIdentifier
                                                                 .id
                                                     ),
                                                     type:
                                                         article.resourceIdentifier &&
-                                                        article.resourceIdentifier
+                                                        article
+                                                            .resourceIdentifier
                                                             .type,
                                                 },
                                             })

@@ -43,12 +43,14 @@ interface IProps {
             r: string
         }
     }
-    user: {
-        name: string
-        username: string
-        email: string
-        dateCreated: string
-    }
+    user:
+        | {
+              name: string
+              username: string
+              email: string
+              dateCreated: string
+          }
+        | undefined
     userId: string
 }
 
@@ -79,38 +81,44 @@ class OnboardingEditProfile extends Component<IProps> {
     }
 
     componentDidMount() {
-        const { name, username, email, dateCreated } = this.props.user
-        const hasData = name && username && email
+        if (this.props.user) {
+            const { name, username, email, dateCreated } = this.props.user
+            const hasData = name && username && email
 
-        const loginTrackingPending = window.localStorage.getItem(
-            'login-tracking-pending'
-        )
+            const loginTrackingPending = window.localStorage.getItem(
+                'login-tracking-pending'
+            )
 
-        if (loginTrackingPending) {
-            const daysCreated = moment().diff(moment(dateCreated), 'minutes')
-            if (!daysCreated || daysCreated <= 5) {
-                analytics.signup(this.props.user)
-            } else {
-                analytics.login(this.props.user)
+            if (loginTrackingPending) {
+                const daysCreated = moment().diff(
+                    moment(dateCreated),
+                    'minutes'
+                )
+                if (!daysCreated || daysCreated <= 5) {
+                    analytics.signup(this.props.user)
+                } else {
+                    analytics.login(this.props.user)
+                }
+                window.localStorage.removeItem('login-tracking-pending')
             }
-            window.localStorage.removeItem('login-tracking-pending')
-        }
-        if (hasData) {
-            let newRedirectURL
-            if (typeof this.props.router.query.r === 'string') {
-                newRedirectURL =
-                    this.props.router.query.r.indexOf('https://') !== -1 ||
-                    this.props.router.query.redirected
-                        ? this.props.router.query.r + '?redirected=true'
-                        : this.props.router.query.r
-            } else {
-                newRedirectURL = `/public-profile/${this.props.userId}`
+            if (hasData) {
+                let newRedirectURL
+                if (typeof this.props.router.query.r === 'string') {
+                    newRedirectURL =
+                        this.props.router.query.r.indexOf('https://') !== -1 ||
+                        this.props.router.query.redirected
+                            ? this.props.router.query.r + '?redirected=true'
+                            : this.props.router.query.r
+                } else {
+                    newRedirectURL = `/public-profile/${this.props.userId}`
+                }
+                return this.props.routeChangeAction(newRedirectURL)
             }
-            return this.props.routeChangeAction(newRedirectURL)
         }
     }
 
     render() {
+        if (!this.props.user) return null
         const { name, username, email } = this.props.user
         const hasData = name && username && email
         if (hasData) {

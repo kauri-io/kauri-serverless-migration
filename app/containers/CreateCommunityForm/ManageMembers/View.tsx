@@ -92,7 +92,7 @@ class ManageMembers extends Component<IProps, IRole> {
                                     }
                                     userId={props.userId}
                                     isCommunityAdmin={props.isCommunityAdmin}
-                                    id={props.id}
+                                    id={String(props.id)}
                                     removeMemberAction={
                                         props.removeMemberAction
                                     }
@@ -108,7 +108,7 @@ class ManageMembers extends Component<IProps, IRole> {
                                 Array.isArray(props.invitations) &&
                                 props.invitations.length >= 1)) && (
                             <InviteMembersPanel
-                                id={props.id}
+                                id={String(props.id)}
                                 resendInvitationAction={
                                     props.resendInvitationAction
                                 }
@@ -153,7 +153,7 @@ class ManageMembers extends Component<IProps, IRole> {
                                     }
                                     userId={props.userId}
                                     isCommunityAdmin={props.isCommunityAdmin}
-                                    id={props.id}
+                                    id={String(props.id)}
                                     removeMemberAction={
                                         props.removeMemberAction
                                     }
@@ -172,7 +172,7 @@ class ManageMembers extends Component<IProps, IRole> {
                                 resendInvitationAction={
                                     props.resendInvitationAction
                                 }
-                                id={props.id}
+                                id={String(props.id)}
                                 revokeInvitationAction={
                                     props.revokeInvitationAction
                                 }
@@ -204,14 +204,14 @@ class ManageMembers extends Component<IProps, IRole> {
                     openChangeMemberRoleModal={this.openChangeMemberRoleModal}
                     userId={props.userId}
                     isCommunityAdmin={props.isCommunityAdmin}
-                    id={props.id}
+                    id={String(props.id)}
                     removeMemberAction={props.removeMemberAction}
                     openAddMemberModal={() => props.openAddMemberModal()}
                     members={props.members}
                 />
                 <InviteMembersPanel
                     resendInvitationAction={props.resendInvitationAction}
-                    id={props.id}
+                    id={String(props.id)}
                     revokeInvitationAction={props.revokeInvitationAction}
                     invitations={
                         (props.data &&

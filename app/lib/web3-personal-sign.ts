@@ -3,8 +3,8 @@ import { showNotificationAction } from './Epics/ShowNotificationEpic'
 import apolloClient from './init-apollo'
 import apolloSubscriber from './apollo-subscriber'
 
-const personalSign = data =>
-    new Promise((resolve, reject) => {
+const personalSign = (data: string) =>
+    new Promise<string>((resolve, reject) => {
         const web3 = global.window && global.window.web3
         if (web3.eth.accounts && web3.eth.accounts.length < 1) {
             global.window.ethereum &&
@@ -55,7 +55,7 @@ const personalSign = data =>
         }
     })
 
-const loginPersonalSign = data =>
+const loginPersonalSign = (data: string) =>
     from(personalSign(data)).catch(err => {
         console.error(err)
         if (err.message.includes('Metamask locked!')) {

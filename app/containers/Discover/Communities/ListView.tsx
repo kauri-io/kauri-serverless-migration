@@ -61,6 +61,7 @@ class Communities extends Component<IProps> {
                                 (community, index) =>
                                     community && (
                                         <CommunityCard
+                                            id={community.id}
                                             key={index}
                                             logo={community.avatar}
                                             imageURL={community.avatar}

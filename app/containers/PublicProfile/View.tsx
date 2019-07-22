@@ -202,8 +202,8 @@ class PublicProfile extends Component<IProps, IState> {
                                 openModalAction={openModalAction}
                             />,
                             <Collections
-                                isLoggedIn={!!currentUser}
                                 data={CollectionQuery}
+                                isLoggedIn={!!currentUser}
                                 routeChangeAction={routeChangeAction}
                             />,
                             isOwner ? (

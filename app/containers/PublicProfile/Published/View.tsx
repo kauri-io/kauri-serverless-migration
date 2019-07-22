@@ -55,19 +55,7 @@ const Articles: React.FC<IArticlesProps> = ({
                     )}
                 <Masonry>
                     {articles.map(
-                        article =>
-                            article && (
-                                <ArticleCard
-                                    key={`${article.id}-${article.version}`}
-                                    title={article.title}
-                                    description={article.description}
-                                    id={article.id}
-                                    version={article.version}
-                                    datePublished={article.datePublished}
-                                    author={article.author}
-                                    attributes={article.attributes}
-                                />
-                            )
+                        article => article && <ArticleCard {...article} />
                     )}
                 </Masonry>
             </Fragment>

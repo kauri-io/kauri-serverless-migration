@@ -43,19 +43,7 @@ const Articles: React.FC<IArticlesProps> = ({ data, routeChangeAction }) => {
             <Fragment>
                 <Masonry withPadding={false}>
                     {articles.map(
-                        article =>
-                            article && (
-                                <ArticleCard
-                                    key={`${article.id}-${article.version}`}
-                                    id={article.id}
-                                    version={article.version}
-                                    datePublished={article.datePublished}
-                                    title={article.title}
-                                    description={article.description}
-                                    author={article.author}
-                                    attributes={article.attributes}
-                                />
-                            )
+                        article => article && <ArticleCard {...article} />
                     )}
                 </Masonry>
             </Fragment>

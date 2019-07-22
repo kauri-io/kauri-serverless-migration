@@ -5,7 +5,10 @@ import Link from 'next/link'
 import Head from 'next/head'
 import PrimaryButton from '../../components/Button/PrimaryButton'
 import { Title2, BodyCard } from '../../components/Typography'
-import { getCollection_getCollection, getCollection_getCollection_owner_CommunityDTO } from '../../queries/__generated__/getCollection'
+import {
+    getCollection_getCollection,
+    getCollection_getCollection_owner_CommunityDTO,
+} from '../../queries/__generated__/getCollection'
 
 const Container = styled.section`
     display: flex;
@@ -99,7 +102,7 @@ class CollectionCreated extends React.Component<IProps> {
                       avatar: owner.avatar,
                       id: owner.id || 'not_found',
                       type: 'COMMUNITY',
-                      username: ( owner as getCollection_getCollection_owner_CommunityDTO).communityName,
+                      username: owner.communityName,
                   }
                 : {
                       avatar: '',
