@@ -21,7 +21,7 @@ import AlertViewComponent from '../../components/Modal/AlertView'
 import AcceptCommunityInvitationModalContent from './AcceptCommunityInvitationModalContent'
 import AddMemberModal from '../CreateCommunityForm/AddMemberModal'
 import { removeResourceVariables } from '../../queries/__generated__/removeResource'
-import { recordView } from '../../queries/Utils'
+import { recordViewMutation } from '../../queries/Utils'
 import ApolloClient from 'apollo-client'
 import HomepageResources from './HomepageResources'
 
@@ -54,7 +54,7 @@ class CommunityConnection extends React.Component<IProps> {
     componentDidMount() {
         this.props.client.mutate({
             fetchPolicy: 'no-cache',
-            mutation: recordView,
+            mutation: recordViewMutation,
             variables: {
                 resourceId: {
                     id: this.props.communityId,
@@ -82,7 +82,7 @@ class CommunityConnection extends React.Component<IProps> {
                         confirmButtonAction={() =>
                             this.props.acceptCommunityInvitationAction({
                                 id: this.props.communityId,
-                                secret: this.props.secret,
+                                secret: this.props.secret || '',
                             })
                         }
                         confirmButtonText={'Accept'}
