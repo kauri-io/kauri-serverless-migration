@@ -2,7 +2,6 @@ import moment from 'moment'
 import ArticleCard from '../Card/ArticleCardMaterial'
 import CollectionCard from '../Card/CollectionCard'
 import CommunityCard from '../Card/CommunityCard'
-import slugify from 'slugify'
 import { Article } from '../../queries/Fragments/__generated__/Article'
 import { Community } from '../../queries/Fragments/__generated__/Community'
 import {
@@ -23,14 +22,7 @@ export const RenderCardContent = ({
 }: IRenderCardContentProps) => (card: Article | Collection | Community) => {
     switch (card.__typename) {
         case 'ArticleDTO':
-            return (
-                <ArticleCard
-                    href={`/${slugify(String(card.title), { lower: true })}/${
-                        card.id
-                    }/a`}
-                    {...card}
-                />
-            )
+            return <ArticleCard {...card} />
         case 'CollectionDTO':
             const articleCount =
                 card.sections &&
@@ -83,7 +75,7 @@ export const RenderCardContent = ({
                     username={
                         typedOwner && typedOwner.__typename === 'PublicUserDTO'
                             ? typedOwner.username
-                            : typedOwner && typedOwner.communityName
+                            : typedOwner.communityName
                     }
                     userId={String(typedOwner && typedOwner.id)}
                     userAvatar={typedOwner && typedOwner.avatar}

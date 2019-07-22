@@ -6,9 +6,7 @@ import ArticleCard from '../../components/Card/ArticleCardMaterial'
 import PrimaryButton from '../../components/Button/PrimaryButton'
 import { Title1, BodyCard } from '../../components/Typography'
 import { Article } from '../../queries/Fragments/__generated__/Article'
-
 import { ShareButtons } from '../../components/Tooltip/ShareButtons'
-import slugify from 'slugify'
 
 interface IProps {
     data: {
@@ -98,32 +96,7 @@ class ArticleApproved extends React.Component<IProps> {
                     <DescriptionContainer>
                         <BodyCard color="white">{`The article ${subjectCopy}`}</BodyCard>
                     </DescriptionContainer>
-                    <ArticleCard
-                        key={String(article.id)}
-                        // nfts={article.associatedNfts}
-                        // resourceType={
-                        //   article.owner && article.owner.__typename === "CommunityDTO"
-                        //     ? "COMMUNITY"
-                        //     : "USER"
-                        // }
-                        // id={String(article.id)}
-                        // version={Number(article.version)}
-                        datePublished={
-                            article.datePublished || article.dateCreated
-                        }
-                        title={String(article.title)}
-                        description={String(article.description)}
-                        author={article.author}
-                        attributes={article.attributes}
-                        // isLoggedIn={isLoggedIn}
-                        href={
-                            type === 'drafted'
-                                ? `/draft/${article.id}/${article.version}`
-                                : `/${slugify(article.title, {
-                                      lower: true,
-                                  })}/${article.id}/a`
-                        }
-                    />
+                    <ArticleCard {...article} />
                     <ArticleApprovedActionButtons>
                         <ShareButtons
                             horizontal={true}

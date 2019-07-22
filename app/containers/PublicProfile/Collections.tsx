@@ -88,12 +88,12 @@ const Collections = ({ data, routeChangeAction, isLoggedIn }: IProps) =>
                         | Collection_owner_PublicUserDTO
                     return (
                         <CollectionCard
-                            changeRoute={routeChangeAction}
                             key={collection.id}
                             id={collection.id}
                             name={collection.name}
                             date={collection.dateUpdated}
                             description={String(collection.description)}
+                            resourceType={owner.__typename}
                             username={
                                 owner.__typename === 'PublicUserDTO'
                                     ? (owner as Collection_owner_PublicUserDTO)

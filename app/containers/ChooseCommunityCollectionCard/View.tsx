@@ -42,7 +42,6 @@ const Link = styled.a`
 
 const CollectionsContent = ({
     chooseCollection,
-    viewCollection,
     chosenCollections,
     collections,
     userId,
@@ -60,7 +59,7 @@ const CollectionsContent = ({
                             ({ resourcesId, id: collectionId }) => {
                                 if (resourcesId) {
                                     return resourcesId.find(
-                                        ({ id, version }) =>
+                                        ({ id }) =>
                                             id === collection.id ||
                                             currentCollectionIdIfUpdating ===
                                                 collection.id

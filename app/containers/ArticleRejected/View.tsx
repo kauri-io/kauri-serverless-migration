@@ -24,8 +24,14 @@ const Container = styled.section`
     }
 `
 
-const ArticleRejected = () => {
-    const { data, routeChangeAction, userId } = this.props
+interface IProps {
+    data: any
+    routeChangeAction: any
+    userId: any
+}
+
+const ArticleRejected = (props: IProps) => {
+    const { data, routeChangeAction, userId } = props
     return (
         <Container>
             <H2>Article Rejected</H2>
