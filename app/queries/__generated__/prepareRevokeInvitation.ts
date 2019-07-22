@@ -22,4 +22,5 @@ export interface prepareRevokeInvitation {
 export interface prepareRevokeInvitationVariables {
   id: string;
   invitationId: string;
+  signature: string;
 }
