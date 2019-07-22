@@ -47,15 +47,15 @@ interface IProps {
 }
 
 interface IState {
-    username: string
-    title: string
-    avatar: string
-    website: string
-    name: string
-    twitter: string
-    github: string
-    email: string
-    status: string
+    username: string | null
+    title: string | null
+    avatar: string | null
+    website: string | null
+    name: string | null
+    twitter: string | null
+    github: string | null
+    email: string | null
+    status: string | null
     pendingSubmit: boolean
     subscriptions: {
         newsletter?: boolean
@@ -109,8 +109,8 @@ class EditableHeader extends Component<IProps, IState> {
 
     componentDidUpdate(prevProps) {
         if (
-            typeof prevProps.OwnProfile.getMyProfile === 'undefined' &&
-            typeof this.props.OwnProfile.getMyProfile !== 'undefined'
+            prevProps.OwnProfile.getMyProfile &&
+            this.props.OwnProfile.getMyProfile
         ) {
             const {
                 username,

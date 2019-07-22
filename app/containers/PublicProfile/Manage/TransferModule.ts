@@ -33,7 +33,7 @@ export const rejectArticleTransferAction = (
 
 export const rejectArticleTransferEpic = (
     action$: ActionsObservable<IRejectArticleTransferAction>,
-    _,
+    _: IReduxState,
     { apolloClient, apolloSubscriber }: IDependencies
 ) =>
     action$.pipe(
@@ -44,14 +44,8 @@ export const rejectArticleTransferEpic = (
                 variables: { id },
             })
         ),
-        flatMap(
-            ({
-                data: {
-                    rejectArticleTransfer: { hash },
-                },
-            }: {
-                data: { rejectArticleTransfer: { hash: string } }
-            }) => apolloSubscriber(hash)
+        flatMap(({ data: { rejectArticleTransfer: { hash } } }) =>
+            apolloSubscriber(hash)
         ),
         tap(() => apolloClient.resetStore()),
         tap(
@@ -199,14 +193,8 @@ export const finaliseArticleTransferEpic: Epic<
                             })
                         )
                     ),
-                    flatMap(
-                        ({
-                            data: {
-                                finaliseArticleTransfer: { hash },
-                            },
-                        }: {
-                            data: { finaliseArticleTransfer: { hash: string } }
-                        }) => apolloSubscriber(hash)
+                    flatMap(({ data: { finaliseArticleTransfer: { hash } } }) =>
+                        apolloSubscriber(hash)
                     ),
                     tap(() => apolloClient.resetStore()),
                     tap(() =>

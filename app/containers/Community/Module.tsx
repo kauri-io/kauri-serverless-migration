@@ -40,10 +40,6 @@ import {
 } from '../../queries/__generated__/prepareSendInvitation'
 import { prepareAcceptInvitationVariables } from '../../queries/__generated__/prepareAcceptInvitation'
 import {
-    acceptInvitation,
-    acceptInvitationVariables,
-} from '../../queries/__generated__/acceptInvitation'
-import {
     prepareRevokeInvitation,
     prepareRevokeInvitationVariables,
 } from '../../queries/__generated__/prepareRevokeInvitation'
@@ -51,10 +47,7 @@ import {
     revokeInvitation,
     revokeInvitationVariables,
 } from '../../queries/__generated__/revokeInvitation'
-import {
-    prepareRemoveMember,
-    prepareRemoveMemberVariables,
-} from '../../queries/__generated__/prepareRemoveMember'
+import { prepareRemoveMemberVariables } from '../../queries/__generated__/prepareRemoveMember'
 import {
     removeMember,
     removeMemberVariables,
@@ -71,10 +64,7 @@ import {
     resendInvitation,
     resendInvitationVariables,
 } from '../../queries/__generated__/resendInvitation'
-import {
-    initiateArticleTransfer,
-    initiateArticleTransferVariables,
-} from '../../queries/__generated__/initiateArticleTransfer'
+import { initiateArticleTransferVariables } from '../../queries/__generated__/initiateArticleTransfer'
 
 import { ISendInvitationCommandOutput } from '../CreateCommunityForm/Module'
 import { closeModalAction } from '../../components/Modal/Module'
@@ -281,10 +271,6 @@ interface ICurateCommunityResourcesCommandOutput {
     error?: string
 }
 
-interface IAcceptInvitationCommandOutput {
-    hash: string
-}
-
 interface IRevokeInvitationCommandOutput {
     hash: string
 }
@@ -310,13 +296,6 @@ interface IChangeMemberRoleCommandOutput {
 type IApproveResourceCommandOutput = ICurateCommunityResourcesCommandOutput
 
 type IResendInvitationCommandOutput = IRevokeInvitationCommandOutput
-
-interface IInitiateArticleTransferCommandOutput {
-    hash: string
-    version: string
-    articleAuthor: string
-    dateCreated: string
-}
 
 const capitalize = (s: string) =>
     compose<string, string, string>(

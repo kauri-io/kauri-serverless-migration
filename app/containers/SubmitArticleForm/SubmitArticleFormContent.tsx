@@ -113,7 +113,6 @@ class SubmitArticleFormText extends React.Component<
                 hasErrors={this.props.getFieldError('text')}
                 editorState={this.state.editorState}
                 handleChange={this.handleChange}
-                readOnly={false}
             />
         )
     }

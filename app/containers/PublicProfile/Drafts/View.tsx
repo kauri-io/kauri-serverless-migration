@@ -18,6 +18,10 @@ import {
     IDeleteDraftArticleAction,
     IDeleteDraftArticlePayload,
 } from '../../ArticleDraft/DeleteDraftArticleModule'
+import {
+    Article_owner_CommunityDTO,
+    Article_owner_PublicUserDTO,
+} from '../../../queries/Fragments/__generated__/Article'
 
 interface IArticlesProps {
     data: searchPersonalArticles
@@ -52,8 +56,13 @@ const Articles = ({
     return articles && articles.length > 0 ? (
         <Fragment>
             <Masonry withPadding={false}>
-                {articles.map(
-                    article =>
+                {articles.map(article => {
+                    const owner =
+                        article &&
+                        (article.owner as
+                            | Article_owner_CommunityDTO
+                            | Article_owner_PublicUserDTO)
+                    return (
                         article && (
                             <ArticleCard
                                 key={`${article.id}-${article.version}`}
@@ -63,19 +72,23 @@ const Articles = ({
                                 title={article.title}
                                 description={article.description}
                                 userId={
-                                    type !== 'toBeApproved' && article.owner
-                                        ? article.owner.id
+                                    type !== 'toBeApproved' && owner
+                                        ? owner.id
                                         : article.author && article.author.id
                                 }
                                 username={
-                                    type !== 'toBeApproved' && article.owner
-                                        ? article.owner.username
+                                    type !== 'toBeApproved' && owner
+                                        ? owner.__typename === 'PublicUserDTO'
+                                            ? (owner as Article_owner_PublicUserDTO)
+                                                  .username
+                                            : (owner as Article_owner_CommunityDTO)
+                                                  .communityName
                                         : article.author &&
                                           article.author.username
                                 }
                                 userAvatar={
-                                    type !== 'toBeApproved' && article.owner
-                                        ? article.owner.avatar
+                                    type !== 'toBeApproved' && owner
+                                        ? owner.avatar
                                         : article.author &&
                                           article.author.avatar
                                 }
@@ -147,7 +160,8 @@ const Articles = ({
                                 )}
                             />
                         )
-                )}
+                    )
+                })}
             </Masonry>
         </Fragment>
     ) : (

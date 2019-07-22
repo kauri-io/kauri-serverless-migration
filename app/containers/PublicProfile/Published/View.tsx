@@ -15,6 +15,10 @@ import {
     IOpenModalAction,
     IOpenModalPayload,
 } from '../../../components/Modal/Module'
+import {
+    Article_owner_CommunityDTO,
+    Article_owner_PublicUserDTO,
+} from '../../../queries/Fragments/__generated__/Article'
 
 export interface IArticlesProps {
     data: searchPersonalArticles
@@ -51,8 +55,12 @@ const Articles: React.FC<IArticlesProps> = ({
                 <CheckpointArticles isOwner={isOwner} articles={articles} />
             )}
             <Masonry>
-                {articles.map(
-                    article =>
+                {articles.map(article => {
+                    if (!article) return null
+                    const owner = article.owner as
+                        | Article_owner_CommunityDTO
+                        | Article_owner_PublicUserDTO
+                    return (
                         article && (
                             <ArticleCard
                                 key={`${article.id}-${article.version}`}
@@ -62,19 +70,23 @@ const Articles: React.FC<IArticlesProps> = ({
                                 description={article.description}
                                 tags={article.tags}
                                 userId={
-                                    type !== 'toBeApproved' && article.owner
-                                        ? article.owner.id
+                                    type !== 'toBeApproved' && owner
+                                        ? owner.id
                                         : article.author && article.author.id
                                 }
                                 username={
-                                    type !== 'toBeApproved' && article.owner
-                                        ? article.owner.username
+                                    type !== 'toBeApproved' && owner
+                                        ? owner.__typename === 'PublicUserDTO'
+                                            ? (owner as Article_owner_PublicUserDTO)
+                                                  .username
+                                            : (owner as Article_owner_CommunityDTO)
+                                                  .communityName
                                         : article.author &&
                                           article.author.username
                                 }
                                 userAvatar={
-                                    type !== 'toBeApproved' && article.owner
-                                        ? article.owner.avatar
+                                    type !== 'toBeApproved' && owner
+                                        ? owner.avatar
                                         : article.author &&
                                           article.author.avatar
                                 }
@@ -119,7 +131,8 @@ const Articles: React.FC<IArticlesProps> = ({
                                 )}
                             />
                         )
-                )}
+                    )
+                })}
             </Masonry>
         </Fragment>
     ) : (

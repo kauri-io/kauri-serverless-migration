@@ -55,8 +55,8 @@ export const registerEpic = (action$: Observable<IRegisterAction>) =>
         ofType(REGISTER),
         switchMap(({ callback }: IRegisterAction) =>
             from(
-                window.ethereum
-                    ? window.ethereum.enable()
+                global.window.ethereum
+                    ? global.window.ethereum.enable()
                     : new Promise(resolve => resolve())
             ).pipe(
                 mergeMap(() =>
@@ -72,7 +72,7 @@ export const registerEpic = (action$: Observable<IRegisterAction>) =>
                     loginPersonalSign(sentence)
                         .map((signature: string) =>
                             registerSignaturePayload(
-                                window.web3.eth.accounts[0],
+                                global.window.web3.eth.accounts[0],
                                 signature,
                                 id
                             )
@@ -105,7 +105,7 @@ export const registerEpic = (action$: Observable<IRegisterAction>) =>
                             })
                             document.cookie = cookie.serialize(
                                 'USER_ID',
-                                window.web3.eth.accounts[0],
+                                global.window.web3.eth.accounts[0],
                                 {
                                     maxAge: 30 * 24 * 60 * 60, // 30 days
                                     domain:

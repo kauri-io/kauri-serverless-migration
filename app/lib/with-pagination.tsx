@@ -26,7 +26,7 @@ function withPagination<T>(
     Paginated: React.FunctionComponent<T> | React.ComponentClass<T>,
     key: PaginationDataQuery,
     queryName: string = 'data'
-): React.FunctionComponent<any> {
+) {
     class WithPagination extends Component<IProps & T, IState> {
         childRef: HTMLElement | null
         childRefElement: Element | null
@@ -185,6 +185,7 @@ function withPagination<T>(
             )
         }
     }
+
     return WithPagination
 }
 
