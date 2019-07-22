@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { homepageContentQuery as query } from '../../queries/Homepage'
+import { homePageContentQuery as query } from '../../queries/Homepage'
 import {
-    homepageContent,
-    homepageContentVariables,
+    homePageContent,
+    homePageContentVariables,
 } from '../../queries/__generated__/homePageContent'
 import { Query } from 'react-apollo'
 import Loading from '../../components/Loading'
@@ -73,13 +73,13 @@ interface IProps {
     }
     hostName: string
     routeChangeAction: (route: string) => void
-    emailSubscribeAction: (emailAddress: string) => void
+    emailSubscribeAction: (emailAddress: string, callback?: any) => void
     showNotificationAction: (payload: IShowNotificationPayload) => void
 }
 
 const HomePageComponent: React.FunctionComponent<IProps> = props => {
     return (
-        <Query<homepageContent, homepageContentVariables>
+        <Query<homePageContent, homePageContentVariables>
             query={query}
             variables={{}}
         >
@@ -166,15 +166,15 @@ const HomePageComponent: React.FunctionComponent<IProps> = props => {
                                                                                 ) =>
                                                                                     category && (
                                                                                         <CuratedCategory
-                                                                                            key={`${category.name}-${categoryIndex}`}
+                                                                                            key={`${category.propertyName}-${categoryIndex}`}
                                                                                             background={
                                                                                                 category.image
                                                                                             }
                                                                                             linkComponent={children => (
                                                                                                 <Link
-                                                                                                    href={
+                                                                                                    href={String(
                                                                                                         category.link
-                                                                                                    }
+                                                                                                    )}
                                                                                                 >
                                                                                                     {
                                                                                                         children
@@ -182,7 +182,7 @@ const HomePageComponent: React.FunctionComponent<IProps> = props => {
                                                                                                 </Link>
                                                                                             )}
                                                                                             category={String(
-                                                                                                category.name
+                                                                                                category.propertyName
                                                                                             )}
                                                                                             description={String(
                                                                                                 category.description
@@ -427,7 +427,7 @@ const HomePageComponent: React.FunctionComponent<IProps> = props => {
                                                                                     const tags = sideBar.content.map(
                                                                                         tag =>
                                                                                             (tag &&
-                                                                                                tag.name) ||
+                                                                                                tag.tagName) ||
                                                                                             ''
                                                                                     )
 

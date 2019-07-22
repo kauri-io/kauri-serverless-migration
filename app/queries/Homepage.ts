@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 import { Collection, CommunityOwner, UserOwner } from './Fragments'
 
-export const homepageContentQuery = gql`
+export const homePageContentQuery = gql`
     fragment ResourceFragment on AbstractResourceDTO {
         ... on CollectionDTO {
             ...Collection
@@ -32,7 +32,7 @@ export const homepageContentQuery = gql`
             }
             author {
                 id
-                publicUserName: name
+                publicUserName
                 username
                 avatar
             }
@@ -55,9 +55,9 @@ export const homepageContentQuery = gql`
             creator {
                 id
                 username
-                publicUserName: name
+                publicUserName
             }
-            communityName: name
+            communityName
             description
             website
             avatar
@@ -161,7 +161,7 @@ export const homepageContentQuery = gql`
         }
     }
 
-    query homepageContent($populate: Boolean = true) {
+    query homePageContent($populate: Boolean = true) {
         getLatestHomepageDescriptor(populate: $populate) {
             rows {
                 main {

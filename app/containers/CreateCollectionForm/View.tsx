@@ -35,7 +35,10 @@ import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
 import handleDragEnd from './handleDragEnd'
 import { IFormState } from './index'
 import { Collection_sections } from '../../queries/Fragments/__generated__/Collection'
-import { IShowNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
+import {
+    IShowNotificationAction,
+    IShowNotificationPayload,
+} from '../../lib/Epics/ShowNotificationEpic'
 import {
     IOpenModalAction,
     ICloseModalAction,
@@ -47,7 +50,7 @@ const emptySection: Collection_sections = {
     id: null,
     __typename: 'SectionDTO',
     name: '',
-    description: undefined,
+    description: null,
     resourcesId: [],
     resources: [],
 }
@@ -103,12 +106,6 @@ const CreateCollectionDetails = styled.div`
     }
 `
 
-const AddAnotherSectionContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    ${space};
-`
 const CreateCollectionActionsPlaceHolder = styled.div`
     display: flex;
     mix-blend-mode: normal;
@@ -168,20 +165,6 @@ const DisplayFormikState = props => (
     </div>
 )
 
-const ErrorMessageRenderer = styled.h2`
-    color: #ffffff !important;
-`
-
-const ShareIcon = () => (
-    <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-        <path
-            fill="#0BA986"
-            d="M352 320c-22.608 0-43.387 7.819-59.79 20.895l-102.486-64.054a96.551 96.551 0 0 0 0-41.683l102.486-64.054C308.613 184.181 329.392 192 352 192c53.019 0 96-42.981 96-96S405.019 0 352 0s-96 42.981-96 96c0 7.158.79 14.13 2.276 20.841L155.79 180.895C139.387 167.819 118.608 160 96 160c-53.019 0-96 42.981-96 96s42.981 96 96 96c22.608 0 43.387-7.819 59.79-20.895l102.486 64.054A96.301 96.301 0 0 0 256 416c0 53.019 42.981 96 96 96s96-42.981 96-96-42.981-96-96-96z"
-            className=""
-        />
-    </svg>
-)
-
 const DraggableResourceContainer = styled.div`
     :hover {
         > :first-child {
@@ -200,10 +183,9 @@ const renderResourceSection = (
     arrayHelpers,
     section,
     values,
-    mappingKey,
-    provided
+    mappingKey
 ) => (resource, resourceIndex) => (
-    <ResourceSection key={resourceIndex} mt={3}>
+    <ResourceSection key={resourceIndex}>
         {path(
             ['sections', index, mappingKey, resourceIndex, 'version'],
             values
@@ -226,24 +208,14 @@ const renderResourceSection = (
                         id="article-card"
                     >
                         <ArticleCard
-                            id={path(
-                                [
-                                    'sections',
-                                    index,
-                                    mappingKey,
-                                    resourceIndex,
-                                    'id',
-                                ],
-                                values
-                            )}
-                            version={parseInt(
+                            id={String(
                                 path(
                                     [
                                         'sections',
                                         index,
                                         mappingKey,
                                         resourceIndex,
-                                        'version',
+                                        'id',
                                     ],
                                     values
                                 )
@@ -270,15 +242,17 @@ const renderResourceSection = (
                             id="collection-card"
                         >
                             <CollectionCard
-                                id={path(
-                                    [
-                                        'sections',
-                                        index,
-                                        mappingKey,
-                                        resourceIndex,
-                                        'id',
-                                    ],
-                                    values
+                                id={String(
+                                    path(
+                                        [
+                                            'sections',
+                                            index,
+                                            mappingKey,
+                                            resourceIndex,
+                                            'id',
+                                        ],
+                                        values
+                                    )
                                 )}
                             />
                             {provided.placeholder}
@@ -326,17 +300,23 @@ export interface IProps {
     isSubmitting: boolean
     setFieldValue: (string, any) => void
     validateForm: () => Promise<any>
-    showNotificationAction: IShowNotificationAction
+    showNotificationAction: (
+        payload: IShowNotificationPayload
+    ) => IShowNotificationAction
     routeChangeAction: (route: string) => void
     openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
     editCollectionAction: any
     createCollectionAction: any
-    data?: { getCollection?: ICollection }
-    closeModalAction: ICloseModalAction
+    data?: { getCollection?: ICollection; variables: { id: string } }
+    closeModalAction: () => ICloseModalAction
     userId: string
     username: string
     userAvatar: string
     isLoggedIn: boolean
+    query: {
+        articleId: string
+        version: string
+    }
 }
 
 const BackIcon = styled.div`
@@ -363,7 +343,7 @@ export default ({
     username,
     userId,
     userAvatar,
-}: Props) => (
+}: IProps) => (
     <Section>
         <Form>
             <ActionsSection
@@ -410,7 +390,7 @@ export default ({
             </ActionsSection>
 
             <PrimaryHeaderSection backgroundURL={values.background}>
-                <CreateCollectionDetails mb={2}>
+                <CreateCollectionDetails>
                     <Label color="white">Collection</Label>
                     <Field
                         type="text"
@@ -456,15 +436,15 @@ export default ({
 
                     {/* TODO: WAIT FOR BACKEND */}
                     {/* <AddTagButton color='white' /> */}
-                    <CreateCollectionActionsPlaceHolder mr={3}>
+                    <CreateCollectionActionsPlaceHolder>
                         {/* <PrimaryButton>Follow Collection</PrimaryButton> */}
                         {/* <TertiaryButton>Up vote</TertiaryButton> */}
                         {/* <TertiaryButton icon={<ShareIcon />}>Share</TertiaryButton> */}
                     </CreateCollectionActionsPlaceHolder>
                 </CreateCollectionDetails>
                 <Stack alignItems={['', 'center']} justifyContent={['', 'end']}>
-                    <CreateCollectionMetaDetails mb={4}>
-                        <CreateCollectionCuratorDetails mr={4} mb={2}>
+                    <CreateCollectionMetaDetails>
+                        <CreateCollectionCuratorDetails>
                             <StatisticsContainer
                                 pageType="CreateCollectionPage"
                                 statistics={[
@@ -530,7 +510,7 @@ export default ({
                 </Stack>
             </PrimaryHeaderSection>
 
-            <ContentSection bg="tertiaryBackgroundColor">
+            <ContentSection>
                 <FieldArray
                     name="sections"
                     render={arrayHelpers => (
@@ -641,10 +621,7 @@ export default ({
                                                         children: (
                                                             <ChooseArticleModal
                                                                 allOtherChosenArticles={values.sections.filter(
-                                                                    (
-                                                                        section,
-                                                                        sectionIndex
-                                                                    ) =>
+                                                                    sectionIndex =>
                                                                         index !==
                                                                         sectionIndex
                                                                 )}
@@ -709,10 +686,7 @@ export default ({
                                                                     id
                                                                 }
                                                                 allOtherChosenCollections={values.sections.filter(
-                                                                    (
-                                                                        section,
-                                                                        sectionIndex
-                                                                    ) =>
+                                                                    sectionIndex =>
                                                                         index !==
                                                                         sectionIndex
                                                                 )}

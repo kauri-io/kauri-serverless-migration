@@ -10,6 +10,7 @@ import Link from '../Link'
 
 interface IProps {
     id: string
+    version: number
     title: string | null
     author: {
         name: string | null

@@ -17,6 +17,10 @@ import {
 } from '../../../components/Modal/Module'
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
 import { ICommunity } from '../../../lib/Module'
+import {
+    Article_owner_CommunityDTO,
+    Article_owner_PublicUserDTO,
+} from '../../../queries/Fragments/__generated__/Article'
 
 interface IArticlesProps {
     data: searchPersonalArticles
@@ -45,49 +49,68 @@ const Articles = ({
     isOwner,
 }: IArticlesProps) => {
     const articles = data.searchArticles && data.searchArticles.content
-    return articles.length > 0 ? (
+    return articles && articles.length > 0 ? (
         <Fragment>
             {typeof type === 'string' && type === 'published' && isOwner && (
                 <CheckpointArticles isOwner={isOwner} articles={articles} />
             )}
             <Masonry withPadding={false}>
-                {articles.map(article => (
-                    <ArticleCard
-                        key={`${article.id}-${article.version}`}
-                        tags={article.tags}
-                        changeRoute={routeChangeAction}
-                        date={article.dateCreated}
-                        title={article.title}
-                        description={article.description}
-                        userId={
-                            type !== 'toBeApproved' && article.owner
-                                ? article.owner.id
-                                : article.author.id
-                        }
-                        username={
-                            type !== 'toBeApproved' && article.owner
-                                ? article.owner.username
-                                : article.author.username
-                        }
-                        userAvatar={
-                            type !== 'toBeApproved' && article.owner
-                                ? article.owner.avatar
-                                : article.author.avatar
-                        }
-                        id={article.id}
-                        version={article.version}
-                        imageURL={
-                            article.attributes && article.attributes.background
-                        }
-                        nfts={article.associatedNfts}
-                        destination={'review'}
-                        linkComponent={(childrenProps, route) => (
-                            <Link useAnchorTag href={route}>
-                                {childrenProps}
-                            </Link>
-                        )}
-                    />
-                ))}
+                {articles &&
+                    articles.map(article => {
+                        const owner =
+                            article &&
+                            (article.owner as
+                                | Article_owner_CommunityDTO
+                                | Article_owner_PublicUserDTO)
+                        return (
+                            article && (
+                                <ArticleCard
+                                    key={`${article.id}-${article.version}`}
+                                    tags={article.tags}
+                                    changeRoute={routeChangeAction}
+                                    date={article.dateCreated}
+                                    title={article.title}
+                                    description={article.description}
+                                    userId={
+                                        type !== 'toBeApproved' && owner
+                                            ? owner.id
+                                            : article.author &&
+                                              article.author.id
+                                    }
+                                    username={
+                                        type !== 'toBeApproved' && owner
+                                            ? owner.__typename ===
+                                              'PublicUserDTO'
+                                                ? (owner as Article_owner_PublicUserDTO)
+                                                      .username
+                                                : (owner as Article_owner_CommunityDTO)
+                                                      .communityName
+                                            : article.author &&
+                                              article.author.username
+                                    }
+                                    userAvatar={
+                                        type !== 'toBeApproved' && owner
+                                            ? owner.avatar
+                                            : article.author &&
+                                              article.author.avatar
+                                    }
+                                    id={article.id}
+                                    version={article.version}
+                                    imageURL={
+                                        article.attributes &&
+                                        article.attributes.background
+                                    }
+                                    nfts={article.associatedNfts}
+                                    destination={'review'}
+                                    linkComponent={(childrenProps, route) => (
+                                        <Link useAnchorTag href={route}>
+                                            {childrenProps}
+                                        </Link>
+                                    )}
+                                />
+                            )
+                        )
+                    })}
             </Masonry>
         </Fragment>
     ) : (

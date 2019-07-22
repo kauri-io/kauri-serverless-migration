@@ -3,10 +3,7 @@ import Form from 'antd/lib/form'
 import SubmitArticleFormActions from './SubmitArticleFormActions'
 import SubmitArticleFormHeader from './SubmitArticleFormHeader'
 import SubmitArticleFormContent from './SubmitArticleFormContent'
-import {
-    IShowNotificationAction,
-    IShowNotificationPayload,
-} from '../../lib/Epics/ShowNotificationEpic'
+import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import AlertView from '../../components/Modal/AlertView'
 import PublishingSelector, {
     IOption,
@@ -31,7 +28,6 @@ interface IOwner {
 }
 
 interface IProps {
-    router: any
     draftArticleAction: (payload: IDraftArticleActionPayload) => void
     submitArticleAction: (payload: ISubmitArticlePayload) => void
     submitArticleVersionAction: (payload: ISubmitArticleVersionPayload) => void
@@ -43,12 +39,10 @@ interface IProps {
     form: any
     handleFormChange: any
     routeChangeAction: any
-    showNotificationAction: (
-        payload: IShowNotificationPayload
-    ) => IShowNotificationAction
     username: string
     userId: string
     userAvatar: string
+    showNotificationAction: typeof showNotificationAction
     openModalAction: (children?: any) => void
     closeModalAction: () => void
     communities: Array<{ community: IOption }>
@@ -71,14 +65,15 @@ class SubmitArticleForm extends React.Component<IProps> {
     componentDidMount() {
         const {
             userId,
-            router,
             routeChangeAction,
             communities,
             openModalAction,
             closeModalAction,
         } = this.props
         if (!userId) {
-            routeChangeAction(`/login?r=${router.asPath}&redirected=true`)
+            routeChangeAction(
+                `/login?r=${window.location.pathname}&redirected=true`
+            )
         } else {
             analytics.track('Write Article Start', {
                 category: 'generic',

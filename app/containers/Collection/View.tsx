@@ -5,33 +5,17 @@ import slugify from 'slugify'
 import { path } from 'ramda'
 import CollectionHeader from '../../components/Headers/CollectionHeader'
 import CollectionSection from './CollectionSection'
-import Link from 'next/link'
+import Link from '../../components/Link'
 import Image from '../../components/Image'
-import { recordView } from '../../queries/Utils'
-
-type ICommunity = {
-    role: string
-    community: {
-        id: string
-        name: string
-        members: Array<{
-            id: string
-            role: string
-        }>
-    }
-}
-
-type Props = {
-    data: {
-        getCollection?: CollectionDTO
-    }
-    proposedCommunityId?: string
-    openModalAction: any
-    routeChangeAction: (route: string) => void
-    hostName: string
-    userId?: string
-    communities?: ICommunity[]
-}
+import { recordViewMutation } from '../../queries/Utils'
+import { getCollection } from '../../queries/__generated__/getCollection'
+import ApolloClient from 'apollo-client'
+import {
+    recordView,
+    recordViewVariables,
+} from '../../queries/__generated__/recordView'
+import { approveResourceAction } from '../Community/Module'
+import { Article_owner_PublicUserDTO } from '../../queries/Fragments/__generated__/Article'
 
 export const Overlay = styled.div`
     position: absolute;
@@ -65,15 +49,47 @@ const HeaderContainer = styled(ContentContainer)`
     }
 `
 
-class CollectionPage extends Component<Props> {
+function noNullsInArray<T>(items: (T | null)[]) {
+    return items.filter((x): x is T => x !== null)
+}
+
+type ICommunity = {
+    role: string
+    community: {
+        id: string
+        name: string
+        members: Array<{
+            id: string
+            role: string
+        }>
+    }
+}
+
+type IProps = {
+    id: string
+    data: getCollection
+    proposedCommunityId?: string
+    openModalAction: any
+    routeChangeAction: (route: string) => void
+    hostName: string
+    userId?: string
+    communities?: ICommunity[]
+    client: ApolloClient<{}>
+    approveResourceAction: typeof approveResourceAction
+}
+
+class CollectionPage extends Component<IProps> {
     componentDidMount() {
-        this.props.client.mutate({
+        this.props.client.mutate<recordView, recordViewVariables>({
             fetchPolicy: 'no-cache',
-            mutation: recordView,
+            mutation: recordViewMutation,
             variables: {
                 resourceId: {
-                    type: 'COLLECTION',
-                    id: this.props.data.getCollection.id,
+                    id:
+                        path<string>(['data', 'getCollection', 'id'])(
+                            this.props
+                        ) || '',
+                    type: 'COLLECTION' as any,
                 },
             },
         })
@@ -82,184 +98,234 @@ class CollectionPage extends Component<Props> {
     render() {
         if (!this.props.data || !this.props.data.getCollection) return null
 
-        const {
-            id,
-            name,
-            background,
-            description,
-            dateCreated,
-            owner,
-            tags,
-            sections,
-        } = this.props.data.getCollection
-        const {
-            userId,
-            routeChangeAction,
-            hostName,
-            openModalAction,
-        } = this.props
-        const bg = background && background
-        const url = `https://${hostName.replace(/api\./g, '')}/collection/${
-            this.props.id
-        }/${slugify(name, {
-            lower: true,
-        })}`
+        if (this.props.data.getCollection) {
+            const {
+                id,
+                name,
+                background,
+                description,
+                dateCreated,
+                owner,
+                tags,
+                sections,
+            } = this.props.data.getCollection
+            const {
+                userId,
+                routeChangeAction,
+                hostName,
+                openModalAction,
+            } = this.props
+            const bg = background
+            const url = `https://${hostName.replace(/api\./g, '')}/collection/${
+                this.props.id
+            }/${slugify(name, {
+                lower: true,
+            })}`
 
-        const resourceType = path([
-            'data',
-            'getCollection',
-            'owner',
-            'resourceIdentifier',
-            'type',
-        ])(this.props)
+            const resourceType = path([
+                'data',
+                'getCollection',
+                'owner',
+                'resourceIdentifier',
+                'type',
+            ])(this.props)
 
-        const isMemberOfCommunityOwner = Boolean(
-            resourceType === 'COMMUNITY' &&
-                Array.isArray(this.props.communities) &&
-                this.props.communities.find(
-                    ({ community }) =>
-                        community.id === this.props.data.getCollection.owner.id
-                )
-        )
+            const isMemberOfCommunityOwner = Boolean(
+                resourceType === 'COMMUNITY' &&
+                    Array.isArray(this.props.communities) &&
+                    this.props.communities.find(
+                        ({ community }) =>
+                            community.id ===
+                            (path<string>([
+                                'data',
+                                'getCollection',
+                                'owner',
+                                'id',
+                            ])(this.props) || '')
+                    )
+            )
 
-        return (
-            <>
-                <Head>
-                    <title>{name} - Kauri</title>
-                    <meta
-                        name="description"
-                        content={`${description &&
-                            description.slice(0, 151)}...`}
-                    />
-                    <link rel="canonical" href={url} />
-                    <meta property="og:title" content={name} />
-                    <meta property="og:site_name" content="kauri.io" />
-                    <meta
-                        property="og:url"
-                        content={`https://${hostName}/article/${id}/${slugify(
-                            name,
-                            {
-                                lower: true,
-                            }
-                        )}`}
-                    />
-                    <meta
-                        property="og:description"
-                        content={`${description &&
-                            description.substring(0, 100)}...`}
-                    />
-                    <meta property="og:type" content="article" />
-                    <meta property="og:image" content={bg} />
-                    <meta name="twitter:card" content="summary" />
-                    <meta
-                        name="twitter:site"
-                        content={`https://${hostName}/article/${id}/${slugify(
-                            name,
-                            {
-                                lower: true,
-                            }
-                        )}`}
-                    />
-                    <meta name="twitter:title" content={name} />
-                    <meta
-                        name="twitter:description"
-                        content={`${description &&
-                            description.substring(0, 100)}...`}
-                    />
-                    <meta name="twitter:creator" content="@kauri_io" />
-                    <meta name="twitter:image" content={bg} />
-                </Head>
-                <ScrollToTopOnMount />
-                <HeaderContainer>
-                    <Image
-                        height="100%"
-                        width="100%"
-                        overlay={{ opacity: 0.5 }}
-                        asBackground
-                        image={bg}
-                    />
-                    <CollectionHeader
-                        isMemberOfCommunityOwner={isMemberOfCommunityOwner}
-                        imageURL={typeof bg === 'string' ? bg : null}
-                        id={id}
-                        name={name}
-                        description={description || ''}
-                        approveArticleAction={this.props.approveArticleAction}
-                        proposedCommunityId={this.props.proposedCommunityId}
-                        articleCount={sections
-                            .map(({ resources }) => resources)
-                            .reduce((current, next) => {
-                                const articlesInSection = next.filter(
-                                    ({ __typename }) =>
-                                        __typename === 'ArticleDTO'
-                                )
-                                if (articlesInSection) {
-                                    return current + articlesInSection.length
+            return (
+                <>
+                    <Head>
+                        <title>{name} - Kauri</title>
+                        <meta
+                            name="description"
+                            content={`${description &&
+                                description.slice(0, 151)}...`}
+                        />
+                        <link rel="canonical" href={url} />
+                        <meta property="og:title" content={name} />
+                        <meta property="og:site_name" content="kauri.io" />
+                        <meta
+                            property="og:url"
+                            content={`https://${hostName}/article/${id}/${slugify(
+                                name,
+                                {
+                                    lower: true,
                                 }
-                                return current
-                            }, 0)}
-                        collectionCount={sections
-                            .map(({ resources }) => resources)
-                            .reduce((current, next) => {
-                                const collectionsInSection = next.filter(
-                                    ({ __typename }) =>
-                                        __typename === 'CollectionDTO'
-                                )
-                                if (collectionsInSection) {
-                                    return current + collectionsInSection.length
-                                }
-                                return current
-                            }, 0)}
-                        updated={dateCreated}
-                        username={
-                            owner &&
-                            (owner.__typename === 'CommunityDTO'
-                                ? owner.name
-                                : owner.username)
-                        }
-                        ownerId={owner.id}
-                        userId={userId || ''}
-                        userAvatar={owner && owner.avatar}
-                        tags={tags}
-                        linkComponent={childrenProps => (
-                            <Link
-                                fullWidth={false}
-                                useAnchorTag
-                                href={
-                                    resourceType === 'COMMUNITY'
-                                        ? `/community/${owner && owner.id}`
-                                        : `/public-profile/${owner && owner.id}`
-                                }
-                            >
-                                {childrenProps}
-                            </Link>
+                            )}`}
+                        />
+                        <meta
+                            property="og:description"
+                            content={`${description &&
+                                description.substring(0, 100)}...`}
+                        />
+                        <meta property="og:type" content="article" />
+                        {typeof bg === 'string' && (
+                            <meta property="og:image" content={bg} />
                         )}
-                        url={url}
-                        profileImage={owner.profileImage}
-                        routeChangeAction={routeChangeAction}
-                    />
-                </HeaderContainer>
-                <ContentContainer>
-                    {sections &&
-                        sections.map(section => {
-                            return (
-                                <CollectionSection
-                                    key={section.name}
-                                    name={section.name}
-                                    isLoggedIn={!!this.props.userId}
-                                    currentUser={this.props.userId}
-                                    description={section.description || ''}
-                                    resources={section.resources}
-                                    openModalAction={openModalAction}
-                                    isOwnedByCurrentUser={
-                                        this.props.userId === owner.id
+                        <meta name="twitter:card" content="summary" />
+                        <meta
+                            name="twitter:site"
+                            content={`https://${hostName}/article/${id}/${slugify(
+                                name,
+                                {
+                                    lower: true,
+                                }
+                            )}`}
+                        />
+                        <meta name="twitter:title" content={name} />
+                        <meta
+                            name="twitter:description"
+                            content={`${description &&
+                                description.substring(0, 100)}...`}
+                        />
+                        <meta name="twitter:creator" content="@kauri_io" />
+                        {typeof bg === 'string' && (
+                            <meta property="twitter:image" content={bg} />
+                        )}
+                    </Head>
+                    <HeaderContainer>
+                        {bg && (
+                            <Image
+                                height="100%"
+                                width="100%"
+                                overlay={{ opacity: 0.5 }}
+                                asBackground
+                                image={bg}
+                            />
+                        )}
+                        <CollectionHeader
+                            isMemberOfCommunityOwner={isMemberOfCommunityOwner}
+                            imageURL={typeof bg === 'string' ? bg : null}
+                            id={id}
+                            name={name}
+                            description={description || ''}
+                            approveResourceAction={
+                                this.props.approveResourceAction
+                            }
+                            proposedCommunityId={this.props.proposedCommunityId}
+                            articleCount={
+                                (sections &&
+                                    sections
+                                        .map(
+                                            section =>
+                                                section && section.resources
+                                        )
+                                        .reduce((current, next) => {
+                                            if (next) {
+                                                const articlesInSection = next.filter(
+                                                    resource =>
+                                                        resource &&
+                                                        resource.__typename ===
+                                                            'ArticleDTO'
+                                                )
+                                                if (articlesInSection) {
+                                                    return (
+                                                        current +
+                                                        articlesInSection.length
+                                                    )
+                                                }
+                                            }
+                                            return current
+                                        }, 0)) ||
+                                0
+                            }
+                            collectionCount={
+                                (sections &&
+                                    sections
+                                        .map(
+                                            section =>
+                                                section && section.resources
+                                        )
+                                        .reduce((current, next) => {
+                                            if (next) {
+                                                const collectionsInSection = next.filter(
+                                                    resource =>
+                                                        resource &&
+                                                        resource.__typename ===
+                                                            'CollectionDTO'
+                                                )
+                                                if (collectionsInSection) {
+                                                    return (
+                                                        current +
+                                                        collectionsInSection.length
+                                                    )
+                                                }
+                                            }
+                                            return current
+                                        }, 0)) ||
+                                0
+                            }
+                            updated={dateCreated}
+                            username={
+                                owner &&
+                                (owner.__typename === 'CommunityDTO'
+                                    ? owner.communityName
+                                    : (owner as Article_owner_PublicUserDTO)
+                                          .username)
+                            }
+                            ownerId={(owner && (owner as any).id) || ''}
+                            userId={userId || ''}
+                            userAvatar={owner && (owner as any).avatar}
+                            tags={(tags && noNullsInArray(tags)) || []}
+                            linkComponent={childrenProps => (
+                                <Link
+                                    fullWidth={false}
+                                    useAnchorTag
+                                    href={
+                                        resourceType === 'COMMUNITY'
+                                            ? `/community/${owner &&
+                                                  (owner as any).id}`
+                                            : `/public-profile/${owner &&
+                                                  (owner as any).id}`
                                     }
-                                />
-                            )
-                        })}
-                </ContentContainer>
-            </>
-        )
+                                >
+                                    {childrenProps}
+                                </Link>
+                            )}
+                            url={url}
+                            routeChangeAction={routeChangeAction}
+                        />
+                    </HeaderContainer>
+                    <ContentContainer>
+                        {sections &&
+                            sections.map(section => {
+                                if (section) {
+                                    return (
+                                        <CollectionSection
+                                            key={String(section.name)}
+                                            name={String(section.name)}
+                                            isLoggedIn={!!this.props.userId}
+                                            currentUser={this.props.userId}
+                                            description={
+                                                section.description || ''
+                                            }
+                                            resources={section.resources as any}
+                                            openModalAction={openModalAction}
+                                            isOwnedByCurrentUser={
+                                                this.props.userId ===
+                                                (owner as any).id
+                                            }
+                                        />
+                                    )
+                                }
+                            })}
+                    </ContentContainer>
+                </>
+            )
+        }
     }
 }
 

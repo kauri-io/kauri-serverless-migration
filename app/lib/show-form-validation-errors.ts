@@ -3,7 +3,7 @@ import { showNotificationAction } from './Epics/ShowNotificationEpic'
 type ValidateOnSubmit = (
     validateForm: any,
     showNotification: typeof showNotificationAction,
-    callback: any
+    callback?: any
 ) => void
 const validateOnSubmit: ValidateOnSubmit = (
     validateForm,

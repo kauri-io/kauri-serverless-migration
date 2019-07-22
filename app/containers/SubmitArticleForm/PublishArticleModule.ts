@@ -1,12 +1,18 @@
-import { ActionsObservable, ofType } from 'redux-observable'
-import { IDependencies } from '../../lib/Module'
+import { Epic, ofType } from 'redux-observable'
+import { IDependencies, IReduxState } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
 import analytics from '../../lib/analytics'
-import { from, merge, of } from 'rxjs'
+import { merge, of, from } from 'rxjs'
 import { switchMap, mergeMap, tap } from 'rxjs/operators'
+import path from 'ramda/es/path'
+import { ICommunity } from '../PublicProfile/Manage/MyCommunities'
 import { publishArticleMutation } from '../../queries/Article'
+import {
+    publishArticle,
+    publishArticleVariables,
+} from '../../queries/__generated__/publishArticle'
 
 interface IAction {
     type: string
@@ -42,10 +48,15 @@ export const publishArticleAction = (
     type: PUBLISH_ARTICLE,
 })
 
-export const publishArticleEpic = (
-    action$: ActionsObservable<IPublishArticleAction>,
-    { getState }: any,
-    { apolloClient, apolloSubscriber, personalSign }: IDependencies
+interface IPublishArticleCommandOutput {
+    id: string
+    version: number
+}
+
+export const publishArticleEpic: Epic<any, any, IReduxState, IDependencies> = (
+    action$,
+    state$,
+    { apolloClient, apolloSubscriber, personalSign }
 ) =>
     action$.pipe(
         ofType(PUBLISH_ARTICLE),
@@ -77,31 +88,37 @@ export const publishArticleEpic = (
                       }
                     : null
 
+                const userCommunities =
+                    path<ICommunity[]>(['value', 'app', 'user', 'communities'])(
+                        state$
+                    ) || []
+
                 const canPublish =
                     !articleOwner ||
                     (articleOwner && articleOwner.id === contributor) ||
-                    getState().app.user.communities.map(
-                        ({ community }) => community.id
-                    ).length > 0
+                    userCommunities.map(({ community }) => community.id)
+                        .length > 0
 
                 return from(personalSign(signatureToSign)).pipe(
                     mergeMap(signature =>
-                        from(
-                            apolloClient.mutate({
-                                mutation: publishArticleMutation,
-                                variables: {
-                                    id,
-                                    owner: articleOwner,
-                                    signature,
-                                    updateComment,
-                                    version,
-                                },
-                            })
-                        )
+                        apolloClient.mutate<
+                            publishArticle,
+                            publishArticleVariables
+                        >({
+                            mutation: publishArticleMutation,
+                            variables: {
+                                id,
+                                owner: articleOwner as any,
+                                signature,
+                                updateComment,
+                                version,
+                            },
+                        })
                     ),
-                    mergeMap(
-                        ({ data: { publishArticle: publishArticleData } }) =>
-                            apolloSubscriber(publishArticleData).hash
+                    mergeMap(({ data }) =>
+                        apolloSubscriber<IPublishArticleCommandOutput>(
+                            path<string>(['publishArticle', 'hash'])(data) || ''
+                        )
                     ),
                     tap(() => apolloClient.resetStore()),
                     tap(() => {
@@ -132,8 +149,8 @@ export const publishArticleEpic = (
                                     `/article/${id}/v${version}/${
                                         !owner ||
                                         (owner && owner.id === contributor) ||
-                                        getState()
-                                            .app.user.communities.map(
+                                        userCommunities
+                                            .map(
                                                 ({ community }) => community.id
                                             )
                                             .includes(owner.id)

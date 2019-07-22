@@ -131,7 +131,7 @@ interface IProps {
     invitations: Array<IInvitation | null> | null
     revokeInvitationAction: typeof revokeInvitation
     resendInvitationAction: typeof resendInvitation
-    id: string | null
+    id: string
 }
 
 const InvitationsPanel: React.SFC<IProps> = props => {

@@ -17,8 +17,6 @@ type State = {}
 
 class PrivacyPolicy extends Component<IProps, State> {
     render() {
-        const { routeChangeAction } = this.props
-
         return (
             <section>
                 <Content>

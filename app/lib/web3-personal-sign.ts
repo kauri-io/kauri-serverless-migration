@@ -55,7 +55,7 @@ const personalSign = data =>
         }
     })
 
-const loginPersonalSign = data =>
+const loginPersonalSign = (data: string) =>
     from(personalSign(data)).catch(err => {
         console.error(err)
         if (err.message.includes('Metamask locked!')) {

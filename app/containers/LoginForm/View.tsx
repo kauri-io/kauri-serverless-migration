@@ -2,7 +2,7 @@ import React, { SyntheticEvent } from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
 import PrimaryButton from '../../components/Button/PrimaryButton'
-import { Title2, BodyArticle, CTA } from '../../components/Typography'
+import { Title2, BodyArticle } from '../../components/Typography'
 
 import { IRegisterAction } from './Module'
 import { IShowNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
@@ -178,6 +178,9 @@ interface IProps {
     form: any
     registerAction: IRegisterAction
     showNotificationAction: IShowNotificationAction
+    handleSubmit: (e?: SyntheticEvent<HTMLButtonElement>) => void
+    isSubmitting: boolean
+    getFieldDecorator: any
 }
 
 class LoginFormContainer extends React.Component<IProps> {

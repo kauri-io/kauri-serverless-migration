@@ -22,11 +22,11 @@ interface IProps {
         DataValue<any>
 }
 
-const withPagination = (
+function withPagination(
     Paginated: React.FunctionComponent<any> | React.ComponentClass<any>,
     key: PaginationDataQuery,
     queryName: string = 'data'
-) => {
+): React.ComponentClass<any> {
     class WithPagination extends Component<IProps, IState> {
         childRef: HTMLElement | null
         childRefElement: Element | null
@@ -185,6 +185,7 @@ const withPagination = (
             )
         }
     }
+
     return WithPagination
 }
 

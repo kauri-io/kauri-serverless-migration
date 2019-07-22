@@ -17,9 +17,13 @@ import {
     IFinaliseArticleTransferAction,
 } from './Manage/TransferModule'
 import {
-    IOpenModalAction,
-    ICloseModalAction,
+    openModalAction,
+    closeModalAction,
 } from '../../components/Modal/Module'
+import path from 'ramda/es/path'
+import { ICollection } from '../CreateCollectionForm/ChooseCollectionModal'
+import pipe from 'ramda/es/pipe'
+import defaultTo from 'ramda/es/defaultTo'
 
 interface IProps {
     router: any
@@ -35,8 +39,8 @@ interface IProps {
     deleteDraftArticleAction: IDeleteDraftArticleAction
     rejectArticleTransferAction: IRejectArticleTransferAction
     acceptArticleTransferAction: IFinaliseArticleTransferAction
-    closeModalAction: ICloseModalAction
-    openModalAction: IOpenModalAction
+    closeModalAction: typeof closeModalAction
+    openModalAction: typeof openModalAction
     isLoggedIn: boolean
     hostName: string
     removeMemberAction: any
@@ -101,6 +105,17 @@ class PublicProfile extends Component<IProps, IState> {
         const isEditing = this.state.isEditing
         const isOwner =
             UserQuery.getUser && UserQuery.getUser.id === currentUser
+        const articlesCount = pipe(
+            path<number>(['searchArticles', 'totalElements']),
+            defaultTo(0)
+        )(ArticlesQuery)
+
+        function getUserField<T>(field: string | string[], defaultValue: T): T {
+            return pipe(
+                path<T>(['getUser'].concat(field)),
+                defaultTo(defaultValue)
+            )(UserQuery)
+        }
 
         return (
             <React.Fragment>
@@ -113,28 +128,42 @@ class PublicProfile extends Component<IProps, IState> {
                     />
                 ) : (
                     <Header
-                        articles={ArticlesQuery.searchArticles.totalElements}
-                        collections={CollectionQuery.searchCollections.content}
+                        articles={articlesCount}
+                        collections={pipe(
+                            path<ICollection[]>([
+                                'searchCollections',
+                                'content',
+                            ]),
+                            defaultTo([])
+                        )(CollectionQuery)}
                         currentUser={currentUser}
-                        id={UserQuery.getUser.id}
-                        avatar={this.state.avatar || UserQuery.getUser.avatar}
-                        username={
-                            this.state.username || UserQuery.getUser.username
+                        id={getUserField<string>('id', '')}
+                        avatar={
+                            this.state.avatar ||
+                            getUserField<string>('avatar', '')
                         }
-                        name={this.state.name || UserQuery.getUser.name}
-                        title={this.state.title || UserQuery.getUser.title}
+                        username={
+                            this.state.username ||
+                            getUserField<string>('username', '')
+                        }
+                        name={
+                            this.state.name || getUserField<string>('name', '')
+                        }
+                        title={
+                            this.state.title ||
+                            getUserField<string>('title', '')
+                        }
                         website={
-                            this.state.website || UserQuery.getUser.website
+                            this.state.website ||
+                            getUserField<string>('website', '')
                         }
                         twitter={
                             this.state.twitter ||
-                            (UserQuery.getUser.social &&
-                                UserQuery.getUser.social.twitter)
+                            getUserField<string>(['social', 'twitter'], '')
                         }
                         github={
                             this.state.github ||
-                            (UserQuery.getUser.social &&
-                                UserQuery.getUser.social.github)
+                            getUserField<string>(['social', 'github'], '')
                         }
                         toggleEditing={() => this.toggleEditing()}
                         hostName={hostName}
@@ -146,30 +175,38 @@ class PublicProfile extends Component<IProps, IState> {
                         router={this.props.router}
                         tabs={[
                             {
-                                name: `Articles (${ArticlesQuery.searchArticles.totalElements})`,
+                                name: `Articles (${articlesCount})`,
                             },
                             {
-                                name: `Collections (${CollectionQuery.searchCollections.totalElements})`,
+                                name: `Collections (${pipe(
+                                    path<number>([
+                                        'searchCollections',
+                                        'totalElements',
+                                    ]),
+                                    defaultTo(0)
+                                )(CollectionQuery)})`,
                             },
-                            isOwner && {
-                                name: 'Manage',
-                            },
+                            isOwner
+                                ? {
+                                      name: 'Manage',
+                                  }
+                                : null,
                         ]}
                         panels={[
                             <Published
-                                data={ArticlesQuery}
+                                data={ArticlesQuery as any}
                                 type="published"
                                 routeChangeAction={routeChangeAction}
-                                isOwner={isOwner}
+                                isOwner={!!isOwner}
                                 isLoggedIn={!!currentUser}
                                 openModalAction={openModalAction}
                             />,
                             <Collections
-                                isLoggedIn={!!currentUser}
                                 data={CollectionQuery}
+                                isLoggedIn={!!currentUser}
                                 routeChangeAction={routeChangeAction}
                             />,
-                            isOwner && (
+                            isOwner ? (
                                 <Manage
                                     userId={this.props.userId}
                                     ownProfile={OwnProfileQuery}
@@ -182,7 +219,8 @@ class PublicProfile extends Component<IProps, IState> {
                                         deleteDraftArticleAction
                                     }
                                     isOwner={
-                                        UserQuery.getUser.id === currentUser
+                                        getUserField<string>('user', '') ===
+                                        currentUser
                                     }
                                     isLoggedIn={!!currentUser}
                                     closeModalAction={closeModalAction}
@@ -194,6 +232,8 @@ class PublicProfile extends Component<IProps, IState> {
                                         acceptArticleTransferAction
                                     }
                                 />
+                            ) : (
+                                <div></div>
                             ),
                         ]}
                     />

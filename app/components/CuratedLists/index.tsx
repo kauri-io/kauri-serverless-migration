@@ -83,7 +83,7 @@ export const RenderCardContent = ({
                     username={
                         typedOwner && typedOwner.__typename === 'PublicUserDTO'
                             ? typedOwner.username
-                            : typedOwner && typedOwner.name
+                            : typedOwner && typedOwner.communityName
                     }
                     userId={String(typedOwner && typedOwner.id)}
                     userAvatar={typedOwner && typedOwner.avatar}
@@ -127,6 +127,7 @@ export const RenderCardContent = ({
         case 'CommunityDTO': {
             return (
                 <CommunityCard
+                    id={card.id}
                     articleCount={''}
                     collectionCount={''}
                     name={String(card.name)}

@@ -63,15 +63,10 @@ export const saveUserDetailsEpic = (
                         },
                     })
                 ).pipe(
-                    tap(() => callback && callback(true)),
-                    mergeMap(
-                        ({
-                            data: {
-                                saveUser: { hash },
-                            },
-                        }: {
-                            data: { saveUser: { hash: string } }
-                        }) => apolloSubscriber(hash)
+                    mergeMap(({ data: { saveUser: { hash } } }) =>
+                        apolloSubscriber<{ error: string | undefined | null }>(
+                            hash
+                        )
                     ),
                     mergeMap(({ data: { output } }) => {
                         if (typeof output.error === 'string') {

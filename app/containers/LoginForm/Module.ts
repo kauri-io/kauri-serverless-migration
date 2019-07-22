@@ -4,19 +4,15 @@ import createReducer from '../../lib/createReducer'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { loginPersonalSign } from '../../lib/web3-personal-sign'
 import superagent from 'superagent'
-import { IDependencies } from '../../lib/Module'
 import config from '../../config'
 import { ofType } from 'redux-observable'
 import { switchMap, mergeMap, map, tap } from 'rxjs/operators'
+import { IReduxState } from '../../lib/Module'
 
 const request = superagent.agent()
 
-export interface IRegisterActionPayload {
-    type?: 'login' | 'register'
-}
 export interface IRegisterAction {
     type: string
-    payload: IRegisterActionPayload
     callback: any
 }
 
@@ -24,12 +20,8 @@ const initialState = {}
 
 const REGISTER: string = 'REGISTER'
 
-export const registerAction = (
-    payload: IRegisterActionPayload,
-    callback: any
-): IRegisterAction => ({
+export const registerAction = (callback: any): IRegisterAction => ({
     type: REGISTER,
-    payload,
     callback,
 })
 
@@ -58,138 +50,123 @@ const registerSignaturePayload = (userId, signature, sentence_id) => ({
     client_id: config.clientId,
 })
 
-export const registerEpic = (
-    action$: Observable<IRegisterAction>,
-    store: any,
-    { fetch }: IDependencies
-) =>
+export const registerEpic = (action$: Observable<IRegisterAction>) =>
     action$.pipe(
         ofType(REGISTER),
-        switchMap(
-            ({ payload: { type = 'register' }, callback }: IRegisterAction) =>
-                from(
-                    window.ethereum
-                        ? window.ethereum.enable()
-                        : new Promise((resolve, reject) => resolve())
-                ).pipe(
-                    mergeMap(() =>
-                        request
-                            // http://api.dev2.kauri.io/web3auth/api/login?app_id=kauri&client_id=kauri-gateway
-                            .get(
-                                `https://${config.gateway}/web3auth/api/login?app_id=${config.appId}&client_id=${config.clientId}`
+        switchMap(({ callback }: IRegisterAction) =>
+            from(
+                global.window.ethereum
+                    ? global.window.ethereum.enable()
+                    : new Promise(resolve => resolve())
+            ).pipe(
+                mergeMap(() =>
+                    request
+                        // http://api.dev2.kauri.io/web3auth/api/login?app_id=kauri&client_id=kauri-gateway
+                        .get(
+                            `https://${config.gateway}/web3auth/api/login?app_id=${config.appId}&client_id=${config.clientId}`
+                        )
+                ),
+                map(res => res.body),
+                tap(h => console.log(h)),
+                switchMap(({ sentence, id }: IInitiateLoginResponse) =>
+                    loginPersonalSign(sentence)
+                        .map((signature: string) =>
+                            registerSignaturePayload(
+                                global.window.web3.eth.accounts[0],
+                                signature,
+                                id
                             )
-                    ),
-                    map(res => res.body),
-                    tap(h => console.log(h)),
-                    switchMap(({ sentence, id }: IInitiateLoginResponse) =>
-                        loginPersonalSign(sentence)
-                            .map((signature: string) =>
-                                registerSignaturePayload(
-                                    window.web3.eth.accounts[0],
-                                    signature,
-                                    id
+                        )
+                        .mergeMap(payload =>
+                            request
+                                .post(
+                                    `https://${config.gateway}/web3auth/api/login`
                                 )
+                                .send(payload)
+                        )
+                        .map(res => res.body)
+                        .do(h => console.log(h))
+                        .do(() => callback())
+                        .do(({ token }: IFinalLoginResponse) => {
+                            console.log(token)
+                            console.log(
+                                global.window &&
+                                    global.window.web3.eth.accounts[0]
                             )
-                            .mergeMap(payload =>
-                                request
-                                    .post(
-                                        `https://${config.gateway}/web3auth/api/login`
+                            document.cookie = cookie.serialize('TOKEN', token, {
+                                maxAge: 30 * 24 * 60 * 60, // 30 days,
+                                domain:
+                                    window &&
+                                    window.location.hostname.includes(
+                                        'localhost'
                                     )
-                                    .send(payload)
-                            )
-                            .map(res => res.body)
-                            .do(h => console.log(h))
-                            .do(() => callback())
-                            .do(({ token }: IFinalLoginResponse) => {
-                                console.log(token)
-                                console.log(
-                                    global.window &&
-                                        global.window.web3.eth.accounts[0]
-                                )
-                                document.cookie = cookie.serialize(
-                                    'TOKEN',
-                                    token,
-                                    {
-                                        maxAge: 30 * 24 * 60 * 60, // 30 days,
-                                        domain:
-                                            window &&
-                                            window.location.hostname.includes(
-                                                'localhost'
-                                            )
-                                                ? window.location.hostname
-                                                : '.' +
-                                                  window.location.hostname,
-                                    }
-                                )
-                                document.cookie = cookie.serialize(
-                                    'USER_ID',
-                                    window.web3.eth.accounts[0],
-                                    {
-                                        maxAge: 30 * 24 * 60 * 60, // 30 days
-                                        domain:
-                                            window &&
-                                            window.location.hostname.includes(
-                                                'localhost'
-                                            )
-                                                ? window.location.hostname
-                                                : '.' +
-                                                  window.location.hostname,
-                                    }
-                                )
+                                        ? window.location.hostname
+                                        : '.' + window.location.hostname,
                             })
-                            .mergeMapTo(
-                                of(
-                                    showNotificationAction({
-                                        notificationType: 'success',
-                                        message:
-                                            type === 'login'
-                                                ? 'Login successful'
-                                                : 'Registration successful',
-                                        description:
-                                            'All set! Time to write an article!',
-                                    })
-                                )
-                            )
-                            .do(() =>
-                                window.localStorage.setItem(
-                                    'login-tracking-pending',
-                                    'true'
-                                )
-                            )
-                            .delay(750)
-                            .do(() => {
-                                window.location.href =
-                                    '/edit-profile' + window.location.search
-                            })
-                            .catch(err => {
-                                console.error(err)
-                                if (err && err.message.includes('locked')) {
-                                    return of(
-                                        showNotificationAction({
-                                            notificationType: 'error',
-                                            message: 'Your wallet is locked!',
-                                            description:
-                                                'Please unlock your wallet!',
-                                        })
-                                    )
+                            document.cookie = cookie.serialize(
+                                'USER_ID',
+                                global.window.web3.eth.accounts[0],
+                                {
+                                    maxAge: 30 * 24 * 60 * 60, // 30 days
+                                    domain:
+                                        window &&
+                                        window.location.hostname.includes(
+                                            'localhost'
+                                        )
+                                            ? window.location.hostname
+                                            : '.' + window.location.hostname,
                                 }
+                            )
+                        })
+                        .mergeMapTo(
+                            of(
+                                showNotificationAction({
+                                    notificationType: 'success',
+                                    message: 'Login successful',
+                                    description:
+                                        'All set! Time to write an article!',
+                                })
+                            )
+                        )
+                        .do(() =>
+                            window.localStorage.setItem(
+                                'login-tracking-pending',
+                                'true'
+                            )
+                        )
+                        .delay(750)
+                        .do(() => {
+                            window.location.href =
+                                '/edit-profile' + window.location.search
+                        })
+                        .catch(err => {
+                            console.error(err)
+                            if (err && err.message.includes('locked')) {
                                 return of(
                                     showNotificationAction({
                                         notificationType: 'error',
-                                        message: 'Submission error',
-                                        description: 'Please try again!',
+                                        message: 'Your wallet is locked!',
+                                        description:
+                                            'Please unlock your wallet!',
                                     })
                                 )
-                            })
-                    )
+                            }
+                            return of(
+                                showNotificationAction({
+                                    notificationType: 'error',
+                                    message: 'Submission error',
+                                    description: 'Please try again!',
+                                })
+                            )
+                        })
                 )
+            )
         )
     )
 
 const handlers = {
-    [REGISTER]: ({}, action: IRegisterAction) => ({
+    [REGISTER]: (state: IReduxState) => ({
         ...state,
-        hello: action.payload,
     }),
 }
 

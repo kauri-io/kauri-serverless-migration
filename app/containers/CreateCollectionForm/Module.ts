@@ -85,7 +85,7 @@ export const composeCollectionAction = (
 
 export const composeCollectionEpic = (
     action$: ActionsObservable<ComposeCollectionAction>,
-    { getState, dispatch },
+    {},
     { apolloClient, apolloSubscriber }: IDependencies
 ) =>
     action$.pipe(
@@ -162,15 +162,8 @@ export const composeCollectionEpic = (
     )
 export const createCollectionEpic = (
     action$: ActionsObservable<ICreateCollectionAction>,
-    { getState, dispatch }: any,
-    {
-        apolloClient,
-        smartContracts,
-        web3,
-        apolloSubscriber,
-        web3PersonalSign,
-        getGasPrice,
-    }: IDependencies
+    {},
+    { apolloClient, apolloSubscriber }: IDependencies
 ) =>
     action$.pipe(
         ofType(CREATE_COLLECTION),
@@ -195,22 +188,22 @@ export const createCollectionEpic = (
                             description,
                             tags,
                             owner: {
-                                type: destination.type,
-                                id: destination.id,
+                                type: destination && destination.type,
+                                id: destination && destination.id,
                             },
                         },
                     })
                 ).pipe(
                     mergeMap(({ data: { createCollection: { hash } } }) =>
-                        apolloSubscriber(hash)
+                        apolloSubscriber<{ id: string }>(hash)
                     ),
-                    tap(h => console.log(h)),
                     map(({ data: { output: { id } } }) =>
                         composeCollectionAction(
                             { id, sections, tags },
                             callback
                         )
-                    )
+                    ),
+                    tap(h => console.log(h))
                 )
             }
         )
@@ -241,7 +234,7 @@ export const editCollectionEpic = (
                     })
                 ).pipe(
                     mergeMap(({ data: { createCollection: { hash } } }) =>
-                        apolloSubscriber(hash)
+                        apolloSubscriber<{ id: string }>(hash)
                     ),
                     tap(h => console.log(h)),
                     map(({ data: { output: { id } } }) =>
