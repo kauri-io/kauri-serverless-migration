@@ -7,7 +7,6 @@ import PrimaryButton from '../../components/Button/PrimaryButton'
 import { Title2, BodyCard } from '../../components/Typography'
 import {
     getCollection_getCollection,
-    getCollection_getCollection_owner_CommunityDTO,
 } from '../../queries/__generated__/getCollection'
 
 const Container = styled.section`

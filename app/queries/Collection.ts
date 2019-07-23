@@ -130,6 +130,7 @@ export const getLatestCollections = gql`
                             name
                             description
                             resourcesId {
+                                version
                                 id
                                 type
                             }

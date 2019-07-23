@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { space } from 'styled-system'
-import { Form, Field, FieldArray } from 'formik'
+import { space, SpaceProps } from 'styled-system'
+import { Form, Field, FieldArray, InjectedFormikProps } from 'formik'
 import Stack from 'stack-styled'
 import {
     path,
@@ -10,7 +10,6 @@ import {
     reduce,
     filter,
     defaultTo,
-    concat,
 } from 'ramda'
 import ActionsSection from '../../components/Section/ActionsSection'
 import PrimaryHeaderSection from '../../components/Section/PrimaryHeaderSection'
@@ -21,8 +20,6 @@ import { Label } from '../../components/Typography'
 import Input from '../../components/Input/Input'
 import PrimaryButton from '../../components/Button/PrimaryButton'
 import TertiaryButton from '../../components/Button/TertiaryButton'
-import ArticleCard from '../../components/Card/ArticleCardMaterial'
-import CollectionCard from '../../components/Card/CollectionCard'
 import setImageUploader from '../../containers/ImageUploader'
 import showFormValidationErrors from '../../lib/show-form-validation-errors'
 import ChooseArticleModal from './ChooseArticleModal'
@@ -33,7 +30,7 @@ import SectionOptions from './SectionOptions'
 import TagSelector from '../../components/TagSelector'
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
 import handleDragEnd from './handleDragEnd'
-import { IFormState } from './index'
+import { IFormValues } from './index'
 import { Collection_sections } from '../../queries/Fragments/__generated__/Collection'
 import {
     IShowNotificationAction,
@@ -45,6 +42,8 @@ import {
     IOpenModalPayload,
 } from '../../components/Modal/Module'
 import { ICommunity } from '../../lib/Module'
+import ArticleCardFormView from '../ArticleCardFormView'
+import CollectionCardFormView from '../CollectionCardFormView'
 
 const emptySection: Collection_sections = {
     id: null,
@@ -74,7 +73,7 @@ const ResourceSection = styled.section`
     }
 `
 
-const SectionSection = styled.section`
+const SectionSection = styled.section<SpaceProps>`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -207,7 +206,7 @@ const renderResourceSection = (
                         innerRef={provided.innerRef}
                         id="article-card"
                     >
-                        <ArticleCard
+                        <ArticleCardFormView
                             id={String(
                                 path(
                                     [
@@ -241,7 +240,7 @@ const renderResourceSection = (
                             innerRef={provided.innerRef}
                             id="collection-card"
                         >
-                            <CollectionCard
+                            <CollectionCardFormView
                                 id={String(
                                     path(
                                         [
@@ -296,7 +295,7 @@ export interface IProps {
         name?: string
         description?: string
     }
-    values: IFormState
+    values: IFormValues
     isSubmitting: boolean
     setFieldValue: (string, any) => void
     validateForm: () => Promise<any>
@@ -327,7 +326,9 @@ const BackIcon = styled.div`
     border-right: 10px solid ${props => props.theme.colors['primary']};
 `
 
-export default ({
+const CreateCollectionForm: React.FC<
+    InjectedFormikProps<IProps, IFormValues>
+> = ({
     id,
     touched,
     errors,
@@ -343,7 +344,7 @@ export default ({
     username,
     userId,
     userAvatar,
-}: IProps) => (
+}) => (
     <Section>
         <Form>
             <ActionsSection
@@ -451,8 +452,10 @@ export default ({
                                     {
                                         name: 'Articles',
                                         count: pipe(
-                                            map(
-                                                ({ resourcesId }) => resourcesId
+                                            map<any, any>(
+                                                section =>
+                                                    section &&
+                                                    section.resourcesId
                                             ),
                                             reduce((current, next) => {
                                                 const articlesInSection = next.filter(
@@ -473,7 +476,7 @@ export default ({
                                     {
                                         name: 'Collections',
                                         count: pipe(
-                                            map(
+                                            map<any, any>(
                                                 ({ resourcesId }) => resourcesId
                                             ),
                                             reduce((current, next) => {
@@ -519,7 +522,7 @@ export default ({
                             {values.sections &&
                                 values.sections.length > 0 &&
                                 values.sections.map(
-                                    (section: SectionDTO, index) => (
+                                    (section: Collection_sections, index) => (
                                         <SectionSection key={index} mt={4}>
                                             <Field
                                                 type="text"
@@ -598,7 +601,7 @@ export default ({
                                             <SectionOptions
                                                 currentSectionIndex={index}
                                                 previousSectionHasArticles={pipe(
-                                                    path([
+                                                    path<any>([
                                                         'sections',
                                                         index > 0 ? index : 0,
                                                         'resourcesId',
@@ -621,16 +624,28 @@ export default ({
                                                         children: (
                                                             <ChooseArticleModal
                                                                 allOtherChosenArticles={values.sections.filter(
-                                                                    sectionIndex =>
+                                                                    (
+                                                                        _,
+                                                                        sectionIndex
+                                                                    ) =>
                                                                         index !==
                                                                         sectionIndex
                                                                 )}
                                                                 chosenArticles={pipe(
-                                                                    path([
+                                                                    path<
+                                                                        [
+                                                                            {
+                                                                                type: string
+                                                                            }
+                                                                        ]
+                                                                    >([
                                                                         'sections',
                                                                         index,
                                                                         'resourcesId',
                                                                     ]),
+                                                                    defaultTo(
+                                                                        []
+                                                                    ),
                                                                     filter(
                                                                         ({
                                                                             type,
@@ -645,22 +660,32 @@ export default ({
                                                                 confirmModal={chosenArticles =>
                                                                     arrayHelpers.form.setFieldValue(
                                                                         `sections[${index}].resourcesId`,
-                                                                        pipe(
-                                                                            path(
+                                                                        (
+                                                                            path<
                                                                                 [
-                                                                                    'sections',
-                                                                                    index,
-                                                                                    'resourcesId',
+                                                                                    {
+                                                                                        type
+                                                                                        string
+                                                                                    }
                                                                                 ]
-                                                                            ),
-                                                                            filter(
+                                                                            >([
+                                                                                'sections',
+                                                                                index,
+                                                                                'resourcesId',
+                                                                            ])(
+                                                                                values
+                                                                            ) ||
+                                                                            []
+                                                                        )
+                                                                            .filter(
                                                                                 ({
                                                                                     type,
                                                                                 }) =>
+                                                                                    type &&
                                                                                     type.toLowerCase() ===
-                                                                                    'collection'
-                                                                            ),
-                                                                            concat(
+                                                                                        'article'
+                                                                            )
+                                                                            .concat(
                                                                                 chosenArticles.map(
                                                                                     article => ({
                                                                                         ...article,
@@ -669,9 +694,6 @@ export default ({
                                                                                     })
                                                                                 )
                                                                             )
-                                                                        )(
-                                                                            values
-                                                                        )
                                                                     )
                                                                 }
                                                             />
@@ -686,46 +708,68 @@ export default ({
                                                                     id
                                                                 }
                                                                 allOtherChosenCollections={values.sections.filter(
-                                                                    sectionIndex =>
+                                                                    (
+                                                                        _,
+                                                                        sectionIndex
+                                                                    ) =>
                                                                         index !==
                                                                         sectionIndex
                                                                 )}
-                                                                chosenCollections={pipe(
-                                                                    path([
+                                                                chosenCollections={(
+                                                                    path<
+                                                                        [
+                                                                            {
+                                                                                type
+                                                                                string
+                                                                            }
+                                                                        ]
+                                                                    >([
                                                                         'sections',
                                                                         index,
                                                                         'resourcesId',
-                                                                    ]),
-                                                                    filter(
-                                                                        ({
-                                                                            type,
-                                                                        }) =>
-                                                                            type.toLowerCase() ===
-                                                                            'collection'
-                                                                    )
-                                                                )(values)}
+                                                                    ])(
+                                                                        values
+                                                                    ) || []
+                                                                ).filter(
+                                                                    ({
+                                                                        type,
+                                                                    }) =>
+                                                                        type &&
+                                                                        type.toLowerCase() ===
+                                                                            'colllection'
+                                                                )}
                                                                 closeModalAction={() =>
                                                                     closeModalAction()
                                                                 }
                                                                 confirmModal={chosenCollections =>
                                                                     arrayHelpers.form.setFieldValue(
                                                                         `sections[${index}].resourcesId`,
-                                                                        pipe(
-                                                                            path(
+                                                                        (
+                                                                            path<
                                                                                 [
-                                                                                    'sections',
-                                                                                    index,
-                                                                                    'resourcesId',
+                                                                                    {
+                                                                                        type
+                                                                                        string
+                                                                                    }
                                                                                 ]
-                                                                            ),
-                                                                            filter(
+                                                                            >([
+                                                                                'sections',
+                                                                                index,
+                                                                                'resourcesId',
+                                                                            ])(
+                                                                                values
+                                                                            ) ||
+                                                                            []
+                                                                        )
+                                                                            .filter(
                                                                                 ({
                                                                                     type,
                                                                                 }) =>
+                                                                                    type &&
                                                                                     type.toLowerCase() ===
-                                                                                    'article'
-                                                                            ),
-                                                                            concat(
+                                                                                        'collection'
+                                                                            )
+                                                                            .concat(
                                                                                 chosenCollections.map(
                                                                                     collection => ({
                                                                                         ...collection,
@@ -734,9 +778,6 @@ export default ({
                                                                                     })
                                                                                 )
                                                                             )
-                                                                        )(
-                                                                            values
-                                                                        )
                                                                     )
                                                                 }
                                                             />
@@ -763,3 +804,5 @@ export default ({
         </Form>
     </Section>
 )
+
+export default CreateCollectionForm

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { compose } from 'recompose'
-import { withFormik } from 'formik'
+import { withFormik, InjectedFormikProps } from 'formik'
 import * as Yup from 'yup'
 import CreateCollectionForm, { IProps } from './View'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
@@ -17,10 +17,14 @@ import {
 import PublishingSelector from '../PublishingSelector'
 import { IReduxState } from '../../lib/Module'
 import { dissocPath, map, pipe, path } from 'ramda'
-import { Collection_sections } from '../../queries/Fragments/__generated__/Collection'
+import {
+    Collection_sections,
+    Collection_sections_resources_ArticleDTO,
+} from '../../queries/Fragments/__generated__/Collection'
 import { ITag } from '../../components/Tags/types'
+import defaultTo from 'ramda/es/defaultTo'
 
-export interface IFormState {
+export interface IFormValues {
     name: string
     background?: string
     description?: string
@@ -29,7 +33,7 @@ export interface IFormState {
         id: string
         type: string
     }
-    tags: ITag[]
+    tags: ITag[] | null
 }
 
 const emptySection: Collection_sections = {
@@ -41,9 +45,11 @@ const emptySection: Collection_sections = {
     resources: [],
 }
 
-const getCollectionField = (field, data) => path(['getCollection', field], data)
+function getCollectionField<T>(field: string, data: any) {
+    return path<T>(['getCollection', field], data)
+}
 
-export default compose(
+export default compose<InjectedFormikProps<IProps, IFormValues>, InjectedFormikProps<IProps, IFormValues>>(
     connect(
         (state: IReduxState) => ({
             communities: state.app.user && state.app.user.communities,
@@ -61,7 +67,7 @@ export default compose(
             closeModalAction,
         }
     ),
-    withFormik({
+    withFormik<IProps, IFormValues>({
         mapPropsToValues: ({ data, query }) => {
             const sections =
                 // Prefill article in section 1 and create first collection
@@ -79,21 +85,40 @@ export default compose(
                               ],
                           },
                       ] // Updating a collection, prefill data
-                    : path(['getCollection', 'sections'])(data)
+                    : path<Collection_sections[]>([
+                          'getCollection',
+                          'sections',
+                      ])(data)
                     ? pipe(
-                          path(['getCollection', 'sections']),
-                          map((section: Collection_sections) => ({
-                              ...section,
-                              resourcesId: map(
-                                  ({ id, version, __typename }) => ({
-                                      type: __typename
-                                          .split('DTO')[0]
-                                          .toUpperCase(),
-                                      id,
-                                      version,
-                                  })
-                              )(section.resources),
-                          })),
+                          path<Collection_sections[]>([
+                              'getCollection',
+                              'sections',
+                          ]),
+                          defaultTo([]),
+                          map(
+                              (section: Collection_sections) =>
+                                  section && {
+                                      ...section,
+                                      resourcesId:
+                                          section.resources &&
+                                          section.resources.map(resource => {
+                                              if (resource) {
+                                                  const {
+                                                      id,
+                                                      version,
+                                                      __typename,
+                                                  } = resource as Collection_sections_resources_ArticleDTO
+                                                  return {
+                                                      type: __typename
+                                                          .split('DTO')[0]
+                                                          .toUpperCase(),
+                                                      id,
+                                                      version,
+                                                  }
+                                              }
+                                          }),
+                                  }
+                          ),
                           map(section => dissocPath(['resources'])(section)),
                           map(section => dissocPath(['__typename'])(section))
                       )(data)
@@ -101,12 +126,14 @@ export default compose(
             // Empty section, fresh collection
 
             return {
-                name: getCollectionField('name', data) || '',
-                sections,
-                background: getCollectionField('background', data) || undefined,
+                name: getCollectionField<string>('name', data) || '',
+                sections: sections as any,
+                background:
+                    getCollectionField<string>('background', data) || undefined,
                 description:
-                    getCollectionField('description', data) || undefined,
-                tags: getCollectionField('tags', data) || undefined,
+                    getCollectionField<string>('description', data) ||
+                    undefined,
+                tags: getCollectionField<ITag[]>('tags', data) || null,
             }
         },
         validationSchema: Yup.object().shape({
@@ -124,7 +151,7 @@ export default compose(
             ),
         }),
         handleSubmit: (
-            values: IFormState,
+            values: IFormValues,
             { props, setSubmitting }: { props: IProps; setSubmitting: any }
         ) => {
             if (props.communities && !props.data) {
@@ -140,6 +167,7 @@ export default compose(
                             communities={props.communities.map(
                                 ({ community }) => ({
                                     ...community,
+                                    __typename: 'CommunityDTO',
                                     type: 'COMMUNITY',
                                 })
                             )}
@@ -155,16 +183,28 @@ export default compose(
                 })
             } else {
                 if (props.data) {
-                    // BACKEND FIX sections.resources -> sections.resourcesId :(
+                    // BACKEND FIX sections.resources -> sections.resourcesId 
                     const reassignResourcesToResourcesId = pipe(
-                        path(['sections']),
+                        path<Collection_sections[]>(['sections']),
+                        defaultTo([]),
                         map((section: Collection_sections) => ({
                             ...section,
-                            resourcesId: map(({ id, version, type }) => ({
-                                type: type.toUpperCase(),
-                                id,
-                                version,
-                            }))(section.resourcesId),
+                            resourcesId:
+                                section.resourcesId &&
+                                section.resourcesId.map(resource => {
+                                    if (resource) {
+                                        const {
+                                            id,
+                                            version,
+                                            type,
+                                        } = resource as any
+                                        return {
+                                            type: type.toUpperCase(),
+                                            id,
+                                            version,
+                                        }
+                                    }
+                                }),
                         })),
                         map(section => dissocPath(['resources'])(section)),
                         map(section => dissocPath(['__typename'])(section))

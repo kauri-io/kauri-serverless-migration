@@ -22,7 +22,7 @@ export interface IDependencies {
     ) => Array<Promise<{ data: { output: T } }>>
     web3PersonalSign: any
     web3GetNetwork: any
-    getGasPrice: any
+    getGasPrice: () => Promise<number>
     personalSign: (data: string) => Promise<string>
 }
 

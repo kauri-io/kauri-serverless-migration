@@ -151,9 +151,9 @@ const RenderResources = (
                                                     ),
                                                     type:
                                                         article.resourceIdentifier &&
-                                                        article
+                                                        (article
                                                             .resourceIdentifier
-                                                            .type,
+                                                            .type as any),
                                                 },
                                             })
                                         }
