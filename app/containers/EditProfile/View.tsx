@@ -51,7 +51,7 @@ interface IProps {
               dateCreated: string
           }
         | undefined
-    userId: string
+    userId: string | undefined
 }
 
 class OnboardingEditProfile extends Component<IProps> {

@@ -141,7 +141,7 @@ export const draftArticleAction = (
     type: DRAFT_ARTICLE,
 })
 
-export const submitArticleEpic: Epic<any, any, IReduxState, IDependencies> = (
+export const submitArticleEpic: Epic<ISubmitArticleAction, any, IReduxState, IDependencies> = (
     action$,
     _,
     { apolloClient, apolloSubscriber }

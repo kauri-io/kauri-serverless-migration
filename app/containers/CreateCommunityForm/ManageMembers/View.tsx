@@ -6,7 +6,6 @@ import FormInviteMembersPanel, { IInvitation } from './FormInviteMembersPanel'
 import styled from 'styled-components'
 import {
     revokeInvitationAction as revokeInvitation,
-    removeMemberAction as removeMember,
     changeMemberRoleAction as changeMemberRole,
     resendInvitationAction as resendInvitation,
 } from '../../Community/Module'
@@ -15,6 +14,7 @@ import { openModalAction as openModal } from '../../../components/Modal/Module'
 import AlertViewComponent from '../../../components/Modal/AlertView'
 import ChangeMemberRoleModalContent from './ChangeMemberRoleModalContent'
 import { Component } from 'react'
+import { removeMemberVariables } from '../../../queries/__generated__/removeMember';
 
 const ManageMembersContainer = styled.section`
     display: flex;
@@ -30,7 +30,7 @@ interface IProps {
     members: Array<getCommunity_getCommunity_members | null> | null
     openAddMemberModal: () => void
     closeModalAction: () => void
-    removeMemberAction: typeof removeMember
+    removeMemberAction: (payload: Pick<removeMemberVariables, 'account' | 'id'>) => void
     revokeInvitationAction: typeof revokeInvitation
     cancelInvitation: (payload: { index: number }) => void
     id: string | null
@@ -52,7 +52,7 @@ class ManageMembers extends Component<IProps, IRole> {
         role: null,
     }
 
-    openChangeMemberRoleModal = (payload: prepareChangeMemberRoleVariables) => {
+    openChangeMemberRoleModal = (payload: Pick<prepareChangeMemberRoleVariables, 'id' | 'account'>) => {
         this.props.openModalAction({
             children: (
                 <AlertViewComponent

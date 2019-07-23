@@ -326,7 +326,6 @@ export const updateCommunityEpic = (
                                       })
                                   )
                               ).pipe(
-                                  tap(console.log),
                                   mergeMap(prepareSendInvitationsResults =>
                                       prepareSendInvitationsResults.map(
                                           (
@@ -372,6 +371,7 @@ export const updateCommunityEpic = (
                                                           },
                                                       })
                                                   ),
+                                                  tap(console.log),
                                                   mergeMap(
                                                       ({
                                                           data: {
