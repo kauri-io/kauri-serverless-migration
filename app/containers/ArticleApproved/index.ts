@@ -1,6 +1,6 @@
 import ArticleApproved from './View'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
-import { getArticle } from '../../queries/Article'
+import { getArticleQuery } from '../../queries/Article'
 import { connect } from 'react-redux'
 import { compose, graphql } from 'react-apollo'
 import withLoading from '../../lib/with-loading'
@@ -27,7 +27,7 @@ export default compose(
         mapStateToProps,
         { routeChangeAction }
     ),
-    graphql(getArticle, {
+    graphql(getArticleQuery, {
         options: ({
             article_id,
             article_version,

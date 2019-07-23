@@ -5,7 +5,6 @@ import InviteMembersPanel from './InviteMembersPanel'
 import FormInviteMembersPanel, { IInvitation } from './FormInviteMembersPanel'
 import styled from 'styled-components'
 import {
-    revokeInvitationAction as revokeInvitation,
     changeMemberRoleAction as changeMemberRole,
     resendInvitationAction as resendInvitation,
 } from '../../Community/Module'
@@ -15,6 +14,7 @@ import AlertViewComponent from '../../../components/Modal/AlertView'
 import ChangeMemberRoleModalContent from './ChangeMemberRoleModalContent'
 import { Component } from 'react'
 import { removeMemberVariables } from '../../../queries/__generated__/removeMember'
+import { revokeInvitationVariables } from '../../../queries/__generated__/revokeInvitation'
 
 const ManageMembersContainer = styled.section`
     display: flex;
@@ -33,7 +33,9 @@ interface IProps {
     removeMemberAction: (
         payload: Pick<removeMemberVariables, 'account' | 'id'>
     ) => void
-    revokeInvitationAction: typeof revokeInvitation
+    revokeInvitationAction: (
+        payload: Pick<revokeInvitationVariables, 'invitationId' | 'id'>
+    ) => void
     cancelInvitation: (payload: { index: number }) => void
     id: string | null
     data?: {

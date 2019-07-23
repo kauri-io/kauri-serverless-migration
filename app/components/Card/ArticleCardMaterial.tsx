@@ -46,74 +46,76 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-export default ({
-    author,
-    title,
-    attributes,
-    datePublished,
-    description,
-    href,
-    className,
-    id,
-}: IProps) => {
-    const classes = ArticleCardStyles({})
-    return (
-        <Card
-            key={id}
-            className={`${classes.card} ${className ? className : ''}`}
-        >
-            <Link
-                useAnchorTag={true}
-                href={`/public-profile/${author && author.id}`}
-            >
-                <CardHeader
-                    className={classes.header}
-                    avatar={
-                        author && author.avatar ? (
-                            <Avatar src={author && author.avatar} />
-                        ) : (
-                            <Avatar
-                                className={classes.avatar}
-                                aria-label={String(author && author.username)}
-                            >
-                                {author &&
-                                    author.username &&
-                                    author.username.charAt(0)}
-                            </Avatar>
-                        )
-                    }
-                    title={
-                        author && (author.name || author.username || author.id)
-                    }
-                    subheader={moment(String(datePublished)).fromNow()}
-                />
-            </Link>
-            <Link useAnchorTag={true} href={href}>
-                <>
-                    {attributes && attributes.background && (
-                        <CardMedia
-                            className={classes.media}
-                            image={attributes.background}
-                            title={String(title)}
-                        />
-                    )}
-                    <CardContent className={classes.content}>
-                        <Typography variant="h6">{title}</Typography>
-                        <Typography
-                            variant="body2"
-                            color="textSecondary"
-                            component="p"
-                        >
-                            {String(
-                                description && description.length < 160
-                                    ? description
-                                    : description &&
-                                          `${description.substring(0, 157)}...`
-                            )}
-                        </Typography>
-                    </CardContent>
-                </>
-            </Link>
-        </Card>
-    )
+const ArticleCard: React.FC<IProps> = ({
+  author,
+  title,
+  attributes,
+  datePublished,
+  description,
+  href,
+  className,
+  id,
+}) => {
+  const classes = ArticleCardStyles({})
+  return (
+      <Card
+          key={id}
+          className={`${classes.card} ${className ? className : ''}`}
+      >
+          <Link
+              useAnchorTag={true}
+              href={`/public-profile/${author && author.id}`}
+          >
+              <CardHeader
+                  className={classes.header}
+                  avatar={
+                      author && author.avatar ? (
+                          <Avatar src={author && author.avatar} />
+                      ) : (
+                          <Avatar
+                              className={classes.avatar}
+                              aria-label={String(author && author.username)}
+                          >
+                              {author &&
+                                  author.username &&
+                                  author.username.charAt(0)}
+                          </Avatar>
+                      )
+                  }
+                  title={
+                      author && (author.name || author.username || author.id)
+                  }
+                  subheader={moment(String(datePublished)).fromNow()}
+              />
+          </Link>
+          <Link useAnchorTag={true} href={href}>
+              <>
+                  {attributes && attributes.background && (
+                      <CardMedia
+                          className={classes.media}
+                          image={attributes.background}
+                          title={String(title)}
+                      />
+                  )}
+                  <CardContent className={classes.content}>
+                      <Typography variant="h6">{title}</Typography>
+                      <Typography
+                          variant="body2"
+                          color="textSecondary"
+                          component="p"
+                      >
+                          {String(
+                              description && description.length < 160
+                                  ? description
+                                  : description &&
+                                        `${description.substring(0, 157)}...`
+                          )}
+                      </Typography>
+                  </CardContent>
+              </>
+          </Link>
+      </Card>
+  )
 }
+
+export default ArticleCard

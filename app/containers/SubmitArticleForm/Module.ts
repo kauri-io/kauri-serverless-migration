@@ -2,7 +2,7 @@ import { Epic, ofType } from 'redux-observable'
 import {
     submitArticleVersionMutation,
     editArticle,
-    getArticle as getArticleQuery,
+    getArticleQuery as getArticleQuery,
     submitNewArticleMutation,
 } from '../../queries/Article'
 import { IDependencies, IReduxState, ICommunity } from '../../lib/Module'

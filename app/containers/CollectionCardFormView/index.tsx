@@ -2,11 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 import { graphql, compose } from "react-apollo";
 import styled from "styled-components";
-import { getCollection } from "../../queries/Collection";
+import { getCollectionQuery } from "../../queries/Collection";
 import withLoading from "../../lib/with-loading";
 import withApolloError from "../../lib/with-apollo-error";
 import CollectionCard from "../../components/Card/CollectionCard";
 import { IReduxState } from "../../lib/Module";
+import { getCollectionVariables } from "../../queries/__generated__/getCollection";
 
 const mapStateToProps = (state: IReduxState) => ({
   hostName: state.app && state.app.hostName,
@@ -115,8 +116,8 @@ export default compose(
     mapStateToProps,
     {}
   ),
-  graphql(getCollection, {
-    options: ({ id }: { id: string }) => ({
+  graphql(getCollectionQuery, {
+    options: ({ id }: getCollectionVariables) => ({
       variables: {
         id,
       },

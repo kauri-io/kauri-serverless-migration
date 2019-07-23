@@ -39,7 +39,7 @@ export const checkpointArticlesEpic: Epic<
     IDependencies
 > = (
     action$,
-    state$,
+    _,
     {
         apolloClient,
         smartContracts,
@@ -92,17 +92,6 @@ export const checkpointArticlesEpic: Epic<
                                     }
                                 )
                             ),
-                            tap((transactionHash) => {
-                                state$.dispatch(
-                                    showNotificationAction({
-                                        notificationType: 'info',
-                                        message: 'Waiting for it to be mined',
-                                        description:
-                                            'You will get another notification when the block is mined!',
-                                    })
-                                )
-                                return transactionHash
-                            }),
                             mergeMap((transactionHash) =>
                                 apolloSubscriber<ICheckpointArticlesCommandOutput>(
                                     transactionHash,
