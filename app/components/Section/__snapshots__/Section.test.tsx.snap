@@ -1,0 +1,2043 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Section/ActionsSection should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
+        "hoverTextColor": "#108E72",
+        "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
+    }
+  >
+    <ActionsSection>
+      <ActionsSection__ActionsSectionStack
+        alignItems={
+          Array [
+            "",
+            "center",
+          ]
+        }
+        background="bgPrimary"
+        gap={30}
+        gridAutoFlow={
+          Array [
+            "",
+            "column",
+          ]
+        }
+        gridTemplateColumns="minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr)"
+        justifyContent={
+          Array [
+            "",
+            "start",
+          ]
+        }
+        width="100%"
+      >
+        <StyledComponent
+          alignItems={
+            Array [
+              "",
+              "center",
+            ]
+          }
+          background="bgPrimary"
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "ActionsSection__ActionsSectionStack-sc-1me8cd-0",
+                "isStatic": false,
+                "lastClassName": "kejMke",
+                "rules": Array [
+                  "background:",
+                  [Function],
+                  ";width:100%;padding:15px ",
+                  [Function],
+                  ";",
+                ],
+              },
+              "displayName": "ActionsSection__ActionsSectionStack",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "ActionsSection__ActionsSectionStack-sc-1me8cd-0",
+              "target": [Function],
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+          gap={30}
+          gridAutoFlow={
+            Array [
+              "",
+              "column",
+            ]
+          }
+          gridTemplateColumns="minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr)"
+          justifyContent={
+            Array [
+              "",
+              "start",
+            ]
+          }
+          width="100%"
+        >
+          <Component
+            alignItems={
+              Array [
+                "",
+                "center",
+              ]
+            }
+            background="bgPrimary"
+            className="ActionsSection__ActionsSectionStack-sc-1me8cd-0 kejMke"
+            gap={30}
+            gridAutoFlow={
+              Array [
+                "",
+                "column",
+              ]
+            }
+            gridTemplateColumns="minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr)"
+            justifyContent={
+              Array [
+                "",
+                "start",
+              ]
+            }
+            width="100%"
+          >
+            <Stack
+              alignItems={
+                Array [
+                  "",
+                  "center",
+                ]
+              }
+              background="bgPrimary"
+              className="ActionsSection__ActionsSectionStack-sc-1me8cd-0 kejMke"
+              gap={30}
+              gridAutoFlow={
+                Array [
+                  "",
+                  "column",
+                ]
+              }
+              gridTemplateColumns="minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr)"
+              justifyContent={
+                Array [
+                  "",
+                  "start",
+                ]
+              }
+              width="100%"
+            >
+              <StyledComponent
+                alignItems={
+                  Array [
+                    "",
+                    "center",
+                  ]
+                }
+                background="bgPrimary"
+                className="ActionsSection__ActionsSectionStack-sc-1me8cd-0 kejMke"
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "_foldedDefaultProps": Object {
+                      "gap": 2,
+                    },
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-bdVaJa",
+                      "isStatic": false,
+                      "lastClassName": "gQKdCs",
+                      "rules": Array [
+                        "box-sizing: border-box;",
+                        "display: grid;",
+                        [Function],
+                        [Function],
+                        [Function],
+                        [Function],
+                        [Function],
+                      ],
+                    },
+                    "displayName": "Stack",
+                    "foldedComponentIds": Array [],
+                    "propTypes": Object {
+                      "alignContent": [Function],
+                      "alignItems": [Function],
+                      "alignSelf": [Function],
+                      "display": [Function],
+                      "flex": [Function],
+                      "flexBasis": [Function],
+                      "flexDirection": [Function],
+                      "flexGrow": [Function],
+                      "flexShrink": [Function],
+                      "flexWrap": [Function],
+                      "gap": [Function],
+                      "gridArea": [Function],
+                      "gridAutoColumns": [Function],
+                      "gridAutoFlow": [Function],
+                      "gridAutoRows": [Function],
+                      "gridColumn": [Function],
+                      "gridColumnGap": [Function],
+                      "gridGap": [Function],
+                      "gridRow": [Function],
+                      "gridRowGap": [Function],
+                      "gridTemplateAreas": [Function],
+                      "gridTemplateColumns": [Function],
+                      "gridTemplateRows": [Function],
+                      "height": [Function],
+                      "justifyContent": [Function],
+                      "justifyItems": [Function],
+                      "justifySelf": [Function],
+                      "m": [Function],
+                      "margin": [Function],
+                      "marginBottom": [Function],
+                      "marginLeft": [Function],
+                      "marginRight": [Function],
+                      "marginTop": [Function],
+                      "marginX": [Function],
+                      "marginY": [Function],
+                      "maxHeight": [Function],
+                      "maxWidth": [Function],
+                      "mb": [Function],
+                      "minHeight": [Function],
+                      "minWidth": [Function],
+                      "ml": [Function],
+                      "mr": [Function],
+                      "mt": [Function],
+                      "mx": [Function],
+                      "my": [Function],
+                      "order": [Function],
+                      "overflow": [Function],
+                      "p": [Function],
+                      "padding": [Function],
+                      "paddingBottom": [Function],
+                      "paddingLeft": [Function],
+                      "paddingRight": [Function],
+                      "paddingTop": [Function],
+                      "paddingX": [Function],
+                      "paddingY": [Function],
+                      "pb": [Function],
+                      "pl": [Function],
+                      "pr": [Function],
+                      "pt": [Function],
+                      "px": [Function],
+                      "py": [Function],
+                      "size": [Function],
+                      "verticalAlign": [Function],
+                      "width": [Function],
+                    },
+                    "render": [Function],
+                    "styledComponentId": "sc-bdVaJa",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                gap={30}
+                gridAutoFlow={
+                  Array [
+                    "",
+                    "column",
+                  ]
+                }
+                gridTemplateColumns="minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr)"
+                justifyContent={
+                  Array [
+                    "",
+                    "start",
+                  ]
+                }
+                width="100%"
+              >
+                <div
+                  className="ActionsSection__ActionsSectionStack-sc-1me8cd-0 kejMke sc-bdVaJa gQKdCs"
+                  width="100%"
+                />
+              </StyledComponent>
+            </Stack>
+          </Component>
+        </StyledComponent>
+      </ActionsSection__ActionsSectionStack>
+    </ActionsSection>
+  </ThemeProvider>
+</Provider>
+`;
+
+exports[`components/Section/CardContentSection should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
+        "hoverTextColor": "#108E72",
+        "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
+    }
+  >
+    <CardContentSection>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "CardContentSection-ygx7u9-0",
+              "isStatic": false,
+              "lastClassName": "cALcbY",
+              "rules": Array [
+                "display:flex;flex-direction:row;justify-content:center;flex:1;flex-wrap:wrap;padding-bottom:0;max-width:",
+                [Function],
+                ";> *{margin:",
+                [Function],
+                "px;}",
+              ],
+            },
+            "displayName": "CardContentSection",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "CardContentSection-ygx7u9-0",
+            "target": "section",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <section
+          className="CardContentSection-ygx7u9-0 cALcbY"
+        />
+      </StyledComponent>
+    </CardContentSection>
+  </ThemeProvider>
+</Provider>
+`;
+
+exports[`components/Section/CardContentSection should match snapshot 2`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
+        "hoverTextColor": "#108E72",
+        "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
+    }
+  >
+    <CardContentSection>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "CardContentSection-ygx7u9-0",
+              "isStatic": false,
+              "lastClassName": "cALcbY",
+              "rules": Array [
+                "display:flex;flex-direction:row;justify-content:center;flex:1;flex-wrap:wrap;padding-bottom:0;max-width:",
+                [Function],
+                ";> *{margin:",
+                [Function],
+                "px;}",
+              ],
+            },
+            "displayName": "CardContentSection",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "CardContentSection-ygx7u9-0",
+            "target": "section",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <section
+          className="CardContentSection-ygx7u9-0 cALcbY"
+        />
+      </StyledComponent>
+    </CardContentSection>
+  </ThemeProvider>
+</Provider>
+`;
+
+exports[`components/Section/CategorySection should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
+        "hoverTextColor": "#108E72",
+        "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
+    }
+  >
+    <CategorySection>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "CategorySection-kutg7g-0",
+              "isStatic": false,
+              "lastClassName": "faKeFm",
+              "rules": Array [
+                "display:flex;flex-direction:column;> div:not(:last-child){margin-bottom:",
+                [Function],
+                "px;}",
+              ],
+            },
+            "displayName": "CategorySection",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "CategorySection-kutg7g-0",
+            "target": "section",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <section
+          className="CategorySection-kutg7g-0 faKeFm"
+        />
+      </StyledComponent>
+    </CategorySection>
+  </ThemeProvider>
+</Provider>
+`;
+
+exports[`components/Section/ContentSection should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
+        "hoverTextColor": "#108E72",
+        "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
+    }
+  >
+    <ContentSection>
+      <ContentSection__ContentSectionStack
+        alignItems={
+          Array [
+            "",
+            "start",
+          ]
+        }
+        background="tertiaryBackgroundColor"
+        gap={30}
+        gridAutoFlow={
+          Array [
+            "",
+            "row",
+          ]
+        }
+        justifyContent={
+          Array [
+            "",
+            "start",
+          ]
+        }
+      >
+        <StyledComponent
+          alignItems={
+            Array [
+              "",
+              "start",
+            ]
+          }
+          background="tertiaryBackgroundColor"
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "ContentSection__ContentSectionStack-sc-1mwbgto-0",
+                "isStatic": false,
+                "lastClassName": "heQKhv",
+                "rules": Array [
+                  "background:",
+                  [Function],
+                  ";min-height:calc(100vh - 220px);padding:",
+                  [Function],
+                  " ",
+                  [Function],
+                  ";",
+                ],
+              },
+              "displayName": "ContentSection__ContentSectionStack",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "ContentSection__ContentSectionStack-sc-1mwbgto-0",
+              "target": [Function],
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+          gap={30}
+          gridAutoFlow={
+            Array [
+              "",
+              "row",
+            ]
+          }
+          justifyContent={
+            Array [
+              "",
+              "start",
+            ]
+          }
+        >
+          <Component
+            alignItems={
+              Array [
+                "",
+                "start",
+              ]
+            }
+            background="tertiaryBackgroundColor"
+            className="ContentSection__ContentSectionStack-sc-1mwbgto-0 heQKhv"
+            gap={30}
+            gridAutoFlow={
+              Array [
+                "",
+                "row",
+              ]
+            }
+            justifyContent={
+              Array [
+                "",
+                "start",
+              ]
+            }
+          >
+            <Stack
+              alignItems={
+                Array [
+                  "",
+                  "start",
+                ]
+              }
+              background="tertiaryBackgroundColor"
+              className="ContentSection__ContentSectionStack-sc-1mwbgto-0 heQKhv"
+              gap={30}
+              gridAutoFlow={
+                Array [
+                  "",
+                  "row",
+                ]
+              }
+              justifyContent={
+                Array [
+                  "",
+                  "start",
+                ]
+              }
+            >
+              <StyledComponent
+                alignItems={
+                  Array [
+                    "",
+                    "start",
+                  ]
+                }
+                background="tertiaryBackgroundColor"
+                className="ContentSection__ContentSectionStack-sc-1mwbgto-0 heQKhv"
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "_foldedDefaultProps": Object {
+                      "gap": 2,
+                    },
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-bdVaJa",
+                      "isStatic": false,
+                      "lastClassName": "fGetdg",
+                      "rules": Array [
+                        "box-sizing: border-box;",
+                        "display: grid;",
+                        [Function],
+                        [Function],
+                        [Function],
+                        [Function],
+                        [Function],
+                      ],
+                    },
+                    "displayName": "Stack",
+                    "foldedComponentIds": Array [],
+                    "propTypes": Object {
+                      "alignContent": [Function],
+                      "alignItems": [Function],
+                      "alignSelf": [Function],
+                      "display": [Function],
+                      "flex": [Function],
+                      "flexBasis": [Function],
+                      "flexDirection": [Function],
+                      "flexGrow": [Function],
+                      "flexShrink": [Function],
+                      "flexWrap": [Function],
+                      "gap": [Function],
+                      "gridArea": [Function],
+                      "gridAutoColumns": [Function],
+                      "gridAutoFlow": [Function],
+                      "gridAutoRows": [Function],
+                      "gridColumn": [Function],
+                      "gridColumnGap": [Function],
+                      "gridGap": [Function],
+                      "gridRow": [Function],
+                      "gridRowGap": [Function],
+                      "gridTemplateAreas": [Function],
+                      "gridTemplateColumns": [Function],
+                      "gridTemplateRows": [Function],
+                      "height": [Function],
+                      "justifyContent": [Function],
+                      "justifyItems": [Function],
+                      "justifySelf": [Function],
+                      "m": [Function],
+                      "margin": [Function],
+                      "marginBottom": [Function],
+                      "marginLeft": [Function],
+                      "marginRight": [Function],
+                      "marginTop": [Function],
+                      "marginX": [Function],
+                      "marginY": [Function],
+                      "maxHeight": [Function],
+                      "maxWidth": [Function],
+                      "mb": [Function],
+                      "minHeight": [Function],
+                      "minWidth": [Function],
+                      "ml": [Function],
+                      "mr": [Function],
+                      "mt": [Function],
+                      "mx": [Function],
+                      "my": [Function],
+                      "order": [Function],
+                      "overflow": [Function],
+                      "p": [Function],
+                      "padding": [Function],
+                      "paddingBottom": [Function],
+                      "paddingLeft": [Function],
+                      "paddingRight": [Function],
+                      "paddingTop": [Function],
+                      "paddingX": [Function],
+                      "paddingY": [Function],
+                      "pb": [Function],
+                      "pl": [Function],
+                      "pr": [Function],
+                      "pt": [Function],
+                      "px": [Function],
+                      "py": [Function],
+                      "size": [Function],
+                      "verticalAlign": [Function],
+                      "width": [Function],
+                    },
+                    "render": [Function],
+                    "styledComponentId": "sc-bdVaJa",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                gap={30}
+                gridAutoFlow={
+                  Array [
+                    "",
+                    "row",
+                  ]
+                }
+                justifyContent={
+                  Array [
+                    "",
+                    "start",
+                  ]
+                }
+              >
+                <div
+                  className="ContentSection__ContentSectionStack-sc-1mwbgto-0 heQKhv sc-bdVaJa fGetdg"
+                />
+              </StyledComponent>
+            </Stack>
+          </Component>
+        </StyledComponent>
+      </ContentSection__ContentSectionStack>
+    </ContentSection>
+  </ThemeProvider>
+</Provider>
+`;
+
+exports[`components/Section/PadContentSection should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
+        "hoverTextColor": "#108E72",
+        "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
+    }
+  >
+    <PadContentSection>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "PadContentSection-sc-3ifiv7-0",
+              "isStatic": false,
+              "lastClassName": "ixxsHv",
+              "rules": Array [
+                [Function],
+                ";background:",
+                [Function],
+                ";",
+              ],
+            },
+            "displayName": "PadContentSection",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "PadContentSection-sc-3ifiv7-0",
+            "target": "section",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <section
+          className="PadContentSection-sc-3ifiv7-0 ixxsHv"
+        />
+      </StyledComponent>
+    </PadContentSection>
+  </ThemeProvider>
+</Provider>
+`;
+
+exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
+        "hoverTextColor": "#108E72",
+        "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
+    }
+  >
+    <PrimaryHeaderSection>
+      <PrimaryHeaderSection__PrimaryHeaderSectionStack
+        alignItems={
+          Array [
+            "",
+            "center",
+          ]
+        }
+        background="bgPrimary"
+        gap={30}
+        gridAutoFlow={
+          Array [
+            "",
+            "column",
+          ]
+        }
+        gridTemplateColumns="minmax(auto, 1fr) minmax(auto, 1fr)"
+        justifyContent={
+          Array [
+            "",
+            "start",
+          ]
+        }
+      >
+        <StyledComponent
+          alignItems={
+            Array [
+              "",
+              "center",
+            ]
+          }
+          background="bgPrimary"
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0",
+                "isStatic": false,
+                "lastClassName": "iIIfDK",
+                "rules": Array [
+                  "background:",
+                  [Function],
+                  ";min-height:250px;padding:",
+                  [Function],
+                  "px ",
+                  [Function],
+                  ";",
+                  [Function],
+                  ";",
+                ],
+              },
+              "displayName": "PrimaryHeaderSection__PrimaryHeaderSectionStack",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0",
+              "target": [Function],
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+          gap={30}
+          gridAutoFlow={
+            Array [
+              "",
+              "column",
+            ]
+          }
+          gridTemplateColumns="minmax(auto, 1fr) minmax(auto, 1fr)"
+          justifyContent={
+            Array [
+              "",
+              "start",
+            ]
+          }
+        >
+          <Component
+            alignItems={
+              Array [
+                "",
+                "center",
+              ]
+            }
+            background="bgPrimary"
+            className="PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0 iIIfDK"
+            gap={30}
+            gridAutoFlow={
+              Array [
+                "",
+                "column",
+              ]
+            }
+            gridTemplateColumns="minmax(auto, 1fr) minmax(auto, 1fr)"
+            justifyContent={
+              Array [
+                "",
+                "start",
+              ]
+            }
+          >
+            <Stack
+              alignItems={
+                Array [
+                  "",
+                  "center",
+                ]
+              }
+              background="bgPrimary"
+              className="PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0 iIIfDK"
+              gap={30}
+              gridAutoFlow={
+                Array [
+                  "",
+                  "column",
+                ]
+              }
+              gridTemplateColumns="minmax(auto, 1fr) minmax(auto, 1fr)"
+              justifyContent={
+                Array [
+                  "",
+                  "start",
+                ]
+              }
+            >
+              <StyledComponent
+                alignItems={
+                  Array [
+                    "",
+                    "center",
+                  ]
+                }
+                background="bgPrimary"
+                className="PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0 iIIfDK"
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "_foldedDefaultProps": Object {
+                      "gap": 2,
+                    },
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-bdVaJa",
+                      "isStatic": false,
+                      "lastClassName": "cEHnpq",
+                      "rules": Array [
+                        "box-sizing: border-box;",
+                        "display: grid;",
+                        [Function],
+                        [Function],
+                        [Function],
+                        [Function],
+                        [Function],
+                      ],
+                    },
+                    "displayName": "Stack",
+                    "foldedComponentIds": Array [],
+                    "propTypes": Object {
+                      "alignContent": [Function],
+                      "alignItems": [Function],
+                      "alignSelf": [Function],
+                      "display": [Function],
+                      "flex": [Function],
+                      "flexBasis": [Function],
+                      "flexDirection": [Function],
+                      "flexGrow": [Function],
+                      "flexShrink": [Function],
+                      "flexWrap": [Function],
+                      "gap": [Function],
+                      "gridArea": [Function],
+                      "gridAutoColumns": [Function],
+                      "gridAutoFlow": [Function],
+                      "gridAutoRows": [Function],
+                      "gridColumn": [Function],
+                      "gridColumnGap": [Function],
+                      "gridGap": [Function],
+                      "gridRow": [Function],
+                      "gridRowGap": [Function],
+                      "gridTemplateAreas": [Function],
+                      "gridTemplateColumns": [Function],
+                      "gridTemplateRows": [Function],
+                      "height": [Function],
+                      "justifyContent": [Function],
+                      "justifyItems": [Function],
+                      "justifySelf": [Function],
+                      "m": [Function],
+                      "margin": [Function],
+                      "marginBottom": [Function],
+                      "marginLeft": [Function],
+                      "marginRight": [Function],
+                      "marginTop": [Function],
+                      "marginX": [Function],
+                      "marginY": [Function],
+                      "maxHeight": [Function],
+                      "maxWidth": [Function],
+                      "mb": [Function],
+                      "minHeight": [Function],
+                      "minWidth": [Function],
+                      "ml": [Function],
+                      "mr": [Function],
+                      "mt": [Function],
+                      "mx": [Function],
+                      "my": [Function],
+                      "order": [Function],
+                      "overflow": [Function],
+                      "p": [Function],
+                      "padding": [Function],
+                      "paddingBottom": [Function],
+                      "paddingLeft": [Function],
+                      "paddingRight": [Function],
+                      "paddingTop": [Function],
+                      "paddingX": [Function],
+                      "paddingY": [Function],
+                      "pb": [Function],
+                      "pl": [Function],
+                      "pr": [Function],
+                      "pt": [Function],
+                      "px": [Function],
+                      "py": [Function],
+                      "size": [Function],
+                      "verticalAlign": [Function],
+                      "width": [Function],
+                    },
+                    "render": [Function],
+                    "styledComponentId": "sc-bdVaJa",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                gap={30}
+                gridAutoFlow={
+                  Array [
+                    "",
+                    "column",
+                  ]
+                }
+                gridTemplateColumns="minmax(auto, 1fr) minmax(auto, 1fr)"
+                justifyContent={
+                  Array [
+                    "",
+                    "start",
+                  ]
+                }
+              >
+                <div
+                  className="PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0 iIIfDK sc-bdVaJa cEHnpq"
+                />
+              </StyledComponent>
+            </Stack>
+          </Component>
+        </StyledComponent>
+      </PrimaryHeaderSection__PrimaryHeaderSectionStack>
+    </PrimaryHeaderSection>
+  </ThemeProvider>
+</Provider>
+`;
+
+exports[`components/Section/TopResourcesSection should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
+        "hoverTextColor": "#108E72",
+        "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
+    }
+  >
+    <TopResourcesSection>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "TopResourcesSection-mr7g3s-0",
+              "isStatic": false,
+              "lastClassName": "bYCQSD",
+              "rules": Array [
+                "display:flex;flex-direction:column;>:first-child{margin-bottom:",
+                [Function],
+                "px;}>:nth-child(2){margin-top:0px;}> * > *:nth-child(n + 6){display:none;}@media (max-width:",
+                [Function],
+                "){display:none;}",
+              ],
+            },
+            "displayName": "TopResourcesSection",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "TopResourcesSection-mr7g3s-0",
+            "target": "section",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <section
+          className="TopResourcesSection-mr7g3s-0 bYCQSD"
+        />
+      </StyledComponent>
+    </TopResourcesSection>
+  </ThemeProvider>
+</Provider>
+`;

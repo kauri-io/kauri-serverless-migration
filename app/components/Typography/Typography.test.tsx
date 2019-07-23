@@ -11,6 +11,10 @@ import {
     CTA,
     Title1,
     Title2,
+    ListBulletPoint,
+    ListDashPoint,
+    NavigationText,
+    PageDescription,
 } from './index'
 
 import { mountWithTheme } from '../../setupTests'
@@ -73,6 +77,26 @@ describe('components/typography', () => {
 
     it('Title2 should match snapshot', () => {
         const wrapper = mountWithTheme(<Title2>Test</Title2>)
+        expect(wrapper).toMatchSnapshot()
+    })
+
+    it('ListBulletPoint should match snapshot', () => {
+        const wrapper = mountWithTheme(<ListBulletPoint>Test</ListBulletPoint>)
+        expect(wrapper).toMatchSnapshot()
+    })
+
+    it('ListDashPoint should match snapshot', () => {
+        const wrapper = mountWithTheme(<ListDashPoint>Test</ListDashPoint>)
+        expect(wrapper).toMatchSnapshot()
+    })
+
+    it('NavigationText should match snapshot', () => {
+        const wrapper = mountWithTheme(<NavigationText>Test</NavigationText>)
+        expect(wrapper).toMatchSnapshot()
+    })
+
+    it('PageDescription should match snapshot', () => {
+        const wrapper = mountWithTheme(<PageDescription>Test</PageDescription>)
         expect(wrapper).toMatchSnapshot()
     })
 })

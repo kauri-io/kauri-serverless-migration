@@ -12,18 +12,6 @@ export interface CheckpointArticlesAction {
     type: string
 }
 
-type CheckpointArticlesCommandOutput = {
-    merkleRoot: string
-    checkpointHash: string
-    signatureV: string
-    signatureR: string
-    signatureS: string
-}
-
-type CheckpointArticlesCommandResponse = {
-    data: { output: CheckpointArticlesCommandOutput }
-}
-
 export const checkpointArticlesAction: () => CheckpointArticlesAction = () => ({
     type: CHECKPOINT_ARTICLES,
 })
@@ -65,7 +53,7 @@ export const checkpointArticlesEpic = (
                                 signatureS,
                             },
                         },
-                    }: CheckpointArticlesCommandResponse) =>
+                    }) =>
                         from(getGasPrice()).pipe(
                             mergeMap(gasPrice =>
                                 smartContracts().KauriCore.checkpointArticles.sendTransaction(
