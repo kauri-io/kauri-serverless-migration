@@ -141,11 +141,12 @@ export const draftArticleAction = (
     type: DRAFT_ARTICLE,
 })
 
-export const submitArticleEpic: Epic<ISubmitArticleAction, any, IReduxState, IDependencies> = (
-    action$,
-    _,
-    { apolloClient, apolloSubscriber }
-) =>
+export const submitArticleEpic: Epic<
+    ISubmitArticleAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(SUBMIT_ARTICLE),
         switchMap(

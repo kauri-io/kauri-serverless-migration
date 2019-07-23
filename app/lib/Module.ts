@@ -83,7 +83,7 @@ export interface IReduxState {
             avatar: string
             dateCreated: string
             username: string
-            name: string,
+            name: string
             email: string
             communities: ICommunity[]
             status: string // [NOT_REGISTERED|CREATED]EMAIL_VERIFIED]

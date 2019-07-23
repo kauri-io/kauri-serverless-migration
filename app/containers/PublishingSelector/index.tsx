@@ -59,14 +59,11 @@ const Label = styled.span`
 `
 
 interface IContentProps {
-  options: IOption[]
-  setDestination: (destValue: IOption) => void
+    options: IOption[]
+    setDestination: (destValue: IOption) => void
 }
 
-const Content: React.FC<IContentProps> = ({
-    options,
-    setDestination,
-}) => {
+const Content: React.FC<IContentProps> = ({ options, setDestination }) => {
     return (
         <TooltipContainer>
             {options &&

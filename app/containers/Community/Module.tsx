@@ -52,9 +52,7 @@ import {
     revokeInvitation,
     revokeInvitationVariables,
 } from '../../queries/__generated__/revokeInvitation'
-import {
-    prepareRemoveMemberVariables,
-} from '../../queries/__generated__/prepareRemoveMember'
+import { prepareRemoveMemberVariables } from '../../queries/__generated__/prepareRemoveMember'
 import {
     removeMember,
     removeMemberVariables,

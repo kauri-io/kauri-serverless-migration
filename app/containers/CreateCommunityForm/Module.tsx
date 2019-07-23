@@ -27,7 +27,17 @@ import {
 
 export interface ICreateCommunityAction {
     callback: () => void
-    payload: createCommunityVariables
+    payload: Pick<
+        createCommunityVariables,
+        | 'name'
+        | 'description'
+        | 'avatar'
+        | 'website'
+        | 'tags'
+        | 'social'
+        | 'attributes'
+        | 'invitations'
+    >
     type: 'CREATE_COMMUNITY'
 }
 
@@ -67,7 +77,17 @@ const COMMUNITY_UPDATED = 'COMMUNITY_UPDATED'
 const UPDATE_COMMUNITY = 'UPDATE_COMMUNITY'
 
 export const createCommunityAction = (
-    payload: createCommunityVariables,
+    payload: Pick<
+        createCommunityVariables,
+        | 'name'
+        | 'description'
+        | 'avatar'
+        | 'website'
+        | 'tags'
+        | 'social'
+        | 'attributes'
+        | 'invitations'
+    >,
     callback: () => void
 ): ICreateCommunityAction => ({
     callback,
