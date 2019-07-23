@@ -25,8 +25,8 @@ const Container: React.SFC<IProps> = props => {
         <StatisticsContainer>
             {statistics.map(({ name, count }) => (
                 <StatisticCount
-                    pageType={String(pageType)}
                     key={name}
+                    pageType={String(pageType)}
                     name={name}
                     count={count}
                 />

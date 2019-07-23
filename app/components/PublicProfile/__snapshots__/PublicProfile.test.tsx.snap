@@ -1,0 +1,895 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/PublicProfile/SocialWebsiteIcon should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
+        "hoverTextColor": "#108E72",
+        "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
+    }
+  >
+    <SocialWebsiteIcon
+      brand="twitter"
+    >
+      <a
+        target="_blank"
+      >
+        <SocialWebsiteIcon__InvertSocialIcon
+          height={20}
+          src="https://unpkg.com/simple-icons@latest/icons/twitter.svg"
+          width={20}
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "SocialWebsiteIcon__InvertSocialIcon-sc-1n3fjnh-0",
+                  "isStatic": true,
+                  "lastClassName": "dyAGBL",
+                  "rules": Array [
+                    "filter:invert(100%);",
+                  ],
+                },
+                "displayName": "SocialWebsiteIcon__InvertSocialIcon",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "SocialWebsiteIcon__InvertSocialIcon-sc-1n3fjnh-0",
+                "target": "img",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            height={20}
+            src="https://unpkg.com/simple-icons@latest/icons/twitter.svg"
+            width={20}
+          >
+            <img
+              className="SocialWebsiteIcon__InvertSocialIcon-sc-1n3fjnh-0 dyAGBL"
+              height={20}
+              src="https://unpkg.com/simple-icons@latest/icons/twitter.svg"
+              width={20}
+            />
+          </StyledComponent>
+        </SocialWebsiteIcon__InvertSocialIcon>
+      </a>
+    </SocialWebsiteIcon>
+  </ThemeProvider>
+</Provider>
+`;
+
+exports[`components/PublicProfile/StatisticCount should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
+        "hoverTextColor": "#108E72",
+        "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
+    }
+  >
+    <Container
+      count={4}
+      name="test"
+      pageType="collection"
+    >
+      <StatisticCount__SectionContainer
+        key="test"
+      >
+        <StyledComponent
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
+                "isStatic": true,
+                "lastClassName": "hBrKEM",
+                "rules": Array [
+                  "display:flex;flex-direction:column;align-items:center;max-width:150px;",
+                ],
+              },
+              "displayName": "StatisticCount__SectionContainer",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
+              "target": "section",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          <section
+            className="StatisticCount__SectionContainer-sc-1xyux9h-1 hBrKEM"
+          >
+            <StatisticCount__Count
+              pageType="collection"
+            >
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "StatisticCount__Count-sc-1xyux9h-0",
+                      "isStatic": false,
+                      "lastClassName": "dTPpIr",
+                      "rules": Array [
+                        "color:white;font-size:",
+                        [Function],
+                        "px;font-weight:",
+                        [Function],
+                        ";margin:0px;margin-bottom:",
+                        [Function],
+                        "px;opacity:",
+                        [Function],
+                        ";",
+                      ],
+                    },
+                    "displayName": "StatisticCount__Count",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
+                    "target": "h3",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                pageType="collection"
+              >
+                <h3
+                  className="StatisticCount__Count-sc-1xyux9h-0 dTPpIr"
+                >
+                  4
+                </h3>
+              </StyledComponent>
+            </StatisticCount__Count>
+            <StatisticCount__Name
+              pageType="collection"
+            >
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "StatisticCount__Name-sc-1xyux9h-2",
+                      "isStatic": false,
+                      "lastClassName": "ivYcUc",
+                      "rules": Array [
+                        "color:white;font-size:",
+                        [Function],
+                        "px;font-weight:",
+                        [Function],
+                        ";opacity:",
+                        [Function],
+                        ";text-transform:uppercase;",
+                      ],
+                    },
+                    "displayName": "StatisticCount__Name",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
+                    "target": "span",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                pageType="collection"
+              >
+                <span
+                  className="StatisticCount__Name-sc-1xyux9h-2 ivYcUc"
+                >
+                  tests
+                </span>
+              </StyledComponent>
+            </StatisticCount__Name>
+          </section>
+        </StyledComponent>
+      </StatisticCount__SectionContainer>
+    </Container>
+  </ThemeProvider>
+</Provider>
+`;
+
+exports[`components/PublicProfile/StatisticsContainer should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
+        "hoverTextColor": "#108E72",
+        "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
+    }
+  >
+    <Container
+      statistics={
+        Array [
+          Object {
+            "count": 4,
+            "name": "test",
+            "pageType": "collection",
+          },
+          Object {
+            "count": 4,
+            "name": "test2",
+            "pageType": "collection",
+          },
+        ]
+      }
+    >
+      <StatisticsContainer>
+        <StyledComponent
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "StatisticsContainer-sc-18atadq-0",
+                "isStatic": false,
+                "lastClassName": "kulLJ",
+                "rules": Array [
+                  "display:flex;flex-direction:row;>:not(:first-child){margin-left:",
+                  [Function],
+                  "px;}",
+                ],
+              },
+              "displayName": "StatisticsContainer",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "StatisticsContainer-sc-18atadq-0",
+              "target": "section",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          <section
+            className="StatisticsContainer-sc-18atadq-0 kulLJ"
+          >
+            <Container
+              count={4}
+              key="test"
+              name="test"
+              pageType="undefined"
+            >
+              <StatisticCount__SectionContainer
+                key="test"
+              >
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
+                        "isStatic": true,
+                        "lastClassName": "hBrKEM",
+                        "rules": Array [
+                          "display:flex;flex-direction:column;align-items:center;max-width:150px;",
+                        ],
+                      },
+                      "displayName": "StatisticCount__SectionContainer",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
+                      "target": "section",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                >
+                  <section
+                    className="StatisticCount__SectionContainer-sc-1xyux9h-1 hBrKEM"
+                  >
+                    <StatisticCount__Count
+                      pageType="undefined"
+                    >
+                      <StyledComponent
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "StatisticCount__Count-sc-1xyux9h-0",
+                              "isStatic": false,
+                              "lastClassName": "dTPpIr",
+                              "rules": Array [
+                                "color:white;font-size:",
+                                [Function],
+                                "px;font-weight:",
+                                [Function],
+                                ";margin:0px;margin-bottom:",
+                                [Function],
+                                "px;opacity:",
+                                [Function],
+                                ";",
+                              ],
+                            },
+                            "displayName": "StatisticCount__Count",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
+                            "target": "h3",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        pageType="undefined"
+                      >
+                        <h3
+                          className="StatisticCount__Count-sc-1xyux9h-0 dTPpIr"
+                        >
+                          4
+                        </h3>
+                      </StyledComponent>
+                    </StatisticCount__Count>
+                    <StatisticCount__Name
+                      pageType="undefined"
+                    >
+                      <StyledComponent
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "StatisticCount__Name-sc-1xyux9h-2",
+                              "isStatic": false,
+                              "lastClassName": "ivYcUc",
+                              "rules": Array [
+                                "color:white;font-size:",
+                                [Function],
+                                "px;font-weight:",
+                                [Function],
+                                ";opacity:",
+                                [Function],
+                                ";text-transform:uppercase;",
+                              ],
+                            },
+                            "displayName": "StatisticCount__Name",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
+                            "target": "span",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        pageType="undefined"
+                      >
+                        <span
+                          className="StatisticCount__Name-sc-1xyux9h-2 ivYcUc"
+                        >
+                          tests
+                        </span>
+                      </StyledComponent>
+                    </StatisticCount__Name>
+                  </section>
+                </StyledComponent>
+              </StatisticCount__SectionContainer>
+            </Container>
+            <Container
+              count={4}
+              key="test2"
+              name="test2"
+              pageType="undefined"
+            >
+              <StatisticCount__SectionContainer
+                key="test2"
+              >
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
+                        "isStatic": true,
+                        "lastClassName": "hBrKEM",
+                        "rules": Array [
+                          "display:flex;flex-direction:column;align-items:center;max-width:150px;",
+                        ],
+                      },
+                      "displayName": "StatisticCount__SectionContainer",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
+                      "target": "section",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                >
+                  <section
+                    className="StatisticCount__SectionContainer-sc-1xyux9h-1 hBrKEM"
+                  >
+                    <StatisticCount__Count
+                      pageType="undefined"
+                    >
+                      <StyledComponent
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "StatisticCount__Count-sc-1xyux9h-0",
+                              "isStatic": false,
+                              "lastClassName": "dTPpIr",
+                              "rules": Array [
+                                "color:white;font-size:",
+                                [Function],
+                                "px;font-weight:",
+                                [Function],
+                                ";margin:0px;margin-bottom:",
+                                [Function],
+                                "px;opacity:",
+                                [Function],
+                                ";",
+                              ],
+                            },
+                            "displayName": "StatisticCount__Count",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
+                            "target": "h3",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        pageType="undefined"
+                      >
+                        <h3
+                          className="StatisticCount__Count-sc-1xyux9h-0 dTPpIr"
+                        >
+                          4
+                        </h3>
+                      </StyledComponent>
+                    </StatisticCount__Count>
+                    <StatisticCount__Name
+                      pageType="undefined"
+                    >
+                      <StyledComponent
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "StatisticCount__Name-sc-1xyux9h-2",
+                              "isStatic": false,
+                              "lastClassName": "ivYcUc",
+                              "rules": Array [
+                                "color:white;font-size:",
+                                [Function],
+                                "px;font-weight:",
+                                [Function],
+                                ";opacity:",
+                                [Function],
+                                ";text-transform:uppercase;",
+                              ],
+                            },
+                            "displayName": "StatisticCount__Name",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
+                            "target": "span",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        pageType="undefined"
+                      >
+                        <span
+                          className="StatisticCount__Name-sc-1xyux9h-2 ivYcUc"
+                        >
+                          test2s
+                        </span>
+                      </StyledComponent>
+                    </StatisticCount__Name>
+                  </section>
+                </StyledComponent>
+              </StatisticCount__SectionContainer>
+            </Container>
+          </section>
+        </StyledComponent>
+      </StatisticsContainer>
+    </Container>
+  </ThemeProvider>
+</Provider>
+`;

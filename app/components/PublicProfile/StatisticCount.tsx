@@ -77,7 +77,7 @@ interface IProps {
 }
 
 const Container: React.SFC<IProps> = ({ name, count, pageType }) => (
-    <SectionContainer>
+    <SectionContainer key={name}>
         <Count pageType={pageType}>{pluraliseCount(count)}</Count>
         <Name pageType={pageType}>{pluraliseName({ name, count })}</Name>
     </SectionContainer>

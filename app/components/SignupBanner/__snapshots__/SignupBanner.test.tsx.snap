@@ -1,0 +1,482 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/SignupBanner snapshot should match 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "DEFAULT_CARD_WIDTH": 288,
+      "MAIN_BODY_WIDTH": 1242,
+      "bg": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "bgPrimary": "#1E2428",
+      "bgSecondary": "#1E3D3B",
+      "borderTextArea": "#979797",
+      "breakpoints": Array [
+        "500px",
+        "52em",
+        "1242px",
+      ],
+      "colors": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+      "disabledBackgroundColor": "#D6D6D6",
+      "disabledTextColor": "#9B9B9B",
+      "divider": "#EBEBEB",
+      "errorRedColor": "#C03030",
+      "fontSizes": Array [
+        11,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22,
+        28,
+        32,
+      ],
+      "fontWeight": Array [
+        300,
+        "normal",
+        500,
+        700,
+      ],
+      "hoverTextColor": "#108E72",
+      "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+      "padding": "calc((100vw - 1242px) / 2)",
+      "paddingTop": "2.5em",
+      "primary": "#0BA986",
+      "primaryColor": "#0BA986",
+      "primaryDark": "#11856B",
+      "primaryTextColor": "#1E2428",
+      "secondary": "#11856B",
+      "secondaryBlue": "rgb(81, 123, 162, 1)",
+      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+      "secondaryColor": "#1E3D3B",
+      "secondaryTextColor": "#283035",
+      "space": Array [
+        0,
+        10,
+        15,
+        30,
+        60,
+      ],
+      "tertiaryBackgroundColor": "#F7F7F7",
+      "textPrimary": "#1E2428",
+      "white": "#FFFFFF",
+    }
+  }
+>
+  <SignupBanner
+    linkComponent={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            <PrimaryButtonComponent
+              color="white"
+            >
+              Sign up
+            </PrimaryButtonComponent>,
+            "/login",
+          ],
+          Array [
+            <SecondaryButtonComponent
+              border="white"
+              color="white"
+            >
+              Learn more
+            </SecondaryButtonComponent>,
+            "/help",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
+    <SignupBanner__SignupBannerStack
+      alignItems={
+        Array [
+          "",
+        ]
+      }
+      gap={30}
+      gridAutoFlow={
+        Array [
+          "column",
+        ]
+      }
+      justifyContent={
+        Array [
+          "",
+        ]
+      }
+    >
+      <StyledComponent
+        alignItems={
+          Array [
+            "",
+          ]
+        }
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "_foldedDefaultProps": Object {
+              "gap": 2,
+            },
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "SignupBanner__SignupBannerStack-sc-1hxzf8p-2",
+              "isStatic": false,
+              "lastClassName": "ieQzri",
+              "rules": Array [
+                "box-sizing: border-box;",
+                "display: grid;",
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                "padding:",
+                [Function],
+                "px ",
+                [Function],
+                ";background:",
+                [Function],
+                ";@media (max-width:",
+                [Function],
+                "){padding:",
+                [Function],
+                "px ",
+                [Function],
+                "px;}",
+              ],
+            },
+            "displayName": "SignupBanner__SignupBannerStack",
+            "foldedComponentIds": Array [
+              "sc-bdVaJa",
+            ],
+            "propTypes": Object {
+              "alignContent": [Function],
+              "alignItems": [Function],
+              "alignSelf": [Function],
+              "display": [Function],
+              "flex": [Function],
+              "flexBasis": [Function],
+              "flexDirection": [Function],
+              "flexGrow": [Function],
+              "flexShrink": [Function],
+              "flexWrap": [Function],
+              "gap": [Function],
+              "gridArea": [Function],
+              "gridAutoColumns": [Function],
+              "gridAutoFlow": [Function],
+              "gridAutoRows": [Function],
+              "gridColumn": [Function],
+              "gridColumnGap": [Function],
+              "gridGap": [Function],
+              "gridRow": [Function],
+              "gridRowGap": [Function],
+              "gridTemplateAreas": [Function],
+              "gridTemplateColumns": [Function],
+              "gridTemplateRows": [Function],
+              "height": [Function],
+              "justifyContent": [Function],
+              "justifyItems": [Function],
+              "justifySelf": [Function],
+              "m": [Function],
+              "margin": [Function],
+              "marginBottom": [Function],
+              "marginLeft": [Function],
+              "marginRight": [Function],
+              "marginTop": [Function],
+              "marginX": [Function],
+              "marginY": [Function],
+              "maxHeight": [Function],
+              "maxWidth": [Function],
+              "mb": [Function],
+              "minHeight": [Function],
+              "minWidth": [Function],
+              "ml": [Function],
+              "mr": [Function],
+              "mt": [Function],
+              "mx": [Function],
+              "my": [Function],
+              "order": [Function],
+              "overflow": [Function],
+              "p": [Function],
+              "padding": [Function],
+              "paddingBottom": [Function],
+              "paddingLeft": [Function],
+              "paddingRight": [Function],
+              "paddingTop": [Function],
+              "paddingX": [Function],
+              "paddingY": [Function],
+              "pb": [Function],
+              "pl": [Function],
+              "pr": [Function],
+              "pt": [Function],
+              "px": [Function],
+              "py": [Function],
+              "size": [Function],
+              "verticalAlign": [Function],
+              "width": [Function],
+            },
+            "render": [Function],
+            "styledComponentId": "SignupBanner__SignupBannerStack-sc-1hxzf8p-2",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+        gap={30}
+        gridAutoFlow={
+          Array [
+            "column",
+          ]
+        }
+        justifyContent={
+          Array [
+            "",
+          ]
+        }
+      >
+        <div
+          className="sc-bdVaJa SignupBanner__SignupBannerStack-sc-1hxzf8p-2 ieQzri"
+        >
+          <SignupBanner__ResourceDetailsContainer>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "SignupBanner__ResourceDetailsContainer-sc-1hxzf8p-0",
+                    "isStatic": false,
+                    "lastClassName": "jkhksa",
+                    "rules": Array [
+                      "display:flex;flex-direction:column;max-width:700px;>:not(:last-child){margin-bottom:",
+                      [Function],
+                      "px;}",
+                    ],
+                  },
+                  "displayName": "SignupBanner__ResourceDetailsContainer",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "SignupBanner__ResourceDetailsContainer-sc-1hxzf8p-0",
+                  "target": "section",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <section
+                className="SignupBanner__ResourceDetailsContainer-sc-1hxzf8p-0 jkhksa"
+              >
+                <Typography__styledComponent
+                  color="white"
+                >
+                  <StyledComponent
+                    color="white"
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                          "isStatic": false,
+                          "lastClassName": "iLJkHN",
+                          "rules": Array [
+                            "color:",
+                            [Function],
+                            ";margin:0px;font-weight:",
+                            "500",
+                            ";",
+                            ";font-size:",
+                            "28",
+                            "px;text-transform:",
+                            [Function],
+                            ";text-align:",
+                            [Function],
+                            ";:hover{color:",
+                            [Function],
+                            ";cursor:",
+                            [Function],
+                            ";}",
+                          ],
+                        },
+                        "displayName": "Typography__styledComponent",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                        "target": "span",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                  >
+                    <span
+                      className="Typography__styledComponent-sc-36xkf6-5 iLJkHN"
+                      color="white"
+                    >
+                      Learn to Build on Ethereum with Kauri
+                    </span>
+                  </StyledComponent>
+                </Typography__styledComponent>
+                <Typography__component
+                  color="white"
+                >
+                  <StyledComponent
+                    color="white"
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "Typography__component-sc-36xkf6-4",
+                          "isStatic": false,
+                          "lastClassName": "dvuWvG",
+                          "rules": Array [
+                            "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
+                            [Function],
+                            "px;line-height:18px;color:",
+                            [Function],
+                            ";",
+                            ";",
+                            [Function],
+                            ";",
+                          ],
+                        },
+                        "displayName": "Typography__component",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "Typography__component-sc-36xkf6-4",
+                        "target": "span",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                  >
+                    <span
+                      className="Typography__component-sc-36xkf6-4 dvuWvG"
+                      color="white"
+                    >
+                      Articles, Tutorials, Documentation and Best Practices
+                    </span>
+                  </StyledComponent>
+                </Typography__component>
+              </section>
+            </StyledComponent>
+          </SignupBanner__ResourceDetailsContainer>
+          <SignupBanner__ViewContainer>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "SignupBanner__ViewContainer-sc-1hxzf8p-1",
+                    "isStatic": false,
+                    "lastClassName": "iebiGj",
+                    "rules": Array [
+                      "display:flex;flex-direction:row;margin-left:auto;>:first-child{margin-right:",
+                      [Function],
+                      "px;}@media (max-width:",
+                      [Function],
+                      "){display:none;}",
+                    ],
+                  },
+                  "displayName": "SignupBanner__ViewContainer",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "SignupBanner__ViewContainer-sc-1hxzf8p-1",
+                  "target": "section",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <section
+                className="SignupBanner__ViewContainer-sc-1hxzf8p-1 iebiGj"
+              />
+            </StyledComponent>
+          </SignupBanner__ViewContainer>
+        </div>
+      </StyledComponent>
+    </SignupBanner__SignupBannerStack>
+  </SignupBanner>
+</ThemeProvider>
+`;

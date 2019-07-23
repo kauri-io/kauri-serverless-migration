@@ -1,4 +1,3 @@
-import moment from 'moment'
 import ArticleCard from '../Card/ArticleCardMaterial'
 import CollectionCard from '../Card/CollectionCard'
 import CommunityCard from '../Card/CommunityCard'
@@ -70,7 +69,7 @@ export const RenderCardContent = ({
                     id={String(card.id)}
                     resourceType="CollectionDTO"
                     name={String(card.name)}
-                    date={moment(card.dateUpdated).format('D MMM YYYY')}
+                    date={card.dateUpdated}
                     description={String(card.description)}
                     username={
                         typedOwner && typedOwner.__typename === 'PublicUserDTO'

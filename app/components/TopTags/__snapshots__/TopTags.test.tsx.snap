@@ -1,0 +1,451 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/TopTags snapshot should match 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "DEFAULT_CARD_WIDTH": 288,
+      "MAIN_BODY_WIDTH": 1242,
+      "bg": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "bgPrimary": "#1E2428",
+      "bgSecondary": "#1E3D3B",
+      "borderTextArea": "#979797",
+      "breakpoints": Array [
+        "500px",
+        "52em",
+        "1242px",
+      ],
+      "colors": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+      "disabledBackgroundColor": "#D6D6D6",
+      "disabledTextColor": "#9B9B9B",
+      "divider": "#EBEBEB",
+      "errorRedColor": "#C03030",
+      "fontSizes": Array [
+        11,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22,
+        28,
+        32,
+      ],
+      "fontWeight": Array [
+        300,
+        "normal",
+        500,
+        700,
+      ],
+      "hoverTextColor": "#108E72",
+      "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+      "padding": "calc((100vw - 1242px) / 2)",
+      "paddingTop": "2.5em",
+      "primary": "#0BA986",
+      "primaryColor": "#0BA986",
+      "primaryDark": "#11856B",
+      "primaryTextColor": "#1E2428",
+      "secondary": "#11856B",
+      "secondaryBlue": "rgb(81, 123, 162, 1)",
+      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+      "secondaryColor": "#1E3D3B",
+      "secondaryTextColor": "#283035",
+      "space": Array [
+        0,
+        10,
+        15,
+        30,
+        60,
+      ],
+      "tertiaryBackgroundColor": "#F7F7F7",
+      "textPrimary": "#1E2428",
+      "white": "#FFFFFF",
+    }
+  }
+>
+  <TopTags
+    routeChangeAction={[MockFunction]}
+    tags={
+      Array [
+        "test",
+        "solidity",
+        "typescript",
+      ]
+    }
+  >
+    <TopResourcesSection>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "TopResourcesSection-mr7g3s-0",
+              "isStatic": false,
+              "lastClassName": "bYCQSD",
+              "rules": Array [
+                "display:flex;flex-direction:column;>:first-child{margin-bottom:",
+                [Function],
+                "px;}>:nth-child(2){margin-top:0px;}> * > *:nth-child(n + 6){display:none;}@media (max-width:",
+                [Function],
+                "){display:none;}",
+              ],
+            },
+            "displayName": "TopResourcesSection",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "TopResourcesSection-mr7g3s-0",
+            "target": "section",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <section
+          className="TopResourcesSection-mr7g3s-0 bYCQSD"
+        >
+          <Typography__styledComponent>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                    "isStatic": false,
+                    "lastClassName": "eLGQne",
+                    "rules": Array [
+                      "color:",
+                      [Function],
+                      ";margin:0px;font-weight:",
+                      "500",
+                      ";",
+                      ";font-size:",
+                      "20",
+                      "px;text-transform:",
+                      [Function],
+                      ";text-align:",
+                      [Function],
+                      ";:hover{color:",
+                      [Function],
+                      ";cursor:",
+                      [Function],
+                      ";}",
+                    ],
+                  },
+                  "displayName": "Typography__styledComponent",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                  "target": "span",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <span
+                className="Typography__styledComponent-sc-36xkf6-5 eLGQne"
+              >
+                Top Tags
+              </span>
+            </StyledComponent>
+          </Typography__styledComponent>
+          <TagList
+            color="textPrimary"
+            maxTags={5}
+            orientation="vertical"
+            routeChangeAction={[MockFunction]}
+            tags={
+              Array [
+                "test",
+                "solidity",
+                "typescript",
+              ]
+            }
+          >
+            <TagList__Container
+              orientation="vertical"
+            >
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "TagList__Container-ipfhd9-0",
+                      "isStatic": false,
+                      "lastClassName": "hRvbAh",
+                      "rules": Array [
+                        "display:flex;margin:",
+                        "10",
+                        "px 0 0 0;flex-direction:",
+                        [Function],
+                        ";flex-wrap:wrap;justify-content:",
+                        [Function],
+                        ";",
+                      ],
+                    },
+                    "displayName": "TagList__Container",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "TagList__Container-ipfhd9-0",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                orientation="vertical"
+              >
+                <div
+                  className="TagList__Container-ipfhd9-0 hRvbAh"
+                  orientation="vertical"
+                >
+                  <TagList__StyledTag
+                    color="textPrimary"
+                    hiddenTags={false}
+                    key="0"
+                    onClick={[Function]}
+                    orientation="vertical"
+                  >
+                    <StyledComponent
+                      color="textPrimary"
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "TagList__StyledTag-ipfhd9-1",
+                            "isStatic": false,
+                            "lastClassName": "dWUAmS",
+                            "rules": Array [
+                              "cursor:pointer;transition:0.3s;&:not(:last-child):after{content:'•';color:",
+                              "#0BA986",
+                              ";margin:",
+                              "5",
+                              "px;font-weight:",
+                              "700",
+                              ";}&:hover{color:",
+                              "#0BA986",
+                              ";}",
+                              [Function],
+                              ";",
+                              [Function],
+                              ";",
+                            ],
+                          },
+                          "displayName": "TagList__StyledTag",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "TagList__StyledTag-ipfhd9-1",
+                          "target": "div",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                      hiddenTags={false}
+                      onClick={[Function]}
+                      orientation="vertical"
+                    >
+                      <div
+                        className="TagList__StyledTag-ipfhd9-1 dWUAmS"
+                        color="textPrimary"
+                        onClick={[Function]}
+                        orientation="vertical"
+                      >
+                        test
+                      </div>
+                    </StyledComponent>
+                  </TagList__StyledTag>
+                  <TagList__StyledTag
+                    color="textPrimary"
+                    hiddenTags={false}
+                    key="1"
+                    onClick={[Function]}
+                    orientation="vertical"
+                  >
+                    <StyledComponent
+                      color="textPrimary"
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "TagList__StyledTag-ipfhd9-1",
+                            "isStatic": false,
+                            "lastClassName": "dWUAmS",
+                            "rules": Array [
+                              "cursor:pointer;transition:0.3s;&:not(:last-child):after{content:'•';color:",
+                              "#0BA986",
+                              ";margin:",
+                              "5",
+                              "px;font-weight:",
+                              "700",
+                              ";}&:hover{color:",
+                              "#0BA986",
+                              ";}",
+                              [Function],
+                              ";",
+                              [Function],
+                              ";",
+                            ],
+                          },
+                          "displayName": "TagList__StyledTag",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "TagList__StyledTag-ipfhd9-1",
+                          "target": "div",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                      hiddenTags={false}
+                      onClick={[Function]}
+                      orientation="vertical"
+                    >
+                      <div
+                        className="TagList__StyledTag-ipfhd9-1 dWUAmS"
+                        color="textPrimary"
+                        onClick={[Function]}
+                        orientation="vertical"
+                      >
+                        solidity
+                      </div>
+                    </StyledComponent>
+                  </TagList__StyledTag>
+                  <TagList__StyledTag
+                    color="textPrimary"
+                    hiddenTags={false}
+                    key="2"
+                    onClick={[Function]}
+                    orientation="vertical"
+                  >
+                    <StyledComponent
+                      color="textPrimary"
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "TagList__StyledTag-ipfhd9-1",
+                            "isStatic": false,
+                            "lastClassName": "dWUAmS",
+                            "rules": Array [
+                              "cursor:pointer;transition:0.3s;&:not(:last-child):after{content:'•';color:",
+                              "#0BA986",
+                              ";margin:",
+                              "5",
+                              "px;font-weight:",
+                              "700",
+                              ";}&:hover{color:",
+                              "#0BA986",
+                              ";}",
+                              [Function],
+                              ";",
+                              [Function],
+                              ";",
+                            ],
+                          },
+                          "displayName": "TagList__StyledTag",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "TagList__StyledTag-ipfhd9-1",
+                          "target": "div",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                      hiddenTags={false}
+                      onClick={[Function]}
+                      orientation="vertical"
+                    >
+                      <div
+                        className="TagList__StyledTag-ipfhd9-1 dWUAmS"
+                        color="textPrimary"
+                        onClick={[Function]}
+                        orientation="vertical"
+                      >
+                        typescript
+                      </div>
+                    </StyledComponent>
+                  </TagList__StyledTag>
+                </div>
+              </StyledComponent>
+            </TagList__Container>
+          </TagList>
+        </section>
+      </StyledComponent>
+    </TopResourcesSection>
+  </TopTags>
+</ThemeProvider>
+`;

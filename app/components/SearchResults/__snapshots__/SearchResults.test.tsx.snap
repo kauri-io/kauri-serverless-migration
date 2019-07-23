@@ -1,0 +1,361 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/ResourceRowWithImage should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
+        "hoverTextColor": "#108E72",
+        "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
+    }
+  >
+    <ResourceRowWithImage
+      date="2019-01-01"
+      description="test description"
+      id="123"
+      imageURL="test url"
+      linkComponent={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              <Image
+                height={195}
+                image="test url"
+                width={288}
+              />,
+              "/test/123/a",
+            ],
+            Array [
+              <ForwardRef(ResourceRowWithImage__Content)>
+                <ForwardRef(Typography__component)>
+                  Posted 01 Jan 2019 00:00
+                </ForwardRef(Typography__component)>
+                <ForwardRef(Typography__styledComponent)>
+                  test
+                </ForwardRef(Typography__styledComponent)>
+                <ForwardRef(Typography__component)>
+                  test description
+                </ForwardRef(Typography__component)>
+                <TagList
+                  color="textPrimary"
+                  maxTags={3}
+                  tags={
+                    Array [
+                      "test",
+                    ]
+                  }
+                />
+              </ForwardRef(ResourceRowWithImage__Content)>,
+              "/test/123/a",
+            ],
+            Array [
+              <UserAvatarComponent
+                avatar="test avatar"
+                cardType="ARTICLE"
+                fullWidth={true}
+                imageURL="test url"
+                userId="0x"
+                username="jimi"
+              />,
+              "/community/0x",
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+      ownerType="COMMUNITY"
+      resourceType="ARTICLE"
+      tags={
+        Array [
+          "test",
+        ]
+      }
+      title="test"
+      userAvatar="test avatar"
+      userId="0x"
+      username="jimi"
+    >
+      <ResourceRowWithImage__ResourceRow
+        key="123"
+      >
+        <StyledComponent
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "ResourceRowWithImage__ResourceRow-tpmrbu-0",
+                "isStatic": false,
+                "lastClassName": "hVSttN",
+                "rules": Array [
+                  "display:flex;width:",
+                  [Function],
+                  "px;height:195px;background-color:",
+                  [Function],
+                  ";border-radius:4px;box-shadow:0 0 4px 0 rgba(0,0,0,0.11);",
+                ],
+              },
+              "displayName": "ResourceRowWithImage__ResourceRow",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "ResourceRowWithImage__ResourceRow-tpmrbu-0",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+        >
+          <div
+            className="ResourceRowWithImage__ResourceRow-tpmrbu-0 hVSttN"
+          >
+            <ResourceRowWithImage__Container>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "ResourceRowWithImage__Container-tpmrbu-2",
+                      "isStatic": false,
+                      "lastClassName": "gCKJgL",
+                      "rules": Array [
+                        "display:flex;width:100%;flex-direction:column;padding:",
+                        [Function],
+                        "px ",
+                        [Function],
+                        "px;",
+                      ],
+                    },
+                    "displayName": "ResourceRowWithImage__Container",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "ResourceRowWithImage__Container-tpmrbu-2",
+                    "target": "section",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <section
+                  className="ResourceRowWithImage__Container-tpmrbu-2 gCKJgL"
+                >
+                  <ResourceRowWithImage__Divider>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "ResourceRowWithImage__Divider-tpmrbu-3",
+                            "isStatic": false,
+                            "lastClassName": "cDKOiH",
+                            "rules": Array [
+                              "width:100%;margin-top:auto;margin-bottom:",
+                              [Function],
+                              "px;background-color:",
+                              [Function],
+                              ";height:2px;",
+                            ],
+                          },
+                          "displayName": "ResourceRowWithImage__Divider",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "ResourceRowWithImage__Divider-tpmrbu-3",
+                          "target": "div",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <div
+                        className="ResourceRowWithImage__Divider-tpmrbu-3 cDKOiH"
+                      />
+                    </StyledComponent>
+                  </ResourceRowWithImage__Divider>
+                  <ResourceRowWithImage__Content>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "ResourceRowWithImage__Content-tpmrbu-1",
+                            "isStatic": false,
+                            "lastClassName": "hBgJZt",
+                            "rules": Array [
+                              "display:flex;flex-direction:column;> *:not(:last-child){margin-bottom:",
+                              [Function],
+                              "px;}> *:nth-child(3){margin-bottom:0px;}",
+                            ],
+                          },
+                          "displayName": "ResourceRowWithImage__Content",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "ResourceRowWithImage__Content-tpmrbu-1",
+                          "target": "div",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <div
+                        className="ResourceRowWithImage__Content-tpmrbu-1 hBgJZt"
+                      />
+                    </StyledComponent>
+                  </ResourceRowWithImage__Content>
+                </section>
+              </StyledComponent>
+            </ResourceRowWithImage__Container>
+          </div>
+        </StyledComponent>
+      </ResourceRowWithImage__ResourceRow>
+    </ResourceRowWithImage>
+  </ThemeProvider>
+</Provider>
+`;
