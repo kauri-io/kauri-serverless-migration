@@ -8,7 +8,7 @@ import { Title1, BodyCard } from '../../components/Typography'
 import { Article } from '../../queries/Fragments/__generated__/Article'
 import { ShareButtons } from '../../components/Tooltip/ShareButtons'
 
-interface IProps {
+export interface IProps {
     data: {
         getArticle: Article
     }

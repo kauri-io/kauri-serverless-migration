@@ -1,0 +1,1741 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`containers/ArticleReview snapshot should match 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
+        "hoverTextColor": "#108E72",
+        "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
+    }
+  >
+    <MockedProvider
+      addTypename={true}
+    >
+      <ApolloProvider
+        client={
+          ApolloClient {
+            "__operations_cache__": Map {},
+            "cache": InMemoryCache {
+              "addTypename": true,
+              "cacheKeyRoot": KeyTrie {
+                "weakness": true,
+              },
+              "config": Object {
+                "addTypename": true,
+                "dataIdFromObject": [Function],
+                "fragmentMatcher": HeuristicFragmentMatcher {},
+                "freezeResults": false,
+                "resultCaching": true,
+              },
+              "data": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "maybeBroadcastWatch": [Function],
+              "optimisticData": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "silenceBroadcast": false,
+              "storeReader": StoreReader {
+                "executeSelectionSet": [Function],
+                "executeStoreQuery": [Function],
+                "executeSubSelectedArray": [Function],
+                "freezeResults": false,
+              },
+              "storeWriter": StoreWriter {},
+              "typenameDocumentCache": Map {},
+              "watches": Set {},
+            },
+            "clearStoreCallbacks": Array [],
+            "defaultOptions": Object {},
+            "disableNetworkFetches": false,
+            "link": MockLink {
+              "addTypename": true,
+              "mockedResponsesByKey": Object {},
+            },
+            "localState": LocalState {
+              "cache": InMemoryCache {
+                "addTypename": true,
+                "cacheKeyRoot": KeyTrie {
+                  "weakness": true,
+                },
+                "config": Object {
+                  "addTypename": true,
+                  "dataIdFromObject": [Function],
+                  "fragmentMatcher": HeuristicFragmentMatcher {},
+                  "freezeResults": false,
+                  "resultCaching": true,
+                },
+                "data": DepTrackingCache {
+                  "data": Object {},
+                  "depend": [Function],
+                },
+                "maybeBroadcastWatch": [Function],
+                "optimisticData": DepTrackingCache {
+                  "data": Object {},
+                  "depend": [Function],
+                },
+                "silenceBroadcast": false,
+                "storeReader": StoreReader {
+                  "executeSelectionSet": [Function],
+                  "executeStoreQuery": [Function],
+                  "executeSubSelectedArray": [Function],
+                  "freezeResults": false,
+                },
+                "storeWriter": StoreWriter {},
+                "typenameDocumentCache": Map {},
+                "watches": Set {},
+              },
+              "client": [Circular],
+            },
+            "mutate": [Function],
+            "query": [Function],
+            "queryDeduplication": true,
+            "queryManager": QueryManager {
+              "assumeImmutableResults": false,
+              "clientAwareness": Object {
+                "name": undefined,
+                "version": undefined,
+              },
+              "dataStore": DataStore {
+                "cache": InMemoryCache {
+                  "addTypename": true,
+                  "cacheKeyRoot": KeyTrie {
+                    "weakness": true,
+                  },
+                  "config": Object {
+                    "addTypename": true,
+                    "dataIdFromObject": [Function],
+                    "fragmentMatcher": HeuristicFragmentMatcher {},
+                    "freezeResults": false,
+                    "resultCaching": true,
+                  },
+                  "data": DepTrackingCache {
+                    "data": Object {},
+                    "depend": [Function],
+                  },
+                  "maybeBroadcastWatch": [Function],
+                  "optimisticData": DepTrackingCache {
+                    "data": Object {},
+                    "depend": [Function],
+                  },
+                  "silenceBroadcast": false,
+                  "storeReader": StoreReader {
+                    "executeSelectionSet": [Function],
+                    "executeStoreQuery": [Function],
+                    "executeSubSelectedArray": [Function],
+                    "freezeResults": false,
+                  },
+                  "storeWriter": StoreWriter {},
+                  "typenameDocumentCache": Map {},
+                  "watches": Set {},
+                },
+              },
+              "fetchQueryRejectFns": Map {},
+              "idCounter": 1,
+              "inFlightLinkObservables": Map {},
+              "link": MockLink {
+                "addTypename": true,
+                "mockedResponsesByKey": Object {},
+              },
+              "localState": LocalState {
+                "cache": InMemoryCache {
+                  "addTypename": true,
+                  "cacheKeyRoot": KeyTrie {
+                    "weakness": true,
+                  },
+                  "config": Object {
+                    "addTypename": true,
+                    "dataIdFromObject": [Function],
+                    "fragmentMatcher": HeuristicFragmentMatcher {},
+                    "freezeResults": false,
+                    "resultCaching": true,
+                  },
+                  "data": DepTrackingCache {
+                    "data": Object {},
+                    "depend": [Function],
+                  },
+                  "maybeBroadcastWatch": [Function],
+                  "optimisticData": DepTrackingCache {
+                    "data": Object {},
+                    "depend": [Function],
+                  },
+                  "silenceBroadcast": false,
+                  "storeReader": StoreReader {
+                    "executeSelectionSet": [Function],
+                    "executeStoreQuery": [Function],
+                    "executeSubSelectedArray": [Function],
+                    "freezeResults": false,
+                  },
+                  "storeWriter": StoreWriter {},
+                  "typenameDocumentCache": Map {},
+                  "watches": Set {},
+                },
+                "client": [Circular],
+              },
+              "mutationStore": MutationStore {
+                "store": Object {},
+              },
+              "onBroadcast": [Function],
+              "pollingInfoByQueryId": Map {},
+              "queries": Map {},
+              "queryDeduplication": true,
+              "queryStore": QueryStore {
+                "store": Object {},
+              },
+              "ssrMode": false,
+              "transformCache": WeakMap {},
+            },
+            "reFetchObservableQueries": [Function],
+            "resetStore": [Function],
+            "resetStoreCallbacks": Array [],
+            "store": DataStore {
+              "cache": InMemoryCache {
+                "addTypename": true,
+                "cacheKeyRoot": KeyTrie {
+                  "weakness": true,
+                },
+                "config": Object {
+                  "addTypename": true,
+                  "dataIdFromObject": [Function],
+                  "fragmentMatcher": HeuristicFragmentMatcher {},
+                  "freezeResults": false,
+                  "resultCaching": true,
+                },
+                "data": DepTrackingCache {
+                  "data": Object {},
+                  "depend": [Function],
+                },
+                "maybeBroadcastWatch": [Function],
+                "optimisticData": DepTrackingCache {
+                  "data": Object {},
+                  "depend": [Function],
+                },
+                "silenceBroadcast": false,
+                "storeReader": StoreReader {
+                  "executeSelectionSet": [Function],
+                  "executeStoreQuery": [Function],
+                  "executeSubSelectedArray": [Function],
+                  "freezeResults": false,
+                },
+                "storeWriter": StoreWriter {},
+                "typenameDocumentCache": Map {},
+                "watches": Set {},
+              },
+            },
+            "typeDefs": undefined,
+            "version": "2.6.3",
+            "watchQuery": [Function],
+          }
+        }
+      >
+        <ArticleReviewView
+          CurrentArticle={
+            Object {
+              "getArticle": Object {
+                "__typename": "ArticleDTO",
+                "associatedNfts": null,
+                "attributes": Object {},
+                "author": Object {
+                  "__typename": "PublicUserDTO",
+                  "avatar": "test avatar 1",
+                  "id": "6791",
+                  "name": "test author name 1",
+                  "username": "test author username 1",
+                },
+                "authorId": "3451",
+                "checkpoint": null,
+                "comments": Object {
+                  "__typename": "ResponsePage_CommentDTO",
+                  "content": Array [],
+                  "totalElements": 0,
+                  "totalPages": 0,
+                },
+                "content": "{\\"markdown\\" : \\"test contet 1\\"}",
+                "contentHash": "hash1",
+                "dateCreated": "2019-01-01",
+                "datePublished": "2019-01-02",
+                "description": "test description 1",
+                "id": "1231",
+                "owner": Object {
+                  "__typename": "PublicUserDTO",
+                  "avatar": "test avatar 1",
+                  "id": "6781",
+                  "name": "test author name 1",
+                  "publicUserName": "test public username1",
+                  "resourceIdentifier": Object {
+                    "__typename": "PublicUserDTO",
+                    "id": "6781",
+                    "type": "ResourceIdentifier",
+                  },
+                  "username": "test author username1",
+                },
+                "resourceIdentifier": Object {
+                  "__typename": "ResourceIdentifier",
+                  "id": "1231",
+                  "type": "ResourceIdentifier",
+                  "version": 1,
+                },
+                "status": "PUBLISHED",
+                "tags": Array [
+                  "Test",
+                  "test2",
+                ],
+                "title": "test title 1",
+                "updateComment": "test update comment1",
+                "version": 1,
+                "voteResult": Object {
+                  "__typename": "VoteResultDTO",
+                  "count": 3,
+                  "hasVoted": false,
+                  "quantity": 1,
+                  "sum": 3,
+                },
+              },
+            }
+          }
+          ProposedUpdate={
+            Object {
+              "getArticle": Object {
+                "__typename": "ArticleDTO",
+                "associatedNfts": null,
+                "attributes": Object {},
+                "author": Object {
+                  "__typename": "PublicUserDTO",
+                  "avatar": "test avatar 2",
+                  "id": "6792",
+                  "name": "test author name 2",
+                  "username": "test author username 2",
+                },
+                "authorId": "3452",
+                "checkpoint": null,
+                "comments": Object {
+                  "__typename": "ResponsePage_CommentDTO",
+                  "content": Array [],
+                  "totalElements": 0,
+                  "totalPages": 0,
+                },
+                "content": "{\\"markdown\\" : \\"test contet 2\\"}",
+                "contentHash": "hash2",
+                "dateCreated": "2019-01-01",
+                "datePublished": "2019-01-02",
+                "description": "test description 2",
+                "id": "1232",
+                "owner": Object {
+                  "__typename": "PublicUserDTO",
+                  "avatar": "test avatar 2",
+                  "id": "6782",
+                  "name": "test author name 2",
+                  "publicUserName": "test public username2",
+                  "resourceIdentifier": Object {
+                    "__typename": "PublicUserDTO",
+                    "id": "6782",
+                    "type": "ResourceIdentifier",
+                  },
+                  "username": "test author username2",
+                },
+                "resourceIdentifier": Object {
+                  "__typename": "ResourceIdentifier",
+                  "id": "1232",
+                  "type": "ResourceIdentifier",
+                  "version": 1,
+                },
+                "status": "PUBLISHED",
+                "tags": Array [
+                  "Test",
+                  "test2",
+                ],
+                "title": "test title 2",
+                "updateComment": "test update comment2",
+                "version": 1,
+                "voteResult": Object {
+                  "__typename": "VoteResultDTO",
+                  "count": 3,
+                  "hasVoted": false,
+                  "quantity": 1,
+                  "sum": 3,
+                },
+              },
+            }
+          }
+          approveArticleAction={[MockFunction]}
+          classes={Object {}}
+          closeModalAction={[MockFunction]}
+          communities={Array []}
+          hostName="test hostname"
+          id="123"
+          openModalAction={[MockFunction]}
+          rejectArticleAction={[MockFunction]}
+          routeChangeAction={[MockFunction]}
+          router={Object {}}
+          userId="234"
+          version="3"
+          voteAction={[MockFunction]}
+        >
+          <View__Container>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "View__Container-bws0mc-0",
+                    "isStatic": true,
+                    "lastClassName": "erjhfy",
+                    "rules": Array [
+                      "background:white;",
+                    ],
+                  },
+                  "displayName": "View__Container",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "View__Container-bws0mc-0",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <div
+                className="View__Container-bws0mc-0 erjhfy"
+              >
+                <Indicator>
+                  <ScrollIndicator__BarContainer>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "ScrollIndicator__BarContainer-sc-1k4p76-0",
+                            "isStatic": true,
+                            "lastClassName": "chhIkH",
+                            "rules": Array [
+                              "position:fixed;top:0;left:0;right:0;height:4px;width:100%;background:transparent;z-index:999;",
+                            ],
+                          },
+                          "displayName": "ScrollIndicator__BarContainer",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "ScrollIndicator__BarContainer-sc-1k4p76-0",
+                          "target": "div",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <div
+                        className="ScrollIndicator__BarContainer-sc-1k4p76-0 chhIkH"
+                      >
+                        <ScrollIndicator__Fill
+                          scrolled={0}
+                        >
+                          <StyledComponent
+                            forwardedComponent={
+                              Object {
+                                "$$typeof": Symbol(react.forward_ref),
+                                "attrs": Array [],
+                                "componentStyle": ComponentStyle {
+                                  "componentId": "ScrollIndicator__Fill-sc-1k4p76-1",
+                                  "isStatic": false,
+                                  "lastClassName": "jxBAEE",
+                                  "rules": Array [
+                                    "width:",
+                                    [Function],
+                                    "%;left:0;background:",
+                                    [Function],
+                                    ";height:100%;",
+                                  ],
+                                },
+                                "displayName": "ScrollIndicator__Fill",
+                                "foldedComponentIds": Array [],
+                                "render": [Function],
+                                "styledComponentId": "ScrollIndicator__Fill-sc-1k4p76-1",
+                                "target": "div",
+                                "toString": [Function],
+                                "warnTooManyClasses": [Function],
+                                "withComponent": [Function],
+                              }
+                            }
+                            forwardedRef={null}
+                            scrolled={0}
+                          >
+                            <div
+                              className="ScrollIndicator__Fill-sc-1k4p76-1 jxBAEE"
+                            />
+                          </StyledComponent>
+                        </ScrollIndicator__Fill>
+                      </div>
+                    </StyledComponent>
+                  </ScrollIndicator__BarContainer>
+                </Indicator>
+                <Header
+                  approveArticleAction={[MockFunction]}
+                  attributes={Object {}}
+                  author={
+                    Object {
+                      "__typename": "PublicUserDTO",
+                      "avatar": "test avatar 2",
+                      "id": "6792",
+                      "name": "test author name 2",
+                      "username": "test author username 2",
+                    }
+                  }
+                  closeModalAction={[MockFunction]}
+                  communities={Array []}
+                  contentHash="hash2"
+                  currentUser="234"
+                  currentVersion={1}
+                  date="2019-01-01"
+                  id="123"
+                  newTags={
+                    Array [
+                      "Test",
+                      "test2",
+                    ]
+                  }
+                  oldTags={
+                    Array [
+                      "Test",
+                      "test2",
+                    ]
+                  }
+                  openModalAction={[MockFunction]}
+                  owner="6781"
+                  proposedVersion={1}
+                  rejectArticleAction={[MockFunction]}
+                  routeChangeAction={[MockFunction]}
+                  status="PUBLISHED"
+                  title="test title 2"
+                >
+                  <Header__Container>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "Header__Container-sc-647imh-0",
+                            "isStatic": false,
+                            "lastClassName": "lnvfmL",
+                            "rules": Array [
+                              "background:",
+                              [Function],
+                              ";height:250px;position:relative;z-index:1;",
+                              [Function],
+                            ],
+                          },
+                          "displayName": "Header__Container",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "Header__Container-sc-647imh-0",
+                          "target": "div",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <div
+                        className="Header__Container-sc-647imh-0 lnvfmL"
+                      >
+                        <Header__Content>
+                          <StyledComponent
+                            forwardedComponent={
+                              Object {
+                                "$$typeof": Symbol(react.forward_ref),
+                                "attrs": Array [],
+                                "componentStyle": ComponentStyle {
+                                  "componentId": "Header__Content-sc-647imh-1",
+                                  "isStatic": false,
+                                  "lastClassName": "jxhDvf",
+                                  "rules": Array [
+                                    "display:flex;background:",
+                                    [Function],
+                                    ";padding-top:0;flex-direction:row;flex-wrap:wrap;padding:",
+                                    [Function],
+                                    "px ",
+                                    [Function],
+                                    ";",
+                                  ],
+                                },
+                                "displayName": "Header__Content",
+                                "foldedComponentIds": Array [],
+                                "render": [Function],
+                                "styledComponentId": "Header__Content-sc-647imh-1",
+                                "target": "div",
+                                "toString": [Function],
+                                "warnTooManyClasses": [Function],
+                                "withComponent": [Function],
+                              }
+                            }
+                            forwardedRef={null}
+                          >
+                            <div
+                              className="Header__Content-sc-647imh-1 jxhDvf"
+                            >
+                              <Header__Actions>
+                                <StyledComponent
+                                  forwardedComponent={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "attrs": Array [],
+                                      "componentStyle": ComponentStyle {
+                                        "componentId": "Header__Actions-sc-647imh-4",
+                                        "isStatic": false,
+                                        "lastClassName": "gNSBMo",
+                                        "rules": Array [
+                                          "width:100%;padding:",
+                                          [Function],
+                                          "px 0;display:flex;flex-direction:row;justify-content:space-between;align-items:center;z-index:10;",
+                                        ],
+                                      },
+                                      "displayName": "Header__Actions",
+                                      "foldedComponentIds": Array [],
+                                      "render": [Function],
+                                      "styledComponentId": "Header__Actions-sc-647imh-4",
+                                      "target": "div",
+                                      "toString": [Function],
+                                      "warnTooManyClasses": [Function],
+                                      "withComponent": [Function],
+                                    }
+                                  }
+                                  forwardedRef={null}
+                                >
+                                  <div
+                                    className="Header__Actions-sc-647imh-4 gNSBMo"
+                                  >
+                                    <Header__BGNotice>
+                                      <StyledComponent
+                                        forwardedComponent={
+                                          Object {
+                                            "$$typeof": Symbol(react.forward_ref),
+                                            "attrs": Array [],
+                                            "componentStyle": ComponentStyle {
+                                              "componentId": "Header__BGNotice-sc-647imh-6",
+                                              "isStatic": true,
+                                              "lastClassName": "dixsoR",
+                                              "rules": Array [
+                                                "display:flex;flex-direction:row;",
+                                              ],
+                                            },
+                                            "displayName": "Header__BGNotice",
+                                            "foldedComponentIds": Array [],
+                                            "render": [Function],
+                                            "styledComponentId": "Header__BGNotice-sc-647imh-6",
+                                            "target": "span",
+                                            "toString": [Function],
+                                            "warnTooManyClasses": [Function],
+                                            "withComponent": [Function],
+                                          }
+                                        }
+                                        forwardedRef={null}
+                                      >
+                                        <span
+                                          className="Header__BGNotice-sc-647imh-6 dixsoR"
+                                        />
+                                      </StyledComponent>
+                                    </Header__BGNotice>
+                                  </div>
+                                </StyledComponent>
+                              </Header__Actions>
+                              <Header__Left>
+                                <StyledComponent
+                                  forwardedComponent={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "attrs": Array [],
+                                      "componentStyle": ComponentStyle {
+                                        "componentId": "Header__Left-sc-647imh-2",
+                                        "isStatic": true,
+                                        "lastClassName": "jMpqtw",
+                                        "rules": Array [
+                                          "flex-direction:column;align-items:flex-start;justify-content:center;width:50%;flex:1;z-index:10;",
+                                        ],
+                                      },
+                                      "displayName": "Header__Left",
+                                      "foldedComponentIds": Array [],
+                                      "render": [Function],
+                                      "styledComponentId": "Header__Left-sc-647imh-2",
+                                      "target": "div",
+                                      "toString": [Function],
+                                      "warnTooManyClasses": [Function],
+                                      "withComponent": [Function],
+                                    }
+                                  }
+                                  forwardedRef={null}
+                                >
+                                  <div
+                                    className="Header__Left-sc-647imh-2 jMpqtw"
+                                  >
+                                    <Typography__component
+                                      color="white"
+                                    >
+                                      <StyledComponent
+                                        color="white"
+                                        forwardedComponent={
+                                          Object {
+                                            "$$typeof": Symbol(react.forward_ref),
+                                            "attrs": Array [],
+                                            "componentStyle": ComponentStyle {
+                                              "componentId": "Typography__component-sc-36xkf6-0",
+                                              "isStatic": false,
+                                              "lastClassName": "kALGmD",
+                                              "rules": Array [
+                                                "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                                                [Function],
+                                                ";text-align:",
+                                                [Function],
+                                                ";",
+                                                [Function],
+                                                " ",
+                                                [Function],
+                                              ],
+                                            },
+                                            "displayName": "Typography__component",
+                                            "foldedComponentIds": Array [],
+                                            "render": [Function],
+                                            "styledComponentId": "Typography__component-sc-36xkf6-0",
+                                            "target": "span",
+                                            "toString": [Function],
+                                            "warnTooManyClasses": [Function],
+                                            "withComponent": [Function],
+                                          }
+                                        }
+                                        forwardedRef={null}
+                                      >
+                                        <span
+                                          className="Typography__component-sc-36xkf6-0 jMarAF"
+                                          color="white"
+                                        >
+                                          SUBMITTED - 
+                                          01 Jan 2019 00:00
+                                        </span>
+                                      </StyledComponent>
+                                    </Typography__component>
+                                    <Typography__styledComponent
+                                      color="white"
+                                    >
+                                      <StyledComponent
+                                        color="white"
+                                        forwardedComponent={
+                                          Object {
+                                            "$$typeof": Symbol(react.forward_ref),
+                                            "attrs": Array [],
+                                            "componentStyle": ComponentStyle {
+                                              "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                              "isStatic": false,
+                                              "lastClassName": "iLJkHN",
+                                              "rules": Array [
+                                                "color:",
+                                                [Function],
+                                                ";margin:0px;font-weight:",
+                                                "500",
+                                                ";",
+                                                ";font-size:",
+                                                "28",
+                                                "px;text-transform:",
+                                                [Function],
+                                                ";text-align:",
+                                                [Function],
+                                                ";:hover{color:",
+                                                [Function],
+                                                ";cursor:",
+                                                [Function],
+                                                ";}",
+                                              ],
+                                            },
+                                            "displayName": "Typography__styledComponent",
+                                            "foldedComponentIds": Array [],
+                                            "render": [Function],
+                                            "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                            "target": "span",
+                                            "toString": [Function],
+                                            "warnTooManyClasses": [Function],
+                                            "withComponent": [Function],
+                                          }
+                                        }
+                                        forwardedRef={null}
+                                      >
+                                        <span
+                                          className="Typography__styledComponent-sc-36xkf6-5 iLJkHN"
+                                          color="white"
+                                        >
+                                          test title 2
+                                        </span>
+                                      </StyledComponent>
+                                    </Typography__styledComponent>
+                                    <DiffTagList
+                                      newTags={
+                                        Array [
+                                          "Test",
+                                          "test2",
+                                        ]
+                                      }
+                                      oldTags={
+                                        Array [
+                                          "Test",
+                                          "test2",
+                                        ]
+                                      }
+                                    >
+                                      <Header__TagContainer>
+                                        <StyledComponent
+                                          forwardedComponent={
+                                            Object {
+                                              "$$typeof": Symbol(react.forward_ref),
+                                              "attrs": Array [],
+                                              "componentStyle": ComponentStyle {
+                                                "componentId": "Header__TagContainer-sc-647imh-7",
+                                                "isStatic": true,
+                                                "lastClassName": "bxgExJ",
+                                                "rules": Array [
+                                                  "display:flex;flex-direction:row;",
+                                                ],
+                                              },
+                                              "displayName": "Header__TagContainer",
+                                              "foldedComponentIds": Array [],
+                                              "render": [Function],
+                                              "styledComponentId": "Header__TagContainer-sc-647imh-7",
+                                              "target": "div",
+                                              "toString": [Function],
+                                              "warnTooManyClasses": [Function],
+                                              "withComponent": [Function],
+                                            }
+                                          }
+                                          forwardedRef={null}
+                                        >
+                                          <div
+                                            className="Header__TagContainer-sc-647imh-7 bxgExJ"
+                                          >
+                                            <Header__TagWrap
+                                              key="0"
+                                              type="unchanged"
+                                            >
+                                              <StyledComponent
+                                                forwardedComponent={
+                                                  Object {
+                                                    "$$typeof": Symbol(react.forward_ref),
+                                                    "attrs": Array [],
+                                                    "componentStyle": ComponentStyle {
+                                                      "componentId": "Header__TagWrap-sc-647imh-8",
+                                                      "isStatic": false,
+                                                      "lastClassName": "iEZHGJ",
+                                                      "rules": Array [
+                                                        "display:flex;align-items:center;& > span{",
+                                                        [Function],
+                                                        ";",
+                                                        [Function],
+                                                        ";border-radius:4px;padding:2px 4px;}&:not(:last-child):after{content:'•';color:white;margin:",
+                                                        "5",
+                                                        "px;font-weight:",
+                                                        "700",
+                                                        ";}",
+                                                      ],
+                                                    },
+                                                    "displayName": "Header__TagWrap",
+                                                    "foldedComponentIds": Array [],
+                                                    "render": [Function],
+                                                    "styledComponentId": "Header__TagWrap-sc-647imh-8",
+                                                    "target": "span",
+                                                    "toString": [Function],
+                                                    "warnTooManyClasses": [Function],
+                                                    "withComponent": [Function],
+                                                  }
+                                                }
+                                                forwardedRef={null}
+                                                type="unchanged"
+                                              >
+                                                <span
+                                                  className="Header__TagWrap-sc-647imh-8 iEZHGJ"
+                                                  type="unchanged"
+                                                >
+                                                  <Typography__component
+                                                    color="white"
+                                                  >
+                                                    <StyledComponent
+                                                      color="white"
+                                                      forwardedComponent={
+                                                        Object {
+                                                          "$$typeof": Symbol(react.forward_ref),
+                                                          "attrs": Array [],
+                                                          "componentStyle": ComponentStyle {
+                                                            "componentId": "Typography__component-sc-36xkf6-0",
+                                                            "isStatic": false,
+                                                            "lastClassName": "kALGmD",
+                                                            "rules": Array [
+                                                              "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                                                              [Function],
+                                                              ";text-align:",
+                                                              [Function],
+                                                              ";",
+                                                              [Function],
+                                                              " ",
+                                                              [Function],
+                                                            ],
+                                                          },
+                                                          "displayName": "Typography__component",
+                                                          "foldedComponentIds": Array [],
+                                                          "render": [Function],
+                                                          "styledComponentId": "Typography__component-sc-36xkf6-0",
+                                                          "target": "span",
+                                                          "toString": [Function],
+                                                          "warnTooManyClasses": [Function],
+                                                          "withComponent": [Function],
+                                                        }
+                                                      }
+                                                      forwardedRef={null}
+                                                    >
+                                                      <span
+                                                        className="Typography__component-sc-36xkf6-0 jMarAF"
+                                                        color="white"
+                                                      >
+                                                        Test
+                                                      </span>
+                                                    </StyledComponent>
+                                                  </Typography__component>
+                                                </span>
+                                              </StyledComponent>
+                                            </Header__TagWrap>
+                                            <Header__TagWrap
+                                              key="1"
+                                              type="unchanged"
+                                            >
+                                              <StyledComponent
+                                                forwardedComponent={
+                                                  Object {
+                                                    "$$typeof": Symbol(react.forward_ref),
+                                                    "attrs": Array [],
+                                                    "componentStyle": ComponentStyle {
+                                                      "componentId": "Header__TagWrap-sc-647imh-8",
+                                                      "isStatic": false,
+                                                      "lastClassName": "iEZHGJ",
+                                                      "rules": Array [
+                                                        "display:flex;align-items:center;& > span{",
+                                                        [Function],
+                                                        ";",
+                                                        [Function],
+                                                        ";border-radius:4px;padding:2px 4px;}&:not(:last-child):after{content:'•';color:white;margin:",
+                                                        "5",
+                                                        "px;font-weight:",
+                                                        "700",
+                                                        ";}",
+                                                      ],
+                                                    },
+                                                    "displayName": "Header__TagWrap",
+                                                    "foldedComponentIds": Array [],
+                                                    "render": [Function],
+                                                    "styledComponentId": "Header__TagWrap-sc-647imh-8",
+                                                    "target": "span",
+                                                    "toString": [Function],
+                                                    "warnTooManyClasses": [Function],
+                                                    "withComponent": [Function],
+                                                  }
+                                                }
+                                                forwardedRef={null}
+                                                type="unchanged"
+                                              >
+                                                <span
+                                                  className="Header__TagWrap-sc-647imh-8 iEZHGJ"
+                                                  type="unchanged"
+                                                >
+                                                  <Typography__component
+                                                    color="white"
+                                                  >
+                                                    <StyledComponent
+                                                      color="white"
+                                                      forwardedComponent={
+                                                        Object {
+                                                          "$$typeof": Symbol(react.forward_ref),
+                                                          "attrs": Array [],
+                                                          "componentStyle": ComponentStyle {
+                                                            "componentId": "Typography__component-sc-36xkf6-0",
+                                                            "isStatic": false,
+                                                            "lastClassName": "kALGmD",
+                                                            "rules": Array [
+                                                              "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                                                              [Function],
+                                                              ";text-align:",
+                                                              [Function],
+                                                              ";",
+                                                              [Function],
+                                                              " ",
+                                                              [Function],
+                                                            ],
+                                                          },
+                                                          "displayName": "Typography__component",
+                                                          "foldedComponentIds": Array [],
+                                                          "render": [Function],
+                                                          "styledComponentId": "Typography__component-sc-36xkf6-0",
+                                                          "target": "span",
+                                                          "toString": [Function],
+                                                          "warnTooManyClasses": [Function],
+                                                          "withComponent": [Function],
+                                                        }
+                                                      }
+                                                      forwardedRef={null}
+                                                    >
+                                                      <span
+                                                        className="Typography__component-sc-36xkf6-0 jMarAF"
+                                                        color="white"
+                                                      >
+                                                        test2
+                                                      </span>
+                                                    </StyledComponent>
+                                                  </Typography__component>
+                                                </span>
+                                              </StyledComponent>
+                                            </Header__TagWrap>
+                                          </div>
+                                        </StyledComponent>
+                                      </Header__TagContainer>
+                                    </DiffTagList>
+                                  </div>
+                                </StyledComponent>
+                              </Header__Left>
+                              <Header__Right>
+                                <StyledComponent
+                                  forwardedComponent={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "attrs": Array [],
+                                      "componentStyle": ComponentStyle {
+                                        "componentId": "Header__Right-sc-647imh-3",
+                                        "isStatic": true,
+                                        "lastClassName": "dUFCFE",
+                                        "rules": Array [
+                                          "width:50%;display:flex;align-items:center;justify-content:flex-end;z-index:10;",
+                                        ],
+                                      },
+                                      "displayName": "Header__Right",
+                                      "foldedComponentIds": Array [],
+                                      "render": [Function],
+                                      "styledComponentId": "Header__Right-sc-647imh-3",
+                                      "target": "div",
+                                      "toString": [Function],
+                                      "warnTooManyClasses": [Function],
+                                      "withComponent": [Function],
+                                    }
+                                  }
+                                  forwardedRef={null}
+                                >
+                                  <div
+                                    className="Header__Right-sc-647imh-3 dUFCFE"
+                                  >
+                                    <Typography__component
+                                      color="white"
+                                    >
+                                      <StyledComponent
+                                        color="white"
+                                        forwardedComponent={
+                                          Object {
+                                            "$$typeof": Symbol(react.forward_ref),
+                                            "attrs": Array [],
+                                            "componentStyle": ComponentStyle {
+                                              "componentId": "Typography__component-sc-36xkf6-0",
+                                              "isStatic": false,
+                                              "lastClassName": "kALGmD",
+                                              "rules": Array [
+                                                "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                                                [Function],
+                                                ";text-align:",
+                                                [Function],
+                                                ";",
+                                                [Function],
+                                                " ",
+                                                [Function],
+                                              ],
+                                            },
+                                            "displayName": "Typography__component",
+                                            "foldedComponentIds": Array [],
+                                            "render": [Function],
+                                            "styledComponentId": "Typography__component-sc-36xkf6-0",
+                                            "target": "span",
+                                            "toString": [Function],
+                                            "warnTooManyClasses": [Function],
+                                            "withComponent": [Function],
+                                          }
+                                        }
+                                        forwardedRef={null}
+                                      >
+                                        <span
+                                          className="Typography__component-sc-36xkf6-0 jMarAF"
+                                          color="white"
+                                        >
+                                          Status - 
+                                          PUBLISHED
+                                        </span>
+                                      </StyledComponent>
+                                    </Typography__component>
+                                  </div>
+                                </StyledComponent>
+                              </Header__Right>
+                            </div>
+                          </StyledComponent>
+                        </Header__Content>
+                      </div>
+                    </StyledComponent>
+                  </Header__Container>
+                </Header>
+                <View__Content>
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "View__Content-bws0mc-1",
+                          "isStatic": false,
+                          "lastClassName": "dxmSsS",
+                          "rules": Array [
+                            "display:flex;flex-direction:row;padding:",
+                            [Function],
+                            "px ",
+                            [Function],
+                            ";",
+                          ],
+                        },
+                        "displayName": "View__Content",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "View__Content-bws0mc-1",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                  >
+                    <div
+                      className="View__Content-bws0mc-1 dxmSsS"
+                    >
+                      <Diffs
+                        current="test contet 1"
+                        proposed="test contet 2"
+                      >
+                        <DiffViewer__Content
+                          className="DiffViewer"
+                        >
+                          <StyledComponent
+                            className="DiffViewer"
+                            forwardedComponent={
+                              Object {
+                                "$$typeof": Symbol(react.forward_ref),
+                                "attrs": Array [],
+                                "componentStyle": ComponentStyle {
+                                  "componentId": "DiffViewer__Content-sc-1yaf9sg-0",
+                                  "isStatic": false,
+                                  "lastClassName": "ecffEv",
+                                  "rules": Array [
+                                    "font-size:",
+                                    [Function],
+                                    "px;width:100%;background:white;word-break:break-all;",
+                                  ],
+                                },
+                                "displayName": "DiffViewer__Content",
+                                "foldedComponentIds": Array [],
+                                "render": [Function],
+                                "styledComponentId": "DiffViewer__Content-sc-1yaf9sg-0",
+                                "target": "div",
+                                "toString": [Function],
+                                "warnTooManyClasses": [Function],
+                                "withComponent": [Function],
+                              }
+                            }
+                            forwardedRef={null}
+                          >
+                            <div
+                              className="DiffViewer DiffViewer__Content-sc-1yaf9sg-0 ecffEv"
+                            >
+                              <DiffViewer
+                                disableWordDiff={false}
+                                hideLineNumbers={false}
+                                highlightLines={Array []}
+                                newValue="test contet 2"
+                                oldValue="test contet 1"
+                                renderContent={[Function]}
+                                splitView={false}
+                                styles={
+                                  Object {
+                                    "diffAdded": Object {
+                                      "maxWidth": "95vh",
+                                      "padding": 4,
+                                    },
+                                    "diffRemoved": Object {
+                                      "maxWidth": "95vh",
+                                      "padding": 4,
+                                    },
+                                    "gutter": Object {
+                                      "display": "none",
+                                    },
+                                    "line": Object {
+                                      "fontFamily": "Roboto",
+                                    },
+                                    "lineNumber": Object {
+                                      "display": "none",
+                                    },
+                                    "marker": Object {
+                                      "display": "none",
+                                    },
+                                    "wordAdded": Object {
+                                      "color": "#006d27 !important",
+                                      "fontWeight": 700,
+                                    },
+                                    "wordRemoved": Object {
+                                      "color": "#960016 !important",
+                                      "fontWeight": 700,
+                                    },
+                                  }
+                                }
+                              >
+                                <table
+                                  className="css-wu4c77-diff-container"
+                                >
+                                  <tbody>
+                                    <Component
+                                      content={
+                                        Array [
+                                          <span
+                                            className="css-15tgi4e-word-diff"
+                                          >
+                                            <ForwardRef(DiffViewer__Line)>
+                                              test contet 
+                                            </ForwardRef(DiffViewer__Line)>
+                                          </span>,
+                                          <span
+                                            className="css-15tgi4e-word-diff css-1uhvp69-word-removed"
+                                          >
+                                            <ForwardRef(DiffViewer__Line)>
+                                              1
+                                            </ForwardRef(DiffViewer__Line)>
+                                          </span>,
+                                          undefined,
+                                        ]
+                                      }
+                                      hideLineNumbers={false}
+                                      hightlightLines={Array []}
+                                      key="0"
+                                      leftLineNumber={1}
+                                      removed={true}
+                                      renderContent={[Function]}
+                                      rightLineNumber={true}
+                                      styles={
+                                        Object {
+                                          "diffAdded": "css-1smcabo-diff-added",
+                                          "diffContainer": "css-wu4c77-diff-container",
+                                          "diffRemoved": "css-oy5qt9-diff-removed",
+                                          "gutter": "css-1uwdc4n-gutter",
+                                          "hightlightedGutter": "css-lzf6ep-hightlighted-gutter",
+                                          "hightlightedLine": "css-h1kdcl-hightlighted-line",
+                                          "leftGutter": "css-1rowcki-left-gutter",
+                                          "line": "css-7gnhnh-line",
+                                          "marker": "css-hvdmkm-marker",
+                                          "rightGutter": "css-84qt4m-right-gutter",
+                                          "wordAdded": "css-1e0k4cm-word-added",
+                                          "wordDiff": "css-15tgi4e-word-diff",
+                                          "wordRemoved": "css-1uhvp69-word-removed",
+                                        }
+                                      }
+                                    >
+                                      <tr
+                                        className="css-7gnhnh-line"
+                                      >
+                                        <td
+                                          className="css-1uwdc4n-gutter css-1rowcki-left-gutter css-oy5qt9-diff-removed"
+                                          onClick={[Function]}
+                                        >
+                                          <LineNumber
+                                            lineNumber={1}
+                                            prefix="L"
+                                          >
+                                            <pre
+                                              id="L-1"
+                                            >
+                                              1
+                                            </pre>
+                                          </LineNumber>
+                                        </td>
+                                        <td
+                                          className="css-1uwdc4n-gutter css-84qt4m-right-gutter css-oy5qt9-diff-removed"
+                                          onClick={[Function]}
+                                        />
+                                        <td
+                                          className="css-hvdmkm-marker css-oy5qt9-diff-removed"
+                                        >
+                                          <pre>
+                                            -
+                                          </pre>
+                                        </td>
+                                        <td
+                                          className="css-oy5qt9-diff-removed"
+                                        >
+                                          <pre>
+                                            <span
+                                              className="css-15tgi4e-word-diff"
+                                              key="0"
+                                            >
+                                              <DiffViewer__Line>
+                                                <StyledComponent
+                                                  forwardedComponent={
+                                                    Object {
+                                                      "$$typeof": Symbol(react.forward_ref),
+                                                      "attrs": Array [],
+                                                      "componentStyle": ComponentStyle {
+                                                        "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
+                                                        "isStatic": true,
+                                                        "lastClassName": "kynGKV",
+                                                        "rules": Array [
+                                                          "font-family:'Roboto';",
+                                                        ],
+                                                      },
+                                                      "displayName": "DiffViewer__Line",
+                                                      "foldedComponentIds": Array [],
+                                                      "render": [Function],
+                                                      "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
+                                                      "target": "span",
+                                                      "toString": [Function],
+                                                      "warnTooManyClasses": [Function],
+                                                      "withComponent": [Function],
+                                                    }
+                                                  }
+                                                  forwardedRef={null}
+                                                >
+                                                  <span
+                                                    className="DiffViewer__Line-sc-1yaf9sg-1 kynGKV"
+                                                  >
+                                                    test contet 
+                                                  </span>
+                                                </StyledComponent>
+                                              </DiffViewer__Line>
+                                            </span>
+                                            <span
+                                              className="css-15tgi4e-word-diff css-1uhvp69-word-removed"
+                                              key="1"
+                                            >
+                                              <DiffViewer__Line>
+                                                <StyledComponent
+                                                  forwardedComponent={
+                                                    Object {
+                                                      "$$typeof": Symbol(react.forward_ref),
+                                                      "attrs": Array [],
+                                                      "componentStyle": ComponentStyle {
+                                                        "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
+                                                        "isStatic": true,
+                                                        "lastClassName": "kynGKV",
+                                                        "rules": Array [
+                                                          "font-family:'Roboto';",
+                                                        ],
+                                                      },
+                                                      "displayName": "DiffViewer__Line",
+                                                      "foldedComponentIds": Array [],
+                                                      "render": [Function],
+                                                      "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
+                                                      "target": "span",
+                                                      "toString": [Function],
+                                                      "warnTooManyClasses": [Function],
+                                                      "withComponent": [Function],
+                                                    }
+                                                  }
+                                                  forwardedRef={null}
+                                                >
+                                                  <span
+                                                    className="DiffViewer__Line-sc-1yaf9sg-1 kynGKV"
+                                                  >
+                                                    1
+                                                  </span>
+                                                </StyledComponent>
+                                              </DiffViewer__Line>
+                                            </span>
+                                          </pre>
+                                        </td>
+                                      </tr>
+                                    </Component>
+                                    <Component
+                                      added={true}
+                                      content={
+                                        Array [
+                                          <span
+                                            className="css-15tgi4e-word-diff"
+                                          >
+                                            <ForwardRef(DiffViewer__Line)>
+                                              test contet 
+                                            </ForwardRef(DiffViewer__Line)>
+                                          </span>,
+                                          undefined,
+                                          <span
+                                            className="css-15tgi4e-word-diff css-1e0k4cm-word-added"
+                                          >
+                                            <ForwardRef(DiffViewer__Line)>
+                                              2
+                                            </ForwardRef(DiffViewer__Line)>
+                                          </span>,
+                                        ]
+                                      }
+                                      hideLineNumbers={false}
+                                      hightlightLines={Array []}
+                                      key="0"
+                                      leftLineNumber={true}
+                                      renderContent={[Function]}
+                                      rightLineNumber={1}
+                                      styles={
+                                        Object {
+                                          "diffAdded": "css-1smcabo-diff-added",
+                                          "diffContainer": "css-wu4c77-diff-container",
+                                          "diffRemoved": "css-oy5qt9-diff-removed",
+                                          "gutter": "css-1uwdc4n-gutter",
+                                          "hightlightedGutter": "css-lzf6ep-hightlighted-gutter",
+                                          "hightlightedLine": "css-h1kdcl-hightlighted-line",
+                                          "leftGutter": "css-1rowcki-left-gutter",
+                                          "line": "css-7gnhnh-line",
+                                          "marker": "css-hvdmkm-marker",
+                                          "rightGutter": "css-84qt4m-right-gutter",
+                                          "wordAdded": "css-1e0k4cm-word-added",
+                                          "wordDiff": "css-15tgi4e-word-diff",
+                                          "wordRemoved": "css-1uhvp69-word-removed",
+                                        }
+                                      }
+                                    >
+                                      <tr
+                                        className="css-7gnhnh-line"
+                                      >
+                                        <td
+                                          className="css-1uwdc4n-gutter css-1rowcki-left-gutter css-1smcabo-diff-added"
+                                          onClick={[Function]}
+                                        />
+                                        <td
+                                          className="css-1uwdc4n-gutter css-84qt4m-right-gutter css-1smcabo-diff-added"
+                                          onClick={[Function]}
+                                        >
+                                          <LineNumber
+                                            lineNumber={1}
+                                            prefix="R"
+                                          >
+                                            <pre
+                                              id="R-1"
+                                            >
+                                              1
+                                            </pre>
+                                          </LineNumber>
+                                        </td>
+                                        <td
+                                          className="css-hvdmkm-marker css-1smcabo-diff-added"
+                                        >
+                                          <pre>
+                                            +
+                                          </pre>
+                                        </td>
+                                        <td
+                                          className="css-1smcabo-diff-added"
+                                        >
+                                          <pre>
+                                            <span
+                                              className="css-15tgi4e-word-diff"
+                                              key="0"
+                                            >
+                                              <DiffViewer__Line>
+                                                <StyledComponent
+                                                  forwardedComponent={
+                                                    Object {
+                                                      "$$typeof": Symbol(react.forward_ref),
+                                                      "attrs": Array [],
+                                                      "componentStyle": ComponentStyle {
+                                                        "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
+                                                        "isStatic": true,
+                                                        "lastClassName": "kynGKV",
+                                                        "rules": Array [
+                                                          "font-family:'Roboto';",
+                                                        ],
+                                                      },
+                                                      "displayName": "DiffViewer__Line",
+                                                      "foldedComponentIds": Array [],
+                                                      "render": [Function],
+                                                      "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
+                                                      "target": "span",
+                                                      "toString": [Function],
+                                                      "warnTooManyClasses": [Function],
+                                                      "withComponent": [Function],
+                                                    }
+                                                  }
+                                                  forwardedRef={null}
+                                                >
+                                                  <span
+                                                    className="DiffViewer__Line-sc-1yaf9sg-1 kynGKV"
+                                                  >
+                                                    test contet 
+                                                  </span>
+                                                </StyledComponent>
+                                              </DiffViewer__Line>
+                                            </span>
+                                            <span
+                                              className="css-15tgi4e-word-diff css-1e0k4cm-word-added"
+                                              key="2"
+                                            >
+                                              <DiffViewer__Line>
+                                                <StyledComponent
+                                                  forwardedComponent={
+                                                    Object {
+                                                      "$$typeof": Symbol(react.forward_ref),
+                                                      "attrs": Array [],
+                                                      "componentStyle": ComponentStyle {
+                                                        "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
+                                                        "isStatic": true,
+                                                        "lastClassName": "kynGKV",
+                                                        "rules": Array [
+                                                          "font-family:'Roboto';",
+                                                        ],
+                                                      },
+                                                      "displayName": "DiffViewer__Line",
+                                                      "foldedComponentIds": Array [],
+                                                      "render": [Function],
+                                                      "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
+                                                      "target": "span",
+                                                      "toString": [Function],
+                                                      "warnTooManyClasses": [Function],
+                                                      "withComponent": [Function],
+                                                    }
+                                                  }
+                                                  forwardedRef={null}
+                                                >
+                                                  <span
+                                                    className="DiffViewer__Line-sc-1yaf9sg-1 kynGKV"
+                                                  >
+                                                    2
+                                                  </span>
+                                                </StyledComponent>
+                                              </DiffViewer__Line>
+                                            </span>
+                                          </pre>
+                                        </td>
+                                      </tr>
+                                    </Component>
+                                  </tbody>
+                                </table>
+                              </DiffViewer>
+                            </div>
+                          </StyledComponent>
+                        </DiffViewer__Content>
+                      </Diffs>
+                      <View__Details>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "View__Details-bws0mc-2",
+                                "isStatic": false,
+                                "lastClassName": "JouJL",
+                                "rules": Array [
+                                  "display:flex;flex-direction:column;max-width:",
+                                  "288",
+                                  "px;margin-left:",
+                                  [Function],
+                                  "px;",
+                                ],
+                              },
+                              "displayName": "View__Details",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "View__Details-bws0mc-2",
+                              "target": "div",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <div
+                            className="View__Details-bws0mc-2 JouJL"
+                          >
+                            <Typography__component>
+                              <StyledComponent
+                                forwardedComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "attrs": Array [],
+                                    "componentStyle": ComponentStyle {
+                                      "componentId": "Typography__component-sc-36xkf6-0",
+                                      "isStatic": false,
+                                      "lastClassName": "kALGmD",
+                                      "rules": Array [
+                                        "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                                        [Function],
+                                        ";text-align:",
+                                        [Function],
+                                        ";",
+                                        [Function],
+                                        " ",
+                                        [Function],
+                                      ],
+                                    },
+                                    "displayName": "Typography__component",
+                                    "foldedComponentIds": Array [],
+                                    "render": [Function],
+                                    "styledComponentId": "Typography__component-sc-36xkf6-0",
+                                    "target": "span",
+                                    "toString": [Function],
+                                    "warnTooManyClasses": [Function],
+                                    "withComponent": [Function],
+                                  }
+                                }
+                                forwardedRef={null}
+                              >
+                                <span
+                                  className="Typography__component-sc-36xkf6-0 kALGmD"
+                                >
+                                  Update comment
+                                </span>
+                              </StyledComponent>
+                            </Typography__component>
+                            <p>
+                              test update comment2
+                            </p>
+                          </div>
+                        </StyledComponent>
+                      </View__Details>
+                    </div>
+                  </StyledComponent>
+                </View__Content>
+              </div>
+            </StyledComponent>
+          </View__Container>
+        </ArticleReviewView>
+      </ApolloProvider>
+    </MockedProvider>
+  </ThemeProvider>
+</Provider>
+`;

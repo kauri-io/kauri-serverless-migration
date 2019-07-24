@@ -1,0 +1,71 @@
+import {
+    Article,
+    Article_resourceIdentifier,
+    Article_comments,
+    Article_voteResult,
+    Article_author,
+    Article_owner_PublicUserDTO,
+    Article_owner_PublicUserDTO_resourceIdentifier,
+} from '../queries/Fragments/__generated__/Article'
+import {
+    ResourceTypeInput,
+    ArticleStatusInput,
+} from '../__generated__/globalTypes'
+
+export const generateArticle = (mod: number) => ({
+    associatedNfts: null,
+    __typename: 'ArticleDTO' as Article['__typename'],
+    resourceIdentifier: {
+        __typename: 'ResourceIdentifier' as Article_resourceIdentifier['__typename'],
+        type: 'ResourceIdentifier' as ResourceTypeInput,
+        id: `123${mod}`,
+        version: 1,
+    },
+    description: `test description ${mod}`,
+    id: `123${mod}`,
+    version: 1,
+    title: `test title ${mod}`,
+    content: `{"markdown" : "test contet ${mod}"}`,
+    authorId: `345${mod}`,
+    dateCreated: '2019-01-01',
+    datePublished: '2019-01-02',
+    status: ArticleStatusInput.PUBLISHED,
+    attributes: {},
+    contentHash: `hash${mod}`,
+    checkpoint: null,
+    tags: ['Test', 'test2'],
+    voteResult: {
+        sum: 3,
+        count: 3,
+        hasVoted: false,
+        quantity: 1,
+        __typename: 'VoteResultDTO' as Article_voteResult['__typename'],
+    },
+    author: {
+        __typename: 'PublicUserDTO' as Article_author['__typename'],
+        id: `679${mod}`,
+        username: `test author username ${mod}`,
+        name: `test author name ${mod}`,
+        avatar: `test avatar ${mod}`,
+    },
+    owner: {
+        __typename: 'PublicUserDTO' as Article_owner_PublicUserDTO['__typename'],
+        id: `678${mod}`,
+        name: `test author name ${mod}`,
+        avatar: `test avatar ${mod}`,
+        publicUserName: `test public username${mod}`,
+        username: `test author username${mod}`,
+        resourceIdentifier: {
+            id: `678${mod}`,
+            type: 'ResourceIdentifier' as ResourceTypeInput,
+            __typename: 'PublicUserDTO' as Article_owner_PublicUserDTO_resourceIdentifier['__typename'],
+        },
+    },
+    comments: {
+        content: [],
+        totalPages: 0,
+        totalElements: 0,
+        __typename: 'ResponsePage_CommentDTO' as Article_comments['__typename'],
+    },
+    updateComment: `test update comment${mod}`,
+})

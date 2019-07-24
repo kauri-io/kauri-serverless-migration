@@ -109,6 +109,7 @@ class TagInput extends Component<IProps, IState> {
     public handleKey(e: React.KeyboardEvent<HTMLInputElement>) {
         this.setState({ value: e.currentTarget.value })
         if (e.keyCode === 13) {
+            console.log('TESSST')
             this.props.handleEnterKey(
                 this.props.availableTags &&
                     this.props.availableTags.length > 0 &&

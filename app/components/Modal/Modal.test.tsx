@@ -2,9 +2,15 @@ import AlertView from './AlertView'
 import ModalView from './View'
 import ChooseArticleContent from './ChooseArticleContent'
 import ChooseCollectionContent from './ChooseCollectionContent'
+import Reducer, {
+    openModalAction,
+    closeModalAction,
+    IModalState,
+} from './Module'
 import { mountWithTheme } from '../../setupTests'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
-describe('components/AlertView', () => {
+describe('components/Moda/AlertView', () => {
     it('should match snapshot', () => {
         const AlertViewProps = {
             title: 'test',
@@ -18,7 +24,7 @@ describe('components/AlertView', () => {
     })
 })
 
-describe('components/ModalView', () => {
+describe('components/Modal/ModalView', () => {
     it('should match snapshot', () => {
         const ModalViewProps = {
             title: 'test',
@@ -36,7 +42,7 @@ describe('components/ModalView', () => {
     })
 })
 
-describe('components/ChooseArticleContent', () => {
+describe('components/Modal/ChooseArticleContent', () => {
     it('should match snapshot', () => {
         const ChooseArticleContentProps = {
             title: 'test',
@@ -55,7 +61,7 @@ describe('components/ChooseArticleContent', () => {
     })
 })
 
-describe('components/ChooseCollectionContent', () => {
+describe('components/Modal/ChooseCollectionContent', () => {
     it('should match snapshot', () => {
         const ChooseCollectionContentProps = {
             title: 'test',
@@ -71,5 +77,34 @@ describe('components/ChooseCollectionContent', () => {
             </ChooseCollectionContent>
         )
         expect(wrapper).toMatchSnapshot()
+    })
+})
+
+describe('components/Modal/Module', () => {
+    const initialState: IModalState = {
+        isModalOpen: false,
+        children: undefined,
+    }
+    let result = initialState
+
+    it('should set the state to isModalOpen: true and children', () => {
+        result = Reducer(
+            initialState,
+            openModalAction({
+                children: <div>Test</div>,
+            })
+        )
+        expect(result).toEqual({
+            isModalOpen: true,
+            children: <div>Test</div>,
+        })
+    })
+
+    it('should set the state to isModalOpen: false', () => {
+        result = Reducer(initialState, closeModalAction())
+        expect(result).toEqual({
+            isModalOpen: false,
+            children: undefined,
+        })
     })
 })

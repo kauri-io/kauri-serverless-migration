@@ -1,7 +1,7 @@
-import UserAvatar from './index'
+import UserAvatar, { IProps } from './index'
 import { mountWithTheme } from '../../setupTests'
 
-let props = {
+let props: IProps = {
     avatar: 'https://test.com/image.png',
 }
 
