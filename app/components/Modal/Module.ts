@@ -25,19 +25,19 @@ export const openModalAction = (
     type: OPEN_MODAL,
 })
 
-interface IState {
+export interface IModalState {
     isModalOpen: boolean
     children: React.ReactElement<any> | undefined
 }
 
-const initialState: IState = {
+const initialState: IModalState = {
     children: undefined,
     isModalOpen: false,
 }
 
 type Action = ICloseModalAction | IOpenModalAction
 
-export default (state: IState = initialState, action: Action) => {
+export default (state: IModalState = initialState, action: Action) => {
     switch (action.type) {
         case CLOSE_MODAL:
             return { ...state, isModalOpen: false }
@@ -47,7 +47,5 @@ export default (state: IState = initialState, action: Action) => {
                 isModalOpen: true,
                 children: action.payload.children,
             }
-        default:
-            return state
     }
 }

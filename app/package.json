@@ -16,7 +16,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "yarn pretty && yarn test && git add .",
+            "pre-commit": "yarn pretty && yarn test --coverage && git add . && open ./coverage/lcov-report/index.html",
             "pre-push": ""
         }
     },

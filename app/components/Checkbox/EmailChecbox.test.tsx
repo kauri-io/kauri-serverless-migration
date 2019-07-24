@@ -4,7 +4,7 @@ import { mountWithTheme } from '../../setupTests'
 let props = {
     checked: true,
     disabled: false,
-    onChange: (e: any) => e,
+    onChange: (e: boolean) => e,
 }
 
 describe('components/EmailCheckbox', () => {

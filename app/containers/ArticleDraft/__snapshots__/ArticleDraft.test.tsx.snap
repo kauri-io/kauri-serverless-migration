@@ -1,0 +1,1290 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`containers/ArticleDraft snapshot should match 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
+        "hoverTextColor": "#108E72",
+        "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
+    }
+  >
+    <MockedProvider
+      addTypename={true}
+    >
+      <ApolloProvider
+        client={
+          ApolloClient {
+            "__operations_cache__": Map {},
+            "cache": InMemoryCache {
+              "addTypename": true,
+              "cacheKeyRoot": KeyTrie {
+                "weakness": true,
+              },
+              "config": Object {
+                "addTypename": true,
+                "dataIdFromObject": [Function],
+                "fragmentMatcher": HeuristicFragmentMatcher {},
+                "freezeResults": false,
+                "resultCaching": true,
+              },
+              "data": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "maybeBroadcastWatch": [Function],
+              "optimisticData": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "silenceBroadcast": false,
+              "storeReader": StoreReader {
+                "executeSelectionSet": [Function],
+                "executeStoreQuery": [Function],
+                "executeSubSelectedArray": [Function],
+                "freezeResults": false,
+              },
+              "storeWriter": StoreWriter {},
+              "typenameDocumentCache": Map {},
+              "watches": Set {},
+            },
+            "clearStoreCallbacks": Array [],
+            "defaultOptions": Object {},
+            "disableNetworkFetches": false,
+            "link": MockLink {
+              "addTypename": true,
+              "mockedResponsesByKey": Object {},
+            },
+            "localState": LocalState {
+              "cache": InMemoryCache {
+                "addTypename": true,
+                "cacheKeyRoot": KeyTrie {
+                  "weakness": true,
+                },
+                "config": Object {
+                  "addTypename": true,
+                  "dataIdFromObject": [Function],
+                  "fragmentMatcher": HeuristicFragmentMatcher {},
+                  "freezeResults": false,
+                  "resultCaching": true,
+                },
+                "data": DepTrackingCache {
+                  "data": Object {},
+                  "depend": [Function],
+                },
+                "maybeBroadcastWatch": [Function],
+                "optimisticData": DepTrackingCache {
+                  "data": Object {},
+                  "depend": [Function],
+                },
+                "silenceBroadcast": false,
+                "storeReader": StoreReader {
+                  "executeSelectionSet": [Function],
+                  "executeStoreQuery": [Function],
+                  "executeSubSelectedArray": [Function],
+                  "freezeResults": false,
+                },
+                "storeWriter": StoreWriter {},
+                "typenameDocumentCache": Map {},
+                "watches": Set {},
+              },
+              "client": [Circular],
+            },
+            "mutate": [Function],
+            "query": [Function],
+            "queryDeduplication": true,
+            "queryManager": QueryManager {
+              "assumeImmutableResults": false,
+              "clientAwareness": Object {
+                "name": undefined,
+                "version": undefined,
+              },
+              "dataStore": DataStore {
+                "cache": InMemoryCache {
+                  "addTypename": true,
+                  "cacheKeyRoot": KeyTrie {
+                    "weakness": true,
+                  },
+                  "config": Object {
+                    "addTypename": true,
+                    "dataIdFromObject": [Function],
+                    "fragmentMatcher": HeuristicFragmentMatcher {},
+                    "freezeResults": false,
+                    "resultCaching": true,
+                  },
+                  "data": DepTrackingCache {
+                    "data": Object {},
+                    "depend": [Function],
+                  },
+                  "maybeBroadcastWatch": [Function],
+                  "optimisticData": DepTrackingCache {
+                    "data": Object {},
+                    "depend": [Function],
+                  },
+                  "silenceBroadcast": false,
+                  "storeReader": StoreReader {
+                    "executeSelectionSet": [Function],
+                    "executeStoreQuery": [Function],
+                    "executeSubSelectedArray": [Function],
+                    "freezeResults": false,
+                  },
+                  "storeWriter": StoreWriter {},
+                  "typenameDocumentCache": Map {},
+                  "watches": Set {},
+                },
+              },
+              "fetchQueryRejectFns": Map {},
+              "idCounter": 1,
+              "inFlightLinkObservables": Map {},
+              "link": MockLink {
+                "addTypename": true,
+                "mockedResponsesByKey": Object {},
+              },
+              "localState": LocalState {
+                "cache": InMemoryCache {
+                  "addTypename": true,
+                  "cacheKeyRoot": KeyTrie {
+                    "weakness": true,
+                  },
+                  "config": Object {
+                    "addTypename": true,
+                    "dataIdFromObject": [Function],
+                    "fragmentMatcher": HeuristicFragmentMatcher {},
+                    "freezeResults": false,
+                    "resultCaching": true,
+                  },
+                  "data": DepTrackingCache {
+                    "data": Object {},
+                    "depend": [Function],
+                  },
+                  "maybeBroadcastWatch": [Function],
+                  "optimisticData": DepTrackingCache {
+                    "data": Object {},
+                    "depend": [Function],
+                  },
+                  "silenceBroadcast": false,
+                  "storeReader": StoreReader {
+                    "executeSelectionSet": [Function],
+                    "executeStoreQuery": [Function],
+                    "executeSubSelectedArray": [Function],
+                    "freezeResults": false,
+                  },
+                  "storeWriter": StoreWriter {},
+                  "typenameDocumentCache": Map {},
+                  "watches": Set {},
+                },
+                "client": [Circular],
+              },
+              "mutationStore": MutationStore {
+                "store": Object {},
+              },
+              "onBroadcast": [Function],
+              "pollingInfoByQueryId": Map {},
+              "queries": Map {},
+              "queryDeduplication": true,
+              "queryStore": QueryStore {
+                "store": Object {},
+              },
+              "ssrMode": false,
+              "transformCache": WeakMap {},
+            },
+            "reFetchObservableQueries": [Function],
+            "resetStore": [Function],
+            "resetStoreCallbacks": Array [],
+            "store": DataStore {
+              "cache": InMemoryCache {
+                "addTypename": true,
+                "cacheKeyRoot": KeyTrie {
+                  "weakness": true,
+                },
+                "config": Object {
+                  "addTypename": true,
+                  "dataIdFromObject": [Function],
+                  "fragmentMatcher": HeuristicFragmentMatcher {},
+                  "freezeResults": false,
+                  "resultCaching": true,
+                },
+                "data": DepTrackingCache {
+                  "data": Object {},
+                  "depend": [Function],
+                },
+                "maybeBroadcastWatch": [Function],
+                "optimisticData": DepTrackingCache {
+                  "data": Object {},
+                  "depend": [Function],
+                },
+                "silenceBroadcast": false,
+                "storeReader": StoreReader {
+                  "executeSelectionSet": [Function],
+                  "executeStoreQuery": [Function],
+                  "executeSubSelectedArray": [Function],
+                  "freezeResults": false,
+                },
+                "storeWriter": StoreWriter {},
+                "typenameDocumentCache": Map {},
+                "watches": Set {},
+              },
+            },
+            "typeDefs": undefined,
+            "version": "2.6.3",
+            "watchQuery": [Function],
+          }
+        }
+      >
+        <_default
+          classes={Object {}}
+          closeModalAction={[MockFunction]}
+          communities={Array []}
+          data={
+            Object {
+              "getArticle": Object {
+                "__typename": "ArticleDTO",
+                "associatedNfts": null,
+                "attributes": Object {},
+                "author": Object {
+                  "__typename": "PublicUserDTO",
+                  "avatar": "test avatar 1",
+                  "id": "6791",
+                  "name": "test author name 1",
+                  "username": "test author username 1",
+                },
+                "authorId": "3451",
+                "checkpoint": null,
+                "comments": Object {
+                  "__typename": "ResponsePage_CommentDTO",
+                  "content": Array [],
+                  "totalElements": 0,
+                  "totalPages": 0,
+                },
+                "content": "{\\"markdown\\" : \\"test contet 1\\"}",
+                "contentHash": "hash1",
+                "dateCreated": "2019-01-01",
+                "datePublished": "2019-01-02",
+                "description": "test description 1",
+                "id": "1231",
+                "owner": Object {
+                  "__typename": "PublicUserDTO",
+                  "avatar": "test avatar 1",
+                  "id": "6781",
+                  "name": "test author name 1",
+                  "publicUserName": "test public username1",
+                  "resourceIdentifier": Object {
+                    "__typename": "PublicUserDTO",
+                    "id": "6781",
+                    "type": "ResourceIdentifier",
+                  },
+                  "username": "test author username1",
+                },
+                "resourceIdentifier": Object {
+                  "__typename": "ResourceIdentifier",
+                  "id": "1231",
+                  "type": "ResourceIdentifier",
+                  "version": 1,
+                },
+                "status": "PUBLISHED",
+                "tags": Array [
+                  "Test",
+                  "test2",
+                ],
+                "title": "test title 1",
+                "updateComment": "test update comment1",
+                "version": 1,
+                "voteResult": Object {
+                  "__typename": "VoteResultDTO",
+                  "count": 3,
+                  "hasVoted": false,
+                  "quantity": 1,
+                  "sum": 3,
+                },
+              },
+            }
+          }
+          deleteDraftArticleAction={[MockFunction]}
+          hostName="test hostname"
+          id="123"
+          openModalAction={[MockFunction]}
+          publishArticleAction={[MockFunction]}
+          routeChangeAction={[MockFunction]}
+          router={Object {}}
+          userId="234"
+          voteAction={[MockFunction]}
+        >
+          <_default
+            __typename="ArticleDTO"
+            associatedNfts={null}
+            attributes={Object {}}
+            author={
+              Object {
+                "__typename": "PublicUserDTO",
+                "avatar": "test avatar 1",
+                "id": "6791",
+                "name": "test author name 1",
+                "username": "test author username 1",
+              }
+            }
+            authorId="3451"
+            checkpoint={null}
+            closeModalAction={[MockFunction]}
+            comments={
+              Object {
+                "__typename": "ResponsePage_CommentDTO",
+                "content": Array [],
+                "totalElements": 0,
+                "totalPages": 0,
+              }
+            }
+            communities={Array []}
+            content="{\\"markdown\\" : \\"test contet 1\\"}"
+            contentHash="hash1"
+            dateCreated="2019-01-01"
+            datePublished="2019-01-02"
+            description="test description 1"
+            id="1231"
+            openModalAction={[MockFunction]}
+            owner={
+              Object {
+                "__typename": "PublicUserDTO",
+                "avatar": "test avatar 1",
+                "id": "6781",
+                "name": "test author name 1",
+                "publicUserName": "test public username1",
+                "resourceIdentifier": Object {
+                  "__typename": "PublicUserDTO",
+                  "id": "6781",
+                  "type": "ResourceIdentifier",
+                },
+                "username": "test author username1",
+              }
+            }
+            publishArticleAction={[MockFunction]}
+            resourceIdentifier={
+              Object {
+                "__typename": "ResourceIdentifier",
+                "id": "1231",
+                "type": "ResourceIdentifier",
+                "version": 1,
+              }
+            }
+            routeChangeAction={[MockFunction]}
+            status="PUBLISHED"
+            tags={
+              Array [
+                "Test",
+                "test2",
+              ]
+            }
+            title="test title 1"
+            updateComment="test update comment1"
+            userId="234"
+            version={1}
+            voteResult={
+              Object {
+                "__typename": "VoteResultDTO",
+                "count": 3,
+                "hasVoted": false,
+                "quantity": 1,
+                "sum": 3,
+              }
+            }
+          >
+            <DraftArticleHeader__HeaderContainer>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "DraftArticleHeader__HeaderContainer-ldqftc-0",
+                      "isStatic": false,
+                      "lastClassName": "jDiRbN",
+                      "rules": Array [
+                        "display:flex;flex-direction:row;width:100%;position:relative;align-items:center;height:260px;margin-top:-76px;background:",
+                        [Function],
+                        ";padding:0 ",
+                        [Function],
+                        ";& > button{margin-left:",
+                        [Function],
+                        "px;}@media (max-width:700px){padding:",
+                        [Function],
+                        "px;& button{display:none;}}@media (min-width:700px){padding:",
+                        [Function],
+                        "px;}@media (min-width:1280px){padding:",
+                        [Function],
+                        ";}",
+                      ],
+                    },
+                    "displayName": "DraftArticleHeader__HeaderContainer",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "DraftArticleHeader__HeaderContainer-ldqftc-0",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="DraftArticleHeader__HeaderContainer-ldqftc-0 jDiRbN"
+                >
+                  <DraftArticleHeader__InfoContainer>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "DraftArticleHeader__InfoContainer-ldqftc-1",
+                            "isStatic": false,
+                            "lastClassName": "fBQPPm",
+                            "rules": Array [
+                              "display:flex;width:100%;min-height:100px;flex-direction:column;align-self:center;z-index:9;> *:not(:last-child){margin-bottom:",
+                              [Function],
+                              "px;}@media (max-width:500px){> *{padding-left:",
+                              [Function],
+                              "px;}}",
+                            ],
+                          },
+                          "displayName": "DraftArticleHeader__InfoContainer",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "DraftArticleHeader__InfoContainer-ldqftc-1",
+                          "target": "div",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <div
+                        className="DraftArticleHeader__InfoContainer-ldqftc-1 fBQPPm"
+                      >
+                        <Typography__component
+                          color="white"
+                        >
+                          <StyledComponent
+                            color="white"
+                            forwardedComponent={
+                              Object {
+                                "$$typeof": Symbol(react.forward_ref),
+                                "attrs": Array [],
+                                "componentStyle": ComponentStyle {
+                                  "componentId": "Typography__component-sc-36xkf6-0",
+                                  "isStatic": false,
+                                  "lastClassName": "jMarAF",
+                                  "rules": Array [
+                                    "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                                    [Function],
+                                    ";text-align:",
+                                    [Function],
+                                    ";",
+                                    [Function],
+                                    " ",
+                                    [Function],
+                                  ],
+                                },
+                                "displayName": "Typography__component",
+                                "foldedComponentIds": Array [],
+                                "render": [Function],
+                                "styledComponentId": "Typography__component-sc-36xkf6-0",
+                                "target": "span",
+                                "toString": [Function],
+                                "warnTooManyClasses": [Function],
+                                "withComponent": [Function],
+                              }
+                            }
+                            forwardedRef={null}
+                          >
+                            <span
+                              className="Typography__component-sc-36xkf6-0 jMarAF"
+                              color="white"
+                            >
+                              CREATED 02 Jan 2019 00:00
+                            </span>
+                          </StyledComponent>
+                        </Typography__component>
+                        <Typography__styledComponent
+                          color="white"
+                        >
+                          <StyledComponent
+                            color="white"
+                            forwardedComponent={
+                              Object {
+                                "$$typeof": Symbol(react.forward_ref),
+                                "attrs": Array [],
+                                "componentStyle": ComponentStyle {
+                                  "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                  "isStatic": false,
+                                  "lastClassName": "iLJkHN",
+                                  "rules": Array [
+                                    "color:",
+                                    [Function],
+                                    ";margin:0px;font-weight:",
+                                    "500",
+                                    ";",
+                                    ";font-size:",
+                                    "28",
+                                    "px;text-transform:",
+                                    [Function],
+                                    ";text-align:",
+                                    [Function],
+                                    ";:hover{color:",
+                                    [Function],
+                                    ";cursor:",
+                                    [Function],
+                                    ";}",
+                                  ],
+                                },
+                                "displayName": "Typography__styledComponent",
+                                "foldedComponentIds": Array [],
+                                "render": [Function],
+                                "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                "target": "span",
+                                "toString": [Function],
+                                "warnTooManyClasses": [Function],
+                                "withComponent": [Function],
+                              }
+                            }
+                            forwardedRef={null}
+                          >
+                            <span
+                              className="Typography__styledComponent-sc-36xkf6-5 iLJkHN"
+                              color="white"
+                            >
+                              test title 1
+                            </span>
+                          </StyledComponent>
+                        </Typography__styledComponent>
+                        <TagList
+                          color="white"
+                          maxTags={7}
+                          routeChangeAction={[MockFunction]}
+                          tags={
+                            Array [
+                              "Test",
+                              "test2",
+                            ]
+                          }
+                        >
+                          <TagList__Container>
+                            <StyledComponent
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "TagList__Container-ipfhd9-0",
+                                    "isStatic": false,
+                                    "lastClassName": "ihYPdv",
+                                    "rules": Array [
+                                      "display:flex;margin:",
+                                      "10",
+                                      "px 0 0 0;flex-direction:",
+                                      [Function],
+                                      ";flex-wrap:wrap;justify-content:",
+                                      [Function],
+                                      ";",
+                                    ],
+                                  },
+                                  "displayName": "TagList__Container",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "TagList__Container-ipfhd9-0",
+                                  "target": "div",
+                                  "toString": [Function],
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                            >
+                              <div
+                                className="TagList__Container-ipfhd9-0 ihYPdv"
+                              >
+                                <TagList__StyledTag
+                                  color="white"
+                                  hiddenTags={false}
+                                  key="0"
+                                  onClick={[Function]}
+                                >
+                                  <StyledComponent
+                                    color="white"
+                                    forwardedComponent={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "attrs": Array [],
+                                        "componentStyle": ComponentStyle {
+                                          "componentId": "TagList__StyledTag-ipfhd9-1",
+                                          "isStatic": false,
+                                          "lastClassName": "eGuhSG",
+                                          "rules": Array [
+                                            "cursor:pointer;transition:0.3s;&:not(:last-child):after{content:'•';color:",
+                                            "#0BA986",
+                                            ";margin:",
+                                            "5",
+                                            "px;font-weight:",
+                                            "700",
+                                            ";}&:hover{color:",
+                                            "#0BA986",
+                                            ";}",
+                                            [Function],
+                                            ";",
+                                            [Function],
+                                            ";",
+                                          ],
+                                        },
+                                        "displayName": "TagList__StyledTag",
+                                        "foldedComponentIds": Array [],
+                                        "render": [Function],
+                                        "styledComponentId": "TagList__StyledTag-ipfhd9-1",
+                                        "target": "div",
+                                        "toString": [Function],
+                                        "warnTooManyClasses": [Function],
+                                        "withComponent": [Function],
+                                      }
+                                    }
+                                    forwardedRef={null}
+                                    hiddenTags={false}
+                                    onClick={[Function]}
+                                  >
+                                    <div
+                                      className="TagList__StyledTag-ipfhd9-1 eGuhSG"
+                                      color="white"
+                                      onClick={[Function]}
+                                    >
+                                      Test
+                                    </div>
+                                  </StyledComponent>
+                                </TagList__StyledTag>
+                                <TagList__StyledTag
+                                  color="white"
+                                  hiddenTags={false}
+                                  key="1"
+                                  onClick={[Function]}
+                                >
+                                  <StyledComponent
+                                    color="white"
+                                    forwardedComponent={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "attrs": Array [],
+                                        "componentStyle": ComponentStyle {
+                                          "componentId": "TagList__StyledTag-ipfhd9-1",
+                                          "isStatic": false,
+                                          "lastClassName": "eGuhSG",
+                                          "rules": Array [
+                                            "cursor:pointer;transition:0.3s;&:not(:last-child):after{content:'•';color:",
+                                            "#0BA986",
+                                            ";margin:",
+                                            "5",
+                                            "px;font-weight:",
+                                            "700",
+                                            ";}&:hover{color:",
+                                            "#0BA986",
+                                            ";}",
+                                            [Function],
+                                            ";",
+                                            [Function],
+                                            ";",
+                                          ],
+                                        },
+                                        "displayName": "TagList__StyledTag",
+                                        "foldedComponentIds": Array [],
+                                        "render": [Function],
+                                        "styledComponentId": "TagList__StyledTag-ipfhd9-1",
+                                        "target": "div",
+                                        "toString": [Function],
+                                        "warnTooManyClasses": [Function],
+                                        "withComponent": [Function],
+                                      }
+                                    }
+                                    forwardedRef={null}
+                                    hiddenTags={false}
+                                    onClick={[Function]}
+                                  >
+                                    <div
+                                      className="TagList__StyledTag-ipfhd9-1 eGuhSG"
+                                      color="white"
+                                      onClick={[Function]}
+                                    >
+                                      test2
+                                    </div>
+                                  </StyledComponent>
+                                </TagList__StyledTag>
+                              </div>
+                            </StyledComponent>
+                          </TagList__Container>
+                        </TagList>
+                      </div>
+                    </StyledComponent>
+                  </DraftArticleHeader__InfoContainer>
+                  <SecondaryButtonComponent
+                    onClick={[Function]}
+                    text="Update Draft"
+                  >
+                    <SecondaryButton
+                      bg="transparent"
+                      border="white"
+                      borderHover="primary"
+                      color="white"
+                      fontSize={0}
+                      fontWeight={700}
+                      mr={2}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      <StyledComponent
+                        bg="transparent"
+                        border="white"
+                        borderHover="primary"
+                        color="white"
+                        fontSize={0}
+                        fontWeight={700}
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "SecondaryButton-sy4hb2-0",
+                              "isStatic": false,
+                              "lastClassName": "faBvdL",
+                              "rules": Array [
+                                "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
+                                [Function],
+                                ";height:40px;border-radius:4px;border:none;cursor:pointer;> svg,img{height:16px;",
+                                [Function],
+                                ";}text-transform:uppercase;opacity:",
+                                [Function],
+                                ";",
+                                [Function],
+                                ";",
+                                [Function],
+                                ";",
+                                [Function],
+                                ";",
+                                [Function],
+                                ";:hover{cursor:",
+                                [Function],
+                                ";}",
+                                ";box-shadow:0px 0px 0px 1px ",
+                                [Function],
+                                ";:hover{box-shadow:0px 0px 0px 2px ",
+                                [Function],
+                                ";}",
+                              ],
+                            },
+                            "displayName": "SecondaryButton",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "SecondaryButton-sy4hb2-0",
+                            "target": "button",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        mr={2}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        <button
+                          className="SecondaryButton-sy4hb2-0 faBvdL"
+                          color="white"
+                          fontSize={0}
+                          fontWeight={700}
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          Update Draft
+                        </button>
+                      </StyledComponent>
+                    </SecondaryButton>
+                  </SecondaryButtonComponent>
+                  <PrimaryButtonComponent
+                    onClick={[Function]}
+                    text="Publish Article"
+                  >
+                    <PrimaryButton
+                      bg="primary"
+                      color="white"
+                      fontSize={0}
+                      fontWeight={700}
+                      mr={2}
+                      onClick={[Function]}
+                      type="submit"
+                    >
+                      <StyledComponent
+                        bg="primary"
+                        color="white"
+                        fontSize={0}
+                        fontWeight={700}
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "PrimaryButton-sc-1cbxa53-0",
+                              "isStatic": false,
+                              "lastClassName": "gGcsYX",
+                              "rules": Array [
+                                "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
+                                [Function],
+                                ";height:40px;border-radius:4px;border:none;cursor:pointer;> svg,img{height:16px;",
+                                [Function],
+                                ";}text-transform:uppercase;opacity:",
+                                [Function],
+                                ";",
+                                [Function],
+                                ";",
+                                [Function],
+                                ";",
+                                [Function],
+                                ";",
+                                [Function],
+                                ";:hover{cursor:",
+                                [Function],
+                                ";}",
+                                ";:hover{background-color:",
+                                [Function],
+                                ";}",
+                              ],
+                            },
+                            "displayName": "PrimaryButton",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "PrimaryButton-sc-1cbxa53-0",
+                            "target": "button",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        mr={2}
+                        onClick={[Function]}
+                        type="submit"
+                      >
+                        <button
+                          className="PrimaryButton-sc-1cbxa53-0 gGcsYX"
+                          color="white"
+                          fontSize={0}
+                          fontWeight={700}
+                          onClick={[Function]}
+                          type="submit"
+                        >
+                          Publish Article
+                        </button>
+                      </StyledComponent>
+                    </PrimaryButton>
+                  </PrimaryButtonComponent>
+                </div>
+              </StyledComponent>
+            </DraftArticleHeader__HeaderContainer>
+          </_default>
+          <_default
+            __typename="ArticleDTO"
+            associatedNfts={null}
+            attributes={Object {}}
+            author={
+              Object {
+                "__typename": "PublicUserDTO",
+                "avatar": "test avatar 1",
+                "id": "6791",
+                "name": "test author name 1",
+                "username": "test author username 1",
+              }
+            }
+            authorId="3451"
+            checkpoint={null}
+            closeModalAction={[MockFunction]}
+            comments={
+              Object {
+                "__typename": "ResponsePage_CommentDTO",
+                "content": Array [],
+                "totalElements": 0,
+                "totalPages": 0,
+              }
+            }
+            content="{\\"markdown\\" : \\"test contet 1\\"}"
+            contentHash="hash1"
+            dateCreated="2019-01-01"
+            datePublished="2019-01-02"
+            deleteDraftArticleAction={[MockFunction]}
+            description="test description 1"
+            id="1231"
+            openModalAction={[MockFunction]}
+            owner={
+              Object {
+                "__typename": "PublicUserDTO",
+                "avatar": "test avatar 1",
+                "id": "6781",
+                "name": "test author name 1",
+                "publicUserName": "test public username1",
+                "resourceIdentifier": Object {
+                  "__typename": "PublicUserDTO",
+                  "id": "6781",
+                  "type": "ResourceIdentifier",
+                },
+                "username": "test author username1",
+              }
+            }
+            resourceIdentifier={
+              Object {
+                "__typename": "ResourceIdentifier",
+                "id": "1231",
+                "type": "ResourceIdentifier",
+                "version": 1,
+              }
+            }
+            status="PUBLISHED"
+            tags={
+              Array [
+                "Test",
+                "test2",
+              ]
+            }
+            title="test title 1"
+            updateComment="test update comment1"
+            version={1}
+            voteResult={
+              Object {
+                "__typename": "VoteResultDTO",
+                "count": 3,
+                "hasVoted": false,
+                "quantity": 1,
+                "sum": 3,
+              }
+            }
+          >
+            <DraftArticleContent__ContentContainer>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "DraftArticleContent__ContentContainer-sc-1x9teyd-0",
+                      "isStatic": false,
+                      "lastClassName": "bPernD",
+                      "rules": Array [
+                        "display:flex;flex-direction:row;flex:1;align-items:flex-start;@media (max-width:700px){padding:",
+                        [Function],
+                        "px;& button{display:none;}}@media (min-width:700px){padding:",
+                        [Function],
+                        "px;}@media (min-width:1280px){padding:",
+                        [Function],
+                        ";}",
+                      ],
+                    },
+                    "displayName": "DraftArticleContent__ContentContainer",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "DraftArticleContent__ContentContainer-sc-1x9teyd-0",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="DraftArticleContent__ContentContainer-sc-1x9teyd-0 bPernD"
+                >
+                  <DraftArticleContent__Content
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<p>test contet 1</p>",
+                      }
+                    }
+                  >
+                    <StyledComponent
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "<p>test contet 1</p>",
+                        }
+                      }
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "DraftArticleContent__Content-sc-1x9teyd-1",
+                            "isStatic": false,
+                            "lastClassName": "dwhBTs",
+                            "rules": Array [
+                              "max-width:930px;width:100%;& img{max-width:100%;}& pre{padding:",
+                              [Function],
+                              "px;background:",
+                              [Function],
+                              ";border-radius:4px;color:white;}",
+                            ],
+                          },
+                          "displayName": "DraftArticleContent__Content",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "DraftArticleContent__Content-sc-1x9teyd-1",
+                          "target": "div",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <div
+                        className="DraftArticleContent__Content-sc-1x9teyd-1 dwhBTs"
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "<p>test contet 1</p>",
+                          }
+                        }
+                      />
+                    </StyledComponent>
+                  </DraftArticleContent__Content>
+                  <TertiaryButtonComponent
+                    color="textPrimary"
+                    handleClick={[Function]}
+                    icon={<DeleteDraftArticleSvgIcon />}
+                  >
+                    <TertiaryButton
+                      color="textPrimary"
+                      disabled={false}
+                      fontSize={0}
+                      fontWeight={700}
+                      mr={1}
+                      onClick={[Function]}
+                      type="button"
+                    >
+                      <StyledComponent
+                        color="textPrimary"
+                        disabled={false}
+                        fontSize={0}
+                        fontWeight={700}
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "TertiaryButton-sc-1rjobqw-0",
+                              "isStatic": false,
+                              "lastClassName": "ldfQHp",
+                              "rules": Array [
+                                "display:flex;align-items:center;border:none;background-color:transparent;cursor:",
+                                [Function],
+                                ";text-transform:uppercase;color:#fff;opacity:",
+                                [Function],
+                                ";padding:0px;>:first-child{height:18px;width:18px;",
+                                [Function],
+                                ";}:hover{color:",
+                                [Function],
+                                ";}:focus,:active{outline:none;box-shadow:none;}",
+                                [Function],
+                                ";",
+                                [Function],
+                                ";",
+                                [Function],
+                                ";",
+                              ],
+                            },
+                            "displayName": "TertiaryButton",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "TertiaryButton-sc-1rjobqw-0",
+                            "target": "button",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        mr={1}
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        <button
+                          className="TertiaryButton-sc-1rjobqw-0 ldfQHp"
+                          color="textPrimary"
+                          disabled={false}
+                          fontSize={0}
+                          fontWeight={700}
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          <DeleteDraftArticleSvgIcon>
+                            <svg
+                              fill="none"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <rect
+                                fill="url(#pattern0)"
+                                height="18"
+                                width="18"
+                              />
+                              <defs>
+                                <pattern
+                                  height="1"
+                                  id="pattern0"
+                                  patternContentUnits="objectBoundingBox"
+                                  width="1"
+                                >
+                                  <use
+                                    transform="scale(0.00833333)"
+                                    xlinkHref="#image0"
+                                  />
+                                </pattern>
+                                <image
+                                  height="120"
+                                  id="image0"
+                                  width="120"
+                                  xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAYAAAA5ZDbSAAAABmJLR0QA/wD/AP+gvaeTAAAFS0lEQVR4nO3cT0ycRRzG8WfeXRYTobsYapvGEC/20miMF6I2EaOE4h3u2CpJT5C2AZUDB9SSgJAYSaBV7rYHvZgigo3/Ug41MRUTPBnioXiQpeKh7+77jgd2G4KUfXffmXc7P57PkW5mNvvtzvuyMwtARERERERERERERGSXqvcTMOHJKxefU1p/AIUOAI/HHO5fAN8iDN/d6J+6E//Z1ZfzgY/OXXreU+H3AJoMD72tPX36r7Mf/WJ43ER59X4CcXkqnID5uADQpEI1YWHcRLkdeHQ0DaDD4gwdpTmcZWWJPj43eEor70NovAKFIzbmEEPjHjzcVB7eufvm5G+mhzce+Njs4LPwvJ9gZ9mUbBth+JLpGzvzS7TnTYJxa9EEZf6abzbw5z0p2L0myqbUq6XX0Bi3b7KoIrOBe68FAG4aHfMQUcBy6TU0xvw7OAwvANg2Pq58/+gwvGR6UOOBN/qn7qgU2gH9JYC86fEFykPjCw9Bu4SPRomIiIiIiIjqyfqRnWNXLmjbc7hs461Jqw242SAcAwvHwMIxsHAMLBwDC8fAwjGwcAwsHAMLx8DCMbBwDCwcAwvHwMIxsHAMLBwDC8fAwjkZWANrCugJwuBEEAYnFNCjgN9dGT9Jzv0FGQ2sPVZoeHH9/OXNXT++npsf+KYxSN2ARnusCRRW/FRwJt83vfubkdfbZoaX/IbCLQ2cjDV+wpx7B3vAyJ64AIB833TeD9JdUFipeXCFFT9Id+2JCwBYP395E0qP1Dx2nTgXOEh7Pzzs3zb7x7f8IN0F4FYNQ99u9Bu6N/vHtx72gFAH39Uwbl05F1j7hQPPEW/2j2/5YfoMqot8u7HQ0LnfyrBb6DUa/QMpSXAucDrlna70mAeRoyzXCit+mH6tUlwASOviyxGf5iPDucDQaiw3P5Cr9LAHy/VBkUvX3IOW5bLc/EAOWo1V+WzrzrnAGjiZKXpLT10dfKLSYytckytec8taZoeyjUHqhmt30ICDgQFAQb3ga7UYOfL/r8mRrrnATtxMqrgQ+9evOnEyMBAr8qGJCzgcGNiJXID3VcvsULbSY8uRo95QSYgLCPn6qIb+OaN055/npv42MV6Scfn10QiqWa4rkfLOLRMRGDATWVpcQFBgIF5kiXEBYYGB2iJLjQs4uF0YhYLSnp+p7uZOQ+TfEhH3DkYVv+eW1bhB4QRpgauOWyY1sqTANcctkxhZSuDYccukRXY/cBX7uS2zQ9lqPtaMdfznEeF64Kq2/DKp4kKDV1g2sNXoDJcD17QrZGCr0SmuBo615XeYIjsXWANr99PB63G3/KrdaryfDrpdPPzuXGAPGNnv3PJekT5+1GjPpIoLUSLn+6bzPBedgIPORZdV9dmyRnvUGy+ei05ApXPRtWwcRL0m81x0Ag46Fx1nVyjKNZnnopOg1VjbzHDL3h/n5gdysbf8Stfk/c5dt80Mt7h4LtrJM1mlu9n3imHwI7DzrtZQ70PjGRfG3832mSwn94NLB9CvpbydS6I2/F/I9vhJcm+JpqowsHAMLBwDC8fAwjGwcAwsHAMLx8DCMbBwDCxcEoG3E5jDTRr3bE9hP7DGuvU5XKXsvzb2A3tYtD6Ho5RSX9ueI4ElWl0FENifxzkBwuAz25NYD7xxbuJXrTBrex4Hzdx9e2rV9iSJ3EUfPdI8CGA5ibkcsdSabb6YxESJBF7tHfVbs83dGvgEh3u5DgB83JptfmO1d9RPYkLrZ7L2Oj43eErDOwuFTgBPA2hK+jkkbBvAH9BYVAg/TWJZJiIiIiIiIiIiIiIiIiIi+f4Dnd1WAMhT8bQAAAAASUVORK5CYII="
+                                />
+                              </defs>
+                            </svg>
+                          </DeleteDraftArticleSvgIcon>
+                          Delete Draft Article
+                        </button>
+                      </StyledComponent>
+                    </TertiaryButton>
+                  </TertiaryButtonComponent>
+                </div>
+              </StyledComponent>
+            </DraftArticleContent__ContentContainer>
+          </_default>
+        </_default>
+      </ApolloProvider>
+    </MockedProvider>
+  </ThemeProvider>
+</Provider>
+`;

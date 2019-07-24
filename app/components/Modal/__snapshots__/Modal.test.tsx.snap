@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/AlertView should match snapshot 1`] = `
+exports[`components/Moda/AlertView should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -445,7 +445,7 @@ exports[`components/AlertView should match snapshot 1`] = `
 </ThemeProvider>
 `;
 
-exports[`components/ChooseArticleContent should match snapshot 1`] = `
+exports[`components/Modal/ChooseArticleContent should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -786,7 +786,7 @@ exports[`components/ChooseArticleContent should match snapshot 1`] = `
 </ThemeProvider>
 `;
 
-exports[`components/ChooseCollectionContent should match snapshot 1`] = `
+exports[`components/Modal/ChooseCollectionContent should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -1111,7 +1111,7 @@ exports[`components/ChooseCollectionContent should match snapshot 1`] = `
 </ThemeProvider>
 `;
 
-exports[`components/ModalView should match snapshot 1`] = `
+exports[`components/Modal/ModalView should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {

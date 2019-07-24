@@ -60,12 +60,14 @@ describe('components/Tags/TagList', () => {
 })
 
 describe('components/Tags/TagInput', () => {
+    let wrapper: any
+    let props: any
     it('snapshot should match', () => {
-        const props = {
+        props = {
             handleEnterKey: jest.fn(),
             removeLastTag: jest.fn(),
         }
-        const wrapper = mountWithTheme(<TagInput {...props} />)
+        wrapper = mountWithTheme(<TagInput {...props} />)
         expect(wrapper).toMatchSnapshot()
     })
 })
