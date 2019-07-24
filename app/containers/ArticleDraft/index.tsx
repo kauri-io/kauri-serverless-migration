@@ -2,7 +2,7 @@ import { compose, graphql } from 'react-apollo'
 import { connect } from 'react-redux'
 import { deleteDraftArticleAction } from './DeleteDraftArticleModule'
 import { publishArticleAction } from '../SubmitArticleForm/PublishArticleModule'
-import { getArticle } from '../../queries/Article'
+import { getArticleQuery } from '../../queries/Article'
 import { IReduxState } from '../../lib/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import withLoading from '../../lib/with-loading'
@@ -34,7 +34,7 @@ export default compose(
             routeChangeAction,
         }
     ),
-    graphql(getArticle, {
+    graphql(getArticleQuery, {
         name: 'data',
         options: ({ id, version }: { id: string; version: string }) => {
             const versionInt = parseInt(version, 10)

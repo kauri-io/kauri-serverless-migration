@@ -3,9 +3,9 @@ import { getCommunity_getCommunity_members } from '../../../queries/__generated_
 import styled from 'styled-components'
 import { Title2, BodyCard, Label } from '../../../components/Typography'
 import PrimaryButtonComponent from '../../../components/Button/PrimaryButton'
-import { IRemoveMemberAction } from '../../Community/Module'
 import theme from '../../../lib/theme-config'
-import { CommunityPermissionInput } from '../../../__generated__/globalTypes'
+import { prepareChangeMemberRoleVariables } from '../../../queries/__generated__/prepareChangeMemberRole'
+import { removeMemberVariables } from '../../../queries/__generated__/removeMember'
 
 const Header = styled.div`
     padding-top: ${props => props.theme.space[2]}px;
@@ -154,18 +154,14 @@ interface IProps {
     id: string
     members: Array<getCommunity_getCommunity_members | null> | null
     openAddMemberModal: () => void
-    removeMemberAction: (payload: {
-        signature?: string
-        account: string
-        id: string
-    }) => IRemoveMemberAction
+    removeMemberAction: (
+        payload: Pick<removeMemberVariables, 'account' | 'id'>
+    ) => void
     isCommunityAdmin: boolean
     userId: string
-    openChangeMemberRoleModal: (payload: {
-        id: string
-        account: string
-        role?: CommunityPermissionInput
-    }) => void
+    openChangeMemberRoleModal: (
+        payload: Pick<prepareChangeMemberRoleVariables, 'account' | 'id'>
+    ) => void
 }
 
 const MembersPanel: React.SFC<IProps> = props => {

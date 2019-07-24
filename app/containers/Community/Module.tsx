@@ -1,7 +1,6 @@
 import { Epic, ActionsObservable } from 'redux-observable'
 import { tail, compose, head, toUpper } from 'ramda'
 import { IReduxState, IDependencies } from '../../lib/Module'
-
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import analytics from '../../lib/analytics'
@@ -24,8 +23,10 @@ import {
 } from '../../queries/Community'
 import { curateCommunityResourcesVariables } from '../../queries/__generated__/curateCommunityResources'
 import { approveResourceVariables } from '../../queries/__generated__/approveResource'
-
-import { removeResourceVariables } from '../../queries/__generated__/removeResource'
+import {
+    removeResource,
+    removeResourceVariables,
+} from '../../queries/__generated__/removeResource'
 
 import {
     sendInvitation,
@@ -35,7 +36,14 @@ import {
     prepareSendInvitation,
     prepareSendInvitationVariables,
 } from '../../queries/__generated__/prepareSendInvitation'
-import { prepareAcceptInvitationVariables } from '../../queries/__generated__/prepareAcceptInvitation'
+import {
+    prepareAcceptInvitationVariables,
+    prepareAcceptInvitation,
+} from '../../queries/__generated__/prepareAcceptInvitation'
+import {
+    acceptInvitation,
+    acceptInvitationVariables,
+} from '../../queries/__generated__/acceptInvitation'
 import {
     prepareRevokeInvitation,
     prepareRevokeInvitationVariables,
@@ -61,13 +69,22 @@ import {
     resendInvitation,
     resendInvitationVariables,
 } from '../../queries/__generated__/resendInvitation'
-import { initiateArticleTransferVariables } from '../../queries/__generated__/initiateArticleTransfer'
+import {
+    initiateArticleTransfer,
+    initiateArticleTransferVariables,
+} from '../../queries/__generated__/initiateArticleTransfer'
 
 import { ISendInvitationCommandOutput } from '../CreateCommunityForm/Module'
 import { closeModalAction } from '../../components/Modal/Module'
 import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
-import { finaliseArticleTransfer } from '../../queries/Article'
+import { finaliseArticleTransferMutation } from '../../queries/Article'
 import { of, merge, from } from 'rxjs'
+import path from 'ramda/es/path'
+import { mergeMap, tap, catchError } from 'rxjs/operators'
+import {
+    finaliseArticleTransfer,
+    finaliseArticleTransferVariables,
+} from '../../queries/__generated__/finaliseArticleTransfer'
 
 interface ICurateCommunityResourcesAction {
     type: 'CURATE_COMMUNITY_RESOURCES'
@@ -268,6 +285,11 @@ interface ICurateCommunityResourcesCommandOutput {
     error?: string
 }
 
+interface IAcceptInvitationCommandOutput {
+    hash: string
+    error?: string
+}
+
 interface IRevokeInvitationCommandOutput {
     hash: string
 }
@@ -279,6 +301,7 @@ interface ICurateCommunityResourcesCommandOutput {
 
 interface IRemoveResourceCommandOutput {
     hash: string
+    error?: string
 }
 
 interface IRemoveMemberCommandOutput {
@@ -290,9 +313,19 @@ interface IChangeMemberRoleCommandOutput {
     hash: string
 }
 
+type IFinaliseArticleTransferCommandOutput = ICurateCommunityResourcesCommandOutput
+
 type IApproveResourceCommandOutput = ICurateCommunityResourcesCommandOutput
 
 type IResendInvitationCommandOutput = IRevokeInvitationCommandOutput
+
+interface IInitiateArticleTransferCommandOutput {
+    hash: string
+    id: string
+    version: number
+    articleAuthor: string
+    dateCreated: string
+}
 
 const capitalize = (s: string) =>
     compose<string, string, string>(
@@ -389,8 +422,14 @@ export const sendCommunityInvitationEpic = (
                 query: prepareSendInvitationQuery,
                 variables: payload,
             })
-        ).mergeMap(({ data: { prepareSendInvitation: result } }) =>
-            from(personalSign(result.messageHash))
+        ).mergeMap(({ data }) =>
+            from(
+                personalSign(
+                    path<string>(['prepareSendInvitation', 'messageHash'])(
+                        data
+                    ) || ''
+                )
+            )
                 .mergeMap(signedSignature =>
                     apolloClient.mutate<
                         sendInvitation,
@@ -406,7 +445,12 @@ export const sendCommunityInvitationEpic = (
                                 role:
                                     payload.invitation &&
                                     payload.invitation.role,
-                                secret: result && result.attributes.secret,
+                                secret:
+                                    path<string>([
+                                        'prepareSendInvitation',
+                                        'attributes',
+                                        'secret',
+                                    ])(data) || '',
                             },
                             signature:
                                 typeof signedSignature === 'string'
@@ -440,110 +484,107 @@ export const sendCommunityInvitationEpic = (
         )
     )
 
-export const acceptCommunityInvitationEpic = (
-    action$: ActionsObservable<IAcceptCommunityInvitationAction>,
-    { app }: IReduxState,
-    { apolloClient, apolloSubscriber, personalSign }
-) =>
-    action$
-        .ofType(ACCEPT_COMMUNITY_INVITATION)
-        .switchMap(({ payload }) =>
-            app && app.user && app.user.id
-                ? from(
-                      apolloClient.query({
-                          query: prepareAcceptInvitationQuery,
-                          variables: payload,
+export const acceptCommunityInvitationEpic: Epic<
+    any,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, state$, { apolloClient, apolloSubscriber, personalSign }) =>
+    action$.ofType(ACCEPT_COMMUNITY_INVITATION).switchMap(({ payload }) =>
+        state$.value && state$.value.app.user && state$.value.app.user.id
+            ? from(
+                  apolloClient.query<
+                      prepareAcceptInvitation,
+                      prepareAcceptInvitationVariables
+                  >({
+                      query: prepareAcceptInvitationQuery,
+                      variables: payload,
+                  })
+              ).pipe(
+                  mergeMap(({ data }) =>
+                      personalSign(
+                          path<string>([
+                              'prepareAcceptInvitation',
+                              'messageHash',
+                          ])(data) || ''
+                      )
+                  ),
+                  mergeMap(signature =>
+                      apolloClient.mutate<
+                          acceptInvitation,
+                          acceptInvitationVariables
+                      >({
+                          mutation: acceptInvitationMutation,
+                          variables: {
+                              id: (payload && payload.id) || '',
+                              secret: (payload && payload.secret) || '',
+                              signature,
+                          },
                       })
-                  ).mergeMap(({ data: { prepareAcceptInvitation: result } }) =>
-                      from(personalSign(result.messageHash))
-                          .mergeMap(signature =>
-                              apolloClient.mutate({
-                                  mutation: acceptInvitationMutation,
-                                  variables: {
-                                      id: (payload && payload.id) || '',
-                                      secret: (payload && payload.secret) || '',
-                                      signature,
-                                  },
+                  ),
+                  mergeMap(({ data }) =>
+                      apolloSubscriber<IAcceptInvitationCommandOutput>(
+                          path<string>(['acceptInvitationResult', 'hash'])(
+                              data
+                          ) || ''
+                      )
+                  ),
+                  mergeMap(({ data: { output: { error } } }) =>
+                      typeof error === 'string' &&
+                      error.includes('associated to another member')
+                          ? merge(
+                                of(closeModalAction()),
+                                of(
+                                    showNotificationAction({
+                                        description:
+                                            'This email invite is already associated with another member of the community!',
+                                        message: 'Submission error',
+                                        notificationType: 'error',
+                                    })
+                                )
+                            )
+                          : merge(
+                                of(closeModalAction()),
+                                of(
+                                    showNotificationAction({
+                                        description: `You are now a member of the community!`,
+                                        message: 'Invitation Accepted',
+                                        notificationType: 'success',
+                                    })
+                                ),
+                                of(
+                                    routeChangeAction(
+                                        `/community/${payload.id}`
+                                    )
+                                ),
+                                of(invitationAcceptedAction())
+                            )
+                  ),
+                  tap(() => apolloClient.resetStore()),
+                  catchError(err => {
+                      console.error(err)
+                      return merge(
+                          of(closeModalAction()),
+                          of(
+                              showNotificationAction({
+                                  description:
+                                      'Please try again or you may already be a member of the community!',
+                                  message: 'Submission error',
+                                  notificationType: 'error',
                               })
                           )
-                          .mergeMap(
-                              ({
-                                  data: {
-                                      acceptInvitation: acceptInvitationResult,
-                                  },
-                              }: any) =>
-                                  apolloSubscriber(acceptInvitationResult.hash)
-                          )
-                          .mergeMap(({ data: { output: { error } } }) =>
-                              typeof error === 'string' &&
-                              error.includes('associated to another member')
-                                  ? merge(
-                                        of(closeModalAction()),
-                                        of(
-                                            showNotificationAction({
-                                                description:
-                                                    'This email invite is already associated with another member of the community!',
-                                                message: 'Submission error',
-                                                notificationType: 'error',
-                                            })
-                                        )
-                                    )
-                                  : merge(
-                                        of(closeModalAction()),
-                                        of(
-                                            showNotificationAction({
-                                                description: `You are now a member of the community!`,
-                                                message: 'Invitation Accepted',
-                                                notificationType: 'success',
-                                            })
-                                        ),
-                                        of(
-                                            routeChangeAction(
-                                                `/community/${payload.id}`
-                                            )
-                                        ),
-                                        of(invitationAcceptedAction())
-                                    )
-                          )
-                          .do(() => apolloClient.resetStore())
-                          .catch(err => {
-                              console.error(err)
-                              return merge(
-                                  of(closeModalAction()),
-                                  of(
-                                      showNotificationAction({
-                                          description:
-                                              'Please try again or you may already be a member of the community!',
-                                          message: 'Submission error',
-                                          notificationType: 'error',
-                                      })
-                                  )
-                              )
-                          })
-                  )
-                : merge(
-                      of(closeModalAction()),
-                      of(
-                          routeChangeAction(
-                              `/login?r=/community/${payload.id}/approve?secret=${payload.secret}`
-                          )
+                      )
+                  })
+              )
+            : merge(
+                  of(closeModalAction()),
+                  of(
+                      routeChangeAction(
+                          `/login?r=/community/${payload.id}/approve?secret=${payload.secret}`
                       )
                   )
-        )
-        .catch(err => {
-            console.error(err)
-            return merge(
-                of(closeModalAction()),
-                of(
-                    showNotificationAction({
-                        description:
-                            'Please try again or you may already be a member of the community!',
-                        message: 'Submission error',
-                        notificationType: 'error',
-                    })
-                )
-            )
-        })
+              )
+    )
 
 export const revokeInvitationEpic = (
     action$: ActionsObservable<IRevokeInvitationAction>,
@@ -559,8 +600,14 @@ export const revokeInvitationEpic = (
                 query: prepareRevokeInvitationQuery,
                 variables: payload,
             })
-        ).mergeMap(({ data: { prepareRevokeInvitation: result } }) =>
-            from<string>(personalSign(result.messageHash))
+        ).mergeMap(({ data }) =>
+            from(
+                personalSign(
+                    path<string>(['prepareRevokeInvitation', 'messageHash'])(
+                        data
+                    ) || ''
+                )
+            )
                 .mergeMap(signature =>
                     apolloClient.mutate<
                         revokeInvitation,
@@ -611,8 +658,14 @@ export const removeMemberEpic = (
                 query: prepareRemoveMemberQuery,
                 variables: payload,
             })
-        ).mergeMap(({ data: { prepareRemoveMember: result } }) =>
-            from<string>(personalSign(result.messageHash))
+        ).mergeMap(({ data }) =>
+            from(
+                personalSign(
+                    path<string>(['prepareRemoveMember', 'messageHash'])(
+                        data
+                    ) || ''
+                )
+            )
                 .mergeMap(signature =>
                     apolloClient.mutate<removeMember, removeMemberVariables>({
                         mutation: removeMemberMutation,
@@ -623,9 +676,10 @@ export const removeMemberEpic = (
                         },
                     })
                 )
-                .mergeMap(({ data: { removeMember: removeMemberResult } }) =>
+                .mergeMap(({ data }) =>
                     apolloSubscriber<IRemoveMemberCommandOutput>(
-                        removeMemberResult.hash
+                        path<string>(['removeMember', 'messageHash'])(data) ||
+                            ''
                     )
                 )
                 .mergeMap(
@@ -693,8 +747,14 @@ export const changeMemberRoleEpic = (
                 query: prepareChangeMemberRoleQuery,
                 variables: payload,
             })
-        ).mergeMap(({ data: { prepareChangeMemberRole: result } }) =>
-            from<string>(personalSign(result.messageHash))
+        ).mergeMap(({ data }) =>
+            from(
+                personalSign(
+                    path<string>(['prepareChangeMemberRole', 'messageHash'])(
+                        data
+                    ) || ''
+                )
+            )
                 .mergeMap(signature =>
                     apolloClient.mutate<
                         changeMemberRole,
@@ -709,13 +769,10 @@ export const changeMemberRoleEpic = (
                         },
                     })
                 )
-                .mergeMap(
-                    ({
-                        data: { changeMemberRole: changeMemberRoleResult },
-                    }: any) =>
-                        apolloSubscriber<IChangeMemberRoleCommandOutput>(
-                            changeMemberRoleResult.hash
-                        )
+                .mergeMap(({ data }) =>
+                    apolloSubscriber<IChangeMemberRoleCommandOutput>(
+                        path<string>(['changeMemberRole', 'hash'])(data) || ''
+                    )
                 )
                 .do(() => apolloClient.resetStore())
                 .mergeMap(() =>
@@ -734,11 +791,12 @@ export const changeMemberRoleEpic = (
         )
     )
 
-export const resendInvitationEpic = (
-    action$: ActionsObservable<IResendInvitationAction>,
-    _: IReduxState,
-    { apolloClient, apolloSubscriber }: IDependencies
-) =>
+export const resendInvitationEpic: Epic<
+    IResendInvitationAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
     action$.ofType(RESEND_INVITATION).switchMap(({ payload }) =>
         from(
             apolloClient.mutate<resendInvitation, resendInvitationVariables>({
@@ -768,11 +826,12 @@ export const resendInvitationEpic = (
             )
     )
 
-export const removeResourceEpic = (
-    action$: ActionsObservable<IRemoveResourceAction>,
-    _: IReduxState,
-    { apolloClient, apolloSubscriber }: IDependencies
-) =>
+export const removeResourceEpic: Epic<
+    IRemoveResourceAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
     action$.ofType(REMOVE_RESOURCE).switchMap(({ payload }) =>
         from(
             apolloClient.mutate({
@@ -780,8 +839,10 @@ export const removeResourceEpic = (
                 variables: payload,
             })
         )
-            .mergeMap(({ data: { removeResource: { hash } } }) =>
-                apolloSubscriber<IRemoveResourceCommandOutput>(hash)
+            .mergeMap(({ data }) =>
+                apolloSubscriber<IRemoveResourceCommandOutput>(
+                    path<string>(['removeResource', 'hash'])(data) || ''
+                )
             )
             .mergeMap(({ data: { output: { error } } }) =>
                 error
@@ -811,101 +872,101 @@ export const removeResourceEpic = (
 
 export const transferArticleToCommunityEpic: Epic<
     any,
+    any,
     IReduxState,
     IDependencies
 > = (action$, _, { apolloClient, apolloSubscriber, personalSign }) =>
-    action$
-        .ofType(TRANSFER_ARTICLE_TO_COMMUNITY)
-        .switchMap(({ payload }: ITransferArticleToCommunityAction) =>
-            from(
-                apolloClient.mutate({
-                    mutation: initiateArticleTransferMutation,
-                    variables: payload,
-                })
-            )
-                .mergeMap(({ data: { initiateArticleTransfer: { hash } } }) =>
-                    apolloSubscriber(hash)
+    action$.ofType(TRANSFER_ARTICLE_TO_COMMUNITY).switchMap(({ payload }) =>
+        from(
+            apolloClient.mutate<
+                initiateArticleTransfer,
+                initiateArticleTransferVariables
+            >({
+                mutation: initiateArticleTransferMutation,
+                variables: payload,
+            })
+        )
+            .mergeMap(({ data }) =>
+                apolloSubscriber<IInitiateArticleTransferCommandOutput>(
+                    path<string>(['initiateArticleTransfer', 'hash'])(data) ||
+                        ''
                 )
-                .switchMap(
-                    ({
-                        data: {
-                            output: {
-                                id,
-                                version,
-                                hash,
-                                articleAuthor,
-                                dateCreated,
-                            },
-                        },
-                    }) => {
-                        const signatureToSign = generatePublishArticleHash(
+            )
+            .switchMap(
+                ({
+                    data: {
+                        output: {
                             id,
                             version,
                             hash,
                             articleAuthor,
-                            dateCreated
-                        )
+                            dateCreated,
+                        },
+                    },
+                }) => {
+                    const signatureToSign = generatePublishArticleHash(
+                        id,
+                        version,
+                        hash,
+                        articleAuthor,
+                        dateCreated
+                    )
 
-                        return from(personalSign(signatureToSign))
-                            .mergeMap(signature =>
-                                from(
-                                    apolloClient.mutate({
-                                        mutation: finaliseArticleTransfer,
-                                        variables: {
-                                            id,
-                                            signature,
-                                        },
-                                    })
-                                )
-                            )
-                            .flatMap(
-                                ({
-                                    data: {
-                                        finaliseArticleTransfer: {
-                                            hash: resultHash,
-                                        },
+                    return from(personalSign(signatureToSign))
+                        .mergeMap(signature =>
+                            from(
+                                apolloClient.mutate<
+                                    finaliseArticleTransfer,
+                                    finaliseArticleTransferVariables
+                                >({
+                                    mutation: finaliseArticleTransferMutation,
+                                    variables: {
+                                        id,
+                                        signature,
                                     },
-                                }: {
-                                    data: {
-                                        finaliseArticleTransfer: {
-                                            hash: string
-                                        }
-                                    }
-                                }) => apolloSubscriber(resultHash)
-                            )
-                            .do(() => apolloClient.resetStore())
-                            .do(() =>
-                                analytics.track('Article Transfer Finalised', {
-                                    category: 'article_actions',
                                 })
                             )
-                            .mergeMap(({ data: { output: { error } } }) =>
-                                error
-                                    ? merge(
-                                          of(closeModalAction()),
-                                          of(
-                                              showNotificationAction({
-                                                  description: `There was an error transferring the article, please try again.`,
-                                                  message: 'Error',
-                                                  notificationType: 'error',
-                                              })
-                                          )
-                                      )
-                                    : merge(
-                                          of(
-                                              articleTransferredToCommunityAction()
-                                          ),
-                                          of(closeModalAction()),
-                                          of(
-                                              showNotificationAction({
-                                                  description: `Your selected article was successfully transferred to the community!`,
-                                                  message:
-                                                      'Article Transferred',
-                                                  notificationType: 'success',
-                                              })
-                                          )
-                                      )
+                        )
+                        .mergeMap(({ data }) =>
+                            apolloSubscriber<
+                                IFinaliseArticleTransferCommandOutput
+                            >(
+                                path<string>([
+                                    'finaliseArticleTransfer',
+                                    'hash',
+                                ])(data) || ''
                             )
-                    }
-                )
-        )
+                        )
+                        .do(() => apolloClient.resetStore())
+                        .do(() =>
+                            analytics.track('Article Transfer Finalised', {
+                                category: 'article_actions',
+                            })
+                        )
+                        .mergeMap(({ data: { output: { error } } }) =>
+                            error
+                                ? merge(
+                                      of(closeModalAction()),
+                                      of(
+                                          showNotificationAction({
+                                              description: `There was an error transferring the article, please try again.`,
+                                              message: 'Error',
+                                              notificationType: 'error',
+                                          })
+                                      )
+                                  )
+                                : merge(
+                                      of(articleTransferredToCommunityAction()),
+                                      of(closeModalAction()),
+                                      of(
+                                          showNotificationAction({
+                                              description: `Your selected article was successfully transferred to the community!`,
+                                              message: 'Article Transferred',
+                                              notificationType: 'success',
+                                          })
+                                      )
+                                  )
+                        )
+                }
+            )
+    )

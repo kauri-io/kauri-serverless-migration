@@ -46,7 +46,7 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-export default ({
+const ArticleCard: React.FC<IProps> = ({
     author,
     title,
     attributes,
@@ -55,7 +55,7 @@ export default ({
     href,
     className,
     id,
-}: IProps) => {
+}) => {
     const classes = ArticleCardStyles({})
     return (
         <Card
@@ -117,3 +117,5 @@ export default ({
         </Card>
     )
 }
+
+export default ArticleCard

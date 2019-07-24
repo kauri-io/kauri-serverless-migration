@@ -1,7 +1,7 @@
 import { compose, graphql } from 'react-apollo'
 import { connect } from 'react-redux'
 import { approveArticleAction, rejectArticleAction } from './Module'
-import { getArticle } from '../../queries/Article'
+import { getArticleQuery } from '../../queries/Article'
 import { IReduxState } from '../../lib/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import withLoading from '../../lib/with-loading'
@@ -37,7 +37,7 @@ export default compose(
             routeChangeAction,
         }
     ),
-    graphql(getArticle, {
+    graphql(getArticleQuery, {
         name: 'ProposedUpdate',
         options: ({ id, version }: IArticleVersion) => ({
             variables: {
@@ -46,7 +46,7 @@ export default compose(
             },
         }),
     }),
-    graphql(getArticle, {
+    graphql(getArticleQuery, {
         name: 'CurrentArticle',
         options: ({ id }: IArticleVersion) => ({
             variables: {

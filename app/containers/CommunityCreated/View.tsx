@@ -93,6 +93,7 @@ const CommunityCreated: React.FunctionComponent<IProps> = props => {
                 <Title2>Community</Title2>
                 {subtitleCopy}
                 <CommunityCard
+                    id={String(id)}
                     cardHeight={310}
                     description={String(description)}
                     name={String(name)}

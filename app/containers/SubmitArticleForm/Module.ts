@@ -2,7 +2,7 @@ import { Epic, ofType } from 'redux-observable'
 import {
     submitArticleVersionMutation,
     editArticle,
-    getArticle as getArticleQuery,
+    getArticleQuery,
     submitNewArticleMutation,
 } from '../../queries/Article'
 import { IDependencies, IReduxState, ICommunity } from '../../lib/Module'
@@ -141,11 +141,12 @@ export const draftArticleAction = (
     type: DRAFT_ARTICLE,
 })
 
-export const submitArticleEpic: Epic<any, any, IReduxState, IDependencies> = (
-    action$,
-    _,
-    { apolloClient, apolloSubscriber }
-) =>
+export const submitArticleEpic: Epic<
+    ISubmitArticleAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(SUBMIT_ARTICLE),
         switchMap(

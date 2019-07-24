@@ -1,10 +1,8 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { Title2, BodyCard, Label } from '../../../components/Typography'
-import {
-    revokeInvitationAction as revokeInvitation,
-    resendInvitationAction as resendInvitation,
-} from '../../Community/Module'
+import { resendInvitationAction as resendInvitation } from '../../Community/Module'
+import { revokeInvitationVariables } from '../../../queries/__generated__/revokeInvitation'
 
 const Header = styled.div`
     padding-top: ${props => props.theme.space[2]}px;
@@ -129,7 +127,9 @@ const InvitationRow: React.FunctionComponent<{
 
 interface IProps {
     invitations: Array<IInvitation | null> | null
-    revokeInvitationAction: typeof revokeInvitation
+    revokeInvitationAction: (
+        payload: Pick<revokeInvitationVariables, 'invitationId' | 'id'>
+    ) => void
     resendInvitationAction: typeof resendInvitation
     id: string
 }

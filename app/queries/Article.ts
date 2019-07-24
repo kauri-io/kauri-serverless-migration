@@ -41,7 +41,7 @@ export const submitNewArticleMutation = gql`
     }
 `
 
-export const getArticle = gql`
+export const getArticleQuery = gql`
     query getArticle($id: String!, $version: Int!, $published: Boolean = true) {
         getArticle(id: $id, version: $version, published: $published) {
             ...Article
@@ -611,7 +611,7 @@ export const getArticleTransfers = gql`
     ${Article}
 `
 
-export const rejectArticleTransfer = gql`
+export const rejectArticleTransferMutation = gql`
     mutation rejectArticleTransfer($id: String!) {
         rejectArticleTransfer(id: $id) {
             hash
@@ -619,7 +619,7 @@ export const rejectArticleTransfer = gql`
     }
 `
 
-export const acceptArticleTransfer = gql`
+export const acceptArticleTransferMutation = gql`
     mutation acceptArticleTransfer($id: String!) {
         acceptArticleTransfer(id: $id) {
             hash
@@ -627,7 +627,7 @@ export const acceptArticleTransfer = gql`
     }
 `
 
-export const finaliseArticleTransfer = gql`
+export const finaliseArticleTransferMutation = gql`
     mutation finaliseArticleTransfer($id: String!, $signature: String!) {
         finaliseArticleTransfer(id: $id, signature: $signature) {
             hash

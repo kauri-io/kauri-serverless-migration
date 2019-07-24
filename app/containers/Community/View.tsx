@@ -82,7 +82,7 @@ class CommunityConnection extends React.Component<IProps> {
                         confirmButtonAction={() =>
                             this.props.acceptCommunityInvitationAction({
                                 id: this.props.communityId,
-                                secret: String(this.props.secret),
+                                secret: this.props.secret || '',
                             })
                         }
                         confirmButtonText={'Accept'}
