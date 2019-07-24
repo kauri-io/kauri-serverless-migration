@@ -39,9 +39,11 @@ export function create (initialState, { getToken }) {
         "X-Auth-Token": token ? `Bearer ${token}` : null,
       },
     });
+    // @ts-ignore
     return next(operation);
   });
 
+    // @ts-ignore
   httpLink = authMiddlewareLink.concat(httpLink);
 
   let link = httpLink;
@@ -57,10 +59,12 @@ export function create (initialState, { getToken }) {
         reconnect: true,
       },
     });
-
+    
+    // @ts-ignore
     link = split(
       // split based on operation type
       ({ query }) => {
+        // @ts-ignore
         const { kind, operation } = getMainDefinition(query);
         return kind === "OperationDefinition" && operation === "subscription";
       },
@@ -74,6 +78,7 @@ export function create (initialState, { getToken }) {
     dataIdFromObject: object => {
       switch (object.__typename) {
         case "ArticleDTO":
+          // @ts-ignore
           return object.id + object.version; // use `key` as the primary key
         default:
           return defaultDataIdFromObject(object);
@@ -82,6 +87,7 @@ export function create (initialState, { getToken }) {
   });
 
   return new ApolloClient({
+    // @ts-ignore
     initialState,
     connectToDevTools: true,
     ssrMode: !global.window, // Disables forceFetch on the server (so queries are only run once)
