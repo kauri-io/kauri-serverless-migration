@@ -13,7 +13,6 @@ export interface IDependencies {
     smartContracts: any
     web3: any
     fetch: any
-    web3PersonalSign: any
     getGasPrice: any
     driverJS: any
     personalSign: any

@@ -77,38 +77,4 @@ const loginPersonalSign = (data: string) =>
         })
     )
 
-const web3PersonalSign = (id, data, gqlMutation) =>
-    global.window && global.window.web3.eth.accounts.length > 0
-        ? from(personalSign(data))
-              .flatMap(signature =>
-                  apolloClient({}, {}).mutate({
-                      mutation: gqlMutation,
-                      variables: {
-                          id,
-                          signature,
-                      },
-                  })
-              )
-              .flatMap(({ data }) =>
-                  apolloSubscriber(
-                      data[gqlMutation.definitions['0'].name.value].hash,
-                      {}
-                  )
-              )
-              .catch(err => {
-                  console.error(err)
-                  if (err.message.includes('Metamask locked!')) {
-                      return Observable.throw(new Error('Metamask locked!'))
-                  }
-                  return Observable.throw(new Error('Submission error'))
-              })
-        : of(
-              showNotificationAction({
-                  notificationType: 'error',
-                  message: 'Your wallet is locked!',
-                  description: 'Please unlock your wallet!',
-              })
-          )
-
-export default web3PersonalSign
 export { loginPersonalSign, personalSign }

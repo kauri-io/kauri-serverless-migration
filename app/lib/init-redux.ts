@@ -3,7 +3,7 @@ import { createEpicMiddleware } from 'redux-observable'
 import fetch from 'isomorphic-unfetch'
 import { ethers } from 'ethers'
 import web3GetNetwork from './web3-get-network'
-import web3PersonalSign, { personalSign } from './web3-personal-sign'
+import { personalSign } from './web3-personal-sign'
 import { rootReducer, rootEpic } from './root'
 import apolloSubscriber, {
     apolloChildHashesSubscriber,
@@ -29,7 +29,6 @@ function create(apollo: any, initialState = {}) {
         fetch,
         apolloSubscriber,
         apolloChildHashesSubscriber,
-        web3PersonalSign,
         web3GetNetwork,
         personalSign,
     }

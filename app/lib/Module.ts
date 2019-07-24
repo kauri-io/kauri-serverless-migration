@@ -3,7 +3,11 @@ import {
     SET_USER_DETAILS,
     ISetUserDetailsAction,
 } from './Epics/FetchUserDetailsEpic'
-import { SHOW_NOTIFICATION, IShowNotificationAction, IShowNotificationPayload } from './Epics/ShowNotificationEpic'
+import {
+    SHOW_NOTIFICATION,
+    IShowNotificationAction,
+    IShowNotificationPayload,
+} from './Epics/ShowNotificationEpic'
 import { ApolloClient } from 'apollo-client'
 
 export interface IDependencies {
@@ -18,7 +22,6 @@ export interface IDependencies {
     apolloChildHashesSubscriber: <T>(
         childHashes: string[]
     ) => Array<Promise<{ data: { output: T } }>>
-    web3PersonalSign: any
     web3GetNetwork: any
     getGasPrice: () => Promise<number>
     personalSign: (data: string) => Promise<string>
@@ -145,12 +148,15 @@ const handlers = {
         ...state,
         navcolorOverride: action.payload,
     }),
-  [SHOW_NOTIFICATION]: (state: IReduxState, action: IShowNotificationAction) => ({
-      ...state,
-      notification: {
-        ...action.payload,
-        type: action.payload.notificationType,
-      }
+    [SHOW_NOTIFICATION]: (
+        state: IReduxState,
+        action: IShowNotificationAction
+    ) => ({
+        ...state,
+        notification: {
+            ...action.payload,
+            type: action.payload.notificationType,
+        },
     }),
     [SET_HOSTNAME]: (state: IReduxState, action: ISetHostNameAction) =>
         typeof action.payload.hostName === 'string'

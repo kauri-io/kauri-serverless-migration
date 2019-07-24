@@ -15,9 +15,9 @@ export const routeChange = (payload: IRouteChangePayload): any => {
         window.location.href.indexOf('redirected=true') !== -1 &&
         payload === 'back'
     ) {
-        return Router.push("/"); // TODO figure out how to do route change
+        return Router.push('/') // TODO figure out how to do route change
     } else {
-        return payload === "back" ? Router.back() : Router.push(payload);
+        return payload === 'back' ? Router.back() : Router.push(payload)
     }
 }
 
@@ -28,7 +28,7 @@ export const routeChangeAction = (
     payload,
 })
 
-const routeChangeEpic: Epic<IRouteChangeAction, any> = (action$) =>
+const routeChangeEpic: Epic<IRouteChangeAction, any> = action$ =>
     action$.pipe(
         filter(action => action.type === ROUTE_CHANGE),
         map(({ payload }) => routeChange(payload)),

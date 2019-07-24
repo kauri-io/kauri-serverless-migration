@@ -39,7 +39,12 @@ interface IProps {
     children: any
 }
 
-const Layout = ({ isModalOpen, children, maxWidthConstrained, user }: IProps) => {
+const Layout = ({
+    isModalOpen,
+    children,
+    maxWidthConstrained,
+    user,
+}: IProps) => {
     const classes = useStyles({})
     return (
         <Grid container={true}>

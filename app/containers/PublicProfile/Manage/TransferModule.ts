@@ -20,6 +20,7 @@ import {
     rejectArticleTransfer,
     rejectArticleTransferVariables,
 } from '../../../queries/__generated__/rejectArticleTransfer'
+import { acceptArticleTransfer, acceptArticleTransferVariables } from '../../../queries/__generated__/acceptArticleTransfer';
 
 interface IRejectArticleTransferPayload {
     id: string
@@ -106,7 +107,7 @@ export const newEpic = (
         ofType(ACCEPT_ARTICLE_TRANSFER),
         mergeMap(({ payload: { id } }) =>
             from(
-                apolloClient.mutate({
+                apolloClient.mutate<acceptArticleTransfer, acceptArticleTransferVariables>({
                     mutation: acceptArticleTransferMutation,
                     variables: { id },
                 })

@@ -42,22 +42,23 @@ export const setUserDetailsAction = (
     payload,
 })
 
-const fetchUserDetailsEpic: Epic<IFetchUserDetailsAction, any, IReduxState, IDependencies> = (
-  action$,
-  _,
-  { apolloClient }
-) =>
-  action$.pipe(
-      filter(action => action.type === FETCH_USER_DETAILS),
-      mergeMap(() =>
-          apolloClient.query<getMyProfile>({
-              query: getOwnProfile,
-              variables: {},
-          })
-      ),
-      map(({ data: { getMyProfile } }) =>
-          getMyProfile ? setUserDetailsAction({ user: getMyProfile }) : null
-      )
-  )
+const fetchUserDetailsEpic: Epic<
+    IFetchUserDetailsAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient }) =>
+    action$.pipe(
+        filter(action => action.type === FETCH_USER_DETAILS),
+        mergeMap(() =>
+            apolloClient.query<getMyProfile>({
+                query: getOwnProfile,
+                variables: {},
+            })
+        ),
+        map(({ data: { getMyProfile } }) =>
+            getMyProfile ? setUserDetailsAction({ user: getMyProfile }) : null
+        )
+    )
 
 export default fetchUserDetailsEpic

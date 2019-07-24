@@ -23,9 +23,7 @@ import {
 } from '../../queries/Community'
 import { curateCommunityResourcesVariables } from '../../queries/__generated__/curateCommunityResources'
 import { approveResourceVariables } from '../../queries/__generated__/approveResource'
-import {
-    removeResourceVariables,
-} from '../../queries/__generated__/removeResource'
+import { removeResourceVariables } from '../../queries/__generated__/removeResource'
 
 import {
     sendInvitation,
