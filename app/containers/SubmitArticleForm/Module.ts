@@ -12,12 +12,12 @@ import { publishArticleAction, IOwnerPayload } from './PublishArticleModule'
 import { IOption } from '../../containers/PublishingSelector'
 import analytics from '../../lib/analytics'
 import { merge, of, from } from 'rxjs'
+import { path } from 'ramda'
 import {
     submitNewArticleVariables,
     submitNewArticle,
 } from '../../queries/__generated__/submitNewArticle'
 import { tap, catchError, mergeMap, switchMap } from 'rxjs/operators'
-import path from 'ramda/es/path'
 import {
     submitArticleVersion,
     submitArticleVersionVariables,

@@ -22,7 +22,7 @@ import {
     Collection_sections_resources_ArticleDTO,
 } from '../../queries/Fragments/__generated__/Collection'
 import { ITag } from '../../components/Tags/types'
-import defaultTo from 'ramda/es/defaultTo'
+import { defaultTo } from 'ramda'
 
 export interface IFormValues {
     name: string

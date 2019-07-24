@@ -78,7 +78,7 @@ import { closeModalAction } from '../../components/Modal/Module'
 import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
 import { finaliseArticleTransferMutation } from '../../queries/Article'
 import { of, merge, from } from 'rxjs'
-import path from 'ramda/es/path'
+import { path } from 'ramda'
 import { mergeMap, tap, catchError } from 'rxjs/operators'
 import {
     finaliseArticleTransfer,

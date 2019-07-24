@@ -127,6 +127,8 @@ export default (ComposedComponent: any) =>
                         {},
                         { fetch, apolloClient: apollo }
                     )
+                    // console.log(sourceAction)
+                    // console.log(setUserDetailsAction)
                     redux && redux.dispatch(setUserDetailsAction)
                 } catch (err) {
                     console.error(
