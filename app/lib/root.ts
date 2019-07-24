@@ -3,7 +3,6 @@ import userDetailsEpic from './Epics/FetchUserDetailsEpic'
 import routeChangeEpic from './Epics/RouteChangeEpic'
 import app from './Module'
 import register, { registerEpic } from '../containers/LoginForm/Module'
-// import { tipArticleEpic } from "../components/containers/Article/Module";
 // import {
 //   rejectArticleEpic,
 //   approveArticleEpic,
@@ -16,11 +15,6 @@ import register, { registerEpic } from '../containers/LoginForm/Module'
 //   draftArticleEpic,
 // } from "../components/containers/SubmitArticleForm/Module";
 // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
-// import localStorage, {
-// startDriverStepsEpic,
-// persistStateToLocalStorageEpic,
-// finishedDriverStepsEpic,
-// } from "./LocalStorageModule";
 // import {
 //   createCollectionEpic,
 //   editCollectionEpic,
@@ -64,25 +58,18 @@ export const rootReducer = {
     app,
     modal,
     register,
-    // localStorage,
 }
 
 const epics = [
-    // showNotificationEpic,
     registerEpic,
-    // showConfirmationModalEpic,
     routeChangeEpic,
+    userDetailsEpic,
     //   submitArticleEpic,
     //   submitArticleVersionEpic,
     //   editArticleEpic,
     //   addCommentEpic,
-    userDetailsEpic,
-    //   // ethUsdPriceEpic,
-    // hideIntroBannerEpic,
-    //   tipArticleEpic,
     //   rejectArticleEpic,
     //   startDriverStepsEpic,
-    //   persistStateToLocalStorageEpic,
     //   finishedDriverStepsEpic,
     //   createCollectionEpic,
     //   composeCollectionEpic,
