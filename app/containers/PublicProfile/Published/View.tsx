@@ -49,6 +49,7 @@ const Articles: React.FC<IArticlesProps> = ({
                     type === 'published' &&
                     isOwner && (
                         <CheckpointArticles
+                            pageType={'public-profile'}
                             isOwner={isOwner}
                             articles={articles}
                         />

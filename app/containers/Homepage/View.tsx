@@ -4,7 +4,7 @@ import { homePageContentQuery as query } from '../../queries/Homepage'
 import {
     homePageContent,
     homePageContentVariables,
-} from '../../queries/__generated__/homePageContent'
+} from '../../queries/__generated__/homepageContent'
 import { Query } from 'react-apollo'
 import Loading from '../../components/Loading'
 import { ErrorMessage } from '../../lib/with-apollo-error'

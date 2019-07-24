@@ -39,7 +39,7 @@ export const globalCollectionDetails = gql`
     ${CommunityOwner}
 `
 
-export const getCollection = globalCollectionDetails
+export const getCollectionQuery = globalCollectionDetails
 export const getCollectionForAnalytics = globalCollectionDetails
 
 export const createCollection = gql`
@@ -130,6 +130,7 @@ export const getLatestCollections = gql`
                             name
                             description
                             resourcesId {
+                                version
                                 id
                                 type
                             }

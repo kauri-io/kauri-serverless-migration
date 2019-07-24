@@ -42,6 +42,7 @@ const Articles = ({ data, type, isOwner }: IArticlesProps) => {
                     type === 'published' &&
                     isOwner && (
                         <CheckpointArticles
+                            pageType={'public-profile'}
                             isOwner={isOwner}
                             articles={articles}
                         />

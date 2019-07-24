@@ -1,14 +1,8 @@
 import { combineEpics } from 'redux-observable'
 import userDetailsEpic from './Epics/FetchUserDetailsEpic'
-import showNotificationEpic from './Epics/ShowNotificationEpic'
-import showConfirmationModalEpic from './Epics/ShowConfirmationModalEpic'
 import routeChangeEpic from './Epics/RouteChangeEpic'
-import hideIntroBannerEpic from './Epics/HideIntroBannerEpic'
 import app from './Module'
-// import register, {
-//   registerEpic,
-// } from "../components/containers/LoginForm/Module";
-// import { tipArticleEpic } from "../components/containers/Article/Module";
+import register, { registerEpic } from '../containers/LoginForm/Module'
 // import {
 //   rejectArticleEpic,
 //   approveArticleEpic,
@@ -21,11 +15,6 @@ import app from './Module'
 //   draftArticleEpic,
 // } from "../components/containers/SubmitArticleForm/Module";
 // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
-// import localStorage, {
-// startDriverStepsEpic,
-// persistStateToLocalStorageEpic,
-// finishedDriverStepsEpic,
-// } from "./LocalStorageModule";
 // import {
 //   createCollectionEpic,
 //   editCollectionEpic,
@@ -68,26 +57,19 @@ import modal from '../components/Modal/Module'
 export const rootReducer = {
     app,
     modal,
-    // register,
-    // localStorage,
+    register,
 }
 
 const epics = [
-    showNotificationEpic,
-    //   registerEpic,
-    showConfirmationModalEpic,
+    registerEpic,
     routeChangeEpic,
+    userDetailsEpic,
     //   submitArticleEpic,
     //   submitArticleVersionEpic,
     //   editArticleEpic,
     //   addCommentEpic,
-    userDetailsEpic,
-    //   // ethUsdPriceEpic,
-    hideIntroBannerEpic,
-    //   tipArticleEpic,
     //   rejectArticleEpic,
     //   startDriverStepsEpic,
-    //   persistStateToLocalStorageEpic,
     //   finishedDriverStepsEpic,
     //   createCollectionEpic,
     //   composeCollectionEpic,

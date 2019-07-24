@@ -2,7 +2,7 @@ import ArticleProposed from './View'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { compose, graphql } from 'react-apollo'
 import { connect } from 'react-redux'
-import { getArticle } from '../../queries/Article'
+import { getArticleQuery } from '../../queries/Article'
 import withLoading from '../../lib/with-loading'
 
 const mapStateToProps = state => {
@@ -16,7 +16,7 @@ export default compose(
         mapStateToProps,
         { routeChangeAction }
     ),
-    graphql(getArticle, {
+    graphql(getArticleQuery, {
         options: ({ id, version }: { id: string; version: string }) => ({
             variables: {
                 id,
