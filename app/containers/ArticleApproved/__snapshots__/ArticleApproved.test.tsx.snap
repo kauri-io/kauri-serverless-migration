@@ -603,7 +603,7 @@ exports[`containers/ArticleApproved snapshot should match 1`] = `
                     </div>
                   </StyledComponent>
                 </View__DescriptionContainer>
-                <_default
+                <ArticleCard
                   __typename="ArticleDTO"
                   associatedNfts={null}
                   attributes={Object {}}
@@ -2203,7 +2203,7 @@ exports[`containers/ArticleApproved snapshot should match 1`] = `
                       </WithStyles(ForwardRef(Paper))>
                     </ForwardRef(Card)>
                   </WithStyles(ForwardRef(Card))>
-                </_default>
+                </ArticleCard>
                 <View__ArticleApprovedActionButtons>
                   <StyledComponent
                     forwardedComponent={

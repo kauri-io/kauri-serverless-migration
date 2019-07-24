@@ -356,36 +356,38 @@ exports[`containers/CheckpointArticles snapshot should match 1`] = `
           }
         }
       >
-        <_default
+        <CheckpointArticles
           checkpointArticlesAction={[MockFunction]}
           isOwner={true}
           pageType="public-profile"
         >
-          <View__CheckpointArticlesCTAContainer>
+          <View__CheckpointedArticlesContainer>
             <StyledComponent
               forwardedComponent={
                 Object {
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": Array [],
                   "componentStyle": ComponentStyle {
-                    "componentId": "View__CheckpointArticlesCTAContainer-sc-1eullvd-0",
+                    "componentId": "View__CheckpointedArticlesContainer-sc-1eullvd-0",
                     "isStatic": false,
-                    "lastClassName": "dBIBDH",
+                    "lastClassName": "hmyxJL",
                     "rules": Array [
-                      "display:flex;justify-content:center;padding:",
+                      "display:flex;>:first-child{margin-right:",
                       [Function],
-                      "px ",
+                      "px;color:",
                       [Function],
-                      ";padding-bottom:0px;margin:0px ",
+                      ";}font-size:",
                       [Function],
-                      "px;",
+                      "px;font-weight:",
+                      [Function],
+                      ";text-transform:uppercase;",
                     ],
                   },
-                  "displayName": "View__CheckpointArticlesCTAContainer",
+                  "displayName": "View__CheckpointedArticlesContainer",
                   "foldedComponentIds": Array [],
                   "render": [Function],
-                  "styledComponentId": "View__CheckpointArticlesCTAContainer-sc-1eullvd-0",
-                  "target": "section",
+                  "styledComponentId": "View__CheckpointedArticlesContainer-sc-1eullvd-0",
+                  "target": "div",
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
                   "withComponent": [Function],
@@ -393,8 +395,8 @@ exports[`containers/CheckpointArticles snapshot should match 1`] = `
               }
               forwardedRef={null}
             >
-              <section
-                className="View__CheckpointArticlesCTAContainer-sc-1eullvd-0 dBIBDH"
+              <div
+                className="View__CheckpointedArticlesContainer-sc-1eullvd-0 hmyxJL"
               >
                 <AllArticlesOnMainnet>
                   <View__CheckpointedArticlesContainer>
@@ -404,9 +406,9 @@ exports[`containers/CheckpointArticles snapshot should match 1`] = `
                           "$$typeof": Symbol(react.forward_ref),
                           "attrs": Array [],
                           "componentStyle": ComponentStyle {
-                            "componentId": "View__CheckpointedArticlesContainer-sc-1eullvd-1",
+                            "componentId": "View__CheckpointedArticlesContainer-sc-1eullvd-0",
                             "isStatic": false,
-                            "lastClassName": "kpgNBB",
+                            "lastClassName": "hmyxJL",
                             "rules": Array [
                               "display:flex;>:first-child{margin-right:",
                               [Function],
@@ -422,7 +424,7 @@ exports[`containers/CheckpointArticles snapshot should match 1`] = `
                           "displayName": "View__CheckpointedArticlesContainer",
                           "foldedComponentIds": Array [],
                           "render": [Function],
-                          "styledComponentId": "View__CheckpointedArticlesContainer-sc-1eullvd-1",
+                          "styledComponentId": "View__CheckpointedArticlesContainer-sc-1eullvd-0",
                           "target": "div",
                           "toString": [Function],
                           "warnTooManyClasses": [Function],
@@ -432,7 +434,7 @@ exports[`containers/CheckpointArticles snapshot should match 1`] = `
                       forwardedRef={null}
                     >
                       <div
-                        className="View__CheckpointedArticlesContainer-sc-1eullvd-1 kpgNBB"
+                        className="View__CheckpointedArticlesContainer-sc-1eullvd-0 hmyxJL"
                       >
                         <CheckpointArticlesIcon>
                           <svg
@@ -463,10 +465,10 @@ exports[`containers/CheckpointArticles snapshot should match 1`] = `
                     </StyledComponent>
                   </View__CheckpointedArticlesContainer>
                 </AllArticlesOnMainnet>
-              </section>
+              </div>
             </StyledComponent>
-          </View__CheckpointArticlesCTAContainer>
-        </_default>
+          </View__CheckpointedArticlesContainer>
+        </CheckpointArticles>
       </ApolloProvider>
     </MockedProvider>
   </ThemeProvider>

@@ -598,7 +598,7 @@ exports[`containers/ArticleProposed snapshot should match 1`] = `
                     </div>
                   </StyledComponent>
                 </View__SectionContainer>
-                <_default
+                <ArticleCard
                   __typename="ArticleDTO"
                   associatedNfts={null}
                   attributes={Object {}}
@@ -2198,7 +2198,7 @@ exports[`containers/ArticleProposed snapshot should match 1`] = `
                       </WithStyles(ForwardRef(Paper))>
                     </ForwardRef(Card)>
                   </WithStyles(ForwardRef(Card))>
-                </_default>
+                </ArticleCard>
                 <View__SectionContainer>
                   <StyledComponent
                     forwardedComponent={

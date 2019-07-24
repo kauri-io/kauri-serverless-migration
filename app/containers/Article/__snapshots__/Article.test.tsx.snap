@@ -2976,7 +2976,7 @@ exports[`containers/Article snapshot should match 1`] = `
                                 <div
                                   className="MuiGrid-root MuiGrid-grid-sm-6"
                                 >
-                                  <_default
+                                  <ArticleCard
                                     __typename="ArticleDTO"
                                     associatedNfts={null}
                                     attributes={Object {}}
@@ -4583,7 +4583,7 @@ exports[`containers/Article snapshot should match 1`] = `
                                         </WithStyles(ForwardRef(Paper))>
                                       </ForwardRef(Card)>
                                     </WithStyles(ForwardRef(Card))>
-                                  </_default>
+                                  </ArticleCard>
                                 </div>
                               </ForwardRef(Grid)>
                             </WithStyles(ForwardRef(Grid))>
@@ -4704,7 +4704,7 @@ exports[`containers/Article snapshot should match 1`] = `
                                 <div
                                   className="MuiGrid-root MuiGrid-grid-sm-6"
                                 >
-                                  <_default
+                                  <ArticleCard
                                     __typename="ArticleDTO"
                                     associatedNfts={null}
                                     attributes={Object {}}
@@ -6311,7 +6311,7 @@ exports[`containers/Article snapshot should match 1`] = `
                                         </WithStyles(ForwardRef(Paper))>
                                       </ForwardRef(Card)>
                                     </WithStyles(ForwardRef(Card))>
-                                  </_default>
+                                  </ArticleCard>
                                 </div>
                               </ForwardRef(Grid)>
                             </WithStyles(ForwardRef(Grid))>

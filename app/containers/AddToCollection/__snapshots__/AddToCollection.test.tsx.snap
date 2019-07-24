@@ -698,13 +698,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                           "selectionSet": undefined,
                         },
                         Object {
-                          "alias": undefined,
+                          "alias": Object {
+                            "kind": "Name",
+                            "value": "publicUserName",
+                          },
                           "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "publicUserName",
+                            "value": "name",
                           },
                           "selectionSet": undefined,
                         },
@@ -799,13 +802,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                           "selectionSet": undefined,
                         },
                         Object {
-                          "alias": undefined,
+                          "alias": Object {
+                            "kind": "Name",
+                            "value": "communityName",
+                          },
                           "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "communityName",
+                            "value": "name",
                           },
                           "selectionSet": undefined,
                         },
@@ -870,7 +876,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 1461,
+                  "end": 1473,
                   "start": 0,
                 },
               },
@@ -1480,13 +1486,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                           "selectionSet": undefined,
                         },
                         Object {
-                          "alias": undefined,
+                          "alias": Object {
+                            "kind": "Name",
+                            "value": "publicUserName",
+                          },
                           "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "publicUserName",
+                            "value": "name",
                           },
                           "selectionSet": undefined,
                         },
@@ -1581,13 +1590,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                           "selectionSet": undefined,
                         },
                         Object {
-                          "alias": undefined,
+                          "alias": Object {
+                            "kind": "Name",
+                            "value": "communityName",
+                          },
                           "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "communityName",
+                            "value": "name",
                           },
                           "selectionSet": undefined,
                         },
@@ -1652,7 +1664,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 1461,
+                  "end": 1473,
                   "start": 0,
                 },
               } => Object {
@@ -2286,13 +2298,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                           "selectionSet": undefined,
                         },
                         Object {
-                          "alias": undefined,
+                          "alias": Object {
+                            "kind": "Name",
+                            "value": "publicUserName",
+                          },
                           "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "publicUserName",
+                            "value": "name",
                           },
                           "selectionSet": undefined,
                         },
@@ -2401,13 +2416,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                           "selectionSet": undefined,
                         },
                         Object {
-                          "alias": undefined,
+                          "alias": Object {
+                            "kind": "Name",
+                            "value": "communityName",
+                          },
                           "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "communityName",
+                            "value": "name",
                           },
                           "selectionSet": undefined,
                         },
@@ -2486,7 +2504,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 1461,
+                  "end": 1473,
                   "start": 0,
                 },
               },
@@ -3121,13 +3139,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                           "selectionSet": undefined,
                         },
                         Object {
-                          "alias": undefined,
+                          "alias": Object {
+                            "kind": "Name",
+                            "value": "publicUserName",
+                          },
                           "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "publicUserName",
+                            "value": "name",
                           },
                           "selectionSet": undefined,
                         },
@@ -3236,13 +3257,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                           "selectionSet": undefined,
                         },
                         Object {
-                          "alias": undefined,
+                          "alias": Object {
+                            "kind": "Name",
+                            "value": "communityName",
+                          },
                           "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "communityName",
+                            "value": "name",
                           },
                           "selectionSet": undefined,
                         },
@@ -3321,7 +3345,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 1461,
+                  "end": 1473,
                   "start": 0,
                 },
               } => Object {
@@ -3955,13 +3979,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                           "selectionSet": undefined,
                         },
                         Object {
-                          "alias": undefined,
+                          "alias": Object {
+                            "kind": "Name",
+                            "value": "publicUserName",
+                          },
                           "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "publicUserName",
+                            "value": "name",
                           },
                           "selectionSet": undefined,
                         },
@@ -4070,13 +4097,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                           "selectionSet": undefined,
                         },
                         Object {
-                          "alias": undefined,
+                          "alias": Object {
+                            "kind": "Name",
+                            "value": "communityName",
+                          },
                           "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "communityName",
+                            "value": "name",
                           },
                           "selectionSet": undefined,
                         },
@@ -4155,7 +4185,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 1461,
+                  "end": 1473,
                   "start": 0,
                 },
               },
@@ -4796,13 +4826,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "publicUserName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "publicUserName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -4911,13 +4944,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "communityName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "communityName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -4996,7 +5032,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 1461,
+                    "end": 1473,
                     "start": 0,
                   },
                 },
@@ -5618,13 +5654,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "publicUserName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "publicUserName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -5719,13 +5758,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "communityName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "communityName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -5790,7 +5832,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 1461,
+                    "end": 1473,
                     "start": 0,
                   },
                 } => Object {
@@ -6424,13 +6466,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "publicUserName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "publicUserName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -6539,13 +6584,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "communityName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "communityName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -6624,7 +6672,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 1461,
+                    "end": 1473,
                     "start": 0,
                   },
                 },
@@ -7259,13 +7307,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "publicUserName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "publicUserName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -7374,13 +7425,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "communityName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "communityName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -7459,7 +7513,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 1461,
+                    "end": 1473,
                     "start": 0,
                   },
                 } => Object {
@@ -8093,13 +8147,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "publicUserName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "publicUserName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -8208,13 +8265,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "communityName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "communityName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -8293,7 +8353,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 1461,
+                    "end": 1473,
                     "start": 0,
                   },
                 },
@@ -8934,13 +8994,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "publicUserName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "publicUserName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -9049,13 +9112,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "communityName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "communityName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -9134,7 +9200,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 1461,
+                      "end": 1473,
                       "start": 0,
                     },
                   },
@@ -9760,13 +9826,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "publicUserName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "publicUserName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -9861,13 +9930,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "communityName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "communityName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -9932,7 +10004,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 1461,
+                      "end": 1473,
                       "start": 0,
                     },
                   } => Object {
@@ -10566,13 +10638,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "publicUserName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "publicUserName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -10681,13 +10756,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "communityName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "communityName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -10766,7 +10844,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 1461,
+                      "end": 1473,
                       "start": 0,
                     },
                   },
@@ -11401,13 +11479,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "publicUserName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "publicUserName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -11516,13 +11597,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "communityName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "communityName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -11601,7 +11685,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 1461,
+                      "end": 1473,
                       "start": 0,
                     },
                   } => Object {
@@ -12235,13 +12319,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "publicUserName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "publicUserName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -12350,13 +12437,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "communityName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "communityName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -12435,7 +12525,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 1461,
+                      "end": 1473,
                       "start": 0,
                     },
                   },
@@ -13076,13 +13166,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                                 "selectionSet": undefined,
                               },
                               Object {
-                                "alias": undefined,
+                                "alias": Object {
+                                  "kind": "Name",
+                                  "value": "publicUserName",
+                                },
                                 "arguments": Array [],
                                 "directives": Array [],
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
-                                  "value": "publicUserName",
+                                  "value": "name",
                                 },
                                 "selectionSet": undefined,
                               },
@@ -13191,13 +13284,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                                 "selectionSet": undefined,
                               },
                               Object {
-                                "alias": undefined,
+                                "alias": Object {
+                                  "kind": "Name",
+                                  "value": "communityName",
+                                },
                                 "arguments": Array [],
                                 "directives": Array [],
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
-                                  "value": "communityName",
+                                  "value": "name",
                                 },
                                 "selectionSet": undefined,
                               },
@@ -13276,7 +13372,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 1461,
+                        "end": 1473,
                         "start": 0,
                       },
                     },
@@ -13926,13 +14022,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                           "selectionSet": undefined,
                         },
                         Object {
-                          "alias": undefined,
+                          "alias": Object {
+                            "kind": "Name",
+                            "value": "publicUserName",
+                          },
                           "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "publicUserName",
+                            "value": "name",
                           },
                           "selectionSet": undefined,
                         },
@@ -14041,13 +14140,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                           "selectionSet": undefined,
                         },
                         Object {
-                          "alias": undefined,
+                          "alias": Object {
+                            "kind": "Name",
+                            "value": "communityName",
+                          },
                           "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "communityName",
+                            "value": "name",
                           },
                           "selectionSet": undefined,
                         },
@@ -14126,7 +14228,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 1461,
+                  "end": 1473,
                   "start": 0,
                 },
               } => Map {},
@@ -14735,13 +14837,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "publicUserName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "publicUserName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -14836,13 +14941,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "communityName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "communityName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -14907,7 +15015,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 1461,
+                      "end": 1473,
                       "start": 0,
                     },
                   } => Object {
@@ -15541,13 +15649,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "publicUserName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "publicUserName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -15656,13 +15767,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "communityName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "communityName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -15741,7 +15855,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 1461,
+                      "end": 1473,
                       "start": 0,
                     },
                   },
@@ -16376,13 +16490,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "publicUserName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "publicUserName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -16491,13 +16608,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "communityName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "communityName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -16576,7 +16696,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 1461,
+                      "end": 1473,
                       "start": 0,
                     },
                   } => Object {
@@ -17210,13 +17330,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "publicUserName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "publicUserName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -17325,13 +17448,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "communityName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "communityName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -17410,7 +17536,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 1461,
+                      "end": 1473,
                       "start": 0,
                     },
                   },
@@ -18051,13 +18177,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                                 "selectionSet": undefined,
                               },
                               Object {
-                                "alias": undefined,
+                                "alias": Object {
+                                  "kind": "Name",
+                                  "value": "publicUserName",
+                                },
                                 "arguments": Array [],
                                 "directives": Array [],
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
-                                  "value": "publicUserName",
+                                  "value": "name",
                                 },
                                 "selectionSet": undefined,
                               },
@@ -18166,13 +18295,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                                 "selectionSet": undefined,
                               },
                               Object {
-                                "alias": undefined,
+                                "alias": Object {
+                                  "kind": "Name",
+                                  "value": "communityName",
+                                },
                                 "arguments": Array [],
                                 "directives": Array [],
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
-                                  "value": "communityName",
+                                  "value": "name",
                                 },
                                 "selectionSet": undefined,
                               },
@@ -18251,7 +18383,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 1461,
+                        "end": 1473,
                         "start": 0,
                       },
                     },
@@ -18907,13 +19039,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "publicUserName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "publicUserName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -19022,13 +19157,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "communityName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "communityName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -19107,7 +19245,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 1461,
+                    "end": 1473,
                     "start": 0,
                   },
                 },
@@ -19711,13 +19849,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                                 "selectionSet": undefined,
                               },
                               Object {
-                                "alias": undefined,
+                                "alias": Object {
+                                  "kind": "Name",
+                                  "value": "publicUserName",
+                                },
                                 "arguments": Array [],
                                 "directives": Array [],
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
-                                  "value": "publicUserName",
+                                  "value": "name",
                                 },
                                 "selectionSet": undefined,
                               },
@@ -19812,13 +19953,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                                 "selectionSet": undefined,
                               },
                               Object {
-                                "alias": undefined,
+                                "alias": Object {
+                                  "kind": "Name",
+                                  "value": "communityName",
+                                },
                                 "arguments": Array [],
                                 "directives": Array [],
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
-                                  "value": "communityName",
+                                  "value": "name",
                                 },
                                 "selectionSet": undefined,
                               },
@@ -19883,7 +20027,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 1461,
+                        "end": 1473,
                         "start": 0,
                       },
                     },
@@ -20548,13 +20692,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "publicUserName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "publicUserName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -20663,13 +20810,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "communityName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "communityName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -20748,7 +20898,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 1461,
+                      "end": 1473,
                       "start": 0,
                     },
                   },
@@ -21378,13 +21528,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "publicUserName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "publicUserName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -21479,13 +21632,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "communityName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "communityName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -21550,7 +21706,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 1461,
+                    "end": 1473,
                     "start": 0,
                   },
                 } => Object {
@@ -22184,13 +22340,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "publicUserName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "publicUserName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -22299,13 +22458,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "communityName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "communityName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -22384,7 +22546,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 1461,
+                    "end": 1473,
                     "start": 0,
                   },
                 },
@@ -23019,13 +23181,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "publicUserName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "publicUserName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -23134,13 +23299,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "communityName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "communityName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -23219,7 +23387,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 1461,
+                    "end": 1473,
                     "start": 0,
                   },
                 } => Object {
@@ -23853,13 +24021,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "publicUserName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "publicUserName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -23968,13 +24139,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                             "selectionSet": undefined,
                           },
                           Object {
-                            "alias": undefined,
+                            "alias": Object {
+                              "kind": "Name",
+                              "value": "communityName",
+                            },
                             "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "communityName",
+                              "value": "name",
                             },
                             "selectionSet": undefined,
                           },
@@ -24053,7 +24227,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 1461,
+                    "end": 1473,
                     "start": 0,
                   },
                 },
@@ -24694,13 +24868,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "publicUserName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "publicUserName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -24809,13 +24986,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                               "selectionSet": undefined,
                             },
                             Object {
-                              "alias": undefined,
+                              "alias": Object {
+                                "kind": "Name",
+                                "value": "communityName",
+                              },
                               "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "communityName",
+                                "value": "name",
                               },
                               "selectionSet": undefined,
                             },
@@ -24894,7 +25074,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 1461,
+                      "end": 1473,
                       "start": 0,
                     },
                   },
@@ -25494,13 +25674,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                         "selectionSet": undefined,
                       },
                       Object {
-                        "alias": undefined,
+                        "alias": Object {
+                          "kind": "Name",
+                          "value": "publicUserName",
+                        },
                         "arguments": Array [],
                         "directives": Array [],
                         "kind": "Field",
                         "name": Object {
                           "kind": "Name",
-                          "value": "publicUserName",
+                          "value": "name",
                         },
                         "selectionSet": undefined,
                       },
@@ -25595,13 +25778,16 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
                         "selectionSet": undefined,
                       },
                       Object {
-                        "alias": undefined,
+                        "alias": Object {
+                          "kind": "Name",
+                          "value": "communityName",
+                        },
                         "arguments": Array [],
                         "directives": Array [],
                         "kind": "Field",
                         "name": Object {
                           "kind": "Name",
-                          "value": "communityName",
+                          "value": "name",
                         },
                         "selectionSet": undefined,
                       },
@@ -25666,7 +25852,7 @@ exports[`containers/AddToCollection snapshot should match 1`] = `
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 1461,
+                "end": 1473,
                 "start": 0,
               },
             }

@@ -1,0 +1,926 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`containers/PublishingSelector snapshot should match 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
+        "hoverTextColor": "#108E72",
+        "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
+    }
+  >
+    <MockedProvider
+      addTypename={true}
+    >
+      <ApolloProvider
+        client={
+          ApolloClient {
+            "__operations_cache__": Map {},
+            "cache": InMemoryCache {
+              "addTypename": true,
+              "cacheKeyRoot": KeyTrie {
+                "weakness": true,
+              },
+              "config": Object {
+                "addTypename": true,
+                "dataIdFromObject": [Function],
+                "fragmentMatcher": HeuristicFragmentMatcher {},
+                "freezeResults": false,
+                "resultCaching": true,
+              },
+              "data": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "maybeBroadcastWatch": [Function],
+              "optimisticData": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "silenceBroadcast": false,
+              "storeReader": StoreReader {
+                "executeSelectionSet": [Function],
+                "executeStoreQuery": [Function],
+                "executeSubSelectedArray": [Function],
+                "freezeResults": false,
+              },
+              "storeWriter": StoreWriter {},
+              "typenameDocumentCache": Map {},
+              "watches": Set {},
+            },
+            "clearStoreCallbacks": Array [],
+            "defaultOptions": Object {},
+            "disableNetworkFetches": false,
+            "link": MockLink {
+              "addTypename": true,
+              "mockedResponsesByKey": Object {},
+            },
+            "localState": LocalState {
+              "cache": InMemoryCache {
+                "addTypename": true,
+                "cacheKeyRoot": KeyTrie {
+                  "weakness": true,
+                },
+                "config": Object {
+                  "addTypename": true,
+                  "dataIdFromObject": [Function],
+                  "fragmentMatcher": HeuristicFragmentMatcher {},
+                  "freezeResults": false,
+                  "resultCaching": true,
+                },
+                "data": DepTrackingCache {
+                  "data": Object {},
+                  "depend": [Function],
+                },
+                "maybeBroadcastWatch": [Function],
+                "optimisticData": DepTrackingCache {
+                  "data": Object {},
+                  "depend": [Function],
+                },
+                "silenceBroadcast": false,
+                "storeReader": StoreReader {
+                  "executeSelectionSet": [Function],
+                  "executeStoreQuery": [Function],
+                  "executeSubSelectedArray": [Function],
+                  "freezeResults": false,
+                },
+                "storeWriter": StoreWriter {},
+                "typenameDocumentCache": Map {},
+                "watches": Set {},
+              },
+              "client": [Circular],
+            },
+            "mutate": [Function],
+            "query": [Function],
+            "queryDeduplication": true,
+            "queryManager": QueryManager {
+              "assumeImmutableResults": false,
+              "clientAwareness": Object {
+                "name": undefined,
+                "version": undefined,
+              },
+              "dataStore": DataStore {
+                "cache": InMemoryCache {
+                  "addTypename": true,
+                  "cacheKeyRoot": KeyTrie {
+                    "weakness": true,
+                  },
+                  "config": Object {
+                    "addTypename": true,
+                    "dataIdFromObject": [Function],
+                    "fragmentMatcher": HeuristicFragmentMatcher {},
+                    "freezeResults": false,
+                    "resultCaching": true,
+                  },
+                  "data": DepTrackingCache {
+                    "data": Object {},
+                    "depend": [Function],
+                  },
+                  "maybeBroadcastWatch": [Function],
+                  "optimisticData": DepTrackingCache {
+                    "data": Object {},
+                    "depend": [Function],
+                  },
+                  "silenceBroadcast": false,
+                  "storeReader": StoreReader {
+                    "executeSelectionSet": [Function],
+                    "executeStoreQuery": [Function],
+                    "executeSubSelectedArray": [Function],
+                    "freezeResults": false,
+                  },
+                  "storeWriter": StoreWriter {},
+                  "typenameDocumentCache": Map {},
+                  "watches": Set {},
+                },
+              },
+              "fetchQueryRejectFns": Map {},
+              "idCounter": 1,
+              "inFlightLinkObservables": Map {},
+              "link": MockLink {
+                "addTypename": true,
+                "mockedResponsesByKey": Object {},
+              },
+              "localState": LocalState {
+                "cache": InMemoryCache {
+                  "addTypename": true,
+                  "cacheKeyRoot": KeyTrie {
+                    "weakness": true,
+                  },
+                  "config": Object {
+                    "addTypename": true,
+                    "dataIdFromObject": [Function],
+                    "fragmentMatcher": HeuristicFragmentMatcher {},
+                    "freezeResults": false,
+                    "resultCaching": true,
+                  },
+                  "data": DepTrackingCache {
+                    "data": Object {},
+                    "depend": [Function],
+                  },
+                  "maybeBroadcastWatch": [Function],
+                  "optimisticData": DepTrackingCache {
+                    "data": Object {},
+                    "depend": [Function],
+                  },
+                  "silenceBroadcast": false,
+                  "storeReader": StoreReader {
+                    "executeSelectionSet": [Function],
+                    "executeStoreQuery": [Function],
+                    "executeSubSelectedArray": [Function],
+                    "freezeResults": false,
+                  },
+                  "storeWriter": StoreWriter {},
+                  "typenameDocumentCache": Map {},
+                  "watches": Set {},
+                },
+                "client": [Circular],
+              },
+              "mutationStore": MutationStore {
+                "store": Object {},
+              },
+              "onBroadcast": [Function],
+              "pollingInfoByQueryId": Map {},
+              "queries": Map {},
+              "queryDeduplication": true,
+              "queryStore": QueryStore {
+                "store": Object {},
+              },
+              "ssrMode": false,
+              "transformCache": WeakMap {},
+            },
+            "reFetchObservableQueries": [Function],
+            "resetStore": [Function],
+            "resetStoreCallbacks": Array [],
+            "store": DataStore {
+              "cache": InMemoryCache {
+                "addTypename": true,
+                "cacheKeyRoot": KeyTrie {
+                  "weakness": true,
+                },
+                "config": Object {
+                  "addTypename": true,
+                  "dataIdFromObject": [Function],
+                  "fragmentMatcher": HeuristicFragmentMatcher {},
+                  "freezeResults": false,
+                  "resultCaching": true,
+                },
+                "data": DepTrackingCache {
+                  "data": Object {},
+                  "depend": [Function],
+                },
+                "maybeBroadcastWatch": [Function],
+                "optimisticData": DepTrackingCache {
+                  "data": Object {},
+                  "depend": [Function],
+                },
+                "silenceBroadcast": false,
+                "storeReader": StoreReader {
+                  "executeSelectionSet": [Function],
+                  "executeStoreQuery": [Function],
+                  "executeSubSelectedArray": [Function],
+                  "freezeResults": false,
+                },
+                "storeWriter": StoreWriter {},
+                "typenameDocumentCache": Map {},
+                "watches": Set {},
+              },
+            },
+            "typeDefs": undefined,
+            "version": "2.6.3",
+            "watchQuery": [Function],
+          }
+        }
+      >
+        <PublishingSelector
+          closeModalAction={[MockFunction]}
+          communities={Array []}
+          handleSubmit={[MockFunction]}
+          type="ARTICLE"
+          userId="123"
+        >
+          <AlertViewComponent
+            closeModalAction={[MockFunction]}
+            confirmButtonAction={[Function]}
+            content={
+              <div>
+                <_default
+                  placeHolder="placeholder text"
+                  value="Publish to My ARTICLE"
+                >
+                  <Content
+                    options={
+                      Array [
+                        Object {
+                          "id": "123",
+                          "name": "My ARTICLE",
+                          "type": "USER",
+                        },
+                      ]
+                    }
+                    setDestination={[Function]}
+                  />
+                </_default>
+              </div>
+            }
+            title="Publish"
+          >
+            <AlertView__Container>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "AlertView__Container-sc-3bl8oo-0",
+                      "isStatic": true,
+                      "lastClassName": "bxVYPz",
+                      "rules": Array [
+                        "display:flex;flex-direction:column;min-height:120px;justify-content:center;align-items:center;",
+                      ],
+                    },
+                    "displayName": "AlertView__Container",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "AlertView__Container-sc-3bl8oo-0",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="AlertView__Container-sc-3bl8oo-0 bxVYPz"
+                >
+                  <AlertView__TitleContainer>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "AlertView__TitleContainer-sc-3bl8oo-1",
+                            "isStatic": true,
+                            "lastClassName": "gnLUsN",
+                            "rules": Array [
+                              "display:flex;text-align:center;justify-content:center;> *{text-align:center;}",
+                            ],
+                          },
+                          "displayName": "AlertView__TitleContainer",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "AlertView__TitleContainer-sc-3bl8oo-1",
+                          "target": "div",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <div
+                        className="AlertView__TitleContainer-sc-3bl8oo-1 gnLUsN"
+                      >
+                        <Typography__styledComponent>
+                          <StyledComponent
+                            forwardedComponent={
+                              Object {
+                                "$$typeof": Symbol(react.forward_ref),
+                                "attrs": Array [],
+                                "componentStyle": ComponentStyle {
+                                  "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                  "isStatic": false,
+                                  "lastClassName": "eLGQne",
+                                  "rules": Array [
+                                    "color:",
+                                    [Function],
+                                    ";margin:0px;font-weight:",
+                                    "500",
+                                    ";",
+                                    ";font-size:",
+                                    "20",
+                                    "px;text-transform:",
+                                    [Function],
+                                    ";text-align:",
+                                    [Function],
+                                    ";:hover{color:",
+                                    [Function],
+                                    ";cursor:",
+                                    [Function],
+                                    ";}",
+                                  ],
+                                },
+                                "displayName": "Typography__styledComponent",
+                                "foldedComponentIds": Array [],
+                                "render": [Function],
+                                "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                "target": "span",
+                                "toString": [Function],
+                                "warnTooManyClasses": [Function],
+                                "withComponent": [Function],
+                              }
+                            }
+                            forwardedRef={null}
+                          >
+                            <span
+                              className="Typography__styledComponent-sc-36xkf6-5 eLGQne"
+                            >
+                              Publish
+                            </span>
+                          </StyledComponent>
+                        </Typography__styledComponent>
+                      </div>
+                    </StyledComponent>
+                  </AlertView__TitleContainer>
+                  <div>
+                    <_default
+                      placeHolder="placeholder text"
+                      value="Publish to My ARTICLE"
+                    >
+                      <Tooltip
+                        animateFill={true}
+                        animation="shift"
+                        arrow={false}
+                        arrowSize="regular"
+                        className="aids"
+                        delay={0}
+                        disabled={false}
+                        distance={10}
+                        duration={375}
+                        followCursor={false}
+                        hideDelay={0}
+                        hideDuration={375}
+                        hideOnClick={true}
+                        html={
+                          <Content
+                            options={
+                              Array [
+                                Object {
+                                  "id": "123",
+                                  "name": "My ARTICLE",
+                                  "type": "USER",
+                                },
+                              ]
+                            }
+                            setDestination={[Function]}
+                          />
+                        }
+                        inertia={false}
+                        interactive={false}
+                        interactiveBorder={2}
+                        multiple={false}
+                        offset={0}
+                        onHidden={[Function]}
+                        onHide={[Function]}
+                        onRequestClose={[Function]}
+                        onShow={[Function]}
+                        onShown={[Function]}
+                        popperOptions={Object {}}
+                        position="bottom"
+                        size="regular"
+                        sticky={false}
+                        stickyDuration={200}
+                        style={Object {}}
+                        theme="dark"
+                        touchHold={false}
+                        trigger="click"
+                        unmountHTMLWhenHide={true}
+                      >
+                        <div
+                          className="aids"
+                          style={
+                            Object {
+                              "display": "inline",
+                            }
+                          }
+                        >
+                          <Select>
+                            <StyledComponent
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "Select-sc-8hcz1c-2",
+                                    "isStatic": false,
+                                    "lastClassName": "imEBQo",
+                                    "rules": Array [
+                                      "display:flex;flex-direction:row;justify-content:center;width:300px;height:40px;cursor:pointer;align-items:center;border:1px solid ",
+                                      [Function],
+                                      ";box-sizing:border-box;border-radius:4px;:hover{border:1px solid ",
+                                      [Function],
+                                      ";}>:first-child{margin:auto;}>:last-child{margin-right:",
+                                      [Function],
+                                      "px;}",
+                                    ],
+                                  },
+                                  "displayName": "Select",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "Select-sc-8hcz1c-2",
+                                  "target": "div",
+                                  "toString": [Function],
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                            >
+                              <div
+                                className="Select-sc-8hcz1c-2 imEBQo"
+                              >
+                                <Typography__component
+                                  textTransform="uppercase"
+                                >
+                                  <StyledComponent
+                                    forwardedComponent={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "attrs": Array [],
+                                        "componentStyle": ComponentStyle {
+                                          "componentId": "Typography__component-sc-36xkf6-0",
+                                          "isStatic": false,
+                                          "lastClassName": "kALGmD",
+                                          "rules": Array [
+                                            "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                                            [Function],
+                                            ";text-align:",
+                                            [Function],
+                                            ";",
+                                            [Function],
+                                            " ",
+                                            [Function],
+                                          ],
+                                        },
+                                        "displayName": "Typography__component",
+                                        "foldedComponentIds": Array [],
+                                        "render": [Function],
+                                        "styledComponentId": "Typography__component-sc-36xkf6-0",
+                                        "target": "span",
+                                        "toString": [Function],
+                                        "warnTooManyClasses": [Function],
+                                        "withComponent": [Function],
+                                      }
+                                    }
+                                    forwardedRef={null}
+                                    textTransform="uppercase"
+                                  >
+                                    <span
+                                      className="Typography__component-sc-36xkf6-0 kALGmD"
+                                    >
+                                      Publish to My ARTICLE
+                                    </span>
+                                  </StyledComponent>
+                                </Typography__component>
+                                <DownArrowIcon>
+                                  <svg
+                                    fill="none"
+                                    height="12"
+                                    viewBox="0 0 12 12"
+                                    width="12"
+                                    xlinkHref="http://www.w3.org/1999/xlink"
+                                  >
+                                    <rect
+                                      fill="url(#pattern0)"
+                                      height="12"
+                                      transform="rotate(90 12 0)"
+                                      width="12"
+                                      x="12"
+                                    />
+                                    <mask
+                                      height="12"
+                                      id="mask0"
+                                      mask-type="alpha"
+                                      maskUnits="userSpaceOnUse"
+                                      width="12"
+                                      x="0"
+                                      y="0"
+                                    >
+                                      <rect
+                                        fill="url(#pattern1)"
+                                        height="12"
+                                        transform="rotate(90 12 0)"
+                                        width="12"
+                                        x="12"
+                                      />
+                                    </mask>
+                                    <g
+                                      mask="url(#mask0)"
+                                    >
+                                      <rect
+                                        fill="#0BA986"
+                                        height="12"
+                                        transform="rotate(90 12 0)"
+                                        width="12"
+                                        x="12"
+                                      />
+                                    </g>
+                                    <defs>
+                                      <pattern
+                                        height="1"
+                                        id="pattern0"
+                                        patternContentUnits="objectBoundingBox"
+                                        width="1"
+                                      >
+                                        <use
+                                          transform="scale(0.00961538)"
+                                          xlinkHref="#image0"
+                                        />
+                                      </pattern>
+                                      <pattern
+                                        height="1"
+                                        id="pattern1"
+                                        patternContentUnits="objectBoundingBox"
+                                        width="1"
+                                      >
+                                        <use
+                                          transform="scale(0.00961538)"
+                                          xlinkHref="#image0"
+                                        />
+                                      </pattern>
+                                      <image
+                                        height="104"
+                                        id="image0"
+                                        width="104"
+                                        xlinkHref="data:image/png;base64,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"
+                                      />
+                                    </defs>
+                                  </svg>
+                                </DownArrowIcon>
+                              </div>
+                            </StyledComponent>
+                          </Select>
+                        </div>
+                      </Tooltip>
+                    </_default>
+                  </div>
+                  <AlertView__Footer>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "AlertView__Footer-sc-3bl8oo-2",
+                            "isStatic": false,
+                            "lastClassName": "dBGTTY",
+                            "rules": Array [
+                              "display:flex;flex-direction:row;margin-top:auto;align-self:center;justify-content:space-between;width:100%;>:first-child{margin-right:",
+                              [Function],
+                              "px;}",
+                            ],
+                          },
+                          "displayName": "AlertView__Footer",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "AlertView__Footer-sc-3bl8oo-2",
+                          "target": "div",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <div
+                        className="AlertView__Footer-sc-3bl8oo-2 dBGTTY"
+                      >
+                        <SecondaryButtonComponent
+                          border="hoverTextColor"
+                          color="textPrimary"
+                          onClick={[Function]}
+                        >
+                          <SecondaryButton
+                            bg="transparent"
+                            border="hoverTextColor"
+                            borderHover="primary"
+                            color="textPrimary"
+                            fontSize={0}
+                            fontWeight={700}
+                            mr={2}
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            <StyledComponent
+                              bg="transparent"
+                              border="hoverTextColor"
+                              borderHover="primary"
+                              color="textPrimary"
+                              fontSize={0}
+                              fontWeight={700}
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "SecondaryButton-sy4hb2-0",
+                                    "isStatic": false,
+                                    "lastClassName": "jBRWmt",
+                                    "rules": Array [
+                                      "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
+                                      [Function],
+                                      ";height:40px;border-radius:4px;border:none;cursor:pointer;> svg,img{height:16px;",
+                                      [Function],
+                                      ";}text-transform:uppercase;opacity:",
+                                      [Function],
+                                      ";",
+                                      [Function],
+                                      ";",
+                                      [Function],
+                                      ";",
+                                      [Function],
+                                      ";",
+                                      [Function],
+                                      ";:hover{cursor:",
+                                      [Function],
+                                      ";}",
+                                      ";box-shadow:0px 0px 0px 1px ",
+                                      [Function],
+                                      ";:hover{box-shadow:0px 0px 0px 2px ",
+                                      [Function],
+                                      ";}",
+                                    ],
+                                  },
+                                  "displayName": "SecondaryButton",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "SecondaryButton-sy4hb2-0",
+                                  "target": "button",
+                                  "toString": [Function],
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                              mr={2}
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              <button
+                                className="SecondaryButton-sy4hb2-0 jBRWmt"
+                                color="textPrimary"
+                                fontSize={0}
+                                fontWeight={700}
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                Cancel
+                              </button>
+                            </StyledComponent>
+                          </SecondaryButton>
+                        </SecondaryButtonComponent>
+                        <PrimaryButtonComponent
+                          onClick={[Function]}
+                        >
+                          <PrimaryButton
+                            bg="primary"
+                            color="white"
+                            fontSize={0}
+                            fontWeight={700}
+                            mr={2}
+                            onClick={[Function]}
+                            type="submit"
+                          >
+                            <StyledComponent
+                              bg="primary"
+                              color="white"
+                              fontSize={0}
+                              fontWeight={700}
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "PrimaryButton-sc-1cbxa53-0",
+                                    "isStatic": false,
+                                    "lastClassName": "gGcsYX",
+                                    "rules": Array [
+                                      "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
+                                      [Function],
+                                      ";height:40px;border-radius:4px;border:none;cursor:pointer;> svg,img{height:16px;",
+                                      [Function],
+                                      ";}text-transform:uppercase;opacity:",
+                                      [Function],
+                                      ";",
+                                      [Function],
+                                      ";",
+                                      [Function],
+                                      ";",
+                                      [Function],
+                                      ";",
+                                      [Function],
+                                      ";:hover{cursor:",
+                                      [Function],
+                                      ";}",
+                                      ";:hover{background-color:",
+                                      [Function],
+                                      ";}",
+                                    ],
+                                  },
+                                  "displayName": "PrimaryButton",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "PrimaryButton-sc-1cbxa53-0",
+                                  "target": "button",
+                                  "toString": [Function],
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                              mr={2}
+                              onClick={[Function]}
+                              type="submit"
+                            >
+                              <button
+                                className="PrimaryButton-sc-1cbxa53-0 gGcsYX"
+                                color="white"
+                                fontSize={0}
+                                fontWeight={700}
+                                onClick={[Function]}
+                                type="submit"
+                              >
+                                Confirm
+                              </button>
+                            </StyledComponent>
+                          </PrimaryButton>
+                        </PrimaryButtonComponent>
+                      </div>
+                    </StyledComponent>
+                  </AlertView__Footer>
+                </div>
+              </StyledComponent>
+            </AlertView__Container>
+          </AlertViewComponent>
+        </PublishingSelector>
+      </ApolloProvider>
+    </MockedProvider>
+  </ThemeProvider>
+</Provider>
+`;
