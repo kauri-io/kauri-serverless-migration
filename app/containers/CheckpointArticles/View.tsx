@@ -33,7 +33,7 @@ const CheckpointedArticlesContainer = styled.div`
     text-transform: uppercase;
 `
 
-interface IProps {
+export interface IProps {
     articles?: Article[]
     articleCheckpointed?: boolean
     checkpointArticlesAction: () => void
@@ -62,13 +62,11 @@ export default ({
                 <AllArticlesOnMainnet />
             )}
         </CheckpointArticlesCTAContainer>
-    ) : articleCheckpointed === false ? (
-        isOwner && (
-            <CTA
-                checkpointArticlesAction={checkpointArticlesAction}
-                pageType={pageType}
-            />
-        )
+    ) : articleCheckpointed === false && isOwner ? (
+        <CTA
+            checkpointArticlesAction={checkpointArticlesAction}
+            pageType={pageType}
+        />
     ) : (
         <AllArticlesOnMainnet text={'Article On-chain'} />
     )
