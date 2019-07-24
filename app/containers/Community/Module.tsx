@@ -834,7 +834,7 @@ export const removeResourceEpic: Epic<
 > = (action$, _, { apolloClient, apolloSubscriber }) =>
     action$.ofType(REMOVE_RESOURCE).switchMap(({ payload }) =>
         from(
-            apolloClient.mutate<removeResource, removeResourceVariables>({
+            apolloClient.mutate({
                 mutation: removeResourceMutation,
                 variables: payload,
             })

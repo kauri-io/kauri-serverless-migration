@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import CTA, { CheckpointArticlesIcon } from './CTA'
 import { searchPersonalArticles_searchArticles_content } from '../../queries/__generated__/searchPersonalArticles'
+import { Article } from '../../queries/Fragments/__generated__/Article'
 
 export const AllArticlesOnMainnet = ({
     text = 'All Articles On-chain',

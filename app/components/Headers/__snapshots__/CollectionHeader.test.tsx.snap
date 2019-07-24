@@ -831,7 +831,9 @@ exports[`components/CollectionHeader snapshot should match 1`] = `
                           name="Articles"
                           pageType="CollectionPage"
                         >
-                          <StatisticCount__SectionContainer>
+                          <StatisticCount__SectionContainer
+                            key="Articles"
+                          >
                             <StyledComponent
                               forwardedComponent={
                                 Object {
@@ -956,7 +958,9 @@ exports[`components/CollectionHeader snapshot should match 1`] = `
                           name="Collections"
                           pageType="CollectionPage"
                         >
-                          <StatisticCount__SectionContainer>
+                          <StatisticCount__SectionContainer
+                            key="Collections"
+                          >
                             <StyledComponent
                               forwardedComponent={
                                 Object {

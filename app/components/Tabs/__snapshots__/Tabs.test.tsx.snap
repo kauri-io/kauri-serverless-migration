@@ -1,0 +1,338 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Tabs snapshot should match 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "DEFAULT_CARD_WIDTH": 288,
+      "MAIN_BODY_WIDTH": 1242,
+      "bg": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "bgPrimary": "#1E2428",
+      "bgSecondary": "#1E3D3B",
+      "borderTextArea": "#979797",
+      "breakpoints": Array [
+        "500px",
+        "52em",
+        "1242px",
+      ],
+      "colors": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+      "disabledBackgroundColor": "#D6D6D6",
+      "disabledTextColor": "#9B9B9B",
+      "divider": "#EBEBEB",
+      "errorRedColor": "#C03030",
+      "fontSizes": Array [
+        11,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22,
+        28,
+        32,
+      ],
+      "fontWeight": Array [
+        300,
+        "normal",
+        500,
+        700,
+      ],
+      "hoverTextColor": "#108E72",
+      "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+      "padding": "calc((100vw - 1242px) / 2)",
+      "paddingTop": "2.5em",
+      "primary": "#0BA986",
+      "primaryColor": "#0BA986",
+      "primaryDark": "#11856B",
+      "primaryTextColor": "#1E2428",
+      "secondary": "#11856B",
+      "secondaryBlue": "rgb(81, 123, 162, 1)",
+      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+      "secondaryColor": "#1E3D3B",
+      "secondaryTextColor": "#283035",
+      "space": Array [
+        0,
+        10,
+        15,
+        30,
+        60,
+      ],
+      "tertiaryBackgroundColor": "#F7F7F7",
+      "textPrimary": "#1E2428",
+      "white": "#FFFFFF",
+    }
+  }
+>
+  <TabsComponent
+    panels={
+      Array [
+        <div>
+          Test
+        </div>,
+        <div>
+          Test 2
+        </div>,
+      ]
+    }
+    tabs={
+      Array [
+        Object {
+          "callback": [MockFunction],
+          "name": "First",
+        },
+        Object {
+          "callback": [MockFunction],
+          "name": "second",
+        },
+      ]
+    }
+  >
+    <Tabs__TabContainer
+      className="tabs"
+    >
+      <StyledComponent
+        className="tabs"
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Tabs__TabContainer-sc-1cx8ezj-0",
+              "isStatic": false,
+              "lastClassName": "bzNgfs",
+              "rules": Array [
+                "display:flex;flex-direction:column;overflow-y:auto;min-width:",
+                [Function],
+                ";padding-bottom:",
+                [Function],
+                "px;",
+              ],
+            },
+            "displayName": "Tabs__TabContainer",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "Tabs__TabContainer-sc-1cx8ezj-0",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <div
+          className="tabs Tabs__TabContainer-sc-1cx8ezj-0 bzNgfs"
+        >
+          <Tabs
+            bg="bgSecondary"
+            padContent={true}
+          >
+            <StyledComponent
+              bg="bgSecondary"
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "Tabs-sc-1cx8ezj-1",
+                    "isStatic": false,
+                    "lastClassName": "esitTx",
+                    "rules": Array [
+                      "height:50px;width:100%;color:",
+                      [Function],
+                      ";display:flex;flex-direction:row;align-items:center;background-color:",
+                      [Function],
+                      ";",
+                      [Function],
+                      ";",
+                      [Function],
+                      ";>:not(:last-child){margin-right:",
+                      [Function],
+                      "px;}@media (max-width:",
+                      [Function],
+                      "){padding:0px ",
+                      [Function],
+                      "px;}",
+                    ],
+                  },
+                  "displayName": "Tabs",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "Tabs-sc-1cx8ezj-1",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              padContent={true}
+            >
+              <div
+                className="Tabs-sc-1cx8ezj-1 esitTx"
+              >
+                <Tabs__Tab
+                  key="0"
+                  onClick={[Function]}
+                  selected={true}
+                >
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "Tabs__Tab-sc-1cx8ezj-2",
+                          "isStatic": false,
+                          "lastClassName": "gaDbSs",
+                          "rules": Array [
+                            "height:50px;display:flex;align-items:center;border-bottom:",
+                            [Function],
+                            ";padding-top:",
+                            [Function],
+                            ";cursor:pointer;font-weight:700;text-transform:uppercase;font-size:",
+                            [Function],
+                            "px;",
+                          ],
+                        },
+                        "displayName": "Tabs__Tab",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "Tabs__Tab-sc-1cx8ezj-2",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    onClick={[Function]}
+                    selected={true}
+                  >
+                    <div
+                      className="Tabs__Tab-sc-1cx8ezj-2 bliwJC"
+                      onClick={[Function]}
+                      selected={true}
+                    >
+                      First
+                    </div>
+                  </StyledComponent>
+                </Tabs__Tab>
+                <Tabs__Tab
+                  key="1"
+                  onClick={[Function]}
+                  selected={false}
+                >
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "Tabs__Tab-sc-1cx8ezj-2",
+                          "isStatic": false,
+                          "lastClassName": "gaDbSs",
+                          "rules": Array [
+                            "height:50px;display:flex;align-items:center;border-bottom:",
+                            [Function],
+                            ";padding-top:",
+                            [Function],
+                            ";cursor:pointer;font-weight:700;text-transform:uppercase;font-size:",
+                            [Function],
+                            "px;",
+                          ],
+                        },
+                        "displayName": "Tabs__Tab",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "Tabs__Tab-sc-1cx8ezj-2",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    onClick={[Function]}
+                    selected={false}
+                  >
+                    <div
+                      className="Tabs__Tab-sc-1cx8ezj-2 gaDbSs"
+                      onClick={[Function]}
+                      selected={false}
+                    >
+                      second
+                    </div>
+                  </StyledComponent>
+                </Tabs__Tab>
+              </div>
+            </StyledComponent>
+          </Tabs>
+          <div>
+            Test
+          </div>
+        </div>
+      </StyledComponent>
+    </Tabs__TabContainer>
+  </TabsComponent>
+</ThemeProvider>
+`;

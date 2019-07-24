@@ -74,7 +74,7 @@ export const checkpointArticlesEpic: Epic<
                                 signatureS,
                             },
                         },
-                    }: CheckpointArticlesCommandResponse) =>
+                    }) =>
                         from(getGasPrice()).pipe(
                             mergeMap<number, string>(gasPrice =>
                                 (smartContracts().KauriCore

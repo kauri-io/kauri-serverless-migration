@@ -1,0 +1,2192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Tags/Close snapshot should match 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "DEFAULT_CARD_WIDTH": 288,
+      "MAIN_BODY_WIDTH": 1242,
+      "bg": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "bgPrimary": "#1E2428",
+      "bgSecondary": "#1E3D3B",
+      "borderTextArea": "#979797",
+      "breakpoints": Array [
+        "500px",
+        "52em",
+        "1242px",
+      ],
+      "colors": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+      "disabledBackgroundColor": "#D6D6D6",
+      "disabledTextColor": "#9B9B9B",
+      "divider": "#EBEBEB",
+      "errorRedColor": "#C03030",
+      "fontSizes": Array [
+        11,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22,
+        28,
+        32,
+      ],
+      "fontWeight": Array [
+        300,
+        "normal",
+        500,
+        700,
+      ],
+      "hoverTextColor": "#108E72",
+      "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+      "padding": "calc((100vw - 1242px) / 2)",
+      "paddingTop": "2.5em",
+      "primary": "#0BA986",
+      "primaryColor": "#0BA986",
+      "primaryDark": "#11856B",
+      "primaryTextColor": "#1E2428",
+      "secondary": "#11856B",
+      "secondaryBlue": "rgb(81, 123, 162, 1)",
+      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+      "secondaryColor": "#1E3D3B",
+      "secondaryTextColor": "#283035",
+      "space": Array [
+        0,
+        10,
+        15,
+        30,
+        60,
+      ],
+      "tertiaryBackgroundColor": "#F7F7F7",
+      "textPrimary": "#1E2428",
+      "white": "#FFFFFF",
+    }
+  }
+>
+  <Close
+    onClick={[Function]}
+  >
+    <svg
+      fill="none"
+      height="18"
+      onClick={[Function]}
+      viewBox="0 0 18 18"
+      width="18"
+    >
+      <rect
+        fill="url(#closePattenId0)"
+        height="18"
+        width="18"
+      />
+      <defs>
+        <pattern
+          height="1"
+          id="closePattenId0"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+        >
+          <use
+            transform="scale(0.00833333)"
+            xlinkHref="#closeImage0"
+          />
+        </pattern>
+        <image
+          height="120"
+          id="closeImage0"
+          width="120"
+          xlinkHref="data:image/png;base64,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"
+        />
+      </defs>
+    </svg>
+  </Close>
+</ThemeProvider>
+`;
+
+exports[`components/Tags/Plus snapshot should match 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "DEFAULT_CARD_WIDTH": 288,
+      "MAIN_BODY_WIDTH": 1242,
+      "bg": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "bgPrimary": "#1E2428",
+      "bgSecondary": "#1E3D3B",
+      "borderTextArea": "#979797",
+      "breakpoints": Array [
+        "500px",
+        "52em",
+        "1242px",
+      ],
+      "colors": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+      "disabledBackgroundColor": "#D6D6D6",
+      "disabledTextColor": "#9B9B9B",
+      "divider": "#EBEBEB",
+      "errorRedColor": "#C03030",
+      "fontSizes": Array [
+        11,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22,
+        28,
+        32,
+      ],
+      "fontWeight": Array [
+        300,
+        "normal",
+        500,
+        700,
+      ],
+      "hoverTextColor": "#108E72",
+      "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+      "padding": "calc((100vw - 1242px) / 2)",
+      "paddingTop": "2.5em",
+      "primary": "#0BA986",
+      "primaryColor": "#0BA986",
+      "primaryDark": "#11856B",
+      "primaryTextColor": "#1E2428",
+      "secondary": "#11856B",
+      "secondaryBlue": "rgb(81, 123, 162, 1)",
+      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+      "secondaryColor": "#1E3D3B",
+      "secondaryTextColor": "#283035",
+      "space": Array [
+        0,
+        10,
+        15,
+        30,
+        60,
+      ],
+      "tertiaryBackgroundColor": "#F7F7F7",
+      "textPrimary": "#1E2428",
+      "white": "#FFFFFF",
+    }
+  }
+>
+  <Plus>
+    <svg
+      fill="none"
+      height="18"
+      viewBox="0 0 18 18"
+      width="18"
+    >
+      <mask
+        height="18"
+        id="plusMask0"
+        mask-type="alpha"
+        maskUnits="userSpaceOnUse"
+        width="18"
+        x="0"
+        y="0"
+      >
+        <rect
+          fill="url(#plusPattern1)"
+          height="18"
+          width="18"
+          x="0"
+          y="0"
+        />
+      </mask>
+      <g
+        mask="url(#plusMask0)"
+      >
+        <rect
+          fill="#0BA986"
+          height="18"
+          width="18"
+          x="0"
+          y="0"
+        />
+      </g>
+      <defs>
+        <pattern
+          height="1"
+          id="plusPattern1"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+        >
+          <use
+            transform="scale(0.00961538)"
+            xlinkHref="#plusImage0"
+          />
+        </pattern>
+        <image
+          height="104"
+          id="plusImage0"
+          width="104"
+          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAABoCAYAAAAdHLWhAAAAAXNSR0IArs4c6QAAAv5JREFUeAHtnUFOG0EQRXEkNkE5ELCAkyGRa0EUVsB9YjZh4VRLXnhhi6r+/iqP81pqEZmq+T3veSzRmnEuLhgQgAAEIAABCEAAAhCAAAQgAAEIQAACEIAABA4Q2Gw2tzGfY37E/Gqso2DU3hw4HC8fk0CAHnL+xqyO0YOkY8rYd6yA/KtqZqf+ad8xT/m11Skvbt/aAvY6Xr/a97vEa+vVavUjUXcyJUsUtFHohaBFnfM35WTp9RNAkJ+xlIAgCZ+/GUF+xlICgiR8/mYE+RlLCQiS8PmbEeRnLCUgSMLnb0aQn7GUgCAJn78ZQX7GUgKCJHz+ZgT5GUsJCJLw+ZsR5GcsJSBIwudvRpCfsZSAIAmfvxlBfsZSAoIkfP5mBPkZSwkIkvD5mxHkZywlIEjC529GkJ+xlIAgCZ+/eeo+5biB/TaW9hjzOuZ3/zIXnfARq3+P+RC3hb9Wz6QsaCvndwRdVsP+8/rPOP/7qqSZj7ifyJl6q4039PjUKY2ZK0h5Pqe0uDMsLj+fNCNIej7nDKGXTqn6fNLMR1xpQRRrBBCk8bN3I8iOWAtAkMbP3o0gO2ItAEEaP3s3guyItYAZQWNviTFHYPyRXxozgsbGH2OOQJndzE7C+EKil5hsltYkjc3Su9hJeKu0la+g7W7sfYQ8xyxfspXFnUntYDRYleWM8y9fQaOpc4xvrlLyq3thStYxestX0DFCOUaeAILyrFoqEdSCPR+KoDyrlkoEtWDPhyIoz6qlEkEt2POhCMqzaqlEUAv2fCiC8qxaKhHUgj0fiqA8q5ZKBLVgz4ciKM+qpRJBLdjzoQjKs2qpRFAL9nwogvKsWioR1II9H4qgPKuWSgS1YM+HIijPqqUSQS3Y86EIyrNqqURQC/Z8KILyrFoqEdSCPR+6REHK80mLu9l/iYLKz9jsvF+V3p3D8M+DBOLhhpuYs//Z+vh2LoabwFbSU/z8E/OrMWpGLXLcYjg+BCAAAQhAAAIQgAAEIAABCEAAAhCAAAQWTOAfqlxd4sUV9HUAAAAASUVORK5CYII="
+        />
+      </defs>
+    </svg>
+  </Plus>
+</ThemeProvider>
+`;
+
+exports[`components/Tags/Tag snapshot should match 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "DEFAULT_CARD_WIDTH": 288,
+      "MAIN_BODY_WIDTH": 1242,
+      "bg": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "bgPrimary": "#1E2428",
+      "bgSecondary": "#1E3D3B",
+      "borderTextArea": "#979797",
+      "breakpoints": Array [
+        "500px",
+        "52em",
+        "1242px",
+      ],
+      "colors": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+      "disabledBackgroundColor": "#D6D6D6",
+      "disabledTextColor": "#9B9B9B",
+      "divider": "#EBEBEB",
+      "errorRedColor": "#C03030",
+      "fontSizes": Array [
+        11,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22,
+        28,
+        32,
+      ],
+      "fontWeight": Array [
+        300,
+        "normal",
+        500,
+        700,
+      ],
+      "hoverTextColor": "#108E72",
+      "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+      "padding": "calc((100vw - 1242px) / 2)",
+      "paddingTop": "2.5em",
+      "primary": "#0BA986",
+      "primaryColor": "#0BA986",
+      "primaryDark": "#11856B",
+      "primaryTextColor": "#1E2428",
+      "secondary": "#11856B",
+      "secondaryBlue": "rgb(81, 123, 162, 1)",
+      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+      "secondaryColor": "#1E3D3B",
+      "secondaryTextColor": "#283035",
+      "space": Array [
+        0,
+        10,
+        15,
+        30,
+        60,
+      ],
+      "tertiaryBackgroundColor": "#F7F7F7",
+      "textPrimary": "#1E2428",
+      "white": "#FFFFFF",
+    }
+  }
+>
+  <Tag
+    color="bgPrimary"
+    removeTag={[MockFunction]}
+    tag="test"
+  >
+    <Tag__Container>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "Tag__Container-sc-174q8by-0",
+              "isStatic": false,
+              "lastClassName": "imVnjm",
+              "rules": Array [
+                "display:flex;align-items:center;& > svg{cursor:pointer;}margin-right:",
+                [Function],
+                "px;",
+              ],
+            },
+            "displayName": "Tag__Container",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "Tag__Container-sc-174q8by-0",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <div
+          className="Tag__Container-sc-174q8by-0 imVnjm"
+        >
+          <Close
+            onClick={[Function]}
+          >
+            <svg
+              fill="none"
+              height="18"
+              onClick={[Function]}
+              viewBox="0 0 18 18"
+              width="18"
+            >
+              <rect
+                fill="url(#closePattenId0)"
+                height="18"
+                width="18"
+              />
+              <defs>
+                <pattern
+                  height="1"
+                  id="closePattenId0"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                >
+                  <use
+                    transform="scale(0.00833333)"
+                    xlinkHref="#closeImage0"
+                  />
+                </pattern>
+                <image
+                  height="120"
+                  id="closeImage0"
+                  width="120"
+                  xlinkHref="data:image/png;base64,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"
+                />
+              </defs>
+            </svg>
+          </Close>
+          <TagName
+            color="bgPrimary"
+          >
+            <StyledComponent
+              color="bgPrimary"
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "TagName-sc-1eewwr1-0",
+                    "isStatic": false,
+                    "lastClassName": "vLyMo",
+                    "rules": Array [
+                      "font-weight:",
+                      [Function],
+                      ";font-size:",
+                      [Function],
+                      "px;text-transform:uppercase;color:",
+                      [Function],
+                      ";margin-top:1px;color:",
+                      [Function],
+                      ";",
+                    ],
+                  },
+                  "displayName": "TagName",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "TagName-sc-1eewwr1-0",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <div
+                className="TagName-sc-1eewwr1-0 vLyMo"
+                color="bgPrimary"
+              >
+                test
+              </div>
+            </StyledComponent>
+          </TagName>
+        </div>
+      </StyledComponent>
+    </Tag__Container>
+  </Tag>
+</ThemeProvider>
+`;
+
+exports[`components/Tags/TagInput snapshot should match 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "DEFAULT_CARD_WIDTH": 288,
+      "MAIN_BODY_WIDTH": 1242,
+      "bg": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "bgPrimary": "#1E2428",
+      "bgSecondary": "#1E3D3B",
+      "borderTextArea": "#979797",
+      "breakpoints": Array [
+        "500px",
+        "52em",
+        "1242px",
+      ],
+      "colors": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+      "disabledBackgroundColor": "#D6D6D6",
+      "disabledTextColor": "#9B9B9B",
+      "divider": "#EBEBEB",
+      "errorRedColor": "#C03030",
+      "fontSizes": Array [
+        11,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22,
+        28,
+        32,
+      ],
+      "fontWeight": Array [
+        300,
+        "normal",
+        500,
+        700,
+      ],
+      "hoverTextColor": "#108E72",
+      "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+      "padding": "calc((100vw - 1242px) / 2)",
+      "paddingTop": "2.5em",
+      "primary": "#0BA986",
+      "primaryColor": "#0BA986",
+      "primaryDark": "#11856B",
+      "primaryTextColor": "#1E2428",
+      "secondary": "#11856B",
+      "secondaryBlue": "rgb(81, 123, 162, 1)",
+      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+      "secondaryColor": "#1E3D3B",
+      "secondaryTextColor": "#283035",
+      "space": Array [
+        0,
+        10,
+        15,
+        30,
+        60,
+      ],
+      "tertiaryBackgroundColor": "#F7F7F7",
+      "textPrimary": "#1E2428",
+      "white": "#FFFFFF",
+    }
+  }
+>
+  <TagInput
+    handleEnterKey={[MockFunction]}
+    removeLastTag={[MockFunction]}
+  >
+    <TagInput__Wrapper>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "TagInput__Wrapper-sc-1g13u3f-0",
+              "isStatic": true,
+              "lastClassName": "fzNisK",
+              "rules": Array [
+                "background:transparent;display:flex;flex-direction:column;position:relative;",
+              ],
+            },
+            "displayName": "TagInput__Wrapper",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "TagInput__Wrapper-sc-1g13u3f-0",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <div
+          className="TagInput__Wrapper-sc-1g13u3f-0 fzNisK"
+        >
+          <div>
+            <TagInput__TopRow>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "TagInput__TopRow-sc-1g13u3f-1",
+                      "isStatic": false,
+                      "lastClassName": "emHHcw",
+                      "rules": Array [
+                        "display:flex;align-items:center;& > svg{margin-right:",
+                        [Function],
+                        "px;cursor:pointer;}",
+                      ],
+                    },
+                    "displayName": "TagInput__TopRow",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "TagInput__TopRow-sc-1g13u3f-1",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="TagInput__TopRow-sc-1g13u3f-1 emHHcw"
+                >
+                  <Plus>
+                    <svg
+                      fill="none"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      width="18"
+                    >
+                      <mask
+                        height="18"
+                        id="plusMask0"
+                        mask-type="alpha"
+                        maskUnits="userSpaceOnUse"
+                        width="18"
+                        x="0"
+                        y="0"
+                      >
+                        <rect
+                          fill="url(#plusPattern1)"
+                          height="18"
+                          width="18"
+                          x="0"
+                          y="0"
+                        />
+                      </mask>
+                      <g
+                        mask="url(#plusMask0)"
+                      >
+                        <rect
+                          fill="#0BA986"
+                          height="18"
+                          width="18"
+                          x="0"
+                          y="0"
+                        />
+                      </g>
+                      <defs>
+                        <pattern
+                          height="1"
+                          id="plusPattern1"
+                          patternContentUnits="objectBoundingBox"
+                          width="1"
+                        >
+                          <use
+                            transform="scale(0.00961538)"
+                            xlinkHref="#plusImage0"
+                          />
+                        </pattern>
+                        <image
+                          height="104"
+                          id="plusImage0"
+                          width="104"
+                          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAABoCAYAAAAdHLWhAAAAAXNSR0IArs4c6QAAAv5JREFUeAHtnUFOG0EQRXEkNkE5ELCAkyGRa0EUVsB9YjZh4VRLXnhhi6r+/iqP81pqEZmq+T3veSzRmnEuLhgQgAAEIAABCEAAAhCAAAQgAAEIQAACEIAABA4Q2Gw2tzGfY37E/Gqso2DU3hw4HC8fk0CAHnL+xqyO0YOkY8rYd6yA/KtqZqf+ad8xT/m11Skvbt/aAvY6Xr/a97vEa+vVavUjUXcyJUsUtFHohaBFnfM35WTp9RNAkJ+xlIAgCZ+/GUF+xlICgiR8/mYE+RlLCQiS8PmbEeRnLCUgSMLnb0aQn7GUgCAJn78ZQX7GUgKCJHz+ZgT5GUsJCJLw+ZsR5GcsJSBIwudvRpCfsZSAIAmfvxlBfsZSAoIkfP5mBPkZSwkIkvD5mxHkZywlIEjC529GkJ+xlIAgCZ+/eeo+5biB/TaW9hjzOuZ3/zIXnfARq3+P+RC3hb9Wz6QsaCvndwRdVsP+8/rPOP/7qqSZj7ifyJl6q4039PjUKY2ZK0h5Pqe0uDMsLj+fNCNIej7nDKGXTqn6fNLMR1xpQRRrBBCk8bN3I8iOWAtAkMbP3o0gO2ItAEEaP3s3guyItYAZQWNviTFHYPyRXxozgsbGH2OOQJndzE7C+EKil5hsltYkjc3Su9hJeKu0la+g7W7sfYQ8xyxfspXFnUntYDRYleWM8y9fQaOpc4xvrlLyq3thStYxestX0DFCOUaeAILyrFoqEdSCPR+KoDyrlkoEtWDPhyIoz6qlEkEt2POhCMqzaqlEUAv2fCiC8qxaKhHUgj0fiqA8q5ZKBLVgz4ciKM+qpRJBLdjzoQjKs2qpRFAL9nwogvKsWioR1II9H4qgPKuWSgS1YM+HIijPqqUSQS3Y86EIyrNqqURQC/Z8KILyrFoqEdSCPR+6REHK80mLu9l/iYLKz9jsvF+V3p3D8M+DBOLhhpuYs//Z+vh2LoabwFbSU/z8E/OrMWpGLXLcYjg+BCAAAQhAAAIQgAAEIAABCEAAAhCAAAQWTOAfqlxd4sUV9HUAAAAASUVORK5CYII="
+                        />
+                      </defs>
+                    </svg>
+                  </Plus>
+                  <Input
+                    color="white"
+                    fontSize={0}
+                    fontWeight={600}
+                    onKeyPress={[Function]}
+                    onKeyUp={[Function]}
+                    placeHolder="ADD TAG"
+                    textAlign="left"
+                  >
+                    <Input__Wrapper
+                      textAlign="left"
+                    >
+                      <StyledComponent
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "Input__Wrapper-sc-100s1kb-2",
+                              "isStatic": false,
+                              "lastClassName": "ekFmoA",
+                              "rules": Array [
+                                "display:flex;position:relative;align-self:auto;",
+                                [Function],
+                                " ",
+                                [Function],
+                                " ",
+                                [Function],
+                              ],
+                            },
+                            "displayName": "Input__Wrapper",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "Input__Wrapper-sc-100s1kb-2",
+                            "target": "div",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        textAlign="left"
+                      >
+                        <div
+                          className="Input__Wrapper-sc-100s1kb-2 ekFmoA"
+                        >
+                          <Input__InputComp
+                            color="white"
+                            fontSize={0}
+                            fontWeight={600}
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            onKeyPress={[Function]}
+                            onKeyUp={[Function]}
+                            placeholder="ADD TAG"
+                            textAlign="left"
+                            value=""
+                          >
+                            <StyledComponent
+                              color="white"
+                              fontSize={0}
+                              fontWeight={600}
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "Input__InputComp-sc-100s1kb-0",
+                                    "isStatic": false,
+                                    "lastClassName": "ignUYs",
+                                    "rules": Array [
+                                      "text-align:",
+                                      [Function],
+                                      ";font-size:",
+                                      [Function],
+                                      "px;font-weight:",
+                                      [Function],
+                                      ";color:",
+                                      [Function],
+                                      ";background:transparent;width:100%;outline:none;border:none;::-webkit-input-placeholder{color:",
+                                      [Function],
+                                      ";}:focus::-webkit-input-placeholder{text-indent:-999px;}",
+                                    ],
+                                  },
+                                  "displayName": "Input__InputComp",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "Input__InputComp-sc-100s1kb-0",
+                                  "target": "input",
+                                  "toString": [Function],
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              onKeyPress={[Function]}
+                              onKeyUp={[Function]}
+                              placeholder="ADD TAG"
+                              textAlign="left"
+                              value=""
+                            >
+                              <input
+                                className="Input__InputComp-sc-100s1kb-0 ignUYs"
+                                color="white"
+                                fontSize={0}
+                                fontWeight={600}
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onFocus={[Function]}
+                                onKeyPress={[Function]}
+                                onKeyUp={[Function]}
+                                placeholder="ADD TAG"
+                                value=""
+                              />
+                            </StyledComponent>
+                          </Input__InputComp>
+                          <Input__Underline
+                            fontSize={0}
+                            textAlign="left"
+                          >
+                            <StyledComponent
+                              fontSize={0}
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "Input__Underline-sc-100s1kb-1",
+                                    "isStatic": false,
+                                    "lastClassName": "jFXrzX",
+                                    "rules": Array [
+                                      "user-select:none;border-top:2px solid ",
+                                      [Function],
+                                      ";position:",
+                                      [Function],
+                                      " left:0;bottom:0;max-width:100%;height:0px;color:transparent;overflow:hidden;font-size:",
+                                      [Function],
+                                      "px;margin-left:2px;",
+                                    ],
+                                  },
+                                  "displayName": "Input__Underline",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "Input__Underline-sc-100s1kb-1",
+                                  "target": "span",
+                                  "toString": [Function],
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                              textAlign="left"
+                            >
+                              <span
+                                className="Input__Underline-sc-100s1kb-1 jFXrzX"
+                                fontSize={0}
+                              >
+                                ADD TAG
+                              </span>
+                            </StyledComponent>
+                          </Input__Underline>
+                        </div>
+                      </StyledComponent>
+                    </Input__Wrapper>
+                  </Input>
+                </div>
+              </StyledComponent>
+            </TagInput__TopRow>
+          </div>
+        </div>
+      </StyledComponent>
+    </TagInput__Wrapper>
+  </TagInput>
+</ThemeProvider>
+`;
+
+exports[`components/Tags/TagList snapshot should match 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "DEFAULT_CARD_WIDTH": 288,
+      "MAIN_BODY_WIDTH": 1242,
+      "bg": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "bgPrimary": "#1E2428",
+      "bgSecondary": "#1E3D3B",
+      "borderTextArea": "#979797",
+      "breakpoints": Array [
+        "500px",
+        "52em",
+        "1242px",
+      ],
+      "colors": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+      "disabledBackgroundColor": "#D6D6D6",
+      "disabledTextColor": "#9B9B9B",
+      "divider": "#EBEBEB",
+      "errorRedColor": "#C03030",
+      "fontSizes": Array [
+        11,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22,
+        28,
+        32,
+      ],
+      "fontWeight": Array [
+        300,
+        "normal",
+        500,
+        700,
+      ],
+      "hoverTextColor": "#108E72",
+      "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+      "padding": "calc((100vw - 1242px) / 2)",
+      "paddingTop": "2.5em",
+      "primary": "#0BA986",
+      "primaryColor": "#0BA986",
+      "primaryDark": "#11856B",
+      "primaryTextColor": "#1E2428",
+      "secondary": "#11856B",
+      "secondaryBlue": "rgb(81, 123, 162, 1)",
+      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+      "secondaryColor": "#1E3D3B",
+      "secondaryTextColor": "#283035",
+      "space": Array [
+        0,
+        10,
+        15,
+        30,
+        60,
+      ],
+      "tertiaryBackgroundColor": "#F7F7F7",
+      "textPrimary": "#1E2428",
+      "white": "#FFFFFF",
+    }
+  }
+>
+  <TagList
+    color="bgPrimary"
+    maxTags={4}
+    tags={
+      Array [
+        "test",
+      ]
+    }
+  >
+    <TagList__Container>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "TagList__Container-ipfhd9-0",
+              "isStatic": false,
+              "lastClassName": "ihYPdv",
+              "rules": Array [
+                "display:flex;margin:",
+                "10",
+                "px 0 0 0;flex-direction:",
+                [Function],
+                ";flex-wrap:wrap;justify-content:",
+                [Function],
+                ";",
+              ],
+            },
+            "displayName": "TagList__Container",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "TagList__Container-ipfhd9-0",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <div
+          className="TagList__Container-ipfhd9-0 ihYPdv"
+        >
+          <TagList__StyledTag
+            color="bgPrimary"
+            hiddenTags={false}
+            key="0"
+            onClick={[Function]}
+          >
+            <StyledComponent
+              color="bgPrimary"
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "TagList__StyledTag-ipfhd9-1",
+                    "isStatic": false,
+                    "lastClassName": "eGuhSG",
+                    "rules": Array [
+                      "cursor:pointer;transition:0.3s;&:not(:last-child):after{content:'•';color:",
+                      "#0BA986",
+                      ";margin:",
+                      "5",
+                      "px;font-weight:",
+                      "700",
+                      ";}&:hover{color:",
+                      "#0BA986",
+                      ";}",
+                      [Function],
+                      ";",
+                      [Function],
+                      ";",
+                    ],
+                  },
+                  "displayName": "TagList__StyledTag",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "TagList__StyledTag-ipfhd9-1",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              hiddenTags={false}
+              onClick={[Function]}
+            >
+              <div
+                className="TagList__StyledTag-ipfhd9-1 eGuhSG"
+                color="bgPrimary"
+                onClick={[Function]}
+              >
+                test
+              </div>
+            </StyledComponent>
+          </TagList__StyledTag>
+        </div>
+      </StyledComponent>
+    </TagList__Container>
+  </TagList>
+</ThemeProvider>
+`;
+
+exports[`components/Tags/TagName snapshot should match 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "DEFAULT_CARD_WIDTH": 288,
+      "MAIN_BODY_WIDTH": 1242,
+      "bg": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "bgPrimary": "#1E2428",
+      "bgSecondary": "#1E3D3B",
+      "borderTextArea": "#979797",
+      "breakpoints": Array [
+        "500px",
+        "52em",
+        "1242px",
+      ],
+      "colors": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+      "disabledBackgroundColor": "#D6D6D6",
+      "disabledTextColor": "#9B9B9B",
+      "divider": "#EBEBEB",
+      "errorRedColor": "#C03030",
+      "fontSizes": Array [
+        11,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22,
+        28,
+        32,
+      ],
+      "fontWeight": Array [
+        300,
+        "normal",
+        500,
+        700,
+      ],
+      "hoverTextColor": "#108E72",
+      "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+      "padding": "calc((100vw - 1242px) / 2)",
+      "paddingTop": "2.5em",
+      "primary": "#0BA986",
+      "primaryColor": "#0BA986",
+      "primaryDark": "#11856B",
+      "primaryTextColor": "#1E2428",
+      "secondary": "#11856B",
+      "secondaryBlue": "rgb(81, 123, 162, 1)",
+      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+      "secondaryColor": "#1E3D3B",
+      "secondaryTextColor": "#283035",
+      "space": Array [
+        0,
+        10,
+        15,
+        30,
+        60,
+      ],
+      "tertiaryBackgroundColor": "#F7F7F7",
+      "textPrimary": "#1E2428",
+      "white": "#FFFFFF",
+    }
+  }
+>
+  <TagName
+    color="bgPrimary"
+  >
+    <StyledComponent
+      color="bgPrimary"
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "TagName-sc-1eewwr1-0",
+            "isStatic": false,
+            "lastClassName": "vLyMo",
+            "rules": Array [
+              "font-weight:",
+              [Function],
+              ";font-size:",
+              [Function],
+              "px;text-transform:uppercase;color:",
+              [Function],
+              ";margin-top:1px;color:",
+              [Function],
+              ";",
+            ],
+          },
+          "displayName": "TagName",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "TagName-sc-1eewwr1-0",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="TagName-sc-1eewwr1-0 vLyMo"
+        color="bgPrimary"
+      />
+    </StyledComponent>
+  </TagName>
+</ThemeProvider>
+`;
+
+exports[`components/Tags/TagSelector snapshot should match 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "DEFAULT_CARD_WIDTH": 288,
+      "MAIN_BODY_WIDTH": 1242,
+      "bg": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "bgPrimary": "#1E2428",
+      "bgSecondary": "#1E3D3B",
+      "borderTextArea": "#979797",
+      "breakpoints": Array [
+        "500px",
+        "52em",
+        "1242px",
+      ],
+      "colors": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+      "disabledBackgroundColor": "#D6D6D6",
+      "disabledTextColor": "#9B9B9B",
+      "divider": "#EBEBEB",
+      "errorRedColor": "#C03030",
+      "fontSizes": Array [
+        11,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22,
+        28,
+        32,
+      ],
+      "fontWeight": Array [
+        300,
+        "normal",
+        500,
+        700,
+      ],
+      "hoverTextColor": "#108E72",
+      "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+      "padding": "calc((100vw - 1242px) / 2)",
+      "paddingTop": "2.5em",
+      "primary": "#0BA986",
+      "primaryColor": "#0BA986",
+      "primaryDark": "#11856B",
+      "primaryTextColor": "#1E2428",
+      "secondary": "#11856B",
+      "secondaryBlue": "rgb(81, 123, 162, 1)",
+      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+      "secondaryColor": "#1E3D3B",
+      "secondaryTextColor": "#283035",
+      "space": Array [
+        0,
+        10,
+        15,
+        30,
+        60,
+      ],
+      "tertiaryBackgroundColor": "#F7F7F7",
+      "textPrimary": "#1E2428",
+      "white": "#FFFFFF",
+    }
+  }
+>
+  <TagSelector
+    availableTags={
+      Array [
+        Object {
+          "tag": "test3",
+        },
+      ]
+    }
+    fetchMatches={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    maxTags={5}
+    onChange={[MockFunction]}
+    tags={
+      Array [
+        "test",
+        "test2",
+      ]
+    }
+  >
+    <TagSelector__Container>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "TagSelector__Container-sc-1n1wtk6-0",
+              "isStatic": true,
+              "lastClassName": "lkiKtv",
+              "rules": Array [
+                "display:flex;flex-direction:row;flex-wrap:wrap;",
+              ],
+            },
+            "displayName": "TagSelector__Container",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "TagSelector__Container-sc-1n1wtk6-0",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <div
+          className="TagSelector__Container-sc-1n1wtk6-0 lkiKtv"
+        >
+          <TagSelector__Heading>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "TagSelector__Heading-sc-1n1wtk6-1",
+                    "isStatic": false,
+                    "lastClassName": "hRwgsM",
+                    "rules": Array [
+                      "color:white;text-transform:uppercase;font-size:",
+                      [Function],
+                      "px;width:100%;font-weight:500;margin-bottom:",
+                      [Function],
+                      "px;",
+                    ],
+                  },
+                  "displayName": "TagSelector__Heading",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "TagSelector__Heading-sc-1n1wtk6-1",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <div
+                className="TagSelector__Heading-sc-1n1wtk6-1 hRwgsM"
+              >
+                Tags Min 1 Max 
+                5
+              </div>
+            </StyledComponent>
+          </TagSelector__Heading>
+          <Tag
+            color="white"
+            key="test"
+            removeTag={[Function]}
+            tag="test"
+          >
+            <Tag__Container>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Tag__Container-sc-174q8by-0",
+                      "isStatic": false,
+                      "lastClassName": "imVnjm",
+                      "rules": Array [
+                        "display:flex;align-items:center;& > svg{cursor:pointer;}margin-right:",
+                        [Function],
+                        "px;",
+                      ],
+                    },
+                    "displayName": "Tag__Container",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "Tag__Container-sc-174q8by-0",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="Tag__Container-sc-174q8by-0 imVnjm"
+                >
+                  <Close
+                    onClick={[Function]}
+                  >
+                    <svg
+                      fill="none"
+                      height="18"
+                      onClick={[Function]}
+                      viewBox="0 0 18 18"
+                      width="18"
+                    >
+                      <rect
+                        fill="url(#closePattenId0)"
+                        height="18"
+                        width="18"
+                      />
+                      <defs>
+                        <pattern
+                          height="1"
+                          id="closePattenId0"
+                          patternContentUnits="objectBoundingBox"
+                          width="1"
+                        >
+                          <use
+                            transform="scale(0.00833333)"
+                            xlinkHref="#closeImage0"
+                          />
+                        </pattern>
+                        <image
+                          height="120"
+                          id="closeImage0"
+                          width="120"
+                          xlinkHref="data:image/png;base64,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"
+                        />
+                      </defs>
+                    </svg>
+                  </Close>
+                  <TagName
+                    color="white"
+                  >
+                    <StyledComponent
+                      color="white"
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "TagName-sc-1eewwr1-0",
+                            "isStatic": false,
+                            "lastClassName": "klJCku",
+                            "rules": Array [
+                              "font-weight:",
+                              [Function],
+                              ";font-size:",
+                              [Function],
+                              "px;text-transform:uppercase;color:",
+                              [Function],
+                              ";margin-top:1px;color:",
+                              [Function],
+                              ";",
+                            ],
+                          },
+                          "displayName": "TagName",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "TagName-sc-1eewwr1-0",
+                          "target": "div",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <div
+                        className="TagName-sc-1eewwr1-0 klJCku"
+                        color="white"
+                      >
+                        test
+                      </div>
+                    </StyledComponent>
+                  </TagName>
+                </div>
+              </StyledComponent>
+            </Tag__Container>
+          </Tag>
+          <Tag
+            color="white"
+            key="test2"
+            removeTag={[Function]}
+            tag="test2"
+          >
+            <Tag__Container>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Tag__Container-sc-174q8by-0",
+                      "isStatic": false,
+                      "lastClassName": "imVnjm",
+                      "rules": Array [
+                        "display:flex;align-items:center;& > svg{cursor:pointer;}margin-right:",
+                        [Function],
+                        "px;",
+                      ],
+                    },
+                    "displayName": "Tag__Container",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "Tag__Container-sc-174q8by-0",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="Tag__Container-sc-174q8by-0 imVnjm"
+                >
+                  <Close
+                    onClick={[Function]}
+                  >
+                    <svg
+                      fill="none"
+                      height="18"
+                      onClick={[Function]}
+                      viewBox="0 0 18 18"
+                      width="18"
+                    >
+                      <rect
+                        fill="url(#closePattenId0)"
+                        height="18"
+                        width="18"
+                      />
+                      <defs>
+                        <pattern
+                          height="1"
+                          id="closePattenId0"
+                          patternContentUnits="objectBoundingBox"
+                          width="1"
+                        >
+                          <use
+                            transform="scale(0.00833333)"
+                            xlinkHref="#closeImage0"
+                          />
+                        </pattern>
+                        <image
+                          height="120"
+                          id="closeImage0"
+                          width="120"
+                          xlinkHref="data:image/png;base64,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"
+                        />
+                      </defs>
+                    </svg>
+                  </Close>
+                  <TagName
+                    color="white"
+                  >
+                    <StyledComponent
+                      color="white"
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "TagName-sc-1eewwr1-0",
+                            "isStatic": false,
+                            "lastClassName": "klJCku",
+                            "rules": Array [
+                              "font-weight:",
+                              [Function],
+                              ";font-size:",
+                              [Function],
+                              "px;text-transform:uppercase;color:",
+                              [Function],
+                              ";margin-top:1px;color:",
+                              [Function],
+                              ";",
+                            ],
+                          },
+                          "displayName": "TagName",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "TagName-sc-1eewwr1-0",
+                          "target": "div",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <div
+                        className="TagName-sc-1eewwr1-0 klJCku"
+                        color="white"
+                      >
+                        test2
+                      </div>
+                    </StyledComponent>
+                  </TagName>
+                </div>
+              </StyledComponent>
+            </Tag__Container>
+          </Tag>
+          <TagInput
+            availableTags={
+              Array [
+                Object {
+                  "tag": "test3",
+                },
+              ]
+            }
+            handleEnterKey={[Function]}
+            onChange={[Function]}
+            onSelect={[Function]}
+            removeLastTag={[Function]}
+            selectedTags={
+              Array [
+                "test",
+                "test2",
+              ]
+            }
+          >
+            <TagInput__Wrapper>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "TagInput__Wrapper-sc-1g13u3f-0",
+                      "isStatic": true,
+                      "lastClassName": "fzNisK",
+                      "rules": Array [
+                        "background:transparent;display:flex;flex-direction:column;position:relative;",
+                      ],
+                    },
+                    "displayName": "TagInput__Wrapper",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "TagInput__Wrapper-sc-1g13u3f-0",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="TagInput__Wrapper-sc-1g13u3f-0 fzNisK"
+                >
+                  <div>
+                    <TagInput__TopRow>
+                      <StyledComponent
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "TagInput__TopRow-sc-1g13u3f-1",
+                              "isStatic": false,
+                              "lastClassName": "emHHcw",
+                              "rules": Array [
+                                "display:flex;align-items:center;& > svg{margin-right:",
+                                [Function],
+                                "px;cursor:pointer;}",
+                              ],
+                            },
+                            "displayName": "TagInput__TopRow",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "TagInput__TopRow-sc-1g13u3f-1",
+                            "target": "div",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                      >
+                        <div
+                          className="TagInput__TopRow-sc-1g13u3f-1 emHHcw"
+                        >
+                          <Plus>
+                            <svg
+                              fill="none"
+                              height="18"
+                              viewBox="0 0 18 18"
+                              width="18"
+                            >
+                              <mask
+                                height="18"
+                                id="plusMask0"
+                                mask-type="alpha"
+                                maskUnits="userSpaceOnUse"
+                                width="18"
+                                x="0"
+                                y="0"
+                              >
+                                <rect
+                                  fill="url(#plusPattern1)"
+                                  height="18"
+                                  width="18"
+                                  x="0"
+                                  y="0"
+                                />
+                              </mask>
+                              <g
+                                mask="url(#plusMask0)"
+                              >
+                                <rect
+                                  fill="#0BA986"
+                                  height="18"
+                                  width="18"
+                                  x="0"
+                                  y="0"
+                                />
+                              </g>
+                              <defs>
+                                <pattern
+                                  height="1"
+                                  id="plusPattern1"
+                                  patternContentUnits="objectBoundingBox"
+                                  width="1"
+                                >
+                                  <use
+                                    transform="scale(0.00961538)"
+                                    xlinkHref="#plusImage0"
+                                  />
+                                </pattern>
+                                <image
+                                  height="104"
+                                  id="plusImage0"
+                                  width="104"
+                                  xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAABoCAYAAAAdHLWhAAAAAXNSR0IArs4c6QAAAv5JREFUeAHtnUFOG0EQRXEkNkE5ELCAkyGRa0EUVsB9YjZh4VRLXnhhi6r+/iqP81pqEZmq+T3veSzRmnEuLhgQgAAEIAABCEAAAhCAAAQgAAEIQAACEIAABA4Q2Gw2tzGfY37E/Gqso2DU3hw4HC8fk0CAHnL+xqyO0YOkY8rYd6yA/KtqZqf+ad8xT/m11Skvbt/aAvY6Xr/a97vEa+vVavUjUXcyJUsUtFHohaBFnfM35WTp9RNAkJ+xlIAgCZ+/GUF+xlICgiR8/mYE+RlLCQiS8PmbEeRnLCUgSMLnb0aQn7GUgCAJn78ZQX7GUgKCJHz+ZgT5GUsJCJLw+ZsR5GcsJSBIwudvRpCfsZSAIAmfvxlBfsZSAoIkfP5mBPkZSwkIkvD5mxHkZywlIEjC529GkJ+xlIAgCZ+/eeo+5biB/TaW9hjzOuZ3/zIXnfARq3+P+RC3hb9Wz6QsaCvndwRdVsP+8/rPOP/7qqSZj7ifyJl6q4039PjUKY2ZK0h5Pqe0uDMsLj+fNCNIej7nDKGXTqn6fNLMR1xpQRRrBBCk8bN3I8iOWAtAkMbP3o0gO2ItAEEaP3s3guyItYAZQWNviTFHYPyRXxozgsbGH2OOQJndzE7C+EKil5hsltYkjc3Su9hJeKu0la+g7W7sfYQ8xyxfspXFnUntYDRYleWM8y9fQaOpc4xvrlLyq3thStYxestX0DFCOUaeAILyrFoqEdSCPR+KoDyrlkoEtWDPhyIoz6qlEkEt2POhCMqzaqlEUAv2fCiC8qxaKhHUgj0fiqA8q5ZKBLVgz4ciKM+qpRJBLdjzoQjKs2qpRFAL9nwogvKsWioR1II9H4qgPKuWSgS1YM+HIijPqqUSQS3Y86EIyrNqqURQC/Z8KILyrFoqEdSCPR+6REHK80mLu9l/iYLKz9jsvF+V3p3D8M+DBOLhhpuYs//Z+vh2LoabwFbSU/z8E/OrMWpGLXLcYjg+BCAAAQhAAAIQgAAEIAABCEAAAhCAAAQWTOAfqlxd4sUV9HUAAAAASUVORK5CYII="
+                                />
+                              </defs>
+                            </svg>
+                          </Plus>
+                          <Input
+                            color="white"
+                            fontSize={0}
+                            fontWeight={600}
+                            onChange={[Function]}
+                            onKeyPress={[Function]}
+                            onKeyUp={[Function]}
+                            placeHolder="ADD TAG"
+                            textAlign="left"
+                          >
+                            <Input__Wrapper
+                              textAlign="left"
+                            >
+                              <StyledComponent
+                                forwardedComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "attrs": Array [],
+                                    "componentStyle": ComponentStyle {
+                                      "componentId": "Input__Wrapper-sc-100s1kb-2",
+                                      "isStatic": false,
+                                      "lastClassName": "ekFmoA",
+                                      "rules": Array [
+                                        "display:flex;position:relative;align-self:auto;",
+                                        [Function],
+                                        " ",
+                                        [Function],
+                                        " ",
+                                        [Function],
+                                      ],
+                                    },
+                                    "displayName": "Input__Wrapper",
+                                    "foldedComponentIds": Array [],
+                                    "render": [Function],
+                                    "styledComponentId": "Input__Wrapper-sc-100s1kb-2",
+                                    "target": "div",
+                                    "toString": [Function],
+                                    "warnTooManyClasses": [Function],
+                                    "withComponent": [Function],
+                                  }
+                                }
+                                forwardedRef={null}
+                                textAlign="left"
+                              >
+                                <div
+                                  className="Input__Wrapper-sc-100s1kb-2 ekFmoA"
+                                >
+                                  <Input__InputComp
+                                    color="white"
+                                    fontSize={0}
+                                    fontWeight={600}
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyPress={[Function]}
+                                    onKeyUp={[Function]}
+                                    placeholder="ADD TAG"
+                                    textAlign="left"
+                                    value=""
+                                  >
+                                    <StyledComponent
+                                      color="white"
+                                      fontSize={0}
+                                      fontWeight={600}
+                                      forwardedComponent={
+                                        Object {
+                                          "$$typeof": Symbol(react.forward_ref),
+                                          "attrs": Array [],
+                                          "componentStyle": ComponentStyle {
+                                            "componentId": "Input__InputComp-sc-100s1kb-0",
+                                            "isStatic": false,
+                                            "lastClassName": "ignUYs",
+                                            "rules": Array [
+                                              "text-align:",
+                                              [Function],
+                                              ";font-size:",
+                                              [Function],
+                                              "px;font-weight:",
+                                              [Function],
+                                              ";color:",
+                                              [Function],
+                                              ";background:transparent;width:100%;outline:none;border:none;::-webkit-input-placeholder{color:",
+                                              [Function],
+                                              ";}:focus::-webkit-input-placeholder{text-indent:-999px;}",
+                                            ],
+                                          },
+                                          "displayName": "Input__InputComp",
+                                          "foldedComponentIds": Array [],
+                                          "render": [Function],
+                                          "styledComponentId": "Input__InputComp-sc-100s1kb-0",
+                                          "target": "input",
+                                          "toString": [Function],
+                                          "warnTooManyClasses": [Function],
+                                          "withComponent": [Function],
+                                        }
+                                      }
+                                      forwardedRef={null}
+                                      onBlur={[Function]}
+                                      onChange={[Function]}
+                                      onFocus={[Function]}
+                                      onKeyPress={[Function]}
+                                      onKeyUp={[Function]}
+                                      placeholder="ADD TAG"
+                                      textAlign="left"
+                                      value=""
+                                    >
+                                      <input
+                                        className="Input__InputComp-sc-100s1kb-0 ignUYs"
+                                        color="white"
+                                        fontSize={0}
+                                        fontWeight={600}
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        onFocus={[Function]}
+                                        onKeyPress={[Function]}
+                                        onKeyUp={[Function]}
+                                        placeholder="ADD TAG"
+                                        value=""
+                                      />
+                                    </StyledComponent>
+                                  </Input__InputComp>
+                                  <Input__Underline
+                                    fontSize={0}
+                                    textAlign="left"
+                                  >
+                                    <StyledComponent
+                                      fontSize={0}
+                                      forwardedComponent={
+                                        Object {
+                                          "$$typeof": Symbol(react.forward_ref),
+                                          "attrs": Array [],
+                                          "componentStyle": ComponentStyle {
+                                            "componentId": "Input__Underline-sc-100s1kb-1",
+                                            "isStatic": false,
+                                            "lastClassName": "jFXrzX",
+                                            "rules": Array [
+                                              "user-select:none;border-top:2px solid ",
+                                              [Function],
+                                              ";position:",
+                                              [Function],
+                                              " left:0;bottom:0;max-width:100%;height:0px;color:transparent;overflow:hidden;font-size:",
+                                              [Function],
+                                              "px;margin-left:2px;",
+                                            ],
+                                          },
+                                          "displayName": "Input__Underline",
+                                          "foldedComponentIds": Array [],
+                                          "render": [Function],
+                                          "styledComponentId": "Input__Underline-sc-100s1kb-1",
+                                          "target": "span",
+                                          "toString": [Function],
+                                          "warnTooManyClasses": [Function],
+                                          "withComponent": [Function],
+                                        }
+                                      }
+                                      forwardedRef={null}
+                                      textAlign="left"
+                                    >
+                                      <span
+                                        className="Input__Underline-sc-100s1kb-1 jFXrzX"
+                                        fontSize={0}
+                                      >
+                                        ADD TAG
+                                      </span>
+                                    </StyledComponent>
+                                  </Input__Underline>
+                                </div>
+                              </StyledComponent>
+                            </Input__Wrapper>
+                          </Input>
+                        </div>
+                      </StyledComponent>
+                    </TagInput__TopRow>
+                  </div>
+                </div>
+              </StyledComponent>
+            </TagInput__Wrapper>
+          </TagInput>
+        </div>
+      </StyledComponent>
+    </TagSelector__Container>
+  </TagSelector>
+</ThemeProvider>
+`;
