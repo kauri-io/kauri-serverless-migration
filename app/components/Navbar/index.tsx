@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { IReduxState } from '../../lib/Module'
+import { IReduxState, ICommunity } from '../../lib/Module'
 import React from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
@@ -103,13 +103,18 @@ const useStyles = makeStyles((theme: Theme) => {
 
 interface IProps {
     user?: {
-        id: string
-        username: string
-        avatar: string
-    }
+      id: string
+      avatar: string
+      dateCreated: string
+      username: string
+      name: string
+      email: string
+      communities: ICommunity[]
+      status: string // [NOT_REGISTERED|CREATED]EMAIL_VERIFIED]
+  }
 }
 
-const PrimarySearchAppBar = ({ user }: IProps) => {
+const PrimarySearchAppBar: React.FC<IProps> = ({ user }) => {
     const classes = useStyles({})
     const [anchorEl, setAnchorEl] = React.useState<
         HTMLLIElement | HTMLButtonElement | null
@@ -277,9 +282,10 @@ const PrimarySearchAppBar = ({ user }: IProps) => {
                                 />
                             ) : (
                                 <Avatar className={classes.avatar}>
-                                    {user.username
-                                        ? user.username.charAt(0)
-                                        : user.id.charAt(0).toUpperCase()}
+                                    {user &&
+                                        (user.username
+                                            ? user.username.charAt(0)
+                                            : user.id.charAt(0).toUpperCase())}
                                 </Avatar>
                             )}
                         </IconButton>
@@ -302,7 +308,7 @@ const PrimarySearchAppBar = ({ user }: IProps) => {
 }
 
 const mapStateToProps = (state: IReduxState) => ({
-    user: state.app.user,
+    user: state.app && state.app.user,
 })
 
 export default connect(mapStateToProps)(PrimarySearchAppBar)

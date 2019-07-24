@@ -2,9 +2,9 @@ import { Epic, ofType, ActionsObservable } from 'redux-observable'
 import { IDependencies, IReduxState } from '../../../lib/Module'
 import { showNotificationAction } from '../../../lib/Epics/ShowNotificationEpic'
 import {
-    rejectArticleTransfer as rejectArticleTransferMutation,
-    acceptArticleTransfer,
-    finaliseArticleTransfer as finaliseArticleTransferMutation,
+    rejectArticleTransferMutation,
+    acceptArticleTransferMutation,
+    finaliseArticleTransferMutation,
 } from '../../../queries/Article'
 import analytics from '../../../lib/analytics'
 import generatePublishArticleHash from '../../../lib/generate-publish-article-hash'
@@ -107,7 +107,7 @@ export const newEpic = (
         mergeMap(({ payload: { id } }) =>
             from(
                 apolloClient.mutate({
-                    mutation: acceptArticleTransfer,
+                    mutation: acceptArticleTransferMutation,
                     variables: { id },
                 })
             ).pipe(

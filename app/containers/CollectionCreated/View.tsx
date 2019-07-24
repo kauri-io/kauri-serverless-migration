@@ -92,7 +92,7 @@ class CollectionCreated extends React.Component<IProps> {
                       avatar: owner.avatar,
                       id: owner.id || 'not_found',
                       type: 'USER',
-                      username: owner.username,
+                      username: owner.publicUserName,
                   }
                 : owner && owner.__typename === 'CommunityDTO'
                 ? {
@@ -116,7 +116,7 @@ class CollectionCreated extends React.Component<IProps> {
                 <BodyCard>{`Your collection is now ${copy}`}</BodyCard>
                 <CollectionCard
                     id={id}
-                    description={description}
+                    description={String(description)}
                     date={dateCreated}
                     name={name}
                     username={ownerResource && ownerResource.username}

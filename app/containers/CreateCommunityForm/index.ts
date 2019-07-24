@@ -55,7 +55,14 @@ export default compose(
             updateCommunityAction,
         }
     ),
-    withFormik<IProps, IFormValues>({
+    // id: null, "invitations" | "name" | "social" | "website"
+    withFormik<
+        IProps,
+        Pick<
+            IFormValues,
+            'name' | 'attributes' | 'avatar' | 'description' | 'homepage'
+        >
+    >({
         handleSubmit: (values, { setSubmitting, props }) => {
             console.info(JSON.stringify(values, null, 2))
             // console.info(values.invitations);

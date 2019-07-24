@@ -1,45 +1,57 @@
-import { ActionsObservable, ofType } from 'redux-observable'
+import { ofType, Epic } from 'redux-observable'
 import { from, merge, of } from 'rxjs'
-import { IDependencies } from '../../lib/Module'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { IDependencies, IReduxState } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
-import { getArticleTitle } from '../ArticleDraft/__generated__/getArticleTitle'
-import AlertViewComponent from '../../components/Modal/AlertView'
 import {
-    closeModalAction,
-    openModalAction,
-} from '../../components/Modal/Module'
-import { BodyCard, H4 } from '../../components/Typography'
-import styled from 'styled-components'
+  getArticleTitle,
+  getArticleTitleVariables,
+} from '../ArticleDraft/__generated__/getArticleTitle'
 import analytics from '../../lib/analytics'
 import { tap, map, mergeMap, switchMap, catchError } from 'rxjs/operators'
 import {
-    addArticleToCollectionMutation,
+  addArticleToCollectionMutation,
     getCollectionTitleQuery,
     getArticleTitleQuery,
-} from '../../queries/Article'
+  } from '../../queries/Article'
+  import {
+  addArticleToCollection,
+  addArticleToCollectionVariables,
+} from '../../queries/__generated__/addArticleToCollection'
+import { path } from 'ramda'
+import {
+  getCollectionTitle,
+  getCollectionTitleVariables,
+} from '../../queries/__generated__/getCollectionTitle'
+// import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+// import AlertViewComponent from '../../components/Modal/AlertView'
+// import {
+//     closeModalAction,
+//     openModalAction,
+// } from '../../components/Modal/Module'
+// import { BodyCard, H4 } from '../../components/Typography'
+// import styled from 'styled-components'
 
-export interface IAddArticleToCollectionPayload {
-    id: string
-    sectionId: string
-    resourceId: {
-        id: string
-        version: number
-        type: 'ARTICLE'
-    }
-    position: number
-}
+// export interface IAddArticleToCollectionPayload {
+//     id: string
+//     sectionId: string
+//     resourceId: {
+//         id: string
+//         version: number
+//         type: 'ARTICLE'
+//     }
+//     position: number
+// }
 
 export interface IAddArticleToCollectionAction {
     callback: () => void
-    payload: IAddArticleToCollectionPayload
+    payload: addArticleToCollectionVariables
     type: 'ADD_ARTICLE_TO_COLLECTION'
 }
 
 const ADD_ARTICLE_TO_COLLECTION = 'ADD_ARTICLE_TO_COLLECTION'
 
 export const addArticleToCollectionAction = (
-    payload: IAddArticleToCollectionPayload,
+    payload: addArticleToCollectionVariables,
     callback: () => void
 ): IAddArticleToCollectionAction => ({
     callback,
@@ -47,42 +59,50 @@ export const addArticleToCollectionAction = (
     type: ADD_ARTICLE_TO_COLLECTION,
 })
 
-const Row = styled.div`
-    display: flex;
-    flex-direction: row;
-    min-height: 130px;
-    align-items: center;
-    > :first-child {
-        margin-right: 3px;
-    }
-`
+// const Row = styled.div`
+//     display: flex;
+//     flex-direction: row;
+//     min-height: 130px;
+//     align-items: center;
+//     > :first-child {
+//         margin-right: 3px;
+//     }
+// `
 
-export const addArticleToCollectionEpic = (
-    action$: ActionsObservable<IAddArticleToCollectionAction>,
-    store: any,
-    { apolloClient, apolloSubscriber }: IDependencies
-) =>
+export const addArticleToCollectionEpic: Epic<
+    IAddArticleToCollectionAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _state$, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(ADD_ARTICLE_TO_COLLECTION),
         switchMap(actions =>
             from(
-                apolloClient.mutate({
+                apolloClient.mutate<
+                    addArticleToCollection,
+                    addArticleToCollectionVariables
+                >({
                     mutation: addArticleToCollectionMutation,
-                    variables: (actions as IAddArticleToCollectionAction)
-                        .payload,
+                    variables: actions.payload,
                 })
             ).pipe(
-                mergeMap(({ data: { addCollectionResource } }) =>
-                    apolloSubscriber(addCollectionResource)
+                mergeMap(({ data }) =>
+                    apolloSubscriber<{ hash: string }>(
+                        path<string>(['addArticleToCollection', 'hash'])(
+                            data
+                        ) || ''
+                    )
                 ),
                 mergeMap(() =>
-                    apolloClient.query<getArticleTitle>({
+                    apolloClient.query<
+                        getArticleTitle,
+                        getArticleTitleVariables
+                    >({
                         query: getArticleTitleQuery,
                         variables: {
-                            id: (actions as IAddArticleToCollectionAction)
-                                .payload.resourceId.id,
-                            version: (actions as IAddArticleToCollectionAction)
-                                .payload.resourceId.version,
+                            id: actions.payload.resourceId.id,
+                            version: actions.payload.resourceId.version,
                         },
                     })
                 ),
@@ -103,64 +123,68 @@ export const addArticleToCollectionEpic = (
                 }),
                 switchMap(title =>
                     from(
-                        apolloClient.query({
+                        apolloClient.query<
+                            getCollectionTitle,
+                            getCollectionTitleVariables
+                        >({
                             query: getCollectionTitleQuery,
                             variables: {
-                                id: (actions as IAddArticleToCollectionAction)
-                                    .payload.id,
+                                id: actions.payload.id,
                             },
                         })
                     ).pipe(
-                        mergeMap(({ data: { getCollection } }) =>
+                      mergeMap((
+                          // { data: { getCollection } }
+                        ) =>
                             merge(
                                 of(
-                                    (showNotificationAction as any)({
+                                    showNotificationAction({
                                         description: `The article "${title}" has been added to your collection!`,
                                         message: 'Article added to collection',
                                         notificationType: 'success',
                                     })
                                 ),
-                                of(
-                                    openModalAction({
-                                        children: (
-                                            <AlertViewComponent
-                                                title="Add to Collection"
-                                                content={
-                                                    <Row>
-                                                        <BodyCard>
-                                                            Article successfully
-                                                            added to
-                                                        </BodyCard>
-                                                        <H4>{` ${getCollection &&
-                                                            getCollection.name} Collection`}</H4>
-                                                    </Row>
-                                                }
-                                                closeModalAction={() =>
-                                                    store.dispatch(
-                                                        closeModalAction()
-                                                    )
-                                                }
-                                                confirmButtonText={
-                                                    'View Collection'
-                                                }
-                                                closeButtonText={'Close'}
-                                                confirmButtonAction={() => {
-                                                    store.dispatch(
-                                                        closeModalAction()
-                                                    )
-                                                    store.dispatch(
-                                                        routeChangeAction(
-                                                            `/collection/${
-                                                                (actions as IAddArticleToCollectionAction)
-                                                                    .payload.id
-                                                            }/update-collection`
-                                                        )
-                                                    )
-                                                }}
-                                            />
-                                        ),
-                                    })
-                                )
+                                // of(
+                                //     openModalAction({
+                                //         children: (
+                                //             <AlertViewComponent
+                                //                 title="Add to Collection"
+                                //                 content={
+                                //                     <Row>
+                                //                         <BodyCard>
+                                //                             Article successfully
+                                //                             added to
+                                //                         </BodyCard>
+                                //                         <H4>{` ${getCollection &&
+                                //                             getCollection.name} Collection`}</H4>
+                                //                     </Row>
+                                //                 }
+                                //                 closeModalAction={() =>
+                                //                     store.dispatch(
+                                //                         closeModalAction()
+                                //                     )
+                                //                 }
+                                //                 confirmButtonText={
+                                //                     'View Collection'
+                                //                 }
+                                //                 closeButtonText={'Close'}
+                                //                 confirmButtonAction={() => {
+                                //                     store.dispatch(
+                                //                         closeModalAction()
+                                //                     )
+                                //                     store.dispatch(
+                                //                         routeChangeAction(
+                                //                             `/collection/${
+                                //                                 (actions as IAddArticleToCollectionAction)
+                                //                                     .payload.id
+                                //                             }/update-collection`
+                                //                         )
+                                //                     )
+                                //                 }}
+                                //             />
+                                //         ),
+                                //     })
+                                // )
                             )
                         ),
                         tap(() => apolloClient.resetStore()),

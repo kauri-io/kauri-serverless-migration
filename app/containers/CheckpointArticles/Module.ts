@@ -1,9 +1,9 @@
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { checkpointArticles } from '../../queries/Article'
 import analytics from '../../lib/analytics'
-import { IDependencies } from '../../lib/Module'
+import { IDependencies, IReduxState } from '../../lib/Module'
 import { of, from } from 'rxjs'
-import { ActionsObservable, ofType } from 'redux-observable'
+import { ofType, Epic } from 'redux-observable'
 import { switchMap, mergeMap, tap, mapTo, catchError } from 'rxjs/operators'
 
 const CHECKPOINT_ARTICLES = 'CHECKPOINT_ARTICLES'
@@ -12,13 +12,26 @@ export interface CheckpointArticlesAction {
     type: string
 }
 
+interface ICheckpointArticlesCommandOutput {
+    merkleRoot: string
+    checkpointHash: string
+    signatureV: string
+    signatureR: string
+    signatureS: string
+}
+
 export const checkpointArticlesAction: () => CheckpointArticlesAction = () => ({
     type: CHECKPOINT_ARTICLES,
 })
 
-export const checkpointArticlesEpic = (
-    action$: ActionsObservable<CheckpointArticlesAction>,
-    { dispatch }: any,
+export const checkpointArticlesEpic: Epic<
+    CheckpointArticlesAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (
+    action$,
+    _,
     {
         apolloClient,
         smartContracts,
@@ -26,7 +39,7 @@ export const checkpointArticlesEpic = (
         web3GetNetwork,
         apolloSubscriber,
         getGasPrice,
-    }: IDependencies
+    }
 ) =>
     action$.pipe(
         ofType(CHECKPOINT_ARTICLES),
@@ -55,8 +68,9 @@ export const checkpointArticlesEpic = (
                         },
                     }) =>
                         from(getGasPrice()).pipe(
-                            mergeMap(gasPrice =>
-                                smartContracts().KauriCore.checkpointArticles.sendTransaction(
+                            mergeMap<number, string>(gasPrice =>
+                                (smartContracts().KauriCore
+                                    .checkpointArticles as any).sendTransaction(
                                     merkleRoot,
                                     checkpointHash,
                                     signatureV,
@@ -70,22 +84,10 @@ export const checkpointArticlesEpic = (
                                     }
                                 )
                             ),
-                            tap((transactionHash: string) => {
-                                dispatch(
-                                    showNotificationAction({
-                                        notificationType: 'info',
-                                        message: 'Waiting for it to be mined',
-                                        description:
-                                            'You will get another notification when the block is mined!',
-                                    })
-                                )
-                                return transactionHash
-                            }),
-                            mergeMap((transactionHash: string) =>
-                                apolloSubscriber(
-                                    transactionHash,
-                                    'ArticlesCheckpointed'
-                                )
+                            mergeMap(transactionHash =>
+                                apolloSubscriber<
+                                    ICheckpointArticlesCommandOutput
+                                >(transactionHash, 'ArticlesCheckpointed')
                             ),
                             tap(() => apolloClient.resetStore()),
                             mapTo(

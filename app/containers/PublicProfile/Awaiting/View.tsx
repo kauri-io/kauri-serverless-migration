@@ -42,7 +42,11 @@ const Articles = ({ data, type, isOwner }: IArticlesProps) => {
     return articles && articles.length > 0 ? (
         <Fragment>
             {typeof type === 'string' && type === 'published' && isOwner && (
-                <CheckpointArticles isOwner={isOwner} articles={articles} />
+                <CheckpointArticles
+                    pageType={'public-profile'}
+                    isOwner={isOwner}
+                    articles={articles}
+                />
             )}
             <Masonry withPadding={false}>
                 {articles &&

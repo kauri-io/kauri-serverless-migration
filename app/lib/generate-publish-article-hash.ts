@@ -13,7 +13,7 @@ const generatePublishArticleHash = (
     contentHash: string,
     contributor: string,
     dateCreated: string
-) => {
+): string => {
     const web3 = global.window && global.window.web3
     const keccak256 = (...args) => {
         args = args.map(arg => {

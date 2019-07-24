@@ -25,7 +25,7 @@ export interface sendInvitation {
 }
 
 export interface sendInvitationVariables {
-  signature?: string;
+  signature: string;
   id: string;
   invitation: InvitationInput;
 }

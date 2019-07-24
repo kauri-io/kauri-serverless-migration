@@ -109,6 +109,10 @@ const CollectionsContent = ({
                         <CollectionCard
                             key={collection.id + collection.version}
                             id={collection.id}
+                            resourceType={collection.owner.__typename
+                                .split('DTO')[0]
+                                .toUpperCase()}
+                            cardHeight={310}
                             description={collection.description}
                             date={collection.dateUpdated}
                             name={collection.name}

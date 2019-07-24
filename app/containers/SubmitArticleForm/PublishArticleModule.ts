@@ -6,13 +6,13 @@ import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
 import analytics from '../../lib/analytics'
 import { merge, of, from } from 'rxjs'
 import { switchMap, mergeMap, tap } from 'rxjs/operators'
-import path from 'ramda/es/path'
 import { ICommunity } from '../PublicProfile/Manage/MyCommunities'
 import { publishArticleMutation } from '../../queries/Article'
 import {
     publishArticle,
     publishArticleVariables,
 } from '../../queries/__generated__/publishArticle'
+import { path } from 'ramda';
 
 interface IAction {
     type: string

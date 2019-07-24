@@ -3,11 +3,11 @@ import { withApollo, compose } from 'react-apollo'
 import withData from '../lib/with-data'
 import App from '../layouts'
 import SubmitArticleForm from '../containers/SubmitArticleForm'
-import { withRouter } from 'next/router'
+import { withRouter, Router } from 'next/router'
 
-const WriteArticle = ({ router }) => (
+const WriteArticle: React.FC<{ router: Router }> = ({ router }) => (
     <App>
-        <SubmitArticleForm templateId={this.props.router.query.template_id} />
+        <SubmitArticleForm templateId={router.query.template_id} />
     </App>
 )
 

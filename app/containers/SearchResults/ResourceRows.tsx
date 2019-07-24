@@ -58,7 +58,6 @@ class ResourceRows extends React.Component<
     IProps & ISearchResultsAutocompleteData
 > {
     render() {
-        console.log(this.props.data)
         const values = Object.keys(this.props.totalElementsBreakdown).map(
             key => this.props.totalElementsBreakdown[key]
         )

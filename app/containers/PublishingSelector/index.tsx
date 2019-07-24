@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import React, { useState } from 'react'
 
 export interface IOption {
+    __typename: string
     id: string
     name: string
     type: string
@@ -57,13 +58,12 @@ const Label = styled.span`
     }
 `
 
-const Content = ({
-    options,
-    setDestination,
-}: {
+interface IContentProps {
     options: IOption[]
     setDestination: (destValue: IOption) => void
-}) => {
+}
+
+const Content: React.FC<IContentProps> = ({ options, setDestination }) => {
     return (
         <TooltipContainer>
             {options &&
@@ -77,7 +77,7 @@ const Content = ({
 }
 
 const PublishingSelector = (props: IProps) => {
-    const options = [
+    const options: any[] = [
         { id: props.userId, name: `My ${props.type}`, type: 'USER' },
         ...props.communities,
     ]

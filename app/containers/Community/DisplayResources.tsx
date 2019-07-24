@@ -47,21 +47,23 @@ const RenderResources = (
     openModalAction?: (payload: { children: any }) => void,
     closeModalAction?: () => void,
     removeResourceAction?: (payload: removeResourceVariables) => void
-) => (i: Community_approved_ArticleDTO | Community_approved_CollectionDTO) => {
+) => (
+    article: Community_approved_ArticleDTO | Community_approved_CollectionDTO
+) => {
     const owner =
-        i.owner && i.owner.__typename === 'PublicUserDTO'
+        article.owner && article.owner.__typename === 'PublicUserDTO'
             ? {
-                  avatar: i.owner.avatar,
-                  id: i.owner.id || 'not_found',
+                  avatar: article.owner.avatar,
+                  id: article.owner.id || 'not_found',
                   type: 'USER',
-                  username: i.owner.username,
+                  username: article.owner.publicUserName,
               }
-            : i.owner && i.owner.__typename === 'CommunityDTO'
+            : article.owner && article.owner.__typename === 'CommunityDTO'
             ? {
-                  avatar: i.owner.avatar,
-                  id: i.owner.id || 'not_found',
+                  avatar: article.owner.avatar,
+                  id: article.owner.id || 'not_found',
                   type: 'COMMUNITY',
-                  username: i.owner.communityName,
+                  username: article.owner.communityName,
               }
             : {
                   avatar: '',
@@ -69,12 +71,23 @@ const RenderResources = (
 
                   username: '',
               }
-    if (i.__typename === 'ArticleDTO') {
-        return <ArticleCard {...i} />
-    } else if (i.__typename === 'CollectionDTO') {
+    if (article.__typename === 'ArticleDTO') {
+        return (
+            <ArticleCard
+                key={String(article.id)}
+                id={String(article.id)}
+                version={Number(article.version)}
+                description={article.description}
+                datePublished={article.datePublished || article.dateCreated}
+                title={String(article.title)}
+                attributes={article.attributes}
+                author={article.author}
+            />
+        )
+    } else if (article.__typename === 'CollectionDTO') {
         const counter =
-            i.sections &&
-            i.sections.reduce(
+            article.sections &&
+            article.sections.reduce(
                 (sum, section) => {
                     if (!section || !section.resources) {
                         return sum
@@ -100,15 +113,15 @@ const RenderResources = (
 
         return (
             <CollectionCard
-                key={String(i.id)}
-                id={String(i.id)}
-                description={i.description || ''}
-                date={i.dateUpdated}
-                name={i.name || ''}
+                key={String(article.id)}
+                id={String(article.id)}
+                description={article.description || ''}
+                date={article.dateUpdated}
+                name={article.name || ''}
                 username={owner.username}
                 userId={owner.id}
                 userAvatar={owner.avatar}
-                imageURL={i.background}
+                imageURL={article.background}
                 articleCount={counter ? counter.articles.toString() : '0'}
                 collectionCount={counter ? counter.collections.toString() : '0'}
                 cardHeight={310}
@@ -131,14 +144,16 @@ const RenderResources = (
                                                 id: String(communityId),
                                                 resource: {
                                                     id: String(
-                                                        i.resourceIdentifier &&
-                                                            i.resourceIdentifier
+                                                        article.resourceIdentifier &&
+                                                            article
+                                                                .resourceIdentifier
                                                                 .id
                                                     ),
                                                     type:
-                                                        i.resourceIdentifier &&
-                                                        i.resourceIdentifier
-                                                            .type,
+                                                        article.resourceIdentifier &&
+                                                        (article
+                                                            .resourceIdentifier
+                                                            .type as any),
                                                 },
                                             })
                                         }

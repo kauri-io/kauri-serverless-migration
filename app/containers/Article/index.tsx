@@ -1,6 +1,6 @@
 import { compose, graphql } from 'react-apollo'
 import { connect } from 'react-redux'
-import { getArticle, relatedArticles } from '../../queries/Article'
+import { getArticleQuery, relatedArticles } from '../../queries/Article'
 // import { addCommentAction } from "../AddCommentForm/Module";
 import withLoading from '../../lib/with-loading'
 import withApolloError from '../../lib/with-apollo-error'
@@ -29,7 +29,7 @@ export default compose(
             voteAction,
         }
     ),
-    graphql(getArticle, {
+    graphql(getArticleQuery, {
         name: 'data',
         options: ({ id }: { id: string }) => ({
             variables: {

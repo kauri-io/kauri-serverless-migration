@@ -3,9 +3,7 @@ import {
     SET_USER_DETAILS,
     ISetUserDetailsAction,
 } from './Epics/FetchUserDetailsEpic'
-import { SHOW_NOTIFICATION } from './Epics/ShowNotificationEpic'
-import { HIDE_INTRO_BANNER_SUCCESS } from './Epics/HideIntroBannerEpic'
-import { SHOW_CONFIRMATION_MODAL } from './Epics/ShowConfirmationModalEpic'
+import { SHOW_NOTIFICATION, IShowNotificationAction, IShowNotificationPayload } from './Epics/ShowNotificationEpic'
 import { ApolloClient } from 'apollo-client'
 
 export interface IDependencies {
@@ -22,7 +20,7 @@ export interface IDependencies {
     ) => Array<Promise<{ data: { output: T } }>>
     web3PersonalSign: any
     web3GetNetwork: any
-    getGasPrice: any
+    getGasPrice: () => Promise<number>
     personalSign: (data: string) => Promise<string>
 }
 
@@ -77,11 +75,15 @@ export interface ICommunity {
 
 export interface IReduxState {
     app: {
+        notification?: IShowNotificationPayload
         hostName?: string
         user?: {
             id: string
             avatar: string
+            dateCreated: string
             username: string
+            name: string
+            email: string
             communities: ICommunity[]
             status: string // [NOT_REGISTERED|CREATED]EMAIL_VERIFIED]
         }
@@ -143,8 +145,13 @@ const handlers = {
         ...state,
         navcolorOverride: action.payload,
     }),
-    [SHOW_NOTIFICATION]: (state: IReduxState) => state,
-    [SHOW_CONFIRMATION_MODAL]: (state: IReduxState) => state,
+  [SHOW_NOTIFICATION]: (state: IReduxState, action: IShowNotificationAction) => ({
+      ...state,
+      notification: {
+        ...action.payload,
+        type: action.payload.notificationType,
+      }
+    }),
     [SET_HOSTNAME]: (state: IReduxState, action: ISetHostNameAction) =>
         typeof action.payload.hostName === 'string'
             ? { ...state, hostName: action.payload.hostName }
@@ -158,11 +165,7 @@ const handlers = {
         action: ISetUserDetailsAction
     ) => ({
         ...state,
-        user: action.payload,
-    }),
-    [HIDE_INTRO_BANNER_SUCCESS]: (state: IReduxState) => ({
-        ...state,
-        showIntroBanner: false,
+        user: action.payload.user,
     }),
     [TOGGLE_MODAL]: (state: IReduxState, action: IToggleModalAction) =>
         (typeof action.modalTitle === 'string' ||

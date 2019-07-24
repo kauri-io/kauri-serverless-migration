@@ -1,15 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import CTA, { CheckpointArticlesIcon } from './CTA'
-import { Article } from '../../queries/Fragments/__generated__/Article'
-
-const CheckpointArticlesCTAContainer = styled.section`
-    display: flex;
-    justify-content: center;
-    padding: ${props => props.theme.space[1]}px ${props => props.theme.padding};
-    padding-bottom: 0px;
-    margin: 0px ${props => props.theme.space[2]}px;
-`
+import { searchPersonalArticles_searchArticles_content } from '../../queries/__generated__/searchPersonalArticles'
 
 export const AllArticlesOnMainnet = ({
     text = 'All Articles On-chain',
@@ -33,40 +25,51 @@ const CheckpointedArticlesContainer = styled.div`
     text-transform: uppercase;
 `
 
-export interface IProps {
-    articles?: Article[]
+interface IProps {
+    articles?: (searchPersonalArticles_searchArticles_content | null)[]
     articleCheckpointed?: boolean
     checkpointArticlesAction: () => void
     pageType: 'public-profile' | 'approved-article'
     isOwner: boolean
 }
 
-export default ({
+const CheckpointArticles: React.FC<IProps> = ({
     isOwner,
     articles,
     articleCheckpointed,
     checkpointArticlesAction,
     pageType = 'public-profile',
-}: IProps) =>
-    pageType === 'public-profile' ? (
-        <CheckpointArticlesCTAContainer>
-            {Array.isArray(articles) &&
-            articles.find(article => !article.checkpoint) ? (
-                isOwner && (
-                    <CTA
-                        checkpointArticlesAction={checkpointArticlesAction}
-                        pageType={pageType}
-                    />
-                )
-            ) : (
-                <AllArticlesOnMainnet />
-            )}
-        </CheckpointArticlesCTAContainer>
-    ) : articleCheckpointed === false && isOwner ? (
-        <CTA
-            checkpointArticlesAction={checkpointArticlesAction}
-            pageType={pageType}
-        />
-    ) : (
-        <AllArticlesOnMainnet text={'Article On-chain'} />
-    )
+}) => {
+    if (pageType === 'public-profile') {
+        return (
+            <CheckpointedArticlesContainer>
+                {Array.isArray(articles) &&
+                articles.find(article => article && !article.checkpoint) ? (
+                    isOwner && (
+                        <CTA
+                            checkpointArticlesAction={checkpointArticlesAction}
+                            pageType={pageType}
+                        />
+                    )
+                ) : (
+                    <AllArticlesOnMainnet />
+                )}
+            </CheckpointedArticlesContainer>
+        )
+    }
+    if (articleCheckpointed === false) {
+        if (isOwner) {
+            return (
+                <CTA
+                    checkpointArticlesAction={checkpointArticlesAction}
+                    pageType={pageType}
+                />
+            )
+        } else {
+            return <AllArticlesOnMainnet text={'Article On-chain'} />
+        }
+    }
+    return null
+}
+
+export default CheckpointArticles

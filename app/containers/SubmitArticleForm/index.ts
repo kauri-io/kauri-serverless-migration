@@ -1,6 +1,6 @@
 import { compose, graphql } from 'react-apollo'
 import { connect } from 'react-redux'
-import { getArticle } from '../../queries/Article'
+import { getArticleQuery } from '../../queries/Article'
 import {
     submitArticleAction,
     submitArticleVersionAction,
@@ -40,7 +40,7 @@ export default compose(
             submitArticleVersionAction,
         }
     ),
-    graphql(getArticle, {
+    graphql(getArticleQuery, {
         options: ({ id, version }: { id: string; version: string }) => ({
             variables: {
                 id,
