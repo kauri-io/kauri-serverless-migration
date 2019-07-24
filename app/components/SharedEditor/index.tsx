@@ -1,6 +1,6 @@
 import React from 'react'
 import { EditorState, ContentState } from 'draft-js'
-import styled, { css } from 'styled-components'
+import { css } from 'styled-components'
 import ReactMde, { DraftUtil } from '@rej156/react-mde'
 import Showdown from 'showdown'
 import { getDefaultCommands } from '@rej156/react-mde/lib/js/commands'
@@ -19,13 +19,6 @@ export const errorBorderCss = css`
     width: 950px;
     height: 22em;
     border: 2px solid ${props => props.theme.errorRedColor};
-`
-
-export const EditorContainer = styled.div<{ hasErrors: boolean }>`
-    min-height: 20em;
-    cursor: text;
-    margin-bottom: 2em;
-    ${props => props.hasErrors && errorBorderCss};
 `
 
 let reactMdeCommands = getDefaultCommands()
@@ -56,9 +49,7 @@ interface IProps {
     }
     setFieldsValue: any
     getFieldsValue: any
-    hasErrors: boolean
     handleChange: (mdeState: MdeState) => void
-    hasErrors?: boolean
 }
 
 export class SharedEditor extends React.Component<IProps> {

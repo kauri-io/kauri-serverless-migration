@@ -24,7 +24,6 @@ import {
 import { curateCommunityResourcesVariables } from '../../queries/__generated__/curateCommunityResources'
 import { approveResourceVariables } from '../../queries/__generated__/approveResource'
 import {
-    removeResource,
     removeResourceVariables,
 } from '../../queries/__generated__/removeResource'
 
