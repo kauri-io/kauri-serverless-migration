@@ -7,13 +7,13 @@ import { ISection } from './SectionsContent'
 import Loading from '../../components/Loading'
 import { ErrorMessage } from '../../lib/with-apollo-error'
 import { Label } from '../..//components/Typography'
-import { IAddArticleToCollectionPayload } from './Module'
 import { getCollectionsForUser as query } from '../../queries/Collection'
 import {
     getCollectionsForUser,
     getCollectionsForUserVariables,
 } from '../../queries/__generated__/getCollectionsForUser'
 import { useState } from 'react'
+import { addArticleToCollectionVariables } from '../../queries/__generated__/addArticleToCollection'
 
 interface IChosen {
     chosenCollection: ICollection | null
@@ -26,7 +26,7 @@ interface IProps {
     routeChangeAction: (route: string) => void
     articleId: string
     addArticleToCollectionAction: (
-        payload: IAddArticleToCollectionPayload,
+        payload: addArticleToCollectionVariables,
         callback: () => void
     ) => void
     version: number
@@ -141,7 +141,7 @@ const Component: React.FunctionComponent<IProps> = ({
                                             position,
                                             resourceId: {
                                                 id: articleId,
-                                                type: 'ARTICLE',
+                                                type: ( 'ARTICLE' as any ),
                                                 version,
                                             },
                                             sectionId: state.chosenSection

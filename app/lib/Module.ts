@@ -165,7 +165,7 @@ const handlers = {
         action: ISetUserDetailsAction
     ) => ({
         ...state,
-        user: action.payload,
+        user: action.payload.user,
     }),
     [TOGGLE_MODAL]: (state: IReduxState, action: IToggleModalAction) =>
         (typeof action.modalTitle === 'string' ||
