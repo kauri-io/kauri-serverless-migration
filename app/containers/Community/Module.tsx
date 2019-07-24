@@ -267,7 +267,7 @@ export const acceptCommunityInvitationAction = (
 })
 
 export const revokeInvitationAction = (
-    payload: prepareRevokeInvitationVariables
+    payload: revokeInvitationVariables
 ): IRevokeInvitationAction => ({
     payload,
     type: REVOKE_INVITATION,

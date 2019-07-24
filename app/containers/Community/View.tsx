@@ -13,7 +13,6 @@ import { propEq, path, any } from 'ramda'
 import {
     curateCommunityResourcesAction as curateCommunityResources,
     acceptCommunityInvitationAction as acceptCommunityInvitation,
-    sendCommunityInvitationAction as sendCommunityInvitation,
     transferArticleToCommunityAction as transferArticleToCommunity,
 } from './Module'
 import EmptyCollections from './EmptyStates/Collections'
@@ -28,6 +27,7 @@ import HomepageResources from './HomepageResources'
 import { routeChangeAction as routeChange } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction as showNotification } from '../../lib/Epics/ShowNotificationEpic'
 import { openModalAction as openModal } from '../../components/Modal/Module'
+import { sendInvitationVariables } from '../../queries/__generated__/sendInvitation'
 
 interface IProps {
     client: ApolloClient<{}>
@@ -45,7 +45,9 @@ interface IProps {
     routeChangeAction: typeof routeChange
     removeResourceAction: (payload: removeResourceVariables) => void
     curateCommunityResourcesAction: typeof curateCommunityResources
-    sendCommunityInvitationAction: typeof sendCommunityInvitation
+    sendCommunityInvitationAction: (
+        payload: Pick<sendInvitationVariables, 'id' | 'invitation'>
+    ) => void
     transferArticleToCommunityAction: typeof transferArticleToCommunity
     showNotificationAction: typeof showNotification
 }

@@ -1,13 +1,22 @@
-import { Observable, of, from } from 'rxjs'
+import { of, from } from 'rxjs'
 import cookie from 'cookie'
 import createReducer from '../../lib/createReducer'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { loginPersonalSign } from '../../lib/web3-personal-sign'
 import superagent from 'superagent'
 import config from '../../config'
-import { ofType } from 'redux-observable'
-import { switchMap, mergeMap, map, tap } from 'rxjs/operators'
+import { ofType, Epic } from 'redux-observable'
+import {
+    switchMap,
+    mergeMap,
+    map,
+    tap,
+    mapTo,
+    catchError,
+} from 'rxjs/operators'
 import { IReduxState } from '../../lib/Module'
+import { IDependencies } from '../ArticleDraft/DeleteDraftArticleModule'
+// import { delay } from 'rxjs-compat/operator/delay'
 
 const request = superagent.agent()
 
@@ -50,7 +59,12 @@ const registerSignaturePayload = (userId, signature, sentence_id) => ({
     client_id: config.clientId,
 })
 
-export const registerEpic = (action$: Observable<IRegisterAction>) =>
+export const registerEpic: Epic<
+    IRegisterAction,
+    any,
+    IReduxState,
+    IDependencies
+> = action$ =>
     action$.pipe(
         ofType(REGISTER),
         switchMap(({ callback }: IRegisterAction) =>
@@ -69,25 +83,25 @@ export const registerEpic = (action$: Observable<IRegisterAction>) =>
                 map(res => res.body),
                 tap(h => console.log(h)),
                 switchMap(({ sentence, id }: IInitiateLoginResponse) =>
-                    loginPersonalSign(sentence)
-                        .map((signature: string) =>
+                    loginPersonalSign(sentence).pipe(
+                        map((signature: string) =>
                             registerSignaturePayload(
                                 global.window.web3.eth.accounts[0],
                                 signature,
                                 id
                             )
-                        )
-                        .mergeMap(payload =>
+                        ),
+                        mergeMap(payload =>
                             request
                                 .post(
                                     `https://${config.gateway}/web3auth/api/login`
                                 )
                                 .send(payload)
-                        )
-                        .map(res => res.body)
-                        .do(h => console.log(h))
-                        .do(() => callback())
-                        .do(({ token }: IFinalLoginResponse) => {
+                        ),
+                        map(res => res.body),
+                        tap(h => console.log(h)),
+                        tap(() => callback()),
+                        tap(({ token }: IFinalLoginResponse) => {
                             console.log(token)
                             console.log(
                                 global.window &&
@@ -117,29 +131,27 @@ export const registerEpic = (action$: Observable<IRegisterAction>) =>
                                             : '.' + window.location.hostname,
                                 }
                             )
-                        })
-                        .mergeMapTo(
-                            of(
-                                showNotificationAction({
-                                    notificationType: 'success',
-                                    message: 'Login successful',
-                                    description:
-                                        'All set! Time to write an article!',
-                                })
-                            )
-                        )
-                        .do(() =>
+                        }),
+                        tap(() =>
                             window.localStorage.setItem(
                                 'login-tracking-pending',
                                 'true'
                             )
-                        )
-                        .delay(750)
-                        .do(() => {
+                        ),
+                        // delay(750),
+                        tap(() => {
                             window.location.href =
                                 '/edit-profile' + window.location.search
-                        })
-                        .catch(err => {
+                        }),
+                        mapTo(
+                            showNotificationAction({
+                                notificationType: 'success',
+                                message: 'Login successful',
+                                description:
+                                    'All set! Time to write an article!',
+                            })
+                        ),
+                        catchError(err => {
                             console.error(err)
                             if (err && err.message.includes('locked')) {
                                 return of(
@@ -159,6 +171,7 @@ export const registerEpic = (action$: Observable<IRegisterAction>) =>
                                 })
                             )
                         })
+                    )
                 )
             )
         )
