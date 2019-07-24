@@ -1,9 +1,6 @@
 import { combineEpics } from 'redux-observable'
 import userDetailsEpic from './Epics/FetchUserDetailsEpic'
-import showNotificationEpic from './Epics/ShowNotificationEpic'
-import showConfirmationModalEpic from './Epics/ShowConfirmationModalEpic'
 import routeChangeEpic from './Epics/RouteChangeEpic'
-import hideIntroBannerEpic from './Epics/HideIntroBannerEpic'
 import app from './Module'
 import register, { registerEpic } from '../containers/LoginForm/Module'
 // import { tipArticleEpic } from "../components/containers/Article/Module";
@@ -71,9 +68,9 @@ export const rootReducer = {
 }
 
 const epics = [
-    showNotificationEpic,
+    // showNotificationEpic,
     registerEpic,
-    showConfirmationModalEpic,
+    // showConfirmationModalEpic,
     routeChangeEpic,
     //   submitArticleEpic,
     //   submitArticleVersionEpic,
@@ -81,7 +78,7 @@ const epics = [
     //   addCommentEpic,
     userDetailsEpic,
     //   // ethUsdPriceEpic,
-    hideIntroBannerEpic,
+    // hideIntroBannerEpic,
     //   tipArticleEpic,
     //   rejectArticleEpic,
     //   startDriverStepsEpic,

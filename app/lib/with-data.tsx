@@ -7,6 +7,7 @@ import { ThemeProvider } from 'styled-components'
 import { ethers } from 'ethers'
 import { Subject } from 'rxjs'
 import { ActionsObservable } from 'redux-observable'
+import { SnackbarProvider } from 'notistack'
 import fetch from 'isomorphic-unfetch'
 import mixpanel from 'mixpanel-browser'
 import initRedux from './init-redux'
@@ -165,14 +166,16 @@ export default (ComposedComponent: any) =>
                 const app = (
                     <Provider store={redux}>
                         <ApolloProvider client={apollo}>
-                            <ThemeProvider theme={themeConfig}>
-                                <>
-                                    <ComposedComponent
-                                        url={url}
-                                        {...composedInitialProps}
-                                    />
-                                </>
-                            </ThemeProvider>
+                            <SnackbarProvider maxSnack={3}>
+                                <ThemeProvider theme={themeConfig}>
+                                    <>
+                                        <ComposedComponent
+                                            url={url}
+                                            {...composedInitialProps}
+                                        />
+                                    </>
+                                </ThemeProvider>
+                            </SnackbarProvider>
                         </ApolloProvider>
                     </Provider>
                 )
@@ -287,18 +290,20 @@ export default (ComposedComponent: any) =>
             return (
                 <Provider store={this.redux}>
                     <ApolloProvider client={this.apollo}>
-                        <ThemeProvider theme={themeConfig}>
-                            <>
-                                <ComposedComponent
-                                    {...this.props}
-                                    web3={
-                                        global.window
-                                            ? global.window.web3
-                                            : global.window
-                                    }
-                                />
-                            </>
-                        </ThemeProvider>
+                        <SnackbarProvider maxSnack={3}>
+                            <ThemeProvider theme={themeConfig}>
+                                <>
+                                    <ComposedComponent
+                                        {...this.props}
+                                        web3={
+                                            global.window
+                                                ? global.window.web3
+                                                : global.window
+                                        }
+                                    />
+                                </>
+                            </ThemeProvider>
+                        </SnackbarProvider>
                     </ApolloProvider>
                 </Provider>
             )
