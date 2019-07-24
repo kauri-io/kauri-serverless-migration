@@ -12,20 +12,12 @@ export interface CheckpointArticlesAction {
     type: string
 }
 
-type CheckpointArticlesCommandOutput = {
+interface ICheckpointArticlesCommandOutput {
     merkleRoot: string
     checkpointHash: string
     signatureV: string
     signatureR: string
     signatureS: string
-}
-
-type CheckpointArticlesCommandResponse = {
-    data: { output: CheckpointArticlesCommandOutput }
-}
-
-interface ICheckpointArticlesCommandOutput {
-    hash: string
 }
 
 export const checkpointArticlesAction: () => CheckpointArticlesAction = () => ({

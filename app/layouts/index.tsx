@@ -4,8 +4,9 @@ import { connect } from 'react-redux'
 import Navbar from '../components/Navbar'
 import StyledFooter, { footerHeight } from '../components/Footer'
 import Modal from '../components/Modal'
+import Notification from '../components/Notification'
 import { makeStyles, Theme } from '@material-ui/core/styles'
-import { IReduxState } from '../lib/Module'
+import { IReduxState, ICommunity } from '../lib/Module'
 
 const mapStateToProps = (state: IReduxState) => ({
     isModalOpen: state.modal.isModalOpen,
@@ -38,7 +39,7 @@ interface IProps {
     children: any
 }
 
-const Layout = ({ isModalOpen, children, maxWidthConstrained }: IProps) => {
+const Layout = ({ isModalOpen, children, maxWidthConstrained, user }: IProps) => {
     const classes = useStyles({})
     return (
         <Grid container={true}>
@@ -46,6 +47,7 @@ const Layout = ({ isModalOpen, children, maxWidthConstrained }: IProps) => {
                 <body className={isModalOpen ? 'overflow-hidden' : null} />
             </Head>
             <Modal />
+            <Notification />
             <Grid sm={12} item={true} className={classes.item}>
                 <Navbar />
             </Grid>
