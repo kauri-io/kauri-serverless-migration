@@ -1,7 +1,4 @@
-import { Observable, of, from } from 'rxjs'
-import { showNotificationAction } from './Epics/ShowNotificationEpic'
-import apolloClient from './init-apollo'
-import apolloSubscriber from './apollo-subscriber'
+import { Observable, from } from 'rxjs'
 import { catchError } from 'rxjs/operators'
 import { ethers } from 'ethers'
 
