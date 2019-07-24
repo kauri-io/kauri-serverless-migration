@@ -1,5 +1,3 @@
-// import config from '../../config'
-// import fetch from 'isomorphic-unfetch'
 import testEpic from '../test-epic'
 import routeChangeEpic, { routeChangeAction } from './RouteChangeEpic'
 jest.mock('next/router', () => {
