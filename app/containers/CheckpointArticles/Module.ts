@@ -25,7 +25,7 @@ type CheckpointArticlesCommandResponse = {
 }
 
 interface ICheckpointArticlesCommandOutput {
-  hash: string
+    hash: string
 }
 
 export const checkpointArticlesAction: () => CheckpointArticlesAction = () => ({
@@ -92,11 +92,10 @@ export const checkpointArticlesEpic: Epic<
                                     }
                                 )
                             ),
-                            mergeMap((transactionHash) =>
-                                apolloSubscriber<ICheckpointArticlesCommandOutput>(
-                                    transactionHash,
-                                    'ArticlesCheckpointed'
-                                )
+                            mergeMap(transactionHash =>
+                                apolloSubscriber<
+                                    ICheckpointArticlesCommandOutput
+                                >(transactionHash, 'ArticlesCheckpointed')
                             ),
                             tap(() => apolloClient.resetStore()),
                             mapTo(

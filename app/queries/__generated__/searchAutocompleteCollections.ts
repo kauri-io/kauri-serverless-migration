@@ -95,6 +95,10 @@ export type searchAutocompleteCollections_searchAutocomplete_content_resource_Co
 export interface searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO_sections_resourcesId {
   __typename: "ResourceIdentifier";
   /**
+   * Resource version (article)
+   */
+  version: number | null;
+  /**
    * Resource ID
    */
   id: string;

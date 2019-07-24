@@ -6,9 +6,7 @@ import withLoading from '../../lib/with-loading'
 import withApolloError from '../../lib/with-apollo-error'
 import ArticleCard from '../../components/Card/ArticleCardMaterial'
 import { IReduxState } from '../../lib/Module'
-import {
-    getArticleVariables,
-} from '../../queries/__generated__/getArticle'
+import { getArticleVariables } from '../../queries/__generated__/getArticle'
 
 const mapStateToProps = (state: IReduxState) => ({
     hostName: state.app && state.app.hostName,

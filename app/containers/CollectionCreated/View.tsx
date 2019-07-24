@@ -5,9 +5,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import PrimaryButton from '../../components/Button/PrimaryButton'
 import { Title2, BodyCard } from '../../components/Typography'
-import {
-    getCollection_getCollection,
-} from '../../queries/__generated__/getCollection'
+import { getCollection_getCollection } from '../../queries/__generated__/getCollection'
 
 const Container = styled.section`
     display: flex;

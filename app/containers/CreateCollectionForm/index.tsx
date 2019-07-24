@@ -49,7 +49,10 @@ function getCollectionField<T>(field: string, data: any) {
     return path<T>(['getCollection', field], data)
 }
 
-export default compose<InjectedFormikProps<IProps, IFormValues>, InjectedFormikProps<IProps, IFormValues>>(
+export default compose<
+    InjectedFormikProps<IProps, IFormValues>,
+    InjectedFormikProps<IProps, IFormValues>
+>(
     connect(
         (state: IReduxState) => ({
             communities: state.app.user && state.app.user.communities,
@@ -183,7 +186,7 @@ export default compose<InjectedFormikProps<IProps, IFormValues>, InjectedFormikP
                 })
             } else {
                 if (props.data) {
-                    // BACKEND FIX sections.resources -> sections.resourcesId 
+                    // BACKEND FIX sections.resources -> sections.resourcesId
                     const reassignResourcesToResourcesId = pipe(
                         path<Collection_sections[]>(['sections']),
                         defaultTo([]),

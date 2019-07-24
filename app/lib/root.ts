@@ -5,9 +5,7 @@ import showConfirmationModalEpic from './Epics/ShowConfirmationModalEpic'
 import routeChangeEpic from './Epics/RouteChangeEpic'
 import hideIntroBannerEpic from './Epics/HideIntroBannerEpic'
 import app from './Module'
-// import register, {
-//   registerEpic,
-// } from "../components/containers/LoginForm/Module";
+import register, { registerEpic } from '../containers/LoginForm/Module'
 // import { tipArticleEpic } from "../components/containers/Article/Module";
 // import {
 //   rejectArticleEpic,
@@ -68,13 +66,13 @@ import modal from '../components/Modal/Module'
 export const rootReducer = {
     app,
     modal,
-    // register,
+    register,
     // localStorage,
 }
 
 const epics = [
     showNotificationEpic,
-    //   registerEpic,
+    registerEpic,
     showConfirmationModalEpic,
     routeChangeEpic,
     //   submitArticleEpic,

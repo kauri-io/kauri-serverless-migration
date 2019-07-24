@@ -108,7 +108,9 @@ const CollectionsContent = ({
                     return (
                         <CollectionCard
                             key={collection.id + collection.version}
-                            resourceType={collection.owner.__typename.split('DTO')[0].toUpperCase()}
+                            resourceType={collection.owner.__typename
+                                .split('DTO')[0]
+                                .toUpperCase()}
                             cardHeight={310}
                             id={collection.id}
                             description={collection.description}

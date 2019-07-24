@@ -2,15 +2,7 @@ import styled from 'styled-components'
 import { space, SpaceProps } from 'styled-system'
 import { Form, Field, FieldArray, InjectedFormikProps } from 'formik'
 import Stack from 'stack-styled'
-import {
-    path,
-    remove,
-    pipe,
-    map,
-    reduce,
-    filter,
-    defaultTo,
-} from 'ramda'
+import { path, remove, pipe, map, reduce, filter, defaultTo } from 'ramda'
 import ActionsSection from '../../components/Section/ActionsSection'
 import PrimaryHeaderSection from '../../components/Section/PrimaryHeaderSection'
 import CardContentSection from '../../components/Section/CardContentSection'
