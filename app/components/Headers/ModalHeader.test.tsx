@@ -7,7 +7,7 @@ let props = {
 }
 
 describe('components/ModalHeader', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<ModalHeader {...props} />)
         expect(wrapper).toMatchSnapshot()
     })

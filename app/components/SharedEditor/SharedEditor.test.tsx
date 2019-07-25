@@ -13,7 +13,7 @@ let props = {
 }
 
 describe('components/SharedEditor', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = shallowWithTheme(<SharedEditor {...props} />)
         expect(wrapper).toMatchSnapshot()
     })

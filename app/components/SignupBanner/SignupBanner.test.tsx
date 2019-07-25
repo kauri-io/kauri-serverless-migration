@@ -6,7 +6,7 @@ let props = {
 }
 
 describe('components/SignupBanner', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<SignupBanner {...props} />)
         expect(wrapper).toMatchSnapshot()
     })

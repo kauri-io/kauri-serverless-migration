@@ -1,5 +1,6 @@
 import HoverDateLabel, { HoverDateStatus } from './index'
-import { mountWithTheme } from '../../setupTests'
+// import { mountWithTheme } from '../../setupTests'
+import { shallow } from 'enzyme'
 
 let props = {
     date: '2019-01-01',
@@ -7,8 +8,25 @@ let props = {
 }
 
 describe('components/HoverDateLabel', () => {
-    it('snapshot should match', () => {
-        const wrapper = mountWithTheme(<HoverDateLabel {...props} />)
+    let wrapper = shallow(<HoverDateLabel {...props} />)
+    it('should match snapshot', () => {
         expect(wrapper).toMatchSnapshot()
+    })
+
+    it('should handle mouseEnter', () => {
+        wrapper = shallow(<HoverDateLabel {...props} />)
+        wrapper.simulate('mouseEnter')
+        expect(wrapper.state('hovered')).toBe(true)
+    })
+
+    it('should handle mouseLeave', () => {
+        wrapper.simulate('mouseLeave')
+        expect(wrapper.state('hovered')).toBe(false)
+    })
+
+    it('should handle Drafted state', () => {
+        wrapper.setProps({ status: 'DRAFT' })
+        wrapper.simulate('mouseEnter')
+        expect(wrapper.text()).toBe('Drafted 01 Jan 2019 00:00')
     })
 })

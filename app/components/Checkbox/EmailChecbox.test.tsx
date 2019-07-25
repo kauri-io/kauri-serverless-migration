@@ -8,7 +8,7 @@ let props = {
 }
 
 describe('components/EmailCheckbox', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<EmailCheckbox {...props} />)
         expect(wrapper).toMatchSnapshot()
     })

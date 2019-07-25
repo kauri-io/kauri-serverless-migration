@@ -3,7 +3,7 @@ import { mountWithRedux } from '../../setupTests'
 import { MockedProvider } from 'react-apollo/test-utils'
 
 describe('containers/ChooseArticleCard', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const props = {}
         const wrapper = mountWithRedux(
             <MockedProvider>

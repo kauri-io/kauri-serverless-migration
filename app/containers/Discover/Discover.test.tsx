@@ -5,7 +5,7 @@ import { mountWithRedux } from '../../setupTests'
 import { MockedProvider } from 'react-apollo/test-utils'
 
 describe('containers/Discover/Articles', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const props = {}
         const wrapper = mountWithRedux(
             <MockedProvider>
@@ -16,7 +16,7 @@ describe('containers/Discover/Articles', () => {
     })
 })
 describe('containers/Discover/Collections', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const props = {}
         const wrapper = mountWithRedux(
             <MockedProvider>
@@ -28,7 +28,7 @@ describe('containers/Discover/Collections', () => {
 })
 
 describe('containers/Discover/Communities', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const props = {}
         const wrapper = mountWithRedux(
             <MockedProvider>

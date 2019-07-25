@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/UserAvatar snapshot should match 1`] = `
+exports[`components/UserAvatar should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {

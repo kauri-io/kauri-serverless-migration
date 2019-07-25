@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/Tabs snapshot should match 1`] = `
+exports[`components/Tabs should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {

@@ -5,7 +5,7 @@ import { getMyProfile_getMyProfile } from '../../queries/__generated__/getMyProf
 import { UserStatusInput } from '../../__generated__/globalTypes'
 
 describe('containers/EditProfileForm', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const props = {
             OwnProfile: {
                 getMyProfile: {

@@ -25,7 +25,7 @@ const CheckpointedArticlesContainer = styled.div`
     text-transform: uppercase;
 `
 
-interface IProps {
+export interface IProps {
     articles?: (searchPersonalArticles_searchArticles_content | null)[]
     articleCheckpointed?: boolean
     checkpointArticlesAction: () => void

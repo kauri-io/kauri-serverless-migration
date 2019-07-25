@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/AddMemberButton snapshot should match 1`] = `
+exports[`components/AddMemberButton should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -169,7 +169,7 @@ exports[`components/AddMemberButton snapshot should match 1`] = `
 </ThemeProvider>
 `;
 
-exports[`components/AddTagButton snapshot should match 1`] = `
+exports[`components/AddTagButton should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -363,7 +363,7 @@ exports[`components/AddTagButton snapshot should match 1`] = `
 </ThemeProvider>
 `;
 
-exports[`components/MediumImportButton snapshot should match 1`] = `
+exports[`components/MediumImportButton should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -603,7 +603,7 @@ exports[`components/MediumImportButton snapshot should match 1`] = `
 </ThemeProvider>
 `;
 
-exports[`components/PrimaryButton snapshot should match 1`] = `
+exports[`components/PrimaryButton should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -799,7 +799,7 @@ exports[`components/PrimaryButton snapshot should match 1`] = `
 </ThemeProvider>
 `;
 
-exports[`components/SecondaryButton snapshot should match 1`] = `
+exports[`components/SecondaryButton should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -1001,7 +1001,7 @@ exports[`components/SecondaryButton snapshot should match 1`] = `
 </ThemeProvider>
 `;
 
-exports[`components/TertiaryButton snapshot should match 1`] = `
+exports[`components/TertiaryButton should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -1193,7 +1193,7 @@ exports[`components/TertiaryButton snapshot should match 1`] = `
 </ThemeProvider>
 `;
 
-exports[`components/UploadLogoButton snapshot should match 1`] = `
+exports[`components/UploadLogoButton should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {

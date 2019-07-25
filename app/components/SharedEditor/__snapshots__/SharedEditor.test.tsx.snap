@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/SharedEditor snapshot should match 1`] = `
+exports[`components/SharedEditor should match snapshot 1`] = `
 <ContextConsumer>
   <Component />
 </ContextConsumer>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/TagSelector snapshot should match 1`] = `
+exports[`components/TagSelector should match snapshot 1`] = `
 <ContextConsumer>
   <Component />
 </ContextConsumer>

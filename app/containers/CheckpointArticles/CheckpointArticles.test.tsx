@@ -3,7 +3,7 @@ import { mountWithRedux } from '../../setupTests'
 import { MockedProvider } from 'react-apollo/test-utils'
 
 describe('containers/CheckpointArticles', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const props = {
             checkpointArticlesAction: jest.fn(),
             pageType: 'public-profile' as IProps['pageType'],

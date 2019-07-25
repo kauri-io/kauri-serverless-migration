@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/Link snapshot should match 1`] = `
+exports[`components/Link should match snapshot 1`] = `
 <Provider
   store={
     Object {

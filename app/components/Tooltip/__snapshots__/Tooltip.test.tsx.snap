@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/Tooltip/ShareArticle snapshot should match 1`] = `
+exports[`components/Tooltip/ShareArticle should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -309,7 +309,7 @@ exports[`components/Tooltip/ShareArticle snapshot should match 1`] = `
 </ThemeProvider>
 `;
 
-exports[`components/Tooltip/ShareButtons snapshot should match 1`] = `
+exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -878,7 +878,7 @@ exports[`components/Tooltip/ShareButtons snapshot should match 1`] = `
 </ThemeProvider>
 `;
 
-exports[`components/Tooltip/Tooltip snapshot should match 1`] = `
+exports[`components/Tooltip/Tooltip should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {

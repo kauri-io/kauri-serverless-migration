@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`containers/Error snapshot should match 1`] = `
+exports[`containers/Error should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {

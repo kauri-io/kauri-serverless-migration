@@ -4,7 +4,7 @@ import { mountWithTheme } from '../../setupTests'
 let props = {}
 
 describe('components/AddOptions', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(
             <AddOptions {...props}>
                 <div>test</div>

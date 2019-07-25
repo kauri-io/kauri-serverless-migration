@@ -4,7 +4,7 @@ import { shallowWithTheme } from '../../setupTests'
 let props = {}
 
 describe('components/TagSelector', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = shallowWithTheme(<TagSelector {...props} />)
         expect(wrapper).toMatchSnapshot()
     })

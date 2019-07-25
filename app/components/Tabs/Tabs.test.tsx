@@ -10,7 +10,7 @@ let props = {
 }
 
 describe('components/Tabs', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<Tabs {...props} />)
         expect(wrapper).toMatchSnapshot()
     })
