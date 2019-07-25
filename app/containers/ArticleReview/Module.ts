@@ -1,4 +1,4 @@
-import { ActionsObservable, ofType, Epic } from 'redux-observable'
+import { ofType, Epic } from 'redux-observable'
 import { IDependencies, IReduxState } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
@@ -125,10 +125,10 @@ export const rejectArticleAction = (
     type: REJECT_ARTICLE,
 })
 
-export const rejectArticleEpic = (
-    action$: ActionsObservable<IRejectArticleAction>,
-    _: IReduxState,
-    { apolloClient, apolloSubscriber }: IDependencies
+export const rejectArticleEpic: Epic<IRejectArticleAction, any, IReduxState, IDependencies>  = (
+    action$,
+    _,
+  { apolloClient, apolloSubscriber }
 ) =>
     action$.pipe(
         ofType(REJECT_ARTICLE),

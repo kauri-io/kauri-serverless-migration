@@ -1,14 +1,19 @@
-import { saveUserDetails, getOwnProfile } from '../../queries/User'
+import { saveUserMutation, getOwnProfile } from '../../queries/User'
 import {
     showNotificationAction,
     IShowNotificationPayload,
 } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
-import { IDependencies } from '../../lib/Module'
+import { IDependencies, IReduxState } from '../../lib/Module'
 import analytics from '../../lib/analytics'
 import { merge, of, from, throwError } from 'rxjs'
-import { ActionsObservable } from 'redux-observable'
-import { filter, switchMap, catchError, tap, mergeMap } from 'rxjs/operators'
+import { Epic, ofType } from 'redux-observable'
+import { switchMap, catchError, tap, mergeMap } from 'rxjs/operators'
+import { path } from 'ramda'
+import {
+    saveUser,
+    saveUserVariables,
+} from '../../queries/__generated__/saveUser'
 
 export interface ISaveUserDetailActionType {
     type: string
@@ -16,19 +21,21 @@ export interface ISaveUserDetailActionType {
     callback: any
 }
 
+const SAVE_USER_DETAILS = 'SAVE_USER_DETAILS'
+
 export const saveUserDetailsAction = (payload: any, callback?: any) => ({
-    type: 'SAVE_USER_DETAILS',
+    type: SAVE_USER_DETAILS,
     payload,
     callback,
 })
 
-export const saveUserDetailsEpic = (
-    action$: ActionsObservable<ISaveUserDetailActionType>,
-    { getState }: any,
-    { apolloClient, apolloSubscriber }: IDependencies
+export const saveUserDetailsEpic: Epic<ISaveUserDetailActionType, any, IReduxState, IDependencies> = (
+    action$,
+    state$,
+    { apolloClient, apolloSubscriber }
 ) =>
     action$.pipe(
-        filter(x => x.type === 'SAVE_USER_DETAILS'),
+        ofType(SAVE_USER_DETAILS),
         switchMap(
             ({
                 payload: {
@@ -46,8 +53,8 @@ export const saveUserDetailsEpic = (
                 callback,
             }) =>
                 from(
-                    apolloClient.mutate({
-                        mutation: saveUserDetails,
+                    apolloClient.mutate<saveUser, saveUserVariables>({
+                        mutation: saveUserMutation,
                         variables: {
                             username,
                             avatar,
@@ -63,9 +70,9 @@ export const saveUserDetailsEpic = (
                         },
                     })
                 ).pipe(
-                    mergeMap(({ data: { saveUser: { hash } } }) =>
+                    mergeMap(({ data }) =>
                         apolloSubscriber<{ error: string | undefined | null }>(
-                            hash
+                            path<string>(['saveUser', 'hash'])(data) || ''
                         )
                     ),
                     mergeMap(({ data: { output } }) => {
@@ -99,7 +106,7 @@ export const saveUserDetailsEpic = (
                                                 : redirectURL
                                     } else {
                                         newRedirectURL = `/public-profile/${
-                                            getState().app.user.id
+                                          path<string>(['value', 'app', 'user','id'])(state$) || ''
                                         }`
                                     }
 

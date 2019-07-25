@@ -14,8 +14,7 @@ import {
     mapTo,
     catchError,
 } from 'rxjs/operators'
-import { IReduxState } from '../../lib/Module'
-import { IDependencies } from '../ArticleDraft/DeleteDraftArticleModule'
+import { IReduxState, IDependencies } from '../../lib/Module'
 // import { delay } from 'rxjs-compat/operator/delay'
 
 const request = superagent.agent()

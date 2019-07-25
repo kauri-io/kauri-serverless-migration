@@ -62,7 +62,7 @@ export const createCollection = gql`
     }
 `
 
-export const editCollection = gql`
+export const editCollectionMutation = gql`
     mutation editCollection(
         $id: String!
         $name: String!

@@ -21,9 +21,16 @@ import {
     resendInvitationMutation,
     initiateArticleTransferMutation,
 } from '../../queries/Community'
-import { curateCommunityResourcesVariables } from '../../queries/__generated__/curateCommunityResources'
-import { approveResourceVariables } from '../../queries/__generated__/approveResource'
+import {
+    curateCommunityResourcesVariables,
+    curateCommunityResources,
+} from '../../queries/__generated__/curateCommunityResources'
+import {
+    approveResourceVariables,
+    approveResource,
+} from '../../queries/__generated__/approveResource'
 import { removeResourceVariables } from '../../queries/__generated__/removeResource'
+import { path } from 'ramda'
 
 import {
     sendInvitation,
@@ -76,7 +83,6 @@ import { closeModalAction } from '../../components/Modal/Module'
 import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
 import { finaliseArticleTransferMutation } from '../../queries/Article'
 import { of, merge, from } from 'rxjs'
-import { path } from 'ramda'
 import { mergeMap, tap, catchError } from 'rxjs/operators'
 import {
     finaliseArticleTransfer,
@@ -294,6 +300,7 @@ interface IRevokeInvitationCommandOutput {
 interface ICurateCommunityResourcesCommandOutput {
     messageHash: string
     secret: string
+    error?: string
 }
 
 interface IRemoveResourceCommandOutput {
@@ -337,15 +344,21 @@ export const curateCommunityResourcesEpic = (
 ) =>
     action$.ofType(CURATE_COMMUNITY_RESOURCES).switchMap(({ payload }) =>
         from(
-            apolloClient.mutate({
+            apolloClient.mutate<
+                curateCommunityResources,
+                curateCommunityResourcesVariables
+            >({
                 mutation: curateCommunityResourcesMutation,
                 variables: payload,
             })
-        )
-            .mergeMap(({ data: { curateResources: { hash } } }) =>
-                apolloSubscriber<ICurateCommunityResourcesCommandOutput>(hash)
-            )
-            .mergeMap(({ data: { output: { error } } }) =>
+        ).pipe(
+            mergeMap(({ data }) =>
+                apolloSubscriber<ICurateCommunityResourcesCommandOutput>(
+                    path<string>(['curateCommunityResources', 'hash'])(data) ||
+                        ''
+                )
+            ),
+            mergeMap(({ data: { output: { error } } }) =>
                 error
                     ? of(
                           showNotificationAction({
@@ -366,8 +379,9 @@ export const curateCommunityResourcesEpic = (
                               notificationType: 'success',
                           })
                       )
-            )
-            .do(() => apolloClient.resetStore())
+            ),
+            tap(() => apolloClient.resetStore())
+        )
     )
 
 export const approveResourceEpic = (
@@ -377,13 +391,15 @@ export const approveResourceEpic = (
 ) =>
     action$.ofType(APPROVE_RESOURCE).switchMap(({ payload }) =>
         from(
-            apolloClient.mutate({
+            apolloClient.mutate<approveResource, approveResourceVariables>({
                 mutation: approveResourceMutation,
                 variables: payload,
             })
         )
-            .mergeMap(({ data: { approveResource: { hash } } }) =>
-                apolloSubscriber<IApproveResourceCommandOutput>(hash)
+            .mergeMap(({ data }) =>
+                apolloSubscriber<IApproveResourceCommandOutput>(
+                    path<string>(['approveResource', 'hash'])(data) || ''
+                )
             )
             .mergeMap(({ data: { output: { error } } }) =>
                 error

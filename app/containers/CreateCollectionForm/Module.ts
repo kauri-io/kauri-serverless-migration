@@ -1,17 +1,18 @@
 import {
     createCollection,
-    editCollection,
+    editCollectionMutation,
     composeCollection,
 } from '../../queries/Collection'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import analytics from '../../lib/analytics'
-
-import { IDependencies } from '../../lib/Module'
-import { ActionsObservable, ofType } from 'redux-observable'
+import { IDependencies, IReduxState } from '../../lib/Module'
+import { ActionsObservable, ofType, Epic } from 'redux-observable'
 import { from, of } from 'rxjs'
+import { path } from 'ramda'
 import { ISection } from '../AddToCollection/SectionsContent'
 import { switchMap, mergeMap, tap, catchError, map } from 'rxjs/operators'
+import { editCollection } from '../../queries/__generated__/editCollection';
 
 export interface ICreateCollectionPayload {
     name: string
@@ -38,7 +39,7 @@ interface ICreateCollectionAction {
     callback: any
 }
 
-interface EditCollectionAction {
+interface IEditCollectionAction {
     type: string
     payload: ICreateCollectionPayload & { id: string }
     callback: any
@@ -68,7 +69,7 @@ export const createCollectionAction = (
 export const editCollectionAction = (
     payload: ICreateCollectionPayload & { id: string },
     callback: any
-): EditCollectionAction => ({
+): IEditCollectionAction => ({
     type: EDIT_COLLECTION,
     payload,
     callback,
@@ -104,9 +105,11 @@ export const composeCollectionEpic = (
                         },
                     })
                 ).pipe(
-                    mergeMap(({ data: { composeCollection: { hash } } }) =>
-                        from(apolloSubscriber(hash)).pipe(
-                            tap(h => console.log(h)),
+                    mergeMap(({ data }) =>
+                      from(
+                        apolloSubscriber<{ id: string }>(path<string>(['composeCollection','hash'])(data) || '')
+                      ).pipe(
+                            tap(console.log),
                             tap(() => {
                                 analytics.track(
                                     updating
@@ -194,8 +197,8 @@ export const createCollectionEpic = (
                         },
                     })
                 ).pipe(
-                    mergeMap(({ data: { createCollection: { hash } } }) =>
-                        apolloSubscriber<{ id: string }>(hash)
+                    mergeMap(({ data }) =>
+                      apolloSubscriber<{ id: string }>(path<string>(['createCollection','hash'])(data) || '')
                     ),
                     map(({ data: { output: { id } } }) =>
                         composeCollectionAction(
@@ -209,10 +212,10 @@ export const createCollectionEpic = (
         )
     )
 
-export const editCollectionEpic = (
-    action$: ActionsObservable<EditCollectionAction>,
+export const editCollectionEpic: Epic<IEditCollectionAction, any, IReduxState, IDependencies> = (
+    action$,
     {},
-    { apolloClient, apolloSubscriber }: IDependencies
+    { apolloClient, apolloSubscriber }
 ) =>
     action$.pipe(
         ofType(EDIT_COLLECTION),
@@ -222,8 +225,8 @@ export const editCollectionEpic = (
                 callback,
             }) => {
                 return from(
-                    apolloClient.mutate({
-                        mutation: editCollection,
+                    apolloClient.mutate<editCollection, any>({
+                        mutation: editCollectionMutation,
                         variables: {
                             id,
                             name,
@@ -233,10 +236,10 @@ export const editCollectionEpic = (
                         },
                     })
                 ).pipe(
-                    mergeMap(({ data: { createCollection: { hash } } }) =>
-                        apolloSubscriber<{ id: string }>(hash)
+                    mergeMap(({ data }) =>
+                        apolloSubscriber<{ id: string }>(path<string>(['createCollection','hash'])(data) || '')
                     ),
-                    tap(h => console.log(h)),
+                    tap(console.log),
                     map(({ data: { output: { id } } }) =>
                         composeCollectionAction(
                             { id, sections, updating: true },
