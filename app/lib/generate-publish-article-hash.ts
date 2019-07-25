@@ -32,17 +32,17 @@ const generatePublishArticleHash = (
             }
         })
 
-        const newArgs = args.join('')
-        console.log('message=' + newArgs)
+        // const newArgs = args.join('')
+        // console.log('message=' + newArgs)
         let result = web3.sha3(args, { encoding: 'hex' })
         return result
     }
 
-    console.log('ID:', id)
-    console.log('VERSION:', version)
-    console.log('CONTENT HASH:', contentHash)
-    console.log('CONTRIBUTOR:', contributor)
-    console.log('DATE CREATED:', dateCreated)
+    // console.log('ID:', id)
+    // console.log('VERSION:', version)
+    // console.log('CONTENT HASH:', contentHash)
+    // console.log('CONTRIBUTOR:', contributor)
+    // console.log('DATE CREATED:', dateCreated)
 
     return keccak256(
         web3.padRight(web3.fromAscii(id), 66),

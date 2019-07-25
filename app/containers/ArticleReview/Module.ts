@@ -53,6 +53,7 @@ export const approveArticleEpic: Epic<IApproveArticleAction, any, IReduxState, I
                         )
                     )
                 ).pipe(
+                    // tap(console.log),
                     mergeMap(signature =>
                         apolloClient.mutate<approveArticle, approveArticleVariables>({
                             mutation: approveArticleMutation,
@@ -74,7 +75,7 @@ export const approveArticleEpic: Epic<IApproveArticleAction, any, IReduxState, I
                         })
                     ),
                     tap(() => apolloClient.resetStore()),
-                    mergeMap<any, any>(() =>
+                    mergeMap(() =>
                         merge(
                             of(
                                 routeChangeAction(
