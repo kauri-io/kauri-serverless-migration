@@ -15,9 +15,9 @@ describe('fetchUserDetailsEpic', () => {
                 Promise.resolve({ data: { getMyProfile: mockProfile } }),
         }
         const sourceAction = fetchUserDetailsAction({ parsedToken: 'test123' })
-        const expectedAction = setUserDetailsAction({
+        const expectedAction = [ setUserDetailsAction({
             user: mockProfile,
-        } as any)
+        } as any) ]
 
         const resultingActions = await testEpic(
             fetchUserDetailsEpic,

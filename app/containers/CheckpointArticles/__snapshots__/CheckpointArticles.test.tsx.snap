@@ -174,148 +174,19 @@ exports[`containers/CheckpointArticles snapshot should match 1`] = `
               "watches": Set {},
             },
             "clearStoreCallbacks": Array [],
+            "clientAwareness": Object {},
             "defaultOptions": Object {},
             "disableNetworkFetches": false,
-            "link": MockLink {
-              "addTypename": true,
-              "mockedResponsesByKey": Object {},
-            },
-            "localState": LocalState {
-              "cache": InMemoryCache {
-                "addTypename": true,
-                "cacheKeyRoot": KeyTrie {
-                  "weakness": true,
-                },
-                "config": Object {
-                  "addTypename": true,
-                  "dataIdFromObject": [Function],
-                  "fragmentMatcher": HeuristicFragmentMatcher {},
-                  "freezeResults": false,
-                  "resultCaching": true,
-                },
-                "data": DepTrackingCache {
-                  "data": Object {},
-                  "depend": [Function],
-                },
-                "maybeBroadcastWatch": [Function],
-                "optimisticData": DepTrackingCache {
-                  "data": Object {},
-                  "depend": [Function],
-                },
-                "silenceBroadcast": false,
-                "storeReader": StoreReader {
-                  "executeSelectionSet": [Function],
-                  "executeStoreQuery": [Function],
-                  "executeSubSelectedArray": [Function],
-                  "freezeResults": false,
-                },
-                "storeWriter": StoreWriter {},
-                "typenameDocumentCache": Map {},
-                "watches": Set {},
-              },
-              "client": [Circular],
+            "link": ApolloLink {
+              "request": [Function],
             },
             "mutate": [Function],
             "query": [Function],
             "queryDeduplication": true,
-            "queryManager": QueryManager {
-              "assumeImmutableResults": false,
-              "clientAwareness": Object {
-                "name": undefined,
-                "version": undefined,
-              },
-              "dataStore": DataStore {
-                "cache": InMemoryCache {
-                  "addTypename": true,
-                  "cacheKeyRoot": KeyTrie {
-                    "weakness": true,
-                  },
-                  "config": Object {
-                    "addTypename": true,
-                    "dataIdFromObject": [Function],
-                    "fragmentMatcher": HeuristicFragmentMatcher {},
-                    "freezeResults": false,
-                    "resultCaching": true,
-                  },
-                  "data": DepTrackingCache {
-                    "data": Object {},
-                    "depend": [Function],
-                  },
-                  "maybeBroadcastWatch": [Function],
-                  "optimisticData": DepTrackingCache {
-                    "data": Object {},
-                    "depend": [Function],
-                  },
-                  "silenceBroadcast": false,
-                  "storeReader": StoreReader {
-                    "executeSelectionSet": [Function],
-                    "executeStoreQuery": [Function],
-                    "executeSubSelectedArray": [Function],
-                    "freezeResults": false,
-                  },
-                  "storeWriter": StoreWriter {},
-                  "typenameDocumentCache": Map {},
-                  "watches": Set {},
-                },
-              },
-              "fetchQueryRejectFns": Map {},
-              "idCounter": 1,
-              "inFlightLinkObservables": Map {},
-              "link": MockLink {
-                "addTypename": true,
-                "mockedResponsesByKey": Object {},
-              },
-              "localState": LocalState {
-                "cache": InMemoryCache {
-                  "addTypename": true,
-                  "cacheKeyRoot": KeyTrie {
-                    "weakness": true,
-                  },
-                  "config": Object {
-                    "addTypename": true,
-                    "dataIdFromObject": [Function],
-                    "fragmentMatcher": HeuristicFragmentMatcher {},
-                    "freezeResults": false,
-                    "resultCaching": true,
-                  },
-                  "data": DepTrackingCache {
-                    "data": Object {},
-                    "depend": [Function],
-                  },
-                  "maybeBroadcastWatch": [Function],
-                  "optimisticData": DepTrackingCache {
-                    "data": Object {},
-                    "depend": [Function],
-                  },
-                  "silenceBroadcast": false,
-                  "storeReader": StoreReader {
-                    "executeSelectionSet": [Function],
-                    "executeStoreQuery": [Function],
-                    "executeSubSelectedArray": [Function],
-                    "freezeResults": false,
-                  },
-                  "storeWriter": StoreWriter {},
-                  "typenameDocumentCache": Map {},
-                  "watches": Set {},
-                },
-                "client": [Circular],
-              },
-              "mutationStore": MutationStore {
-                "store": Object {},
-              },
-              "onBroadcast": [Function],
-              "pollingInfoByQueryId": Map {},
-              "queries": Map {},
-              "queryDeduplication": true,
-              "queryStore": QueryStore {
-                "store": Object {},
-              },
-              "ssrMode": false,
-              "transformCache": WeakMap {},
-            },
             "reFetchObservableQueries": [Function],
             "resetStore": [Function],
             "resetStoreCallbacks": Array [],
+            "ssrMode": false,
             "store": DataStore {
               "cache": InMemoryCache {
                 "addTypename": true,
@@ -350,42 +221,43 @@ exports[`containers/CheckpointArticles snapshot should match 1`] = `
                 "watches": Set {},
               },
             },
-            "typeDefs": undefined,
-            "version": "2.6.3",
+            "version": "2.4.13",
             "watchQuery": [Function],
           }
         }
       >
-        <_default
+        <CheckpointArticles
           checkpointArticlesAction={[MockFunction]}
           isOwner={true}
           pageType="public-profile"
         >
-          <View__CheckpointArticlesCTAContainer>
+          <View__CheckpointedArticlesContainer>
             <StyledComponent
               forwardedComponent={
                 Object {
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": Array [],
                   "componentStyle": ComponentStyle {
-                    "componentId": "View__CheckpointArticlesCTAContainer-sc-1eullvd-0",
+                    "componentId": "View__CheckpointedArticlesContainer-sc-1eullvd-0",
                     "isStatic": false,
-                    "lastClassName": "dBIBDH",
+                    "lastClassName": "hmyxJL",
                     "rules": Array [
-                      "display:flex;justify-content:center;padding:",
+                      "display:flex;>:first-child{margin-right:",
                       [Function],
-                      "px ",
+                      "px;color:",
                       [Function],
-                      ";padding-bottom:0px;margin:0px ",
+                      ";}font-size:",
                       [Function],
-                      "px;",
+                      "px;font-weight:",
+                      [Function],
+                      ";text-transform:uppercase;",
                     ],
                   },
-                  "displayName": "View__CheckpointArticlesCTAContainer",
+                  "displayName": "View__CheckpointedArticlesContainer",
                   "foldedComponentIds": Array [],
                   "render": [Function],
-                  "styledComponentId": "View__CheckpointArticlesCTAContainer-sc-1eullvd-0",
-                  "target": "section",
+                  "styledComponentId": "View__CheckpointedArticlesContainer-sc-1eullvd-0",
+                  "target": "div",
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
                   "withComponent": [Function],
@@ -393,8 +265,8 @@ exports[`containers/CheckpointArticles snapshot should match 1`] = `
               }
               forwardedRef={null}
             >
-              <section
-                className="View__CheckpointArticlesCTAContainer-sc-1eullvd-0 dBIBDH"
+              <div
+                className="View__CheckpointedArticlesContainer-sc-1eullvd-0 hmyxJL"
               >
                 <AllArticlesOnMainnet>
                   <View__CheckpointedArticlesContainer>
@@ -404,9 +276,9 @@ exports[`containers/CheckpointArticles snapshot should match 1`] = `
                           "$$typeof": Symbol(react.forward_ref),
                           "attrs": Array [],
                           "componentStyle": ComponentStyle {
-                            "componentId": "View__CheckpointedArticlesContainer-sc-1eullvd-1",
+                            "componentId": "View__CheckpointedArticlesContainer-sc-1eullvd-0",
                             "isStatic": false,
-                            "lastClassName": "kpgNBB",
+                            "lastClassName": "hmyxJL",
                             "rules": Array [
                               "display:flex;>:first-child{margin-right:",
                               [Function],
@@ -422,7 +294,7 @@ exports[`containers/CheckpointArticles snapshot should match 1`] = `
                           "displayName": "View__CheckpointedArticlesContainer",
                           "foldedComponentIds": Array [],
                           "render": [Function],
-                          "styledComponentId": "View__CheckpointedArticlesContainer-sc-1eullvd-1",
+                          "styledComponentId": "View__CheckpointedArticlesContainer-sc-1eullvd-0",
                           "target": "div",
                           "toString": [Function],
                           "warnTooManyClasses": [Function],
@@ -432,7 +304,7 @@ exports[`containers/CheckpointArticles snapshot should match 1`] = `
                       forwardedRef={null}
                     >
                       <div
-                        className="View__CheckpointedArticlesContainer-sc-1eullvd-1 kpgNBB"
+                        className="View__CheckpointedArticlesContainer-sc-1eullvd-0 hmyxJL"
                       >
                         <CheckpointArticlesIcon>
                           <svg
@@ -463,10 +335,10 @@ exports[`containers/CheckpointArticles snapshot should match 1`] = `
                     </StyledComponent>
                   </View__CheckpointedArticlesContainer>
                 </AllArticlesOnMainnet>
-              </section>
+              </div>
             </StyledComponent>
-          </View__CheckpointArticlesCTAContainer>
-        </_default>
+          </View__CheckpointedArticlesContainer>
+        </CheckpointArticles>
       </ApolloProvider>
     </MockedProvider>
   </ThemeProvider>
