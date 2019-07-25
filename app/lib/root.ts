@@ -3,10 +3,11 @@ import userDetailsEpic from './Epics/FetchUserDetailsEpic'
 import routeChangeEpic from './Epics/RouteChangeEpic'
 import app from './Module'
 import register, { registerEpic } from '../containers/LoginForm/Module'
-// import {
-//   rejectArticleEpic,
-//   approveArticleEpic,
-// } from "../components/containers/ArticleReview/Module";
+import modal from '../components/Modal/Module'
+import {
+    rejectArticleEpic,
+    approveArticleEpic,
+} from '../containers/ArticleReview/Module'
 // import { publishArticleEpic } from "../components/containers/SubmitArticleForm/PublishArticleModule";
 // import {
 //   submitArticleEpic,
@@ -21,7 +22,6 @@ import register, { registerEpic } from '../containers/LoginForm/Module'
 //   composeCollectionEpic,
 // } from "../components/containers/CreateCollectionForm/Module";
 // import { saveUserDetailsEpic } from "../components/common/EditProfile/Module";
-import modal from '../components/Modal/Module'
 // import { checkpointArticlesEpic } from "../components/containers/CheckpointArticles/Module";
 // import { deleteDraftArticleEpic } from "../components/containers/ArticleDraft/DeleteDraftArticleModule";
 // import { addArticleToCollectionEpic } from "../components/connections/AddToCollection/Module";
@@ -64,16 +64,16 @@ const epics = [
     registerEpic,
     routeChangeEpic,
     userDetailsEpic,
+    rejectArticleEpic,
+    approveArticleEpic,
     //   submitArticleEpic,
     //   submitArticleVersionEpic,
     //   editArticleEpic,
     //   addCommentEpic,
-    //   rejectArticleEpic,
     //   startDriverStepsEpic,
     //   finishedDriverStepsEpic,
     //   createCollectionEpic,
     //   composeCollectionEpic,
-    //   approveArticleEpic,
     //   draftArticleEpic,
     //   editCollectionEpic,
     //   checkpointArticlesEpic,
