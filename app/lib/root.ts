@@ -8,13 +8,13 @@ import {
     rejectArticleEpic,
     approveArticleEpic,
 } from '../containers/ArticleReview/Module'
-// import { publishArticleEpic } from "../components/containers/SubmitArticleForm/PublishArticleModule";
+import { publishArticleEpic } from "../containers/SubmitArticleForm/PublishArticleModule";
 import {
-  submitArticleEpic,
-  submitArticleVersionEpic,
-  editArticleEpic,
-  // draftArticleEpic,
-} from "../containers/SubmitArticleForm/Module";
+    submitArticleEpic,
+    submitArticleVersionEpic,
+    editArticleEpic,
+    draftArticleEpic,
+} from '../containers/SubmitArticleForm/Module'
 // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
 // import {
 //   createCollectionEpic,
@@ -66,17 +66,17 @@ const epics = [
     userDetailsEpic,
     rejectArticleEpic,
     approveArticleEpic,
-      submitArticleEpic,
-      submitArticleVersionEpic,
-      editArticleEpic,
+    submitArticleEpic,
+    submitArticleVersionEpic,
+    editArticleEpic,
+    draftArticleEpic,
+    publishArticleEpic,
     //   addCommentEpic,
     //   createCollectionEpic,
     //   composeCollectionEpic,
-    //   draftArticleEpic,
     //   editCollectionEpic,
     //   checkpointArticlesEpic,
     //   saveUserDetailsEpic,
-    //   publishArticleEpic,
     //   deleteDraftArticleEpic,
     //   addArticleToCollectionEpic,
     //   verifyEmailEpic,

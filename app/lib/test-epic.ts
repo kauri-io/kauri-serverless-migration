@@ -5,7 +5,7 @@ import { toArray } from 'rxjs/operators';
 const testEpic = (epic, action, state = {}, dependencies = {}) => {
     const actions = new Subject()
     const actions$ = new ActionsObservable(actions as any)
-    const store = { getState: () => state }
+    const store = { value: state }
 
     const promised = epic(actions$, store, dependencies).pipe(toArray()).toPromise()
 
