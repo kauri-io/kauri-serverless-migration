@@ -292,7 +292,7 @@ export const submitArticleVersionEpic: Epic<
                             ) || ''
                         )
                     ),
-                    tap(h => console.log(h)),
+                    // tap(h => console.log(h)),
                     mergeMap(({ data: { output } }) =>
                         apolloClient.query<IGetArticleResult>({
                             fetchPolicy: 'network-only',
@@ -303,7 +303,7 @@ export const submitArticleVersionEpic: Epic<
                             },
                         })
                     ),
-                    tap(h => console.log(h)),
+                    // tap(h => console.log(h)),
                     mergeMap(({ data: { getArticle } }) =>
                         typeof selfPublish !== 'undefined'
                             ? of(
