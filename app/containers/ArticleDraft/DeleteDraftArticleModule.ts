@@ -10,7 +10,7 @@ import {
     deleteDraftArticleVariables,
 } from '../../queries/__generated__/deleteDraftArticle'
 import { path } from 'ramda'
-import { IDependencies } from '../../lib/Module';
+import { IDependencies, IReduxState } from '../../lib/Module';
 
 export interface IDeleteDraftArticlePayload {
     id: string
@@ -21,14 +21,6 @@ export interface IDeleteDraftArticleAction {
     type: 'DELETE_DRAFT_ARTICLE'
     payload: IDeleteDraftArticlePayload
     callback: () => void
-}
-
-interface IReduxState {
-    app: {
-        user: {
-            id: string
-        }
-    }
 }
 
 const DELETE_DRAFT_ARTICLE = 'DELETE_DRAFT_ARTICLE'

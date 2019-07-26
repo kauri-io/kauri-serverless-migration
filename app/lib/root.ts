@@ -22,7 +22,7 @@ import { checkpointArticlesEpic } from "../containers/CheckpointArticles/Module"
 //   composeCollectionEpic,
 // } from "../components/containers/CreateCollectionForm/Module";
 // import { saveUserDetailsEpic } from "../components/common/EditProfile/Module";
-// import { deleteDraftArticleEpic } from "../components/containers/ArticleDraft/DeleteDraftArticleModule";
+import { deleteDraftArticleEpic } from "../containers/ArticleDraft/DeleteDraftArticleModule";
 // import { addArticleToCollectionEpic } from "../components/connections/AddToCollection/Module";
 // import {
 //   verifyEmailEpic,
@@ -56,30 +56,32 @@ import { checkpointArticlesEpic } from "../containers/CheckpointArticles/Module"
 // TODO: // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
 
 export const rootReducer = {
-    app,
-    modal,
-    register,
+  app,
+  modal,
+  register,
 }
 
 const epics = [
-    registerEpic,
-    routeChangeEpic,
-    userDetailsEpic,
-    rejectArticleEpic,
-    approveArticleEpic,
-    submitArticleEpic,
-    submitArticleVersionEpic,
-    editArticleEpic,
-    draftArticleEpic,
-    publishArticleEpic,
-    checkpointArticlesEpic,
-    //   addCommentEpic,
+  registerEpic,
+  routeChangeEpic,
+  userDetailsEpic,
+  rejectArticleEpic,
+  approveArticleEpic,
+  submitArticleEpic,
+  submitArticleVersionEpic,
+  editArticleEpic,
+  draftArticleEpic,
+  publishArticleEpic,
+  checkpointArticlesEpic,
+  deleteDraftArticleEpic,
+    // addArticleToCollectionEpic,
+
+  //   TODO: addCommentEpic,
+  //   saveUserDetailsEpic,
+
     //   createCollectionEpic,
     //   composeCollectionEpic,
     //   editCollectionEpic,
-    //   saveUserDetailsEpic,
-    //   deleteDraftArticleEpic,
-    //   addArticleToCollectionEpic,
     //   verifyEmailEpic,
     //   resendEmailVerificationEpic,
     //   emailSubscribeEpic,

@@ -1,9 +1,13 @@
 import testEpic from '../../lib/test-epic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
-import { checkpointArticlesAction, checkpointArticlesEpic } from './Module'
+import {
+    deleteDraftArticleAction,
+    deleteDraftArticleEpic,
+} from './DeleteDraftArticleModule'
 import { from } from 'rxjs'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
-describe('checkpointArticlesEpic', () => {
+describe('deleteDraftArticleEpic', () => {
     beforeAll(() => {
         // global.window = {}
         global.window.web3 = {
@@ -18,7 +22,7 @@ describe('checkpointArticlesEpic', () => {
         }
     })
 
-    it('publishes a new article version since they are a member of the community that owns it', async () => {
+    it('deletes a draft article', async () => {
         const mockPersonalSign = () => Promise.resolve('abc')
         const id = '1234567890-'
         const version = 123
@@ -37,7 +41,7 @@ describe('checkpointArticlesEpic', () => {
         const mockApolloClient = {
             mutate: () =>
                 Promise.resolve({
-                    data: { checkpointArticles: { hash: '1234567890' } },
+                    data: { deleteDraftArticle: { hash: '1234567890' } },
                 }),
             query: () =>
                 Promise.resolve({
@@ -59,27 +63,33 @@ describe('checkpointArticlesEpic', () => {
         const mockWeb3GetGasPrice = () => from(Promise.resolve(10000))
         const mockSmartContracts = () => ({
             KauriCore: {
-                checkpointArticles: {
+                deleteDraftArticle: {
                     sendTransaction: () => Promise.resolve('transactionHash'),
                 },
             },
         })
 
-        const sourceAction = checkpointArticlesAction()
+        const sourceAction = deleteDraftArticleAction({ id, version }, () => {})
 
         const expectedAction = [
             showNotificationAction({
+                description: `Your draft article has been deleted!`,
+                message: 'Draft article deleted',
                 notificationType: 'success',
-                message: 'Articles checkpointed!',
-                description: 'All Kauri platform articles are now On-chain!',
             }),
+            routeChangeAction(`/public-profile/${123}`),
         ]
 
         const resultingActions = await testEpic(
-            checkpointArticlesEpic,
+            deleteDraftArticleEpic,
             sourceAction,
             {
-                app: { user: { communities: [{ community: { id: '123' } }] } },
+                app: {
+                    user: {
+                        communities: [{ community: { id: '123' } }],
+                        id: '123',
+                    },
+                },
             },
             {
                 web3GetNetwork: mockWeb3GetNetwork,
