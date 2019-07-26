@@ -15,73 +15,72 @@ import {
     editArticleEpic,
     draftArticleEpic,
 } from '../containers/SubmitArticleForm/Module'
-import { checkpointArticlesEpic } from "../containers/CheckpointArticles/Module";
+import { checkpointArticlesEpic } from '../containers/CheckpointArticles/Module'
 import {
-  createCollectionEpic,
-  editCollectionEpic,
-  composeCollectionEpic,
-} from "../containers/CreateCollectionForm/Module";
-// import { saveUserDetailsEpic } from "../components/common/EditProfile/Module";
-import { deleteDraftArticleEpic } from "../containers/ArticleDraft/DeleteDraftArticleModule";
-// import {
-  //   verifyEmailEpic,
-  //   resendEmailVerificationEpic,
-//   emailSubscribeEpic,
-// } from "../components/containers/EmailVerification/Module";
+    createCollectionEpic,
+    editCollectionEpic,
+    composeCollectionEpic,
+} from '../containers/CreateCollectionForm/Module'
+import { deleteDraftArticleEpic } from '../containers/ArticleDraft/DeleteDraftArticleModule'
+import {
+    verifyEmailEpic,
+    resendEmailVerificationEpic,
+    emailSubscribeEpic,
+} from '../containers/EmailVerification/Module'
 // import { voteEpic } from "../components/containers/Article/ApprovedArticle/VoteModule";
 // import {
-  //   createCommunityEpic,
-  //   communityCreatedEpic,
-  //   updateCommunityEpic,
-  // } from "../components/containers/CreateCommunityForm/Module";
+//   createCommunityEpic,
+//   communityCreatedEpic,
+//   updateCommunityEpic,
+// } from "../components/containers/CreateCommunityForm/Module";
 // import {
-  //   curateCommunityResourcesEpic,
-  //   approveResourceEpic,
-  //   sendCommunityInvitationEpic,
-  //   acceptCommunityInvitationEpic,
-  //   revokeInvitationEpic,
-  //   removeMemberEpic,
-  //   removeResourceEpic,
-  //   changeMemberRoleEpic,
-  //   resendInvitationEpic,
-  //   transferArticleToCommunityEpic,
-  // } from "../components/containers/Community/Module";
-  // import {
-    //   rejectArticleTransferEpic,
-    //   acceptArticleTransferEpic,
-    //   finaliseArticleTransferEpic,
-    // } from "../components/containers/PublicProfile/Manage/TransferModule";
-    
-    // TODO: // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
-    // TODO: // import { addArticleToCollectionEpic } from "../containers/AddToCollection/Module";
+//   curateCommunityResourcesEpic,
+//   approveResourceEpic,
+//   sendCommunityInvitationEpic,
+//   acceptCommunityInvitationEpic,
+//   revokeInvitationEpic,
+//   removeMemberEpic,
+//   removeResourceEpic,
+//   changeMemberRoleEpic,
+//   resendInvitationEpic,
+//   transferArticleToCommunityEpic,
+// } from "../components/containers/Community/Module";
+// import {
+//   rejectArticleTransferEpic,
+//   acceptArticleTransferEpic,
+//   finaliseArticleTransferEpic,
+// } from "../components/containers/PublicProfile/Manage/TransferModule";
+
+// TODO: // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
+// TODO: // import { addArticleToCollectionEpic } from "../containers/AddToCollection/Module";
+// import { saveUserDetailsEpic } from "../components/common/EditProfile/Module";
 
 export const rootReducer = {
-  app,
-  modal,
-  register,
+    app,
+    modal,
+    register,
 }
 
 const epics = [
-  registerEpic,
-  routeChangeEpic,
-  userDetailsEpic,
-  rejectArticleEpic,
-  approveArticleEpic,
-  submitArticleEpic,
-  submitArticleVersionEpic,
-  editArticleEpic,
-  draftArticleEpic,
-  publishArticleEpic,
-  checkpointArticlesEpic,
-  deleteDraftArticleEpic,
-  createCollectionEpic,
-  editCollectionEpic,
-  composeCollectionEpic,
-  
+    registerEpic,
+    routeChangeEpic,
+    userDetailsEpic,
+    verifyEmailEpic,
+    resendEmailVerificationEpic,
+    emailSubscribeEpic,
+    rejectArticleEpic,
+    approveArticleEpic,
+    submitArticleEpic,
+    submitArticleVersionEpic,
+    editArticleEpic,
+    draftArticleEpic,
+    publishArticleEpic,
+    checkpointArticlesEpic,
+    deleteDraftArticleEpic,
+    createCollectionEpic,
+    editCollectionEpic,
+    composeCollectionEpic,
 
-    //   verifyEmailEpic,
-    //   resendEmailVerificationEpic,
-    //   emailSubscribeEpic,
     //   voteEpic,
     //   createCommunityEpic,
     //   communityCreatedEpic,
@@ -101,8 +100,8 @@ const epics = [
     //   transferArticleToCommunityEpic,
 
     //   TODO: addCommentEpic,
-  //   saveUserDetailsEpic,
-  // addArticleToCollectionEpic,
+    //   saveUserDetailsEpic,
+    // addArticleToCollectionEpic,
 ]
 
 export const rootEpic = combineEpics(...epics)
