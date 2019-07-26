@@ -14,6 +14,7 @@ import {
     saveUser,
     saveUserVariables,
 } from '../../queries/__generated__/saveUser'
+import { getMyProfile } from '../../queries/__generated__/getMyProfile'
 
 export interface ISaveUserDetailActionType {
     type: string
@@ -29,11 +30,12 @@ export const saveUserDetailsAction = (payload: any, callback?: any) => ({
     callback,
 })
 
-export const saveUserDetailsEpic: Epic<ISaveUserDetailActionType, any, IReduxState, IDependencies> = (
-    action$,
-    state$,
-    { apolloClient, apolloSubscriber }
-) =>
+export const saveUserDetailsEpic: Epic<
+    ISaveUserDetailActionType,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, state$, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(SAVE_USER_DETAILS),
         switchMap(
@@ -79,63 +81,49 @@ export const saveUserDetailsEpic: Epic<ISaveUserDetailActionType, any, IReduxSta
                         if (typeof output.error === 'string') {
                             return throwError(output.error)
                         } else {
-                            return of({
-                                type: 'UPDATE_USER_SUCCESS',
-                            }).pipe(
-                                tap(() =>
-                                    analytics.track('Edit Profile', {
-                                        category: 'user_actions',
-                                    })
-                                ),
-                                tap(() => callback && callback(false)),
-                                mergeMap(() =>
-                                    apolloClient.query({
-                                        query: getOwnProfile,
-                                        variables: {},
-                                        fetchPolicy: 'network-only',
-                                    })
-                                ),
-                                mergeMap(() => {
-                                    let newRedirectURL
-                                    if (typeof redirectURL === 'string') {
-                                        newRedirectURL =
-                                            redirectURL.indexOf('https://') !==
-                                            -1
-                                                ? redirectURL +
-                                                  '?redirected=true'
-                                                : redirectURL
-                                    } else {
-                                        newRedirectURL = `/public-profile/${
-                                          path<string>(['value', 'app', 'user','id'])(state$) || ''
-                                        }`
-                                    }
+                            return apolloClient.query<getMyProfile>({
+                                query: getOwnProfile,
+                                variables: {},
+                                fetchPolicy: 'network-only',
+                            })
+                        }
+                    }),
+                    tap(() =>
+                        analytics.track('Edit Profile', {
+                            category: 'user_actions',
+                        })
+                    ),
+                    tap(() => callback && callback(false)),
+                    mergeMap(() => {
+                        let newRedirectURL
+                        if (typeof redirectURL === 'string') {
+                            newRedirectURL =
+                                redirectURL.indexOf('https://') !== -1
+                                    ? redirectURL + '?redirected=true'
+                                    : redirectURL
+                        } else {
+                            newRedirectURL = `/public-profile/${path<string>([
+                                'value',
+                                'app',
+                                'user',
+                                'id',
+                            ])(state$) || ''}`
+                        }
 
-                                    return merge(
-                                        of(routeChangeAction(newRedirectURL)),
-                                        of(
-                                            showNotificationAction({
-                                                notificationType: 'success',
-                                                message:
-                                                    'Submission Successful',
-                                                description:
-                                                    'You have successfully updated your profile',
-                                            })
-                                        ),
-                                        catchError(err => {
-                                            console.error(err)
-                                            return of(
-                                                showNotificationAction({
-                                                    notificationType: 'error',
-                                                    message: 'Submission error',
-                                                    description:
-                                                        'Please try again',
-                                                })
-                                            )
-                                        })
-                                    )
+                        return merge(
+                            of(routeChangeAction(newRedirectURL)),
+                            of({
+                                type: 'UPDATE_USER_SUCCESS',
+                            }),
+                            of(
+                                showNotificationAction({
+                                    notificationType: 'success',
+                                    message: 'Submission Successful',
+                                    description:
+                                        'You have successfully updated your profile',
                                 })
                             )
-                        }
+                        )
                     }),
                     catchError(err => {
                         console.error(err)
@@ -143,21 +131,17 @@ export const saveUserDetailsEpic: Epic<ISaveUserDetailActionType, any, IReduxSta
                             'already uses this email'
                         )
                             ? {
-                                  notificationType: 'error',
+                                  notificationType: 'error' as any,
                                   message: 'Submission error',
                                   description:
                                       'A user already uses this email!',
                               }
                             : {
-                                  notificationType: 'error',
+                                  notificationType: 'error' as any,
                                   message: 'Submission error',
                                   description: 'Please try again',
                               }
-                        return of(
-                            showNotificationAction(
-                                notificationPayload as IShowNotificationPayload
-                            )
-                        )
+                        return of(showNotificationAction(notificationPayload))
                     })
                 )
         )

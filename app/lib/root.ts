@@ -70,17 +70,13 @@ const epics = [
     //   submitArticleVersionEpic,
     //   editArticleEpic,
     //   addCommentEpic,
-    //   startDriverStepsEpic,
-    //   finishedDriverStepsEpic,
     //   createCollectionEpic,
     //   composeCollectionEpic,
     //   draftArticleEpic,
     //   editCollectionEpic,
     //   checkpointArticlesEpic,
     //   saveUserDetailsEpic,
-    //   // ReasonML epics
     //   publishArticleEpic,
-    //   // Typescript epics
     //   deleteDraftArticleEpic,
     //   addArticleToCollectionEpic,
     //   verifyEmailEpic,
