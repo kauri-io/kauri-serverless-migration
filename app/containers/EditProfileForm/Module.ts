@@ -1,7 +1,6 @@
 import { saveUserMutation, getOwnProfile } from '../../queries/User'
 import {
     showNotificationAction,
-    IShowNotificationPayload,
 } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { IDependencies, IReduxState } from '../../lib/Module'
