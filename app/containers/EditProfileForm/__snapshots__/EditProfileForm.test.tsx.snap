@@ -1,6 +1,167 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`containers/EditProfileForm should match snapshot 1`] = `
+exports[`containers/EditProfileForm should match snapshot when OwnProfile props does not exists 1`] = `
+<View__Container>
+  <View__StyledUpload
+    bg=""
+    color="white"
+    handleClick={[Function]}
+    text="Profile"
+  />
+  <View__InputsContainers>
+    <Input
+      fontSize={6}
+      fontWeight="normal"
+      onChange={[Function]}
+      placeHolder="Add your full name"
+      value=""
+    />
+    <Input
+      fontSize={3}
+      fontWeight="normal"
+      onChange={[Function]}
+      placeHolder="Add job title"
+      value=""
+    />
+    <Input
+      fontSize={1}
+      fontWeight="normal"
+      onChange={[Function]}
+      placeHolder="Add username"
+      value=""
+    />
+    <Input
+      fontSize={1}
+      fontWeight="normal"
+      onChange={[Function]}
+      placeHolder="Add Website"
+      value=""
+    />
+    <View__Offset>
+      <SocialWebsiteIcon
+        brand="twitter"
+      />
+      <Input
+        fontSize={1}
+        fontWeight="normal"
+        onChange={[Function]}
+        placeHolder="Twitter"
+        value=""
+      />
+    </View__Offset>
+    <View__Offset>
+      <SocialWebsiteIcon
+        brand="github"
+      />
+      <Input
+        fontSize={1}
+        fontWeight="normal"
+        onChange={[Function]}
+        placeHolder="Github"
+        value=""
+      />
+    </View__Offset>
+    <withApollo(Connect(EmailField))
+      email=""
+      handleChange={[Function]}
+      resendEmailVerification={[MockFunction]}
+      status="CREATED"
+    />
+    <View__Offset
+      margin={12}
+    >
+      <Component
+        checked={false}
+        disabled={true}
+        onChange={[Function]}
+      />
+    </View__Offset>
+  </View__InputsContainers>
+</View__Container>
+`;
+
+exports[`containers/EditProfileForm should match snapshot when OwnProfile props exists 1`] = `
+<View__Container>
+  <View__StyledUpload
+    bg="test avatar"
+    color="white"
+    handleClick={[Function]}
+    text="Profile"
+  />
+  <View__InputsContainers>
+    <Input
+      fontSize={6}
+      fontWeight="normal"
+      onChange={[Function]}
+      placeHolder="Add your full name"
+      value="test name"
+    />
+    <Input
+      fontSize={3}
+      fontWeight="normal"
+      onChange={[Function]}
+      placeHolder="Add job title"
+      value="test title"
+    />
+    <Input
+      fontSize={1}
+      fontWeight="normal"
+      onChange={[Function]}
+      placeHolder="Add username"
+      value="test username"
+    />
+    <Input
+      fontSize={1}
+      fontWeight="normal"
+      onChange={[Function]}
+      placeHolder="Add Website"
+      value="test website"
+    />
+    <View__Offset>
+      <SocialWebsiteIcon
+        brand="twitter"
+      />
+      <Input
+        fontSize={1}
+        fontWeight="normal"
+        onChange={[Function]}
+        placeHolder="Twitter"
+        value="test twitter"
+      />
+    </View__Offset>
+    <View__Offset>
+      <SocialWebsiteIcon
+        brand="github"
+      />
+      <Input
+        fontSize={1}
+        fontWeight="normal"
+        onChange={[Function]}
+        placeHolder="Github"
+        value="test github"
+      />
+    </View__Offset>
+    <withApollo(Connect(EmailField))
+      email="email@test.com"
+      handleChange={[Function]}
+      oldEmail="email@test.com"
+      resendEmailVerification={[MockFunction]}
+      status="EMAIL_VERIFIED"
+    />
+    <View__Offset
+      margin={12}
+    >
+      <Component
+        checked={false}
+        disabled={false}
+        onChange={[Function]}
+      />
+    </View__Offset>
+  </View__InputsContainers>
+</View__Container>
+`;
+
+exports[`containers/EditProfileForm should should match the styling 1`] = `
 <Provider
   store={
     Object {
@@ -229,24 +390,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
         <EditableHeader
           OwnProfile={
             Object {
-              "getMyProfile": Object {
-                "__typename": "UserDTO",
-                "avatar": "test avatar",
-                "communities": Array [],
-                "dateCreated": "2019-01-01",
-                "email": "email@test.com",
-                "id": "123",
-                "name": "test name",
-                "social": Object {
-                  "github": "test github",
-                  "twitter": "test twitter",
-                },
-                "status": "EMAIL_VERIFIED",
-                "subscriptions": Object {},
-                "title": "test title",
-                "username": "test username",
-                "website": "test website",
-              },
+              "getMyProfile": null,
             }
           }
           resendEmailVerificationAction={[MockFunction]}
@@ -282,13 +426,13 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                 className="View__Container-sc-1edczmb-3 kWFhCL"
               >
                 <View__StyledUpload
-                  bg="test avatar"
+                  bg=""
                   color="white"
                   handleClick={[Function]}
                   text="Profile"
                 >
                   <StyledComponent
-                    bg="test avatar"
+                    bg=""
                     color="white"
                     forwardedComponent={
                       Object {
@@ -319,14 +463,14 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                     text="Profile"
                   >
                     <UploadLogoButtonComponent
-                      bg="test avatar"
+                      bg=""
                       className="View__StyledUpload-sc-1edczmb-1 jFWtTD"
                       color="white"
                       handleClick={[Function]}
                       text="Profile"
                     >
                       <UploadLogoButton
-                        bg="test avatar"
+                        bg=""
                         className="View__StyledUpload-sc-1edczmb-1 jFWtTD"
                         color="white"
                         fontSize={0}
@@ -336,7 +480,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                         width="100px"
                       >
                         <StyledComponent
-                          bg="test avatar"
+                          bg=""
                           className="View__StyledUpload-sc-1edczmb-1 jFWtTD"
                           color="white"
                           fontSize={0}
@@ -347,7 +491,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                               "componentStyle": ComponentStyle {
                                 "componentId": "UploadLogoButton-t7p33i-0",
                                 "isStatic": false,
-                                "lastClassName": "eEcuOp",
+                                "lastClassName": "ibeuVU",
                                 "rules": Array [
                                   "border:1px solid ",
                                   [Function],
@@ -389,7 +533,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                           width="100px"
                         >
                           <button
-                            className="View__StyledUpload-sc-1edczmb-1 jFWtTD UploadLogoButton-t7p33i-0 eEcuOp"
+                            className="View__StyledUpload-sc-1edczmb-1 jFWtTD UploadLogoButton-t7p33i-0 ibeuVU"
                             color="white"
                             fontSize={0}
                             height="100px"
@@ -477,7 +621,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                         fontWeight="normal"
                         onChange={[Function]}
                         placeHolder="Add your full name"
-                        value="test name"
+                        value=""
                       >
                         <Input__Wrapper
                           textAlign="left"
@@ -526,7 +670,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                 onKeyUp={[Function]}
                                 placeholder="Add your full name"
                                 textAlign="left"
-                                value="test name"
+                                value=""
                               >
                                 <StyledComponent
                                   color="white"
@@ -571,7 +715,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                   onKeyUp={[Function]}
                                   placeholder="Add your full name"
                                   textAlign="left"
-                                  value="test name"
+                                  value=""
                                 >
                                   <input
                                     className="Input__InputComp-sc-100s1kb-0 ruzah"
@@ -583,7 +727,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                     onFocus={[Function]}
                                     onKeyUp={[Function]}
                                     placeholder="Add your full name"
-                                    value="test name"
+                                    value=""
                                   />
                                 </StyledComponent>
                               </Input__InputComp>
@@ -628,7 +772,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                     className="Input__Underline-sc-100s1kb-1 fxgvFF"
                                     fontSize={6}
                                   >
-                                    test name
+                                    Add your full name
                                   </span>
                                 </StyledComponent>
                               </Input__Underline>
@@ -641,7 +785,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                         fontWeight="normal"
                         onChange={[Function]}
                         placeHolder="Add job title"
-                        value="test title"
+                        value=""
                       >
                         <Input__Wrapper
                           textAlign="left"
@@ -690,7 +834,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                 onKeyUp={[Function]}
                                 placeholder="Add job title"
                                 textAlign="left"
-                                value="test title"
+                                value=""
                               >
                                 <StyledComponent
                                   color="white"
@@ -735,7 +879,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                   onKeyUp={[Function]}
                                   placeholder="Add job title"
                                   textAlign="left"
-                                  value="test title"
+                                  value=""
                                 >
                                   <input
                                     className="Input__InputComp-sc-100s1kb-0 jcnZmI"
@@ -747,7 +891,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                     onFocus={[Function]}
                                     onKeyUp={[Function]}
                                     placeholder="Add job title"
-                                    value="test title"
+                                    value=""
                                   />
                                 </StyledComponent>
                               </Input__InputComp>
@@ -792,7 +936,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                     className="Input__Underline-sc-100s1kb-1 bQpxWe"
                                     fontSize={3}
                                   >
-                                    test title
+                                    Add job title
                                   </span>
                                 </StyledComponent>
                               </Input__Underline>
@@ -805,7 +949,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                         fontWeight="normal"
                         onChange={[Function]}
                         placeHolder="Add username"
-                        value="test username"
+                        value=""
                       >
                         <Input__Wrapper
                           textAlign="left"
@@ -854,7 +998,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                 onKeyUp={[Function]}
                                 placeholder="Add username"
                                 textAlign="left"
-                                value="test username"
+                                value=""
                               >
                                 <StyledComponent
                                   color="white"
@@ -899,7 +1043,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                   onKeyUp={[Function]}
                                   placeholder="Add username"
                                   textAlign="left"
-                                  value="test username"
+                                  value=""
                                 >
                                   <input
                                     className="Input__InputComp-sc-100s1kb-0 npwKk"
@@ -911,7 +1055,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                     onFocus={[Function]}
                                     onKeyUp={[Function]}
                                     placeholder="Add username"
-                                    value="test username"
+                                    value=""
                                   />
                                 </StyledComponent>
                               </Input__InputComp>
@@ -956,7 +1100,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                     className="Input__Underline-sc-100s1kb-1 fGJtkn"
                                     fontSize={1}
                                   >
-                                    test username
+                                    Add username
                                   </span>
                                 </StyledComponent>
                               </Input__Underline>
@@ -969,7 +1113,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                         fontWeight="normal"
                         onChange={[Function]}
                         placeHolder="Add Website"
-                        value="test website"
+                        value=""
                       >
                         <Input__Wrapper
                           textAlign="left"
@@ -1018,7 +1162,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                 onKeyUp={[Function]}
                                 placeholder="Add Website"
                                 textAlign="left"
-                                value="test website"
+                                value=""
                               >
                                 <StyledComponent
                                   color="white"
@@ -1063,7 +1207,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                   onKeyUp={[Function]}
                                   placeholder="Add Website"
                                   textAlign="left"
-                                  value="test website"
+                                  value=""
                                 >
                                   <input
                                     className="Input__InputComp-sc-100s1kb-0 npwKk"
@@ -1075,7 +1219,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                     onFocus={[Function]}
                                     onKeyUp={[Function]}
                                     placeholder="Add Website"
-                                    value="test website"
+                                    value=""
                                   />
                                 </StyledComponent>
                               </Input__InputComp>
@@ -1120,7 +1264,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                     className="Input__Underline-sc-100s1kb-1 fGJtkn"
                                     fontSize={1}
                                   >
-                                    test website
+                                    Add Website
                                   </span>
                                 </StyledComponent>
                               </Input__Underline>
@@ -1215,7 +1359,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                               fontWeight="normal"
                               onChange={[Function]}
                               placeHolder="Twitter"
-                              value="test twitter"
+                              value=""
                             >
                               <Input__Wrapper
                                 textAlign="left"
@@ -1264,7 +1408,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                       onKeyUp={[Function]}
                                       placeholder="Twitter"
                                       textAlign="left"
-                                      value="test twitter"
+                                      value=""
                                     >
                                       <StyledComponent
                                         color="white"
@@ -1309,7 +1453,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                         onKeyUp={[Function]}
                                         placeholder="Twitter"
                                         textAlign="left"
-                                        value="test twitter"
+                                        value=""
                                       >
                                         <input
                                           className="Input__InputComp-sc-100s1kb-0 npwKk"
@@ -1321,7 +1465,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                           onFocus={[Function]}
                                           onKeyUp={[Function]}
                                           placeholder="Twitter"
-                                          value="test twitter"
+                                          value=""
                                         />
                                       </StyledComponent>
                                     </Input__InputComp>
@@ -1366,7 +1510,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                           className="Input__Underline-sc-100s1kb-1 fGJtkn"
                                           fontSize={1}
                                         >
-                                          test twitter
+                                          Twitter
                                         </span>
                                       </StyledComponent>
                                     </Input__Underline>
@@ -1464,7 +1608,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                               fontWeight="normal"
                               onChange={[Function]}
                               placeHolder="Github"
-                              value="test github"
+                              value=""
                             >
                               <Input__Wrapper
                                 textAlign="left"
@@ -1513,7 +1657,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                       onKeyUp={[Function]}
                                       placeholder="Github"
                                       textAlign="left"
-                                      value="test github"
+                                      value=""
                                     >
                                       <StyledComponent
                                         color="white"
@@ -1558,7 +1702,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                         onKeyUp={[Function]}
                                         placeholder="Github"
                                         textAlign="left"
-                                        value="test github"
+                                        value=""
                                       >
                                         <input
                                           className="Input__InputComp-sc-100s1kb-0 npwKk"
@@ -1570,7 +1714,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                           onFocus={[Function]}
                                           onKeyUp={[Function]}
                                           placeholder="Github"
-                                          value="test github"
+                                          value=""
                                         />
                                       </StyledComponent>
                                     </Input__InputComp>
@@ -1615,7 +1759,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                           className="Input__Underline-sc-100s1kb-1 fGJtkn"
                                           fontSize={1}
                                         >
-                                          test github
+                                          Github
                                         </span>
                                       </StyledComponent>
                                     </Input__Underline>
@@ -1627,11 +1771,10 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                         </StyledComponent>
                       </View__Offset>
                       <withApollo(Connect(EmailField))
-                        email="email@test.com"
+                        email=""
                         handleChange={[Function]}
-                        oldEmail="email@test.com"
                         resendEmailVerification={[MockFunction]}
-                        status="EMAIL_VERIFIED"
+                        status="CREATED"
                       >
                         <ApolloConsumer>
                           <Connect(EmailField)
@@ -1722,11 +1865,10 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                 "watchQuery": [Function],
                               }
                             }
-                            email="email@test.com"
+                            email=""
                             handleChange={[Function]}
-                            oldEmail="email@test.com"
                             resendEmailVerification={[MockFunction]}
-                            status="EMAIL_VERIFIED"
+                            status="CREATED"
                           >
                             <EmailField
                               client={
@@ -1816,15 +1958,12 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                   "watchQuery": [Function],
                                 }
                               }
-                              email="email@test.com"
+                              email=""
                               handleChange={[Function]}
-                              oldEmail="email@test.com"
                               resendEmailVerification={[MockFunction]}
-                              status="EMAIL_VERIFIED"
+                              status="CREATED"
                             >
-                              <EmailField__Container
-                                oldEmail="email@test.com"
-                              >
+                              <EmailField__Container>
                                 <StyledComponent
                                   forwardedComponent={
                                     Object {
@@ -1833,7 +1972,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                       "componentStyle": ComponentStyle {
                                         "componentId": "EmailField__Container-sc-1iup53b-1",
                                         "isStatic": false,
-                                        "lastClassName": "jHxVjH",
+                                        "lastClassName": "kaDpag",
                                         "rules": Array [
                                           "position:relative;display:flex;flex-direction:row;align-items:center;",
                                           [Function],
@@ -1851,107 +1990,16 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                     }
                                   }
                                   forwardedRef={null}
-                                  oldEmail="email@test.com"
                                 >
                                   <div
-                                    className="EmailField__Container-sc-1iup53b-1 jHxVjH"
+                                    className="EmailField__Container-sc-1iup53b-1 kaDpag"
                                   >
-                                    <Tooltip
-                                      animateFill={true}
-                                      animation="shift"
-                                      arrow={false}
-                                      arrowSize="regular"
-                                      className=""
-                                      delay={0}
-                                      disabled={false}
-                                      distance={10}
-                                      duration={375}
-                                      followCursor={false}
-                                      hideDelay={0}
-                                      hideDuration={375}
-                                      hideOnClick={true}
-                                      html={
-                                        <ForwardRef(EmailField__TooltipContainer)>
-                                          <ForwardRef(EmailField__TooltipArrow) />
-                                          <ForwardRef(Typography__component)>
-                                            Email Verified
-                                          </ForwardRef(Typography__component)>
-                                        </ForwardRef(EmailField__TooltipContainer)>
-                                      }
-                                      inertia={false}
-                                      interactive={false}
-                                      interactiveBorder={2}
-                                      multiple={false}
-                                      offset={0}
-                                      onHidden={[Function]}
-                                      onHide={[Function]}
-                                      onRequestClose={[Function]}
-                                      onShow={[Function]}
-                                      onShown={[Function]}
-                                      popperOptions={Object {}}
-                                      position="top"
-                                      size="regular"
-                                      sticky={false}
-                                      stickyDuration={200}
-                                      style={Object {}}
-                                      theme="dark"
-                                      touchHold={false}
-                                      trigger="mouseenter"
-                                      unmountHTMLWhenHide={true}
-                                    >
-                                      <div
-                                        className=""
-                                        style={
-                                          Object {
-                                            "display": "inline",
-                                          }
-                                        }
-                                      >
-                                        <EmailField__Icon
-                                          src="/static/images/icons8-info.png"
-                                        >
-                                          <StyledComponent
-                                            forwardedComponent={
-                                              Object {
-                                                "$$typeof": Symbol(react.forward_ref),
-                                                "attrs": Array [],
-                                                "componentStyle": ComponentStyle {
-                                                  "componentId": "EmailField__Icon-sc-1iup53b-0",
-                                                  "isStatic": false,
-                                                  "lastClassName": "NFXjq",
-                                                  "rules": Array [
-                                                    "height:20px;width:20px;margin-right:",
-                                                    [Function],
-                                                    "px;",
-                                                  ],
-                                                },
-                                                "displayName": "EmailField__Icon",
-                                                "foldedComponentIds": Array [],
-                                                "render": [Function],
-                                                "styledComponentId": "EmailField__Icon-sc-1iup53b-0",
-                                                "target": "img",
-                                                "toString": [Function],
-                                                "warnTooManyClasses": [Function],
-                                                "withComponent": [Function],
-                                              }
-                                            }
-                                            forwardedRef={null}
-                                            src="/static/images/icons8-info.png"
-                                          >
-                                            <img
-                                              className="EmailField__Icon-sc-1iup53b-0 NFXjq"
-                                              src="/static/images/icons8-info.png"
-                                            />
-                                          </StyledComponent>
-                                        </EmailField__Icon>
-                                      </div>
-                                    </Tooltip>
                                     <Input
                                       fontSize={1}
                                       fontWeight={400}
                                       onChange={[Function]}
                                       placeHolder="Add Email"
-                                      value="email@test.com"
+                                      value=""
                                     >
                                       <Input__Wrapper
                                         textAlign="left"
@@ -2000,7 +2048,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                               onKeyUp={[Function]}
                                               placeholder="Add Email"
                                               textAlign="left"
-                                              value="email@test.com"
+                                              value=""
                                             >
                                               <StyledComponent
                                                 color="white"
@@ -2045,7 +2093,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                                 onKeyUp={[Function]}
                                                 placeholder="Add Email"
                                                 textAlign="left"
-                                                value="email@test.com"
+                                                value=""
                                               >
                                                 <input
                                                   className="Input__InputComp-sc-100s1kb-0 eWmapl"
@@ -2057,7 +2105,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                                   onFocus={[Function]}
                                                   onKeyUp={[Function]}
                                                   placeholder="Add Email"
-                                                  value="email@test.com"
+                                                  value=""
                                                 />
                                               </StyledComponent>
                                             </Input__InputComp>
@@ -2102,7 +2150,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                                   className="Input__Underline-sc-100s1kb-1 fGJtkn"
                                                   fontSize={1}
                                                 >
-                                                  email@test.com
+                                                  Add Email
                                                 </span>
                                               </StyledComponent>
                                             </Input__Underline>
@@ -2155,7 +2203,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                           >
                             <Component
                               checked={false}
-                              disabled={false}
+                              disabled={true}
                               onChange={[Function]}
                             >
                               <EmailCheckbox__ReferenceContainer>
@@ -2233,16 +2281,16 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                       >
                                         <Component
                                           checked={false}
-                                          disabled={false}
+                                          disabled={true}
                                           label="newsletter"
                                           onChange={[Function]}
                                         >
                                           <Checkbox__Styled
-                                            disabled={false}
+                                            disabled={true}
                                             onClick={[Function]}
                                           >
                                             <StyledComponent
-                                              disabled={false}
+                                              disabled={true}
                                               forwardedComponent={
                                                 Object {
                                                   "$$typeof": Symbol(react.forward_ref),
@@ -2250,7 +2298,7 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                                   "componentStyle": ComponentStyle {
                                                     "componentId": "Checkbox__Styled-nz5nsn-0",
                                                     "isStatic": false,
-                                                    "lastClassName": "kuIXZW",
+                                                    "lastClassName": "djKjrV",
                                                     "rules": Array [
                                                       "display:flex;cursor:",
                                                       [Function],
@@ -2275,13 +2323,13 @@ exports[`containers/EditProfileForm should match snapshot 1`] = `
                                               onClick={[Function]}
                                             >
                                               <div
-                                                className="Checkbox__Styled-nz5nsn-0 kuIXZW"
-                                                disabled={false}
+                                                className="Checkbox__Styled-nz5nsn-0 djKjrV"
+                                                disabled={true}
                                                 onClick={[Function]}
                                               >
                                                 <input
                                                   defaultChecked={false}
-                                                  disabled={false}
+                                                  disabled={true}
                                                   type="checkbox"
                                                 />
                                                 <label>
