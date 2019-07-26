@@ -174,148 +174,19 @@ exports[`containers/Article snapshot should match 1`] = `
               "watches": Set {},
             },
             "clearStoreCallbacks": Array [],
+            "clientAwareness": Object {},
             "defaultOptions": Object {},
             "disableNetworkFetches": false,
-            "link": MockLink {
-              "addTypename": true,
-              "mockedResponsesByKey": Object {},
-            },
-            "localState": LocalState {
-              "cache": InMemoryCache {
-                "addTypename": true,
-                "cacheKeyRoot": KeyTrie {
-                  "weakness": true,
-                },
-                "config": Object {
-                  "addTypename": true,
-                  "dataIdFromObject": [Function],
-                  "fragmentMatcher": HeuristicFragmentMatcher {},
-                  "freezeResults": false,
-                  "resultCaching": true,
-                },
-                "data": DepTrackingCache {
-                  "data": Object {},
-                  "depend": [Function],
-                },
-                "maybeBroadcastWatch": [Function],
-                "optimisticData": DepTrackingCache {
-                  "data": Object {},
-                  "depend": [Function],
-                },
-                "silenceBroadcast": false,
-                "storeReader": StoreReader {
-                  "executeSelectionSet": [Function],
-                  "executeStoreQuery": [Function],
-                  "executeSubSelectedArray": [Function],
-                  "freezeResults": false,
-                },
-                "storeWriter": StoreWriter {},
-                "typenameDocumentCache": Map {},
-                "watches": Set {},
-              },
-              "client": [Circular],
+            "link": ApolloLink {
+              "request": [Function],
             },
             "mutate": [Function],
             "query": [Function],
             "queryDeduplication": true,
-            "queryManager": QueryManager {
-              "assumeImmutableResults": false,
-              "clientAwareness": Object {
-                "name": undefined,
-                "version": undefined,
-              },
-              "dataStore": DataStore {
-                "cache": InMemoryCache {
-                  "addTypename": true,
-                  "cacheKeyRoot": KeyTrie {
-                    "weakness": true,
-                  },
-                  "config": Object {
-                    "addTypename": true,
-                    "dataIdFromObject": [Function],
-                    "fragmentMatcher": HeuristicFragmentMatcher {},
-                    "freezeResults": false,
-                    "resultCaching": true,
-                  },
-                  "data": DepTrackingCache {
-                    "data": Object {},
-                    "depend": [Function],
-                  },
-                  "maybeBroadcastWatch": [Function],
-                  "optimisticData": DepTrackingCache {
-                    "data": Object {},
-                    "depend": [Function],
-                  },
-                  "silenceBroadcast": false,
-                  "storeReader": StoreReader {
-                    "executeSelectionSet": [Function],
-                    "executeStoreQuery": [Function],
-                    "executeSubSelectedArray": [Function],
-                    "freezeResults": false,
-                  },
-                  "storeWriter": StoreWriter {},
-                  "typenameDocumentCache": Map {},
-                  "watches": Set {},
-                },
-              },
-              "fetchQueryRejectFns": Map {},
-              "idCounter": 1,
-              "inFlightLinkObservables": Map {},
-              "link": MockLink {
-                "addTypename": true,
-                "mockedResponsesByKey": Object {},
-              },
-              "localState": LocalState {
-                "cache": InMemoryCache {
-                  "addTypename": true,
-                  "cacheKeyRoot": KeyTrie {
-                    "weakness": true,
-                  },
-                  "config": Object {
-                    "addTypename": true,
-                    "dataIdFromObject": [Function],
-                    "fragmentMatcher": HeuristicFragmentMatcher {},
-                    "freezeResults": false,
-                    "resultCaching": true,
-                  },
-                  "data": DepTrackingCache {
-                    "data": Object {},
-                    "depend": [Function],
-                  },
-                  "maybeBroadcastWatch": [Function],
-                  "optimisticData": DepTrackingCache {
-                    "data": Object {},
-                    "depend": [Function],
-                  },
-                  "silenceBroadcast": false,
-                  "storeReader": StoreReader {
-                    "executeSelectionSet": [Function],
-                    "executeStoreQuery": [Function],
-                    "executeSubSelectedArray": [Function],
-                    "freezeResults": false,
-                  },
-                  "storeWriter": StoreWriter {},
-                  "typenameDocumentCache": Map {},
-                  "watches": Set {},
-                },
-                "client": [Circular],
-              },
-              "mutationStore": MutationStore {
-                "store": Object {},
-              },
-              "onBroadcast": [Function],
-              "pollingInfoByQueryId": Map {},
-              "queries": Map {},
-              "queryDeduplication": true,
-              "queryStore": QueryStore {
-                "store": Object {},
-              },
-              "ssrMode": false,
-              "transformCache": WeakMap {},
-            },
             "reFetchObservableQueries": [Function],
             "resetStore": [Function],
             "resetStoreCallbacks": Array [],
+            "ssrMode": false,
             "store": DataStore {
               "cache": InMemoryCache {
                 "addTypename": true,
@@ -350,8 +221,7 @@ exports[`containers/Article snapshot should match 1`] = `
                 "watches": Set {},
               },
             },
-            "typeDefs": undefined,
-            "version": "2.6.3",
+            "version": "2.4.13",
             "watchQuery": [Function],
           }
         }
@@ -2976,7 +2846,7 @@ exports[`containers/Article snapshot should match 1`] = `
                                 <div
                                   className="MuiGrid-root MuiGrid-grid-sm-6"
                                 >
-                                  <_default
+                                  <ArticleCard
                                     __typename="ArticleDTO"
                                     associatedNfts={null}
                                     attributes={Object {}}
@@ -4583,7 +4453,7 @@ exports[`containers/Article snapshot should match 1`] = `
                                         </WithStyles(ForwardRef(Paper))>
                                       </ForwardRef(Card)>
                                     </WithStyles(ForwardRef(Card))>
-                                  </_default>
+                                  </ArticleCard>
                                 </div>
                               </ForwardRef(Grid)>
                             </WithStyles(ForwardRef(Grid))>
@@ -4704,7 +4574,7 @@ exports[`containers/Article snapshot should match 1`] = `
                                 <div
                                   className="MuiGrid-root MuiGrid-grid-sm-6"
                                 >
-                                  <_default
+                                  <ArticleCard
                                     __typename="ArticleDTO"
                                     associatedNfts={null}
                                     attributes={Object {}}
@@ -6311,7 +6181,7 @@ exports[`containers/Article snapshot should match 1`] = `
                                         </WithStyles(ForwardRef(Paper))>
                                       </ForwardRef(Card)>
                                     </WithStyles(ForwardRef(Card))>
-                                  </_default>
+                                  </ArticleCard>
                                 </div>
                               </ForwardRef(Grid)>
                             </WithStyles(ForwardRef(Grid))>

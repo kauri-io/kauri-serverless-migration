@@ -8,7 +8,6 @@ import Reducer, {
     IModalState,
 } from './Module'
 import { mountWithTheme } from '../../setupTests'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 describe('components/Moda/AlertView', () => {
     it('should match snapshot', () => {

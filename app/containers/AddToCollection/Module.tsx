@@ -3,24 +3,24 @@ import { from, merge, of } from 'rxjs'
 import { IDependencies, IReduxState } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import {
-  getArticleTitle,
-  getArticleTitleVariables,
+    getArticleTitle,
+    getArticleTitleVariables,
 } from '../ArticleDraft/__generated__/getArticleTitle'
 import analytics from '../../lib/analytics'
 import { tap, map, mergeMap, switchMap, catchError } from 'rxjs/operators'
 import {
-  addArticleToCollectionMutation,
+    addArticleToCollectionMutation,
     getCollectionTitleQuery,
     getArticleTitleQuery,
-  } from '../../queries/Article'
-  import {
-  addArticleToCollection,
-  addArticleToCollectionVariables,
+} from '../../queries/Article'
+import {
+    addArticleToCollection,
+    addArticleToCollectionVariables,
 } from '../../queries/__generated__/addArticleToCollection'
 import { path } from 'ramda'
 import {
-  getCollectionTitle,
-  getCollectionTitleVariables,
+    getCollectionTitle,
+    getCollectionTitleVariables,
 } from '../../queries/__generated__/getCollectionTitle'
 // import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 // import AlertViewComponent from '../../components/Modal/AlertView'
@@ -133,9 +133,8 @@ export const addArticleToCollectionEpic: Epic<
                             },
                         })
                     ).pipe(
-                      mergeMap((
-                          // { data: { getCollection } }
-                        ) =>
+                        mergeMap(() =>
+                            // { data: { getCollection } }
                             merge(
                                 of(
                                     showNotificationAction({
@@ -143,7 +142,7 @@ export const addArticleToCollectionEpic: Epic<
                                         message: 'Article added to collection',
                                         notificationType: 'success',
                                     })
-                                ),
+                                )
                                 // of(
                                 //     openModalAction({
                                 //         children: (

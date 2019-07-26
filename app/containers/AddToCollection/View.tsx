@@ -141,7 +141,7 @@ const Component: React.FunctionComponent<IProps> = ({
                                             position,
                                             resourceId: {
                                                 id: articleId,
-                                                type: ( 'ARTICLE' as any ),
+                                                type: 'ARTICLE' as any,
                                                 version,
                                             },
                                             sectionId: state.chosenSection

@@ -103,15 +103,15 @@ const useStyles = makeStyles((theme: Theme) => {
 
 interface IProps {
     user?: {
-      id: string
-      avatar: string
-      dateCreated: string
-      username: string
-      name: string
-      email: string
-      communities: ICommunity[]
-      status: string // [NOT_REGISTERED|CREATED]EMAIL_VERIFIED]
-  }
+        id: string
+        avatar: string
+        dateCreated: string
+        username: string
+        name: string
+        email: string
+        communities: ICommunity[]
+        status: string // [NOT_REGISTERED|CREATED]EMAIL_VERIFIED]
+    }
 }
 
 const PrimarySearchAppBar: React.FC<IProps> = ({ user }) => {

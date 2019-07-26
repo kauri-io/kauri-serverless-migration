@@ -21,7 +21,7 @@ import {
     closeModalAction,
 } from '../../components/Modal/Module'
 import { ICollection } from '../CreateCollectionForm/ChooseCollectionModal'
-import { pipe,  path, defaultTo  } from 'ramda'
+import { pipe, path, defaultTo } from 'ramda'
 
 interface IProps {
     router: any

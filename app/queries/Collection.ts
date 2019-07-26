@@ -42,7 +42,7 @@ export const globalCollectionDetails = gql`
 export const getCollectionQuery = globalCollectionDetails
 export const getCollectionForAnalytics = globalCollectionDetails
 
-export const createCollection = gql`
+export const createCollectionMutation = gql`
     mutation createCollection(
         $name: String!
         $description: String!
@@ -62,7 +62,7 @@ export const createCollection = gql`
     }
 `
 
-export const editCollection = gql`
+export const editCollectionMutation = gql`
     mutation editCollection(
         $id: String!
         $name: String!
@@ -82,7 +82,7 @@ export const editCollection = gql`
     }
 `
 
-export const composeCollection = gql`
+export const composeCollectionMutation = gql`
     mutation composeCollection($id: String!, $sections: [SectionDTOInput]!) {
         composeCollection(id: $id, sections: $sections) {
             hash

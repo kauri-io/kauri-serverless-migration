@@ -12,7 +12,7 @@ import {
     publishArticle,
     publishArticleVariables,
 } from '../../queries/__generated__/publishArticle'
-import { path } from 'ramda';
+import { path } from 'ramda'
 
 interface IAction {
     type: string

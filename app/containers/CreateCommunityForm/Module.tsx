@@ -24,6 +24,11 @@ import {
     catchError,
     combineAll,
 } from 'rxjs/operators'
+import {
+    prepareSendInvitation,
+    prepareSendInvitationVariables,
+} from '../../queries/__generated__/prepareSendInvitation'
+import { sendInvitation, sendInvitationVariables } from '../../queries/__generated__/sendInvitation';
 
 export interface ICreateCommunityAction {
     callback: () => void
@@ -337,7 +342,10 @@ export const updateCommunityEpic = (
                         actions.payload.invitations.length
                             ? forkJoin(
                                   actions.payload.invitations.map(invitation =>
-                                      apolloClient.query({
+                                      apolloClient.query<
+                                          prepareSendInvitation,
+                                          prepareSendInvitationVariables
+                                      >({
                                           query: prepareSendInvitationQuery,
                                           variables: {
                                               id: actions.payload.id,
@@ -358,11 +366,13 @@ export const updateCommunityEpic = (
                                           ) =>
                                               from(
                                                   personalSign(
-                                                      result.messageHash
+                                                      (result &&
+                                                          result.messageHash) ||
+                                                          ''
                                                   )
                                               ).pipe(
                                                   mergeMap(signedSignature =>
-                                                      apolloClient.mutate({
+                                                      apolloClient.mutate<sendInvitation, sendInvitationVariables>({
                                                           mutation: sendInvitationMutation,
                                                           variables: {
                                                               id:
@@ -383,9 +393,11 @@ export const updateCommunityEpic = (
                                                                           invitationIndex
                                                                       ].role,
                                                                   secret:
-                                                                      result
-                                                                          .attributes
-                                                                          .secret,
+                                                                      (result &&
+                                                                          result
+                                                                              .attributes
+                                                                              .secret) ||
+                                                                      '',
                                                               },
                                                               signature: signedSignature,
                                                           },
@@ -397,7 +409,7 @@ export const updateCommunityEpic = (
                                                           data: {
                                                               sendInvitation: sendInvitationResult,
                                                           },
-                                                      }: any) =>
+                                                      }) =>
                                                           apolloSubscriber(
                                                               sendInvitationResult.hash
                                                           )

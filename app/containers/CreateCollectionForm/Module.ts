@@ -1,17 +1,33 @@
 import {
-    createCollection,
-    editCollection,
-    composeCollection,
+    createCollectionMutation,
+    editCollectionMutation,
+    composeCollectionMutation,
 } from '../../queries/Collection'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import analytics from '../../lib/analytics'
-
-import { IDependencies } from '../../lib/Module'
-import { ActionsObservable, ofType } from 'redux-observable'
+import { IDependencies, IReduxState } from '../../lib/Module'
+import { ActionsObservable, ofType, Epic } from 'redux-observable'
 import { from, of } from 'rxjs'
+import { path } from 'ramda'
 import { ISection } from '../AddToCollection/SectionsContent'
-import { switchMap, mergeMap, tap, catchError, map } from 'rxjs/operators'
+import {
+    switchMap,
+    mergeMap,
+    tap,
+    catchError,
+    map,
+} from 'rxjs/operators'
+import { merge } from 'rxjs'
+import { editCollection } from '../../queries/__generated__/editCollection'
+import {
+    createCollection,
+    createCollectionVariables,
+} from '../../queries/__generated__/createCollection'
+import {
+    composeCollection,
+    composeCollectionVariables,
+} from '../../queries/__generated__/composeCollection'
 
 export interface ICreateCollectionPayload {
     name: string
@@ -38,7 +54,7 @@ interface ICreateCollectionAction {
     callback: any
 }
 
-interface EditCollectionAction {
+interface IEditCollectionAction {
     type: string
     payload: ICreateCollectionPayload & { id: string }
     callback: any
@@ -68,7 +84,7 @@ export const createCollectionAction = (
 export const editCollectionAction = (
     payload: ICreateCollectionPayload & { id: string },
     callback: any
-): EditCollectionAction => ({
+): IEditCollectionAction => ({
     type: EDIT_COLLECTION,
     payload,
     callback,
@@ -83,30 +99,40 @@ export const composeCollectionAction = (
     callback,
 })
 
-export const composeCollectionEpic = (
-    action$: ActionsObservable<ComposeCollectionAction>,
-    {},
-    { apolloClient, apolloSubscriber }: IDependencies
-) =>
+export const composeCollectionEpic: Epic<
+    ComposeCollectionAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, {}, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(COMPOSE_COLLECTION),
         switchMap(
             ({
                 payload: { id, sections, updating },
                 callback,
-            }: ComposeCollectionAction) =>
+            }) =>
                 from(
-                    apolloClient.mutate({
-                        mutation: composeCollection,
+                    apolloClient.mutate<
+                        composeCollection,
+                        composeCollectionVariables
+                    >({
+                        mutation: composeCollectionMutation,
                         variables: {
                             id,
                             sections,
                         },
                     })
                 ).pipe(
-                    mergeMap(({ data: { composeCollection: { hash } } }) =>
-                        from(apolloSubscriber(hash)).pipe(
-                            tap(h => console.log(h)),
+                    mergeMap(({ data }) =>
+                        from(
+                            apolloSubscriber<{ id: string }>(
+                                path<string>(['composeCollection', 'hash'])(
+                                    data
+                                ) || ''
+                            )
+                        ).pipe(
+                            // tap(console.log),
                             tap(() => {
                                 analytics.track(
                                     updating
@@ -124,22 +150,26 @@ export const composeCollectionEpic = (
                                 )
                             }),
                             mergeMap(() =>
-                                of(
-                                    showNotificationAction({
-                                        notificationType: 'success',
-                                        message:
-                                            typeof updating !== 'undefined'
-                                                ? 'Collection updated!'
-                                                : 'Collection created!',
-                                        description:
-                                            'Your collection is now available for viewing!',
-                                    }),
-                                    routeChangeAction(
-                                        `/collection/${id}/collection-${
-                                            typeof updating !== 'undefined'
-                                                ? 'updated'
-                                                : 'created'
-                                        }`
+                                merge(
+                                    of(
+                                        showNotificationAction({
+                                            notificationType: 'success',
+                                            message:
+                                                typeof updating !== 'undefined'
+                                                    ? 'Collection updated!'
+                                                    : 'Collection created!',
+                                            description:
+                                                'Your collection is now available for viewing!',
+                                        })
+                                    ),
+                                    of(
+                                        routeChangeAction(
+                                            `/collection/${id}/collection-${
+                                                typeof updating !== 'undefined'
+                                                    ? 'updated'
+                                                    : 'created'
+                                            }`
+                                        )
                                     )
                                 )
                             ),
@@ -160,11 +190,12 @@ export const composeCollectionEpic = (
                 )
         )
     )
-export const createCollectionEpic = (
-    action$: ActionsObservable<ICreateCollectionAction>,
-    {},
-    { apolloClient, apolloSubscriber }: IDependencies
-) =>
+export const createCollectionEpic: Epic<
+    ICreateCollectionAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, {}, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(CREATE_COLLECTION),
         switchMap(
@@ -180,40 +211,49 @@ export const createCollectionEpic = (
                 callback,
             }) => {
                 return from(
-                    apolloClient.mutate({
-                        mutation: createCollection,
+                    apolloClient.mutate<
+                        createCollection,
+                        createCollectionVariables
+                    >({
+                        mutation: createCollectionMutation,
                         variables: {
                             name,
                             background,
-                            description,
+                            description: String(description),
                             tags,
                             owner: {
-                                type: destination && destination.type,
-                                id: destination && destination.id,
+                                type: String(
+                                    destination && destination.type
+                                ) as any,
+                                id: String(destination && destination.id),
                             },
                         },
                     })
                 ).pipe(
-                    mergeMap(({ data: { createCollection: { hash } } }) =>
-                        apolloSubscriber<{ id: string }>(hash)
+                    mergeMap(({ data }) =>
+                        apolloSubscriber<{ id: string }>(
+                            path<string>(['createCollection', 'hash'])(data) ||
+                                ''
+                        )
                     ),
                     map(({ data: { output: { id } } }) =>
                         composeCollectionAction(
                             { id, sections, tags },
                             callback
                         )
-                    ),
-                    tap(h => console.log(h))
+                    )
+                    // tap(h => console.log(h))
                 )
             }
         )
     )
 
-export const editCollectionEpic = (
-    action$: ActionsObservable<EditCollectionAction>,
-    {},
-    { apolloClient, apolloSubscriber }: IDependencies
-) =>
+export const editCollectionEpic: Epic<
+    IEditCollectionAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, {}, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(EDIT_COLLECTION),
         switchMap(
@@ -222,8 +262,8 @@ export const editCollectionEpic = (
                 callback,
             }) => {
                 return from(
-                    apolloClient.mutate({
-                        mutation: editCollection,
+                    apolloClient.mutate<editCollection, any>({
+                        mutation: editCollectionMutation,
                         variables: {
                             id,
                             name,
@@ -233,10 +273,13 @@ export const editCollectionEpic = (
                         },
                     })
                 ).pipe(
-                    mergeMap(({ data: { createCollection: { hash } } }) =>
-                        apolloSubscriber<{ id: string }>(hash)
+                    mergeMap(({ data }) =>
+                        apolloSubscriber<{ id: string }>(
+                            path<string>(['createCollection', 'hash'])(data) ||
+                                ''
+                        )
                     ),
-                    tap(h => console.log(h)),
+                    // tap(console.log),
                     map(({ data: { output: { id } } }) =>
                         composeCollectionAction(
                             { id, sections, updating: true },
