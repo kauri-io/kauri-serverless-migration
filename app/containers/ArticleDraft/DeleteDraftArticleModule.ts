@@ -1,46 +1,26 @@
-import { ActionsObservable, ofType } from 'redux-observable'
+import { ofType, Epic } from 'redux-observable'
 import { merge, of, from } from 'rxjs'
-import { ApolloClient } from 'apollo-client'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import analytics from '../../lib/analytics'
 import { switchMap, mergeMap, tap } from 'rxjs/operators'
 import { deleteDraftArticleMutation } from '../../queries/Article'
-
-export interface IDependencies {
-    apolloClient: ApolloClient<{}>
-    apolloSubscriber: <T>(hash: string) => Promise<{ data: { output: T } }>
-    smartContracts: any
-    web3: any
-    fetch: any
-    web3PersonalSign: any
-    getGasPrice: any
-    driverJS: any
-    personalSign: any
-}
-
-interface IAction {
-    type: string
-    payload?: {}
-}
+import {
+    deleteDraftArticle,
+    deleteDraftArticleVariables,
+} from '../../queries/__generated__/deleteDraftArticle'
+import { path } from 'ramda'
+import { IDependencies, IReduxState } from '../../lib/Module'
 
 export interface IDeleteDraftArticlePayload {
     id: string
     version: number
 }
 
-export interface IDeleteDraftArticleAction extends IAction {
+export interface IDeleteDraftArticleAction {
     type: 'DELETE_DRAFT_ARTICLE'
     payload: IDeleteDraftArticlePayload
     callback: () => void
-}
-
-interface IReduxState {
-    app: {
-        user: {
-            id: string
-        }
-    }
 }
 
 const DELETE_DRAFT_ARTICLE = 'DELETE_DRAFT_ARTICLE'
@@ -54,47 +34,57 @@ export const deleteDraftArticleAction = (
     type: DELETE_DRAFT_ARTICLE,
 })
 
-export const deleteDraftArticleEpic = (
-    action$: ActionsObservable<IDeleteDraftArticleAction>,
-    state: IReduxState,
-    { apolloClient, apolloSubscriber }: IDependencies
-) =>
+export const deleteDraftArticleEpic: Epic<
+    IDeleteDraftArticleAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, state$, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(DELETE_DRAFT_ARTICLE),
-        switchMap(
-            ({ payload: variables, callback }: IDeleteDraftArticleAction) =>
-                from(
-                    apolloClient.mutate({
-                        mutation: deleteDraftArticleMutation,
-                        variables,
+        switchMap(({ payload: variables, callback }) =>
+            from(
+                apolloClient.mutate<
+                    deleteDraftArticle,
+                    deleteDraftArticleVariables
+                >({
+                    mutation: deleteDraftArticleMutation,
+                    variables,
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    apolloSubscriber<{ hash: string }>(
+                        path<string>(['cancelArticle', 'hash'])(data) || ''
+                    )
+                ),
+                tap(() => {
+                    analytics.track('Delete Draft', {
+                        category: 'article_actions',
                     })
-                ).pipe(
-                    mergeMap(({ data: { cancelArticle } }) =>
-                        apolloSubscriber(cancelArticle.hash)
-                    ),
-                    tap(() => {
-                        analytics.track('Delete Draft', {
-                            category: 'article_actions',
-                        })
-                        apolloClient.resetStore()
-                        return typeof callback === 'function' && callback()
-                    }),
-                    mergeMap(() =>
-                        merge(
-                            of(
-                                (showNotificationAction as any)({
-                                    description: `Your draft article has been deleted!`,
-                                    message: 'Draft article deleted',
-                                    notificationType: 'success',
-                                })
-                            ),
-                            of(
-                                routeChangeAction(
-                                    `/public-profile/${state.app.user.id}`
-                                )
+                    apolloClient.resetStore()
+                    return typeof callback === 'function' && callback()
+                }),
+                mergeMap(() =>
+                    merge(
+                        of(
+                            showNotificationAction({
+                                description: `Your draft article has been deleted!`,
+                                message: 'Draft article deleted',
+                                notificationType: 'success',
+                            })
+                        ),
+                        of(
+                            routeChangeAction(
+                                `/public-profile/${path<string>([
+                                    'value',
+                                    'app',
+                                    'user',
+                                    'id',
+                                ])(state$) || ''}`
                             )
                         )
                     )
                 )
+            )
         )
     )

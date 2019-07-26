@@ -1,19 +1,16 @@
-import {
-    getOwnProfile,
-    saveUserDetails as saveUserMutation,
-} from '../../queries/User'
+import { getOwnProfile, saveUserMutation } from '../../queries/User'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { IDependencies, IReduxState } from '../../lib/Module'
 import analytics from '../../lib/analytics'
 import { merge, of, from, throwError } from 'rxjs'
-import { switchMap, catchError, tap, mergeMap } from 'rxjs/operators'
 import { Epic, ofType } from 'redux-observable'
+import { switchMap, catchError, tap, mergeMap } from 'rxjs/operators'
+import { path } from 'ramda'
 import {
     saveUser,
     saveUserVariables,
 } from '../../queries/__generated__/saveUser'
-import { path } from 'ramda'
 import { getMyProfile } from '../../queries/__generated__/getMyProfile'
 
 export interface ISaveUserDetailActionType {
@@ -95,7 +92,7 @@ export const saveUserDetailsEpic: Epic<
                     ),
                     tap(() => callback && callback(false)),
                     mergeMap(() => {
-                        let newRedirectURL: string
+                        let newRedirectURL
                         if (typeof redirectURL === 'string') {
                             newRedirectURL =
                                 redirectURL.indexOf('https://') !== -1

@@ -3,33 +3,30 @@ import userDetailsEpic from './Epics/FetchUserDetailsEpic'
 import routeChangeEpic from './Epics/RouteChangeEpic'
 import app from './Module'
 import register, { registerEpic } from '../containers/LoginForm/Module'
-// import {
-//   rejectArticleEpic,
-//   approveArticleEpic,
-// } from "../components/containers/ArticleReview/Module";
-// import { publishArticleEpic } from "../components/containers/SubmitArticleForm/PublishArticleModule";
-// import {
-//   submitArticleEpic,
-//   submitArticleVersionEpic,
-//   editArticleEpic,
-//   draftArticleEpic,
-// } from "../components/containers/SubmitArticleForm/Module";
-// import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
-// import {
-//   createCollectionEpic,
-//   editCollectionEpic,
-//   composeCollectionEpic,
-// } from "../components/containers/CreateCollectionForm/Module";
-// import { saveUserDetailsEpic } from "../components/common/EditProfile/Module";
 import modal from '../components/Modal/Module'
-// import { checkpointArticlesEpic } from "../components/containers/CheckpointArticles/Module";
-// import { deleteDraftArticleEpic } from "../components/containers/ArticleDraft/DeleteDraftArticleModule";
-// import { addArticleToCollectionEpic } from "../components/connections/AddToCollection/Module";
-// import {
-//   verifyEmailEpic,
-//   resendEmailVerificationEpic,
-//   emailSubscribeEpic,
-// } from "../components/containers/EmailVerification/Module";
+import {
+    rejectArticleEpic,
+    approveArticleEpic,
+} from '../containers/ArticleReview/Module'
+import { publishArticleEpic } from '../containers/SubmitArticleForm/PublishArticleModule'
+import {
+    submitArticleEpic,
+    submitArticleVersionEpic,
+    editArticleEpic,
+    draftArticleEpic,
+} from '../containers/SubmitArticleForm/Module'
+import { checkpointArticlesEpic } from '../containers/CheckpointArticles/Module'
+import {
+    createCollectionEpic,
+    editCollectionEpic,
+    composeCollectionEpic,
+} from '../containers/CreateCollectionForm/Module'
+import { deleteDraftArticleEpic } from '../containers/ArticleDraft/DeleteDraftArticleModule'
+import {
+    verifyEmailEpic,
+    resendEmailVerificationEpic,
+    emailSubscribeEpic,
+} from '../containers/EmailVerification/Module'
 // import { voteEpic } from "../components/containers/Article/ApprovedArticle/VoteModule";
 // import {
 //   createCommunityEpic,
@@ -54,6 +51,10 @@ import modal from '../components/Modal/Module'
 //   finaliseArticleTransferEpic,
 // } from "../components/containers/PublicProfile/Manage/TransferModule";
 
+// TODO: // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
+// TODO: // import { addArticleToCollectionEpic } from "../containers/AddToCollection/Module";
+// import { saveUserDetailsEpic } from "../components/common/EditProfile/Module";
+
 export const rootReducer = {
     app,
     modal,
@@ -64,28 +65,22 @@ const epics = [
     registerEpic,
     routeChangeEpic,
     userDetailsEpic,
-    //   submitArticleEpic,
-    //   submitArticleVersionEpic,
-    //   editArticleEpic,
-    //   addCommentEpic,
-    //   rejectArticleEpic,
-    //   startDriverStepsEpic,
-    //   finishedDriverStepsEpic,
-    //   createCollectionEpic,
-    //   composeCollectionEpic,
-    //   approveArticleEpic,
-    //   draftArticleEpic,
-    //   editCollectionEpic,
-    //   checkpointArticlesEpic,
-    //   saveUserDetailsEpic,
-    //   // ReasonML epics
-    //   publishArticleEpic,
-    //   // Typescript epics
-    //   deleteDraftArticleEpic,
-    //   addArticleToCollectionEpic,
-    //   verifyEmailEpic,
-    //   resendEmailVerificationEpic,
-    //   emailSubscribeEpic,
+    verifyEmailEpic,
+    resendEmailVerificationEpic,
+    emailSubscribeEpic,
+    rejectArticleEpic,
+    approveArticleEpic,
+    submitArticleEpic,
+    submitArticleVersionEpic,
+    editArticleEpic,
+    draftArticleEpic,
+    publishArticleEpic,
+    checkpointArticlesEpic,
+    deleteDraftArticleEpic,
+    createCollectionEpic,
+    editCollectionEpic,
+    composeCollectionEpic,
+
     //   voteEpic,
     //   createCommunityEpic,
     //   communityCreatedEpic,
@@ -103,6 +98,10 @@ const epics = [
     //   changeMemberRoleEpic,
     //   resendInvitationEpic,
     //   transferArticleToCommunityEpic,
+
+    //   TODO: addCommentEpic,
+    //   saveUserDetailsEpic,
+    // addArticleToCollectionEpic,
 ]
 
 export const rootEpic = combineEpics(...epics)

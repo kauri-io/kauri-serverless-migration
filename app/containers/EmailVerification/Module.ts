@@ -1,5 +1,5 @@
-import { ActionsObservable, ofType } from 'redux-observable'
-import { IDependencies } from '../../lib/Module'
+import { ofType, Epic } from 'redux-observable'
+import { IDependencies, IReduxState } from '../../lib/Module'
 
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { create } from '../../lib/init-apollo'
@@ -9,13 +9,16 @@ import {
     emailSubscribe as emailSubscribeMutation,
     regenerateEmailVerificationCode as regenerateMutation,
 } from '../../queries/User'
-import { verifyEmail } from '../../queries/__generated__/verifyEmail'
+import {
+    verifyEmail,
+    verifyEmailVariables,
+} from '../../queries/__generated__/verifyEmail'
 import {
     emailSubscribe,
     emailSubscribeVariables,
 } from '../../queries/__generated__/emailSubscribe'
 import { from, of, forkJoin } from 'rxjs'
-import { filter, mergeMap, tap, switchMap, map } from 'rxjs/operators'
+import { mergeMap, tap, switchMap, map } from 'rxjs/operators'
 import { regenerateEmailVerificationCode } from '../../queries/__generated__/regenerateEmailVerificationCode'
 import { path } from 'ramda'
 
@@ -85,13 +88,14 @@ interface IEmailSubscribeOutput {
     commandResult: string
 }
 
-export const emailSubscribeEpic = (
-    action$: ActionsObservable<IEmailSubscribeAction>,
-    _: any,
-    { apolloClient }: IDependencies
-) =>
+export const emailSubscribeEpic: Epic<
+    IEmailSubscribeAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient }) =>
     action$.pipe(
-        filter(x => x.type === EMAIL_SUBSCRIBE),
+        ofType(EMAIL_SUBSCRIBE),
         switchMap(({ emailAddress }: IEmailSubscribeAction) =>
             from(
                 apolloClient.mutate<emailSubscribe, emailSubscribeVariables>({
@@ -145,16 +149,17 @@ export const emailSubscribeEpic = (
         )
     )
 
-export const verifyEmailEpic = (
-    action$: ActionsObservable<IVerifyEmailAction>,
-    _: any,
-    { apolloClient }: IDependencies
-) =>
+export const verifyEmailEpic: Epic<
+    IVerifyEmailAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient }) =>
     action$.pipe(
-        filter(x => x.type === VERIFY_EMAIL),
+        ofType(VERIFY_EMAIL),
         switchMap(({ code, callback }: IVerifyEmailAction) =>
             from(
-                apolloClient.mutate<verifyEmail>({
+                apolloClient.mutate<verifyEmail, verifyEmailVariables>({
                     mutation: verifyEmailMutation,
                     variables: {
                         code,
@@ -233,11 +238,12 @@ export const verifyEmailEpic = (
         )
     )
 
-export const resendEmailVerificationEpic = (
-    action$: ActionsObservable<IResendEmailVerificationAction>,
-    _: any,
-    { apolloClient }: IDependencies
-) =>
+export const resendEmailVerificationEpic: Epic<
+    IResendEmailVerificationAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient }) =>
     action$.pipe(
         ofType('SEND_EMAIL_VERIFICATION'),
         mergeMap(() =>

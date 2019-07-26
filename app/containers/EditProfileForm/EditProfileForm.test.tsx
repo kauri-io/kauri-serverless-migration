@@ -10,6 +10,7 @@ import Input from '../../components/Input/Input'
 import EmailField from './EmailField'
 import { mountWithRedux } from '../../setupTests'
 import { MockedProvider } from 'react-apollo/test-utils'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 describe('containers/EditProfileForm', () => {
     let mockProfile,
@@ -61,18 +62,24 @@ describe('containers/EditProfileForm', () => {
             callback
         )
 
-        const expectedAction = showNotificationAction({
-            notificationType: 'success',
-            message: 'Submission Successful',
-            description: 'You have successfully updated your profile',
-        } as any)
+        const expectedActions = [
+            routeChangeAction('testRedirectURL'),
+            {
+                type: 'UPDATE_USER_SUCCESS',
+            },
+            showNotificationAction({
+                notificationType: 'success',
+                message: 'Submission Successful',
+                description: 'You have successfully updated your profile',
+            } as any),
+        ]
 
         const resultingActions = await getResultingActions(
             mockApolloSubscriber,
             sourceAction
         )
 
-        expect(resultingActions).toEqual(expectedAction)
+        expect(resultingActions).toEqual(expectedActions)
     })
 
     it('should fire the callback if provided', async () => {
@@ -99,17 +106,19 @@ describe('containers/EditProfileForm', () => {
         mockApolloSubscriber = () =>
             Promise.resolve({ data: { output: { error: 'Test Error' } } })
 
-        const expectedAction = showNotificationAction({
-            notificationType: 'error',
-            message: 'Submission error',
-            description: 'Please try again',
-        } as any)
+        const expectedActions = [
+            showNotificationAction({
+                notificationType: 'error',
+                message: 'Submission error',
+                description: 'Please try again',
+            } as any),
+        ]
 
         const resultingActions = await getResultingActions(
             mockApolloSubscriber,
             sourceAction
         )
-        expect(resultingActions).toEqual(expectedAction)
+        expect(resultingActions).toEqual(expectedActions)
     })
 
     it('should match snapshot when OwnProfile props exists', () => {

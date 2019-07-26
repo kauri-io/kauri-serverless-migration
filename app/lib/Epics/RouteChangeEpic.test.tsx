@@ -16,7 +16,7 @@ jest.mock('next/router', () => {
 describe('routeChangeEpic', () => {
     it('take a router and perform the side effect to change route', async () => {
         const sourceAction = routeChangeAction('/test123')
-        const expectedActions = undefined
+        const expectedActions = []
 
         const resultingActions = await testEpic(routeChangeEpic, sourceAction)
 

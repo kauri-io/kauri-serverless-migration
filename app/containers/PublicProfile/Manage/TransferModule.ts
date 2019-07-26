@@ -8,10 +8,6 @@ import {
 } from '../../../queries/Article'
 import analytics from '../../../lib/analytics'
 import generatePublishArticleHash from '../../../lib/generate-publish-article-hash'
-import { create } from '../../../lib/init-apollo'
-import { getEvent } from '../../../queries/Module'
-import { from, of } from 'rxjs'
-import { mergeMap, flatMap, tap } from 'rxjs/operators'
 import {
     finaliseArticleTransferVariables,
     finaliseArticleTransfer,
@@ -20,6 +16,13 @@ import {
     rejectArticleTransfer,
     rejectArticleTransferVariables,
 } from '../../../queries/__generated__/rejectArticleTransfer'
+import {
+    acceptArticleTransfer,
+    acceptArticleTransferVariables,
+} from '../../../queries/__generated__/acceptArticleTransfer'
+import { from, of } from 'rxjs'
+import { path } from 'ramda'
+import { mergeMap, flatMap, tap } from 'rxjs/operators'
 
 interface IRejectArticleTransferPayload {
     id: string
@@ -97,38 +100,31 @@ export const acceptArticleTransferAction = (
     type: ACCEPT_ARTICLE_TRANSFER,
 })
 
-export const newEpic = (
-    action$: ActionsObservable<IAcceptArticleTransferAction>,
-    _: IReduxState,
-    { apolloClient }: IDependencies
-) =>
+export const acceptArticleTransferEpic: Epic<
+    IAcceptArticleTransferAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(ACCEPT_ARTICLE_TRANSFER),
         mergeMap(({ payload: { id } }) =>
             from(
-                apolloClient.mutate({
+                apolloClient.mutate<
+                    acceptArticleTransfer,
+                    acceptArticleTransferVariables
+                >({
                     mutation: acceptArticleTransferMutation,
                     variables: { id },
                 })
             ).pipe(
-                mergeMap(({ data: { acceptArticleTransfer: { hash } } }) =>
+                mergeMap(({ data }) =>
                     from(
-                        new Promise<{ data: any }>((resolve, reject) => {
-                            create(
-                                {},
-                                {
-                                    getToken: () => 'DUMMYVERIFICATIONTOKEN',
-                                }
-                            )
-                                .subscribe({
-                                    query: getEvent,
-                                    variables: { hash },
-                                })
-                                .subscribe({
-                                    error: (err: Error) => reject(err),
-                                    next: (data: any) => resolve(data),
-                                })
-                        })
+                        apolloSubscriber<any>(
+                            path<string>(['acceptArticleTransfer', 'hash'])(
+                                data
+                            ) || ''
+                        )
                     )
                 ),
                 mergeMap(

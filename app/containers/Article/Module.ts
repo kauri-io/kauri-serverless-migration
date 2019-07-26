@@ -3,9 +3,10 @@ import { IDependencies, IReduxState } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { Epic, ofType } from 'redux-observable'
 import { vote as voteMutation } from '../../queries/Article'
-import { voteVariables } from '../../queries/__generated__/vote'
+import { voteVariables, vote } from '../../queries/__generated__/vote'
 import analytics from '../../lib/analytics'
 import { switchMap, mergeMap, tap, catchError } from 'rxjs/operators'
+import { path } from 'ramda'
 
 export interface IVoteAction {
     type: string
@@ -22,20 +23,20 @@ export const voteAction = (payload: voteVariables): IVoteAction => ({
 
 export const voteEpic: Epic<IVoteAction, any, IReduxState, IDependencies> = (
     action$,
-    _: any,
+    _,
     { apolloClient, apolloSubscriber }
 ) =>
     action$.pipe(
         ofType(VOTE),
-        switchMap(({ payload }: IVoteAction) =>
+        switchMap(({ payload }) =>
             from(
-                apolloClient.mutate({
+                apolloClient.mutate<vote, voteVariables>({
                     mutation: voteMutation,
                     variables: payload,
                 })
             ).pipe(
-                mergeMap(({ data: { vote: { hash } } }) =>
-                    apolloSubscriber(hash)
+                mergeMap(({ data }) =>
+                    apolloSubscriber(path<string>(['vote', 'hash'])(data) || '')
                 ),
                 tap(() =>
                     analytics.track('Vote Content', {
@@ -49,7 +50,7 @@ export const voteEpic: Epic<IVoteAction, any, IReduxState, IDependencies> = (
                     of(
                         showNotificationAction({
                             description:
-                                (payload as voteVariables) &&
+                                payload &&
                                 typeof payload.value === 'number' &&
                                 payload.value > 0
                                     ? 'Your vote has been counted! Thanks for your feedback!'

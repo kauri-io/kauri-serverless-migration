@@ -180,7 +180,7 @@ export const submitArticleEpic: Epic<
                                 ''
                         )
                     ),
-                    tap(h => console.log(h)),
+                    // tap(h => console.log(h)),
                     mergeMap(({ data: { output } }) =>
                         apolloClient.query<getArticle, getArticleVariables>({
                             fetchPolicy: 'network-only',
@@ -191,7 +191,7 @@ export const submitArticleEpic: Epic<
                             },
                         })
                     ),
-                    tap(h => console.log(h)),
+                    // tap(h => console.log(h)),
                     mergeMap(({ data: { getArticle } }) => {
                         if (getArticle) {
                             return typeof selfPublish !== 'undefined'
@@ -292,7 +292,7 @@ export const submitArticleVersionEpic: Epic<
                             ) || ''
                         )
                     ),
-                    tap(h => console.log(h)),
+                    // tap(h => console.log(h)),
                     mergeMap(({ data: { output } }) =>
                         apolloClient.query<IGetArticleResult>({
                             fetchPolicy: 'network-only',
@@ -303,7 +303,7 @@ export const submitArticleVersionEpic: Epic<
                             },
                         })
                     ),
-                    tap(h => console.log(h)),
+                    // tap(h => console.log(h)),
                     mergeMap(({ data: { getArticle } }) =>
                         typeof selfPublish !== 'undefined'
                             ? of(
@@ -413,11 +413,12 @@ export const submitArticleVersionEpic: Epic<
         )
     )
 
-export const editArticleEpic: Epic<any, any, IReduxState, IDependencies> = (
-    action$,
-    _,
-    { apolloClient, apolloSubscriber }: IDependencies
-) =>
+export const editArticleEpic: Epic<
+    IEditArticleAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(EDIT_ARTICLE),
         switchMap(
@@ -455,7 +456,7 @@ export const editArticleEpic: Epic<any, any, IReduxState, IDependencies> = (
                             ) || ''
                         )
                     ),
-                    tap(h => console.log(h)),
+                    // tap(h => console.log(h)),
                     mergeMap(({ data: { output } }) =>
                         apolloClient.query<IGetArticleResult>({
                             fetchPolicy: 'network-only',

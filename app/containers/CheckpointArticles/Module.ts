@@ -9,7 +9,7 @@ import { switchMap, mergeMap, tap, mapTo, catchError } from 'rxjs/operators'
 const CHECKPOINT_ARTICLES = 'CHECKPOINT_ARTICLES'
 
 export interface CheckpointArticlesAction {
-    type: string
+    type: 'CHECKPOINT_ARTICLES'
 }
 
 interface ICheckpointArticlesCommandOutput {
@@ -44,18 +44,18 @@ export const checkpointArticlesEpic: Epic<
     action$.pipe(
         ofType(CHECKPOINT_ARTICLES),
         switchMap(() =>
-            web3GetNetwork()
-                .mergeMap(() =>
+            web3GetNetwork().pipe(
+                mergeMap(() =>
                     apolloClient.mutate({
                         mutation: checkpointArticles,
                         variables: {},
                     })
-                )
-                .flatMap(({ data: { checkpointArticles: { hash } } }) =>
+                ),
+                mergeMap(({ data: { checkpointArticles: { hash } } }) =>
                     from(apolloSubscriber(hash))
-                )
-                .do(h => console.log(h))
-                .switchMap(
+                ),
+                // tap(h => console.log(h)),
+                switchMap(
                     ({
                         data: {
                             output: {
@@ -156,8 +156,8 @@ export const checkpointArticlesEpic: Epic<
                                 )
                             })
                         )
-                )
-                .catch(err => {
+                ),
+                catchError(err => {
                     if (err.message && err.message.includes('locked')) {
                         return of(
                             showNotificationAction({
@@ -201,5 +201,6 @@ export const checkpointArticlesEpic: Epic<
                         })
                     )
                 })
+            )
         )
     )

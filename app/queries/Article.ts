@@ -431,7 +431,7 @@ export const searchPending = gql`
     ${CommunityOwner}
 `
 
-export const approveArticle = gql`
+export const approveArticleMutation = gql`
     mutation approveArticle($id: String!, $version: Int!, $signature: String!) {
         approveArticle(id: $id, version: $version, signature: $signature) {
             hash
@@ -439,7 +439,7 @@ export const approveArticle = gql`
     }
 `
 
-export const rejectArticle = gql`
+export const rejectArticleMutation = gql`
     mutation rejectArticle($id: String!, $version: Int!, $cause: String) {
         rejectArticle(id: $id, version: $version, cause: $cause) {
             hash

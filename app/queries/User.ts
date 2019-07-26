@@ -43,7 +43,7 @@ export const getOwnProfile = gql`
     }
 `
 
-export const saveUserDetails = gql`
+export const saveUserMutation = gql`
     mutation saveUser(
         $username: String
         $name: String
