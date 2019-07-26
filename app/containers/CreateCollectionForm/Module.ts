@@ -260,7 +260,7 @@ export const editCollectionEpic: Epic<
                                 ''
                         )
                     ),
-                    tap(console.log),
+                    // tap(console.log),
                     map(({ data: { output: { id } } }) =>
                         composeCollectionAction(
                             { id, sections, updating: true },

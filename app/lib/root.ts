@@ -18,7 +18,7 @@ import {
 import { checkpointArticlesEpic } from "../containers/CheckpointArticles/Module";
 import {
   createCollectionEpic,
-//   editCollectionEpic,
+  editCollectionEpic,
 //   composeCollectionEpic,
 } from "../containers/CreateCollectionForm/Module";
 // import { saveUserDetailsEpic } from "../components/common/EditProfile/Module";
@@ -75,10 +75,10 @@ const epics = [
   checkpointArticlesEpic,
   deleteDraftArticleEpic,
   createCollectionEpic,
+  editCollectionEpic,
   
 
     //   composeCollectionEpic,
-    //   editCollectionEpic,
     //   verifyEmailEpic,
     //   resendEmailVerificationEpic,
     //   emailSubscribeEpic,
