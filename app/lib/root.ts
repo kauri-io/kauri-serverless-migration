@@ -19,7 +19,7 @@ import { checkpointArticlesEpic } from "../containers/CheckpointArticles/Module"
 import {
   createCollectionEpic,
   editCollectionEpic,
-//   composeCollectionEpic,
+  composeCollectionEpic,
 } from "../containers/CreateCollectionForm/Module";
 // import { saveUserDetailsEpic } from "../components/common/EditProfile/Module";
 import { deleteDraftArticleEpic } from "../containers/ArticleDraft/DeleteDraftArticleModule";
@@ -76,9 +76,9 @@ const epics = [
   deleteDraftArticleEpic,
   createCollectionEpic,
   editCollectionEpic,
+  composeCollectionEpic,
   
 
-    //   composeCollectionEpic,
     //   verifyEmailEpic,
     //   resendEmailVerificationEpic,
     //   emailSubscribeEpic,

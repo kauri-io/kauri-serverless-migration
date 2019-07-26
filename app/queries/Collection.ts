@@ -82,7 +82,7 @@ export const editCollectionMutation = gql`
     }
 `
 
-export const composeCollection = gql`
+export const composeCollectionMutation = gql`
     mutation composeCollection($id: String!, $sections: [SectionDTOInput]!) {
         composeCollection(id: $id, sections: $sections) {
             hash

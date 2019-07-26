@@ -1,7 +1,7 @@
 import {
     createCollectionMutation,
     editCollectionMutation,
-    composeCollection,
+    composeCollectionMutation,
 } from '../../queries/Collection'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
@@ -11,12 +11,23 @@ import { ActionsObservable, ofType, Epic } from 'redux-observable'
 import { from, of } from 'rxjs'
 import { path } from 'ramda'
 import { ISection } from '../AddToCollection/SectionsContent'
-import { switchMap, mergeMap, tap, catchError, map } from 'rxjs/operators'
+import {
+    switchMap,
+    mergeMap,
+    tap,
+    catchError,
+    map,
+} from 'rxjs/operators'
+import { merge } from 'rxjs'
 import { editCollection } from '../../queries/__generated__/editCollection'
 import {
     createCollection,
     createCollectionVariables,
 } from '../../queries/__generated__/createCollection'
+import {
+    composeCollection,
+    composeCollectionVariables,
+} from '../../queries/__generated__/composeCollection'
 
 export interface ICreateCollectionPayload {
     name: string
@@ -88,21 +99,25 @@ export const composeCollectionAction = (
     callback,
 })
 
-export const composeCollectionEpic = (
-    action$: ActionsObservable<ComposeCollectionAction>,
-    {},
-    { apolloClient, apolloSubscriber }: IDependencies
-) =>
+export const composeCollectionEpic: Epic<
+    ComposeCollectionAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, {}, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(COMPOSE_COLLECTION),
         switchMap(
             ({
                 payload: { id, sections, updating },
                 callback,
-            }: ComposeCollectionAction) =>
+            }) =>
                 from(
-                    apolloClient.mutate({
-                        mutation: composeCollection,
+                    apolloClient.mutate<
+                        composeCollection,
+                        composeCollectionVariables
+                    >({
+                        mutation: composeCollectionMutation,
                         variables: {
                             id,
                             sections,
@@ -117,7 +132,7 @@ export const composeCollectionEpic = (
                                 ) || ''
                             )
                         ).pipe(
-                            tap(console.log),
+                            // tap(console.log),
                             tap(() => {
                                 analytics.track(
                                     updating
@@ -135,22 +150,26 @@ export const composeCollectionEpic = (
                                 )
                             }),
                             mergeMap(() =>
-                                of(
-                                    showNotificationAction({
-                                        notificationType: 'success',
-                                        message:
-                                            typeof updating !== 'undefined'
-                                                ? 'Collection updated!'
-                                                : 'Collection created!',
-                                        description:
-                                            'Your collection is now available for viewing!',
-                                    }),
-                                    routeChangeAction(
-                                        `/collection/${id}/collection-${
-                                            typeof updating !== 'undefined'
-                                                ? 'updated'
-                                                : 'created'
-                                        }`
+                                merge(
+                                    of(
+                                        showNotificationAction({
+                                            notificationType: 'success',
+                                            message:
+                                                typeof updating !== 'undefined'
+                                                    ? 'Collection updated!'
+                                                    : 'Collection created!',
+                                            description:
+                                                'Your collection is now available for viewing!',
+                                        })
+                                    ),
+                                    of(
+                                        routeChangeAction(
+                                            `/collection/${id}/collection-${
+                                                typeof updating !== 'undefined'
+                                                    ? 'updated'
+                                                    : 'created'
+                                            }`
+                                        )
                                     )
                                 )
                             ),
@@ -222,7 +241,7 @@ export const createCollectionEpic: Epic<
                             { id, sections, tags },
                             callback
                         )
-                    ),
+                    )
                     // tap(h => console.log(h))
                 )
             }
