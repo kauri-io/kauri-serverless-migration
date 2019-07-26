@@ -9,12 +9,12 @@ import {
     approveArticleEpic,
 } from '../containers/ArticleReview/Module'
 // import { publishArticleEpic } from "../components/containers/SubmitArticleForm/PublishArticleModule";
-// import {
-//   submitArticleEpic,
-//   submitArticleVersionEpic,
-//   editArticleEpic,
-//   draftArticleEpic,
-// } from "../components/containers/SubmitArticleForm/Module";
+import {
+  submitArticleEpic,
+  submitArticleVersionEpic,
+  editArticleEpic,
+  // draftArticleEpic,
+} from "../containers/SubmitArticleForm/Module";
 // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
 // import {
 //   createCollectionEpic,
@@ -66,9 +66,9 @@ const epics = [
     userDetailsEpic,
     rejectArticleEpic,
     approveArticleEpic,
-    //   submitArticleEpic,
-    //   submitArticleVersionEpic,
-    //   editArticleEpic,
+      submitArticleEpic,
+      submitArticleVersionEpic,
+      editArticleEpic,
     //   addCommentEpic,
     //   createCollectionEpic,
     //   composeCollectionEpic,
