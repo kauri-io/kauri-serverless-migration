@@ -30,7 +30,7 @@ import { openModalAction as openModal } from '../../components/Modal/Module'
 import { sendInvitationVariables } from '../../queries/__generated__/sendInvitation'
 
 interface IProps {
-    client: ApolloClient<{}>
+    client?: ApolloClient<{}>
     acceptCommunityInvitationAction: typeof acceptCommunityInvitation
     currentUser: string
     isCommunityAdmin: boolean
@@ -38,7 +38,7 @@ interface IProps {
     communityId: string
     data: {
         getCommunity: getCommunity_getCommunity
-        searchArticles: getCommunityAndPendingArticles_searchArticles
+        searchArticles?: getCommunityAndPendingArticles_searchArticles
     }
     closeModalAction: () => void
     openModalAction: typeof openModal
@@ -54,16 +54,17 @@ interface IProps {
 
 class CommunityConnection extends React.Component<IProps> {
     componentDidMount() {
-        this.props.client.mutate({
-            fetchPolicy: 'no-cache',
-            mutation: recordViewMutation,
-            variables: {
-                resourceId: {
-                    id: this.props.communityId,
-                    type: 'COMMUNITY',
+        this.props.client &&
+            this.props.client.mutate({
+                fetchPolicy: 'no-cache',
+                mutation: recordViewMutation,
+                variables: {
+                    resourceId: {
+                        id: this.props.communityId,
+                        type: 'COMMUNITY',
+                    },
                 },
-            },
-        })
+            })
 
         const {
             data: { getCommunity },

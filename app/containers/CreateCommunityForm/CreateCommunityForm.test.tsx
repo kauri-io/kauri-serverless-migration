@@ -1,6 +1,6 @@
 import View from './index'
 import { mountWithRedux } from '../../setupTests'
-import mockData from './mock'
+import { Community as mockData } from '../../mocks'
 import { getCommunity_getCommunity } from '../../queries/__generated__/getCommunity'
 import { MockedProvider } from 'react-apollo/test-utils'
 

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`containers/CollectionCreated/View should match the snapshot 1`] = `
+<View__Container>
+  <Head>
+    <title>
+      Collection live - Kauri
+    </title>
+  </Head>
+  <Typography__styledComponent>
+    Collection
+  </Typography__styledComponent>
+  <Typography__component>
+    Your collection is now live
+  </Typography__component>
+  <CollectionCard
+    articleCount="11"
+    cardHeight={310}
+    collectionCount="2"
+    date="2019-04-16T04:39:35.351Z"
+    description="Learn about blockchains, smart contracts, Ethereum, and what you can build with them"
+    id="5cb55c871325f2000141df73"
+    imageURL="https://api.kauri.io:443/ipfs/QmQTsd7FhCLBQVJCYNP8a5Vf1G68AsxLPyDtWP3gToc7g4"
+    linkComponent={[Function]}
+    name="Getting Started"
+    resourceType="USER"
+    userAvatar="https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY"
+    userId="37648fc15a8365735289e002d65d44d80c505e8b"
+  />
+  <PrimaryButtonComponent
+    onClick={[Function]}
+  >
+    View Collection
+  </PrimaryButtonComponent>
+</View__Container>
+`;

@@ -678,7 +678,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                                       "componentStyle": ComponentStyle {
                                         "componentId": "TertiaryButton-sc-1rjobqw-0",
                                         "isStatic": false,
-                                        "lastClassName": "deyJuN",
+                                        "lastClassName": "CufMJ",
                                         "rules": Array [
                                           "display:flex;align-items:center;border:none;background-color:transparent;cursor:",
                                           [Function],
@@ -712,7 +712,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                                   type="button"
                                 >
                                   <button
-                                    className="TertiaryButton-sc-1rjobqw-0 deyJuN"
+                                    className="TertiaryButton-sc-1rjobqw-0 CufMJ"
                                     color="white"
                                     disabled={false}
                                     fontSize={0}
