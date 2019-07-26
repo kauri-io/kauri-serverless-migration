@@ -8,21 +8,20 @@ import {
     rejectArticleEpic,
     approveArticleEpic,
 } from '../containers/ArticleReview/Module'
-import { publishArticleEpic } from "../containers/SubmitArticleForm/PublishArticleModule";
+import { publishArticleEpic } from '../containers/SubmitArticleForm/PublishArticleModule'
 import {
     submitArticleEpic,
     submitArticleVersionEpic,
     editArticleEpic,
     draftArticleEpic,
 } from '../containers/SubmitArticleForm/Module'
-// import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
+import { checkpointArticlesEpic } from "../containers/CheckpointArticles/Module";
 // import {
 //   createCollectionEpic,
 //   editCollectionEpic,
 //   composeCollectionEpic,
 // } from "../components/containers/CreateCollectionForm/Module";
 // import { saveUserDetailsEpic } from "../components/common/EditProfile/Module";
-// import { checkpointArticlesEpic } from "../components/containers/CheckpointArticles/Module";
 // import { deleteDraftArticleEpic } from "../components/containers/ArticleDraft/DeleteDraftArticleModule";
 // import { addArticleToCollectionEpic } from "../components/connections/AddToCollection/Module";
 // import {
@@ -54,6 +53,8 @@ import {
 //   finaliseArticleTransferEpic,
 // } from "../components/containers/PublicProfile/Manage/TransferModule";
 
+// TODO: // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
+
 export const rootReducer = {
     app,
     modal,
@@ -71,11 +72,11 @@ const epics = [
     editArticleEpic,
     draftArticleEpic,
     publishArticleEpic,
+    checkpointArticlesEpic,
     //   addCommentEpic,
     //   createCollectionEpic,
     //   composeCollectionEpic,
     //   editCollectionEpic,
-    //   checkpointArticlesEpic,
     //   saveUserDetailsEpic,
     //   deleteDraftArticleEpic,
     //   addArticleToCollectionEpic,
