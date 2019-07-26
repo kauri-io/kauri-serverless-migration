@@ -1,18 +1,18 @@
 import AddIcon from './AddIcon'
 import UploadIcon from './UploadIcon'
 
-import { mountWithTheme } from '../../setupTests'
+import { shallow } from 'enzyme'
 
 describe('components/AddIcon', () => {
-    it('snapshot should match', () => {
-        const wrapper = mountWithTheme(<AddIcon />)
+    it('should match snapshot', () => {
+        const wrapper = shallow(<AddIcon />)
         expect(wrapper).toMatchSnapshot()
     })
 })
 
 describe('components/UploadIcon', () => {
-    it('snapshot should match', () => {
-        const wrapper = mountWithTheme(<UploadIcon />)
+    it('should match snapshot', () => {
+        const wrapper = shallow(<UploadIcon />)
         expect(wrapper).toMatchSnapshot()
     })
 })

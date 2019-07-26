@@ -77,5 +77,4 @@ describe('draftArticleEpic', () => {
 
         expect(resultingActions).toEqual(expectedAction)
     })
-
 })

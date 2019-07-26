@@ -19,7 +19,7 @@ const InputsContainers = styled.div`
     height: 230px;
 `
 
-const StyledUpload = styled(UploadLogoButton)`
+export const StyledUpload = styled(UploadLogoButton)`
     margin-right: ${props => props.theme.space[1]}px;
 `
 

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/CuratedCategory snapshot should match 1`] = `
+exports[`components/CuratedCategory should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {

@@ -305,7 +305,7 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                           "componentStyle": ComponentStyle {
                             "componentId": "SecondaryButton-sy4hb2-0",
                             "isStatic": false,
-                            "lastClassName": "jBRWmt",
+                            "lastClassName": "iFALPe",
                             "rules": Array [
                               "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
                               [Function],
@@ -347,7 +347,7 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                       type="button"
                     >
                       <button
-                        className="SecondaryButton-sy4hb2-0 jBRWmt"
+                        className="SecondaryButton-sy4hb2-0 iFALPe"
                         color="textPrimary"
                         fontSize={0}
                         fontWeight={700}
@@ -383,7 +383,7 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                           "componentStyle": ComponentStyle {
                             "componentId": "PrimaryButton-sc-1cbxa53-0",
                             "isStatic": false,
-                            "lastClassName": "gGcsYX",
+                            "lastClassName": "bVbdII",
                             "rules": Array [
                               "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
                               [Function],
@@ -423,7 +423,7 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                       type="submit"
                     >
                       <button
-                        className="PrimaryButton-sc-1cbxa53-0 gGcsYX"
+                        className="PrimaryButton-sc-1cbxa53-0 bVbdII"
                         color="white"
                         fontSize={0}
                         fontWeight={700}

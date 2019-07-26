@@ -1,76 +1,198 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/Image snapshot should match 1`] = `
-<Image
-  image="http://test.com/image.png"
-  width={100}
+exports[`components/Image should match snapshot 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "DEFAULT_CARD_WIDTH": 288,
+      "MAIN_BODY_WIDTH": 1242,
+      "bg": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "bgPrimary": "#1E2428",
+      "bgSecondary": "#1E3D3B",
+      "borderTextArea": "#979797",
+      "breakpoints": Array [
+        "500px",
+        "52em",
+        "1242px",
+      ],
+      "colors": Object {
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "hoverTextColor": "#108E72",
+        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      },
+      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+      "disabledBackgroundColor": "#D6D6D6",
+      "disabledTextColor": "#9B9B9B",
+      "divider": "#EBEBEB",
+      "errorRedColor": "#C03030",
+      "fontSizes": Array [
+        11,
+        13,
+        14,
+        16,
+        18,
+        20,
+        22,
+        28,
+        32,
+      ],
+      "fontWeight": Array [
+        300,
+        "normal",
+        500,
+        700,
+      ],
+      "hoverTextColor": "#108E72",
+      "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+      "padding": "calc((100vw - 1242px) / 2)",
+      "paddingTop": "2.5em",
+      "primary": "#0BA986",
+      "primaryColor": "#0BA986",
+      "primaryDark": "#11856B",
+      "primaryTextColor": "#1E2428",
+      "secondary": "#11856B",
+      "secondaryBlue": "rgb(81, 123, 162, 1)",
+      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+      "secondaryColor": "#1E3D3B",
+      "secondaryTextColor": "#283035",
+      "space": Array [
+        0,
+        10,
+        15,
+        30,
+        60,
+      ],
+      "tertiaryBackgroundColor": "#F7F7F7",
+      "textPrimary": "#1E2428",
+      "white": "#FFFFFF",
+    }
+  }
 >
-  <InView
-    rootMargin="200px 0px"
-    threshold={0}
-    triggerOnce={true}
+  <Image
+    image="http://test.com/image.png"
+    width={100}
   >
-    <Image__Img
-      image="http://test.com/image.png"
-      inView={false}
-      width={100}
+    <InView
+      rootMargin="200px 0px"
+      threshold={0}
+      triggerOnce={true}
     >
-      <StyledComponent
-        forwardedComponent={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "componentId": "Image__Img-sc-1jpuda7-0",
-              "isStatic": false,
-              "lastClassName": "iqWPmg",
-              "rules": Array [
-                "height:",
-                [Function],
-                ";width:",
-                [Function],
-                ";",
-                [Function],
-                ";background:",
-                [Function],
-                ";background-size:cover;opacity:",
-                [Function],
-                ";transition:opacity ",
-                [Function],
-                "s;",
-                [Function],
-                ";",
-                [Function],
-                ";position:",
-                [Function],
-                ";",
-                [Function],
-                " ",
-                [Function],
-                ";",
-              ],
-            },
-            "displayName": "Image__Img",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "Image__Img-sc-1jpuda7-0",
-            "target": "div",
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          }
-        }
-        forwardedRef={[Function]}
+      <Image__Img
         image="http://test.com/image.png"
         inView={false}
         width={100}
       >
-        <div
-          className="Image__Img-sc-1jpuda7-0 iqWPmg"
+        <StyledComponent
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "Image__Img-sc-1jpuda7-0",
+                "isStatic": false,
+                "lastClassName": "iqWPmg",
+                "rules": Array [
+                  "height:",
+                  [Function],
+                  ";width:",
+                  [Function],
+                  ";",
+                  [Function],
+                  ";background:",
+                  [Function],
+                  ";background-size:cover;opacity:",
+                  [Function],
+                  ";transition:opacity ",
+                  [Function],
+                  "s;",
+                  [Function],
+                  ";",
+                  [Function],
+                  ";position:",
+                  [Function],
+                  ";",
+                  [Function],
+                  " ",
+                  [Function],
+                  ";",
+                ],
+              },
+              "displayName": "Image__Img",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "Image__Img-sc-1jpuda7-0",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={[Function]}
+          image="http://test.com/image.png"
+          inView={false}
           width={100}
-        />
-      </StyledComponent>
-    </Image__Img>
-  </InView>
-</Image>
+        >
+          <div
+            className="Image__Img-sc-1jpuda7-0 iqWPmg"
+            width={100}
+          />
+        </StyledComponent>
+      </Image__Img>
+    </InView>
+  </Image>
+</ThemeProvider>
 `;

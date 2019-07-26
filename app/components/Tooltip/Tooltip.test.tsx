@@ -4,7 +4,7 @@ import Tooltip from './Tooltip'
 import { mountWithTheme } from '../../setupTests'
 
 describe('components/Tooltip/ShareArticle', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         let props = {
             url: 'test',
             title: 'test',
@@ -16,7 +16,7 @@ describe('components/Tooltip/ShareArticle', () => {
 })
 
 describe('components/Tooltip/ShareButtons', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         let props = {
             url: 'test',
             title: 'test',
@@ -27,7 +27,7 @@ describe('components/Tooltip/ShareButtons', () => {
 })
 
 describe('components/Tooltip/Tooltip', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(
             <Tooltip>
                 <div>Test</div>

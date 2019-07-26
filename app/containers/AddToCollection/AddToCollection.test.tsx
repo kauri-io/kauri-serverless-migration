@@ -3,7 +3,7 @@ import { mountWithTheme } from '../../setupTests'
 import { MockedProvider } from 'react-apollo/test-utils'
 
 describe('containers/AddToCollection', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const props = {
             closeModalAction: jest.fn(),
             userId: 'test user id',

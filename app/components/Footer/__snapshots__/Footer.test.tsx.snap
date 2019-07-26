@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/Footer snapshot should match 1`] = `
+exports[`components/Footer should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {

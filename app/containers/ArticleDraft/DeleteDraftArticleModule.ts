@@ -10,7 +10,7 @@ import {
     deleteDraftArticleVariables,
 } from '../../queries/__generated__/deleteDraftArticle'
 import { path } from 'ramda'
-import { IDependencies, IReduxState } from '../../lib/Module';
+import { IDependencies, IReduxState } from '../../lib/Module'
 
 export interface IDeleteDraftArticlePayload {
     id: string

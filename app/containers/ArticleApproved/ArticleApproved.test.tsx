@@ -4,7 +4,7 @@ import { MockedProvider } from 'react-apollo/test-utils'
 import { generateArticle } from '../../mocks'
 
 describe('containers/ArticleApproved', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const article1 = generateArticle(1)
         const props = {
             id: '123',

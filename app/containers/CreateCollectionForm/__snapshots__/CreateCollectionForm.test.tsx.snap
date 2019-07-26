@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
+<View__Section>
+  <Form>
+    <ActionsSection
+      bg="bgPrimary"
+    >
+      <Stack
+        alignItems={
+          Array [
+            "",
+            "center",
+          ]
+        }
+        gap={2}
+      >
+        <TertiaryButtonComponent
+          icon={<ForwardRef(View__BackIcon) />}
+          onClick={[Function]}
+        >
+          Cancel Collection
+        </TertiaryButtonComponent>
+      </Stack>
+      <Stack
+        alignItems={
+          Array [
+            "",
+            "center",
+          ]
+        }
+        gap={2}
+        justifyContent={
+          Array [
+            "",
+            "center",
+          ]
+        }
+      >
+        <TertiaryButtonComponent
+          handleClick={[Function]}
+          icon={<UploadIcon />}
+        >
+          Background Image
+        </TertiaryButtonComponent>
+      </Stack>
+      <Stack
+        alignItems={
+          Array [
+            "",
+            "center",
+          ]
+        }
+        gap={2}
+        justifyContent={
+          Array [
+            "",
+            "end",
+          ]
+        }
+      >
+        <PrimaryButtonComponent
+          disabled={false}
+          onClick={[Function]}
+          type="submit"
+        >
+          Create Collection
+        </PrimaryButtonComponent>
+      </Stack>
+    </ActionsSection>
+    <PrimaryHeaderSection>
+      <View__CreateCollectionDetails>
+        <Typography__component
+          color="white"
+        >
+          Collection
+        </Typography__component>
+        <FormikConnect(FieldInner)
+          name="name"
+          render={[Function]}
+          type="text"
+        />
+        <FormikConnect(FieldInner)
+          name="description"
+          render={[Function]}
+          type="text"
+        />
+        <FormikConnect(FieldArrayInner)
+          name="tags"
+          render={[Function]}
+        />
+        <View__CreateCollectionActionsPlaceHolder />
+      </View__CreateCollectionDetails>
+      <Stack
+        alignItems={
+          Array [
+            "",
+            "center",
+          ]
+        }
+        gap={2}
+        justifyContent={
+          Array [
+            "",
+            "end",
+          ]
+        }
+      >
+        <View__CreateCollectionMetaDetails>
+          <View__CreateCollectionCuratorDetails>
+            <Container
+              pageType="CreateCollectionPage"
+              statistics={
+                Array [
+                  Object {
+                    "count": 0,
+                    "name": "Articles",
+                  },
+                  Object {
+                    "count": 0,
+                    "name": "Collections",
+                  },
+                ]
+              }
+            />
+            <Typography__component
+              color="white"
+            >
+              Curator
+            </Typography__component>
+            <View__CreateCollectionCurators>
+              <UserAvatarComponent
+                avatar="avatar url"
+                fullWidth={true}
+                userId="234"
+                username="345"
+                variant="white"
+              />
+            </View__CreateCollectionCurators>
+          </View__CreateCollectionCuratorDetails>
+        </View__CreateCollectionMetaDetails>
+      </Stack>
+    </PrimaryHeaderSection>
+    <View__ContentSection>
+      <FormikConnect(FieldArrayInner)
+        name="sections"
+        render={[Function]}
+      />
+      <DisplayFormikState
+        errors={Object {}}
+        isSubmitting={false}
+        touched={
+          Object {
+            "description": true,
+            "name": true,
+          }
+        }
+        values={
+          Object {
+            "name": "test name",
+            "sections": Array [],
+            "tags": Array [],
+          }
+        }
+      />
+    </View__ContentSection>
+  </Form>
+</View__Section>
+`;

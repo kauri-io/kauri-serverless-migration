@@ -7,7 +7,7 @@ let props = {
 }
 
 describe('components/FeaturedContent', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = shallowWithTheme(<FeaturedContent {...props} />)
         expect(wrapper).toMatchSnapshot()
     })

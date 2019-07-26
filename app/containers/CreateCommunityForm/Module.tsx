@@ -28,7 +28,10 @@ import {
     prepareSendInvitation,
     prepareSendInvitationVariables,
 } from '../../queries/__generated__/prepareSendInvitation'
-import { sendInvitation, sendInvitationVariables } from '../../queries/__generated__/sendInvitation';
+import {
+    sendInvitation,
+    sendInvitationVariables,
+} from '../../queries/__generated__/sendInvitation'
 
 export interface ICreateCommunityAction {
     callback: () => void
@@ -372,7 +375,10 @@ export const updateCommunityEpic = (
                                                   )
                                               ).pipe(
                                                   mergeMap(signedSignature =>
-                                                      apolloClient.mutate<sendInvitation, sendInvitationVariables>({
+                                                      apolloClient.mutate<
+                                                          sendInvitation,
+                                                          sendInvitationVariables
+                                                      >({
                                                           mutation: sendInvitationMutation,
                                                           variables: {
                                                               id:

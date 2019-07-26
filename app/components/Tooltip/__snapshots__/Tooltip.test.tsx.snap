@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/Tooltip/ShareArticle snapshot should match 1`] = `
+exports[`components/Tooltip/ShareArticle should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -243,7 +243,7 @@ exports[`components/Tooltip/ShareArticle snapshot should match 1`] = `
                         "componentStyle": ComponentStyle {
                           "componentId": "TertiaryButton-sc-1rjobqw-0",
                           "isStatic": false,
-                          "lastClassName": "bOyMCf",
+                          "lastClassName": "MFFdZ",
                           "rules": Array [
                             "display:flex;align-items:center;border:none;background-color:transparent;cursor:",
                             [Function],
@@ -277,7 +277,7 @@ exports[`components/Tooltip/ShareArticle snapshot should match 1`] = `
                     type="button"
                   >
                     <button
-                      className="TertiaryButton-sc-1rjobqw-0 bOyMCf"
+                      className="TertiaryButton-sc-1rjobqw-0 MFFdZ"
                       color="black"
                       disabled={false}
                       fontSize={0}
@@ -309,7 +309,7 @@ exports[`components/Tooltip/ShareArticle snapshot should match 1`] = `
 </ThemeProvider>
 `;
 
-exports[`components/Tooltip/ShareButtons snapshot should match 1`] = `
+exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
@@ -878,7 +878,7 @@ exports[`components/Tooltip/ShareButtons snapshot should match 1`] = `
 </ThemeProvider>
 `;
 
-exports[`components/Tooltip/Tooltip snapshot should match 1`] = `
+exports[`components/Tooltip/Tooltip should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {

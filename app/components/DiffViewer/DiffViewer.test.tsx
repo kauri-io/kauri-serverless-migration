@@ -7,7 +7,7 @@ let props = {
 }
 
 describe('components/DiffViewer', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<DiffViewer {...props} />)
         expect(wrapper).toMatchSnapshot()
     })

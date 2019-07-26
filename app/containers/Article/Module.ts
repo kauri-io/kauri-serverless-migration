@@ -50,7 +50,7 @@ export const voteEpic: Epic<IVoteAction, any, IReduxState, IDependencies> = (
                     of(
                         showNotificationAction({
                             description:
-                                (payload) &&
+                                payload &&
                                 typeof payload.value === 'number' &&
                                 payload.value > 0
                                     ? 'Your vote has been counted! Thanks for your feedback!'

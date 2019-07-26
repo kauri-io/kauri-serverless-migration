@@ -21,7 +21,7 @@ let props = {
 }
 
 describe('components/CollectionHeader', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<CollectionHeader {...props} />)
         expect(wrapper).toMatchSnapshot()
     })

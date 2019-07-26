@@ -2066,10 +2066,10 @@ exports[`components/Navbar should match snapshot 1`] = `
                                         </ForwardRef>
                                       </span>
                                       <NoSsr>
-                                        <WithStyles(TouchRipple)
+                                        <WithStyles(undefined)
                                           center={true}
                                         >
-                                          <TouchRipple
+                                          <ForwardRef(TouchRipple)
                                             center={true}
                                             classes={
                                               Object {
@@ -2089,12 +2089,11 @@ exports[`components/Navbar should match snapshot 1`] = `
                                               <TransitionGroup
                                                 childFactory={[Function]}
                                                 component={null}
-                                                enter={true}
                                                 exit={true}
                                               />
                                             </span>
-                                          </TouchRipple>
-                                        </WithStyles(TouchRipple)>
+                                          </ForwardRef(TouchRipple)>
+                                        </WithStyles(undefined)>
                                       </NoSsr>
                                     </button>
                                   </ForwardRef(ButtonBase)>
@@ -2206,10 +2205,10 @@ exports[`components/Navbar should match snapshot 1`] = `
                                         </ForwardRef>
                                       </span>
                                       <NoSsr>
-                                        <WithStyles(TouchRipple)
+                                        <WithStyles(undefined)
                                           center={true}
                                         >
-                                          <TouchRipple
+                                          <ForwardRef(TouchRipple)
                                             center={true}
                                             classes={
                                               Object {
@@ -2229,12 +2228,11 @@ exports[`components/Navbar should match snapshot 1`] = `
                                               <TransitionGroup
                                                 childFactory={[Function]}
                                                 component={null}
-                                                enter={true}
                                                 exit={true}
                                               />
                                             </span>
-                                          </TouchRipple>
-                                        </WithStyles(TouchRipple)>
+                                          </ForwardRef(TouchRipple)>
+                                        </WithStyles(undefined)>
                                       </NoSsr>
                                     </button>
                                   </ForwardRef(ButtonBase)>

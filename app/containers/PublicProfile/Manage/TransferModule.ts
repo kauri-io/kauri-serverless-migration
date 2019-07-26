@@ -100,11 +100,12 @@ export const acceptArticleTransferAction = (
     type: ACCEPT_ARTICLE_TRANSFER,
 })
 
-export const acceptArticleTransferEpic: Epic<IAcceptArticleTransferAction, any, IReduxState, IDependencies> = (
-    action$,
-    _,
-  { apolloClient, apolloSubscriber }
-) =>
+export const acceptArticleTransferEpic: Epic<
+    IAcceptArticleTransferAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(ACCEPT_ARTICLE_TRANSFER),
         mergeMap(({ payload: { id } }) =>
@@ -119,7 +120,11 @@ export const acceptArticleTransferEpic: Epic<IAcceptArticleTransferAction, any, 
             ).pipe(
                 mergeMap(({ data }) =>
                     from(
-                      apolloSubscriber<any>(path<string>(['acceptArticleTransfer', 'hash'])(data) || '')
+                        apolloSubscriber<any>(
+                            path<string>(['acceptArticleTransfer', 'hash'])(
+                                data
+                            ) || ''
+                        )
                     )
                 ),
                 mergeMap(
