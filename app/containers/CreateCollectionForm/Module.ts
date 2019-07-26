@@ -1,5 +1,5 @@
 import {
-    createCollection,
+    createCollectionMutation,
     editCollectionMutation,
     composeCollection,
 } from '../../queries/Collection'
@@ -12,7 +12,11 @@ import { from, of } from 'rxjs'
 import { path } from 'ramda'
 import { ISection } from '../AddToCollection/SectionsContent'
 import { switchMap, mergeMap, tap, catchError, map } from 'rxjs/operators'
-import { editCollection } from '../../queries/__generated__/editCollection';
+import { editCollection } from '../../queries/__generated__/editCollection'
+import {
+    createCollection,
+    createCollectionVariables,
+} from '../../queries/__generated__/createCollection'
 
 export interface ICreateCollectionPayload {
     name: string
@@ -106,9 +110,13 @@ export const composeCollectionEpic = (
                     })
                 ).pipe(
                     mergeMap(({ data }) =>
-                      from(
-                        apolloSubscriber<{ id: string }>(path<string>(['composeCollection','hash'])(data) || '')
-                      ).pipe(
+                        from(
+                            apolloSubscriber<{ id: string }>(
+                                path<string>(['composeCollection', 'hash'])(
+                                    data
+                                ) || ''
+                            )
+                        ).pipe(
                             tap(console.log),
                             tap(() => {
                                 analytics.track(
@@ -163,11 +171,12 @@ export const composeCollectionEpic = (
                 )
         )
     )
-export const createCollectionEpic = (
-    action$: ActionsObservable<ICreateCollectionAction>,
-    {},
-    { apolloClient, apolloSubscriber }: IDependencies
-) =>
+export const createCollectionEpic: Epic<
+    ICreateCollectionAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, {}, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(CREATE_COLLECTION),
         switchMap(
@@ -183,22 +192,30 @@ export const createCollectionEpic = (
                 callback,
             }) => {
                 return from(
-                    apolloClient.mutate({
-                        mutation: createCollection,
+                    apolloClient.mutate<
+                        createCollection,
+                        createCollectionVariables
+                    >({
+                        mutation: createCollectionMutation,
                         variables: {
                             name,
                             background,
-                            description,
+                            description: String(description),
                             tags,
                             owner: {
-                                type: destination && destination.type,
-                                id: destination && destination.id,
+                                type: String(
+                                    destination && destination.type
+                                ) as any,
+                                id: String(destination && destination.id),
                             },
                         },
                     })
                 ).pipe(
                     mergeMap(({ data }) =>
-                      apolloSubscriber<{ id: string }>(path<string>(['createCollection','hash'])(data) || '')
+                        apolloSubscriber<{ id: string }>(
+                            path<string>(['createCollection', 'hash'])(data) ||
+                                ''
+                        )
                     ),
                     map(({ data: { output: { id } } }) =>
                         composeCollectionAction(
@@ -206,17 +223,18 @@ export const createCollectionEpic = (
                             callback
                         )
                     ),
-                    tap(h => console.log(h))
+                    // tap(h => console.log(h))
                 )
             }
         )
     )
 
-export const editCollectionEpic: Epic<IEditCollectionAction, any, IReduxState, IDependencies> = (
-    action$,
-    {},
-    { apolloClient, apolloSubscriber }
-) =>
+export const editCollectionEpic: Epic<
+    IEditCollectionAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, {}, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(EDIT_COLLECTION),
         switchMap(
@@ -237,7 +255,10 @@ export const editCollectionEpic: Epic<IEditCollectionAction, any, IReduxState, I
                     })
                 ).pipe(
                     mergeMap(({ data }) =>
-                        apolloSubscriber<{ id: string }>(path<string>(['createCollection','hash'])(data) || '')
+                        apolloSubscriber<{ id: string }>(
+                            path<string>(['createCollection', 'hash'])(data) ||
+                                ''
+                        )
                     ),
                     tap(console.log),
                     map(({ data: { output: { id } } }) =>

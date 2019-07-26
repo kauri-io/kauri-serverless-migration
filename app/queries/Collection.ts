@@ -42,7 +42,7 @@ export const globalCollectionDetails = gql`
 export const getCollectionQuery = globalCollectionDetails
 export const getCollectionForAnalytics = globalCollectionDetails
 
-export const createCollection = gql`
+export const createCollectionMutation = gql`
     mutation createCollection(
         $name: String!
         $description: String!

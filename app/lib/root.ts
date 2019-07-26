@@ -16,44 +16,44 @@ import {
     draftArticleEpic,
 } from '../containers/SubmitArticleForm/Module'
 import { checkpointArticlesEpic } from "../containers/CheckpointArticles/Module";
-// import {
-//   createCollectionEpic,
+import {
+  createCollectionEpic,
 //   editCollectionEpic,
 //   composeCollectionEpic,
-// } from "../components/containers/CreateCollectionForm/Module";
+} from "../containers/CreateCollectionForm/Module";
 // import { saveUserDetailsEpic } from "../components/common/EditProfile/Module";
 import { deleteDraftArticleEpic } from "../containers/ArticleDraft/DeleteDraftArticleModule";
-// import { addArticleToCollectionEpic } from "../components/connections/AddToCollection/Module";
 // import {
-//   verifyEmailEpic,
-//   resendEmailVerificationEpic,
+  //   verifyEmailEpic,
+  //   resendEmailVerificationEpic,
 //   emailSubscribeEpic,
 // } from "../components/containers/EmailVerification/Module";
 // import { voteEpic } from "../components/containers/Article/ApprovedArticle/VoteModule";
 // import {
-//   createCommunityEpic,
-//   communityCreatedEpic,
-//   updateCommunityEpic,
-// } from "../components/containers/CreateCommunityForm/Module";
+  //   createCommunityEpic,
+  //   communityCreatedEpic,
+  //   updateCommunityEpic,
+  // } from "../components/containers/CreateCommunityForm/Module";
 // import {
-//   curateCommunityResourcesEpic,
-//   approveResourceEpic,
-//   sendCommunityInvitationEpic,
-//   acceptCommunityInvitationEpic,
-//   revokeInvitationEpic,
-//   removeMemberEpic,
-//   removeResourceEpic,
-//   changeMemberRoleEpic,
-//   resendInvitationEpic,
-//   transferArticleToCommunityEpic,
-// } from "../components/containers/Community/Module";
-// import {
-//   rejectArticleTransferEpic,
-//   acceptArticleTransferEpic,
-//   finaliseArticleTransferEpic,
-// } from "../components/containers/PublicProfile/Manage/TransferModule";
-
-// TODO: // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
+  //   curateCommunityResourcesEpic,
+  //   approveResourceEpic,
+  //   sendCommunityInvitationEpic,
+  //   acceptCommunityInvitationEpic,
+  //   revokeInvitationEpic,
+  //   removeMemberEpic,
+  //   removeResourceEpic,
+  //   changeMemberRoleEpic,
+  //   resendInvitationEpic,
+  //   transferArticleToCommunityEpic,
+  // } from "../components/containers/Community/Module";
+  // import {
+    //   rejectArticleTransferEpic,
+    //   acceptArticleTransferEpic,
+    //   finaliseArticleTransferEpic,
+    // } from "../components/containers/PublicProfile/Manage/TransferModule";
+    
+    // TODO: // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
+    // TODO: // import { addArticleToCollectionEpic } from "../containers/AddToCollection/Module";
 
 export const rootReducer = {
   app,
@@ -74,12 +74,9 @@ const epics = [
   publishArticleEpic,
   checkpointArticlesEpic,
   deleteDraftArticleEpic,
-    // addArticleToCollectionEpic,
+  createCollectionEpic,
+  
 
-  //   TODO: addCommentEpic,
-  //   saveUserDetailsEpic,
-
-    //   createCollectionEpic,
     //   composeCollectionEpic,
     //   editCollectionEpic,
     //   verifyEmailEpic,
@@ -102,6 +99,10 @@ const epics = [
     //   changeMemberRoleEpic,
     //   resendInvitationEpic,
     //   transferArticleToCommunityEpic,
+
+    //   TODO: addCommentEpic,
+  //   saveUserDetailsEpic,
+  // addArticleToCollectionEpic,
 ]
 
 export const rootEpic = combineEpics(...epics)
