@@ -1139,6 +1139,7 @@ export const Collection = {
             background:
                 'https://api.kauri.io:443/ipfs/QmQTsd7FhCLBQVJCYNP8a5Vf1G68AsxLPyDtWP3gToc7g4',
             dateCreated: '2019-04-16T04:39:35.351Z',
+            dateUpdated: '2019-04-16T04:39:35.351Z',
             owner: {
                 id: '37648fc15a8365735289e002d65d44d80c505e8b',
                 name: 'Kauri Team',

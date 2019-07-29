@@ -7332,7 +7332,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                     />
                                                                   }
                                                                   className="makeStyles-header-4"
-                                                                  subheader="7 days ago"
+                                                                  subheader="10 days ago"
                                                                   title="Grégoire Jeanmart"
                                                                 >
                                                                   <ForwardRef(CardHeader)
@@ -7352,7 +7352,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                         "title": "MuiCardHeader-title",
                                                                       }
                                                                     }
-                                                                    subheader="7 days ago"
+                                                                    subheader="10 days ago"
                                                                     title="Grégoire Jeanmart"
                                                                   >
                                                                     <div
@@ -8024,7 +8024,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                             <span
                                                                               className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                             >
-                                                                              7 days ago
+                                                                              10 days ago
                                                                             </span>
                                                                           </ForwardRef(Typography)>
                                                                         </WithStyles(ForwardRef(Typography))>
@@ -8950,7 +8950,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                     />
                                                                   }
                                                                   className="makeStyles-header-4"
-                                                                  subheader="7 days ago"
+                                                                  subheader="10 days ago"
                                                                   title="Grégoire Jeanmart"
                                                                 >
                                                                   <ForwardRef(CardHeader)
@@ -8970,7 +8970,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                         "title": "MuiCardHeader-title",
                                                                       }
                                                                     }
-                                                                    subheader="7 days ago"
+                                                                    subheader="10 days ago"
                                                                     title="Grégoire Jeanmart"
                                                                   >
                                                                     <div
@@ -9642,7 +9642,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                             <span
                                                                               className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                             >
-                                                                              7 days ago
+                                                                              10 days ago
                                                                             </span>
                                                                           </ForwardRef(Typography)>
                                                                         </WithStyles(ForwardRef(Typography))>
@@ -10568,7 +10568,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                     />
                                                                   }
                                                                   className="makeStyles-header-4"
-                                                                  subheader="7 days ago"
+                                                                  subheader="10 days ago"
                                                                   title="Grégoire Jeanmart"
                                                                 >
                                                                   <ForwardRef(CardHeader)
@@ -10588,7 +10588,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                         "title": "MuiCardHeader-title",
                                                                       }
                                                                     }
-                                                                    subheader="7 days ago"
+                                                                    subheader="10 days ago"
                                                                     title="Grégoire Jeanmart"
                                                                   >
                                                                     <div
@@ -11260,7 +11260,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                             <span
                                                                               className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                             >
-                                                                              7 days ago
+                                                                              10 days ago
                                                                             </span>
                                                                           </ForwardRef(Typography)>
                                                                         </WithStyles(ForwardRef(Typography))>
@@ -12193,7 +12193,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                     />
                                                                   }
                                                                   className="makeStyles-header-4"
-                                                                  subheader="7 days ago"
+                                                                  subheader="10 days ago"
                                                                   title="Craig Williams"
                                                                 >
                                                                   <ForwardRef(CardHeader)
@@ -12213,7 +12213,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                         "title": "MuiCardHeader-title",
                                                                       }
                                                                     }
-                                                                    subheader="7 days ago"
+                                                                    subheader="10 days ago"
                                                                     title="Craig Williams"
                                                                   >
                                                                     <div
@@ -12885,7 +12885,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                             <span
                                                                               className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                             >
-                                                                              7 days ago
+                                                                              10 days ago
                                                                             </span>
                                                                           </ForwardRef(Typography)>
                                                                         </WithStyles(ForwardRef(Typography))>
@@ -13818,7 +13818,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                     />
                                                                   }
                                                                   className="makeStyles-header-4"
-                                                                  subheader="4 days ago"
+                                                                  subheader="7 days ago"
                                                                   title="Craig Williams"
                                                                 >
                                                                   <ForwardRef(CardHeader)
@@ -13838,7 +13838,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                         "title": "MuiCardHeader-title",
                                                                       }
                                                                     }
-                                                                    subheader="4 days ago"
+                                                                    subheader="7 days ago"
                                                                     title="Craig Williams"
                                                                   >
                                                                     <div
@@ -14510,7 +14510,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                             <span
                                                                               className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                             >
-                                                                              4 days ago
+                                                                              7 days ago
                                                                             </span>
                                                                           </ForwardRef(Typography)>
                                                                         </WithStyles(ForwardRef(Typography))>
@@ -15436,7 +15436,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                     />
                                                                   }
                                                                   className="makeStyles-header-4"
-                                                                  subheader="7 days ago"
+                                                                  subheader="10 days ago"
                                                                   title="Felipe Faraggi"
                                                                 >
                                                                   <ForwardRef(CardHeader)
@@ -15456,7 +15456,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                         "title": "MuiCardHeader-title",
                                                                       }
                                                                     }
-                                                                    subheader="7 days ago"
+                                                                    subheader="10 days ago"
                                                                     title="Felipe Faraggi"
                                                                   >
                                                                     <div
@@ -16128,7 +16128,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                             <span
                                                                               className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                             >
-                                                                              7 days ago
+                                                                              10 days ago
                                                                             </span>
                                                                           </ForwardRef(Typography)>
                                                                         </WithStyles(ForwardRef(Typography))>

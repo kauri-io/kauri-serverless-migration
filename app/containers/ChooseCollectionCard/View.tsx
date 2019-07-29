@@ -9,6 +9,7 @@ import SecondaryButton from '../../components/Button/SecondaryButton'
 import Tabs from '../../components/Tabs'
 import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
+import { searchCollections_searchCollections } from '../../queries/__generated__/searchCollections'
 
 const Container = styled.div`
     display: flex;
@@ -179,7 +180,19 @@ const PersonalPublishedCollections = withPagination(
     'searchPersonalPublishedCollections'
 )
 
-export default props => {
+interface IProps {
+    searchPersonalPublishedCollections: {
+        loading: boolean
+        searchCollections: searchCollections_searchCollections
+    }
+    searchPublishedCollections: {
+        loading: boolean
+        searchCollections: searchCollections_searchCollections
+    }
+    passChangeTabFunction: () => void
+}
+
+export default (props: IProps) => {
     if (
         (props.searchPublishedCollections &&
             props.searchPublishedCollections.loading) ||
