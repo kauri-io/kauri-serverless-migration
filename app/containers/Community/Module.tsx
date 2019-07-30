@@ -29,7 +29,10 @@ import {
     approveResourceVariables,
     approveResource,
 } from '../../queries/__generated__/approveResource'
-import { removeResourceVariables, removeResource } from '../../queries/__generated__/removeResource'
+import {
+    removeResourceVariables,
+    removeResource,
+} from '../../queries/__generated__/removeResource'
 import { path } from 'ramda'
 
 import {
@@ -599,29 +602,35 @@ export const acceptCommunityInvitationEpic: Epic<
               )
     )
 
-export const revokeInvitationEpic = (
-    action$: ActionsObservable<IRevokeInvitationAction>,
-    _: IReduxState,
-    { apolloClient, apolloSubscriber, personalSign }: IDependencies
-) =>
-    action$.ofType(REVOKE_INVITATION).switchMap(({ payload }) =>
-        from(
-            apolloClient.query<
-                prepareRevokeInvitation,
-                prepareRevokeInvitationVariables
-            >({
-                query: prepareRevokeInvitationQuery,
-                variables: payload,
-            })
-        ).mergeMap(({ data }) =>
+export const revokeInvitationEpic: Epic<
+    IRevokeInvitationAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber, personalSign }) =>
+    action$.pipe(
+        ofType(REVOKE_INVITATION),
+        switchMap(({ payload }) =>
             from(
-                personalSign(
-                    path<string>(['prepareRevokeInvitation', 'messageHash'])(
-                        data
-                    ) || ''
-                )
-            )
-                .mergeMap(signature =>
+                apolloClient.query<
+                    prepareRevokeInvitation,
+                    prepareRevokeInvitationVariables
+                >({
+                    query: prepareRevokeInvitationQuery,
+                    variables: payload,
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    from(
+                        personalSign(
+                            path<string>([
+                                'prepareRevokeInvitation',
+                                'messageHash',
+                            ])(data) || ''
+                        )
+                    )
+                ),
+                mergeMap(signature =>
                     apolloClient.mutate<
                         revokeInvitation,
                         revokeInvitationVariables
@@ -634,17 +643,14 @@ export const revokeInvitationEpic = (
                             signature,
                         },
                     })
-                )
-                .mergeMap(
-                    ({
-                        data: { revokeInvitation: revokeInvitationResult },
-                    }: any) =>
-                        apolloSubscriber<IRevokeInvitationCommandOutput>(
-                            revokeInvitationResult.hash
-                        )
-                )
-                .do(() => apolloClient.resetStore())
-                .mergeMap(() =>
+                ),
+                mergeMap(({ data }) =>
+                    apolloSubscriber<IRevokeInvitationCommandOutput>(
+                        path<string>(['revokeInvitation', 'hash'])(data) || ''
+                    )
+                ),
+                tap(() => apolloClient.resetStore()),
+                mergeMap(() =>
                     merge(
                         of(closeModalAction()),
                         of(
@@ -657,6 +663,7 @@ export const revokeInvitationEpic = (
                         of(invitationRevokedAction())
                     )
                 )
+            )
         )
     )
 

@@ -38,10 +38,10 @@ import {
 //   approveResourceEpic,
 //   sendCommunityInvitationEpic,
 //   acceptCommunityInvitationEpic,
-//   revokeInvitationEpic,
 //   removeMemberEpic,
   removeResourceEpic,
   changeMemberRoleEpic,
+  revokeInvitationEpic,
   resendInvitationEpic,
   transferArticleToCommunityEpic,
 } from "../containers/Community/Module";
@@ -88,6 +88,8 @@ const epics = [
     resendInvitationEpic,
     changeMemberRoleEpic,
     removeResourceEpic,
+    revokeInvitationEpic,
+    // removeMemberEpic,
 
     //   createCommunityEpic,
     //   communityCreatedEpic,
@@ -96,9 +98,7 @@ const epics = [
     //   approveResourceEpic,
     //   sendCommunityInvitationEpic,
     //   acceptCommunityInvitationEpic,
-    //   revokeInvitationEpic,
-    //   removeMemberEpic,
-
+    
     //   TODO: addCommentEpic,
     //   saveUserDetailsEpic,
     // addArticleToCollectionEpic,
