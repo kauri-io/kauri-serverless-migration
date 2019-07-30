@@ -1,5 +1,5 @@
-import { ActionsObservable, ofType } from 'redux-observable'
-import { IDependencies } from '../../lib/Module'
+import { ActionsObservable, ofType, Epic } from 'redux-observable'
+import { IDependencies, IReduxState } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
@@ -28,7 +28,14 @@ import {
     prepareSendInvitation,
     prepareSendInvitationVariables,
 } from '../../queries/__generated__/prepareSendInvitation'
-import { sendInvitation, sendInvitationVariables } from '../../queries/__generated__/sendInvitation';
+import {
+    sendInvitation,
+    sendInvitationVariables,
+} from '../../queries/__generated__/sendInvitation'
+
+interface ICommunityCreatedCommandOutput {
+    error?: string
+}
 
 export interface ICreateCommunityAction {
     callback: () => void
@@ -100,14 +107,14 @@ export const createCommunityAction = (
     type: CREATE_COMMUNITY,
 })
 
-const communityCreatedAction = (
+export const communityCreatedAction = (
     payload: ICommunityCreatedPayload
 ): ICommunityCreatedAction => ({
     payload,
     type: COMMUNITY_CREATED,
 })
 
-const communityUpdatedAction = (): ICommunityUpdatedAction => ({
+export const communityUpdatedAction = (): ICommunityUpdatedAction => ({
     payload: {},
     type: COMMUNITY_UPDATED,
 })
@@ -132,18 +139,21 @@ export interface ISendInvitationCommandOutput {
     hash: string
 }
 
-export const communityCreatedEpic = (
-    action$: ActionsObservable<ICommunityCreatedAction>,
-    {},
-    { apolloSubscriber }: IDependencies
-) =>
+export const communityCreatedEpic: Epic<
+    ICommunityCreatedAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, {}, { apolloSubscriber }) =>
     action$.pipe(
         ofType(COMMUNITY_CREATED),
-        switchMap((action: ICommunityCreatedAction) =>
+        switchMap(({ payload }) =>
             from(
-                apolloSubscriber(action.payload.transactionHash, 'GroupCreated')
+                apolloSubscriber<ICommunityCreatedCommandOutput>(
+                    payload.transactionHash,
+                    'MemberAdded'
+                )
             ).pipe(
-                tap(console.log),
                 mergeMap(({ data: { output: { error } } }) =>
                     error
                         ? throwError(new Error('Submission error'))
@@ -155,6 +165,9 @@ export const communityCreatedEpic = (
                               })
                           )
                 ),
+                tap(() => {
+                    window.location.reload()
+                }),
                 catchError(err => {
                     console.error(err)
                     return of(
@@ -166,17 +179,7 @@ export const communityCreatedEpic = (
                     )
                 })
             )
-        ),
-        catchError(err => {
-            console.error(err)
-            return of(
-                showNotificationAction({
-                    description: 'Please try again',
-                    message: 'Submission error',
-                    notificationType: 'error',
-                })
-            )
-        })
+        )
     )
 
 export const createCommunityEpic = (
@@ -372,7 +375,10 @@ export const updateCommunityEpic = (
                                                   )
                                               ).pipe(
                                                   mergeMap(signedSignature =>
-                                                      apolloClient.mutate<sendInvitation, sendInvitationVariables>({
+                                                      apolloClient.mutate<
+                                                          sendInvitation,
+                                                          sendInvitationVariables
+                                                      >({
                                                           mutation: sendInvitationMutation,
                                                           variables: {
                                                               id:

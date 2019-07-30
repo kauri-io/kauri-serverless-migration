@@ -28,11 +28,11 @@ import {
     emailSubscribeEpic,
 } from '../containers/EmailVerification/Module'
 import { voteEpic } from "../containers/Article/Module";
-// import {
+import {
 //   createCommunityEpic,
-//   communityCreatedEpic,
+  communityCreatedEpic,
 //   updateCommunityEpic,
-// } from "../components/containers/CreateCommunityForm/Module";
+} from "../containers/CreateCommunityForm/Module";
 import {
   curateCommunityResourcesEpic,
   approveResourceEpic,
@@ -96,9 +96,9 @@ const epics = [
     waitForInvitationReconciliationEpic,
     sendCommunityInvitationEpic,
     curateCommunityResourcesEpic,
+    communityCreatedEpic,
 
     //   createCommunityEpic,
-    //   communityCreatedEpic,
     //   updateCommunityEpic,
     
     //   TODO: addCommentEpic,
