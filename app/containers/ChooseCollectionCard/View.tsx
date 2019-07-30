@@ -181,6 +181,11 @@ const PersonalPublishedCollections = withPagination(
 )
 
 interface IProps {
+    userId?: string
+    allOtherChosenCollections?: { id: string }[]
+    chosenCollections?: { id: string }[]
+    chooseCollection?: ({ id: string, version: number }) => void
+    currentCollectionIdIfUpdating?: string
     searchPersonalPublishedCollections: {
         loading: boolean
         searchCollections: searchCollections_searchCollections

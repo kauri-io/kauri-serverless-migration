@@ -5,6 +5,7 @@ import { searchCollections } from '../../mocks/searchCollections'
 describe('containers/ChooseCollectionCard', () => {
     it('should match the snapshot', () => {
         const props = {
+            userId: '324',
             searchPersonalPublishedCollections: {
                 loading: false,
                 searchCollections: searchCollections.data.searchCollections,

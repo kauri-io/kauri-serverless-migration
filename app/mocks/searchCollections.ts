@@ -17,6 +17,7 @@ export const searchCollections = {
                     owner: {
                         id: '37648fc15a8365735289e002d65d44d80c505e8b',
                         name: 'Kauri Team',
+                        publicUserName: 'kauri',
                         username: 'kauri',
                         avatar:
                             'https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY',
@@ -438,6 +439,7 @@ export const searchCollections = {
                     owner: {
                         id: '37648fc15a8365735289e002d65d44d80c505e8b',
                         name: 'Kauri Team',
+                        publicUserName: 'kauri',
                         username: 'kauri',
                         avatar:
                             'https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY',
@@ -509,6 +511,7 @@ export const searchCollections = {
                     owner: {
                         id: '37648fc15a8365735289e002d65d44d80c505e8b',
                         name: 'Kauri Team',
+                        publicUserName: 'kauri',
                         username: 'kauri',
                         avatar:
                             'https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY',
@@ -639,6 +642,7 @@ export const searchCollections = {
                     owner: {
                         id: '58611161415d53d5dae63935f3c4c5fbf56572d1',
                         name: 'Gitcoin',
+                        publicUserName: 'gitcoin',
                         username: 'gitcoin',
                         avatar:
                             'https://api.beta.kauri.io:443/ipfs/Qmdy8mn5eGZxnhnLJT5gmC7cwtcornxjVmMtPniVfx62oX',
@@ -730,6 +734,7 @@ export const searchCollections = {
                     owner: {
                         id: '49dd10357731604d42cfb7d1fa15f2caf2d1c7d4',
                         name: 'Chris Spannos',
+                        publicUserName: null,
                         username: null,
                         avatar: null,
                         resourceIdentifier: {
@@ -810,6 +815,7 @@ export const searchCollections = {
                     owner: {
                         id: '1f20b6035c8ee3a5e0cee6a3bfbd615dfe811dbc',
                         name: 'ShatnerHODL',
+                        publicUserName: 'ShatnerHODL',
                         username: 'ShatnerHODL',
                         avatar:
                             'https://api.beta.kauri.io:443/ipfs/QmQoSuVkvArCKeQVCpS7AtDQSqu7nPRxHwvKttA4nYkSmY',
@@ -849,6 +855,7 @@ export const searchCollections = {
                     owner: {
                         id: 'edf0623e0b7f44f76bc55612d72bea0b2df9b42c',
                         name: 'Kelly Cooper',
+                        publicUserName: 'KellyCooper',
                         username: 'KellyCooper',
                         avatar:
                             'https://api.beta.kauri.io:443/ipfs/QmTkLRtgvx32RCd3vUZHKdM1aQmVdPrU3znKoPjCPPRBtz',
@@ -888,6 +895,7 @@ export const searchCollections = {
                     owner: {
                         id: '2e34cdb393c08086e759e3d186b3b4fb2ca5b1b2',
                         name: 'Michael A',
+                        publicUserName: 'Silver84',
                         username: 'Silver84',
                         avatar:
                             'https://api.kauri.io:443/ipfs/Qmcy6fjySofraVHi57VaigC3bF5eCrv9AyyTN3BCYdLUAr',
@@ -926,6 +934,7 @@ export const searchCollections = {
                     owner: {
                         id: 'e66f8c6ab127ecdfd5cbf031f74a584ad2fc494b',
                         name: 'Will Villanueva',
+                        publicUserName: 'will',
                         username: 'will',
                         avatar:
                             'https://api.beta.kauri.io:443/ipfs/QmVc3offnRqNHdCzXVCT7QgYXsu9VudYnh6oMR3THfFKQ3',
@@ -984,7 +993,7 @@ export const searchCollections = {
                     dateUpdated: '2018-12-03T09:05:24.241Z',
                     owner: {
                         id: '15ad082c5778af59d70c1ec9e5eed4ff10cce322',
-                        name: 'Postman',
+                        publicUserName: null,
                         username: null,
                         avatar: null,
                         resourceIdentifier: {
@@ -1023,6 +1032,7 @@ export const searchCollections = {
                     owner: {
                         id: 'f8ae578d5d4e570de6c31f26d42ef369c320ae0b',
                         name: 'Andreas Wallendahl',
+                        publicUserName: 'AndreasWallend1',
                         username: 'AndreasWallend1',
                         avatar:
                             'https://api.beta.kauri.io:443/ipfs/QmY13rSck53pyw6w6t5cGEf8cBkyeiajMJ3d4QKiiRXmwg',
@@ -1132,6 +1142,7 @@ export const searchCollections = {
                     owner: {
                         id: 'f8ae578d5d4e570de6c31f26d42ef369c320ae0b',
                         name: 'Andreas Wallendahl',
+                        publicUserName: 'AndreasWallend1',
                         username: 'AndreasWallend1',
                         avatar:
                             'https://api.beta.kauri.io:443/ipfs/QmY13rSck53pyw6w6t5cGEf8cBkyeiajMJ3d4QKiiRXmwg',
@@ -1193,8 +1204,8 @@ export const searchCollections = {
                 },
             ],
             isLast: false,
-            __typename: 'ResponsePage_CollectionDTO' as searchCollections_searchCollections['__typename'],
-        },
+            __typename: 'ResponsePage_CollectionDTO',
+        } as searchCollections_searchCollections,
     },
     dataPresent: true,
 }
