@@ -40,7 +40,7 @@ import {
 //   acceptCommunityInvitationEpic,
 //   revokeInvitationEpic,
 //   removeMemberEpic,
-//   removeResourceEpic,
+  removeResourceEpic,
   changeMemberRoleEpic,
   resendInvitationEpic,
   transferArticleToCommunityEpic,
@@ -87,6 +87,7 @@ const epics = [
     transferArticleToCommunityEpic,
     resendInvitationEpic,
     changeMemberRoleEpic,
+    removeResourceEpic,
 
     //   createCommunityEpic,
     //   communityCreatedEpic,
@@ -97,7 +98,6 @@ const epics = [
     //   acceptCommunityInvitationEpic,
     //   revokeInvitationEpic,
     //   removeMemberEpic,
-    //   removeResourceEpic,
 
     //   TODO: addCommentEpic,
     //   saveUserDetailsEpic,

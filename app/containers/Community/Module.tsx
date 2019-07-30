@@ -29,7 +29,7 @@ import {
     approveResourceVariables,
     approveResource,
 } from '../../queries/__generated__/approveResource'
-import { removeResourceVariables } from '../../queries/__generated__/removeResource'
+import { removeResourceVariables, removeResource } from '../../queries/__generated__/removeResource'
 import { path } from 'ramda'
 
 import {
@@ -752,7 +752,8 @@ export const changeMemberRoleEpic: Epic<
     IReduxState,
     IDependencies
 > = (action$, _, { apolloClient, apolloSubscriber, personalSign }) =>
-    action$.ofType(CHANGE_MEMBER_ROLE).pipe(
+    action$.pipe(
+        ofType(CHANGE_MEMBER_ROLE),
         switchMap(({ payload }) =>
             from(
                 apolloClient.query<
@@ -882,42 +883,56 @@ export const removeResourceEpic: Epic<
     IReduxState,
     IDependencies
 > = (action$, _, { apolloClient, apolloSubscriber }) =>
-    action$.ofType(REMOVE_RESOURCE).switchMap(({ payload }) =>
-        from(
-            apolloClient.mutate({
-                mutation: removeResourceMutation,
-                variables: payload,
-            })
+    action$.pipe(
+        ofType(REMOVE_RESOURCE),
+        switchMap(({ payload }) =>
+            from(
+                apolloClient.mutate<removeResource, removeResourceVariables>({
+                    mutation: removeResourceMutation,
+                    variables: payload,
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    apolloSubscriber<IRemoveResourceCommandOutput>(
+                        path<string>(['removeResource', 'hash'])(data) || ''
+                    )
+                ),
+                mergeMap(({ data: { output: { error } } }) =>
+                    error
+                        ? merge(
+                              of(closeModalAction()),
+                              of(
+                                  showNotificationAction({
+                                      description: `There was an error removing the selected item, please try again.`,
+                                      message: 'Error',
+                                      notificationType: 'error',
+                                  })
+                              )
+                          )
+                        : merge(
+                              of(closeModalAction()),
+                              of(
+                                  showNotificationAction({
+                                      description: `Your selected resource was successfully removed from this community!`,
+                                      message: 'Resource Removed',
+                                      notificationType: 'success',
+                                  })
+                              )
+                          )
+                ),
+                tap(() => apolloClient.resetStore()),
+                catchError(err => {
+                    console.error(err)
+                    return of(
+                        showNotificationAction({
+                            description: 'Please try again',
+                            message: 'Submission error',
+                            notificationType: 'error',
+                        })
+                    )
+                })
+            )
         )
-            .mergeMap(({ data }) =>
-                apolloSubscriber<IRemoveResourceCommandOutput>(
-                    path<string>(['removeResource', 'hash'])(data) || ''
-                )
-            )
-            .mergeMap(({ data: { output: { error } } }) =>
-                error
-                    ? merge(
-                          of(closeModalAction()),
-                          of(
-                              showNotificationAction({
-                                  description: `There was an error removing the selected item, please try again.`,
-                                  message: 'Error',
-                                  notificationType: 'error',
-                              })
-                          )
-                      )
-                    : merge(
-                          of(closeModalAction()),
-                          of(
-                              showNotificationAction({
-                                  description: `Your selected resource was successfully removed from this community!`,
-                                  message: 'Resource Removed',
-                                  notificationType: 'success',
-                              })
-                          )
-                      )
-            )
-            .do(() => apolloClient.resetStore())
     )
 
 export const transferArticleToCommunityEpic: Epic<
