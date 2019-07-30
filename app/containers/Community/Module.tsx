@@ -59,7 +59,10 @@ import {
     revokeInvitation,
     revokeInvitationVariables,
 } from '../../queries/__generated__/revokeInvitation'
-import { prepareRemoveMemberVariables } from '../../queries/__generated__/prepareRemoveMember'
+import {
+    prepareRemoveMemberVariables,
+    prepareRemoveMember,
+} from '../../queries/__generated__/prepareRemoveMember'
 import {
     removeMember,
     removeMemberVariables,
@@ -667,26 +670,35 @@ export const revokeInvitationEpic: Epic<
         )
     )
 
-export const removeMemberEpic = (
-    action$: ActionsObservable<IRemoveMemberAction>,
-    {  }: IReduxState,
-    { apolloClient, apolloSubscriber, personalSign }: IDependencies
-) =>
-    action$.ofType(REMOVE_MEMBER).switchMap(({ payload }) =>
-        from(
-            apolloClient.query({
-                query: prepareRemoveMemberQuery,
-                variables: payload,
-            })
-        ).mergeMap(({ data }) =>
+export const removeMemberEpic: Epic<
+    IRemoveMemberAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, {}, { apolloClient, apolloSubscriber, personalSign }) =>
+    action$.pipe(
+        ofType(REMOVE_MEMBER),
+        switchMap(({ payload }) =>
             from(
-                personalSign(
-                    path<string>(['prepareRemoveMember', 'messageHash'])(
-                        data
-                    ) || ''
-                )
-            )
-                .mergeMap(signature =>
+                apolloClient.query<
+                    prepareRemoveMember,
+                    prepareRemoveMemberVariables
+                >({
+                    query: prepareRemoveMemberQuery,
+                    variables: payload,
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    from(
+                        personalSign(
+                            path<string>([
+                                'prepareRemoveMember',
+                                'messageHash',
+                            ])(data) || ''
+                        )
+                    )
+                ),
+                mergeMap(signature =>
                     apolloClient.mutate<removeMember, removeMemberVariables>({
                         mutation: removeMemberMutation,
                         variables: {
@@ -695,42 +707,25 @@ export const removeMemberEpic = (
                             signature,
                         },
                     })
-                )
-                .mergeMap(({ data }) =>
+                ),
+                mergeMap(({ data }) =>
                     apolloSubscriber<IRemoveMemberCommandOutput>(
                         path<string>(['removeMember', 'messageHash'])(data) ||
                             ''
                     )
-                )
-                .mergeMap(
-                    ({
-                        data: {
-                            output: { error },
-                        },
-                    }: {
-                        data: { output: IRemoveMemberCommandOutput }
-                    }) => {
-                        if (error) {
-                            console.log(error)
-                            if (error.includes('cannot be removed')) {
-                                return merge(
-                                    of(closeModalAction()),
-                                    of(
-                                        showNotificationAction({
-                                            description: `You cannot leave the community`,
-                                            message:
-                                                'You are the last remaining admin of the community!',
-                                            notificationType: 'error',
-                                        })
-                                    )
-                                )
-                            }
+                ),
+                tap(() => apolloClient.resetStore()),
+                switchMap(({ data: { output: { error } } }) => {
+                    if (error) {
+                        console.log(error)
+                        if (error.includes('cannot be removed')) {
                             return merge(
                                 of(closeModalAction()),
                                 of(
                                     showNotificationAction({
-                                        description: `Please try again`,
-                                        message: 'Something went wrong',
+                                        description: `You cannot leave the community`,
+                                        message:
+                                            'You are the last remaining admin of the community!',
                                         notificationType: 'error',
                                     })
                                 )
@@ -740,16 +735,36 @@ export const removeMemberEpic = (
                             of(closeModalAction()),
                             of(
                                 showNotificationAction({
-                                    description: `That user has been successfully removed from the community`,
-                                    message: 'Member removed',
-                                    notificationType: 'success',
+                                    description: `Please try again`,
+                                    message: 'Something went wrong',
+                                    notificationType: 'error',
                                 })
-                            ),
-                            of(memberRemovedAction())
+                            )
                         )
                     }
-                )
-                .do(() => apolloClient.resetStore())
+                    return merge(
+                        of(closeModalAction()),
+                        of(
+                            showNotificationAction({
+                                description: `That user has been successfully removed from the community`,
+                                message: 'Member removed',
+                                notificationType: 'success',
+                            })
+                        ),
+                        of(memberRemovedAction())
+                    )
+                }),
+                catchError(err => {
+                    console.error(err)
+                    return of(
+                        showNotificationAction({
+                            description: 'Please try again',
+                            message: 'Submission error',
+                            notificationType: 'error',
+                        })
+                    )
+                })
+            )
         )
     )
 

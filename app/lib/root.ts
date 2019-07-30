@@ -38,7 +38,7 @@ import {
 //   approveResourceEpic,
 //   sendCommunityInvitationEpic,
 //   acceptCommunityInvitationEpic,
-//   removeMemberEpic,
+  removeMemberEpic,
   removeResourceEpic,
   changeMemberRoleEpic,
   revokeInvitationEpic,
@@ -89,7 +89,7 @@ const epics = [
     changeMemberRoleEpic,
     removeResourceEpic,
     revokeInvitationEpic,
-    // removeMemberEpic,
+    removeMemberEpic,
 
     //   createCommunityEpic,
     //   communityCreatedEpic,
