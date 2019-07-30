@@ -176,6 +176,11 @@ const CommunityPublishedCollections = withPagination(
 )
 
 interface IProps {
+    userId?: string
+    allOtherChosenCollections?: { id: string }[]
+    chosenCollections?: { id: string }[]
+    chooseCollection?: ({ id: string, version: number }) => void
+    currentCollectionIdIfUpdating?: string
     searchCommunityPublishedCollections: {
         loading: boolean
         getCommunityContent: getCommunity_getCommunity

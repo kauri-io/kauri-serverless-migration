@@ -5,7 +5,12 @@ import UploadLogoButton from '../../components/Button/UploadLogoButton'
 import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
 import EmailCheckbox from '../../components/Checkbox/EmailCheckbox'
 import TriggerImageUploader from '../ImageUploader'
-import { pipe, assocPath, filter, path } from 'ramda'
+import {
+    pipe,
+    assocPath,
+    // filter,
+    path,
+} from 'ramda'
 import EmailField from './EmailField'
 import { getMyProfile } from '../../queries/__generated__/getMyProfile'
 import { ISaveUserDetailActionType } from './Module'
@@ -141,7 +146,7 @@ class EditableHeader extends Component<IProps, IState> {
 
     saveUser(redirectURL: string | undefined) {
         const payload = pipe(
-            filter(val => typeof val !== 'undefined' || !!val),
+            // filter((val) => typeof val !== 'undefined' || !!val),
             assocPath(['redirectURL'], redirectURL)
         )(this.state)
 

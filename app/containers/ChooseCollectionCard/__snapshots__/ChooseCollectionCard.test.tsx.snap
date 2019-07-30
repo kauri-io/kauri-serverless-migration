@@ -22,6 +22,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                   "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                   "name": "Kauri Team",
+                  "publicUserName": "kauri",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -440,6 +441,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                   "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                   "name": "Kauri Team",
+                  "publicUserName": "kauri",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -508,6 +510,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                   "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                   "name": "Kauri Team",
+                  "publicUserName": "kauri",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -636,6 +639,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/Qmdy8mn5eGZxnhnLJT5gmC7cwtcornxjVmMtPniVfx62oX",
                   "id": "58611161415d53d5dae63935f3c4c5fbf56572d1",
                   "name": "Gitcoin",
+                  "publicUserName": "gitcoin",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "58611161415d53d5dae63935f3c4c5fbf56572d1",
@@ -724,6 +728,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": null,
                   "id": "49dd10357731604d42cfb7d1fa15f2caf2d1c7d4",
                   "name": "Chris Spannos",
+                  "publicUserName": null,
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "49dd10357731604d42cfb7d1fa15f2caf2d1c7d4",
@@ -802,6 +807,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/QmQoSuVkvArCKeQVCpS7AtDQSqu7nPRxHwvKttA4nYkSmY",
                   "id": "1f20b6035c8ee3a5e0cee6a3bfbd615dfe811dbc",
                   "name": "ShatnerHODL",
+                  "publicUserName": "ShatnerHODL",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "1f20b6035c8ee3a5e0cee6a3bfbd615dfe811dbc",
@@ -838,6 +844,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/QmTkLRtgvx32RCd3vUZHKdM1aQmVdPrU3znKoPjCPPRBtz",
                   "id": "edf0623e0b7f44f76bc55612d72bea0b2df9b42c",
                   "name": "Kelly Cooper",
+                  "publicUserName": "KellyCooper",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "edf0623e0b7f44f76bc55612d72bea0b2df9b42c",
@@ -874,6 +881,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.kauri.io:443/ipfs/Qmcy6fjySofraVHi57VaigC3bF5eCrv9AyyTN3BCYdLUAr",
                   "id": "2e34cdb393c08086e759e3d186b3b4fb2ca5b1b2",
                   "name": "Michael A",
+                  "publicUserName": "Silver84",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "2e34cdb393c08086e759e3d186b3b4fb2ca5b1b2",
@@ -910,6 +918,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/QmVc3offnRqNHdCzXVCT7QgYXsu9VudYnh6oMR3THfFKQ3",
                   "id": "e66f8c6ab127ecdfd5cbf031f74a584ad2fc494b",
                   "name": "Will Villanueva",
+                  "publicUserName": "will",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "e66f8c6ab127ecdfd5cbf031f74a584ad2fc494b",
@@ -967,7 +976,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "__typename": "PublicUserDTO",
                   "avatar": null,
                   "id": "15ad082c5778af59d70c1ec9e5eed4ff10cce322",
-                  "name": "Postman",
+                  "publicUserName": null,
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "15ad082c5778af59d70c1ec9e5eed4ff10cce322",
@@ -1004,6 +1013,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/QmY13rSck53pyw6w6t5cGEf8cBkyeiajMJ3d4QKiiRXmwg",
                   "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
                   "name": "Andreas Wallendahl",
+                  "publicUserName": "AndreasWallend1",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
@@ -1112,6 +1122,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/QmY13rSck53pyw6w6t5cGEf8cBkyeiajMJ3d4QKiiRXmwg",
                   "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
                   "name": "Andreas Wallendahl",
+                  "publicUserName": "AndreasWallend1",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
@@ -1192,6 +1203,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                     "name": "Kauri Team",
+                    "publicUserName": "kauri",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -1610,6 +1622,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                     "name": "Kauri Team",
+                    "publicUserName": "kauri",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -1678,6 +1691,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                     "name": "Kauri Team",
+                    "publicUserName": "kauri",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -1806,6 +1820,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/Qmdy8mn5eGZxnhnLJT5gmC7cwtcornxjVmMtPniVfx62oX",
                     "id": "58611161415d53d5dae63935f3c4c5fbf56572d1",
                     "name": "Gitcoin",
+                    "publicUserName": "gitcoin",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "58611161415d53d5dae63935f3c4c5fbf56572d1",
@@ -1894,6 +1909,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": null,
                     "id": "49dd10357731604d42cfb7d1fa15f2caf2d1c7d4",
                     "name": "Chris Spannos",
+                    "publicUserName": null,
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "49dd10357731604d42cfb7d1fa15f2caf2d1c7d4",
@@ -1972,6 +1988,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmQoSuVkvArCKeQVCpS7AtDQSqu7nPRxHwvKttA4nYkSmY",
                     "id": "1f20b6035c8ee3a5e0cee6a3bfbd615dfe811dbc",
                     "name": "ShatnerHODL",
+                    "publicUserName": "ShatnerHODL",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "1f20b6035c8ee3a5e0cee6a3bfbd615dfe811dbc",
@@ -2008,6 +2025,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmTkLRtgvx32RCd3vUZHKdM1aQmVdPrU3znKoPjCPPRBtz",
                     "id": "edf0623e0b7f44f76bc55612d72bea0b2df9b42c",
                     "name": "Kelly Cooper",
+                    "publicUserName": "KellyCooper",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "edf0623e0b7f44f76bc55612d72bea0b2df9b42c",
@@ -2044,6 +2062,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.kauri.io:443/ipfs/Qmcy6fjySofraVHi57VaigC3bF5eCrv9AyyTN3BCYdLUAr",
                     "id": "2e34cdb393c08086e759e3d186b3b4fb2ca5b1b2",
                     "name": "Michael A",
+                    "publicUserName": "Silver84",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "2e34cdb393c08086e759e3d186b3b4fb2ca5b1b2",
@@ -2080,6 +2099,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmVc3offnRqNHdCzXVCT7QgYXsu9VudYnh6oMR3THfFKQ3",
                     "id": "e66f8c6ab127ecdfd5cbf031f74a584ad2fc494b",
                     "name": "Will Villanueva",
+                    "publicUserName": "will",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "e66f8c6ab127ecdfd5cbf031f74a584ad2fc494b",
@@ -2137,7 +2157,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "__typename": "PublicUserDTO",
                     "avatar": null,
                     "id": "15ad082c5778af59d70c1ec9e5eed4ff10cce322",
-                    "name": "Postman",
+                    "publicUserName": null,
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "15ad082c5778af59d70c1ec9e5eed4ff10cce322",
@@ -2174,6 +2194,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmY13rSck53pyw6w6t5cGEf8cBkyeiajMJ3d4QKiiRXmwg",
                     "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
                     "name": "Andreas Wallendahl",
+                    "publicUserName": "AndreasWallend1",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
@@ -2282,6 +2303,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmY13rSck53pyw6w6t5cGEf8cBkyeiajMJ3d4QKiiRXmwg",
                     "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
                     "name": "Andreas Wallendahl",
+                    "publicUserName": "AndreasWallend1",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
@@ -2362,6 +2384,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                     "name": "Kauri Team",
+                    "publicUserName": "kauri",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -2780,6 +2803,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                     "name": "Kauri Team",
+                    "publicUserName": "kauri",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -2848,6 +2872,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                     "name": "Kauri Team",
+                    "publicUserName": "kauri",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -2976,6 +3001,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/Qmdy8mn5eGZxnhnLJT5gmC7cwtcornxjVmMtPniVfx62oX",
                     "id": "58611161415d53d5dae63935f3c4c5fbf56572d1",
                     "name": "Gitcoin",
+                    "publicUserName": "gitcoin",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "58611161415d53d5dae63935f3c4c5fbf56572d1",
@@ -3064,6 +3090,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": null,
                     "id": "49dd10357731604d42cfb7d1fa15f2caf2d1c7d4",
                     "name": "Chris Spannos",
+                    "publicUserName": null,
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "49dd10357731604d42cfb7d1fa15f2caf2d1c7d4",
@@ -3142,6 +3169,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmQoSuVkvArCKeQVCpS7AtDQSqu7nPRxHwvKttA4nYkSmY",
                     "id": "1f20b6035c8ee3a5e0cee6a3bfbd615dfe811dbc",
                     "name": "ShatnerHODL",
+                    "publicUserName": "ShatnerHODL",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "1f20b6035c8ee3a5e0cee6a3bfbd615dfe811dbc",
@@ -3178,6 +3206,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmTkLRtgvx32RCd3vUZHKdM1aQmVdPrU3znKoPjCPPRBtz",
                     "id": "edf0623e0b7f44f76bc55612d72bea0b2df9b42c",
                     "name": "Kelly Cooper",
+                    "publicUserName": "KellyCooper",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "edf0623e0b7f44f76bc55612d72bea0b2df9b42c",
@@ -3214,6 +3243,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.kauri.io:443/ipfs/Qmcy6fjySofraVHi57VaigC3bF5eCrv9AyyTN3BCYdLUAr",
                     "id": "2e34cdb393c08086e759e3d186b3b4fb2ca5b1b2",
                     "name": "Michael A",
+                    "publicUserName": "Silver84",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "2e34cdb393c08086e759e3d186b3b4fb2ca5b1b2",
@@ -3250,6 +3280,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmVc3offnRqNHdCzXVCT7QgYXsu9VudYnh6oMR3THfFKQ3",
                     "id": "e66f8c6ab127ecdfd5cbf031f74a584ad2fc494b",
                     "name": "Will Villanueva",
+                    "publicUserName": "will",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "e66f8c6ab127ecdfd5cbf031f74a584ad2fc494b",
@@ -3307,7 +3338,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "__typename": "PublicUserDTO",
                     "avatar": null,
                     "id": "15ad082c5778af59d70c1ec9e5eed4ff10cce322",
-                    "name": "Postman",
+                    "publicUserName": null,
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "15ad082c5778af59d70c1ec9e5eed4ff10cce322",
@@ -3344,6 +3375,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmY13rSck53pyw6w6t5cGEf8cBkyeiajMJ3d4QKiiRXmwg",
                     "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
                     "name": "Andreas Wallendahl",
+                    "publicUserName": "AndreasWallend1",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
@@ -3452,6 +3484,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmY13rSck53pyw6w6t5cGEf8cBkyeiajMJ3d4QKiiRXmwg",
                     "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
                     "name": "Andreas Wallendahl",
+                    "publicUserName": "AndreasWallend1",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
@@ -3514,6 +3547,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
             },
           }
         }
+        userId="324"
       />,
       <WithPagination
         collections={
@@ -3532,6 +3566,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                   "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                   "name": "Kauri Team",
+                  "publicUserName": "kauri",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -3950,6 +3985,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                   "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                   "name": "Kauri Team",
+                  "publicUserName": "kauri",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -4018,6 +4054,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                   "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                   "name": "Kauri Team",
+                  "publicUserName": "kauri",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -4146,6 +4183,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/Qmdy8mn5eGZxnhnLJT5gmC7cwtcornxjVmMtPniVfx62oX",
                   "id": "58611161415d53d5dae63935f3c4c5fbf56572d1",
                   "name": "Gitcoin",
+                  "publicUserName": "gitcoin",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "58611161415d53d5dae63935f3c4c5fbf56572d1",
@@ -4234,6 +4272,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": null,
                   "id": "49dd10357731604d42cfb7d1fa15f2caf2d1c7d4",
                   "name": "Chris Spannos",
+                  "publicUserName": null,
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "49dd10357731604d42cfb7d1fa15f2caf2d1c7d4",
@@ -4312,6 +4351,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/QmQoSuVkvArCKeQVCpS7AtDQSqu7nPRxHwvKttA4nYkSmY",
                   "id": "1f20b6035c8ee3a5e0cee6a3bfbd615dfe811dbc",
                   "name": "ShatnerHODL",
+                  "publicUserName": "ShatnerHODL",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "1f20b6035c8ee3a5e0cee6a3bfbd615dfe811dbc",
@@ -4348,6 +4388,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/QmTkLRtgvx32RCd3vUZHKdM1aQmVdPrU3znKoPjCPPRBtz",
                   "id": "edf0623e0b7f44f76bc55612d72bea0b2df9b42c",
                   "name": "Kelly Cooper",
+                  "publicUserName": "KellyCooper",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "edf0623e0b7f44f76bc55612d72bea0b2df9b42c",
@@ -4384,6 +4425,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.kauri.io:443/ipfs/Qmcy6fjySofraVHi57VaigC3bF5eCrv9AyyTN3BCYdLUAr",
                   "id": "2e34cdb393c08086e759e3d186b3b4fb2ca5b1b2",
                   "name": "Michael A",
+                  "publicUserName": "Silver84",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "2e34cdb393c08086e759e3d186b3b4fb2ca5b1b2",
@@ -4420,6 +4462,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/QmVc3offnRqNHdCzXVCT7QgYXsu9VudYnh6oMR3THfFKQ3",
                   "id": "e66f8c6ab127ecdfd5cbf031f74a584ad2fc494b",
                   "name": "Will Villanueva",
+                  "publicUserName": "will",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "e66f8c6ab127ecdfd5cbf031f74a584ad2fc494b",
@@ -4477,7 +4520,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "__typename": "PublicUserDTO",
                   "avatar": null,
                   "id": "15ad082c5778af59d70c1ec9e5eed4ff10cce322",
-                  "name": "Postman",
+                  "publicUserName": null,
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "15ad082c5778af59d70c1ec9e5eed4ff10cce322",
@@ -4514,6 +4557,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/QmY13rSck53pyw6w6t5cGEf8cBkyeiajMJ3d4QKiiRXmwg",
                   "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
                   "name": "Andreas Wallendahl",
+                  "publicUserName": "AndreasWallend1",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
@@ -4622,6 +4666,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                   "avatar": "https://api.beta.kauri.io:443/ipfs/QmY13rSck53pyw6w6t5cGEf8cBkyeiajMJ3d4QKiiRXmwg",
                   "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
                   "name": "Andreas Wallendahl",
+                  "publicUserName": "AndreasWallend1",
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
                     "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
@@ -4702,6 +4747,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                     "name": "Kauri Team",
+                    "publicUserName": "kauri",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -5120,6 +5166,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                     "name": "Kauri Team",
+                    "publicUserName": "kauri",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -5188,6 +5235,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                     "name": "Kauri Team",
+                    "publicUserName": "kauri",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -5316,6 +5364,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/Qmdy8mn5eGZxnhnLJT5gmC7cwtcornxjVmMtPniVfx62oX",
                     "id": "58611161415d53d5dae63935f3c4c5fbf56572d1",
                     "name": "Gitcoin",
+                    "publicUserName": "gitcoin",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "58611161415d53d5dae63935f3c4c5fbf56572d1",
@@ -5404,6 +5453,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": null,
                     "id": "49dd10357731604d42cfb7d1fa15f2caf2d1c7d4",
                     "name": "Chris Spannos",
+                    "publicUserName": null,
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "49dd10357731604d42cfb7d1fa15f2caf2d1c7d4",
@@ -5482,6 +5532,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmQoSuVkvArCKeQVCpS7AtDQSqu7nPRxHwvKttA4nYkSmY",
                     "id": "1f20b6035c8ee3a5e0cee6a3bfbd615dfe811dbc",
                     "name": "ShatnerHODL",
+                    "publicUserName": "ShatnerHODL",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "1f20b6035c8ee3a5e0cee6a3bfbd615dfe811dbc",
@@ -5518,6 +5569,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmTkLRtgvx32RCd3vUZHKdM1aQmVdPrU3znKoPjCPPRBtz",
                     "id": "edf0623e0b7f44f76bc55612d72bea0b2df9b42c",
                     "name": "Kelly Cooper",
+                    "publicUserName": "KellyCooper",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "edf0623e0b7f44f76bc55612d72bea0b2df9b42c",
@@ -5554,6 +5606,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.kauri.io:443/ipfs/Qmcy6fjySofraVHi57VaigC3bF5eCrv9AyyTN3BCYdLUAr",
                     "id": "2e34cdb393c08086e759e3d186b3b4fb2ca5b1b2",
                     "name": "Michael A",
+                    "publicUserName": "Silver84",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "2e34cdb393c08086e759e3d186b3b4fb2ca5b1b2",
@@ -5590,6 +5643,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmVc3offnRqNHdCzXVCT7QgYXsu9VudYnh6oMR3THfFKQ3",
                     "id": "e66f8c6ab127ecdfd5cbf031f74a584ad2fc494b",
                     "name": "Will Villanueva",
+                    "publicUserName": "will",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "e66f8c6ab127ecdfd5cbf031f74a584ad2fc494b",
@@ -5647,7 +5701,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "__typename": "PublicUserDTO",
                     "avatar": null,
                     "id": "15ad082c5778af59d70c1ec9e5eed4ff10cce322",
-                    "name": "Postman",
+                    "publicUserName": null,
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "15ad082c5778af59d70c1ec9e5eed4ff10cce322",
@@ -5684,6 +5738,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmY13rSck53pyw6w6t5cGEf8cBkyeiajMJ3d4QKiiRXmwg",
                     "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
                     "name": "Andreas Wallendahl",
+                    "publicUserName": "AndreasWallend1",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
@@ -5792,6 +5847,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmY13rSck53pyw6w6t5cGEf8cBkyeiajMJ3d4QKiiRXmwg",
                     "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
                     "name": "Andreas Wallendahl",
+                    "publicUserName": "AndreasWallend1",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
@@ -5872,6 +5928,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                     "name": "Kauri Team",
+                    "publicUserName": "kauri",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -6290,6 +6347,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                     "name": "Kauri Team",
+                    "publicUserName": "kauri",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -6358,6 +6416,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY",
                     "id": "37648fc15a8365735289e002d65d44d80c505e8b",
                     "name": "Kauri Team",
+                    "publicUserName": "kauri",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "37648fc15a8365735289e002d65d44d80c505e8b",
@@ -6486,6 +6545,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/Qmdy8mn5eGZxnhnLJT5gmC7cwtcornxjVmMtPniVfx62oX",
                     "id": "58611161415d53d5dae63935f3c4c5fbf56572d1",
                     "name": "Gitcoin",
+                    "publicUserName": "gitcoin",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "58611161415d53d5dae63935f3c4c5fbf56572d1",
@@ -6574,6 +6634,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": null,
                     "id": "49dd10357731604d42cfb7d1fa15f2caf2d1c7d4",
                     "name": "Chris Spannos",
+                    "publicUserName": null,
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "49dd10357731604d42cfb7d1fa15f2caf2d1c7d4",
@@ -6652,6 +6713,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmQoSuVkvArCKeQVCpS7AtDQSqu7nPRxHwvKttA4nYkSmY",
                     "id": "1f20b6035c8ee3a5e0cee6a3bfbd615dfe811dbc",
                     "name": "ShatnerHODL",
+                    "publicUserName": "ShatnerHODL",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "1f20b6035c8ee3a5e0cee6a3bfbd615dfe811dbc",
@@ -6688,6 +6750,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmTkLRtgvx32RCd3vUZHKdM1aQmVdPrU3znKoPjCPPRBtz",
                     "id": "edf0623e0b7f44f76bc55612d72bea0b2df9b42c",
                     "name": "Kelly Cooper",
+                    "publicUserName": "KellyCooper",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "edf0623e0b7f44f76bc55612d72bea0b2df9b42c",
@@ -6724,6 +6787,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.kauri.io:443/ipfs/Qmcy6fjySofraVHi57VaigC3bF5eCrv9AyyTN3BCYdLUAr",
                     "id": "2e34cdb393c08086e759e3d186b3b4fb2ca5b1b2",
                     "name": "Michael A",
+                    "publicUserName": "Silver84",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "2e34cdb393c08086e759e3d186b3b4fb2ca5b1b2",
@@ -6760,6 +6824,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmVc3offnRqNHdCzXVCT7QgYXsu9VudYnh6oMR3THfFKQ3",
                     "id": "e66f8c6ab127ecdfd5cbf031f74a584ad2fc494b",
                     "name": "Will Villanueva",
+                    "publicUserName": "will",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "e66f8c6ab127ecdfd5cbf031f74a584ad2fc494b",
@@ -6817,7 +6882,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "__typename": "PublicUserDTO",
                     "avatar": null,
                     "id": "15ad082c5778af59d70c1ec9e5eed4ff10cce322",
-                    "name": "Postman",
+                    "publicUserName": null,
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "15ad082c5778af59d70c1ec9e5eed4ff10cce322",
@@ -6854,6 +6919,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmY13rSck53pyw6w6t5cGEf8cBkyeiajMJ3d4QKiiRXmwg",
                     "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
                     "name": "Andreas Wallendahl",
+                    "publicUserName": "AndreasWallend1",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
@@ -6962,6 +7028,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
                     "avatar": "https://api.beta.kauri.io:443/ipfs/QmY13rSck53pyw6w6t5cGEf8cBkyeiajMJ3d4QKiiRXmwg",
                     "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
                     "name": "Andreas Wallendahl",
+                    "publicUserName": "AndreasWallend1",
                     "resourceIdentifier": Object {
                       "__typename": "ResourceIdentifier",
                       "id": "f8ae578d5d4e570de6c31f26d42ef369c320ae0b",
@@ -7024,6 +7091,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
             },
           }
         }
+        userId="324"
       />,
     ]
   }
