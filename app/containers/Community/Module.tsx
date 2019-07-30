@@ -95,6 +95,11 @@ import {
     finaliseArticleTransferVariables,
 } from '../../queries/__generated__/finaliseArticleTransfer'
 
+interface IWaitForInvitationReconciliationPayload {
+    id: string
+    transactionHash: string
+}
+
 interface ICurateCommunityResourcesAction {
     type: 'CURATE_COMMUNITY_RESOURCES'
     payload: curateCommunityResourcesVariables
@@ -146,6 +151,11 @@ interface IMemberRemovedAction {
     type: 'MEMBER_REMOVED'
 }
 
+interface IWaitForInvitationReconciliationAction {
+    type: 'WAIT_FOR_INVITATION_RECONCILIATION'
+    payload: IWaitForInvitationReconciliationPayload
+}
+
 interface IArticleTransferredToCommunityAction {
     type: 'ARTICLE_TRANSFERRED_TO_COMMUNITY'
 }
@@ -190,6 +200,7 @@ const RESEND_INVITATION = 'RESEND_INVITATION'
 const INVITATION_RESENT = 'INVITATION_RESENT'
 const TRANSFER_ARTICLE_TO_COMMUNITY = 'TRANSFER_ARTICLE_TO_COMMUNITY'
 const ARTICLE_TRANSFERRED_TO_COMMUNITY = 'ARTICLE_TRANSFERRED_TO_COMMUNITY'
+const WAIT_FOR_INVITATION_RECONCILIATION = 'WAIT_FOR_INVITATION_RECONCILIATION'
 
 export const invitationRevokedAction = (): IInvitationRevokedAction => ({
     type: INVITATION_REVOKED,
@@ -275,6 +286,13 @@ export const acceptCommunityInvitationAction = (
     type: ACCEPT_COMMUNITY_INVITATION,
 })
 
+export const waitForInvitationReconciliationAction = (
+    payload: IWaitForInvitationReconciliationPayload
+): IWaitForInvitationReconciliationAction => ({
+    type: WAIT_FOR_INVITATION_RECONCILIATION,
+    payload,
+})
+
 export const revokeInvitationAction = (
     payload: revokeInvitationVariables
 ): IRevokeInvitationAction => ({
@@ -295,7 +313,7 @@ interface ICurateCommunityResourcesCommandOutput {
 }
 
 interface IAcceptInvitationCommandOutput {
-    hash: string
+    transactionHash: string
     error?: string
 }
 
@@ -503,106 +521,187 @@ export const sendCommunityInvitationEpic = (
         )
     )
 
-export const acceptCommunityInvitationEpic: Epic<
+export const waitForInvitationReconciliationEpic: Epic<
+    IWaitForInvitationReconciliationAction,
     any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloSubscriber }) =>
+    action$.pipe(
+        ofType(WAIT_FOR_INVITATION_RECONCILIATION),
+        switchMap(({ payload }) =>
+            from(
+                apolloSubscriber<IAcceptInvitationCommandOutput>(
+                    payload.transactionHash,
+                    'AcceptCommitted'
+                )
+            ).pipe(
+                mergeMap(({ data }) =>
+                    apolloSubscriber<IAcceptInvitationCommandOutput>(
+                        path<string>(['output', 'transactionHash'])(data) || '',
+                        'MemberAdded'
+                    )
+                ),
+                mergeMap(() =>
+                    merge(
+                      of(
+                          showNotificationAction({
+                            description: `You are now a member of the community!`,
+                            message: 'Invitation Accepted',
+                            notificationType: 'success',
+                          }),
+                      ),
+                      of(invitationAcceptedAction())
+                    )
+                ),
+                tap(() => {
+                    window.location.href = `/community/${payload.id}`
+                }),
+                catchError(err => {
+                    console.error(err)
+                    return merge(
+                        of(closeModalAction()),
+                        of(
+                            showNotificationAction({
+                                description:
+                                    'Please try again, you may already be a member of the community or your invitation may have expired!',
+                                message: 'Submission error',
+                                notificationType: 'error',
+                            })
+                        )
+                    )
+                })
+            )
+        )
+    )
+
+export const acceptCommunityInvitationEpic: Epic<
+    IAcceptCommunityInvitationAction,
     any,
     IReduxState,
     IDependencies
 > = (action$, state$, { apolloClient, apolloSubscriber, personalSign }) =>
-    action$.ofType(ACCEPT_COMMUNITY_INVITATION).switchMap(({ payload }) =>
-        state$.value && state$.value.app.user && state$.value.app.user.id
-            ? from(
-                  apolloClient.query<
-                      prepareAcceptInvitation,
-                      prepareAcceptInvitationVariables
-                  >({
-                      query: prepareAcceptInvitationQuery,
-                      variables: payload,
-                  })
-              ).pipe(
-                  mergeMap(({ data }) =>
-                      personalSign(
-                          path<string>([
-                              'prepareAcceptInvitation',
-                              'messageHash',
-                          ])(data) || ''
-                      )
-                  ),
-                  mergeMap(signature =>
-                      apolloClient.mutate<
-                          acceptInvitation,
-                          acceptInvitationVariables
+    action$.ofType(ACCEPT_COMMUNITY_INVITATION).pipe(
+        switchMap(({ payload }) =>
+            state$.value && state$.value.app.user && state$.value.app.user.id
+                ? from(
+                      apolloClient.query<
+                          prepareAcceptInvitation,
+                          prepareAcceptInvitationVariables
                       >({
-                          mutation: acceptInvitationMutation,
-                          variables: {
-                              id: (payload && payload.id) || '',
-                              secret: (payload && payload.secret) || '',
-                              signature,
-                          },
+                          query: prepareAcceptInvitationQuery,
+                          variables: payload,
                       })
-                  ),
-                  mergeMap(({ data }) =>
-                      apolloSubscriber<IAcceptInvitationCommandOutput>(
-                          path<string>(['acceptInvitationResult', 'hash'])(
-                              data
-                          ) || ''
-                      )
-                  ),
-                  mergeMap(({ data: { output: { error } } }) =>
-                      typeof error === 'string' &&
-                      error.includes('associated to another member')
-                          ? merge(
-                                of(closeModalAction()),
-                                of(
-                                    showNotificationAction({
-                                        description:
-                                            'This email invite is already associated with another member of the community!',
-                                        message: 'Submission error',
-                                        notificationType: 'error',
-                                    })
-                                )
-                            )
-                          : merge(
-                                of(closeModalAction()),
-                                of(
-                                    showNotificationAction({
-                                        description: `You are now a member of the community!`,
-                                        message: 'Invitation Accepted',
-                                        notificationType: 'success',
-                                    })
-                                ),
-                                of(
-                                    routeChangeAction(
-                                        `/community/${payload.id}`
-                                    )
-                                ),
-                                of(invitationAcceptedAction())
-                            )
-                  ),
-                  tap(() => apolloClient.resetStore()),
-                  catchError(err => {
-                      console.error(err)
-                      return merge(
-                          of(closeModalAction()),
-                          of(
-                              showNotificationAction({
-                                  description:
-                                      'Please try again or you may already be a member of the community!',
-                                  message: 'Submission error',
-                                  notificationType: 'error',
-                              })
+                  ).pipe(
+                      mergeMap(({ data }) =>
+                          personalSign(
+                              path<string>([
+                                  'prepareAcceptInvitation',
+                                  'messageHash',
+                              ])(data) || ''
+                          )
+                      ),
+                      mergeMap(signature =>
+                          apolloClient.mutate<
+                              acceptInvitation,
+                              acceptInvitationVariables
+                          >({
+                              mutation: acceptInvitationMutation,
+                              variables: {
+                                  id: (payload && payload.id) || '',
+                                  secret: (payload && payload.secret) || '',
+                                  signature,
+                              },
+                          })
+                      ),
+                      mergeMap(({ data }) =>
+                          apolloSubscriber<IAcceptInvitationCommandOutput>(
+                              path<string>(['acceptInvitationResult', 'hash'])(
+                                  data
+                              ) || ''
+                          )
+                      ),
+                      mergeMap(
+                          ({
+                              data: {
+                                  output: { error, transactionHash },
+                              },
+                          }) => {
+                              if (typeof error === 'string') {
+                                  if (
+                                      error.includes(
+                                          'associated to another member'
+                                      )
+                                  ) {
+                                      return merge(
+                                          of(closeModalAction()),
+                                          of(
+                                              showNotificationAction({
+                                                  description:
+                                                      'This email invite is already associated with another member of the community!',
+                                                  message: 'Submission error',
+                                                  notificationType: 'error',
+                                              })
+                                          )
+                                      )
+                                  }
+                                  return merge(
+                                      of(closeModalAction()),
+                                      of(
+                                          showNotificationAction({
+                                              description:
+                                                  'Please try again, your invitation may have expired!',
+                                              message: 'Something went wrong',
+                                              notificationType: 'error',
+                                          })
+                                      )
+                                  )
+                              }
+
+                              return merge(
+                                  of(closeModalAction()),
+                                  of(
+                                      showNotificationAction({
+                                          description:
+                                              'This usually takes about 10 seconds!',
+                                          message:
+                                              'Invitation acceptance in progress',
+                                          notificationType: 'success',
+                                      })
+                                  ),
+                                  of(
+                                      waitForInvitationReconciliationAction({
+                                          id: payload.id,
+                                          transactionHash,
+                                      })
+                                  )
+                              )
+                          }
+                      ),
+                      catchError(err => {
+                          console.error(err)
+                          return merge(
+                              of(closeModalAction()),
+                              of(
+                                  showNotificationAction({
+                                      description:
+                                          'Please try again or you may already be a member of the community!',
+                                      message: 'Submission error',
+                                      notificationType: 'error',
+                                  })
+                              )
+                          )
+                      })
+                  )
+                : merge(
+                      of(closeModalAction()),
+                      of(
+                          routeChangeAction(
+                              `/login?r=/community/${payload.id}/approve?secret=${payload.secret}`
                           )
                       )
-                  })
-              )
-            : merge(
-                  of(closeModalAction()),
-                  of(
-                      routeChangeAction(
-                          `/login?r=/community/${payload.id}/approve?secret=${payload.secret}`
-                      )
                   )
-              )
+        )
     )
 
 export const revokeInvitationEpic: Epic<

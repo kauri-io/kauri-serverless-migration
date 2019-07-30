@@ -37,7 +37,8 @@ import {
 //   curateCommunityResourcesEpic,
 //   approveResourceEpic,
 //   sendCommunityInvitationEpic,
-//   acceptCommunityInvitationEpic,
+  acceptCommunityInvitationEpic,
+  waitForInvitationReconciliationEpic,
   removeMemberEpic,
   removeResourceEpic,
   changeMemberRoleEpic,
@@ -90,6 +91,8 @@ const epics = [
     removeResourceEpic,
     revokeInvitationEpic,
     removeMemberEpic,
+    acceptCommunityInvitationEpic,
+    waitForInvitationReconciliationEpic
 
     //   createCommunityEpic,
     //   communityCreatedEpic,
@@ -97,7 +100,6 @@ const epics = [
     //   curateCommunityResourcesEpic,
     //   approveResourceEpic,
     //   sendCommunityInvitationEpic,
-    //   acceptCommunityInvitationEpic,
     
     //   TODO: addCommentEpic,
     //   saveUserDetailsEpic,
