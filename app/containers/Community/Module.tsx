@@ -408,41 +408,56 @@ export const curateCommunityResourcesEpic = (
         )
     )
 
-export const approveResourceEpic = (
-    action$: ActionsObservable<IApproveResourceAction>,
-    _: IReduxState,
-    { apolloClient, apolloSubscriber }: IDependencies
-) =>
-    action$.ofType(APPROVE_RESOURCE).switchMap(({ payload }) =>
-        from(
-            apolloClient.mutate<approveResource, approveResourceVariables>({
-                mutation: approveResourceMutation,
-                variables: payload,
-            })
+export const approveResourceEpic: Epic<
+    IApproveResourceAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
+    action$.pipe(
+        ofType(APPROVE_RESOURCE),
+        switchMap(({ payload }) =>
+            from(
+                apolloClient.mutate<approveResource, approveResourceVariables>({
+                    mutation: approveResourceMutation,
+                    variables: payload,
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    apolloSubscriber<IApproveResourceCommandOutput>(
+                        path<string>(['approveResource', 'hash'])(data) || ''
+                    )
+                ),
+                mergeMap(({ data: { output: { error } } }) =>
+                    error
+                        ? of(
+                              showNotificationAction({
+                                  description: 'Please try again',
+                                  message: 'Submission Error',
+                                  notificationType: 'error',
+                              })
+                          )
+                        : of(
+                              showNotificationAction({
+                                  description: `The proposed resource has been added to the community`,
+                                  message: `Resource approved`,
+                                  notificationType: 'success',
+                              })
+                          )
+                ),
+                tap(() => apolloClient.resetStore()),
+                catchError(err => {
+                    console.error(err)
+                    return of(
+                        showNotificationAction({
+                            description: 'Please try again',
+                            message: 'Submission error',
+                            notificationType: 'error',
+                        })
+                    )
+                })
+            )
         )
-            .mergeMap(({ data }) =>
-                apolloSubscriber<IApproveResourceCommandOutput>(
-                    path<string>(['approveResource', 'hash'])(data) || ''
-                )
-            )
-            .mergeMap(({ data: { output: { error } } }) =>
-                error
-                    ? of(
-                          showNotificationAction({
-                              description: 'Please try again',
-                              message: 'Submission Error',
-                              notificationType: 'error',
-                          })
-                      )
-                    : of(
-                          showNotificationAction({
-                              description: `The proposed resource has been added to the community`,
-                              message: `Resource approved`,
-                              notificationType: 'success',
-                          })
-                      )
-            )
-            .do(() => apolloClient.resetStore())
     )
 
 export const sendCommunityInvitationEpic: Epic<

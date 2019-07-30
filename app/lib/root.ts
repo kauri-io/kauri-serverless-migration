@@ -35,7 +35,7 @@ import { voteEpic } from "../containers/Article/Module";
 // } from "../components/containers/CreateCommunityForm/Module";
 import {
 //   curateCommunityResourcesEpic,
-//   approveResourceEpic,
+  approveResourceEpic,
   sendCommunityInvitationEpic,
   acceptCommunityInvitationEpic,
   waitForInvitationReconciliationEpic,
@@ -88,6 +88,7 @@ const epics = [
     transferArticleToCommunityEpic,
     resendInvitationEpic,
     changeMemberRoleEpic,
+    approveResourceEpic,
     removeResourceEpic,
     revokeInvitationEpic,
     removeMemberEpic,
@@ -99,7 +100,6 @@ const epics = [
     //   communityCreatedEpic,
     //   updateCommunityEpic,
     //   curateCommunityResourcesEpic,
-    //   approveResourceEpic,
     
     //   TODO: addCommentEpic,
     //   saveUserDetailsEpic,
