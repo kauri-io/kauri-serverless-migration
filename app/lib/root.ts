@@ -34,7 +34,7 @@ import { voteEpic } from "../containers/Article/Module";
 //   updateCommunityEpic,
 // } from "../components/containers/CreateCommunityForm/Module";
 import {
-//   curateCommunityResourcesEpic,
+  curateCommunityResourcesEpic,
   approveResourceEpic,
   sendCommunityInvitationEpic,
   acceptCommunityInvitationEpic,
@@ -95,11 +95,11 @@ const epics = [
     acceptCommunityInvitationEpic,
     waitForInvitationReconciliationEpic,
     sendCommunityInvitationEpic,
+    curateCommunityResourcesEpic,
 
     //   createCommunityEpic,
     //   communityCreatedEpic,
     //   updateCommunityEpic,
-    //   curateCommunityResourcesEpic,
     
     //   TODO: addCommentEpic,
     //   saveUserDetailsEpic,

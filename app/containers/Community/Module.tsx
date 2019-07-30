@@ -355,56 +355,71 @@ interface IInitiateArticleTransferCommandOutput {
     dateCreated: string
 }
 
-const capitalize = (s: string) =>
+export const capitalize = (s: string) =>
     compose<string, string, string>(
         toUpper,
         head
     )(s) + tail(s)
 
-export const curateCommunityResourcesEpic = (
-    action$: ActionsObservable<ICurateCommunityResourcesAction>,
-    _: IReduxState,
-    { apolloClient, apolloSubscriber }: IDependencies
-) =>
-    action$.ofType(CURATE_COMMUNITY_RESOURCES).switchMap(({ payload }) =>
-        from(
-            apolloClient.mutate<
-                curateCommunityResources,
-                curateCommunityResourcesVariables
-            >({
-                mutation: curateCommunityResourcesMutation,
-                variables: payload,
-            })
-        ).pipe(
-            mergeMap(({ data }) =>
-                apolloSubscriber<ICurateCommunityResourcesCommandOutput>(
-                    path<string>(['curateCommunityResources', 'hash'])(data) ||
-                        ''
-                )
-            ),
-            mergeMap(({ data: { output: { error } } }) =>
-                error
-                    ? of(
-                          showNotificationAction({
-                              description: 'Please try again',
-                              message: 'Submission Error',
-                              notificationType: 'error',
-                          })
-                      )
-                    : of(
-                          showNotificationAction({
-                              description: `They have been proposed to the community!`,
-                              message: `${payload.resources &&
-                                  capitalize(
-                                      (payload.resources[0] as {
-                                          type: string
-                                      }).type.toLowerCase()
-                                  )}s curated!`,
-                              notificationType: 'success',
-                          })
-                      )
-            ),
-            tap(() => apolloClient.resetStore())
+export const curateCommunityResourcesEpic: Epic<
+    ICurateCommunityResourcesAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
+    action$.pipe(
+        ofType(CURATE_COMMUNITY_RESOURCES),
+        switchMap(({ payload }) =>
+            from(
+                apolloClient.mutate<
+                    curateCommunityResources,
+                    curateCommunityResourcesVariables
+                >({
+                    mutation: curateCommunityResourcesMutation,
+                    variables: payload,
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    apolloSubscriber<ICurateCommunityResourcesCommandOutput>(
+                        path<string>(['curateCommunityResources', 'hash'])(
+                            data
+                        ) || ''
+                    )
+                ),
+                mergeMap(({ data: { output: { error } } }) =>
+                    error
+                        ? of(
+                              showNotificationAction({
+                                  description: 'Please try again',
+                                  message: 'Submission Error',
+                                  notificationType: 'error',
+                              })
+                          )
+                        : of(
+                              showNotificationAction({
+                                  description: `They have been proposed to the community!`,
+                                  message: `${payload.resources &&
+                                      capitalize(
+                                          (payload.resources[0] as {
+                                              type: string
+                                          }).type.toLowerCase()
+                                      )}s curated!`,
+                                  notificationType: 'success',
+                              })
+                          )
+                ),
+                tap(() => apolloClient.resetStore()),
+                catchError(err => {
+                    console.error(err)
+                    return of(
+                        showNotificationAction({
+                            description: 'Please try again',
+                            message: 'Submission error',
+                            notificationType: 'error',
+                        })
+                    )
+                })
+            )
         )
     )
 
