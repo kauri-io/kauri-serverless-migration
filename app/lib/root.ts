@@ -31,7 +31,7 @@ import { voteEpic } from "../containers/Article/Module";
 import {
 //   createCommunityEpic,
   communityCreatedEpic,
-//   updateCommunityEpic,
+  updateCommunityEpic,
 } from "../containers/CreateCommunityForm/Module";
 import {
   curateCommunityResourcesEpic,
@@ -97,9 +97,9 @@ const epics = [
     sendCommunityInvitationEpic,
     curateCommunityResourcesEpic,
     communityCreatedEpic,
+    updateCommunityEpic,
 
     //   createCommunityEpic,
-    //   updateCommunityEpic,
     
     //   TODO: addCommentEpic,
     //   saveUserDetailsEpic,
