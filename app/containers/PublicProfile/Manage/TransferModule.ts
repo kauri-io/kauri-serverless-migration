@@ -22,7 +22,7 @@ import {
 } from '../../../queries/__generated__/acceptArticleTransfer'
 import { from, of } from 'rxjs'
 import { path } from 'ramda'
-import { mergeMap, flatMap, tap } from 'rxjs/operators'
+import { mergeMap, flatMap, tap, mapTo, catchError } from 'rxjs/operators'
 
 interface IRejectArticleTransferPayload {
     id: string
@@ -42,11 +42,12 @@ export const rejectArticleTransferAction = (
     type: REJECT_ARTICLE_TRANSFER,
 })
 
-export const rejectArticleTransferEpic = (
-    action$: ActionsObservable<IRejectArticleTransferAction>,
-    _: IReduxState,
-    { apolloClient, apolloSubscriber }: IDependencies
-) =>
+export const rejectArticleTransferEpic: Epic<
+    IRejectArticleTransferAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(REJECT_ARTICLE_TRANSFER),
         mergeMap(({ payload: { id } }) =>
@@ -67,19 +68,28 @@ export const rejectArticleTransferEpic = (
             )
         ),
         tap(() => apolloClient.resetStore()),
-        tap(
-            () =>
+        tap(() =>
+            analytics.track('Article Transfer Rejected', {
+                category: 'article_actions',
+            })
+        ),
+        mapTo(
+            showNotificationAction({
+                description: `You successfully rejected the ownership of the article!`,
+                message: 'Article Transfer Rejected!',
+                notificationType: 'success',
+            })
+        ),
+        catchError((err) => {
+            console.error(err)
+            return of(
                 showNotificationAction({
-                    description: `You successfully rejected the ownership of the article!`,
-                    message: 'Article Transfer Rejected!',
-                    notificationType: 'success',
-                }),
-            tap(() =>
-                analytics.track('Article Transfer Rejected', {
-                    category: 'article_actions',
+                    description: 'Please try again!',
+                    message: 'Submission error',
+                    notificationType: 'error',
                 })
             )
-        )
+        })
     )
 
 interface IAcceptArticleTransferPayload {
@@ -100,11 +110,12 @@ export const acceptArticleTransferAction = (
     type: ACCEPT_ARTICLE_TRANSFER,
 })
 
-export const acceptArticleTransferEpic: Epic<IAcceptArticleTransferAction, any, IReduxState, IDependencies> = (
-    action$,
-    _,
-  { apolloClient, apolloSubscriber }
-) =>
+export const acceptArticleTransferEpic: Epic<
+    IAcceptArticleTransferAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(ACCEPT_ARTICLE_TRANSFER),
         mergeMap(({ payload: { id } }) =>
@@ -119,7 +130,11 @@ export const acceptArticleTransferEpic: Epic<IAcceptArticleTransferAction, any, 
             ).pipe(
                 mergeMap(({ data }) =>
                     from(
-                      apolloSubscriber<any>(path<string>(['acceptArticleTransfer', 'hash'])(data) || '')
+                        apolloSubscriber<any>(
+                            path<string>(['acceptArticleTransfer', 'hash'])(
+                                data
+                            ) || ''
+                        )
                     )
                 ),
                 mergeMap(

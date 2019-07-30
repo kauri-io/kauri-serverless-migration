@@ -45,11 +45,11 @@ import { voteEpic } from "../containers/Article/Module";
 //   resendInvitationEpic,
 //   transferArticleToCommunityEpic,
 // } from "../components/containers/Community/Module";
-// import {
-//   rejectArticleTransferEpic,
+import {
+  rejectArticleTransferEpic,
 //   acceptArticleTransferEpic,
 //   finaliseArticleTransferEpic,
-// } from "../components/containers/PublicProfile/Manage/TransferModule";
+} from "../containers/PublicProfile/Manage/TransferModule";
 
 // TODO: // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
 // TODO: // import { addArticleToCollectionEpic } from "../containers/AddToCollection/Module";
@@ -81,11 +81,11 @@ const epics = [
     editCollectionEpic,
     composeCollectionEpic,
     voteEpic,
+    rejectArticleTransferEpic,
 
     //   createCommunityEpic,
     //   communityCreatedEpic,
     //   updateCommunityEpic,
-    //   rejectArticleTransferEpic,
     //   acceptArticleTransferEpic,
     //   finaliseArticleTransferEpic,
     //   curateCommunityResourcesEpic,
