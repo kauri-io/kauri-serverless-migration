@@ -1,9 +1,12 @@
-import { ActionsObservable, ofType } from 'redux-observable'
-import { IDependencies } from '../../lib/Module'
+import { ActionsObservable, ofType, Epic } from 'redux-observable'
+import { IDependencies, IReduxState } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
-import { createCommunityVariables } from '../../queries/__generated__/createCommunity'
+import {
+    createCommunityVariables,
+    createCommunity,
+} from '../../queries/__generated__/createCommunity'
 import {
     updateCommunity,
     updateCommunityVariables,
@@ -32,6 +35,23 @@ import {
     sendInvitation,
     sendInvitationVariables,
 } from '../../queries/__generated__/sendInvitation'
+import { path } from 'ramda'
+import {
+    prepareCreateCommunityVariables,
+    prepareCreateCommunity,
+} from '../../queries/__generated__/prepareCreateCommunity'
+
+interface ICommunityCreatedCommandOutput {
+    error?: string
+}
+
+interface ICreateCommunityCommandOutput {
+    id: string
+    transactionHash: string
+    error: string | undefined
+}
+
+type IUpdateCommunityCommandOutput = ICreateCommunityCommandOutput
 
 export interface ICreateCommunityAction {
     callback: () => void
@@ -103,14 +123,14 @@ export const createCommunityAction = (
     type: CREATE_COMMUNITY,
 })
 
-const communityCreatedAction = (
+export const communityCreatedAction = (
     payload: ICommunityCreatedPayload
 ): ICommunityCreatedAction => ({
     payload,
     type: COMMUNITY_CREATED,
 })
 
-const communityUpdatedAction = (): ICommunityUpdatedAction => ({
+export const communityUpdatedAction = (): ICommunityUpdatedAction => ({
     payload: {},
     type: COMMUNITY_UPDATED,
 })
@@ -135,18 +155,21 @@ export interface ISendInvitationCommandOutput {
     hash: string
 }
 
-export const communityCreatedEpic = (
-    action$: ActionsObservable<ICommunityCreatedAction>,
-    {},
-    { apolloSubscriber }: IDependencies
-) =>
+export const communityCreatedEpic: Epic<
+    ICommunityCreatedAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, {}, { apolloSubscriber }) =>
     action$.pipe(
         ofType(COMMUNITY_CREATED),
-        switchMap((action: ICommunityCreatedAction) =>
+        switchMap(({ payload }) =>
             from(
-                apolloSubscriber(action.payload.transactionHash, 'GroupCreated')
+                apolloSubscriber<ICommunityCreatedCommandOutput>(
+                    payload.transactionHash,
+                    'MemberAdded'
+                )
             ).pipe(
-                tap(console.log),
                 mergeMap(({ data: { output: { error } } }) =>
                     error
                         ? throwError(new Error('Submission error'))
@@ -158,6 +181,9 @@ export const communityCreatedEpic = (
                               })
                           )
                 ),
+                tap(() => {
+                    window.location.reload()
+                }),
                 catchError(err => {
                     console.error(err)
                     return of(
@@ -169,28 +195,20 @@ export const communityCreatedEpic = (
                     )
                 })
             )
-        ),
-        catchError(err => {
-            console.error(err)
-            return of(
-                showNotificationAction({
-                    description: 'Please try again',
-                    message: 'Submission error',
-                    notificationType: 'error',
-                })
-            )
-        })
+        )
     )
 
-export const createCommunityEpic = (
-    action$: ActionsObservable<ICreateCommunityAction>,
-    state,
-    { apolloClient, apolloSubscriber, personalSign }
-) =>
+export const createCommunityEpic: Epic<
+    ICreateCommunityAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, state$, { apolloClient, apolloSubscriber, personalSign }) =>
     action$.pipe(
         ofType(CREATE_COMMUNITY),
         switchMap(actions =>
-            state.app.user.status !== 'EMAIL_VERIFIED'
+            path<string>(['value', 'app', 'user', 'status'])(state$) !==
+            'EMAIL_VERIFIED'
                 ? of(
                       showNotificationAction({
                           description: `Sorry but you need to verify your email address then refresh before creating your community!`,
@@ -199,101 +217,106 @@ export const createCommunityEpic = (
                       })
                   )
                 : from(
-                      apolloClient.query({
+                      apolloClient.query<
+                          prepareCreateCommunity,
+                          prepareCreateCommunityVariables
+                      >({
                           query: prepareCreateCommunityQuery,
                           variables: actions.payload,
                       })
                   ).pipe(
-                      tap(console.log),
-                      switchMap(
-                          ({
-                              data: {
-                                  prepareCreateCommunity: prepareCreateCommunityResult,
-                              },
-                          }) =>
-                              from<string>(
-                                  prepareCreateCommunityResult &&
-                                      personalSign(
-                                          prepareCreateCommunityResult.messageHash
-                                      )
-                              ).pipe(
-                                  mergeMap(signature =>
-                                      apolloClient.mutate({
-                                          mutation: createCommunityMutation,
-                                          variables: {
-                                              ...(actions as ICreateCommunityAction)
-                                                  .payload,
-                                              invitations:
-                                                  prepareCreateCommunityResult &&
-                                                  prepareCreateCommunityResult
-                                                      .attributes.invitations,
-                                              signature,
-                                          },
-                                      })
-                                  ),
-                                  tap(console.log),
-                                  mergeMap(
-                                      ({ data: { createCommunity: result } }) =>
-                                          apolloSubscriber(result.hash)
-                                  ),
-                                  tap(console.log),
-                                  tap(
-                                      () =>
-                                          typeof actions.callback ===
-                                              'function' && actions.callback()
-                                  ),
-                                  mergeMap(
-                                      ({
-                                          data: {
-                                              output: {
-                                                  id,
-                                                  transactionHash,
-                                                  error,
-                                              },
-                                          },
-                                      }) =>
-                                          error
-                                              ? throwError(
-                                                    new Error(
-                                                        'Submission error'
-                                                    )
-                                                )
-                                              : merge(
-                                                    of(
-                                                        (showNotificationAction as any)(
-                                                            {
-                                                                description: `Your community is being created! Once this is completed (within a few minutes), you will be able to add articles and collections`,
-                                                                message:
-                                                                    'Creating Community',
-                                                                notificationType:
-                                                                    'info',
-                                                            }
-                                                        )
-                                                    ),
-                                                    of(
-                                                        communityCreatedAction({
-                                                            transactionHash,
-                                                        })
-                                                    ),
-                                                    of(
-                                                        routeChangeAction(
-                                                            `/community/${id}/community-created`
-                                                        )
-                                                    )
-                                                )
-                                  ),
-                                  tap(() => apolloClient.resetStore()),
-                                  catchError(err => {
-                                      console.error(err)
-                                      return of(
-                                          showNotificationAction({
-                                              description: 'Please try again',
-                                              message: 'Submission error',
-                                              notificationType: 'error',
-                                          })
-                                      )
-                                  })
+                      // tap(console.log),
+                      switchMap(({ data }) =>
+                          from(
+                              personalSign(
+                                  path<string>([
+                                      'prepareCreateCommunity',
+                                      'messageHash',
+                                  ])(data) || ''
                               )
+                          ).pipe(
+                              mergeMap(signature =>
+                                  apolloClient.mutate<
+                                      createCommunity,
+                                      createCommunityVariables
+                                  >({
+                                      mutation: createCommunityMutation,
+                                      variables: {
+                                          ...actions.payload,
+                                          invitations:
+                                              path<any[]>([
+                                                  'prepareCreateCommunity',
+                                                  'attributes',
+                                                  'invitations',
+                                              ])(data) || [],
+                                          signature,
+                                      },
+                                  })
+                              ),
+                              // tap(console.log),
+                              mergeMap(({ data }) =>
+                                  apolloSubscriber<
+                                      ICreateCommunityCommandOutput
+                                  >(
+                                      path<string>(['createCommunity', 'hash'])(
+                                          data
+                                      ) || ''
+                                  )
+                              ),
+                              // tap(console.log),
+                              tap(
+                                  () =>
+                                      typeof actions.callback === 'function' &&
+                                      actions.callback()
+                              ),
+                              mergeMap(
+                                  ({
+                                      data: {
+                                          output: {
+                                              id,
+                                              transactionHash,
+                                              error,
+                                          },
+                                      },
+                                  }) =>
+                                      error
+                                          ? throwError(
+                                                new Error('Submission error')
+                                            )
+                                          : merge(
+                                                of(
+                                                    showNotificationAction({
+                                                        description: `Your community is being created! Once this is completed (within a few minutes), you will be able to add articles and collections`,
+                                                        message:
+                                                            'Creating Community',
+                                                        notificationType:
+                                                            'info',
+                                                    })
+                                                ),
+                                                of(
+                                                    communityCreatedAction({
+                                                        transactionHash,
+                                                    })
+                                                ),
+                                                of(
+                                                    routeChangeAction(
+                                                        `/community/${id}/community-created`
+                                                    )
+                                                )
+                                            )
+                              ),
+                              tap(() => apolloClient.resetStore()),
+                              catchError(err => {
+                                  console.error(err)
+                                  return of(
+                                      showNotificationAction({
+                                          description: 'Please try again',
+                                          message: 'Submission error',
+                                          notificationType: 'error',
+                                      })
+                                  )
+                              })
+                          )
                       ),
                       tap(() => apolloClient.resetStore()),
                       catchError(err => {
@@ -320,58 +343,56 @@ export const createCommunityEpic = (
         })
     )
 
-export const updateCommunityEpic = (
-    action$: ActionsObservable<IUpdateCommunityAction>,
-    {},
-    { apolloClient, apolloSubscriber, personalSign }: IDependencies
-) =>
+export const updateCommunityEpic: Epic<
+    IUpdateCommunityAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber, personalSign }) =>
     action$.pipe(
         ofType(UPDATE_COMMUNITY),
-        switchMap(actions =>
+        switchMap(({ payload, callback }) =>
             from(
                 apolloClient.mutate<updateCommunity, updateCommunityVariables>({
                     mutation: updateCommunityMutation,
-                    variables: actions.payload,
+                    variables: payload,
                 })
-            ).pipe(
-                tap(() => console.log(actions.payload)),
-                tap(console.log),
-                mergeMap(({ data: { editCommunity: result } }) =>
-                    apolloSubscriber(result.hash)
-                ),
-                tap(console.log),
-                switchMap(
-                    () =>
-                        actions.payload.invitations.length
+            )
+                // ,tap(() => console.log(actions.payload))
+                // ,tap(console.log)
+                .pipe(
+                    mergeMap(({ data }) =>
+                        apolloSubscriber<IUpdateCommunityCommandOutput>(
+                            path<string>(['editCommunity', 'hash'])(data) || ''
+                        )
+                    ),
+                    // ,tap(console.log)
+                    switchMap(() =>
+                        payload.invitations.length
                             ? forkJoin(
-                                  actions.payload.invitations.map(invitation =>
+                                  payload.invitations.map(invitation =>
                                       apolloClient.query<
                                           prepareSendInvitation,
                                           prepareSendInvitationVariables
                                       >({
                                           query: prepareSendInvitationQuery,
                                           variables: {
-                                              id: actions.payload.id,
+                                              id: payload.id,
                                               invitation,
                                           },
                                       })
                                   )
                               ).pipe(
+                                  // ,tap(console.log)
                                   mergeMap(prepareSendInvitationsResults =>
                                       prepareSendInvitationsResults.map(
-                                          (
-                                              {
-                                                  data: {
-                                                      prepareSendInvitation: result,
-                                                  },
-                                              },
-                                              invitationIndex
-                                          ) =>
+                                          ({ data }, invitationIndex) =>
                                               from(
                                                   personalSign(
-                                                      (result &&
-                                                          result.messageHash) ||
-                                                          ''
+                                                      path<string>([
+                                                          'prepareSendInvitation',
+                                                          'messageHash',
+                                                      ])(data) || ''
                                                   )
                                               ).pipe(
                                                   mergeMap(signedSignature =>
@@ -381,42 +402,42 @@ export const updateCommunityEpic = (
                                                       >({
                                                           mutation: sendInvitationMutation,
                                                           variables: {
-                                                              id:
-                                                                  actions
-                                                                      .payload
-                                                                      .id,
+                                                              id: payload.id,
                                                               invitation: {
                                                                   email:
-                                                                      actions
-                                                                          .payload
+                                                                      payload
                                                                           .invitations[
                                                                           invitationIndex
                                                                       ].email,
                                                                   role:
-                                                                      actions
-                                                                          .payload
+                                                                      payload
                                                                           .invitations[
                                                                           invitationIndex
                                                                       ].role,
                                                                   secret:
-                                                                      (result &&
-                                                                          result
-                                                                              .attributes
-                                                                              .secret) ||
-                                                                      '',
+                                                                      path<
+                                                                          string
+                                                                      >([
+                                                                          'prepareSendInvitation',
+                                                                          'attributes',
+                                                                          'secret',
+                                                                      ])(
+                                                                          data
+                                                                      ) || '',
                                                               },
                                                               signature: signedSignature,
                                                           },
                                                       })
                                                   ),
-                                                  tap(console.log),
                                                   mergeMap(
                                                       ({
                                                           data: {
                                                               sendInvitation: sendInvitationResult,
                                                           },
-                                                      }) =>
-                                                          apolloSubscriber(
+                                                      }: any) =>
+                                                          apolloSubscriber<
+                                                              ISendInvitationCommandOutput
+                                                          >(
                                                               sendInvitationResult.hash
                                                           )
                                                   )
@@ -424,12 +445,12 @@ export const updateCommunityEpic = (
                                       )
                                   ),
                                   combineAll(),
-                                  tap(signedSignatures =>
-                                      console.log(
-                                          'signedSignatures combined',
-                                          signedSignatures
-                                      )
-                                  ),
+                                  // .do(signedSignatures =>
+                                  //     console.log(
+                                  //         'signedSignatures combined',
+                                  //         signedSignatures
+                                  //     )
+                                  // )
                                   mergeMap(() =>
                                       merge(
                                           of(
@@ -442,10 +463,7 @@ export const updateCommunityEpic = (
                                           of(communityUpdatedAction()),
                                           of(
                                               routeChangeAction(
-                                                  `/community/${
-                                                      (actions as IUpdateCommunityAction)
-                                                          .payload.id
-                                                  }/community-updated`
+                                                  `/community/${payload.id}/community-updated`
                                               )
                                           )
                                       )
@@ -453,8 +471,8 @@ export const updateCommunityEpic = (
                                   tap(() => apolloClient.resetStore()),
                                   tap(
                                       () =>
-                                          typeof actions.callback ===
-                                              'function' && actions.callback()
+                                          typeof callback === 'function' &&
+                                          callback()
                                   ),
                                   catchError(err => {
                                       console.error(err)
@@ -478,25 +496,11 @@ export const updateCommunityEpic = (
                                   of(communityUpdatedAction()),
                                   of(
                                       routeChangeAction(
-                                          `/community/${
-                                              (actions as IUpdateCommunityAction)
-                                                  .payload.id
-                                          }/community-updated`
+                                          `/community/${payload.id}/community-updated`
                                       )
                                   )
-                              ),
-                    tap(() => apolloClient.resetStore())
+                              ).pipe(tap(() => apolloClient.resetStore()))
+                    )
                 )
-            )
-        ),
-        catchError(err => {
-            console.error(err)
-            return of(
-                showNotificationAction({
-                    description: 'Please try again',
-                    message: 'Submission error',
-                    notificationType: 'error',
-                })
-            )
-        })
+        )
     )

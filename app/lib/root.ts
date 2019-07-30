@@ -27,29 +27,30 @@ import {
     resendEmailVerificationEpic,
     emailSubscribeEpic,
 } from '../containers/EmailVerification/Module'
-// import { voteEpic } from "../components/containers/Article/ApprovedArticle/VoteModule";
-// import {
-//   createCommunityEpic,
-//   communityCreatedEpic,
-//   updateCommunityEpic,
-// } from "../components/containers/CreateCommunityForm/Module";
-// import {
-//   curateCommunityResourcesEpic,
-//   approveResourceEpic,
-//   sendCommunityInvitationEpic,
-//   acceptCommunityInvitationEpic,
-//   revokeInvitationEpic,
-//   removeMemberEpic,
-//   removeResourceEpic,
-//   changeMemberRoleEpic,
-//   resendInvitationEpic,
-//   transferArticleToCommunityEpic,
-// } from "../components/containers/Community/Module";
-// import {
-//   rejectArticleTransferEpic,
-//   acceptArticleTransferEpic,
-//   finaliseArticleTransferEpic,
-// } from "../components/containers/PublicProfile/Manage/TransferModule";
+import { voteEpic } from "../containers/Article/Module";
+import {
+  createCommunityEpic,
+  communityCreatedEpic,
+  updateCommunityEpic,
+} from "../containers/CreateCommunityForm/Module";
+import {
+  curateCommunityResourcesEpic,
+  approveResourceEpic,
+  sendCommunityInvitationEpic,
+  acceptCommunityInvitationEpic,
+  waitForInvitationReconciliationEpic,
+  removeMemberEpic,
+  removeResourceEpic,
+  changeMemberRoleEpic,
+  revokeInvitationEpic,
+  resendInvitationEpic,
+  transferArticleToCommunityEpic,
+} from "../containers/Community/Module";
+import {
+  rejectArticleTransferEpic,
+  acceptArticleTransferEpic,
+  finaliseArticleTransferEpic,
+} from "../containers/PublicProfile/Manage/TransferModule";
 
 // TODO: // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
 // TODO: // import { addArticleToCollectionEpic } from "../containers/AddToCollection/Module";
@@ -80,25 +81,26 @@ const epics = [
     createCollectionEpic,
     editCollectionEpic,
     composeCollectionEpic,
+    voteEpic,
+    rejectArticleTransferEpic,
+    acceptArticleTransferEpic,
+    finaliseArticleTransferEpic,
+    transferArticleToCommunityEpic,
+    resendInvitationEpic,
+    changeMemberRoleEpic,
+    approveResourceEpic,
+    removeResourceEpic,
+    revokeInvitationEpic,
+    removeMemberEpic,
+    acceptCommunityInvitationEpic,
+    waitForInvitationReconciliationEpic,
+    sendCommunityInvitationEpic,
+    curateCommunityResourcesEpic,
+    communityCreatedEpic,
+    updateCommunityEpic,
+    createCommunityEpic,
 
-    //   voteEpic,
-    //   createCommunityEpic,
-    //   communityCreatedEpic,
-    //   updateCommunityEpic,
-    //   rejectArticleTransferEpic,
-    //   acceptArticleTransferEpic,
-    //   finaliseArticleTransferEpic,
-    //   curateCommunityResourcesEpic,
-    //   approveResourceEpic,
-    //   sendCommunityInvitationEpic,
-    //   acceptCommunityInvitationEpic,
-    //   revokeInvitationEpic,
-    //   removeMemberEpic,
-    //   removeResourceEpic,
-    //   changeMemberRoleEpic,
-    //   resendInvitationEpic,
-    //   transferArticleToCommunityEpic,
-
+    
     //   TODO: addCommentEpic,
     //   saveUserDetailsEpic,
     // addArticleToCollectionEpic,
