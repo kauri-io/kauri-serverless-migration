@@ -6,15 +6,21 @@ const XHRUpload = require('@uppy/xhr-upload')
 import request from 'superagent'
 import config from '../config'
 
-export function parseCookies(ctx, options) {
+export function parseCookies(
+    ctx: { req?: any },
+    options: cookie.CookieParseOptions | undefined
+) {
     let cookieToParse =
         ctx.req && ctx.req.headers.cookie && ctx.req.headers.cookie
-    if (global.window) cookieToParse = window.document.cookie
+    if (global.window) cookieToParse = global.window.document.cookie
     if (!cookieToParse) return {}
     return cookie.parse(cookieToParse, options)
 }
 
-class myXHR extends XHRUpload {
+export class myXHR extends XHRUpload {
+    constructor(args: {}) {
+        super(args)
+    }
     processfile = imageURL =>
         request.get(`/image-proxy?url=${imageURL}`).responseType('blob')
 
@@ -45,6 +51,7 @@ class myXHR extends XHRUpload {
                 )
             }
             formData.append(opts.fieldName, file.data)
+            formData.append('', file.data)
 
             const xhr = new XMLHttpRequest()
 
@@ -116,6 +123,8 @@ class myXHR extends XHRUpload {
                 emitError(error)
                 return reject(error)
             })
+
+            console.log(this)
 
             this.uppy.on('cancel-all', () => {
                 xhr.abort()

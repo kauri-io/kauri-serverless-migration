@@ -22,6 +22,7 @@ const personalSign = (data: string) =>
                             ) {
                                 reject(new Error('Metamask locked!'))
                             }
+
                             web3.currentProvider.sendAsync(
                                 {
                                     id: new Date().getTime(),

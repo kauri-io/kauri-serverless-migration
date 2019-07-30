@@ -13,7 +13,6 @@ type PaginationDataQuery =
     | 'searchCommunities'
     | 'searchAutocompleteCollections'
     | 'searchArticles'
-    | 'searchArticles'
     | 'searchAutocomplete'
     | 'searchCollections'
 
@@ -41,62 +40,60 @@ function withPagination(
             this.childRefElement = null
         }
 
-        componentDidMount() {
-            const triggerTouchStartEvent = (
-                childRefElement?: Element
-            ) => () => {
-                if (childRefElement) {
-                    childRefElement.addEventListener(
-                        'touchend',
-                        this.handleOnScroll,
-                        false
-                    )
-                    childRefElement.removeEventListener(
-                        'touchstart',
-                        triggerTouchStartEvent()
-                    )
-                    return
-                }
-                window.addEventListener('touchend', this.handleOnScroll, false)
-                window.removeEventListener(
-                    'touchstart',
-                    triggerTouchStartEvent()
+        triggerTouchStartEvent = (childRefElement?: Element) => () => {
+            if (childRefElement) {
+                childRefElement.addEventListener(
+                    'touchend',
+                    this.handleOnScroll,
+                    false
                 )
-                window.removeEventListener('scroll', triggerScrollEvent())
+                childRefElement.removeEventListener(
+                    'touchstart',
+                    this.triggerTouchStartEvent()
+                )
+                return
             }
-            const triggerScrollEvent = (childRefElement?: Element) => () => {
-                if (childRefElement) {
-                    childRefElement.addEventListener(
-                        'scroll',
-                        this.handleOnScroll,
-                        false
-                    )
-                    childRefElement.removeEventListener(
-                        'scroll',
-                        triggerScrollEvent()
-                    )
-                    return
-                }
-                window.addEventListener('scroll', this.handleOnScroll, false)
-                window.removeEventListener('scroll', triggerScrollEvent())
+            window.addEventListener('touchend', this.handleOnScroll, false)
+            window.removeEventListener(
+                'touchstart',
+                this.triggerTouchStartEvent()
+            )
+            window.removeEventListener('scroll', this.triggerScrollEvent())
+        }
+        triggerScrollEvent = (childRefElement?: Element) => () => {
+            if (childRefElement) {
+                childRefElement.addEventListener(
+                    'scroll',
+                    this.handleOnScroll,
+                    false
+                )
+                childRefElement.removeEventListener(
+                    'scroll',
+                    this.triggerScrollEvent()
+                )
+                return
             }
+            window.addEventListener('scroll', this.handleOnScroll, false)
+            window.removeEventListener('scroll', this.triggerScrollEvent())
+        }
 
+        componentDidMount() {
             if (this.childRef) {
                 const childRefElement = findDOMNode(this.childRef)
                 this.childRefElement = childRefElement as Element
                 ;(childRefElement as Element).addEventListener(
                     'touchstart',
-                    triggerTouchStartEvent(childRefElement as Element)
+                    this.triggerTouchStartEvent(childRefElement as Element)
                 )
                 ;(childRefElement as Element).addEventListener(
                     'scroll',
-                    triggerScrollEvent(childRefElement as Element)
+                    this.triggerScrollEvent(childRefElement as Element)
                 )
                 return
             }
 
-            window.addEventListener('touchstart', triggerTouchStartEvent())
-            window.addEventListener('scroll', triggerScrollEvent())
+            window.addEventListener('touchstart', this.triggerTouchStartEvent())
+            window.addEventListener('scroll', this.triggerScrollEvent())
         }
 
         componentWillUnmount() {

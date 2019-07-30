@@ -1,9 +1,25 @@
 import View from './View'
-import { shallow } from 'enzyme'
+import { mountWithRedux } from '../../setupTests'
+import { MockedProvider } from 'react-apollo/test-utils'
+import TertiaryButton from '../../components/Button/TertiaryButton'
+import PrimaryButton from '../../components/Button/PrimaryButton'
+
+let wrapper
+let props
+
+const routeChangeAction = jest.fn()
+const showNotificationAction = jest.fn()
+const validateForm = jest.fn()
+jest.mock('../../lib/show-form-validation-errors', () =>
+    jest.fn().mockImplementation((f1, f2) => {
+        f1()
+        f2()
+    })
+)
 
 describe('containers/CreateCollectionForm/View', () => {
-    it('should match the snapshot', () => {
-        const props = {
+    beforeAll(() => {
+        props = {
             communities: [],
             id: '123',
             touched: {
@@ -13,14 +29,29 @@ describe('containers/CreateCollectionForm/View', () => {
             errors: {},
             values: {
                 name: 'test name',
-                sections: [],
+                sections: [
+                    {
+                        resourcesId: [
+                            // {
+                            //     id: '4e9186353fd848c68c3887effa298d9a',
+                            //     type: 'COLLECTION',
+                            //     __typename: 'ResourceIdentifier',
+                            // },
+                            // {
+                            //     id: 'c5f31cd6bd464d15aa7c8e10fa35c55f',
+                            //     type: 'ARTICLE',
+                            //     __typename: 'ResourceIdentifier',
+                            // },
+                        ],
+                    },
+                ],
                 tags: [],
             },
             isSubmitting: false,
             setFieldValue: jest.fn(),
-            validateForm: jest.fn(),
-            showNotificationAction: jest.fn(),
-            routeChangeAction: jest.fn(),
+            validateForm,
+            showNotificationAction,
+            routeChangeAction,
             openModalAction: jest.fn(),
             editCollectionAction: jest.fn(),
             createCollectionAction: jest.fn(),
@@ -61,7 +92,32 @@ describe('containers/CreateCollectionForm/View', () => {
             registerField: jest.fn(),
             unregisterField: jest.fn(),
         }
-        const wrapper = shallow(<View {...props} />)
+    })
+    it('should match the snapshot', () => {
+        wrapper = mountWithRedux(
+            <MockedProvider>
+                <View {...props} />
+            </MockedProvider>
+        )
         expect(wrapper).toMatchSnapshot()
+    })
+    it('should handle go back route', () => {
+        const tertiaryButtons = wrapper.find(TertiaryButton)
+        tertiaryButtons.get(0).props.onClick()
+        expect(routeChangeAction).toHaveBeenCalledWith('back')
+    })
+
+    it('should check for validation errors', () => {
+        const primaryButtons = wrapper.find(PrimaryButton)
+        primaryButtons.get(0).props.onClick()
+        expect(validateForm).toHaveBeenCalled()
+        expect(showNotificationAction).toHaveBeenCalled()
+    })
+
+    it('should check for validation errors', () => {
+        const primaryButtons = wrapper.find(PrimaryButton)
+        primaryButtons.get(0).props.onClick()
+        expect(validateForm).toHaveBeenCalled()
+        expect(showNotificationAction).toHaveBeenCalled()
     })
 })
