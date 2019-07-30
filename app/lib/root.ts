@@ -33,7 +33,7 @@ import { voteEpic } from "../containers/Article/Module";
 //   communityCreatedEpic,
 //   updateCommunityEpic,
 // } from "../components/containers/CreateCommunityForm/Module";
-// import {
+import {
 //   curateCommunityResourcesEpic,
 //   approveResourceEpic,
 //   sendCommunityInvitationEpic,
@@ -43,8 +43,8 @@ import { voteEpic } from "../containers/Article/Module";
 //   removeResourceEpic,
 //   changeMemberRoleEpic,
 //   resendInvitationEpic,
-//   transferArticleToCommunityEpic,
-// } from "../components/containers/Community/Module";
+  transferArticleToCommunityEpic,
+} from "../containers/Community/Module";
 import {
   rejectArticleTransferEpic,
   acceptArticleTransferEpic,
@@ -84,6 +84,7 @@ const epics = [
     rejectArticleTransferEpic,
     acceptArticleTransferEpic,
     finaliseArticleTransferEpic,
+    transferArticleToCommunityEpic,
 
     //   createCommunityEpic,
     //   communityCreatedEpic,
@@ -97,7 +98,6 @@ const epics = [
     //   removeResourceEpic,
     //   changeMemberRoleEpic,
     //   resendInvitationEpic,
-    //   transferArticleToCommunityEpic,
 
     //   TODO: addCommentEpic,
     //   saveUserDetailsEpic,

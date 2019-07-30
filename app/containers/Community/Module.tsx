@@ -1,4 +1,4 @@
-import { Epic, ActionsObservable } from 'redux-observable'
+import { Epic, ActionsObservable, ofType } from 'redux-observable'
 import { tail, compose, head, toUpper } from 'ramda'
 import { IReduxState, IDependencies } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
@@ -83,7 +83,7 @@ import { closeModalAction } from '../../components/Modal/Module'
 import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
 import { finaliseArticleTransferMutation } from '../../queries/Article'
 import { of, merge, from } from 'rxjs'
-import { mergeMap, tap, catchError } from 'rxjs/operators'
+import { mergeMap, tap, catchError, switchMap } from 'rxjs/operators'
 import {
     finaliseArticleTransfer,
     finaliseArticleTransferVariables,
@@ -884,102 +884,111 @@ export const removeResourceEpic: Epic<
     )
 
 export const transferArticleToCommunityEpic: Epic<
-    any,
+    ITransferArticleToCommunityAction,
     any,
     IReduxState,
     IDependencies
 > = (action$, _, { apolloClient, apolloSubscriber, personalSign }) =>
-    action$.ofType(TRANSFER_ARTICLE_TO_COMMUNITY).switchMap(({ payload }) =>
-        from(
-            apolloClient.mutate<
-                initiateArticleTransfer,
-                initiateArticleTransferVariables
-            >({
-                mutation: initiateArticleTransferMutation,
-                variables: payload,
-            })
-        )
-            .mergeMap(({ data }) =>
-                apolloSubscriber<IInitiateArticleTransferCommandOutput>(
-                    path<string>(['initiateArticleTransfer', 'hash'])(data) ||
-                        ''
-                )
-            )
-            .switchMap(
-                ({
-                    data: {
-                        output: {
+    action$.pipe(
+        ofType(TRANSFER_ARTICLE_TO_COMMUNITY),
+        switchMap(({ payload }) =>
+            from(
+                apolloClient.mutate<
+                    initiateArticleTransfer,
+                    initiateArticleTransferVariables
+                >({
+                    mutation: initiateArticleTransferMutation,
+                    variables: payload,
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    apolloSubscriber<IInitiateArticleTransferCommandOutput>(
+                        path<string>(['initiateArticleTransfer', 'hash'])(
+                            data
+                        ) || ''
+                    )
+                ),
+                switchMap(
+                    ({
+                        data: {
+                            output: {
+                                id,
+                                version,
+                                hash,
+                                articleAuthor,
+                                dateCreated,
+                            },
+                        },
+                    }) => {
+                        const signatureToSign = generatePublishArticleHash(
                             id,
                             version,
                             hash,
                             articleAuthor,
-                            dateCreated,
-                        },
-                    },
-                }) => {
-                    const signatureToSign = generatePublishArticleHash(
-                        id,
-                        version,
-                        hash,
-                        articleAuthor,
-                        dateCreated
-                    )
+                            dateCreated
+                        )
 
-                    return from(personalSign(signatureToSign))
-                        .mergeMap(signature =>
-                            from(
-                                apolloClient.mutate<
-                                    finaliseArticleTransfer,
-                                    finaliseArticleTransferVariables
-                                >({
-                                    mutation: finaliseArticleTransferMutation,
-                                    variables: {
-                                        id,
-                                        signature,
-                                    },
+                        return from(personalSign(signatureToSign)).pipe(
+                            mergeMap(signature =>
+                                from(
+                                    apolloClient.mutate<
+                                        finaliseArticleTransfer,
+                                        finaliseArticleTransferVariables
+                                    >({
+                                        mutation: finaliseArticleTransferMutation,
+                                        variables: {
+                                            id,
+                                            signature,
+                                        },
+                                    })
+                                )
+                            ),
+                            mergeMap(({ data }) =>
+                                apolloSubscriber<
+                                    IFinaliseArticleTransferCommandOutput
+                                >(
+                                    path<string>([
+                                        'finaliseArticleTransfer',
+                                        'hash',
+                                    ])(data) || ''
+                                )
+                            ),
+                            tap(() => apolloClient.resetStore()),
+                            tap(() =>
+                                analytics.track('Article Transfer Finalised', {
+                                    category: 'article_actions',
                                 })
+                            ),
+                            mergeMap(({ data: { output: { error } } }) =>
+                                error
+                                    ? merge(
+                                          of(closeModalAction()),
+                                          of(
+                                              showNotificationAction({
+                                                  description: `There was an error transferring the article, please try again.`,
+                                                  message: 'Error',
+                                                  notificationType: 'error',
+                                              })
+                                          )
+                                      )
+                                    : merge(
+                                          of(
+                                              articleTransferredToCommunityAction()
+                                          ),
+                                          of(closeModalAction()),
+                                          of(
+                                              showNotificationAction({
+                                                  description: `Your selected article was successfully transferred to the community!`,
+                                                  message:
+                                                      'Article Transferred',
+                                                  notificationType: 'success',
+                                              })
+                                          )
+                                      )
                             )
                         )
-                        .mergeMap(({ data }) =>
-                            apolloSubscriber<
-                                IFinaliseArticleTransferCommandOutput
-                            >(
-                                path<string>([
-                                    'finaliseArticleTransfer',
-                                    'hash',
-                                ])(data) || ''
-                            )
-                        )
-                        .do(() => apolloClient.resetStore())
-                        .do(() =>
-                            analytics.track('Article Transfer Finalised', {
-                                category: 'article_actions',
-                            })
-                        )
-                        .mergeMap(({ data: { output: { error } } }) =>
-                            error
-                                ? merge(
-                                      of(closeModalAction()),
-                                      of(
-                                          showNotificationAction({
-                                              description: `There was an error transferring the article, please try again.`,
-                                              message: 'Error',
-                                              notificationType: 'error',
-                                          })
-                                      )
-                                  )
-                                : merge(
-                                      of(articleTransferredToCommunityAction()),
-                                      of(closeModalAction()),
-                                      of(
-                                          showNotificationAction({
-                                              description: `Your selected article was successfully transferred to the community!`,
-                                              message: 'Article Transferred',
-                                              notificationType: 'success',
-                                          })
-                                      )
-                                  )
-                        )
-                }
+                    }
+                )
             )
+        )
     )
