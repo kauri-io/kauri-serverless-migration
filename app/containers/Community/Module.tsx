@@ -810,33 +810,49 @@ export const resendInvitationEpic: Epic<
     IReduxState,
     IDependencies
 > = (action$, _, { apolloClient, apolloSubscriber }) =>
-    action$.ofType(RESEND_INVITATION).switchMap(({ payload }) =>
-        from(
-            apolloClient.mutate<resendInvitation, resendInvitationVariables>({
-                mutation: resendInvitationMutation,
-                variables: payload,
-            })
-        )
-            .mergeMap(
-                ({ data: { resendInvitation: resendInvitationResult } }: any) =>
+    action$.pipe(
+        ofType(RESEND_INVITATION),
+        switchMap(({ payload }) =>
+            from(
+                apolloClient.mutate<
+                    resendInvitation,
+                    resendInvitationVariables
+                >({
+                    mutation: resendInvitationMutation,
+                    variables: payload,
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
                     apolloSubscriber<IResendInvitationCommandOutput>(
-                        resendInvitationResult.hash
+                        path<string>(['resendInvitation', 'hash'])(data) || ''
                     )
-            )
-            .do(() => apolloClient.resetStore())
-            .mergeMap(() =>
-                merge(
-                    of(closeModalAction()),
-                    of(
+                ),
+                tap(() => apolloClient.resetStore()),
+                mergeMap(() =>
+                    merge(
+                        of(closeModalAction()),
+                        of(
+                            showNotificationAction({
+                                description: `Another email invitation has been sent to that user to join the community`,
+                                message: 'Email resent',
+                                notificationType: 'success',
+                            })
+                        ),
+                        of(invitationResentAction())
+                    )
+                ),
+                catchError(err => {
+                    console.error(err)
+                    return of(
                         showNotificationAction({
-                            description: `Another email invitation has been sent to that user to join the community`,
-                            message: 'Email resent',
-                            notificationType: 'success',
+                            description: 'Please try again',
+                            message: 'Submission error',
+                            notificationType: 'error',
                         })
-                    ),
-                    of(invitationResentAction())
-                )
+                    )
+                })
             )
+        )
     )
 
 export const removeResourceEpic: Epic<
@@ -985,7 +1001,17 @@ export const transferArticleToCommunityEpic: Epic<
                                               })
                                           )
                                       )
-                            )
+                            ),
+                            catchError(err => {
+                                console.error(err)
+                                return of(
+                                    showNotificationAction({
+                                        description: 'Please try again',
+                                        message: 'Submission error',
+                                        notificationType: 'error',
+                                    })
+                                )
+                            })
                         )
                     }
                 )
