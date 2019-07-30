@@ -27,7 +27,7 @@ import {
     resendEmailVerificationEpic,
     emailSubscribeEpic,
 } from '../containers/EmailVerification/Module'
-// import { voteEpic } from "../components/containers/Article/ApprovedArticle/VoteModule";
+import { voteEpic } from "../containers/Article/Module";
 // import {
 //   createCommunityEpic,
 //   communityCreatedEpic,
@@ -80,8 +80,8 @@ const epics = [
     createCollectionEpic,
     editCollectionEpic,
     composeCollectionEpic,
+    voteEpic,
 
-    //   voteEpic,
     //   createCommunityEpic,
     //   communityCreatedEpic,
     //   updateCommunityEpic,
