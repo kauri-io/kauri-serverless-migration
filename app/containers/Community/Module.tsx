@@ -445,79 +445,98 @@ export const approveResourceEpic = (
             .do(() => apolloClient.resetStore())
     )
 
-export const sendCommunityInvitationEpic = (
-    action$: ActionsObservable<ISendCommunityInvitationAction>,
-    _: IReduxState,
-    { apolloClient, apolloSubscriber, personalSign }: IDependencies
-) =>
-    action$.ofType(SEND_COMMUNITY_INVITATION).switchMap(({ payload }) =>
-        from(
-            apolloClient.query<
-                prepareSendInvitation,
-                prepareSendInvitationVariables
-            >({
-                query: prepareSendInvitationQuery,
-                variables: payload,
-            })
-        ).mergeMap(({ data }) =>
+export const sendCommunityInvitationEpic: Epic<
+    ISendCommunityInvitationAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber, personalSign }) =>
+    action$.pipe(
+        ofType(SEND_COMMUNITY_INVITATION),
+        mergeMap(({ payload }) =>
             from(
-                personalSign(
-                    path<string>(['prepareSendInvitation', 'messageHash'])(
-                        data
-                    ) || ''
-                )
-            )
-                .mergeMap(signedSignature =>
-                    apolloClient.mutate<
-                        sendInvitation,
-                        sendInvitationVariables
-                    >({
-                        mutation: sendInvitationMutation,
-                        variables: {
-                            id: payload.id,
-                            invitation: {
-                                email:
-                                    payload.invitation &&
-                                    payload.invitation.email,
-                                role:
-                                    payload.invitation &&
-                                    payload.invitation.role,
-                                secret:
-                                    path<string>([
-                                        'prepareSendInvitation',
-                                        'attributes',
-                                        'secret',
-                                    ])(data) || '',
-                            },
-                            signature:
-                                typeof signedSignature === 'string'
-                                    ? signedSignature
-                                    : '',
-                        },
-                    })
-                )
-                .mergeMap(
-                    ({ data: { sendInvitation: sendInvitationResult } }: any) =>
-                        apolloSubscriber<ISendInvitationCommandOutput>(
-                            sendInvitationResult.hash
+                apolloClient.query<
+                    prepareSendInvitation,
+                    prepareSendInvitationVariables
+                >({
+                    query: prepareSendInvitationQuery,
+                    variables: payload,
+                })
+            ).pipe(
+                switchMap(({ data }) =>
+                    from(
+                        personalSign(
+                            path<string>([
+                                'prepareSendInvitation',
+                                'messageHash',
+                            ])(data) || ''
                         )
-                )
-                .do(() => apolloClient.resetStore())
-                .mergeMap(() =>
-                    merge(
-                        of(
-                            showNotificationAction({
-                                description: `The invitation ${payload.invitation &&
-                                    payload.invitation
-                                        .email} for to join the community has been sent! You can view and manage all moderators from the Manage tab.`,
-                                message: 'Invitation Sent',
-                                notificationType: 'success',
+                    ).pipe(
+                        mergeMap(signedSignature =>
+                            apolloClient.mutate<
+                                sendInvitation,
+                                sendInvitationVariables
+                            >({
+                                mutation: sendInvitationMutation,
+                                variables: {
+                                    id: payload.id,
+                                    invitation: {
+                                        email:
+                                            payload.invitation &&
+                                            payload.invitation.email,
+                                        role:
+                                            payload.invitation &&
+                                            payload.invitation.role,
+                                        secret:
+                                            path<string>([
+                                                'prepareSendInvitation',
+                                                'attributes',
+                                                'secret',
+                                            ])(data) || '',
+                                    },
+                                    signature:
+                                        typeof signedSignature === 'string'
+                                            ? signedSignature
+                                            : '',
+                                },
                             })
                         ),
-                        of(invitationSentAction()),
-                        of(closeModalAction())
+                        mergeMap(({ data }) =>
+                            apolloSubscriber<ISendInvitationCommandOutput>(
+                                path<string>(['sendInvitation', 'hash'])(
+                                    data
+                                ) || ''
+                            )
+                        ),
+                        tap(() => apolloClient.resetStore()),
+                        mergeMap(() =>
+                            merge(
+                                of(
+                                    showNotificationAction({
+                                        description: `The invitation ${payload.invitation &&
+                                            payload.invitation
+                                                .email} for to join the community has been sent! You can view and manage all moderators from the Manage tab.`,
+                                        message: 'Invitation Sent',
+                                        notificationType: 'success',
+                                    })
+                                ),
+                                of(invitationSentAction()),
+                                of(closeModalAction())
+                            )
+                        ),
+                        catchError(err => {
+                            console.error(err)
+                            return of(
+                                showNotificationAction({
+                                    description: 'Please try again',
+                                    message: 'Submission error',
+                                    notificationType: 'error',
+                                })
+                            )
+                        })
                     )
                 )
+            )
         )
     )
 
@@ -544,14 +563,14 @@ export const waitForInvitationReconciliationEpic: Epic<
                 ),
                 mergeMap(() =>
                     merge(
-                      of(
-                          showNotificationAction({
-                            description: `You are now a member of the community!`,
-                            message: 'Invitation Accepted',
-                            notificationType: 'success',
-                          }),
-                      ),
-                      of(invitationAcceptedAction())
+                        of(
+                            showNotificationAction({
+                                description: `You are now a member of the community!`,
+                                message: 'Invitation Accepted',
+                                notificationType: 'success',
+                            })
+                        ),
+                        of(invitationAcceptedAction())
                     )
                 ),
                 tap(() => {
@@ -764,7 +783,17 @@ export const revokeInvitationEpic: Epic<
                         ),
                         of(invitationRevokedAction())
                     )
-                )
+                ),
+                catchError(err => {
+                    console.error(err)
+                    return of(
+                        showNotificationAction({
+                            description: 'Please try again',
+                            message: 'Submission error',
+                            notificationType: 'error',
+                        })
+                    )
+                })
             )
         )
     )

@@ -36,7 +36,7 @@ import { voteEpic } from "../containers/Article/Module";
 import {
 //   curateCommunityResourcesEpic,
 //   approveResourceEpic,
-//   sendCommunityInvitationEpic,
+  sendCommunityInvitationEpic,
   acceptCommunityInvitationEpic,
   waitForInvitationReconciliationEpic,
   removeMemberEpic,
@@ -92,14 +92,14 @@ const epics = [
     revokeInvitationEpic,
     removeMemberEpic,
     acceptCommunityInvitationEpic,
-    waitForInvitationReconciliationEpic
+    waitForInvitationReconciliationEpic,
+    sendCommunityInvitationEpic,
 
     //   createCommunityEpic,
     //   communityCreatedEpic,
     //   updateCommunityEpic,
     //   curateCommunityResourcesEpic,
     //   approveResourceEpic,
-    //   sendCommunityInvitationEpic,
     
     //   TODO: addCommentEpic,
     //   saveUserDetailsEpic,
