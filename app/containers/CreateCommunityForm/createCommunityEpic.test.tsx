@@ -1,8 +1,13 @@
 import testEpic from '../../lib/test-epic'
-import { communityCreatedEpic, communityCreatedAction } from './Module'
+import {
+    createCommunityEpic,
+    createCommunityAction,
+    communityCreatedAction,
+} from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
-describe('communityCreatedEpic', () => {
+describe('createCommunityEpic', () => {
     beforeAll(() => {
         // global.window = {}
         global.window.web3 = {
@@ -19,11 +24,11 @@ describe('communityCreatedEpic', () => {
             port: '123',
             protocol: 'http:',
             hostname: 'localhost',
-            reload: () => ({})
+            reload: () => ({}),
         } as any
     })
 
-    it('takes a transactionHash from the createCommunityEpic and waits for the backend to reconcile before refreshing the page to refresh JWT state', async () => {
+    it('creates the community if the user has a verified email and triggers the communityCreatedAction for reconciliation', async () => {
         const mockPersonalSign = () => Promise.resolve('abc')
         const id = '1234567890-'
         const version = 123
@@ -43,40 +48,62 @@ describe('communityCreatedEpic', () => {
             Promise.resolve({
                 data: {
                     output: {
-                        id,
+                        id: communityId,
                         transactionHash,
                     },
                 },
             })
         const mockReduxInitialState = {
-            app: { user: { communities: [{ community: { id: '123' } }], id } },
+            app: { user: { id, status: 'EMAIL_VERIFIED' } },
         }
         const mockApolloClient = {
             mutate: () =>
                 Promise.resolve({
                     data: {
-                        prepareAcceptInvitation: { messageHash: '1234567890' },
+                        editCommunity: { hash: '1234567890' },
+                        sendInvitation: { hash: '1234567890' },
                     },
                 }),
             query: () =>
                 Promise.resolve({
-                    data: { getArticle: mockGetArticle },
+                    data: {
+                        prepareSendInvitation: {
+                            messageHash: mockGetArticle.contentHash,
+                        },
+                    },
                 }),
             resetStore: () => {},
         }
 
-        const sourceAction = communityCreatedAction({ transactionHash })
+        const communityId = 'Community ID'
+        const email = 'test@example.com'
+        const invitations: any = [
+            {
+                email,
+                role: 'ADMIN' as any,
+            },
+        ]
+
+        const sourceAction = createCommunityAction(
+            {
+                name: 'Alice',
+                invitations,
+            },
+            () => {}
+        )
 
         const expectedAction = [
             showNotificationAction({
-                description: `Your community has been created! You can start adding articles and collections now!`,
-                message: 'Community Created',
-                notificationType: 'success',
+                description: `Your community is being created! Once this is completed (within a few minutes), you will be able to add articles and collections`,
+                message: 'Creating Community',
+                notificationType: 'info',
             }),
+            communityCreatedAction({ transactionHash }),
+            routeChangeAction(`/community/${communityId}/community-created`),
         ]
 
         const resultingActions = await testEpic(
-            communityCreatedEpic,
+            createCommunityEpic,
             sourceAction,
             mockReduxInitialState,
             {

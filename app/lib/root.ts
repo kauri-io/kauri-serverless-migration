@@ -29,7 +29,7 @@ import {
 } from '../containers/EmailVerification/Module'
 import { voteEpic } from "../containers/Article/Module";
 import {
-//   createCommunityEpic,
+  createCommunityEpic,
   communityCreatedEpic,
   updateCommunityEpic,
 } from "../containers/CreateCommunityForm/Module";
@@ -98,8 +98,8 @@ const epics = [
     curateCommunityResourcesEpic,
     communityCreatedEpic,
     updateCommunityEpic,
+    createCommunityEpic,
 
-    //   createCommunityEpic,
     
     //   TODO: addCommentEpic,
     //   saveUserDetailsEpic,
