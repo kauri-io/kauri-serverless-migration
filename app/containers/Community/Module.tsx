@@ -746,61 +746,82 @@ export const removeMemberEpic = (
         )
     )
 
-export const changeMemberRoleEpic = (
-    action$: ActionsObservable<IChangeMemberRoleAction>,
-    _: IReduxState,
-    { apolloClient, apolloSubscriber, personalSign }: IDependencies
-) =>
-    action$.ofType(CHANGE_MEMBER_ROLE).switchMap(({ payload }) =>
-        from(
-            apolloClient.query<
-                prepareChangeMemberRole,
-                prepareChangeMemberRoleVariables
-            >({
-                query: prepareChangeMemberRoleQuery,
-                variables: payload,
-            })
-        ).mergeMap(({ data }) =>
+export const changeMemberRoleEpic: Epic<
+    IChangeMemberRoleAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber, personalSign }) =>
+    action$.ofType(CHANGE_MEMBER_ROLE).pipe(
+        switchMap(({ payload }) =>
             from(
-                personalSign(
-                    path<string>(['prepareChangeMemberRole', 'messageHash'])(
-                        data
-                    ) || ''
-                )
-            )
-                .mergeMap(signature =>
-                    apolloClient.mutate<
-                        changeMemberRole,
-                        changeMemberRoleVariables
-                    >({
-                        mutation: changeMemberRoleMutation,
-                        variables: {
-                            account: (payload && payload.account) || '',
-                            id: (payload && payload.id) || '',
-                            role: (payload && (payload.role as any)) || '',
-                            signature,
-                        },
-                    })
-                )
-                .mergeMap(({ data }) =>
-                    apolloSubscriber<IChangeMemberRoleCommandOutput>(
-                        path<string>(['changeMemberRole', 'hash'])(data) || ''
-                    )
-                )
-                .do(() => apolloClient.resetStore())
-                .mergeMap(() =>
-                    merge(
-                        of(closeModalAction()),
-                        of(
-                            showNotificationAction({
-                                description: `That user has had their role changed within the community`,
-                                message: 'Member role changed',
-                                notificationType: 'success',
+                apolloClient.query<
+                    prepareChangeMemberRole,
+                    prepareChangeMemberRoleVariables
+                >({
+                    query: prepareChangeMemberRoleQuery,
+                    variables: payload,
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    from(
+                        personalSign(
+                            path<string>([
+                                'prepareChangeMemberRole',
+                                'messageHash',
+                            ])(data) || ''
+                        )
+                    ).pipe(
+                        mergeMap(signature =>
+                            apolloClient.mutate<
+                                changeMemberRole,
+                                changeMemberRoleVariables
+                            >({
+                                mutation: changeMemberRoleMutation,
+                                variables: {
+                                    account: (payload && payload.account) || '',
+                                    id: (payload && payload.id) || '',
+                                    role:
+                                        (payload && (payload.role as any)) ||
+                                        '',
+                                    signature,
+                                },
                             })
                         ),
-                        of(memberRoleChangedAction())
+                        mergeMap(({ data }) =>
+                            apolloSubscriber<IChangeMemberRoleCommandOutput>(
+                                path<string>(['changeMemberRole', 'hash'])(
+                                    data
+                                ) || ''
+                            )
+                        ),
+                        tap(() => apolloClient.resetStore()),
+                        mergeMap(() =>
+                            merge(
+                                of(closeModalAction()),
+                                of(
+                                    showNotificationAction({
+                                        description: `That user has had their role changed within the community`,
+                                        message: 'Member role changed',
+                                        notificationType: 'success',
+                                    })
+                                ),
+                                of(memberRoleChangedAction())
+                            )
+                        ),
+                        catchError(err => {
+                            console.error(err)
+                            return of(
+                                showNotificationAction({
+                                    description: 'Please try again',
+                                    message: 'Submission error',
+                                    notificationType: 'error',
+                                })
+                            )
+                        })
                     )
                 )
+            )
         )
     )
 

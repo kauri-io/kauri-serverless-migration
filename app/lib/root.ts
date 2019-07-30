@@ -41,7 +41,7 @@ import {
 //   revokeInvitationEpic,
 //   removeMemberEpic,
 //   removeResourceEpic,
-//   changeMemberRoleEpic,
+  changeMemberRoleEpic,
   resendInvitationEpic,
   transferArticleToCommunityEpic,
 } from "../containers/Community/Module";
@@ -86,6 +86,7 @@ const epics = [
     finaliseArticleTransferEpic,
     transferArticleToCommunityEpic,
     resendInvitationEpic,
+    changeMemberRoleEpic,
 
     //   createCommunityEpic,
     //   communityCreatedEpic,
@@ -97,7 +98,6 @@ const epics = [
     //   revokeInvitationEpic,
     //   removeMemberEpic,
     //   removeResourceEpic,
-    //   changeMemberRoleEpic,
 
     //   TODO: addCommentEpic,
     //   saveUserDetailsEpic,
