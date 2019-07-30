@@ -27,7 +27,8 @@
         "queries/__generated__/*.ts",
         "components",
         "containers",
-        "lib"
+        "lib",
+        "types"
     ],
     "exclude": ["node_modules", "dist", ".next", "out", "next.config.js"]
 }

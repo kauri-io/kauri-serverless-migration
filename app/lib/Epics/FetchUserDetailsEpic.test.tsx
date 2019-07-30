@@ -2,7 +2,7 @@ import testEpic from '../test-epic'
 import fetchUserDetailsEpic, {
     fetchUserDetailsAction,
     setUserDetailsAction,
-} from './fetchUserDetailsEpic'
+} from './FetchUserDetailsEpic'
 
 describe('fetchUserDetailsEpic', () => {
     it('take a parsed cookie token, query the backend and set them', async () => {

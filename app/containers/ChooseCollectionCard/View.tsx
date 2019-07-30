@@ -189,7 +189,7 @@ interface IProps {
         loading: boolean
         searchCollections: searchCollections_searchCollections
     }
-    passChangeTabFunction: () => void
+    passChangeTabFunction: (changeTab?: any) => void
 }
 
 export default (props: IProps) => {

@@ -81,7 +81,7 @@ interface IProps {
     minWidth?: string
     dark?: boolean
     router?: any
-    passChangeTabFunction?: (func: any) => void
+    passChangeTabFunction?: (func?: any) => void
 }
 
 interface IState {

@@ -180,7 +180,7 @@ interface IProps {
         loading: boolean
         getCommunityContent: getCommunity_getCommunity
     }
-    passChangeTabFunction: () => void
+    passChangeTabFunction: (changeTab?: any) => void
 }
 
 export default (props: IProps) => {

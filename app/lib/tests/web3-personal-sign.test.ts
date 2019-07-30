@@ -1,4 +1,4 @@
-import { personalSign } from '../web3-personal-sign'
+import { personalSign, loginPersonalSign } from '../web3-personal-sign'
 
 const OLD_GLOBAL = global
 
@@ -75,6 +75,13 @@ describe('lib/web3-personal-sign', () => {
         } catch (e) {
             expect(e).toEqual(Error('Metamask locked!'))
         }
+    })
+
+    it('should handle the login personal sign', done => {
+        loginPersonalSign('test').subscribe(data => {
+            expect(data).toEqual('send async result')
+            done()
+        })
     })
 
     afterAll(() => {
