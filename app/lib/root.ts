@@ -48,7 +48,7 @@ import { voteEpic } from "../containers/Article/Module";
 import {
   rejectArticleTransferEpic,
   acceptArticleTransferEpic,
-//   finaliseArticleTransferEpic,
+  finaliseArticleTransferEpic,
 } from "../containers/PublicProfile/Manage/TransferModule";
 
 // TODO: // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
@@ -83,7 +83,7 @@ const epics = [
     voteEpic,
     rejectArticleTransferEpic,
     acceptArticleTransferEpic,
-    //   finaliseArticleTransferEpic,
+    finaliseArticleTransferEpic,
 
     //   createCommunityEpic,
     //   communityCreatedEpic,

@@ -1,4 +1,4 @@
-import { Epic, ofType, ActionsObservable } from 'redux-observable'
+import { Epic, ofType } from 'redux-observable'
 import { IDependencies, IReduxState } from '../../../lib/Module'
 import { showNotificationAction } from '../../../lib/Epics/ShowNotificationEpic'
 import {
@@ -97,10 +97,10 @@ interface IAcceptArticleTransferPayload {
 }
 
 interface IAcceptArticleTransferCommandOutput {
-  hash: string,
-  version: string,
-  articleAuthor: string,
-  dateCreated: string,
+    hash: string
+    version: string
+    articleAuthor: string
+    dateCreated: string
 }
 
 const ACCEPT_ARTICLE_TRANSFER = 'ACCEPT_ARTICLE_TRANSFER'
@@ -249,13 +249,23 @@ export const finaliseArticleTransferEpic: Epic<
                             category: 'article_actions',
                         })
                     ),
-                    tap(() =>
+                    mapTo(
                         showNotificationAction({
-                            description: `You successfully approved the ownership of the article!`,
+                            description: `You successfully accepted the ownership of the article!`,
                             message: 'Article Transfer Accepted!',
                             notificationType: 'success',
                         })
-                    )
+                    ),
+                    catchError(err => {
+                        console.error(err)
+                        return of(
+                            showNotificationAction({
+                                description: 'Please try again!',
+                                message: 'Submission error',
+                                notificationType: 'error',
+                            })
+                        )
+                    })
                 )
             }
         )
