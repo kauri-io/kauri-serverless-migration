@@ -2,7 +2,7 @@ import Footer from './index'
 import { mountWithTheme } from '../../setupTests'
 
 describe('components/Footer', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<Footer />)
         expect(wrapper).toMatchSnapshot()
     })

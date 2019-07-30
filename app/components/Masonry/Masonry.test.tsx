@@ -5,7 +5,7 @@ import { mountWithTheme } from '../../setupTests'
 const props = {}
 
 describe('components/Masonry', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(
             <Masonry {...props}>
                 <div>Test</div>

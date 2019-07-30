@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`containers/ArticleApproved snapshot should match 1`] = `
+exports[`containers/ArticleApproved should match snapshot 1`] = `
 <Provider
   store={
     Object {
@@ -2575,7 +2575,7 @@ exports[`containers/ArticleApproved snapshot should match 1`] = `
                                 "componentStyle": ComponentStyle {
                                   "componentId": "PrimaryButton-sc-1cbxa53-0",
                                   "isStatic": false,
-                                  "lastClassName": "gGcsYX",
+                                  "lastClassName": "bVbdII",
                                   "rules": Array [
                                     "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
                                     [Function],
@@ -2615,7 +2615,7 @@ exports[`containers/ArticleApproved snapshot should match 1`] = `
                             type="submit"
                           >
                             <button
-                              className="PrimaryButton-sc-1cbxa53-0 gGcsYX"
+                              className="PrimaryButton-sc-1cbxa53-0 bVbdII"
                               color="white"
                               fontSize={0}
                               fontWeight={700}

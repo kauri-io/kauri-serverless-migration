@@ -145,13 +145,13 @@ describe('composeCollectionEpic', () => {
         )
 
         const expectedAction = [
-          showNotificationAction({
-              notificationType: 'success',
-              message: 'Collection created!',
-              description: 'Your collection is now available for viewing!',
-          }),
-          routeChangeAction(`/collection/${id}/collection-${'created'}`),
-      ]
+            showNotificationAction({
+                notificationType: 'success',
+                message: 'Collection created!',
+                description: 'Your collection is now available for viewing!',
+            }),
+            routeChangeAction(`/collection/${id}/collection-${'created'}`),
+        ]
 
         const resultingActions = await testEpic(
             composeCollectionEpic,

@@ -13,7 +13,7 @@ let props = {
 }
 
 describe('components/TopContributors', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<TopContributors {...props} />)
         expect(wrapper).toMatchSnapshot()
     })

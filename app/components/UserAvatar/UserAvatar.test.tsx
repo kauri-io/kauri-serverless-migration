@@ -6,7 +6,7 @@ let props: IProps = {
 }
 
 describe('components/UserAvatar', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<UserAvatar {...props} />)
         expect(wrapper).toMatchSnapshot()
     })

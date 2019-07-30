@@ -3,13 +3,22 @@ import { IDependencies, IReduxState } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
-import { approveArticleMutation, rejectArticleMutation } from '../../queries/Article'
+import {
+    approveArticleMutation,
+    rejectArticleMutation,
+} from '../../queries/Article'
 import analytics from '../../lib/analytics'
 import { from, merge, of } from 'rxjs'
 import { switchMap, mergeMap, tap, catchError } from 'rxjs/operators'
-import { approveArticle, approveArticleVariables } from '../../queries/__generated__/approveArticle';
+import {
+    approveArticle,
+    approveArticleVariables,
+} from '../../queries/__generated__/approveArticle'
 import { path } from 'ramda'
-import { rejectArticle, rejectArticleVariables } from '../../queries/__generated__/rejectArticle';
+import {
+    rejectArticle,
+    rejectArticleVariables,
+} from '../../queries/__generated__/rejectArticle'
 
 interface IApproveArticlePayload {
     id: string
@@ -33,11 +42,12 @@ export const approveArticleAction = (
     type: APPROVE_ARTICLE,
 })
 
-export const approveArticleEpic: Epic<IApproveArticleAction, any, IReduxState, IDependencies> = (
-    action$,
-    _,
-    { apolloClient, personalSign, apolloSubscriber }
-) =>
+export const approveArticleEpic: Epic<
+    IApproveArticleAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, personalSign, apolloSubscriber }) =>
     action$.pipe(
         ofType(APPROVE_ARTICLE),
         switchMap(
@@ -55,7 +65,10 @@ export const approveArticleEpic: Epic<IApproveArticleAction, any, IReduxState, I
                 ).pipe(
                     // tap(console.log),
                     mergeMap(signature =>
-                        apolloClient.mutate<approveArticle, approveArticleVariables>({
+                        apolloClient.mutate<
+                            approveArticle,
+                            approveArticleVariables
+                        >({
                             mutation: approveArticleMutation,
                             variables: {
                                 id,
@@ -66,7 +79,11 @@ export const approveArticleEpic: Epic<IApproveArticleAction, any, IReduxState, I
                     ),
                     mergeMap(({ data }) =>
                         from(
-                          apolloSubscriber<{ hash: string }>(path<string>(['approveArticle', 'hash'])(data) || '')
+                            apolloSubscriber<{ hash: string }>(
+                                path<string>(['approveArticle', 'hash'])(
+                                    data
+                                ) || ''
+                            )
                         )
                     ),
                     tap(() =>
@@ -126,11 +143,12 @@ export const rejectArticleAction = (
     type: REJECT_ARTICLE,
 })
 
-export const rejectArticleEpic: Epic<IRejectArticleAction, any, IReduxState, IDependencies>  = (
-    action$,
-    _,
-  { apolloClient, apolloSubscriber }
-) =>
+export const rejectArticleEpic: Epic<
+    IRejectArticleAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(REJECT_ARTICLE),
         switchMap(({ payload: { id, version, cause } }) =>
@@ -141,7 +159,9 @@ export const rejectArticleEpic: Epic<IRejectArticleAction, any, IReduxState, IDe
                 })
             ).pipe(
                 mergeMap(({ data }) =>
-                  apolloSubscriber<{ hash: string }>(path<string>(['rejectArticle', 'hash'])(data) || '')
+                    apolloSubscriber<{ hash: string }>(
+                        path<string>(['rejectArticle', 'hash'])(data) || ''
+                    )
                 ),
                 tap(() => apolloClient.resetStore()),
                 tap(() =>

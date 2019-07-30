@@ -3,7 +3,7 @@ import ImportYourContentBanner from './index'
 import { mountWithTheme } from '../../setupTests'
 
 describe('components/ImportYourContentBanner', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<ImportYourContentBanner />)
         expect(wrapper).toMatchSnapshot()
     })

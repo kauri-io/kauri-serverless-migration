@@ -7,7 +7,7 @@ import PrimaryButton from '../../components/Button/PrimaryButton'
 import { Title2, BodyCard } from '../../components/Typography'
 import { getCommunity } from '../../queries/__generated__/getCommunity'
 
-interface IProps {
+export interface IProps {
     data: getCommunity
     routeChangeAction: (route: string) => void
     type: 'created' | 'updated'
@@ -41,7 +41,7 @@ const Row = styled.div`
     text-align: center;
 `
 
-const CommunityCreated: React.FunctionComponent<IProps> = props => {
+const CommunityCreated = (props: IProps) => {
     const { routeChangeAction, type } = props
     const copy = type === 'updated' ? 'updated' : 'live'
     const subtitleCopy =

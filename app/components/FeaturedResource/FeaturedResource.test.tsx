@@ -14,7 +14,7 @@ let props = {
 }
 
 describe('components/FeaturedResource', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<FeaturedResource {...props} />)
         expect(wrapper).toMatchSnapshot()
     })

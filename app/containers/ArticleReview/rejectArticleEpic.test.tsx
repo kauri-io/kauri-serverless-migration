@@ -1,7 +1,7 @@
 import testEpic from '../../lib/test-epic'
 import { rejectArticleEpic, rejectArticleAction } from './Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
-import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic';
+import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 
 describe('rejectArticleEpic', () => {
     it('rejects a proposed article update, notifies and shows confirmation page', async () => {
@@ -22,12 +22,12 @@ describe('rejectArticleEpic', () => {
             cause: 'yungblud',
         })
         const expectedAction = [
-          routeChangeAction(`/article/${id}/v${version}/article-rejected`),
-          showNotificationAction({
-            description: `It will not show up in your approvals queue anymore!`,
-            message: 'Article rejected!',
-            notificationType: 'success',
-        })
+            routeChangeAction(`/article/${id}/v${version}/article-rejected`),
+            showNotificationAction({
+                description: `It will not show up in your approvals queue anymore!`,
+                message: 'Article rejected!',
+                notificationType: 'success',
+            }),
         ]
 
         const resultingActions = await testEpic(

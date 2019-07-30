@@ -27,7 +27,7 @@ const Container = styled.section`
     }
 `
 
-interface IProps {
+export interface IProps {
     data: {
         getCollection: getCollection_getCollection
     }

@@ -13,7 +13,7 @@ const props = {
 }
 
 describe('components/Link', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithRedux(
             <Link {...props}>
                 <div>Test</div>

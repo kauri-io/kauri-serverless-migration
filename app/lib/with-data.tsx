@@ -29,7 +29,7 @@ import analytics from './analytics'
 
 const config = require('../config').default
 
-const dispatchEpic = (epic, action, state = {}, dependencies = {}) => {
+export const dispatchEpic = (epic, action, state = {}, dependencies = {}) => {
     const actions = new Subject()
     const actions$ = new ActionsObservable<any>(actions)
     const store = { getState: () => state }

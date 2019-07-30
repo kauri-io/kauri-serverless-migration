@@ -8,42 +8,42 @@ import AddTagButton from './AddTagButton'
 import { mountWithTheme } from '../../setupTests'
 
 describe('components/PrimaryButton', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<PrimaryButton>Test</PrimaryButton>)
         expect(wrapper).toMatchSnapshot()
     })
 })
 
 describe('components/SecondaryButton', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<SecondaryButton>Test</SecondaryButton>)
         expect(wrapper).toMatchSnapshot()
     })
 })
 
 describe('components/TertiaryButton', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<TertiaryButton>Test</TertiaryButton>)
         expect(wrapper).toMatchSnapshot()
     })
 })
 
 describe('components/AddMemberButton', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<AddMemberButton>Test</AddMemberButton>)
         expect(wrapper).toMatchSnapshot()
     })
 })
 
 describe('components/MediumImportButton', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<MediumImportButton />)
         expect(wrapper).toMatchSnapshot()
     })
 })
 
 describe('components/UploadLogoButton', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(
             <UploadLogoButton>Test</UploadLogoButton>
         )
@@ -52,7 +52,7 @@ describe('components/UploadLogoButton', () => {
 })
 
 describe('components/AddTagButton', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(
             <AddTagButton bg="https://test.com/image.png" />
         )

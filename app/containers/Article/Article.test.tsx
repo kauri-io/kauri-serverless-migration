@@ -10,7 +10,7 @@ import {
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
 
 describe('containers/Article', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const article1 = generateArticle(1)
         const article2 = generateArticle(2)
         const article3 = generateArticle(3)

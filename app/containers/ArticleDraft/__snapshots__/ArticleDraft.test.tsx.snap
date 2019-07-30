@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`containers/ArticleDraft snapshot should match 1`] = `
+exports[`containers/ArticleDraft should match snapshot 1`] = `
 <Provider
   store={
     Object {
@@ -744,7 +744,7 @@ exports[`containers/ArticleDraft snapshot should match 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "SecondaryButton-sy4hb2-0",
                               "isStatic": false,
-                              "lastClassName": "faBvdL",
+                              "lastClassName": "fCmNwl",
                               "rules": Array [
                                 "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
                                 [Function],
@@ -786,7 +786,7 @@ exports[`containers/ArticleDraft snapshot should match 1`] = `
                         type="button"
                       >
                         <button
-                          className="SecondaryButton-sy4hb2-0 faBvdL"
+                          className="SecondaryButton-sy4hb2-0 fCmNwl"
                           color="white"
                           fontSize={0}
                           fontWeight={700}
@@ -823,7 +823,7 @@ exports[`containers/ArticleDraft snapshot should match 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "PrimaryButton-sc-1cbxa53-0",
                               "isStatic": false,
-                              "lastClassName": "gGcsYX",
+                              "lastClassName": "bVbdII",
                               "rules": Array [
                                 "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
                                 [Function],
@@ -863,7 +863,7 @@ exports[`containers/ArticleDraft snapshot should match 1`] = `
                         type="submit"
                       >
                         <button
-                          className="PrimaryButton-sc-1cbxa53-0 gGcsYX"
+                          className="PrimaryButton-sc-1cbxa53-0 bVbdII"
                           color="white"
                           fontSize={0}
                           fontWeight={700}
@@ -1066,7 +1066,7 @@ exports[`containers/ArticleDraft snapshot should match 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "TertiaryButton-sc-1rjobqw-0",
                               "isStatic": false,
-                              "lastClassName": "ldfQHp",
+                              "lastClassName": "VsrAD",
                               "rules": Array [
                                 "display:flex;align-items:center;border:none;background-color:transparent;cursor:",
                                 [Function],
@@ -1101,7 +1101,7 @@ exports[`containers/ArticleDraft snapshot should match 1`] = `
                         type="button"
                       >
                         <button
-                          className="TertiaryButton-sc-1rjobqw-0 ldfQHp"
+                          className="TertiaryButton-sc-1rjobqw-0 VsrAD"
                           color="textPrimary"
                           disabled={false}
                           fontSize={0}

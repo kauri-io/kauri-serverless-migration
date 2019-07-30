@@ -7,7 +7,7 @@ let props = {
 }
 
 describe('components/TopTags', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<TopTags {...props} />)
         expect(wrapper).toMatchSnapshot()
     })

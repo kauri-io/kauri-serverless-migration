@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`containers/ChooseArticleCard snapshot should match 1`] = `
+exports[`containers/ChooseArticleCard should match snapshot 1`] = `
 <Provider
   store={
     Object {

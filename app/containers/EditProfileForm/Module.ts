@@ -1,7 +1,5 @@
-import { saveUserMutation, getOwnProfile } from '../../queries/User'
-import {
-    showNotificationAction,
-} from '../../lib/Epics/ShowNotificationEpic'
+import { getOwnProfile, saveUserMutation } from '../../queries/User'
+import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { IDependencies, IReduxState } from '../../lib/Module'
 import analytics from '../../lib/analytics'
@@ -108,7 +106,6 @@ export const saveUserDetailsEpic: Epic<
                                 'id',
                             ])(state$) || ''}`
                         }
-
                         return merge(
                             of(routeChangeAction(newRedirectURL)),
                             of({
@@ -125,7 +122,6 @@ export const saveUserDetailsEpic: Epic<
                         )
                     }),
                     catchError(err => {
-                        console.error(err)
                         const notificationPayload = err.includes(
                             'already uses this email'
                         )

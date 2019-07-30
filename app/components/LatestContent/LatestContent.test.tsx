@@ -17,7 +17,7 @@ let props = {
 }
 
 describe('components/LatestContent', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<LatestContent {...props} />)
         expect(wrapper).toMatchSnapshot()
     })

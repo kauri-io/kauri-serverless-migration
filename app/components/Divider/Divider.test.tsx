@@ -4,7 +4,7 @@ import { mountWithTheme } from '../../setupTests'
 let props = {}
 
 describe('components/Divider', () => {
-    it('snapshot should match', () => {
+    it('should match snapshot', () => {
         const wrapper = mountWithTheme(<Divider {...props} />)
         expect(wrapper).toMatchSnapshot()
     })

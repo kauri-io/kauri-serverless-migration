@@ -63,6 +63,7 @@ export default compose(
             'name' | 'attributes' | 'avatar' | 'description' | 'homepage'
         >
     >({
+        displayName: 'CreateCommunityForm',
         handleSubmit: (values, { setSubmitting, props }) => {
             console.info(JSON.stringify(values, null, 2))
             // console.info(values.invitations);

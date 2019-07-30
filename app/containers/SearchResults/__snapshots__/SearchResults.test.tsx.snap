@@ -1,0 +1,784 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`containers/SearchResults should match snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "bgPrimary": "#1E2428",
+        "bgSecondary": "#1E3D3B",
+        "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
+        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+        "disabledBackgroundColor": "#D6D6D6",
+        "disabledTextColor": "#9B9B9B",
+        "divider": "#EBEBEB",
+        "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
+        "hoverTextColor": "#108E72",
+        "padContent": "
+    max-width: 1242px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 1242px) {
+      min-width: 1242px;
+    }
+    @media (max-width: 1242px) {
+      min-width: 90%;
+    }
+  ",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
+    }
+  >
+    <MockedProvider
+      addTypename={true}
+    >
+      <ApolloProvider
+        client={
+          ApolloClient {
+            "__operations_cache__": Map {},
+            "cache": InMemoryCache {
+              "addTypename": true,
+              "cacheKeyRoot": KeyTrie {
+                "weakness": true,
+              },
+              "config": Object {
+                "addTypename": true,
+                "dataIdFromObject": [Function],
+                "fragmentMatcher": HeuristicFragmentMatcher {},
+                "freezeResults": false,
+                "resultCaching": true,
+              },
+              "data": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "maybeBroadcastWatch": [Function],
+              "optimisticData": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "silenceBroadcast": false,
+              "storeReader": StoreReader {
+                "executeSelectionSet": [Function],
+                "executeStoreQuery": [Function],
+                "executeSubSelectedArray": [Function],
+                "freezeResults": false,
+              },
+              "storeWriter": StoreWriter {},
+              "typenameDocumentCache": Map {},
+              "watches": Set {},
+            },
+            "clearStoreCallbacks": Array [],
+            "clientAwareness": Object {},
+            "defaultOptions": Object {},
+            "disableNetworkFetches": false,
+            "link": ApolloLink {
+              "request": [Function],
+            },
+            "mutate": [Function],
+            "query": [Function],
+            "queryDeduplication": true,
+            "reFetchObservableQueries": [Function],
+            "resetStore": [Function],
+            "resetStoreCallbacks": Array [],
+            "ssrMode": false,
+            "store": DataStore {
+              "cache": InMemoryCache {
+                "addTypename": true,
+                "cacheKeyRoot": KeyTrie {
+                  "weakness": true,
+                },
+                "config": Object {
+                  "addTypename": true,
+                  "dataIdFromObject": [Function],
+                  "fragmentMatcher": HeuristicFragmentMatcher {},
+                  "freezeResults": false,
+                  "resultCaching": true,
+                },
+                "data": DepTrackingCache {
+                  "data": Object {},
+                  "depend": [Function],
+                },
+                "maybeBroadcastWatch": [Function],
+                "optimisticData": DepTrackingCache {
+                  "data": Object {},
+                  "depend": [Function],
+                },
+                "silenceBroadcast": false,
+                "storeReader": StoreReader {
+                  "executeSelectionSet": [Function],
+                  "executeStoreQuery": [Function],
+                  "executeSubSelectedArray": [Function],
+                  "freezeResults": false,
+                },
+                "storeWriter": StoreWriter {},
+                "typenameDocumentCache": Map {},
+                "watches": Set {},
+              },
+            },
+            "version": "2.4.13",
+            "watchQuery": [Function],
+          }
+        }
+      >
+        <SearchResults
+          query={
+            Object {
+              "q": "eth",
+            }
+          }
+          router={Object {}}
+        >
+          <section>
+            <SearchResults__ArticlesHeader>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "SearchResults__ArticlesHeader-sc-3rzbew-0",
+                      "isStatic": false,
+                      "lastClassName": "gMlgbs",
+                      "rules": Array [
+                        "background-color:",
+                        [Function],
+                        ";width:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;color:",
+                        [Function],
+                        ";padding:",
+                        [Function],
+                        "px;padding-bottom:",
+                        [Function],
+                        "px;",
+                      ],
+                    },
+                    "displayName": "SearchResults__ArticlesHeader",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "SearchResults__ArticlesHeader-sc-3rzbew-0",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="SearchResults__ArticlesHeader-sc-3rzbew-0 gMlgbs"
+                >
+                  <Typography__styledComponent
+                    color="white"
+                  >
+                    <StyledComponent
+                      color="white"
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                            "isStatic": false,
+                            "lastClassName": "iLJkHN",
+                            "rules": Array [
+                              "color:",
+                              [Function],
+                              ";margin:0px;font-weight:",
+                              "500",
+                              ";",
+                              ";font-size:",
+                              "28",
+                              "px;text-transform:",
+                              [Function],
+                              ";text-align:",
+                              [Function],
+                              ";:hover{color:",
+                              [Function],
+                              ";cursor:",
+                              [Function],
+                              ";}",
+                            ],
+                          },
+                          "displayName": "Typography__styledComponent",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                          "target": "span",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <span
+                        className="Typography__styledComponent-sc-36xkf6-5 iLJkHN"
+                        color="white"
+                      >
+                        Search
+                      </span>
+                    </StyledComponent>
+                  </Typography__styledComponent>
+                  <Typography__component>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "Typography__component-sc-36xkf6-4",
+                            "isStatic": false,
+                            "lastClassName": "kdkRvh",
+                            "rules": Array [
+                              "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
+                              [Function],
+                              "px;line-height:18px;color:",
+                              [Function],
+                              ";",
+                              ";",
+                              [Function],
+                              ";",
+                            ],
+                          },
+                          "displayName": "Typography__component",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "Typography__component-sc-36xkf6-4",
+                          "target": "span",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <span
+                        className="Typography__component-sc-36xkf6-4 kdkRvh"
+                      >
+                        Loading results
+                      </span>
+                    </StyledComponent>
+                  </Typography__component>
+                  <withApollo(Connect(Complete))
+                    query={
+                      Object {
+                        "q": "eth",
+                      }
+                    }
+                    router={Object {}}
+                    setSearchCategory={[Function]}
+                    setSearchResults={[Function]}
+                  >
+                    <ApolloConsumer>
+                      <Connect(Complete)
+                        client={
+                          ApolloClient {
+                            "__operations_cache__": Map {},
+                            "cache": InMemoryCache {
+                              "addTypename": true,
+                              "cacheKeyRoot": KeyTrie {
+                                "weakness": true,
+                              },
+                              "config": Object {
+                                "addTypename": true,
+                                "dataIdFromObject": [Function],
+                                "fragmentMatcher": HeuristicFragmentMatcher {},
+                                "freezeResults": false,
+                                "resultCaching": true,
+                              },
+                              "data": DepTrackingCache {
+                                "data": Object {},
+                                "depend": [Function],
+                              },
+                              "maybeBroadcastWatch": [Function],
+                              "optimisticData": DepTrackingCache {
+                                "data": Object {},
+                                "depend": [Function],
+                              },
+                              "silenceBroadcast": false,
+                              "storeReader": StoreReader {
+                                "executeSelectionSet": [Function],
+                                "executeStoreQuery": [Function],
+                                "executeSubSelectedArray": [Function],
+                                "freezeResults": false,
+                              },
+                              "storeWriter": StoreWriter {},
+                              "typenameDocumentCache": Map {},
+                              "watches": Set {},
+                            },
+                            "clearStoreCallbacks": Array [],
+                            "clientAwareness": Object {},
+                            "defaultOptions": Object {},
+                            "disableNetworkFetches": false,
+                            "link": ApolloLink {
+                              "request": [Function],
+                            },
+                            "mutate": [Function],
+                            "query": [Function],
+                            "queryDeduplication": true,
+                            "reFetchObservableQueries": [Function],
+                            "resetStore": [Function],
+                            "resetStoreCallbacks": Array [],
+                            "ssrMode": false,
+                            "store": DataStore {
+                              "cache": InMemoryCache {
+                                "addTypename": true,
+                                "cacheKeyRoot": KeyTrie {
+                                  "weakness": true,
+                                },
+                                "config": Object {
+                                  "addTypename": true,
+                                  "dataIdFromObject": [Function],
+                                  "fragmentMatcher": HeuristicFragmentMatcher {},
+                                  "freezeResults": false,
+                                  "resultCaching": true,
+                                },
+                                "data": DepTrackingCache {
+                                  "data": Object {},
+                                  "depend": [Function],
+                                },
+                                "maybeBroadcastWatch": [Function],
+                                "optimisticData": DepTrackingCache {
+                                  "data": Object {},
+                                  "depend": [Function],
+                                },
+                                "silenceBroadcast": false,
+                                "storeReader": StoreReader {
+                                  "executeSelectionSet": [Function],
+                                  "executeStoreQuery": [Function],
+                                  "executeSubSelectedArray": [Function],
+                                  "freezeResults": false,
+                                },
+                                "storeWriter": StoreWriter {},
+                                "typenameDocumentCache": Map {},
+                                "watches": Set {},
+                              },
+                            },
+                            "version": "2.4.13",
+                            "watchQuery": [Function],
+                          }
+                        }
+                        query={
+                          Object {
+                            "q": "eth",
+                          }
+                        }
+                        router={Object {}}
+                        setSearchCategory={[Function]}
+                        setSearchResults={[Function]}
+                      >
+                        <Complete
+                          client={
+                            ApolloClient {
+                              "__operations_cache__": Map {},
+                              "cache": InMemoryCache {
+                                "addTypename": true,
+                                "cacheKeyRoot": KeyTrie {
+                                  "weakness": true,
+                                },
+                                "config": Object {
+                                  "addTypename": true,
+                                  "dataIdFromObject": [Function],
+                                  "fragmentMatcher": HeuristicFragmentMatcher {},
+                                  "freezeResults": false,
+                                  "resultCaching": true,
+                                },
+                                "data": DepTrackingCache {
+                                  "data": Object {},
+                                  "depend": [Function],
+                                },
+                                "maybeBroadcastWatch": [Function],
+                                "optimisticData": DepTrackingCache {
+                                  "data": Object {},
+                                  "depend": [Function],
+                                },
+                                "silenceBroadcast": false,
+                                "storeReader": StoreReader {
+                                  "executeSelectionSet": [Function],
+                                  "executeStoreQuery": [Function],
+                                  "executeSubSelectedArray": [Function],
+                                  "freezeResults": false,
+                                },
+                                "storeWriter": StoreWriter {},
+                                "typenameDocumentCache": Map {},
+                                "watches": Set {},
+                              },
+                              "clearStoreCallbacks": Array [],
+                              "clientAwareness": Object {},
+                              "defaultOptions": Object {},
+                              "disableNetworkFetches": false,
+                              "link": ApolloLink {
+                                "request": [Function],
+                              },
+                              "mutate": [Function],
+                              "query": [Function],
+                              "queryDeduplication": true,
+                              "reFetchObservableQueries": [Function],
+                              "resetStore": [Function],
+                              "resetStoreCallbacks": Array [],
+                              "ssrMode": false,
+                              "store": DataStore {
+                                "cache": InMemoryCache {
+                                  "addTypename": true,
+                                  "cacheKeyRoot": KeyTrie {
+                                    "weakness": true,
+                                  },
+                                  "config": Object {
+                                    "addTypename": true,
+                                    "dataIdFromObject": [Function],
+                                    "fragmentMatcher": HeuristicFragmentMatcher {},
+                                    "freezeResults": false,
+                                    "resultCaching": true,
+                                  },
+                                  "data": DepTrackingCache {
+                                    "data": Object {},
+                                    "depend": [Function],
+                                  },
+                                  "maybeBroadcastWatch": [Function],
+                                  "optimisticData": DepTrackingCache {
+                                    "data": Object {},
+                                    "depend": [Function],
+                                  },
+                                  "silenceBroadcast": false,
+                                  "storeReader": StoreReader {
+                                    "executeSelectionSet": [Function],
+                                    "executeStoreQuery": [Function],
+                                    "executeSubSelectedArray": [Function],
+                                    "freezeResults": false,
+                                  },
+                                  "storeWriter": StoreWriter {},
+                                  "typenameDocumentCache": Map {},
+                                  "watches": Set {},
+                                },
+                              },
+                              "version": "2.4.13",
+                              "watchQuery": [Function],
+                            }
+                          }
+                          query={
+                            Object {
+                              "q": "eth",
+                            }
+                          }
+                          routeChangeAction={[Function]}
+                          router={Object {}}
+                          setSearchCategory={[Function]}
+                          setSearchResults={[Function]}
+                        >
+                          <ResourceSearch__SearchWrapper
+                            className="global-search-wrapper"
+                          >
+                            <StyledComponent
+                              className="global-search-wrapper"
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "ResourceSearch__SearchWrapper-sc-7ioqrv-1",
+                                    "isStatic": true,
+                                    "lastClassName": "hwZepJ",
+                                    "rules": Array [
+                                      "width:300px;margin-bottom:64px;margin-top:19px;display:grid;position:relative;border-radius:4px;&:hover{& > input{border:1px solid #209b86;}}& > .certain-category-icon{position:absolute;top:11px;right:9px;}",
+                                    ],
+                                  },
+                                  "displayName": "ResourceSearch__SearchWrapper",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "ResourceSearch__SearchWrapper-sc-7ioqrv-1",
+                                  "target": "div",
+                                  "toString": [Function],
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                            >
+                              <div
+                                className="global-search-wrapper ResourceSearch__SearchWrapper-sc-7ioqrv-1 hwZepJ"
+                              >
+                                <ResourceSearch__SearchInput
+                                  onChange={[Function]}
+                                  value="eth"
+                                >
+                                  <StyledComponent
+                                    forwardedComponent={
+                                      Object {
+                                        "$$typeof": Symbol(react.forward_ref),
+                                        "attrs": Array [],
+                                        "componentStyle": ComponentStyle {
+                                          "componentId": "ResourceSearch__SearchInput-sc-7ioqrv-0",
+                                          "isStatic": false,
+                                          "lastClassName": "fTtWOd",
+                                          "rules": Array [
+                                            "border:1px solid white;border-radius:4px;background:transparent;height:40px;outline:none;padding:0 ",
+                                            [Function],
+                                            "px;",
+                                          ],
+                                        },
+                                        "displayName": "ResourceSearch__SearchInput",
+                                        "foldedComponentIds": Array [],
+                                        "render": [Function],
+                                        "styledComponentId": "ResourceSearch__SearchInput-sc-7ioqrv-0",
+                                        "target": "input",
+                                        "toString": [Function],
+                                        "warnTooManyClasses": [Function],
+                                        "withComponent": [Function],
+                                      }
+                                    }
+                                    forwardedRef={null}
+                                    onChange={[Function]}
+                                    value="eth"
+                                  >
+                                    <input
+                                      className="ResourceSearch__SearchInput-sc-7ioqrv-0 fTtWOd"
+                                      onChange={[Function]}
+                                      value="eth"
+                                    />
+                                  </StyledComponent>
+                                </ResourceSearch__SearchInput>
+                                <SearchSVG>
+                                  <div
+                                    className="certain-category-icon"
+                                  >
+                                    <svg
+                                      fill="white"
+                                      height="18"
+                                      viewBox="0 0 24 24"
+                                      width="18"
+                                    >
+                                      <path
+                                        clipRule="evenodd"
+                                        d="M11 4C7.13401 4 4 7.13401 4 11C4 14.866 7.13401 18 11 18C14.866 18 18 14.866 18 11C18 7.13401 14.866 4 11 4ZM2 11C2 6.02944 6.02944 2 11 2C15.9706 2 20 6.02944 20 11C20 15.9706 15.9706 20 11 20C6.02944 20 2 15.9706 2 11Z"
+                                        fill="white"
+                                        fillRule="evenodd"
+                                      />
+                                      <path
+                                        clipRule="evenodd"
+                                        d="M15.9429 15.9429C16.3334 15.5524 16.9666 15.5524 17.3571 15.9429L21.7071 20.2929C22.0976 20.6834 22.0976 21.3166 21.7071 21.7071C21.3166 22.0977 20.6834 22.0977 20.2929 21.7071L15.9429 17.3571C15.5524 16.9666 15.5524 16.3334 15.9429 15.9429Z"
+                                        fill="white"
+                                        fillRule="evenodd"
+                                      />
+                                    </svg>
+                                  </div>
+                                </SearchSVG>
+                              </div>
+                            </StyledComponent>
+                          </ResourceSearch__SearchWrapper>
+                        </Complete>
+                      </Connect(Complete)>
+                    </ApolloConsumer>
+                  </withApollo(Connect(Complete))>
+                </div>
+              </StyledComponent>
+            </SearchResults__ArticlesHeader>
+            <ResourceResults
+              loading={true}
+              query="eth"
+              setSearchCategory={[Function]}
+              totalElementsBreakdown={
+                Object {
+                  "ARTICLE": 0,
+                  "COLLECTION": 0,
+                  "COMMENT": 0,
+                  "COMMUNITY": 0,
+                  "CURATED_LIST": 0,
+                  "REQUEST": 0,
+                  "USER": 0,
+                }
+              }
+            >
+              <LoadingComponent>
+                <style
+                  type="text/css"
+                >
+                  
+        .centered-wrapper{
+          display: flex;
+          flex: 1;
+          align-items: center;
+          justify-content: center;
+        }
+        .lds-ellipsis {
+          display: inline-block;
+          position: relative;
+          width: 64px;
+          height: 64px;
+        }
+        .lds-ellipsis div {
+          position: absolute;
+          top: 27px;
+          width: 11px;
+          height: 11px;
+          border-radius: 50%;
+          background: #0BA986;
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+        .lds-ellipsis div:nth-child(1) {
+          left: 6px;
+          animation: lds-ellipsis1 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(2) {
+          left: 6px;
+          animation: lds-ellipsis2 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(3) {
+          left: 26px;
+          animation: lds-ellipsis2 0.6s infinite;
+        }
+        .lds-ellipsis div:nth-child(4) {
+          left: 45px;
+          animation: lds-ellipsis3 0.6s infinite;
+        }
+        @keyframes lds-ellipsis1 {
+          0% {
+            transform: scale(0);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+        @keyframes lds-ellipsis3 {
+          0% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(0);
+          }
+        }
+        @keyframes lds-ellipsis2 {
+          0% {
+            transform: translate(0, 0);
+          }
+          100% {
+            transform: translate(19px, 0);
+          }
+        }
+        
+                </style>
+                <div
+                  className="centered-wrapper"
+                >
+                  <div
+                    className="lds-ellipsis"
+                  >
+                    <div />
+                    <div />
+                    <div />
+                    <div />
+                  </div>
+                </div>
+              </LoadingComponent>
+            </ResourceResults>
+          </section>
+        </SearchResults>
+      </ApolloProvider>
+    </MockedProvider>
+  </ThemeProvider>
+</Provider>
+`;
