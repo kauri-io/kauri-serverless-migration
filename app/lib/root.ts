@@ -47,7 +47,7 @@ import { voteEpic } from "../containers/Article/Module";
 // } from "../components/containers/Community/Module";
 import {
   rejectArticleTransferEpic,
-//   acceptArticleTransferEpic,
+  acceptArticleTransferEpic,
 //   finaliseArticleTransferEpic,
 } from "../containers/PublicProfile/Manage/TransferModule";
 
@@ -82,12 +82,12 @@ const epics = [
     composeCollectionEpic,
     voteEpic,
     rejectArticleTransferEpic,
+    acceptArticleTransferEpic,
+    //   finaliseArticleTransferEpic,
 
     //   createCommunityEpic,
     //   communityCreatedEpic,
     //   updateCommunityEpic,
-    //   acceptArticleTransferEpic,
-    //   finaliseArticleTransferEpic,
     //   curateCommunityResourcesEpic,
     //   approveResourceEpic,
     //   sendCommunityInvitationEpic,

@@ -80,7 +80,7 @@ export const rejectArticleTransferEpic: Epic<
                 notificationType: 'success',
             })
         ),
-        catchError((err) => {
+        catchError(err => {
             console.error(err)
             return of(
                 showNotificationAction({
@@ -94,6 +94,13 @@ export const rejectArticleTransferEpic: Epic<
 
 interface IAcceptArticleTransferPayload {
     id: string
+}
+
+interface IAcceptArticleTransferCommandOutput {
+  hash: string,
+  version: string,
+  articleAuthor: string,
+  dateCreated: string,
 }
 
 const ACCEPT_ARTICLE_TRANSFER = 'ACCEPT_ARTICLE_TRANSFER'
@@ -130,7 +137,7 @@ export const acceptArticleTransferEpic: Epic<
             ).pipe(
                 mergeMap(({ data }) =>
                     from(
-                        apolloSubscriber<any>(
+                        apolloSubscriber<IAcceptArticleTransferCommandOutput>(
                             path<string>(['acceptArticleTransfer', 'hash'])(
                                 data
                             ) || ''
@@ -157,7 +164,17 @@ export const acceptArticleTransferEpic: Epic<
                                 version: parseInt(version, 10),
                             })
                         )
-                )
+                ),
+                catchError(err => {
+                    console.error(err)
+                    return of(
+                        showNotificationAction({
+                            description: 'Please try again!',
+                            message: 'Submission error',
+                            notificationType: 'error',
+                        })
+                    )
+                })
             )
         )
     )
