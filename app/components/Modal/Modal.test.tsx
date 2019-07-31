@@ -86,6 +86,11 @@ describe('components/Modal/Module', () => {
     }
     let result = initialState
 
+    it('should sreturn initial state during initialization', () => {
+        result = Reducer(initialState, { type: 'dummy init' as any })
+        expect(result).toEqual(initialState)
+    })
+
     it('should set the state to isModalOpen: true and children', () => {
         result = Reducer(
             initialState,

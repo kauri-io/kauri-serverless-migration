@@ -47,5 +47,7 @@ export default (state: IModalState = initialState, action: Action) => {
                 isModalOpen: true,
                 children: action.payload.children,
             }
+        default:
+            return state
     }
 }
