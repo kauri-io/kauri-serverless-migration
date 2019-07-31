@@ -7560,12 +7560,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                                   >
                                                     <Link
-                                                      as="/public-profile/afc2f2bbd4173311be60a7f5d4103b098d2703e8"
-                                                      href="/public-profile?user_id=afc2f2bbd4173311be60a7f5d4103b098d2703e8"
+                                                      as="cooganb/undefined/p"
+                                                      href="/public-profile?user_id=undefined"
                                                       prefetch={true}
                                                     >
                                                       <a
-                                                        href="/public-profile/afc2f2bbd4173311be60a7f5d4103b098d2703e8"
+                                                        href="cooganb/undefined/p"
                                                         onClick={[Function]}
                                                         onMouseEnter={[Function]}
                                                       >
@@ -13144,12 +13144,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                               >
                                                 <Link
-                                                  as="/public-profile/eefb9234302128259d46ed9e223fbc48b5edb5d1"
-                                                  href="/public-profile?user_id=eefb9234302128259d46ed9e223fbc48b5edb5d1"
+                                                  as="julienbrg/undefined/p"
+                                                  href="/public-profile?user_id=undefined"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="/public-profile/eefb9234302128259d46ed9e223fbc48b5edb5d1"
+                                                    href="julienbrg/undefined/p"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
@@ -14655,12 +14655,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                               >
                                                 <Link
-                                                  as="/public-profile/970991bdd61aed3c2cf91e9bf6944960561dbcf5"
-                                                  href="/public-profile?user_id=970991bdd61aed3c2cf91e9bf6944960561dbcf5"
+                                                  as="fblauer/undefined/p"
+                                                  href="/public-profile?user_id=undefined"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="/public-profile/970991bdd61aed3c2cf91e9bf6944960561dbcf5"
+                                                    href="fblauer/undefined/p"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
@@ -16199,12 +16199,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                               >
                                                 <Link
-                                                  as="/public-profile/970991bdd61aed3c2cf91e9bf6944960561dbcf5"
-                                                  href="/public-profile?user_id=970991bdd61aed3c2cf91e9bf6944960561dbcf5"
+                                                  as="fblauer/undefined/p"
+                                                  href="/public-profile?user_id=undefined"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="/public-profile/970991bdd61aed3c2cf91e9bf6944960561dbcf5"
+                                                    href="fblauer/undefined/p"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
@@ -18665,12 +18665,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                               >
                                                 <Link
-                                                  as="/public-profile/970991bdd61aed3c2cf91e9bf6944960561dbcf5"
-                                                  href="/public-profile?user_id=970991bdd61aed3c2cf91e9bf6944960561dbcf5"
+                                                  as="fblauer/undefined/p"
+                                                  href="/public-profile?user_id=undefined"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="/public-profile/970991bdd61aed3c2cf91e9bf6944960561dbcf5"
+                                                    href="fblauer/undefined/p"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
@@ -21131,12 +21131,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                               >
                                                 <Link
-                                                  as="/public-profile/824e8fa64ff92b859cc9991ac044e00b665b9b04"
-                                                  href="/public-profile?user_id=824e8fa64ff92b859cc9991ac044e00b665b9b04"
+                                                  as="felipefaraggi/undefined/p"
+                                                  href="/public-profile?user_id=undefined"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="/public-profile/824e8fa64ff92b859cc9991ac044e00b665b9b04"
+                                                    href="felipefaraggi/undefined/p"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
@@ -22669,12 +22669,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                               >
                                                 <Link
-                                                  as="/public-profile/4d91838268f6d6d4e590e8fd2a001cd91c32e7a4"
-                                                  href="/public-profile?user_id=4d91838268f6d6d4e590e8fd2a001cd91c32e7a4"
+                                                  as="craig/undefined/p"
+                                                  href="/public-profile?user_id=undefined"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="/public-profile/4d91838268f6d6d4e590e8fd2a001cd91c32e7a4"
+                                                    href="craig/undefined/p"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >

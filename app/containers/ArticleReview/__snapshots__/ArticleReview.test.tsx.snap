@@ -250,6 +250,15 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                 },
                 "content": "{\\"markdown\\" : \\"test contet 1\\"}",
                 "contentHash": "hash1",
+                "contributors": Array [
+                  Object {
+                    "__typename": "PublicUserDTO",
+                    "avatar": "test avatar 1",
+                    "id": "6791",
+                    "name": "test author name 1",
+                    "username": "test author username 1",
+                  },
+                ],
                 "dateCreated": "2019-01-01",
                 "datePublished": "2019-01-02",
                 "description": "test description 1",
@@ -314,6 +323,15 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                 },
                 "content": "{\\"markdown\\" : \\"test contet 2\\"}",
                 "contentHash": "hash2",
+                "contributors": Array [
+                  Object {
+                    "__typename": "PublicUserDTO",
+                    "avatar": "test avatar 2",
+                    "id": "6792",
+                    "name": "test author name 2",
+                    "username": "test author username 2",
+                  },
+                ],
                 "dateCreated": "2019-01-01",
                 "datePublished": "2019-01-02",
                 "description": "test description 2",

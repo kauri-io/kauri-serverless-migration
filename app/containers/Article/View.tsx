@@ -48,7 +48,7 @@ const ArticleComp = ({
     data: {
         getArticle: {
             id,
-            author,
+            contributors,
             content,
             attributes,
             title,
@@ -107,11 +107,15 @@ const ArticleComp = ({
                             justify="space-between"
                         >
                             <Grid item={true} sm={6}>
-                                <ArticleAvatar
-                                    author={author as Article_author}
-                                    datePublished={datePublished}
-                                    classes={classes}
-                                />
+                                {contributors && contributors[0] && (
+                                    <ArticleAvatar
+                                        author={
+                                            contributors[0] as Article_author
+                                        }
+                                        datePublished={datePublished}
+                                        classes={classes}
+                                    />
+                                )}
                             </Grid>
                             <ArticleActions
                                 userId={userId}

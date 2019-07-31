@@ -253,6 +253,15 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                 },
                 "content": "{\\"markdown\\" : \\"test contet 1\\"}",
                 "contentHash": "hash1",
+                "contributors": Array [
+                  Object {
+                    "__typename": "PublicUserDTO",
+                    "avatar": "test avatar 1",
+                    "id": "6791",
+                    "name": "test author name 1",
+                    "username": "test author username 1",
+                  },
+                ],
                 "dateCreated": "2019-01-01",
                 "datePublished": "2019-01-02",
                 "description": "test description 1",
@@ -331,6 +340,17 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
             communities={Array []}
             content="{\\"markdown\\" : \\"test contet 1\\"}"
             contentHash="hash1"
+            contributors={
+              Array [
+                Object {
+                  "__typename": "PublicUserDTO",
+                  "avatar": "test avatar 1",
+                  "id": "6791",
+                  "name": "test author name 1",
+                  "username": "test author username 1",
+                },
+              ]
+            }
             dateCreated="2019-01-01"
             datePublished="2019-01-02"
             description="test description 1"
@@ -905,6 +925,17 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
             }
             content="{\\"markdown\\" : \\"test contet 1\\"}"
             contentHash="hash1"
+            contributors={
+              Array [
+                Object {
+                  "__typename": "PublicUserDTO",
+                  "avatar": "test avatar 1",
+                  "id": "6791",
+                  "name": "test author name 1",
+                  "username": "test author username 1",
+                },
+              ]
+            }
             dateCreated="2019-01-01"
             datePublished="2019-01-02"
             deleteDraftArticleAction={[MockFunction]}

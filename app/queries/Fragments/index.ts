@@ -45,6 +45,12 @@ export const Article = gql`
             id
             type
         }
+        contributors {
+            id
+            name
+            username
+            avatar
+        }
         description
         id
         version

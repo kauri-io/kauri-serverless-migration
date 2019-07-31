@@ -479,6 +479,26 @@ export interface getCommunityAndPendingArticles_getCommunity_approved_ArticleDTO
   version: number | null;
 }
 
+export interface getCommunityAndPendingArticles_getCommunity_approved_ArticleDTO_contributors {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
 export interface getCommunityAndPendingArticles_getCommunity_approved_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -646,6 +666,11 @@ export interface getCommunityAndPendingArticles_getCommunity_approved_ArticleDTO
    */
   associatedNfts: (getCommunityAndPendingArticles_getCommunity_approved_ArticleDTO_associatedNfts | null)[] | null;
   resourceIdentifier: getCommunityAndPendingArticles_getCommunity_approved_ArticleDTO_resourceIdentifier | null;
+  /**
+   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
+   * This operation can only be performed by logged user
+   */
+  contributors: (getCommunityAndPendingArticles_getCommunity_approved_ArticleDTO_contributors | null)[] | null;
   /**
    * Description of the article - First 500 characters of the plaintext content)
    */
@@ -922,6 +947,26 @@ export interface getCommunityAndPendingArticles_getCommunity_pending_ArticleDTO_
   version: number | null;
 }
 
+export interface getCommunityAndPendingArticles_getCommunity_pending_ArticleDTO_contributors {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
 export interface getCommunityAndPendingArticles_getCommunity_pending_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -1089,6 +1134,11 @@ export interface getCommunityAndPendingArticles_getCommunity_pending_ArticleDTO 
    */
   associatedNfts: (getCommunityAndPendingArticles_getCommunity_pending_ArticleDTO_associatedNfts | null)[] | null;
   resourceIdentifier: getCommunityAndPendingArticles_getCommunity_pending_ArticleDTO_resourceIdentifier | null;
+  /**
+   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
+   * This operation can only be performed by logged user
+   */
+  contributors: (getCommunityAndPendingArticles_getCommunity_pending_ArticleDTO_contributors | null)[] | null;
   /**
    * Description of the article - First 500 characters of the plaintext content)
    */

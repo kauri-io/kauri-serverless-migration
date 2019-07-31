@@ -7,6 +7,8 @@ import { Typography } from '@material-ui/core'
 import { Theme, makeStyles } from '@material-ui/core/styles'
 import moment from 'moment'
 import Link from 'next/link'
+import { getProfileURL } from '../../lib/getURLs'
+import { Article_author } from '../../queries/Fragments/__generated__/Article'
 
 interface IProps {
     id: string
@@ -60,10 +62,7 @@ const ArticleCard: React.FC<IProps> = ({
     id,
 }) => {
     const classes = ArticleCardStyles({})
-    const authorHref = {
-        href: `/public-profile?user_id=${author && author.id}`,
-        as: `/public-profile/${author && author.id}`,
-    }
+    const authorHref = getProfileURL(author as Article_author) // TODO update as contributors[0]
     return (
         <Card
             key={id}

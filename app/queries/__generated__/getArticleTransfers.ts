@@ -33,6 +33,26 @@ export interface getArticleTransfers_getArticleTransfers_content_article_resourc
   version: number | null;
 }
 
+export interface getArticleTransfers_getArticleTransfers_content_article_contributors {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
 export interface getArticleTransfers_getArticleTransfers_content_article_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -200,6 +220,11 @@ export interface getArticleTransfers_getArticleTransfers_content_article {
    */
   associatedNfts: (getArticleTransfers_getArticleTransfers_content_article_associatedNfts | null)[] | null;
   resourceIdentifier: getArticleTransfers_getArticleTransfers_content_article_resourceIdentifier | null;
+  /**
+   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
+   * This operation can only be performed by logged user
+   */
+  contributors: (getArticleTransfers_getArticleTransfers_content_article_contributors | null)[] | null;
   /**
    * Description of the article - First 500 characters of the plaintext content)
    */
