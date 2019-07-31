@@ -6,7 +6,7 @@ import Avatar from '@material-ui/core/Avatar'
 import { Typography } from '@material-ui/core'
 import { Theme, makeStyles } from '@material-ui/core/styles'
 import moment from 'moment'
-import Link from '../Link'
+import Link from 'next/link'
 
 interface IProps {
     id: string
@@ -23,8 +23,11 @@ interface IProps {
     }
     datePublished: string | null
     description: string | null
-    href?: string
     className?: string
+    href: {
+        as: string
+        href: string
+    }
 }
 
 export const ArticleCardStyles = makeStyles((theme: Theme) => ({
@@ -52,44 +55,50 @@ const ArticleCard: React.FC<IProps> = ({
     attributes,
     datePublished,
     description,
-    href,
     className,
+    href,
     id,
 }) => {
     const classes = ArticleCardStyles({})
+    const authorHref = {
+        href: `/public-profile?user_id=${author && author.id}`,
+        as: `/public-profile/${author && author.id}`,
+    }
     return (
         <Card
             key={id}
             className={`${classes.card} ${className ? className : ''}`}
         >
-            <Link
-                useAnchorTag={true}
-                href={`/public-profile/${author && author.id}`}
-            >
-                <CardHeader
-                    className={classes.header}
-                    avatar={
-                        author && author.avatar ? (
-                            <Avatar src={author && author.avatar} />
-                        ) : (
-                            <Avatar
-                                className={classes.avatar}
-                                aria-label={String(author && author.username)}
-                            >
-                                {author &&
-                                    author.username &&
-                                    author.username.charAt(0)}
-                            </Avatar>
-                        )
-                    }
-                    title={
-                        author && (author.name || author.username || author.id)
-                    }
-                    subheader={moment(String(datePublished)).fromNow()}
-                />
+            <Link href={authorHref.href} as={authorHref.as}>
+                <a>
+                    <CardHeader
+                        className={classes.header}
+                        avatar={
+                            author && author.avatar ? (
+                                <Avatar src={author && author.avatar} />
+                            ) : (
+                                <Avatar
+                                    className={classes.avatar}
+                                    aria-label={String(
+                                        author && author.username
+                                    )}
+                                >
+                                    {author &&
+                                        author.username &&
+                                        author.username.charAt(0)}
+                                </Avatar>
+                            )
+                        }
+                        title={
+                            author &&
+                            (author.name || author.username || author.id)
+                        }
+                        subheader={moment(String(datePublished)).fromNow()}
+                    />
+                </a>
             </Link>
-            <Link useAnchorTag={true} href={href}>
-                <>
+            <Link href={href.href} as={href.as}>
+                <a>
                     {attributes && attributes.background && (
                         <CardMedia
                             className={classes.media}
@@ -112,7 +121,7 @@ const ArticleCard: React.FC<IProps> = ({
                             )}
                         </Typography>
                     </CardContent>
-                </>
+                </a>
             </Link>
         </Card>
     )

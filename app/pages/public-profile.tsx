@@ -5,16 +5,16 @@ import App from '../layouts'
 import PublicProfile from '../containers/PublicProfile'
 import { withRouter } from 'next/router'
 
-const PublicProfilePage = () => (
+const PublicProfilePage = props => (
     <App>
         <PublicProfile
             userId={
-                this.props.router &&
-                this.props.router.query &&
-                this.props.router.query['user_id']
+                props.router &&
+                props.router.query &&
+                props.router.query['user_id']
             }
-            routeChangeAction={this.props.routeChangAction}
-            router={this.props.router}
+            routeChangeAction={props.routeChangAction}
+            router={props.router}
         />
     </App>
 )

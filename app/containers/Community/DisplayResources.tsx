@@ -13,6 +13,7 @@ import { BodyCard } from '../../components/Typography'
 import { removeResourceVariables } from '../../queries/__generated__/removeResource'
 import ArticlesEmptyState from './EmptyStates/Articles'
 import CollectionsEmptyState from './EmptyStates/Collections'
+import getArticleHref from '../../lib/getArticleHref'
 
 const Container = styled.div`
     margin-left: ${props => props.theme.space[3]}px;
@@ -72,18 +73,7 @@ const RenderResources = (
                   username: '',
               }
     if (article.__typename === 'ArticleDTO') {
-        return (
-            <ArticleCard
-                key={String(article.id)}
-                id={String(article.id)}
-                version={Number(article.version)}
-                description={article.description}
-                datePublished={article.datePublished || article.dateCreated}
-                title={String(article.title)}
-                attributes={article.attributes}
-                author={article.author}
-            />
-        )
+        return <ArticleCard href={getArticleHref(article)} {...article} />
     } else if (article.__typename === 'CollectionDTO') {
         const counter =
             article.sections &&

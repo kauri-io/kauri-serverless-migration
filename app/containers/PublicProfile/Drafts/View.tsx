@@ -15,6 +15,7 @@ import {
     IDeleteDraftArticleAction,
     IDeleteDraftArticlePayload,
 } from '../../ArticleDraft/DeleteDraftArticleModule'
+import getArticleHref from '../../../lib/getArticleHref'
 
 interface IArticlesProps {
     data: searchPersonalArticles
@@ -43,7 +44,13 @@ const Articles: React.FC<IArticlesProps> = ({ data, routeChangeAction }) => {
             <Fragment>
                 <Masonry withPadding={false}>
                     {articles.map(
-                        article => article && <ArticleCard {...article} />
+                        article =>
+                            article && (
+                                <ArticleCard
+                                    href={getArticleHref(article)}
+                                    {...article}
+                                />
+                            )
                     )}
                 </Masonry>
             </Fragment>
