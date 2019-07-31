@@ -3,14 +3,12 @@ import styled from 'styled-components'
 import { IReduxState, IDependencies } from '../../lib/Module'
 import analytics from '../../lib/analytics'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import {
     getArticleTitleQuery,
     addArticleToCollectionMutation,
     getCollectionTitleQuery,
 } from '../../queries/Article'
 import {
-    closeModalAction,
     openModalAction,
 } from '../../components/Modal/Module'
 import AlertViewComponent from '../../components/Modal/AlertView'

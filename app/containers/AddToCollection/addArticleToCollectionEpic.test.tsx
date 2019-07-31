@@ -26,10 +26,7 @@ describe('addArticleToCollectionEpic', () => {
         const mockPersonalSign = () => Promise.resolve('abc')
         const mockApolloSubscriber = () => Promise.resolve(true)
         const id = '1234567890-'
-        const author = 'julz'
-        const contentHash = 'LJLREW68184'
         const version = 123
-        const dateCreated = '2019'
         const mockGetArticle = {
             id,
             version,
@@ -41,7 +38,7 @@ describe('addArticleToCollectionEpic', () => {
             author: { id: '123', name: 'Alice' },
             title,
         }
-        const getCollection = { title, id }
+        const getCollection: any = { title, id }
         const mockApolloClient = {
             query: () =>
                 Promise.resolve({

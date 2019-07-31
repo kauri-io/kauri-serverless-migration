@@ -4,8 +4,7 @@ import {
     openAddArticleToCollectionConfirmationModalAction,
 } from './Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
-import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
-import { closeModalAction, openModalAction } from '../../components/Modal/Module'
+import { closeModalAction } from '../../components/Modal/Module'
 
 describe('openAddArticleToCollectionConfirmationModalEpic', () => {
     beforeAll(() => {
@@ -24,22 +23,12 @@ describe('openAddArticleToCollectionConfirmationModalEpic', () => {
         const mockPersonalSign = () => Promise.resolve('abc')
         const mockApolloSubscriber = () => Promise.resolve(true)
         const id = '1234567890-'
-        const author = 'julz'
-        const contentHash = 'LJLREW68184'
-        const version = 123
-        const dateCreated = '2019'
-        const mockGetArticle = {
-            id,
-            version,
-            contentHash: 'LJLREW68184',
-            contributor: 'abc',
-            authorId: id,
-            dateCreated: '2019',
-            owner: { id: '123', name: 'Alice', type: 'USER' },
-            author: { id: '123', name: 'Alice' },
+        const getCollection = {
             title,
+            id,
+            __typename: 'CollectionDTO' as any,
+            name: 'lol',
         }
-        const getCollection = { title, id, __typename: 'CollectionDTO' as any, name: 'lol' }
         const mockApolloClient = {
             query: () =>
                 Promise.resolve({
@@ -55,11 +44,11 @@ describe('openAddArticleToCollectionConfirmationModalEpic', () => {
             resetStore: () => {},
         }
 
-        const sourceAction = openAddArticleToCollectionConfirmationModalAction(
-            {
-              getCollection, routeChangeAction ,closeModalAction
-            },
-        )
+        const sourceAction = openAddArticleToCollectionConfirmationModalAction({
+            getCollection,
+            routeChangeAction,
+            closeModalAction,
+        })
         const resultingActions = await testEpic(
             openAddArticleToCollectionConfirmationModalEpic,
             sourceAction,
