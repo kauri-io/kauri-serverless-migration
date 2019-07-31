@@ -656,6 +656,7 @@ export const addArticleToCollectionMutation = gql`
 export const getCollectionTitleQuery = gql`
     query getCollectionTitle($id: String!) {
         getCollection(id: $id) {
+            id
             name
         }
     }

@@ -10,7 +10,6 @@ import { path } from 'ramda'
 import {
     addCommentVariables,
     addComment,
-    addComment_addComment,
 } from '../../queries/__generated__/addComment'
 
 export interface IVoteAction {
