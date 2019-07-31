@@ -571,7 +571,17 @@ exports[`containers/Article should match snapshot 1`] = `
                 className="MuiGrid-root makeStyles-root-12 MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-justify-xs-center"
               >
                 <Hidden
+                  implementation="js"
+                  lgDown={false}
+                  lgUp={false}
+                  mdDown={false}
+                  mdUp={false}
                   smDown={true}
+                  smUp={false}
+                  xlDown={false}
+                  xlUp={false}
+                  xsDown={false}
+                  xsUp={false}
                 >
                   <WithWidth(HiddenJs)
                     lgDown={false}
@@ -6182,7 +6192,17 @@ exports[`containers/Article should match snapshot 1`] = `
                   </ForwardRef(Grid)>
                 </WithStyles(ForwardRef(Grid))>
                 <Hidden
+                  implementation="js"
+                  lgDown={false}
+                  lgUp={false}
+                  mdDown={false}
+                  mdUp={false}
                   smDown={true}
+                  smUp={false}
+                  xlDown={false}
+                  xlUp={false}
+                  xsDown={false}
+                  xsUp={false}
                 >
                   <WithWidth(HiddenJs)
                     lgDown={false}

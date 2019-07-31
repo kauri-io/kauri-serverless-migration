@@ -438,7 +438,7 @@ exports[`containers/ArticleRejected should match snapshot 1`] = `
                           "componentStyle": ComponentStyle {
                             "componentId": "SecondaryButton-sy4hb2-0",
                             "isStatic": false,
-                            "lastClassName": "fCmNwl",
+                            "lastClassName": "faBvdL",
                             "rules": Array [
                               "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
                               [Function],
@@ -480,7 +480,7 @@ exports[`containers/ArticleRejected should match snapshot 1`] = `
                       type="button"
                     >
                       <button
-                        className="SecondaryButton-sy4hb2-0 fCmNwl"
+                        className="SecondaryButton-sy4hb2-0 faBvdL"
                         color="white"
                         fontSize={0}
                         fontWeight={700}

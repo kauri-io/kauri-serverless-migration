@@ -243,7 +243,7 @@ exports[`components/Tooltip/ShareArticle should match snapshot 1`] = `
                         "componentStyle": ComponentStyle {
                           "componentId": "TertiaryButton-sc-1rjobqw-0",
                           "isStatic": false,
-                          "lastClassName": "MFFdZ",
+                          "lastClassName": "bOyMCf",
                           "rules": Array [
                             "display:flex;align-items:center;border:none;background-color:transparent;cursor:",
                             [Function],
@@ -277,7 +277,7 @@ exports[`components/Tooltip/ShareArticle should match snapshot 1`] = `
                     type="button"
                   >
                     <button
-                      className="TertiaryButton-sc-1rjobqw-0 MFFdZ"
+                      className="TertiaryButton-sc-1rjobqw-0 bOyMCf"
                       color="black"
                       disabled={false}
                       fontSize={0}

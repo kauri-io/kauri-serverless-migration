@@ -253,7 +253,7 @@ exports[`containers/Error should match snapshot 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "PrimaryButton-sc-1cbxa53-0",
                         "isStatic": false,
-                        "lastClassName": "bVbdII",
+                        "lastClassName": "gGcsYX",
                         "rules": Array [
                           "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
                           [Function],
@@ -293,7 +293,7 @@ exports[`containers/Error should match snapshot 1`] = `
                   type="submit"
                 >
                   <button
-                    className="PrimaryButton-sc-1cbxa53-0 bVbdII"
+                    className="PrimaryButton-sc-1cbxa53-0 gGcsYX"
                     color="white"
                     fontSize={0}
                     fontWeight={700}

@@ -51,10 +51,10 @@ import {
     acceptArticleTransferEpic,
     finaliseArticleTransferEpic,
 } from '../containers/PublicProfile/Manage/TransferModule'
+import { saveUserDetailsEpic } from '../containers/EditProfileForm/Module'
+import { addCommentEpic } from '../containers/Article/Module'
 
-// TODO: // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
 // TODO: // import { addArticleToCollectionEpic } from "../containers/AddToCollection/Module";
-// import { saveUserDetailsEpic } from "../components/common/EditProfile/Module";
 export const rootReducer = {
     app,
     modal,
@@ -98,9 +98,9 @@ const epics = [
     communityCreatedEpic,
     updateCommunityEpic,
     createCommunityEpic,
+    saveUserDetailsEpic,
+    addCommentEpic,
 
-    //   TODO: addCommentEpic,
-    //   saveUserDetailsEpic,
     // addArticleToCollectionEpic,
 ]
 
