@@ -21,6 +21,15 @@ export const generateArticle = (mod: number) => ({
         id: `123${mod}`,
         version: 1,
     },
+    contributors: [
+        {
+            __typename: 'PublicUserDTO' as Article_author['__typename'],
+            id: `679${mod}`,
+            username: `test author username ${mod}`,
+            name: `test author name ${mod}`,
+            avatar: `test avatar ${mod}`,
+        },
+    ],
     description: `test description ${mod}`,
     id: `123${mod}`,
     version: 1,

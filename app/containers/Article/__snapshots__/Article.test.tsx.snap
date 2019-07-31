@@ -255,6 +255,15 @@ exports[`containers/Article should match snapshot 1`] = `
                       },
                       "content": "{\\"markdown\\" : \\"test contet 2\\"}",
                       "contentHash": "hash2",
+                      "contributors": Array [
+                        Object {
+                          "__typename": "PublicUserDTO",
+                          "avatar": "test avatar 2",
+                          "id": "6792",
+                          "name": "test author name 2",
+                          "username": "test author username 2",
+                        },
+                      ],
                       "dateCreated": "2019-01-01",
                       "datePublished": "2019-01-02",
                       "description": "test description 2",
@@ -323,6 +332,15 @@ exports[`containers/Article should match snapshot 1`] = `
                       },
                       "content": "{\\"markdown\\" : \\"test contet 3\\"}",
                       "contentHash": "hash3",
+                      "contributors": Array [
+                        Object {
+                          "__typename": "PublicUserDTO",
+                          "avatar": "test avatar 3",
+                          "id": "6793",
+                          "name": "test author name 3",
+                          "username": "test author username 3",
+                        },
+                      ],
                       "dateCreated": "2019-01-01",
                       "datePublished": "2019-01-02",
                       "description": "test description 3",
@@ -399,6 +417,15 @@ exports[`containers/Article should match snapshot 1`] = `
                 },
                 "content": "{\\"markdown\\" : \\"test contet 1\\"}",
                 "contentHash": "hash1",
+                "contributors": Array [
+                  Object {
+                    "__typename": "PublicUserDTO",
+                    "avatar": "test avatar 1",
+                    "id": "6791",
+                    "name": "test author name 1",
+                    "username": "test author username 1",
+                  },
+                ],
                 "dateCreated": "2019-01-01",
                 "datePublished": "2019-01-02",
                 "description": "test description 1",
@@ -2862,6 +2889,17 @@ exports[`containers/Article should match snapshot 1`] = `
                                     }
                                     content="{\\"markdown\\" : \\"test contet 2\\"}"
                                     contentHash="hash2"
+                                    contributors={
+                                      Array [
+                                        Object {
+                                          "__typename": "PublicUserDTO",
+                                          "avatar": "test avatar 2",
+                                          "id": "6792",
+                                          "name": "test author name 2",
+                                          "username": "test author username 2",
+                                        },
+                                      ]
+                                    }
                                     dateCreated="2019-01-01"
                                     datePublished="2019-01-02"
                                     description="test description 2"
@@ -2970,12 +3008,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                               className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-163 makeStyles-card-3 MuiPaper-rounded"
                                             >
                                               <Link
-                                                as="/public-profile/6792"
-                                                href="/public-profile?user_id=6792"
+                                                as="test-author-username-2/undefined/p"
+                                                href="/public-profile?user_id=undefined"
                                                 prefetch={true}
                                               >
                                                 <a
-                                                  href="/public-profile/6792"
+                                                  href="test-author-username-2/undefined/p"
                                                   onClick={[Function]}
                                                   onMouseEnter={[Function]}
                                                 >
@@ -4499,6 +4537,17 @@ exports[`containers/Article should match snapshot 1`] = `
                                     }
                                     content="{\\"markdown\\" : \\"test contet 3\\"}"
                                     contentHash="hash3"
+                                    contributors={
+                                      Array [
+                                        Object {
+                                          "__typename": "PublicUserDTO",
+                                          "avatar": "test avatar 3",
+                                          "id": "6793",
+                                          "name": "test author name 3",
+                                          "username": "test author username 3",
+                                        },
+                                      ]
+                                    }
                                     dateCreated="2019-01-01"
                                     datePublished="2019-01-02"
                                     description="test description 3"
@@ -4607,12 +4656,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                               className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-163 makeStyles-card-3 MuiPaper-rounded"
                                             >
                                               <Link
-                                                as="/public-profile/6793"
-                                                href="/public-profile?user_id=6793"
+                                                as="test-author-username-3/undefined/p"
+                                                href="/public-profile?user_id=undefined"
                                                 prefetch={true}
                                               >
                                                 <a
-                                                  href="/public-profile/6793"
+                                                  href="test-author-username-3/undefined/p"
                                                   onClick={[Function]}
                                                   onMouseEnter={[Function]}
                                                 >

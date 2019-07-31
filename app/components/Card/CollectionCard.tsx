@@ -327,7 +327,7 @@ const RenderCardContent: React.SFC<ICardContentProps> = ({
                 username={username}
                 resourceType={resourceType}
                 collectionURL={getCollectionURL({
-                    title: String(name),
+                    name,
                     id,
                 })}
             />
@@ -347,7 +347,7 @@ const RenderCardContent: React.SFC<ICardContentProps> = ({
                 username={username}
                 resourceType={resourceType}
                 collectionURL={getCollectionURL({
-                    title: String(name),
+                    name,
                     id,
                 })}
             />

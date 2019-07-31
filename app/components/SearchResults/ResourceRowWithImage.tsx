@@ -16,6 +16,7 @@ const ResourceRow = styled.div`
     background-color: ${props => props.theme.colors.white};
     border-radius: 4px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
+    cursor: pointer;
 `
 
 const Content = styled.div`

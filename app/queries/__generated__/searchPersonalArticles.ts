@@ -33,6 +33,26 @@ export interface searchPersonalArticles_searchArticles_content_resourceIdentifie
   version: number | null;
 }
 
+export interface searchPersonalArticles_searchArticles_content_contributors {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
 export interface searchPersonalArticles_searchArticles_content_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -201,6 +221,11 @@ export interface searchPersonalArticles_searchArticles_content {
   associatedNfts: (searchPersonalArticles_searchArticles_content_associatedNfts | null)[] | null;
   resourceIdentifier: searchPersonalArticles_searchArticles_content_resourceIdentifier | null;
   /**
+   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
+   * This operation can only be performed by logged user
+   */
+  contributors: (searchPersonalArticles_searchArticles_content_contributors | null)[] | null;
+  /**
    * Description of the article - First 500 characters of the plaintext content)
    */
   description: string | null;
@@ -306,5 +331,5 @@ export interface searchPersonalArticlesVariables {
   userId?: string | null;
   size?: number | null;
   page?: number | null;
-  text: string;
+  text?: string | null;
 }

@@ -4,6 +4,8 @@ import UserAvatarComponent, {
     IProps as UserAvatarComponentProps,
 } from '../UserAvatar'
 import styled from 'styled-components'
+import Link from 'next/link'
+import { getProfileURL } from '../../lib/getURLs'
 
 const ContributorsContainer = styled.div`
     display: flex;
@@ -15,25 +17,25 @@ const ContributorsContainer = styled.div`
 
 interface IProps {
     contributors: UserAvatarComponentProps[]
-    linkComponent: (children: React.ReactElement<any>, route: string) => void
 }
 
-const TopContributors: React.FunctionComponent<IProps> = ({
-    contributors,
-    linkComponent,
-}) => (
+const TopContributors: React.FunctionComponent<IProps> = ({ contributors }) => (
     <TopResourcesSection>
         <Title2>Top Contributors</Title2>
         <ContributorsContainer>
-            {contributors.map(contributor =>
-                linkComponent(
-                    <UserAvatarComponent
-                        key={contributor.userId}
-                        {...contributor}
-                    />,
-                    `/public-profile/${contributor.userId}`
+            {contributors.map(contributor => {
+                const url = getProfileURL(contributor)
+                return (
+                    <Link href={url.href} as={url.as}>
+                        <a>
+                            <UserAvatarComponent
+                                key={contributor.userId}
+                                {...contributor}
+                            />
+                        </a>
+                    </Link>
                 )
-            )}
+            })}
         </ContributorsContainer>
     </TopResourcesSection>
 )

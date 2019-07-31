@@ -110,7 +110,7 @@ class CollectionPage extends Component<IProps> {
             } = this.props.data.getCollection
             const { userId, routeChangeAction, openModalAction } = this.props
             const bg = background
-            const url = getCollectionURL({ title: name, id }).as
+            const url = getCollectionURL({ name, id }).as
 
             const resourceType = path([
                 'data',

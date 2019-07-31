@@ -384,23 +384,6 @@ export const HomePageComponent = (props: {
                                                                     key={
                                                                         'top contributors'
                                                                     }
-                                                                    linkComponent={(
-                                                                        children,
-                                                                        route
-                                                                    ) => (
-                                                                        <Link
-                                                                            key={
-                                                                                route
-                                                                            }
-                                                                            href={
-                                                                                route
-                                                                            }
-                                                                        >
-                                                                            {
-                                                                                children
-                                                                            }
-                                                                        </Link>
-                                                                    )}
                                                                     contributors={
                                                                         contributors
                                                                     }

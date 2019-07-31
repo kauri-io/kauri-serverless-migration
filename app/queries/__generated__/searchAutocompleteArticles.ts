@@ -49,6 +49,26 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
   version: number | null;
 }
 
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_contributors {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -216,6 +236,11 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
    */
   associatedNfts: (searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_associatedNfts | null)[] | null;
   resourceIdentifier: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_resourceIdentifier | null;
+  /**
+   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
+   * This operation can only be performed by logged user
+   */
+  contributors: (searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_contributors | null)[] | null;
   /**
    * Description of the article - First 500 characters of the plaintext content)
    */

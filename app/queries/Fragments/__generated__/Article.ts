@@ -33,6 +33,26 @@ export interface Article_resourceIdentifier {
   version: number | null;
 }
 
+export interface Article_contributors {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
 export interface Article_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -200,6 +220,11 @@ export interface Article {
    */
   associatedNfts: (Article_associatedNfts | null)[] | null;
   resourceIdentifier: Article_resourceIdentifier | null;
+  /**
+   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
+   * This operation can only be performed by logged user
+   */
+  contributors: (Article_contributors | null)[] | null;
   /**
    * Description of the article - First 500 characters of the plaintext content)
    */

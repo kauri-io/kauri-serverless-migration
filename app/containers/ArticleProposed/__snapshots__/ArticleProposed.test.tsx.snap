@@ -251,6 +251,15 @@ exports[`containers/ArticleProposed should match snapshot 1`] = `
                 },
                 "content": "{\\"markdown\\" : \\"test contet 1\\"}",
                 "contentHash": "hash1",
+                "contributors": Array [
+                  Object {
+                    "__typename": "PublicUserDTO",
+                    "avatar": "test avatar 1",
+                    "id": "6791",
+                    "name": "test author name 1",
+                    "username": "test author username 1",
+                  },
+                ],
                 "dateCreated": "2019-01-01",
                 "datePublished": "2019-01-02",
                 "description": "test description 1",
@@ -493,6 +502,17 @@ exports[`containers/ArticleProposed should match snapshot 1`] = `
                   }
                   content="{\\"markdown\\" : \\"test contet 1\\"}"
                   contentHash="hash1"
+                  contributors={
+                    Array [
+                      Object {
+                        "__typename": "PublicUserDTO",
+                        "avatar": "test avatar 1",
+                        "id": "6791",
+                        "name": "test author name 1",
+                        "username": "test author username 1",
+                      },
+                    ]
+                  }
                   dateCreated="2019-01-01"
                   datePublished="2019-01-02"
                   description="test description 1"
@@ -601,12 +621,12 @@ exports[`containers/ArticleProposed should match snapshot 1`] = `
                             className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                           >
                             <Link
-                              as="/public-profile/6791"
-                              href="/public-profile?user_id=6791"
+                              as="test-author-username-1/undefined/p"
+                              href="/public-profile?user_id=undefined"
                               prefetch={true}
                             >
                               <a
-                                href="/public-profile/6791"
+                                href="test-author-username-1/undefined/p"
                                 onClick={[Function]}
                                 onMouseEnter={[Function]}
                               >
