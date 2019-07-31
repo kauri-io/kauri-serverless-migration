@@ -2,7 +2,6 @@ import testEpic from '../../lib/test-epic'
 import {
     changeMemberRoleEpic,
     changeMemberRoleAction,
-    invitationResentAction,
     memberRoleChangedAction,
 } from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'

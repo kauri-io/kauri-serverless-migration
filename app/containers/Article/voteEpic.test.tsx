@@ -45,23 +45,23 @@ describe('voteEpic', () => {
         const value = 1
 
         const sourceAction = voteAction({
-          resourceId: {
-            id,
-            type: "ARTICLE" as any,
-            version
-          }, 
-          value
+            resourceId: {
+                id,
+                type: 'ARTICLE' as any,
+                version,
+            },
+            value,
         })
 
         const expectedAction = [
-          showNotificationAction({
-            description:
-                value > 0
-                    ? 'Your vote has been counted! Thanks for your feedback!'
-                    : 'Please leave a comment below with your feedback to the author to help them improve the article.',
-            message: `Voted`,
-            notificationType: 'success',
-        })
+            showNotificationAction({
+                description:
+                    value > 0
+                        ? 'Your vote has been counted! Thanks for your feedback!'
+                        : 'Please leave a comment below with your feedback to the author to help them improve the article.',
+                message: `Voted`,
+                notificationType: 'success',
+            }),
         ]
 
         const resultingActions = await testEpic(
@@ -78,7 +78,7 @@ describe('voteEpic', () => {
         expect(resultingActions).toEqual(expectedAction)
     })
 
-it('can downvote a resource', async () => {
+    it('can downvote a resource', async () => {
         const mockPersonalSign = () => Promise.resolve('abc')
         const id = '1234567890-'
         const version = 123
@@ -109,23 +109,23 @@ it('can downvote a resource', async () => {
         const value = -1
 
         const sourceAction = voteAction({
-          resourceId: {
-            id,
-            type: "ARTICLE" as any,
-            version
-          }, 
-          value
+            resourceId: {
+                id,
+                type: 'ARTICLE' as any,
+                version,
+            },
+            value,
         })
 
         const expectedAction = [
-          showNotificationAction({
-            description:
-                value > 0
-                    ? 'Your vote has been counted! Thanks for your feedback!'
-                    : 'Please leave a comment below with your feedback to the author to help them improve the article.',
-            message: `Voted`,
-            notificationType: 'success',
-        })
+            showNotificationAction({
+                description:
+                    value > 0
+                        ? 'Your vote has been counted! Thanks for your feedback!'
+                        : 'Please leave a comment below with your feedback to the author to help them improve the article.',
+                message: `Voted`,
+                notificationType: 'success',
+            }),
         ]
 
         const resultingActions = await testEpic(
@@ -141,6 +141,4 @@ it('can downvote a resource', async () => {
 
         expect(resultingActions).toEqual(expectedAction)
     })
-
-
 })

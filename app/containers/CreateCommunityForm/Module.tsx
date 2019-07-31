@@ -1,4 +1,4 @@
-import { ActionsObservable, ofType, Epic } from 'redux-observable'
+import { ofType, Epic } from 'redux-observable'
 import { IDependencies, IReduxState } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'

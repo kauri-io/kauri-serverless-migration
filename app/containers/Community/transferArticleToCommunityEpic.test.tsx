@@ -23,11 +23,6 @@ describe('transferArticleToCommunityEpic', () => {
         const mockPersonalSign = () => Promise.resolve('abc')
         const id = '1234567890-'
         const version = 123
-        const text = 'julz'
-        const subject = 'LJLREW68184'
-        const attributes = { background: 'asdfghjkl' }
-        const tags = []
-        const selfPublish = true
         const mockGetArticle = {
             id,
             version,

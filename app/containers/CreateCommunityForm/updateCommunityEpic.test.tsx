@@ -1,7 +1,11 @@
 import testEpic from '../../lib/test-epic'
-import { updateCommunityEpic, updateCommunityAction, communityUpdatedAction } from './Module'
+import {
+    updateCommunityEpic,
+    updateCommunityAction,
+    communityUpdatedAction,
+} from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic';
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 describe('updateCommunityEpic', () => {
     beforeAll(() => {
@@ -56,24 +60,29 @@ describe('updateCommunityEpic', () => {
             mutate: () =>
                 Promise.resolve({
                     data: {
-                      editCommunity: { hash: '1234567890' },
-                      sendInvitation: { hash: '1234567890' },
+                        editCommunity: { hash: '1234567890' },
+                        sendInvitation: { hash: '1234567890' },
                     },
                 }),
             query: () =>
                 Promise.resolve({
-                    data: { prepareSendInvitation: { messageHash: mockGetArticle.contentHash } },
+                    data: {
+                        prepareSendInvitation: {
+                            messageHash: mockGetArticle.contentHash,
+                        },
+                    },
                 }),
             resetStore: () => {},
         }
 
         const communityId = 'Community ID'
         const email = 'test@example.com'
-        const invitations: any = [{ 
-          email,
-          role: 'ADMIN' as any
-        }
-          ]
+        const invitations: any = [
+            {
+                email,
+                role: 'ADMIN' as any,
+            },
+        ]
 
         const sourceAction = updateCommunityAction(
             {
@@ -86,15 +95,13 @@ describe('updateCommunityEpic', () => {
         )
 
         const expectedAction = [
-          showNotificationAction({
-            description: `The community's details have been updated!`,
-            message: 'Community updated',
-            notificationType: 'success',
-          }),
-          communityUpdatedAction(),
-          routeChangeAction(
-            `/community/${communityId}/community-updated`
-        )
+            showNotificationAction({
+                description: `The community's details have been updated!`,
+                message: 'Community updated',
+                notificationType: 'success',
+            }),
+            communityUpdatedAction(),
+            routeChangeAction(`/community/${communityId}/community-updated`),
         ]
 
         const resultingActions = await testEpic(

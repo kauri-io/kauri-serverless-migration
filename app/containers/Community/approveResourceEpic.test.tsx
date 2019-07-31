@@ -1,10 +1,6 @@
 import testEpic from '../../lib/test-epic'
-import {
-    approveResourceEpic,
-    approveResourceAction,
-} from './Module'
+import { approveResourceEpic, approveResourceAction } from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
-import { closeModalAction } from '../../components/Modal/Module'
 
 describe('approveResourceEpic', () => {
     beforeAll(() => {
@@ -49,7 +45,7 @@ describe('approveResourceEpic', () => {
             mutate: () =>
                 Promise.resolve({
                     data: {
-                      approveResource: { hash: '1234567890' },
+                        approveResource: { hash: '1234567890' },
                     },
                 }),
             query: () =>
