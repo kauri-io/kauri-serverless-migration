@@ -51,10 +51,13 @@ import {
     acceptArticleTransferEpic,
     finaliseArticleTransferEpic,
 } from '../containers/PublicProfile/Manage/TransferModule'
+import { saveUserDetailsEpic } from '../containers/EditProfileForm/Module'
+import { addCommentEpic } from '../containers/Article/Module'
+import {
+    addArticleToCollectionEpic,
+    openAddArticleToCollectionConfirmationModalEpic,
+} from '../containers/AddToCollection/Module'
 
-// TODO: // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
-// TODO: // import { addArticleToCollectionEpic } from "../containers/AddToCollection/Module";
-// import { saveUserDetailsEpic } from "../components/common/EditProfile/Module";
 export const rootReducer = {
     app,
     modal,
@@ -98,10 +101,10 @@ const epics = [
     communityCreatedEpic,
     updateCommunityEpic,
     createCommunityEpic,
-
-    //   TODO: addCommentEpic,
-    //   saveUserDetailsEpic,
-    // addArticleToCollectionEpic,
+    saveUserDetailsEpic,
+    addCommentEpic,
+    addArticleToCollectionEpic,
+    openAddArticleToCollectionConfirmationModalEpic,
 ]
 
 export const rootEpic = combineEpics(...epics)

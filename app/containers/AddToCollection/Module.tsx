@@ -1,57 +1,55 @@
-import { ofType, Epic } from 'redux-observable'
-import { from, merge, of } from 'rxjs'
-import { IDependencies, IReduxState } from '../../lib/Module'
+import { Epic, ofType } from 'redux-observable'
+import styled from 'styled-components'
+import { IReduxState, IDependencies } from '../../lib/Module'
+import analytics from '../../lib/analytics'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import {
-    getArticleTitle,
-    getArticleTitleVariables,
-} from '../ArticleDraft/__generated__/getArticleTitle'
-import analytics from '../../lib/analytics'
-import { tap, map, mergeMap, switchMap, catchError } from 'rxjs/operators'
-import {
+    getArticleTitleQuery,
     addArticleToCollectionMutation,
     getCollectionTitleQuery,
-    getArticleTitleQuery,
 } from '../../queries/Article'
+import { openModalAction } from '../../components/Modal/Module'
+import AlertViewComponent from '../../components/Modal/AlertView'
+import { BodyCard, H4 } from '../../components/Typography'
 import {
-    addArticleToCollection,
     addArticleToCollectionVariables,
+    addArticleToCollection,
 } from '../../queries/__generated__/addArticleToCollection'
+import { switchMap, mergeMap, map, tap, catchError } from 'rxjs/operators'
+import { from, of, merge } from 'rxjs'
 import { path } from 'ramda'
-import {
-    getCollectionTitle,
-    getCollectionTitleVariables,
-} from '../../queries/__generated__/getCollectionTitle'
-// import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
-// import AlertViewComponent from '../../components/Modal/AlertView'
-// import {
-//     closeModalAction,
-//     openModalAction,
-// } from '../../components/Modal/Module'
-// import { BodyCard, H4 } from '../../components/Typography'
-// import styled from 'styled-components'
-
-// export interface IAddArticleToCollectionPayload {
-//     id: string
-//     sectionId: string
-//     resourceId: {
-//         id: string
-//         version: number
-//         type: 'ARTICLE'
-//     }
-//     position: number
-// }
+import { getCollectionTitle } from '../../queries/__generated__/getCollectionTitle'
+import { getArticleTitleVariables } from '../ArticleDraft/__generated__/getArticleTitle'
+import { getArticleTitle } from '../../queries/__generated__/getArticleTitle'
 
 export interface IAddArticleToCollectionAction {
     callback: () => void
-    payload: addArticleToCollectionVariables
+    payload: IAddArticleToCollectionPayload
     type: 'ADD_ARTICLE_TO_COLLECTION'
+}
+
+export type IOpenAddArticleToCollectionConfirmationModalPayload = getCollectionTitle & {
+    routeChangeAction: any
+    closeModalAction: any
+}
+
+export interface IOpenAddArticleToCollectionConfirmationModalAction {
+    payload: IOpenAddArticleToCollectionConfirmationModalPayload
+    type: 'OPEN_ADD_ARTICLE_TO_COLLECTION_CONFIRMATION_MODAL'
 }
 
 const ADD_ARTICLE_TO_COLLECTION = 'ADD_ARTICLE_TO_COLLECTION'
 
+const OPEN_ADD_ARTICLE_TO_COLLECTION_CONFIRMATION_MODAL =
+    'OPEN_ADD_ARTICLE_TO_COLLECTION_CONFIRMATION_MODAL'
+
+export type IAddArticleToCollectionPayload = addArticleToCollectionVariables & {
+    routeChangeAction: any
+    closeModalAction: any
+}
+
 export const addArticleToCollectionAction = (
-    payload: addArticleToCollectionVariables,
+    payload: IAddArticleToCollectionPayload,
     callback: () => void
 ): IAddArticleToCollectionAction => ({
     callback,
@@ -59,15 +57,69 @@ export const addArticleToCollectionAction = (
     type: ADD_ARTICLE_TO_COLLECTION,
 })
 
-// const Row = styled.div`
-//     display: flex;
-//     flex-direction: row;
-//     min-height: 130px;
-//     align-items: center;
-//     > :first-child {
-//         margin-right: 3px;
-//     }
-// `
+export const openAddArticleToCollectionConfirmationModalAction = (
+    payload: IOpenAddArticleToCollectionConfirmationModalPayload
+): IOpenAddArticleToCollectionConfirmationModalAction => ({
+    payload,
+    type: OPEN_ADD_ARTICLE_TO_COLLECTION_CONFIRMATION_MODAL,
+})
+
+interface IAddArticleToCollectionCommandOutput {
+    id: string
+    version: number
+}
+
+const Row = styled.div`
+    display: flex;
+    flex-direction: row;
+    min-height: 130px;
+    align-items: center;
+    > :first-child {
+        margin-right: 3px;
+    }
+`
+
+export const openAddArticleToCollectionConfirmationModalEpic: Epic<
+    IOpenAddArticleToCollectionConfirmationModalAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _state$, {}) =>
+    action$.pipe(
+        ofType(OPEN_ADD_ARTICLE_TO_COLLECTION_CONFIRMATION_MODAL),
+        mergeMap(({ payload }) =>
+            of(
+                openModalAction({
+                    children: (
+                        <AlertViewComponent
+                            title="Add to Collection"
+                            content={
+                                <Row>
+                                    <BodyCard>
+                                        Article successfully added to
+                                    </BodyCard>
+                                    <H4>{` ${payload.getCollection &&
+                                        payload.getCollection
+                                            .name} Collection`}</H4>
+                                </Row>
+                            }
+                            closeModalAction={() => payload.closeModalAction()}
+                            confirmButtonText={'View Collection'}
+                            closeButtonText={'Close'}
+                            confirmButtonAction={() => {
+                                payload.closeModalAction()
+                                payload.routeChangeAction(
+                                    `/collection/${payload.getCollection &&
+                                        payload.getCollection
+                                            .id}/update-collection`
+                                )
+                            }}
+                        />
+                    ),
+                })
+            )
+        )
+    )
 
 export const addArticleToCollectionEpic: Epic<
     IAddArticleToCollectionAction,
@@ -77,21 +129,20 @@ export const addArticleToCollectionEpic: Epic<
 > = (action$, _state$, { apolloClient, apolloSubscriber }) =>
     action$.pipe(
         ofType(ADD_ARTICLE_TO_COLLECTION),
-        switchMap(actions =>
+        mergeMap(({ payload, callback }) =>
             from(
                 apolloClient.mutate<
                     addArticleToCollection,
                     addArticleToCollectionVariables
                 >({
                     mutation: addArticleToCollectionMutation,
-                    variables: actions.payload,
+                    variables: payload,
                 })
             ).pipe(
                 mergeMap(({ data }) =>
-                    apolloSubscriber<{ hash: string }>(
-                        path<string>(['addArticleToCollection', 'hash'])(
-                            data
-                        ) || ''
+                    apolloSubscriber<IAddArticleToCollectionCommandOutput>(
+                        path<string>(['addCollectionResource', 'hash'])(data) ||
+                            ''
                     )
                 ),
                 mergeMap(() =>
@@ -101,40 +152,28 @@ export const addArticleToCollectionEpic: Epic<
                     >({
                         query: getArticleTitleQuery,
                         variables: {
-                            id: actions.payload.resourceId.id,
-                            version: actions.payload.resourceId.version,
+                            id: payload.resourceId.id,
+                            version: payload.resourceId.version,
                         },
                     })
                 ),
                 map(
-                    ({ data: { getArticle } }) => getArticle && getArticle.title
+                    ({ data: { getArticle } }) =>
+                        (getArticle && getArticle.title) || ''
                 ),
-                tap(
-                    () =>
-                        typeof actions.callback === 'function' &&
-                        actions.callback()
-                ),
-                tap(() => {
-                    analytics.track('Add To Collection', {
-                        category: 'collection_actions',
-                        resourceId: '4e1a8de4dece4736bd0b9c33b9225c92',
-                        resourceType: actions.payload.resourceId.type,
-                    })
-                }),
                 switchMap(title =>
                     from(
                         apolloClient.query<
                             getCollectionTitle,
-                            getCollectionTitleVariables
+                            getArticleTitleVariables
                         >({
                             query: getCollectionTitleQuery,
                             variables: {
-                                id: actions.payload.id,
+                                id: payload.id,
                             },
                         })
                     ).pipe(
-                        mergeMap(() =>
-                            // { data: { getCollection } }
+                        mergeMap(({ data: { getCollection } }) =>
                             merge(
                                 of(
                                     showNotificationAction({
@@ -142,48 +181,18 @@ export const addArticleToCollectionEpic: Epic<
                                         message: 'Article added to collection',
                                         notificationType: 'success',
                                     })
+                                ),
+                                of(
+                                    openAddArticleToCollectionConfirmationModalAction(
+                                        {
+                                            getCollection,
+                                            routeChangeAction:
+                                                payload.routeChangeAction,
+                                            closeModalAction:
+                                                payload.closeModalAction,
+                                        }
+                                    )
                                 )
-                                // of(
-                                //     openModalAction({
-                                //         children: (
-                                //             <AlertViewComponent
-                                //                 title="Add to Collection"
-                                //                 content={
-                                //                     <Row>
-                                //                         <BodyCard>
-                                //                             Article successfully
-                                //                             added to
-                                //                         </BodyCard>
-                                //                         <H4>{` ${getCollection &&
-                                //                             getCollection.name} Collection`}</H4>
-                                //                     </Row>
-                                //                 }
-                                //                 closeModalAction={() =>
-                                //                     store.dispatch(
-                                //                         closeModalAction()
-                                //                     )
-                                //                 }
-                                //                 confirmButtonText={
-                                //                     'View Collection'
-                                //                 }
-                                //                 closeButtonText={'Close'}
-                                //                 confirmButtonAction={() => {
-                                //                     store.dispatch(
-                                //                         closeModalAction()
-                                //                     )
-                                //                     store.dispatch(
-                                //                         routeChangeAction(
-                                //                             `/collection/${
-                                //                                 (actions as IAddArticleToCollectionAction)
-                                //                                     .payload.id
-                                //                             }/update-collection`
-                                //                         )
-                                //                     )
-                                //                 }}
-                                //             />
-                                //         ),
-                                //     })
-                                // )
                             )
                         ),
                         tap(() => apolloClient.resetStore()),
@@ -199,15 +208,13 @@ export const addArticleToCollectionEpic: Epic<
                         })
                     )
                 ),
-                catchError(err => {
-                    console.error(err)
-                    return of(
-                        showNotificationAction({
-                            description: 'Please try again',
-                            message: 'Submission error',
-                            notificationType: 'error',
-                        })
-                    )
+                tap(() => typeof callback === 'function' && callback()),
+                tap(() => {
+                    analytics.track('Add To Collection', {
+                        category: 'collection_actions',
+                        resourceId: '4e1a8de4dece4736bd0b9c33b9225c92',
+                        resourceType: payload.resourceId.type,
+                    })
                 })
             )
         )

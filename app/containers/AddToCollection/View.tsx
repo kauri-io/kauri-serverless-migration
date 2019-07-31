@@ -13,7 +13,7 @@ import {
     getCollectionsForUserVariables,
 } from '../../queries/__generated__/getCollectionsForUser'
 import { useState } from 'react'
-import { addArticleToCollectionVariables } from '../../queries/__generated__/addArticleToCollection'
+import { addArticleToCollectionAction } from './Module'
 
 interface IChosen {
     chosenCollection: ICollection | null
@@ -25,10 +25,7 @@ interface IProps {
     userId: string
     routeChangeAction: (route: string) => void
     articleId: string
-    addArticleToCollectionAction: (
-        payload: addArticleToCollectionVariables,
-        callback: () => void
-    ) => void
+    addArticleToCollectionAction: typeof addArticleToCollectionAction
     version: number
 }
 
@@ -147,6 +144,8 @@ const Component: React.FunctionComponent<IProps> = ({
                                             sectionId: state.chosenSection
                                                 ? state.chosenSection.id
                                                 : '',
+                                            closeModalAction,
+                                            routeChangeAction,
                                         },
                                         closeModalAction
                                     )

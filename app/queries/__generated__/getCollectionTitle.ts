@@ -9,6 +9,10 @@
 export interface getCollectionTitle_getCollection {
   __typename: "CollectionDTO";
   /**
+   * Collection ID
+   */
+  id: string;
+  /**
    * Collection name
    */
   name: string;

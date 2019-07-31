@@ -301,7 +301,7 @@ export const submitArticleVersionMutation = gql`
     }
 `
 
-export const addComment = gql`
+export const addCommentMutation = gql`
     mutation addComment($parent: ResourceIdentifierInput!, $body: String!) {
         addComment(parent: $parent, body: $body) {
             hash
@@ -656,6 +656,7 @@ export const addArticleToCollectionMutation = gql`
 export const getCollectionTitleQuery = gql`
     query getCollectionTitle($id: String!) {
         getCollection(id: $id) {
+            id
             name
         }
     }
