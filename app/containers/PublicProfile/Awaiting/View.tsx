@@ -16,7 +16,7 @@ import {
 } from '../../../components/Modal/Module'
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
 import { ICommunity } from '../../../lib/Module'
-import getArticleHref from '../../../lib/getArticleHref'
+import { getArticleURL } from '../../../lib/getURLs'
 
 interface IArticlesProps {
     data: searchPersonalArticles
@@ -55,7 +55,7 @@ const Articles = ({ data, type, isOwner }: IArticlesProps) => {
                         return (
                             article && (
                                 <ArticleCard
-                                    href={getArticleHref(article)}
+                                    href={getArticleURL(article)}
                                     {...article}
                                 />
                             )

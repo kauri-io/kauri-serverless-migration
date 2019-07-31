@@ -12,7 +12,7 @@ import { searchPending } from '../../../queries/Article'
 import { graphql, compose } from 'react-apollo'
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
 import { ICommunity } from '../../../lib/Module'
-import getArticleHref from '../../../lib/getArticleHref'
+import { getArticleURL } from '../../../lib/getURLs'
 
 interface IArticlesProps {
     data: searchPersonalArticles
@@ -53,7 +53,7 @@ const Articles = ({ data, type, isOwner }: IArticlesProps) => {
                         article =>
                             article && (
                                 <ArticleCard
-                                    href={getArticleHref(article)}
+                                    href={getArticleURL(article)}
                                     {...article}
                                 />
                             )

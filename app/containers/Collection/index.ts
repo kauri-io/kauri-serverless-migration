@@ -10,7 +10,6 @@ import { approveResourceAction } from '../Community/Module'
 
 const mapStateToProps = state => {
     return {
-        hostName: state.app && state.app.hostName,
         userId: state.app && state.app.user && state.app.user.id,
         communities: state.app && state.app.user && state.app.user.communities,
     }

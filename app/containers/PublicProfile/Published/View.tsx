@@ -9,7 +9,7 @@ import Masonry from '../../../components/Masonry'
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
 import { BodyCard } from '../../../components/Typography'
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
-import getArticleHref from '../../../lib/getArticleHref'
+import { getArticleURL } from '../../../lib/getURLs'
 import {
     IOpenModalAction,
     IOpenModalPayload,
@@ -60,7 +60,7 @@ const Articles: React.FC<IArticlesProps> = ({
                         article =>
                             article && (
                                 <ArticleCard
-                                    href={getArticleHref(article)}
+                                    href={getArticleURL(article)}
                                     {...article}
                                 />
                             )

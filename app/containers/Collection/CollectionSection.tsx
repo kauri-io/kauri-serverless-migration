@@ -9,7 +9,7 @@ import {
     Collection_owner_PublicUserDTO,
 } from '../../queries/Fragments/__generated__/Collection'
 import CollectionCard from '../../components/Card/CollectionCard'
-import getArticleHref from '../../lib/getArticleHref'
+import { getArticleURL } from '../../lib/getURLs'
 
 const Container = styled.section`
     display: flex;
@@ -60,7 +60,7 @@ const CollectionSection: React.SFC<IProps> = props => {
                         if (resource.__typename === 'ArticleDTO') {
                             return (
                                 <ArticleCard
-                                    href={getArticleHref(resource)}
+                                    href={getArticleURL(resource)}
                                     {...resource}
                                 />
                             )

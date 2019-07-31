@@ -15,6 +15,9 @@ import {
     toggleInitialState,
 } from '../../lib/use-toggle'
 import Date from '../HoverDateLabel'
+import slugify from 'slugify'
+import Link from 'next/link'
+import { getCollectionURL } from '../../lib/getURLs'
 
 const DEFAULT_CARD_HEIGHT = 310
 const DEFAULT_CARD_WIDTH = theme.DEFAULT_CARD_WIDTH
@@ -215,16 +218,16 @@ interface IActualContentProps {
     imageURL: string | null
     description: string
     id: string
-    linkComponent: (
-        childrenProps: React.ReactElement<any>,
-        route: string
-    ) => React.ReactElement<any>
     name: string | null
     username: string | null
     userId: string
     userAvatar: string | null
     date: string
     resourceType: string
+    collectionURL: {
+        href: string
+        as: string
+    }
 }
 
 const RenderActualContent: React.SFC<IActualContentProps> = ({
@@ -233,39 +236,47 @@ const RenderActualContent: React.SFC<IActualContentProps> = ({
     description,
     cardHeight,
     cardWidth,
-    id,
-    linkComponent,
     username,
     userId,
     userAvatar,
     date,
     resourceType,
+    collectionURL,
 }) => (
     <>
-        {linkComponent(
-            <RenderBodyContent
-                name={name}
-                cardHeight={cardHeight}
-                cardWidth={cardWidth}
-                imageURL={imageURL}
-                description={description}
-                userId={userId}
-                userAvatar={userAvatar}
-            />,
-            `/collection/${id}`
-        )}
-        {linkComponent(
+        <Link as={collectionURL.as} href={collectionURL.href}>
+            <a>
+                <RenderBodyContent
+                    name={name}
+                    cardHeight={cardHeight}
+                    cardWidth={cardWidth}
+                    imageURL={imageURL}
+                    description={description}
+                    userId={userId}
+                    userAvatar={userAvatar}
+                />
+            </a>
+        </Link>
+        <Link
+            href={
+                resourceType === 'CommunityDTO'
+                    ? `/community/${userId}`
+                    : `/public-profile/${userId}`
+            }
+            as={
+                resourceType === 'CommunityDTO'
+                    ? `/community/${userId}`
+                    : `/public-profile/${userId}`
+            }
+        >
             <RenderPublicProfile
                 cardWidth={cardWidth}
                 username={username}
                 userId={userId}
                 imageURL={imageURL}
                 userAvatar={userAvatar}
-            />,
-            resourceType === 'CommunityDTO'
-                ? `/community/${userId}`
-                : `/public-profile/${userId}`
-        )}
+            />
+        </Link>
         <Date status="PUBLISHED" date={date} />
     </>
 )
@@ -295,7 +306,6 @@ const RenderCardContent: React.SFC<ICardContentProps> = ({
     cardHeight,
     cardWidth,
     id,
-    linkComponent,
     username,
     userId,
     userAvatar,
@@ -311,12 +321,15 @@ const RenderCardContent: React.SFC<ICardContentProps> = ({
                 description={description}
                 id={id}
                 imageURL={imageURL}
-                linkComponent={linkComponent}
                 name={name}
                 userAvatar={userAvatar}
                 userId={userId}
                 username={username}
                 resourceType={resourceType}
+                collectionURL={getCollectionURL({
+                    title: String(name),
+                    id,
+                })}
             />
         </Mask>
     ) : (
@@ -328,12 +341,15 @@ const RenderCardContent: React.SFC<ICardContentProps> = ({
                 description={description}
                 id={id}
                 imageURL={imageURL}
-                linkComponent={linkComponent}
                 name={name}
                 userAvatar={userAvatar}
                 userId={userId}
                 username={username}
                 resourceType={resourceType}
+                collectionURL={getCollectionURL({
+                    title: String(name),
+                    id,
+                })}
             />
         </>
     )
@@ -532,6 +548,7 @@ interface IProps {
 }
 
 interface IRenderFooterProps {
+    title: string
     id: string
     imageURL: string | null
     articleCount: string
@@ -545,6 +562,7 @@ interface IRenderFooterProps {
 const RenderFooter: React.FunctionComponent<IRenderFooterProps> = ({
     id,
     imageURL,
+    title,
     articleCount,
     collectionCount,
     linkComponent,
@@ -568,7 +586,7 @@ const RenderFooter: React.FunctionComponent<IRenderFooterProps> = ({
                 </Count>
             )}
         </Footer>,
-        `/collection/${id}`
+        `/${slugify(title, { lower: true })}/${id}/c`
     )
 
 const CollectionCard: React.FunctionComponent<IProps> = ({
@@ -609,6 +627,7 @@ const CollectionCard: React.FunctionComponent<IProps> = ({
             isChosenArticle={isChosenCollection}
             toggledOn={toggledOn}
         >
+            {console.log(linkComponent)}
             {!!hoverChildren && toggledOn === true && (
                 <Hover
                     hasImageURL={Boolean(imageURL)}
@@ -654,6 +673,7 @@ const CollectionCard: React.FunctionComponent<IProps> = ({
                 ) : null}
                 <RenderFooter
                     id={id}
+                    title={name}
                     imageURL={imageURL}
                     linkComponent={linkComponent}
                     articleCount={articleCount}

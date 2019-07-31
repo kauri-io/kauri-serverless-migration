@@ -5541,7 +5541,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                               className="ResourceRowWithImage__ResourceRow-tpmrbu-0 hVSttN"
                                             >
                                               <Link
-                                                href="/collection/5d11f9f8a6afcc0001f621de"
+                                                href="/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
                                                 prefetch={true}
                                                 useAnchorTag={true}
                                               >
@@ -5674,7 +5674,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     className="ResourceRowWithImage__Container-tpmrbu-2 gCKJgL"
                                                   >
                                                     <Link
-                                                      href="/collection/5d11f9f8a6afcc0001f621de"
+                                                      href="/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
                                                       prefetch={true}
                                                       useAnchorTag={true}
                                                     >
@@ -9343,11 +9343,16 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                         <RenderActualContent
                                                                           cardHeight={310}
                                                                           cardWidth={288}
+                                                                          collectionURL={
+                                                                            Object {
+                                                                              "as": "flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c",
+                                                                              "href": "/collection?collection_id=5d11f9f8a6afcc0001f621de",
+                                                                            }
+                                                                          }
                                                                           date="2019-06-25T10:41:54.259Z"
                                                                           description="This two part tutorial walks you through from start to finish the process of making NFTs and making them available on OpenSea, Rarebits and the World Wide Web. It uses Netlify and Lambda functions to make sure your metadata is highly available."
                                                                           id="5d11f9f8a6afcc0001f621de"
                                                                           imageURL="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
-                                                                          linkComponent={[Function]}
                                                                           name="Flexible, Upgradeable & Highly Available NFTs"
                                                                           resourceType="CollectionDTO"
                                                                           userAvatar="https://api.beta.kauri.io:443/ipfs/QmQar5iK3jKuKuw7tes9DGayTPLHfpxa2kQAQg3Ht7TNbQ"
@@ -9355,200 +9360,202 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                           username="okwme"
                                                                         >
                                                                           <Link
-                                                                            href="/collection/5d11f9f8a6afcc0001f621de"
+                                                                            as="flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
+                                                                            href="/collection?collection_id=5d11f9f8a6afcc0001f621de"
                                                                             prefetch={true}
-                                                                            toSlug={false}
-                                                                            useAnchorTag={true}
                                                                           >
-                                                                            <RenderBodyContent
-                                                                              cardHeight={310}
-                                                                              cardWidth={288}
-                                                                              description="This two part tutorial walks you through from start to finish the process of making NFTs and making them available on OpenSea, Rarebits and the World Wide Web. It uses Netlify and Lambda functions to make sure your metadata is highly available."
-                                                                              imageURL="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
-                                                                              name="Flexible, Upgradeable & Highly Available NFTs"
+                                                                            <a
+                                                                              href="flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
                                                                               onClick={[Function]}
                                                                               onMouseEnter={[Function]}
-                                                                              userAvatar="https://api.beta.kauri.io:443/ipfs/QmQar5iK3jKuKuw7tes9DGayTPLHfpxa2kQAQg3Ht7TNbQ"
-                                                                              userId="d0c838486120cda746ca514f76c70938bf708b90"
                                                                             >
-                                                                              <CollectionCard__LabelContainer>
-                                                                                <StyledComponent
-                                                                                  forwardedComponent={
-                                                                                    Object {
-                                                                                      "$$typeof": Symbol(react.forward_ref),
-                                                                                      "attrs": Array [],
-                                                                                      "componentStyle": ComponentStyle {
-                                                                                        "componentId": "CollectionCard__LabelContainer-sc-2oluuz-8",
-                                                                                        "isStatic": false,
-                                                                                        "lastClassName": "hUtKUh",
-                                                                                        "rules": Array [
-                                                                                          "display:flex;width:100%;justify-content:center;margin-bottom:",
-                                                                                          [Function],
-                                                                                          "px;",
-                                                                                        ],
-                                                                                      },
-                                                                                      "displayName": "CollectionCard__LabelContainer",
-                                                                                      "foldedComponentIds": Array [],
-                                                                                      "render": [Function],
-                                                                                      "styledComponentId": "CollectionCard__LabelContainer-sc-2oluuz-8",
-                                                                                      "target": "div",
-                                                                                      "toString": [Function],
-                                                                                      "warnTooManyClasses": [Function],
-                                                                                      "withComponent": [Function],
+                                                                              <RenderBodyContent
+                                                                                cardHeight={310}
+                                                                                cardWidth={288}
+                                                                                description="This two part tutorial walks you through from start to finish the process of making NFTs and making them available on OpenSea, Rarebits and the World Wide Web. It uses Netlify and Lambda functions to make sure your metadata is highly available."
+                                                                                imageURL="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
+                                                                                name="Flexible, Upgradeable & Highly Available NFTs"
+                                                                                userAvatar="https://api.beta.kauri.io:443/ipfs/QmQar5iK3jKuKuw7tes9DGayTPLHfpxa2kQAQg3Ht7TNbQ"
+                                                                                userId="d0c838486120cda746ca514f76c70938bf708b90"
+                                                                              >
+                                                                                <CollectionCard__LabelContainer>
+                                                                                  <StyledComponent
+                                                                                    forwardedComponent={
+                                                                                      Object {
+                                                                                        "$$typeof": Symbol(react.forward_ref),
+                                                                                        "attrs": Array [],
+                                                                                        "componentStyle": ComponentStyle {
+                                                                                          "componentId": "CollectionCard__LabelContainer-sc-2oluuz-8",
+                                                                                          "isStatic": false,
+                                                                                          "lastClassName": "hUtKUh",
+                                                                                          "rules": Array [
+                                                                                            "display:flex;width:100%;justify-content:center;margin-bottom:",
+                                                                                            [Function],
+                                                                                            "px;",
+                                                                                          ],
+                                                                                        },
+                                                                                        "displayName": "CollectionCard__LabelContainer",
+                                                                                        "foldedComponentIds": Array [],
+                                                                                        "render": [Function],
+                                                                                        "styledComponentId": "CollectionCard__LabelContainer-sc-2oluuz-8",
+                                                                                        "target": "div",
+                                                                                        "toString": [Function],
+                                                                                        "warnTooManyClasses": [Function],
+                                                                                        "withComponent": [Function],
+                                                                                      }
                                                                                     }
-                                                                                  }
-                                                                                  forwardedRef={null}
-                                                                                >
-                                                                                  <div
-                                                                                    className="CollectionCard__LabelContainer-sc-2oluuz-8 hUtKUh"
+                                                                                    forwardedRef={null}
                                                                                   >
-                                                                                    <Typography__component
-                                                                                      textAlign="center"
+                                                                                    <div
+                                                                                      className="CollectionCard__LabelContainer-sc-2oluuz-8 hUtKUh"
                                                                                     >
-                                                                                      <StyledComponent
-                                                                                        forwardedComponent={
-                                                                                          Object {
-                                                                                            "$$typeof": Symbol(react.forward_ref),
-                                                                                            "attrs": Array [],
-                                                                                            "componentStyle": ComponentStyle {
-                                                                                              "componentId": "Typography__component-sc-36xkf6-0",
-                                                                                              "isStatic": false,
-                                                                                              "lastClassName": "kALGmD",
-                                                                                              "rules": Array [
-                                                                                                "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
-                                                                                                [Function],
-                                                                                                ";text-align:",
-                                                                                                [Function],
-                                                                                                ";",
-                                                                                                [Function],
-                                                                                                " ",
-                                                                                                [Function],
-                                                                                              ],
-                                                                                            },
-                                                                                            "displayName": "Typography__component",
-                                                                                            "foldedComponentIds": Array [],
-                                                                                            "render": [Function],
-                                                                                            "styledComponentId": "Typography__component-sc-36xkf6-0",
-                                                                                            "target": "span",
-                                                                                            "toString": [Function],
-                                                                                            "warnTooManyClasses": [Function],
-                                                                                            "withComponent": [Function],
-                                                                                          }
-                                                                                        }
-                                                                                        forwardedRef={null}
+                                                                                      <Typography__component
                                                                                         textAlign="center"
                                                                                       >
-                                                                                        <span
-                                                                                          className="Typography__component-sc-36xkf6-0 YZQXM"
+                                                                                        <StyledComponent
+                                                                                          forwardedComponent={
+                                                                                            Object {
+                                                                                              "$$typeof": Symbol(react.forward_ref),
+                                                                                              "attrs": Array [],
+                                                                                              "componentStyle": ComponentStyle {
+                                                                                                "componentId": "Typography__component-sc-36xkf6-0",
+                                                                                                "isStatic": false,
+                                                                                                "lastClassName": "kALGmD",
+                                                                                                "rules": Array [
+                                                                                                  "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                                                                                                  [Function],
+                                                                                                  ";text-align:",
+                                                                                                  [Function],
+                                                                                                  ";",
+                                                                                                  [Function],
+                                                                                                  " ",
+                                                                                                  [Function],
+                                                                                                ],
+                                                                                              },
+                                                                                              "displayName": "Typography__component",
+                                                                                              "foldedComponentIds": Array [],
+                                                                                              "render": [Function],
+                                                                                              "styledComponentId": "Typography__component-sc-36xkf6-0",
+                                                                                              "target": "span",
+                                                                                              "toString": [Function],
+                                                                                              "warnTooManyClasses": [Function],
+                                                                                              "withComponent": [Function],
+                                                                                            }
+                                                                                          }
+                                                                                          forwardedRef={null}
+                                                                                          textAlign="center"
                                                                                         >
-                                                                                          Collection
-                                                                                        </span>
-                                                                                      </StyledComponent>
-                                                                                    </Typography__component>
-                                                                                  </div>
-                                                                                </StyledComponent>
-                                                                              </CollectionCard__LabelContainer>
-                                                                              <Typography__styledComponent
-                                                                                textAlign="center"
-                                                                              >
-                                                                                <StyledComponent
-                                                                                  forwardedComponent={
-                                                                                    Object {
-                                                                                      "$$typeof": Symbol(react.forward_ref),
-                                                                                      "attrs": Array [],
-                                                                                      "componentStyle": ComponentStyle {
-                                                                                        "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                                                        "isStatic": false,
-                                                                                        "lastClassName": "jNVtUZ",
-                                                                                        "rules": Array [
-                                                                                          "color:",
-                                                                                          [Function],
-                                                                                          ";margin:0px;font-weight:",
-                                                                                          "500",
-                                                                                          ";",
-                                                                                          ";font-size:",
-                                                                                          "20",
-                                                                                          "px;text-transform:",
-                                                                                          [Function],
-                                                                                          ";text-align:",
-                                                                                          [Function],
-                                                                                          ";:hover{color:",
-                                                                                          [Function],
-                                                                                          ";cursor:",
-                                                                                          [Function],
-                                                                                          ";}",
-                                                                                        ],
-                                                                                      },
-                                                                                      "displayName": "Typography__styledComponent",
-                                                                                      "foldedComponentIds": Array [],
-                                                                                      "render": [Function],
-                                                                                      "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                                                      "target": "span",
-                                                                                      "toString": [Function],
-                                                                                      "warnTooManyClasses": [Function],
-                                                                                      "withComponent": [Function],
-                                                                                    }
-                                                                                  }
-                                                                                  forwardedRef={null}
+                                                                                          <span
+                                                                                            className="Typography__component-sc-36xkf6-0 YZQXM"
+                                                                                          >
+                                                                                            Collection
+                                                                                          </span>
+                                                                                        </StyledComponent>
+                                                                                      </Typography__component>
+                                                                                    </div>
+                                                                                  </StyledComponent>
+                                                                                </CollectionCard__LabelContainer>
+                                                                                <Typography__styledComponent
                                                                                   textAlign="center"
                                                                                 >
-                                                                                  <span
-                                                                                    className="Typography__styledComponent-sc-36xkf6-5 iNROud"
-                                                                                  >
-                                                                                    Flexible, Upgradeable & Hig...
-                                                                                  </span>
-                                                                                </StyledComponent>
-                                                                              </Typography__styledComponent>
-                                                                              <Typography__component
-                                                                                textAlign="center"
-                                                                              >
-                                                                                <StyledComponent
-                                                                                  forwardedComponent={
-                                                                                    Object {
-                                                                                      "$$typeof": Symbol(react.forward_ref),
-                                                                                      "attrs": Array [],
-                                                                                      "componentStyle": ComponentStyle {
-                                                                                        "componentId": "Typography__component-sc-36xkf6-4",
-                                                                                        "isStatic": false,
-                                                                                        "lastClassName": "chprKh",
-                                                                                        "rules": Array [
-                                                                                          "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
-                                                                                          [Function],
-                                                                                          "px;line-height:18px;color:",
-                                                                                          [Function],
-                                                                                          ";",
-                                                                                          ";",
-                                                                                          [Function],
-                                                                                          ";",
-                                                                                        ],
-                                                                                      },
-                                                                                      "displayName": "Typography__component",
-                                                                                      "foldedComponentIds": Array [],
-                                                                                      "render": [Function],
-                                                                                      "styledComponentId": "Typography__component-sc-36xkf6-4",
-                                                                                      "target": "span",
-                                                                                      "toString": [Function],
-                                                                                      "warnTooManyClasses": [Function],
-                                                                                      "withComponent": [Function],
+                                                                                  <StyledComponent
+                                                                                    forwardedComponent={
+                                                                                      Object {
+                                                                                        "$$typeof": Symbol(react.forward_ref),
+                                                                                        "attrs": Array [],
+                                                                                        "componentStyle": ComponentStyle {
+                                                                                          "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                                          "isStatic": false,
+                                                                                          "lastClassName": "jNVtUZ",
+                                                                                          "rules": Array [
+                                                                                            "color:",
+                                                                                            [Function],
+                                                                                            ";margin:0px;font-weight:",
+                                                                                            "500",
+                                                                                            ";",
+                                                                                            ";font-size:",
+                                                                                            "20",
+                                                                                            "px;text-transform:",
+                                                                                            [Function],
+                                                                                            ";text-align:",
+                                                                                            [Function],
+                                                                                            ";:hover{color:",
+                                                                                            [Function],
+                                                                                            ";cursor:",
+                                                                                            [Function],
+                                                                                            ";}",
+                                                                                          ],
+                                                                                        },
+                                                                                        "displayName": "Typography__styledComponent",
+                                                                                        "foldedComponentIds": Array [],
+                                                                                        "render": [Function],
+                                                                                        "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                                        "target": "span",
+                                                                                        "toString": [Function],
+                                                                                        "warnTooManyClasses": [Function],
+                                                                                        "withComponent": [Function],
+                                                                                      }
                                                                                     }
-                                                                                  }
-                                                                                  forwardedRef={null}
+                                                                                    forwardedRef={null}
+                                                                                    textAlign="center"
+                                                                                  >
+                                                                                    <span
+                                                                                      className="Typography__styledComponent-sc-36xkf6-5 iNROud"
+                                                                                    >
+                                                                                      Flexible, Upgradeable & Hig...
+                                                                                    </span>
+                                                                                  </StyledComponent>
+                                                                                </Typography__styledComponent>
+                                                                                <Typography__component
                                                                                   textAlign="center"
                                                                                 >
-                                                                                  <span
-                                                                                    className="Typography__component-sc-36xkf6-4 iELyjY"
+                                                                                  <StyledComponent
+                                                                                    forwardedComponent={
+                                                                                      Object {
+                                                                                        "$$typeof": Symbol(react.forward_ref),
+                                                                                        "attrs": Array [],
+                                                                                        "componentStyle": ComponentStyle {
+                                                                                          "componentId": "Typography__component-sc-36xkf6-4",
+                                                                                          "isStatic": false,
+                                                                                          "lastClassName": "chprKh",
+                                                                                          "rules": Array [
+                                                                                            "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
+                                                                                            [Function],
+                                                                                            "px;line-height:18px;color:",
+                                                                                            [Function],
+                                                                                            ";",
+                                                                                            ";",
+                                                                                            [Function],
+                                                                                            ";",
+                                                                                          ],
+                                                                                        },
+                                                                                        "displayName": "Typography__component",
+                                                                                        "foldedComponentIds": Array [],
+                                                                                        "render": [Function],
+                                                                                        "styledComponentId": "Typography__component-sc-36xkf6-4",
+                                                                                        "target": "span",
+                                                                                        "toString": [Function],
+                                                                                        "warnTooManyClasses": [Function],
+                                                                                        "withComponent": [Function],
+                                                                                      }
+                                                                                    }
+                                                                                    forwardedRef={null}
+                                                                                    textAlign="center"
                                                                                   >
-                                                                                    This two part tutorial walks you through from start to finish the process of making NFTs and maki...
-                                                                                  </span>
-                                                                                </StyledComponent>
-                                                                              </Typography__component>
-                                                                            </RenderBodyContent>
+                                                                                    <span
+                                                                                      className="Typography__component-sc-36xkf6-4 iELyjY"
+                                                                                    >
+                                                                                      This two part tutorial walks you through from start to finish the process of making NFTs and maki...
+                                                                                    </span>
+                                                                                  </StyledComponent>
+                                                                                </Typography__component>
+                                                                              </RenderBodyContent>
+                                                                            </a>
                                                                           </Link>
                                                                           <Link
+                                                                            as="/public-profile/d0c838486120cda746ca514f76c70938bf708b90"
                                                                             href="/public-profile/d0c838486120cda746ca514f76c70938bf708b90"
                                                                             prefetch={true}
-                                                                            toSlug={false}
-                                                                            useAnchorTag={true}
                                                                           >
                                                                             <RenderPublicProfile
                                                                               cardWidth={288}
@@ -9905,9 +9912,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           id="5d11f9f8a6afcc0001f621de"
                                                           imageURL="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
                                                           linkComponent={[Function]}
+                                                          title="Flexible, Upgradeable & Highly Available NFTs"
                                                         >
                                                           <Link
-                                                            href="/collection/5d11f9f8a6afcc0001f621de"
+                                                            href="/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
                                                             prefetch={true}
                                                             toSlug={false}
                                                             useAnchorTag={true}
@@ -17749,11 +17757,16 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                               <RenderActualContent
                                                                 cardHeight={310}
                                                                 cardWidth={288}
+                                                                collectionURL={
+                                                                  Object {
+                                                                    "as": "defi-collection/5d388fa9dba75a00016a4a75/c",
+                                                                    "href": "/collection?collection_id=5d388fa9dba75a00016a4a75",
+                                                                  }
+                                                                }
                                                                 date="2019-07-24T17:04:41.148Z"
                                                                 description="Defi collection"
                                                                 id="5d388fa9dba75a00016a4a75"
                                                                 imageURL={null}
-                                                                linkComponent={[Function]}
                                                                 name="Defi collection"
                                                                 resourceType="CollectionDTO"
                                                                 userAvatar={null}
@@ -17761,200 +17774,202 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 username="fblauer"
                                                               >
                                                                 <Link
-                                                                  href="/collection/5d388fa9dba75a00016a4a75"
+                                                                  as="defi-collection/5d388fa9dba75a00016a4a75/c"
+                                                                  href="/collection?collection_id=5d388fa9dba75a00016a4a75"
                                                                   prefetch={true}
-                                                                  toSlug={false}
-                                                                  useAnchorTag={true}
                                                                 >
-                                                                  <RenderBodyContent
-                                                                    cardHeight={310}
-                                                                    cardWidth={288}
-                                                                    description="Defi collection"
-                                                                    imageURL={null}
-                                                                    name="Defi collection"
+                                                                  <a
+                                                                    href="defi-collection/5d388fa9dba75a00016a4a75/c"
                                                                     onClick={[Function]}
                                                                     onMouseEnter={[Function]}
-                                                                    userAvatar={null}
-                                                                    userId="970991bdd61aed3c2cf91e9bf6944960561dbcf5"
                                                                   >
-                                                                    <CollectionCard__LabelContainer>
-                                                                      <StyledComponent
-                                                                        forwardedComponent={
-                                                                          Object {
-                                                                            "$$typeof": Symbol(react.forward_ref),
-                                                                            "attrs": Array [],
-                                                                            "componentStyle": ComponentStyle {
-                                                                              "componentId": "CollectionCard__LabelContainer-sc-2oluuz-8",
-                                                                              "isStatic": false,
-                                                                              "lastClassName": "hUtKUh",
-                                                                              "rules": Array [
-                                                                                "display:flex;width:100%;justify-content:center;margin-bottom:",
-                                                                                [Function],
-                                                                                "px;",
-                                                                              ],
-                                                                            },
-                                                                            "displayName": "CollectionCard__LabelContainer",
-                                                                            "foldedComponentIds": Array [],
-                                                                            "render": [Function],
-                                                                            "styledComponentId": "CollectionCard__LabelContainer-sc-2oluuz-8",
-                                                                            "target": "div",
-                                                                            "toString": [Function],
-                                                                            "warnTooManyClasses": [Function],
-                                                                            "withComponent": [Function],
+                                                                    <RenderBodyContent
+                                                                      cardHeight={310}
+                                                                      cardWidth={288}
+                                                                      description="Defi collection"
+                                                                      imageURL={null}
+                                                                      name="Defi collection"
+                                                                      userAvatar={null}
+                                                                      userId="970991bdd61aed3c2cf91e9bf6944960561dbcf5"
+                                                                    >
+                                                                      <CollectionCard__LabelContainer>
+                                                                        <StyledComponent
+                                                                          forwardedComponent={
+                                                                            Object {
+                                                                              "$$typeof": Symbol(react.forward_ref),
+                                                                              "attrs": Array [],
+                                                                              "componentStyle": ComponentStyle {
+                                                                                "componentId": "CollectionCard__LabelContainer-sc-2oluuz-8",
+                                                                                "isStatic": false,
+                                                                                "lastClassName": "hUtKUh",
+                                                                                "rules": Array [
+                                                                                  "display:flex;width:100%;justify-content:center;margin-bottom:",
+                                                                                  [Function],
+                                                                                  "px;",
+                                                                                ],
+                                                                              },
+                                                                              "displayName": "CollectionCard__LabelContainer",
+                                                                              "foldedComponentIds": Array [],
+                                                                              "render": [Function],
+                                                                              "styledComponentId": "CollectionCard__LabelContainer-sc-2oluuz-8",
+                                                                              "target": "div",
+                                                                              "toString": [Function],
+                                                                              "warnTooManyClasses": [Function],
+                                                                              "withComponent": [Function],
+                                                                            }
                                                                           }
-                                                                        }
-                                                                        forwardedRef={null}
-                                                                      >
-                                                                        <div
-                                                                          className="CollectionCard__LabelContainer-sc-2oluuz-8 hUtKUh"
+                                                                          forwardedRef={null}
                                                                         >
-                                                                          <Typography__component
-                                                                            textAlign="center"
+                                                                          <div
+                                                                            className="CollectionCard__LabelContainer-sc-2oluuz-8 hUtKUh"
                                                                           >
-                                                                            <StyledComponent
-                                                                              forwardedComponent={
-                                                                                Object {
-                                                                                  "$$typeof": Symbol(react.forward_ref),
-                                                                                  "attrs": Array [],
-                                                                                  "componentStyle": ComponentStyle {
-                                                                                    "componentId": "Typography__component-sc-36xkf6-0",
-                                                                                    "isStatic": false,
-                                                                                    "lastClassName": "kALGmD",
-                                                                                    "rules": Array [
-                                                                                      "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
-                                                                                      [Function],
-                                                                                      ";text-align:",
-                                                                                      [Function],
-                                                                                      ";",
-                                                                                      [Function],
-                                                                                      " ",
-                                                                                      [Function],
-                                                                                    ],
-                                                                                  },
-                                                                                  "displayName": "Typography__component",
-                                                                                  "foldedComponentIds": Array [],
-                                                                                  "render": [Function],
-                                                                                  "styledComponentId": "Typography__component-sc-36xkf6-0",
-                                                                                  "target": "span",
-                                                                                  "toString": [Function],
-                                                                                  "warnTooManyClasses": [Function],
-                                                                                  "withComponent": [Function],
-                                                                                }
-                                                                              }
-                                                                              forwardedRef={null}
+                                                                            <Typography__component
                                                                               textAlign="center"
                                                                             >
-                                                                              <span
-                                                                                className="Typography__component-sc-36xkf6-0 YZQXM"
+                                                                              <StyledComponent
+                                                                                forwardedComponent={
+                                                                                  Object {
+                                                                                    "$$typeof": Symbol(react.forward_ref),
+                                                                                    "attrs": Array [],
+                                                                                    "componentStyle": ComponentStyle {
+                                                                                      "componentId": "Typography__component-sc-36xkf6-0",
+                                                                                      "isStatic": false,
+                                                                                      "lastClassName": "kALGmD",
+                                                                                      "rules": Array [
+                                                                                        "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                                                                                        [Function],
+                                                                                        ";text-align:",
+                                                                                        [Function],
+                                                                                        ";",
+                                                                                        [Function],
+                                                                                        " ",
+                                                                                        [Function],
+                                                                                      ],
+                                                                                    },
+                                                                                    "displayName": "Typography__component",
+                                                                                    "foldedComponentIds": Array [],
+                                                                                    "render": [Function],
+                                                                                    "styledComponentId": "Typography__component-sc-36xkf6-0",
+                                                                                    "target": "span",
+                                                                                    "toString": [Function],
+                                                                                    "warnTooManyClasses": [Function],
+                                                                                    "withComponent": [Function],
+                                                                                  }
+                                                                                }
+                                                                                forwardedRef={null}
+                                                                                textAlign="center"
                                                                               >
-                                                                                Collection
-                                                                              </span>
-                                                                            </StyledComponent>
-                                                                          </Typography__component>
-                                                                        </div>
-                                                                      </StyledComponent>
-                                                                    </CollectionCard__LabelContainer>
-                                                                    <Typography__styledComponent
-                                                                      textAlign="center"
-                                                                    >
-                                                                      <StyledComponent
-                                                                        forwardedComponent={
-                                                                          Object {
-                                                                            "$$typeof": Symbol(react.forward_ref),
-                                                                            "attrs": Array [],
-                                                                            "componentStyle": ComponentStyle {
-                                                                              "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                                              "isStatic": false,
-                                                                              "lastClassName": "jNVtUZ",
-                                                                              "rules": Array [
-                                                                                "color:",
-                                                                                [Function],
-                                                                                ";margin:0px;font-weight:",
-                                                                                "500",
-                                                                                ";",
-                                                                                ";font-size:",
-                                                                                "20",
-                                                                                "px;text-transform:",
-                                                                                [Function],
-                                                                                ";text-align:",
-                                                                                [Function],
-                                                                                ";:hover{color:",
-                                                                                [Function],
-                                                                                ";cursor:",
-                                                                                [Function],
-                                                                                ";}",
-                                                                              ],
-                                                                            },
-                                                                            "displayName": "Typography__styledComponent",
-                                                                            "foldedComponentIds": Array [],
-                                                                            "render": [Function],
-                                                                            "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                                            "target": "span",
-                                                                            "toString": [Function],
-                                                                            "warnTooManyClasses": [Function],
-                                                                            "withComponent": [Function],
-                                                                          }
-                                                                        }
-                                                                        forwardedRef={null}
+                                                                                <span
+                                                                                  className="Typography__component-sc-36xkf6-0 YZQXM"
+                                                                                >
+                                                                                  Collection
+                                                                                </span>
+                                                                              </StyledComponent>
+                                                                            </Typography__component>
+                                                                          </div>
+                                                                        </StyledComponent>
+                                                                      </CollectionCard__LabelContainer>
+                                                                      <Typography__styledComponent
                                                                         textAlign="center"
                                                                       >
-                                                                        <span
-                                                                          className="Typography__styledComponent-sc-36xkf6-5 iNROud"
-                                                                        >
-                                                                          Defi collection
-                                                                        </span>
-                                                                      </StyledComponent>
-                                                                    </Typography__styledComponent>
-                                                                    <Typography__component
-                                                                      textAlign="center"
-                                                                    >
-                                                                      <StyledComponent
-                                                                        forwardedComponent={
-                                                                          Object {
-                                                                            "$$typeof": Symbol(react.forward_ref),
-                                                                            "attrs": Array [],
-                                                                            "componentStyle": ComponentStyle {
-                                                                              "componentId": "Typography__component-sc-36xkf6-4",
-                                                                              "isStatic": false,
-                                                                              "lastClassName": "chprKh",
-                                                                              "rules": Array [
-                                                                                "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
-                                                                                [Function],
-                                                                                "px;line-height:18px;color:",
-                                                                                [Function],
-                                                                                ";",
-                                                                                ";",
-                                                                                [Function],
-                                                                                ";",
-                                                                              ],
-                                                                            },
-                                                                            "displayName": "Typography__component",
-                                                                            "foldedComponentIds": Array [],
-                                                                            "render": [Function],
-                                                                            "styledComponentId": "Typography__component-sc-36xkf6-4",
-                                                                            "target": "span",
-                                                                            "toString": [Function],
-                                                                            "warnTooManyClasses": [Function],
-                                                                            "withComponent": [Function],
+                                                                        <StyledComponent
+                                                                          forwardedComponent={
+                                                                            Object {
+                                                                              "$$typeof": Symbol(react.forward_ref),
+                                                                              "attrs": Array [],
+                                                                              "componentStyle": ComponentStyle {
+                                                                                "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                                "isStatic": false,
+                                                                                "lastClassName": "jNVtUZ",
+                                                                                "rules": Array [
+                                                                                  "color:",
+                                                                                  [Function],
+                                                                                  ";margin:0px;font-weight:",
+                                                                                  "500",
+                                                                                  ";",
+                                                                                  ";font-size:",
+                                                                                  "20",
+                                                                                  "px;text-transform:",
+                                                                                  [Function],
+                                                                                  ";text-align:",
+                                                                                  [Function],
+                                                                                  ";:hover{color:",
+                                                                                  [Function],
+                                                                                  ";cursor:",
+                                                                                  [Function],
+                                                                                  ";}",
+                                                                                ],
+                                                                              },
+                                                                              "displayName": "Typography__styledComponent",
+                                                                              "foldedComponentIds": Array [],
+                                                                              "render": [Function],
+                                                                              "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                              "target": "span",
+                                                                              "toString": [Function],
+                                                                              "warnTooManyClasses": [Function],
+                                                                              "withComponent": [Function],
+                                                                            }
                                                                           }
-                                                                        }
-                                                                        forwardedRef={null}
+                                                                          forwardedRef={null}
+                                                                          textAlign="center"
+                                                                        >
+                                                                          <span
+                                                                            className="Typography__styledComponent-sc-36xkf6-5 iNROud"
+                                                                          >
+                                                                            Defi collection
+                                                                          </span>
+                                                                        </StyledComponent>
+                                                                      </Typography__styledComponent>
+                                                                      <Typography__component
                                                                         textAlign="center"
                                                                       >
-                                                                        <span
-                                                                          className="Typography__component-sc-36xkf6-4 iELyjY"
+                                                                        <StyledComponent
+                                                                          forwardedComponent={
+                                                                            Object {
+                                                                              "$$typeof": Symbol(react.forward_ref),
+                                                                              "attrs": Array [],
+                                                                              "componentStyle": ComponentStyle {
+                                                                                "componentId": "Typography__component-sc-36xkf6-4",
+                                                                                "isStatic": false,
+                                                                                "lastClassName": "chprKh",
+                                                                                "rules": Array [
+                                                                                  "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
+                                                                                  [Function],
+                                                                                  "px;line-height:18px;color:",
+                                                                                  [Function],
+                                                                                  ";",
+                                                                                  ";",
+                                                                                  [Function],
+                                                                                  ";",
+                                                                                ],
+                                                                              },
+                                                                              "displayName": "Typography__component",
+                                                                              "foldedComponentIds": Array [],
+                                                                              "render": [Function],
+                                                                              "styledComponentId": "Typography__component-sc-36xkf6-4",
+                                                                              "target": "span",
+                                                                              "toString": [Function],
+                                                                              "warnTooManyClasses": [Function],
+                                                                              "withComponent": [Function],
+                                                                            }
+                                                                          }
+                                                                          forwardedRef={null}
+                                                                          textAlign="center"
                                                                         >
-                                                                          Defi collection
-                                                                        </span>
-                                                                      </StyledComponent>
-                                                                    </Typography__component>
-                                                                  </RenderBodyContent>
+                                                                          <span
+                                                                            className="Typography__component-sc-36xkf6-4 iELyjY"
+                                                                          >
+                                                                            Defi collection
+                                                                          </span>
+                                                                        </StyledComponent>
+                                                                      </Typography__component>
+                                                                    </RenderBodyContent>
+                                                                  </a>
                                                                 </Link>
                                                                 <Link
+                                                                  as="/public-profile/970991bdd61aed3c2cf91e9bf6944960561dbcf5"
                                                                   href="/public-profile/970991bdd61aed3c2cf91e9bf6944960561dbcf5"
                                                                   prefetch={true}
-                                                                  toSlug={false}
-                                                                  useAnchorTag={true}
                                                                 >
                                                                   <RenderPublicProfile
                                                                     cardWidth={288}
@@ -18314,9 +18329,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       id="5d388fa9dba75a00016a4a75"
                                                       imageURL={null}
                                                       linkComponent={[Function]}
+                                                      title="Defi collection"
                                                     >
                                                       <Link
-                                                        href="/collection/5d388fa9dba75a00016a4a75"
+                                                        href="/defi-collection/5d388fa9dba75a00016a4a75/c"
                                                         prefetch={true}
                                                         toSlug={false}
                                                         useAnchorTag={true}
@@ -20207,11 +20223,16 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                               <RenderActualContent
                                                                 cardHeight={310}
                                                                 cardWidth={288}
+                                                                collectionURL={
+                                                                  Object {
+                                                                    "as": "read-items/5d36c507e95943000108e6a0/c",
+                                                                    "href": "/collection?collection_id=5d36c507e95943000108e6a0",
+                                                                  }
+                                                                }
                                                                 date="2019-07-23T08:27:51.854Z"
                                                                 description="kauri communities"
                                                                 id="5d36c507e95943000108e6a0"
                                                                 imageURL={null}
-                                                                linkComponent={[Function]}
                                                                 name="Read items"
                                                                 resourceType="CollectionDTO"
                                                                 userAvatar={null}
@@ -20219,200 +20240,202 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 username={null}
                                                               >
                                                                 <Link
-                                                                  href="/collection/5d36c507e95943000108e6a0"
+                                                                  as="read-items/5d36c507e95943000108e6a0/c"
+                                                                  href="/collection?collection_id=5d36c507e95943000108e6a0"
                                                                   prefetch={true}
-                                                                  toSlug={false}
-                                                                  useAnchorTag={true}
                                                                 >
-                                                                  <RenderBodyContent
-                                                                    cardHeight={310}
-                                                                    cardWidth={288}
-                                                                    description="kauri communities"
-                                                                    imageURL={null}
-                                                                    name="Read items"
+                                                                  <a
+                                                                    href="read-items/5d36c507e95943000108e6a0/c"
                                                                     onClick={[Function]}
                                                                     onMouseEnter={[Function]}
-                                                                    userAvatar={null}
-                                                                    userId="f1e2979fe88c01d1097e8ce2d17ba9c623737ea3"
                                                                   >
-                                                                    <CollectionCard__LabelContainer>
-                                                                      <StyledComponent
-                                                                        forwardedComponent={
-                                                                          Object {
-                                                                            "$$typeof": Symbol(react.forward_ref),
-                                                                            "attrs": Array [],
-                                                                            "componentStyle": ComponentStyle {
-                                                                              "componentId": "CollectionCard__LabelContainer-sc-2oluuz-8",
-                                                                              "isStatic": false,
-                                                                              "lastClassName": "hUtKUh",
-                                                                              "rules": Array [
-                                                                                "display:flex;width:100%;justify-content:center;margin-bottom:",
-                                                                                [Function],
-                                                                                "px;",
-                                                                              ],
-                                                                            },
-                                                                            "displayName": "CollectionCard__LabelContainer",
-                                                                            "foldedComponentIds": Array [],
-                                                                            "render": [Function],
-                                                                            "styledComponentId": "CollectionCard__LabelContainer-sc-2oluuz-8",
-                                                                            "target": "div",
-                                                                            "toString": [Function],
-                                                                            "warnTooManyClasses": [Function],
-                                                                            "withComponent": [Function],
+                                                                    <RenderBodyContent
+                                                                      cardHeight={310}
+                                                                      cardWidth={288}
+                                                                      description="kauri communities"
+                                                                      imageURL={null}
+                                                                      name="Read items"
+                                                                      userAvatar={null}
+                                                                      userId="f1e2979fe88c01d1097e8ce2d17ba9c623737ea3"
+                                                                    >
+                                                                      <CollectionCard__LabelContainer>
+                                                                        <StyledComponent
+                                                                          forwardedComponent={
+                                                                            Object {
+                                                                              "$$typeof": Symbol(react.forward_ref),
+                                                                              "attrs": Array [],
+                                                                              "componentStyle": ComponentStyle {
+                                                                                "componentId": "CollectionCard__LabelContainer-sc-2oluuz-8",
+                                                                                "isStatic": false,
+                                                                                "lastClassName": "hUtKUh",
+                                                                                "rules": Array [
+                                                                                  "display:flex;width:100%;justify-content:center;margin-bottom:",
+                                                                                  [Function],
+                                                                                  "px;",
+                                                                                ],
+                                                                              },
+                                                                              "displayName": "CollectionCard__LabelContainer",
+                                                                              "foldedComponentIds": Array [],
+                                                                              "render": [Function],
+                                                                              "styledComponentId": "CollectionCard__LabelContainer-sc-2oluuz-8",
+                                                                              "target": "div",
+                                                                              "toString": [Function],
+                                                                              "warnTooManyClasses": [Function],
+                                                                              "withComponent": [Function],
+                                                                            }
                                                                           }
-                                                                        }
-                                                                        forwardedRef={null}
-                                                                      >
-                                                                        <div
-                                                                          className="CollectionCard__LabelContainer-sc-2oluuz-8 hUtKUh"
+                                                                          forwardedRef={null}
                                                                         >
-                                                                          <Typography__component
-                                                                            textAlign="center"
+                                                                          <div
+                                                                            className="CollectionCard__LabelContainer-sc-2oluuz-8 hUtKUh"
                                                                           >
-                                                                            <StyledComponent
-                                                                              forwardedComponent={
-                                                                                Object {
-                                                                                  "$$typeof": Symbol(react.forward_ref),
-                                                                                  "attrs": Array [],
-                                                                                  "componentStyle": ComponentStyle {
-                                                                                    "componentId": "Typography__component-sc-36xkf6-0",
-                                                                                    "isStatic": false,
-                                                                                    "lastClassName": "kALGmD",
-                                                                                    "rules": Array [
-                                                                                      "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
-                                                                                      [Function],
-                                                                                      ";text-align:",
-                                                                                      [Function],
-                                                                                      ";",
-                                                                                      [Function],
-                                                                                      " ",
-                                                                                      [Function],
-                                                                                    ],
-                                                                                  },
-                                                                                  "displayName": "Typography__component",
-                                                                                  "foldedComponentIds": Array [],
-                                                                                  "render": [Function],
-                                                                                  "styledComponentId": "Typography__component-sc-36xkf6-0",
-                                                                                  "target": "span",
-                                                                                  "toString": [Function],
-                                                                                  "warnTooManyClasses": [Function],
-                                                                                  "withComponent": [Function],
-                                                                                }
-                                                                              }
-                                                                              forwardedRef={null}
+                                                                            <Typography__component
                                                                               textAlign="center"
                                                                             >
-                                                                              <span
-                                                                                className="Typography__component-sc-36xkf6-0 YZQXM"
+                                                                              <StyledComponent
+                                                                                forwardedComponent={
+                                                                                  Object {
+                                                                                    "$$typeof": Symbol(react.forward_ref),
+                                                                                    "attrs": Array [],
+                                                                                    "componentStyle": ComponentStyle {
+                                                                                      "componentId": "Typography__component-sc-36xkf6-0",
+                                                                                      "isStatic": false,
+                                                                                      "lastClassName": "kALGmD",
+                                                                                      "rules": Array [
+                                                                                        "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                                                                                        [Function],
+                                                                                        ";text-align:",
+                                                                                        [Function],
+                                                                                        ";",
+                                                                                        [Function],
+                                                                                        " ",
+                                                                                        [Function],
+                                                                                      ],
+                                                                                    },
+                                                                                    "displayName": "Typography__component",
+                                                                                    "foldedComponentIds": Array [],
+                                                                                    "render": [Function],
+                                                                                    "styledComponentId": "Typography__component-sc-36xkf6-0",
+                                                                                    "target": "span",
+                                                                                    "toString": [Function],
+                                                                                    "warnTooManyClasses": [Function],
+                                                                                    "withComponent": [Function],
+                                                                                  }
+                                                                                }
+                                                                                forwardedRef={null}
+                                                                                textAlign="center"
                                                                               >
-                                                                                Collection
-                                                                              </span>
-                                                                            </StyledComponent>
-                                                                          </Typography__component>
-                                                                        </div>
-                                                                      </StyledComponent>
-                                                                    </CollectionCard__LabelContainer>
-                                                                    <Typography__styledComponent
-                                                                      textAlign="center"
-                                                                    >
-                                                                      <StyledComponent
-                                                                        forwardedComponent={
-                                                                          Object {
-                                                                            "$$typeof": Symbol(react.forward_ref),
-                                                                            "attrs": Array [],
-                                                                            "componentStyle": ComponentStyle {
-                                                                              "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                                              "isStatic": false,
-                                                                              "lastClassName": "jNVtUZ",
-                                                                              "rules": Array [
-                                                                                "color:",
-                                                                                [Function],
-                                                                                ";margin:0px;font-weight:",
-                                                                                "500",
-                                                                                ";",
-                                                                                ";font-size:",
-                                                                                "20",
-                                                                                "px;text-transform:",
-                                                                                [Function],
-                                                                                ";text-align:",
-                                                                                [Function],
-                                                                                ";:hover{color:",
-                                                                                [Function],
-                                                                                ";cursor:",
-                                                                                [Function],
-                                                                                ";}",
-                                                                              ],
-                                                                            },
-                                                                            "displayName": "Typography__styledComponent",
-                                                                            "foldedComponentIds": Array [],
-                                                                            "render": [Function],
-                                                                            "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                                            "target": "span",
-                                                                            "toString": [Function],
-                                                                            "warnTooManyClasses": [Function],
-                                                                            "withComponent": [Function],
-                                                                          }
-                                                                        }
-                                                                        forwardedRef={null}
+                                                                                <span
+                                                                                  className="Typography__component-sc-36xkf6-0 YZQXM"
+                                                                                >
+                                                                                  Collection
+                                                                                </span>
+                                                                              </StyledComponent>
+                                                                            </Typography__component>
+                                                                          </div>
+                                                                        </StyledComponent>
+                                                                      </CollectionCard__LabelContainer>
+                                                                      <Typography__styledComponent
                                                                         textAlign="center"
                                                                       >
-                                                                        <span
-                                                                          className="Typography__styledComponent-sc-36xkf6-5 iNROud"
-                                                                        >
-                                                                          Read items
-                                                                        </span>
-                                                                      </StyledComponent>
-                                                                    </Typography__styledComponent>
-                                                                    <Typography__component
-                                                                      textAlign="center"
-                                                                    >
-                                                                      <StyledComponent
-                                                                        forwardedComponent={
-                                                                          Object {
-                                                                            "$$typeof": Symbol(react.forward_ref),
-                                                                            "attrs": Array [],
-                                                                            "componentStyle": ComponentStyle {
-                                                                              "componentId": "Typography__component-sc-36xkf6-4",
-                                                                              "isStatic": false,
-                                                                              "lastClassName": "chprKh",
-                                                                              "rules": Array [
-                                                                                "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
-                                                                                [Function],
-                                                                                "px;line-height:18px;color:",
-                                                                                [Function],
-                                                                                ";",
-                                                                                ";",
-                                                                                [Function],
-                                                                                ";",
-                                                                              ],
-                                                                            },
-                                                                            "displayName": "Typography__component",
-                                                                            "foldedComponentIds": Array [],
-                                                                            "render": [Function],
-                                                                            "styledComponentId": "Typography__component-sc-36xkf6-4",
-                                                                            "target": "span",
-                                                                            "toString": [Function],
-                                                                            "warnTooManyClasses": [Function],
-                                                                            "withComponent": [Function],
+                                                                        <StyledComponent
+                                                                          forwardedComponent={
+                                                                            Object {
+                                                                              "$$typeof": Symbol(react.forward_ref),
+                                                                              "attrs": Array [],
+                                                                              "componentStyle": ComponentStyle {
+                                                                                "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                                "isStatic": false,
+                                                                                "lastClassName": "jNVtUZ",
+                                                                                "rules": Array [
+                                                                                  "color:",
+                                                                                  [Function],
+                                                                                  ";margin:0px;font-weight:",
+                                                                                  "500",
+                                                                                  ";",
+                                                                                  ";font-size:",
+                                                                                  "20",
+                                                                                  "px;text-transform:",
+                                                                                  [Function],
+                                                                                  ";text-align:",
+                                                                                  [Function],
+                                                                                  ";:hover{color:",
+                                                                                  [Function],
+                                                                                  ";cursor:",
+                                                                                  [Function],
+                                                                                  ";}",
+                                                                                ],
+                                                                              },
+                                                                              "displayName": "Typography__styledComponent",
+                                                                              "foldedComponentIds": Array [],
+                                                                              "render": [Function],
+                                                                              "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                              "target": "span",
+                                                                              "toString": [Function],
+                                                                              "warnTooManyClasses": [Function],
+                                                                              "withComponent": [Function],
+                                                                            }
                                                                           }
-                                                                        }
-                                                                        forwardedRef={null}
+                                                                          forwardedRef={null}
+                                                                          textAlign="center"
+                                                                        >
+                                                                          <span
+                                                                            className="Typography__styledComponent-sc-36xkf6-5 iNROud"
+                                                                          >
+                                                                            Read items
+                                                                          </span>
+                                                                        </StyledComponent>
+                                                                      </Typography__styledComponent>
+                                                                      <Typography__component
                                                                         textAlign="center"
                                                                       >
-                                                                        <span
-                                                                          className="Typography__component-sc-36xkf6-4 iELyjY"
+                                                                        <StyledComponent
+                                                                          forwardedComponent={
+                                                                            Object {
+                                                                              "$$typeof": Symbol(react.forward_ref),
+                                                                              "attrs": Array [],
+                                                                              "componentStyle": ComponentStyle {
+                                                                                "componentId": "Typography__component-sc-36xkf6-4",
+                                                                                "isStatic": false,
+                                                                                "lastClassName": "chprKh",
+                                                                                "rules": Array [
+                                                                                  "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
+                                                                                  [Function],
+                                                                                  "px;line-height:18px;color:",
+                                                                                  [Function],
+                                                                                  ";",
+                                                                                  ";",
+                                                                                  [Function],
+                                                                                  ";",
+                                                                                ],
+                                                                              },
+                                                                              "displayName": "Typography__component",
+                                                                              "foldedComponentIds": Array [],
+                                                                              "render": [Function],
+                                                                              "styledComponentId": "Typography__component-sc-36xkf6-4",
+                                                                              "target": "span",
+                                                                              "toString": [Function],
+                                                                              "warnTooManyClasses": [Function],
+                                                                              "withComponent": [Function],
+                                                                            }
+                                                                          }
+                                                                          forwardedRef={null}
+                                                                          textAlign="center"
                                                                         >
-                                                                          kauri communities
-                                                                        </span>
-                                                                      </StyledComponent>
-                                                                    </Typography__component>
-                                                                  </RenderBodyContent>
+                                                                          <span
+                                                                            className="Typography__component-sc-36xkf6-4 iELyjY"
+                                                                          >
+                                                                            kauri communities
+                                                                          </span>
+                                                                        </StyledComponent>
+                                                                      </Typography__component>
+                                                                    </RenderBodyContent>
+                                                                  </a>
                                                                 </Link>
                                                                 <Link
+                                                                  as="/public-profile/f1e2979fe88c01d1097e8ce2d17ba9c623737ea3"
                                                                   href="/public-profile/f1e2979fe88c01d1097e8ce2d17ba9c623737ea3"
                                                                   prefetch={true}
-                                                                  toSlug={false}
-                                                                  useAnchorTag={true}
                                                                 >
                                                                   <RenderPublicProfile
                                                                     cardWidth={288}
@@ -20772,9 +20795,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       id="5d36c507e95943000108e6a0"
                                                       imageURL={null}
                                                       linkComponent={[Function]}
+                                                      title="Read items"
                                                     >
                                                       <Link
-                                                        href="/collection/5d36c507e95943000108e6a0"
+                                                        href="/read-items/5d36c507e95943000108e6a0/c"
                                                         prefetch={true}
                                                         toSlug={false}
                                                         useAnchorTag={true}

@@ -15,7 +15,7 @@ import {
     IDeleteDraftArticleAction,
     IDeleteDraftArticlePayload,
 } from '../../ArticleDraft/DeleteDraftArticleModule'
-import getArticleHref from '../../../lib/getArticleHref'
+import { getArticleURL } from '../../../lib/getURLs'
 
 interface IArticlesProps {
     data: searchPersonalArticles
@@ -47,7 +47,7 @@ const Articles: React.FC<IArticlesProps> = ({ data, routeChangeAction }) => {
                         article =>
                             article && (
                                 <ArticleCard
-                                    href={getArticleHref(article)}
+                                    href={getArticleURL(article)}
                                     {...article}
                                 />
                             )
