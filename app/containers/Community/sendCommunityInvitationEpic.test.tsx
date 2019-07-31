@@ -2,7 +2,6 @@ import testEpic from '../../lib/test-epic'
 import {
     sendCommunityInvitationEpic,
     sendCommunityInvitationAction,
-    invitationsendCommunitydAction,
     invitationSentAction,
 } from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
@@ -73,13 +72,13 @@ describe('sendCommunityInvitationEpic', () => {
         })
 
         const expectedAction = [
-          showNotificationAction({
-            description: `The invitation ${invitation.email} for to join the community has been sent! You can view and manage all moderators from the Manage tab.`,
-            message: 'Invitation Sent',
-            notificationType: 'success',
-          }),
-          invitationSentAction(),
-          closeModalAction(),
+            showNotificationAction({
+                description: `The invitation ${invitation.email} for to join the community has been sent! You can view and manage all moderators from the Manage tab.`,
+                message: 'Invitation Sent',
+                notificationType: 'success',
+            }),
+            invitationSentAction(),
+            closeModalAction(),
         ]
 
         const resultingActions = await testEpic(

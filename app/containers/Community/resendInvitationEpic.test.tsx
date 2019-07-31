@@ -1,5 +1,9 @@
 import testEpic from '../../lib/test-epic'
-import { resendInvitationEpic, resendInvitationAction, invitationResentAction } from './Module'
+import {
+    resendInvitationEpic,
+    resendInvitationAction,
+    invitationResentAction,
+} from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { closeModalAction } from '../../components/Modal/Module'
 

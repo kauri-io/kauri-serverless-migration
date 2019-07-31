@@ -19,7 +19,7 @@ describe('communityCreatedEpic', () => {
             port: '123',
             protocol: 'http:',
             hostname: 'localhost',
-            reload: () => ({})
+            reload: () => ({}),
         } as any
     })
 

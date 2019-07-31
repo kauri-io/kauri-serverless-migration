@@ -4,7 +4,6 @@ import {
     acceptArticleTransferAction,
     finaliseArticleTransferAction,
 } from './TransferModule'
-import { showNotificationAction } from '../../../lib/Epics/ShowNotificationEpic'
 
 describe('acceptArticleTransferEpic', () => {
     beforeAll(() => {
@@ -33,12 +32,16 @@ describe('acceptArticleTransferEpic', () => {
             author: { id: '123', name: 'Alice' },
         }
         const mockApolloSubscriber = () =>
-            Promise.resolve({ data: { output: {
-              hash: mockGetArticle.contentHash,
-              version,
-              articleAuthor: mockGetArticle.contributor,
-              dateCreated: mockGetArticle.dateCreated,
-          } } })
+            Promise.resolve({
+                data: {
+                    output: {
+                        hash: mockGetArticle.contentHash,
+                        version,
+                        articleAuthor: mockGetArticle.contributor,
+                        dateCreated: mockGetArticle.dateCreated,
+                    },
+                },
+            })
         const mockApolloClient = {
             mutate: () =>
                 Promise.resolve({
@@ -56,13 +59,13 @@ describe('acceptArticleTransferEpic', () => {
         })
 
         const expectedAction = [
-          finaliseArticleTransferAction({
-            contentHash: mockGetArticle.contentHash,
-            contributor: mockGetArticle.contributor,
-            dateCreated: mockGetArticle.dateCreated,
-            id,
-            version: mockGetArticle.version,
-          })
+            finaliseArticleTransferAction({
+                contentHash: mockGetArticle.contentHash,
+                contributor: mockGetArticle.contributor,
+                dateCreated: mockGetArticle.dateCreated,
+                id,
+                version: mockGetArticle.version,
+            }),
         ]
 
         const resultingActions = await testEpic(

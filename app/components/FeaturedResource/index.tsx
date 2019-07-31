@@ -87,24 +87,9 @@ const FeaturedResource: React.FunctionComponent<
                     <Label>Featured</Label>
                     {linkComponent(
                         <>
-                            <Title2>
-                                {String(
-                                    title && title.length < 30
-                                        ? title
-                                        : title &&
-                                              `${title.substring(0, 27)}...`
-                                )}
-                            </Title2>
+                            <Title2>{title && String(title)}</Title2>
                             <BodyCard>
-                                {String(
-                                    description && description.length < 160
-                                        ? description
-                                        : description &&
-                                              `${description.substring(
-                                                  0,
-                                                  157
-                                              )}...`
-                                )}
+                                {description && String(description)}
                             </BodyCard>
                         </>,
                         resourceType === 'article'

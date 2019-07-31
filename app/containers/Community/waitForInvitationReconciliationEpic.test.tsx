@@ -5,7 +5,6 @@ import {
     invitationAcceptedAction,
 } from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
-import { closeModalAction } from '../../components/Modal/Module'
 
 describe('waitForInvitationReconciliationEpic', () => {
     beforeAll(() => {
@@ -20,11 +19,11 @@ describe('waitForInvitationReconciliationEpic', () => {
 
         delete global.window.location
         global.window = Object.create(window)
-        global.window.location  = ({
-          port: '123',
-          protocol: 'http:',
-          hostname: 'localhost',
-        } as any);
+        global.window.location = {
+            port: '123',
+            protocol: 'http:',
+            hostname: 'localhost',
+        } as any
     })
 
     it('waits for the ws committed and member added messages from the blockchain before refreshing the page for new JWT details', async () => {

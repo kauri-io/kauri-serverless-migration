@@ -2,7 +2,6 @@ import testEpic from '../../lib/test-epic'
 import {
     removeMemberEpic,
     removeMemberAction,
-    invitationRevokedAction,
     memberRemovedAction,
 } from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
@@ -71,11 +70,11 @@ describe('removeMemberEpic', () => {
         const expectedAction = [
             closeModalAction(),
             showNotificationAction({
-              description: `That user has been successfully removed from the community`,
-              message: 'Member removed',
-              notificationType: 'success',
-          }),
-          memberRemovedAction()
+                description: `That user has been successfully removed from the community`,
+                message: 'Member removed',
+                notificationType: 'success',
+            }),
+            memberRemovedAction(),
         ]
 
         const resultingActions = await testEpic(

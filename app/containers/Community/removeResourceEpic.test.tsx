@@ -1,9 +1,5 @@
 import testEpic from '../../lib/test-epic'
-import {
-    removeResourceEpic,
-    removeResourceAction,
-    memberRoleChangedAction,
-} from './Module'
+import { removeResourceEpic, removeResourceAction } from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { closeModalAction } from '../../components/Modal/Module'
 
@@ -50,7 +46,7 @@ describe('removeResourceEpic', () => {
             mutate: () =>
                 Promise.resolve({
                     data: {
-                      removeResource: { hash: '1234567890' },
+                        removeResource: { hash: '1234567890' },
                     },
                 }),
             query: () =>

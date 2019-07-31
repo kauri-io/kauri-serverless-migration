@@ -1,4 +1,4 @@
-import { Epic, ActionsObservable, ofType } from 'redux-observable'
+import { Epic, ofType } from 'redux-observable'
 import { tail, compose, head, toUpper } from 'ramda'
 import { IReduxState, IDependencies } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'

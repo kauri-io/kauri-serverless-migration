@@ -89,6 +89,8 @@ const ResourceRowWithImage: React.SFC<IProps> = ({
                         width={DEFAULT_CARD_WIDTH}
                         height={195}
                         image={imageURL}
+                        borderTopLeftRadius={'4px'}
+                        borderBottomLeftRadius={'4px'}
                     />,
                     resourceType === 'collection'
                         ? `/collection/${id}`
@@ -106,24 +108,10 @@ const ResourceRowWithImage: React.SFC<IProps> = ({
                                 : 'Posted ' +
                                   moment(date).format('DD MMM YYYY HH:mm')}
                         </Label>
-                        <H1>
-                            {String(
-                                title && title.length < 30
-                                    ? title
-                                    : title && `${title.substring(0, 27)}...`
-                            )}
-                        </H1>
+                        <H1>{title && String(title)}</H1>
                         {description && (
                             <BodyCard>
-                                {String(
-                                    description && description.length < 160
-                                        ? description
-                                        : description &&
-                                              `${description.substring(
-                                                  0,
-                                                  157
-                                              )}...`
-                                )}
+                                {description && String(description)}
                             </BodyCard>
                         )}
                         {Array.isArray(tags) && tags.length > 0 && (
