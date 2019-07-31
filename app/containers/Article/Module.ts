@@ -2,11 +2,15 @@ import { of, from } from 'rxjs'
 import { IDependencies, IReduxState } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { Epic, ofType } from 'redux-observable'
-import { vote as voteMutation } from '../../queries/Article'
+import { vote as voteMutation, addCommentMutation } from '../../queries/Article'
 import { voteVariables, vote } from '../../queries/__generated__/vote'
 import analytics from '../../lib/analytics'
-import { switchMap, mergeMap, tap, catchError } from 'rxjs/operators'
+import { switchMap, mergeMap, tap, catchError, mapTo } from 'rxjs/operators'
 import { path } from 'ramda'
+import {
+    addCommentVariables,
+    addComment,
+} from '../../queries/__generated__/addComment'
 
 export interface IVoteAction {
     type: string
@@ -68,6 +72,72 @@ export const voteEpic: Epic<IVoteAction, any, IReduxState, IDependencies> = (
                             description: 'Please try again!',
                             message: 'Voting error',
                             notificationType: 'error',
+                        })
+                    )
+                })
+            )
+        )
+    )
+
+export type IAddCommentAction = {
+    type: string
+    payload: addCommentVariables
+    callback: any
+}
+
+export const ADD_COMMENT: string = 'ADD_COMMENT'
+
+export const addCommentAction = (
+    payload: addCommentVariables,
+    callback: any
+): IAddCommentAction => ({
+    type: ADD_COMMENT,
+    payload,
+    callback,
+})
+
+export const addCommentEpic: Epic<
+    IAddCommentAction,
+    any,
+    IReduxState,
+    IDependencies
+> = (action$, _, { apolloClient, apolloSubscriber }) =>
+    action$.pipe(
+        ofType(ADD_COMMENT),
+        switchMap(({ payload: { parent, body }, callback }) =>
+            from(
+                apolloClient.mutate<addComment, addCommentVariables>({
+                    mutation: addCommentMutation,
+                    variables: { parent, body },
+                })
+            ).pipe(
+                mergeMap(({ data }) =>
+                    apolloSubscriber<{ error?: string }>(
+                        path<string>(['addComment', 'hash'])(data) || ''
+                    )
+                ),
+                // tap(console.log),
+                tap(_ => (callback ? callback() : null)),
+                tap(() =>
+                    analytics.track('Leave Comment', {
+                        category: 'article_actions',
+                    })
+                ),
+                tap(() => apolloClient.resetStore()),
+                mapTo(
+                    showNotificationAction({
+                        notificationType: 'success',
+                        message: 'Comment added',
+                        description: `Your comment has been added to the article!`,
+                    })
+                ),
+                catchError(err => {
+                    console.error(err)
+                    return of(
+                        showNotificationAction({
+                            notificationType: 'error',
+                            message: 'Submission error',
+                            description: 'Please try again!',
                         })
                     )
                 })

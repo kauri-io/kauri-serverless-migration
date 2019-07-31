@@ -2690,7 +2690,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                 "componentStyle": ComponentStyle {
                                                                   "componentId": "TertiaryButton-sc-1rjobqw-0",
                                                                   "isStatic": false,
-                                                                  "lastClassName": "CufMJ",
+                                                                  "lastClassName": "deyJuN",
                                                                   "rules": Array [
                                                                     "display:flex;align-items:center;border:none;background-color:transparent;cursor:",
                                                                     [Function],
@@ -2724,7 +2724,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                             type="button"
                                                           >
                                                             <button
-                                                              className="TertiaryButton-sc-1rjobqw-0 CufMJ"
+                                                              className="TertiaryButton-sc-1rjobqw-0 deyJuN"
                                                               color="white"
                                                               disabled={false}
                                                               fontSize={0}
