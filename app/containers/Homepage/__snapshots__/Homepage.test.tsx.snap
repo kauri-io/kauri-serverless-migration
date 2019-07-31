@@ -4549,13 +4549,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "ResourceRowWithImage__ResourceRow-tpmrbu-0",
                                                   "isStatic": false,
-                                                  "lastClassName": "hVSttN",
+                                                  "lastClassName": "igCEwE",
                                                   "rules": Array [
                                                     "display:flex;width:",
                                                     [Function],
                                                     "px;height:195px;background-color:",
                                                     [Function],
-                                                    ";border-radius:4px;box-shadow:0 0 4px 0 rgba(0,0,0,0.11);",
+                                                    ";border-radius:4px;box-shadow:0 0 4px 0 rgba(0,0,0,0.11);cursor:pointer;",
                                                   ],
                                                 },
                                                 "displayName": "ResourceRowWithImage__ResourceRow",
@@ -4571,7 +4571,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             forwardedRef={null}
                                           >
                                             <div
-                                              className="ResourceRowWithImage__ResourceRow-tpmrbu-0 hVSttN"
+                                              className="ResourceRowWithImage__ResourceRow-tpmrbu-0 igCEwE"
                                             >
                                               <Link
                                                 href="/building-and-working-with-facebook's-cryptocurrency-libra/cc41c516e62a4ca593f5ecdd86bdf299/a"
@@ -5516,13 +5516,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "ResourceRowWithImage__ResourceRow-tpmrbu-0",
                                                   "isStatic": false,
-                                                  "lastClassName": "hVSttN",
+                                                  "lastClassName": "igCEwE",
                                                   "rules": Array [
                                                     "display:flex;width:",
                                                     [Function],
                                                     "px;height:195px;background-color:",
                                                     [Function],
-                                                    ";border-radius:4px;box-shadow:0 0 4px 0 rgba(0,0,0,0.11);",
+                                                    ";border-radius:4px;box-shadow:0 0 4px 0 rgba(0,0,0,0.11);cursor:pointer;",
                                                   ],
                                                 },
                                                 "displayName": "ResourceRowWithImage__ResourceRow",
@@ -5538,7 +5538,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             forwardedRef={null}
                                           >
                                             <div
-                                              className="ResourceRowWithImage__ResourceRow-tpmrbu-0 hVSttN"
+                                              className="ResourceRowWithImage__ResourceRow-tpmrbu-0 igCEwE"
                                             >
                                               <Link
                                                 href="/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
@@ -11028,7 +11028,6 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                 ]
                               }
                               key="top contributors"
-                              linkComponent={[Function]}
                             >
                               <TopResourcesSection>
                                 <StyledComponent
@@ -11143,1239 +11142,1259 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           className="TopContributors__ContributorsContainer-sc-2nkhip-0 cOmYpI"
                                         >
                                           <Link
-                                            href="/public-profile/52d5520c145553241ffe4609008695519b3ad705"
-                                            key="/public-profile/52d5520c145553241ffe4609008695519b3ad705"
+                                            as="kendall/52d5520c145553241ffe4609008695519b3ad705/p"
+                                            href="/public-profile?user_id=52d5520c145553241ffe4609008695519b3ad705"
                                             prefetch={true}
                                           >
-                                            <UserAvatarComponent
-                                              avatar="https://api.beta.kauri.io:443/ipfs/QmV2qgMi7rJ5k7kZqNbXLkePKEBN3S1UT8Qg3YSGAgVtkG"
-                                              key="52d5520c145553241ffe4609008695519b3ad705"
+                                            <a
+                                              href="kendall/52d5520c145553241ffe4609008695519b3ad705/p"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
-                                              userId="52d5520c145553241ffe4609008695519b3ad705"
-                                              username="kendall"
                                             >
-                                              <UserAvatar__Container
-                                                color="textPrimary"
-                                                fullWidth={false}
+                                              <UserAvatarComponent
+                                                avatar="https://api.beta.kauri.io:443/ipfs/QmV2qgMi7rJ5k7kZqNbXLkePKEBN3S1UT8Qg3YSGAgVtkG"
                                                 key="52d5520c145553241ffe4609008695519b3ad705"
+                                                userId="52d5520c145553241ffe4609008695519b3ad705"
+                                                username="kendall"
                                               >
-                                                <StyledComponent
+                                                <UserAvatar__Container
                                                   color="textPrimary"
-                                                  forwardedComponent={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": Array [],
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "UserAvatar__Container-plfgvx-0",
-                                                        "isStatic": false,
-                                                        "lastClassName": "SjTka",
-                                                        "rules": Array [
-                                                          "display:flex;align-items:center;width:",
-                                                          [Function],
-                                                          ";>:first-child{margin-right:",
-                                                          [Function],
-                                                          "px;}>:nth-child(2){white-space:pre;overflow:hidden;text-overflow:ellipsis;max-width:",
-                                                          [Function],
-                                                          ";color:",
-                                                          [Function],
-                                                          ";}",
-                                                        ],
-                                                      },
-                                                      "displayName": "UserAvatar__Container",
-                                                      "foldedComponentIds": Array [],
-                                                      "render": [Function],
-                                                      "styledComponentId": "UserAvatar__Container-plfgvx-0",
-                                                      "target": "div",
-                                                      "toString": [Function],
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
-                                                    }
-                                                  }
-                                                  forwardedRef={null}
                                                   fullWidth={false}
+                                                  key="52d5520c145553241ffe4609008695519b3ad705"
                                                 >
-                                                  <div
-                                                    className="UserAvatar__Container-plfgvx-0 SjTka"
+                                                  <StyledComponent
                                                     color="textPrimary"
+                                                    forwardedComponent={
+                                                      Object {
+                                                        "$$typeof": Symbol(react.forward_ref),
+                                                        "attrs": Array [],
+                                                        "componentStyle": ComponentStyle {
+                                                          "componentId": "UserAvatar__Container-plfgvx-0",
+                                                          "isStatic": false,
+                                                          "lastClassName": "SjTka",
+                                                          "rules": Array [
+                                                            "display:flex;align-items:center;width:",
+                                                            [Function],
+                                                            ";>:first-child{margin-right:",
+                                                            [Function],
+                                                            "px;}>:nth-child(2){white-space:pre;overflow:hidden;text-overflow:ellipsis;max-width:",
+                                                            [Function],
+                                                            ";color:",
+                                                            [Function],
+                                                            ";}",
+                                                          ],
+                                                        },
+                                                        "displayName": "UserAvatar__Container",
+                                                        "foldedComponentIds": Array [],
+                                                        "render": [Function],
+                                                        "styledComponentId": "UserAvatar__Container-plfgvx-0",
+                                                        "target": "div",
+                                                        "toString": [Function],
+                                                        "warnTooManyClasses": [Function],
+                                                        "withComponent": [Function],
+                                                      }
+                                                    }
+                                                    forwardedRef={null}
+                                                    fullWidth={false}
                                                   >
-                                                    <UserAvatar__Avatar
-                                                      avatar="https://api.beta.kauri.io:443/ipfs/QmV2qgMi7rJ5k7kZqNbXLkePKEBN3S1UT8Qg3YSGAgVtkG"
-                                                      color="white"
-                                                      height={30}
-                                                      width={30}
+                                                    <div
+                                                      className="UserAvatar__Container-plfgvx-0 SjTka"
+                                                      color="textPrimary"
                                                     >
-                                                      <StyledComponent
+                                                      <UserAvatar__Avatar
                                                         avatar="https://api.beta.kauri.io:443/ipfs/QmV2qgMi7rJ5k7kZqNbXLkePKEBN3S1UT8Qg3YSGAgVtkG"
                                                         color="white"
-                                                        forwardedComponent={
-                                                          Object {
-                                                            "$$typeof": Symbol(react.forward_ref),
-                                                            "attrs": Array [],
-                                                            "componentStyle": ComponentStyle {
-                                                              "componentId": "UserAvatar__Avatar-plfgvx-1",
-                                                              "isStatic": false,
-                                                              "lastClassName": "cXMNBx",
-                                                              "rules": Array [
-                                                                "display:flex;height:",
-                                                                [Function],
-                                                                ";width:",
-                                                                [Function],
-                                                                ";justify-content:center;align-items:center;border-radius:",
-                                                                [Function],
-                                                                ";background:",
-                                                                [Function],
-                                                                ";> *{color:",
-                                                                [Function],
-                                                                ";text-transform:uppercase;line-height:10px;}",
-                                                              ],
-                                                            },
-                                                            "displayName": "UserAvatar__Avatar",
-                                                            "foldedComponentIds": Array [],
-                                                            "render": [Function],
-                                                            "styledComponentId": "UserAvatar__Avatar-plfgvx-1",
-                                                            "target": "div",
-                                                            "toString": [Function],
-                                                            "warnTooManyClasses": [Function],
-                                                            "withComponent": [Function],
-                                                          }
-                                                        }
-                                                        forwardedRef={null}
                                                         height={30}
                                                         width={30}
                                                       >
-                                                        <div
-                                                          className="UserAvatar__Avatar-plfgvx-1 kMwImw"
+                                                        <StyledComponent
+                                                          avatar="https://api.beta.kauri.io:443/ipfs/QmV2qgMi7rJ5k7kZqNbXLkePKEBN3S1UT8Qg3YSGAgVtkG"
                                                           color="white"
+                                                          forwardedComponent={
+                                                            Object {
+                                                              "$$typeof": Symbol(react.forward_ref),
+                                                              "attrs": Array [],
+                                                              "componentStyle": ComponentStyle {
+                                                                "componentId": "UserAvatar__Avatar-plfgvx-1",
+                                                                "isStatic": false,
+                                                                "lastClassName": "cXMNBx",
+                                                                "rules": Array [
+                                                                  "display:flex;height:",
+                                                                  [Function],
+                                                                  ";width:",
+                                                                  [Function],
+                                                                  ";justify-content:center;align-items:center;border-radius:",
+                                                                  [Function],
+                                                                  ";background:",
+                                                                  [Function],
+                                                                  ";> *{color:",
+                                                                  [Function],
+                                                                  ";text-transform:uppercase;line-height:10px;}",
+                                                                ],
+                                                              },
+                                                              "displayName": "UserAvatar__Avatar",
+                                                              "foldedComponentIds": Array [],
+                                                              "render": [Function],
+                                                              "styledComponentId": "UserAvatar__Avatar-plfgvx-1",
+                                                              "target": "div",
+                                                              "toString": [Function],
+                                                              "warnTooManyClasses": [Function],
+                                                              "withComponent": [Function],
+                                                            }
+                                                          }
+                                                          forwardedRef={null}
                                                           height={30}
                                                           width={30}
                                                         >
-                                                          <Image
-                                                            borderRadius="4px"
+                                                          <div
+                                                            className="UserAvatar__Avatar-plfgvx-1 kMwImw"
+                                                            color="white"
                                                             height={30}
-                                                            image="https://api.beta.kauri.io:443/ipfs/QmV2qgMi7rJ5k7kZqNbXLkePKEBN3S1UT8Qg3YSGAgVtkG"
                                                             width={30}
                                                           >
-                                                            <InView
-                                                              rootMargin="200px 0px"
-                                                              threshold={0}
-                                                              triggerOnce={true}
+                                                            <Image
+                                                              borderRadius="4px"
+                                                              height={30}
+                                                              image="https://api.beta.kauri.io:443/ipfs/QmV2qgMi7rJ5k7kZqNbXLkePKEBN3S1UT8Qg3YSGAgVtkG"
+                                                              width={30}
                                                             >
-                                                              <Image__Img
-                                                                borderRadius="4px"
-                                                                height={30}
-                                                                image="https://api.beta.kauri.io:443/ipfs/QmV2qgMi7rJ5k7kZqNbXLkePKEBN3S1UT8Qg3YSGAgVtkG"
-                                                                inView={false}
-                                                                width={30}
+                                                              <InView
+                                                                rootMargin="200px 0px"
+                                                                threshold={0}
+                                                                triggerOnce={true}
                                                               >
-                                                                <StyledComponent
+                                                                <Image__Img
                                                                   borderRadius="4px"
-                                                                  forwardedComponent={
-                                                                    Object {
-                                                                      "$$typeof": Symbol(react.forward_ref),
-                                                                      "attrs": Array [],
-                                                                      "componentStyle": ComponentStyle {
-                                                                        "componentId": "Image__Img-sc-1jpuda7-0",
-                                                                        "isStatic": false,
-                                                                        "lastClassName": "jAWVlp",
-                                                                        "rules": Array [
-                                                                          "height:",
-                                                                          [Function],
-                                                                          ";width:",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";background:",
-                                                                          [Function],
-                                                                          ";background-size:cover;opacity:",
-                                                                          [Function],
-                                                                          ";transition:opacity ",
-                                                                          [Function],
-                                                                          "s;",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";position:",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          " ",
-                                                                          [Function],
-                                                                          ";",
-                                                                        ],
-                                                                      },
-                                                                      "displayName": "Image__Img",
-                                                                      "foldedComponentIds": Array [],
-                                                                      "render": [Function],
-                                                                      "styledComponentId": "Image__Img-sc-1jpuda7-0",
-                                                                      "target": "div",
-                                                                      "toString": [Function],
-                                                                      "warnTooManyClasses": [Function],
-                                                                      "withComponent": [Function],
-                                                                    }
-                                                                  }
-                                                                  forwardedRef={[Function]}
                                                                   height={30}
                                                                   image="https://api.beta.kauri.io:443/ipfs/QmV2qgMi7rJ5k7kZqNbXLkePKEBN3S1UT8Qg3YSGAgVtkG"
                                                                   inView={false}
                                                                   width={30}
                                                                 >
-                                                                  <div
-                                                                    className="Image__Img-sc-1jpuda7-0 jAWVlp"
+                                                                  <StyledComponent
+                                                                    borderRadius="4px"
+                                                                    forwardedComponent={
+                                                                      Object {
+                                                                        "$$typeof": Symbol(react.forward_ref),
+                                                                        "attrs": Array [],
+                                                                        "componentStyle": ComponentStyle {
+                                                                          "componentId": "Image__Img-sc-1jpuda7-0",
+                                                                          "isStatic": false,
+                                                                          "lastClassName": "jAWVlp",
+                                                                          "rules": Array [
+                                                                            "height:",
+                                                                            [Function],
+                                                                            ";width:",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";background:",
+                                                                            [Function],
+                                                                            ";background-size:cover;opacity:",
+                                                                            [Function],
+                                                                            ";transition:opacity ",
+                                                                            [Function],
+                                                                            "s;",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";position:",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            " ",
+                                                                            [Function],
+                                                                            ";",
+                                                                          ],
+                                                                        },
+                                                                        "displayName": "Image__Img",
+                                                                        "foldedComponentIds": Array [],
+                                                                        "render": [Function],
+                                                                        "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                                                                        "target": "div",
+                                                                        "toString": [Function],
+                                                                        "warnTooManyClasses": [Function],
+                                                                        "withComponent": [Function],
+                                                                      }
+                                                                    }
+                                                                    forwardedRef={[Function]}
                                                                     height={30}
+                                                                    image="https://api.beta.kauri.io:443/ipfs/QmV2qgMi7rJ5k7kZqNbXLkePKEBN3S1UT8Qg3YSGAgVtkG"
+                                                                    inView={false}
                                                                     width={30}
-                                                                  />
-                                                                </StyledComponent>
-                                                              </Image__Img>
-                                                            </InView>
-                                                          </Image>
-                                                        </div>
-                                                      </StyledComponent>
-                                                    </UserAvatar__Avatar>
-                                                    <Typography__styledComponent>
-                                                      <StyledComponent
-                                                        forwardedComponent={
-                                                          Object {
-                                                            "$$typeof": Symbol(react.forward_ref),
-                                                            "attrs": Array [],
-                                                            "componentStyle": ComponentStyle {
-                                                              "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                              "isStatic": false,
-                                                              "lastClassName": "evZVGc",
-                                                              "rules": Array [
-                                                                "color:",
-                                                                [Function],
-                                                                ";margin:0px;font-weight:",
-                                                                "bold",
-                                                                ";",
-                                                                ";font-size:",
-                                                                "13",
-                                                                "px;text-transform:",
-                                                                [Function],
-                                                                ";text-align:",
-                                                                [Function],
-                                                                ";:hover{color:",
-                                                                [Function],
-                                                                ";cursor:",
-                                                                [Function],
-                                                                ";}",
-                                                              ],
-                                                            },
-                                                            "displayName": "Typography__styledComponent",
-                                                            "foldedComponentIds": Array [],
-                                                            "render": [Function],
-                                                            "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                            "target": "span",
-                                                            "toString": [Function],
-                                                            "warnTooManyClasses": [Function],
-                                                            "withComponent": [Function],
+                                                                  >
+                                                                    <div
+                                                                      className="Image__Img-sc-1jpuda7-0 jAWVlp"
+                                                                      height={30}
+                                                                      width={30}
+                                                                    />
+                                                                  </StyledComponent>
+                                                                </Image__Img>
+                                                              </InView>
+                                                            </Image>
+                                                          </div>
+                                                        </StyledComponent>
+                                                      </UserAvatar__Avatar>
+                                                      <Typography__styledComponent>
+                                                        <StyledComponent
+                                                          forwardedComponent={
+                                                            Object {
+                                                              "$$typeof": Symbol(react.forward_ref),
+                                                              "attrs": Array [],
+                                                              "componentStyle": ComponentStyle {
+                                                                "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                "isStatic": false,
+                                                                "lastClassName": "evZVGc",
+                                                                "rules": Array [
+                                                                  "color:",
+                                                                  [Function],
+                                                                  ";margin:0px;font-weight:",
+                                                                  "bold",
+                                                                  ";",
+                                                                  ";font-size:",
+                                                                  "13",
+                                                                  "px;text-transform:",
+                                                                  [Function],
+                                                                  ";text-align:",
+                                                                  [Function],
+                                                                  ";:hover{color:",
+                                                                  [Function],
+                                                                  ";cursor:",
+                                                                  [Function],
+                                                                  ";}",
+                                                                ],
+                                                              },
+                                                              "displayName": "Typography__styledComponent",
+                                                              "foldedComponentIds": Array [],
+                                                              "render": [Function],
+                                                              "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                              "target": "span",
+                                                              "toString": [Function],
+                                                              "warnTooManyClasses": [Function],
+                                                              "withComponent": [Function],
+                                                            }
                                                           }
-                                                        }
-                                                        forwardedRef={null}
-                                                      >
-                                                        <span
-                                                          className="Typography__styledComponent-sc-36xkf6-5 evZVGc"
+                                                          forwardedRef={null}
                                                         >
-                                                          kendall
-                                                        </span>
-                                                      </StyledComponent>
-                                                    </Typography__styledComponent>
-                                                  </div>
-                                                </StyledComponent>
-                                              </UserAvatar__Container>
-                                            </UserAvatarComponent>
+                                                          <span
+                                                            className="Typography__styledComponent-sc-36xkf6-5 evZVGc"
+                                                          >
+                                                            kendall
+                                                          </span>
+                                                        </StyledComponent>
+                                                      </Typography__styledComponent>
+                                                    </div>
+                                                  </StyledComponent>
+                                                </UserAvatar__Container>
+                                              </UserAvatarComponent>
+                                            </a>
                                           </Link>
                                           <Link
-                                            href="/public-profile/60e0fca78e5bf845d7af875288b1bfb010d61ac4"
-                                            key="/public-profile/60e0fca78e5bf845d7af875288b1bfb010d61ac4"
+                                            as="wil/60e0fca78e5bf845d7af875288b1bfb010d61ac4/p"
+                                            href="/public-profile?user_id=60e0fca78e5bf845d7af875288b1bfb010d61ac4"
                                             prefetch={true}
                                           >
-                                            <UserAvatarComponent
-                                              avatar="https://api.beta.kauri.io:443/ipfs/QmQQCj8493FQLUmWGCQMWzny6euAQUwhSBToFZjPtAExbH"
-                                              key="60e0fca78e5bf845d7af875288b1bfb010d61ac4"
+                                            <a
+                                              href="wil/60e0fca78e5bf845d7af875288b1bfb010d61ac4/p"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
-                                              userId="60e0fca78e5bf845d7af875288b1bfb010d61ac4"
-                                              username="wil"
                                             >
-                                              <UserAvatar__Container
-                                                color="textPrimary"
-                                                fullWidth={false}
+                                              <UserAvatarComponent
+                                                avatar="https://api.beta.kauri.io:443/ipfs/QmQQCj8493FQLUmWGCQMWzny6euAQUwhSBToFZjPtAExbH"
                                                 key="60e0fca78e5bf845d7af875288b1bfb010d61ac4"
+                                                userId="60e0fca78e5bf845d7af875288b1bfb010d61ac4"
+                                                username="wil"
                                               >
-                                                <StyledComponent
+                                                <UserAvatar__Container
                                                   color="textPrimary"
-                                                  forwardedComponent={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": Array [],
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "UserAvatar__Container-plfgvx-0",
-                                                        "isStatic": false,
-                                                        "lastClassName": "SjTka",
-                                                        "rules": Array [
-                                                          "display:flex;align-items:center;width:",
-                                                          [Function],
-                                                          ";>:first-child{margin-right:",
-                                                          [Function],
-                                                          "px;}>:nth-child(2){white-space:pre;overflow:hidden;text-overflow:ellipsis;max-width:",
-                                                          [Function],
-                                                          ";color:",
-                                                          [Function],
-                                                          ";}",
-                                                        ],
-                                                      },
-                                                      "displayName": "UserAvatar__Container",
-                                                      "foldedComponentIds": Array [],
-                                                      "render": [Function],
-                                                      "styledComponentId": "UserAvatar__Container-plfgvx-0",
-                                                      "target": "div",
-                                                      "toString": [Function],
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
-                                                    }
-                                                  }
-                                                  forwardedRef={null}
                                                   fullWidth={false}
+                                                  key="60e0fca78e5bf845d7af875288b1bfb010d61ac4"
                                                 >
-                                                  <div
-                                                    className="UserAvatar__Container-plfgvx-0 SjTka"
+                                                  <StyledComponent
                                                     color="textPrimary"
+                                                    forwardedComponent={
+                                                      Object {
+                                                        "$$typeof": Symbol(react.forward_ref),
+                                                        "attrs": Array [],
+                                                        "componentStyle": ComponentStyle {
+                                                          "componentId": "UserAvatar__Container-plfgvx-0",
+                                                          "isStatic": false,
+                                                          "lastClassName": "SjTka",
+                                                          "rules": Array [
+                                                            "display:flex;align-items:center;width:",
+                                                            [Function],
+                                                            ";>:first-child{margin-right:",
+                                                            [Function],
+                                                            "px;}>:nth-child(2){white-space:pre;overflow:hidden;text-overflow:ellipsis;max-width:",
+                                                            [Function],
+                                                            ";color:",
+                                                            [Function],
+                                                            ";}",
+                                                          ],
+                                                        },
+                                                        "displayName": "UserAvatar__Container",
+                                                        "foldedComponentIds": Array [],
+                                                        "render": [Function],
+                                                        "styledComponentId": "UserAvatar__Container-plfgvx-0",
+                                                        "target": "div",
+                                                        "toString": [Function],
+                                                        "warnTooManyClasses": [Function],
+                                                        "withComponent": [Function],
+                                                      }
+                                                    }
+                                                    forwardedRef={null}
+                                                    fullWidth={false}
                                                   >
-                                                    <UserAvatar__Avatar
-                                                      avatar="https://api.beta.kauri.io:443/ipfs/QmQQCj8493FQLUmWGCQMWzny6euAQUwhSBToFZjPtAExbH"
-                                                      color="white"
-                                                      height={30}
-                                                      width={30}
+                                                    <div
+                                                      className="UserAvatar__Container-plfgvx-0 SjTka"
+                                                      color="textPrimary"
                                                     >
-                                                      <StyledComponent
+                                                      <UserAvatar__Avatar
                                                         avatar="https://api.beta.kauri.io:443/ipfs/QmQQCj8493FQLUmWGCQMWzny6euAQUwhSBToFZjPtAExbH"
                                                         color="white"
-                                                        forwardedComponent={
-                                                          Object {
-                                                            "$$typeof": Symbol(react.forward_ref),
-                                                            "attrs": Array [],
-                                                            "componentStyle": ComponentStyle {
-                                                              "componentId": "UserAvatar__Avatar-plfgvx-1",
-                                                              "isStatic": false,
-                                                              "lastClassName": "cXMNBx",
-                                                              "rules": Array [
-                                                                "display:flex;height:",
-                                                                [Function],
-                                                                ";width:",
-                                                                [Function],
-                                                                ";justify-content:center;align-items:center;border-radius:",
-                                                                [Function],
-                                                                ";background:",
-                                                                [Function],
-                                                                ";> *{color:",
-                                                                [Function],
-                                                                ";text-transform:uppercase;line-height:10px;}",
-                                                              ],
-                                                            },
-                                                            "displayName": "UserAvatar__Avatar",
-                                                            "foldedComponentIds": Array [],
-                                                            "render": [Function],
-                                                            "styledComponentId": "UserAvatar__Avatar-plfgvx-1",
-                                                            "target": "div",
-                                                            "toString": [Function],
-                                                            "warnTooManyClasses": [Function],
-                                                            "withComponent": [Function],
-                                                          }
-                                                        }
-                                                        forwardedRef={null}
                                                         height={30}
                                                         width={30}
                                                       >
-                                                        <div
-                                                          className="UserAvatar__Avatar-plfgvx-1 kMwImw"
+                                                        <StyledComponent
+                                                          avatar="https://api.beta.kauri.io:443/ipfs/QmQQCj8493FQLUmWGCQMWzny6euAQUwhSBToFZjPtAExbH"
                                                           color="white"
+                                                          forwardedComponent={
+                                                            Object {
+                                                              "$$typeof": Symbol(react.forward_ref),
+                                                              "attrs": Array [],
+                                                              "componentStyle": ComponentStyle {
+                                                                "componentId": "UserAvatar__Avatar-plfgvx-1",
+                                                                "isStatic": false,
+                                                                "lastClassName": "cXMNBx",
+                                                                "rules": Array [
+                                                                  "display:flex;height:",
+                                                                  [Function],
+                                                                  ";width:",
+                                                                  [Function],
+                                                                  ";justify-content:center;align-items:center;border-radius:",
+                                                                  [Function],
+                                                                  ";background:",
+                                                                  [Function],
+                                                                  ";> *{color:",
+                                                                  [Function],
+                                                                  ";text-transform:uppercase;line-height:10px;}",
+                                                                ],
+                                                              },
+                                                              "displayName": "UserAvatar__Avatar",
+                                                              "foldedComponentIds": Array [],
+                                                              "render": [Function],
+                                                              "styledComponentId": "UserAvatar__Avatar-plfgvx-1",
+                                                              "target": "div",
+                                                              "toString": [Function],
+                                                              "warnTooManyClasses": [Function],
+                                                              "withComponent": [Function],
+                                                            }
+                                                          }
+                                                          forwardedRef={null}
                                                           height={30}
                                                           width={30}
                                                         >
-                                                          <Image
-                                                            borderRadius="4px"
+                                                          <div
+                                                            className="UserAvatar__Avatar-plfgvx-1 kMwImw"
+                                                            color="white"
                                                             height={30}
-                                                            image="https://api.beta.kauri.io:443/ipfs/QmQQCj8493FQLUmWGCQMWzny6euAQUwhSBToFZjPtAExbH"
                                                             width={30}
                                                           >
-                                                            <InView
-                                                              rootMargin="200px 0px"
-                                                              threshold={0}
-                                                              triggerOnce={true}
+                                                            <Image
+                                                              borderRadius="4px"
+                                                              height={30}
+                                                              image="https://api.beta.kauri.io:443/ipfs/QmQQCj8493FQLUmWGCQMWzny6euAQUwhSBToFZjPtAExbH"
+                                                              width={30}
                                                             >
-                                                              <Image__Img
-                                                                borderRadius="4px"
-                                                                height={30}
-                                                                image="https://api.beta.kauri.io:443/ipfs/QmQQCj8493FQLUmWGCQMWzny6euAQUwhSBToFZjPtAExbH"
-                                                                inView={false}
-                                                                width={30}
+                                                              <InView
+                                                                rootMargin="200px 0px"
+                                                                threshold={0}
+                                                                triggerOnce={true}
                                                               >
-                                                                <StyledComponent
+                                                                <Image__Img
                                                                   borderRadius="4px"
-                                                                  forwardedComponent={
-                                                                    Object {
-                                                                      "$$typeof": Symbol(react.forward_ref),
-                                                                      "attrs": Array [],
-                                                                      "componentStyle": ComponentStyle {
-                                                                        "componentId": "Image__Img-sc-1jpuda7-0",
-                                                                        "isStatic": false,
-                                                                        "lastClassName": "jAWVlp",
-                                                                        "rules": Array [
-                                                                          "height:",
-                                                                          [Function],
-                                                                          ";width:",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";background:",
-                                                                          [Function],
-                                                                          ";background-size:cover;opacity:",
-                                                                          [Function],
-                                                                          ";transition:opacity ",
-                                                                          [Function],
-                                                                          "s;",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";position:",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          " ",
-                                                                          [Function],
-                                                                          ";",
-                                                                        ],
-                                                                      },
-                                                                      "displayName": "Image__Img",
-                                                                      "foldedComponentIds": Array [],
-                                                                      "render": [Function],
-                                                                      "styledComponentId": "Image__Img-sc-1jpuda7-0",
-                                                                      "target": "div",
-                                                                      "toString": [Function],
-                                                                      "warnTooManyClasses": [Function],
-                                                                      "withComponent": [Function],
-                                                                    }
-                                                                  }
-                                                                  forwardedRef={[Function]}
                                                                   height={30}
                                                                   image="https://api.beta.kauri.io:443/ipfs/QmQQCj8493FQLUmWGCQMWzny6euAQUwhSBToFZjPtAExbH"
                                                                   inView={false}
                                                                   width={30}
                                                                 >
-                                                                  <div
-                                                                    className="Image__Img-sc-1jpuda7-0 jAWVlp"
+                                                                  <StyledComponent
+                                                                    borderRadius="4px"
+                                                                    forwardedComponent={
+                                                                      Object {
+                                                                        "$$typeof": Symbol(react.forward_ref),
+                                                                        "attrs": Array [],
+                                                                        "componentStyle": ComponentStyle {
+                                                                          "componentId": "Image__Img-sc-1jpuda7-0",
+                                                                          "isStatic": false,
+                                                                          "lastClassName": "jAWVlp",
+                                                                          "rules": Array [
+                                                                            "height:",
+                                                                            [Function],
+                                                                            ";width:",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";background:",
+                                                                            [Function],
+                                                                            ";background-size:cover;opacity:",
+                                                                            [Function],
+                                                                            ";transition:opacity ",
+                                                                            [Function],
+                                                                            "s;",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";position:",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            " ",
+                                                                            [Function],
+                                                                            ";",
+                                                                          ],
+                                                                        },
+                                                                        "displayName": "Image__Img",
+                                                                        "foldedComponentIds": Array [],
+                                                                        "render": [Function],
+                                                                        "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                                                                        "target": "div",
+                                                                        "toString": [Function],
+                                                                        "warnTooManyClasses": [Function],
+                                                                        "withComponent": [Function],
+                                                                      }
+                                                                    }
+                                                                    forwardedRef={[Function]}
                                                                     height={30}
+                                                                    image="https://api.beta.kauri.io:443/ipfs/QmQQCj8493FQLUmWGCQMWzny6euAQUwhSBToFZjPtAExbH"
+                                                                    inView={false}
                                                                     width={30}
-                                                                  />
-                                                                </StyledComponent>
-                                                              </Image__Img>
-                                                            </InView>
-                                                          </Image>
-                                                        </div>
-                                                      </StyledComponent>
-                                                    </UserAvatar__Avatar>
-                                                    <Typography__styledComponent>
-                                                      <StyledComponent
-                                                        forwardedComponent={
-                                                          Object {
-                                                            "$$typeof": Symbol(react.forward_ref),
-                                                            "attrs": Array [],
-                                                            "componentStyle": ComponentStyle {
-                                                              "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                              "isStatic": false,
-                                                              "lastClassName": "evZVGc",
-                                                              "rules": Array [
-                                                                "color:",
-                                                                [Function],
-                                                                ";margin:0px;font-weight:",
-                                                                "bold",
-                                                                ";",
-                                                                ";font-size:",
-                                                                "13",
-                                                                "px;text-transform:",
-                                                                [Function],
-                                                                ";text-align:",
-                                                                [Function],
-                                                                ";:hover{color:",
-                                                                [Function],
-                                                                ";cursor:",
-                                                                [Function],
-                                                                ";}",
-                                                              ],
-                                                            },
-                                                            "displayName": "Typography__styledComponent",
-                                                            "foldedComponentIds": Array [],
-                                                            "render": [Function],
-                                                            "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                            "target": "span",
-                                                            "toString": [Function],
-                                                            "warnTooManyClasses": [Function],
-                                                            "withComponent": [Function],
+                                                                  >
+                                                                    <div
+                                                                      className="Image__Img-sc-1jpuda7-0 jAWVlp"
+                                                                      height={30}
+                                                                      width={30}
+                                                                    />
+                                                                  </StyledComponent>
+                                                                </Image__Img>
+                                                              </InView>
+                                                            </Image>
+                                                          </div>
+                                                        </StyledComponent>
+                                                      </UserAvatar__Avatar>
+                                                      <Typography__styledComponent>
+                                                        <StyledComponent
+                                                          forwardedComponent={
+                                                            Object {
+                                                              "$$typeof": Symbol(react.forward_ref),
+                                                              "attrs": Array [],
+                                                              "componentStyle": ComponentStyle {
+                                                                "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                "isStatic": false,
+                                                                "lastClassName": "evZVGc",
+                                                                "rules": Array [
+                                                                  "color:",
+                                                                  [Function],
+                                                                  ";margin:0px;font-weight:",
+                                                                  "bold",
+                                                                  ";",
+                                                                  ";font-size:",
+                                                                  "13",
+                                                                  "px;text-transform:",
+                                                                  [Function],
+                                                                  ";text-align:",
+                                                                  [Function],
+                                                                  ";:hover{color:",
+                                                                  [Function],
+                                                                  ";cursor:",
+                                                                  [Function],
+                                                                  ";}",
+                                                                ],
+                                                              },
+                                                              "displayName": "Typography__styledComponent",
+                                                              "foldedComponentIds": Array [],
+                                                              "render": [Function],
+                                                              "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                              "target": "span",
+                                                              "toString": [Function],
+                                                              "warnTooManyClasses": [Function],
+                                                              "withComponent": [Function],
+                                                            }
                                                           }
-                                                        }
-                                                        forwardedRef={null}
-                                                      >
-                                                        <span
-                                                          className="Typography__styledComponent-sc-36xkf6-5 evZVGc"
+                                                          forwardedRef={null}
                                                         >
-                                                          wil
-                                                        </span>
-                                                      </StyledComponent>
-                                                    </Typography__styledComponent>
-                                                  </div>
-                                                </StyledComponent>
-                                              </UserAvatar__Container>
-                                            </UserAvatarComponent>
+                                                          <span
+                                                            className="Typography__styledComponent-sc-36xkf6-5 evZVGc"
+                                                          >
+                                                            wil
+                                                          </span>
+                                                        </StyledComponent>
+                                                      </Typography__styledComponent>
+                                                    </div>
+                                                  </StyledComponent>
+                                                </UserAvatar__Container>
+                                              </UserAvatarComponent>
+                                            </a>
                                           </Link>
                                           <Link
-                                            href="/public-profile/dd23401dcab425f0a435eb7a86c77c5e8513bead"
-                                            key="/public-profile/dd23401dcab425f0a435eb7a86c77c5e8513bead"
+                                            as="jmrocco/dd23401dcab425f0a435eb7a86c77c5e8513bead/p"
+                                            href="/public-profile?user_id=dd23401dcab425f0a435eb7a86c77c5e8513bead"
                                             prefetch={true}
                                           >
-                                            <UserAvatarComponent
-                                              avatar="https://api.beta.kauri.io:443/ipfs/QmX55Vs7WZUkG94VEFaCYe1naJf2A68vdkue8FNUXMSx5g"
-                                              key="dd23401dcab425f0a435eb7a86c77c5e8513bead"
+                                            <a
+                                              href="jmrocco/dd23401dcab425f0a435eb7a86c77c5e8513bead/p"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
-                                              userId="dd23401dcab425f0a435eb7a86c77c5e8513bead"
-                                              username="jmrocco"
                                             >
-                                              <UserAvatar__Container
-                                                color="textPrimary"
-                                                fullWidth={false}
+                                              <UserAvatarComponent
+                                                avatar="https://api.beta.kauri.io:443/ipfs/QmX55Vs7WZUkG94VEFaCYe1naJf2A68vdkue8FNUXMSx5g"
                                                 key="dd23401dcab425f0a435eb7a86c77c5e8513bead"
+                                                userId="dd23401dcab425f0a435eb7a86c77c5e8513bead"
+                                                username="jmrocco"
                                               >
-                                                <StyledComponent
+                                                <UserAvatar__Container
                                                   color="textPrimary"
-                                                  forwardedComponent={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": Array [],
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "UserAvatar__Container-plfgvx-0",
-                                                        "isStatic": false,
-                                                        "lastClassName": "SjTka",
-                                                        "rules": Array [
-                                                          "display:flex;align-items:center;width:",
-                                                          [Function],
-                                                          ";>:first-child{margin-right:",
-                                                          [Function],
-                                                          "px;}>:nth-child(2){white-space:pre;overflow:hidden;text-overflow:ellipsis;max-width:",
-                                                          [Function],
-                                                          ";color:",
-                                                          [Function],
-                                                          ";}",
-                                                        ],
-                                                      },
-                                                      "displayName": "UserAvatar__Container",
-                                                      "foldedComponentIds": Array [],
-                                                      "render": [Function],
-                                                      "styledComponentId": "UserAvatar__Container-plfgvx-0",
-                                                      "target": "div",
-                                                      "toString": [Function],
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
-                                                    }
-                                                  }
-                                                  forwardedRef={null}
                                                   fullWidth={false}
+                                                  key="dd23401dcab425f0a435eb7a86c77c5e8513bead"
                                                 >
-                                                  <div
-                                                    className="UserAvatar__Container-plfgvx-0 SjTka"
+                                                  <StyledComponent
                                                     color="textPrimary"
+                                                    forwardedComponent={
+                                                      Object {
+                                                        "$$typeof": Symbol(react.forward_ref),
+                                                        "attrs": Array [],
+                                                        "componentStyle": ComponentStyle {
+                                                          "componentId": "UserAvatar__Container-plfgvx-0",
+                                                          "isStatic": false,
+                                                          "lastClassName": "SjTka",
+                                                          "rules": Array [
+                                                            "display:flex;align-items:center;width:",
+                                                            [Function],
+                                                            ";>:first-child{margin-right:",
+                                                            [Function],
+                                                            "px;}>:nth-child(2){white-space:pre;overflow:hidden;text-overflow:ellipsis;max-width:",
+                                                            [Function],
+                                                            ";color:",
+                                                            [Function],
+                                                            ";}",
+                                                          ],
+                                                        },
+                                                        "displayName": "UserAvatar__Container",
+                                                        "foldedComponentIds": Array [],
+                                                        "render": [Function],
+                                                        "styledComponentId": "UserAvatar__Container-plfgvx-0",
+                                                        "target": "div",
+                                                        "toString": [Function],
+                                                        "warnTooManyClasses": [Function],
+                                                        "withComponent": [Function],
+                                                      }
+                                                    }
+                                                    forwardedRef={null}
+                                                    fullWidth={false}
                                                   >
-                                                    <UserAvatar__Avatar
-                                                      avatar="https://api.beta.kauri.io:443/ipfs/QmX55Vs7WZUkG94VEFaCYe1naJf2A68vdkue8FNUXMSx5g"
-                                                      color="white"
-                                                      height={30}
-                                                      width={30}
+                                                    <div
+                                                      className="UserAvatar__Container-plfgvx-0 SjTka"
+                                                      color="textPrimary"
                                                     >
-                                                      <StyledComponent
+                                                      <UserAvatar__Avatar
                                                         avatar="https://api.beta.kauri.io:443/ipfs/QmX55Vs7WZUkG94VEFaCYe1naJf2A68vdkue8FNUXMSx5g"
                                                         color="white"
-                                                        forwardedComponent={
-                                                          Object {
-                                                            "$$typeof": Symbol(react.forward_ref),
-                                                            "attrs": Array [],
-                                                            "componentStyle": ComponentStyle {
-                                                              "componentId": "UserAvatar__Avatar-plfgvx-1",
-                                                              "isStatic": false,
-                                                              "lastClassName": "cXMNBx",
-                                                              "rules": Array [
-                                                                "display:flex;height:",
-                                                                [Function],
-                                                                ";width:",
-                                                                [Function],
-                                                                ";justify-content:center;align-items:center;border-radius:",
-                                                                [Function],
-                                                                ";background:",
-                                                                [Function],
-                                                                ";> *{color:",
-                                                                [Function],
-                                                                ";text-transform:uppercase;line-height:10px;}",
-                                                              ],
-                                                            },
-                                                            "displayName": "UserAvatar__Avatar",
-                                                            "foldedComponentIds": Array [],
-                                                            "render": [Function],
-                                                            "styledComponentId": "UserAvatar__Avatar-plfgvx-1",
-                                                            "target": "div",
-                                                            "toString": [Function],
-                                                            "warnTooManyClasses": [Function],
-                                                            "withComponent": [Function],
-                                                          }
-                                                        }
-                                                        forwardedRef={null}
                                                         height={30}
                                                         width={30}
                                                       >
-                                                        <div
-                                                          className="UserAvatar__Avatar-plfgvx-1 kMwImw"
+                                                        <StyledComponent
+                                                          avatar="https://api.beta.kauri.io:443/ipfs/QmX55Vs7WZUkG94VEFaCYe1naJf2A68vdkue8FNUXMSx5g"
                                                           color="white"
+                                                          forwardedComponent={
+                                                            Object {
+                                                              "$$typeof": Symbol(react.forward_ref),
+                                                              "attrs": Array [],
+                                                              "componentStyle": ComponentStyle {
+                                                                "componentId": "UserAvatar__Avatar-plfgvx-1",
+                                                                "isStatic": false,
+                                                                "lastClassName": "cXMNBx",
+                                                                "rules": Array [
+                                                                  "display:flex;height:",
+                                                                  [Function],
+                                                                  ";width:",
+                                                                  [Function],
+                                                                  ";justify-content:center;align-items:center;border-radius:",
+                                                                  [Function],
+                                                                  ";background:",
+                                                                  [Function],
+                                                                  ";> *{color:",
+                                                                  [Function],
+                                                                  ";text-transform:uppercase;line-height:10px;}",
+                                                                ],
+                                                              },
+                                                              "displayName": "UserAvatar__Avatar",
+                                                              "foldedComponentIds": Array [],
+                                                              "render": [Function],
+                                                              "styledComponentId": "UserAvatar__Avatar-plfgvx-1",
+                                                              "target": "div",
+                                                              "toString": [Function],
+                                                              "warnTooManyClasses": [Function],
+                                                              "withComponent": [Function],
+                                                            }
+                                                          }
+                                                          forwardedRef={null}
                                                           height={30}
                                                           width={30}
                                                         >
-                                                          <Image
-                                                            borderRadius="4px"
+                                                          <div
+                                                            className="UserAvatar__Avatar-plfgvx-1 kMwImw"
+                                                            color="white"
                                                             height={30}
-                                                            image="https://api.beta.kauri.io:443/ipfs/QmX55Vs7WZUkG94VEFaCYe1naJf2A68vdkue8FNUXMSx5g"
                                                             width={30}
                                                           >
-                                                            <InView
-                                                              rootMargin="200px 0px"
-                                                              threshold={0}
-                                                              triggerOnce={true}
+                                                            <Image
+                                                              borderRadius="4px"
+                                                              height={30}
+                                                              image="https://api.beta.kauri.io:443/ipfs/QmX55Vs7WZUkG94VEFaCYe1naJf2A68vdkue8FNUXMSx5g"
+                                                              width={30}
                                                             >
-                                                              <Image__Img
-                                                                borderRadius="4px"
-                                                                height={30}
-                                                                image="https://api.beta.kauri.io:443/ipfs/QmX55Vs7WZUkG94VEFaCYe1naJf2A68vdkue8FNUXMSx5g"
-                                                                inView={false}
-                                                                width={30}
+                                                              <InView
+                                                                rootMargin="200px 0px"
+                                                                threshold={0}
+                                                                triggerOnce={true}
                                                               >
-                                                                <StyledComponent
+                                                                <Image__Img
                                                                   borderRadius="4px"
-                                                                  forwardedComponent={
-                                                                    Object {
-                                                                      "$$typeof": Symbol(react.forward_ref),
-                                                                      "attrs": Array [],
-                                                                      "componentStyle": ComponentStyle {
-                                                                        "componentId": "Image__Img-sc-1jpuda7-0",
-                                                                        "isStatic": false,
-                                                                        "lastClassName": "jAWVlp",
-                                                                        "rules": Array [
-                                                                          "height:",
-                                                                          [Function],
-                                                                          ";width:",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";background:",
-                                                                          [Function],
-                                                                          ";background-size:cover;opacity:",
-                                                                          [Function],
-                                                                          ";transition:opacity ",
-                                                                          [Function],
-                                                                          "s;",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";position:",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          " ",
-                                                                          [Function],
-                                                                          ";",
-                                                                        ],
-                                                                      },
-                                                                      "displayName": "Image__Img",
-                                                                      "foldedComponentIds": Array [],
-                                                                      "render": [Function],
-                                                                      "styledComponentId": "Image__Img-sc-1jpuda7-0",
-                                                                      "target": "div",
-                                                                      "toString": [Function],
-                                                                      "warnTooManyClasses": [Function],
-                                                                      "withComponent": [Function],
-                                                                    }
-                                                                  }
-                                                                  forwardedRef={[Function]}
                                                                   height={30}
                                                                   image="https://api.beta.kauri.io:443/ipfs/QmX55Vs7WZUkG94VEFaCYe1naJf2A68vdkue8FNUXMSx5g"
                                                                   inView={false}
                                                                   width={30}
                                                                 >
-                                                                  <div
-                                                                    className="Image__Img-sc-1jpuda7-0 jAWVlp"
+                                                                  <StyledComponent
+                                                                    borderRadius="4px"
+                                                                    forwardedComponent={
+                                                                      Object {
+                                                                        "$$typeof": Symbol(react.forward_ref),
+                                                                        "attrs": Array [],
+                                                                        "componentStyle": ComponentStyle {
+                                                                          "componentId": "Image__Img-sc-1jpuda7-0",
+                                                                          "isStatic": false,
+                                                                          "lastClassName": "jAWVlp",
+                                                                          "rules": Array [
+                                                                            "height:",
+                                                                            [Function],
+                                                                            ";width:",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";background:",
+                                                                            [Function],
+                                                                            ";background-size:cover;opacity:",
+                                                                            [Function],
+                                                                            ";transition:opacity ",
+                                                                            [Function],
+                                                                            "s;",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";position:",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            " ",
+                                                                            [Function],
+                                                                            ";",
+                                                                          ],
+                                                                        },
+                                                                        "displayName": "Image__Img",
+                                                                        "foldedComponentIds": Array [],
+                                                                        "render": [Function],
+                                                                        "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                                                                        "target": "div",
+                                                                        "toString": [Function],
+                                                                        "warnTooManyClasses": [Function],
+                                                                        "withComponent": [Function],
+                                                                      }
+                                                                    }
+                                                                    forwardedRef={[Function]}
                                                                     height={30}
+                                                                    image="https://api.beta.kauri.io:443/ipfs/QmX55Vs7WZUkG94VEFaCYe1naJf2A68vdkue8FNUXMSx5g"
+                                                                    inView={false}
                                                                     width={30}
-                                                                  />
-                                                                </StyledComponent>
-                                                              </Image__Img>
-                                                            </InView>
-                                                          </Image>
-                                                        </div>
-                                                      </StyledComponent>
-                                                    </UserAvatar__Avatar>
-                                                    <Typography__styledComponent>
-                                                      <StyledComponent
-                                                        forwardedComponent={
-                                                          Object {
-                                                            "$$typeof": Symbol(react.forward_ref),
-                                                            "attrs": Array [],
-                                                            "componentStyle": ComponentStyle {
-                                                              "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                              "isStatic": false,
-                                                              "lastClassName": "evZVGc",
-                                                              "rules": Array [
-                                                                "color:",
-                                                                [Function],
-                                                                ";margin:0px;font-weight:",
-                                                                "bold",
-                                                                ";",
-                                                                ";font-size:",
-                                                                "13",
-                                                                "px;text-transform:",
-                                                                [Function],
-                                                                ";text-align:",
-                                                                [Function],
-                                                                ";:hover{color:",
-                                                                [Function],
-                                                                ";cursor:",
-                                                                [Function],
-                                                                ";}",
-                                                              ],
-                                                            },
-                                                            "displayName": "Typography__styledComponent",
-                                                            "foldedComponentIds": Array [],
-                                                            "render": [Function],
-                                                            "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                            "target": "span",
-                                                            "toString": [Function],
-                                                            "warnTooManyClasses": [Function],
-                                                            "withComponent": [Function],
+                                                                  >
+                                                                    <div
+                                                                      className="Image__Img-sc-1jpuda7-0 jAWVlp"
+                                                                      height={30}
+                                                                      width={30}
+                                                                    />
+                                                                  </StyledComponent>
+                                                                </Image__Img>
+                                                              </InView>
+                                                            </Image>
+                                                          </div>
+                                                        </StyledComponent>
+                                                      </UserAvatar__Avatar>
+                                                      <Typography__styledComponent>
+                                                        <StyledComponent
+                                                          forwardedComponent={
+                                                            Object {
+                                                              "$$typeof": Symbol(react.forward_ref),
+                                                              "attrs": Array [],
+                                                              "componentStyle": ComponentStyle {
+                                                                "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                "isStatic": false,
+                                                                "lastClassName": "evZVGc",
+                                                                "rules": Array [
+                                                                  "color:",
+                                                                  [Function],
+                                                                  ";margin:0px;font-weight:",
+                                                                  "bold",
+                                                                  ";",
+                                                                  ";font-size:",
+                                                                  "13",
+                                                                  "px;text-transform:",
+                                                                  [Function],
+                                                                  ";text-align:",
+                                                                  [Function],
+                                                                  ";:hover{color:",
+                                                                  [Function],
+                                                                  ";cursor:",
+                                                                  [Function],
+                                                                  ";}",
+                                                                ],
+                                                              },
+                                                              "displayName": "Typography__styledComponent",
+                                                              "foldedComponentIds": Array [],
+                                                              "render": [Function],
+                                                              "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                              "target": "span",
+                                                              "toString": [Function],
+                                                              "warnTooManyClasses": [Function],
+                                                              "withComponent": [Function],
+                                                            }
                                                           }
-                                                        }
-                                                        forwardedRef={null}
-                                                      >
-                                                        <span
-                                                          className="Typography__styledComponent-sc-36xkf6-5 evZVGc"
+                                                          forwardedRef={null}
                                                         >
-                                                          jmrocco
-                                                        </span>
-                                                      </StyledComponent>
-                                                    </Typography__styledComponent>
-                                                  </div>
-                                                </StyledComponent>
-                                              </UserAvatar__Container>
-                                            </UserAvatarComponent>
+                                                          <span
+                                                            className="Typography__styledComponent-sc-36xkf6-5 evZVGc"
+                                                          >
+                                                            jmrocco
+                                                          </span>
+                                                        </StyledComponent>
+                                                      </Typography__styledComponent>
+                                                    </div>
+                                                  </StyledComponent>
+                                                </UserAvatar__Container>
+                                              </UserAvatarComponent>
+                                            </a>
                                           </Link>
                                           <Link
-                                            href="/public-profile/bfecec47dd8bf5f6264a9830a9d26ef387c38a67"
-                                            key="/public-profile/bfecec47dd8bf5f6264a9830a9d26ef387c38a67"
+                                            as="ericjuta/bfecec47dd8bf5f6264a9830a9d26ef387c38a67/p"
+                                            href="/public-profile?user_id=bfecec47dd8bf5f6264a9830a9d26ef387c38a67"
                                             prefetch={true}
                                           >
-                                            <UserAvatarComponent
-                                              avatar="https://api.kauri.io:443/ipfs/QmNQusgLsoAS8DwjMEKyJ4VC9XosBwBrhzca4Lux5ojFVz"
-                                              key="bfecec47dd8bf5f6264a9830a9d26ef387c38a67"
+                                            <a
+                                              href="ericjuta/bfecec47dd8bf5f6264a9830a9d26ef387c38a67/p"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
-                                              userId="bfecec47dd8bf5f6264a9830a9d26ef387c38a67"
-                                              username="ericjuta"
                                             >
-                                              <UserAvatar__Container
-                                                color="textPrimary"
-                                                fullWidth={false}
+                                              <UserAvatarComponent
+                                                avatar="https://api.kauri.io:443/ipfs/QmNQusgLsoAS8DwjMEKyJ4VC9XosBwBrhzca4Lux5ojFVz"
                                                 key="bfecec47dd8bf5f6264a9830a9d26ef387c38a67"
+                                                userId="bfecec47dd8bf5f6264a9830a9d26ef387c38a67"
+                                                username="ericjuta"
                                               >
-                                                <StyledComponent
+                                                <UserAvatar__Container
                                                   color="textPrimary"
-                                                  forwardedComponent={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": Array [],
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "UserAvatar__Container-plfgvx-0",
-                                                        "isStatic": false,
-                                                        "lastClassName": "SjTka",
-                                                        "rules": Array [
-                                                          "display:flex;align-items:center;width:",
-                                                          [Function],
-                                                          ";>:first-child{margin-right:",
-                                                          [Function],
-                                                          "px;}>:nth-child(2){white-space:pre;overflow:hidden;text-overflow:ellipsis;max-width:",
-                                                          [Function],
-                                                          ";color:",
-                                                          [Function],
-                                                          ";}",
-                                                        ],
-                                                      },
-                                                      "displayName": "UserAvatar__Container",
-                                                      "foldedComponentIds": Array [],
-                                                      "render": [Function],
-                                                      "styledComponentId": "UserAvatar__Container-plfgvx-0",
-                                                      "target": "div",
-                                                      "toString": [Function],
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
-                                                    }
-                                                  }
-                                                  forwardedRef={null}
                                                   fullWidth={false}
+                                                  key="bfecec47dd8bf5f6264a9830a9d26ef387c38a67"
                                                 >
-                                                  <div
-                                                    className="UserAvatar__Container-plfgvx-0 SjTka"
+                                                  <StyledComponent
                                                     color="textPrimary"
+                                                    forwardedComponent={
+                                                      Object {
+                                                        "$$typeof": Symbol(react.forward_ref),
+                                                        "attrs": Array [],
+                                                        "componentStyle": ComponentStyle {
+                                                          "componentId": "UserAvatar__Container-plfgvx-0",
+                                                          "isStatic": false,
+                                                          "lastClassName": "SjTka",
+                                                          "rules": Array [
+                                                            "display:flex;align-items:center;width:",
+                                                            [Function],
+                                                            ";>:first-child{margin-right:",
+                                                            [Function],
+                                                            "px;}>:nth-child(2){white-space:pre;overflow:hidden;text-overflow:ellipsis;max-width:",
+                                                            [Function],
+                                                            ";color:",
+                                                            [Function],
+                                                            ";}",
+                                                          ],
+                                                        },
+                                                        "displayName": "UserAvatar__Container",
+                                                        "foldedComponentIds": Array [],
+                                                        "render": [Function],
+                                                        "styledComponentId": "UserAvatar__Container-plfgvx-0",
+                                                        "target": "div",
+                                                        "toString": [Function],
+                                                        "warnTooManyClasses": [Function],
+                                                        "withComponent": [Function],
+                                                      }
+                                                    }
+                                                    forwardedRef={null}
+                                                    fullWidth={false}
                                                   >
-                                                    <UserAvatar__Avatar
-                                                      avatar="https://api.kauri.io:443/ipfs/QmNQusgLsoAS8DwjMEKyJ4VC9XosBwBrhzca4Lux5ojFVz"
-                                                      color="white"
-                                                      height={30}
-                                                      width={30}
+                                                    <div
+                                                      className="UserAvatar__Container-plfgvx-0 SjTka"
+                                                      color="textPrimary"
                                                     >
-                                                      <StyledComponent
+                                                      <UserAvatar__Avatar
                                                         avatar="https://api.kauri.io:443/ipfs/QmNQusgLsoAS8DwjMEKyJ4VC9XosBwBrhzca4Lux5ojFVz"
                                                         color="white"
-                                                        forwardedComponent={
-                                                          Object {
-                                                            "$$typeof": Symbol(react.forward_ref),
-                                                            "attrs": Array [],
-                                                            "componentStyle": ComponentStyle {
-                                                              "componentId": "UserAvatar__Avatar-plfgvx-1",
-                                                              "isStatic": false,
-                                                              "lastClassName": "cXMNBx",
-                                                              "rules": Array [
-                                                                "display:flex;height:",
-                                                                [Function],
-                                                                ";width:",
-                                                                [Function],
-                                                                ";justify-content:center;align-items:center;border-radius:",
-                                                                [Function],
-                                                                ";background:",
-                                                                [Function],
-                                                                ";> *{color:",
-                                                                [Function],
-                                                                ";text-transform:uppercase;line-height:10px;}",
-                                                              ],
-                                                            },
-                                                            "displayName": "UserAvatar__Avatar",
-                                                            "foldedComponentIds": Array [],
-                                                            "render": [Function],
-                                                            "styledComponentId": "UserAvatar__Avatar-plfgvx-1",
-                                                            "target": "div",
-                                                            "toString": [Function],
-                                                            "warnTooManyClasses": [Function],
-                                                            "withComponent": [Function],
-                                                          }
-                                                        }
-                                                        forwardedRef={null}
                                                         height={30}
                                                         width={30}
                                                       >
-                                                        <div
-                                                          className="UserAvatar__Avatar-plfgvx-1 kMwImw"
+                                                        <StyledComponent
+                                                          avatar="https://api.kauri.io:443/ipfs/QmNQusgLsoAS8DwjMEKyJ4VC9XosBwBrhzca4Lux5ojFVz"
                                                           color="white"
+                                                          forwardedComponent={
+                                                            Object {
+                                                              "$$typeof": Symbol(react.forward_ref),
+                                                              "attrs": Array [],
+                                                              "componentStyle": ComponentStyle {
+                                                                "componentId": "UserAvatar__Avatar-plfgvx-1",
+                                                                "isStatic": false,
+                                                                "lastClassName": "cXMNBx",
+                                                                "rules": Array [
+                                                                  "display:flex;height:",
+                                                                  [Function],
+                                                                  ";width:",
+                                                                  [Function],
+                                                                  ";justify-content:center;align-items:center;border-radius:",
+                                                                  [Function],
+                                                                  ";background:",
+                                                                  [Function],
+                                                                  ";> *{color:",
+                                                                  [Function],
+                                                                  ";text-transform:uppercase;line-height:10px;}",
+                                                                ],
+                                                              },
+                                                              "displayName": "UserAvatar__Avatar",
+                                                              "foldedComponentIds": Array [],
+                                                              "render": [Function],
+                                                              "styledComponentId": "UserAvatar__Avatar-plfgvx-1",
+                                                              "target": "div",
+                                                              "toString": [Function],
+                                                              "warnTooManyClasses": [Function],
+                                                              "withComponent": [Function],
+                                                            }
+                                                          }
+                                                          forwardedRef={null}
                                                           height={30}
                                                           width={30}
                                                         >
-                                                          <Image
-                                                            borderRadius="4px"
+                                                          <div
+                                                            className="UserAvatar__Avatar-plfgvx-1 kMwImw"
+                                                            color="white"
                                                             height={30}
-                                                            image="https://api.kauri.io:443/ipfs/QmNQusgLsoAS8DwjMEKyJ4VC9XosBwBrhzca4Lux5ojFVz"
                                                             width={30}
                                                           >
-                                                            <InView
-                                                              rootMargin="200px 0px"
-                                                              threshold={0}
-                                                              triggerOnce={true}
+                                                            <Image
+                                                              borderRadius="4px"
+                                                              height={30}
+                                                              image="https://api.kauri.io:443/ipfs/QmNQusgLsoAS8DwjMEKyJ4VC9XosBwBrhzca4Lux5ojFVz"
+                                                              width={30}
                                                             >
-                                                              <Image__Img
-                                                                borderRadius="4px"
-                                                                height={30}
-                                                                image="https://api.kauri.io:443/ipfs/QmNQusgLsoAS8DwjMEKyJ4VC9XosBwBrhzca4Lux5ojFVz"
-                                                                inView={false}
-                                                                width={30}
+                                                              <InView
+                                                                rootMargin="200px 0px"
+                                                                threshold={0}
+                                                                triggerOnce={true}
                                                               >
-                                                                <StyledComponent
+                                                                <Image__Img
                                                                   borderRadius="4px"
-                                                                  forwardedComponent={
-                                                                    Object {
-                                                                      "$$typeof": Symbol(react.forward_ref),
-                                                                      "attrs": Array [],
-                                                                      "componentStyle": ComponentStyle {
-                                                                        "componentId": "Image__Img-sc-1jpuda7-0",
-                                                                        "isStatic": false,
-                                                                        "lastClassName": "jAWVlp",
-                                                                        "rules": Array [
-                                                                          "height:",
-                                                                          [Function],
-                                                                          ";width:",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";background:",
-                                                                          [Function],
-                                                                          ";background-size:cover;opacity:",
-                                                                          [Function],
-                                                                          ";transition:opacity ",
-                                                                          [Function],
-                                                                          "s;",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";position:",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          " ",
-                                                                          [Function],
-                                                                          ";",
-                                                                        ],
-                                                                      },
-                                                                      "displayName": "Image__Img",
-                                                                      "foldedComponentIds": Array [],
-                                                                      "render": [Function],
-                                                                      "styledComponentId": "Image__Img-sc-1jpuda7-0",
-                                                                      "target": "div",
-                                                                      "toString": [Function],
-                                                                      "warnTooManyClasses": [Function],
-                                                                      "withComponent": [Function],
-                                                                    }
-                                                                  }
-                                                                  forwardedRef={[Function]}
                                                                   height={30}
                                                                   image="https://api.kauri.io:443/ipfs/QmNQusgLsoAS8DwjMEKyJ4VC9XosBwBrhzca4Lux5ojFVz"
                                                                   inView={false}
                                                                   width={30}
                                                                 >
-                                                                  <div
-                                                                    className="Image__Img-sc-1jpuda7-0 jAWVlp"
+                                                                  <StyledComponent
+                                                                    borderRadius="4px"
+                                                                    forwardedComponent={
+                                                                      Object {
+                                                                        "$$typeof": Symbol(react.forward_ref),
+                                                                        "attrs": Array [],
+                                                                        "componentStyle": ComponentStyle {
+                                                                          "componentId": "Image__Img-sc-1jpuda7-0",
+                                                                          "isStatic": false,
+                                                                          "lastClassName": "jAWVlp",
+                                                                          "rules": Array [
+                                                                            "height:",
+                                                                            [Function],
+                                                                            ";width:",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";background:",
+                                                                            [Function],
+                                                                            ";background-size:cover;opacity:",
+                                                                            [Function],
+                                                                            ";transition:opacity ",
+                                                                            [Function],
+                                                                            "s;",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";position:",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            " ",
+                                                                            [Function],
+                                                                            ";",
+                                                                          ],
+                                                                        },
+                                                                        "displayName": "Image__Img",
+                                                                        "foldedComponentIds": Array [],
+                                                                        "render": [Function],
+                                                                        "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                                                                        "target": "div",
+                                                                        "toString": [Function],
+                                                                        "warnTooManyClasses": [Function],
+                                                                        "withComponent": [Function],
+                                                                      }
+                                                                    }
+                                                                    forwardedRef={[Function]}
                                                                     height={30}
+                                                                    image="https://api.kauri.io:443/ipfs/QmNQusgLsoAS8DwjMEKyJ4VC9XosBwBrhzca4Lux5ojFVz"
+                                                                    inView={false}
                                                                     width={30}
-                                                                  />
-                                                                </StyledComponent>
-                                                              </Image__Img>
-                                                            </InView>
-                                                          </Image>
-                                                        </div>
-                                                      </StyledComponent>
-                                                    </UserAvatar__Avatar>
-                                                    <Typography__styledComponent>
-                                                      <StyledComponent
-                                                        forwardedComponent={
-                                                          Object {
-                                                            "$$typeof": Symbol(react.forward_ref),
-                                                            "attrs": Array [],
-                                                            "componentStyle": ComponentStyle {
-                                                              "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                              "isStatic": false,
-                                                              "lastClassName": "evZVGc",
-                                                              "rules": Array [
-                                                                "color:",
-                                                                [Function],
-                                                                ";margin:0px;font-weight:",
-                                                                "bold",
-                                                                ";",
-                                                                ";font-size:",
-                                                                "13",
-                                                                "px;text-transform:",
-                                                                [Function],
-                                                                ";text-align:",
-                                                                [Function],
-                                                                ";:hover{color:",
-                                                                [Function],
-                                                                ";cursor:",
-                                                                [Function],
-                                                                ";}",
-                                                              ],
-                                                            },
-                                                            "displayName": "Typography__styledComponent",
-                                                            "foldedComponentIds": Array [],
-                                                            "render": [Function],
-                                                            "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                            "target": "span",
-                                                            "toString": [Function],
-                                                            "warnTooManyClasses": [Function],
-                                                            "withComponent": [Function],
+                                                                  >
+                                                                    <div
+                                                                      className="Image__Img-sc-1jpuda7-0 jAWVlp"
+                                                                      height={30}
+                                                                      width={30}
+                                                                    />
+                                                                  </StyledComponent>
+                                                                </Image__Img>
+                                                              </InView>
+                                                            </Image>
+                                                          </div>
+                                                        </StyledComponent>
+                                                      </UserAvatar__Avatar>
+                                                      <Typography__styledComponent>
+                                                        <StyledComponent
+                                                          forwardedComponent={
+                                                            Object {
+                                                              "$$typeof": Symbol(react.forward_ref),
+                                                              "attrs": Array [],
+                                                              "componentStyle": ComponentStyle {
+                                                                "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                "isStatic": false,
+                                                                "lastClassName": "evZVGc",
+                                                                "rules": Array [
+                                                                  "color:",
+                                                                  [Function],
+                                                                  ";margin:0px;font-weight:",
+                                                                  "bold",
+                                                                  ";",
+                                                                  ";font-size:",
+                                                                  "13",
+                                                                  "px;text-transform:",
+                                                                  [Function],
+                                                                  ";text-align:",
+                                                                  [Function],
+                                                                  ";:hover{color:",
+                                                                  [Function],
+                                                                  ";cursor:",
+                                                                  [Function],
+                                                                  ";}",
+                                                                ],
+                                                              },
+                                                              "displayName": "Typography__styledComponent",
+                                                              "foldedComponentIds": Array [],
+                                                              "render": [Function],
+                                                              "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                              "target": "span",
+                                                              "toString": [Function],
+                                                              "warnTooManyClasses": [Function],
+                                                              "withComponent": [Function],
+                                                            }
                                                           }
-                                                        }
-                                                        forwardedRef={null}
-                                                      >
-                                                        <span
-                                                          className="Typography__styledComponent-sc-36xkf6-5 evZVGc"
+                                                          forwardedRef={null}
                                                         >
-                                                          ericjuta
-                                                        </span>
-                                                      </StyledComponent>
-                                                    </Typography__styledComponent>
-                                                  </div>
-                                                </StyledComponent>
-                                              </UserAvatar__Container>
-                                            </UserAvatarComponent>
+                                                          <span
+                                                            className="Typography__styledComponent-sc-36xkf6-5 evZVGc"
+                                                          >
+                                                            ericjuta
+                                                          </span>
+                                                        </StyledComponent>
+                                                      </Typography__styledComponent>
+                                                    </div>
+                                                  </StyledComponent>
+                                                </UserAvatar__Container>
+                                              </UserAvatarComponent>
+                                            </a>
                                           </Link>
                                           <Link
-                                            href="/public-profile/f0f15cedc719b5a55470877b0710d5c7816916b1"
-                                            key="/public-profile/f0f15cedc719b5a55470877b0710d5c7816916b1"
+                                            as="gregjeanmart/f0f15cedc719b5a55470877b0710d5c7816916b1/p"
+                                            href="/public-profile?user_id=f0f15cedc719b5a55470877b0710d5c7816916b1"
                                             prefetch={true}
                                           >
-                                            <UserAvatarComponent
-                                              avatar="https://api.dev2.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
-                                              key="f0f15cedc719b5a55470877b0710d5c7816916b1"
+                                            <a
+                                              href="gregjeanmart/f0f15cedc719b5a55470877b0710d5c7816916b1/p"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
-                                              userId="f0f15cedc719b5a55470877b0710d5c7816916b1"
-                                              username="gregjeanmart"
                                             >
-                                              <UserAvatar__Container
-                                                color="textPrimary"
-                                                fullWidth={false}
+                                              <UserAvatarComponent
+                                                avatar="https://api.dev2.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
                                                 key="f0f15cedc719b5a55470877b0710d5c7816916b1"
+                                                userId="f0f15cedc719b5a55470877b0710d5c7816916b1"
+                                                username="gregjeanmart"
                                               >
-                                                <StyledComponent
+                                                <UserAvatar__Container
                                                   color="textPrimary"
-                                                  forwardedComponent={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": Array [],
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "UserAvatar__Container-plfgvx-0",
-                                                        "isStatic": false,
-                                                        "lastClassName": "SjTka",
-                                                        "rules": Array [
-                                                          "display:flex;align-items:center;width:",
-                                                          [Function],
-                                                          ";>:first-child{margin-right:",
-                                                          [Function],
-                                                          "px;}>:nth-child(2){white-space:pre;overflow:hidden;text-overflow:ellipsis;max-width:",
-                                                          [Function],
-                                                          ";color:",
-                                                          [Function],
-                                                          ";}",
-                                                        ],
-                                                      },
-                                                      "displayName": "UserAvatar__Container",
-                                                      "foldedComponentIds": Array [],
-                                                      "render": [Function],
-                                                      "styledComponentId": "UserAvatar__Container-plfgvx-0",
-                                                      "target": "div",
-                                                      "toString": [Function],
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
-                                                    }
-                                                  }
-                                                  forwardedRef={null}
                                                   fullWidth={false}
+                                                  key="f0f15cedc719b5a55470877b0710d5c7816916b1"
                                                 >
-                                                  <div
-                                                    className="UserAvatar__Container-plfgvx-0 SjTka"
+                                                  <StyledComponent
                                                     color="textPrimary"
+                                                    forwardedComponent={
+                                                      Object {
+                                                        "$$typeof": Symbol(react.forward_ref),
+                                                        "attrs": Array [],
+                                                        "componentStyle": ComponentStyle {
+                                                          "componentId": "UserAvatar__Container-plfgvx-0",
+                                                          "isStatic": false,
+                                                          "lastClassName": "SjTka",
+                                                          "rules": Array [
+                                                            "display:flex;align-items:center;width:",
+                                                            [Function],
+                                                            ";>:first-child{margin-right:",
+                                                            [Function],
+                                                            "px;}>:nth-child(2){white-space:pre;overflow:hidden;text-overflow:ellipsis;max-width:",
+                                                            [Function],
+                                                            ";color:",
+                                                            [Function],
+                                                            ";}",
+                                                          ],
+                                                        },
+                                                        "displayName": "UserAvatar__Container",
+                                                        "foldedComponentIds": Array [],
+                                                        "render": [Function],
+                                                        "styledComponentId": "UserAvatar__Container-plfgvx-0",
+                                                        "target": "div",
+                                                        "toString": [Function],
+                                                        "warnTooManyClasses": [Function],
+                                                        "withComponent": [Function],
+                                                      }
+                                                    }
+                                                    forwardedRef={null}
+                                                    fullWidth={false}
                                                   >
-                                                    <UserAvatar__Avatar
-                                                      avatar="https://api.dev2.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
-                                                      color="white"
-                                                      height={30}
-                                                      width={30}
+                                                    <div
+                                                      className="UserAvatar__Container-plfgvx-0 SjTka"
+                                                      color="textPrimary"
                                                     >
-                                                      <StyledComponent
+                                                      <UserAvatar__Avatar
                                                         avatar="https://api.dev2.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
                                                         color="white"
-                                                        forwardedComponent={
-                                                          Object {
-                                                            "$$typeof": Symbol(react.forward_ref),
-                                                            "attrs": Array [],
-                                                            "componentStyle": ComponentStyle {
-                                                              "componentId": "UserAvatar__Avatar-plfgvx-1",
-                                                              "isStatic": false,
-                                                              "lastClassName": "cXMNBx",
-                                                              "rules": Array [
-                                                                "display:flex;height:",
-                                                                [Function],
-                                                                ";width:",
-                                                                [Function],
-                                                                ";justify-content:center;align-items:center;border-radius:",
-                                                                [Function],
-                                                                ";background:",
-                                                                [Function],
-                                                                ";> *{color:",
-                                                                [Function],
-                                                                ";text-transform:uppercase;line-height:10px;}",
-                                                              ],
-                                                            },
-                                                            "displayName": "UserAvatar__Avatar",
-                                                            "foldedComponentIds": Array [],
-                                                            "render": [Function],
-                                                            "styledComponentId": "UserAvatar__Avatar-plfgvx-1",
-                                                            "target": "div",
-                                                            "toString": [Function],
-                                                            "warnTooManyClasses": [Function],
-                                                            "withComponent": [Function],
-                                                          }
-                                                        }
-                                                        forwardedRef={null}
                                                         height={30}
                                                         width={30}
                                                       >
-                                                        <div
-                                                          className="UserAvatar__Avatar-plfgvx-1 kMwImw"
+                                                        <StyledComponent
+                                                          avatar="https://api.dev2.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
                                                           color="white"
+                                                          forwardedComponent={
+                                                            Object {
+                                                              "$$typeof": Symbol(react.forward_ref),
+                                                              "attrs": Array [],
+                                                              "componentStyle": ComponentStyle {
+                                                                "componentId": "UserAvatar__Avatar-plfgvx-1",
+                                                                "isStatic": false,
+                                                                "lastClassName": "cXMNBx",
+                                                                "rules": Array [
+                                                                  "display:flex;height:",
+                                                                  [Function],
+                                                                  ";width:",
+                                                                  [Function],
+                                                                  ";justify-content:center;align-items:center;border-radius:",
+                                                                  [Function],
+                                                                  ";background:",
+                                                                  [Function],
+                                                                  ";> *{color:",
+                                                                  [Function],
+                                                                  ";text-transform:uppercase;line-height:10px;}",
+                                                                ],
+                                                              },
+                                                              "displayName": "UserAvatar__Avatar",
+                                                              "foldedComponentIds": Array [],
+                                                              "render": [Function],
+                                                              "styledComponentId": "UserAvatar__Avatar-plfgvx-1",
+                                                              "target": "div",
+                                                              "toString": [Function],
+                                                              "warnTooManyClasses": [Function],
+                                                              "withComponent": [Function],
+                                                            }
+                                                          }
+                                                          forwardedRef={null}
                                                           height={30}
                                                           width={30}
                                                         >
-                                                          <Image
-                                                            borderRadius="4px"
+                                                          <div
+                                                            className="UserAvatar__Avatar-plfgvx-1 kMwImw"
+                                                            color="white"
                                                             height={30}
-                                                            image="https://api.dev2.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
                                                             width={30}
                                                           >
-                                                            <InView
-                                                              rootMargin="200px 0px"
-                                                              threshold={0}
-                                                              triggerOnce={true}
+                                                            <Image
+                                                              borderRadius="4px"
+                                                              height={30}
+                                                              image="https://api.dev2.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
+                                                              width={30}
                                                             >
-                                                              <Image__Img
-                                                                borderRadius="4px"
-                                                                height={30}
-                                                                image="https://api.dev2.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
-                                                                inView={false}
-                                                                width={30}
+                                                              <InView
+                                                                rootMargin="200px 0px"
+                                                                threshold={0}
+                                                                triggerOnce={true}
                                                               >
-                                                                <StyledComponent
+                                                                <Image__Img
                                                                   borderRadius="4px"
-                                                                  forwardedComponent={
-                                                                    Object {
-                                                                      "$$typeof": Symbol(react.forward_ref),
-                                                                      "attrs": Array [],
-                                                                      "componentStyle": ComponentStyle {
-                                                                        "componentId": "Image__Img-sc-1jpuda7-0",
-                                                                        "isStatic": false,
-                                                                        "lastClassName": "jAWVlp",
-                                                                        "rules": Array [
-                                                                          "height:",
-                                                                          [Function],
-                                                                          ";width:",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";background:",
-                                                                          [Function],
-                                                                          ";background-size:cover;opacity:",
-                                                                          [Function],
-                                                                          ";transition:opacity ",
-                                                                          [Function],
-                                                                          "s;",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";position:",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          ";",
-                                                                          [Function],
-                                                                          " ",
-                                                                          [Function],
-                                                                          ";",
-                                                                        ],
-                                                                      },
-                                                                      "displayName": "Image__Img",
-                                                                      "foldedComponentIds": Array [],
-                                                                      "render": [Function],
-                                                                      "styledComponentId": "Image__Img-sc-1jpuda7-0",
-                                                                      "target": "div",
-                                                                      "toString": [Function],
-                                                                      "warnTooManyClasses": [Function],
-                                                                      "withComponent": [Function],
-                                                                    }
-                                                                  }
-                                                                  forwardedRef={[Function]}
                                                                   height={30}
                                                                   image="https://api.dev2.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
                                                                   inView={false}
                                                                   width={30}
                                                                 >
-                                                                  <div
-                                                                    className="Image__Img-sc-1jpuda7-0 jAWVlp"
+                                                                  <StyledComponent
+                                                                    borderRadius="4px"
+                                                                    forwardedComponent={
+                                                                      Object {
+                                                                        "$$typeof": Symbol(react.forward_ref),
+                                                                        "attrs": Array [],
+                                                                        "componentStyle": ComponentStyle {
+                                                                          "componentId": "Image__Img-sc-1jpuda7-0",
+                                                                          "isStatic": false,
+                                                                          "lastClassName": "jAWVlp",
+                                                                          "rules": Array [
+                                                                            "height:",
+                                                                            [Function],
+                                                                            ";width:",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";background:",
+                                                                            [Function],
+                                                                            ";background-size:cover;opacity:",
+                                                                            [Function],
+                                                                            ";transition:opacity ",
+                                                                            [Function],
+                                                                            "s;",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";position:",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            ";",
+                                                                            [Function],
+                                                                            " ",
+                                                                            [Function],
+                                                                            ";",
+                                                                          ],
+                                                                        },
+                                                                        "displayName": "Image__Img",
+                                                                        "foldedComponentIds": Array [],
+                                                                        "render": [Function],
+                                                                        "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                                                                        "target": "div",
+                                                                        "toString": [Function],
+                                                                        "warnTooManyClasses": [Function],
+                                                                        "withComponent": [Function],
+                                                                      }
+                                                                    }
+                                                                    forwardedRef={[Function]}
                                                                     height={30}
+                                                                    image="https://api.dev2.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
+                                                                    inView={false}
                                                                     width={30}
-                                                                  />
-                                                                </StyledComponent>
-                                                              </Image__Img>
-                                                            </InView>
-                                                          </Image>
-                                                        </div>
-                                                      </StyledComponent>
-                                                    </UserAvatar__Avatar>
-                                                    <Typography__styledComponent>
-                                                      <StyledComponent
-                                                        forwardedComponent={
-                                                          Object {
-                                                            "$$typeof": Symbol(react.forward_ref),
-                                                            "attrs": Array [],
-                                                            "componentStyle": ComponentStyle {
-                                                              "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                              "isStatic": false,
-                                                              "lastClassName": "evZVGc",
-                                                              "rules": Array [
-                                                                "color:",
-                                                                [Function],
-                                                                ";margin:0px;font-weight:",
-                                                                "bold",
-                                                                ";",
-                                                                ";font-size:",
-                                                                "13",
-                                                                "px;text-transform:",
-                                                                [Function],
-                                                                ";text-align:",
-                                                                [Function],
-                                                                ";:hover{color:",
-                                                                [Function],
-                                                                ";cursor:",
-                                                                [Function],
-                                                                ";}",
-                                                              ],
-                                                            },
-                                                            "displayName": "Typography__styledComponent",
-                                                            "foldedComponentIds": Array [],
-                                                            "render": [Function],
-                                                            "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                            "target": "span",
-                                                            "toString": [Function],
-                                                            "warnTooManyClasses": [Function],
-                                                            "withComponent": [Function],
+                                                                  >
+                                                                    <div
+                                                                      className="Image__Img-sc-1jpuda7-0 jAWVlp"
+                                                                      height={30}
+                                                                      width={30}
+                                                                    />
+                                                                  </StyledComponent>
+                                                                </Image__Img>
+                                                              </InView>
+                                                            </Image>
+                                                          </div>
+                                                        </StyledComponent>
+                                                      </UserAvatar__Avatar>
+                                                      <Typography__styledComponent>
+                                                        <StyledComponent
+                                                          forwardedComponent={
+                                                            Object {
+                                                              "$$typeof": Symbol(react.forward_ref),
+                                                              "attrs": Array [],
+                                                              "componentStyle": ComponentStyle {
+                                                                "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                "isStatic": false,
+                                                                "lastClassName": "evZVGc",
+                                                                "rules": Array [
+                                                                  "color:",
+                                                                  [Function],
+                                                                  ";margin:0px;font-weight:",
+                                                                  "bold",
+                                                                  ";",
+                                                                  ";font-size:",
+                                                                  "13",
+                                                                  "px;text-transform:",
+                                                                  [Function],
+                                                                  ";text-align:",
+                                                                  [Function],
+                                                                  ";:hover{color:",
+                                                                  [Function],
+                                                                  ";cursor:",
+                                                                  [Function],
+                                                                  ";}",
+                                                                ],
+                                                              },
+                                                              "displayName": "Typography__styledComponent",
+                                                              "foldedComponentIds": Array [],
+                                                              "render": [Function],
+                                                              "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                              "target": "span",
+                                                              "toString": [Function],
+                                                              "warnTooManyClasses": [Function],
+                                                              "withComponent": [Function],
+                                                            }
                                                           }
-                                                        }
-                                                        forwardedRef={null}
-                                                      >
-                                                        <span
-                                                          className="Typography__styledComponent-sc-36xkf6-5 evZVGc"
+                                                          forwardedRef={null}
                                                         >
-                                                          gregjeanmart
-                                                        </span>
-                                                      </StyledComponent>
-                                                    </Typography__styledComponent>
-                                                  </div>
-                                                </StyledComponent>
-                                              </UserAvatar__Container>
-                                            </UserAvatarComponent>
+                                                          <span
+                                                            className="Typography__styledComponent-sc-36xkf6-5 evZVGc"
+                                                          >
+                                                            gregjeanmart
+                                                          </span>
+                                                        </StyledComponent>
+                                                      </Typography__styledComponent>
+                                                    </div>
+                                                  </StyledComponent>
+                                                </UserAvatar__Container>
+                                              </UserAvatarComponent>
+                                            </a>
                                           </Link>
                                         </div>
                                       </StyledComponent>

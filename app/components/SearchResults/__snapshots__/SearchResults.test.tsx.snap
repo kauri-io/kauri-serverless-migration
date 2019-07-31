@@ -226,13 +226,13 @@ exports[`components/ResourceRowWithImage should match snapshot 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "ResourceRowWithImage__ResourceRow-tpmrbu-0",
                 "isStatic": false,
-                "lastClassName": "hVSttN",
+                "lastClassName": "igCEwE",
                 "rules": Array [
                   "display:flex;width:",
                   [Function],
                   "px;height:195px;background-color:",
                   [Function],
-                  ";border-radius:4px;box-shadow:0 0 4px 0 rgba(0,0,0,0.11);",
+                  ";border-radius:4px;box-shadow:0 0 4px 0 rgba(0,0,0,0.11);cursor:pointer;",
                 ],
               },
               "displayName": "ResourceRowWithImage__ResourceRow",
@@ -248,7 +248,7 @@ exports[`components/ResourceRowWithImage should match snapshot 1`] = `
           forwardedRef={null}
         >
           <div
-            className="ResourceRowWithImage__ResourceRow-tpmrbu-0 hVSttN"
+            className="ResourceRowWithImage__ResourceRow-tpmrbu-0 igCEwE"
           >
             <ResourceRowWithImage__Container>
               <StyledComponent
