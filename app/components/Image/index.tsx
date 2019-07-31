@@ -88,6 +88,13 @@ const Img = styled.div<ImgProps>`
     position: ${props => (props.asBackground ? 'absolute' : 'relative')};
 
     ${props =>
+        props.borderBottomLeftRadius &&
+        `border-bottom-left-radius: ${props.borderBottomLeftRadius}`};
+    ${props =>
+        props.borderBottomRightRadius &&
+        `border-bottom-right-radius: ${props.borderBottomRightRadius}`};
+
+    ${props =>
         props.overlay &&
         `&:after {
       content: "";
@@ -101,14 +108,6 @@ const Img = styled.div<ImgProps>`
       right: 0;
       bottom: 0;
       ${props.borderRadius && `border-radius: ${props.borderRadius}`};
-      ${props.borderTopLeftRadius &&
-          `border-top-left-radius: ${props.borderTopLeftRadius}`};
-      ${props.borderTopRightRadius &&
-          `border-top-right-radius: ${props.borderTopRightRadius}`};
-      ${props.borderBottomLeftRadius &&
-          `border-bottom-left-radius: ${props.borderBottomLeftRadius}`};
-      ${props.borderBottomRightRadius &&
-          `border-bottom-right-radius: ${props.borderBottomRightRadius}`};
     }`}
 
     ${props =>

@@ -144,6 +144,8 @@ exports[`components/ResourceRowWithImage should match snapshot 1`] = `
           "calls": Array [
             Array [
               <Image
+                borderBottomLeftRadius="4px"
+                borderTopLeftRadius="4px"
                 height={195}
                 image="test url"
                 width={288}

@@ -55,8 +55,6 @@ import {
 // TODO: // import { addCommentEpic } from "../components/containers/Article/CommentArticleForm/Module";
 // TODO: // import { addArticleToCollectionEpic } from "../containers/AddToCollection/Module";
 // import { saveUserDetailsEpic } from "../components/common/EditProfile/Module";
-
-console.log(modal)
 export const rootReducer = {
     app,
     modal,

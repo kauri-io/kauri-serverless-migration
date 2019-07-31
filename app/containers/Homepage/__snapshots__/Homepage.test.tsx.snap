@@ -1893,7 +1893,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "Image__Img-sc-1jpuda7-0",
                                                   "isStatic": false,
-                                                  "lastClassName": "bwLgPZ",
+                                                  "lastClassName": "jAWVlp",
                                                   "rules": Array [
                                                     "height:",
                                                     [Function],
@@ -1912,6 +1912,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     ";",
                                                     [Function],
                                                     ";position:",
+                                                    [Function],
+                                                    ";",
+                                                    [Function],
+                                                    ";",
                                                     [Function],
                                                     ";",
                                                     [Function],
@@ -1945,7 +1949,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             width="288px"
                                           >
                                             <div
-                                              className="Image__Img-sc-1jpuda7-0 jthmjD"
+                                              className="Image__Img-sc-1jpuda7-0 jlLeQT"
                                               height="90px"
                                               width="288px"
                                             />
@@ -2186,7 +2190,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "Image__Img-sc-1jpuda7-0",
                                                   "isStatic": false,
-                                                  "lastClassName": "bwLgPZ",
+                                                  "lastClassName": "jAWVlp",
                                                   "rules": Array [
                                                     "height:",
                                                     [Function],
@@ -2205,6 +2209,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     ";",
                                                     [Function],
                                                     ";position:",
+                                                    [Function],
+                                                    ";",
+                                                    [Function],
+                                                    ";",
                                                     [Function],
                                                     ";",
                                                     [Function],
@@ -2238,7 +2246,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             width="288px"
                                           >
                                             <div
-                                              className="Image__Img-sc-1jpuda7-0 jthmjD"
+                                              className="Image__Img-sc-1jpuda7-0 jlLeQT"
                                               height="90px"
                                               width="288px"
                                             />
@@ -2479,7 +2487,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "Image__Img-sc-1jpuda7-0",
                                                   "isStatic": false,
-                                                  "lastClassName": "bwLgPZ",
+                                                  "lastClassName": "jAWVlp",
                                                   "rules": Array [
                                                     "height:",
                                                     [Function],
@@ -2498,6 +2506,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     ";",
                                                     [Function],
                                                     ";position:",
+                                                    [Function],
+                                                    ";",
+                                                    [Function],
+                                                    ";",
                                                     [Function],
                                                     ";",
                                                     [Function],
@@ -2531,7 +2543,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             width="288px"
                                           >
                                             <div
-                                              className="Image__Img-sc-1jpuda7-0 jthmjD"
+                                              className="Image__Img-sc-1jpuda7-0 jlLeQT"
                                               height="90px"
                                               width="288px"
                                             />
@@ -2772,7 +2784,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "Image__Img-sc-1jpuda7-0",
                                                   "isStatic": false,
-                                                  "lastClassName": "bwLgPZ",
+                                                  "lastClassName": "jAWVlp",
                                                   "rules": Array [
                                                     "height:",
                                                     [Function],
@@ -2791,6 +2803,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     ";",
                                                     [Function],
                                                     ";position:",
+                                                    [Function],
+                                                    ";",
+                                                    [Function],
+                                                    ";",
                                                     [Function],
                                                     ";",
                                                     [Function],
@@ -2824,7 +2840,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             width="288px"
                                           >
                                             <div
-                                              className="Image__Img-sc-1jpuda7-0 jthmjD"
+                                              className="Image__Img-sc-1jpuda7-0 jlLeQT"
                                               height="90px"
                                               width="288px"
                                             />
@@ -3287,7 +3303,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 <span
                                                   className="Typography__styledComponent-sc-36xkf6-5 eLGQne"
                                                 >
-                                                  Join the Community Ambassad...
+                                                  Join the Community Ambassador Program! (up to $3k in bounty funding)
                                                 </span>
                                               </StyledComponent>
                                             </Typography__styledComponent>
@@ -3327,7 +3343,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 <span
                                                   className="Typography__component-sc-36xkf6-4 kdkRvh"
                                                 >
-                                                  Apply here by August 5th! The Ethereum community is moving rapidly, with new tools, projects, protocols, and libraries launching every day. While this speed ...
+                                                  Apply here by August 5th! The Ethereum community is moving rapidly, with new tools, projects, protocols, and libraries launching every day. While this speed of development is exciting, it can be overwhelming for both new and experienced Ethereum developers to find up to date and accurate information. Kauri aims to create a set of resources to help developers quickly understand what they can build with Ethereum and related web3 tools. This involves a combination of education, demonstration, and d
                                                 </span>
                                               </StyledComponent>
                                             </Typography__component>
@@ -3624,7 +3640,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                       "componentStyle": ComponentStyle {
                                                                         "componentId": "Image__Img-sc-1jpuda7-0",
                                                                         "isStatic": false,
-                                                                        "lastClassName": "bwLgPZ",
+                                                                        "lastClassName": "jAWVlp",
                                                                         "rules": Array [
                                                                           "height:",
                                                                           [Function],
@@ -3643,6 +3659,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                           ";",
                                                                           [Function],
                                                                           ";position:",
+                                                                          [Function],
+                                                                          ";",
+                                                                          [Function],
+                                                                          ";",
                                                                           [Function],
                                                                           ";",
                                                                           [Function],
@@ -3668,7 +3688,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                   width={30}
                                                                 >
                                                                   <div
-                                                                    className="Image__Img-sc-1jpuda7-0 bwLgPZ"
+                                                                    className="Image__Img-sc-1jpuda7-0 jAWVlp"
                                                                     height={30}
                                                                     width={30}
                                                                   />
@@ -4559,6 +4579,8 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 useAnchorTag={true}
                                               >
                                                 <Image
+                                                  borderBottomLeftRadius="4px"
+                                                  borderTopLeftRadius="4px"
                                                   height={195}
                                                   image="https://api.kauri.io:443/ipfs/QmQ6Ja45gL89wV6vxiiqtBGzyShj3Q4LCe7bphvBjWLLoM"
                                                   onClick={[Function]}
@@ -4571,6 +4593,8 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     triggerOnce={true}
                                                   >
                                                     <Image__Img
+                                                      borderBottomLeftRadius="4px"
+                                                      borderTopLeftRadius="4px"
                                                       height={195}
                                                       image="https://api.kauri.io:443/ipfs/QmQ6Ja45gL89wV6vxiiqtBGzyShj3Q4LCe7bphvBjWLLoM"
                                                       inView={false}
@@ -4579,6 +4603,8 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       width={288}
                                                     >
                                                       <StyledComponent
+                                                        borderBottomLeftRadius="4px"
+                                                        borderTopLeftRadius="4px"
                                                         forwardedComponent={
                                                           Object {
                                                             "$$typeof": Symbol(react.forward_ref),
@@ -4586,7 +4612,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                             "componentStyle": ComponentStyle {
                                                               "componentId": "Image__Img-sc-1jpuda7-0",
                                                               "isStatic": false,
-                                                              "lastClassName": "bwLgPZ",
+                                                              "lastClassName": "jAWVlp",
                                                               "rules": Array [
                                                                 "height:",
                                                                 [Function],
@@ -4605,6 +4631,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 ";",
                                                                 [Function],
                                                                 ";position:",
+                                                                [Function],
+                                                                ";",
+                                                                [Function],
+                                                                ";",
                                                                 [Function],
                                                                 ";",
                                                                 [Function],
@@ -4632,7 +4662,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                         width={288}
                                                       >
                                                         <div
-                                                          className="Image__Img-sc-1jpuda7-0 cqArMo"
+                                                          className="Image__Img-sc-1jpuda7-0 hxUKdf"
                                                           height={195}
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
@@ -4804,7 +4834,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 <span
                                                                   className="Typography__styledComponent-sc-36xkf6-5 cmeRrF"
                                                                 >
-                                                                  Building and Working with F...
+                                                                  Building and Working with Facebook’s Cryptocurrency Libra
                                                                 </span>
                                                               </StyledComponent>
                                                             </Typography__styledComponent>
@@ -4844,7 +4874,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 <span
                                                                   className="Typography__component-sc-36xkf6-4 kdkRvh"
                                                                 >
-                                                                  EDIT: I work at ConsenSys Academy, creating educational content similar to this. I teach developers and non-developers on how to use the Ethereum Blockchain....
+                                                                  EDIT: I work at ConsenSys Academy, creating educational content similar to this. I teach developers and non-developers on how to use the Ethereum Blockchain. If you enjoy this content on Libra and want to learn more about blockchain, I highly recommend you sign up for the Developer Program On-Demand. Even though Facebooks name is hard to find on the Libra website, the long term plan is for it to integrate with their forthcoming Calibra wallet, and then, the whole game plan might make more sense.
                                                                 </span>
                                                               </StyledComponent>
                                                             </Typography__component>
@@ -5330,7 +5360,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                                       "componentStyle": ComponentStyle {
                                                                                         "componentId": "Image__Img-sc-1jpuda7-0",
                                                                                         "isStatic": false,
-                                                                                        "lastClassName": "bwLgPZ",
+                                                                                        "lastClassName": "jAWVlp",
                                                                                         "rules": Array [
                                                                                           "height:",
                                                                                           [Function],
@@ -5349,6 +5379,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                                           ";",
                                                                                           [Function],
                                                                                           ";position:",
+                                                                                          [Function],
+                                                                                          ";",
+                                                                                          [Function],
+                                                                                          ";",
                                                                                           [Function],
                                                                                           ";",
                                                                                           [Function],
@@ -5374,7 +5408,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                                   width={30}
                                                                                 >
                                                                                   <div
-                                                                                    className="Image__Img-sc-1jpuda7-0 bwLgPZ"
+                                                                                    className="Image__Img-sc-1jpuda7-0 jAWVlp"
                                                                                     height={30}
                                                                                     width={30}
                                                                                   />
@@ -5512,6 +5546,8 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 useAnchorTag={true}
                                               >
                                                 <Image
+                                                  borderBottomLeftRadius="4px"
+                                                  borderTopLeftRadius="4px"
                                                   height={195}
                                                   image="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
                                                   onClick={[Function]}
@@ -5524,6 +5560,8 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     triggerOnce={true}
                                                   >
                                                     <Image__Img
+                                                      borderBottomLeftRadius="4px"
+                                                      borderTopLeftRadius="4px"
                                                       height={195}
                                                       image="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
                                                       inView={false}
@@ -5532,6 +5570,8 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       width={288}
                                                     >
                                                       <StyledComponent
+                                                        borderBottomLeftRadius="4px"
+                                                        borderTopLeftRadius="4px"
                                                         forwardedComponent={
                                                           Object {
                                                             "$$typeof": Symbol(react.forward_ref),
@@ -5539,7 +5579,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                             "componentStyle": ComponentStyle {
                                                               "componentId": "Image__Img-sc-1jpuda7-0",
                                                               "isStatic": false,
-                                                              "lastClassName": "bwLgPZ",
+                                                              "lastClassName": "jAWVlp",
                                                               "rules": Array [
                                                                 "height:",
                                                                 [Function],
@@ -5558,6 +5598,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 ";",
                                                                 [Function],
                                                                 ";position:",
+                                                                [Function],
+                                                                ";",
+                                                                [Function],
+                                                                ";",
                                                                 [Function],
                                                                 ";",
                                                                 [Function],
@@ -5585,7 +5629,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                         width={288}
                                                       >
                                                         <div
-                                                          className="Image__Img-sc-1jpuda7-0 cqArMo"
+                                                          className="Image__Img-sc-1jpuda7-0 hxUKdf"
                                                           height={195}
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
@@ -5757,7 +5801,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 <span
                                                                   className="Typography__styledComponent-sc-36xkf6-5 cmeRrF"
                                                                 >
-                                                                  Flexible, Upgradeable & Hig...
+                                                                  Flexible, Upgradeable & Highly Available NFTs
                                                                 </span>
                                                               </StyledComponent>
                                                             </Typography__styledComponent>
@@ -5797,7 +5841,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 <span
                                                                   className="Typography__component-sc-36xkf6-4 kdkRvh"
                                                                 >
-                                                                  This two part tutorial walks you through from start to finish the process of making NFTs and making them available on OpenSea, Rarebits and the World Wide We...
+                                                                  This two part tutorial walks you through from start to finish the process of making NFTs and making them available on OpenSea, Rarebits and the World Wide Web. It uses Netlify and Lambda functions to make sure your metadata is highly available.
                                                                 </span>
                                                               </StyledComponent>
                                                             </Typography__component>
@@ -6390,7 +6434,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                                       "componentStyle": ComponentStyle {
                                                                                         "componentId": "Image__Img-sc-1jpuda7-0",
                                                                                         "isStatic": false,
-                                                                                        "lastClassName": "bwLgPZ",
+                                                                                        "lastClassName": "jAWVlp",
                                                                                         "rules": Array [
                                                                                           "height:",
                                                                                           [Function],
@@ -6409,6 +6453,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                                           ";",
                                                                                           [Function],
                                                                                           ";position:",
+                                                                                          [Function],
+                                                                                          ";",
+                                                                                          [Function],
+                                                                                          ";",
                                                                                           [Function],
                                                                                           ";",
                                                                                           [Function],
@@ -6434,7 +6482,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                                   width={30}
                                                                                 >
                                                                                   <div
-                                                                                    className="Image__Img-sc-1jpuda7-0 bwLgPZ"
+                                                                                    className="Image__Img-sc-1jpuda7-0 jAWVlp"
                                                                                     height={30}
                                                                                     width={30}
                                                                                   />
@@ -9269,7 +9317,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                             "componentStyle": ComponentStyle {
                                                                               "componentId": "Image__Img-sc-1jpuda7-0",
                                                                               "isStatic": false,
-                                                                              "lastClassName": "bwLgPZ",
+                                                                              "lastClassName": "jAWVlp",
                                                                               "rules": Array [
                                                                                 "height:",
                                                                                 [Function],
@@ -9288,6 +9336,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                                 ";",
                                                                                 [Function],
                                                                                 ";position:",
+                                                                                [Function],
+                                                                                ";",
+                                                                                [Function],
+                                                                                ";",
                                                                                 [Function],
                                                                                 ";",
                                                                                 [Function],
@@ -9318,7 +9370,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                         width={288}
                                                                       >
                                                                         <div
-                                                                          className="Image__Img-sc-1jpuda7-0 jrdanM"
+                                                                          className="Image__Img-sc-1jpuda7-0 bSmInO"
                                                                           height={250}
                                                                           width={288}
                                                                         />
@@ -9757,7 +9809,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                                                               "componentStyle": ComponentStyle {
                                                                                                                 "componentId": "Image__Img-sc-1jpuda7-0",
                                                                                                                 "isStatic": false,
-                                                                                                                "lastClassName": "bwLgPZ",
+                                                                                                                "lastClassName": "jAWVlp",
                                                                                                                 "rules": Array [
                                                                                                                   "height:",
                                                                                                                   [Function],
@@ -9776,6 +9828,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                                                                   ";",
                                                                                                                   [Function],
                                                                                                                   ";position:",
+                                                                                                                  [Function],
+                                                                                                                  ";",
+                                                                                                                  [Function],
+                                                                                                                  ";",
                                                                                                                   [Function],
                                                                                                                   ";",
                                                                                                                   [Function],
@@ -9801,7 +9857,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                                                           width={30}
                                                                                                         >
                                                                                                           <div
-                                                                                                            className="Image__Img-sc-1jpuda7-0 bwLgPZ"
+                                                                                                            className="Image__Img-sc-1jpuda7-0 jAWVlp"
                                                                                                             height={30}
                                                                                                             width={30}
                                                                                                           />
@@ -10306,7 +10362,6 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             <SecondaryButtonComponent
                                               border="primary"
                                               color="textPrimary"
-                                              key="Write Article"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
                                               width="288px"
@@ -10387,9 +10442,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     onClick={[Function]}
                                                     type="button"
                                                     width="288px"
-                                                  >
-                                                    Write Article
-                                                  </button>
+                                                  />
                                                 </StyledComponent>
                                               </SecondaryButton>
                                             </SecondaryButtonComponent>
@@ -10401,7 +10454,6 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             <SecondaryButtonComponent
                                               border="primary"
                                               color="textPrimary"
-                                              key="Create Collection"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
                                               width="288px"
@@ -10482,9 +10534,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     onClick={[Function]}
                                                     type="button"
                                                     width="288px"
-                                                  >
-                                                    Create Collection
-                                                  </button>
+                                                  />
                                                 </StyledComponent>
                                               </SecondaryButton>
                                             </SecondaryButtonComponent>
@@ -10496,7 +10546,6 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             <SecondaryButtonComponent
                                               border="primary"
                                               color="textPrimary"
-                                              key="Import Content"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
                                               width="288px"
@@ -10577,9 +10626,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     onClick={[Function]}
                                                     type="button"
                                                     width="288px"
-                                                  >
-                                                    Import Content
-                                                  </button>
+                                                  />
                                                 </StyledComponent>
                                               </SecondaryButton>
                                             </SecondaryButtonComponent>
@@ -11307,7 +11354,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                       "componentStyle": ComponentStyle {
                                                                         "componentId": "Image__Img-sc-1jpuda7-0",
                                                                         "isStatic": false,
-                                                                        "lastClassName": "bwLgPZ",
+                                                                        "lastClassName": "jAWVlp",
                                                                         "rules": Array [
                                                                           "height:",
                                                                           [Function],
@@ -11326,6 +11373,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                           ";",
                                                                           [Function],
                                                                           ";position:",
+                                                                          [Function],
+                                                                          ";",
+                                                                          [Function],
+                                                                          ";",
                                                                           [Function],
                                                                           ";",
                                                                           [Function],
@@ -11351,7 +11402,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                   width={30}
                                                                 >
                                                                   <div
-                                                                    className="Image__Img-sc-1jpuda7-0 bwLgPZ"
+                                                                    className="Image__Img-sc-1jpuda7-0 jAWVlp"
                                                                     height={30}
                                                                     width={30}
                                                                   />
@@ -11550,7 +11601,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                       "componentStyle": ComponentStyle {
                                                                         "componentId": "Image__Img-sc-1jpuda7-0",
                                                                         "isStatic": false,
-                                                                        "lastClassName": "bwLgPZ",
+                                                                        "lastClassName": "jAWVlp",
                                                                         "rules": Array [
                                                                           "height:",
                                                                           [Function],
@@ -11569,6 +11620,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                           ";",
                                                                           [Function],
                                                                           ";position:",
+                                                                          [Function],
+                                                                          ";",
+                                                                          [Function],
+                                                                          ";",
                                                                           [Function],
                                                                           ";",
                                                                           [Function],
@@ -11594,7 +11649,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                   width={30}
                                                                 >
                                                                   <div
-                                                                    className="Image__Img-sc-1jpuda7-0 bwLgPZ"
+                                                                    className="Image__Img-sc-1jpuda7-0 jAWVlp"
                                                                     height={30}
                                                                     width={30}
                                                                   />
@@ -11793,7 +11848,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                       "componentStyle": ComponentStyle {
                                                                         "componentId": "Image__Img-sc-1jpuda7-0",
                                                                         "isStatic": false,
-                                                                        "lastClassName": "bwLgPZ",
+                                                                        "lastClassName": "jAWVlp",
                                                                         "rules": Array [
                                                                           "height:",
                                                                           [Function],
@@ -11812,6 +11867,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                           ";",
                                                                           [Function],
                                                                           ";position:",
+                                                                          [Function],
+                                                                          ";",
+                                                                          [Function],
+                                                                          ";",
                                                                           [Function],
                                                                           ";",
                                                                           [Function],
@@ -11837,7 +11896,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                   width={30}
                                                                 >
                                                                   <div
-                                                                    className="Image__Img-sc-1jpuda7-0 bwLgPZ"
+                                                                    className="Image__Img-sc-1jpuda7-0 jAWVlp"
                                                                     height={30}
                                                                     width={30}
                                                                   />
@@ -12036,7 +12095,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                       "componentStyle": ComponentStyle {
                                                                         "componentId": "Image__Img-sc-1jpuda7-0",
                                                                         "isStatic": false,
-                                                                        "lastClassName": "bwLgPZ",
+                                                                        "lastClassName": "jAWVlp",
                                                                         "rules": Array [
                                                                           "height:",
                                                                           [Function],
@@ -12055,6 +12114,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                           ";",
                                                                           [Function],
                                                                           ";position:",
+                                                                          [Function],
+                                                                          ";",
+                                                                          [Function],
+                                                                          ";",
                                                                           [Function],
                                                                           ";",
                                                                           [Function],
@@ -12080,7 +12143,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                   width={30}
                                                                 >
                                                                   <div
-                                                                    className="Image__Img-sc-1jpuda7-0 bwLgPZ"
+                                                                    className="Image__Img-sc-1jpuda7-0 jAWVlp"
                                                                     height={30}
                                                                     width={30}
                                                                   />
@@ -12279,7 +12342,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                       "componentStyle": ComponentStyle {
                                                                         "componentId": "Image__Img-sc-1jpuda7-0",
                                                                         "isStatic": false,
-                                                                        "lastClassName": "bwLgPZ",
+                                                                        "lastClassName": "jAWVlp",
                                                                         "rules": Array [
                                                                           "height:",
                                                                           [Function],
@@ -12298,6 +12361,10 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                           ";",
                                                                           [Function],
                                                                           ";position:",
+                                                                          [Function],
+                                                                          ";",
+                                                                          [Function],
+                                                                          ";",
                                                                           [Function],
                                                                           ";",
                                                                           [Function],
@@ -12323,7 +12390,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                   width={30}
                                                                 >
                                                                   <div
-                                                                    className="Image__Img-sc-1jpuda7-0 bwLgPZ"
+                                                                    className="Image__Img-sc-1jpuda7-0 jAWVlp"
                                                                     height={30}
                                                                     width={30}
                                                                   />

@@ -246,7 +246,7 @@ exports[`components/UserAvatar should match snapshot 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "Image__Img-sc-1jpuda7-0",
                               "isStatic": false,
-                              "lastClassName": "bwLgPZ",
+                              "lastClassName": "jAWVlp",
                               "rules": Array [
                                 "height:",
                                 [Function],
@@ -265,6 +265,10 @@ exports[`components/UserAvatar should match snapshot 1`] = `
                                 ";",
                                 [Function],
                                 ";position:",
+                                [Function],
+                                ";",
+                                [Function],
+                                ";",
                                 [Function],
                                 ";",
                                 [Function],
@@ -290,7 +294,7 @@ exports[`components/UserAvatar should match snapshot 1`] = `
                         width={30}
                       >
                         <div
-                          className="Image__Img-sc-1jpuda7-0 bwLgPZ"
+                          className="Image__Img-sc-1jpuda7-0 jAWVlp"
                           height={30}
                           width={30}
                         />

@@ -1,0 +1,7 @@
+app/node_modules
+app/.next
+.DS_Store
+app/output
+app/coverage
+*.test.tsx
+*.test.ts

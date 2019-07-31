@@ -37,18 +37,19 @@ const PublishYourOwnContentCTA: React.FunctionComponent<IProps> = props => (
     <Container>
         <Title2>Publish your own content</Title2>
         <Buttons>
+            {console.log(props.content)}
             {props.content &&
                 props.content.map(
                     content =>
                         content &&
                         props.linkComponent(
                             <SecondaryButtonComponent
-                                key={content.name}
+                                key={content.actionName}
                                 color="textPrimary"
                                 border={'primary'}
                                 width={`${DEFAULT_CARD_WIDTH}px`}
                             >
-                                {content.name}
+                                {content.actionName}
                             </SecondaryButtonComponent>,
                             props.isLoggedIn
                                 ? content.link
