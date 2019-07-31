@@ -8,27 +8,17 @@ import {
     addArticleToCollectionMutation,
     getCollectionTitleQuery,
 } from '../../queries/Article'
-import {
-    openModalAction,
-} from '../../components/Modal/Module'
+import { openModalAction } from '../../components/Modal/Module'
 import AlertViewComponent from '../../components/Modal/AlertView'
 import { BodyCard, H4 } from '../../components/Typography'
 import {
     addArticleToCollectionVariables,
     addArticleToCollection,
 } from '../../queries/__generated__/addArticleToCollection'
-import {
-    switchMap,
-    mergeMap,
-    map,
-    tap,
-    catchError,
-} from 'rxjs/operators'
+import { switchMap, mergeMap, map, tap, catchError } from 'rxjs/operators'
 import { from, of, merge } from 'rxjs'
 import { path } from 'ramda'
-import {
-    getCollectionTitle,
-} from '../../queries/__generated__/getCollectionTitle'
+import { getCollectionTitle } from '../../queries/__generated__/getCollectionTitle'
 import { getArticleTitleVariables } from '../ArticleDraft/__generated__/getArticleTitle'
 import { getArticleTitle } from '../../queries/__generated__/getArticleTitle'
 
@@ -156,7 +146,10 @@ export const addArticleToCollectionEpic: Epic<
                     )
                 ),
                 mergeMap(() =>
-                    apolloClient.query<getArticleTitle, getArticleTitleVariables>({
+                    apolloClient.query<
+                        getArticleTitle,
+                        getArticleTitleVariables
+                    >({
                         query: getArticleTitleQuery,
                         variables: {
                             id: payload.resourceId.id,
@@ -222,7 +215,7 @@ export const addArticleToCollectionEpic: Epic<
                         resourceId: '4e1a8de4dece4736bd0b9c33b9225c92',
                         resourceType: payload.resourceId.type,
                     })
-                }),
+                })
             )
         )
     )

@@ -4,6 +4,7 @@ import Head from 'next/head'
 import ArticleCard from '../../components/Card/ArticleCardMaterial'
 import PrimaryButton from '../../components/Button/PrimaryButton'
 import { Title2, BodyCard } from '../../components/Typography'
+import { getArticleURL } from '../../lib/getURLs'
 
 const Container = styled.section`
     display: flex;
@@ -40,7 +41,7 @@ const ArticleProposed = ({
                     Waiting for original author approval
                 </BodyCard>
             </SectionContainer>
-            <ArticleCard {...getArticle} />
+            <ArticleCard href={getArticleURL(getArticle)} {...getArticle} />
             <SectionContainer>
                 <PrimaryButton
                     onClick={() =>

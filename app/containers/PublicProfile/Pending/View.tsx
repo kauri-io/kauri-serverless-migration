@@ -12,6 +12,7 @@ import { searchPending } from '../../../queries/Article'
 import { graphql, compose } from 'react-apollo'
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
 import { ICommunity } from '../../../lib/Module'
+import { getArticleURL } from '../../../lib/getURLs'
 
 interface IArticlesProps {
     data: searchPersonalArticles
@@ -49,7 +50,13 @@ const Articles = ({ data, type, isOwner }: IArticlesProps) => {
                     )}
                 <Masonry withPadding={false}>
                     {articles.map(
-                        article => article && <ArticleCard {...article} />
+                        article =>
+                            article && (
+                                <ArticleCard
+                                    href={getArticleURL(article)}
+                                    {...article}
+                                />
+                            )
                     )}
                 </Masonry>
             </Fragment>

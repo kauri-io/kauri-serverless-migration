@@ -95,7 +95,7 @@ const FeaturedResource: React.FunctionComponent<
                         resourceType === 'article'
                             ? `/${slug}/${id}/a`
                             : resourceType === 'collection'
-                            ? `/collection/${id}`
+                            ? `/${slugify(name, { lower: true })}/${id}/c`
                             : `/community/${id}`
                     )}
                     <TagList maxTags={3} color="textPrimary" tags={tags} />
@@ -119,7 +119,7 @@ const FeaturedResource: React.FunctionComponent<
                         resourceType === 'article'
                             ? `/${slug}/${id}/a`
                             : resourceType === 'collection'
-                            ? `/collection/${id}`
+                            ? `/${slugify(name, { lower: true })}/${id}/c`
                             : `/community/${id}`
                     )}
                 </ViewContainer>

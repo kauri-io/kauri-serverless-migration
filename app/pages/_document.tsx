@@ -73,6 +73,7 @@ export default class MyDocument extends Document<IProps> {
                         content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
                     />
                     {this.props.styleTags}
+                    <style>{`a { color: inherit; text-decoration: none;} `}</style>
                 </Head>
                 <body>
                     <Main />

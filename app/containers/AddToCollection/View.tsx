@@ -13,7 +13,7 @@ import {
     getCollectionsForUserVariables,
 } from '../../queries/__generated__/getCollectionsForUser'
 import { useState } from 'react'
-import { addArticleToCollectionAction } from './Module';
+import { addArticleToCollectionAction } from './Module'
 
 interface IChosen {
     chosenCollection: ICollection | null
@@ -143,10 +143,9 @@ const Component: React.FunctionComponent<IProps> = ({
                                             },
                                             sectionId: state.chosenSection
                                                 ? state.chosenSection.id
-                                          : '',
+                                                : '',
                                             closeModalAction,
-                                            routeChangeAction
-                                            
+                                            routeChangeAction,
                                         },
                                         closeModalAction
                                     )

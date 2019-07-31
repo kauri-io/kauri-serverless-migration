@@ -16,6 +16,7 @@ import {
 } from '../../../components/Modal/Module'
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
 import { ICommunity } from '../../../lib/Module'
+import { getArticleURL } from '../../../lib/getURLs'
 
 interface IArticlesProps {
     data: searchPersonalArticles
@@ -51,7 +52,14 @@ const Articles = ({ data, type, isOwner }: IArticlesProps) => {
             <Masonry withPadding={false}>
                 {articles &&
                     articles.map(article => {
-                        return article && <ArticleCard {...article} />
+                        return (
+                            article && (
+                                <ArticleCard
+                                    href={getArticleURL(article)}
+                                    {...article}
+                                />
+                            )
+                        )
                     })}
             </Masonry>
         </Fragment>

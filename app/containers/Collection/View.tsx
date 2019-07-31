@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
-import slugify from 'slugify'
 import { path } from 'ramda'
 import CollectionHeader from '../../components/Headers/CollectionHeader'
 import CollectionSection from './CollectionSection'
@@ -16,6 +15,7 @@ import {
 } from '../../queries/__generated__/recordView'
 import { approveResourceAction } from '../Community/Module'
 import { Article_owner_PublicUserDTO } from '../../queries/Fragments/__generated__/Article'
+import { getCollectionURL } from '../../lib/getURLs'
 
 export const Overlay = styled.div`
     position: absolute;
@@ -71,7 +71,6 @@ type IProps = {
     proposedCommunityId?: string
     openModalAction: any
     routeChangeAction: (route: string) => void
-    hostName: string
     userId?: string
     communities?: ICommunity[]
     client: ApolloClient<{}>
@@ -109,18 +108,9 @@ class CollectionPage extends Component<IProps> {
                 tags,
                 sections,
             } = this.props.data.getCollection
-            const {
-                userId,
-                routeChangeAction,
-                hostName,
-                openModalAction,
-            } = this.props
+            const { userId, routeChangeAction, openModalAction } = this.props
             const bg = background
-            const url = `https://${hostName.replace(/api\./g, '')}/collection/${
-                this.props.id
-            }/${slugify(name, {
-                lower: true,
-            })}`
+            const url = getCollectionURL({ title: name, id }).as
 
             const resourceType = path([
                 'data',
@@ -157,15 +147,7 @@ class CollectionPage extends Component<IProps> {
                         <link rel="canonical" href={url} />
                         <meta property="og:title" content={name} />
                         <meta property="og:site_name" content="kauri.io" />
-                        <meta
-                            property="og:url"
-                            content={`https://${hostName}/article/${id}/${slugify(
-                                name,
-                                {
-                                    lower: true,
-                                }
-                            )}`}
-                        />
+                        <meta property="og:url" content={url} />
                         <meta
                             property="og:description"
                             content={`${description &&
@@ -176,15 +158,7 @@ class CollectionPage extends Component<IProps> {
                             <meta property="og:image" content={bg} />
                         )}
                         <meta name="twitter:card" content="summary" />
-                        <meta
-                            name="twitter:site"
-                            content={`https://${hostName}/article/${id}/${slugify(
-                                name,
-                                {
-                                    lower: true,
-                                }
-                            )}`}
-                        />
+                        <meta name="twitter:site" content={url} />
                         <meta name="twitter:title" content={name} />
                         <meta
                             name="twitter:description"

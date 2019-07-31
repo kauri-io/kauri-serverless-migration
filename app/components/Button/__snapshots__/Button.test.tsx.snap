@@ -312,7 +312,7 @@ exports[`components/AddTagButton should match snapshot 1`] = `
             "componentStyle": ComponentStyle {
               "componentId": "AddTagButton-oghske-0",
               "isStatic": false,
-              "lastClassName": "yGuKI",
+              "lastClassName": "kLnLvB",
               "rules": Array [
                 "display:flex;align-items:center;justify-content:center;height:26px;width:80px;border-radius:13px;cursor:pointer;opacity:",
                 [Function],
@@ -347,7 +347,7 @@ exports[`components/AddTagButton should match snapshot 1`] = `
         forwardedRef={null}
       >
         <button
-          className="AddTagButton-oghske-0 yGuKI"
+          className="AddTagButton-oghske-0 kLnLvB"
           color="textPrimary"
           fontSize={0}
           fontWeight={700}
@@ -513,7 +513,7 @@ exports[`components/MediumImportButton should match snapshot 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "TertiaryButton-sc-1rjobqw-0",
                   "isStatic": false,
-                  "lastClassName": "ldfQHp",
+                  "lastClassName": "VsrAD",
                   "rules": Array [
                     "display:flex;align-items:center;border:none;background-color:transparent;cursor:",
                     [Function],
@@ -547,7 +547,7 @@ exports[`components/MediumImportButton should match snapshot 1`] = `
             type="button"
           >
             <button
-              className="TertiaryButton-sc-1rjobqw-0 ldfQHp"
+              className="TertiaryButton-sc-1rjobqw-0 VsrAD"
               color="textPrimary"
               disabled={false}
               fontSize={0}
@@ -746,7 +746,7 @@ exports[`components/PrimaryButton should match snapshot 1`] = `
             "componentStyle": ComponentStyle {
               "componentId": "PrimaryButton-sc-1cbxa53-0",
               "isStatic": false,
-              "lastClassName": "gGcsYX",
+              "lastClassName": "bVbdII",
               "rules": Array [
                 "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
                 [Function],
@@ -785,7 +785,7 @@ exports[`components/PrimaryButton should match snapshot 1`] = `
         type="submit"
       >
         <button
-          className="PrimaryButton-sc-1cbxa53-0 gGcsYX"
+          className="PrimaryButton-sc-1cbxa53-0 bVbdII"
           color="white"
           fontSize={0}
           fontWeight={700}
@@ -946,7 +946,7 @@ exports[`components/SecondaryButton should match snapshot 1`] = `
             "componentStyle": ComponentStyle {
               "componentId": "SecondaryButton-sy4hb2-0",
               "isStatic": false,
-              "lastClassName": "faBvdL",
+              "lastClassName": "fCmNwl",
               "rules": Array [
                 "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
                 [Function],
@@ -987,7 +987,7 @@ exports[`components/SecondaryButton should match snapshot 1`] = `
         type="button"
       >
         <button
-          className="SecondaryButton-sy4hb2-0 faBvdL"
+          className="SecondaryButton-sy4hb2-0 fCmNwl"
           color="white"
           fontSize={0}
           fontWeight={700}
@@ -1144,7 +1144,7 @@ exports[`components/TertiaryButton should match snapshot 1`] = `
             "componentStyle": ComponentStyle {
               "componentId": "TertiaryButton-sc-1rjobqw-0",
               "isStatic": false,
-              "lastClassName": "deyJuN",
+              "lastClassName": "CufMJ",
               "rules": Array [
                 "display:flex;align-items:center;border:none;background-color:transparent;cursor:",
                 [Function],
@@ -1178,7 +1178,7 @@ exports[`components/TertiaryButton should match snapshot 1`] = `
         type="button"
       >
         <button
-          className="TertiaryButton-sc-1rjobqw-0 deyJuN"
+          className="TertiaryButton-sc-1rjobqw-0 CufMJ"
           color="white"
           disabled={false}
           fontSize={0}

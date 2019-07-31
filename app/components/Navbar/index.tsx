@@ -193,49 +193,63 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user }) => {
         <div className={classes.grow}>
             <AppBar elevation={1} position="fixed" color="inherit">
                 <Toolbar className={classes.navbar}>
-                    <img
-                        className={classes.logo}
-                        src="/static/images/logo.svg"
-                    />
                     <Link href="/">
-                        <Typography
-                            className={classes.navlink}
-                            variant="button"
-                        >
-                            Home
-                        </Typography>
+                        <a>
+                            <img
+                                className={classes.logo}
+                                src="/static/images/logo.svg"
+                            />
+                        </a>
+                    </Link>
+                    <Link href="/">
+                        <a>
+                            <Typography
+                                className={classes.navlink}
+                                variant="button"
+                            >
+                                Home
+                            </Typography>
+                        </a>
                     </Link>
                     <Link href="/articles">
-                        <Typography
-                            className={classes.navlink}
-                            variant="button"
-                        >
-                            Articles
-                        </Typography>
+                        <a>
+                            <Typography
+                                className={classes.navlink}
+                                variant="button"
+                            >
+                                Articles
+                            </Typography>
+                        </a>
                     </Link>
                     <Link href="/collections">
-                        <Typography
-                            className={classes.navlink}
-                            variant="button"
-                        >
-                            Collections
-                        </Typography>
+                        <a>
+                            <Typography
+                                className={classes.navlink}
+                                variant="button"
+                            >
+                                Collections
+                            </Typography>
+                        </a>
                     </Link>
                     <Link href="/communities">
-                        <Typography
-                            className={classes.navlink}
-                            variant="button"
-                        >
-                            Communities
-                        </Typography>
+                        <a>
+                            <Typography
+                                className={classes.navlink}
+                                variant="button"
+                            >
+                                Communities
+                            </Typography>
+                        </a>
                     </Link>
                     <Link href="/help">
-                        <Typography
-                            className={classes.navlink}
-                            variant="button"
-                        >
-                            Help
-                        </Typography>
+                        <a>
+                            <Typography
+                                className={classes.navlink}
+                                variant="button"
+                            >
+                                Help
+                            </Typography>
+                        </a>
                     </Link>
                     <div className={classes.grow} />
                     <div className={classes.searchClass}>

@@ -17,6 +17,7 @@ import Hidden from '@material-ui/core/Hidden'
 import { ArticleStyles } from './styles'
 import VoteWidget from './components/VoteWidget'
 import slugify from 'slugify'
+import { getArticleURL } from '../../lib/getURLs'
 
 const converter = new ShowDown.Converter()
 
@@ -151,16 +152,9 @@ const ArticleComp = ({
                                         <Grid sm={6} key={key}>
                                             <ArticleCardMaterial
                                                 className={classes.card}
-                                                href={`/${slugify(
-                                                    String(
-                                                        recommendedArticle
-                                                            .resource.title
-                                                    ),
-                                                    { lower: true }
-                                                )}/${
+                                                href={getArticleURL(
                                                     recommendedArticle.resource
-                                                        .id
-                                                }/a`}
+                                                )}
                                                 {...recommendedArticle.resource}
                                             />
                                         </Grid>

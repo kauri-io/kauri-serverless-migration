@@ -8,6 +8,7 @@ import {
     Collection_owner_PublicUserDTO,
     Collection_owner_CommunityDTO,
 } from '../../queries/Fragments/__generated__/Collection'
+import { getArticleURL } from '../../lib/getURLs'
 
 interface IRenderCardContentProps {
     fromAdmin: boolean
@@ -21,7 +22,7 @@ export const RenderCardContent = ({
 }: IRenderCardContentProps) => (card: Article | Collection | Community) => {
     switch (card.__typename) {
         case 'ArticleDTO':
-            return <ArticleCard {...card} />
+            return <ArticleCard href={getArticleURL(card)} {...card} />
         case 'CollectionDTO':
             const articleCount =
                 card.sections &&

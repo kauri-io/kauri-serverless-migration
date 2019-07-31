@@ -7,6 +7,7 @@ import PrimaryButton from '../../components/Button/PrimaryButton'
 import { Title1, BodyCard } from '../../components/Typography'
 import { Article } from '../../queries/Fragments/__generated__/Article'
 import { ShareButtons } from '../../components/Tooltip/ShareButtons'
+import { getArticleURL } from '../../lib/getURLs'
 
 export interface IProps {
     data: {
@@ -96,7 +97,7 @@ class ArticleApproved extends React.Component<IProps> {
                     <DescriptionContainer>
                         <BodyCard color="white">{`The article ${subjectCopy}`}</BodyCard>
                     </DescriptionContainer>
-                    <ArticleCard {...article} />
+                    <ArticleCard href={getArticleURL(article)} {...article} />
                     <ArticleApprovedActionButtons>
                         <ShareButtons
                             horizontal={true}

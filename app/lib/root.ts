@@ -53,7 +53,10 @@ import {
 } from '../containers/PublicProfile/Manage/TransferModule'
 import { saveUserDetailsEpic } from '../containers/EditProfileForm/Module'
 import { addCommentEpic } from '../containers/Article/Module'
-import { addArticleToCollectionEpic, openAddArticleToCollectionConfirmationModalEpic } from "../containers/AddToCollection/Module";
+import {
+    addArticleToCollectionEpic,
+    openAddArticleToCollectionConfirmationModalEpic,
+} from '../containers/AddToCollection/Module'
 
 export const rootReducer = {
     app,
@@ -101,7 +104,7 @@ const epics = [
     saveUserDetailsEpic,
     addCommentEpic,
     addArticleToCollectionEpic,
-    openAddArticleToCollectionConfirmationModalEpic 
+    openAddArticleToCollectionConfirmationModalEpic,
 ]
 
 export const rootEpic = combineEpics(...epics)

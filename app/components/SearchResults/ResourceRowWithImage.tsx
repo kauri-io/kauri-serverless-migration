@@ -93,7 +93,7 @@ const ResourceRowWithImage: React.SFC<IProps> = ({
                         borderBottomLeftRadius={'4px'}
                     />,
                     resourceType === 'collection'
-                        ? `/collection/${id}`
+                        ? `/${slugify(title, { lower: true })}/${id}/c`
                         : resourceType === 'community'
                         ? `/community/${id}`
                         : `/${slug}/${id}/a`
@@ -123,7 +123,7 @@ const ResourceRowWithImage: React.SFC<IProps> = ({
                         )}
                     </Content>,
                     resourceType === 'collection'
-                        ? `/collection/${id}`
+                        ? `/${slugify(title, { lower: true })}/${id}/c`
                         : resourceType === 'community'
                         ? `/community/${id}`
                         : `/${slug}/${id}/a`

@@ -7,6 +7,7 @@ import {
     searchAutocompleteArticles_searchAutocomplete,
     searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO,
 } from '../../../queries/__generated__/searchAutocompleteArticles'
+import { getArticleURL } from '../../../lib/getURLs'
 
 interface IProps {
     ArticlesQuery: {
@@ -54,7 +55,12 @@ class Articles extends Component<IProps> {
                                 return <></>
                             }
 
-                            return <ArticleCard {...article} />
+                            return (
+                                <ArticleCard
+                                    href={getArticleURL(article)}
+                                    {...article}
+                                />
+                            )
                         })}
                     </Masonry>
                 ) : (

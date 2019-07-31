@@ -803,7 +803,7 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                       "componentStyle": ComponentStyle {
                                                         "componentId": "TertiaryButton-sc-1rjobqw-0",
                                                         "isStatic": false,
-                                                        "lastClassName": "deyJuN",
+                                                        "lastClassName": "CufMJ",
                                                         "rules": Array [
                                                           "display:flex;align-items:center;border:none;background-color:transparent;cursor:",
                                                           [Function],
@@ -838,7 +838,7 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                   type="button"
                                                 >
                                                   <button
-                                                    className="TertiaryButton-sc-1rjobqw-0 deyJuN"
+                                                    className="TertiaryButton-sc-1rjobqw-0 CufMJ"
                                                     color="white"
                                                     disabled={false}
                                                     fontSize={0}
@@ -1043,7 +1043,7 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                       "componentStyle": ComponentStyle {
                                                         "componentId": "TertiaryButton-sc-1rjobqw-0",
                                                         "isStatic": false,
-                                                        "lastClassName": "deyJuN",
+                                                        "lastClassName": "CufMJ",
                                                         "rules": Array [
                                                           "display:flex;align-items:center;border:none;background-color:transparent;cursor:",
                                                           [Function],
@@ -1078,7 +1078,7 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                   type="button"
                                                 >
                                                   <button
-                                                    className="TertiaryButton-sc-1rjobqw-0 deyJuN"
+                                                    className="TertiaryButton-sc-1rjobqw-0 CufMJ"
                                                     color="white"
                                                     disabled={false}
                                                     fontSize={0}
@@ -1258,7 +1258,7 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                       "componentStyle": ComponentStyle {
                                                         "componentId": "PrimaryButton-sc-1cbxa53-0",
                                                         "isStatic": false,
-                                                        "lastClassName": "gGcsYX",
+                                                        "lastClassName": "bVbdII",
                                                         "rules": Array [
                                                           "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
                                                           [Function],
@@ -1298,7 +1298,7 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                   type="submit"
                                                 >
                                                   <button
-                                                    className="PrimaryButton-sc-1cbxa53-0 gGcsYX"
+                                                    className="PrimaryButton-sc-1cbxa53-0 bVbdII"
                                                     color="white"
                                                     disabled={false}
                                                     fontSize={0}

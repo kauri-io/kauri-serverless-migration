@@ -9,6 +9,7 @@ import Masonry from '../../../components/Masonry'
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
 import { BodyCard } from '../../../components/Typography'
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
+import { getArticleURL } from '../../../lib/getURLs'
 import {
     IOpenModalAction,
     IOpenModalPayload,
@@ -56,7 +57,13 @@ const Articles: React.FC<IArticlesProps> = ({
                     )}
                 <Masonry>
                     {articles.map(
-                        article => article && <ArticleCard {...article} />
+                        article =>
+                            article && (
+                                <ArticleCard
+                                    href={getArticleURL(article)}
+                                    {...article}
+                                />
+                            )
                     )}
                 </Masonry>
             </Fragment>
