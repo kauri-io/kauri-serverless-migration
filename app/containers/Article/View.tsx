@@ -6,7 +6,7 @@ import ArticleOutline from './components/ArticleOutline'
 import Image from '../../components/Image'
 import ArticleAvatar from './components/ArticleAvatar'
 import ArticleActions from './components/ArticleActions'
-import ArticleCardMaterial from '../../components/Card/ArticleCard'
+import ArticleCard from '../../components/Card/ArticleCard'
 import { relatedArticles } from '../../queries/__generated__/relatedArticles'
 
 import {
@@ -153,8 +153,8 @@ const ArticleComp = ({
                                     recommendedArticle.resource &&
                                     recommendedArticle.resource.__typename ===
                                         'ArticleDTO' ? (
-                                        <Grid item={true} sm={6} key={key}>
-                                            <ArticleCardMaterial
+                                    <Grid item={true} sm={6} key={key}>
+                                            <ArticleCard
                                                 className={classes.card}
                                                 href={getArticleURL(
                                                     recommendedArticle.resource

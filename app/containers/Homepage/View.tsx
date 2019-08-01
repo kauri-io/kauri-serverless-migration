@@ -388,6 +388,7 @@ const HomePageComponentWrapper: React.FunctionComponent<IProps> = props => {
     return (
         <Query<homePageContent> query={query}>
             {({ loading, error, data }) => {
+                // console.log(error)
                 if (loading) {
                     return <Loading />
                 }

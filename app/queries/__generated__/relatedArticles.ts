@@ -44,6 +44,14 @@ export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_
   avatar: string | null;
 }
 
+export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -102,6 +110,10 @@ export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO 
    * Tags list
    */
   tags: (string | null)[] | null;
+  /**
+   * Get a paginated list of comments for this article
+   */
+  comments: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_comments | null;
   /**
    * Get vote result for the article
    */

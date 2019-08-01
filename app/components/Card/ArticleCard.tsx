@@ -13,10 +13,6 @@ import { getProfileURL } from '../../lib/getURLs'
 import { Article_author } from '../../queries/Fragments/__generated__/Article'
 import IconButton from '@material-ui/core/IconButton'
 import Icon from '@material-ui/core/Icon'
-import {
-    searchApprovedArticles_searchArticles_content_comments,
-    searchApprovedArticles_searchArticles_content_voteResult,
-} from '../../queries/__generated__/searchApprovedArticles'
 import { useState } from 'react'
 
 export const ArticleCardStyles = makeStyles((theme: Theme) => ({
@@ -58,9 +54,13 @@ interface IProps {
         as: string
         href: string
     }
-    isLoggedIn: boolean
-    comments: searchApprovedArticles_searchArticles_content_comments | null
-    voteResult: searchApprovedArticles_searchArticles_content_voteResult | null
+    isLoggedIn?: boolean
+    comments: {
+        totalElements: any
+    } | null
+    voteResult: {
+        sum: number
+    } | null
 }
 
 const ArticleCard: React.FC<IProps> = ({
@@ -74,7 +74,7 @@ const ArticleCard: React.FC<IProps> = ({
     id,
     comments,
     voteResult,
-    isLoggedIn,
+    isLoggedIn = false,
 }) => {
     const classes = ArticleCardStyles({})
     const authorHref = getProfileURL(author as Article_author) // TODO update as contributors[0]

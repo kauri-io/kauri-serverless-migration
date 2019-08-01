@@ -218,6 +218,14 @@ export interface HomepageComponentFragment_Featured_content_resource_ArticleDTO_
   version: number | null;
 }
 
+export interface HomepageComponentFragment_Featured_content_resource_ArticleDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface HomepageComponentFragment_Featured_content_resource_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -377,6 +385,10 @@ export interface HomepageComponentFragment_Featured_content_resource_ArticleDTO 
    * Tags list
    */
   tags: (string | null)[] | null;
+  /**
+   * Get a paginated list of comments for this article
+   */
+  comments: HomepageComponentFragment_Featured_content_resource_ArticleDTO_comments | null;
   /**
    * Get vote result for the article
    */
@@ -786,6 +798,14 @@ export interface HomepageComponentFragment_Promo_content_resource_ArticleDTO_res
   version: number | null;
 }
 
+export interface HomepageComponentFragment_Promo_content_resource_ArticleDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface HomepageComponentFragment_Promo_content_resource_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -945,6 +965,10 @@ export interface HomepageComponentFragment_Promo_content_resource_ArticleDTO {
    * Tags list
    */
   tags: (string | null)[] | null;
+  /**
+   * Get a paginated list of comments for this article
+   */
+  comments: HomepageComponentFragment_Promo_content_resource_ArticleDTO_comments | null;
   /**
    * Get vote result for the article
    */
@@ -1301,6 +1325,14 @@ export interface HomepageComponentFragment_LatestContent_content_ArticleDTO_reso
   version: number | null;
 }
 
+export interface HomepageComponentFragment_LatestContent_content_ArticleDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface HomepageComponentFragment_LatestContent_content_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -1460,6 +1492,10 @@ export interface HomepageComponentFragment_LatestContent_content_ArticleDTO {
    * Tags list
    */
   tags: (string | null)[] | null;
+  /**
+   * Get a paginated list of comments for this article
+   */
+  comments: HomepageComponentFragment_LatestContent_content_ArticleDTO_comments | null;
   /**
    * Get vote result for the article
    */

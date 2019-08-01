@@ -10,7 +10,7 @@ import Loading from '../../components/Loading'
 
 const Container = styled.div`
     display: flex;
-    flex-diretion: column;
+    flex-direction: column;
     overflow-y: auto;
     width: 100%;
     height: 100%;
