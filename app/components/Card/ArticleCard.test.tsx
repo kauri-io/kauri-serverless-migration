@@ -95,12 +95,32 @@ describe('components/Card/ArticleCard', () => {
         expect(image).toEqual('default image prop')
     })
 
-    it('should show the author name', () => {
+    it('should show the author name by default', () => {
         const wrapper = mountWithTheme(<ArticleCard {...ArticleCardProps} />)
 
         const dataTestId = `ArticleCard-${ArticleCardProps.id}-author`
         const author = wrapper.find(`[data-testid="${dataTestId}"]`).first()
         expect(author.text()).toBe(ArticleCardProps.author.name)
+    })
+
+    it('should show the author username if they have no name', () => {
+        const wrapper = mountWithTheme(
+            <ArticleCard {...ArticleCardProps} name={null} />
+        )
+
+        const dataTestId = `ArticleCard-${ArticleCardProps.id}-author`
+        const author = wrapper.find(`[data-testid="${dataTestId}"]`).first()
+        expect(author.text()).toBe(ArticleCardProps.author.username)
+    })
+
+    it('should fallback to show the author id', () => {
+        const wrapper = mountWithTheme(
+            <ArticleCard {...ArticleCardProps} name={null} username={null} />
+        )
+
+        const dataTestId = `ArticleCard-${ArticleCardProps.id}-author`
+        const author = wrapper.find(`[data-testid="${dataTestId}"]`).first()
+        expect(author.text()).toBe(ArticleCardProps.author.id)
     })
 
     it('should show the date published', () => {
@@ -180,10 +200,11 @@ describe('components/Card/ArticleCard', () => {
             .find(`[data-testid="${moreOptionsMenuDataTestId}"]`)
             .first()
             .props()
-        const addToCollectionButton = wrapper
-            .exists(`[data-testid="${addToCollectionButtonDataTestId}"]`)
+        const addToCollectionButton = wrapper.exists(
+            `[data-testid="${addToCollectionButtonDataTestId}"]`
+        )
 
         expect(open).toBeTruthy()
-        expect(addToCollectionButton ).toBeTruthy()
+        expect(addToCollectionButton).toBeTruthy()
     })
 })
