@@ -3,6 +3,7 @@ import { Title1, BodyCard } from '../Typography'
 import SecondaryButtonComponent from '../Button/SecondaryButton'
 import Stack from 'stack-styled'
 import PrimaryButtonComponent from '../Button/PrimaryButton'
+import Link from 'next/link'
 
 const ResourceDetailsContainer = styled.section`
     display: flex;
@@ -25,13 +26,6 @@ const ViewContainer = styled.section`
     }
 `
 
-interface IProps {
-    linkComponent: (
-        children: React.ReactElement<any>,
-        route: string
-    ) => React.ReactElement<any>
-}
-
 const SignupBannerStack = styled(Stack)`
     padding: ${props => props.theme.space[3]}px ${props => props.theme.padding};
     background: ${props => props.theme.colors.bgPrimary};
@@ -41,7 +35,7 @@ const SignupBannerStack = styled(Stack)`
     }
 `
 
-const SignupBanner: React.FunctionComponent<IProps> = props => (
+const SignupBanner: React.FunctionComponent = () => (
     <SignupBannerStack
         alignItems={['']}
         justifyContent={['']}
@@ -55,17 +49,19 @@ const SignupBanner: React.FunctionComponent<IProps> = props => (
             </BodyCard>
         </ResourceDetailsContainer>
         <ViewContainer>
-            {props.linkComponent(
-                <PrimaryButtonComponent color="white">{`Sign up`}</PrimaryButtonComponent>,
-                `/login`
-            )}
-            {props.linkComponent(
-                <SecondaryButtonComponent
-                    border="white"
-                    color="white"
-                >{`Learn more`}</SecondaryButtonComponent>,
-                `/help`
-            )}
+            <Link href="/login">
+                <a>
+                    <PrimaryButtonComponent color="white">{`Sign up`}</PrimaryButtonComponent>
+                </a>
+            </Link>
+            <Link href="/help">
+                <a>
+                    <SecondaryButtonComponent
+                        border="white"
+                        color="white"
+                    >{`Learn more`}</SecondaryButtonComponent>
+                </a>
+            </Link>
         </ViewContainer>
     </SignupBannerStack>
 )

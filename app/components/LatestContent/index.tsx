@@ -3,6 +3,7 @@ import { Title2 } from '../Typography'
 import { RenderCardContent } from '../CuratedLists'
 import SecondaryButtonComponent from '../Button/SecondaryButton'
 import theme from '../../lib/theme-config'
+import Link from 'next/link'
 
 const DEFAULT_CARD_WIDTH = theme.DEFAULT_CARD_WIDTH
 
@@ -54,11 +55,6 @@ const AllContentButtonsContainer = styled.div`
 
 interface IProps {
     content: any
-    Link: any
-    linkComponent: (
-        children: React.ReactElement<any>,
-        route: string
-    ) => React.ReactElement<any>
 }
 
 const LatestContent: React.FunctionComponent<IProps> = props => {
@@ -69,26 +65,29 @@ const LatestContent: React.FunctionComponent<IProps> = props => {
                 {props.content.map(RenderCardContent())}
             </LatestContentCardContainer>
             <AllContentButtonsContainer>
-                {props.linkComponent(
-                    <SecondaryButtonComponent
-                        color="textPrimary"
-                        width={'140px'}
-                        border={'primary'}
-                    >
-                        All Articles
-                    </SecondaryButtonComponent>,
-                    `/articles`
-                )}
-                {props.linkComponent(
-                    <SecondaryButtonComponent
-                        color="textPrimary"
-                        width={'140px'}
-                        border={'primary'}
-                    >
-                        All Collections
-                    </SecondaryButtonComponent>,
-                    `/collections`
-                )}
+                <Link href="/articles" as="/articles">
+                    <a>
+                        <SecondaryButtonComponent
+                            color="textPrimary"
+                            width={'140px'}
+                            border={'primary'}
+                        >
+                            All Articles
+                        </SecondaryButtonComponent>
+                    </a>
+                </Link>
+
+                <Link href="/collections" as="/collections">
+                    <a>
+                        <SecondaryButtonComponent
+                            color="textPrimary"
+                            width={'140px'}
+                            border={'primary'}
+                        >
+                            All Collections
+                        </SecondaryButtonComponent>
+                    </a>
+                </Link>
             </AllContentButtonsContainer>
         </LatestContentSection>
     )

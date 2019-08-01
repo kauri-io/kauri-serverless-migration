@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import SecondaryButtonComponent from '../Button/SecondaryButton'
 import { Title2 } from '../Typography'
 import theme from '../../lib/theme-config'
+import Link from 'next/link'
 
 const DEFAULT_CARD_WIDTH = theme.DEFAULT_CARD_WIDTH
 
@@ -26,10 +27,6 @@ const Buttons = styled.div`
 
 interface IProps {
     content: Array<any | null> | null
-    linkComponent: (
-        children: React.ReactElement<any>,
-        route: string
-    ) => React.ReactElement<any>
     isLoggedIn: boolean
 }
 
@@ -38,10 +35,16 @@ const PublishYourOwnContentCTA: React.FunctionComponent<IProps> = props => (
         <Title2>Publish your own content</Title2>
         <Buttons>
             {props.content &&
-                props.content.map(
-                    content =>
-                        content &&
-                        props.linkComponent(
+                props.content.map((content, key) => (
+                    <Link
+                        key={key}
+                        href={
+                            props.isLoggedIn
+                                ? content.link
+                                : `/login?r=${content.link}`
+                        }
+                    >
+                        <a>
                             <SecondaryButtonComponent
                                 key={content.actionName}
                                 color="textPrimary"
@@ -49,12 +52,10 @@ const PublishYourOwnContentCTA: React.FunctionComponent<IProps> = props => (
                                 width={`${DEFAULT_CARD_WIDTH}px`}
                             >
                                 {content.actionName}
-                            </SecondaryButtonComponent>,
-                            props.isLoggedIn
-                                ? content.link
-                                : `/login?r=${content.link}`
-                        )
-                )}
+                            </SecondaryButtonComponent>
+                        </a>
+                    </Link>
+                ))}
         </Buttons>
     </Container>
 )

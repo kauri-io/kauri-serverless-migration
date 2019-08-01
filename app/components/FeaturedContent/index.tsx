@@ -66,7 +66,7 @@ interface IProps {
 const RenderMobileFeaturedContent: React.FunctionComponent<IProps> = props => {
     return (
         <MobileResourceContainer>
-            {props.content.map(({ resource }) => {
+            {props.content.map(({ resource }, key) => {
                 const articleCount =
                     resource.sections &&
                     resource.sections.reduce((current: number, next: any) => {
@@ -106,6 +106,7 @@ const RenderMobileFeaturedContent: React.FunctionComponent<IProps> = props => {
 
                 return (
                     <RenderedCard
+                        key={key}
                         {...resource}
                         articleCount={articleCount}
                         collectionCount={collectionCount}
@@ -116,9 +117,9 @@ const RenderMobileFeaturedContent: React.FunctionComponent<IProps> = props => {
     )
 }
 
-const RenderDesktopFeaturedContent: React.FunctionComponent<
-    IProps & { Link: React.FunctionComponent<any> }
-> = ({ content, Link }) => (
+const RenderDesktopFeaturedContent: React.FunctionComponent<IProps> = ({
+    content,
+}) => (
     <DesktopResourceContainer>
         {content.map(({ resource }: { resource: any }) => {
             switch (resource.__typename) {
@@ -148,11 +149,6 @@ const RenderDesktopFeaturedContent: React.FunctionComponent<
                             userAvatar={(resource.owner as any).avatar}
                             date={resource.datePublished}
                             ownerType={'USER'}
-                            linkComponent={(children, route) => (
-                                <Link useAnchorTag={true} href={route}>
-                                    {children}
-                                </Link>
-                            )}
                             imageURL={
                                 resource &&
                                 resource.attributes &&
@@ -187,11 +183,6 @@ const RenderDesktopFeaturedContent: React.FunctionComponent<
                             userAvatar={(resource.owner as any).avatar}
                             date={resource.dateUpdated}
                             ownerType={'USER'}
-                            linkComponent={(children, route) => (
-                                <Link useAnchorTag={true} href={route}>
-                                    {children}
-                                </Link>
-                            )}
                             imageURL={resource.background}
                         />
                     )
@@ -208,10 +199,7 @@ const RenderDesktopFeaturedContent: React.FunctionComponent<
 const FeaturedContent: React.FunctionComponent<IProps> = props => (
     <Container>
         <Title2>Featured Content</Title2>
-        <RenderDesktopFeaturedContent
-            {...props}
-            Link={props.Link as React.FunctionComponent<any>}
-        />
+        <RenderDesktopFeaturedContent {...props} />
         <RenderMobileFeaturedContent {...props} />
     </Container>
 )

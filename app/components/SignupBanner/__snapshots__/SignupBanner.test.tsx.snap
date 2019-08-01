@@ -122,41 +122,7 @@ exports[`components/SignupBanner should match snapshot 1`] = `
     }
   }
 >
-  <SignupBanner
-    linkComponent={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            <PrimaryButtonComponent
-              color="white"
-            >
-              Sign up
-            </PrimaryButtonComponent>,
-            "/login",
-          ],
-          Array [
-            <SecondaryButtonComponent
-              border="white"
-              color="white"
-            >
-              Learn more
-            </SecondaryButtonComponent>,
-            "/help",
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      }
-    }
-  >
+  <SignupBanner>
     <SignupBanner__SignupBannerStack
       alignItems={
         Array [
@@ -471,7 +437,183 @@ exports[`components/SignupBanner should match snapshot 1`] = `
             >
               <section
                 className="SignupBanner__ViewContainer-sc-1hxzf8p-1 iebiGj"
-              />
+              >
+                <Link
+                  href="/login"
+                  prefetch={true}
+                >
+                  <a
+                    href="/login"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    <PrimaryButtonComponent
+                      color="white"
+                    >
+                      <PrimaryButton
+                        bg="primary"
+                        color="white"
+                        fontSize={0}
+                        fontWeight={700}
+                        mr={2}
+                        type="submit"
+                      >
+                        <StyledComponent
+                          bg="primary"
+                          color="white"
+                          fontSize={0}
+                          fontWeight={700}
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "PrimaryButton-sc-1cbxa53-0",
+                                "isStatic": false,
+                                "lastClassName": "bVbdII",
+                                "rules": Array [
+                                  "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
+                                  [Function],
+                                  ";height:40px;border-radius:4px;border:none;cursor:pointer;> svg,img{height:16px;",
+                                  [Function],
+                                  ";}text-transform:uppercase;opacity:",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";:hover{cursor:",
+                                  [Function],
+                                  ";}",
+                                  ";:hover{background-color:",
+                                  [Function],
+                                  ";}",
+                                ],
+                              },
+                              "displayName": "PrimaryButton",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "PrimaryButton-sc-1cbxa53-0",
+                              "target": "button",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                          mr={2}
+                          type="submit"
+                        >
+                          <button
+                            className="PrimaryButton-sc-1cbxa53-0 bVbdII"
+                            color="white"
+                            fontSize={0}
+                            fontWeight={700}
+                            type="submit"
+                          >
+                            Sign up
+                          </button>
+                        </StyledComponent>
+                      </PrimaryButton>
+                    </PrimaryButtonComponent>
+                  </a>
+                </Link>
+                <Link
+                  href="/help"
+                  prefetch={true}
+                >
+                  <a
+                    href="/help"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    <SecondaryButtonComponent
+                      border="white"
+                      color="white"
+                    >
+                      <SecondaryButton
+                        bg="transparent"
+                        border="white"
+                        borderHover="primary"
+                        color="white"
+                        fontSize={0}
+                        fontWeight={700}
+                        mr={2}
+                        type="button"
+                      >
+                        <StyledComponent
+                          bg="transparent"
+                          border="white"
+                          borderHover="primary"
+                          color="white"
+                          fontSize={0}
+                          fontWeight={700}
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "SecondaryButton-sy4hb2-0",
+                                "isStatic": false,
+                                "lastClassName": "fCmNwl",
+                                "rules": Array [
+                                  "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
+                                  [Function],
+                                  ";height:40px;border-radius:4px;border:none;cursor:pointer;> svg,img{height:16px;",
+                                  [Function],
+                                  ";}text-transform:uppercase;opacity:",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";:hover{cursor:",
+                                  [Function],
+                                  ";}",
+                                  ";box-shadow:0px 0px 0px 1px ",
+                                  [Function],
+                                  ";:hover{box-shadow:0px 0px 0px 2px ",
+                                  [Function],
+                                  ";}",
+                                ],
+                              },
+                              "displayName": "SecondaryButton",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "SecondaryButton-sy4hb2-0",
+                              "target": "button",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                          mr={2}
+                          type="button"
+                        >
+                          <button
+                            className="SecondaryButton-sy4hb2-0 fCmNwl"
+                            color="white"
+                            fontSize={0}
+                            fontWeight={700}
+                            type="button"
+                          >
+                            Learn more
+                          </button>
+                        </StyledComponent>
+                      </SecondaryButton>
+                    </SecondaryButtonComponent>
+                  </a>
+                </Link>
+              </section>
             </StyledComponent>
           </SignupBanner__ViewContainer>
         </div>

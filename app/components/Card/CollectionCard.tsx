@@ -268,13 +268,15 @@ const RenderActualContent: React.SFC<IActualContentProps> = ({
                     : `/public-profile/${userId}`
             }
         >
-            <RenderPublicProfile
-                cardWidth={cardWidth}
-                username={username}
-                userId={userId}
-                imageURL={imageURL}
-                userAvatar={userAvatar}
-            />
+            <a>
+                <RenderPublicProfile
+                    cardWidth={cardWidth}
+                    username={username}
+                    userId={userId}
+                    imageURL={imageURL}
+                    userAvatar={userAvatar}
+                />
+            </a>
         </Link>
         <Date status="PUBLISHED" date={date} />
     </>

@@ -9,7 +9,6 @@ import {
     searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO,
     searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_CommunityDTO,
 } from '../../queries/__generated__/searchResultsAutocomplete'
-import Link from 'next/link'
 
 const ResourceSection = styled.section`
     display: flex;
@@ -148,16 +147,6 @@ class ResourceRows extends React.Component<
                                                             ? tags
                                                             : []
                                                     }
-                                                    linkComponent={(
-                                                        childrenProps,
-                                                        route
-                                                    ) => {
-                                                        return (
-                                                            <Link href={route}>
-                                                                {childrenProps}
-                                                            </Link>
-                                                        )
-                                                    }}
                                                 />
                                             )
                                         }
@@ -226,16 +215,6 @@ class ResourceRows extends React.Component<
                                                             ? tags
                                                             : []
                                                     }
-                                                    linkComponent={(
-                                                        childrenProps,
-                                                        route
-                                                    ) => {
-                                                        return (
-                                                            <Link href={route}>
-                                                                {childrenProps}
-                                                            </Link>
-                                                        )
-                                                    }}
                                                 />
                                             )
                                         }
@@ -273,16 +252,6 @@ class ResourceRows extends React.Component<
                                                     userAvatar={avatar}
                                                     imageURL={avatar}
                                                     tags={[]}
-                                                    linkComponent={(
-                                                        childrenProps,
-                                                        route
-                                                    ) => {
-                                                        return (
-                                                            <Link href={route}>
-                                                                {childrenProps}
-                                                            </Link>
-                                                        )
-                                                    }}
                                                 />
                                             )
                                         }
