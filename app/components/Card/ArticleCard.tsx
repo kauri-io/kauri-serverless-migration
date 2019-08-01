@@ -3,14 +3,21 @@ import CardHeader from '@material-ui/core/CardHeader'
 import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
 import Avatar from '@material-ui/core/Avatar'
+import Menu from '@material-ui/core/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
 import { Typography } from '@material-ui/core'
 import { Theme, makeStyles } from '@material-ui/core/styles'
 import moment from 'moment'
 import Link from 'next/link'
 import { getProfileURL } from '../../lib/getURLs'
 import { Article_author } from '../../queries/Fragments/__generated__/Article'
+import IconButton from '@material-ui/core/IconButton'
 import Icon from '@material-ui/core/Icon'
-import { searchApprovedArticles_searchArticles_content_comments } from '../../queries/__generated__/searchApprovedArticles'
+import {
+    searchApprovedArticles_searchArticles_content_comments,
+    searchApprovedArticles_searchArticles_content_voteResult,
+} from '../../queries/__generated__/searchApprovedArticles'
+import { useState } from 'react'
 
 export const ArticleCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -53,6 +60,7 @@ interface IProps {
     }
     isLoggedIn: boolean
     comments: searchApprovedArticles_searchArticles_content_comments | null
+    voteResult: searchApprovedArticles_searchArticles_content_voteResult | null
 }
 
 const ArticleCard: React.FC<IProps> = ({
@@ -65,9 +73,20 @@ const ArticleCard: React.FC<IProps> = ({
     href,
     id,
     comments,
+    voteResult,
+    isLoggedIn,
 }) => {
     const classes = ArticleCardStyles({})
     const authorHref = getProfileURL(author as Article_author) // TODO update as contributors[0]
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+
+    function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
+        setAnchorEl(event.currentTarget)
+    }
+
+    function handleClose() {
+        setAnchorEl(null)
+    }
 
     return (
         <Card
@@ -129,7 +148,12 @@ const ArticleCard: React.FC<IProps> = ({
                         data-testid={`ArticleCard-${id}-description`}
                         className={classes.content}
                     >
-                        <Typography variant="h6">{title}</Typography>
+                        <Typography
+                            data-testid={`ArticleCard-${id}-title`}
+                            variant="h6"
+                        >
+                            {title}
+                        </Typography>
                         <Typography
                             variant="body2"
                             color="textSecondary"
@@ -151,6 +175,43 @@ const ArticleCard: React.FC<IProps> = ({
                         >
                             {comments && comments.totalElements}
                         </Typography>
+
+                        <Icon data-testid={`ArticleCard-${id}-upvoteIcon`}>
+                            arrow_drop_up
+                        </Icon>
+                        <Typography
+                            data-testid={`ArticleCard-${id}-upvoteCount`}
+                            variant="subtitle1"
+                        >
+                            {voteResult && voteResult.sum}
+                        </Typography>
+
+                        <IconButton
+                            onClick={handleClick}
+                            data-testid={`ArticleCard-${id}-moreOptionsButton`}
+                            aria-label="more options"
+                        >
+                            <Icon>more_vert</Icon>
+                        </IconButton>
+                        <Menu
+                            id="more-options-menu"
+                            data-testid={`ArticleCard-${id}-moreOptionsMenu`}
+                            anchorEl={anchorEl}
+                            keepMounted
+                            open={Boolean(anchorEl)}
+                            onClose={handleClose}
+                        >
+                            <MenuItem onClick={handleClose}>Share</MenuItem>
+                            <MenuItem onClick={handleClose}>Logout</MenuItem>
+                            {isLoggedIn && (
+                                <MenuItem
+                                    data-testid={`ArticleCard-${id}-addToCollectionButton`}
+                                    onClick={handleClose}
+                                >
+                                    Add To Collection
+                                </MenuItem>
+                            )}
+                        </Menu>
                     </CardContent>
                 </a>
             </Link>

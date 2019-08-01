@@ -20,6 +20,9 @@ describe('components/Card/ArticleCard', () => {
                 background:
                     'https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg',
             },
+            voteResult: {
+                sum: 2,
+            },
             datePublished: '1994-06-13T00:05:32.000Z',
             comments: {
                 totalElements: 1,
@@ -114,31 +117,73 @@ describe('components/Card/ArticleCard', () => {
             `[data-testid="${commentIconDataTestId}"]`
         )
         const commentCountDataTestId = `ArticleCard-${ArticleCardProps.id}-commentCount`
-        const commentCount = wrapper.find(
-            `[data-testid="${commentCountDataTestId}"]`
-        ).first()
+        const commentCount = wrapper
+            .find(`[data-testid="${commentCountDataTestId}"]`)
+            .first()
 
         expect(commentIcon).toBeTruthy()
-        expect(commentCount.text()).toBe("1")
+        expect(commentCount.text()).toBe('1')
     })
 
-    it('should show the upvote count', () => {
+    it('should show the upvote count and icon', () => {
         const wrapper = mountWithTheme(<ArticleCard {...ArticleCardProps} />)
-        // expect(wrapper).toMatchSnapshot()
+        const upvoteIconDataTestId = `ArticleCard-${ArticleCardProps.id}-upvoteIcon`
+        const upvoteIcon = wrapper.exists(
+            `[data-testid="${upvoteIconDataTestId}"]`
+        )
+        const upvoteCountDataTestId = `ArticleCard-${ArticleCardProps.id}-upvoteCount`
+        const upvoteCount = wrapper
+            .find(`[data-testid="${upvoteCountDataTestId}"]`)
+            .first()
+
+        expect(upvoteIcon).toBeTruthy()
+        expect(upvoteCount.text()).toBe('2')
     })
 
     it('should show the more options menu', () => {
         const wrapper = mountWithTheme(<ArticleCard {...ArticleCardProps} />)
-        // expect(wrapper).toMatchSnapshot()
+        const dataTestId = `ArticleCard-${ArticleCardProps.id}-moreOptionsButton`
+        const moreOptionsButton = wrapper.exists(
+            `[data-testid="${dataTestId}"]`
+        )
+        expect(moreOptionsButton).toBeTruthy()
     })
 
     it('should open more options when the menu is clicked', () => {
         const wrapper = mountWithTheme(<ArticleCard {...ArticleCardProps} />)
-        // expect(wrapper).toMatchSnapshot()
+        const moreOptionsButtonDataTestId = `ArticleCard-${ArticleCardProps.id}-moreOptionsButton`
+        const moreOptionsMenuDataTestId = `ArticleCard-${ArticleCardProps.id}-moreOptionsMenu`
+        wrapper
+            .find(`[data-testid="${moreOptionsButtonDataTestId}"]`)
+            .first()
+            .simulate('click')
+        const { open } = wrapper
+            .find(`[data-testid="${moreOptionsMenuDataTestId}"]`)
+            .first()
+            .props()
+
+        expect(open).toBeTruthy()
     })
 
     it('should show even more options when the menu is clicked AND the user is logged in', () => {
-        const wrapper = mountWithTheme(<ArticleCard {...ArticleCardProps} />)
-        // expect(wrapper).toMatchSnapshot()
+        const wrapper = mountWithTheme(
+            <ArticleCard {...ArticleCardProps} isLoggedIn={true} />
+        )
+        const moreOptionsButtonDataTestId = `ArticleCard-${ArticleCardProps.id}-moreOptionsButton`
+        const moreOptionsMenuDataTestId = `ArticleCard-${ArticleCardProps.id}-moreOptionsMenu`
+        const addToCollectionButtonDataTestId = `ArticleCard-${ArticleCardProps.id}-moreOptionsMenu`
+        wrapper
+            .find(`[data-testid="${moreOptionsButtonDataTestId}"]`)
+            .first()
+            .simulate('click')
+        const { open } = wrapper
+            .find(`[data-testid="${moreOptionsMenuDataTestId}"]`)
+            .first()
+            .props()
+        const addToCollectionButton = wrapper
+            .exists(`[data-testid="${addToCollectionButtonDataTestId}"]`)
+
+        expect(open).toBeTruthy()
+        expect(addToCollectionButton ).toBeTruthy()
     })
 })
