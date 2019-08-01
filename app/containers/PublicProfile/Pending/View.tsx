@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import ArticleCard from '../../../components/Card/ArticleCardMaterial'
+import ArticleCard from '../../../components/Card/ArticleCard'
 import withLoading from '../../../lib/with-loading'
 import withApolloError from '../../../lib/with-apollo-error'
 import CheckpointArticles from '../../CheckpointArticles'

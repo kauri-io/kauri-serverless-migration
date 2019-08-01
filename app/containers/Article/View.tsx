@@ -6,7 +6,7 @@ import ArticleOutline from './components/ArticleOutline'
 import Image from '../../components/Image'
 import ArticleAvatar from './components/ArticleAvatar'
 import ArticleActions from './components/ArticleActions'
-import ArticleCardMaterial from '../../components/Card/ArticleCardMaterial'
+import ArticleCardMaterial from '../../components/Card/ArticleCard'
 import { relatedArticles } from '../../queries/__generated__/relatedArticles'
 
 import {

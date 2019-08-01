@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Empty from '../PublicProfile/Empty'
 import { Title2, PageDescription } from '../../components/Typography'
-import ArticleCard from '../../components/Card/ArticleCardMaterial'
+import ArticleCard from '../../components/Card/ArticleCard'
 import { Article } from '../../queries/Fragments/__generated__/Article'
 import {
     Collection,

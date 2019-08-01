@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import Head from 'next/head'
-import ArticleCard from '../../../components/Card/ArticleCardMaterial'
+import ArticleCard from '../../../components/Card/ArticleCard'
 import Loading from '../../../components/Loading'
 import Masonry from '../../../components/Masonry'
 import {

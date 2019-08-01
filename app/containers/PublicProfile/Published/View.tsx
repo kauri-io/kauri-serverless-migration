@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import ArticleCard from '../../../components/Card/ArticleCardMaterial'
+import ArticleCard from '../../../components/Card/ArticleCard'
 import CheckpointArticles from '../../CheckpointArticles'
 import withPagination from '../../../lib/with-pagination'
 import PrimaryButton from '../../../components/Button/PrimaryButton'

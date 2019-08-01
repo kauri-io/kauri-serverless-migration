@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import ArticleCard from '../../../components/Card/ArticleCardMaterial'
+import ArticleCard from '../../../components/Card/ArticleCard'
 import withPagination from '../../../lib/with-pagination'
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
 import PrimaryButton from '../../../components/Button/PrimaryButton'

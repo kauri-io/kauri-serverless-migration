@@ -10,6 +10,25 @@ import Link from 'next/link'
 import { getProfileURL } from '../../lib/getURLs'
 import { Article_author } from '../../queries/Fragments/__generated__/Article'
 
+export const ArticleCardStyles = makeStyles((theme: Theme) => ({
+    avatar: {
+        backgroundColor: theme.palette.primary.main,
+        textTransform: 'uppercase',
+    },
+    card: {},
+    content: {
+        cursor: 'pointer',
+        height: '100%',
+    },
+    header: {
+        cursor: 'pointer',
+    },
+    media: {
+        cursor: 'pointer',
+        height: 160,
+    },
+}))
+
 interface IProps {
     id: string
     version: number
@@ -30,26 +49,8 @@ interface IProps {
         as: string
         href: string
     }
+    isLoggedIn: boolean
 }
-
-export const ArticleCardStyles = makeStyles((theme: Theme) => ({
-    avatar: {
-        backgroundColor: theme.palette.primary.main,
-        textTransform: 'uppercase',
-    },
-    card: {},
-    content: {
-        cursor: 'pointer',
-        height: '100%',
-    },
-    header: {
-        cursor: 'pointer',
-    },
-    media: {
-        cursor: 'pointer',
-        height: 160,
-    },
-}))
 
 const ArticleCard: React.FC<IProps> = ({
     author,
@@ -63,6 +64,7 @@ const ArticleCard: React.FC<IProps> = ({
 }) => {
     const classes = ArticleCardStyles({})
     const authorHref = getProfileURL(author as Article_author) // TODO update as contributors[0]
+
     return (
         <Card
             key={id}
