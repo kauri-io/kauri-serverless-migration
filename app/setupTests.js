@@ -1,4 +1,5 @@
-import Enzyme, { shallow, mount } from 'enzyme'
+import Enzyme, { shallow } from 'enzyme'
+import { createMount } from '@material-ui/core/test-utils';
 import Adapter from 'enzyme-adapter-react-16'
 import theme from './lib/theme-config'
 import { ThemeProvider } from 'styled-components'
@@ -7,6 +8,7 @@ import { Provider } from 'react-redux'
 
 const middlewares = []
 const mockStore = configureStore(middlewares)
+const mount = createMount()
 
 const initialState = {
     app: {
