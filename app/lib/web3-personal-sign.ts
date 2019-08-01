@@ -15,7 +15,8 @@ const personalSign = (data: string) =>
                     global.window.ethereum
                         .enable()
                         .then(result => {
-                            console.log('enabled result: ', result)
+                            if (process.env.NODE_ENV !== 'test')
+                                console.log('result', result)
                             if (
                                 web3.eth.accounts &&
                                 web3.eth.accounts.length < 1
@@ -35,7 +36,8 @@ const personalSign = (data: string) =>
                                 },
                                 (err, { result }) => {
                                     if (err) console.error('err', err)
-                                    console.log('result', result)
+                                    if (process.env.NODE_ENV !== 'test')
+                                        console.log('result', result)
                                     return err || !result
                                         ? reject(err)
                                         : resolve(result)
@@ -56,7 +58,8 @@ const personalSign = (data: string) =>
                     },
                     (err, { result }) => {
                         if (err) console.error('err', err)
-                        console.log('result', result)
+                        if (process.env.NODE_ENV !== 'test')
+                            console.log('result', result)
                         return err || !result ? reject(err) : resolve(result)
                     }
                 )

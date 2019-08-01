@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import styled from 'styled-components'
 import Empty from '../PublicProfile/Empty'
 import { Title2, PageDescription } from '../../components/Typography'
@@ -9,7 +8,7 @@ import {
     Collection_owner_PublicUserDTO,
 } from '../../queries/Fragments/__generated__/Collection'
 import CollectionCard from '../../components/Card/CollectionCard'
-import { getArticleURL } from '../../lib/getURLs'
+import { getArticleURL, getCollectionURL } from '../../lib/getURLs'
 
 const Container = styled.section`
     display: flex;
@@ -56,10 +55,11 @@ const CollectionSection: React.SFC<IProps> = props => {
                 <StyledTitle>{name}</StyledTitle>
                 <StyledDescription>{description}</StyledDescription>
                 <ResourcesSection>
-                    {resources.map(resource => {
+                    {resources.map((resource, key) => {
                         if (resource.__typename === 'ArticleDTO') {
                             return (
                                 <ArticleCard
+                                    key={key}
                                     href={getArticleURL(resource)}
                                     {...resource}
                                 />
@@ -130,6 +130,7 @@ const CollectionSection: React.SFC<IProps> = props => {
 
                             return (
                                 <CollectionCard
+                                    href={getCollectionURL(collection)}
                                     key={String(collection.id)}
                                     id={String(collection.id)}
                                     articleCount={String(articleCount)}
@@ -159,14 +160,6 @@ const CollectionSection: React.SFC<IProps> = props => {
                                             .avatar
                                     }
                                     imageURL={collection.background}
-                                    linkComponent={(
-                                        childrenProps: React.ReactElement<any>,
-                                        route: string
-                                    ) => (
-                                        <Link href={route}>
-                                            {childrenProps}
-                                        </Link>
-                                    )}
                                     cardHeight={310}
                                     resourceType={ownerResource.type || 'USER'}
                                 />

@@ -15,7 +15,6 @@ import {
     toggleInitialState,
 } from '../../lib/use-toggle'
 import Date from '../HoverDateLabel'
-import slugify from 'slugify'
 import Link from 'next/link'
 import { getCollectionURL } from '../../lib/getURLs'
 
@@ -269,13 +268,15 @@ const RenderActualContent: React.SFC<IActualContentProps> = ({
                     : `/public-profile/${userId}`
             }
         >
-            <RenderPublicProfile
-                cardWidth={cardWidth}
-                username={username}
-                userId={userId}
-                imageURL={imageURL}
-                userAvatar={userAvatar}
-            />
+            <a>
+                <RenderPublicProfile
+                    cardWidth={cardWidth}
+                    username={username}
+                    userId={userId}
+                    imageURL={imageURL}
+                    userAvatar={userAvatar}
+                />
+            </a>
         </Link>
         <Date status="PUBLISHED" date={date} />
     </>
@@ -287,10 +288,6 @@ interface ICardContentProps {
     imageURL: string | null
     description: string
     id: string
-    linkComponent: (
-        childrenProps: React.ReactElement<any>,
-        route: string
-    ) => React.ReactElement<any>
     name: string | null
     username: string | null
     userId: string
@@ -460,10 +457,6 @@ interface IContentProps {
     cardHeight: number
     cardWidth: number
     id: string
-    linkComponent: (
-        childrenProps: React.ReactElement<any>,
-        route: string
-    ) => React.ReactElement<any>
     username: string | null
     userId: string
     userAvatar: string | null
@@ -478,7 +471,6 @@ const RenderContent: React.SFC<IContentProps> = ({
     cardHeight,
     cardWidth,
     id,
-    linkComponent,
     username,
     userId,
     userAvatar,
@@ -505,7 +497,6 @@ const RenderContent: React.SFC<IContentProps> = ({
                 description={description}
                 id={id}
                 imageURL={imageURL}
-                linkComponent={linkComponent}
                 name={name}
                 userAvatar={userAvatar}
                 userId={userId}
@@ -517,6 +508,10 @@ const RenderContent: React.SFC<IContentProps> = ({
 )
 
 interface IProps {
+    href: {
+        href: string
+        as: string
+    }
     id: string
     description: string
     date: string
@@ -529,10 +524,6 @@ interface IProps {
     imageURL: string | null
     cardHeight: number
     cardWidth?: number
-    linkComponent: (
-        childrenProps: React.ReactElement<any>,
-        route: string
-    ) => React.ReactElement<any>
     isChosenCollection?: boolean
     isLoggedIn?: boolean
     canAccessHoverChildren?: boolean
@@ -548,46 +539,44 @@ interface IProps {
 }
 
 interface IRenderFooterProps {
-    title: string
-    id: string
+    href: {
+        href: string
+        as: string
+    }
     imageURL: string | null
     articleCount: string
     collectionCount: string
-    linkComponent: (
-        childrenProps: React.ReactElement<any>,
-        route: string
-    ) => React.ReactElement<any>
 }
 
 const RenderFooter: React.FunctionComponent<IRenderFooterProps> = ({
-    id,
     imageURL,
-    title,
     articleCount,
     collectionCount,
-    linkComponent,
-}) =>
-    linkComponent(
-        <Footer imageURL={imageURL}>
-            {!!Number(articleCount) && (
-                <Count imageURL={imageURL}>
-                    <H4>{articleCount}</H4>
-                    <Label>{`Article${
-                        Number(articleCount) > 1 ? 's' : ''
-                    }`}</Label>
-                </Count>
-            )}
-            {!!Number(collectionCount) && (
-                <Count imageURL={imageURL}>
-                    <H4>{collectionCount}</H4>
-                    <Label>{`Collection${
-                        Number(collectionCount) > 1 ? 's' : ''
-                    }`}</Label>
-                </Count>
-            )}
-        </Footer>,
-        `/${slugify(title, { lower: true })}/${id}/c`
-    )
+    href,
+}) => (
+    <Link href={href.href} as={href.as}>
+        <a>
+            <Footer imageURL={imageURL}>
+                {!!Number(articleCount) && (
+                    <Count imageURL={imageURL}>
+                        <H4>{articleCount}</H4>
+                        <Label>{`Article${
+                            Number(articleCount) > 1 ? 's' : ''
+                        }`}</Label>
+                    </Count>
+                )}
+                {!!Number(collectionCount) && (
+                    <Count imageURL={imageURL}>
+                        <H4>{collectionCount}</H4>
+                        <Label>{`Collection${
+                            Number(collectionCount) > 1 ? 's' : ''
+                        }`}</Label>
+                    </Count>
+                )}
+            </Footer>
+        </a>
+    </Link>
+)
 
 const CollectionCard: React.FunctionComponent<IProps> = ({
     id,
@@ -600,7 +589,6 @@ const CollectionCard: React.FunctionComponent<IProps> = ({
     imageURL,
     cardWidth = DEFAULT_CARD_WIDTH,
     cardHeight = DEFAULT_CARD_HEIGHT,
-    linkComponent,
     hoverChildren,
     isChosenCollection,
     articleCount,
@@ -608,6 +596,7 @@ const CollectionCard: React.FunctionComponent<IProps> = ({
     triggerHoverChildrenOnFullCardClick = false,
     canAccessHoverChildren,
     resourceType,
+    href,
 }) => {
     const [{ toggledOn }, dispatch] = useReducer(
         toggleReducer,
@@ -627,7 +616,6 @@ const CollectionCard: React.FunctionComponent<IProps> = ({
             isChosenArticle={isChosenCollection}
             toggledOn={toggledOn}
         >
-            {console.log(linkComponent)}
             {!!hoverChildren && toggledOn === true && (
                 <Hover
                     hasImageURL={Boolean(imageURL)}
@@ -660,7 +648,6 @@ const CollectionCard: React.FunctionComponent<IProps> = ({
                     description={description}
                     id={id}
                     imageURL={imageURL}
-                    linkComponent={linkComponent}
                     name={name}
                     userAvatar={userAvatar}
                     userId={userId}
@@ -672,10 +659,8 @@ const CollectionCard: React.FunctionComponent<IProps> = ({
                     <Divider />
                 ) : null}
                 <RenderFooter
-                    id={id}
-                    title={name}
+                    href={href}
                     imageURL={imageURL}
-                    linkComponent={linkComponent}
                     articleCount={articleCount}
                     collectionCount={collectionCount}
                 />

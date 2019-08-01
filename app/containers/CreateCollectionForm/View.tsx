@@ -195,7 +195,7 @@ const renderResourceSection = (
                     <DraggableResourceContainer
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
-                        ref={provided.ref}
+                        ref={provided.innerRef}
                         id="article-card"
                     >
                         <ArticleCardFormView
@@ -229,7 +229,7 @@ const renderResourceSection = (
                         <DraggableResourceContainer
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
-                            ref={provided.ref}
+                            ref={provided.innerRef}
                             id="collection-card"
                         >
                             <CollectionCardFormView
@@ -580,7 +580,7 @@ const CreateCollectionForm: React.FC<
                                                             <CardContentSection
                                                                 {...provided.droppableProps}
                                                                 ref={
-                                                                    provided.ref
+                                                                    provided.innerRef
                                                                 }
                                                             >
                                                                 {/* Section id */}

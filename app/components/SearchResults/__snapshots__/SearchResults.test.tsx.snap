@@ -139,70 +139,7 @@ exports[`components/ResourceRowWithImage should match snapshot 1`] = `
       description="test description"
       id="123"
       imageURL="test url"
-      linkComponent={
-        [MockFunction] {
-          "calls": Array [
-            Array [
-              <Image
-                borderBottomLeftRadius="4px"
-                borderTopLeftRadius="4px"
-                height={195}
-                image="test url"
-                width={288}
-              />,
-              "/test/123/a",
-            ],
-            Array [
-              <ForwardRef(ResourceRowWithImage__Content)>
-                <ForwardRef(Typography__component)>
-                  Posted 01 Jan 2019 00:00
-                </ForwardRef(Typography__component)>
-                <ForwardRef(Typography__styledComponent)>
-                  test
-                </ForwardRef(Typography__styledComponent)>
-                <ForwardRef(Typography__component)>
-                  test description
-                </ForwardRef(Typography__component)>
-                <TagList
-                  color="textPrimary"
-                  maxTags={3}
-                  tags={
-                    Array [
-                      "test",
-                    ]
-                  }
-                />
-              </ForwardRef(ResourceRowWithImage__Content)>,
-              "/test/123/a",
-            ],
-            Array [
-              <UserAvatarComponent
-                avatar="test avatar"
-                cardType="ARTICLE"
-                fullWidth={true}
-                imageURL="test url"
-                userId="0x"
-                username="jimi"
-              />,
-              "/community/0x",
-            ],
-          ],
-          "results": Array [
-            Object {
-              "type": "return",
-              "value": undefined,
-            },
-            Object {
-              "type": "return",
-              "value": undefined,
-            },
-            Object {
-              "type": "return",
-              "value": undefined,
-            },
-          ],
-        }
-      }
+      linkComponent={[MockFunction]}
       ownerType="COMMUNITY"
       resourceType="ARTICLE"
       tags={
@@ -250,6 +187,103 @@ exports[`components/ResourceRowWithImage should match snapshot 1`] = `
           <div
             className="ResourceRowWithImage__ResourceRow-tpmrbu-0 igCEwE"
           >
+            <Link
+              href="/test/123/a"
+              prefetch={true}
+            >
+              <a
+                href="/test/123/a"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                <Image
+                  borderBottomLeftRadius="4px"
+                  borderTopLeftRadius="4px"
+                  height={195}
+                  image="test url"
+                  width={288}
+                >
+                  <InView
+                    rootMargin="200px 0px"
+                    threshold={0}
+                    triggerOnce={true}
+                  >
+                    <Image__Img
+                      borderBottomLeftRadius="4px"
+                      borderTopLeftRadius="4px"
+                      height={195}
+                      image="test url"
+                      inView={false}
+                      width={288}
+                    >
+                      <StyledComponent
+                        borderBottomLeftRadius="4px"
+                        borderTopLeftRadius="4px"
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "Image__Img-sc-1jpuda7-0",
+                              "isStatic": false,
+                              "lastClassName": "jAWVlp",
+                              "rules": Array [
+                                "height:",
+                                [Function],
+                                ";width:",
+                                [Function],
+                                ";",
+                                [Function],
+                                ";background:",
+                                [Function],
+                                ";background-size:cover;opacity:",
+                                [Function],
+                                ";transition:opacity ",
+                                [Function],
+                                "s;",
+                                [Function],
+                                ";",
+                                [Function],
+                                ";position:",
+                                [Function],
+                                ";",
+                                [Function],
+                                ";",
+                                [Function],
+                                ";",
+                                [Function],
+                                " ",
+                                [Function],
+                                ";",
+                              ],
+                            },
+                            "displayName": "Image__Img",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                            "target": "div",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={[Function]}
+                        height={195}
+                        image="test url"
+                        inView={false}
+                        width={288}
+                      >
+                        <div
+                          className="Image__Img-sc-1jpuda7-0 hxUKdf"
+                          height={195}
+                          width={288}
+                        />
+                      </StyledComponent>
+                    </Image__Img>
+                  </InView>
+                </Image>
+              </a>
+            </Link>
             <ResourceRowWithImage__Container>
               <StyledComponent
                 forwardedComponent={
@@ -283,6 +317,283 @@ exports[`components/ResourceRowWithImage should match snapshot 1`] = `
                 <section
                   className="ResourceRowWithImage__Container-tpmrbu-2 gCKJgL"
                 >
+                  <Link
+                    href="/test/123/a"
+                    prefetch={true}
+                  >
+                    <a
+                      href="/test/123/a"
+                      onClick={[Function]}
+                      onMouseEnter={[Function]}
+                    >
+                      <ResourceRowWithImage__Content>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "ResourceRowWithImage__Content-tpmrbu-1",
+                                "isStatic": false,
+                                "lastClassName": "hBgJZt",
+                                "rules": Array [
+                                  "display:flex;flex-direction:column;> *:not(:last-child){margin-bottom:",
+                                  [Function],
+                                  "px;}> *:nth-child(3){margin-bottom:0px;}",
+                                ],
+                              },
+                              "displayName": "ResourceRowWithImage__Content",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "ResourceRowWithImage__Content-tpmrbu-1",
+                              "target": "div",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <div
+                            className="ResourceRowWithImage__Content-tpmrbu-1 hBgJZt"
+                          >
+                            <Typography__component>
+                              <StyledComponent
+                                forwardedComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "attrs": Array [],
+                                    "componentStyle": ComponentStyle {
+                                      "componentId": "Typography__component-sc-36xkf6-0",
+                                      "isStatic": false,
+                                      "lastClassName": "kALGmD",
+                                      "rules": Array [
+                                        "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                                        [Function],
+                                        ";text-align:",
+                                        [Function],
+                                        ";",
+                                        [Function],
+                                        " ",
+                                        [Function],
+                                      ],
+                                    },
+                                    "displayName": "Typography__component",
+                                    "foldedComponentIds": Array [],
+                                    "render": [Function],
+                                    "styledComponentId": "Typography__component-sc-36xkf6-0",
+                                    "target": "span",
+                                    "toString": [Function],
+                                    "warnTooManyClasses": [Function],
+                                    "withComponent": [Function],
+                                  }
+                                }
+                                forwardedRef={null}
+                              >
+                                <span
+                                  className="Typography__component-sc-36xkf6-0 kALGmD"
+                                >
+                                  Posted 01 Jan 2019 00:00
+                                </span>
+                              </StyledComponent>
+                            </Typography__component>
+                            <Typography__styledComponent>
+                              <StyledComponent
+                                forwardedComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "attrs": Array [],
+                                    "componentStyle": ComponentStyle {
+                                      "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                      "isStatic": false,
+                                      "lastClassName": "cmeRrF",
+                                      "rules": Array [
+                                        "color:",
+                                        [Function],
+                                        ";margin:0px;font-weight:",
+                                        "bold",
+                                        ";",
+                                        "line-height: 24px",
+                                        ";font-size:",
+                                        "20",
+                                        "px;text-transform:",
+                                        [Function],
+                                        ";text-align:",
+                                        [Function],
+                                        ";:hover{color:",
+                                        [Function],
+                                        ";cursor:",
+                                        [Function],
+                                        ";}",
+                                      ],
+                                    },
+                                    "displayName": "Typography__styledComponent",
+                                    "foldedComponentIds": Array [],
+                                    "render": [Function],
+                                    "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                    "target": "span",
+                                    "toString": [Function],
+                                    "warnTooManyClasses": [Function],
+                                    "withComponent": [Function],
+                                  }
+                                }
+                                forwardedRef={null}
+                              >
+                                <span
+                                  className="Typography__styledComponent-sc-36xkf6-5 cmeRrF"
+                                >
+                                  test
+                                </span>
+                              </StyledComponent>
+                            </Typography__styledComponent>
+                            <Typography__component>
+                              <StyledComponent
+                                forwardedComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "attrs": Array [],
+                                    "componentStyle": ComponentStyle {
+                                      "componentId": "Typography__component-sc-36xkf6-4",
+                                      "isStatic": false,
+                                      "lastClassName": "kdkRvh",
+                                      "rules": Array [
+                                        "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
+                                        [Function],
+                                        "px;line-height:18px;color:",
+                                        [Function],
+                                        ";",
+                                        ";",
+                                        [Function],
+                                        ";",
+                                      ],
+                                    },
+                                    "displayName": "Typography__component",
+                                    "foldedComponentIds": Array [],
+                                    "render": [Function],
+                                    "styledComponentId": "Typography__component-sc-36xkf6-4",
+                                    "target": "span",
+                                    "toString": [Function],
+                                    "warnTooManyClasses": [Function],
+                                    "withComponent": [Function],
+                                  }
+                                }
+                                forwardedRef={null}
+                              >
+                                <span
+                                  className="Typography__component-sc-36xkf6-4 kdkRvh"
+                                >
+                                  test description
+                                </span>
+                              </StyledComponent>
+                            </Typography__component>
+                            <TagList
+                              color="textPrimary"
+                              maxTags={3}
+                              tags={
+                                Array [
+                                  "test",
+                                ]
+                              }
+                            >
+                              <TagList__Container>
+                                <StyledComponent
+                                  forwardedComponent={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "attrs": Array [],
+                                      "componentStyle": ComponentStyle {
+                                        "componentId": "TagList__Container-ipfhd9-0",
+                                        "isStatic": false,
+                                        "lastClassName": "ihYPdv",
+                                        "rules": Array [
+                                          "display:flex;margin:",
+                                          "10",
+                                          "px 0 0 0;flex-direction:",
+                                          [Function],
+                                          ";flex-wrap:wrap;justify-content:",
+                                          [Function],
+                                          ";",
+                                        ],
+                                      },
+                                      "displayName": "TagList__Container",
+                                      "foldedComponentIds": Array [],
+                                      "render": [Function],
+                                      "styledComponentId": "TagList__Container-ipfhd9-0",
+                                      "target": "div",
+                                      "toString": [Function],
+                                      "warnTooManyClasses": [Function],
+                                      "withComponent": [Function],
+                                    }
+                                  }
+                                  forwardedRef={null}
+                                >
+                                  <div
+                                    className="TagList__Container-ipfhd9-0 ihYPdv"
+                                  >
+                                    <TagList__StyledTag
+                                      color="textPrimary"
+                                      hiddenTags={false}
+                                      key="0"
+                                      onClick={[Function]}
+                                    >
+                                      <StyledComponent
+                                        color="textPrimary"
+                                        forwardedComponent={
+                                          Object {
+                                            "$$typeof": Symbol(react.forward_ref),
+                                            "attrs": Array [],
+                                            "componentStyle": ComponentStyle {
+                                              "componentId": "TagList__StyledTag-ipfhd9-1",
+                                              "isStatic": false,
+                                              "lastClassName": "eGuhSG",
+                                              "rules": Array [
+                                                "cursor:pointer;transition:0.3s;&:not(:last-child):after{content:'•';color:",
+                                                "#0BA986",
+                                                ";margin:",
+                                                "5",
+                                                "px;font-weight:",
+                                                "700",
+                                                ";}&:hover{color:",
+                                                "#0BA986",
+                                                ";}",
+                                                [Function],
+                                                ";",
+                                                [Function],
+                                                ";",
+                                              ],
+                                            },
+                                            "displayName": "TagList__StyledTag",
+                                            "foldedComponentIds": Array [],
+                                            "render": [Function],
+                                            "styledComponentId": "TagList__StyledTag-ipfhd9-1",
+                                            "target": "div",
+                                            "toString": [Function],
+                                            "warnTooManyClasses": [Function],
+                                            "withComponent": [Function],
+                                          }
+                                        }
+                                        forwardedRef={null}
+                                        hiddenTags={false}
+                                        onClick={[Function]}
+                                      >
+                                        <div
+                                          className="TagList__StyledTag-ipfhd9-1 eGuhSG"
+                                          color="textPrimary"
+                                          onClick={[Function]}
+                                        >
+                                          test
+                                        </div>
+                                      </StyledComponent>
+                                    </TagList__StyledTag>
+                                  </div>
+                                </StyledComponent>
+                              </TagList__Container>
+                            </TagList>
+                          </div>
+                        </StyledComponent>
+                      </ResourceRowWithImage__Content>
+                    </a>
+                  </Link>
                   <ResourceRowWithImage__Divider>
                     <StyledComponent
                       forwardedComponent={
@@ -348,7 +659,264 @@ exports[`components/ResourceRowWithImage should match snapshot 1`] = `
                     >
                       <div
                         className="ResourceRowWithImage__Content-tpmrbu-1 hBgJZt"
-                      />
+                      >
+                        <Link
+                          href="/community/0x"
+                          prefetch={true}
+                        >
+                          <a
+                            href="/community/0x"
+                            onClick={[Function]}
+                            onMouseEnter={[Function]}
+                          >
+                            <UserAvatarComponent
+                              avatar="test avatar"
+                              cardType="ARTICLE"
+                              fullWidth={true}
+                              imageURL="test url"
+                              userId="0x"
+                              username="jimi"
+                            >
+                              <UserAvatar__Container
+                                cardType="ARTICLE"
+                                color="textPrimary"
+                                fullWidth={true}
+                                imageURL="test url"
+                                key="0x"
+                              >
+                                <StyledComponent
+                                  cardType="ARTICLE"
+                                  color="textPrimary"
+                                  forwardedComponent={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "attrs": Array [],
+                                      "componentStyle": ComponentStyle {
+                                        "componentId": "UserAvatar__Container-plfgvx-0",
+                                        "isStatic": false,
+                                        "lastClassName": "bkAwig",
+                                        "rules": Array [
+                                          "display:flex;align-items:center;width:",
+                                          [Function],
+                                          ";>:first-child{margin-right:",
+                                          [Function],
+                                          "px;}>:nth-child(2){white-space:pre;overflow:hidden;text-overflow:ellipsis;max-width:",
+                                          [Function],
+                                          ";color:",
+                                          [Function],
+                                          ";}",
+                                        ],
+                                      },
+                                      "displayName": "UserAvatar__Container",
+                                      "foldedComponentIds": Array [],
+                                      "render": [Function],
+                                      "styledComponentId": "UserAvatar__Container-plfgvx-0",
+                                      "target": "div",
+                                      "toString": [Function],
+                                      "warnTooManyClasses": [Function],
+                                      "withComponent": [Function],
+                                    }
+                                  }
+                                  forwardedRef={null}
+                                  fullWidth={true}
+                                  imageURL="test url"
+                                >
+                                  <div
+                                    className="UserAvatar__Container-plfgvx-0 bkAwig"
+                                    color="textPrimary"
+                                  >
+                                    <UserAvatar__Avatar
+                                      avatar="test avatar"
+                                      color="white"
+                                      height={30}
+                                      width={30}
+                                    >
+                                      <StyledComponent
+                                        avatar="test avatar"
+                                        color="white"
+                                        forwardedComponent={
+                                          Object {
+                                            "$$typeof": Symbol(react.forward_ref),
+                                            "attrs": Array [],
+                                            "componentStyle": ComponentStyle {
+                                              "componentId": "UserAvatar__Avatar-plfgvx-1",
+                                              "isStatic": false,
+                                              "lastClassName": "kMwImw",
+                                              "rules": Array [
+                                                "display:flex;height:",
+                                                [Function],
+                                                ";width:",
+                                                [Function],
+                                                ";justify-content:center;align-items:center;border-radius:",
+                                                [Function],
+                                                ";background:",
+                                                [Function],
+                                                ";> *{color:",
+                                                [Function],
+                                                ";text-transform:uppercase;line-height:10px;}",
+                                              ],
+                                            },
+                                            "displayName": "UserAvatar__Avatar",
+                                            "foldedComponentIds": Array [],
+                                            "render": [Function],
+                                            "styledComponentId": "UserAvatar__Avatar-plfgvx-1",
+                                            "target": "div",
+                                            "toString": [Function],
+                                            "warnTooManyClasses": [Function],
+                                            "withComponent": [Function],
+                                          }
+                                        }
+                                        forwardedRef={null}
+                                        height={30}
+                                        width={30}
+                                      >
+                                        <div
+                                          className="UserAvatar__Avatar-plfgvx-1 kMwImw"
+                                          color="white"
+                                          height={30}
+                                          width={30}
+                                        >
+                                          <Image
+                                            borderRadius="4px"
+                                            height={30}
+                                            image="test avatar"
+                                            width={30}
+                                          >
+                                            <InView
+                                              rootMargin="200px 0px"
+                                              threshold={0}
+                                              triggerOnce={true}
+                                            >
+                                              <Image__Img
+                                                borderRadius="4px"
+                                                height={30}
+                                                image="test avatar"
+                                                inView={false}
+                                                width={30}
+                                              >
+                                                <StyledComponent
+                                                  borderRadius="4px"
+                                                  forwardedComponent={
+                                                    Object {
+                                                      "$$typeof": Symbol(react.forward_ref),
+                                                      "attrs": Array [],
+                                                      "componentStyle": ComponentStyle {
+                                                        "componentId": "Image__Img-sc-1jpuda7-0",
+                                                        "isStatic": false,
+                                                        "lastClassName": "jAWVlp",
+                                                        "rules": Array [
+                                                          "height:",
+                                                          [Function],
+                                                          ";width:",
+                                                          [Function],
+                                                          ";",
+                                                          [Function],
+                                                          ";background:",
+                                                          [Function],
+                                                          ";background-size:cover;opacity:",
+                                                          [Function],
+                                                          ";transition:opacity ",
+                                                          [Function],
+                                                          "s;",
+                                                          [Function],
+                                                          ";",
+                                                          [Function],
+                                                          ";position:",
+                                                          [Function],
+                                                          ";",
+                                                          [Function],
+                                                          ";",
+                                                          [Function],
+                                                          ";",
+                                                          [Function],
+                                                          " ",
+                                                          [Function],
+                                                          ";",
+                                                        ],
+                                                      },
+                                                      "displayName": "Image__Img",
+                                                      "foldedComponentIds": Array [],
+                                                      "render": [Function],
+                                                      "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                                                      "target": "div",
+                                                      "toString": [Function],
+                                                      "warnTooManyClasses": [Function],
+                                                      "withComponent": [Function],
+                                                    }
+                                                  }
+                                                  forwardedRef={[Function]}
+                                                  height={30}
+                                                  image="test avatar"
+                                                  inView={false}
+                                                  width={30}
+                                                >
+                                                  <div
+                                                    className="Image__Img-sc-1jpuda7-0 jAWVlp"
+                                                    height={30}
+                                                    width={30}
+                                                  />
+                                                </StyledComponent>
+                                              </Image__Img>
+                                            </InView>
+                                          </Image>
+                                        </div>
+                                      </StyledComponent>
+                                    </UserAvatar__Avatar>
+                                    <Typography__styledComponent>
+                                      <StyledComponent
+                                        forwardedComponent={
+                                          Object {
+                                            "$$typeof": Symbol(react.forward_ref),
+                                            "attrs": Array [],
+                                            "componentStyle": ComponentStyle {
+                                              "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                              "isStatic": false,
+                                              "lastClassName": "evZVGc",
+                                              "rules": Array [
+                                                "color:",
+                                                [Function],
+                                                ";margin:0px;font-weight:",
+                                                "bold",
+                                                ";",
+                                                ";font-size:",
+                                                "13",
+                                                "px;text-transform:",
+                                                [Function],
+                                                ";text-align:",
+                                                [Function],
+                                                ";:hover{color:",
+                                                [Function],
+                                                ";cursor:",
+                                                [Function],
+                                                ";}",
+                                              ],
+                                            },
+                                            "displayName": "Typography__styledComponent",
+                                            "foldedComponentIds": Array [],
+                                            "render": [Function],
+                                            "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                            "target": "span",
+                                            "toString": [Function],
+                                            "warnTooManyClasses": [Function],
+                                            "withComponent": [Function],
+                                          }
+                                        }
+                                        forwardedRef={null}
+                                      >
+                                        <span
+                                          className="Typography__styledComponent-sc-36xkf6-5 evZVGc"
+                                        >
+                                          jimi
+                                        </span>
+                                      </StyledComponent>
+                                    </Typography__styledComponent>
+                                  </div>
+                                </StyledComponent>
+                              </UserAvatar__Container>
+                            </UserAvatarComponent>
+                          </a>
+                        </Link>
+                      </div>
                     </StyledComponent>
                   </ResourceRowWithImage__Content>
                 </section>

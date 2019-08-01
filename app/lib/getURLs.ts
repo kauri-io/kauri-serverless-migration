@@ -30,3 +30,13 @@ export const getProfileURL = ({ username, userId }: IProfileProps) => ({
     as: `${slugify(String(username), { lower: true })}/${String(userId)}/p`,
     href: `/public-profile?user_id=${String(userId)}`,
 })
+
+interface ICommunityProps {
+    id: string
+    name: string
+}
+
+export const getCommunityURL = ({ name, id }: ICommunityProps) => ({
+    as: `${slugify(String(name), { lower: true })}/${String(id)}/cm`,
+    href: `/public-profile?user_id=${String(id)}`,
+})

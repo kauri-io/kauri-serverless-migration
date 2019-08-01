@@ -6,6 +6,10 @@ import {
     publishArticleEpic,
 } from './PublishArticleModule'
 
+jest.mock('../../lib/analytics', () => ({
+    track: jest.fn(),
+}))
+
 describe('publishArticleEpic', () => {
     beforeAll(() => {
         // global.window = {}

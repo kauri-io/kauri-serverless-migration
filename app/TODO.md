@@ -1,0 +1,1 @@
+- add elastic search JS snippet https://www.elastic.co/guide/en/apm/agent/js-base/master/intro.html

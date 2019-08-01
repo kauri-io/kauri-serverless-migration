@@ -6,6 +6,7 @@ import { Label, Title2, BodyCard } from '../Typography'
 import TagList from '../Tags/TagList'
 import SecondaryButtonComponent from '../Button/SecondaryButton'
 import slugify from 'slugify'
+import Link from 'next/link'
 
 const ContentSection = styled.div`
     display: flex;
@@ -59,10 +60,6 @@ interface IProps {
     tags: string[]
     resourceType: string
     ownerResourceType: string
-    linkComponent: (
-        children: React.ReactElement<any>,
-        route: string
-    ) => React.ReactElement<any>
 }
 
 const FeaturedResource: React.FunctionComponent<
@@ -70,7 +67,6 @@ const FeaturedResource: React.FunctionComponent<
 > = ({
     title,
     description,
-    linkComponent,
     resourceType,
     id,
     userId,
@@ -85,43 +81,56 @@ const FeaturedResource: React.FunctionComponent<
             <ContentSection>
                 <ResourceDetailsContainer>
                     <Label>Featured</Label>
-                    {linkComponent(
-                        <>
+                    <Link
+                        href={
+                            resourceType === 'article'
+                                ? `/${slug}/${id}/a`
+                                : resourceType === 'collection'
+                                ? `/${slugify(name, { lower: true })}/${id}/c`
+                                : `/community/${id}`
+                        }
+                    >
+                        <a>
                             <Title2>{title && String(title)}</Title2>
                             <BodyCard>
                                 {description && String(description)}
                             </BodyCard>
-                        </>,
-                        resourceType === 'article'
-                            ? `/${slug}/${id}/a`
-                            : resourceType === 'collection'
-                            ? `/${slugify(name, { lower: true })}/${id}/c`
-                            : `/community/${id}`
-                    )}
+                        </a>
+                    </Link>
                     <TagList maxTags={3} color="textPrimary" tags={tags} />
-                    {linkComponent(
-                        <UserAvatarComponent
-                            userId={userId}
-                            username={username}
-                            avatar={avatar}
-                        />,
-                        ownerResourceType === 'COMMUNITY'
-                            ? `/community/${userId}`
-                            : `/public-profile/${userId}`
-                    )}
+                    <Link
+                        href={
+                            ownerResourceType === 'COMMUNITY'
+                                ? `/community/${userId}`
+                                : `/public-profile/${userId}`
+                        }
+                    >
+                        <a>
+                            <UserAvatarComponent
+                                userId={userId}
+                                username={username}
+                                avatar={avatar}
+                            />
+                        </a>
+                    </Link>
                 </ResourceDetailsContainer>
                 <ViewContainer>
-                    {linkComponent(
-                        <SecondaryButtonComponent
-                            border="primary"
-                            color="textPrimary"
-                        >{`View ${resourceType}`}</SecondaryButtonComponent>,
-                        resourceType === 'article'
-                            ? `/${slug}/${id}/a`
-                            : resourceType === 'collection'
-                            ? `/${slugify(name, { lower: true })}/${id}/c`
-                            : `/community/${id}`
-                    )}
+                    <Link
+                        href={
+                            resourceType === 'article'
+                                ? `/${slug}/${id}/a`
+                                : resourceType === 'collection'
+                                ? `/${slugify(name, { lower: true })}/${id}/c`
+                                : `/community/${id}`
+                        }
+                    >
+                        <a>
+                            <SecondaryButtonComponent
+                                border="primary"
+                                color="textPrimary"
+                            >{`View ${resourceType}`}</SecondaryButtonComponent>
+                        </a>
+                    </Link>
                 </ViewContainer>
             </ContentSection>
         </FeaturedResourceContainer>

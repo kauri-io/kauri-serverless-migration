@@ -7228,6 +7228,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                               }
                                             }
                                             id="b9eb647c47a546bc95693acc0be72546"
+                                            key="0"
                                             owner={
                                               Object {
                                                 "__typename": "CommunityDTO",
@@ -7329,7 +7330,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                               />
                                                             }
                                                             className="makeStyles-header-4"
-                                                            subheader="12 days ago"
+                                                            subheader="19th Jul 19"
                                                             title="Grégoire Jeanmart"
                                                           >
                                                             <ForwardRef(CardHeader)
@@ -7349,7 +7350,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                   "title": "MuiCardHeader-title",
                                                                 }
                                                               }
-                                                              subheader="12 days ago"
+                                                              subheader="19th Jul 19"
                                                               title="Grégoire Jeanmart"
                                                             >
                                                               <div
@@ -8021,7 +8022,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                       <span
                                                                         className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                       >
-                                                                        12 days ago
+                                                                        19th Jul 19
                                                                       </span>
                                                                     </ForwardRef(Typography)>
                                                                   </WithStyles(ForwardRef(Typography))>
@@ -8761,6 +8762,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                               }
                                             }
                                             id="925d923e12c543da9a0a3e617be963b4"
+                                            key="1"
                                             owner={
                                               Object {
                                                 "__typename": "CommunityDTO",
@@ -8862,7 +8864,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                               />
                                                             }
                                                             className="makeStyles-header-4"
-                                                            subheader="12 days ago"
+                                                            subheader="19th Jul 19"
                                                             title="Grégoire Jeanmart"
                                                           >
                                                             <ForwardRef(CardHeader)
@@ -8882,7 +8884,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                   "title": "MuiCardHeader-title",
                                                                 }
                                                               }
-                                                              subheader="12 days ago"
+                                                              subheader="19th Jul 19"
                                                               title="Grégoire Jeanmart"
                                                             >
                                                               <div
@@ -9554,7 +9556,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                       <span
                                                                         className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                       >
-                                                                        12 days ago
+                                                                        19th Jul 19
                                                                       </span>
                                                                     </ForwardRef(Typography)>
                                                                   </WithStyles(ForwardRef(Typography))>
@@ -10294,6 +10296,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                               }
                                             }
                                             id="84475132317d4d6a84a2c42eb9348e4b"
+                                            key="2"
                                             owner={
                                               Object {
                                                 "__typename": "CommunityDTO",
@@ -10395,7 +10398,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                               />
                                                             }
                                                             className="makeStyles-header-4"
-                                                            subheader="12 days ago"
+                                                            subheader="19th Jul 19"
                                                             title="Grégoire Jeanmart"
                                                           >
                                                             <ForwardRef(CardHeader)
@@ -10415,7 +10418,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                   "title": "MuiCardHeader-title",
                                                                 }
                                                               }
-                                                              subheader="12 days ago"
+                                                              subheader="19th Jul 19"
                                                               title="Grégoire Jeanmart"
                                                             >
                                                               <div
@@ -11087,7 +11090,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                       <span
                                                                         className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                       >
-                                                                        12 days ago
+                                                                        19th Jul 19
                                                                       </span>
                                                                     </ForwardRef(Typography)>
                                                                   </WithStyles(ForwardRef(Typography))>
@@ -11834,6 +11837,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                               }
                                             }
                                             id="14dc434d11ef4ee18bf7d57f079e246e"
+                                            key="3"
                                             owner={
                                               Object {
                                                 "__typename": "CommunityDTO",
@@ -11935,7 +11939,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                               />
                                                             }
                                                             className="makeStyles-header-4"
-                                                            subheader="12 days ago"
+                                                            subheader="19th Jul 19"
                                                             title="Craig Williams"
                                                           >
                                                             <ForwardRef(CardHeader)
@@ -11955,7 +11959,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                   "title": "MuiCardHeader-title",
                                                                 }
                                                               }
-                                                              subheader="12 days ago"
+                                                              subheader="19th Jul 19"
                                                               title="Craig Williams"
                                                             >
                                                               <div
@@ -12627,7 +12631,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                       <span
                                                                         className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                       >
-                                                                        12 days ago
+                                                                        19th Jul 19
                                                                       </span>
                                                                     </ForwardRef(Typography)>
                                                                   </WithStyles(ForwardRef(Typography))>
@@ -13374,6 +13378,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                               }
                                             }
                                             id="760f495423db42f988d17b8c145b0874"
+                                            key="4"
                                             owner={
                                               Object {
                                                 "__typename": "CommunityDTO",
@@ -13475,7 +13480,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                               />
                                                             }
                                                             className="makeStyles-header-4"
-                                                            subheader="9 days ago"
+                                                            subheader="22nd Jul 19"
                                                             title="Craig Williams"
                                                           >
                                                             <ForwardRef(CardHeader)
@@ -13495,7 +13500,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                   "title": "MuiCardHeader-title",
                                                                 }
                                                               }
-                                                              subheader="9 days ago"
+                                                              subheader="22nd Jul 19"
                                                               title="Craig Williams"
                                                             >
                                                               <div
@@ -14167,7 +14172,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                       <span
                                                                         className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                       >
-                                                                        9 days ago
+                                                                        22nd Jul 19
                                                                       </span>
                                                                     </ForwardRef(Typography)>
                                                                   </WithStyles(ForwardRef(Typography))>
@@ -14907,6 +14912,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                               }
                                             }
                                             id="276dd27f1458443295eea58403fd6965"
+                                            key="5"
                                             owner={
                                               Object {
                                                 "__typename": "CommunityDTO",
@@ -15008,7 +15014,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                               />
                                                             }
                                                             className="makeStyles-header-4"
-                                                            subheader="12 days ago"
+                                                            subheader="19th Jul 19"
                                                             title="Felipe Faraggi"
                                                           >
                                                             <ForwardRef(CardHeader)
@@ -15028,7 +15034,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                   "title": "MuiCardHeader-title",
                                                                 }
                                                               }
-                                                              subheader="12 days ago"
+                                                              subheader="19th Jul 19"
                                                               title="Felipe Faraggi"
                                                             >
                                                               <div
@@ -15700,7 +15706,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                       <span
                                                                         className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                       >
-                                                                        12 days ago
+                                                                        19th Jul 19
                                                                       </span>
                                                                     </ForwardRef(Typography)>
                                                                   </WithStyles(ForwardRef(Typography))>

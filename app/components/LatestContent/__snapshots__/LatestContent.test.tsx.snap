@@ -135,42 +135,7 @@ exports[`components/LatestContent should match snapshot 1`] = `
         },
       ]
     }
-    linkComponent={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            <SecondaryButtonComponent
-              border="primary"
-              color="textPrimary"
-              width="140px"
-            >
-              All Articles
-            </SecondaryButtonComponent>,
-            "/articles",
-          ],
-          Array [
-            <SecondaryButtonComponent
-              border="primary"
-              color="textPrimary"
-              width="140px"
-            >
-              All Collections
-            </SecondaryButtonComponent>,
-            "/collections",
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      }
-    }
+    linkComponent={[MockFunction]}
   >
     <LatestContent__LatestContentSection>
       <StyledComponent
@@ -336,7 +301,200 @@ exports[`components/LatestContent should match snapshot 1`] = `
             >
               <div
                 className="LatestContent__AllContentButtonsContainer-cuqkpj-2 eQZZGU"
-              />
+              >
+                <Link
+                  as="/articles"
+                  href="/articles"
+                  prefetch={true}
+                >
+                  <a
+                    href="/articles"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    <SecondaryButtonComponent
+                      border="primary"
+                      color="textPrimary"
+                      width="140px"
+                    >
+                      <SecondaryButton
+                        bg="transparent"
+                        border="primary"
+                        borderHover="primary"
+                        color="textPrimary"
+                        fontSize={0}
+                        fontWeight={700}
+                        mr={2}
+                        type="button"
+                        width="140px"
+                      >
+                        <StyledComponent
+                          bg="transparent"
+                          border="primary"
+                          borderHover="primary"
+                          color="textPrimary"
+                          fontSize={0}
+                          fontWeight={700}
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "SecondaryButton-sy4hb2-0",
+                                "isStatic": false,
+                                "lastClassName": "iINBGs",
+                                "rules": Array [
+                                  "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
+                                  [Function],
+                                  ";height:40px;border-radius:4px;border:none;cursor:pointer;> svg,img{height:16px;",
+                                  [Function],
+                                  ";}text-transform:uppercase;opacity:",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";:hover{cursor:",
+                                  [Function],
+                                  ";}",
+                                  ";box-shadow:0px 0px 0px 1px ",
+                                  [Function],
+                                  ";:hover{box-shadow:0px 0px 0px 2px ",
+                                  [Function],
+                                  ";}",
+                                ],
+                              },
+                              "displayName": "SecondaryButton",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "SecondaryButton-sy4hb2-0",
+                              "target": "button",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                          mr={2}
+                          type="button"
+                          width="140px"
+                        >
+                          <button
+                            className="SecondaryButton-sy4hb2-0 iINBGs"
+                            color="textPrimary"
+                            fontSize={0}
+                            fontWeight={700}
+                            type="button"
+                            width="140px"
+                          >
+                            All Articles
+                          </button>
+                        </StyledComponent>
+                      </SecondaryButton>
+                    </SecondaryButtonComponent>
+                  </a>
+                </Link>
+                <Link
+                  as="/collections"
+                  href="/collections"
+                  prefetch={true}
+                >
+                  <a
+                    href="/collections"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    <SecondaryButtonComponent
+                      border="primary"
+                      color="textPrimary"
+                      width="140px"
+                    >
+                      <SecondaryButton
+                        bg="transparent"
+                        border="primary"
+                        borderHover="primary"
+                        color="textPrimary"
+                        fontSize={0}
+                        fontWeight={700}
+                        mr={2}
+                        type="button"
+                        width="140px"
+                      >
+                        <StyledComponent
+                          bg="transparent"
+                          border="primary"
+                          borderHover="primary"
+                          color="textPrimary"
+                          fontSize={0}
+                          fontWeight={700}
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "SecondaryButton-sy4hb2-0",
+                                "isStatic": false,
+                                "lastClassName": "iINBGs",
+                                "rules": Array [
+                                  "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
+                                  [Function],
+                                  ";height:40px;border-radius:4px;border:none;cursor:pointer;> svg,img{height:16px;",
+                                  [Function],
+                                  ";}text-transform:uppercase;opacity:",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";:hover{cursor:",
+                                  [Function],
+                                  ";}",
+                                  ";box-shadow:0px 0px 0px 1px ",
+                                  [Function],
+                                  ";:hover{box-shadow:0px 0px 0px 2px ",
+                                  [Function],
+                                  ";}",
+                                ],
+                              },
+                              "displayName": "SecondaryButton",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "SecondaryButton-sy4hb2-0",
+                              "target": "button",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                          mr={2}
+                          type="button"
+                          width="140px"
+                        >
+                          <button
+                            className="SecondaryButton-sy4hb2-0 iINBGs"
+                            color="textPrimary"
+                            fontSize={0}
+                            fontWeight={700}
+                            type="button"
+                            width="140px"
+                          >
+                            All Collections
+                          </button>
+                        </StyledComponent>
+                      </SecondaryButton>
+                    </SecondaryButtonComponent>
+                  </a>
+                </Link>
+              </div>
             </StyledComponent>
           </LatestContent__AllContentButtonsContainer>
         </section>

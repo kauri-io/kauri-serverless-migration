@@ -1,36 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { graphql, compose } from 'react-apollo'
-import styled from 'styled-components'
 import { getCollectionQuery } from '../../queries/Collection'
 import withLoading from '../../lib/with-loading'
 import withApolloError from '../../lib/with-apollo-error'
 import CollectionCard from '../../components/Card/CollectionCard'
 import { IReduxState } from '../../lib/Module'
 import { getCollectionVariables } from '../../queries/__generated__/getCollection'
+import { getCollectionURL } from '../../lib/getURLs'
 
 const mapStateToProps = (state: IReduxState) => ({
     hostName: state.app && state.app.hostName,
     isLoggedIn: !!(state.app && state.app.user && state.app.user.id),
 })
-
-const Link = styled.a`
-    text-decoration: none;
-    color: inherit;
-    :hover {
-        color: ${props => props.theme.colors.hoverTextColor} !important;
-        > * {
-            color: ${props => props.theme.colors.hoverTextColor} !important;
-            > * {
-                color: ${props => props.theme.colors.hoverTextColor} !important;
-                > * {
-                    color: ${props =>
-                        props.theme.colors.hoverTextColor} !important;
-                }
-            }
-        }
-    }
-`
 
 interface IProps {
     data: { getCollection: any }
@@ -98,12 +80,12 @@ const View: React.FunctionComponent<IProps> = ({ data }) => {
 
     return (
         <CollectionCard
+            href={getCollectionURL(collection)}
             cardHeight={310}
             key={collection.id}
             id={collection.id}
             articleCount={articleCount}
             collectionCount={collectionCount}
-            linkComponent={children => <Link>{children}</Link>}
             description={collection.description}
             date={collection.dateUpdated}
             name={collection.name}

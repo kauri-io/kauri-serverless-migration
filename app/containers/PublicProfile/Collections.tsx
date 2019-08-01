@@ -1,6 +1,5 @@
 import React from 'react'
 import CollectionCard from '../../components/Card/CollectionCard'
-import Link from '../../components/Link'
 import styled from 'styled-components'
 import PublicProfileEmptyState from '../../components/PublicProfileEmptyState'
 import PrimaryButton from '../../components/Button/PrimaryButton'
@@ -12,6 +11,7 @@ import {
     Collection_owner_CommunityDTO,
     Collection_owner_PublicUserDTO,
 } from '../../queries/Fragments/__generated__/Collection'
+import { getCollectionURL } from '../../lib/getURLs'
 
 const Centered = styled.div`
     display: flex;
@@ -88,6 +88,7 @@ const Collections = ({ data, routeChangeAction, isLoggedIn }: IProps) =>
                         | Collection_owner_PublicUserDTO
                     return (
                         <CollectionCard
+                            href={getCollectionURL(collection)}
                             key={collection.id}
                             id={collection.id}
                             name={collection.name}
@@ -107,19 +108,6 @@ const Collections = ({ data, routeChangeAction, isLoggedIn }: IProps) =>
                             collectionCount={String(collectionCount)}
                             imageURL={collection.background}
                             cardHeight={310}
-                            linkComponent={(childrenProps, route) => (
-                                <Link
-                                    toSlug={
-                                        route &&
-                                        route.includes('collection') &&
-                                        collection.name
-                                    }
-                                    useAnchorTag
-                                    href={route}
-                                >
-                                    {childrenProps}
-                                </Link>
-                            )}
                         />
                     )
                 } else {

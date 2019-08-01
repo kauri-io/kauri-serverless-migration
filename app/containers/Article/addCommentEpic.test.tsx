@@ -2,6 +2,10 @@ import testEpic from '../../lib/test-epic'
 import { addCommentEpic, addCommentAction } from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 
+jest.mock('../../lib/analytics', () => ({
+    track: jest.fn(),
+}))
+
 describe('addCommentEpic', () => {
     beforeAll(() => {
         // global.window = {}

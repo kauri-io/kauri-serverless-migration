@@ -92,7 +92,9 @@ const ArticleCard: React.FC<IProps> = ({
                             author &&
                             (author.name || author.username || author.id)
                         }
-                        subheader={moment(String(datePublished)).fromNow()}
+                        subheader={moment(String(datePublished)).format(
+                            'Do MMM YY'
+                        )}
                     />
                 </a>
             </Link>

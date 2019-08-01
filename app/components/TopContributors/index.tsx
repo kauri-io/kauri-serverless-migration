@@ -23,15 +23,12 @@ const TopContributors: React.FunctionComponent<IProps> = ({ contributors }) => (
     <TopResourcesSection>
         <Title2>Top Contributors</Title2>
         <ContributorsContainer>
-            {contributors.map(contributor => {
+            {contributors.map((contributor, index) => {
                 const url = getProfileURL(contributor)
                 return (
-                    <Link href={url.href} as={url.as}>
+                    <Link key={index} href={url.href} as={url.as}>
                         <a>
-                            <UserAvatarComponent
-                                key={contributor.userId}
-                                {...contributor}
-                            />
+                            <UserAvatarComponent {...contributor} />
                         </a>
                     </Link>
                 )

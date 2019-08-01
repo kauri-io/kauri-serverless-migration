@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import CollectionCard from '../../components/Card/CollectionCard'
-import Link from 'next/link'
 import Head from 'next/head'
 import PrimaryButton from '../../components/Button/PrimaryButton'
 import { Title2, BodyCard } from '../../components/Typography'
 import { getCollection_getCollection } from '../../queries/__generated__/getCollection'
+import { getCollectionURL } from '../../lib/getURLs'
 
 const Container = styled.section`
     display: flex;
@@ -115,6 +115,7 @@ class CollectionCreated extends React.Component<IProps> {
                 <Title2>Collection</Title2>
                 <BodyCard>{`Your collection is now ${copy}`}</BodyCard>
                 <CollectionCard
+                    href={getCollectionURL(this.props.data.getCollection)}
                     id={id}
                     description={String(description)}
                     date={dateCreated}
@@ -127,9 +128,6 @@ class CollectionCreated extends React.Component<IProps> {
                     articleCount={String(articleCount)}
                     collectionCount={String(collectionCount)}
                     resourceType={ownerResource.type || 'USER'}
-                    linkComponent={(childrenProps, route) => (
-                        <Link href={route}>{childrenProps}</Link>
-                    )}
                 />
                 <PrimaryButton
                     onClick={() =>

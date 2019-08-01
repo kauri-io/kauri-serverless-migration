@@ -112,13 +112,13 @@ const Web3Unavailable = () => (
                             type="text"
                             name="b_e46233ccfd6bb938ab7cbb5a3_f49f81a2a9"
                             tabIndex={-1}
-                            value=""
+                            defaultValue=""
                         />
                     </div>
                     <div className="clear">
                         <input
                             type="submit"
-                            value="Subscribe"
+                            defaultValue="Subscribe"
                             name="subscribe"
                             id="mc-embedded-subscribe"
                             className="button"

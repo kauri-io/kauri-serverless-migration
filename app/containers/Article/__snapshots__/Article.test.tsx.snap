@@ -2747,6 +2747,7 @@ exports[`containers/Article should match snapshot 1`] = `
                             className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-justify-xs-center"
                           >
                             <WithStyles(ForwardRef(Grid))
+                              item={true}
                               key="0"
                               sm={6}
                             >
@@ -2858,10 +2859,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                     "zeroMinWidth": "MuiGrid-zeroMinWidth",
                                   }
                                 }
+                                item={true}
                                 sm={6}
                               >
                                 <div
-                                  className="MuiGrid-root MuiGrid-grid-sm-6"
+                                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-6"
                                 >
                                   <ArticleCard
                                     __typename="ArticleDTO"
@@ -3024,7 +3026,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                       />
                                                     }
                                                     className="makeStyles-header-165"
-                                                    subheader="7 months ago"
+                                                    subheader="2nd Jan 19"
                                                     title="test author name 2"
                                                   >
                                                     <ForwardRef(CardHeader)
@@ -3044,7 +3046,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                           "title": "MuiCardHeader-title",
                                                         }
                                                       }
-                                                      subheader="7 months ago"
+                                                      subheader="2nd Jan 19"
                                                       title="test author name 2"
                                                     >
                                                       <div
@@ -3716,7 +3718,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                               <span
                                                                 className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                               >
-                                                                7 months ago
+                                                                2nd Jan 19
                                                               </span>
                                                             </ForwardRef(Typography)>
                                                           </WithStyles(ForwardRef(Typography))>
@@ -4395,6 +4397,7 @@ exports[`containers/Article should match snapshot 1`] = `
                               </ForwardRef(Grid)>
                             </WithStyles(ForwardRef(Grid))>
                             <WithStyles(ForwardRef(Grid))
+                              item={true}
                               key="1"
                               sm={6}
                             >
@@ -4506,10 +4509,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                     "zeroMinWidth": "MuiGrid-zeroMinWidth",
                                   }
                                 }
+                                item={true}
                                 sm={6}
                               >
                                 <div
-                                  className="MuiGrid-root MuiGrid-grid-sm-6"
+                                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-6"
                                 >
                                   <ArticleCard
                                     __typename="ArticleDTO"
@@ -4672,7 +4676,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                       />
                                                     }
                                                     className="makeStyles-header-165"
-                                                    subheader="7 months ago"
+                                                    subheader="2nd Jan 19"
                                                     title="test author name 3"
                                                   >
                                                     <ForwardRef(CardHeader)
@@ -4692,7 +4696,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                           "title": "MuiCardHeader-title",
                                                         }
                                                       }
-                                                      subheader="7 months ago"
+                                                      subheader="2nd Jan 19"
                                                       title="test author name 3"
                                                     >
                                                       <div
@@ -5364,7 +5368,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                               <span
                                                                 className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                               >
-                                                                7 months ago
+                                                                2nd Jan 19
                                                               </span>
                                                             </ForwardRef(Typography)>
                                                           </WithStyles(ForwardRef(Typography))>

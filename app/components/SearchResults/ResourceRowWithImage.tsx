@@ -6,6 +6,7 @@ import TagList from '../Tags/TagList'
 import Image from '../Image'
 import theme from '../../lib/theme-config'
 import slugify from 'slugify'
+import Link from 'next/link'
 
 const DEFAULT_CARD_WIDTH = theme.DEFAULT_CARD_WIDTH
 
@@ -59,10 +60,6 @@ export interface IProps {
     username: string | null
     userId: string
     userAvatar: string | null
-    linkComponent: (
-        childrenProps: React.ReactElement<any>,
-        route: string
-    ) => React.ReactElement<any>
     ownerType: string // "USER" | "COMMUNITY" | "COLLECTION";
     resourceType: string // "article" | "community" | "collection"
 }
@@ -73,7 +70,6 @@ const ResourceRowWithImage: React.SFC<IProps> = ({
     imageURL,
     id,
     resourceType,
-    linkComponent,
     date,
     ownerType,
     tags,
@@ -84,66 +80,82 @@ const ResourceRowWithImage: React.SFC<IProps> = ({
     const slug = slugify(title, { lower: true })
     return (
         <ResourceRow key={id}>
-            {imageURL &&
-                linkComponent(
-                    <Image
-                        width={DEFAULT_CARD_WIDTH}
-                        height={195}
-                        image={imageURL}
-                        borderTopLeftRadius={'4px'}
-                        borderBottomLeftRadius={'4px'}
-                    />,
-                    resourceType === 'collection'
-                        ? `/${slugify(title, { lower: true })}/${id}/c`
-                        : resourceType === 'community'
-                        ? `/community/${id}`
-                        : `/${slug}/${id}/a`
-                )}
+            {imageURL && (
+                <Link
+                    href={
+                        resourceType === 'collection'
+                            ? `/${slugify(title, { lower: true })}/${id}/c`
+                            : resourceType === 'community'
+                            ? `/community/${id}`
+                            : `/${slug}/${id}/a`
+                    }
+                >
+                    <a>
+                        <Image
+                            width={DEFAULT_CARD_WIDTH}
+                            height={195}
+                            image={imageURL}
+                            borderTopLeftRadius={'4px'}
+                            borderBottomLeftRadius={'4px'}
+                        />
+                    </a>
+                </Link>
+            )}
             <Container>
-                {linkComponent(
-                    <Content>
-                        <Label>
-                            {ownerType === 'COLLECTION'
-                                ? 'Updated ' +
-                                  moment(date).format('DD MMM YYYY HH:mm')
-                                : 'Posted ' +
-                                  moment(date).format('DD MMM YYYY HH:mm')}
-                        </Label>
-                        <H1>{title && String(title)}</H1>
-                        {description && (
-                            <BodyCard>
-                                {description && String(description)}
-                            </BodyCard>
-                        )}
-                        {Array.isArray(tags) && tags.length > 0 && (
-                            <TagList
-                                maxTags={3}
-                                color="textPrimary"
-                                tags={tags}
-                            />
-                        )}
-                    </Content>,
-                    resourceType === 'collection'
-                        ? `/${slugify(title, { lower: true })}/${id}/c`
-                        : resourceType === 'community'
-                        ? `/community/${id}`
-                        : `/${slug}/${id}/a`
-                )}
+                <Link
+                    href={
+                        resourceType === 'collection'
+                            ? `/${slugify(title, { lower: true })}/${id}/c`
+                            : resourceType === 'community'
+                            ? `/community/${id}`
+                            : `/${slug}/${id}/a`
+                    }
+                >
+                    <a>
+                        <Content>
+                            <Label>
+                                {ownerType === 'COLLECTION'
+                                    ? 'Updated ' +
+                                      moment(date).format('DD MMM YYYY HH:mm')
+                                    : 'Posted ' +
+                                      moment(date).format('DD MMM YYYY HH:mm')}
+                            </Label>
+                            <H1>{title && String(title)}</H1>
+                            {description && (
+                                <BodyCard>
+                                    {description && String(description)}
+                                </BodyCard>
+                            )}
+                            {Array.isArray(tags) && tags.length > 0 && (
+                                <TagList
+                                    maxTags={3}
+                                    color="textPrimary"
+                                    tags={tags}
+                                />
+                            )}
+                        </Content>
+                    </a>
+                </Link>
                 <Divider />
                 <Footer>
-                    {linkComponent(
-                        <UserAvatar
-                            imageURL={imageURL}
-                            cardType="ARTICLE"
-                            fullWidth={true}
-                            username={username}
-                            userId={userId}
-                            avatar={userAvatar}
-                        />,
-                        ownerType === 'COMMUNITY'
-                            ? `/community/${userId}`
-                            : `/public-profile/${userId}`
-                    )}
+                    <Link
+                        href={
+                            ownerType === 'COMMUNITY'
+                                ? `/community/${userId}`
+                                : `/public-profile/${userId}`
+                        }
+                    >
+                        <a>
+                            <UserAvatar
+                                imageURL={imageURL}
+                                cardType="ARTICLE"
+                                fullWidth={true}
+                                username={username}
+                                userId={userId}
+                                avatar={userAvatar}
+                            />
+                        </a>
+                    </Link>
                 </Footer>
             </Container>
         </ResourceRow>

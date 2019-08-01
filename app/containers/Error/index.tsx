@@ -27,8 +27,10 @@ const Error = () => (
     <ErrorContainer>
         <Code>404</Code>
         <Copy>Sorry, something went wrong :(</Copy>
-        <Link href="/">
-            <PrimaryButton>Go to homepage</PrimaryButton>
+        <Link href="/" as="/">
+            <a>
+                <PrimaryButton>Go to homepage</PrimaryButton>
+            </a>
         </Link>
     </ErrorContainer>
 )

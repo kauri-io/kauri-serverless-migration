@@ -544,10 +544,10 @@ exports[`containers/LoginForm should match snapshot 1`] = `
                                 }
                               >
                                 <input
+                                  defaultValue=""
                                   name="b_e46233ccfd6bb938ab7cbb5a3_f49f81a2a9"
                                   tabIndex={-1}
                                   type="text"
-                                  value=""
                                 />
                               </div>
                               <div
@@ -555,10 +555,10 @@ exports[`containers/LoginForm should match snapshot 1`] = `
                               >
                                 <input
                                   className="button"
+                                  defaultValue="Subscribe"
                                   id="mc-embedded-subscribe"
                                   name="subscribe"
                                   type="submit"
-                                  value="Subscribe"
                                 />
                               </div>
                             </div>

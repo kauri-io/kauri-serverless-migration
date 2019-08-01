@@ -637,7 +637,7 @@ exports[`containers/ArticleProposed should match snapshot 1`] = `
                                     />
                                   }
                                   className="makeStyles-header-4"
-                                  subheader="7 months ago"
+                                  subheader="2nd Jan 19"
                                   title="test author name 1"
                                 >
                                   <ForwardRef(CardHeader)
@@ -657,7 +657,7 @@ exports[`containers/ArticleProposed should match snapshot 1`] = `
                                         "title": "MuiCardHeader-title",
                                       }
                                     }
-                                    subheader="7 months ago"
+                                    subheader="2nd Jan 19"
                                     title="test author name 1"
                                   >
                                     <div
@@ -1329,7 +1329,7 @@ exports[`containers/ArticleProposed should match snapshot 1`] = `
                                             <span
                                               className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                             >
-                                              7 months ago
+                                              2nd Jan 19
                                             </span>
                                           </ForwardRef(Typography)>
                                         </WithStyles(ForwardRef(Typography))>

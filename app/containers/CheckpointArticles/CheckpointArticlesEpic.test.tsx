@@ -3,6 +3,10 @@ import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { checkpointArticlesAction, checkpointArticlesEpic } from './Module'
 import { from } from 'rxjs'
 
+jest.mock('../../lib/analytics', () => ({
+    track: jest.fn(),
+}))
+
 describe('checkpointArticlesEpic', () => {
     beforeAll(() => {
         // global.window = {}

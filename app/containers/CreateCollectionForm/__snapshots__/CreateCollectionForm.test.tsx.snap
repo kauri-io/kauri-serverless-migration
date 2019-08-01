@@ -4332,7 +4332,7 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                             "withComponent": [Function],
                                                           }
                                                         }
-                                                        forwardedRef={null}
+                                                        forwardedRef={[Function]}
                                                       >
                                                         <section
                                                           className="CardContentSection-ygx7u9-0 cALcbY"

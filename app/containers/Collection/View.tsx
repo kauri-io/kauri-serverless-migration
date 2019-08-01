@@ -4,7 +4,6 @@ import Head from 'next/head'
 import { path } from 'ramda'
 import CollectionHeader from '../../components/Headers/CollectionHeader'
 import CollectionSection from './CollectionSection'
-import Link from '../../components/Link'
 import Image from '../../components/Image'
 import { recordViewMutation } from '../../queries/Utils'
 import { getCollection } from '../../queries/__generated__/getCollection'
@@ -16,6 +15,7 @@ import {
 import { approveResourceAction } from '../Community/Module'
 import { Article_owner_PublicUserDTO } from '../../queries/Fragments/__generated__/Article'
 import { getCollectionURL } from '../../lib/getURLs'
+import Link from 'next/link'
 
 export const Overlay = styled.div`
     position: absolute;
@@ -256,8 +256,6 @@ class CollectionPage extends Component<IProps> {
                             tags={(tags && noNullsInArray(tags)) || []}
                             linkComponent={childrenProps => (
                                 <Link
-                                    fullWidth={false}
-                                    useAnchorTag
                                     href={
                                         resourceType === 'COMMUNITY'
                                             ? `/community/${owner &&

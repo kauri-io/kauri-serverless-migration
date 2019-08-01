@@ -98,13 +98,7 @@ export const HomePageComponent = (props: {
             />
         </Head>
 
-        {!props.isLoggedIn && (
-            <SignupBanner
-                linkComponent={(children, route) => (
-                    <Link href={route}>{children}</Link>
-                )}
-            />
-        )}
+        {!props.isLoggedIn && <SignupBanner />}
 
         {props.data.getLatestHomepageDescriptor.rows.map((row, index) => {
             return (
@@ -163,6 +157,7 @@ export const HomePageComponent = (props: {
                                         if (mainRow.content) {
                                             return (
                                                 <FeaturedContent
+                                                    key="featured-content"
                                                     Link={Link}
                                                     content={mainRow.content}
                                                 />
@@ -188,6 +183,7 @@ export const HomePageComponent = (props: {
 
                                                 return (
                                                     <FeaturedResource
+                                                        key="featured-resource"
                                                         {...resource[0]}
                                                         {...resource[0].owner}
                                                         id={resource[0].id}
@@ -196,14 +192,6 @@ export const HomePageComponent = (props: {
                                                         }
                                                         resourceType={resource[0].resourceIdentifier.type.toLowerCase()}
                                                         ownerResourceType={resource[0].owner.resourceIdentifier.type.toLowerCase()}
-                                                        linkComponent={(
-                                                            children,
-                                                            route
-                                                        ) => (
-                                                            <Link href={route}>
-                                                                {children}
-                                                            </Link>
-                                                        )}
                                                     />
                                                 )
                                             }
@@ -222,16 +210,8 @@ export const HomePageComponent = (props: {
                                                 const content = mainRow.content
                                                 return (
                                                     <LatestContent
+                                                        key="latest-content"
                                                         content={content}
-                                                        Link={Link}
-                                                        linkComponent={(
-                                                            children,
-                                                            route
-                                                        ) => (
-                                                            <Link href={route}>
-                                                                {children}
-                                                            </Link>
-                                                        )}
                                                     />
                                                 )
                                             }
@@ -244,6 +224,7 @@ export const HomePageComponent = (props: {
                                         ) {
                                             return (
                                                 <NewsletterBanner
+                                                    key="newsletter-banner"
                                                     handleSubmit={emailAddress =>
                                                         props.emailSubscribeAction(
                                                             emailAddress
@@ -268,7 +249,9 @@ export const HomePageComponent = (props: {
 
                                     case 'Import': {
                                         if (mainRow.__typename === 'Import') {
-                                            return <ImportYourContentBanner />
+                                            return (
+                                                <ImportYourContentBanner key="import" />
+                                            )
                                         }
                                     }
 
@@ -305,16 +288,6 @@ export const HomePageComponent = (props: {
                                                             key={
                                                                 sideBar.__typename
                                                             }
-                                                            linkComponent={(
-                                                                children,
-                                                                route
-                                                            ) => (
-                                                                <Link
-                                                                    href={route}
-                                                                >
-                                                                    {children}
-                                                                </Link>
-                                                            )}
                                                             content={
                                                                 sideBar.content
                                                             }
@@ -415,7 +388,6 @@ const HomePageComponentWrapper: React.FunctionComponent<IProps> = props => {
     return (
         <Query<homePageContent> query={query}>
             {({ loading, error, data }) => {
-                console.log(error)
                 if (loading) {
                     return <Loading />
                 }

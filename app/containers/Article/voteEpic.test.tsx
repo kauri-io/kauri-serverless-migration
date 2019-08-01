@@ -2,6 +2,10 @@ import testEpic from '../../lib/test-epic'
 import { voteEpic, voteAction } from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 
+jest.mock('../../lib/analytics', () => ({
+    track: jest.fn(),
+}))
+
 describe('voteEpic', () => {
     beforeAll(() => {
         // global.window = {}
