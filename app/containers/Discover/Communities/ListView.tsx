@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import Head from 'next/head'
 import CommunityCard from '../../../components/Card/CommunityCard'
 import Masonry from '../../../components/Masonry'
-import Link from 'next/link'
 import Loading from '../../../components/Loading'
 import { searchCommunities_searchCommunities } from '../../../queries/__generated__/searchCommunities'
+import { getCollectionURL } from '../../../lib/getURLs'
 
 interface IProps {
     CommunityQuery: {
@@ -61,6 +61,7 @@ class Communities extends Component<IProps> {
                                 (community, index) =>
                                     community && (
                                         <CommunityCard
+                                            href={getCollectionURL(community)}
                                             id={community.id}
                                             key={index}
                                             logo={community.avatar}
@@ -106,19 +107,6 @@ class Communities extends Component<IProps> {
                                                     )) ||
                                                 '0'
                                             }
-                                            // tags={community.tags}
-                                            linkComponent={(
-                                                childrenProps: React.ReactElement<
-                                                    any
-                                                >
-                                            ) => (
-                                                <Link
-                                                    href={`/community/${community &&
-                                                        community.id}`}
-                                                >
-                                                    {childrenProps}
-                                                </Link>
-                                            )}
                                         />
                                     )
                             )}

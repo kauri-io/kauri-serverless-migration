@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import CommunityCard from '../../components/Card/CommunityCard'
-import Link from 'next/link'
 import Head from 'next/head'
 import PrimaryButton from '../../components/Button/PrimaryButton'
 import { Title2, BodyCard } from '../../components/Typography'
 import { getCommunity } from '../../queries/__generated__/getCommunity'
+import { getCommunityURL } from '../../lib/getURLs'
 
 export interface IProps {
     data: getCommunity
@@ -93,6 +93,7 @@ const CommunityCreated = (props: IProps) => {
                 <Title2>Community</Title2>
                 {subtitleCopy}
                 <CommunityCard
+                    href={getCommunityURL(props.data.getCommunity)}
                     id={String(id)}
                     cardHeight={310}
                     description={String(description)}
@@ -101,11 +102,6 @@ const CommunityCreated = (props: IProps) => {
                     logo={avatar}
                     articleCount={String(articleCount)}
                     collectionCount={String(collectionCount)}
-                    linkComponent={(childrenProps: React.ReactElement<any>) => (
-                        <Link href={`/community/${String(id)}`}>
-                            {childrenProps}
-                        </Link>
-                    )}
                 />
                 <PrimaryButton
                     onClick={() =>

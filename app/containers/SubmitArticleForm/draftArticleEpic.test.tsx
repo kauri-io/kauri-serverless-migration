@@ -3,6 +3,10 @@ import { draftArticleEpic, draftArticleAction } from './Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 
+jest.mock('../../lib/analytics', () => ({
+    track: jest.fn(),
+}))
+
 describe('draftArticleEpic', () => {
     beforeAll(() => {
         // global.window = {}

@@ -4,6 +4,10 @@ import { from } from 'rxjs'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
+jest.mock('../../lib/analytics', () => ({
+    track: jest.fn(),
+}))
+
 describe('composeCollectionEpic', () => {
     beforeAll(() => {
         // global.window = {}

@@ -8,21 +8,19 @@ import {
     Collection_owner_PublicUserDTO,
     Collection_owner_CommunityDTO,
 } from '../../queries/Fragments/__generated__/Collection'
-import { getArticleURL } from '../../lib/getURLs'
-
-interface IRenderCardContentProps {
-    fromAdmin: boolean
-    Link: any
-    onCardClick?: (input: any) => void
-}
-export const RenderCardContent = ({
-    fromAdmin,
-    Link,
-    onCardClick,
-}: IRenderCardContentProps) => (card: Article | Collection | Community) => {
+import { getArticleURL, getCollectionURL } from '../../lib/getURLs'
+export const RenderCardContent = () => (
+    card: Article | Collection | Community
+) => {
     switch (card.__typename) {
         case 'ArticleDTO':
-            return <ArticleCard href={getArticleURL(card)} {...card} />
+            return (
+                <ArticleCard
+                    key={card.id}
+                    href={getArticleURL(card)}
+                    {...card}
+                />
+            )
         case 'CollectionDTO':
             const articleCount =
                 card.sections &&
@@ -67,6 +65,8 @@ export const RenderCardContent = ({
 
             return (
                 <CollectionCard
+                    href={getCollectionURL(card)}
+                    key={card.id}
                     id={String(card.id)}
                     resourceType="CollectionDTO"
                     name={String(card.name)}
@@ -83,42 +83,12 @@ export const RenderCardContent = ({
                     collectionCount={String(collectionCount)}
                     imageURL={card.background}
                     cardHeight={310}
-                    linkComponent={(childrenProps, route) => {
-                        if (fromAdmin) {
-                            return (
-                                <div
-                                    onClick={() =>
-                                        onCardClick &&
-                                        onCardClick({
-                                            id: card.id,
-                                            type: 'COLLECTION',
-                                        })
-                                    }
-                                >
-                                    {childrenProps}
-                                </div>
-                            )
-                        } else {
-                            return (
-                                <Link
-                                    toSlug={
-                                        route &&
-                                        route.includes('article') &&
-                                        card.name
-                                    }
-                                    useAnchorTag
-                                    href={route}
-                                >
-                                    {childrenProps}
-                                </Link>
-                            )
-                        }
-                    }}
                 />
             )
         case 'CommunityDTO': {
             return (
                 <CommunityCard
+                    key={card.id}
                     id={card.id}
                     articleCount={''}
                     collectionCount={''}
@@ -127,11 +97,7 @@ export const RenderCardContent = ({
                     imageURL={card.attributes.background}
                     cardHeight={310}
                     logo={card.avatar}
-                    linkComponent={childrenProps => (
-                        <Link useAnchorTag route={`/community/${card.id}`}>
-                            {childrenProps}
-                        </Link>
-                    )}
+                    href={getCollectionURL(card)}
                 />
             )
         }

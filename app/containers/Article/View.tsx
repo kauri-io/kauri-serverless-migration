@@ -153,7 +153,7 @@ const ArticleComp = ({
                                     recommendedArticle.resource &&
                                     recommendedArticle.resource.__typename ===
                                         'ArticleDTO' ? (
-                                        <Grid sm={6} key={key}>
+                                        <Grid item={true} sm={6} key={key}>
                                             <ArticleCardMaterial
                                                 className={classes.card}
                                                 href={getArticleURL(

@@ -1,6 +1,10 @@
 import TopContributors from './index'
 import { mountWithTheme } from '../../setupTests'
 
+jest.mock('../../lib/analytics', () => ({
+    track: jest.fn(),
+}))
+
 let props = {
     contributors: [
         {

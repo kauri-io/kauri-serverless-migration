@@ -10,6 +10,7 @@ import Tabs from '../../components/Tabs'
 import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
 import { getCommunity_getCommunity } from '../../queries/__generated__/getCommunity'
+import { getCollectionURL } from '../../lib/getURLs'
 
 const Container = styled.div`
     display: flex;
@@ -20,24 +21,6 @@ const Container = styled.div`
 
     ${Content} {
         padding-top: 10px;
-    }
-`
-
-const Link = styled.a`
-    text-decoration: none;
-    color: inherit;
-    :hover {
-        color: ${props => props.theme.colors.hoverTextColor} !important;
-        > * {
-            color: ${props => props.theme.colors.hoverTextColor} !important;
-            > * {
-                color: ${props => props.theme.colors.hoverTextColor} !important;
-                > * {
-                    color: ${props =>
-                        props.theme.colors.hoverTextColor} !important;
-                }
-            }
-        }
     }
 `
 
@@ -108,6 +91,7 @@ const CollectionsContent = ({
 
                     return (
                         <CollectionCard
+                            href={getCollectionURL(collection)}
                             key={collection.id + collection.version}
                             id={collection.id}
                             resourceType={collection.owner.__typename
@@ -126,7 +110,6 @@ const CollectionsContent = ({
                             isLoggedIn={!!userId}
                             articleCount={articleCount}
                             collectionCount={collectionCount}
-                            linkComponent={children => <Link>{children}</Link>}
                             hoverChildren={({ hideDispatch }) => (
                                 <React.Fragment>
                                     <PrimaryButton
@@ -213,10 +196,3 @@ export default (props: IProps) => {
         />
     )
 }
-
-//   linkComponent?: (React.Node, string) => React.Node,
-//   pageType?: PageType,
-//   hoverAction?: { id: string, content: string } => void,
-//   viewAction?: { id: string, version: string } => void,
-//   isChosenArticle?: boolean,
-// }

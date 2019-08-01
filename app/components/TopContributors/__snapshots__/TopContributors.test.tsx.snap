@@ -249,6 +249,7 @@ exports[`components/TopContributors should match snapshot 1`] = `
                 <Link
                   as="test-username/undefined/p"
                   href="/public-profile?user_id=undefined"
+                  key="0"
                   prefetch={true}
                 >
                   <a

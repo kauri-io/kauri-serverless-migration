@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Head from 'next/head'
 import CollectionCard from '../../../components/Card/CollectionCard'
 import Masonry from '../../../components/Masonry'
-import Link from 'next/link'
 import Loading from '../../../components/Loading'
 import {
     searchAutocompleteCollections_searchAutocomplete,
@@ -12,6 +11,7 @@ import {
     searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO,
 } from '../../../queries/__generated__/searchAutocompleteCollections'
 import theme from '../../../lib/theme-config'
+import { getCollectionURL } from '../../../lib/getURLs'
 
 const DEFAULT_CARD_WIDTH = theme.DEFAULT_CARD_WIDTH
 
@@ -168,6 +168,9 @@ class Collections extends Component<IProps> {
 
                                 return (
                                     <CollectionCard
+                                        href={getCollectionURL(
+                                            collectionResource as searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO
+                                        )}
                                         key={String(
                                             collectionResource &&
                                                 collectionResource.id
@@ -214,16 +217,6 @@ class Collections extends Component<IProps> {
                                         }
                                         cardHeight={310}
                                         cardWidth={DEFAULT_CARD_WIDTH}
-                                        linkComponent={(
-                                            childrenProps: React.ReactElement<
-                                                any
-                                            >,
-                                            route: string
-                                        ) => (
-                                            <Link href={route}>
-                                                {childrenProps}
-                                            </Link>
-                                        )}
                                         resourceType={owner.type || 'USER'}
                                     />
                                 )

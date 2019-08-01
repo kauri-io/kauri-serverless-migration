@@ -102,10 +102,7 @@ const RenderMobileFeaturedContent: React.FunctionComponent<IProps> = props => {
                         return current
                     }, 0)
 
-                const RenderedCard = RenderCardContent({
-                    Link: props.Link,
-                    fromAdmin: false,
-                })
+                const RenderedCard = RenderCardContent()
 
                 return (
                     <RenderedCard

@@ -1,6 +1,5 @@
 import ArticleCard from '../../components/Card/ArticleCardMaterial'
 import CollectionCard from '../../components/Card/CollectionCard'
-import Link from '../../components/Link'
 import {
     Community_approved_CollectionDTO,
     Community_approved_ArticleDTO,
@@ -13,7 +12,7 @@ import { BodyCard } from '../../components/Typography'
 import { removeResourceVariables } from '../../queries/__generated__/removeResource'
 import ArticlesEmptyState from './EmptyStates/Articles'
 import CollectionsEmptyState from './EmptyStates/Collections'
-import { getArticleURL } from '../../lib/getURLs'
+import { getArticleURL, getCollectionURL } from '../../lib/getURLs'
 
 const Container = styled.div`
     margin-left: ${props => props.theme.space[3]}px;
@@ -51,6 +50,7 @@ const RenderResources = (
 ) => (
     article: Community_approved_ArticleDTO | Community_approved_CollectionDTO
 ) => {
+    console.log(destination)
     const owner =
         article.owner && article.owner.__typename === 'PublicUserDTO'
             ? {
@@ -103,6 +103,7 @@ const RenderResources = (
 
         return (
             <CollectionCard
+                href={getCollectionURL(article)}
                 key={String(article.id)}
                 id={String(article.id)}
                 description={article.description || ''}
@@ -167,24 +168,24 @@ const RenderResources = (
                         Remove Collection
                     </PrimaryButton>
                 )}
-                linkComponent={(
-                    childrenProps: React.ReactElement<any>,
-                    route: string
-                ) => (
-                    <Link
-                        useAnchorTag={true}
-                        href={
-                            destination
-                                ? `${route}`
-                                : typeof communityId === 'string' &&
-                                  destination === 'review'
-                                ? `${route}?proposed-community-id=${communityId}`
-                                : route
-                        }
-                    >
-                        {childrenProps}
-                    </Link>
-                )}
+                // linkComponent={(
+                //     childrenProps: React.ReactElement<any>,
+                //     route: string
+                // ) => (
+                //     <Link
+                //         useAnchorTag={true}
+                //         href={
+                //             destination
+                //                 ? `${route}`
+                //                 : typeof communityId === 'string' &&
+                //                   destination === 'review'
+                //                 ? `${route}?proposed-community-id=${communityId}`
+                //                 : route
+                //         }
+                //     >
+                //         {childrenProps}
+                //     </Link>
+                // )}
             />
         )
     } else {

@@ -127,7 +127,9 @@ const signup = (user: any) => {
 }
 
 const init = () => {
-    console.log('Initialising Mixpanel')
+    if (process.env.NODE_ENV !== 'test') {
+        console.log('Initialising Mixpanel')
+    }
     ga.initialize(tokens.ga)
     mixpanel.init(
         tokens.mixpanel,

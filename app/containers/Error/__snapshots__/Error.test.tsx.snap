@@ -225,86 +225,87 @@ exports[`containers/Error should match snapshot 1`] = `
             </StyledComponent>
           </Error__Copy>
           <Link
+            as="/"
             href="/"
             prefetch={true}
           >
-            <PrimaryButtonComponent
+            <a
+              href="/"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              <PrimaryButton
-                bg="primary"
-                color="white"
-                fontSize={0}
-                fontWeight={700}
-                mr={2}
-                onClick={[Function]}
-                type="submit"
-              >
-                <StyledComponent
+              <PrimaryButtonComponent>
+                <PrimaryButton
                   bg="primary"
                   color="white"
                   fontSize={0}
                   fontWeight={700}
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "PrimaryButton-sc-1cbxa53-0",
-                        "isStatic": false,
-                        "lastClassName": "bVbdII",
-                        "rules": Array [
-                          "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
-                          [Function],
-                          ";height:40px;border-radius:4px;border:none;cursor:pointer;> svg,img{height:16px;",
-                          [Function],
-                          ";}text-transform:uppercase;opacity:",
-                          [Function],
-                          ";",
-                          [Function],
-                          ";",
-                          [Function],
-                          ";",
-                          [Function],
-                          ";",
-                          [Function],
-                          ";:hover{cursor:",
-                          [Function],
-                          ";}",
-                          ";:hover{background-color:",
-                          [Function],
-                          ";}",
-                        ],
-                      },
-                      "displayName": "PrimaryButton",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "PrimaryButton-sc-1cbxa53-0",
-                      "target": "button",
-                      "toString": [Function],
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
-                    }
-                  }
-                  forwardedRef={null}
                   mr={2}
-                  onClick={[Function]}
                   type="submit"
                 >
-                  <button
-                    className="PrimaryButton-sc-1cbxa53-0 bVbdII"
+                  <StyledComponent
+                    bg="primary"
                     color="white"
                     fontSize={0}
                     fontWeight={700}
-                    onClick={[Function]}
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "PrimaryButton-sc-1cbxa53-0",
+                          "isStatic": false,
+                          "lastClassName": "bVbdII",
+                          "rules": Array [
+                            "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
+                            [Function],
+                            ";height:40px;border-radius:4px;border:none;cursor:pointer;> svg,img{height:16px;",
+                            [Function],
+                            ";}text-transform:uppercase;opacity:",
+                            [Function],
+                            ";",
+                            [Function],
+                            ";",
+                            [Function],
+                            ";",
+                            [Function],
+                            ";",
+                            [Function],
+                            ";:hover{cursor:",
+                            [Function],
+                            ";}",
+                            ";:hover{background-color:",
+                            [Function],
+                            ";}",
+                          ],
+                        },
+                        "displayName": "PrimaryButton",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "PrimaryButton-sc-1cbxa53-0",
+                        "target": "button",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    mr={2}
                     type="submit"
                   >
-                    Go to homepage
-                  </button>
-                </StyledComponent>
-              </PrimaryButton>
-            </PrimaryButtonComponent>
+                    <button
+                      className="PrimaryButton-sc-1cbxa53-0 bVbdII"
+                      color="white"
+                      fontSize={0}
+                      fontWeight={700}
+                      type="submit"
+                    >
+                      Go to homepage
+                    </button>
+                  </StyledComponent>
+                </PrimaryButton>
+              </PrimaryButtonComponent>
+            </a>
           </Link>
         </div>
       </StyledComponent>

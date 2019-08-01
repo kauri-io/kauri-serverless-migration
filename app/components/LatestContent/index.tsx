@@ -66,9 +66,7 @@ const LatestContent: React.FunctionComponent<IProps> = props => {
         <LatestContentSection>
             <Title2>Latest Content</Title2>
             <LatestContentCardContainer>
-                {props.content.map(
-                    RenderCardContent({ fromAdmin: false, Link: props.Link })
-                )}
+                {props.content.map(RenderCardContent())}
             </LatestContentCardContainer>
             <AllContentButtonsContainer>
                 {props.linkComponent(

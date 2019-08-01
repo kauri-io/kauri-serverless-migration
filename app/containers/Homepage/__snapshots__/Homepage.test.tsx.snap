@@ -6954,9 +6954,15 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           cardHeight={310}
                                           collectionCount=""
                                           description="Java is one of the worlds most popular programming languages used in global-scale applications by developers everywhere. This community brings together developers and projects at the forefront of bringing Ethereum support to this rich language ecosystem."
+                                          href={
+                                            Object {
+                                              "as": "java-ethereum/5d2f30daaba2920001c82409/c",
+                                              "href": "/collection?collection_id=5d2f30daaba2920001c82409",
+                                            }
+                                          }
                                           id="5d2f30daaba2920001c82409"
                                           imageURL="https://api.kauri.io:443/ipfs/QmPyoXQaK9uA1oedsptssr1EhYRBF1A9vrnypbKAkMhuxQ"
-                                          linkComponent={[Function]}
+                                          key="5d2f30daaba2920001c82409"
                                           logo="https://api.kauri.io:443/ipfs/QmQ9to7bfbR6ADTG2tAKVxWTNw8o3YbwJ1LzdpEJeanLBX"
                                           name="Java Ethereum"
                                         >
@@ -7117,207 +7123,211 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           </StyledComponent>
                                                         </CommunityCard__LabelContainer>
                                                         <Link
+                                                          as="java-ethereum/5d2f30daaba2920001c82409/c"
+                                                          href="/collection?collection_id=5d2f30daaba2920001c82409"
                                                           prefetch={true}
-                                                          route="/community/5d2f30daaba2920001c82409"
-                                                          useAnchorTag={true}
                                                         >
-                                                          <CardContent
-                                                            description="Java is one of the worlds most popular programming languages used in global-scale applications by developers everywhere. This community brings together developers and projects at the forefront of bringing Ethereum support to this rich language ecosystem."
-                                                            logo="https://api.kauri.io:443/ipfs/QmQ9to7bfbR6ADTG2tAKVxWTNw8o3YbwJ1LzdpEJeanLBX"
-                                                            name="Java Ethereum"
+                                                          <a
+                                                            href="java-ethereum/5d2f30daaba2920001c82409/c"
                                                             onClick={[Function]}
                                                             onMouseEnter={[Function]}
                                                           >
-                                                            <CommunityCard__Content>
-                                                              <StyledComponent
-                                                                forwardedComponent={
-                                                                  Object {
-                                                                    "$$typeof": Symbol(react.forward_ref),
-                                                                    "attrs": Array [],
-                                                                    "componentStyle": ComponentStyle {
-                                                                      "componentId": "CommunityCard__Content-sc-1yf4ke7-4",
-                                                                      "isStatic": false,
-                                                                      "lastClassName": "ivKqnA",
-                                                                      "rules": Array [
-                                                                        "display:flex;flex-direction:column;align-items:center;justify-content:flex-start;flex:1;height:100%;overflow:hidden;>:first-child{margin-bottom:",
-                                                                        [Function],
-                                                                        "px;}",
-                                                                      ],
-                                                                    },
-                                                                    "displayName": "CommunityCard__Content",
-                                                                    "foldedComponentIds": Array [],
-                                                                    "render": [Function],
-                                                                    "styledComponentId": "CommunityCard__Content-sc-1yf4ke7-4",
-                                                                    "target": "div",
-                                                                    "toString": [Function],
-                                                                    "warnTooManyClasses": [Function],
-                                                                    "withComponent": [Function],
+                                                            <CardContent
+                                                              description="Java is one of the worlds most popular programming languages used in global-scale applications by developers everywhere. This community brings together developers and projects at the forefront of bringing Ethereum support to this rich language ecosystem."
+                                                              logo="https://api.kauri.io:443/ipfs/QmQ9to7bfbR6ADTG2tAKVxWTNw8o3YbwJ1LzdpEJeanLBX"
+                                                              name="Java Ethereum"
+                                                            >
+                                                              <CommunityCard__Content>
+                                                                <StyledComponent
+                                                                  forwardedComponent={
+                                                                    Object {
+                                                                      "$$typeof": Symbol(react.forward_ref),
+                                                                      "attrs": Array [],
+                                                                      "componentStyle": ComponentStyle {
+                                                                        "componentId": "CommunityCard__Content-sc-1yf4ke7-4",
+                                                                        "isStatic": false,
+                                                                        "lastClassName": "ivKqnA",
+                                                                        "rules": Array [
+                                                                          "display:flex;flex-direction:column;align-items:center;justify-content:flex-start;flex:1;height:100%;overflow:hidden;>:first-child{margin-bottom:",
+                                                                          [Function],
+                                                                          "px;}",
+                                                                        ],
+                                                                      },
+                                                                      "displayName": "CommunityCard__Content",
+                                                                      "foldedComponentIds": Array [],
+                                                                      "render": [Function],
+                                                                      "styledComponentId": "CommunityCard__Content-sc-1yf4ke7-4",
+                                                                      "target": "div",
+                                                                      "toString": [Function],
+                                                                      "warnTooManyClasses": [Function],
+                                                                      "withComponent": [Function],
+                                                                    }
                                                                   }
-                                                                }
-                                                                forwardedRef={null}
-                                                              >
-                                                                <div
-                                                                  className="CommunityCard__Content-sc-1yf4ke7-4 ivKqnA"
+                                                                  forwardedRef={null}
                                                                 >
-                                                                  <CommunityCard__ImageContainer>
-                                                                    <StyledComponent
-                                                                      forwardedComponent={
-                                                                        Object {
-                                                                          "$$typeof": Symbol(react.forward_ref),
-                                                                          "attrs": Array [],
-                                                                          "componentStyle": ComponentStyle {
-                                                                            "componentId": "CommunityCard__ImageContainer-sc-1yf4ke7-2",
-                                                                            "isStatic": true,
-                                                                            "lastClassName": "gWZBsg",
-                                                                            "rules": Array [
-                                                                              "display:flex;justify-content:center;align-items:center;height:70px;width:70px;border-radius:4px;",
-                                                                            ],
-                                                                          },
-                                                                          "displayName": "CommunityCard__ImageContainer",
-                                                                          "foldedComponentIds": Array [],
-                                                                          "render": [Function],
-                                                                          "styledComponentId": "CommunityCard__ImageContainer-sc-1yf4ke7-2",
-                                                                          "target": "div",
-                                                                          "toString": [Function],
-                                                                          "warnTooManyClasses": [Function],
-                                                                          "withComponent": [Function],
+                                                                  <div
+                                                                    className="CommunityCard__Content-sc-1yf4ke7-4 ivKqnA"
+                                                                  >
+                                                                    <CommunityCard__ImageContainer>
+                                                                      <StyledComponent
+                                                                        forwardedComponent={
+                                                                          Object {
+                                                                            "$$typeof": Symbol(react.forward_ref),
+                                                                            "attrs": Array [],
+                                                                            "componentStyle": ComponentStyle {
+                                                                              "componentId": "CommunityCard__ImageContainer-sc-1yf4ke7-2",
+                                                                              "isStatic": true,
+                                                                              "lastClassName": "gWZBsg",
+                                                                              "rules": Array [
+                                                                                "display:flex;justify-content:center;align-items:center;height:70px;width:70px;border-radius:4px;",
+                                                                              ],
+                                                                            },
+                                                                            "displayName": "CommunityCard__ImageContainer",
+                                                                            "foldedComponentIds": Array [],
+                                                                            "render": [Function],
+                                                                            "styledComponentId": "CommunityCard__ImageContainer-sc-1yf4ke7-2",
+                                                                            "target": "div",
+                                                                            "toString": [Function],
+                                                                            "warnTooManyClasses": [Function],
+                                                                            "withComponent": [Function],
+                                                                          }
                                                                         }
-                                                                      }
-                                                                      forwardedRef={null}
-                                                                    >
-                                                                      <div
-                                                                        className="CommunityCard__ImageContainer-sc-1yf4ke7-2 gWZBsg"
+                                                                        forwardedRef={null}
                                                                       >
-                                                                        <CommunityCard__Image
-                                                                          src="https://api.kauri.io:443/ipfs/QmQ9to7bfbR6ADTG2tAKVxWTNw8o3YbwJ1LzdpEJeanLBX"
+                                                                        <div
+                                                                          className="CommunityCard__ImageContainer-sc-1yf4ke7-2 gWZBsg"
                                                                         >
-                                                                          <StyledComponent
-                                                                            forwardedComponent={
-                                                                              Object {
-                                                                                "$$typeof": Symbol(react.forward_ref),
-                                                                                "attrs": Array [],
-                                                                                "componentStyle": ComponentStyle {
-                                                                                  "componentId": "CommunityCard__Image-sc-1yf4ke7-1",
-                                                                                  "isStatic": true,
-                                                                                  "lastClassName": "kVoxxM",
-                                                                                  "rules": Array [
-                                                                                    "width:70px;border-radius:4px;",
-                                                                                  ],
-                                                                                },
-                                                                                "displayName": "CommunityCard__Image",
-                                                                                "foldedComponentIds": Array [],
-                                                                                "render": [Function],
-                                                                                "styledComponentId": "CommunityCard__Image-sc-1yf4ke7-1",
-                                                                                "target": "img",
-                                                                                "toString": [Function],
-                                                                                "warnTooManyClasses": [Function],
-                                                                                "withComponent": [Function],
-                                                                              }
-                                                                            }
-                                                                            forwardedRef={null}
+                                                                          <CommunityCard__Image
                                                                             src="https://api.kauri.io:443/ipfs/QmQ9to7bfbR6ADTG2tAKVxWTNw8o3YbwJ1LzdpEJeanLBX"
                                                                           >
-                                                                            <img
-                                                                              className="CommunityCard__Image-sc-1yf4ke7-1 kVoxxM"
+                                                                            <StyledComponent
+                                                                              forwardedComponent={
+                                                                                Object {
+                                                                                  "$$typeof": Symbol(react.forward_ref),
+                                                                                  "attrs": Array [],
+                                                                                  "componentStyle": ComponentStyle {
+                                                                                    "componentId": "CommunityCard__Image-sc-1yf4ke7-1",
+                                                                                    "isStatic": true,
+                                                                                    "lastClassName": "kVoxxM",
+                                                                                    "rules": Array [
+                                                                                      "width:70px;border-radius:4px;",
+                                                                                    ],
+                                                                                  },
+                                                                                  "displayName": "CommunityCard__Image",
+                                                                                  "foldedComponentIds": Array [],
+                                                                                  "render": [Function],
+                                                                                  "styledComponentId": "CommunityCard__Image-sc-1yf4ke7-1",
+                                                                                  "target": "img",
+                                                                                  "toString": [Function],
+                                                                                  "warnTooManyClasses": [Function],
+                                                                                  "withComponent": [Function],
+                                                                                }
+                                                                              }
+                                                                              forwardedRef={null}
                                                                               src="https://api.kauri.io:443/ipfs/QmQ9to7bfbR6ADTG2tAKVxWTNw8o3YbwJ1LzdpEJeanLBX"
-                                                                            />
-                                                                          </StyledComponent>
-                                                                        </CommunityCard__Image>
-                                                                      </div>
-                                                                    </StyledComponent>
-                                                                  </CommunityCard__ImageContainer>
-                                                                  <Typography__styledComponent>
-                                                                    <StyledComponent
-                                                                      forwardedComponent={
-                                                                        Object {
-                                                                          "$$typeof": Symbol(react.forward_ref),
-                                                                          "attrs": Array [],
-                                                                          "componentStyle": ComponentStyle {
-                                                                            "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                                            "isStatic": false,
-                                                                            "lastClassName": "jNVtUZ",
-                                                                            "rules": Array [
-                                                                              "color:",
-                                                                              [Function],
-                                                                              ";margin:0px;font-weight:",
-                                                                              "500",
-                                                                              ";",
-                                                                              ";font-size:",
-                                                                              "20",
-                                                                              "px;text-transform:",
-                                                                              [Function],
-                                                                              ";text-align:",
-                                                                              [Function],
-                                                                              ";:hover{color:",
-                                                                              [Function],
-                                                                              ";cursor:",
-                                                                              [Function],
-                                                                              ";}",
-                                                                            ],
-                                                                          },
-                                                                          "displayName": "Typography__styledComponent",
-                                                                          "foldedComponentIds": Array [],
-                                                                          "render": [Function],
-                                                                          "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                                          "target": "span",
-                                                                          "toString": [Function],
-                                                                          "warnTooManyClasses": [Function],
-                                                                          "withComponent": [Function],
+                                                                            >
+                                                                              <img
+                                                                                className="CommunityCard__Image-sc-1yf4ke7-1 kVoxxM"
+                                                                                src="https://api.kauri.io:443/ipfs/QmQ9to7bfbR6ADTG2tAKVxWTNw8o3YbwJ1LzdpEJeanLBX"
+                                                                              />
+                                                                            </StyledComponent>
+                                                                          </CommunityCard__Image>
+                                                                        </div>
+                                                                      </StyledComponent>
+                                                                    </CommunityCard__ImageContainer>
+                                                                    <Typography__styledComponent>
+                                                                      <StyledComponent
+                                                                        forwardedComponent={
+                                                                          Object {
+                                                                            "$$typeof": Symbol(react.forward_ref),
+                                                                            "attrs": Array [],
+                                                                            "componentStyle": ComponentStyle {
+                                                                              "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                              "isStatic": false,
+                                                                              "lastClassName": "jNVtUZ",
+                                                                              "rules": Array [
+                                                                                "color:",
+                                                                                [Function],
+                                                                                ";margin:0px;font-weight:",
+                                                                                "500",
+                                                                                ";",
+                                                                                ";font-size:",
+                                                                                "20",
+                                                                                "px;text-transform:",
+                                                                                [Function],
+                                                                                ";text-align:",
+                                                                                [Function],
+                                                                                ";:hover{color:",
+                                                                                [Function],
+                                                                                ";cursor:",
+                                                                                [Function],
+                                                                                ";}",
+                                                                              ],
+                                                                            },
+                                                                            "displayName": "Typography__styledComponent",
+                                                                            "foldedComponentIds": Array [],
+                                                                            "render": [Function],
+                                                                            "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                            "target": "span",
+                                                                            "toString": [Function],
+                                                                            "warnTooManyClasses": [Function],
+                                                                            "withComponent": [Function],
+                                                                          }
                                                                         }
-                                                                      }
-                                                                      forwardedRef={null}
-                                                                    >
-                                                                      <span
-                                                                        className="Typography__styledComponent-sc-36xkf6-5 eLGQne"
+                                                                        forwardedRef={null}
                                                                       >
-                                                                        Java Ethereum
-                                                                      </span>
-                                                                    </StyledComponent>
-                                                                  </Typography__styledComponent>
-                                                                  <Typography__component>
-                                                                    <StyledComponent
-                                                                      forwardedComponent={
-                                                                        Object {
-                                                                          "$$typeof": Symbol(react.forward_ref),
-                                                                          "attrs": Array [],
-                                                                          "componentStyle": ComponentStyle {
-                                                                            "componentId": "Typography__component-sc-36xkf6-4",
-                                                                            "isStatic": false,
-                                                                            "lastClassName": "chprKh",
-                                                                            "rules": Array [
-                                                                              "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
-                                                                              [Function],
-                                                                              "px;line-height:18px;color:",
-                                                                              [Function],
-                                                                              ";",
-                                                                              ";",
-                                                                              [Function],
-                                                                              ";",
-                                                                            ],
-                                                                          },
-                                                                          "displayName": "Typography__component",
-                                                                          "foldedComponentIds": Array [],
-                                                                          "render": [Function],
-                                                                          "styledComponentId": "Typography__component-sc-36xkf6-4",
-                                                                          "target": "span",
-                                                                          "toString": [Function],
-                                                                          "warnTooManyClasses": [Function],
-                                                                          "withComponent": [Function],
+                                                                        <span
+                                                                          className="Typography__styledComponent-sc-36xkf6-5 eLGQne"
+                                                                        >
+                                                                          Java Ethereum
+                                                                        </span>
+                                                                      </StyledComponent>
+                                                                    </Typography__styledComponent>
+                                                                    <Typography__component>
+                                                                      <StyledComponent
+                                                                        forwardedComponent={
+                                                                          Object {
+                                                                            "$$typeof": Symbol(react.forward_ref),
+                                                                            "attrs": Array [],
+                                                                            "componentStyle": ComponentStyle {
+                                                                              "componentId": "Typography__component-sc-36xkf6-4",
+                                                                              "isStatic": false,
+                                                                              "lastClassName": "chprKh",
+                                                                              "rules": Array [
+                                                                                "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
+                                                                                [Function],
+                                                                                "px;line-height:18px;color:",
+                                                                                [Function],
+                                                                                ";",
+                                                                                ";",
+                                                                                [Function],
+                                                                                ";",
+                                                                              ],
+                                                                            },
+                                                                            "displayName": "Typography__component",
+                                                                            "foldedComponentIds": Array [],
+                                                                            "render": [Function],
+                                                                            "styledComponentId": "Typography__component-sc-36xkf6-4",
+                                                                            "target": "span",
+                                                                            "toString": [Function],
+                                                                            "warnTooManyClasses": [Function],
+                                                                            "withComponent": [Function],
+                                                                          }
                                                                         }
-                                                                      }
-                                                                      forwardedRef={null}
-                                                                    >
-                                                                      <span
-                                                                        className="Typography__component-sc-36xkf6-4 kdkRvh"
+                                                                        forwardedRef={null}
                                                                       >
-                                                                        Java is one of the worlds most popular programming languages used in global-scale applications by...
-                                                                      </span>
-                                                                    </StyledComponent>
-                                                                  </Typography__component>
-                                                                </div>
-                                                              </StyledComponent>
-                                                            </CommunityCard__Content>
-                                                          </CardContent>
+                                                                        <span
+                                                                          className="Typography__component-sc-36xkf6-4 kdkRvh"
+                                                                        >
+                                                                          Java is one of the worlds most popular programming languages used in global-scale applications by...
+                                                                        </span>
+                                                                      </StyledComponent>
+                                                                    </Typography__component>
+                                                                  </div>
+                                                                </StyledComponent>
+                                                              </CommunityCard__Content>
+                                                            </CardContent>
+                                                          </a>
                                                         </Link>
                                                         <CommunityCard__Footer>
                                                           <StyledComponent
@@ -7460,6 +7470,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             }
                                           }
                                           id="cc41c516e62a4ca593f5ecdd86bdf299"
+                                          key="cc41c516e62a4ca593f5ecdd86bdf299"
                                           owner={
                                             Object {
                                               "__typename": "PublicUserDTO",
@@ -7576,7 +7587,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                             />
                                                           }
                                                           className="makeStyles-header-4"
-                                                          subheader="a month ago"
+                                                          subheader="2nd Jul 19"
                                                           title="Coogan"
                                                         >
                                                           <ForwardRef(CardHeader)
@@ -7596,7 +7607,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 "title": "MuiCardHeader-title",
                                                               }
                                                             }
-                                                            subheader="a month ago"
+                                                            subheader="2nd Jul 19"
                                                             title="Coogan"
                                                           >
                                                             <div
@@ -8268,7 +8279,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                     <span
                                                                       className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                     >
-                                                                      a month ago
+                                                                      2nd Jul 19
                                                                     </span>
                                                                   </ForwardRef(Typography)>
                                                                 </WithStyles(ForwardRef(Typography))>
@@ -9051,9 +9062,15 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           collectionCount="0"
                                           date="2019-06-25T10:41:54.259Z"
                                           description="This two part tutorial walks you through from start to finish the process of making NFTs and making them available on OpenSea, Rarebits and the World Wide Web. It uses Netlify and Lambda functions to make sure your metadata is highly available."
+                                          href={
+                                            Object {
+                                              "as": "flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c",
+                                              "href": "/collection?collection_id=5d11f9f8a6afcc0001f621de",
+                                            }
+                                          }
                                           id="5d11f9f8a6afcc0001f621de"
                                           imageURL="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
-                                          linkComponent={[Function]}
+                                          key="5d11f9f8a6afcc0001f621de"
                                           name="Flexible, Upgradeable & Highly Available NFTs"
                                           resourceType="CollectionDTO"
                                           userAvatar="https://api.beta.kauri.io:443/ipfs/QmQar5iK3jKuKuw7tes9DGayTPLHfpxa2kQAQg3Ht7TNbQ"
@@ -9153,7 +9170,6 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           description="This two part tutorial walks you through from start to finish the process of making NFTs and making them available on OpenSea, Rarebits and the World Wide Web. It uses Netlify and Lambda functions to make sure your metadata is highly available."
                                                           id="5d11f9f8a6afcc0001f621de"
                                                           imageURL="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
-                                                          linkComponent={[Function]}
                                                           name="Flexible, Upgradeable & Highly Available NFTs"
                                                           resourceType="CollectionDTO"
                                                           userAvatar="https://api.beta.kauri.io:443/ipfs/QmQar5iK3jKuKuw7tes9DGayTPLHfpxa2kQAQg3Ht7TNbQ"
@@ -9300,7 +9316,6 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                   description="This two part tutorial walks you through from start to finish the process of making NFTs and making them available on OpenSea, Rarebits and the World Wide Web. It uses Netlify and Lambda functions to make sure your metadata is highly available."
                                                                   id="5d11f9f8a6afcc0001f621de"
                                                                   imageURL="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
-                                                                  linkComponent={[Function]}
                                                                   name="Flexible, Upgradeable & Highly Available NFTs"
                                                                   resourceType="CollectionDTO"
                                                                   userAvatar="https://api.beta.kauri.io:443/ipfs/QmQar5iK3jKuKuw7tes9DGayTPLHfpxa2kQAQg3Ht7TNbQ"
@@ -9909,187 +9924,189 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                         <RenderFooter
                                                           articleCount="2"
                                                           collectionCount="0"
-                                                          id="5d11f9f8a6afcc0001f621de"
+                                                          href={
+                                                            Object {
+                                                              "as": "flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c",
+                                                              "href": "/collection?collection_id=5d11f9f8a6afcc0001f621de",
+                                                            }
+                                                          }
                                                           imageURL="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
-                                                          linkComponent={[Function]}
-                                                          title="Flexible, Upgradeable & Highly Available NFTs"
                                                         >
                                                           <Link
-                                                            href="/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
+                                                            as="flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
+                                                            href="/collection?collection_id=5d11f9f8a6afcc0001f621de"
                                                             prefetch={true}
-                                                            toSlug={false}
-                                                            useAnchorTag={true}
                                                           >
-                                                            <CollectionCard__Footer
-                                                              imageURL="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
+                                                            <a
+                                                              href="flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
                                                               onClick={[Function]}
                                                               onMouseEnter={[Function]}
                                                             >
-                                                              <StyledComponent
-                                                                forwardedComponent={
-                                                                  Object {
-                                                                    "$$typeof": Symbol(react.forward_ref),
-                                                                    "attrs": Array [],
-                                                                    "componentStyle": ComponentStyle {
-                                                                      "componentId": "CollectionCard__Footer-sc-2oluuz-5",
-                                                                      "isStatic": false,
-                                                                      "lastClassName": "iXJAmi",
-                                                                      "rules": Array [
-                                                                        "display:flex;flex-direction:row;justify-content:center;align-items:center;>:not(:last-child){margin-right:",
-                                                                        [Function],
-                                                                        "px;}",
-                                                                      ],
-                                                                    },
-                                                                    "displayName": "CollectionCard__Footer",
-                                                                    "foldedComponentIds": Array [],
-                                                                    "render": [Function],
-                                                                    "styledComponentId": "CollectionCard__Footer-sc-2oluuz-5",
-                                                                    "target": "div",
-                                                                    "toString": [Function],
-                                                                    "warnTooManyClasses": [Function],
-                                                                    "withComponent": [Function],
-                                                                  }
-                                                                }
-                                                                forwardedRef={[Function]}
+                                                              <CollectionCard__Footer
                                                                 imageURL="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
-                                                                onClick={[Function]}
-                                                                onMouseEnter={[Function]}
                                                               >
-                                                                <div
-                                                                  className="CollectionCard__Footer-sc-2oluuz-5 iXJAmi"
-                                                                  onClick={[Function]}
-                                                                  onMouseEnter={[Function]}
+                                                                <StyledComponent
+                                                                  forwardedComponent={
+                                                                    Object {
+                                                                      "$$typeof": Symbol(react.forward_ref),
+                                                                      "attrs": Array [],
+                                                                      "componentStyle": ComponentStyle {
+                                                                        "componentId": "CollectionCard__Footer-sc-2oluuz-5",
+                                                                        "isStatic": false,
+                                                                        "lastClassName": "iXJAmi",
+                                                                        "rules": Array [
+                                                                          "display:flex;flex-direction:row;justify-content:center;align-items:center;>:not(:last-child){margin-right:",
+                                                                          [Function],
+                                                                          "px;}",
+                                                                        ],
+                                                                      },
+                                                                      "displayName": "CollectionCard__Footer",
+                                                                      "foldedComponentIds": Array [],
+                                                                      "render": [Function],
+                                                                      "styledComponentId": "CollectionCard__Footer-sc-2oluuz-5",
+                                                                      "target": "div",
+                                                                      "toString": [Function],
+                                                                      "warnTooManyClasses": [Function],
+                                                                      "withComponent": [Function],
+                                                                    }
+                                                                  }
+                                                                  forwardedRef={null}
+                                                                  imageURL="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
                                                                 >
-                                                                  <CollectionCard__Count
-                                                                    imageURL="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
+                                                                  <div
+                                                                    className="CollectionCard__Footer-sc-2oluuz-5 iXJAmi"
                                                                   >
-                                                                    <StyledComponent
-                                                                      forwardedComponent={
-                                                                        Object {
-                                                                          "$$typeof": Symbol(react.forward_ref),
-                                                                          "attrs": Array [],
-                                                                          "componentStyle": ComponentStyle {
-                                                                            "componentId": "CollectionCard__Count-sc-2oluuz-6",
-                                                                            "isStatic": false,
-                                                                            "lastClassName": "cpkSce",
-                                                                            "rules": Array [
-                                                                              "display:flex;flex-direction:column;justify-content:center;align-items:center;padding:",
-                                                                              [Function],
-                                                                              ";padding-top:",
-                                                                              [Function],
-                                                                              ";> *{text-transform:uppercase;}",
-                                                                            ],
-                                                                          },
-                                                                          "displayName": "CollectionCard__Count",
-                                                                          "foldedComponentIds": Array [],
-                                                                          "render": [Function],
-                                                                          "styledComponentId": "CollectionCard__Count-sc-2oluuz-6",
-                                                                          "target": "div",
-                                                                          "toString": [Function],
-                                                                          "warnTooManyClasses": [Function],
-                                                                          "withComponent": [Function],
-                                                                        }
-                                                                      }
-                                                                      forwardedRef={null}
+                                                                    <CollectionCard__Count
                                                                       imageURL="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
                                                                     >
-                                                                      <div
-                                                                        className="CollectionCard__Count-sc-2oluuz-6 gycHll"
+                                                                      <StyledComponent
+                                                                        forwardedComponent={
+                                                                          Object {
+                                                                            "$$typeof": Symbol(react.forward_ref),
+                                                                            "attrs": Array [],
+                                                                            "componentStyle": ComponentStyle {
+                                                                              "componentId": "CollectionCard__Count-sc-2oluuz-6",
+                                                                              "isStatic": false,
+                                                                              "lastClassName": "cpkSce",
+                                                                              "rules": Array [
+                                                                                "display:flex;flex-direction:column;justify-content:center;align-items:center;padding:",
+                                                                                [Function],
+                                                                                ";padding-top:",
+                                                                                [Function],
+                                                                                ";> *{text-transform:uppercase;}",
+                                                                              ],
+                                                                            },
+                                                                            "displayName": "CollectionCard__Count",
+                                                                            "foldedComponentIds": Array [],
+                                                                            "render": [Function],
+                                                                            "styledComponentId": "CollectionCard__Count-sc-2oluuz-6",
+                                                                            "target": "div",
+                                                                            "toString": [Function],
+                                                                            "warnTooManyClasses": [Function],
+                                                                            "withComponent": [Function],
+                                                                          }
+                                                                        }
+                                                                        forwardedRef={null}
+                                                                        imageURL="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
                                                                       >
-                                                                        <Typography__styledComponent>
-                                                                          <StyledComponent
-                                                                            forwardedComponent={
-                                                                              Object {
-                                                                                "$$typeof": Symbol(react.forward_ref),
-                                                                                "attrs": Array [],
-                                                                                "componentStyle": ComponentStyle {
-                                                                                  "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                                                  "isStatic": false,
-                                                                                  "lastClassName": "dIJEmX",
-                                                                                  "rules": Array [
-                                                                                    "color:",
-                                                                                    [Function],
-                                                                                    ";margin:0px;font-weight:",
-                                                                                    "bold",
-                                                                                    ";",
-                                                                                    ";font-size:",
-                                                                                    "14",
-                                                                                    "px;text-transform:",
-                                                                                    [Function],
-                                                                                    ";text-align:",
-                                                                                    [Function],
-                                                                                    ";:hover{color:",
-                                                                                    [Function],
-                                                                                    ";cursor:",
-                                                                                    [Function],
-                                                                                    ";}",
-                                                                                  ],
-                                                                                },
-                                                                                "displayName": "Typography__styledComponent",
-                                                                                "foldedComponentIds": Array [],
-                                                                                "render": [Function],
-                                                                                "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                                                "target": "span",
-                                                                                "toString": [Function],
-                                                                                "warnTooManyClasses": [Function],
-                                                                                "withComponent": [Function],
+                                                                        <div
+                                                                          className="CollectionCard__Count-sc-2oluuz-6 gycHll"
+                                                                        >
+                                                                          <Typography__styledComponent>
+                                                                            <StyledComponent
+                                                                              forwardedComponent={
+                                                                                Object {
+                                                                                  "$$typeof": Symbol(react.forward_ref),
+                                                                                  "attrs": Array [],
+                                                                                  "componentStyle": ComponentStyle {
+                                                                                    "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                                    "isStatic": false,
+                                                                                    "lastClassName": "dIJEmX",
+                                                                                    "rules": Array [
+                                                                                      "color:",
+                                                                                      [Function],
+                                                                                      ";margin:0px;font-weight:",
+                                                                                      "bold",
+                                                                                      ";",
+                                                                                      ";font-size:",
+                                                                                      "14",
+                                                                                      "px;text-transform:",
+                                                                                      [Function],
+                                                                                      ";text-align:",
+                                                                                      [Function],
+                                                                                      ";:hover{color:",
+                                                                                      [Function],
+                                                                                      ";cursor:",
+                                                                                      [Function],
+                                                                                      ";}",
+                                                                                    ],
+                                                                                  },
+                                                                                  "displayName": "Typography__styledComponent",
+                                                                                  "foldedComponentIds": Array [],
+                                                                                  "render": [Function],
+                                                                                  "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                                  "target": "span",
+                                                                                  "toString": [Function],
+                                                                                  "warnTooManyClasses": [Function],
+                                                                                  "withComponent": [Function],
+                                                                                }
                                                                               }
-                                                                            }
-                                                                            forwardedRef={null}
-                                                                          >
-                                                                            <span
-                                                                              className="Typography__styledComponent-sc-36xkf6-5 dIJEmX"
+                                                                              forwardedRef={null}
                                                                             >
-                                                                              2
-                                                                            </span>
-                                                                          </StyledComponent>
-                                                                        </Typography__styledComponent>
-                                                                        <Typography__component>
-                                                                          <StyledComponent
-                                                                            forwardedComponent={
-                                                                              Object {
-                                                                                "$$typeof": Symbol(react.forward_ref),
-                                                                                "attrs": Array [],
-                                                                                "componentStyle": ComponentStyle {
-                                                                                  "componentId": "Typography__component-sc-36xkf6-0",
-                                                                                  "isStatic": false,
-                                                                                  "lastClassName": "kALGmD",
-                                                                                  "rules": Array [
-                                                                                    "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
-                                                                                    [Function],
-                                                                                    ";text-align:",
-                                                                                    [Function],
-                                                                                    ";",
-                                                                                    [Function],
-                                                                                    " ",
-                                                                                    [Function],
-                                                                                  ],
-                                                                                },
-                                                                                "displayName": "Typography__component",
-                                                                                "foldedComponentIds": Array [],
-                                                                                "render": [Function],
-                                                                                "styledComponentId": "Typography__component-sc-36xkf6-0",
-                                                                                "target": "span",
-                                                                                "toString": [Function],
-                                                                                "warnTooManyClasses": [Function],
-                                                                                "withComponent": [Function],
+                                                                              <span
+                                                                                className="Typography__styledComponent-sc-36xkf6-5 dIJEmX"
+                                                                              >
+                                                                                2
+                                                                              </span>
+                                                                            </StyledComponent>
+                                                                          </Typography__styledComponent>
+                                                                          <Typography__component>
+                                                                            <StyledComponent
+                                                                              forwardedComponent={
+                                                                                Object {
+                                                                                  "$$typeof": Symbol(react.forward_ref),
+                                                                                  "attrs": Array [],
+                                                                                  "componentStyle": ComponentStyle {
+                                                                                    "componentId": "Typography__component-sc-36xkf6-0",
+                                                                                    "isStatic": false,
+                                                                                    "lastClassName": "kALGmD",
+                                                                                    "rules": Array [
+                                                                                      "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                                                                                      [Function],
+                                                                                      ";text-align:",
+                                                                                      [Function],
+                                                                                      ";",
+                                                                                      [Function],
+                                                                                      " ",
+                                                                                      [Function],
+                                                                                    ],
+                                                                                  },
+                                                                                  "displayName": "Typography__component",
+                                                                                  "foldedComponentIds": Array [],
+                                                                                  "render": [Function],
+                                                                                  "styledComponentId": "Typography__component-sc-36xkf6-0",
+                                                                                  "target": "span",
+                                                                                  "toString": [Function],
+                                                                                  "warnTooManyClasses": [Function],
+                                                                                  "withComponent": [Function],
+                                                                                }
                                                                               }
-                                                                            }
-                                                                            forwardedRef={null}
-                                                                          >
-                                                                            <span
-                                                                              className="Typography__component-sc-36xkf6-0 kALGmD"
+                                                                              forwardedRef={null}
                                                                             >
-                                                                              Articles
-                                                                            </span>
-                                                                          </StyledComponent>
-                                                                        </Typography__component>
-                                                                      </div>
-                                                                    </StyledComponent>
-                                                                  </CollectionCard__Count>
-                                                                </div>
-                                                              </StyledComponent>
-                                                            </CollectionCard__Footer>
+                                                                              <span
+                                                                                className="Typography__component-sc-36xkf6-0 kALGmD"
+                                                                              >
+                                                                                Articles
+                                                                              </span>
+                                                                            </StyledComponent>
+                                                                          </Typography__component>
+                                                                        </div>
+                                                                      </StyledComponent>
+                                                                    </CollectionCard__Count>
+                                                                  </div>
+                                                                </StyledComponent>
+                                                              </CollectionCard__Footer>
+                                                            </a>
                                                           </Link>
                                                         </RenderFooter>
                                                       </div>
@@ -11144,6 +11161,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           <Link
                                             as="kendall/52d5520c145553241ffe4609008695519b3ad705/p"
                                             href="/public-profile?user_id=52d5520c145553241ffe4609008695519b3ad705"
+                                            key="0"
                                             prefetch={true}
                                           >
                                             <a
@@ -11153,7 +11171,6 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             >
                                               <UserAvatarComponent
                                                 avatar="https://api.beta.kauri.io:443/ipfs/QmV2qgMi7rJ5k7kZqNbXLkePKEBN3S1UT8Qg3YSGAgVtkG"
-                                                key="52d5520c145553241ffe4609008695519b3ad705"
                                                 userId="52d5520c145553241ffe4609008695519b3ad705"
                                                 username="kendall"
                                               >
@@ -11395,6 +11412,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           <Link
                                             as="wil/60e0fca78e5bf845d7af875288b1bfb010d61ac4/p"
                                             href="/public-profile?user_id=60e0fca78e5bf845d7af875288b1bfb010d61ac4"
+                                            key="1"
                                             prefetch={true}
                                           >
                                             <a
@@ -11404,7 +11422,6 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             >
                                               <UserAvatarComponent
                                                 avatar="https://api.beta.kauri.io:443/ipfs/QmQQCj8493FQLUmWGCQMWzny6euAQUwhSBToFZjPtAExbH"
-                                                key="60e0fca78e5bf845d7af875288b1bfb010d61ac4"
                                                 userId="60e0fca78e5bf845d7af875288b1bfb010d61ac4"
                                                 username="wil"
                                               >
@@ -11646,6 +11663,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           <Link
                                             as="jmrocco/dd23401dcab425f0a435eb7a86c77c5e8513bead/p"
                                             href="/public-profile?user_id=dd23401dcab425f0a435eb7a86c77c5e8513bead"
+                                            key="2"
                                             prefetch={true}
                                           >
                                             <a
@@ -11655,7 +11673,6 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             >
                                               <UserAvatarComponent
                                                 avatar="https://api.beta.kauri.io:443/ipfs/QmX55Vs7WZUkG94VEFaCYe1naJf2A68vdkue8FNUXMSx5g"
-                                                key="dd23401dcab425f0a435eb7a86c77c5e8513bead"
                                                 userId="dd23401dcab425f0a435eb7a86c77c5e8513bead"
                                                 username="jmrocco"
                                               >
@@ -11897,6 +11914,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           <Link
                                             as="ericjuta/bfecec47dd8bf5f6264a9830a9d26ef387c38a67/p"
                                             href="/public-profile?user_id=bfecec47dd8bf5f6264a9830a9d26ef387c38a67"
+                                            key="3"
                                             prefetch={true}
                                           >
                                             <a
@@ -11906,7 +11924,6 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             >
                                               <UserAvatarComponent
                                                 avatar="https://api.kauri.io:443/ipfs/QmNQusgLsoAS8DwjMEKyJ4VC9XosBwBrhzca4Lux5ojFVz"
-                                                key="bfecec47dd8bf5f6264a9830a9d26ef387c38a67"
                                                 userId="bfecec47dd8bf5f6264a9830a9d26ef387c38a67"
                                                 username="ericjuta"
                                               >
@@ -12148,6 +12165,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           <Link
                                             as="gregjeanmart/f0f15cedc719b5a55470877b0710d5c7816916b1/p"
                                             href="/public-profile?user_id=f0f15cedc719b5a55470877b0710d5c7816916b1"
+                                            key="4"
                                             prefetch={true}
                                           >
                                             <a
@@ -12157,7 +12175,6 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             >
                                               <UserAvatarComponent
                                                 avatar="https://api.dev2.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
-                                                key="f0f15cedc719b5a55470877b0710d5c7816916b1"
                                                 userId="f0f15cedc719b5a55470877b0710d5c7816916b1"
                                                 username="gregjeanmart"
                                               >
@@ -13042,6 +13059,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                         }
                                       }
                                       id="980d76e9595d401c8fac6af3045033d4"
+                                      key="980d76e9595d401c8fac6af3045033d4"
                                       owner={
                                         Object {
                                           "__typename": "PublicUserDTO",
@@ -13160,7 +13178,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                         />
                                                       }
                                                       className="makeStyles-header-4"
-                                                      subheader="6 days ago"
+                                                      subheader="25th Jul 19"
                                                       title="Julien Béranger"
                                                     >
                                                       <ForwardRef(CardHeader)
@@ -13180,7 +13198,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                             "title": "MuiCardHeader-title",
                                                           }
                                                         }
-                                                        subheader="6 days ago"
+                                                        subheader="25th Jul 19"
                                                         title="Julien Béranger"
                                                       >
                                                         <div
@@ -13852,7 +13870,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 <span
                                                                   className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                 >
-                                                                  6 days ago
+                                                                  25th Jul 19
                                                                 </span>
                                                               </ForwardRef(Typography)>
                                                             </WithStyles(ForwardRef(Typography))>
@@ -14557,6 +14575,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                         }
                                       }
                                       id="6012ca70153c4bb2af8b7849bcb6909f"
+                                      key="6012ca70153c4bb2af8b7849bcb6909f"
                                       owner={
                                         Object {
                                           "__typename": "PublicUserDTO",
@@ -14674,7 +14693,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                         </ForwardRef(WithStyles)>
                                                       }
                                                       className="makeStyles-header-4"
-                                                      subheader="7 days ago"
+                                                      subheader="24th Jul 19"
                                                       title="Fred Blauer"
                                                     >
                                                       <ForwardRef(CardHeader)
@@ -14697,7 +14716,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                             "title": "MuiCardHeader-title",
                                                           }
                                                         }
-                                                        subheader="7 days ago"
+                                                        subheader="24th Jul 19"
                                                         title="Fred Blauer"
                                                       >
                                                         <div
@@ -15369,7 +15388,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 <span
                                                                   className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                 >
-                                                                  7 days ago
+                                                                  24th Jul 19
                                                                 </span>
                                                               </ForwardRef(Typography)>
                                                             </WithStyles(ForwardRef(Typography))>
@@ -16101,6 +16120,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                         }
                                       }
                                       id="1ab97af325d645128b6bf46760cbb873"
+                                      key="1ab97af325d645128b6bf46760cbb873"
                                       owner={
                                         Object {
                                           "__typename": "PublicUserDTO",
@@ -16218,7 +16238,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                         </ForwardRef(WithStyles)>
                                                       }
                                                       className="makeStyles-header-4"
-                                                      subheader="7 days ago"
+                                                      subheader="24th Jul 19"
                                                       title="Fred Blauer"
                                                     >
                                                       <ForwardRef(CardHeader)
@@ -16241,7 +16261,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                             "title": "MuiCardHeader-title",
                                                           }
                                                         }
-                                                        subheader="7 days ago"
+                                                        subheader="24th Jul 19"
                                                         title="Fred Blauer"
                                                       >
                                                         <div
@@ -16913,7 +16933,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 <span
                                                                   className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                 >
-                                                                  7 days ago
+                                                                  24th Jul 19
                                                                 </span>
                                                               </ForwardRef(Typography)>
                                                             </WithStyles(ForwardRef(Typography))>
@@ -17621,9 +17641,15 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       collectionCount="0"
                                       date="2019-07-24T17:04:41.148Z"
                                       description="Defi collection"
+                                      href={
+                                        Object {
+                                          "as": "defi-collection/5d388fa9dba75a00016a4a75/c",
+                                          "href": "/collection?collection_id=5d388fa9dba75a00016a4a75",
+                                        }
+                                      }
                                       id="5d388fa9dba75a00016a4a75"
                                       imageURL={null}
-                                      linkComponent={[Function]}
+                                      key="5d388fa9dba75a00016a4a75"
                                       name="Defi collection"
                                       resourceType="CollectionDTO"
                                       userAvatar={null}
@@ -17723,7 +17749,6 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       description="Defi collection"
                                                       id="5d388fa9dba75a00016a4a75"
                                                       imageURL={null}
-                                                      linkComponent={[Function]}
                                                       name="Defi collection"
                                                       resourceType="CollectionDTO"
                                                       userAvatar={null}
@@ -17766,7 +17791,6 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                               description="Defi collection"
                                                               id="5d388fa9dba75a00016a4a75"
                                                               imageURL={null}
-                                                              linkComponent={[Function]}
                                                               name="Defi collection"
                                                               resourceType="CollectionDTO"
                                                               userAvatar={null}
@@ -18293,7 +18317,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                         <span
                                                                           className="Typography__component-sc-36xkf6-0 kALGmD"
                                                                         >
-                                                                          Posted 7 days ago
+                                                                          Posted 8 days ago
                                                                         </span>
                                                                       </StyledComponent>
                                                                     </Typography__component>
@@ -18345,187 +18369,189 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     <RenderFooter
                                                       articleCount="1"
                                                       collectionCount="0"
-                                                      id="5d388fa9dba75a00016a4a75"
+                                                      href={
+                                                        Object {
+                                                          "as": "defi-collection/5d388fa9dba75a00016a4a75/c",
+                                                          "href": "/collection?collection_id=5d388fa9dba75a00016a4a75",
+                                                        }
+                                                      }
                                                       imageURL={null}
-                                                      linkComponent={[Function]}
-                                                      title="Defi collection"
                                                     >
                                                       <Link
-                                                        href="/defi-collection/5d388fa9dba75a00016a4a75/c"
+                                                        as="defi-collection/5d388fa9dba75a00016a4a75/c"
+                                                        href="/collection?collection_id=5d388fa9dba75a00016a4a75"
                                                         prefetch={true}
-                                                        toSlug={false}
-                                                        useAnchorTag={true}
                                                       >
-                                                        <CollectionCard__Footer
-                                                          imageURL={null}
+                                                        <a
+                                                          href="defi-collection/5d388fa9dba75a00016a4a75/c"
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
                                                         >
-                                                          <StyledComponent
-                                                            forwardedComponent={
-                                                              Object {
-                                                                "$$typeof": Symbol(react.forward_ref),
-                                                                "attrs": Array [],
-                                                                "componentStyle": ComponentStyle {
-                                                                  "componentId": "CollectionCard__Footer-sc-2oluuz-5",
-                                                                  "isStatic": false,
-                                                                  "lastClassName": "iXJAmi",
-                                                                  "rules": Array [
-                                                                    "display:flex;flex-direction:row;justify-content:center;align-items:center;>:not(:last-child){margin-right:",
-                                                                    [Function],
-                                                                    "px;}",
-                                                                  ],
-                                                                },
-                                                                "displayName": "CollectionCard__Footer",
-                                                                "foldedComponentIds": Array [],
-                                                                "render": [Function],
-                                                                "styledComponentId": "CollectionCard__Footer-sc-2oluuz-5",
-                                                                "target": "div",
-                                                                "toString": [Function],
-                                                                "warnTooManyClasses": [Function],
-                                                                "withComponent": [Function],
-                                                              }
-                                                            }
-                                                            forwardedRef={[Function]}
+                                                          <CollectionCard__Footer
                                                             imageURL={null}
-                                                            onClick={[Function]}
-                                                            onMouseEnter={[Function]}
                                                           >
-                                                            <div
-                                                              className="CollectionCard__Footer-sc-2oluuz-5 iXJAmi"
-                                                              onClick={[Function]}
-                                                              onMouseEnter={[Function]}
+                                                            <StyledComponent
+                                                              forwardedComponent={
+                                                                Object {
+                                                                  "$$typeof": Symbol(react.forward_ref),
+                                                                  "attrs": Array [],
+                                                                  "componentStyle": ComponentStyle {
+                                                                    "componentId": "CollectionCard__Footer-sc-2oluuz-5",
+                                                                    "isStatic": false,
+                                                                    "lastClassName": "iXJAmi",
+                                                                    "rules": Array [
+                                                                      "display:flex;flex-direction:row;justify-content:center;align-items:center;>:not(:last-child){margin-right:",
+                                                                      [Function],
+                                                                      "px;}",
+                                                                    ],
+                                                                  },
+                                                                  "displayName": "CollectionCard__Footer",
+                                                                  "foldedComponentIds": Array [],
+                                                                  "render": [Function],
+                                                                  "styledComponentId": "CollectionCard__Footer-sc-2oluuz-5",
+                                                                  "target": "div",
+                                                                  "toString": [Function],
+                                                                  "warnTooManyClasses": [Function],
+                                                                  "withComponent": [Function],
+                                                                }
+                                                              }
+                                                              forwardedRef={null}
+                                                              imageURL={null}
                                                             >
-                                                              <CollectionCard__Count
-                                                                imageURL={null}
+                                                              <div
+                                                                className="CollectionCard__Footer-sc-2oluuz-5 iXJAmi"
                                                               >
-                                                                <StyledComponent
-                                                                  forwardedComponent={
-                                                                    Object {
-                                                                      "$$typeof": Symbol(react.forward_ref),
-                                                                      "attrs": Array [],
-                                                                      "componentStyle": ComponentStyle {
-                                                                        "componentId": "CollectionCard__Count-sc-2oluuz-6",
-                                                                        "isStatic": false,
-                                                                        "lastClassName": "cpkSce",
-                                                                        "rules": Array [
-                                                                          "display:flex;flex-direction:column;justify-content:center;align-items:center;padding:",
-                                                                          [Function],
-                                                                          ";padding-top:",
-                                                                          [Function],
-                                                                          ";> *{text-transform:uppercase;}",
-                                                                        ],
-                                                                      },
-                                                                      "displayName": "CollectionCard__Count",
-                                                                      "foldedComponentIds": Array [],
-                                                                      "render": [Function],
-                                                                      "styledComponentId": "CollectionCard__Count-sc-2oluuz-6",
-                                                                      "target": "div",
-                                                                      "toString": [Function],
-                                                                      "warnTooManyClasses": [Function],
-                                                                      "withComponent": [Function],
-                                                                    }
-                                                                  }
-                                                                  forwardedRef={null}
+                                                                <CollectionCard__Count
                                                                   imageURL={null}
                                                                 >
-                                                                  <div
-                                                                    className="CollectionCard__Count-sc-2oluuz-6 cpkSce"
+                                                                  <StyledComponent
+                                                                    forwardedComponent={
+                                                                      Object {
+                                                                        "$$typeof": Symbol(react.forward_ref),
+                                                                        "attrs": Array [],
+                                                                        "componentStyle": ComponentStyle {
+                                                                          "componentId": "CollectionCard__Count-sc-2oluuz-6",
+                                                                          "isStatic": false,
+                                                                          "lastClassName": "cpkSce",
+                                                                          "rules": Array [
+                                                                            "display:flex;flex-direction:column;justify-content:center;align-items:center;padding:",
+                                                                            [Function],
+                                                                            ";padding-top:",
+                                                                            [Function],
+                                                                            ";> *{text-transform:uppercase;}",
+                                                                          ],
+                                                                        },
+                                                                        "displayName": "CollectionCard__Count",
+                                                                        "foldedComponentIds": Array [],
+                                                                        "render": [Function],
+                                                                        "styledComponentId": "CollectionCard__Count-sc-2oluuz-6",
+                                                                        "target": "div",
+                                                                        "toString": [Function],
+                                                                        "warnTooManyClasses": [Function],
+                                                                        "withComponent": [Function],
+                                                                      }
+                                                                    }
+                                                                    forwardedRef={null}
+                                                                    imageURL={null}
                                                                   >
-                                                                    <Typography__styledComponent>
-                                                                      <StyledComponent
-                                                                        forwardedComponent={
-                                                                          Object {
-                                                                            "$$typeof": Symbol(react.forward_ref),
-                                                                            "attrs": Array [],
-                                                                            "componentStyle": ComponentStyle {
-                                                                              "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                                              "isStatic": false,
-                                                                              "lastClassName": "dIJEmX",
-                                                                              "rules": Array [
-                                                                                "color:",
-                                                                                [Function],
-                                                                                ";margin:0px;font-weight:",
-                                                                                "bold",
-                                                                                ";",
-                                                                                ";font-size:",
-                                                                                "14",
-                                                                                "px;text-transform:",
-                                                                                [Function],
-                                                                                ";text-align:",
-                                                                                [Function],
-                                                                                ";:hover{color:",
-                                                                                [Function],
-                                                                                ";cursor:",
-                                                                                [Function],
-                                                                                ";}",
-                                                                              ],
-                                                                            },
-                                                                            "displayName": "Typography__styledComponent",
-                                                                            "foldedComponentIds": Array [],
-                                                                            "render": [Function],
-                                                                            "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                                            "target": "span",
-                                                                            "toString": [Function],
-                                                                            "warnTooManyClasses": [Function],
-                                                                            "withComponent": [Function],
+                                                                    <div
+                                                                      className="CollectionCard__Count-sc-2oluuz-6 cpkSce"
+                                                                    >
+                                                                      <Typography__styledComponent>
+                                                                        <StyledComponent
+                                                                          forwardedComponent={
+                                                                            Object {
+                                                                              "$$typeof": Symbol(react.forward_ref),
+                                                                              "attrs": Array [],
+                                                                              "componentStyle": ComponentStyle {
+                                                                                "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                                "isStatic": false,
+                                                                                "lastClassName": "dIJEmX",
+                                                                                "rules": Array [
+                                                                                  "color:",
+                                                                                  [Function],
+                                                                                  ";margin:0px;font-weight:",
+                                                                                  "bold",
+                                                                                  ";",
+                                                                                  ";font-size:",
+                                                                                  "14",
+                                                                                  "px;text-transform:",
+                                                                                  [Function],
+                                                                                  ";text-align:",
+                                                                                  [Function],
+                                                                                  ";:hover{color:",
+                                                                                  [Function],
+                                                                                  ";cursor:",
+                                                                                  [Function],
+                                                                                  ";}",
+                                                                                ],
+                                                                              },
+                                                                              "displayName": "Typography__styledComponent",
+                                                                              "foldedComponentIds": Array [],
+                                                                              "render": [Function],
+                                                                              "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                              "target": "span",
+                                                                              "toString": [Function],
+                                                                              "warnTooManyClasses": [Function],
+                                                                              "withComponent": [Function],
+                                                                            }
                                                                           }
-                                                                        }
-                                                                        forwardedRef={null}
-                                                                      >
-                                                                        <span
-                                                                          className="Typography__styledComponent-sc-36xkf6-5 dIJEmX"
+                                                                          forwardedRef={null}
                                                                         >
-                                                                          1
-                                                                        </span>
-                                                                      </StyledComponent>
-                                                                    </Typography__styledComponent>
-                                                                    <Typography__component>
-                                                                      <StyledComponent
-                                                                        forwardedComponent={
-                                                                          Object {
-                                                                            "$$typeof": Symbol(react.forward_ref),
-                                                                            "attrs": Array [],
-                                                                            "componentStyle": ComponentStyle {
-                                                                              "componentId": "Typography__component-sc-36xkf6-0",
-                                                                              "isStatic": false,
-                                                                              "lastClassName": "kALGmD",
-                                                                              "rules": Array [
-                                                                                "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
-                                                                                [Function],
-                                                                                ";text-align:",
-                                                                                [Function],
-                                                                                ";",
-                                                                                [Function],
-                                                                                " ",
-                                                                                [Function],
-                                                                              ],
-                                                                            },
-                                                                            "displayName": "Typography__component",
-                                                                            "foldedComponentIds": Array [],
-                                                                            "render": [Function],
-                                                                            "styledComponentId": "Typography__component-sc-36xkf6-0",
-                                                                            "target": "span",
-                                                                            "toString": [Function],
-                                                                            "warnTooManyClasses": [Function],
-                                                                            "withComponent": [Function],
+                                                                          <span
+                                                                            className="Typography__styledComponent-sc-36xkf6-5 dIJEmX"
+                                                                          >
+                                                                            1
+                                                                          </span>
+                                                                        </StyledComponent>
+                                                                      </Typography__styledComponent>
+                                                                      <Typography__component>
+                                                                        <StyledComponent
+                                                                          forwardedComponent={
+                                                                            Object {
+                                                                              "$$typeof": Symbol(react.forward_ref),
+                                                                              "attrs": Array [],
+                                                                              "componentStyle": ComponentStyle {
+                                                                                "componentId": "Typography__component-sc-36xkf6-0",
+                                                                                "isStatic": false,
+                                                                                "lastClassName": "kALGmD",
+                                                                                "rules": Array [
+                                                                                  "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                                                                                  [Function],
+                                                                                  ";text-align:",
+                                                                                  [Function],
+                                                                                  ";",
+                                                                                  [Function],
+                                                                                  " ",
+                                                                                  [Function],
+                                                                                ],
+                                                                              },
+                                                                              "displayName": "Typography__component",
+                                                                              "foldedComponentIds": Array [],
+                                                                              "render": [Function],
+                                                                              "styledComponentId": "Typography__component-sc-36xkf6-0",
+                                                                              "target": "span",
+                                                                              "toString": [Function],
+                                                                              "warnTooManyClasses": [Function],
+                                                                              "withComponent": [Function],
+                                                                            }
                                                                           }
-                                                                        }
-                                                                        forwardedRef={null}
-                                                                      >
-                                                                        <span
-                                                                          className="Typography__component-sc-36xkf6-0 kALGmD"
+                                                                          forwardedRef={null}
                                                                         >
-                                                                          Article
-                                                                        </span>
-                                                                      </StyledComponent>
-                                                                    </Typography__component>
-                                                                  </div>
-                                                                </StyledComponent>
-                                                              </CollectionCard__Count>
-                                                            </div>
-                                                          </StyledComponent>
-                                                        </CollectionCard__Footer>
+                                                                          <span
+                                                                            className="Typography__component-sc-36xkf6-0 kALGmD"
+                                                                          >
+                                                                            Article
+                                                                          </span>
+                                                                        </StyledComponent>
+                                                                      </Typography__component>
+                                                                    </div>
+                                                                  </StyledComponent>
+                                                                </CollectionCard__Count>
+                                                              </div>
+                                                            </StyledComponent>
+                                                          </CollectionCard__Footer>
+                                                        </a>
                                                       </Link>
                                                     </RenderFooter>
                                                   </div>
@@ -18566,6 +18592,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                         }
                                       }
                                       id="056f5d1d53cb4d4990f43b99e8544de4"
+                                      key="056f5d1d53cb4d4990f43b99e8544de4"
                                       owner={
                                         Object {
                                           "__typename": "PublicUserDTO",
@@ -18684,7 +18711,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                         </ForwardRef(WithStyles)>
                                                       }
                                                       className="makeStyles-header-4"
-                                                      subheader="8 days ago"
+                                                      subheader="24th Jul 19"
                                                       title="Fred Blauer"
                                                     >
                                                       <ForwardRef(CardHeader)
@@ -18707,7 +18734,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                             "title": "MuiCardHeader-title",
                                                           }
                                                         }
-                                                        subheader="8 days ago"
+                                                        subheader="24th Jul 19"
                                                         title="Fred Blauer"
                                                       >
                                                         <div
@@ -19379,7 +19406,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 <span
                                                                   className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                 >
-                                                                  8 days ago
+                                                                  24th Jul 19
                                                                 </span>
                                                               </ForwardRef(Typography)>
                                                             </WithStyles(ForwardRef(Typography))>
@@ -20087,9 +20114,15 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       collectionCount="0"
                                       date="2019-07-23T08:27:51.854Z"
                                       description="kauri communities"
+                                      href={
+                                        Object {
+                                          "as": "read-items/5d36c507e95943000108e6a0/c",
+                                          "href": "/collection?collection_id=5d36c507e95943000108e6a0",
+                                        }
+                                      }
                                       id="5d36c507e95943000108e6a0"
                                       imageURL={null}
-                                      linkComponent={[Function]}
+                                      key="5d36c507e95943000108e6a0"
                                       name="Read items"
                                       resourceType="CollectionDTO"
                                       userAvatar={null}
@@ -20189,7 +20222,6 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       description="kauri communities"
                                                       id="5d36c507e95943000108e6a0"
                                                       imageURL={null}
-                                                      linkComponent={[Function]}
                                                       name="Read items"
                                                       resourceType="CollectionDTO"
                                                       userAvatar={null}
@@ -20232,7 +20264,6 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                               description="kauri communities"
                                                               id="5d36c507e95943000108e6a0"
                                                               imageURL={null}
-                                                              linkComponent={[Function]}
                                                               name="Read items"
                                                               resourceType="CollectionDTO"
                                                               userAvatar={null}
@@ -20759,7 +20790,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                         <span
                                                                           className="Typography__component-sc-36xkf6-0 kALGmD"
                                                                         >
-                                                                          Posted 8 days ago
+                                                                          Posted 9 days ago
                                                                         </span>
                                                                       </StyledComponent>
                                                                     </Typography__component>
@@ -20811,187 +20842,189 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     <RenderFooter
                                                       articleCount="1"
                                                       collectionCount="0"
-                                                      id="5d36c507e95943000108e6a0"
+                                                      href={
+                                                        Object {
+                                                          "as": "read-items/5d36c507e95943000108e6a0/c",
+                                                          "href": "/collection?collection_id=5d36c507e95943000108e6a0",
+                                                        }
+                                                      }
                                                       imageURL={null}
-                                                      linkComponent={[Function]}
-                                                      title="Read items"
                                                     >
                                                       <Link
-                                                        href="/read-items/5d36c507e95943000108e6a0/c"
+                                                        as="read-items/5d36c507e95943000108e6a0/c"
+                                                        href="/collection?collection_id=5d36c507e95943000108e6a0"
                                                         prefetch={true}
-                                                        toSlug={false}
-                                                        useAnchorTag={true}
                                                       >
-                                                        <CollectionCard__Footer
-                                                          imageURL={null}
+                                                        <a
+                                                          href="read-items/5d36c507e95943000108e6a0/c"
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
                                                         >
-                                                          <StyledComponent
-                                                            forwardedComponent={
-                                                              Object {
-                                                                "$$typeof": Symbol(react.forward_ref),
-                                                                "attrs": Array [],
-                                                                "componentStyle": ComponentStyle {
-                                                                  "componentId": "CollectionCard__Footer-sc-2oluuz-5",
-                                                                  "isStatic": false,
-                                                                  "lastClassName": "iXJAmi",
-                                                                  "rules": Array [
-                                                                    "display:flex;flex-direction:row;justify-content:center;align-items:center;>:not(:last-child){margin-right:",
-                                                                    [Function],
-                                                                    "px;}",
-                                                                  ],
-                                                                },
-                                                                "displayName": "CollectionCard__Footer",
-                                                                "foldedComponentIds": Array [],
-                                                                "render": [Function],
-                                                                "styledComponentId": "CollectionCard__Footer-sc-2oluuz-5",
-                                                                "target": "div",
-                                                                "toString": [Function],
-                                                                "warnTooManyClasses": [Function],
-                                                                "withComponent": [Function],
-                                                              }
-                                                            }
-                                                            forwardedRef={[Function]}
+                                                          <CollectionCard__Footer
                                                             imageURL={null}
-                                                            onClick={[Function]}
-                                                            onMouseEnter={[Function]}
                                                           >
-                                                            <div
-                                                              className="CollectionCard__Footer-sc-2oluuz-5 iXJAmi"
-                                                              onClick={[Function]}
-                                                              onMouseEnter={[Function]}
+                                                            <StyledComponent
+                                                              forwardedComponent={
+                                                                Object {
+                                                                  "$$typeof": Symbol(react.forward_ref),
+                                                                  "attrs": Array [],
+                                                                  "componentStyle": ComponentStyle {
+                                                                    "componentId": "CollectionCard__Footer-sc-2oluuz-5",
+                                                                    "isStatic": false,
+                                                                    "lastClassName": "iXJAmi",
+                                                                    "rules": Array [
+                                                                      "display:flex;flex-direction:row;justify-content:center;align-items:center;>:not(:last-child){margin-right:",
+                                                                      [Function],
+                                                                      "px;}",
+                                                                    ],
+                                                                  },
+                                                                  "displayName": "CollectionCard__Footer",
+                                                                  "foldedComponentIds": Array [],
+                                                                  "render": [Function],
+                                                                  "styledComponentId": "CollectionCard__Footer-sc-2oluuz-5",
+                                                                  "target": "div",
+                                                                  "toString": [Function],
+                                                                  "warnTooManyClasses": [Function],
+                                                                  "withComponent": [Function],
+                                                                }
+                                                              }
+                                                              forwardedRef={null}
+                                                              imageURL={null}
                                                             >
-                                                              <CollectionCard__Count
-                                                                imageURL={null}
+                                                              <div
+                                                                className="CollectionCard__Footer-sc-2oluuz-5 iXJAmi"
                                                               >
-                                                                <StyledComponent
-                                                                  forwardedComponent={
-                                                                    Object {
-                                                                      "$$typeof": Symbol(react.forward_ref),
-                                                                      "attrs": Array [],
-                                                                      "componentStyle": ComponentStyle {
-                                                                        "componentId": "CollectionCard__Count-sc-2oluuz-6",
-                                                                        "isStatic": false,
-                                                                        "lastClassName": "cpkSce",
-                                                                        "rules": Array [
-                                                                          "display:flex;flex-direction:column;justify-content:center;align-items:center;padding:",
-                                                                          [Function],
-                                                                          ";padding-top:",
-                                                                          [Function],
-                                                                          ";> *{text-transform:uppercase;}",
-                                                                        ],
-                                                                      },
-                                                                      "displayName": "CollectionCard__Count",
-                                                                      "foldedComponentIds": Array [],
-                                                                      "render": [Function],
-                                                                      "styledComponentId": "CollectionCard__Count-sc-2oluuz-6",
-                                                                      "target": "div",
-                                                                      "toString": [Function],
-                                                                      "warnTooManyClasses": [Function],
-                                                                      "withComponent": [Function],
-                                                                    }
-                                                                  }
-                                                                  forwardedRef={null}
+                                                                <CollectionCard__Count
                                                                   imageURL={null}
                                                                 >
-                                                                  <div
-                                                                    className="CollectionCard__Count-sc-2oluuz-6 cpkSce"
+                                                                  <StyledComponent
+                                                                    forwardedComponent={
+                                                                      Object {
+                                                                        "$$typeof": Symbol(react.forward_ref),
+                                                                        "attrs": Array [],
+                                                                        "componentStyle": ComponentStyle {
+                                                                          "componentId": "CollectionCard__Count-sc-2oluuz-6",
+                                                                          "isStatic": false,
+                                                                          "lastClassName": "cpkSce",
+                                                                          "rules": Array [
+                                                                            "display:flex;flex-direction:column;justify-content:center;align-items:center;padding:",
+                                                                            [Function],
+                                                                            ";padding-top:",
+                                                                            [Function],
+                                                                            ";> *{text-transform:uppercase;}",
+                                                                          ],
+                                                                        },
+                                                                        "displayName": "CollectionCard__Count",
+                                                                        "foldedComponentIds": Array [],
+                                                                        "render": [Function],
+                                                                        "styledComponentId": "CollectionCard__Count-sc-2oluuz-6",
+                                                                        "target": "div",
+                                                                        "toString": [Function],
+                                                                        "warnTooManyClasses": [Function],
+                                                                        "withComponent": [Function],
+                                                                      }
+                                                                    }
+                                                                    forwardedRef={null}
+                                                                    imageURL={null}
                                                                   >
-                                                                    <Typography__styledComponent>
-                                                                      <StyledComponent
-                                                                        forwardedComponent={
-                                                                          Object {
-                                                                            "$$typeof": Symbol(react.forward_ref),
-                                                                            "attrs": Array [],
-                                                                            "componentStyle": ComponentStyle {
-                                                                              "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                                              "isStatic": false,
-                                                                              "lastClassName": "dIJEmX",
-                                                                              "rules": Array [
-                                                                                "color:",
-                                                                                [Function],
-                                                                                ";margin:0px;font-weight:",
-                                                                                "bold",
-                                                                                ";",
-                                                                                ";font-size:",
-                                                                                "14",
-                                                                                "px;text-transform:",
-                                                                                [Function],
-                                                                                ";text-align:",
-                                                                                [Function],
-                                                                                ";:hover{color:",
-                                                                                [Function],
-                                                                                ";cursor:",
-                                                                                [Function],
-                                                                                ";}",
-                                                                              ],
-                                                                            },
-                                                                            "displayName": "Typography__styledComponent",
-                                                                            "foldedComponentIds": Array [],
-                                                                            "render": [Function],
-                                                                            "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                                                                            "target": "span",
-                                                                            "toString": [Function],
-                                                                            "warnTooManyClasses": [Function],
-                                                                            "withComponent": [Function],
+                                                                    <div
+                                                                      className="CollectionCard__Count-sc-2oluuz-6 cpkSce"
+                                                                    >
+                                                                      <Typography__styledComponent>
+                                                                        <StyledComponent
+                                                                          forwardedComponent={
+                                                                            Object {
+                                                                              "$$typeof": Symbol(react.forward_ref),
+                                                                              "attrs": Array [],
+                                                                              "componentStyle": ComponentStyle {
+                                                                                "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                                "isStatic": false,
+                                                                                "lastClassName": "dIJEmX",
+                                                                                "rules": Array [
+                                                                                  "color:",
+                                                                                  [Function],
+                                                                                  ";margin:0px;font-weight:",
+                                                                                  "bold",
+                                                                                  ";",
+                                                                                  ";font-size:",
+                                                                                  "14",
+                                                                                  "px;text-transform:",
+                                                                                  [Function],
+                                                                                  ";text-align:",
+                                                                                  [Function],
+                                                                                  ";:hover{color:",
+                                                                                  [Function],
+                                                                                  ";cursor:",
+                                                                                  [Function],
+                                                                                  ";}",
+                                                                                ],
+                                                                              },
+                                                                              "displayName": "Typography__styledComponent",
+                                                                              "foldedComponentIds": Array [],
+                                                                              "render": [Function],
+                                                                              "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                                              "target": "span",
+                                                                              "toString": [Function],
+                                                                              "warnTooManyClasses": [Function],
+                                                                              "withComponent": [Function],
+                                                                            }
                                                                           }
-                                                                        }
-                                                                        forwardedRef={null}
-                                                                      >
-                                                                        <span
-                                                                          className="Typography__styledComponent-sc-36xkf6-5 dIJEmX"
+                                                                          forwardedRef={null}
                                                                         >
-                                                                          1
-                                                                        </span>
-                                                                      </StyledComponent>
-                                                                    </Typography__styledComponent>
-                                                                    <Typography__component>
-                                                                      <StyledComponent
-                                                                        forwardedComponent={
-                                                                          Object {
-                                                                            "$$typeof": Symbol(react.forward_ref),
-                                                                            "attrs": Array [],
-                                                                            "componentStyle": ComponentStyle {
-                                                                              "componentId": "Typography__component-sc-36xkf6-0",
-                                                                              "isStatic": false,
-                                                                              "lastClassName": "kALGmD",
-                                                                              "rules": Array [
-                                                                                "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
-                                                                                [Function],
-                                                                                ";text-align:",
-                                                                                [Function],
-                                                                                ";",
-                                                                                [Function],
-                                                                                " ",
-                                                                                [Function],
-                                                                              ],
-                                                                            },
-                                                                            "displayName": "Typography__component",
-                                                                            "foldedComponentIds": Array [],
-                                                                            "render": [Function],
-                                                                            "styledComponentId": "Typography__component-sc-36xkf6-0",
-                                                                            "target": "span",
-                                                                            "toString": [Function],
-                                                                            "warnTooManyClasses": [Function],
-                                                                            "withComponent": [Function],
+                                                                          <span
+                                                                            className="Typography__styledComponent-sc-36xkf6-5 dIJEmX"
+                                                                          >
+                                                                            1
+                                                                          </span>
+                                                                        </StyledComponent>
+                                                                      </Typography__styledComponent>
+                                                                      <Typography__component>
+                                                                        <StyledComponent
+                                                                          forwardedComponent={
+                                                                            Object {
+                                                                              "$$typeof": Symbol(react.forward_ref),
+                                                                              "attrs": Array [],
+                                                                              "componentStyle": ComponentStyle {
+                                                                                "componentId": "Typography__component-sc-36xkf6-0",
+                                                                                "isStatic": false,
+                                                                                "lastClassName": "kALGmD",
+                                                                                "rules": Array [
+                                                                                  "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                                                                                  [Function],
+                                                                                  ";text-align:",
+                                                                                  [Function],
+                                                                                  ";",
+                                                                                  [Function],
+                                                                                  " ",
+                                                                                  [Function],
+                                                                                ],
+                                                                              },
+                                                                              "displayName": "Typography__component",
+                                                                              "foldedComponentIds": Array [],
+                                                                              "render": [Function],
+                                                                              "styledComponentId": "Typography__component-sc-36xkf6-0",
+                                                                              "target": "span",
+                                                                              "toString": [Function],
+                                                                              "warnTooManyClasses": [Function],
+                                                                              "withComponent": [Function],
+                                                                            }
                                                                           }
-                                                                        }
-                                                                        forwardedRef={null}
-                                                                      >
-                                                                        <span
-                                                                          className="Typography__component-sc-36xkf6-0 kALGmD"
+                                                                          forwardedRef={null}
                                                                         >
-                                                                          Article
-                                                                        </span>
-                                                                      </StyledComponent>
-                                                                    </Typography__component>
-                                                                  </div>
-                                                                </StyledComponent>
-                                                              </CollectionCard__Count>
-                                                            </div>
-                                                          </StyledComponent>
-                                                        </CollectionCard__Footer>
+                                                                          <span
+                                                                            className="Typography__component-sc-36xkf6-0 kALGmD"
+                                                                          >
+                                                                            Article
+                                                                          </span>
+                                                                        </StyledComponent>
+                                                                      </Typography__component>
+                                                                    </div>
+                                                                  </StyledComponent>
+                                                                </CollectionCard__Count>
+                                                              </div>
+                                                            </StyledComponent>
+                                                          </CollectionCard__Footer>
+                                                        </a>
                                                       </Link>
                                                     </RenderFooter>
                                                   </div>
@@ -21032,6 +21065,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                         }
                                       }
                                       id="276dd27f1458443295eea58403fd6965"
+                                      key="276dd27f1458443295eea58403fd6965"
                                       owner={
                                         Object {
                                           "__typename": "CommunityDTO",
@@ -21147,7 +21181,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                         />
                                                       }
                                                       className="makeStyles-header-4"
-                                                      subheader="12 days ago"
+                                                      subheader="19th Jul 19"
                                                       title="Felipe Faraggi"
                                                     >
                                                       <ForwardRef(CardHeader)
@@ -21167,7 +21201,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                             "title": "MuiCardHeader-title",
                                                           }
                                                         }
-                                                        subheader="12 days ago"
+                                                        subheader="19th Jul 19"
                                                         title="Felipe Faraggi"
                                                       >
                                                         <div
@@ -21839,7 +21873,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 <span
                                                                   className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                 >
-                                                                  12 days ago
+                                                                  19th Jul 19
                                                                 </span>
                                                               </ForwardRef(Typography)>
                                                             </WithStyles(ForwardRef(Typography))>
@@ -22571,6 +22605,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                         }
                                       }
                                       id="760f495423db42f988d17b8c145b0874"
+                                      key="760f495423db42f988d17b8c145b0874"
                                       owner={
                                         Object {
                                           "__typename": "CommunityDTO",
@@ -22685,7 +22720,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                         />
                                                       }
                                                       className="makeStyles-header-4"
-                                                      subheader="9 days ago"
+                                                      subheader="22nd Jul 19"
                                                       title="Craig Williams"
                                                     >
                                                       <ForwardRef(CardHeader)
@@ -22705,7 +22740,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                             "title": "MuiCardHeader-title",
                                                           }
                                                         }
-                                                        subheader="9 days ago"
+                                                        subheader="22nd Jul 19"
                                                         title="Craig Williams"
                                                       >
                                                         <div
@@ -23377,7 +23412,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 <span
                                                                   className="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                                                                 >
-                                                                  9 days ago
+                                                                  22nd Jul 19
                                                                 </span>
                                                               </ForwardRef(Typography)>
                                                             </WithStyles(ForwardRef(Typography))>

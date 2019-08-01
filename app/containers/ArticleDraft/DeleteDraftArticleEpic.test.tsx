@@ -7,6 +7,10 @@ import {
 import { from } from 'rxjs'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
+jest.mock('../../lib/analytics', () => ({
+    track: jest.fn(),
+}))
+
 describe('deleteDraftArticleEpic', () => {
     beforeAll(() => {
         // global.window = {}

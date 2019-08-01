@@ -5,6 +5,10 @@ import {
 } from './TransferModule'
 import { showNotificationAction } from '../../../lib/Epics/ShowNotificationEpic'
 
+jest.mock('../../../lib/analytics', () => ({
+    track: jest.fn(),
+}))
+
 describe('finaliseArticleTransferEpic', () => {
     beforeAll(() => {
         // global.window = {}

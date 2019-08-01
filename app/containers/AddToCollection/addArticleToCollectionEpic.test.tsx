@@ -8,6 +8,10 @@ import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { closeModalAction } from '../../components/Modal/Module'
 
+jest.mock('../../lib/analytics', () => ({
+    track: jest.fn(),
+}))
+
 describe('addArticleToCollectionEpic', () => {
     beforeAll(() => {
         // global.window = {}

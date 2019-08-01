@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Label, BodyCard, H4, Title2 } from '../Typography'
 import BaseCard from '../Card/BaseCard'
 import theme from '../../lib/theme-config'
+import Link from 'next/link'
 
 const DEFAULT_CARD_HEIGHT = 310
 const DEFAULT_CARD_WIDTH = theme.DEFAULT_CARD_WIDTH
@@ -131,16 +132,17 @@ interface IProps {
     collectionCount: string
     description: string
     imageURL: string | null
-    linkComponent: (
-        childrenProps: React.ReactElement<any>
-    ) => React.ReactElement<any>
+    href: {
+        href: string
+        as: string
+    }
     logo: string | null
     name: string
 }
 
 const CommunityCard: React.SFC<IProps> = props => {
     const {
-        linkComponent,
+        href,
         cardHeight = DEFAULT_CARD_HEIGHT,
         articleCount,
         collectionCount,
@@ -161,21 +163,15 @@ const CommunityCard: React.SFC<IProps> = props => {
                 <LabelContainer>
                     <Label textAlign="center">{'Community'}</Label>
                 </LabelContainer>
-                {linkComponent ? (
-                    linkComponent(
+                <Link href={href.href} as={href.as}>
+                    <a>
                         <CardContent
                             description={description}
                             name={name}
                             logo={logo}
                         />
-                    )
-                ) : (
-                    <CardContent
-                        description={description}
-                        name={name}
-                        logo={logo}
-                    />
-                )}
+                    </a>
+                </Link>
                 {(Boolean(Number(articleCount)) ||
                     Boolean(Number(collectionCount))) && <Divider />}
                 <Footer>

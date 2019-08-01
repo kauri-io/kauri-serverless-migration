@@ -12,6 +12,10 @@ import { mountWithRedux } from '../../setupTests'
 import { MockedProvider } from 'react-apollo/test-utils'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
+jest.mock('../../lib/analytics', () => ({
+    track: jest.fn(),
+}))
+
 describe('containers/EditProfileForm', () => {
     let mockProfile,
         mockState,

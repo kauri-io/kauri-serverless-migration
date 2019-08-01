@@ -3,6 +3,10 @@ import { rejectArticleEpic, rejectArticleAction } from './Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 
+jest.mock('../../lib/analytics', () => ({
+    track: jest.fn(),
+}))
+
 describe('rejectArticleEpic', () => {
     it('rejects a proposed article update, notifies and shows confirmation page', async () => {
         const mockApolloClient = {
