@@ -10,7 +10,7 @@ import { IShowNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 const Container = styled.div`
     background: ${props => props.theme.bgPrimary};
     color: white;
-    min-height: 100%;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;

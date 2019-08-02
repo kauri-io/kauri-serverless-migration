@@ -16,7 +16,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "yarn pretty && yarn test --coverage && tsc && git add . && open ./coverage/lcov-report/index.html",
+            "pre-commit": "yarn pretty && yarn test --coverage && tsc",
             "pre-push": ""
         }
     },
@@ -103,6 +103,7 @@
         "@typescript-eslint/eslint-plugin": "^1.11.0",
         "@typescript-eslint/parser": "^1.11.0",
         "@zeit/next-source-maps": "^0.0.3",
+        "babel-plugin-dynamic-import-node": "^2.3.0",
         "babel-plugin-styled-components": "^1.10.6",
         "enzyme": "^3.10.0",
         "enzyme-adapter-react-16": "^1.14.0",
