@@ -240,7 +240,7 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
    * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
    * This operation can only be performed by logged user
    */
-  contributors: (searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_contributors | null)[] | null;
+  contributors: (searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_contributors | null)[];
   /**
    * Description of the article - First 500 characters of the plaintext content)
    */

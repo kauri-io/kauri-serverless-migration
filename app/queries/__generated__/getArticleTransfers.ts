@@ -224,7 +224,7 @@ export interface getArticleTransfers_getArticleTransfers_content_article {
    * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
    * This operation can only be performed by logged user
    */
-  contributors: (getArticleTransfers_getArticleTransfers_content_article_contributors | null)[] | null;
+  contributors: (getArticleTransfers_getArticleTransfers_content_article_contributors | null)[];
   /**
    * Description of the article - First 500 characters of the plaintext content)
    */

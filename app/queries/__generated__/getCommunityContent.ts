@@ -228,7 +228,7 @@ export interface getCommunityContent_getCommunityContent_content_resource_Articl
    * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
    * This operation can only be performed by logged user
    */
-  contributors: (getCommunityContent_getCommunityContent_content_resource_ArticleDTO_contributors | null)[] | null;
+  contributors: (getCommunityContent_getCommunityContent_content_resource_ArticleDTO_contributors | null)[];
   /**
    * Description of the article - First 500 characters of the plaintext content)
    */

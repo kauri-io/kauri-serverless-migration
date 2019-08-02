@@ -296,7 +296,7 @@ export interface getCollection_getCollection_sections_resources_ArticleDTO {
    * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
    * This operation can only be performed by logged user
    */
-  contributors: (getCollection_getCollection_sections_resources_ArticleDTO_contributors | null)[] | null;
+  contributors: (getCollection_getCollection_sections_resources_ArticleDTO_contributors | null)[];
   /**
    * Description of the article - First 500 characters of the plaintext content)
    */
