@@ -178,7 +178,7 @@ const ArticleCard: React.FC<IProps> = ({
                 <div className={classes.header}>
                     <Link href={href.href} as={href.as}>
                         <a className={classes.title}>
-                            <TruncateMarkup lines={2} lineHeight={24}>
+                            <TruncateMarkup lines={2}>
                                 <Typography
                                     data-testid={`ArticleCard-${id}-title`}
                                     variant={'h5'}
@@ -204,7 +204,7 @@ const ArticleCard: React.FC<IProps> = ({
                             data-testid={`ArticleCard-${id}-description`}
                             className={classes.content}
                         >
-                            <TruncateMarkup lineHeight={24} lines={2}>
+                            <TruncateMarkup lines={2}>
                                 <Typography
                                     data-testid={`ArticleCard-${id}-description`}
                                     variant="body2"

@@ -244,7 +244,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                     >
                       <TruncateMarkup
                         ellipsis="..."
-                        lineHeight={24}
+                        lineHeight=""
                         lines={2}
                         onTruncate={[Function]}
                         tokenize="characters"
@@ -628,7 +628,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                         >
                           <TruncateMarkup
                             ellipsis="..."
-                            lineHeight={24}
+                            lineHeight=""
                             lines={2}
                             onTruncate={[Function]}
                             tokenize="characters"
