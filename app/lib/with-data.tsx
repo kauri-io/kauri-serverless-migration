@@ -269,7 +269,6 @@ export default (ComposedComponent: any) =>
                 debug: true,
                 loaded: function() {
                     mixpanel.track('loaded() callback works but is unnecessary');
-                    alert("Mixpanel loaded successfully via Webpack/UMD");
                 }
             }
             */
