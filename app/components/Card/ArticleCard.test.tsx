@@ -2,9 +2,11 @@ import { mountWithTheme } from '../../setupTests'
 import ArticleCard from './ArticleCard'
 
 let ArticleCardProps
+let consoleWarn = console.warn
 
 describe('components/Card/ArticleCard', () => {
     beforeAll(() => {
+        global.console.warn = jest.fn()
         ArticleCardProps = {
             id: '1234567890',
             version: 123,
@@ -47,6 +49,9 @@ describe('components/Card/ArticleCard', () => {
             },
             isLoggedIn: true,
         }
+    })
+    afterAll(() => {
+        global.console.warn = consoleWarn
     })
 
     it('should match snapshot', () => {
@@ -92,7 +97,7 @@ describe('components/Card/ArticleCard', () => {
             .find(`[data-testid="${dataTestId}"]`)
             .first()
             .props()
-        expect(image).toEqual('default image prop')
+        expect(image).toEqual(ArticleCardProps.author.avatar)
     })
 
     it('should show the author name by default', () => {
@@ -105,7 +110,10 @@ describe('components/Card/ArticleCard', () => {
 
     it('should show the author username if they have no name', () => {
         const wrapper = mountWithTheme(
-            <ArticleCard {...ArticleCardProps} name={null} />
+            <ArticleCard
+                {...ArticleCardProps}
+                author={{ ...ArticleCardProps.author, name: null }}
+            />
         )
 
         const dataTestId = `ArticleCard-${ArticleCardProps.id}-author`
@@ -115,7 +123,14 @@ describe('components/Card/ArticleCard', () => {
 
     it('should fallback to show the author id', () => {
         const wrapper = mountWithTheme(
-            <ArticleCard {...ArticleCardProps} name={null} username={null} />
+            <ArticleCard
+                {...ArticleCardProps}
+                author={{
+                    ...ArticleCardProps.author,
+                    name: null,
+                    username: null,
+                }}
+            />
         )
 
         const dataTestId = `ArticleCard-${ArticleCardProps.id}-author`
@@ -127,7 +142,7 @@ describe('components/Card/ArticleCard', () => {
         const wrapper = mountWithTheme(<ArticleCard {...ArticleCardProps} />)
         const dataTestId = `ArticleCard-${ArticleCardProps.id}-date`
         const date = wrapper.find(`[data-testid="${dataTestId}"]`).first()
-        expect(date.text()).toBe('25 years ago')
+        expect(date.text()).toBe('13 Jun 94')
     })
 
     it('should show the comment count and icon', () => {
