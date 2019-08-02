@@ -15,6 +15,7 @@ import MoreIcon from '@material-ui/icons/MoreVert'
 import Link from 'next/link'
 import { logout } from './Module'
 import { Avatar } from '@material-ui/core'
+import { withRouter, Router } from 'next/router'
 
 const useStyles = makeStyles((theme: Theme) => {
     return {
@@ -112,9 +113,10 @@ interface IProps {
         communities: ICommunity[]
         status: string // [NOT_REGISTERED|CREATED]EMAIL_VERIFIED]
     }
+    router: Router
 }
 
-const PrimarySearchAppBar: React.FC<IProps> = ({ user }) => {
+const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
     const classes = useStyles({})
     const [anchorEl, setAnchorEl] = React.useState<
         HTMLLIElement | HTMLButtonElement | null
@@ -172,9 +174,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user }) => {
         >
             <MenuItem
                 onClick={
-                    user
-                        ? handleProfileMenuOpen
-                        : () => console.log('should change route here')
+                    user ? handleProfileMenuOpen : () => router.push('/login')
                 }
             >
                 <IconButton color="inherit">
@@ -260,8 +260,9 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user }) => {
                             placeholder="Search…"
                             onKeyUp={e => {
                                 if (e.key === 'Enter') {
-                                    // routeChangeAction(`/search-results?q=${e.currentTarget.value}`)
-                                    console.log('Should change route here')
+                                    router.push(
+                                        `/search-results?q=${e.currentTarget.value}`
+                                    )
                                 }
                             }}
                             classes={{
@@ -280,10 +281,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user }) => {
                             onClick={
                                 user
                                     ? handleProfileMenuOpen
-                                    : () =>
-                                          console.log(
-                                              'should changee route here'
-                                          )
+                                    : () => router.push('/login')
                             }
                             color="inherit"
                         >
@@ -325,4 +323,4 @@ const mapStateToProps = (state: IReduxState) => ({
     user: state.app && state.app.user,
 })
 
-export default connect(mapStateToProps)(PrimarySearchAppBar)
+export default connect(mapStateToProps)(withRouter(PrimarySearchAppBar))

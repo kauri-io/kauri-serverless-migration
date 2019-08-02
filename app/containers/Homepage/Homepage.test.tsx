@@ -4,7 +4,7 @@ import { MockedProvider } from 'react-apollo/test-utils'
 import wait from 'waait'
 
 import mockData from './mock'
-import { homePageContent_getLatestHomepageDescriptor } from '../../queries/__generated__/homepageContent'
+import { homePageContent_getLatestHomepageDescriptor } from '../../queries/__generated__/homePageContent'
 
 describe('containers/Homepage/View', () => {
     it('should match the snapshot', async () => {
