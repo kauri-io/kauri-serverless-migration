@@ -2,7 +2,6 @@ import { ofType, Epic } from 'redux-observable'
 import { IDependencies, IReduxState } from '../../lib/Module'
 
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
-import { create } from '../../lib/init-apollo'
 import { getEvent } from '../../queries/Module'
 import {
     verifyEmail as verifyEmailMutation,
@@ -20,6 +19,7 @@ import {
 import { from, of, forkJoin } from 'rxjs'
 import { mergeMap, tap, switchMap, map } from 'rxjs/operators'
 import { regenerateEmailVerificationCode } from '../../queries/__generated__/regenerateEmailVerificationCode'
+import { apollo } from '../../lib/with-data'
 import { path } from 'ramda'
 
 interface IVerifyEmailAction {
@@ -112,13 +112,7 @@ export const emailSubscribeEpic: Epic<
                 new Promise<{
                     data: { output: IEmailSubscribeOutput }
                 }>((resolve, reject) => {
-                    create(
-                        {},
-                        {
-                            getToken: () => 'DUMMYVERIFICATIONTOKEN',
-                            // hostName: getState().app.hostName,
-                        }
-                    )
+                    apollo
                         .subscribe({
                             query: getEvent,
                             variables: path(['subscribe', 'hash'], data),
@@ -170,14 +164,7 @@ export const verifyEmailEpic: Epic<
                     from(
                         new Promise<{ data: { output: IVerifyEmailOutput } }>(
                             (resolve, reject) => {
-                                create(
-                                    {},
-                                    {
-                                        getToken: () =>
-                                            'DUMMYVERIFICATIONTOKEN',
-                                        // hostName: getState().app.hostName,
-                                    }
-                                )
+                                apollo
                                     .subscribe({
                                         query: getEvent,
                                         variables: path(
@@ -203,13 +190,7 @@ export const verifyEmailEpic: Epic<
                               output.childHashes.map(
                                   hash =>
                                       new Promise((resolve, reject) =>
-                                          create(
-                                              {},
-                                              {
-                                                  getToken: () =>
-                                                      'DUMMYVERIFICATIONTOKEN',
-                                              }
-                                          )
+                                          apollo
                                               .subscribe({
                                                   query: getEvent,
                                                   variables: { hash },

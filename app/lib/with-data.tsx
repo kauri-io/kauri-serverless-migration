@@ -26,6 +26,8 @@ import themeConfig from './theme-config'
 // import '@uppy/core/dist/style.css'
 // import '@uppy/url/dist/style.css'
 import analytics from './analytics'
+import ApolloClient from 'apollo-client'
+import { NormalizedCacheObject } from 'apollo-cache-inmemory'
 
 const config = require('../config').default
 
@@ -59,9 +61,10 @@ interface IProps {
     stateApollo: any
 }
 
+export let apollo: ApolloClient<NormalizedCacheObject>
+
 export default (ComposedComponent: any) =>
     class WithData extends React.Component<IProps> {
-        apollo: any
         redux: any
         static async getInitialProps(context) {
             const url = { query: context.query, pathname: context.pathname }
@@ -74,7 +77,6 @@ export default (ComposedComponent: any) =>
                     : navigator.userAgent
 
             // console.log(hostName)
-
             let stateApollo = {
                 apollo: {
                     data: {},
@@ -103,12 +105,14 @@ export default (ComposedComponent: any) =>
 
             // Setup a server-side one-time-use apollo client for initial props and
             // rendering (on server)
-            const apollo = initApollo(
-                {},
-                {
-                    getToken: () => parsedToken,
-                }
-            )
+            apollo = apollo
+                ? apollo
+                : initApollo(
+                      {},
+                      {
+                          getToken: () => parsedToken,
+                      }
+                  )
             const redux = initRedux(apollo, stateRedux)
 
             // Set userId from cookie
@@ -116,7 +120,6 @@ export default (ComposedComponent: any) =>
             redux && redux.dispatch({ type: 'SET_USER_ID', userId })
             // Set hostName from request context
             redux && redux.dispatch(setHostNameAction({ hostName }))
-
             // Parse token jwt for user details
             if (parsedToken) {
                 try {
@@ -127,8 +130,6 @@ export default (ComposedComponent: any) =>
                         {},
                         { fetch, apolloClient: apollo }
                     )
-                    // console.log(sourceAction)
-                    // console.log(setUserDetailsAction)
                     redux && redux.dispatch(setUserDetailsAction)
                 } catch (err) {
                     console.error(
@@ -196,14 +197,13 @@ export default (ComposedComponent: any) =>
                 // Extract query data from the Apollo's store
                 Head.rewind()
 
-                stateRedux = redux && redux.getState()
-
                 stateApollo = {
                     apollo: {
                         data: apollo.cache.extract(),
                     },
                 }
             }
+            stateRedux = redux && redux.getState()
 
             return {
                 ua,
@@ -217,11 +217,14 @@ export default (ComposedComponent: any) =>
 
         constructor(props) {
             super(props)
-            this.apollo = initApollo(this.props.stateApollo.apollo.data, {
-                getToken: () => props.parsedToken,
-                hostName: props.hostName,
-            })
-            this.redux = initRedux(this.apollo, this.props.stateRedux)
+            apollo = apollo
+                ? apollo
+                : initApollo(this.props.stateApollo.apollo.data, {
+                      getToken: () => props.parsedToken,
+                      hostName: props.hostName,
+                  })
+
+            this.redux = initRedux(apollo, this.props.stateRedux)
         }
 
         componentDidMount() {
@@ -274,23 +277,12 @@ export default (ComposedComponent: any) =>
             */
                 )
             })
-
-            global.window.addEventListener('beforeunload', () => {
-                if (this.apollo.close) this.apollo.close()
-            })
-        }
-
-        componentWillUnmount() {
-            if (global.window && this.apollo && this.apollo.close) {
-                console.log('Unsubscribing WebSocket')
-                this.apollo.close()
-            }
         }
 
         render() {
             return (
                 <Provider store={this.redux}>
-                    <ApolloProvider client={this.apollo}>
+                    <ApolloProvider client={apollo}>
                         <SnackbarProvider maxSnack={3}>
                             <ThemeProvider theme={themeConfig}>
                                 <>
