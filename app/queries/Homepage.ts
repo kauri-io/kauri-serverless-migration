@@ -24,6 +24,9 @@ export const homePageContentQuery = gql`
             contentHash
             checkpoint
             tags
+            comments {
+              totalElements
+            }
             voteResult {
                 sum
                 count

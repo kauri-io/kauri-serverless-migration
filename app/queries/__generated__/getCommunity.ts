@@ -670,7 +670,7 @@ export interface getCommunity_getCommunity_approved_ArticleDTO {
    * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
    * This operation can only be performed by logged user
    */
-  contributors: (getCommunity_getCommunity_approved_ArticleDTO_contributors | null)[] | null;
+  contributors: (getCommunity_getCommunity_approved_ArticleDTO_contributors | null)[];
   /**
    * Description of the article - First 500 characters of the plaintext content)
    */
@@ -1138,7 +1138,7 @@ export interface getCommunity_getCommunity_pending_ArticleDTO {
    * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
    * This operation can only be performed by logged user
    */
-  contributors: (getCommunity_getCommunity_pending_ArticleDTO_contributors | null)[] | null;
+  contributors: (getCommunity_getCommunity_pending_ArticleDTO_contributors | null)[];
   /**
    * Description of the article - First 500 characters of the plaintext content)
    */

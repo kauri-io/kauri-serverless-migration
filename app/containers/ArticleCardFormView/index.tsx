@@ -4,7 +4,7 @@ import { graphql, compose } from 'react-apollo'
 import { getArticleQuery } from '../../queries/Article'
 import withLoading from '../../lib/with-loading'
 import withApolloError from '../../lib/with-apollo-error'
-import ArticleCard from '../../components/Card/ArticleCardMaterial'
+import ArticleCard from '../../components/Card/ArticleCard'
 import { IReduxState } from '../../lib/Module'
 import { getArticleVariables } from '../../queries/__generated__/getArticle'
 

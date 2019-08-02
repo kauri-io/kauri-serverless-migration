@@ -19,6 +19,7 @@ const store = mockStore(initialState)
 Enzyme.configure({ adapter: new Adapter() })
 
 const observeMock = {
+    unobserve: () => null,
     observe: () => null,
     disconnect: () => null, // maybe not needed
 }

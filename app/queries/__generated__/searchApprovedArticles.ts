@@ -224,7 +224,7 @@ export interface searchApprovedArticles_searchArticles_content {
    * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
    * This operation can only be performed by logged user
    */
-  contributors: (searchApprovedArticles_searchArticles_content_contributors | null)[] | null;
+  contributors: (searchApprovedArticles_searchArticles_content_contributors | null)[];
   /**
    * Description of the article - First 500 characters of the plaintext content)
    */

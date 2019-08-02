@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import ArticleCard from '../../components/Card/ArticleCardMaterial'
+import ArticleCard from '../../components/Card/ArticleCard'
 import ChooseArticleContent, {
     Content,
 } from '../../components/Modal/ChooseArticleContent'
@@ -10,7 +10,7 @@ import Loading from '../../components/Loading'
 
 const Container = styled.div`
     display: flex;
-    flex-diretion: column;
+    flex-direction: column;
     overflow-y: auto;
     width: 100%;
     height: 100%;

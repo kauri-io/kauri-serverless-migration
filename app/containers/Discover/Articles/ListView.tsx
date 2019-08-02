@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from 'react'
 import Head from 'next/head'
-import ArticleCard from '../../../components/Card/ArticleCardMaterial'
+import ArticleCard from '../../../components/Card/ArticleCard'
 import Loading from '../../../components/Loading'
-import Masonry from '../../../components/Masonry'
 import {
     searchAutocompleteArticles_searchAutocomplete,
     searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO,
 } from '../../../queries/__generated__/searchAutocompleteArticles'
 import { getArticleURL } from '../../../lib/getURLs'
+import { Grid, Container, withStyles } from '@material-ui/core'
 
 interface IProps {
     ArticlesQuery: {
@@ -17,6 +17,7 @@ interface IProps {
     hostName: string
     isLoggedIn: boolean
     openModalAction: (payload: { children: React.ReactElement<any> }) => void
+    classes: { grid: any }
 }
 
 class Articles extends Component<IProps> {
@@ -43,32 +44,50 @@ class Articles extends Component<IProps> {
                         href={`https://${this.props.hostName}/articles`}
                     />
                 </Head>
-                {searchAutocomplete &&
-                searchAutocomplete.content &&
-                searchAutocomplete.content.length > 0 ? (
-                    <Masonry>
-                        {searchAutocomplete.content.map(articleResult => {
-                            const article =
-                                articleResult &&
-                                (articleResult.resource as searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO)
-                            if (!article) {
-                                return <></>
-                            }
+                <Container>
+                    {searchAutocomplete &&
+                    searchAutocomplete.content &&
+                    searchAutocomplete.content.length > 0 ? (
+                        <Grid
+                            className={this.props.classes.grid}
+                            container
+                            spacing={3}
+                        >
+                            {searchAutocomplete.content.map(articleResult => {
+                                const article =
+                                    articleResult &&
+                                    (articleResult.resource as searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO)
+                                if (!article) {
+                                    return <></>
+                                }
 
-                            return (
-                                <ArticleCard
-                                    href={getArticleURL(article)}
-                                    {...article}
-                                />
-                            )
-                        })}
-                    </Masonry>
-                ) : (
-                    <Loading />
-                )}
+                                return (
+                                    <Grid
+                                        key={article.id}
+                                        item
+                                        xs={12}
+                                        sm={12}
+                                        lg={6}
+                                    >
+                                        <ArticleCard
+                                            href={getArticleURL(article)}
+                                            {...article}
+                                        />
+                                    </Grid>
+                                )
+                            })}
+                        </Grid>
+                    ) : (
+                        <Loading />
+                    )}
+                </Container>
             </Fragment>
         )
     }
 }
 
-export default Articles
+export default withStyles({
+    grid: {
+        paddingTop: '24px',
+    },
+})(Articles)

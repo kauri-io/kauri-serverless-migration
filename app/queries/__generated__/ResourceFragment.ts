@@ -199,6 +199,14 @@ export interface ResourceFragment_ArticleDTO_resourceIdentifier {
   version: number | null;
 }
 
+export interface ResourceFragment_ArticleDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface ResourceFragment_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -358,6 +366,10 @@ export interface ResourceFragment_ArticleDTO {
    * Tags list
    */
   tags: (string | null)[] | null;
+  /**
+   * Get a paginated list of comments for this article
+   */
+  comments: ResourceFragment_ArticleDTO_comments | null;
   /**
    * Get vote result for the article
    */

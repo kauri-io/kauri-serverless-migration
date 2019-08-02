@@ -88,10 +88,12 @@ export interface IProps {
     hideUsername?: boolean
     borderRadius?: string
     name?: string | null | undefined
+    dataTestId?: string
 }
 
 const UserAvatarComponent: React.SFC<IProps> = props => (
     <Container
+        data-testid={props.dataTestId}
         key={props.userId}
         hideUsername={props.hideUsername}
         cardType={props.cardType}

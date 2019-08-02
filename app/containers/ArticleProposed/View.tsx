@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
-import ArticleCard from '../../components/Card/ArticleCardMaterial'
+import ArticleCard from '../../components/Card/ArticleCard'
 import PrimaryButton from '../../components/Button/PrimaryButton'
 import { Title2, BodyCard } from '../../components/Typography'
 import { getArticleURL } from '../../lib/getURLs'

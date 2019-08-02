@@ -218,6 +218,14 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
   version: number | null;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -377,6 +385,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
    * Tags list
    */
   tags: (string | null)[] | null;
+  /**
+   * Get a paginated list of comments for this article
+   */
+  comments: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_comments | null;
   /**
    * Get vote result for the article
    */
@@ -786,6 +798,14 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
   version: number | null;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -945,6 +965,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
    * Tags list
    */
   tags: (string | null)[] | null;
+  /**
+   * Get a paginated list of comments for this article
+   */
+  comments: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_comments | null;
   /**
    * Get vote result for the article
    */
@@ -1301,6 +1325,14 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
   version: number | null;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -1460,6 +1492,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
    * Tags list
    */
   tags: (string | null)[] | null;
+  /**
+   * Get a paginated list of comments for this article
+   */
+  comments: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_comments | null;
   /**
    * Get vote result for the article
    */
@@ -1841,6 +1877,14 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
   version: number | null;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -2000,6 +2044,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
    * Tags list
    */
   tags: (string | null)[] | null;
+  /**
+   * Get a paginated list of comments for this article
+   */
+  comments: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_comments | null;
   /**
    * Get vote result for the article
    */
@@ -2409,6 +2457,14 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
   version: number | null;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -2568,6 +2624,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
    * Tags list
    */
   tags: (string | null)[] | null;
+  /**
+   * Get a paginated list of comments for this article
+   */
+  comments: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_comments | null;
   /**
    * Get vote result for the article
    */
@@ -2924,6 +2984,14 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
   version: number | null;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_voteResult {
   __typename: "VoteResultDTO";
   /**
@@ -3083,6 +3151,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
    * Tags list
    */
   tags: (string | null)[] | null;
+  /**
+   * Get a paginated list of comments for this article
+   */
+  comments: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_comments | null;
   /**
    * Get vote result for the article
    */
