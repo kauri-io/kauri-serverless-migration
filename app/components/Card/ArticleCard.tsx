@@ -1,5 +1,5 @@
 import Card from '@material-ui/core/Card'
-import CardHeader from '@material-ui/core/CardHeader'
+import CardActions from '@material-ui/core/CardActions'
 import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
 import Avatar from '@material-ui/core/Avatar'
@@ -7,6 +7,7 @@ import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import { Typography } from '@material-ui/core'
 import { Theme, makeStyles } from '@material-ui/core/styles'
+import TruncateMarkup from 'react-truncate-markup'
 import moment from 'moment'
 import Link from 'next/link'
 import { getProfileURL } from '../../lib/getURLs'
@@ -19,18 +20,98 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
         backgroundColor: theme.palette.primary.main,
         textTransform: 'uppercase',
+        width: 24,
+        height: 24,
     },
-    card: {},
+    card: {
+        display: 'flex',
+        '& > *:last-child': {
+            alignSelf: 'center',
+        },
+        height: 184,
+    },
+    cardActualContent: {
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        [theme.breakpoints.up('sm')]: {
+            width: 'calc(100% - 152px)',
+        },
+    },
+    author: {
+        [theme.breakpoints.only('xs')]: {
+            display: 'none !important',
+        },
+    },
     content: {
         cursor: 'pointer',
         height: '100%',
+        padding: '0px !important',
+        paddingLeft: `${theme.spacing(1.5)}px !important`,
+        [theme.breakpoints.only('xs')]: {
+            display: 'none !important',
+        },
     },
     header: {
+        display: 'flex',
+        paddingTop: theme.spacing(1.5),
+        paddingLeft: theme.spacing(1.5),
+        paddingRight: theme.spacing(1.5),
         cursor: 'pointer',
     },
-    media: {
+    mobileMedia: {
+        marginLeft: 'auto',
         cursor: 'pointer',
-        height: 160,
+        borderRadius: '4px',
+        height: 152,
+        width: 152,
+        [theme.breakpoints.only('xs')]: {
+            alignSelf: 'center',
+            width: 76,
+            height: 76,
+        },
+        [theme.breakpoints.up('sm')]: {
+            display: 'none !important',
+        },
+    },
+    desktopMedia: {
+        marginLeft: 'auto',
+        cursor: 'pointer',
+        borderRadius: '4px',
+        height: 152,
+        width: 152,
+        marginRight: theme.spacing(1.5),
+        [theme.breakpoints.only('xs')]: {
+            display: 'none !important',
+        },
+    },
+    title: {
+        [theme.breakpoints.only('xs')]: { maxWidth: `calc(100% - 100px)` },
+    },
+    cardActions: {
+        display: 'flex',
+        marginTop: 'auto',
+        alignItems: 'center',
+        paddingBottom: theme.spacing(1.5),
+        paddingLeft: theme.spacing(1.5),
+    },
+    user: {
+        display: 'flex',
+        alignItems: 'center',
+        '& > *:not(:last-child)': {
+            marginRight: theme.spacing(1),
+        },
+        '& > *': {
+            lineHeight: '1.57 !important',
+        },
+    },
+    statistics: {
+        display: 'flex',
+        marginLeft: 'auto !important',
+        alignItems: 'center',
+        '& > *:not(:last-child)': {
+            marginRight: theme.spacing(1),
+        },
     },
 }))
 
@@ -93,79 +174,94 @@ const ArticleCard: React.FC<IProps> = ({
             key={id}
             className={`${classes.card} ${className ? className : ''}`}
         >
-            <Link href={authorHref.href} as={authorHref.as}>
-                <a>
-                    <CardHeader
-                        className={classes.header}
-                        avatar={
-                            author && author.avatar ? (
-                                <Avatar src={author && author.avatar} />
-                            ) : (
-                                <Avatar
-                                    data-testid={`ArticleCard-${id}-avatar`}
-                                    className={classes.avatar}
-                                    aria-label={String(
-                                        author && author.username
-                                    )}
+            <div className={classes.cardActualContent}>
+                <div className={classes.header}>
+                    <Link href={href.href} as={href.as}>
+                        <a className={classes.title}>
+                            <TruncateMarkup lines={2}>
+                                <Typography
+                                    data-testid={`ArticleCard-${id}-title`}
+                                    variant={'h5'}
                                 >
-                                    {author &&
-                                        author.username &&
-                                        author.username.charAt(0)}
-                                </Avatar>
-                            )
-                        }
-                        title={
-                            <Typography
-                                data-testid={`ArticleCard-${id}-author`}
-                                variant="h6"
-                            >
-                                {author &&
-                                    (author.name ||
-                                        author.username ||
-                                        author.id)}
-                            </Typography>
-                        }
-                        subheader={
-                            <Typography
-                                data-testid={`ArticleCard-${id}-date`}
-                                variant="subtitle1"
-                            >
-                                {moment(String(datePublished)).fromNow()}
-                            </Typography>
-                        }
-                    />
-                </a>
-            </Link>
-            <Link href={href.href} as={href.as}>
-                <a>
+                                    {title}
+                                </Typography>
+                            </TruncateMarkup>
+                        </a>
+                    </Link>
                     <CardMedia
                         data-testid={`ArticleCard-${id}-image`}
-                        className={classes.media}
-                        image={attributes.background || 'default image prop'}
+                        className={classes.mobileMedia}
+                        image={
+                            attributes.background ||
+                            'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
+                        }
                         title={String(title)}
                     />
-                    <CardContent
-                        data-testid={`ArticleCard-${id}-description`}
-                        className={classes.content}
-                    >
-                        <Typography
-                            data-testid={`ArticleCard-${id}-title`}
-                            variant="h6"
+                </div>
+                <Link href={href.href} as={href.as}>
+                    <a>
+                        <CardContent
+                            data-testid={`ArticleCard-${id}-description`}
+                            className={classes.content}
                         >
-                            {title}
+                            <TruncateMarkup lines={2}>
+                                <Typography
+                                    data-testid={`ArticleCard-${id}-description`}
+                                    variant="body2"
+                                    color="textSecondary"
+                                    component="p"
+                                >
+                                    {description}
+                                </Typography>
+                            </TruncateMarkup>
+                        </CardContent>
+                    </a>
+                </Link>
+                <CardActions className={classes.cardActions}>
+                    <div className={classes.user}>
+                        <Link href={authorHref.href} as={authorHref.as}>
+                            <a>
+                                {author && author.avatar ? (
+                                    <Avatar
+                                        className={classes.avatar}
+                                        src={author && author.avatar}
+                                        aria-label={String(
+                                            author && author.username
+                                        )}
+                                        data-testid={`ArticleCard-${id}-avatar`}
+                                    />
+                                ) : (
+                                    <Avatar
+                                        data-testid={`ArticleCard-${id}-avatar`}
+                                        className={classes.avatar}
+                                        aria-label={String(
+                                            author && author.username
+                                        )}
+                                    >
+                                        {author &&
+                                            author.username &&
+                                            author.username.charAt(0)}
+                                    </Avatar>
+                                )}
+                            </a>
+                        </Link>
+                        <Typography
+                            data-testid={`ArticleCard-${id}-author`}
+                            variant="subtitle2"
+                            className={classes.author}
+                        >
+                            {author &&
+                                (author.name || author.username || author.id)}
                         </Typography>
                         <Typography
+                            data-testid={`ArticleCard-${id}-date`}
                             variant="body2"
-                            color="textSecondary"
-                            component="p"
                         >
-                            {String(
-                                description && description.length < 160
-                                    ? description
-                                    : description &&
-                                          `${description.substring(0, 157)}...`
-                            )}
+                            {moment(String(datePublished)).format('DD MMM YY')}
                         </Typography>
+                    </div>
+
+                    <div className={classes.statistics}>
                         <Icon data-testid={`ArticleCard-${id}-commentIcon`}>
                             comment
                         </Icon>
@@ -212,9 +308,18 @@ const ArticleCard: React.FC<IProps> = ({
                                 </MenuItem>
                             )}
                         </Menu>
-                    </CardContent>
-                </a>
-            </Link>
+                    </div>
+                </CardActions>
+            </div>
+            <CardMedia
+                data-testid={`ArticleCard-${id}-image`}
+                className={classes.desktopMedia}
+                image={
+                    attributes.background ||
+                    'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
+                }
+                title={String(title)}
+            />
         </Card>
     )
 }
