@@ -8,9 +8,8 @@ import { withRouter } from 'next/router'
 const CommunityPage = ({ router }) => (
     <App>
         <Community
-            secret={this.props.router && this.props.router.query.secret}
-            communityId={
-                this.props.router && this.props.router.query.communityId
+            secret={router.query.secret}
+            communityId={router.query.communityId
             }
         />
     </App>

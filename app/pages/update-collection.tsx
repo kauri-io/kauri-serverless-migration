@@ -5,9 +5,9 @@ import withData from '../lib/with-data'
 import App from '../layouts'
 import CreateCollectionConnection from '../containers/CreateCollection'
 
-const UpdateCollection = () => (
+const UpdateCollection = ({ router }) => (
     <App>
-        <CreateCollectionConnection id={this.props.router.query['id']} />
+        <CreateCollectionConnection id={router.query['id']} />
     </App>
 )
 

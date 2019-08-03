@@ -8,7 +8,7 @@ import CreateCollectionConnection from '../containers/CreateCollection'
 const CreateCollection = ({ router }) => (
     <App>
         <CreateCollectionConnection
-            query={this.props.router && this.props.router.query}
+            query={router.query}
         />
     </App>
 )

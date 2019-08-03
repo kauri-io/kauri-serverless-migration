@@ -7,7 +7,7 @@ import { withRouter } from 'next/router'
 
 const CollectionUpdatedPage = ({ router }) => (
     <App>
-        <CollectionCreated type="updated" id={this.props.router.query.id} />
+        <CollectionCreated type="updated" id={router.query.id} />
     </App>
 )
 

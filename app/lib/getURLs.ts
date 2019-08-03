@@ -2,13 +2,23 @@ import slugify from 'slugify'
 interface IArticleProps {
     title: string
     id: string
-    urlType?: string
+    version: number
 }
 
-export const getArticleURL = ({ title, id }: IArticleProps) => ({
-    as: `/${slugify(title, { lower: true })}/${id}/a`,
-    href: `/article?article_id=${id}`,
-})
+export const getArticleURL = ({ title, id, version }: IArticleProps, type?: string) => {
+    switch(type) {
+        case 'draft':
+            return ({
+                as: `/draft/${id}/${version}`,
+                href: `/draft?id=${id}&version=${version}`
+            })
+        default:
+            return ({
+                as: `/${slugify(title, { lower: true })}/${id}/a`,
+                href: `/article?article_id=${id}`,
+            })
+    }
+}
 
 interface ICollectionProps {
     name?: string | null

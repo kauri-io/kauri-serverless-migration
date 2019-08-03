@@ -14,12 +14,12 @@ interface IProps {
     }
 }
 
-const ArticleApprovedPage = () => (
+const ArticleApprovedPage = ({ router }) => (
     <App>
         <ArticleApproved
             type="draft deleted"
-            article_id={this.props.router.query.article_id}
-            article_version={this.props.router.query.article_version}
+            article_id={router.query.article_id}
+            article_version={router.query.article_version}
         />
     </App>
 )

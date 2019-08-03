@@ -8,8 +8,8 @@ import { withRouter } from 'next/router'
 const ArticleDraftPage = ({ router }) => (
     <App>
         <ArticleDraft
-            id={this.props.router.query.id}
-            version={this.props.router.query.version}
+            id={router.query.id}
+            version={router.query.version}
         />
     </App>
 )

@@ -5,12 +5,12 @@ import App from '../layouts'
 import ArticleApproved from '../containers/ArticleApproved'
 import { withRouter } from 'next/router'
 
-const ArticleApprovedPage = () => (
+const ArticleApprovedPage = ({ router }) => (
     <App>
         <ArticleApproved
             type="approved"
-            article_id={this.props.router.query.article_id}
-            article_version={this.props.router.query.article_version}
+            article_id={router.query.article_id}
+            article_version={router.query.article_version}
         />
     </App>
 )
