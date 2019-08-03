@@ -5,12 +5,11 @@ import withData from '../lib/with-data'
 import App from '../layouts'
 import CreateCommunityConnection from '../containers/CreateCommunity'
 
-const CreateCommunity = ({ router }) =>
+const CreateCommunity = ({ router }) => (
     <App>
-        <CreateCommunityConnection
-            id={router.query.id}
-        />
+        <CreateCommunityConnection id={router.query.id} />
     </App>
+)
 export default compose(
     withData,
     withApollo,

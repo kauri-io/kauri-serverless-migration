@@ -5,18 +5,21 @@ interface IArticleProps {
     version: number
 }
 
-export const getArticleURL = ({ title, id, version }: IArticleProps, type?: string) => {
-    switch(type) {
+export const getArticleURL = (
+    { title, id, version }: IArticleProps,
+    type?: string
+) => {
+    switch (type) {
         case 'draft':
-            return ({
+            return {
                 as: `/draft/${id}/${version}`,
-                href: `/draft?id=${id}&version=${version}`
-            })
+                href: `/draft?id=${id}&version=${version}`,
+            }
         default:
-            return ({
+            return {
                 as: `/${slugify(title, { lower: true })}/${id}/a`,
                 href: `/article?article_id=${id}`,
-            })
+            }
     }
 }
 

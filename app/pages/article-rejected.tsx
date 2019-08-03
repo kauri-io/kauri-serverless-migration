@@ -7,10 +7,7 @@ import { withRouter } from 'next/router'
 
 const ArticleRejectedPage = ({ router }) => (
     <App>
-        <ArticleRejected
-            id={router.query.id}
-            version={router.query.version}
-        />
+        <ArticleRejected id={router.query.id} version={router.query.version} />
     </App>
 )
 

@@ -9,8 +9,7 @@ const CommunityPage = ({ router }) => (
     <App>
         <Community
             secret={router.query.secret}
-            communityId={router.query.communityId
-            }
+            communityId={router.query.communityId}
         />
     </App>
 )

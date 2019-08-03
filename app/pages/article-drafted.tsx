@@ -5,7 +5,7 @@ import App from '../layouts'
 import ArticleApproved from '../containers/ArticleApproved'
 import { withRouter } from 'next/router'
 
-const ArticleApprovedPage = (router) => (
+const ArticleApprovedPage = router => (
     <App>
         <ArticleApproved
             type="drafted"

@@ -7,10 +7,7 @@ import { withRouter } from 'next/router'
 
 const ArticleDraftPage = ({ router }) => (
     <App>
-        <ArticleDraft
-            id={router.query.id}
-            version={router.query.version}
-        />
+        <ArticleDraft id={router.query.id} version={router.query.version} />
     </App>
 )
 

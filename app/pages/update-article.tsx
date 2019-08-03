@@ -5,7 +5,7 @@ import App from '../layouts'
 import SubmitArticle from '../containers/SubmitArticleForm'
 import { withRouter } from 'next/router'
 
-const ViewArticle = ({router}) => (
+const ViewArticle = ({ router }) => (
     <App>
         <SubmitArticle
             id={router.query['id']}
