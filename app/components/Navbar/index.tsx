@@ -16,7 +16,7 @@ import Link from 'next/link'
 import { logout } from './Module'
 import { Avatar } from '@material-ui/core'
 import { withRouter, Router } from 'next/router'
-import { getProfileURL } from '../../lib/getURLs'
+import { getProfileURL } from '../../lib/getURLs';
 
 const useStyles = makeStyles((theme: Theme) => {
     return {

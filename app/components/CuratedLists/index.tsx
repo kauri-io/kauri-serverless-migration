@@ -1,4 +1,4 @@
-import ArticleCard from '../Card/ArticleCardMaterial'
+import ArticleCard from '../Card/ArticleCard'
 import CollectionCard from '../Card/CollectionCard'
 import CommunityCard from '../Card/CommunityCard'
 import { Article } from '../../queries/Fragments/__generated__/Article'

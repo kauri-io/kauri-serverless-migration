@@ -1,4 +1,4 @@
-import ArticleCard from '../../components/Card/ArticleCardMaterial'
+import ArticleCard from '../../components/Card/ArticleCard'
 import CollectionCard from '../../components/Card/CollectionCard'
 import {
     Community_approved_CollectionDTO,

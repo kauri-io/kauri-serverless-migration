@@ -529,6 +529,9 @@ export const relatedArticles = gql`
                         contentHash
                         checkpoint
                         tags
+                        comments {
+                          totalElements
+                        }
                         voteResult {
                             sum
                         }
