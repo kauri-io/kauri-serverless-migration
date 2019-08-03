@@ -247,13 +247,13 @@ exports[`components/TopContributors should match snapshot 1`] = `
                 className="TopContributors__ContributorsContainer-sc-2nkhip-0 cOmYpI"
               >
                 <Link
-                  as="test-username/undefined/p"
+                  as="/test-username/undefined/p"
                   href="/public-profile?user_id=undefined"
                   key="0"
                   prefetch={true}
                 >
                   <a
-                    href="test-username/undefined/p"
+                    href="/test-username/undefined/p"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >

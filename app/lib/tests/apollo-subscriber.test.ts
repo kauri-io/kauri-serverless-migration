@@ -10,7 +10,7 @@ let firstSubscribe = jest.fn()
 let secondSubscribe = jest.fn()
 
 jest.mock('../with-data', () => ({
-    apollo: jest.fn()
+    apollo: jest.fn(),
 }))
 const apollo = require('../with-data').apollo
 

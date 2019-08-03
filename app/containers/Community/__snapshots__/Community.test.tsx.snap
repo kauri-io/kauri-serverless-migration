@@ -7223,7 +7223,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                             description="Other articles in this series: - Manage an Ethereum account with Java and Web3j - Generate a Java Wrapper from your Smart Contract - Interacting with an Ethereum Smart Contract in Java - Listening for Ethereum Smart Contract Events in Java - Using Pantheon, the Java Ethereum Client with Linux Ethereum is a Blockchain, which means it operates on a peer-to-peer network composed of thousand of nodes where each node agrees on the next state. In order to interact with the Ethereum global state (distr"
                                             href={
                                               Object {
-                                                "as": "connecting-to-an-ethereum-client-with-java-eclipse-and-web3j/b9eb647c47a546bc95693acc0be72546/a",
+                                                "as": "/connecting-to-an-ethereum-client-with-java-eclipse-and-web3j/b9eb647c47a546bc95693acc0be72546/a",
                                                 "href": "/article?article_id=b9eb647c47a546bc95693acc0be72546",
                                               }
                                             }
@@ -7314,12 +7314,12 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                       className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                                     >
                                                       <Link
-                                                        as="gregjeanmart/undefined/p"
-                                                        href="/public-profile?user_id=undefined"
+                                                        as="/gregjeanmart/f0f15cedc719b5a55470877b0710d5c7816916b1/p"
+                                                        href="/public-profile?user_id=f0f15cedc719b5a55470877b0710d5c7816916b1"
                                                         prefetch={true}
                                                       >
                                                         <a
-                                                          href="gregjeanmart/undefined/p"
+                                                          href="/gregjeanmart/f0f15cedc719b5a55470877b0710d5c7816916b1/p"
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
                                                         >
@@ -8033,12 +8033,12 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                         </a>
                                                       </Link>
                                                       <Link
-                                                        as="connecting-to-an-ethereum-client-with-java-eclipse-and-web3j/b9eb647c47a546bc95693acc0be72546/a"
+                                                        as="/connecting-to-an-ethereum-client-with-java-eclipse-and-web3j/b9eb647c47a546bc95693acc0be72546/a"
                                                         href="/article?article_id=b9eb647c47a546bc95693acc0be72546"
                                                         prefetch={true}
                                                       >
                                                         <a
-                                                          href="connecting-to-an-ethereum-client-with-java-eclipse-and-web3j/b9eb647c47a546bc95693acc0be72546/a"
+                                                          href="/connecting-to-an-ethereum-client-with-java-eclipse-and-web3j/b9eb647c47a546bc95693acc0be72546/a"
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
                                                         >
@@ -8757,7 +8757,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                             description="Other articles in this series: - Connecting to an Ethereum client with Java, Eclipse and Web3j - Generate a Java Wrapper from your Smart Contract - Interacting with an Ethereum Smart Contract in Java - Listening for Ethereum Smart Contract Events in Java - Using Pantheon, the Java Ethereum Client with Linux The Ethereum blockchain is often compared to a World Computer with a global state. The global state grows after each new block and cosists of many accounts organised in a Merkle tree. Each ac"
                                             href={
                                               Object {
-                                                "as": "manage-an-ethereum-account-with-java-and-web3j/925d923e12c543da9a0a3e617be963b4/a",
+                                                "as": "/manage-an-ethereum-account-with-java-and-web3j/925d923e12c543da9a0a3e617be963b4/a",
                                                 "href": "/article?article_id=925d923e12c543da9a0a3e617be963b4",
                                               }
                                             }
@@ -8848,12 +8848,12 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                       className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                                     >
                                                       <Link
-                                                        as="gregjeanmart/undefined/p"
-                                                        href="/public-profile?user_id=undefined"
+                                                        as="/gregjeanmart/f0f15cedc719b5a55470877b0710d5c7816916b1/p"
+                                                        href="/public-profile?user_id=f0f15cedc719b5a55470877b0710d5c7816916b1"
                                                         prefetch={true}
                                                       >
                                                         <a
-                                                          href="gregjeanmart/undefined/p"
+                                                          href="/gregjeanmart/f0f15cedc719b5a55470877b0710d5c7816916b1/p"
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
                                                         >
@@ -9567,12 +9567,12 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                         </a>
                                                       </Link>
                                                       <Link
-                                                        as="manage-an-ethereum-account-with-java-and-web3j/925d923e12c543da9a0a3e617be963b4/a"
+                                                        as="/manage-an-ethereum-account-with-java-and-web3j/925d923e12c543da9a0a3e617be963b4/a"
                                                         href="/article?article_id=925d923e12c543da9a0a3e617be963b4"
                                                         prefetch={true}
                                                       >
                                                         <a
-                                                          href="manage-an-ethereum-account-with-java-and-web3j/925d923e12c543da9a0a3e617be963b4/a"
+                                                          href="/manage-an-ethereum-account-with-java-and-web3j/925d923e12c543da9a0a3e617be963b4/a"
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
                                                         >
@@ -10291,7 +10291,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                             description="Other articles in this series: - Connecting to an Ethereum client with Java, Eclipse and Web3j - Manage an Ethereum account with Java and Web3j - Interacting with an Ethereum Smart Contract in Java - Listening for Ethereum Smart Contract Events in Java - Using Pantheon, the Java Ethereum Client with Linux In this article, we discover how to generate a Java Wrapper Class directly from a smart contract to interact with a smart contract in Java. There are different methods to generate a Java Wrappe"
                                             href={
                                               Object {
-                                                "as": "generate-a-java-wrapper-from-your-smart-contract/84475132317d4d6a84a2c42eb9348e4b/a",
+                                                "as": "/generate-a-java-wrapper-from-your-smart-contract/84475132317d4d6a84a2c42eb9348e4b/a",
                                                 "href": "/article?article_id=84475132317d4d6a84a2c42eb9348e4b",
                                               }
                                             }
@@ -10382,12 +10382,12 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                       className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                                     >
                                                       <Link
-                                                        as="gregjeanmart/undefined/p"
-                                                        href="/public-profile?user_id=undefined"
+                                                        as="/gregjeanmart/f0f15cedc719b5a55470877b0710d5c7816916b1/p"
+                                                        href="/public-profile?user_id=f0f15cedc719b5a55470877b0710d5c7816916b1"
                                                         prefetch={true}
                                                       >
                                                         <a
-                                                          href="gregjeanmart/undefined/p"
+                                                          href="/gregjeanmart/f0f15cedc719b5a55470877b0710d5c7816916b1/p"
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
                                                         >
@@ -11101,12 +11101,12 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                         </a>
                                                       </Link>
                                                       <Link
-                                                        as="generate-a-java-wrapper-from-your-smart-contract/84475132317d4d6a84a2c42eb9348e4b/a"
+                                                        as="/generate-a-java-wrapper-from-your-smart-contract/84475132317d4d6a84a2c42eb9348e4b/a"
                                                         href="/article?article_id=84475132317d4d6a84a2c42eb9348e4b"
                                                         prefetch={true}
                                                       >
                                                         <a
-                                                          href="generate-a-java-wrapper-from-your-smart-contract/84475132317d4d6a84a2c42eb9348e4b/a"
+                                                          href="/generate-a-java-wrapper-from-your-smart-contract/84475132317d4d6a84a2c42eb9348e4b/a"
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
                                                         >
@@ -11832,7 +11832,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                             description="Other articles in this series: - Connecting to an Ethereum client with Java, Eclipse and Web3j - Manage an Ethereum account with Java and Web3j - Generate a Java Wrapper from your Smart Contract - Listening for Ethereum Smart Contract Events in Java - Using Pantheon, the Java Ethereum Client with Linux In this tutorial, you will learn how to deploy a smart contract using the Web3j java library, along with how to interact with the functions of the smart contract. As a prerequisite, you should be"
                                             href={
                                               Object {
-                                                "as": "interacting-with-an-ethereum-smart-contract-in-java/14dc434d11ef4ee18bf7d57f079e246e/a",
+                                                "as": "/interacting-with-an-ethereum-smart-contract-in-java/14dc434d11ef4ee18bf7d57f079e246e/a",
                                                 "href": "/article?article_id=14dc434d11ef4ee18bf7d57f079e246e",
                                               }
                                             }
@@ -11923,12 +11923,12 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                       className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                                     >
                                                       <Link
-                                                        as="craig/undefined/p"
-                                                        href="/public-profile?user_id=undefined"
+                                                        as="/craig/4d91838268f6d6d4e590e8fd2a001cd91c32e7a4/p"
+                                                        href="/public-profile?user_id=4d91838268f6d6d4e590e8fd2a001cd91c32e7a4"
                                                         prefetch={true}
                                                       >
                                                         <a
-                                                          href="craig/undefined/p"
+                                                          href="/craig/4d91838268f6d6d4e590e8fd2a001cd91c32e7a4/p"
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
                                                         >
@@ -12642,12 +12642,12 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                         </a>
                                                       </Link>
                                                       <Link
-                                                        as="interacting-with-an-ethereum-smart-contract-in-java/14dc434d11ef4ee18bf7d57f079e246e/a"
+                                                        as="/interacting-with-an-ethereum-smart-contract-in-java/14dc434d11ef4ee18bf7d57f079e246e/a"
                                                         href="/article?article_id=14dc434d11ef4ee18bf7d57f079e246e"
                                                         prefetch={true}
                                                       >
                                                         <a
-                                                          href="interacting-with-an-ethereum-smart-contract-in-java/14dc434d11ef4ee18bf7d57f079e246e/a"
+                                                          href="/interacting-with-an-ethereum-smart-contract-in-java/14dc434d11ef4ee18bf7d57f079e246e/a"
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
                                                         >
@@ -13373,7 +13373,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                             description="Other articles in this series: - Connecting to an Ethereum client with Java, Eclipse and Web3j - Manage an Ethereum account with Java and Web3j - Generate a Java Wrapper from your Smart Contract - Interacting with an Ethereum Smart Contract in Java - Using Pantheon, the Java Ethereum Client with Linux What is a Smart Contract Event You can emit an event from any smart contract function triggered by a transaction, and they are an important piece of the Ethereum application architecture puzzle. Th"
                                             href={
                                               Object {
-                                                "as": "listening-for-ethereum-smart-contract-events-in-java/760f495423db42f988d17b8c145b0874/a",
+                                                "as": "/listening-for-ethereum-smart-contract-events-in-java/760f495423db42f988d17b8c145b0874/a",
                                                 "href": "/article?article_id=760f495423db42f988d17b8c145b0874",
                                               }
                                             }
@@ -13464,12 +13464,12 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                       className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                                     >
                                                       <Link
-                                                        as="craig/undefined/p"
-                                                        href="/public-profile?user_id=undefined"
+                                                        as="/craig/4d91838268f6d6d4e590e8fd2a001cd91c32e7a4/p"
+                                                        href="/public-profile?user_id=4d91838268f6d6d4e590e8fd2a001cd91c32e7a4"
                                                         prefetch={true}
                                                       >
                                                         <a
-                                                          href="craig/undefined/p"
+                                                          href="/craig/4d91838268f6d6d4e590e8fd2a001cd91c32e7a4/p"
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
                                                         >
@@ -14183,12 +14183,12 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                         </a>
                                                       </Link>
                                                       <Link
-                                                        as="listening-for-ethereum-smart-contract-events-in-java/760f495423db42f988d17b8c145b0874/a"
+                                                        as="/listening-for-ethereum-smart-contract-events-in-java/760f495423db42f988d17b8c145b0874/a"
                                                         href="/article?article_id=760f495423db42f988d17b8c145b0874"
                                                         prefetch={true}
                                                       >
                                                         <a
-                                                          href="listening-for-ethereum-smart-contract-events-in-java/760f495423db42f988d17b8c145b0874/a"
+                                                          href="/listening-for-ethereum-smart-contract-events-in-java/760f495423db42f988d17b8c145b0874/a"
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
                                                         >
@@ -14907,7 +14907,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                             description="Toolbelt: Pantheon included! Original photo by Jesse Orrico This is the first article of a 3-part series on installing Pantheon, the Java client for Ethereum: Linux macOS Windows Having some powerful tools in your toolbelt is essential for a Java developer, and one of the crucial tools for an Ethereum blockchain developer is the network client. This is the piece of software that communicates data to and from the blockchain. Among other things, the client: spins up nodes, acts as a peer discovery"
                                             href={
                                               Object {
-                                                "as": "using-pantheon-the-java-ethereum-client-with-linux/276dd27f1458443295eea58403fd6965/a",
+                                                "as": "/using-pantheon-the-java-ethereum-client-with-linux/276dd27f1458443295eea58403fd6965/a",
                                                 "href": "/article?article_id=276dd27f1458443295eea58403fd6965",
                                               }
                                             }
@@ -14998,12 +14998,12 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                       className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                                     >
                                                       <Link
-                                                        as="felipefaraggi/undefined/p"
-                                                        href="/public-profile?user_id=undefined"
+                                                        as="/felipefaraggi/824e8fa64ff92b859cc9991ac044e00b665b9b04/p"
+                                                        href="/public-profile?user_id=824e8fa64ff92b859cc9991ac044e00b665b9b04"
                                                         prefetch={true}
                                                       >
                                                         <a
-                                                          href="felipefaraggi/undefined/p"
+                                                          href="/felipefaraggi/824e8fa64ff92b859cc9991ac044e00b665b9b04/p"
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
                                                         >
@@ -15717,12 +15717,12 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                         </a>
                                                       </Link>
                                                       <Link
-                                                        as="using-pantheon-the-java-ethereum-client-with-linux/276dd27f1458443295eea58403fd6965/a"
+                                                        as="/using-pantheon-the-java-ethereum-client-with-linux/276dd27f1458443295eea58403fd6965/a"
                                                         href="/article?article_id=276dd27f1458443295eea58403fd6965"
                                                         prefetch={true}
                                                       >
                                                         <a
-                                                          href="using-pantheon-the-java-ethereum-client-with-linux/276dd27f1458443295eea58403fd6965/a"
+                                                          href="/using-pantheon-the-java-ethereum-client-with-linux/276dd27f1458443295eea58403fd6965/a"
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
                                                         >

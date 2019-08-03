@@ -21,7 +21,7 @@ exports[`containers/CollectionCreated/View should match the snapshot 1`] = `
     description="Learn about blockchains, smart contracts, Ethereum, and what you can build with them"
     href={
       Object {
-        "as": "getting-started/5cb55c871325f2000141df73/c",
+        "as": "/getting-started/5cb55c871325f2000141df73/c",
         "href": "/collection?collection_id=5cb55c871325f2000141df73",
       }
     }

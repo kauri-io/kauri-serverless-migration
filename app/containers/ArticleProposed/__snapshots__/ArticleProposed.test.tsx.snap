@@ -518,7 +518,7 @@ exports[`containers/ArticleProposed should match snapshot 1`] = `
                   description="test description 1"
                   href={
                     Object {
-                      "as": "test-title-1/1231/a",
+                      "as": "/test-title-1/1231/a",
                       "href": "/article?article_id=1231",
                     }
                   }
@@ -621,12 +621,12 @@ exports[`containers/ArticleProposed should match snapshot 1`] = `
                             className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                           >
                             <Link
-                              as="test-author-username-1/undefined/p"
-                              href="/public-profile?user_id=undefined"
+                              as="/test-author-username-1/6791/p"
+                              href="/public-profile?user_id=6791"
                               prefetch={true}
                             >
                               <a
-                                href="test-author-username-1/undefined/p"
+                                href="/test-author-username-1/6791/p"
                                 onClick={[Function]}
                                 onMouseEnter={[Function]}
                               >
@@ -1340,12 +1340,12 @@ exports[`containers/ArticleProposed should match snapshot 1`] = `
                               </a>
                             </Link>
                             <Link
-                              as="test-title-1/1231/a"
+                              as="/test-title-1/1231/a"
                               href="/article?article_id=1231"
                               prefetch={true}
                             >
                               <a
-                                href="test-title-1/1231/a"
+                                href="/test-title-1/1231/a"
                                 onClick={[Function]}
                                 onMouseEnter={[Function]}
                               >

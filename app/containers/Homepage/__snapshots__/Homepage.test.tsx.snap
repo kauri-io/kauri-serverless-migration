@@ -6963,7 +6963,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           description="Java is one of the worlds most popular programming languages used in global-scale applications by developers everywhere. This community brings together developers and projects at the forefront of bringing Ethereum support to this rich language ecosystem."
                                           href={
                                             Object {
-                                              "as": "java-ethereum/5d2f30daaba2920001c82409/c",
+                                              "as": "/java-ethereum/5d2f30daaba2920001c82409/c",
                                               "href": "/collection?collection_id=5d2f30daaba2920001c82409",
                                             }
                                           }
@@ -7130,12 +7130,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           </StyledComponent>
                                                         </CommunityCard__LabelContainer>
                                                         <Link
-                                                          as="java-ethereum/5d2f30daaba2920001c82409/c"
+                                                          as="/java-ethereum/5d2f30daaba2920001c82409/c"
                                                           href="/collection?collection_id=5d2f30daaba2920001c82409"
                                                           prefetch={true}
                                                         >
                                                           <a
-                                                            href="java-ethereum/5d2f30daaba2920001c82409/c"
+                                                            href="/java-ethereum/5d2f30daaba2920001c82409/c"
                                                             onClick={[Function]}
                                                             onMouseEnter={[Function]}
                                                           >
@@ -7473,7 +7473,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           description="EDIT: I work at ConsenSys Academy, creating educational content similar to this. I teach developers and non-developers on how to use the Ethereum Blockchain. If you enjoy this content on Libra and want to learn more about blockchain, I highly recommend you sign up for the Developer Program On-Demand. Even though Facebooks name is hard to find on the Libra website, the long term plan is for it to integrate with their forthcoming Calibra wallet, and then, the whole game plan might make more sense."
                                           href={
                                             Object {
-                                              "as": "building-and-working-with-facebook's-cryptocurrency-libra/cc41c516e62a4ca593f5ecdd86bdf299/a",
+                                              "as": "/building-and-working-with-facebook's-cryptocurrency-libra/cc41c516e62a4ca593f5ecdd86bdf299/a",
                                               "href": "/article?article_id=cc41c516e62a4ca593f5ecdd86bdf299",
                                             }
                                           }
@@ -7579,12 +7579,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                                   >
                                                     <Link
-                                                      as="cooganb/undefined/p"
-                                                      href="/public-profile?user_id=undefined"
+                                                      as="/cooganb/afc2f2bbd4173311be60a7f5d4103b098d2703e8/p"
+                                                      href="/public-profile?user_id=afc2f2bbd4173311be60a7f5d4103b098d2703e8"
                                                       prefetch={true}
                                                     >
                                                       <a
-                                                        href="cooganb/undefined/p"
+                                                        href="/cooganb/afc2f2bbd4173311be60a7f5d4103b098d2703e8/p"
                                                         onClick={[Function]}
                                                         onMouseEnter={[Function]}
                                                       >
@@ -8298,12 +8298,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       </a>
                                                     </Link>
                                                     <Link
-                                                      as="building-and-working-with-facebook's-cryptocurrency-libra/cc41c516e62a4ca593f5ecdd86bdf299/a"
+                                                      as="/building-and-working-with-facebook's-cryptocurrency-libra/cc41c516e62a4ca593f5ecdd86bdf299/a"
                                                       href="/article?article_id=cc41c516e62a4ca593f5ecdd86bdf299"
                                                       prefetch={true}
                                                     >
                                                       <a
-                                                        href="building-and-working-with-facebook's-cryptocurrency-libra/cc41c516e62a4ca593f5ecdd86bdf299/a"
+                                                        href="/building-and-working-with-facebook's-cryptocurrency-libra/cc41c516e62a4ca593f5ecdd86bdf299/a"
                                                         onClick={[Function]}
                                                         onMouseEnter={[Function]}
                                                       >
@@ -9073,7 +9073,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           description="This two part tutorial walks you through from start to finish the process of making NFTs and making them available on OpenSea, Rarebits and the World Wide Web. It uses Netlify and Lambda functions to make sure your metadata is highly available."
                                           href={
                                             Object {
-                                              "as": "flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c",
+                                              "as": "/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c",
                                               "href": "/collection?collection_id=5d11f9f8a6afcc0001f621de",
                                             }
                                           }
@@ -9369,7 +9369,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                           cardWidth={288}
                                                                           collectionURL={
                                                                             Object {
-                                                                              "as": "flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c",
+                                                                              "as": "/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c",
                                                                               "href": "/collection?collection_id=5d11f9f8a6afcc0001f621de",
                                                                             }
                                                                           }
@@ -9384,12 +9384,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                           username="okwme"
                                                                         >
                                                                           <Link
-                                                                            as="flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
+                                                                            as="/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
                                                                             href="/collection?collection_id=5d11f9f8a6afcc0001f621de"
                                                                             prefetch={true}
                                                                           >
                                                                             <a
-                                                                              href="flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
+                                                                              href="/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
                                                                               onClick={[Function]}
                                                                               onMouseEnter={[Function]}
                                                                             >
@@ -9939,19 +9939,19 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           collectionCount="0"
                                                           href={
                                                             Object {
-                                                              "as": "flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c",
+                                                              "as": "/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c",
                                                               "href": "/collection?collection_id=5d11f9f8a6afcc0001f621de",
                                                             }
                                                           }
                                                           imageURL="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
                                                         >
                                                           <Link
-                                                            as="flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
+                                                            as="/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
                                                             href="/collection?collection_id=5d11f9f8a6afcc0001f621de"
                                                             prefetch={true}
                                                           >
                                                             <a
-                                                              href="flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
+                                                              href="/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
                                                               onClick={[Function]}
                                                               onMouseEnter={[Function]}
                                                             >
@@ -11177,13 +11177,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           className="TopContributors__ContributorsContainer-sc-2nkhip-0 cOmYpI"
                                         >
                                           <Link
-                                            as="kendall/52d5520c145553241ffe4609008695519b3ad705/p"
-                                            href="/public-profile?user_id=52d5520c145553241ffe4609008695519b3ad705"
+                                            as="/kendall/undefined/p"
+                                            href="/public-profile?user_id=undefined"
                                             key="0"
                                             prefetch={true}
                                           >
                                             <a
-                                              href="kendall/52d5520c145553241ffe4609008695519b3ad705/p"
+                                              href="/kendall/undefined/p"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
                                             >
@@ -11428,13 +11428,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             </a>
                                           </Link>
                                           <Link
-                                            as="wil/60e0fca78e5bf845d7af875288b1bfb010d61ac4/p"
-                                            href="/public-profile?user_id=60e0fca78e5bf845d7af875288b1bfb010d61ac4"
+                                            as="/wil/undefined/p"
+                                            href="/public-profile?user_id=undefined"
                                             key="1"
                                             prefetch={true}
                                           >
                                             <a
-                                              href="wil/60e0fca78e5bf845d7af875288b1bfb010d61ac4/p"
+                                              href="/wil/undefined/p"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
                                             >
@@ -11679,13 +11679,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             </a>
                                           </Link>
                                           <Link
-                                            as="jmrocco/dd23401dcab425f0a435eb7a86c77c5e8513bead/p"
-                                            href="/public-profile?user_id=dd23401dcab425f0a435eb7a86c77c5e8513bead"
+                                            as="/jmrocco/undefined/p"
+                                            href="/public-profile?user_id=undefined"
                                             key="2"
                                             prefetch={true}
                                           >
                                             <a
-                                              href="jmrocco/dd23401dcab425f0a435eb7a86c77c5e8513bead/p"
+                                              href="/jmrocco/undefined/p"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
                                             >
@@ -11930,13 +11930,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             </a>
                                           </Link>
                                           <Link
-                                            as="ericjuta/bfecec47dd8bf5f6264a9830a9d26ef387c38a67/p"
-                                            href="/public-profile?user_id=bfecec47dd8bf5f6264a9830a9d26ef387c38a67"
+                                            as="/ericjuta/undefined/p"
+                                            href="/public-profile?user_id=undefined"
                                             key="3"
                                             prefetch={true}
                                           >
                                             <a
-                                              href="ericjuta/bfecec47dd8bf5f6264a9830a9d26ef387c38a67/p"
+                                              href="/ericjuta/undefined/p"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
                                             >
@@ -12181,13 +12181,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             </a>
                                           </Link>
                                           <Link
-                                            as="gregjeanmart/f0f15cedc719b5a55470877b0710d5c7816916b1/p"
-                                            href="/public-profile?user_id=f0f15cedc719b5a55470877b0710d5c7816916b1"
+                                            as="/gregjeanmart/undefined/p"
+                                            href="/public-profile?user_id=undefined"
                                             key="4"
                                             prefetch={true}
                                           >
                                             <a
-                                              href="gregjeanmart/f0f15cedc719b5a55470877b0710d5c7816916b1/p"
+                                              href="/gregjeanmart/undefined/p"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
                                             >
@@ -13071,7 +13071,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       description="Whether you are a developer, tech enthusiast or enterprise, iExec offers one of the most complete and simple-to-use decentralized oracle solutions. This guide will show you how to start feeding Web 2.0 API data into your Ethereum smart contract in no time. For a general overview of what a decentralized oracle is and why it is needed, have a look at our previous article: Why your Decentralized Application Needs a Decentralized Oracle If earning some RLC while learning about decentralized oracles"
                                       href={
                                         Object {
-                                          "as": "how-to-build-a-decentralized-oracle-on-ethereum-a-step-by-step-guide/980d76e9595d401c8fac6af3045033d4/a",
+                                          "as": "/how-to-build-a-decentralized-oracle-on-ethereum-a-step-by-step-guide/980d76e9595d401c8fac6af3045033d4/a",
                                           "href": "/article?article_id=980d76e9595d401c8fac6af3045033d4",
                                         }
                                       }
@@ -13179,12 +13179,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                               >
                                                 <Link
-                                                  as="julienbrg/undefined/p"
-                                                  href="/public-profile?user_id=undefined"
+                                                  as="/julienbrg/eefb9234302128259d46ed9e223fbc48b5edb5d1/p"
+                                                  href="/public-profile?user_id=eefb9234302128259d46ed9e223fbc48b5edb5d1"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="julienbrg/undefined/p"
+                                                    href="/julienbrg/eefb9234302128259d46ed9e223fbc48b5edb5d1/p"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
@@ -13898,12 +13898,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                   </a>
                                                 </Link>
                                                 <Link
-                                                  as="how-to-build-a-decentralized-oracle-on-ethereum-a-step-by-step-guide/980d76e9595d401c8fac6af3045033d4/a"
+                                                  as="/how-to-build-a-decentralized-oracle-on-ethereum-a-step-by-step-guide/980d76e9595d401c8fac6af3045033d4/a"
                                                   href="/article?article_id=980d76e9595d401c8fac6af3045033d4"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="how-to-build-a-decentralized-oracle-on-ethereum-a-step-by-step-guide/980d76e9595d401c8fac6af3045033d4/a"
+                                                    href="/how-to-build-a-decentralized-oracle-on-ethereum-a-step-by-step-guide/980d76e9595d401c8fac6af3045033d4/a"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
@@ -14587,7 +14587,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       description="Introduction This article discusses some of the defi and opfi lending and borrowing services that I have tested and evaluated. It is not intended to be an exhaustive list, since there are so many products and services in the defi space, and is rapidly growing. There are different degrees of decentralisation, and transparency, but all of them make good use of smart contracts. Most of the dapps are running on the etherium platform, since they are the most mature of the smart contract platforms. Bu"
                                       href={
                                         Object {
-                                          "as": "defi-and-opfi-lending-and-borrowing-platforms-(users-perspective)/6012ca70153c4bb2af8b7849bcb6909f/a",
+                                          "as": "/defi-and-opfi-lending-and-borrowing-platforms-(users-perspective)/6012ca70153c4bb2af8b7849bcb6909f/a",
                                           "href": "/article?article_id=6012ca70153c4bb2af8b7849bcb6909f",
                                         }
                                       }
@@ -14691,12 +14691,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                               >
                                                 <Link
-                                                  as="fblauer/undefined/p"
-                                                  href="/public-profile?user_id=undefined"
+                                                  as="/fblauer/970991bdd61aed3c2cf91e9bf6944960561dbcf5/p"
+                                                  href="/public-profile?user_id=970991bdd61aed3c2cf91e9bf6944960561dbcf5"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="fblauer/undefined/p"
+                                                    href="/fblauer/970991bdd61aed3c2cf91e9bf6944960561dbcf5/p"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
@@ -15416,12 +15416,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                   </a>
                                                 </Link>
                                                 <Link
-                                                  as="defi-and-opfi-lending-and-borrowing-platforms-(users-perspective)/6012ca70153c4bb2af8b7849bcb6909f/a"
+                                                  as="/defi-and-opfi-lending-and-borrowing-platforms-(users-perspective)/6012ca70153c4bb2af8b7849bcb6909f/a"
                                                   href="/article?article_id=6012ca70153c4bb2af8b7849bcb6909f"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="defi-and-opfi-lending-and-borrowing-platforms-(users-perspective)/6012ca70153c4bb2af8b7849bcb6909f/a"
+                                                    href="/defi-and-opfi-lending-and-borrowing-platforms-(users-perspective)/6012ca70153c4bb2af8b7849bcb6909f/a"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
@@ -16132,7 +16132,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       description="Intro I have been evaluating the Cobo.com wallet services for the past few of months. I have been testing the staking pool, and interest earning capabilities, as an alternative to Celsius (which I really like – I will also be writing some articles about Celsius finance). There are 3 types of Cobo wallets – Cloud/mobile, Hardware/vault, and custody solution for enterprises. For the purposes of this article, I will be discussing the mobile/cloud wallet and investment capabilities. For people who a"
                                       href={
                                         Object {
-                                          "as": "cobo-crypto-wallet-for-investing-and-staking/1ab97af325d645128b6bf46760cbb873/a",
+                                          "as": "/cobo-crypto-wallet-for-investing-and-staking/1ab97af325d645128b6bf46760cbb873/a",
                                           "href": "/article?article_id=1ab97af325d645128b6bf46760cbb873",
                                         }
                                       }
@@ -16236,12 +16236,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                               >
                                                 <Link
-                                                  as="fblauer/undefined/p"
-                                                  href="/public-profile?user_id=undefined"
+                                                  as="/fblauer/970991bdd61aed3c2cf91e9bf6944960561dbcf5/p"
+                                                  href="/public-profile?user_id=970991bdd61aed3c2cf91e9bf6944960561dbcf5"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="fblauer/undefined/p"
+                                                    href="/fblauer/970991bdd61aed3c2cf91e9bf6944960561dbcf5/p"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
@@ -16961,12 +16961,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                   </a>
                                                 </Link>
                                                 <Link
-                                                  as="cobo-crypto-wallet-for-investing-and-staking/1ab97af325d645128b6bf46760cbb873/a"
+                                                  as="/cobo-crypto-wallet-for-investing-and-staking/1ab97af325d645128b6bf46760cbb873/a"
                                                   href="/article?article_id=1ab97af325d645128b6bf46760cbb873"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="cobo-crypto-wallet-for-investing-and-staking/1ab97af325d645128b6bf46760cbb873/a"
+                                                    href="/cobo-crypto-wallet-for-investing-and-staking/1ab97af325d645128b6bf46760cbb873/a"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
@@ -17660,7 +17660,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       description="Defi collection"
                                       href={
                                         Object {
-                                          "as": "defi-collection/5d388fa9dba75a00016a4a75/c",
+                                          "as": "/defi-collection/5d388fa9dba75a00016a4a75/c",
                                           "href": "/collection?collection_id=5d388fa9dba75a00016a4a75",
                                         }
                                       }
@@ -17819,7 +17819,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 cardWidth={288}
                                                                 collectionURL={
                                                                   Object {
-                                                                    "as": "defi-collection/5d388fa9dba75a00016a4a75/c",
+                                                                    "as": "/defi-collection/5d388fa9dba75a00016a4a75/c",
                                                                     "href": "/collection?collection_id=5d388fa9dba75a00016a4a75",
                                                                   }
                                                                 }
@@ -17834,12 +17834,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 username="fblauer"
                                                               >
                                                                 <Link
-                                                                  as="defi-collection/5d388fa9dba75a00016a4a75/c"
+                                                                  as="/defi-collection/5d388fa9dba75a00016a4a75/c"
                                                                   href="/collection?collection_id=5d388fa9dba75a00016a4a75"
                                                                   prefetch={true}
                                                                 >
                                                                   <a
-                                                                    href="defi-collection/5d388fa9dba75a00016a4a75/c"
+                                                                    href="/defi-collection/5d388fa9dba75a00016a4a75/c"
                                                                     onClick={[Function]}
                                                                     onMouseEnter={[Function]}
                                                                   >
@@ -18338,7 +18338,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                         <span
                                                                           className="Typography__component-sc-36xkf6-0 kALGmD"
                                                                         >
-                                                                          Posted 9 days ago
+                                                                          Posted 10 days ago
                                                                         </span>
                                                                       </StyledComponent>
                                                                     </Typography__component>
@@ -18392,19 +18392,19 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       collectionCount="0"
                                                       href={
                                                         Object {
-                                                          "as": "defi-collection/5d388fa9dba75a00016a4a75/c",
+                                                          "as": "/defi-collection/5d388fa9dba75a00016a4a75/c",
                                                           "href": "/collection?collection_id=5d388fa9dba75a00016a4a75",
                                                         }
                                                       }
                                                       imageURL={null}
                                                     >
                                                       <Link
-                                                        as="defi-collection/5d388fa9dba75a00016a4a75/c"
+                                                        as="/defi-collection/5d388fa9dba75a00016a4a75/c"
                                                         href="/collection?collection_id=5d388fa9dba75a00016a4a75"
                                                         prefetch={true}
                                                       >
                                                         <a
-                                                          href="defi-collection/5d388fa9dba75a00016a4a75/c"
+                                                          href="/defi-collection/5d388fa9dba75a00016a4a75/c"
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
                                                         >
@@ -18608,7 +18608,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       description="Hello world. I am super excited about the new breed of Defi_Opfi projects that I have been discovering and testing out with great preliminary results. To me, this is where the new killer apps will come from and give the mainstream retail and institutional investors a good reason to adopt crypto currencies and blockchain smart contracts. If you can earn 14% on a decentrlized stable coin like dai, which is pegged to the US dollar, with low risk, there is a good incentive to get serious about movin"
                                       href={
                                         Object {
-                                          "as": "my-first-post-to-the-new-defi_opfi-blog/056f5d1d53cb4d4990f43b99e8544de4/a",
+                                          "as": "/my-first-post-to-the-new-defi_opfi-blog/056f5d1d53cb4d4990f43b99e8544de4/a",
                                           "href": "/article?article_id=056f5d1d53cb4d4990f43b99e8544de4",
                                         }
                                       }
@@ -18713,12 +18713,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                               >
                                                 <Link
-                                                  as="fblauer/undefined/p"
-                                                  href="/public-profile?user_id=undefined"
+                                                  as="/fblauer/970991bdd61aed3c2cf91e9bf6944960561dbcf5/p"
+                                                  href="/public-profile?user_id=970991bdd61aed3c2cf91e9bf6944960561dbcf5"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="fblauer/undefined/p"
+                                                    href="/fblauer/970991bdd61aed3c2cf91e9bf6944960561dbcf5/p"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
@@ -19438,12 +19438,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                   </a>
                                                 </Link>
                                                 <Link
-                                                  as="my-first-post-to-the-new-defi_opfi-blog/056f5d1d53cb4d4990f43b99e8544de4/a"
+                                                  as="/my-first-post-to-the-new-defi_opfi-blog/056f5d1d53cb4d4990f43b99e8544de4/a"
                                                   href="/article?article_id=056f5d1d53cb4d4990f43b99e8544de4"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="my-first-post-to-the-new-defi_opfi-blog/056f5d1d53cb4d4990f43b99e8544de4/a"
+                                                    href="/my-first-post-to-the-new-defi_opfi-blog/056f5d1d53cb4d4990f43b99e8544de4/a"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
@@ -20137,7 +20137,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       description="kauri communities"
                                       href={
                                         Object {
-                                          "as": "read-items/5d36c507e95943000108e6a0/c",
+                                          "as": "/read-items/5d36c507e95943000108e6a0/c",
                                           "href": "/collection?collection_id=5d36c507e95943000108e6a0",
                                         }
                                       }
@@ -20296,7 +20296,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 cardWidth={288}
                                                                 collectionURL={
                                                                   Object {
-                                                                    "as": "read-items/5d36c507e95943000108e6a0/c",
+                                                                    "as": "/read-items/5d36c507e95943000108e6a0/c",
                                                                     "href": "/collection?collection_id=5d36c507e95943000108e6a0",
                                                                   }
                                                                 }
@@ -20311,12 +20311,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 username={null}
                                                               >
                                                                 <Link
-                                                                  as="read-items/5d36c507e95943000108e6a0/c"
+                                                                  as="/read-items/5d36c507e95943000108e6a0/c"
                                                                   href="/collection?collection_id=5d36c507e95943000108e6a0"
                                                                   prefetch={true}
                                                                 >
                                                                   <a
-                                                                    href="read-items/5d36c507e95943000108e6a0/c"
+                                                                    href="/read-items/5d36c507e95943000108e6a0/c"
                                                                     onClick={[Function]}
                                                                     onMouseEnter={[Function]}
                                                                   >
@@ -20869,19 +20869,19 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       collectionCount="0"
                                                       href={
                                                         Object {
-                                                          "as": "read-items/5d36c507e95943000108e6a0/c",
+                                                          "as": "/read-items/5d36c507e95943000108e6a0/c",
                                                           "href": "/collection?collection_id=5d36c507e95943000108e6a0",
                                                         }
                                                       }
                                                       imageURL={null}
                                                     >
                                                       <Link
-                                                        as="read-items/5d36c507e95943000108e6a0/c"
+                                                        as="/read-items/5d36c507e95943000108e6a0/c"
                                                         href="/collection?collection_id=5d36c507e95943000108e6a0"
                                                         prefetch={true}
                                                       >
                                                         <a
-                                                          href="read-items/5d36c507e95943000108e6a0/c"
+                                                          href="/read-items/5d36c507e95943000108e6a0/c"
                                                           onClick={[Function]}
                                                           onMouseEnter={[Function]}
                                                         >
@@ -21085,7 +21085,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       description="Toolbelt: Pantheon included! Original photo by Jesse Orrico This is the first article of a 3-part series on installing Pantheon, the Java client for Ethereum: Linux macOS Windows Having some powerful tools in your toolbelt is essential for a Java developer, and one of the crucial tools for an Ethereum blockchain developer is the network client. This is the piece of software that communicates data to and from the blockchain. Among other things, the client: spins up nodes, acts as a peer discovery"
                                       href={
                                         Object {
-                                          "as": "using-pantheon-the-java-ethereum-client-with-linux/276dd27f1458443295eea58403fd6965/a",
+                                          "as": "/using-pantheon-the-java-ethereum-client-with-linux/276dd27f1458443295eea58403fd6965/a",
                                           "href": "/article?article_id=276dd27f1458443295eea58403fd6965",
                                         }
                                       }
@@ -21190,12 +21190,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                               >
                                                 <Link
-                                                  as="felipefaraggi/undefined/p"
-                                                  href="/public-profile?user_id=undefined"
+                                                  as="/felipefaraggi/824e8fa64ff92b859cc9991ac044e00b665b9b04/p"
+                                                  href="/public-profile?user_id=824e8fa64ff92b859cc9991ac044e00b665b9b04"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="felipefaraggi/undefined/p"
+                                                    href="/felipefaraggi/824e8fa64ff92b859cc9991ac044e00b665b9b04/p"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
@@ -21909,12 +21909,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                   </a>
                                                 </Link>
                                                 <Link
-                                                  as="using-pantheon-the-java-ethereum-client-with-linux/276dd27f1458443295eea58403fd6965/a"
+                                                  as="/using-pantheon-the-java-ethereum-client-with-linux/276dd27f1458443295eea58403fd6965/a"
                                                   href="/article?article_id=276dd27f1458443295eea58403fd6965"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="using-pantheon-the-java-ethereum-client-with-linux/276dd27f1458443295eea58403fd6965/a"
+                                                    href="/using-pantheon-the-java-ethereum-client-with-linux/276dd27f1458443295eea58403fd6965/a"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
@@ -22625,7 +22625,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       description="Other articles in this series: - Connecting to an Ethereum client with Java, Eclipse and Web3j - Manage an Ethereum account with Java and Web3j - Generate a Java Wrapper from your Smart Contract - Interacting with an Ethereum Smart Contract in Java - Using Pantheon, the Java Ethereum Client with Linux What is a Smart Contract Event You can emit an event from any smart contract function triggered by a transaction, and they are an important piece of the Ethereum application architecture puzzle. Th"
                                       href={
                                         Object {
-                                          "as": "listening-for-ethereum-smart-contract-events-in-java/760f495423db42f988d17b8c145b0874/a",
+                                          "as": "/listening-for-ethereum-smart-contract-events-in-java/760f495423db42f988d17b8c145b0874/a",
                                           "href": "/article?article_id=760f495423db42f988d17b8c145b0874",
                                         }
                                       }
@@ -22729,12 +22729,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-2  MuiPaper-rounded"
                                               >
                                                 <Link
-                                                  as="craig/undefined/p"
-                                                  href="/public-profile?user_id=undefined"
+                                                  as="/craig/4d91838268f6d6d4e590e8fd2a001cd91c32e7a4/p"
+                                                  href="/public-profile?user_id=4d91838268f6d6d4e590e8fd2a001cd91c32e7a4"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="craig/undefined/p"
+                                                    href="/craig/4d91838268f6d6d4e590e8fd2a001cd91c32e7a4/p"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
@@ -23448,12 +23448,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                   </a>
                                                 </Link>
                                                 <Link
-                                                  as="listening-for-ethereum-smart-contract-events-in-java/760f495423db42f988d17b8c145b0874/a"
+                                                  as="/listening-for-ethereum-smart-contract-events-in-java/760f495423db42f988d17b8c145b0874/a"
                                                   href="/article?article_id=760f495423db42f988d17b8c145b0874"
                                                   prefetch={true}
                                                 >
                                                   <a
-                                                    href="listening-for-ethereum-smart-contract-events-in-java/760f495423db42f988d17b8c145b0874/a"
+                                                    href="/listening-for-ethereum-smart-contract-events-in-java/760f495423db42f988d17b8c145b0874/a"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >

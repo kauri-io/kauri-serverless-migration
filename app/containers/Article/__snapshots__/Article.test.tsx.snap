@@ -2907,7 +2907,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                     description="test description 2"
                                     href={
                                       Object {
-                                        "as": "test-title-2/1232/a",
+                                        "as": "/test-title-2/1232/a",
                                         "href": "/article?article_id=1232",
                                       }
                                     }
@@ -3010,12 +3010,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                               className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-163 makeStyles-card-3 MuiPaper-rounded"
                                             >
                                               <Link
-                                                as="test-author-username-2/undefined/p"
-                                                href="/public-profile?user_id=undefined"
+                                                as="/test-author-username-2/6792/p"
+                                                href="/public-profile?user_id=6792"
                                                 prefetch={true}
                                               >
                                                 <a
-                                                  href="test-author-username-2/undefined/p"
+                                                  href="/test-author-username-2/6792/p"
                                                   onClick={[Function]}
                                                   onMouseEnter={[Function]}
                                                 >
@@ -3729,12 +3729,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                 </a>
                                               </Link>
                                               <Link
-                                                as="test-title-2/1232/a"
+                                                as="/test-title-2/1232/a"
                                                 href="/article?article_id=1232"
                                                 prefetch={true}
                                               >
                                                 <a
-                                                  href="test-title-2/1232/a"
+                                                  href="/test-title-2/1232/a"
                                                   onClick={[Function]}
                                                   onMouseEnter={[Function]}
                                                 >
@@ -4557,7 +4557,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                     description="test description 3"
                                     href={
                                       Object {
-                                        "as": "test-title-3/1233/a",
+                                        "as": "/test-title-3/1233/a",
                                         "href": "/article?article_id=1233",
                                       }
                                     }
@@ -4660,12 +4660,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                               className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-163 makeStyles-card-3 MuiPaper-rounded"
                                             >
                                               <Link
-                                                as="test-author-username-3/undefined/p"
-                                                href="/public-profile?user_id=undefined"
+                                                as="/test-author-username-3/6793/p"
+                                                href="/public-profile?user_id=6793"
                                                 prefetch={true}
                                               >
                                                 <a
-                                                  href="test-author-username-3/undefined/p"
+                                                  href="/test-author-username-3/6793/p"
                                                   onClick={[Function]}
                                                   onMouseEnter={[Function]}
                                                 >
@@ -5379,12 +5379,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                 </a>
                                               </Link>
                                               <Link
-                                                as="test-title-3/1233/a"
+                                                as="/test-title-3/1233/a"
                                                 href="/article?article_id=1233"
                                                 prefetch={true}
                                               >
                                                 <a
-                                                  href="test-title-3/1233/a"
+                                                  href="/test-title-3/1233/a"
                                                   onClick={[Function]}
                                                   onMouseEnter={[Function]}
                                                 >
