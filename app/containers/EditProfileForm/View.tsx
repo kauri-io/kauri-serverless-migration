@@ -112,38 +112,6 @@ class EditableHeader extends Component<IProps, IState> {
         }
     }
 
-    componentDidUpdate(prevProps) {
-        if (
-            prevProps.OwnProfile.getMyProfile &&
-            this.props.OwnProfile.getMyProfile
-        ) {
-            const {
-                username,
-                title,
-                avatar,
-                website,
-                social,
-                name,
-                email,
-                status,
-                subscriptions,
-            } = this.props.OwnProfile.getMyProfile
-
-            this.setState({
-                username,
-                title,
-                avatar,
-                website,
-                github: social && social.github,
-                twitter: social && social.twitter,
-                name,
-                email,
-                status,
-                subscriptions,
-            })
-        }
-    }
-
     saveUser(redirectURL: string | undefined) {
         const payload = pipe(
             // filter((val) => typeof val !== 'undefined' || !!val),

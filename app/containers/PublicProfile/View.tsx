@@ -194,7 +194,6 @@ class PublicProfile extends Component<IProps, IState> {
                             <Published
                                 data={ArticlesQuery as any}
                                 type="published"
-                                routeChangeAction={routeChangeAction}
                                 isOwner={!!isOwner}
                                 isLoggedIn={!!currentUser}
                                 openModalAction={openModalAction}
