@@ -4,8 +4,7 @@ import { BackgroundProps } from 'styled-system'
 
 const withBackgroundURLCss = css<{ backgroundURL?: string }>`
     background: ${props =>
-        props.backgroundURL &&
-        `url(${props.backgroundURL.replace('dev2', 'beta')}) center center`};
+        props.backgroundURL && `url(${props.backgroundURL}) center center`};
     background-size: cover;
     margin-top: -76px;
     padding-top: 106px;

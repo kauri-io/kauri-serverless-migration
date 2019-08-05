@@ -487,7 +487,7 @@ exports[`components/MediumImportButton should match snapshot 1`] = `
 >
   <MediumImportButton>
     <a
-      href="https://import.dev2.kauri.io"
+      href="https://import.dev.kauri.io"
       target="_blank"
     >
       <TertiaryButtonComponent

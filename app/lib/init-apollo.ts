@@ -22,6 +22,7 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 })
 
 export function create(initialState, { getToken }) {
+    console.log('create apollo instance')
     const apiURL = config.gateway
     let httpLink = new HttpLink({
         uri: `http${

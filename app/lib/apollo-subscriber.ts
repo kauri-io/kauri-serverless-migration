@@ -1,11 +1,11 @@
-import apolloClient from './init-apollo'
+import { apollo } from './with-data'
 import { getEvent } from '../queries/Module'
 
 export const apolloChildHashesSubscriber = childHashes =>
     childHashes.map(
         hash =>
             new Promise((resolve, reject) =>
-                apolloClient({}, {})
+                apollo
                     .subscribe({
                         query: getEvent,
                         variables: { hash },
@@ -17,32 +17,18 @@ export const apolloChildHashesSubscriber = childHashes =>
             )
     )
 
-export const apolloHashSubscriber = (hash: string, filterName: any) =>
-    new Promise((resolve, reject) =>
-        filterName
-            ? apolloClient({}, {})
-                  .subscribe({
-                      query: getEvent,
-                      variables: { hash: `${hash}-${filterName}` },
-                  })
-                  .subscribe({
-                      next: data => {
-                          // if (!count) {
-                          //   count = count + 1;
-                          // }
-                          resolve(data)
-                      },
-                      error: err => reject(err),
-                  })
-            : apolloClient({}, {})
-                  .subscribe({
-                      query: getEvent,
-                      variables: { hash },
-                  })
-                  .subscribe({
-                      next: data => resolve(data),
-                      error: err => reject(err),
-                  })
+export const apolloHashSubscriber = (hash: string) => {
+    return new Promise((resolve, reject) =>
+        apollo
+            .subscribe({
+                query: getEvent,
+                variables: { hash },
+            })
+            .subscribe({
+                next: data => resolve(data),
+                error: err => reject(err),
+            })
     )
+}
 
 export default apolloHashSubscriber

@@ -20,8 +20,8 @@ exports[`containers/CommunityCreated/View should match the snapshot 1`] = `
     description="Java is one of the worlds most popular programming languages used in global-scale applications by developers everywhere. This community brings together developers and projects at the forefront of bringing Ethereum support to this rich language ecosystem."
     href={
       Object {
-        "as": "java-ethereum/5d2f30daaba2920001c82409/cm",
-        "href": "/public-profile?user_id=5d2f30daaba2920001c82409",
+        "as": "/java-ethereum/5d2f30daaba2920001c82409/cm",
+        "href": "/community_id=5d2f30daaba2920001c82409",
       }
     }
     id="5d2f30daaba2920001c82409"

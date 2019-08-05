@@ -5,11 +5,11 @@ import App from '../layouts'
 import SubmitArticle from '../containers/SubmitArticleForm'
 import { withRouter } from 'next/router'
 
-const ViewArticle = () => (
+const ViewArticle = ({ router }) => (
     <App>
         <SubmitArticle
-            id={this.props.router.query['id']}
-            version={this.props.router.query['version']}
+            id={router.query['id']}
+            version={router.query['version']}
         />
     </App>
 )

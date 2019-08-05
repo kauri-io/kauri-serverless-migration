@@ -5,12 +5,9 @@ import App from '../layouts'
 import ArticleRejected from '../containers/ArticleRejected'
 import { withRouter } from 'next/router'
 
-const ArticleRejectedPage = () => (
+const ArticleRejectedPage = ({ router }) => (
     <App>
-        <ArticleRejected
-            id={this.props.router.query.id}
-            version={this.props.router.query.version}
-        />
+        <ArticleRejected id={router.query.id} version={router.query.version} />
     </App>
 )
 

@@ -25,7 +25,7 @@ export const homePageContentQuery = gql`
             checkpoint
             tags
             comments {
-              totalElements
+                totalElements
             }
             voteResult {
                 sum

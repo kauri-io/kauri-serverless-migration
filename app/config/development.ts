@@ -1,9 +1,9 @@
 import uppyConfig from './uppy'
 
 export default {
-    monolithApi: 'api.dev2.kauri.io',
-    monolithExternalApi: 'api.dev2.kauri.io',
-    gateway: 'api.dev2.kauri.io',
+    monolithApi: 'api.dev.kauri.io',
+    monolithExternalApi: 'api.dev.kauri.io',
+    gateway: 'api.dev.kauri.io',
     gethBlockchain: '35.231.60.112:8545',
     KauriCommunityId: '3e174cdcf9744ee3898f6a3badc3288b',
     uppyConfig,

@@ -73,11 +73,9 @@ export const registerEpic: Epic<
                     : new Promise(resolve => resolve())
             ).pipe(
                 mergeMap(() =>
-                    request
-                        // http://api.dev2.kauri.io/web3auth/api/login?app_id=kauri&client_id=kauri-gateway
-                        .get(
-                            `https://${config.gateway}/web3auth/api/login?app_id=${config.appId}&client_id=${config.clientId}`
-                        )
+                    request.get(
+                        `https://${config.gateway}/web3auth/api/login?app_id=${config.appId}&client_id=${config.clientId}`
+                    )
                 ),
                 map(res => res.body),
                 tap(h => console.log(h)),

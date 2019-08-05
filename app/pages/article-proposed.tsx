@@ -5,11 +5,11 @@ import App from '../layouts'
 import ArticleProposed from '../containers/ArticleProposed'
 import { withRouter } from 'next/router'
 
-const ArticleProposedPage = () => (
+const ArticleProposedPage = ({ router }) => (
     <App>
         <ArticleProposed
-            id={this.props.router.query['article_id']}
-            version={this.props.router.query['article_version']}
+            id={router.query['article_id']}
+            version={router.query['article_version']}
         />
     </App>
 )

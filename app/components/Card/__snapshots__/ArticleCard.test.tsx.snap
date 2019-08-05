@@ -978,12 +978,12 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                         className="makeStyles-user-11"
                       >
                         <Link
-                          as="test-username/undefined/p"
-                          href="/public-profile?user_id=undefined"
+                          as="/test-username/1234567890/p"
+                          href="/public-profile?user_id=1234567890"
                           prefetch={true}
                         >
                           <a
-                            href="test-username/undefined/p"
+                            href="/test-username/1234567890/p"
                             onClick={[Function]}
                             onMouseEnter={[Function]}
                           >

@@ -1,17 +1,49 @@
 {
   "version": 2,
   "name": "kauri-serverless",
-  "alias": "dev.kauri.now.sh",
   "build": {
     "env": {
       "config": "development-config"
     }
   },
-  "builds": [{ "src": "app/package.json", "use": "@now/next" }],
+  "builds": [
+    {
+      "src": "app/package.json",
+      "use": "@now/next"
+    }
+  ],
   "routes": [
-    { "src": "/(.*)/(.*)/a", "dest": "/app/article?article_id=$2" },
-    { "src": "/(.*)/(.*)/c", "dest": "/app/collection?collection_id=$2" },
-    { "src": "/public-profile/(.*)", "dest": "/app/public-profile?user_id=$1" },
-    { "src": "/(.*)", "dest": "/app/$1" }
+    {
+      "src": "/(.*)/(.*)/a",
+      "dest": "/app/article?article_id=$2"
+    },
+    {
+      "src": "/(.*)/(.*)/c",
+      "dest": "/app/collection?collection_id=$2"
+    },
+    {
+      "src": "/(.*)/(.*)/p",
+      "dest": "/app/public-profile?user_id=$2"
+    },
+    {
+      "src": "draft/(.*)/(.*)",
+      "dest": "/app/draft?id=$1&version=$2"
+    },
+    {
+      "src": "/article/(.*)/v(.*)/update-article",
+      "dest": "/app/update-article?id=$1&version=$2"
+    },
+    {
+      "src": "/article/(.*)/v(.*)/article-updated",
+      "dest": "/app/article-updated?article_id=$1&article_version=$2"
+    },
+    {
+      "src": "/article/(.*)/v(.*)/article-published",
+      "dest": "/app/article-published?article_id=$1&article_version=$2"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/app/$1"
+    }
   ]
 }

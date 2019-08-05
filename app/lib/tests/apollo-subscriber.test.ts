@@ -6,17 +6,17 @@ import {
 jest.mock('../../queries/Module', () => ({ getEvent: 'test string' }))
 const query = require('../../queries/Module')
 
-jest.mock('../init-apollo', () => jest.fn())
-const apolloClient = require('../init-apollo')
-
 let firstSubscribe = jest.fn()
 let secondSubscribe = jest.fn()
 
+jest.mock('../with-data', () => ({
+    apollo: jest.fn(),
+}))
+const apollo = require('../with-data').apollo
+
 describe('lib/apollo-subscriber', () => {
     beforeAll(async () => {
-        apolloClient.mockImplementation(() => ({
-            subscribe: firstSubscribe,
-        }))
+        apollo.subscribe = firstSubscribe
         firstSubscribe.mockImplementation(() => ({
             subscribe: secondSubscribe,
         }))
@@ -31,7 +31,7 @@ describe('lib/apollo-subscriber', () => {
     })
 
     it('should subscribe to regular hashes', async () => {
-        apolloHashSubscriber('test hash', 'test filter')
+        apolloHashSubscriber('test hash')
         expect(firstSubscribe).toHaveBeenCalledWith({
             query: query.getEvent,
             variables: { hash: 'test hash' },

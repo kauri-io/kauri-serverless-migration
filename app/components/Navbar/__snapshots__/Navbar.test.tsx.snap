@@ -216,10 +216,10 @@ exports[`components/Navbar should match snapshot 1`] = `
                       className="MuiPaper-root MuiPaper-elevation1 MuiAppBar-root MuiAppBar-positionFixed mui-fixed"
                     >
                       <WithStyles(ForwardRef(Toolbar))
-                        className="makeStyles-navbar-7"
+                        className="makeStyles-navbar-8"
                       >
                         <ForwardRef(Toolbar)
-                          className="makeStyles-navbar-7"
+                          className="makeStyles-navbar-8"
                           classes={
                             Object {
                               "dense": "MuiToolbar-dense",
@@ -230,7 +230,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                           }
                         >
                           <div
-                            className="MuiToolbar-root MuiToolbar-regular makeStyles-navbar-7 MuiToolbar-gutters"
+                            className="MuiToolbar-root MuiToolbar-regular makeStyles-navbar-8 MuiToolbar-gutters"
                           >
                             <Link
                               href="/"
@@ -257,11 +257,11 @@ exports[`components/Navbar should match snapshot 1`] = `
                                 onMouseEnter={[Function]}
                               >
                                 <WithStyles(ForwardRef(Typography))
-                                  className="makeStyles-navlink-8"
+                                  className="makeStyles-navlink-9"
                                   variant="button"
                                 >
                                   <ForwardRef(Typography)
-                                    className="makeStyles-navlink-8"
+                                    className="makeStyles-navlink-9"
                                     classes={
                                       Object {
                                         "alignCenter": "MuiTypography-alignCenter",
@@ -565,7 +565,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                                     variant="button"
                                   >
                                     <span
-                                      className="MuiTypography-root makeStyles-navlink-8 MuiTypography-button"
+                                      className="MuiTypography-root makeStyles-navlink-9 MuiTypography-button"
                                     >
                                       Home
                                     </span>
@@ -583,11 +583,11 @@ exports[`components/Navbar should match snapshot 1`] = `
                                 onMouseEnter={[Function]}
                               >
                                 <WithStyles(ForwardRef(Typography))
-                                  className="makeStyles-navlink-8"
+                                  className="makeStyles-navlink-9"
                                   variant="button"
                                 >
                                   <ForwardRef(Typography)
-                                    className="makeStyles-navlink-8"
+                                    className="makeStyles-navlink-9"
                                     classes={
                                       Object {
                                         "alignCenter": "MuiTypography-alignCenter",
@@ -891,7 +891,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                                     variant="button"
                                   >
                                     <span
-                                      className="MuiTypography-root makeStyles-navlink-8 MuiTypography-button"
+                                      className="MuiTypography-root makeStyles-navlink-9 MuiTypography-button"
                                     >
                                       Articles
                                     </span>
@@ -909,11 +909,11 @@ exports[`components/Navbar should match snapshot 1`] = `
                                 onMouseEnter={[Function]}
                               >
                                 <WithStyles(ForwardRef(Typography))
-                                  className="makeStyles-navlink-8"
+                                  className="makeStyles-navlink-9"
                                   variant="button"
                                 >
                                   <ForwardRef(Typography)
-                                    className="makeStyles-navlink-8"
+                                    className="makeStyles-navlink-9"
                                     classes={
                                       Object {
                                         "alignCenter": "MuiTypography-alignCenter",
@@ -1217,7 +1217,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                                     variant="button"
                                   >
                                     <span
-                                      className="MuiTypography-root makeStyles-navlink-8 MuiTypography-button"
+                                      className="MuiTypography-root makeStyles-navlink-9 MuiTypography-button"
                                     >
                                       Collections
                                     </span>
@@ -1235,11 +1235,11 @@ exports[`components/Navbar should match snapshot 1`] = `
                                 onMouseEnter={[Function]}
                               >
                                 <WithStyles(ForwardRef(Typography))
-                                  className="makeStyles-navlink-8"
+                                  className="makeStyles-navlink-9"
                                   variant="button"
                                 >
                                   <ForwardRef(Typography)
-                                    className="makeStyles-navlink-8"
+                                    className="makeStyles-navlink-9"
                                     classes={
                                       Object {
                                         "alignCenter": "MuiTypography-alignCenter",
@@ -1543,7 +1543,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                                     variant="button"
                                   >
                                     <span
-                                      className="MuiTypography-root makeStyles-navlink-8 MuiTypography-button"
+                                      className="MuiTypography-root makeStyles-navlink-9 MuiTypography-button"
                                     >
                                       Communities
                                     </span>
@@ -1561,11 +1561,11 @@ exports[`components/Navbar should match snapshot 1`] = `
                                 onMouseEnter={[Function]}
                               >
                                 <WithStyles(ForwardRef(Typography))
-                                  className="makeStyles-navlink-8"
+                                  className="makeStyles-navlink-9"
                                   variant="button"
                                 >
                                   <ForwardRef(Typography)
-                                    className="makeStyles-navlink-8"
+                                    className="makeStyles-navlink-9"
                                     classes={
                                       Object {
                                         "alignCenter": "MuiTypography-alignCenter",
@@ -1869,7 +1869,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                                     variant="button"
                                   >
                                     <span
-                                      className="MuiTypography-root makeStyles-navlink-8 MuiTypography-button"
+                                      className="MuiTypography-root makeStyles-navlink-9 MuiTypography-button"
                                     >
                                       Help
                                     </span>
@@ -1881,10 +1881,10 @@ exports[`components/Navbar should match snapshot 1`] = `
                               className="makeStyles-grow-2"
                             />
                             <div
-                              className="makeStyles-searchClass-10"
+                              className="makeStyles-searchClass-11"
                             >
                               <div
-                                className="makeStyles-searchIconClass-11"
+                                className="makeStyles-searchIconClass-12"
                               >
                                 <ForwardRef>
                                   <WithStyles(ForwardRef(SvgIcon))>
@@ -1971,7 +1971,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                               </WithStyles(ForwardRef(InputBase))>
                             </div>
                             <div
-                              className="makeStyles-sectionDesktop-12"
+                              className="makeStyles-sectionDesktop-13"
                             >
                               <WithStyles(ForwardRef(IconButton))
                                 aria-haspopup="true"
@@ -2117,7 +2117,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                               </WithStyles(ForwardRef(IconButton))>
                             </div>
                             <div
-                              className="makeStyles-sectionMobile-13"
+                              className="makeStyles-sectionMobile-14"
                             >
                               <WithStyles(ForwardRef(IconButton))
                                 aria-haspopup="true"
@@ -2271,6 +2271,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                   "vertical": "top",
                 }
               }
+              className="makeStyles-menu-6"
               onClose={[Function]}
               open={false}
               transformOrigin={
@@ -2288,6 +2289,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                     "vertical": "top",
                   }
                 }
+                className="makeStyles-menu-6"
                 classes={
                   Object {
                     "list": "MuiMenu-list",
@@ -2584,6 +2586,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                       "vertical": "top",
                     }
                   }
+                  className="makeStyles-menu-6"
                   getContentAnchorEl={[Function]}
                   onClose={[Function]}
                   onEntering={[Function]}
@@ -2611,6 +2614,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                         "vertical": "top",
                       }
                     }
+                    className="makeStyles-menu-6"
                     classes={
                       Object {
                         "paper": "MuiPopover-paper",
@@ -2634,6 +2638,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                           "invisible": true,
                         }
                       }
+                      className="makeStyles-menu-6"
                       onClose={[Function]}
                       open={false}
                     />
@@ -2649,6 +2654,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                   "vertical": "top",
                 }
               }
+              className="makeStyles-menu-6"
               onClose={[Function]}
               open={false}
               transformOrigin={
@@ -2666,6 +2672,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                     "vertical": "top",
                   }
                 }
+                className="makeStyles-menu-6"
                 classes={
                   Object {
                     "list": "MuiMenu-list",
@@ -2962,6 +2969,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                       "vertical": "top",
                     }
                   }
+                  className="makeStyles-menu-6"
                   getContentAnchorEl={[Function]}
                   onClose={[Function]}
                   onEntering={[Function]}
@@ -2989,6 +2997,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                         "vertical": "top",
                       }
                     }
+                    className="makeStyles-menu-6"
                     classes={
                       Object {
                         "paper": "MuiPopover-paper",
@@ -3012,6 +3021,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                           "invisible": true,
                         }
                       }
+                      className="makeStyles-menu-6"
                       onClose={[Function]}
                       open={false}
                     />

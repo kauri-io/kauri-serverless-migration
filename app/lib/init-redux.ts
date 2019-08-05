@@ -20,6 +20,7 @@ function create(apollo: any, initialState = {}) {
         web3:
             (global.window && global.window.web3) ||
             (global.window &&
+                global.window.web3 &&
                 new ethers.providers.Web3Provider(
                     global.window.web3.currentProvider
                 )),

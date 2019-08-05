@@ -16,6 +16,7 @@ import Link from 'next/link'
 import { logout } from './Module'
 import { Avatar } from '@material-ui/core'
 import { withRouter, Router } from 'next/router'
+import { getProfileURL } from '../../lib/getURLs'
 
 const useStyles = makeStyles((theme: Theme) => {
     return {
@@ -41,6 +42,13 @@ const useStyles = makeStyles((theme: Theme) => {
             height: 30,
             marginRight: theme.spacing(0),
             width: 30,
+        },
+        menu: {
+            '& ul': {
+                display: 'flex',
+                flexDirection: 'column',
+                padding: theme.spacing(2),
+            },
         },
         menuButton: {
             marginRight: theme.spacing(1),
@@ -157,7 +165,19 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
             transformOrigin={{ vertical: 'top', horizontal: 'right' }}
             open={isMenuOpen}
             onClose={handleMenuClose}
+            className={classes.menu}
         >
+            {user && (
+                <Link
+                    href={getProfileURL(user).href}
+                    as={getProfileURL(user).as}
+                >
+                    <a>
+                        <MenuItem>My Profile</MenuItem>
+                    </a>
+                </Link>
+            )}
+
             <MenuItem className={classes.padded} onClick={logout}>
                 Logout
             </MenuItem>
@@ -171,6 +191,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
             transformOrigin={{ vertical: 'top', horizontal: 'right' }}
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
+            className={classes.menu}
         >
             <MenuItem
                 onClick={

@@ -2,13 +2,26 @@ import slugify from 'slugify'
 interface IArticleProps {
     title: string
     id: string
-    urlType?: string
+    version: number
 }
 
-export const getArticleURL = ({ title, id }: IArticleProps) => ({
-    as: `${slugify(title, { lower: true })}/${id}/a`,
-    href: `/article?article_id=${id}`,
-})
+export const getArticleURL = (
+    { title, id, version }: IArticleProps,
+    type?: string
+) => {
+    switch (type) {
+        case 'draft':
+            return {
+                as: `/draft/${id}/${version}`,
+                href: `/draft?id=${id}&version=${version}`,
+            }
+        default:
+            return {
+                as: `/${slugify(title, { lower: true })}/${id}/a`,
+                href: `/article?article_id=${id}`,
+            }
+    }
+}
 
 interface ICollectionProps {
     name?: string | null
@@ -16,19 +29,19 @@ interface ICollectionProps {
     urlType?: string
 }
 export const getCollectionURL = ({ name, id }: ICollectionProps) => ({
-    as: `${slugify(String(name), { lower: true })}/${String(id)}/c`,
+    as: `/${slugify(String(name), { lower: true })}/${String(id)}/c`,
     href: `/collection?collection_id=${String(id)}`,
 })
 
 interface IProfileProps {
     username?: string | null
-    userId?: string
+    id?: string
     urlType?: string
 }
 
-export const getProfileURL = ({ username, userId }: IProfileProps) => ({
-    as: `${slugify(String(username), { lower: true })}/${String(userId)}/p`,
-    href: `/public-profile?user_id=${String(userId)}`,
+export const getProfileURL = ({ username, id }: IProfileProps) => ({
+    as: `/${slugify(String(username), { lower: true })}/${String(id)}/p`,
+    href: `/public-profile?user_id=${String(id)}`,
 })
 
 interface ICommunityProps {
@@ -37,6 +50,6 @@ interface ICommunityProps {
 }
 
 export const getCommunityURL = ({ name, id }: ICommunityProps) => ({
-    as: `${slugify(String(name), { lower: true })}/${String(id)}/cm`,
-    href: `/public-profile?user_id=${String(id)}`,
+    as: `/${slugify(String(name), { lower: true })}/${String(id)}/cm`,
+    href: `/community_id=${String(id)}`,
 })

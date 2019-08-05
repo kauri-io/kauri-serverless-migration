@@ -16,6 +16,7 @@ const generatePublishArticleHash = (
 ): string => {
     const web3 = global.window && global.window.web3
     const keccak256 = (...args) => {
+        console.log(args)
         args = args.map(arg => {
             if (typeof arg === 'string') {
                 if (arg.substring(0, 2) === '0x') {
@@ -32,9 +33,9 @@ const generatePublishArticleHash = (
             }
         })
 
-        // const newArgs = args.join('')
-        // console.log('message=' + newArgs)
-        let result = web3.sha3(args, { encoding: 'hex' })
+        const newArgs = args.join('')
+        console.log('message=' + newArgs)
+        let result = web3.sha3(newArgs, { encoding: 'hex' })
         return result
     }
 

@@ -530,7 +530,7 @@ export const relatedArticles = gql`
                         checkpoint
                         tags
                         comments {
-                          totalElements
+                            totalElements
                         }
                         voteResult {
                             sum

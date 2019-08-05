@@ -47,7 +47,7 @@ const Articles: React.FC<IArticlesProps> = ({ data, routeChangeAction }) => {
                         article =>
                             article && (
                                 <ArticleCard
-                                    href={getArticleURL(article)}
+                                    href={getArticleURL(article, 'draft')}
                                     {...article}
                                 />
                             )

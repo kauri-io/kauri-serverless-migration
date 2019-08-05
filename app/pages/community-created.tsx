@@ -5,18 +5,11 @@ import App from '../layouts'
 import CommunityCreated from '../containers/CommunityCreated'
 import { withRouter } from 'next/router'
 
-class CommunityCreatedPage extends React.Component<{ router: any }> {
-    render() {
-        return (
-            <App>
-                <CommunityCreated
-                    type="created"
-                    id={this.props.router.query.id}
-                />
-            </App>
-        )
-    }
-}
+const CommunityCreatedPage = ({ router }) => (
+    <App>
+        <CommunityCreated type="created" id={router.query.id} />
+    </App>
+)
 
 export default compose(
     withData,
