@@ -42,7 +42,7 @@ export const submitNewArticleMutation = gql`
 `
 
 export const getArticleQuery = gql`
-    query getArticle($id: String, $version: Int, $published: Boolean = true) {
+    query getArticle($id: String!, $version: Int, $published: Boolean = true) {
         getArticle(id: $id, version: $version, published: $published) {
             ...Article
         }

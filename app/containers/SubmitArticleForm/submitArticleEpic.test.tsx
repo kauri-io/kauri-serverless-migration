@@ -42,7 +42,7 @@ describe('submitArticleEpic', () => {
             author: { id: '123', name: 'Alice' },
         }
         const mockApolloSubscriber = () =>
-            Promise.resolve({ data: { output: { id, version } } })
+            Promise.resolve({ data: { getEvent: { output: { id, version } } } })
         const mockApolloClient = {
             mutate: () =>
                 Promise.resolve({
@@ -52,7 +52,7 @@ describe('submitArticleEpic', () => {
                 Promise.resolve({
                     data: { getArticle: mockGetArticle },
                 }),
-            resetStore: () => {},
+            resetStore: () => { },
         }
 
         const sourceAction = submitArticleAction({
@@ -114,7 +114,7 @@ describe('submitArticleEpic', () => {
             author: { id: '123', name: 'Alice' },
         }
         const mockApolloSubscriber = () =>
-            Promise.resolve({ data: { output: { id, version } } })
+            Promise.resolve({ data: { getEvent: { output: { id, version } } } })
         const mockApolloClient = {
             mutate: () =>
                 Promise.resolve({
@@ -124,7 +124,7 @@ describe('submitArticleEpic', () => {
                 Promise.resolve({
                     data: { getArticle: mockGetArticle },
                 }),
-            resetStore: () => {},
+            resetStore: () => { },
         }
 
         const sourceAction = submitArticleAction({

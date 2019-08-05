@@ -1,7 +1,6 @@
 {
   "version": 2,
   "name": "kauri-serverless",
-  "alias": "dev.kauri.now.sh",
   "build": {
     "env": {
       "config": "development-config"
@@ -29,6 +28,18 @@
     {
       "src": "draft/(.*)/(.*)",
       "dest": "/app/draft?id=$1&version=$2"
+    },
+    {
+      "src": "/article/(.*)/v(.*)/update-article",
+      "dest": "/app/update-article?id=$1&version=$2"
+    },
+    {
+      "src": "/article/(.*)/v(.*)/article-updated",
+      "dest": "/app/article-updated?article_id=$1&article_version=$2"
+    },
+    {
+      "src": "/article/(.*)/v(.*)/article-published",
+      "dest": "/app/article-published?article_id=$1&article_version=$2"
     },
     {
       "src": "/(.*)",

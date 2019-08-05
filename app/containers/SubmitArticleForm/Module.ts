@@ -174,14 +174,15 @@ export const submitArticleEpic: Epic<
                         },
                     })
                 ).pipe(
+                    tap(console.log),
                     mergeMap(({ data }) =>
                         apolloSubscriber<{ id: string; version: number }>(
                             path<string>(['submitNewArticle', 'hash'])(data) ||
                                 ''
                         )
                     ),
-                    // tap(h => console.log(h)),
-                    mergeMap(({ data: { output } }) =>
+                    tap(console.log),
+                    mergeMap(({ data: { getEvent: { output } } }) =>
                         apolloClient.query<getArticle, getArticleVariables>({
                             fetchPolicy: 'network-only',
                             query: getArticleQuery,
@@ -292,8 +293,8 @@ export const submitArticleVersionEpic: Epic<
                             ) || ''
                         )
                     ),
-                    // tap(h => console.log(h)),
-                    mergeMap(({ data: { output } }) =>
+                    tap(console.log),
+                    mergeMap(({ data: { getEvent: { output } } }) =>
                         apolloClient.query<IGetArticleResult>({
                             fetchPolicy: 'network-only',
                             query: getArticleQuery,
@@ -450,14 +451,14 @@ export const editArticleEpic: Epic<
                     })
                 ).pipe(
                     mergeMap(({ data }) =>
-                        apolloSubscriber<{ id: string; version: number }>(
+                        apolloSubscriber(
                             path<string>(['editArticleVersion', 'hash'])(
                                 data
                             ) || ''
                         )
                     ),
-                    // tap(h => console.log(h)),
-                    mergeMap(({ data: { output } }) =>
+                    tap(console.log),
+                    mergeMap(({ data: { getEvent: { output } } }) =>
                         apolloClient.query<IGetArticleResult>({
                             fetchPolicy: 'network-only',
                             query: getArticleQuery,
@@ -467,6 +468,7 @@ export const editArticleEpic: Epic<
                             },
                         })
                     ),
+
                     mergeMap<any, any>(({ data: { getArticle } }) =>
                         typeof selfPublish !== 'undefined'
                             ? of(

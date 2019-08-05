@@ -17,8 +17,8 @@ export const apolloChildHashesSubscriber = childHashes =>
             )
     )
 
-export const apolloHashSubscriber = (hash: string) =>
-    new Promise((resolve, reject) =>
+export const apolloHashSubscriber = (hash: string) => {
+    return new Promise((resolve, reject) =>
         apollo
             .subscribe({
                 query: getEvent,
@@ -29,5 +29,6 @@ export const apolloHashSubscriber = (hash: string) =>
                 error: err => reject(err),
             })
     )
+}
 
 export default apolloHashSubscriber
