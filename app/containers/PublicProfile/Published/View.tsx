@@ -35,10 +35,7 @@ const Articles: React.FC<IArticlesProps> = ({
                             articles={articles}
                         />
                     )}
-                <Grid
-                    container
-                    spacing={3}
-                >
+                <Grid container spacing={3}>
                     {articles.map(
                         article =>
                             article && (
@@ -59,8 +56,8 @@ const Articles: React.FC<IArticlesProps> = ({
                 </Grid>
             </Container>
         ) : (
-                <Empty isLoggedIn={isLoggedIn} isOwner={isOwner} />
-            )
+            <Empty isLoggedIn={isLoggedIn} isOwner={isOwner} />
+        )
     }
     return null
 }

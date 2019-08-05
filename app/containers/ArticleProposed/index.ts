@@ -7,7 +7,7 @@ import withLoading from '../../lib/with-loading'
 
 const mapStateToProps = state => {
     return {
-        userId: state.app && state.app.user && state.app.user.id,
+        user: state.app && state.app.user,
     }
 }
 

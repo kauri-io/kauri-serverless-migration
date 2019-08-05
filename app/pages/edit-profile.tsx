@@ -2,12 +2,12 @@ import React from 'react'
 import { withApollo, compose } from 'react-apollo'
 import withData from '../lib/with-data'
 import App from '../layouts'
-import EditProfileComp from '../containers/EditProfile'
+import EditProfilePage from '../containers/EditProfilePage'
 import { withRouter } from 'next/router'
 
 const EditProfile = ({ router }) => (
     <App>
-        <EditProfileComp router={router} />
+        <EditProfilePage router={router} />
     </App>
 )
 

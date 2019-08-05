@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import SecondaryButton from '../../components/Button/SecondaryButton'
 import { H2 } from '../../components/Typography'
+import { getProfileURL } from '../../lib/getURLs'
 // import { ArticleApprovedConfirmationLogoBadge } from "../../common/ActionBadge";
 
 const ConfirmationSubject = styled.h2`
@@ -27,11 +28,11 @@ const Container = styled.section`
 interface IProps {
     data: any
     routeChangeAction: any
-    userId: any
+    user: any
 }
 
 const ArticleRejected = (props: IProps) => {
-    const { data, routeChangeAction, userId } = props
+    const { data, routeChangeAction, user } = props
     return (
         <Container>
             <H2>Article Rejected</H2>
@@ -40,7 +41,7 @@ const ArticleRejected = (props: IProps) => {
                     'The author has been notified by email with your note.'}
             </ConfirmationSubject>
             <SecondaryButton
-                onClick={() => routeChangeAction(`/public-profile/${userId}`)}
+                onClick={() => routeChangeAction(getProfileURL(user).href)}
             >
                 Back to my articles
             </SecondaryButton>

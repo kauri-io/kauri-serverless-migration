@@ -305,7 +305,11 @@ exports[`containers/ArticleRejected should match snapshot 1`] = `
           id="123"
           routeChangeAction={[MockFunction]}
           router={Object {}}
-          userId="234"
+          user={
+            Object {
+              "id": "234",
+            }
+          }
         >
           <View__Container>
             <StyledComponent

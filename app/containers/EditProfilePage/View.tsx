@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import EditProfile from '../EditProfileForm'
+import EditProfileForm from '../EditProfileForm'
 import PrimaryButton from '../../components/Button/PrimaryButton'
 import Loading from '../../components/Loading'
 import analytics from '../../lib/analytics'
@@ -9,6 +9,7 @@ import {
     IShowNotificationPayload,
     IShowNotificationAction,
 } from '../../lib/Epics/ShowNotificationEpic'
+import { getProfileURL } from '../../lib/getURLs'
 
 const Page = styled.div`
     display: flex;
@@ -51,7 +52,6 @@ interface IProps {
               dateCreated: string
           }
         | undefined
-    userId: string | undefined
 }
 
 class OnboardingEditProfile extends Component<IProps> {
@@ -110,7 +110,7 @@ class OnboardingEditProfile extends Component<IProps> {
                             ? this.props.router.query.r + '?redirected=true'
                             : this.props.router.query.r
                 } else {
-                    newRedirectURL = `/public-profile/${this.props.userId}`
+                    newRedirectURL = getProfileURL(this.props.user as any).href
                 }
                 return this.props.routeChangeAction(newRedirectURL)
             }
@@ -131,7 +131,7 @@ class OnboardingEditProfile extends Component<IProps> {
         return (
             <Page>
                 <Wrapper>
-                    <EditProfile ref={comp => (this.login = comp)} />
+                    <EditProfileForm ref={comp => (this.login = comp)} />
                     <ButtonWrapper>
                         <PrimaryButton onClick={() => this.handleSubmit()}>
                             Next

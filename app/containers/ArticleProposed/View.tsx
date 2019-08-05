@@ -4,7 +4,7 @@ import Head from 'next/head'
 import ArticleCard from '../../components/Card/ArticleCard'
 import PrimaryButton from '../../components/Button/PrimaryButton'
 import { Title2, BodyCard } from '../../components/Typography'
-import { getArticleURL } from '../../lib/getURLs'
+import { getArticleURL, getProfileURL } from '../../lib/getURLs'
 
 const Container = styled.section`
     display: flex;
@@ -25,11 +25,7 @@ const SectionContainer = styled.div`
     }
 `
 
-const ArticleProposed = ({
-    data: { getArticle },
-    routeChangeAction,
-    userId,
-}) => {
+const ArticleProposed = ({ data: { getArticle }, routeChangeAction, user }) => {
     return (
         <Container>
             <Head>
@@ -44,9 +40,7 @@ const ArticleProposed = ({
             <ArticleCard href={getArticleURL(getArticle)} {...getArticle} />
             <SectionContainer>
                 <PrimaryButton
-                    onClick={() =>
-                        routeChangeAction(`/public-profile/${userId}`)
-                    }
+                    onClick={() => routeChangeAction(getProfileURL(user).href)}
                 >
                     My Articles
                 </PrimaryButton>

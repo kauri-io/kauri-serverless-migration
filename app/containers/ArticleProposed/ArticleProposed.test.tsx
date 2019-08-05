@@ -8,7 +8,9 @@ describe('containers/ArticleProposed', () => {
         const article1 = generateArticle(1)
         const props = {
             id: '123',
-            userId: '234',
+            user: {
+                id: '234',
+            },
             classes: {},
             data: {
                 getArticle: article1,

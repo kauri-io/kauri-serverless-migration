@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Label } from '../../../../components/Typography'
 import { ITransfer } from './index'
 import Link from '../../../../components/Link'
-import slugify from 'slugify'
+import { getProfileURL, getArticleURL } from '../../../../lib/getURLs'
 
 interface ICell {
     bold?: boolean
@@ -69,16 +69,15 @@ const Table = (props: IProps) => {
             <Line />
             {props.data &&
                 props.data.map(i => {
-                    const slug = slugify(i.article.title, { lower: true })
+                    const articleUrl = getArticleURL(i.article)
+                    const ownerUrl = getProfileURL(i.article.owner)
                     return (
                         <Row key={i.id}>
                             <Cell>
                                 <Label>Pending</Label>
                             </Cell>
                             <Cell hoverable={true}>
-                                <Link
-                                    href={`/public-profile/${i.article.owner.id}`}
-                                >
+                                <Link href={ownerUrl.href} as={ownerUrl.href}>
                                     <Label>
                                         {i.article.owner.name ||
                                             i.article.owner.username ||
@@ -87,7 +86,7 @@ const Table = (props: IProps) => {
                                 </Link>
                             </Cell>
                             <Cell flex={3} hoverable={true}>
-                                <Link href={`/${slug}/${i.article.id}/a`}>
+                                <Link href={articleUrl.href} as={articleUrl.as}>
                                     <Label>{i.article.title}</Label>
                                 </Link>
                             </Cell>

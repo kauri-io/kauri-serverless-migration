@@ -269,9 +269,9 @@ exports[`containers/EditProfile should match snapshot 1`] = `
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": Array [],
                   "componentStyle": ComponentStyle {
-                    "componentId": "View__Page-sc-8ju51k-0",
+                    "componentId": "View__Page-sc-19kw1f9-0",
                     "isStatic": false,
-                    "lastClassName": "eFXWaF",
+                    "lastClassName": "fDNfNI",
                     "rules": Array [
                       "display:flex;background:",
                       [Function],
@@ -281,7 +281,7 @@ exports[`containers/EditProfile should match snapshot 1`] = `
                   "displayName": "View__Page",
                   "foldedComponentIds": Array [],
                   "render": [Function],
-                  "styledComponentId": "View__Page-sc-8ju51k-0",
+                  "styledComponentId": "View__Page-sc-19kw1f9-0",
                   "target": "div",
                   "toString": [Function],
                   "warnTooManyClasses": [Function],
@@ -291,7 +291,7 @@ exports[`containers/EditProfile should match snapshot 1`] = `
               forwardedRef={null}
             >
               <div
-                className="View__Page-sc-8ju51k-0 eFXWaF"
+                className="View__Page-sc-19kw1f9-0 fDNfNI"
               >
                 <LoadingComponent>
                   <style

@@ -12,6 +12,7 @@ import {
     saveUserVariables,
 } from '../../queries/__generated__/saveUser'
 import { getMyProfile } from '../../queries/__generated__/getMyProfile'
+import { getProfileURL } from '../../lib/getURLs'
 
 export interface ISaveUserDetailActionType {
     type: string
@@ -99,12 +100,9 @@ export const saveUserDetailsEpic: Epic<
                                     ? redirectURL + '?redirected=true'
                                     : redirectURL
                         } else {
-                            newRedirectURL = `/public-profile/${path<string>([
-                                'value',
-                                'app',
-                                'user',
-                                'id',
-                            ])(state$) || ''}`
+                            newRedirectURL = state$.value.app.user
+                                ? getProfileURL(state$.value.app.user)
+                                : '/'
                         }
                         return merge(
                             of(routeChangeAction(newRedirectURL)),

@@ -5,7 +5,6 @@ import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { IReduxState } from '../../lib/Module'
 
 const mapStateToProps = (state: IReduxState) => ({
-    userId: state.app.user && state.app.user.id,
     user: state.app.user,
 })
 
