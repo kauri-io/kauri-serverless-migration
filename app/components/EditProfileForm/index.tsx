@@ -46,7 +46,6 @@ interface IProps {
         newsletter: boolean
     }
     resendEmailVerificationAction: () => void
-    uploadImage: () => void
     updateState: (
         payload: string | { newsletter: boolean },
         field: string
@@ -65,16 +64,15 @@ const EditProfileForm = ({
     resendEmailVerificationAction,
     status,
     subscriptions,
-    uploadImage,
     updateState,
 }: IProps) => {
     return (
         <Container>
             <StyledUpload
                 bg={avatar}
-                handleClick={() => uploadImage()}
                 text="Profile"
                 color="white"
+                setIPFSUrl={hash => updateState(hash, 'avatar')}
             />
             <InputsContainers>
                 <Input

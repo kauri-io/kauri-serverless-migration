@@ -10,7 +10,6 @@ import {
 } from '../../lib/Epics/ShowNotificationEpic'
 import { ISaveUserDetailActionType } from '../../components/EditProfileForm/Module'
 import { getMyProfile } from '../../queries/__generated__/getMyProfile'
-import TriggerImageUploader from '../ImageUploader'
 
 const HeaderContainer = styled.div`
     background-color: ${props => props.theme.colors.bgPrimary};
@@ -105,12 +104,6 @@ class EditableHeader extends Component<IProps, IState> {
         }
     }
 
-    uploadImage() {
-        TriggerImageUploader(() => {}, '', (_file: Blob, url: string) =>
-            this.setState({ avatar: url })
-        )
-    }
-
     updateState(payload: string | { newsletter: boolean }, field: string) {
         const newState = this.state
         newState[field] = payload
@@ -146,7 +139,6 @@ class EditableHeader extends Component<IProps, IState> {
                     resendEmailVerificationAction={() =>
                         console.log('email verification')
                     }
-                    uploadImage={this.uploadImage}
                     updateState={this.updateState.bind(this)}
                 />
                 <ActionsContainer>

@@ -1317,6 +1317,7 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
 >
   <UploadLogoButtonComponent>
     <UploadLogoButton
+      className="image-upload"
       color="textPrimary"
       fontSize={0}
       height="100px"
@@ -1324,6 +1325,7 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
       width="100px"
     >
       <StyledComponent
+        className="image-upload"
         color="textPrimary"
         fontSize={0}
         forwardedComponent={
@@ -1374,7 +1376,7 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
         width="100px"
       >
         <button
-          className="UploadLogoButton-t7p33i-0 jYCJmi"
+          className="image-upload UploadLogoButton-t7p33i-0 jYCJmi"
           color="textPrimary"
           fontSize={0}
           height="100px"

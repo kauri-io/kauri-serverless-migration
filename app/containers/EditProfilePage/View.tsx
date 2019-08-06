@@ -10,7 +10,6 @@ import {
     IShowNotificationAction,
 } from '../../lib/Epics/ShowNotificationEpic'
 import { getProfileURL } from '../../lib/getURLs'
-import TriggerImageUploader from '../ImageUploader'
 import { pipe, assocPath } from 'ramda'
 import { ISaveUserDetailActionType } from '../../components/EditProfileForm/Module'
 import { getMyProfile_getMyProfile } from '../../queries/__generated__/getMyProfile'
@@ -126,43 +125,41 @@ class OnboardingEditProfile extends Component<IProps, IState> {
     }
 
     componentDidMount() {
-            const { name, username, email, title, dateCreated } = this.props.OwnProfile.getMyProfile
-            
-            const hasData = name && username && email && title
-            const loginTrackingPending = window.localStorage.getItem(
-                'login-tracking-pending'
-            )
+        const {
+            name,
+            username,
+            email,
+            title,
+            dateCreated,
+        } = this.props.OwnProfile.getMyProfile
 
-            if (loginTrackingPending) {
-                const daysCreated = moment().diff(
-                    moment(dateCreated),
-                    'minutes'
-                )
-                if (!daysCreated || daysCreated <= 5) {
-                    analytics.signup(this.props.OwnProfile.getMyProfile)
-                } else {
-                    analytics.login(this.props.OwnProfile.getMyProfile)
-                }
-                window.localStorage.removeItem('login-tracking-pending')
-            }
-            if (hasData) {
-                let newRedirectURL
-                if (typeof this.props.router.query.r === 'string') {
-                    newRedirectURL =
-                        this.props.router.query.r.indexOf('https://') !== -1 ||
-                        this.props.router.query.redirected
-                            ? this.props.router.query.r + '?redirected=true'
-                            : this.props.router.query.r
-                } else {
-                    newRedirectURL = getProfileURL(this.props.user as any).as
-                }
-                return this.props.routeChangeAction(newRedirectURL)
-            }
-    }
-    uploadImage() {
-        TriggerImageUploader(() => {}, '', (_file: Blob, url: string) =>
-            this.setState({ avatar: url })
+        const hasData = name && username && email && title
+        const loginTrackingPending = window.localStorage.getItem(
+            'login-tracking-pending'
         )
+
+        if (loginTrackingPending) {
+            const daysCreated = moment().diff(moment(dateCreated), 'minutes')
+            if (!daysCreated || daysCreated <= 5) {
+                analytics.signup(this.props.OwnProfile.getMyProfile)
+            } else {
+                analytics.login(this.props.OwnProfile.getMyProfile)
+            }
+            window.localStorage.removeItem('login-tracking-pending')
+        }
+        if (hasData) {
+            let newRedirectURL
+            if (typeof this.props.router.query.r === 'string') {
+                newRedirectURL =
+                    this.props.router.query.r.indexOf('https://') !== -1 ||
+                    this.props.router.query.redirected
+                        ? this.props.router.query.r + '?redirected=true'
+                        : this.props.router.query.r
+            } else {
+                newRedirectURL = getProfileURL(this.props.user as any).as
+            }
+            return this.props.routeChangeAction(newRedirectURL)
+        }
     }
 
     updateState(payload: string | { newsletter: boolean }, field: string) {
@@ -210,7 +207,6 @@ class OnboardingEditProfile extends Component<IProps, IState> {
                         resendEmailVerificationAction={() =>
                             console.log('email verification')
                         }
-                        uploadImage={this.uploadImage}
                         updateState={this.updateState.bind(this)}
                     />
                     <ButtonWrapper>

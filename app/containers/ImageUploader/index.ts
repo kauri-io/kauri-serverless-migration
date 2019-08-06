@@ -6,9 +6,9 @@ const TriggerImageUploader = (
     fieldName: any,
     callback?: any
 ) => {
-    const uppy = initUppy({ allowGifs: false })
-    uppy.run()
+    const uppy = initUppy({ allowGifs: false, trigger: '.image-upload' })
     uppy.on('upload-success', (file, { hash }) => {
+        console.log(file, hash)
         if (setFieldsValue && fieldName) {
             setFieldsValue({
                 [fieldName]: {
@@ -18,10 +18,7 @@ const TriggerImageUploader = (
         }
         if (callback)
             callback(file, `https://${config.getApiURL()}:443/ipfs/${hash}`)
-        uppy.getPlugin('Dashboard').closeModal()
-        uppy.close()
     })
-    uppy.getPlugin('Dashboard').openModal()
 }
 
 export default TriggerImageUploader

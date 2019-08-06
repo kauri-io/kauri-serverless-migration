@@ -20,9 +20,7 @@ const uploadImageCommand = {
                 '![',
                 selection.start
             )
-            const uppy = initUppy({})
-
-            uppy.run()
+            const uppy = initUppy({ allowGifs: true, trigger: '.image-upload' })
             uppy.on('upload-success', (_file, { hash }) => {
                 const finalText = insertText(
                     newText,
@@ -36,11 +34,9 @@ const uploadImageCommand = {
                         end: selection.end + insertionLength,
                     },
                 }
-                uppy.getPlugin('Dashboard').closeModal()
                 uppy.close()
                 resolve(buildNewDraftState(state, modification))
             })
-            uppy.getPlugin('Dashboard').openModal()
         }),
 }
 
