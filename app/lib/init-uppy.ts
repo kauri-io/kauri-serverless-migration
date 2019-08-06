@@ -1,9 +1,9 @@
-import { Core, XHRUpload, Dashboard } from 'uppy'
+const Uppy = require('@uppy/core')
+const Url = require('@uppy/url')
+const Dashboard = require('@uppy/dashboard')
+const XHRUpload = require('@uppy/xhr-upload')
 import cookie from 'cookie'
 import config from '../config'
-import '@uppy/core/dist/style.css'
-import '@uppy/dashboard/dist/style.css'
-import '@uppy/url/dist/style.css'
 
 export const parseCookies = (ctx: any, options?: any) => {
     let cookieToParse =
@@ -15,7 +15,7 @@ export const parseCookies = (ctx: any, options?: any) => {
 
 const initUppy = ({ allowGifs, trigger }) => {
     const parsedToken = parseCookies({}, {})['TOKEN']
-    const uppy = Core(config.uppyConfig)
+    const uppy = Uppy(config.uppyConfig)
         .use(Dashboard, {
             closeModalOnClickOutside: true,
             disableThumbnailGenerator: false,
@@ -29,21 +29,21 @@ const initUppy = ({ allowGifs, trigger }) => {
             locale: {
                 strings: {
                     dropPaste:
-                        'Import from a URL using the link above, paste or drop an image here, or',
+                        'Drag and drop your image here or browse files from your device',
                     dropPasteImport:
-                        'Import from a URL using the link above, paste or drop an image here, or',
+                        'Drag and drop your image here or browse files from your device',
                     browse: 'browse your files.',
                 },
             },
             bundle: true,
         })
-        // .use(Url, {
-        //     target: Dashboard,
-        //     companionUrl: "https://api2.transloadit.com/uppy-server",
-        //     headers: {
-        //         "X-Auth-Token": `Bearer ${parsedToken}`,
-        //     },
-        // })
+        .use(Url, {
+            target: Dashboard,
+            companionUrl: "https://api2.transloadit.com/uppy-server",
+            headers: {
+                "X-Auth-Token": `Bearer ${parsedToken}`,
+            },
+        })
         .use(XHRUpload, {
             limit: 1,
             method: 'post',
@@ -53,7 +53,7 @@ const initUppy = ({ allowGifs, trigger }) => {
             endpoint: `https://${config.gateway}:443/ipfs/`,
             headers: {
                 'X-Auth-Token': `Bearer ${parsedToken}`,
-            },
+            }
         })
     return uppy
 }

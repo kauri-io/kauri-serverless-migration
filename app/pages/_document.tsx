@@ -59,10 +59,6 @@ export default class MyDocument extends Document<IProps> {
           )} */}
                     <meta charSet="UTF-8" />
                     <link rel="icon" href="/favicon.ico" />
-                    <link
-                        rel="stylesheet"
-                        href="https://transloadit.edgly.net/releases/uppy/v0.24.3/dist/uppy.min.css"
-                    />
                     <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver" />
                     <script
                         defer
@@ -77,7 +73,7 @@ export default class MyDocument extends Document<IProps> {
                         content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
                     />
                     {this.props.styleTags}
-                    <style>{`a { color: inherit; text-decoration: none;} `}</style>
+                    <style>{`a { color: inherit; text-decoration: none;} .uppy-DashboardTab:last-child{display: none;} `}</style>
                 </Head>
                 <body>
                     <Main />
