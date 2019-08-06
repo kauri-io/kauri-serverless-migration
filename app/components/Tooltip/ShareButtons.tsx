@@ -149,12 +149,14 @@ interface IProps {
     url: string
     title: string
     horizontal?: boolean
+    onClose?: () => void
 }
 
-export const ShareButtons = ({ url, title, horizontal }: IProps) => (
+export const ShareButtons = ({ url, title, horizontal, onClose }: IProps) => (
     <Container horizontal={horizontal}>
         <LinkedinShareButton
             onShareWindowClose={() => {
+                onClose && onClose()
                 analytics.track('Share', {
                     category: 'generic',
                     platform: 'LinkedIn',
@@ -167,6 +169,7 @@ export const ShareButtons = ({ url, title, horizontal }: IProps) => (
         </LinkedinShareButton>
         <TwitterShareButton
             onShareWindowClose={() => {
+                onClose && onClose()
                 analytics.track('Share', {
                     category: 'generic',
                     platform: 'Twitter',
@@ -179,6 +182,7 @@ export const ShareButtons = ({ url, title, horizontal }: IProps) => (
         </TwitterShareButton>
         <RedditShareButton
             onShareWindowClose={() => {
+                onClose && onClose()
                 analytics.track('Share', {
                     category: 'generic',
                     platform: 'Reddit',

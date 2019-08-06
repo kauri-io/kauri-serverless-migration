@@ -110,16 +110,18 @@ export const CommunityCardStyles = makeStyles((theme: Theme) => ({
 
 interface IShareDialogProps {
     id: string
+    href: string
     name: string | null
     open: boolean
-    onClose: (value: string) => void
+    onClose: () => void
 }
 
-const ShareDialog: React.FC<IShareDialogProps> = ({
+export const ShareDialog: React.FC<IShareDialogProps> = ({
     onClose,
     open,
     id,
     name,
+    href,
 }) => (
     <Dialog
         data-testid={`CommunityCard-${id}-shareDialog`}
@@ -131,10 +133,11 @@ const ShareDialog: React.FC<IShareDialogProps> = ({
             Choose social platform to share on
         </DialogTitle>
         <List>
-          <ShareButtons
-              title={String(name)}
-              url={`${window.location.origin}${getCommunityURL({ name, id }).href}`}
-          ></ShareButtons>
+            <ShareButtons
+                onClose={onClose}
+                title={String(name)}
+                url={`${window.location.origin}${href}`}
+            ></ShareButtons>
         </List>
     </Dialog>
 )
@@ -207,15 +210,13 @@ const CommunityCard: React.FC<IProps> = ({
     const classes = CommunityCardStyles({})
 
     const [open, setOpen] = React.useState(false)
-    const [, setSelectedValue] = React.useState<string | null>(null)
 
     function handleClickOpen() {
         setOpen(true)
     }
 
-    const handleClose = (value: string) => {
+    const handleClose = () => {
         setOpen(false)
-        setSelectedValue(value)
     }
 
     const articleCount =
@@ -347,6 +348,7 @@ const CommunityCard: React.FC<IProps> = ({
                             <Icon>share</Icon>
                         </IconButton>
                         <ShareDialog
+                            href={getCommunityURL({ name, id }).href}
                             name={name}
                             id={id}
                             open={open}
