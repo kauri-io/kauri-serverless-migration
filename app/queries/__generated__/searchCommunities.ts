@@ -2,11 +2,31 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { CommunityFilterInput, DirectionInput, CommunityStatusInput, ResourceTypeInput } from "./../../__generated__/globalTypes";
+import { CommunityFilterInput, DirectionInput, ResourceTypeInput, CommunityStatusInput } from "./../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: searchCommunities
 // ====================================================
+
+export interface searchCommunities_searchCommunities_content_members {
+  __typename: "CommunityMemberDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User full name
+   */
+  name: string | null;
+}
 
 export interface searchCommunities_searchCommunities_content_approvedId {
   __typename: "ResourceIdentifier";
@@ -30,6 +50,18 @@ export interface searchCommunities_searchCommunities_content {
    * Community last date updated
    */
   dateUpdated: any;
+  /**
+   * Community members list (full profile)
+   */
+  members: (searchCommunities_searchCommunities_content_members | null)[] | null;
+  /**
+   * Community custom attribtes
+   */
+  attributes: any | null;
+  /**
+   * List of approved curated content
+   */
+  approvedId: (searchCommunities_searchCommunities_content_approvedId | null)[] | null;
   /**
    * Community ID
    */
@@ -62,10 +94,6 @@ export interface searchCommunities_searchCommunities_content {
    * Community social data (twitter, github, etc.)
    */
   social: any | null;
-  /**
-   * List of approved curated content
-   */
-  approvedId: (searchCommunities_searchCommunities_content_approvedId | null)[] | null;
 }
 
 export interface searchCommunities_searchCommunities {

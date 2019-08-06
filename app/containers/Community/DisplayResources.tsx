@@ -43,14 +43,13 @@ const RenderEmptyState: React.FunctionComponent<{ type: string }> = ({
 const RenderResources = (
     isMember: boolean,
     communityId: string | null,
-    destination?: string,
     openModalAction?: (payload: { children: any }) => void,
     closeModalAction?: () => void,
     removeResourceAction?: (payload: removeResourceVariables) => void
 ) => (
     article: Community_approved_ArticleDTO | Community_approved_CollectionDTO
 ) => {
-    console.log(destination)
+    // console.log(destination)
     const owner =
         article.owner && article.owner.__typename === 'PublicUserDTO'
             ? {
@@ -216,7 +215,6 @@ const DisplayResources = ({
                       RenderResources(
                           isMember,
                           communityId,
-                          undefined,
                           openModalAction,
                           closeModalAction,
                           removeResourceAction
@@ -230,7 +228,6 @@ const DisplayResources = ({
 export const DisplayManagedResources = ({
     resources,
     communityId,
-    review,
     isMember,
     openModalAction,
     closeModalAction,
@@ -244,7 +241,6 @@ export const DisplayManagedResources = ({
                           RenderResources(
                               isMember,
                               communityId,
-                              review ? 'review' : undefined,
                               openModalAction,
                               closeModalAction,
                               removeResourceAction

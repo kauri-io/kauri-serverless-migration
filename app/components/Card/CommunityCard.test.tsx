@@ -48,27 +48,17 @@ describe('components/Card/CommunityCard', () => {
                 },
             ],
             dateUpdated: '1994-06-13T00:05:32.000Z',
-            sections: [
+            approvedId: [
                 {
-                    resourcesId: [
-                        {
-                            type: 'ARTICLE',
-                        },
-                        {
-                            type: 'COLLECTION',
-                        },
-                        {
-                            type: 'COLLECTION',
-                        },
-                    ],
+                    type: 'ARTICLE',
                 },
                 {
-                    resourcesId: [
-                        {
-                            type: 'ARTICLE',
-                        },
-                    ],
+                    type: 'COLLECTION',
                 },
+                {
+                    type: 'COLLECTION',
+                },
+                { type: 'ARTICLE' },
             ],
             description: 'test description',
             href: {
@@ -148,17 +138,9 @@ describe('components/Card/CommunityCard', () => {
             .children().length
         expect(membersContainerLength).toBeLessThan(4)
         const moreMembers = wrapper
-            .find(`[data-testid="${moreMembersDataTestId}"]`).first()
+            .find(`[data-testid="${moreMembersDataTestId}"]`)
+            .first()
         expect(moreMembers.text()).toBe('+1')
-    })
-
-    it('should show the date published', () => {
-        const wrapper = mountWithTheme(
-            <CommunityCard {...CommunityCardProps} />
-        )
-        const dataTestId = `CommunityCard-${CommunityCardProps.id}-date`
-        const date = wrapper.find(`[data-testid="${dataTestId}"]`).first()
-        expect(date.text()).toBe('Jun 13')
     })
 
     it('should show the article count and icon', () => {

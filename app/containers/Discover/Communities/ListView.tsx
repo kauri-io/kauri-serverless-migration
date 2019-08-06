@@ -1,11 +1,10 @@
 import React, { Component, Fragment } from 'react'
-import styled from 'styled-components'
 import Head from 'next/head'
 import CommunityCard from '../../../components/Card/CommunityCard'
-import Masonry from '../../../components/Masonry'
 import Loading from '../../../components/Loading'
 import { searchCommunities_searchCommunities } from '../../../queries/__generated__/searchCommunities'
 import { getCollectionURL } from '../../../lib/getURLs'
+import { Grid, Container, withStyles } from '@material-ui/core'
 
 interface IProps {
     CommunityQuery: {
@@ -14,20 +13,8 @@ interface IProps {
     }
     hostName: string
     routeChangeAction(route: string): void
+    classes: { grid: any }
 }
-
-export const CommunitiesContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex: 1;
-    flex-wrap: wrap;
-    padding-bottom: 0;
-    max-width: ${props => props.theme.breakpoints[2]};
-    > div {
-        margin: 15px;
-    }
-`
 
 class Communities extends Component<IProps> {
     render() {
@@ -53,70 +40,47 @@ class Communities extends Component<IProps> {
                         href={`https://${this.props.hostName}/collections`}
                     />
                 </Head>
-                {searchCommunities ? (
-                    <Masonry>
-                        {searchCommunities &&
-                            searchCommunities.content &&
-                            searchCommunities.content.map(
-                                (community, index) =>
-                                    community && (
-                                        <CommunityCard
-                                            href={getCollectionURL(community)}
-                                            id={community.id}
-                                            key={index}
-                                            logo={community.avatar}
-                                            imageURL={community.avatar}
-                                            name={String(community.name)}
-                                            description={
-                                                community.description
-                                                    ? community.description.split(
-                                                          '.'
-                                                      )[0]
-                                                    : ''
-                                            }
-                                            cardHeight={310}
-                                            collectionCount={
-                                                (Array.isArray(
-                                                    community.approvedId
-                                                ) &&
-                                                    String(
-                                                        community &&
-                                                            community.approvedId &&
-                                                            community.approvedId.filter(
-                                                                resource =>
-                                                                    resource &&
-                                                                    resource.type ===
-                                                                        'COLLECTION'
-                                                            ).length
-                                                    )) ||
-                                                '0'
-                                            }
-                                            articleCount={
-                                                (Array.isArray(
-                                                    community.approvedId
-                                                ) &&
-                                                    String(
-                                                        community &&
-                                                            community.approvedId &&
-                                                            community.approvedId.filter(
-                                                                resource =>
-                                                                    resource &&
-                                                                    resource.type ===
-                                                                        'ARTICLE'
-                                                            ).length
-                                                    )) ||
-                                                '0'
-                                            }
-                                        />
-                                    )
-                            )}
-                    </Masonry>
-                ) : (
-                    <Loading />
-                )}
+                <Container>
+                    {searchCommunities ? (
+                        <Grid
+                            className={this.props.classes.grid}
+                            container
+                            spacing={3}
+                        >
+                            {searchCommunities &&
+                                searchCommunities.content &&
+                                searchCommunities.content.map(
+                                    community =>
+                                        community && (
+                                            <Grid
+                                                key={community.id}
+                                                item
+                                                xs={12}
+                                                sm={12}
+                                                lg={6}
+                                            >
+                                                <CommunityCard
+                                                    {...community}
+                                                    key={community.id}
+                                                    href={getCollectionURL(
+                                                        community
+                                                    )}
+                                                />
+                                            </Grid>
+                                        )
+                                )}
+                        </Grid>
+                    ) : (
+                        <Loading />
+                    )}
+                </Container>
             </Fragment>
         )
     }
 }
 
-export default Communities
+export default withStyles({
+    grid: {
+        paddingTop: '24px',
+    },
+})(Communities)

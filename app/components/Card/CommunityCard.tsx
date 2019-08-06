@@ -1,7 +1,6 @@
 import React from 'react'
-import moment from 'moment'
 import Link from 'next/link'
-import { getCommunityURL } from '../../lib/getURLs'
+import { getProfileURL } from '../../lib/getURLs'
 import { Theme, makeStyles } from '@material-ui/core/styles'
 import {
     Card,
@@ -19,7 +18,6 @@ import {
     ListItemText,
 } from '@material-ui/core'
 import TruncateMarkup from 'react-truncate-markup'
-import { Community_members } from '../../queries/Fragments/__generated__/Community'
 
 export const CommunityCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -54,8 +52,13 @@ export const CommunityCardStyles = makeStyles((theme: Theme) => ({
             marginRight: theme.spacing(1),
         },
     },
+    moreMembersCount: {
+        color: 'white',
+    },
     moreMembers: {
         backgroundColor: theme.palette.primary.main,
+        width: 24,
+        height: 24,
     },
     content: {
         cursor: 'pointer',
@@ -139,9 +142,16 @@ const ShareDialog: React.FC<IShareDialogProps> = ({ onClose, open, id }) => (
     </Dialog>
 )
 
+interface IMember {
+    id: string
+    username: string | null
+    name: string | null
+    avatar: string | null
+}
+
 interface IMemberProps {
     memberHref: { as: string; href: string }
-    member: Community_members | null
+    member: IMember
     id: string
     classes: any
 }
@@ -176,27 +186,25 @@ const Member: React.FC<IMemberProps> = ({ member, id, classes, memberHref }) =>
 interface IProps {
     id: string
     name: string | null
-    dateUpdated: string | null
     description: string | null
-    background: string | null
+    attributes: any | null
     className?: string
     href: {
         as: string
         href: string
     }
-    sections: (any | null)[] | null
-    members: (Community_members | null)[] | null
+    approvedId: (any | null)[] | null
+    members: (IMember | null)[] | null
 }
 
 const CommunityCard: React.FC<IProps> = ({
     name,
-    background,
-    dateUpdated,
+    attributes,
     description,
     className,
     href,
     id,
-    sections,
+    approvedId,
     members,
 }) => {
     const classes = CommunityCardStyles({})
@@ -214,33 +222,15 @@ const CommunityCard: React.FC<IProps> = ({
     }
 
     const articleCount =
-        (sections &&
-            sections.reduce((current, next) => {
-                if (next && next.resourcesId) {
-                    const articlesInSection = next.resourcesId.filter(
-                        resource => resource && resource.type === 'ARTICLE'
-                    ).length
-                    if (articlesInSection > 0) {
-                        current += articlesInSection
-                    }
-                }
-                return current
-            }, 0)) ||
+        (approvedId &&
+            approvedId.filter(resource => resource.type === 'ARTICLE')
+                .length) ||
         0
 
     const collectionCount =
-        (sections &&
-            sections.reduce((current, next) => {
-                if (next && next.resourcesId) {
-                    const collectionsInSection = next.resourcesId.filter(
-                        resource => resource && resource.type === 'COLLECTION'
-                    ).length
-                    if (collectionsInSection > 0) {
-                        current += collectionsInSection
-                    }
-                }
-                return current
-            }, 0)) ||
+        (approvedId &&
+            approvedId.filter(resource => resource.type === 'COLLECTION')
+                .length) ||
         0
 
     return (
@@ -252,7 +242,7 @@ const CommunityCard: React.FC<IProps> = ({
                 data-testid={`CommunityCard-${id}-image`}
                 className={classes.desktopMedia}
                 image={
-                    background ||
+                    (attributes && attributes.background) ||
                     'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
                 }
                 title={String(name)}
@@ -260,14 +250,9 @@ const CommunityCard: React.FC<IProps> = ({
             <div className={classes.cardActualContent}>
                 <div className={classes.header}>
                     <div className={classes.stripHeader}>
-                        <Icon>folder</Icon>
+                        <Icon>people</Icon>
                         <Typography variant="subtitle2">Community</Typography>
-                        <Typography
-                            data-testid={`CommunityCard-${id}-date`}
-                            variant="body2"
-                        >
-                            {moment(String(dateUpdated)).format('MMM DD')}
-                        </Typography>
+
                     </div>
                     <Link href={href.href} as={href.as}>
                         <a className={classes.name}>
@@ -304,7 +289,7 @@ const CommunityCard: React.FC<IProps> = ({
                 <CardActions className={classes.cardActions}>
                     <div className={classes.members}>
                         {members &&
-                            members.map(
+                            members.slice(0, 3).map(
                                 member =>
                                     member && (
                                         <Member
@@ -313,8 +298,8 @@ const CommunityCard: React.FC<IProps> = ({
                                             // TODO update as contributors[0]
                                             member={member}
                                             id={id}
-                                            memberHref={getCommunityURL({
-                                                name,
+                                            memberHref={getProfileURL({
+                                                username: member.username,
                                                 id,
                                             })}
                                         ></Member>
@@ -326,14 +311,19 @@ const CommunityCard: React.FC<IProps> = ({
                                 className={classes.moreMembers}
                                 aria-label={'more-members'}
                             >
-                                {`+${members.length - 3}`}
+                                <Typography
+                                    className={classes.moreMembersCount}
+                                    variant="caption"
+                                >
+                                    {`+${members.length - 3}`}
+                                </Typography>
                             </Avatar>
                         ) : null}
                     </div>
 
                     <div className={classes.statistics}>
                         <Icon data-testid={`CommunityCard-${id}-articleIcon`}>
-                            document
+                          insert_drive_file
                         </Icon>
                         <Typography
                             data-testid={`CommunityCard-${id}-articleCount`}
