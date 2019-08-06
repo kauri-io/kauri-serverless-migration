@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { getProfileURL } from '../../lib/getURLs'
+import { getProfileURL, getCommunityURL } from '../../lib/getURLs'
 import { Theme, makeStyles } from '@material-ui/core/styles'
 import {
     Card,
@@ -14,10 +14,9 @@ import {
     Dialog,
     List,
     DialogTitle,
-    ListItem,
-    ListItemText,
 } from '@material-ui/core'
 import TruncateMarkup from 'react-truncate-markup'
+import { ShareButtons } from '../Tooltip/ShareButtons'
 
 export const CommunityCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -109,15 +108,19 @@ export const CommunityCardStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-const sharePlatforms = ['twitter', 'linkedin', '']
-
 interface IShareDialogProps {
     id: string
+    name: string | null
     open: boolean
     onClose: (value: string) => void
 }
 
-const ShareDialog: React.FC<IShareDialogProps> = ({ onClose, open, id }) => (
+const ShareDialog: React.FC<IShareDialogProps> = ({
+    onClose,
+    open,
+    id,
+    name,
+}) => (
     <Dialog
         data-testid={`CommunityCard-${id}-shareDialog`}
         onClose={onClose}
@@ -128,16 +131,10 @@ const ShareDialog: React.FC<IShareDialogProps> = ({ onClose, open, id }) => (
             Choose social platform to share on
         </DialogTitle>
         <List>
-            {sharePlatforms.map(sharePlatform => (
-                <ListItem
-                    button={true}
-                    data-testid={`CommunityCard-${id}-${sharePlatform}ShareButton`}
-                    onClick={() => onClose(sharePlatform)}
-                    key={sharePlatform}
-                >
-                    <ListItemText primary={sharePlatform} />
-                </ListItem>
-            ))}
+          <ShareButtons
+              title={String(name)}
+              url={`${window.location.origin}${getCommunityURL({ name, id }).href}`}
+          ></ShareButtons>
         </List>
     </Dialog>
 )
@@ -252,7 +249,6 @@ const CommunityCard: React.FC<IProps> = ({
                     <div className={classes.stripHeader}>
                         <Icon>people</Icon>
                         <Typography variant="subtitle2">Community</Typography>
-
                     </div>
                     <Link href={href.href} as={href.as}>
                         <a className={classes.name}>
@@ -323,7 +319,7 @@ const CommunityCard: React.FC<IProps> = ({
 
                     <div className={classes.statistics}>
                         <Icon data-testid={`CommunityCard-${id}-articleIcon`}>
-                          insert_drive_file
+                            insert_drive_file
                         </Icon>
                         <Typography
                             data-testid={`CommunityCard-${id}-articleCount`}
@@ -351,6 +347,7 @@ const CommunityCard: React.FC<IProps> = ({
                             <Icon>share</Icon>
                         </IconButton>
                         <ShareDialog
+                            name={name}
                             id={id}
                             open={open}
                             onClose={handleClose}

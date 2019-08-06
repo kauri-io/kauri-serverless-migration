@@ -192,7 +192,6 @@ describe('components/Card/CommunityCard', () => {
         )
         const shareIconDataTestId = `CommunityCard-${CommunityCardProps.id}-shareIcon`
         const shareDialogDataTestId = `CommunityCard-${CommunityCardProps.id}-shareDialog`
-        const twitterShareButtonDataTestId = `CommunityCard-${CommunityCardProps.id}-twitterShareButton`
 
         wrapper
             .find(`[data-testid="${shareIconDataTestId}"]`)
@@ -202,11 +201,7 @@ describe('components/Card/CommunityCard', () => {
             .find(`[data-testid="${shareDialogDataTestId}"]`)
             .first()
             .props()
-        const twitterShareButton = wrapper.exists(
-            `[data-testid="${twitterShareButtonDataTestId}"]`
-        )
 
-        expect(twitterShareButton).toBeTruthy()
         expect(open).toBeTruthy()
     })
 })

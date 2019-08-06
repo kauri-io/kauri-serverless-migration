@@ -307,7 +307,7 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                           aria-hidden={true}
                           className="material-icons MuiIcon-root"
                         >
-                          folder
+                          people
                         </span>
                       </ForwardRef(Icon)>
                     </WithStyles(ForwardRef(Icon))>
@@ -2728,6 +2728,7 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                         </WithStyles(ForwardRef(IconButton))>
                         <ShareDialog
                           id="1234567890"
+                          name="Community"
                           onClose={[Function]}
                           open={false}
                         >
