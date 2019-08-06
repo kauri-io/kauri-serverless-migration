@@ -191,7 +191,7 @@ describe('components/Card/CommunityCard', () => {
             <CommunityCard {...CommunityCardProps} />
         )
         const shareIconDataTestId = `CommunityCard-${CommunityCardProps.id}-shareIcon`
-        const shareDialogDataTestId = `CommunityCard-${CommunityCardProps.id}-shareDialog`
+        const shareDialogDataTestId = `Card-${CommunityCardProps.id}-shareDialog`
 
         wrapper
             .find(`[data-testid="${shareIconDataTestId}"]`)

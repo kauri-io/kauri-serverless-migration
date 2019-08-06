@@ -5,7 +5,7 @@ import CardContent from '@material-ui/core/CardContent'
 import Avatar from '@material-ui/core/Avatar'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-import { Typography } from '@material-ui/core'
+import { Typography, MenuList } from '@material-ui/core'
 import { Theme, makeStyles } from '@material-ui/core/styles'
 import TruncateMarkup from 'react-truncate-markup'
 import moment from 'moment'
@@ -114,6 +114,9 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
             marginRight: theme.spacing(1),
         },
     },
+    menuItem: {
+        padding: theme.spacing(0, 1.5),
+    },
 }))
 
 interface IProps {
@@ -178,6 +181,7 @@ const ArticleCard: React.FC<IProps> = ({
     }
 
     const handleShareDialogClose = () => {
+        handleClose()
         setShareDialogOpen(false)
     }
 
@@ -297,7 +301,8 @@ const ArticleCard: React.FC<IProps> = ({
                         <IconButton
                             onClick={handleClick}
                             data-testid={`ArticleCard-${id}-moreOptionsButton`}
-                            aria-label="more options"
+                            aria-label="simple-menu"
+                            aria-haspopup="true"
                         >
                             <Icon>more_vert</Icon>
                         </IconButton>
@@ -309,30 +314,33 @@ const ArticleCard: React.FC<IProps> = ({
                                     version: Number(version),
                                 }).href
                             }
-                            name={name}
+                            name={title}
                             id={id}
                             open={shareDialogOpen}
                             onClose={handleShareDialogClose}
                         ></ShareDialog>
+
                         <Menu
-                            id="more-options-menu"
+                            id="simple-menu"
                             data-testid={`ArticleCard-${id}-moreOptionsMenu`}
                             anchorEl={anchorEl}
                             keepMounted
                             open={Boolean(anchorEl)}
                             onClose={handleClose}
                         >
-                            <MenuItem onClick={handleClickShareDialogOpen}>
-                                Share
-                            </MenuItem>
-                            {isLoggedIn && (
-                                <MenuItem
-                                    data-testid={`ArticleCard-${id}-addToCollectionButton`}
-                                    onClick={handleClose}
-                                >
-                                    Add To Collection
+                            <MenuList>
+                                <MenuItem className={classes.menuItem} onClick={handleClickShareDialogOpen}>
+                                    Share
                                 </MenuItem>
-                            )}
+                                {isLoggedIn && (
+                                    <MenuItem
+                                        data-testid={`ArticleCard-${id}-addToCollectionButton`}
+                                        onClick={handleClose}
+                                    >
+                                        Add To Collection
+                                    </MenuItem>
+                                )}
+                            </MenuList>
                         </Menu>
                     </div>
                 </CardActions>

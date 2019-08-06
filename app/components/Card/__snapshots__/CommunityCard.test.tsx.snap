@@ -2727,6 +2727,7 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                           </ForwardRef(IconButton)>
                         </WithStyles(ForwardRef(IconButton))>
                         <ShareDialog
+                          href="/community_id=1234567890"
                           id="1234567890"
                           name="Community"
                           onClose={[Function]}
@@ -2734,7 +2735,7 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                         >
                           <WithStyles(ForwardRef(Dialog))
                             aria-labelledby="share-dialog"
-                            data-testid="CommunityCard-1234567890-shareDialog"
+                            data-testid="Card-1234567890-shareDialog"
                             onClose={[Function]}
                             open={false}
                           >
@@ -2759,7 +2760,7 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                                   "scrollPaper": "MuiDialog-scrollPaper",
                                 }
                               }
-                              data-testid="CommunityCard-1234567890-shareDialog"
+                              data-testid="Card-1234567890-shareDialog"
                               onClose={[Function]}
                               open={false}
                             >
@@ -3065,12 +3066,11 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                                 aria-labelledby="share-dialog"
                                 className="MuiDialog-root"
                                 closeAfterTransition={true}
-                                data-testid="CommunityCard-1234567890-shareDialog"
+                                data-testid="Card-1234567890-shareDialog"
                                 disableBackdropClick={false}
                                 disableEscapeKeyDown={false}
                                 onClose={[Function]}
                                 open={false}
-                                role="dialog"
                               />
                             </ForwardRef(Dialog)>
                           </WithStyles(ForwardRef(Dialog))>

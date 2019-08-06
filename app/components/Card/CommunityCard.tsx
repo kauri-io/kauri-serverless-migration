@@ -124,7 +124,7 @@ export const ShareDialog: React.FC<IShareDialogProps> = ({
     href,
 }) => (
     <Dialog
-        data-testid={`CommunityCard-${id}-shareDialog`}
+        data-testid={`Card-${id}-shareDialog`}
         onClose={onClose}
         aria-labelledby="share-dialog"
         open={open}
@@ -136,7 +136,7 @@ export const ShareDialog: React.FC<IShareDialogProps> = ({
             <ShareButtons
                 onClose={onClose}
                 title={String(name)}
-                url={`${window.location.origin}${href}`}
+                url={`${global.window && global.window.location.origin}${href}`}
             ></ShareButtons>
         </List>
     </Dialog>
