@@ -22,6 +22,8 @@ import {
 } from '../../components/Modal/Module'
 import { ICollection } from '../CreateCollectionForm/ChooseCollectionModal'
 import { pipe, path, defaultTo } from 'ramda'
+import { IShowNotificationPayload, IShowNotificationAction } from '../../lib/Epics/ShowNotificationEpic';
+import { ISaveUserDetailActionType } from '../../components/EditProfileForm/Module';
 
 interface IProps {
     router: any
@@ -32,7 +34,14 @@ interface IProps {
     DraftsQuery: searchPersonalArticles
     OwnProfileQuery: getMyProfile
     PendingTransfersQuery: searchPendingArticles_searchArticles
+    showNotificationAction: (
+        payload: IShowNotificationPayload
+    ) => IShowNotificationAction
     routeChangeAction: (route: string) => void
+    saveUserDetailsAction: (
+        payload: any,
+        callback: any
+    ) => ISaveUserDetailActionType
     currentUser: string
     deleteDraftArticleAction: IDeleteDraftArticleAction
     rejectArticleTransferAction: IRejectArticleTransferAction
@@ -91,6 +100,8 @@ class PublicProfile extends Component<IProps, IState> {
             openModalAction,
             hostName,
             removeMemberAction,
+            saveUserDetailsAction,
+            showNotificationAction
         } = this.props
 
         const isHeaderLoaded =
@@ -121,6 +132,10 @@ class PublicProfile extends Component<IProps, IState> {
                     <Loading />
                 ) : isEditing ? (
                     <EditableHeader
+                        OwnProfile={OwnProfileQuery}
+                        saveUserDetailsAction={saveUserDetailsAction}
+                        routeChangeAction={routeChangeAction}
+                        showNotificationAction={showNotificationAction}
                         router={this.props.router}
                         toggleEditing={() => this.toggleEditing()}
                     />

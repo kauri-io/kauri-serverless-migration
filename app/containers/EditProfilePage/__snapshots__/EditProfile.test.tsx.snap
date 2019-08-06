@@ -227,6 +227,30 @@ exports[`containers/EditProfile should match snapshot 1`] = `
         }
       >
         <OnboardingEditProfile
+          OwnProfile={
+            Object {
+              "getMyProfile": Object {
+                "__typename": "UserDTO",
+                "avatar": "avatar",
+                "communities": Array [],
+                "dateCreated": "2019-01-01",
+                "email": "test@test.com",
+                "id": "123",
+                "name": "test name",
+                "social": Object {
+                  "github": "github",
+                  "twitter": "twitter",
+                },
+                "status": "CREATED",
+                "subscriptions": Object {
+                  "newsletter": false,
+                },
+                "title": "title",
+                "username": "test username",
+                "website": "website",
+              },
+            }
+          }
           routeChangeAction={
             [MockFunction] {
               "calls": Array [
@@ -250,6 +274,7 @@ exports[`containers/EditProfile should match snapshot 1`] = `
               },
             }
           }
+          saveUserDetailsAction={[MockFunction]}
           showNotificationAction={[MockFunction]}
           user={
             Object {

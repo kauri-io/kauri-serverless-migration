@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import EditProfileForm from '../EditProfileForm'
+import EditProfileForm from '../../components/EditProfileForm'
 import PrimaryButton from '../../components/Button/PrimaryButton'
 import Loading from '../../components/Loading'
 import analytics from '../../lib/analytics'
@@ -10,6 +10,10 @@ import {
     IShowNotificationAction,
 } from '../../lib/Epics/ShowNotificationEpic'
 import { getProfileURL } from '../../lib/getURLs'
+import TriggerImageUploader from '../ImageUploader';
+import { pipe, assocPath } from 'ramda';
+import { ISaveUserDetailActionType } from '../../components/EditProfileForm/Module';
+import { getMyProfile } from '../../queries/__generated__/getMyProfile';
 
 const Page = styled.div`
     display: flex;
@@ -34,10 +38,15 @@ const ButtonWrapper = styled.div`
 `
 
 interface IProps {
+    OwnProfile: getMyProfile;
     showNotificationAction: (
         payload: IShowNotificationPayload
     ) => IShowNotificationAction
     routeChangeAction: (route: string) => void
+    saveUserDetailsAction: (
+        payload: any,
+        callback: any
+    ) => ISaveUserDetailActionType
     router: {
         query: {
             redirected: boolean
@@ -45,28 +54,58 @@ interface IProps {
         }
     }
     user:
-        | {
-              name: string
-              username: string
-              email: string
-              dateCreated: string
-          }
-        | undefined
+    | {
+        name: string
+        username: string
+        email: string
+        dateCreated: string
+    }
+    | undefined
 }
 
-class OnboardingEditProfile extends Component<IProps> {
-    login: any
+interface IState {
+    name: string;
+    username: string;
+    website: string;
+    email: string;
+    title: string;
+    github: string;
+    avatar: string;
+    status: string;
+    twitter: string;
+    pendingSubmit: boolean;
+    subscriptions: {
+        newsletter: boolean;
+    }
+}
+
+class OnboardingEditProfile extends Component<IProps, IState> {
+    constructor(props) {
+        super(props)
+        const profile = props.OwnProfile.getMyProfile
+        this.state = { pendingSubmit: false, subscriptions: { newsletter: false}, ...profile,  }
+    }
+
+    emailCheck(email) {
+        const emailCheck = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return email && emailCheck.test(email.toLowerCase())
+    }
+
+    saveUser(route) {
+        const payload = pipe(
+            // filter((val) => typeof val !== 'undefined' || !!val),
+            assocPath(['redirectURL'], route)
+        )(this.state)
+
+        this.props.saveUserDetailsAction(payload, (pendingSubmit: any) => {
+            this.setState({ pendingSubmit })
+        })
+    }
 
     handleSubmit() {
-        const loginComp = this.login.getWrappedInstance().getWrappedInstance()
-
-        const emailCheck = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        const validEmail = emailCheck.test(
-            String(loginComp.state.email).toLowerCase()
-        )
-
+        const validEmail = this.emailCheck(this.state.email)
         if (validEmail) {
-            loginComp.saveUser(
+            this.saveUser(
                 this.props.router.query.redirected
                     ? `${this.props.router.query.r}?redirected=true`
                     : this.props.router.query.r
@@ -106,7 +145,7 @@ class OnboardingEditProfile extends Component<IProps> {
                 if (typeof this.props.router.query.r === 'string') {
                     newRedirectURL =
                         this.props.router.query.r.indexOf('https://') !== -1 ||
-                        this.props.router.query.redirected
+                            this.props.router.query.redirected
                             ? this.props.router.query.r + '?redirected=true'
                             : this.props.router.query.r
                 } else {
@@ -116,10 +155,22 @@ class OnboardingEditProfile extends Component<IProps> {
             }
         }
     }
+    uploadImage() {
+        TriggerImageUploader(() => { }, '', (_file: Blob, url: string) =>
+            this.setState({ avatar: url })
+        )
+    }
+
+    updateState(payload: string | {
+        subscriptions: { newsletter: boolean };
+    }, field: string) {
+        const newState = this.state;
+        newState[field] = payload;
+        this.setState(newState)
+    }
 
     render() {
-        if (!this.props.user) return null
-        const { name, username, email } = this.props.user
+        const { name, username, email, title, twitter, github, avatar, website, subscriptions, status } = this.state
         const hasData = name && username && email
         if (hasData) {
             return (
@@ -131,7 +182,21 @@ class OnboardingEditProfile extends Component<IProps> {
         return (
             <Page>
                 <Wrapper>
-                    <EditProfileForm ref={comp => (this.login = comp)} />
+                    <EditProfileForm
+                        name={name}
+                        username={username}
+                        avatar={avatar}
+                        github={github}
+                        twitter={twitter}
+                        website={website}
+                        title={title}
+                        email={email}
+                        status={status}
+                        subscriptions={subscriptions}
+                        resendEmailVerificationAction={() => console.log('email verification')}
+                        uploadImage={this.uploadImage}
+                        updateState={this.updateState.bind(this)}
+                    />
                     <ButtonWrapper>
                         <PrimaryButton onClick={() => this.handleSubmit()}>
                             Next

@@ -51,7 +51,7 @@ import {
     acceptArticleTransferEpic,
     finaliseArticleTransferEpic,
 } from '../containers/PublicProfile/Manage/TransferModule'
-import { saveUserDetailsEpic } from '../containers/EditProfileForm/Module'
+import { saveUserDetailsEpic } from '../components/EditProfileForm/Module'
 import { addCommentEpic } from '../containers/Article/Module'
 import {
     addArticleToCollectionEpic,

@@ -52,7 +52,7 @@ describe('submitArticleEpic', () => {
                 Promise.resolve({
                     data: { getArticle: mockGetArticle },
                 }),
-            resetStore: () => {},
+            resetStore: () => { },
         }
 
         const sourceAction = submitArticleAction({
@@ -124,7 +124,7 @@ describe('submitArticleEpic', () => {
                 Promise.resolve({
                     data: { getArticle: mockGetArticle },
                 }),
-            resetStore: () => {},
+            resetStore: () => { },
         }
 
         const sourceAction = submitArticleAction({
