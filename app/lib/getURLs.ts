@@ -46,10 +46,10 @@ export const getProfileURL = ({ username, id }: IProfileProps) => ({
 
 interface ICommunityProps {
     id: string
-    title: string | null
+    name: string | null
 }
 
-export const getCommunityURL = ({ title, id }: ICommunityProps) => ({
-    as: `/${slugify(String(title), { lower: true })}/${String(id)}/cm`,
+export const getCommunityURL = ({ name, id }: ICommunityProps) => ({
+    as: `/${slugify(String(name), { lower: true })}/${String(id)}/cm`,
     href: `/community_id=${String(id)}`,
 })

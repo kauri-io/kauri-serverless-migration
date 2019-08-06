@@ -77,7 +77,7 @@ export const CommunityCardStyles = makeStyles((theme: Theme) => ({
             display: 'none !important',
         },
     },
-    title: {
+    name: {
         [theme.breakpoints.only('xs')]: { maxWidth: `calc(100% - 100px)` },
     },
     cardActions: {
@@ -175,7 +175,7 @@ const Member: React.FC<IMemberProps> = ({ member, id, classes, memberHref }) =>
 
 interface IProps {
     id: string
-    title: string | null
+    name: string | null
     dateUpdated: string | null
     description: string | null
     background: string | null
@@ -189,7 +189,7 @@ interface IProps {
 }
 
 const CommunityCard: React.FC<IProps> = ({
-    title,
+    name,
     background,
     dateUpdated,
     description,
@@ -255,7 +255,7 @@ const CommunityCard: React.FC<IProps> = ({
                     background ||
                     'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
                 }
-                title={String(title)}
+                title={String(name)}
             />
             <div className={classes.cardActualContent}>
                 <div className={classes.header}>
@@ -270,13 +270,13 @@ const CommunityCard: React.FC<IProps> = ({
                         </Typography>
                     </div>
                     <Link href={href.href} as={href.as}>
-                        <a className={classes.title}>
+                        <a className={classes.name}>
                             <TruncateMarkup lines={1}>
                                 <Typography
-                                    data-testid={`CommunityCard-${id}-title`}
+                                    data-testid={`CommunityCard-${id}-name`}
                                     variant={'h5'}
                                 >
-                                    {title}
+                                    {name}
                                 </Typography>
                             </TruncateMarkup>
                         </a>
@@ -314,7 +314,7 @@ const CommunityCard: React.FC<IProps> = ({
                                             member={member}
                                             id={id}
                                             memberHref={getCommunityURL({
-                                                title,
+                                                name,
                                                 id,
                                             })}
                                         ></Member>
