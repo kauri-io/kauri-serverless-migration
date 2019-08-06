@@ -8,7 +8,11 @@ import {
     Collection_owner_PublicUserDTO,
     Collection_owner_CommunityDTO,
 } from '../../queries/Fragments/__generated__/Collection'
-import { getArticleURL, getCollectionURL } from '../../lib/getURLs'
+import {
+    getArticleURL,
+    getCollectionURL,
+    getCommunityURL,
+} from '../../lib/getURLs'
 export const RenderCardContent = () => (
     card: Article | Collection | Community
 ) => {
@@ -88,16 +92,10 @@ export const RenderCardContent = () => (
         case 'CommunityDTO': {
             return (
                 <CommunityCard
+                    {...card}
                     key={card.id}
                     id={card.id}
-                    articleCount={''}
-                    collectionCount={''}
-                    name={String(card.name)}
-                    description={String(card.description)}
-                    imageURL={card.attributes.background}
-                    cardHeight={310}
-                    logo={card.avatar}
-                    href={getCollectionURL(card)}
+                    href={getCommunityURL({ name: card.name, id: card.id })}
                 />
             )
         }

@@ -46,7 +46,7 @@ export const getProfileURL = ({ username, id }: IProfileProps) => ({
 
 interface ICommunityProps {
     id: string
-    name: string
+    name: string | null
 }
 
 export const getCommunityURL = ({ name, id }: ICommunityProps) => ({
