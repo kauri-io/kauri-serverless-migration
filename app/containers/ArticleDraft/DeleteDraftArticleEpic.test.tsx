@@ -92,7 +92,7 @@ describe('deleteDraftArticleEpic', () => {
                     user: {
                         communities: [{ community: { id: '123' } }],
                         id: '123',
-                        username: 'username'
+                        username: 'username',
                     },
                 },
             },

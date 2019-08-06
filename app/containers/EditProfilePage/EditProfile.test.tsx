@@ -1,8 +1,8 @@
 import EditProfile from './View'
 import { mountWithRedux } from '../../setupTests'
 import { MockedProvider } from 'react-apollo/test-utils'
-import { getMyProfile_getMyProfile } from '../../queries/__generated__/getMyProfile';
-import { UserStatusInput } from '../../__generated__/globalTypes';
+import { getMyProfile_getMyProfile } from '../../queries/__generated__/getMyProfile'
+import { UserStatusInput } from '../../__generated__/globalTypes'
 
 const saveUserDetailsAction = jest.fn()
 
@@ -18,21 +18,25 @@ describe('containers/EditProfile', () => {
                 },
             },
             OwnProfile: {
-                getMyProfile:
-                {
+                getMyProfile: {
                     __typename: 'UserDTO' as getMyProfile_getMyProfile['__typename'],
                     id: '123',
                     name: 'test name',
                     username: 'test username',
                     email: 'test@test.com',
                     dateCreated: '2019-01-01',
-                    title: 'title', website: 'website', avatar: 'avatar', social: {
+                    title: 'title',
+                    website: 'website',
+                    avatar: 'avatar',
+                    social: {
                         github: 'github',
-                        twitter: 'twitter'
+                        twitter: 'twitter',
                     },
-                    status: UserStatusInput.CREATED, communities: [], subscriptions: {
-                        newsletter: false
-                    }
+                    status: UserStatusInput.CREATED,
+                    communities: [],
+                    subscriptions: {
+                        newsletter: false,
+                    },
                 },
             },
             userId: '123',
@@ -43,7 +47,7 @@ describe('containers/EditProfile', () => {
                 email: 'test@test.com',
                 dateCreated: '2019-01-01',
             },
-            saveUserDetailsAction
+            saveUserDetailsAction,
         }
         const wrapper = mountWithRedux(
             <MockedProvider>

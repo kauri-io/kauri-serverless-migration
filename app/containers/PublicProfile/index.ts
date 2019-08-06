@@ -42,7 +42,7 @@ export default compose(
             acceptArticleTransferAction,
             removeMemberAction,
             saveUserDetailsAction,
-            showNotificationAction
+            showNotificationAction,
         }
     ),
     graphql(searchPersonalArticles, {

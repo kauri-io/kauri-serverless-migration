@@ -22,8 +22,11 @@ import {
 } from '../../components/Modal/Module'
 import { ICollection } from '../CreateCollectionForm/ChooseCollectionModal'
 import { pipe, path, defaultTo } from 'ramda'
-import { IShowNotificationPayload, IShowNotificationAction } from '../../lib/Epics/ShowNotificationEpic';
-import { ISaveUserDetailActionType } from '../../components/EditProfileForm/Module';
+import {
+    IShowNotificationPayload,
+    IShowNotificationAction,
+} from '../../lib/Epics/ShowNotificationEpic'
+import { ISaveUserDetailActionType } from '../../components/EditProfileForm/Module'
 
 interface IProps {
     router: any
@@ -101,7 +104,7 @@ class PublicProfile extends Component<IProps, IState> {
             hostName,
             removeMemberAction,
             saveUserDetailsAction,
-            showNotificationAction
+            showNotificationAction,
         } = this.props
 
         const isHeaderLoaded =

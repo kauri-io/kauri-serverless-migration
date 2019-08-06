@@ -3,11 +3,14 @@ import styled from 'styled-components'
 import PrimaryButton from '../../components/Button/PrimaryButton'
 import TertiaryButton from '../../components/Button/TertiaryButton'
 import EditProfileForm from '../../components/EditProfileForm'
-import { pipe, assocPath } from 'ramda';
-import { IShowNotificationPayload, IShowNotificationAction } from '../../lib/Epics/ShowNotificationEpic';
-import { ISaveUserDetailActionType } from '../../components/EditProfileForm/Module';
-import { getMyProfile } from '../../queries/__generated__/getMyProfile';
-import TriggerImageUploader from '../ImageUploader';
+import { pipe, assocPath } from 'ramda'
+import {
+    IShowNotificationPayload,
+    IShowNotificationAction,
+} from '../../lib/Epics/ShowNotificationEpic'
+import { ISaveUserDetailActionType } from '../../components/EditProfileForm/Module'
+import { getMyProfile } from '../../queries/__generated__/getMyProfile'
+import TriggerImageUploader from '../ImageUploader'
 
 const HeaderContainer = styled.div`
     background-color: ${props => props.theme.colors.bgPrimary};
@@ -23,10 +26,9 @@ const ActionsContainer = styled.div`
     justify-content: space-between;
 `
 
-
 interface IProps {
     toggleEditing: () => void
-    OwnProfile: getMyProfile;
+    OwnProfile: getMyProfile
     showNotificationAction: (
         payload: IShowNotificationPayload
     ) => IShowNotificationAction
@@ -44,31 +46,34 @@ interface IProps {
 }
 
 interface IState {
-    name: string;
-    username: string;
-    website: string;
-    email: string;
-    title: string;
-    github: string;
-    avatar: string;
-    status: string;
-    twitter: string;
-    pendingSubmit: boolean;
+    name: string
+    username: string
+    website: string
+    email: string
+    title: string
+    github: string
+    avatar: string
+    status: string
+    twitter: string
+    pendingSubmit: boolean
     subscriptions: {
-        newsletter: boolean;
+        newsletter: boolean
     }
 }
 
 class EditableHeader extends Component<IProps, IState> {
-
     constructor(props) {
         super(props)
         const profile = props.OwnProfile.getMyProfile
-        this.state = { pendingSubmit: false, subscriptions: { newsletter: false}, ...profile,  }
+        this.state = {
+            pendingSubmit: false,
+            subscriptions: { newsletter: false },
+            ...profile,
+        }
     }
 
     emailCheck(email) {
-        const emailCheck = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const emailCheck = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         return email && emailCheck.test(email.toLowerCase())
     }
 
@@ -101,38 +106,49 @@ class EditableHeader extends Component<IProps, IState> {
     }
 
     uploadImage() {
-        TriggerImageUploader(() => { }, '', (_file: Blob, url: string) =>
+        TriggerImageUploader(() => {}, '', (_file: Blob, url: string) =>
             this.setState({ avatar: url })
         )
     }
 
-    updateState(payload: string | {
-        subscriptions: { newsletter: boolean };
-    }, field: string) {
-        const newState = this.state;
-        newState[field] = payload;
+    updateState(payload: string | { newsletter: boolean }, field: string) {
+        const newState = this.state
+        newState[field] = payload
         this.setState(newState)
     }
 
     render() {
-        const { name, username, email, title, twitter, github, avatar, website, subscriptions, status } = this.state
+        const {
+            name,
+            username,
+            email,
+            title,
+            twitter,
+            github,
+            avatar,
+            website,
+            subscriptions,
+            status,
+        } = this.state
         return (
             <HeaderContainer>
                 <EditProfileForm
-                        name={name}
-                        username={username}
-                        avatar={avatar}
-                        github={github}
-                        twitter={twitter}
-                        website={website}
-                        title={title}
-                        email={email}
-                        status={status}
-                        subscriptions={subscriptions}
-                        resendEmailVerificationAction={() => console.log('email verification')}
-                        uploadImage={this.uploadImage}
-                        updateState={this.updateState.bind(this)}
-                    />
+                    name={name}
+                    username={username}
+                    avatar={avatar}
+                    github={github}
+                    twitter={twitter}
+                    website={website}
+                    title={title}
+                    email={email}
+                    status={status}
+                    subscriptions={subscriptions}
+                    resendEmailVerificationAction={() =>
+                        console.log('email verification')
+                    }
+                    uploadImage={this.uploadImage}
+                    updateState={this.updateState.bind(this)}
+                />
                 <ActionsContainer>
                     <TertiaryButton onClick={() => this.props.toggleEditing()}>
                         Discard

@@ -296,11 +296,11 @@ exports[`containers/EditProfile should match snapshot 1`] = `
                   "componentStyle": ComponentStyle {
                     "componentId": "View__Page-sc-19kw1f9-0",
                     "isStatic": false,
-                    "lastClassName": "fDNfNI",
+                    "lastClassName": "bmDLLx",
                     "rules": Array [
                       "display:flex;background:",
                       [Function],
-                      ";height:100vh;align-items:center;justify-content:center;flex-direction:column;",
+                      ";flex:1;align-items:center;justify-content:center;flex-direction:column;",
                     ],
                   },
                   "displayName": "View__Page",
@@ -316,7 +316,7 @@ exports[`containers/EditProfile should match snapshot 1`] = `
               forwardedRef={null}
             >
               <div
-                className="View__Page-sc-19kw1f9-0 fDNfNI"
+                className="View__Page-sc-19kw1f9-0 bmDLLx"
               >
                 <LoadingComponent>
                   <style

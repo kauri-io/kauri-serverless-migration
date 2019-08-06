@@ -33,23 +33,24 @@ const Container = styled.div`
 `
 
 interface IProps {
-    avatar: string;
-    name: string;
-    title: string;
-    username: string;
-    website: string;
-    github: string;
-    twitter: string;
-    email: string;
-    status: string;
+    avatar: string
+    name: string
+    title: string
+    username: string
+    website: string
+    github: string
+    twitter: string
+    email: string
+    status: string
     subscriptions: {
-        newsletter: boolean;
+        newsletter: boolean
     }
-    resendEmailVerificationAction: () => void;
-    uploadImage: () => void;
-    updateState: (payload: string | {
-        subscriptions: { newsletter: boolean};
-    }, field: string) => void;
+    resendEmailVerificationAction: () => void
+    uploadImage: () => void
+    updateState: (
+        payload: string | { newsletter: boolean },
+        field: string
+    ) => void
 }
 
 const EditProfileForm = ({
@@ -65,91 +66,88 @@ const EditProfileForm = ({
     status,
     subscriptions,
     uploadImage,
-    updateState
+    updateState,
 }: IProps) => {
-
-    return <Container>
-        <StyledUpload
-            bg={avatar}
-            handleClick={() => uploadImage()}
-            text="Profile"
-            color="white"
-        />
-        <InputsContainers>
-            <Input
-                onChange={e => updateState(e.target.value, 'name')}
-                fontWeight="normal"
-                fontSize={6}
-                value={name}
-                placeHolder="Add your full name"
+    return (
+        <Container>
+            <StyledUpload
+                bg={avatar}
+                handleClick={() => uploadImage()}
+                text="Profile"
+                color="white"
             />
-            <Input
-                onChange={e => updateState(e.target.value, 'title')}
-                fontWeight="normal"
-                fontSize={3}
-                value={title}
-                placeHolder="Add job title"
-            />
-            <Input
-                onChange={e => updateState(e.target.value, 'username')}
-                fontWeight="normal"
-                fontSize={1}
-                value={username}
-                placeHolder="Add username"
-            />
-            <Input
-                onChange={e => updateState(e.target.value, 'website')}
-                fontWeight="normal"
-                fontSize={1}
-                value={website}
-                placeHolder="Add Website"
-            />
-            <Offset>
-                <SocialWebsiteIcon brand="twitter" />
+            <InputsContainers>
                 <Input
-                    onChange={e => updateState(e.target.value, 'twitter')}
+                    onChange={e => updateState(e.target.value, 'name')}
+                    fontWeight="normal"
+                    fontSize={6}
+                    value={name}
+                    placeHolder="Add your full name"
+                />
+                <Input
+                    onChange={e => updateState(e.target.value, 'title')}
+                    fontWeight="normal"
+                    fontSize={3}
+                    value={title}
+                    placeHolder="Add job title"
+                />
+                <Input
+                    onChange={e => updateState(e.target.value, 'username')}
                     fontWeight="normal"
                     fontSize={1}
-                    value={twitter}
-                    placeHolder="Twitter"
+                    value={username}
+                    placeHolder="Add username"
                 />
-            </Offset>
-            <Offset>
-                <SocialWebsiteIcon brand="github" />
                 <Input
-                    onChange={e => updateState(e.target.value, 'github')}
+                    onChange={e => updateState(e.target.value, 'website')}
                     fontWeight="normal"
                     fontSize={1}
-                    value={github}
-                    placeHolder="Github"
+                    value={website}
+                    placeHolder="Add Website"
                 />
-            </Offset>
-            <EmailField
-                resendEmailVerification={
-                    resendEmailVerificationAction
-                }
-                email={email}
-                handleChange={e =>
-                    updateState(e.target.value, 'email')
-                }
-                status={status}
-            />
-            <Offset margin={12}>
-                <EmailCheckbox
-                    disabled={!email}
-                    checked={subscriptions && subscriptions.newsletter
-                    }
-                    onChange={checked =>
-                        updateState({
-                            subscriptions: {
-                                newsletter: checked,
-                            },
-                        }, 'subscriptions')
-                    }
+                <Offset>
+                    <SocialWebsiteIcon brand="twitter" />
+                    <Input
+                        onChange={e => updateState(e.target.value, 'twitter')}
+                        fontWeight="normal"
+                        fontSize={1}
+                        value={twitter}
+                        placeHolder="Twitter"
+                    />
+                </Offset>
+                <Offset>
+                    <SocialWebsiteIcon brand="github" />
+                    <Input
+                        onChange={e => updateState(e.target.value, 'github')}
+                        fontWeight="normal"
+                        fontSize={1}
+                        value={github}
+                        placeHolder="Github"
+                    />
+                </Offset>
+                <EmailField
+                    resendEmailVerification={resendEmailVerificationAction}
+                    email={email}
+                    handleChange={e => updateState(e.target.value, 'email')}
+                    status={status}
                 />
-            </Offset>
-        </InputsContainers>
-    </Container>
+                <Offset margin={12}>
+                    <EmailCheckbox
+                        disabled={!email}
+                        checked={subscriptions.newsletter}
+                        onChange={checked =>
+                            updateState(
+                                {
+                                    newsletter: checked,
+                                },
+                                'subscriptions'
+                            )
+                        }
+                    />
+                </Offset>
+            </InputsContainers>
+        </Container>
+    )
 }
 
 export default EditProfileForm

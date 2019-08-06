@@ -76,7 +76,7 @@ class EmailField extends React.Component<IProps, {}> {
 
     render() {
         return (
-            <Container >
+            <Container>
                 {this.props.status === 'CREATED' && (
                     <Tooltip
                         html={
@@ -117,9 +117,7 @@ class EmailField extends React.Component<IProps, {}> {
                     </Tooltip>
                 )}
                 <Input
-                    onChange={
-                        this.props.handleChange
-                    }
+                    onChange={this.props.handleChange}
                     fontWeight={400}
                     fontSize={1}
                     value={this.props.email}

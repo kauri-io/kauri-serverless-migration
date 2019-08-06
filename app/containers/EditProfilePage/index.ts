@@ -13,8 +13,9 @@ const mapStateToProps = (state: IReduxState) => ({
 
 export default compose(
     connect(
-    mapStateToProps,
-    { routeChangeAction, showNotificationAction, saveUserDetailsAction }),
+        mapStateToProps,
+        { routeChangeAction, showNotificationAction, saveUserDetailsAction }
+    ),
     graphql(getOwnProfile, {
         name: 'OwnProfile',
         options: {
