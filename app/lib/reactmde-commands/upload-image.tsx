@@ -5,12 +5,22 @@ import {
 } from '@rej156/react-mde/lib/js/util/DraftUtil'
 import { MdeToolbarIcon } from '@rej156/react-mde/lib/js/components'
 import initUppy from '../init-uppy'
+import { useEffect } from 'react';
 const config = require('../../config').default
 
-const uploadImageCommand = {
-    buttonContent: <MdeToolbarIcon icon="image" />,
+let uppy
 
-    buttonProps: { 'aria-label': 'Insert a picture' },
+const InitButton = () => {
+    useEffect(() => {
+        uppy = initUppy({ allowGifs: true, trigger: '.image-upload' })
+    }, [])
+    return <MdeToolbarIcon icon="image" />
+}
+
+const uploadImageCommand = {
+    buttonContent: <InitButton />,
+
+    buttonProps: { 'aria-label': 'Insert a picture', className: "image-upload"},
 
     execute: state =>
         new Promise(resolve => {
@@ -20,11 +30,11 @@ const uploadImageCommand = {
                 '![',
                 selection.start
             )
-            const uppy = initUppy({ allowGifs: true, trigger: '.image-upload' })
-            uppy.on('upload-success', (_file, { hash }) => {
+            
+            uppy.on('upload-success', (_file, { body: {hash} }) => {
                 const finalText = insertText(
                     newText,
-                    `](https://${config.getApiURL()}:443/ipfs/${hash})`,
+                    `](https://${config.gateway}:443/ipfs/${hash})`,
                     selection.end + insertionLength
                 ).newText
                 const modification = {
@@ -34,7 +44,6 @@ const uploadImageCommand = {
                         end: selection.end + insertionLength,
                     },
                 }
-                uppy.close()
                 resolve(buildNewDraftState(state, modification))
             })
         }),

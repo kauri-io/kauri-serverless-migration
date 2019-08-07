@@ -85,7 +85,7 @@ export default ({
     communities,
 }: IProps) => {
     useEffect(() => {
-        const uppy = initUppy({ allowGifs: false, trigger: '.image-upload' })
+        const uppy = initUppy({ allowGifs: false, trigger: '.background-upload' })
         getFieldDecorator('attributes')
         uppy.on('upload-success', (_data, data2) => {
             const url = `https://${config.gateway}:443/ipfs/${data2.body.hash}`
@@ -117,7 +117,7 @@ export default ({
                     gap={20}
                 >
                     <TertiaryButton
-                        className="image-upload"
+                        className="background-upload"
                         icon={<UploadIcon />}
                     >
                         Upload Background

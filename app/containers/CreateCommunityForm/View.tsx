@@ -124,13 +124,13 @@ const Component: React.SFC<
                     isCommunityAdmin={props.isCommunityAdmin}
                     setFieldValue={props.setFieldValue}
                 />
-                                    {process.env.NODE_ENV !== 'production' && (
-                        <DisplayFormikState
-                            touched={props.touched}
-                            errors={props.errors}
-                            values={props.values}
-                        />
-                    )}
+                {process.env.NODE_ENV !== 'production' && (
+                    <DisplayFormikState
+                        touched={props.touched}
+                        errors={props.errors}
+                        values={props.values}
+                    />
+                )}
             </Form>
         </Section>
     )
