@@ -5,7 +5,7 @@ import {
 } from '@rej156/react-mde/lib/js/util/DraftUtil'
 import { MdeToolbarIcon } from '@rej156/react-mde/lib/js/components'
 import initUppy from '../init-uppy'
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 const config = require('../../config').default
 
 let uppy
@@ -20,7 +20,10 @@ const InitButton = () => {
 const uploadImageCommand = {
     buttonContent: <InitButton />,
 
-    buttonProps: { 'aria-label': 'Insert a picture', className: "image-upload"},
+    buttonProps: {
+        'aria-label': 'Insert a picture',
+        className: 'image-upload',
+    },
 
     execute: state =>
         new Promise(resolve => {
@@ -30,8 +33,8 @@ const uploadImageCommand = {
                 '![',
                 selection.start
             )
-            
-            uppy.on('upload-success', (_file, { body: {hash} }) => {
+
+            uppy.on('upload-success', (_file, { body: { hash } }) => {
                 const finalText = insertText(
                     newText,
                     `](https://${config.gateway}:443/ipfs/${hash})`,
