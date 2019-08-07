@@ -1,34 +1,20 @@
 import React from 'react'
-import styled from 'styled-components'
 import ArticleCard from '../../components/Card/ArticleCard'
-import ChooseArticleContent, {
-    Content,
-} from '../../components/Modal/ChooseArticleContent'
 import Tabs from '../../components/Tabs'
 import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
-
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    width: 100%;
-    height: 100%;
-
-    ${Content} {
-        padding-top: 10px;
-    }
-`
+import { getArticleURL } from '../../lib/getURLs'
+import { Container, Grid } from '@material-ui/core'
 
 const ArticlesContent = props => {
-    const { articles, setRef, allOtherChosenArticles } = props
+    const { articles, allOtherChosenArticles, setRef } = props
     if (!articles) {
         return null
     }
 
     return articles && articles.content.length > 0 ? (
-        <Container>
-            <ChooseArticleContent setRef={setRef}>
+        <Container >
+        <Grid container spacing={3} ref={ref => setRef && setRef(ref)}>
                 {articles.content.map(article => {
                     if (allOtherChosenArticles) {
                         if (
@@ -45,9 +31,17 @@ const ArticlesContent = props => {
                         }
                     }
 
-                    return <ArticleCard {...article} />
+                    const { title, id, version } = article
+                    return (
+                        <Grid key={article.id} item xs={12} sm={12} lg={12}>
+                            <ArticleCard
+                                {...article}
+                                href={getArticleURL({ title, id, version })}
+                            />
+                        </Grid>
+                    )
                 })}
-            </ChooseArticleContent>
+            </Grid>
         </Container>
     ) : (
         <p>You have no published articles!</p>
