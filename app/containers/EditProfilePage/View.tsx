@@ -13,6 +13,7 @@ import { getProfileURL } from '../../lib/getURLs'
 import { pipe, assocPath } from 'ramda'
 import { ISaveUserDetailActionType } from '../../components/EditProfileForm/Module'
 import { getMyProfile_getMyProfile } from '../../queries/__generated__/getMyProfile'
+import { resendEmailVerificationAction } from '../EmailVerification/Module';
 
 const Page = styled.div`
     display: flex;
@@ -40,6 +41,7 @@ interface IProps {
     OwnProfile: {
         getMyProfile: getMyProfile_getMyProfile
     }
+    resendEmailVerificationAction: () => void;
     showNotificationAction: (
         payload: IShowNotificationPayload
     ) => IShowNotificationAction
@@ -204,9 +206,7 @@ class OnboardingEditProfile extends Component<IProps, IState> {
                         email={email}
                         status={status}
                         subscriptions={subscriptions}
-                        resendEmailVerificationAction={() =>
-                            console.log('email verification')
-                        }
+                        resendEmailVerificationAction={resendEmailVerificationAction}
                         updateState={this.updateState.bind(this)}
                     />
                     <ButtonWrapper>

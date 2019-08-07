@@ -22,6 +22,7 @@ import {
 import { removeMemberAction } from '../Community/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { saveUserDetailsAction } from '../../components/EditProfileForm/Module'
+import { resendEmailVerificationAction } from '../EmailVerification/Module'
 
 const mapStateToProps = state => {
     return {
@@ -42,6 +43,7 @@ export default compose(
             acceptArticleTransferAction,
             removeMemberAction,
             saveUserDetailsAction,
+            resendEmailVerificationAction,
             showNotificationAction,
         }
     ),
