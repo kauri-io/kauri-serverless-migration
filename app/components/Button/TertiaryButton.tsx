@@ -49,6 +49,7 @@ interface IProps {
     fontSize?: number
     space?: number
     color?: string
+    className?: string
 }
 
 const TertiaryButtonComponent: React.SFC<IProps> = ({
@@ -62,8 +63,10 @@ const TertiaryButtonComponent: React.SFC<IProps> = ({
     onClick,
     icon,
     children,
+    className,
 }) => (
     <TertiaryButton
+        className={className}
         type={type}
         disabled={disabled}
         onClick={handleClick || onClick}

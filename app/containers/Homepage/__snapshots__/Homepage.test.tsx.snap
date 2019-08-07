@@ -24095,7 +24095,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                         <span
                                                                           className="Typography__component-sc-36xkf6-0 kALGmD"
                                                                         >
-                                                                          Posted 13 days ago
+                                                                          Posted 14 days ago
                                                                         </span>
                                                                       </StyledComponent>
                                                                     </Typography__component>
@@ -27999,7 +27999,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                         <span
                                                                           className="Typography__component-sc-36xkf6-0 kALGmD"
                                                                         >
-                                                                          Posted 14 days ago
+                                                                          Posted 15 days ago
                                                                         </span>
                                                                       </StyledComponent>
                                                                     </Typography__component>

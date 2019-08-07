@@ -72,7 +72,7 @@ const EditProfileForm = ({
                 bg={avatar}
                 text="Profile"
                 color="white"
-                setIPFSUrl={hash => updateState(hash, 'avatar')}
+                callback={hash => updateState(hash, 'avatar')}
             />
             <InputsContainers>
                 <Input

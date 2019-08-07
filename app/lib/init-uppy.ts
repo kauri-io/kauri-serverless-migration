@@ -39,9 +39,9 @@ const initUppy = ({ allowGifs, trigger }) => {
         })
         .use(Url, {
             target: Dashboard,
-            companionUrl: "https://api2.transloadit.com/uppy-server",
+            companionUrl: 'https://api2.transloadit.com/uppy-server',
             headers: {
-                "X-Auth-Token": `Bearer ${parsedToken}`,
+                'X-Auth-Token': `Bearer ${parsedToken}`,
             },
         })
         .use(XHRUpload, {
@@ -53,7 +53,7 @@ const initUppy = ({ allowGifs, trigger }) => {
             endpoint: `https://${config.gateway}:443/ipfs/`,
             headers: {
                 'X-Auth-Token': `Bearer ${parsedToken}`,
-            }
+            },
         })
     return uppy
 }

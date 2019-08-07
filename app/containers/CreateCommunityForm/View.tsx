@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import Actions from './CreateCommunityFormActions'
 import Header from './CreateCommunityFormHeader'
 import Content from './CreateCommunityFormContent'
-import setImageUploader from '../ImageUploader'
 import { showNotificationAction as showNotification } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { createCommunityAction, updateCommunityAction } from './Module'
@@ -32,16 +31,6 @@ export interface IProps {
     showNotificationAction: typeof showNotification
     isCommunityAdmin: boolean
 }
-
-const handleBackgroundSetFormField = (setFieldValue: any) => () =>
-    setImageUploader((payload: any) => {
-        setFieldValue('attributes.background', payload.background.background)
-    }, 'background')
-
-const handleAvatarSetFormField = (setFieldValue: any) => () =>
-    setImageUploader((payload: any) => {
-        setFieldValue('avatar', payload.avatar.background)
-    }, 'avatar')
 
 const Section = styled.section`
     display: flex;
@@ -91,9 +80,7 @@ const Component: React.SFC<
                     validateForm={props.validateForm}
                     id={props.id}
                     goBack={() => props.routeChangeAction(`back`)}
-                    setupImageUploader={handleBackgroundSetFormField(
-                        props.setFieldValue
-                    )}
+                    setupImageUploader={console.log}
                     isSubmitting={props.isSubmitting}
                     background={
                         props.values.attributes &&
@@ -113,7 +100,7 @@ const Component: React.SFC<
                         props.values.attributes.background
                     }
                     openAddMemberModal={openAddMemberModal}
-                    uploadLogo={handleAvatarSetFormField(props.setFieldValue)}
+                    uploadLogo={console.log}
                     setFieldValue={props.setFieldValue}
                 />
                 <Content

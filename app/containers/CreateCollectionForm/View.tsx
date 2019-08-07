@@ -12,7 +12,6 @@ import { Label } from '../../components/Typography'
 import Input from '../../components/Input/Input'
 import PrimaryButton from '../../components/Button/PrimaryButton'
 import TertiaryButton from '../../components/Button/TertiaryButton'
-import setImageUploader from '../../containers/ImageUploader'
 import showFormValidationErrors from '../../lib/show-form-validation-errors'
 import ChooseArticleModal from './ChooseArticleModal'
 import ChooseCollectionModal, { ICollection } from './ChooseCollectionModal'
@@ -163,11 +162,6 @@ const DraggableResourceContainer = styled.div`
         }
     }
 `
-
-const handleBackgroundSetFormField = setFieldValue => () =>
-    setImageUploader(payload => {
-        setFieldValue('background', payload.background.background)
-    }, 'background')
 
 const renderResourceSection = (
     index,
@@ -326,7 +320,7 @@ const CreateCollectionForm: React.FC<
     errors,
     values,
     isSubmitting,
-    setFieldValue,
+    // setFieldValue,
     validateForm,
     showNotificationAction,
     routeChangeAction,
@@ -361,9 +355,7 @@ const CreateCollectionForm: React.FC<
                     >
                         <TertiaryButton
                             icon={<UploadIcon />}
-                            handleClick={handleBackgroundSetFormField(
-                                setFieldValue
-                            )}
+                            handleClick={console.log}
                         >
                             Background Image
                         </TertiaryButton>

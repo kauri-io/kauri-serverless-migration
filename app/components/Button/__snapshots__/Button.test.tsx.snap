@@ -1315,7 +1315,9 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
     }
   }
 >
-  <UploadLogoButtonComponent>
+  <UploadLogoButtonComponent
+    callback={[MockFunction]}
+  >
     <UploadLogoButton
       className="image-upload"
       color="textPrimary"

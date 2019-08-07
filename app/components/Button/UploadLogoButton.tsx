@@ -66,7 +66,7 @@ interface IProps extends IButtonProps {
     disabled?: boolean
     space?: number
     text?: string
-    setIPFSUrl?: (hash: string) => void
+    callback: (hash: string) => void
 }
 
 const UploadLogoButtonComponent: React.FunctionComponent<IProps> = ({
@@ -80,17 +80,13 @@ const UploadLogoButtonComponent: React.FunctionComponent<IProps> = ({
     onClick,
     children,
     disabled,
-    setIPFSUrl,
+    callback,
 }) => {
     useEffect(() => {
-        console.log('component did mount')
         const uppy = initUppy({ allowGifs: false, trigger: '.image-upload' })
-        uppy.on('upload-success', (_data, data2) => {
-            setIPFSUrl &&
-                setIPFSUrl(
-                    `https://${config.gateway}:443/ipfs/${data2.body.hash}`
-                )
-        })
+        uppy.on('upload-success', (_data, data2) =>
+            callback(`https://${config.gateway}:443/ipfs/${data2.body.hash}`)
+        )
     }, [])
     return (
         <UploadLogoButton
