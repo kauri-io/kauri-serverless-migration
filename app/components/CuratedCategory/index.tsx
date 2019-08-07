@@ -14,6 +14,7 @@ const Container = styled.div<{ background: null | string }>`
     width: ${DEFAULT_CARD_WIDTH}px;
     height: 90px;
     background: ${props => props.theme.colors.bgPrimary};
+    cursor: pointer;
     border-radius: 4px;
     @media (max-width: ${props => props.theme.breakpoints[0]}) {
         height: 60px;
