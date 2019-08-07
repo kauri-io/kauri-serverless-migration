@@ -6,6 +6,7 @@ import { IReduxState } from '../../lib/Module'
 import { saveUserDetailsAction } from '../../components/EditProfileForm/Module'
 import { getOwnProfile } from '../../queries/User'
 import { compose, graphql } from 'react-apollo'
+import { resendEmailVerificationAction } from '../EmailVerification/Module'
 
 const mapStateToProps = (state: IReduxState) => ({
     user: state.app.user,
@@ -14,7 +15,12 @@ const mapStateToProps = (state: IReduxState) => ({
 export default compose(
     connect(
         mapStateToProps,
-        { routeChangeAction, showNotificationAction, saveUserDetailsAction }
+        {
+            routeChangeAction,
+            showNotificationAction,
+            saveUserDetailsAction,
+            resendEmailVerificationAction,
+        }
     ),
     graphql(getOwnProfile, {
         name: 'OwnProfile',

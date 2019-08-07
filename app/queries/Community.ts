@@ -104,14 +104,14 @@ export const getAllCommunities = gql`
                 dateCreated
                 dateUpdated
                 members {
-                  id
-                  avatar
-                  username
-                  name
+                    id
+                    avatar
+                    username
+                    name
                 }
                 attributes
                 approvedId {
-                  type
+                    type
                 }
                 creatorId
                 name

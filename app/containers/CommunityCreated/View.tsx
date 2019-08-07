@@ -57,9 +57,7 @@ const CommunityCreated = (props: IProps) => {
         )
 
     if (props.data.getCommunity) {
-        const {
-            id,
-        } = props.data.getCommunity
+        const { id } = props.data.getCommunity
 
         return (
             <Container>

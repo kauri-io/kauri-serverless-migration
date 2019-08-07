@@ -37,6 +37,7 @@ interface IProps {
     DraftsQuery: searchPersonalArticles
     OwnProfileQuery: getMyProfile
     PendingTransfersQuery: searchPendingArticles_searchArticles
+    resendEmailVerificationAction: () => void
     showNotificationAction: (
         payload: IShowNotificationPayload
     ) => IShowNotificationAction
@@ -105,6 +106,7 @@ class PublicProfile extends Component<IProps, IState> {
             removeMemberAction,
             saveUserDetailsAction,
             showNotificationAction,
+            resendEmailVerificationAction,
         } = this.props
 
         const isHeaderLoaded =
@@ -141,6 +143,9 @@ class PublicProfile extends Component<IProps, IState> {
                         showNotificationAction={showNotificationAction}
                         router={this.props.router}
                         toggleEditing={() => this.toggleEditing()}
+                        resendEmailVerificationAction={
+                            resendEmailVerificationAction
+                        }
                     />
                 ) : (
                     <Header
