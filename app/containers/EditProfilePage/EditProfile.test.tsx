@@ -48,6 +48,7 @@ describe('containers/EditProfile', () => {
                 dateCreated: '2019-01-01',
             },
             saveUserDetailsAction,
+            resendEmailVerificationAction: jest.fn(),
         }
         const wrapper = mountWithRedux(
             <MockedProvider>

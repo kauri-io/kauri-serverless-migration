@@ -26,7 +26,7 @@ const ActionsContainer = styled.div`
 `
 
 interface IProps {
-    resendEmailVerificationAction: () => void;
+    resendEmailVerificationAction: () => void
     toggleEditing: () => void
     OwnProfile: getMyProfile
     showNotificationAction: (
@@ -137,7 +137,9 @@ class EditableHeader extends Component<IProps, IState> {
                     email={email}
                     status={status}
                     subscriptions={subscriptions}
-                    resendEmailVerificationAction={this.props.resendEmailVerificationAction}
+                    resendEmailVerificationAction={
+                        this.props.resendEmailVerificationAction
+                    }
                     updateState={this.updateState.bind(this)}
                 />
                 <ActionsContainer>

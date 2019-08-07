@@ -251,6 +251,7 @@ exports[`containers/EditProfile should match snapshot 1`] = `
               },
             }
           }
+          resendEmailVerificationAction={[MockFunction]}
           routeChangeAction={
             [MockFunction] {
               "calls": Array [

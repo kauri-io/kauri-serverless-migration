@@ -329,7 +329,10 @@ const ArticleCard: React.FC<IProps> = ({
                             onClose={handleClose}
                         >
                             <MenuList>
-                                <MenuItem className={classes.menuItem} onClick={handleClickShareDialogOpen}>
+                                <MenuItem
+                                    className={classes.menuItem}
+                                    onClick={handleClickShareDialogOpen}
+                                >
                                     Share
                                 </MenuItem>
                                 {isLoggedIn && (

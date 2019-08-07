@@ -106,7 +106,7 @@ class PublicProfile extends Component<IProps, IState> {
             removeMemberAction,
             saveUserDetailsAction,
             showNotificationAction,
-            resendEmailVerificationAction
+            resendEmailVerificationAction,
         } = this.props
 
         const isHeaderLoaded =
@@ -143,7 +143,9 @@ class PublicProfile extends Component<IProps, IState> {
                         showNotificationAction={showNotificationAction}
                         router={this.props.router}
                         toggleEditing={() => this.toggleEditing()}
-                        resendEmailVerificationAction={resendEmailVerificationAction}
+                        resendEmailVerificationAction={
+                            resendEmailVerificationAction
+                        }
                     />
                 ) : (
                     <Header
