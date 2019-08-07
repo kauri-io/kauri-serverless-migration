@@ -35,6 +35,9 @@ import {
 import { ICommunity } from '../../lib/Module'
 import ArticleCardFormView from '../ArticleCardFormView'
 import CollectionCardFormView from '../CollectionCardFormView'
+import { useEffect } from 'react';
+import initUppy from '../../lib/init-uppy';
+import config from '../../config';
 
 const emptySection: Collection_sections = {
     id: null,
@@ -320,7 +323,7 @@ const CreateCollectionForm: React.FC<
     errors,
     values,
     isSubmitting,
-    // setFieldValue,
+    setFieldValue,
     validateForm,
     showNotificationAction,
     routeChangeAction,
@@ -330,7 +333,15 @@ const CreateCollectionForm: React.FC<
     username,
     userId,
     userAvatar,
-}) => (
+}) => {
+    useEffect(() => {
+        const uppy = initUppy({ allowGifs: false, trigger: '.background-upload' })
+        uppy.on('upload-success', (_data, data2) => {
+            const url = `https://${config.gateway}:443/ipfs/${data2.body.hash}`
+            setFieldValue('background', url)
+        })
+    }, [])
+    return (
     <Section>
         <Formik initialValues={values} onSubmit={console.log}>
             <Form>
@@ -355,7 +366,7 @@ const CreateCollectionForm: React.FC<
                     >
                         <TertiaryButton
                             icon={<UploadIcon />}
-                            handleClick={console.log}
+                            className="background-upload"
                         >
                             Background Image
                         </TertiaryButton>
@@ -810,6 +821,6 @@ const CreateCollectionForm: React.FC<
             </Form>
         </Formik>
     </Section>
-)
+)}
 
 export default CreateCollectionForm

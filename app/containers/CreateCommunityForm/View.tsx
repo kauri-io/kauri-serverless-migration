@@ -32,6 +32,18 @@ export interface IProps {
     isCommunityAdmin: boolean
 }
 
+const DisplayFormikState = props => (
+    <div style={{ margin: '1rem 0', background: '#f6f8fa', padding: '.5rem' }}>
+        <strong>Injected Formik props (the form's state)</strong>
+        <div>
+            <code>errors:</code> {JSON.stringify(props.errors, null, 2)}
+        </div>
+        <div>
+            <code>values:</code> {JSON.stringify(props.values, null, 2)}
+        </div>
+    </div>
+)
+
 const Section = styled.section`
     display: flex;
     flex-direction: column;
@@ -76,6 +88,7 @@ const Component: React.SFC<
                 </Head>
 
                 <Actions
+                    setFieldValue={props.setFieldValue}
                     showNotificationAction={props.showNotificationAction}
                     validateForm={props.validateForm}
                     id={props.id}
@@ -111,6 +124,13 @@ const Component: React.SFC<
                     isCommunityAdmin={props.isCommunityAdmin}
                     setFieldValue={props.setFieldValue}
                 />
+                                    {process.env.NODE_ENV !== 'production' && (
+                        <DisplayFormikState
+                            touched={props.touched}
+                            errors={props.errors}
+                            values={props.values}
+                        />
+                    )}
             </Form>
         </Section>
     )
