@@ -45,7 +45,7 @@ describe('components/MediumImportButton', () => {
 describe('components/UploadLogoButton', () => {
     it('should match snapshot', () => {
         const wrapper = mountWithTheme(
-            <UploadLogoButton>Test</UploadLogoButton>
+            <UploadLogoButton callback={jest.fn()}>Test</UploadLogoButton>
         )
         expect(wrapper).toMatchSnapshot()
     })

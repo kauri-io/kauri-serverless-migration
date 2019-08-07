@@ -14,7 +14,7 @@ import {
 } from '../../queries/__generated__/recordView'
 import { approveResourceAction } from '../Community/Module'
 import { Article_owner_PublicUserDTO } from '../../queries/Fragments/__generated__/Article'
-import { getCollectionURL } from '../../lib/getURLs'
+import { getCollectionURL, getProfileURL } from '../../lib/getURLs'
 import Link from 'next/link'
 
 export const Overlay = styled.div`
@@ -260,8 +260,7 @@ class CollectionPage extends Component<IProps> {
                                         resourceType === 'COMMUNITY'
                                             ? `/community/${owner &&
                                                   (owner as any).id}`
-                                            : `/public-profile/${owner &&
-                                                  (owner as any).id}`
+                                            : getProfileURL(owner as any).href
                                     }
                                 >
                                     {childrenProps}

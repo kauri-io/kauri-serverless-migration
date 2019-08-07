@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import TriggerImageUploader from '../../containers/ImageUploader'
 import Stack from 'stack-styled'
 import ActionsSection from '../../components/Section/ActionsSection'
 import PrimaryButton from '../../components/Button/PrimaryButton'
@@ -8,6 +7,8 @@ import SecondaryButton from '../../components/Button/SecondaryButton'
 import TertiaryButton from '../../components/Button/TertiaryButton'
 import ProposeUpdateModal from './ProposeUpdateModal'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
+import initUppy from '../../lib/init-uppy'
+import config from '../../config'
 
 const UploadIcon = () => (
     <img src="https://png.icons8.com/color/50/000000/upload.png" />
@@ -51,16 +52,11 @@ interface IProps {
     closeModalAction: () => void
     owner: string
     status: string
-    getFieldDecorator: (field: string, arg1: any) => any
-    setFieldsValue: ({ text }: { text: string }) => void
+    getFieldDecorator: (field: string, arg1?: any) => any
+    setFieldsValue: ({ attributes: { background: string } }) => void
     showNotificationAction: typeof showNotificationAction
     selectDestination: () => void
     communities: string[]
-}
-
-const setupImageUploader = (setFieldsValue: any, getFieldDecorator: any) => {
-    getFieldDecorator('attributes')
-    TriggerImageUploader(setFieldsValue, 'attributes')
 }
 
 const isOwner = (
@@ -87,65 +83,77 @@ export default ({
     showNotificationAction,
     selectDestination,
     communities,
-}: IProps) => (
-    <SubmitArticleFormActions>
-        <ActionsSection
-            width={'100%'}
-            justifyContent={['', 'start']}
-            gridAutoFlow={['', 'column']}
-            gridTemplateColumns="minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr)"
-        >
-            <TertiaryButton
-                icon={<BackIcon />}
-                onClick={() => routeChangeAction('back')}
-            >
-                <span>Go Back</span>
-            </TertiaryButton>
-            <Stack
-                alignItems={['', 'center']}
-                justifyContent={['', 'center']}
-                gridAutoFlow={['row']}
-                gap={20}
+}: IProps) => {
+    useEffect(() => {
+        const uppy = initUppy({ allowGifs: false, trigger: '.background-upload' })
+        getFieldDecorator('attributes')
+        uppy.on('upload-success', (_data, data2) => {
+            const url = `https://${config.gateway}:443/ipfs/${data2.body.hash}`
+            setFieldsValue({
+                attributes: {
+                    background: url,
+                },
+            })
+        })
+    }, [])
+    return (
+        <SubmitArticleFormActions>
+            <ActionsSection
+                width={'100%'}
+                justifyContent={['', 'start']}
+                gridAutoFlow={['', 'column']}
+                gridTemplateColumns="minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr)"
             >
                 <TertiaryButton
-                    icon={<UploadIcon />}
-                    handleClick={() =>
-                        setupImageUploader(setFieldsValue, getFieldDecorator)
-                    }
+                    icon={<BackIcon />}
+                    onClick={() => routeChangeAction('back')}
                 >
-                    Upload Background
+                    <span>Go Back</span>
                 </TertiaryButton>
-            </Stack>
-            <ContainerRow>
-                <SecondaryButton onClick={handleSubmit('draft')}>
-                    Save draft
-                </SecondaryButton>
-                {isOwner(status, owner, userId, communities) ? (
-                    <PrimaryButton onClick={selectDestination}>
-                        Publish Article
-                    </PrimaryButton>
-                ) : (
-                    <PrimaryButton
-                        onClick={() =>
-                            openModalAction({
-                                children: (
-                                    <ProposeUpdateModal
-                                        closeModalAction={() =>
-                                            closeModalAction()
-                                        }
-                                        confirmModal={handleSubmit}
-                                        showNotificationAction={
-                                            showNotificationAction
-                                        }
-                                    />
-                                ),
-                            })
-                        }
+                <Stack
+                    alignItems={['', 'center']}
+                    justifyContent={['', 'center']}
+                    gridAutoFlow={['row']}
+                    gap={20}
+                >
+                    <TertiaryButton
+                        className="background-upload"
+                        icon={<UploadIcon />}
                     >
-                        Propose Update
-                    </PrimaryButton>
-                )}
-            </ContainerRow>
-        </ActionsSection>
-    </SubmitArticleFormActions>
-)
+                        Upload Background
+                    </TertiaryButton>
+                </Stack>
+                <ContainerRow>
+                    <SecondaryButton onClick={handleSubmit('draft')}>
+                        Save draft
+                    </SecondaryButton>
+                    {isOwner(status, owner, userId, communities) ? (
+                        <PrimaryButton onClick={selectDestination}>
+                            Publish Article
+                        </PrimaryButton>
+                    ) : (
+                        <PrimaryButton
+                            onClick={() =>
+                                openModalAction({
+                                    children: (
+                                        <ProposeUpdateModal
+                                            closeModalAction={() =>
+                                                closeModalAction()
+                                            }
+                                            confirmModal={handleSubmit}
+                                            showNotificationAction={
+                                                showNotificationAction
+                                            }
+                                        />
+                                    ),
+                                })
+                            }
+                        >
+                            Propose Update
+                        </PrimaryButton>
+                    )}
+                </ContainerRow>
+            </ActionsSection>
+        </SubmitArticleFormActions>
+    )
+}

@@ -81,7 +81,7 @@ describe('deleteDraftArticleEpic', () => {
                 message: 'Draft article deleted',
                 notificationType: 'success',
             }),
-            routeChangeAction(`/public-profile/${123}`),
+            routeChangeAction(`/username/${123}/p`),
         ]
 
         const resultingActions = await testEpic(
@@ -92,6 +92,7 @@ describe('deleteDraftArticleEpic', () => {
                     user: {
                         communities: [{ community: { id: '123' } }],
                         id: '123',
+                        username: 'username',
                     },
                 },
             },

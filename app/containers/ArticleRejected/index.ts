@@ -8,7 +8,7 @@ import { IReduxState } from '../../lib/Module'
 
 const mapStateToProps = (state: IReduxState) => {
     return {
-        userId: state.app && state.app.user && state.app.user.id,
+        user: state.app && state.app.user,
     }
 }
 

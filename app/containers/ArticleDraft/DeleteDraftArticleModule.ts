@@ -11,6 +11,7 @@ import {
 } from '../../queries/__generated__/deleteDraftArticle'
 import { path } from 'ramda'
 import { IDependencies, IReduxState } from '../../lib/Module'
+import { getProfileURL } from '../../lib/getURLs'
 
 export interface IDeleteDraftArticlePayload {
     id: string
@@ -75,12 +76,9 @@ export const deleteDraftArticleEpic: Epic<
                         ),
                         of(
                             routeChangeAction(
-                                `/public-profile/${path<string>([
-                                    'value',
-                                    'app',
-                                    'user',
-                                    'id',
-                                ])(state$) || ''}`
+                                state$.value.app.user
+                                    ? getProfileURL(state$.value.app.user).as
+                                    : '/'
                             )
                         )
                     )

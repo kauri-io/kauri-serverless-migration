@@ -7,7 +7,7 @@ import PrimaryButton from '../../components/Button/PrimaryButton'
 import { Title1, BodyCard } from '../../components/Typography'
 import { Article } from '../../queries/Fragments/__generated__/Article'
 import { ShareButtons } from '../../components/Tooltip/ShareButtons'
-import { getArticleURL } from '../../lib/getURLs'
+import { getArticleURL, getProfileURL } from '../../lib/getURLs'
 
 export interface IProps {
     data: {
@@ -112,8 +112,7 @@ class ArticleApproved extends React.Component<IProps> {
                         <PrimaryButton
                             onClick={() =>
                                 routeChangeAction(
-                                    `/public-profile/${this.props.user &&
-                                        this.props.user.id}`
+                                    getProfileURL(this.props.user).href
                                 )
                             }
                         >

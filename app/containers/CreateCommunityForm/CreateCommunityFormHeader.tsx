@@ -93,8 +93,8 @@ const Component: React.SFC<IProps> = props => (
         <LeftSide>
             <MainDetails>
                 <UploadLogoButtonComponent
+                    callback={url => props.setFieldValue('avatar', url)}
                     bg={String(props.avatar)}
-                    handleClick={() => props.uploadLogo()}
                     text="Logo"
                     color="white"
                 />

@@ -1019,19 +1019,20 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                             className="sc-bdVaJa DgGhp"
                                           >
                                             <TertiaryButtonComponent
-                                              handleClick={[Function]}
+                                              className="background-upload"
                                               icon={<UploadIcon />}
                                             >
                                               <TertiaryButton
+                                                className="background-upload"
                                                 color="white"
                                                 disabled={false}
                                                 fontSize={0}
                                                 fontWeight={700}
                                                 mr={1}
-                                                onClick={[Function]}
                                                 type="button"
                                               >
                                                 <StyledComponent
+                                                  className="background-upload"
                                                   color="white"
                                                   disabled={false}
                                                   fontSize={0}
@@ -1074,16 +1075,14 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                   }
                                                   forwardedRef={null}
                                                   mr={1}
-                                                  onClick={[Function]}
                                                   type="button"
                                                 >
                                                   <button
-                                                    className="TertiaryButton-sc-1rjobqw-0 CufMJ"
+                                                    className="background-upload TertiaryButton-sc-1rjobqw-0 CufMJ"
                                                     color="white"
                                                     disabled={false}
                                                     fontSize={0}
                                                     fontWeight={700}
-                                                    onClick={[Function]}
                                                     type="button"
                                                   >
                                                     <UploadIcon>

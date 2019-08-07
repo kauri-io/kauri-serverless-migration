@@ -20,6 +20,8 @@ import {
     acceptArticleTransferAction,
 } from './Manage/TransferModule'
 import { removeMemberAction } from '../Community/Module'
+import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
+import { saveUserDetailsAction } from '../../components/EditProfileForm/Module'
 
 const mapStateToProps = state => {
     return {
@@ -39,6 +41,8 @@ export default compose(
             rejectArticleTransferAction,
             acceptArticleTransferAction,
             removeMemberAction,
+            saveUserDetailsAction,
+            showNotificationAction,
         }
     ),
     graphql(searchPersonalArticles, {

@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 import { fontSize as fontSizeSS, color as colorSS, space } from 'styled-system'
+import initUppy from '../../lib/init-uppy'
+import { useEffect } from 'react'
+import config from '../../config'
 
 interface IButtonProps {
     bg?: string | null
@@ -63,10 +66,10 @@ interface IProps extends IButtonProps {
     disabled?: boolean
     space?: number
     text?: string
+    callback: (hash: string) => void
 }
 
 const UploadLogoButtonComponent: React.FunctionComponent<IProps> = ({
-    className,
     bg,
     fontSize = 0,
     color = 'textPrimary',
@@ -77,23 +80,32 @@ const UploadLogoButtonComponent: React.FunctionComponent<IProps> = ({
     onClick,
     children,
     disabled,
-}) => (
-    <UploadLogoButton
-        className={className}
-        bg={bg}
-        height={height}
-        width={width}
-        disabled={disabled}
-        onClick={onClick || handleClick}
-        color={color}
-        fontSize={fontSize}
-        type="button"
-    >
-        <Overlay>
-            <img src="https://png.icons8.com/color/50/000000/upload.png" />
-            {text || children}
-        </Overlay>
-    </UploadLogoButton>
-)
+    callback,
+}) => {
+    useEffect(() => {
+        const uppy = initUppy({ allowGifs: false, trigger: '.image-upload' })
+        uppy.on('upload-success', (_data, data2) =>
+            callback(`https://${config.gateway}:443/ipfs/${data2.body.hash}`)
+        )
+    }, [])
+    return (
+        <UploadLogoButton
+            className="image-upload"
+            bg={bg}
+            height={height}
+            width={width}
+            disabled={disabled}
+            onClick={onClick || handleClick}
+            color={color}
+            fontSize={fontSize}
+            type="button"
+        >
+            <Overlay>
+                <img src="https://png.icons8.com/color/50/000000/upload.png" />
+                {text || children}
+            </Overlay>
+        </UploadLogoButton>
+    )
+}
 
 export default UploadLogoButtonComponent

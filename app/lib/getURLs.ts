@@ -2,7 +2,7 @@ import slugify from 'slugify'
 interface IArticleProps {
     title: string
     id: string
-    version: number
+    version?: number
 }
 
 export const getArticleURL = (
