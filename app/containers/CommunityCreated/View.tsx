@@ -58,32 +58,8 @@ const CommunityCreated = (props: IProps) => {
 
     if (props.data.getCommunity) {
         const {
-            approved,
             id,
-            description,
-            name,
-            avatar,
-            attributes,
-            // tags,
         } = props.data.getCommunity
-
-        const articleCount =
-            approved &&
-            approved.reduce((current, next) => {
-                if (next && next.__typename === 'ArticleDTO') {
-                    current += 1
-                }
-                return current
-            }, 0)
-
-        const collectionCount =
-            approved &&
-            approved.reduce((current, next) => {
-                if (next && next.__typename === 'CollectionDTO') {
-                    current += 1
-                }
-                return current
-            }, 0)
 
         return (
             <Container>
@@ -93,15 +69,9 @@ const CommunityCreated = (props: IProps) => {
                 <Title2>Community</Title2>
                 {subtitleCopy}
                 <CommunityCard
+                    {...props.data.getCommunity}
+                    key={String(id)}
                     href={getCommunityURL(props.data.getCommunity)}
-                    id={String(id)}
-                    cardHeight={310}
-                    description={String(description)}
-                    name={String(name)}
-                    imageURL={attributes && attributes.background}
-                    logo={avatar}
-                    articleCount={String(articleCount)}
-                    collectionCount={String(collectionCount)}
                 />
                 <PrimaryButton
                     onClick={() =>
