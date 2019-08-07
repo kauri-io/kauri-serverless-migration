@@ -537,7 +537,7 @@ export const draftArticleEpic: Epic<any, any, {}, IDependencies> = (
                         category: 'article_actions',
                     })
                 }),
-                mergeMap(({ data: { output: { id, version } } }) =>
+                mergeMap(({ data: { getEvent: { output: { id, version } } } }) =>
                     merge(
                         of(
                             showNotificationAction({

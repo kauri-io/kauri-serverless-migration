@@ -170,7 +170,7 @@ export const communityCreatedEpic: Epic<
                     'MemberAdded'
                 )
             ).pipe(
-                mergeMap(({ data: { output: { error } } }) =>
+                mergeMap(({ data: { getEvent: { output: { error } } } }) =>
                     error
                         ? throwError(new Error('Submission error'))
                         : of(
@@ -272,10 +272,12 @@ export const createCommunityEpic: Epic<
                               mergeMap(
                                   ({
                                       data: {
-                                          output: {
-                                              id,
-                                              transactionHash,
-                                              error,
+                                          getEvent: {
+                                              output: {
+                                                  id,
+                                                  transactionHash,
+                                                  error,
+                                              },
                                           },
                                       },
                                   }) =>

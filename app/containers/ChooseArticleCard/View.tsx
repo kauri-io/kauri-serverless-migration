@@ -4,7 +4,7 @@ import Tabs from '../../components/Tabs'
 import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
 import { getArticleURL } from '../../lib/getURLs'
-import { Container, Grid } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 
 const ArticlesContent = props => {
     const { articles, allOtherChosenArticles, setRef } = props
@@ -13,9 +13,15 @@ const ArticlesContent = props => {
     }
 
     return articles && articles.content.length > 0 ? (
-        <Container >
-        <Grid container spacing={3} ref={ref => setRef && setRef(ref)}>
+        <div
+            ref={ref => {
+                // console.log(setRef)
+                setRef && setRef(ref)
+            }}
+        >
+            <Grid container spacing={3}>
                 {articles.content.map(article => {
+                    const { title, id, version } = article
                     if (allOtherChosenArticles) {
                         if (
                             allOtherChosenArticles.find(chosenArticle => {
@@ -31,9 +37,8 @@ const ArticlesContent = props => {
                         }
                     }
 
-                    const { title, id, version } = article
                     return (
-                        <Grid key={article.id} item xs={12} sm={12} lg={12}>
+                      <Grid key={article.id} item xs={12} sm={12} lg={12} onClick={() => props.chooseArticle({ id: article.id, version: article.version})}>
                             <ArticleCard
                                 {...article}
                                 href={getArticleURL({ title, id, version })}
@@ -42,7 +47,7 @@ const ArticlesContent = props => {
                     )
                 })}
             </Grid>
-        </Container>
+        </div>
     ) : (
         <p>You have no published articles!</p>
     )

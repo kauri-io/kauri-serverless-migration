@@ -3,7 +3,7 @@ import Head from 'next/head'
 import CommunityCard from '../../../components/Card/CommunityCard'
 import Loading from '../../../components/Loading'
 import { searchCommunities_searchCommunities } from '../../../queries/__generated__/searchCommunities'
-import { getCollectionURL } from '../../../lib/getURLs'
+import { getCommunityURL } from '../../../lib/getURLs'
 import { Grid, Container, withStyles } from '@material-ui/core'
 
 interface IProps {
@@ -62,7 +62,7 @@ class Communities extends Component<IProps> {
                                                 <CommunityCard
                                                     {...community}
                                                     key={community.id}
-                                                    href={getCollectionURL(
+                                                    href={getCommunityURL(
                                                         community
                                                     )}
                                                 />

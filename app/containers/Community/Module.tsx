@@ -386,7 +386,7 @@ export const curateCommunityResourcesEpic: Epic<
                         ) || ''
                     )
                 ),
-                mergeMap(({ data: { output: { error } } }) =>
+              mergeMap(({ data: { getEvent: { output: { error } } } }) =>
                     error
                         ? of(
                               showNotificationAction({
@@ -443,7 +443,7 @@ export const approveResourceEpic: Epic<
                         path<string>(['approveResource', 'hash'])(data) || ''
                     )
                 ),
-                mergeMap(({ data: { output: { error } } }) =>
+              mergeMap(({ data: { getEvent: { output: { error } } } }) =>
                     error
                         ? of(
                               showNotificationAction({
@@ -673,7 +673,7 @@ export const acceptCommunityInvitationEpic: Epic<
                       mergeMap(
                           ({
                               data: {
-                                  output: { error, transactionHash },
+                                 getEvent: { output: { error, transactionHash } },
                               },
                           }) => {
                               if (typeof error === 'string') {
@@ -873,7 +873,7 @@ export const removeMemberEpic: Epic<
                     )
                 ),
                 tap(() => apolloClient.resetStore()),
-                switchMap(({ data: { output: { error } } }) => {
+              switchMap(({ data: { getEvent: { output: { error } } } }) => {
                     if (error) {
                         console.log(error)
                         if (error.includes('cannot be removed')) {
@@ -1077,7 +1077,7 @@ export const removeResourceEpic: Epic<
                         path<string>(['removeResource', 'hash'])(data) || ''
                     )
                 ),
-                mergeMap(({ data: { output: { error } } }) =>
+              mergeMap(({ data: { getEvent: { output: { error } } } }) =>
                     error
                         ? merge(
                               of(closeModalAction()),
@@ -1143,13 +1143,13 @@ export const transferArticleToCommunityEpic: Epic<
                 switchMap(
                     ({
                         data: {
-                            output: {
+                            getEvent: { output: {
                                 id,
                                 version,
                                 hash,
                                 articleAuthor,
                                 dateCreated,
-                            },
+                            } },
                         },
                     }) => {
                         const signatureToSign = generatePublishArticleHash(
@@ -1191,7 +1191,7 @@ export const transferArticleToCommunityEpic: Epic<
                                     category: 'article_actions',
                                 })
                             ),
-                            mergeMap(({ data: { output: { error } } }) =>
+                          mergeMap(({ data: { getEvent: { output: { error } } } }) =>
                                 error
                                     ? merge(
                                           of(closeModalAction()),
