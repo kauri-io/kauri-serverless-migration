@@ -7,7 +7,6 @@ import Input from '../../components/Input/Input'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import CloseIcon from '@material-ui/icons/Close'
 
-
 const TitleContainer = styled.div`
     display: flex;
     flex-direction: column;

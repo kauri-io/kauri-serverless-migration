@@ -38,7 +38,6 @@ const ActionsContainer = styled.div`
     }
 `
 
-
 const Actions: React.FunctionComponent<any> = ({
     handleClose,
     handleConfirm,

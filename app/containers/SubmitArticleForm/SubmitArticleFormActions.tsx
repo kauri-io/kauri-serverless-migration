@@ -10,24 +10,24 @@ import Grid from '@material-ui/core/Grid'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme: Theme) => {
-    return ({
+    return {
         container: {
             backgroundColor: theme.palette.common.black,
             padding: theme.spacing(2, 0),
         },
         actions: {
             maxWidth: 1280,
-            margin: 'auto'
+            margin: 'auto',
         },
         buttons: {
             '& button': {
-                marginLeft: theme.spacing(2)
+                marginLeft: theme.spacing(2),
             },
         },
         uploadIcon: {
-            marginRight: theme.spacing(2)
-        }
-    })
+            marginRight: theme.spacing(2),
+        },
+    }
 })
 
 interface IProps {
@@ -86,10 +86,10 @@ export default ({
         })
     }, [])
 
-    const classes = useStyles();
+    const classes = useStyles()
     return (
         <div className={classes.container}>
-            <Grid className={classes.actions} sm={12} container={true} >
+            <Grid className={classes.actions} sm={12} container={true}>
                 <Grid item={true} sm={4}>
                     <Button
                         color="secondary"
@@ -100,7 +100,7 @@ export default ({
                         <span>Go Back</span>
                     </Button>
                 </Grid>
-                <Grid justify='center' item={true} container={true} sm={4}>
+                <Grid justify="center" item={true} container={true} sm={4}>
                     <Button
                         color="secondary"
                         className="background-upload"
@@ -110,7 +110,13 @@ export default ({
                         Upload Background
                     </Button>
                 </Grid>
-                <Grid className={classes.buttons} sm={4} item={true} container={true} justify='flex-end'>
+                <Grid
+                    className={classes.buttons}
+                    sm={4}
+                    item={true}
+                    container={true}
+                    justify="flex-end"
+                >
                     <Button
                         color="secondary"
                         variant="outlined"
@@ -127,28 +133,28 @@ export default ({
                             Publish Article
                         </Button>
                     ) : (
-                            <Button
-                                color="primary"
-                                variant="contained"
-                                onClick={() =>
-                                    openModalAction({
-                                        children: (
-                                            <ProposeUpdateModal
-                                                closeModalAction={() =>
-                                                    closeModalAction()
-                                                }
-                                                confirmModal={handleSubmit}
-                                                showNotificationAction={
-                                                    showNotificationAction
-                                                }
-                                            />
-                                        ),
-                                    })
-                                }
-                            >
-                                Propose Update
+                        <Button
+                            color="primary"
+                            variant="contained"
+                            onClick={() =>
+                                openModalAction({
+                                    children: (
+                                        <ProposeUpdateModal
+                                            closeModalAction={() =>
+                                                closeModalAction()
+                                            }
+                                            confirmModal={handleSubmit}
+                                            showNotificationAction={
+                                                showNotificationAction
+                                            }
+                                        />
+                                    ),
+                                })
+                            }
+                        >
+                            Propose Update
                         </Button>
-                        )}
+                    )}
                 </Grid>
             </Grid>
         </div>

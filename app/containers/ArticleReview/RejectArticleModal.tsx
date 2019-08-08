@@ -29,7 +29,6 @@ const ActionsContainer = styled.div`
     }
 `
 
-
 const Actions = ({
     handleClose,
     handleConfirm,

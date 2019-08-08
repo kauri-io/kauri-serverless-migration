@@ -9,7 +9,7 @@ import { createMuiTheme } from '@material-ui/core/styles'
 const theme = createMuiTheme({
     palette: {
         common: {
-            black: '#1E2428'
+            black: '#1E2428',
         },
         background: {
             default: '#f5f5f5',
