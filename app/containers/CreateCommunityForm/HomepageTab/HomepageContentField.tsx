@@ -300,7 +300,7 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                         }}
                                     >
                                         <Droppable
-                                            direction={'horizontal'}
+                                            direction={'vertical'}
                                             droppableId={
                                                 (section && section.id) || '0'
                                             }

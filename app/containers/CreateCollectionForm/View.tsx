@@ -583,7 +583,7 @@ const CreateCollectionForm: React.FC<
                                                     )}
                                                 >
                                                     <Droppable
-                                                        direction={'horizontal'}
+                                                        direction={'vertical'}
                                                         droppableId={
                                                             section.id || '0'
                                                         }
