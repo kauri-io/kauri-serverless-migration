@@ -43,7 +43,6 @@ const Layout = ({
     isModalOpen,
     children,
     maxWidthConstrained,
-    user,
 }: IProps) => {
     const classes = useStyles({})
     return (

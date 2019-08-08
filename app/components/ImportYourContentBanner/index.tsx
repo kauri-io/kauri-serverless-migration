@@ -49,7 +49,7 @@ const NewsletterBanner: React.FunctionComponent = _ => {
                     </BodyCard>
                 </ImportBannerCopy>
                 <Button
-                    color="primary"
+                    color="secondary"
                     variant="outlined"
                     onClick={() => {
                         window.location.href = 'https://import.kauri.io'

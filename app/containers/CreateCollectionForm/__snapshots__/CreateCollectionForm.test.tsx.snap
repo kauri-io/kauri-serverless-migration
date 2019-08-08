@@ -779,7 +779,7 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                             className="sc-bdVaJa ckxOPF"
                                           >
                                             <WithStyles(ForwardRef(Button))
-                                              color="primary"
+                                              color="secondary"
                                               onClick={[Function]}
                                             >
                                               <ForwardRef(Button)
@@ -804,11 +804,11 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                     "textSecondary": "MuiButton-textSecondary",
                                                   }
                                                 }
-                                                color="primary"
+                                                color="secondary"
                                                 onClick={[Function]}
                                               >
                                                 <WithStyles(ForwardRef(ButtonBase))
-                                                  className="MuiButton-root MuiButton-text MuiButton-textPrimary"
+                                                  className="MuiButton-root MuiButton-text MuiButton-textSecondary"
                                                   component="button"
                                                   disabled={false}
                                                   focusRipple={true}
@@ -817,7 +817,7 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                   type="button"
                                                 >
                                                   <ForwardRef(ButtonBase)
-                                                    className="MuiButton-root MuiButton-text MuiButton-textPrimary"
+                                                    className="MuiButton-root MuiButton-text MuiButton-textSecondary"
                                                     classes={
                                                       Object {
                                                         "disabled": "Mui-disabled",
@@ -833,7 +833,7 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                     type="button"
                                                   >
                                                     <button
-                                                      className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
+                                                      className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textSecondary"
                                                       disabled={false}
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
@@ -853,39 +853,41 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                       <span
                                                         className="MuiButton-label"
                                                       >
-                                                        <View__BackIcon>
-                                                          <StyledComponent
-                                                            forwardedComponent={
-                                                              Object {
-                                                                "$$typeof": Symbol(react.forward_ref),
-                                                                "attrs": Array [],
-                                                                "componentStyle": ComponentStyle {
-                                                                  "componentId": "View__BackIcon-o1kbu4-10",
-                                                                  "isStatic": false,
-                                                                  "lastClassName": "gqPXsg",
-                                                                  "rules": Array [
-                                                                    "width:10px !important;height:14px !important;border-top:8px solid transparent;border-bottom:8px solid transparent;border-right:10px solid ",
-                                                                    [Function],
-                                                                    ";",
-                                                                  ],
-                                                                },
-                                                                "displayName": "View__BackIcon",
-                                                                "foldedComponentIds": Array [],
-                                                                "render": [Function],
-                                                                "styledComponentId": "View__BackIcon-o1kbu4-10",
-                                                                "target": "div",
-                                                                "toString": [Function],
-                                                                "warnTooManyClasses": [Function],
-                                                                "withComponent": [Function],
+                                                        <ForwardRef>
+                                                          <WithStyles(ForwardRef(SvgIcon))>
+                                                            <ForwardRef(SvgIcon)
+                                                              classes={
+                                                                Object {
+                                                                  "colorAction": "MuiSvgIcon-colorAction",
+                                                                  "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                                                  "colorError": "MuiSvgIcon-colorError",
+                                                                  "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                                                  "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                                                  "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                                                  "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                                                  "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                                                  "root": "MuiSvgIcon-root",
+                                                                }
                                                               }
-                                                            }
-                                                            forwardedRef={null}
-                                                          >
-                                                            <div
-                                                              className="View__BackIcon-o1kbu4-10 gqPXsg"
-                                                            />
-                                                          </StyledComponent>
-                                                        </View__BackIcon>
+                                                            >
+                                                              <svg
+                                                                aria-hidden="true"
+                                                                className="MuiSvgIcon-root"
+                                                                focusable="false"
+                                                                role="presentation"
+                                                                viewBox="0 0 24 24"
+                                                              >
+                                                                <path
+                                                                  d="M14 7l-5 5 5 5V7z"
+                                                                />
+                                                                <path
+                                                                  d="M24 0v24H0V0h24z"
+                                                                  fill="none"
+                                                                />
+                                                              </svg>
+                                                            </ForwardRef(SvgIcon)>
+                                                          </WithStyles(ForwardRef(SvgIcon))>
+                                                        </ForwardRef>
                                                         Cancel Collection
                                                       </span>
                                                       <NoSsr>
@@ -1059,7 +1061,7 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                           >
                                             <WithStyles(ForwardRef(Button))
                                               className="background-upload"
-                                              color="primary"
+                                              color="secondary"
                                             >
                                               <ForwardRef(Button)
                                                 className="background-upload"
@@ -1084,10 +1086,10 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                     "textSecondary": "MuiButton-textSecondary",
                                                   }
                                                 }
-                                                color="primary"
+                                                color="secondary"
                                               >
                                                 <WithStyles(ForwardRef(ButtonBase))
-                                                  className="MuiButton-root background-upload MuiButton-text MuiButton-textPrimary"
+                                                  className="MuiButton-root background-upload MuiButton-text MuiButton-textSecondary"
                                                   component="button"
                                                   disabled={false}
                                                   focusRipple={true}
@@ -1095,7 +1097,7 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                   type="button"
                                                 >
                                                   <ForwardRef(ButtonBase)
-                                                    className="MuiButton-root background-upload MuiButton-text MuiButton-textPrimary"
+                                                    className="MuiButton-root background-upload MuiButton-text MuiButton-textSecondary"
                                                     classes={
                                                       Object {
                                                         "disabled": "Mui-disabled",
@@ -1110,7 +1112,7 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                     type="button"
                                                   >
                                                     <button
-                                                      className="MuiButtonBase-root MuiButton-root background-upload MuiButton-text MuiButton-textPrimary"
+                                                      className="MuiButtonBase-root MuiButton-root background-upload MuiButton-text MuiButton-textSecondary"
                                                       disabled={false}
                                                       onBlur={[Function]}
                                                       onDragLeave={[Function]}
@@ -1129,11 +1131,37 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                       <span
                                                         className="MuiButton-label"
                                                       >
-                                                        <UploadIcon>
-                                                          <img
-                                                            src="https://png.icons8.com/color/50/000000/upload.png"
-                                                          />
-                                                        </UploadIcon>
+                                                        <ForwardRef>
+                                                          <WithStyles(ForwardRef(SvgIcon))>
+                                                            <ForwardRef(SvgIcon)
+                                                              classes={
+                                                                Object {
+                                                                  "colorAction": "MuiSvgIcon-colorAction",
+                                                                  "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                                                  "colorError": "MuiSvgIcon-colorError",
+                                                                  "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                                                  "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                                                  "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                                                  "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                                                  "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                                                  "root": "MuiSvgIcon-root",
+                                                                }
+                                                              }
+                                                            >
+                                                              <svg
+                                                                aria-hidden="true"
+                                                                className="MuiSvgIcon-root"
+                                                                focusable="false"
+                                                                role="presentation"
+                                                                viewBox="0 0 24 24"
+                                                              >
+                                                                <path
+                                                                  d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"
+                                                                />
+                                                              </svg>
+                                                            </ForwardRef(SvgIcon)>
+                                                          </WithStyles(ForwardRef(SvgIcon))>
+                                                        </ForwardRef>
                                                         Background Image
                                                       </span>
                                                       <NoSsr>
@@ -4551,86 +4579,37 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                                     <div
                                                       className="AddOptions__AddButton-sc-1q8xpt7-0 jPyFLk"
                                                     >
-                                                      <AddIcon>
-                                                        <svg
-                                                          fill="none"
-                                                          height="30"
-                                                          viewBox="0 0 30 30"
-                                                          width="30"
-                                                        >
-                                                          <path
-                                                            clipRule="evenodd"
-                                                            d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30Z"
-                                                            fill="#0BA986"
-                                                            fillRule="evenodd"
-                                                          />
-                                                          <rect
-                                                            fill="url(#pattern0)"
-                                                            height="18"
-                                                            width="18"
-                                                            x="6"
-                                                            y="6"
-                                                          />
-                                                          <mask
-                                                            height="18"
-                                                            id="mask0"
-                                                            mask-type="alpha"
-                                                            maskUnits="userSpaceOnUse"
-                                                            width="18"
-                                                            x="6"
-                                                            y="6"
+                                                      <ForwardRef>
+                                                        <WithStyles(ForwardRef(SvgIcon))>
+                                                          <ForwardRef(SvgIcon)
+                                                            classes={
+                                                              Object {
+                                                                "colorAction": "MuiSvgIcon-colorAction",
+                                                                "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                                                "colorError": "MuiSvgIcon-colorError",
+                                                                "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                                                "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                                                "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                                                "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                                                "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                                                "root": "MuiSvgIcon-root",
+                                                              }
+                                                            }
                                                           >
-                                                            <rect
-                                                              fill="url(#pattern1)"
-                                                              height="18"
-                                                              width="18"
-                                                              x="6"
-                                                              y="6"
-                                                            />
-                                                          </mask>
-                                                          <g
-                                                            mask="url(#mask0)"
-                                                          >
-                                                            <rect
-                                                              fill="white"
-                                                              height="18"
-                                                              width="18"
-                                                              x="6"
-                                                              y="6"
-                                                            />
-                                                          </g>
-                                                          <defs>
-                                                            <pattern
-                                                              height="1"
-                                                              id="pattern0"
-                                                              patternContentUnits="objectBoundingBox"
-                                                              width="1"
+                                                            <svg
+                                                              aria-hidden="true"
+                                                              className="MuiSvgIcon-root"
+                                                              focusable="false"
+                                                              role="presentation"
+                                                              viewBox="0 0 24 24"
                                                             >
-                                                              <use
-                                                                transform="scale(0.00961538)"
-                                                                xlinkHref="#image0"
+                                                              <path
+                                                                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
                                                               />
-                                                            </pattern>
-                                                            <pattern
-                                                              height="1"
-                                                              id="pattern1"
-                                                              patternContentUnits="objectBoundingBox"
-                                                              width="1"
-                                                            >
-                                                              <use
-                                                                transform="scale(0.00961538)"
-                                                                xlinkHref="#image0"
-                                                              />
-                                                            </pattern>
-                                                            <image
-                                                              height="104"
-                                                              id="image0"
-                                                              width="104"
-                                                              xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAABoCAYAAAAdHLWhAAAAAXNSR0IArs4c6QAAAv5JREFUeAHtnUFOG0EQRXEkNkE5ELCAkyGRa0EUVsB9YjZh4VRLXnhhi6r+/iqP81pqEZmq+T3veSzRmnEuLhgQgAAEIAABCEAAAhCAAAQgAAEIQAACEIAABA4Q2Gw2tzGfY37E/Gqso2DU3hw4HC8fk0CAHnL+xqyO0YOkY8rYd6yA/KtqZqf+ad8xT/m11Skvbt/aAvY6Xr/a97vEa+vVavUjUXcyJUsUtFHohaBFnfM35WTp9RNAkJ+xlIAgCZ+/GUF+xlICgiR8/mYE+RlLCQiS8PmbEeRnLCUgSMLnb0aQn7GUgCAJn78ZQX7GUgKCJHz+ZgT5GUsJCJLw+ZsR5GcsJSBIwudvRpCfsZSAIAmfvxlBfsZSAoIkfP5mBPkZSwkIkvD5mxHkZywlIEjC529GkJ+xlIAgCZ+/eeo+5biB/TaW9hjzOuZ3/zIXnfARq3+P+RC3hb9Wz6QsaCvndwRdVsP+8/rPOP/7qqSZj7ifyJl6q4039PjUKY2ZK0h5Pqe0uDMsLj+fNCNIej7nDKGXTqn6fNLMR1xpQRRrBBCk8bN3I8iOWAtAkMbP3o0gO2ItAEEaP3s3guyItYAZQWNviTFHYPyRXxozgsbGH2OOQJndzE7C+EKil5hsltYkjc3Su9hJeKu0la+g7W7sfYQ8xyxfspXFnUntYDRYleWM8y9fQaOpc4xvrlLyq3thStYxestX0DFCOUaeAILyrFoqEdSCPR+KoDyrlkoEtWDPhyIoz6qlEkEt2POhCMqzaqlEUAv2fCiC8qxaKhHUgj0fiqA8q5ZKBLVgz4ciKM+qpRJBLdjzoQjKs2qpRFAL9nwogvKsWioR1II9H4qgPKuWSgS1YM+HIijPqqUSQS3Y86EIyrNqqURQC/Z8KILyrFoqEdSCPR+6REHK80mLu9l/iYLKz9jsvF+V3p3D8M+DBOLhhpuYs//Z+vh2LoabwFbSU/z8E/OrMWpGLXLcYjg+BCAAAQhAAAIQgAAEIAABCEAAAhCAAAQWTOAfqlxd4sUV9HUAAAAASUVORK5CYII="
-                                                            />
-                                                          </defs>
-                                                        </svg>
-                                                      </AddIcon>
+                                                            </svg>
+                                                          </ForwardRef(SvgIcon)>
+                                                        </WithStyles(ForwardRef(SvgIcon))>
+                                                      </ForwardRef>
                                                       <Typography__styledComponent
                                                         textTransform="uppercase"
                                                       >

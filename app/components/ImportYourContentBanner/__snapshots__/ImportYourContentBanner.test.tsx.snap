@@ -368,7 +368,7 @@ exports[`components/ImportYourContentBanner should match snapshot 1`] = `
                   </StyledComponent>
                 </ImportYourContentBanner__ImportBannerCopy>
                 <WithStyles(ForwardRef(Button))
-                  color="primary"
+                  color="secondary"
                   onClick={[Function]}
                   variant="outlined"
                 >
@@ -394,12 +394,12 @@ exports[`components/ImportYourContentBanner should match snapshot 1`] = `
                         "textSecondary": "MuiButton-textSecondary",
                       }
                     }
-                    color="primary"
+                    color="secondary"
                     onClick={[Function]}
                     variant="outlined"
                   >
                     <WithStyles(ForwardRef(ButtonBase))
-                      className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                      className="MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
                       component="button"
                       disabled={false}
                       focusRipple={true}
@@ -408,7 +408,7 @@ exports[`components/ImportYourContentBanner should match snapshot 1`] = `
                       type="button"
                     >
                       <ForwardRef(ButtonBase)
-                        className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                        className="MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
                         classes={
                           Object {
                             "disabled": "Mui-disabled",
@@ -424,7 +424,7 @@ exports[`components/ImportYourContentBanner should match snapshot 1`] = `
                         type="button"
                       >
                         <button
-                          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
                           disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}

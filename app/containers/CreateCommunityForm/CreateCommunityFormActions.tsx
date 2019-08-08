@@ -3,7 +3,6 @@ import ActionsSection, {
     RightActionsRow,
 } from '../../components/Section/ActionsSection'
 import Button from '@material-ui/core/Button'
-import UploadIcon from '../../components/Icon/UploadIcon'
 import showFormValidationErrors from '../../lib/show-form-validation-errors'
 import {
     IShowNotificationAction,
@@ -12,6 +11,7 @@ import {
 import { useEffect } from 'react'
 import initUppy from '../../lib/init-uppy'
 import config from '../../config'
+import UploadIcon from '@material-ui/icons/CloudUpload'
 
 interface IProps {
     id: string | null

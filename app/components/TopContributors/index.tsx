@@ -25,6 +25,7 @@ const TopContributors: React.FunctionComponent<IProps> = ({ contributors }) => (
         <ContributorsContainer>
             {contributors.map((contributor, index) => {
                 const url = getProfileURL(contributor)
+                console.log(contributor)
                 return (
                     <Link key={index} href={url.href} as={url.as}>
                         <a>

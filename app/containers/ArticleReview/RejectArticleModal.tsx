@@ -4,6 +4,7 @@ import { NavigationText, BodyCard } from '../../components/Typography'
 import Button from '@material-ui/core/Button'
 import ModalHeader from '../../components/Headers/ModalHeader'
 import Input from '../../components/Input/Input'
+import CloseIcon from '@material-ui/icons/Close'
 
 const TitleContainer = styled.div`
     display: flex;
@@ -28,12 +29,6 @@ const ActionsContainer = styled.div`
     }
 `
 
-const CloseIcon = () => (
-    <img
-        style={{ rotate: '45deg' }}
-        src="https://png.icons8.com/material-two-tone/50/000000/delete-sign.png"
-    />
-)
 
 const Actions = ({
     handleClose,

@@ -5,6 +5,8 @@ import Button from '@material-ui/core/Button'
 import ModalHeader from '../../components/Headers/ModalHeader'
 import Input from '../../components/Input/Input'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
+import CloseIcon from '@material-ui/icons/Close'
+
 
 const TitleContainer = styled.div`
     display: flex;
@@ -28,13 +30,6 @@ const ActionsContainer = styled.div`
         margin-right: ${props => props.theme.space[3]}px;
     }
 `
-
-const CloseIcon = () => (
-    <img
-        style={{ rotate: '45deg' }}
-        src="https://png.icons8.com/material-two-tone/50/000000/delete-sign.png"
-    />
-)
 
 const Actions = ({
     handleClose,

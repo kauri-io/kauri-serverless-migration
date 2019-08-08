@@ -10,6 +10,7 @@ import { compose, graphql } from 'react-apollo'
 import withApolloError from '../../../lib/with-apollo-error'
 import { IReduxState } from '../../../lib/Module'
 import { getCommunityContentQuery } from '../../../queries/Community'
+import CloseIcon from '@material-ui/icons/Close'
 
 const collectionSize = 12
 
@@ -35,13 +36,6 @@ const ActionsContainer = styled.div`
         margin-right: ${props => props.theme.space[3]}px;
     }
 `
-
-const CloseIcon = () => (
-    <img
-        style={{ rotate: '45deg' }}
-        src="https://png.icons8.com/material-two-tone/50/000000/delete-sign.png"
-    />
-)
 
 const Actions: React.FunctionComponent<any> = ({
     handleClose,

@@ -11,6 +11,7 @@ import { connect } from 'react-redux'
 import withApolloError from '../../lib/with-apollo-error'
 import { getCollectionsForUser } from '../../queries/Collection'
 import { IReduxState } from '../../lib/Module'
+import CloseIcon from '@material-ui/icons/Close'
 
 const collectionSize = 12
 
@@ -37,12 +38,6 @@ const ActionsContainer = styled.div`
     }
 `
 
-const CloseIcon = () => (
-    <img
-        style={{ rotate: '45deg' }}
-        src="https://png.icons8.com/material-two-tone/50/000000/delete-sign.png"
-    />
-)
 
 const Actions: React.FunctionComponent<any> = ({
     handleClose,

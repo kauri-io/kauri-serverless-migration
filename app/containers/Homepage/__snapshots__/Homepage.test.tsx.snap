@@ -13345,13 +13345,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           className="TopContributors__ContributorsContainer-sc-2nkhip-0 cOmYpI"
                                         >
                                           <Link
-                                            as="/kendall/undefined/p"
-                                            href="/public-profile?user_id=undefined"
+                                            as="/kendall/52d5520c145553241ffe4609008695519b3ad705/p"
+                                            href="/public-profile?user_id=52d5520c145553241ffe4609008695519b3ad705"
                                             key="0"
                                             prefetch={true}
                                           >
                                             <a
-                                              href="/kendall/undefined/p"
+                                              href="/kendall/52d5520c145553241ffe4609008695519b3ad705/p"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
                                             >
@@ -13596,13 +13596,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             </a>
                                           </Link>
                                           <Link
-                                            as="/wil/undefined/p"
-                                            href="/public-profile?user_id=undefined"
+                                            as="/wil/60e0fca78e5bf845d7af875288b1bfb010d61ac4/p"
+                                            href="/public-profile?user_id=60e0fca78e5bf845d7af875288b1bfb010d61ac4"
                                             key="1"
                                             prefetch={true}
                                           >
                                             <a
-                                              href="/wil/undefined/p"
+                                              href="/wil/60e0fca78e5bf845d7af875288b1bfb010d61ac4/p"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
                                             >
@@ -13847,13 +13847,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             </a>
                                           </Link>
                                           <Link
-                                            as="/jmrocco/undefined/p"
-                                            href="/public-profile?user_id=undefined"
+                                            as="/jmrocco/dd23401dcab425f0a435eb7a86c77c5e8513bead/p"
+                                            href="/public-profile?user_id=dd23401dcab425f0a435eb7a86c77c5e8513bead"
                                             key="2"
                                             prefetch={true}
                                           >
                                             <a
-                                              href="/jmrocco/undefined/p"
+                                              href="/jmrocco/dd23401dcab425f0a435eb7a86c77c5e8513bead/p"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
                                             >
@@ -14098,13 +14098,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             </a>
                                           </Link>
                                           <Link
-                                            as="/ericjuta/undefined/p"
-                                            href="/public-profile?user_id=undefined"
+                                            as="/ericjuta/bfecec47dd8bf5f6264a9830a9d26ef387c38a67/p"
+                                            href="/public-profile?user_id=bfecec47dd8bf5f6264a9830a9d26ef387c38a67"
                                             key="3"
                                             prefetch={true}
                                           >
                                             <a
-                                              href="/ericjuta/undefined/p"
+                                              href="/ericjuta/bfecec47dd8bf5f6264a9830a9d26ef387c38a67/p"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
                                             >
@@ -14349,13 +14349,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             </a>
                                           </Link>
                                           <Link
-                                            as="/gregjeanmart/undefined/p"
-                                            href="/public-profile?user_id=undefined"
+                                            as="/gregjeanmart/f0f15cedc719b5a55470877b0710d5c7816916b1/p"
+                                            href="/public-profile?user_id=f0f15cedc719b5a55470877b0710d5c7816916b1"
                                             key="4"
                                             prefetch={true}
                                           >
                                             <a
-                                              href="/gregjeanmart/undefined/p"
+                                              href="/gregjeanmart/f0f15cedc719b5a55470877b0710d5c7816916b1/p"
                                               onClick={[Function]}
                                               onMouseEnter={[Function]}
                                             >
@@ -35520,7 +35520,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       </StyledComponent>
                                     </ImportYourContentBanner__ImportBannerCopy>
                                     <WithStyles(ForwardRef(Button))
-                                      color="primary"
+                                      color="secondary"
                                       onClick={[Function]}
                                       variant="outlined"
                                     >
@@ -35546,12 +35546,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             "textSecondary": "MuiButton-textSecondary",
                                           }
                                         }
-                                        color="primary"
+                                        color="secondary"
                                         onClick={[Function]}
                                         variant="outlined"
                                       >
                                         <WithStyles(ForwardRef(ButtonBase))
-                                          className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                                          className="MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
                                           component="button"
                                           disabled={false}
                                           focusRipple={true}
@@ -35560,7 +35560,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           type="button"
                                         >
                                           <ForwardRef(ButtonBase)
-                                            className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                                            className="MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
                                             classes={
                                               Object {
                                                 "disabled": "Mui-disabled",
@@ -35576,7 +35576,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             type="button"
                                           >
                                             <button
-                                              className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                                              className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
                                               disabled={false}
                                               onBlur={[Function]}
                                               onClick={[Function]}

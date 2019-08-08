@@ -22,6 +22,7 @@ const ActionsContainer = styled.div`
     display: flex;
     width: 200px;
     justify-content: space-between;
+    color: white;
 `
 
 interface IProps {
@@ -150,6 +151,7 @@ class EditableHeader extends Component<IProps, IState> {
                         Discard
                     </Button>
                     <Button
+                        fullWidth={true}
                         color="primary"
                         variant="contained"
                         onClick={() => this.handleSubmit()}

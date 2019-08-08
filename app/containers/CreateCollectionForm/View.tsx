@@ -37,6 +37,8 @@ import CollectionCardFormView from '../CollectionCardFormView'
 import { useEffect } from 'react'
 import initUppy from '../../lib/init-uppy'
 import config from '../../config'
+import UploadIcon from '@material-ui/icons/CloudUpload'
+import BackIcon from '@material-ui/icons/ArrowLeft'
 
 const emptySection: Collection_sections = {
     id: null,
@@ -136,10 +138,6 @@ const CreateCollectionCurators = styled.div`
     display: flex;
     align-items: center;
 `
-
-const UploadIcon = () => (
-    <img src="https://png.icons8.com/color/50/000000/upload.png" />
-)
 
 const DisplayFormikState = props => (
     <div style={{ margin: '1rem 0', background: '#f6f8fa', padding: '.5rem' }}>
@@ -306,15 +304,6 @@ export interface IProps {
         version: string
     }
 }
-
-const BackIcon = styled.div`
-    width: 10px !important;
-    height: 14px !important;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-right: 10px solid ${props => props.theme.colors['primary']};
-`
-
 const CreateCollectionForm: React.FC<
     InjectedFormikProps<IProps, IFormValues>
 > = ({
@@ -357,7 +346,7 @@ const CreateCollectionForm: React.FC<
                     >
                         <Stack alignItems={['', 'center']}>
                             <Button
-                                color="primary"
+                                color="secondary"
                                 onClick={() => routeChangeAction('back')}
                             >
                                 <BackIcon />
@@ -369,7 +358,7 @@ const CreateCollectionForm: React.FC<
                             justifyContent={['', 'center']}
                         >
                             <Button
-                                color="primary"
+                                color="secondary"
                                 className="background-upload"
                             >
                                 <UploadIcon />
