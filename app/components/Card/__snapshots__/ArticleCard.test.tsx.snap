@@ -991,6 +991,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                               aria-label="test username"
                               className="makeStyles-avatar-1"
                               data-testid="ArticleCard-1234567890-avatar"
+                              sizes="24"
                               src="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
                             >
                               <ForwardRef(Avatar)
@@ -1004,6 +1005,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                   }
                                 }
                                 data-testid="ArticleCard-1234567890-avatar"
+                                sizes="24"
                                 src="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
                               >
                                 <div
@@ -1013,6 +1015,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                 >
                                   <img
                                     className="MuiAvatar-img"
+                                    sizes="24"
                                     src="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
                                   />
                                 </div>

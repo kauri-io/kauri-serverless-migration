@@ -34,8 +34,8 @@ export const getCollectionURL = ({ name, id }: ICollectionProps) => ({
 })
 
 export const getUpdateCollectionURL = ({ id }: ICollectionProps) => ({
-  as: `/collection/${String(id)}/update-collection`,
-  href: `/update-collection?collection_id=${String(id)}`,
+    as: `/collection/${String(id)}/update-collection`,
+    href: `/update-collection?collection_id=${String(id)}`,
 })
 
 interface IProfileProps {

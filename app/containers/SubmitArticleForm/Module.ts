@@ -537,22 +537,29 @@ export const draftArticleEpic: Epic<any, any, {}, IDependencies> = (
                         category: 'article_actions',
                     })
                 }),
-                mergeMap(({ data: { getEvent: { output: { id, version } } } }) =>
-                    merge(
-                        of(
-                            showNotificationAction({
-                                description:
-                                    'The draft has just been saved. You can go back and submit it whenever you are ready.',
-                                message: 'Draft Created',
-                                notificationType: 'info',
-                            })
-                        ),
-                        of(
-                            routeChangeAction(
-                                `/article/${id}/v${version}/article-drafted`
+                mergeMap(
+                    ({
+                        data: {
+                            getEvent: {
+                                output: { id, version },
+                            },
+                        },
+                    }) =>
+                        merge(
+                            of(
+                                showNotificationAction({
+                                    description:
+                                        'The draft has just been saved. You can go back and submit it whenever you are ready.',
+                                    message: 'Draft Created',
+                                    notificationType: 'info',
+                                })
+                            ),
+                            of(
+                                routeChangeAction(
+                                    `/article/${id}/v${version}/article-drafted`
+                                )
                             )
                         )
-                    )
                 )
             )
         )

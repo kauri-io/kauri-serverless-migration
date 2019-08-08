@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { space, SpaceProps } from 'styled-system'
-import { Form, Field, FieldArray, InjectedFormikProps } from 'formik'
+import { Form, Field, FieldArray, InjectedFormikProps, Formik } from 'formik'
 import Stack from 'stack-styled'
 import { path, remove, pipe, map, reduce, filter, defaultTo } from 'ramda'
 import ActionsSection from '../../components/Section/ActionsSection'
@@ -362,6 +362,7 @@ const CreateCollectionForm: React.FC<
                 >
                     <Stack alignItems={['', 'center']}>
                         <TertiaryButton
+                            data-testid={`CreateCollectionForm-back`}
                             onClick={() => routeChangeAction('back')}
                             icon={<BackIcon />}
                         >

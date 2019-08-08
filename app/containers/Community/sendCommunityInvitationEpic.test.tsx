@@ -41,12 +41,14 @@ describe('sendCommunityInvitationEpic', () => {
         const mockApolloSubscriber = () =>
             Promise.resolve({
                 data: {
-                    output: {
-                        id,
-                        version,
-                        hash: mockGetArticle.contentHash,
-                        articleAuthor: mockGetArticle.author.id,
-                        dateCreated: mockGetArticle.dateCreated,
+                    getEvent: {
+                        output: {
+                            id,
+                            version,
+                            hash: mockGetArticle.contentHash,
+                            articleAuthor: mockGetArticle.author.id,
+                            dateCreated: mockGetArticle.dateCreated,
+                        },
                     },
                 },
             })

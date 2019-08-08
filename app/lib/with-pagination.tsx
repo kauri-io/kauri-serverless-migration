@@ -61,7 +61,6 @@ function withPagination(
             window.removeEventListener('scroll', this.triggerScrollEvent())
         }
         triggerScrollEvent = (childRefElement?: Element) => () => {
-          console.log('dasdasdasdas')
             if (childRefElement) {
                 childRefElement.addEventListener(
                     'scroll',
@@ -102,7 +101,7 @@ function withPagination(
         }
 
         handleOnScroll = () => {
-          console.log('hs')
+            console.log('hs')
             const scrollTop =
                 (this.childRefElement && this.childRefElement.scrollTop) ||
                 (document.scrollingElement &&

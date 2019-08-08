@@ -8079,6 +8079,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                       aria-label="gregjeanmart"
                                                                       className="makeStyles-avatar-1"
                                                                       data-testid="ArticleCard-b9eb647c47a546bc95693acc0be72546-avatar"
+                                                                      sizes="24"
                                                                       src="https://api.dev.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
                                                                     >
                                                                       <ForwardRef(Avatar)
@@ -8092,6 +8093,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                           }
                                                                         }
                                                                         data-testid="ArticleCard-b9eb647c47a546bc95693acc0be72546-avatar"
+                                                                        sizes="24"
                                                                         src="https://api.dev.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
                                                                       >
                                                                         <div
@@ -8101,6 +8103,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                         >
                                                                           <img
                                                                             className="MuiAvatar-img"
+                                                                            sizes="24"
                                                                             src="https://api.dev.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
                                                                           />
                                                                         </div>
@@ -11859,6 +11862,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                       aria-label="gregjeanmart"
                                                                       className="makeStyles-avatar-1"
                                                                       data-testid="ArticleCard-925d923e12c543da9a0a3e617be963b4-avatar"
+                                                                      sizes="24"
                                                                       src="https://api.dev.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
                                                                     >
                                                                       <ForwardRef(Avatar)
@@ -11872,6 +11876,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                           }
                                                                         }
                                                                         data-testid="ArticleCard-925d923e12c543da9a0a3e617be963b4-avatar"
+                                                                        sizes="24"
                                                                         src="https://api.dev.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
                                                                       >
                                                                         <div
@@ -11881,6 +11886,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                         >
                                                                           <img
                                                                             className="MuiAvatar-img"
+                                                                            sizes="24"
                                                                             src="https://api.dev.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
                                                                           />
                                                                         </div>
@@ -15639,6 +15645,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                       aria-label="gregjeanmart"
                                                                       className="makeStyles-avatar-1"
                                                                       data-testid="ArticleCard-84475132317d4d6a84a2c42eb9348e4b-avatar"
+                                                                      sizes="24"
                                                                       src="https://api.dev.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
                                                                     >
                                                                       <ForwardRef(Avatar)
@@ -15652,6 +15659,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                           }
                                                                         }
                                                                         data-testid="ArticleCard-84475132317d4d6a84a2c42eb9348e4b-avatar"
+                                                                        sizes="24"
                                                                         src="https://api.dev.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
                                                                       >
                                                                         <div
@@ -15661,6 +15669,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                         >
                                                                           <img
                                                                             className="MuiAvatar-img"
+                                                                            sizes="24"
                                                                             src="https://api.dev.kauri.io:443/ipfs/QmXa9LzhDV4wiF9YLsv2Z9CBUaSU6ph8QLNRLTDAUBsrA8"
                                                                           />
                                                                         </div>
@@ -19426,6 +19435,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                       aria-label="craig"
                                                                       className="makeStyles-avatar-1"
                                                                       data-testid="ArticleCard-14dc434d11ef4ee18bf7d57f079e246e-avatar"
+                                                                      sizes="24"
                                                                       src="https://api.beta.kauri.io:443/ipfs/QmekAbiDvz3Bc5y4pZB7Gnk5Zgn5iaa5CxQoSmTsDoPkP9"
                                                                     >
                                                                       <ForwardRef(Avatar)
@@ -19439,6 +19449,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                           }
                                                                         }
                                                                         data-testid="ArticleCard-14dc434d11ef4ee18bf7d57f079e246e-avatar"
+                                                                        sizes="24"
                                                                         src="https://api.beta.kauri.io:443/ipfs/QmekAbiDvz3Bc5y4pZB7Gnk5Zgn5iaa5CxQoSmTsDoPkP9"
                                                                       >
                                                                         <div
@@ -19448,6 +19459,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                         >
                                                                           <img
                                                                             className="MuiAvatar-img"
+                                                                            sizes="24"
                                                                             src="https://api.beta.kauri.io:443/ipfs/QmekAbiDvz3Bc5y4pZB7Gnk5Zgn5iaa5CxQoSmTsDoPkP9"
                                                                           />
                                                                         </div>
@@ -23213,6 +23225,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                       aria-label="craig"
                                                                       className="makeStyles-avatar-1"
                                                                       data-testid="ArticleCard-760f495423db42f988d17b8c145b0874-avatar"
+                                                                      sizes="24"
                                                                       src="https://api.beta.kauri.io:443/ipfs/QmekAbiDvz3Bc5y4pZB7Gnk5Zgn5iaa5CxQoSmTsDoPkP9"
                                                                     >
                                                                       <ForwardRef(Avatar)
@@ -23226,6 +23239,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                           }
                                                                         }
                                                                         data-testid="ArticleCard-760f495423db42f988d17b8c145b0874-avatar"
+                                                                        sizes="24"
                                                                         src="https://api.beta.kauri.io:443/ipfs/QmekAbiDvz3Bc5y4pZB7Gnk5Zgn5iaa5CxQoSmTsDoPkP9"
                                                                       >
                                                                         <div
@@ -23235,6 +23249,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                         >
                                                                           <img
                                                                             className="MuiAvatar-img"
+                                                                            sizes="24"
                                                                             src="https://api.beta.kauri.io:443/ipfs/QmekAbiDvz3Bc5y4pZB7Gnk5Zgn5iaa5CxQoSmTsDoPkP9"
                                                                           />
                                                                         </div>
@@ -26993,6 +27008,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                       aria-label="felipefaraggi"
                                                                       className="makeStyles-avatar-1"
                                                                       data-testid="ArticleCard-276dd27f1458443295eea58403fd6965-avatar"
+                                                                      sizes="24"
                                                                       src="https://api.kauri.io:443/ipfs/QmUR61QiSMk1XqBaAyvA7WmgVBP44x7RQMBa8RU3DCMp6f"
                                                                     >
                                                                       <ForwardRef(Avatar)
@@ -27006,6 +27022,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                           }
                                                                         }
                                                                         data-testid="ArticleCard-276dd27f1458443295eea58403fd6965-avatar"
+                                                                        sizes="24"
                                                                         src="https://api.kauri.io:443/ipfs/QmUR61QiSMk1XqBaAyvA7WmgVBP44x7RQMBa8RU3DCMp6f"
                                                                       >
                                                                         <div
@@ -27015,6 +27032,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                                         >
                                                                           <img
                                                                             className="MuiAvatar-img"
+                                                                            sizes="24"
                                                                             src="https://api.kauri.io:443/ipfs/QmUR61QiSMk1XqBaAyvA7WmgVBP44x7RQMBa8RU3DCMp6f"
                                                                           />
                                                                         </div>

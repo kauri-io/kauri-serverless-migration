@@ -38,7 +38,19 @@ const ArticlesContent = props => {
                     }
 
                     return (
-                      <Grid key={article.id} item xs={12} sm={12} lg={12} onClick={() => props.chooseArticle({ id: article.id, version: article.version})}>
+                        <Grid
+                            key={article.id}
+                            item
+                            xs={12}
+                            sm={12}
+                            lg={12}
+                            onClick={() =>
+                                props.chooseArticle({
+                                    id: article.id,
+                                    version: article.version,
+                                })
+                            }
+                        >
                             <ArticleCard
                                 {...article}
                                 href={getArticleURL({ title, id, version })}

@@ -3,6 +3,7 @@ import { mountWithRedux } from '../../setupTests'
 import { MockedProvider } from 'react-apollo/test-utils'
 import TertiaryButton from '../../components/Button/TertiaryButton'
 import PrimaryButton from '../../components/Button/PrimaryButton'
+import { Formik } from 'formik'
 
 let wrapper
 let props
@@ -64,9 +65,9 @@ describe('containers/CreateCollectionForm/View', () => {
                 articleId: '789',
                 version: '2',
             },
+            setSubmitting: jest.fn(),
             isValidating: false,
             submitCount: 0,
-            setSubmitting: jest.fn(),
             setStatus: jest.fn(),
             setError: jest.fn(),
             setErrors: jest.fn(),
@@ -96,11 +97,17 @@ describe('containers/CreateCollectionForm/View', () => {
     it('should match the snapshot', () => {
         wrapper = mountWithRedux(
             <MockedProvider>
-                <View {...props} />
+                <Formik
+                    initialValues={props.initialValues}
+                    onSubmit={console.log}
+                >
+                    <View {...props} />
+                </Formik>
             </MockedProvider>
         )
         expect(wrapper).toMatchSnapshot()
     })
+
     it('should handle go back route', () => {
         const tertiaryButtons = wrapper.find(TertiaryButton)
         tertiaryButtons.get(0).props.onClick()

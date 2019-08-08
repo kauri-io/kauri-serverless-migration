@@ -34,11 +34,13 @@ describe('acceptArticleTransferEpic', () => {
         const mockApolloSubscriber = () =>
             Promise.resolve({
                 data: {
-                    output: {
-                        hash: mockGetArticle.contentHash,
-                        version,
-                        articleAuthor: mockGetArticle.contributor,
-                        dateCreated: mockGetArticle.dateCreated,
+                    getEvent: {
+                        output: {
+                            hash: mockGetArticle.contentHash,
+                            version,
+                            articleAuthor: mockGetArticle.contributor,
+                            dateCreated: mockGetArticle.dateCreated,
+                        },
                     },
                 },
             })

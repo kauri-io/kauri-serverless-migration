@@ -6,7 +6,7 @@ import UserAvatar from '../UserAvatar'
 import PrimaryButton from '../Button/PrimaryButton'
 import StatisticsContainer from '../PublicProfile/StatisticsContainer'
 import { TagList } from '../Tags'
-import { getUpdateCollectionURL } from '../../lib/getURLs';
+import { getUpdateCollectionURL } from '../../lib/getURLs'
 
 const CollectionHeaderSection = styled.section`
     display: flex;
@@ -154,7 +154,13 @@ const Container: React.SFC<IProps> = props => {
                     />
                 )}
                 {userId === ownerId || isMemberOfCommunityOwner ? (
-                    <PrimaryButton onClick={() => routeChangeAction(getUpdateCollectionURL({ id }).href)}>
+                    <PrimaryButton
+                        onClick={() =>
+                            routeChangeAction(
+                                getUpdateCollectionURL({ id }).href
+                            )
+                        }
+                    >
                         Update Collection
                     </PrimaryButton>
                 ) : null}

@@ -12,7 +12,12 @@ import { compose, graphql } from 'react-apollo'
 import { searchApprovedArticles } from '../../queries/Article'
 import withApolloError from '../../lib/with-apollo-error'
 import { IReduxState } from '../../lib/Module'
-import { Dialog, DialogTitle, DialogContent, DialogActions } from '@material-ui/core'
+import {
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    DialogActions,
+} from '@material-ui/core'
 
 const articleSize = 12
 

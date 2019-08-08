@@ -47,9 +47,11 @@ describe('createCommunityEpic', () => {
         const mockApolloSubscriber = () =>
             Promise.resolve({
                 data: {
-                    output: {
-                        id: communityId,
-                        transactionHash,
+                    getEvent: {
+                        output: {
+                            id: communityId,
+                            transactionHash,
+                        },
                     },
                 },
             })
