@@ -239,6 +239,7 @@ const ArticleCard: React.FC<IProps> = ({
                             <a>
                                 {author && author.avatar ? (
                                     <Avatar
+                                        sizes={'24'}
                                         className={classes.avatar}
                                         src={author && author.avatar}
                                         aria-label={String(
@@ -248,6 +249,7 @@ const ArticleCard: React.FC<IProps> = ({
                                     />
                                 ) : (
                                     <Avatar
+                                        sizes={'24'}
                                         data-testid={`ArticleCard-${id}-avatar`}
                                         className={classes.avatar}
                                         aria-label={String(

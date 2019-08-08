@@ -18,7 +18,7 @@ export interface IDependencies {
     apolloSubscriber: <T>(
         hash: string,
         filterName?: string
-    ) => Promise<{ data: { output: T } }>
+    ) => Promise<{ data: { getEvent: { output: T } } }>
     apolloChildHashesSubscriber: <T>(
         childHashes: string[]
     ) => Array<Promise<{ data: { output: T } }>>
