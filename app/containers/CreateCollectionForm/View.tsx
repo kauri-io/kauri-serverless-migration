@@ -670,7 +670,7 @@ const CreateCollectionForm: React.FC<
                                                                     }) =>
                                                                         type &&
                                                                         type.toLowerCase() ===
-                                                                            'article'
+                                                                            'collection'
                                                                 )
                                                                 .concat(
                                                                     chosenArticles.map(

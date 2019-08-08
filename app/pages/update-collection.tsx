@@ -7,7 +7,7 @@ import CreateCollectionConnection from '../containers/CreateCollection'
 
 const UpdateCollection = ({ router }) => (
     <App>
-        <CreateCollectionConnection id={router.query['id']} />
+        <CreateCollectionConnection id={router.query['collection_id']} />
     </App>
 )
 
