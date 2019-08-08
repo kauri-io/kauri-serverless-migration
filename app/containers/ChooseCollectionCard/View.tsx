@@ -4,8 +4,6 @@ import CollectionCard from '../../components/Card/CollectionCard'
 import ChooseCollectionContent, {
     Content,
 } from '../../components/Modal/ChooseCollectionContent'
-import PrimaryButton from '../../components/Button/PrimaryButton'
-import SecondaryButton from '../../components/Button/SecondaryButton'
 import Tabs from '../../components/Tabs'
 import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
@@ -25,8 +23,8 @@ const Container = styled.div`
 `
 
 const CollectionsContent = ({
-    chooseCollection,
-    chosenCollections,
+    // chooseCollection,
+    // chosenCollections,
     collections,
     userId,
     setRef,
@@ -57,92 +55,45 @@ const CollectionsContent = ({
                         return null
                     }
 
-                    const articleCount =
-                        collection.sections &&
-                        collection.sections.reduce((current, next) => {
-                            if (next && Array.isArray(next.resources)) {
-                                const articlesInSection = next.resources.filter(
-                                    sectionResource =>
-                                        sectionResource &&
-                                        sectionResource.__typename
-                                            .toLowerCase()
-                                            .includes('article')
-                                )
-                                current += articlesInSection.length
-                            }
-                            return current
-                        }, 0)
-
-                    const collectionCount =
-                        collection.sections &&
-                        collection.sections.reduce((current, next) => {
-                            if (next && Array.isArray(next.resources)) {
-                                const collectionsInSection = next.resources.filter(
-                                    sectionResource =>
-                                        sectionResource &&
-                                        sectionResource.__typename
-                                            .toLowerCase()
-                                            .includes('collection')
-                                )
-                                current += collectionsInSection.length
-                            }
-                            return current
-                        }, 0)
-
                     return (
                         <CollectionCard
+                            {...collection}
                             href={getCollectionURL(collection)}
-                            key={collection.id + collection.version}
-                            resourceType={collection.owner.__typename
-                                .split('DTO')[0]
-                                .toUpperCase()}
-                            cardHeight={310}
-                            id={collection.id}
-                            description={collection.description}
-                            date={collection.dateUpdated}
-                            name={collection.name}
-                            userId={collection.owner && collection.owner.id}
-                            username={collection.owner && collection.owner.name}
-                            userAvatar={
-                                collection.owner && collection.owner.avatar
-                            }
-                            imageURL={collection.background}
+                            key={collection.id}
                             isLoggedIn={!!userId}
-                            articleCount={articleCount}
-                            collectionCount={collectionCount}
-                            hoverChildren={({ hideDispatch }) => (
-                                <React.Fragment>
-                                    <PrimaryButton
-                                        onClick={() => {
-                                            chooseCollection({
-                                                id: collection.id,
-                                                version: collection.version,
-                                            })
-                                            hideDispatch()
-                                        }}
-                                    >
-                                        Choose
-                                    </PrimaryButton>
-                                    <SecondaryButton
-                                        onClick={() =>
-                                            window.open(
-                                                `${window.location.origin}/collection/${collection.id}`,
-                                                '_blank'
-                                            )
-                                        }
-                                    >
-                                        View
-                                    </SecondaryButton>
-                                </React.Fragment>
-                            )}
-                            isChosenCollection={
-                                !!chosenCollections.find(
-                                    ({ id, version }) =>
-                                        collection.id === id &&
-                                        collection.version === version
-                                )
-                            }
-                            triggerHoverChildrenOnFullCardClick
+                            // hoverChildren={({ hideDispatch }) => (
+                            //     <React.Fragment>
+                            //         <PrimaryButton
+                            //             onClick={() => {
+                            //                 chooseCollection({
+                            //                     id: collection.id,
+                            //                     version: collection.version,
+                            //                 })
+                            //                 hideDispatch()
+                            //             }}
+                            //         >
+                            //             Choose
+                            //         </PrimaryButton>
+                            //         <SecondaryButton
+                            //             onClick={() =>
+                            //                 window.open(
+                            //                     `${window.location.origin}/collection/${collection.id}`,
+                            //                     '_blank'
+                            //                 )
+                            //             }
+                            //         >
+                            //             View
+                            //         </SecondaryButton>
+                            //     </React.Fragment>
+                            // )}
+                            // isChosenCollection={
+                            //     !!chosenCollections.find(
+                            //         ({ id, version }) =>
+                            //             collection.id === id &&
+                            //             collection.version === version
+                            //     )
+                            // }
+                            // triggerHoverChildrenOnFullCardClick
                         />
                     )
                 })}
