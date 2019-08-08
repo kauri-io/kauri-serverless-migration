@@ -131,7 +131,7 @@ interface IProps {
     } | null
     attributes: {
         background?: string
-    }
+    } | null
     datePublished: string | null
     description: string | null
     className?: string
@@ -208,7 +208,7 @@ const ArticleCard: React.FC<IProps> = ({
                         data-testid={`ArticleCard-${id}-image`}
                         className={classes.mobileMedia}
                         image={
-                            attributes.background ||
+                            (attributes && attributes.background) ||
                             'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
                         }
                         title={String(title)}
@@ -352,7 +352,7 @@ const ArticleCard: React.FC<IProps> = ({
                 data-testid={`ArticleCard-${id}-image`}
                 className={classes.desktopMedia}
                 image={
-                    attributes.background ||
+                    (attributes && attributes.background) ||
                     'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
                 }
                 title={String(title)}

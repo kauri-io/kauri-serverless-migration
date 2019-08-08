@@ -15,6 +15,11 @@ export const getArticleURL = (
                 as: `/draft/${id}/${version}`,
                 href: `/draft?id=${id}&version=${version}`,
             }
+        case 'review':
+            return {
+                as: `/review/${id}/${version}`,
+                href: `/article-review?id=${id}&version=${version}`,
+            }
         default:
             return {
                 as: `/${slugify(title, { lower: true })}/${id}/a`,

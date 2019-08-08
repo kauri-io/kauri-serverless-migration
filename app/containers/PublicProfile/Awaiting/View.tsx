@@ -55,7 +55,7 @@ const Articles = ({ data, type, isOwner }: IArticlesProps) => {
                         return (
                             article && (
                                 <ArticleCard
-                                    href={getArticleURL(article)}
+                                    href={getArticleURL(article, 'review')}
                                     {...article}
                                 />
                             )
