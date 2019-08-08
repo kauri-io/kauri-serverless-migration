@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import CollectionCard from '../../components/Card/CollectionCard'
 import Head from 'next/head'
-import PrimaryButton from '../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import { Title2, BodyCard } from '../../components/Typography'
 import { getCollection_getCollection } from '../../queries/__generated__/getCollection'
 import { getCollectionURL } from '../../lib/getURLs'
@@ -129,13 +129,15 @@ class CollectionCreated extends React.Component<IProps> {
                     collectionCount={String(collectionCount)}
                     resourceType={ownerResource.type || 'USER'}
                 />
-                <PrimaryButton
+                <Button
+                    color="primary"
+                    variant="contained"
                     onClick={() =>
                         routeChangeAction(`/collection/${String(id)}`)
                     }
                 >
                     View Collection
-                </PrimaryButton>
+                </Button>
             </Container>
         )
     }

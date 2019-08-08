@@ -2,9 +2,7 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Stack from 'stack-styled'
 import ActionsSection from '../../components/Section/ActionsSection'
-import PrimaryButton from '../../components/Button/PrimaryButton'
-import SecondaryButton from '../../components/Button/SecondaryButton'
-import TertiaryButton from '../../components/Button/TertiaryButton'
+import Button from '@material-ui/core/Button'
 import ProposeUpdateModal from './ProposeUpdateModal'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import initUppy from '../../lib/init-uppy'
@@ -107,35 +105,49 @@ export default ({
                 gridAutoFlow={['', 'column']}
                 gridTemplateColumns="minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr)"
             >
-                <TertiaryButton
-                    icon={<BackIcon />}
+                <Button
+                    color="primary"
+                    variant="text"
                     onClick={() => routeChangeAction('back')}
                 >
+                    <BackIcon />
                     <span>Go Back</span>
-                </TertiaryButton>
+                </Button>
                 <Stack
                     alignItems={['', 'center']}
                     justifyContent={['', 'center']}
                     gridAutoFlow={['row']}
                     gap={20}
                 >
-                    <TertiaryButton
+                    <Button
+                        color="primary"
                         className="background-upload"
-                        icon={<UploadIcon />}
+                        variant="text"
                     >
+                        <UploadIcon />
                         Upload Background
-                    </TertiaryButton>
+                    </Button>
                 </Stack>
                 <ContainerRow>
-                    <SecondaryButton onClick={handleSubmit('draft')}>
+                    <Button
+                        color="primary"
+                        variant="outlined"
+                        onClick={handleSubmit('draft') as any}
+                    >
                         Save draft
-                    </SecondaryButton>
+                    </Button>
                     {isOwner(status, owner, userId, communities) ? (
-                        <PrimaryButton onClick={selectDestination}>
+                        <Button
+                            color="primary"
+                            variant="contained"
+                            onClick={selectDestination}
+                        >
                             Publish Article
-                        </PrimaryButton>
+                        </Button>
                     ) : (
-                        <PrimaryButton
+                        <Button
+                            color="primary"
+                            variant="contained"
                             onClick={() =>
                                 openModalAction({
                                     children: (
@@ -153,7 +165,7 @@ export default ({
                             }
                         >
                             Propose Update
-                        </PrimaryButton>
+                        </Button>
                     )}
                 </ContainerRow>
             </ActionsSection>

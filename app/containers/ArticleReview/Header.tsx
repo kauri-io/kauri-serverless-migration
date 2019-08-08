@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 import { Title1, Label } from '../../components/Typography'
 import Image from '../../components/Image'
-import PrimaryButton from '../../components/Button/PrimaryButton'
-import SecondaryButton from '../../components/Button/SecondaryButton'
+import Button from '@material-ui/core/Button'
 import moment from 'moment'
 import theme from '../../lib/theme-config'
 import RejectArticleModal from './RejectArticleModal'
@@ -203,7 +202,9 @@ const Header: React.FunctionComponent<IProps> = props => (
                     )) &&
                     props.status === 'PENDING' && (
                         <Buttons>
-                            <SecondaryButton
+                            <Button
+                                color="primary"
+                                variant="outlined"
                                 onClick={() =>
                                     props.openModalAction({
                                         children: (
@@ -225,9 +226,12 @@ const Header: React.FunctionComponent<IProps> = props => (
                                         ),
                                     })
                                 }
-                                text="Reject Changes"
-                            />
-                            <PrimaryButton
+                            >
+                                Reject Changes
+                            </Button>
+                            <Button
+                                color="primary"
+                                variant="contained"
                                 onClick={() =>
                                     props.approveArticleAction({
                                         author: props.author.id,
@@ -240,8 +244,9 @@ const Header: React.FunctionComponent<IProps> = props => (
                                         ),
                                     })
                                 }
-                                text="Approve Changes"
-                            />
+                            >
+                                Approve Changes
+                            </Button>
                         </Buttons>
                     )}
             </Actions>

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import SecondaryButton from '../../components/Button/SecondaryButton'
+import Button from '@material-ui/core/Button'
 import { H2 } from '../../components/Typography'
 import { getProfileURL } from '../../lib/getURLs'
 // import { ArticleApprovedConfirmationLogoBadge } from "../../common/ActionBadge";
@@ -40,11 +40,13 @@ const ArticleRejected = (props: IProps) => {
                 {(data && data.getArticle && data.getArticle.subject) ||
                     'The author has been notified by email with your note.'}
             </ConfirmationSubject>
-            <SecondaryButton
+            <Button
+                color="primary"
+                variant="outlined"
                 onClick={() => routeChangeAction(getProfileURL(user).href)}
             >
                 Back to my articles
-            </SecondaryButton>
+            </Button>
         </Container>
     )
 }

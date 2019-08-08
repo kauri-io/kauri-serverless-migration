@@ -2,8 +2,7 @@ import ActionsSection, {
     MiddleActionsStack,
     RightActionsRow,
 } from '../../components/Section/ActionsSection'
-import PrimaryButtonComponent from '../../components/Button/PrimaryButton'
-import TertiaryButtonComponent from '../../components/Button/TertiaryButton'
+import Button from '@material-ui/core/Button'
 import UploadIcon from '../../components/Icon/UploadIcon'
 import showFormValidationErrors from '../../lib/show-form-validation-errors'
 import {
@@ -46,17 +45,20 @@ const Component: React.FunctionComponent<IProps> = props => {
             }
         >
             <MiddleActionsStack>
-                <TertiaryButtonComponent
-                    icon={<UploadIcon />}
+                <Button
+                    color="primary"
+                    variant="text"
                     className="background-upload"
                 >
+                    <UploadIcon />
                     Background Image
-                </TertiaryButtonComponent>
+                </Button>
             </MiddleActionsStack>
 
             <RightActionsRow>
-                <PrimaryButtonComponent
-                    type="submit"
+                <Button
+                    color="primary"
+                    variant="contained"
                     disabled={props.isSubmitting}
                     onClick={() =>
                         showFormValidationErrors(
@@ -69,7 +71,7 @@ const Component: React.FunctionComponent<IProps> = props => {
                     }
                 >
                     {`${props.id ? 'Update' : 'Create'} Community`}
-                </PrimaryButtonComponent>
+                </Button>
             </RightActionsRow>
         </ActionsSection>
     )

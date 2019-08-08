@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { getCommunity_getCommunity_members } from '../../../queries/__generated__/getCommunity'
 import styled from 'styled-components'
 import { Title2, BodyCard, Label } from '../../../components/Typography'
-import PrimaryButtonComponent from '../../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import theme from '../../../lib/theme-config'
 import { prepareChangeMemberRoleVariables } from '../../../queries/__generated__/prepareChangeMemberRole'
 import { removeMemberVariables } from '../../../queries/__generated__/removeMember'
@@ -207,12 +207,13 @@ const MembersPanel: React.SFC<IProps> = props => {
                     )}
             </Content>
             <Footer>
-                <PrimaryButtonComponent
-                    type={'button'}
+                <Button
+                    color="primary"
+                    variant="contained"
                     onClick={() => props.openAddMemberModal()}
                 >
                     Invite Member
-                </PrimaryButtonComponent>
+                </Button>
             </Footer>
         </Section>
     )

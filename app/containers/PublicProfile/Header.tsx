@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import anchorme from 'anchorme'
-import PrimaryButton from '../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import StatisticsContainer from '../../components/PublicProfile/StatisticsContainer'
 import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
 import UserAvatar from '../../components/UserAvatar'
@@ -63,7 +63,7 @@ const DetailsContainer = styled.div`
     }
 `
 
-const StyledButton = styled(PrimaryButton)`
+const StyledButton = styled(Button)`
     align-self: center;
 `
 
@@ -238,7 +238,11 @@ const ProfileHeader = ({
                 />
             )}
             {id === currentUser && (
-                <StyledButton onClick={() => toggleEditing()}>
+                <StyledButton
+                    color="primary"
+                    variant="contained"
+                    onClick={() => toggleEditing()}
+                >
                     Edit Profile
                 </StyledButton>
             )}

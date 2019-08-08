@@ -4,7 +4,7 @@ import UserAvatarComponent, {
 } from '../UserAvatar'
 import { Label, Title2, BodyCard } from '../Typography'
 import TagList from '../Tags/TagList'
-import SecondaryButtonComponent from '../Button/SecondaryButton'
+import Button from '@material-ui/core/Button'
 import slugify from 'slugify'
 import Link from 'next/link'
 
@@ -125,10 +125,10 @@ const FeaturedResource: React.FunctionComponent<
                         }
                     >
                         <a>
-                            <SecondaryButtonComponent
-                                border="primary"
-                                color="textPrimary"
-                            >{`View ${resourceType}`}</SecondaryButtonComponent>
+                            <Button
+                                color="primary"
+                                variant="outlined"
+                            >{`View ${resourceType}`}</Button>
                         </a>
                     </Link>
                 </ViewContainer>

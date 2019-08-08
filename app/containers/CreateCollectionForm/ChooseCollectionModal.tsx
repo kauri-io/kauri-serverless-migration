@@ -2,8 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { find, reduce, union } from 'ramda'
 import { BodyCard } from '../../components/Typography'
-import PrimaryButton from '../../components/Button/PrimaryButton'
-import TertiaryButton from '../../components/Button/TertiaryButton'
+import Button from '@material-ui/core/Button'
 import ChooseCollectionCard from '../ChooseCollectionCard/View'
 import ModalHeader from '../../components/Headers/ModalHeader'
 import ChooseResourceModalSearch from './ChooseResourceModalSearch'
@@ -60,21 +59,20 @@ const Actions: React.FunctionComponent<any> = ({
             query={searchPublishedCollections}
             changeTab={changeTab}
         />
-        <TertiaryButton
-            icon={<CloseIcon />}
-            onClick={() => handleClose()}
-            color="textPrimary"
-        >
+        <Button color="primary" onClick={() => handleClose()} variant="text">
+            <CloseIcon />
             Close
-        </TertiaryButton>
-        <PrimaryButton
+        </Button>
+        <Button
+            color="primary"
+            variant="contained"
             onClick={() => {
                 handleConfirm(chosenCollections)
                 handleClose()
             }}
         >
             Confirm
-        </PrimaryButton>
+        </Button>
     </ActionsContainer>
 )
 

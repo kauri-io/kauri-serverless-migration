@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Title2, BodyCard } from '../Typography'
 import { Input } from '../Input'
-import PrimaryButtonComponent from '../Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import * as Yup from 'yup'
 import { useState, FunctionComponent } from 'react'
 
@@ -106,11 +106,13 @@ const NewsletterBanner: FunctionComponent<IProps> = props => {
                 >
                     {state.emailAddress}
                 </Input>
-                <PrimaryButtonComponent
+                <Button
+                    color="primary"
+                    variant="contained"
                     onClick={handleEmailAddress(props, state)}
                 >
                     Subscribe
-                </PrimaryButtonComponent>
+                </Button>
             </Content>
         </Container>
     )

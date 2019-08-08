@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
 import ArticleCard from '../../components/Card/ArticleCard'
-import PrimaryButton from '../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import { Title2, BodyCard } from '../../components/Typography'
 import { getArticleURL, getProfileURL } from '../../lib/getURLs'
 
@@ -39,11 +39,13 @@ const ArticleProposed = ({ data: { getArticle }, routeChangeAction, user }) => {
             </SectionContainer>
             <ArticleCard href={getArticleURL(getArticle)} {...getArticle} />
             <SectionContainer>
-                <PrimaryButton
+                <Button
+                    color="primary"
+                    variant="contained"
                     onClick={() => routeChangeAction(getProfileURL(user).href)}
                 >
                     My Articles
-                </PrimaryButton>
+                </Button>
             </SectionContainer>
         </Container>
     )

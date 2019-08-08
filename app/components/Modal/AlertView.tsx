@@ -1,7 +1,6 @@
 import { Title2 } from '../Typography'
 import styled from 'styled-components'
-import PrimaryButton from '../Button/PrimaryButton'
-import SecondaryButtonComponent from '../Button/SecondaryButton'
+import Button from '@material-ui/core/Button'
 
 interface IProps {
     title: string
@@ -55,20 +54,22 @@ const AlertViewComponent: React.FunctionComponent<IProps> = props => (
         {props.content}
         <Footer>
             {!props.hideCloseButton && (
-                <SecondaryButtonComponent
-                    color={'textPrimary'}
-                    border={'hoverTextColor'}
+                <Button
+                    color="primary"
+                    variant="outlined"
                     onClick={handleConfirmAction(props.closeModalAction)}
                 >
                     {props.closeButtonText || 'Cancel'}
-                </SecondaryButtonComponent>
+                </Button>
             )}
             {!props.hideConfirmButton && (
-                <PrimaryButton
+                <Button
+                    color="primary"
+                    variant="contained"
                     onClick={handleConfirmAction(props.confirmButtonAction)}
                 >
                     {props.confirmButtonText || 'Confirm'}
-                </PrimaryButton>
+                </Button>
             )}
         </Footer>
     </Container>

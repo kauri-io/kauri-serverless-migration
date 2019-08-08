@@ -2,8 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { find, reduce, union } from 'ramda'
 import { BodyCard } from '../../../components/Typography'
-import PrimaryButton from '../../../components/Button/PrimaryButton'
-import TertiaryButton from '../../../components/Button/TertiaryButton'
+import Button from '@material-ui/core/Button'
 import ChooseCommunityCollectionCard from '../../ChooseCommunityCollectionCard/View'
 import ModalHeader from '../../../components/Headers/ModalHeader'
 import { connect } from 'react-redux'
@@ -50,21 +49,20 @@ const Actions: React.FunctionComponent<any> = ({
     chosenCollections,
 }) => (
     <ActionsContainer>
-        <TertiaryButton
-            icon={<CloseIcon />}
-            onClick={() => handleClose()}
-            color="textPrimary"
-        >
+        <Button color="primary" variant="text" onClick={() => handleClose()}>
+            <CloseIcon />
             Close
-        </TertiaryButton>
-        <PrimaryButton
+        </Button>
+        <Button
+            color="primary"
+            variant="contained"
             onClick={() => {
                 handleConfirm(chosenCollections)
                 handleClose()
             }}
         >
             Confirm
-        </PrimaryButton>
+        </Button>
     </ActionsContainer>
 )
 

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import ArticleCard from '../../../components/Card/ArticleCard'
 import withPagination from '../../../lib/with-pagination'
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
-import PrimaryButton from '../../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import Masonry from '../../../components/Masonry'
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
 import {
@@ -64,11 +64,13 @@ const Articles: React.FC<IArticlesProps> = ({ data, routeChangeAction }) => {
                     }
                     title="No Saved Drafts"
                     primaryButton={
-                        <PrimaryButton
+                        <Button
+                            color="primary"
+                            variant="contained"
                             onClick={() => routeChangeAction('/write-article')}
                         >
                             Create Article
-                        </PrimaryButton>
+                        </Button>
                     }
                 />
             </Centered>

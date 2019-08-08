@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import PrimaryButton from '../../components/Button/PrimaryButton'
-import TertiaryButton from '../../components/Button/TertiaryButton'
+import Button from '@material-ui/core/Button'
 import EditProfileForm from '../../components/EditProfileForm'
 import { pipe, assocPath } from 'ramda'
 import {
@@ -143,12 +142,20 @@ class EditableHeader extends Component<IProps, IState> {
                     updateState={this.updateState.bind(this)}
                 />
                 <ActionsContainer>
-                    <TertiaryButton onClick={() => this.props.toggleEditing()}>
+                    <Button
+                        color="primary"
+                        variant="text"
+                        onClick={() => this.props.toggleEditing()}
+                    >
                         Discard
-                    </TertiaryButton>
-                    <PrimaryButton onClick={() => this.handleSubmit()}>
+                    </Button>
+                    <Button
+                        color="primary"
+                        variant="contained"
+                        onClick={() => this.handleSubmit()}
+                    >
                         Save Changes
-                    </PrimaryButton>
+                    </Button>
                 </ActionsContainer>
             </HeaderContainer>
         )

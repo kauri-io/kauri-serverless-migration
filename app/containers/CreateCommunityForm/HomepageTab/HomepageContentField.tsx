@@ -8,7 +8,7 @@ import ArticleCard from '../../ArticleCardFormView'
 import CollectionCard from '../../CollectionCardFormView'
 import { space, SpaceProps, background, BackgroundProps } from 'styled-system'
 import { path, defaultTo, pipe, filter, remove, concat } from 'ramda'
-import TertiaryButtonComponent from '../../../components/Button/TertiaryButton'
+import Button from '@material-ui/core/Button'
 import SectionOptions from '../../CreateCollectionForm/SectionOptions'
 import {
     openModalAction as openModal,
@@ -155,9 +155,9 @@ const renderResourceSection = (
                 </Draggable>
             )
         )}
-        <TertiaryButtonComponent
-            color="primaryTextColor"
-            icon={<RemoveIcon />}
+        <Button
+            color="primary"
+            variant="text"
             onClick={() =>
                 arrayHelpers.form.setFieldValue(
                     `homepage[${index}][${mappingKey}]`,
@@ -174,8 +174,9 @@ const renderResourceSection = (
                 )
             } // Remove current resource index
         >
+            <RemoveIcon />
             {`Remove ${resource.type}`}
-        </TertiaryButtonComponent>
+        </Button>
     </ResourceSection>
 )
 

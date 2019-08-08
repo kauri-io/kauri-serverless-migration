@@ -1,10 +1,7 @@
 import styled from 'styled-components'
-import SecondaryButtonComponent from '../Button/SecondaryButton'
+import Button from '@material-ui/core/Button'
 import { Title2 } from '../Typography'
-import theme from '../../lib/theme-config'
 import Link from 'next/link'
-
-const DEFAULT_CARD_WIDTH = theme.DEFAULT_CARD_WIDTH
 
 const Container = styled.section`
     display: flex;
@@ -45,14 +42,14 @@ const PublishYourOwnContentCTA: React.FunctionComponent<IProps> = props => (
                         }
                     >
                         <a>
-                            <SecondaryButtonComponent
+                            <Button
+                                color="primary"
+                                fullWidth={true}
+                                variant="outlined"
                                 key={content.actionName}
-                                color="textPrimary"
-                                border={'primary'}
-                                width={`${DEFAULT_CARD_WIDTH}px`}
                             >
                                 {content.actionName}
-                            </SecondaryButtonComponent>
+                            </Button>
                         </a>
                     </Link>
                 ))}

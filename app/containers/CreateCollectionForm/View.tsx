@@ -10,8 +10,7 @@ import StatisticsContainer from '../../components/PublicProfile/StatisticsContai
 import UserAvatar from '../../components/UserAvatar'
 import { Label } from '../../components/Typography'
 import Input from '../../components/Input/Input'
-import PrimaryButton from '../../components/Button/PrimaryButton'
-import TertiaryButton from '../../components/Button/TertiaryButton'
+import Button from '@material-ui/core/Button'
 import showFormValidationErrors from '../../lib/show-form-validation-errors'
 import ChooseArticleModal from './ChooseArticleModal'
 import ChooseCollectionModal, { ICollection } from './ChooseCollectionModal'
@@ -249,9 +248,9 @@ const renderResourceSection = (
                 </Draggable>
             )
         )}
-        <TertiaryButton
-            color="primaryTextColor"
-            icon={<RemoveIcon />}
+        <Button
+            color="primary"
+            variant="text"
             onClick={() =>
                 arrayHelpers.form.setFieldValue(
                     `sections[${index}][${mappingKey}]`,
@@ -268,8 +267,9 @@ const renderResourceSection = (
                 )
             } // Remove current resource index
         >
+            <RemoveIcon />
             {`Remove ${resource.type}`}
-        </TertiaryButton>
+        </Button>
     </ResourceSection>
 )
 
@@ -356,31 +356,35 @@ const CreateCollectionForm: React.FC<
                         }
                     >
                         <Stack alignItems={['', 'center']}>
-                            <TertiaryButton
+                            <Button
+                                color="primary"
                                 onClick={() => routeChangeAction('back')}
-                                icon={<BackIcon />}
                             >
+                                <BackIcon />
                                 Cancel Collection
-                            </TertiaryButton>
+                            </Button>
                         </Stack>
                         <Stack
                             alignItems={['', 'center']}
                             justifyContent={['', 'center']}
                         >
-                            <TertiaryButton
-                                icon={<UploadIcon />}
+                            <Button
+                                color="primary"
                                 className="background-upload"
                             >
+                                <UploadIcon />
                                 Background Image
-                            </TertiaryButton>
+                            </Button>
                         </Stack>
                         <Stack
                             alignItems={['', 'center']}
                             justifyContent={['', 'end']}
                         >
-                            <PrimaryButton
+                            <Button
+                                className="create-collection"
+                                color="primary"
+                                variant="contained"
                                 disabled={isSubmitting}
-                                type="submit"
                                 onClick={() =>
                                     showFormValidationErrors(
                                         validateForm,
@@ -391,7 +395,7 @@ const CreateCollectionForm: React.FC<
                                 {data
                                     ? 'Update Collection'
                                     : 'Create Collection'}
-                            </PrimaryButton>
+                            </Button>
                         </Stack>
                     </ActionsSection>
 
@@ -443,9 +447,9 @@ const CreateCollectionForm: React.FC<
                             {/* TODO: WAIT FOR BACKEND */}
                             {/* <AddTagButton color='white' /> */}
                             <CreateCollectionActionsPlaceHolder>
-                                {/* <PrimaryButton>Follow Collection</PrimaryButton> */}
-                                {/* <TertiaryButton>Up vote</TertiaryButton> */}
-                                {/* <TertiaryButton icon={<ShareIcon />}>Share</TertiaryButton> */}
+                                {/* <Button>Follow Collection</Button> */}
+                                {/* <Button>Up vote</Button> */}
+                                {/* <Button color='primary' icon={<ShareIcon />}>Share</Button> */}
                             </CreateCollectionActionsPlaceHolder>
                         </CreateCollectionDetails>
                         <Stack

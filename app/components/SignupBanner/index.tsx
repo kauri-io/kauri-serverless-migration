@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 import { Title1, BodyCard } from '../Typography'
-import SecondaryButtonComponent from '../Button/SecondaryButton'
+import Button from '@material-ui/core/Button'
 import Stack from 'stack-styled'
-import PrimaryButtonComponent from '../Button/PrimaryButton'
 import Link from 'next/link'
 
 const ResourceDetailsContainer = styled.section`
@@ -51,15 +50,18 @@ const SignupBanner: React.FunctionComponent = () => (
         <ViewContainer>
             <Link href="/login">
                 <a>
-                    <PrimaryButtonComponent color="white">{`Sign up`}</PrimaryButtonComponent>
+                    <Button
+                        color="primary"
+                        variant="contained"
+                    >{`Sign up`}</Button>
                 </a>
             </Link>
             <Link href="/help">
                 <a>
-                    <SecondaryButtonComponent
-                        border="white"
-                        color="white"
-                    >{`Learn more`}</SecondaryButtonComponent>
+                    <Button
+                        color="primary"
+                        variant="outlined"
+                    >{`Learn more`}</Button>
                 </a>
             </Link>
         </ViewContainer>

@@ -4,8 +4,7 @@ import CollectionCard from '../../components/Card/CollectionCard'
 import ChooseCollectionContent, {
     Content,
 } from '../../components/Modal/ChooseCollectionContent'
-import PrimaryButton from '../../components/Button/PrimaryButton'
-import SecondaryButton from '../../components/Button/SecondaryButton'
+import Button from '@material-ui/core/Button'
 import Tabs from '../../components/Tabs'
 import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
@@ -112,7 +111,9 @@ const CollectionsContent = ({
                             collectionCount={collectionCount}
                             hoverChildren={({ hideDispatch }) => (
                                 <React.Fragment>
-                                    <PrimaryButton
+                                    <Button
+                                        color="primary"
+                                        variant="contained"
                                         onClick={() => {
                                             chooseCollection({
                                                 id: collection.id,
@@ -122,8 +123,10 @@ const CollectionsContent = ({
                                         }}
                                     >
                                         Choose
-                                    </PrimaryButton>
-                                    <SecondaryButton
+                                    </Button>
+                                    <Button
+                                        color="primary"
+                                        variant="outlined"
                                         onClick={() =>
                                             window.open(
                                                 `${window.location.origin}/collection/${collection.id}`,
@@ -132,7 +135,7 @@ const CollectionsContent = ({
                                         }
                                     >
                                         View
-                                    </SecondaryButton>
+                                    </Button>
                                 </React.Fragment>
                             )}
                             isChosenCollection={

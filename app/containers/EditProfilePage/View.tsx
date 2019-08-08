@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import EditProfileForm from '../../components/EditProfileForm'
-import PrimaryButton from '../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import Loading from '../../components/Loading'
 import analytics from '../../lib/analytics'
 import moment from 'moment'
@@ -212,9 +212,13 @@ class OnboardingEditProfile extends Component<IProps, IState> {
                         updateState={this.updateState.bind(this)}
                     />
                     <ButtonWrapper>
-                        <PrimaryButton onClick={() => this.handleSubmit()}>
+                        <Button
+                            color="primary"
+                            variant="contained"
+                            onClick={() => this.handleSubmit()}
+                        >
                             Next
-                        </PrimaryButton>
+                        </Button>
                     </ButtonWrapper>
                 </Wrapper>
             </Page>

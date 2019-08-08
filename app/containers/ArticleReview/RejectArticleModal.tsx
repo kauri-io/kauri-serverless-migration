@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { NavigationText, BodyCard } from '../../components/Typography'
-import PrimaryButton from '../../components/Button/PrimaryButton'
-import TertiaryButton from '../../components/Button/TertiaryButton'
+import Button from '@material-ui/core/Button'
 import ModalHeader from '../../components/Headers/ModalHeader'
 import Input from '../../components/Input/Input'
 
@@ -44,21 +43,20 @@ const Actions = ({
     handleConfirm: any
 }) => (
     <ActionsContainer>
-        <TertiaryButton
-            icon={<CloseIcon />}
-            onClick={() => handleClose()}
-            color="textPrimary"
-        >
+        <Button color="primary" onClick={() => handleClose()}>
+            <CloseIcon />
             Close
-        </TertiaryButton>
-        <PrimaryButton
+        </Button>
+        <Button
+            color="primary"
+            variant="contained"
             onClick={() => {
                 handleConfirm()
                 handleClose()
             }}
         >
             Confirm
-        </PrimaryButton>
+        </Button>
     </ActionsContainer>
 )
 

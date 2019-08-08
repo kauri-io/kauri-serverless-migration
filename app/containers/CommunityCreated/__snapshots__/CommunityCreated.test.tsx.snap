@@ -987,10 +987,12 @@ exports[`containers/CommunityCreated/View should match the snapshot 1`] = `
     }
     website=""
   />
-  <PrimaryButtonComponent
+  <WithStyles(ForwardRef(Button))
+    color="primary"
     onClick={[Function]}
+    variant="contained"
   >
     View Community
-  </PrimaryButtonComponent>
+  </WithStyles(ForwardRef(Button))>
 </View__Container>
 `;

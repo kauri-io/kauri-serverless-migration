@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { cond, equals, always, tail } from 'ramda'
 import styled from 'styled-components'
 import ArticleCard from '../../components/Card/ArticleCard'
-import PrimaryButton from '../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import { Title1, BodyCard } from '../../components/Typography'
 import { Article } from '../../queries/Fragments/__generated__/Article'
 import { ShareButtons } from '../../components/Tooltip/ShareButtons'
@@ -109,7 +109,9 @@ class ArticleApproved extends React.Component<IProps> {
                                 )}/article/${article.id}?utm_campaign=published`
                             )}
                         />
-                        <PrimaryButton
+                        <Button
+                            color="primary"
+                            variant="contained"
                             onClick={() =>
                                 routeChangeAction(
                                     getProfileURL(this.props.user).href
@@ -117,7 +119,7 @@ class ArticleApproved extends React.Component<IProps> {
                             }
                         >
                             My Articles
-                        </PrimaryButton>
+                        </Button>
                     </ArticleApprovedActionButtons>
                 </Container>
             )

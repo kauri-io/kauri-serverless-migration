@@ -778,112 +778,151 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                           <div
                                             className="sc-bdVaJa ckxOPF"
                                           >
-                                            <TertiaryButtonComponent
-                                              icon={<ForwardRef(View__BackIcon) />}
+                                            <WithStyles(ForwardRef(Button))
+                                              color="primary"
                                               onClick={[Function]}
                                             >
-                                              <TertiaryButton
-                                                color="white"
-                                                disabled={false}
-                                                fontSize={0}
-                                                fontWeight={700}
-                                                mr={1}
-                                                onClick={[Function]}
-                                                type="button"
-                                              >
-                                                <StyledComponent
-                                                  color="white"
-                                                  disabled={false}
-                                                  fontSize={0}
-                                                  fontWeight={700}
-                                                  forwardedComponent={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": Array [],
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "TertiaryButton-sc-1rjobqw-0",
-                                                        "isStatic": false,
-                                                        "lastClassName": "CufMJ",
-                                                        "rules": Array [
-                                                          "display:flex;align-items:center;border:none;background-color:transparent;cursor:",
-                                                          [Function],
-                                                          ";text-transform:uppercase;color:#fff;opacity:",
-                                                          [Function],
-                                                          ";padding:0px;>:first-child{height:18px;width:18px;",
-                                                          [Function],
-                                                          ";}:hover{color:",
-                                                          [Function],
-                                                          ";}:focus,:active{outline:none;box-shadow:none;}",
-                                                          [Function],
-                                                          ";",
-                                                          [Function],
-                                                          ";",
-                                                          [Function],
-                                                          ";",
-                                                        ],
-                                                      },
-                                                      "displayName": "TertiaryButton",
-                                                      "foldedComponentIds": Array [],
-                                                      "render": [Function],
-                                                      "styledComponentId": "TertiaryButton-sc-1rjobqw-0",
-                                                      "target": "button",
-                                                      "toString": [Function],
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
-                                                    }
+                                              <ForwardRef(Button)
+                                                classes={
+                                                  Object {
+                                                    "colorInherit": "MuiButton-colorInherit",
+                                                    "contained": "MuiButton-contained",
+                                                    "containedPrimary": "MuiButton-containedPrimary",
+                                                    "containedSecondary": "MuiButton-containedSecondary",
+                                                    "disabled": "Mui-disabled",
+                                                    "focusVisible": "Mui-focusVisible",
+                                                    "fullWidth": "MuiButton-fullWidth",
+                                                    "label": "MuiButton-label",
+                                                    "outlined": "MuiButton-outlined",
+                                                    "outlinedPrimary": "MuiButton-outlinedPrimary",
+                                                    "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                                    "root": "MuiButton-root",
+                                                    "sizeLarge": "MuiButton-sizeLarge",
+                                                    "sizeSmall": "MuiButton-sizeSmall",
+                                                    "text": "MuiButton-text",
+                                                    "textPrimary": "MuiButton-textPrimary",
+                                                    "textSecondary": "MuiButton-textSecondary",
                                                   }
-                                                  forwardedRef={null}
-                                                  mr={1}
+                                                }
+                                                color="primary"
+                                                onClick={[Function]}
+                                              >
+                                                <WithStyles(ForwardRef(ButtonBase))
+                                                  className="MuiButton-root MuiButton-text MuiButton-textPrimary"
+                                                  component="button"
+                                                  disabled={false}
+                                                  focusRipple={true}
+                                                  focusVisibleClassName="Mui-focusVisible"
                                                   onClick={[Function]}
                                                   type="button"
                                                 >
-                                                  <button
-                                                    className="TertiaryButton-sc-1rjobqw-0 CufMJ"
-                                                    color="white"
+                                                  <ForwardRef(ButtonBase)
+                                                    className="MuiButton-root MuiButton-text MuiButton-textPrimary"
+                                                    classes={
+                                                      Object {
+                                                        "disabled": "Mui-disabled",
+                                                        "focusVisible": "Mui-focusVisible",
+                                                        "root": "MuiButtonBase-root",
+                                                      }
+                                                    }
+                                                    component="button"
                                                     disabled={false}
-                                                    fontSize={0}
-                                                    fontWeight={700}
+                                                    focusRipple={true}
+                                                    focusVisibleClassName="Mui-focusVisible"
                                                     onClick={[Function]}
                                                     type="button"
                                                   >
-                                                    <View__BackIcon>
-                                                      <StyledComponent
-                                                        forwardedComponent={
-                                                          Object {
-                                                            "$$typeof": Symbol(react.forward_ref),
-                                                            "attrs": Array [],
-                                                            "componentStyle": ComponentStyle {
-                                                              "componentId": "View__BackIcon-o1kbu4-10",
-                                                              "isStatic": false,
-                                                              "lastClassName": "gqPXsg",
-                                                              "rules": Array [
-                                                                "width:10px !important;height:14px !important;border-top:8px solid transparent;border-bottom:8px solid transparent;border-right:10px solid ",
-                                                                [Function],
-                                                                ";",
-                                                              ],
-                                                            },
-                                                            "displayName": "View__BackIcon",
-                                                            "foldedComponentIds": Array [],
-                                                            "render": [Function],
-                                                            "styledComponentId": "View__BackIcon-o1kbu4-10",
-                                                            "target": "div",
-                                                            "toString": [Function],
-                                                            "warnTooManyClasses": [Function],
-                                                            "withComponent": [Function],
-                                                          }
-                                                        }
-                                                        forwardedRef={null}
+                                                    <button
+                                                      className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
+                                                      disabled={false}
+                                                      onBlur={[Function]}
+                                                      onClick={[Function]}
+                                                      onDragLeave={[Function]}
+                                                      onFocus={[Function]}
+                                                      onKeyDown={[Function]}
+                                                      onKeyUp={[Function]}
+                                                      onMouseDown={[Function]}
+                                                      onMouseLeave={[Function]}
+                                                      onMouseUp={[Function]}
+                                                      onTouchEnd={[Function]}
+                                                      onTouchMove={[Function]}
+                                                      onTouchStart={[Function]}
+                                                      tabIndex={0}
+                                                      type="button"
+                                                    >
+                                                      <span
+                                                        className="MuiButton-label"
                                                       >
-                                                        <div
-                                                          className="View__BackIcon-o1kbu4-10 gqPXsg"
-                                                        />
-                                                      </StyledComponent>
-                                                    </View__BackIcon>
-                                                    Cancel Collection
-                                                  </button>
-                                                </StyledComponent>
-                                              </TertiaryButton>
-                                            </TertiaryButtonComponent>
+                                                        <View__BackIcon>
+                                                          <StyledComponent
+                                                            forwardedComponent={
+                                                              Object {
+                                                                "$$typeof": Symbol(react.forward_ref),
+                                                                "attrs": Array [],
+                                                                "componentStyle": ComponentStyle {
+                                                                  "componentId": "View__BackIcon-o1kbu4-10",
+                                                                  "isStatic": false,
+                                                                  "lastClassName": "gqPXsg",
+                                                                  "rules": Array [
+                                                                    "width:10px !important;height:14px !important;border-top:8px solid transparent;border-bottom:8px solid transparent;border-right:10px solid ",
+                                                                    [Function],
+                                                                    ";",
+                                                                  ],
+                                                                },
+                                                                "displayName": "View__BackIcon",
+                                                                "foldedComponentIds": Array [],
+                                                                "render": [Function],
+                                                                "styledComponentId": "View__BackIcon-o1kbu4-10",
+                                                                "target": "div",
+                                                                "toString": [Function],
+                                                                "warnTooManyClasses": [Function],
+                                                                "withComponent": [Function],
+                                                              }
+                                                            }
+                                                            forwardedRef={null}
+                                                          >
+                                                            <div
+                                                              className="View__BackIcon-o1kbu4-10 gqPXsg"
+                                                            />
+                                                          </StyledComponent>
+                                                        </View__BackIcon>
+                                                        Cancel Collection
+                                                      </span>
+                                                      <NoSsr>
+                                                        <WithStyles(undefined)
+                                                          center={false}
+                                                        >
+                                                          <ForwardRef(TouchRipple)
+                                                            center={false}
+                                                            classes={
+                                                              Object {
+                                                                "child": "MuiTouchRipple-child",
+                                                                "childLeaving": "MuiTouchRipple-childLeaving",
+                                                                "childPulsate": "MuiTouchRipple-childPulsate",
+                                                                "ripple": "MuiTouchRipple-ripple",
+                                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                                "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                                "root": "MuiTouchRipple-root",
+                                                              }
+                                                            }
+                                                          >
+                                                            <span
+                                                              className="MuiTouchRipple-root"
+                                                            >
+                                                              <TransitionGroup
+                                                                childFactory={[Function]}
+                                                                component={null}
+                                                                exit={true}
+                                                              />
+                                                            </span>
+                                                          </ForwardRef(TouchRipple)>
+                                                        </WithStyles(undefined)>
+                                                      </NoSsr>
+                                                    </button>
+                                                  </ForwardRef(ButtonBase)>
+                                                </WithStyles(ForwardRef(ButtonBase))>
+                                              </ForwardRef(Button)>
+                                            </WithStyles(ForwardRef(Button))>
                                           </div>
                                         </StyledComponent>
                                       </Stack>
@@ -1018,83 +1057,120 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                           <div
                                             className="sc-bdVaJa DgGhp"
                                           >
-                                            <TertiaryButtonComponent
+                                            <WithStyles(ForwardRef(Button))
                                               className="background-upload"
-                                              icon={<UploadIcon />}
+                                              color="primary"
                                             >
-                                              <TertiaryButton
+                                              <ForwardRef(Button)
                                                 className="background-upload"
-                                                color="white"
-                                                disabled={false}
-                                                fontSize={0}
-                                                fontWeight={700}
-                                                mr={1}
-                                                type="button"
-                                              >
-                                                <StyledComponent
-                                                  className="background-upload"
-                                                  color="white"
-                                                  disabled={false}
-                                                  fontSize={0}
-                                                  fontWeight={700}
-                                                  forwardedComponent={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": Array [],
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "TertiaryButton-sc-1rjobqw-0",
-                                                        "isStatic": false,
-                                                        "lastClassName": "CufMJ",
-                                                        "rules": Array [
-                                                          "display:flex;align-items:center;border:none;background-color:transparent;cursor:",
-                                                          [Function],
-                                                          ";text-transform:uppercase;color:#fff;opacity:",
-                                                          [Function],
-                                                          ";padding:0px;>:first-child{height:18px;width:18px;",
-                                                          [Function],
-                                                          ";}:hover{color:",
-                                                          [Function],
-                                                          ";}:focus,:active{outline:none;box-shadow:none;}",
-                                                          [Function],
-                                                          ";",
-                                                          [Function],
-                                                          ";",
-                                                          [Function],
-                                                          ";",
-                                                        ],
-                                                      },
-                                                      "displayName": "TertiaryButton",
-                                                      "foldedComponentIds": Array [],
-                                                      "render": [Function],
-                                                      "styledComponentId": "TertiaryButton-sc-1rjobqw-0",
-                                                      "target": "button",
-                                                      "toString": [Function],
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
-                                                    }
+                                                classes={
+                                                  Object {
+                                                    "colorInherit": "MuiButton-colorInherit",
+                                                    "contained": "MuiButton-contained",
+                                                    "containedPrimary": "MuiButton-containedPrimary",
+                                                    "containedSecondary": "MuiButton-containedSecondary",
+                                                    "disabled": "Mui-disabled",
+                                                    "focusVisible": "Mui-focusVisible",
+                                                    "fullWidth": "MuiButton-fullWidth",
+                                                    "label": "MuiButton-label",
+                                                    "outlined": "MuiButton-outlined",
+                                                    "outlinedPrimary": "MuiButton-outlinedPrimary",
+                                                    "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                                    "root": "MuiButton-root",
+                                                    "sizeLarge": "MuiButton-sizeLarge",
+                                                    "sizeSmall": "MuiButton-sizeSmall",
+                                                    "text": "MuiButton-text",
+                                                    "textPrimary": "MuiButton-textPrimary",
+                                                    "textSecondary": "MuiButton-textSecondary",
                                                   }
-                                                  forwardedRef={null}
-                                                  mr={1}
+                                                }
+                                                color="primary"
+                                              >
+                                                <WithStyles(ForwardRef(ButtonBase))
+                                                  className="MuiButton-root background-upload MuiButton-text MuiButton-textPrimary"
+                                                  component="button"
+                                                  disabled={false}
+                                                  focusRipple={true}
+                                                  focusVisibleClassName="Mui-focusVisible"
                                                   type="button"
                                                 >
-                                                  <button
-                                                    className="background-upload TertiaryButton-sc-1rjobqw-0 CufMJ"
-                                                    color="white"
+                                                  <ForwardRef(ButtonBase)
+                                                    className="MuiButton-root background-upload MuiButton-text MuiButton-textPrimary"
+                                                    classes={
+                                                      Object {
+                                                        "disabled": "Mui-disabled",
+                                                        "focusVisible": "Mui-focusVisible",
+                                                        "root": "MuiButtonBase-root",
+                                                      }
+                                                    }
+                                                    component="button"
                                                     disabled={false}
-                                                    fontSize={0}
-                                                    fontWeight={700}
+                                                    focusRipple={true}
+                                                    focusVisibleClassName="Mui-focusVisible"
                                                     type="button"
                                                   >
-                                                    <UploadIcon>
-                                                      <img
-                                                        src="https://png.icons8.com/color/50/000000/upload.png"
-                                                      />
-                                                    </UploadIcon>
-                                                    Background Image
-                                                  </button>
-                                                </StyledComponent>
-                                              </TertiaryButton>
-                                            </TertiaryButtonComponent>
+                                                    <button
+                                                      className="MuiButtonBase-root MuiButton-root background-upload MuiButton-text MuiButton-textPrimary"
+                                                      disabled={false}
+                                                      onBlur={[Function]}
+                                                      onDragLeave={[Function]}
+                                                      onFocus={[Function]}
+                                                      onKeyDown={[Function]}
+                                                      onKeyUp={[Function]}
+                                                      onMouseDown={[Function]}
+                                                      onMouseLeave={[Function]}
+                                                      onMouseUp={[Function]}
+                                                      onTouchEnd={[Function]}
+                                                      onTouchMove={[Function]}
+                                                      onTouchStart={[Function]}
+                                                      tabIndex={0}
+                                                      type="button"
+                                                    >
+                                                      <span
+                                                        className="MuiButton-label"
+                                                      >
+                                                        <UploadIcon>
+                                                          <img
+                                                            src="https://png.icons8.com/color/50/000000/upload.png"
+                                                          />
+                                                        </UploadIcon>
+                                                        Background Image
+                                                      </span>
+                                                      <NoSsr>
+                                                        <WithStyles(undefined)
+                                                          center={false}
+                                                        >
+                                                          <ForwardRef(TouchRipple)
+                                                            center={false}
+                                                            classes={
+                                                              Object {
+                                                                "child": "MuiTouchRipple-child",
+                                                                "childLeaving": "MuiTouchRipple-childLeaving",
+                                                                "childPulsate": "MuiTouchRipple-childPulsate",
+                                                                "ripple": "MuiTouchRipple-ripple",
+                                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                                "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                                "root": "MuiTouchRipple-root",
+                                                              }
+                                                            }
+                                                          >
+                                                            <span
+                                                              className="MuiTouchRipple-root"
+                                                            >
+                                                              <TransitionGroup
+                                                                childFactory={[Function]}
+                                                                component={null}
+                                                                exit={true}
+                                                              />
+                                                            </span>
+                                                          </ForwardRef(TouchRipple)>
+                                                        </WithStyles(undefined)>
+                                                      </NoSsr>
+                                                    </button>
+                                                  </ForwardRef(ButtonBase)>
+                                                </WithStyles(ForwardRef(ButtonBase))>
+                                              </ForwardRef(Button)>
+                                            </WithStyles(ForwardRef(Button))>
                                           </div>
                                         </StyledComponent>
                                       </Stack>
@@ -1229,87 +1305,124 @@ exports[`containers/CreateCollectionForm/View should match the snapshot 1`] = `
                                           <div
                                             className="sc-bdVaJa dvVvbZ"
                                           >
-                                            <PrimaryButtonComponent
+                                            <WithStyles(ForwardRef(Button))
+                                              className="create-collection"
+                                              color="primary"
                                               disabled={false}
                                               onClick={[Function]}
-                                              type="submit"
+                                              variant="contained"
                                             >
-                                              <PrimaryButton
-                                                bg="primary"
-                                                color="white"
-                                                disabled={false}
-                                                fontSize={0}
-                                                fontWeight={700}
-                                                mr={2}
-                                                onClick={[Function]}
-                                                type="submit"
-                                              >
-                                                <StyledComponent
-                                                  bg="primary"
-                                                  color="white"
-                                                  disabled={false}
-                                                  fontSize={0}
-                                                  fontWeight={700}
-                                                  forwardedComponent={
-                                                    Object {
-                                                      "$$typeof": Symbol(react.forward_ref),
-                                                      "attrs": Array [],
-                                                      "componentStyle": ComponentStyle {
-                                                        "componentId": "PrimaryButton-sc-1cbxa53-0",
-                                                        "isStatic": false,
-                                                        "lastClassName": "bVbdII",
-                                                        "rules": Array [
-                                                          "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
-                                                          [Function],
-                                                          ";height:40px;border-radius:4px;border:none;cursor:pointer;> svg,img{height:16px;",
-                                                          [Function],
-                                                          ";}text-transform:uppercase;opacity:",
-                                                          [Function],
-                                                          ";",
-                                                          [Function],
-                                                          ";",
-                                                          [Function],
-                                                          ";",
-                                                          [Function],
-                                                          ";",
-                                                          [Function],
-                                                          ";:hover{cursor:",
-                                                          [Function],
-                                                          ";}",
-                                                          ";:hover{background-color:",
-                                                          [Function],
-                                                          ";}",
-                                                        ],
-                                                      },
-                                                      "displayName": "PrimaryButton",
-                                                      "foldedComponentIds": Array [],
-                                                      "render": [Function],
-                                                      "styledComponentId": "PrimaryButton-sc-1cbxa53-0",
-                                                      "target": "button",
-                                                      "toString": [Function],
-                                                      "warnTooManyClasses": [Function],
-                                                      "withComponent": [Function],
-                                                    }
+                                              <ForwardRef(Button)
+                                                className="create-collection"
+                                                classes={
+                                                  Object {
+                                                    "colorInherit": "MuiButton-colorInherit",
+                                                    "contained": "MuiButton-contained",
+                                                    "containedPrimary": "MuiButton-containedPrimary",
+                                                    "containedSecondary": "MuiButton-containedSecondary",
+                                                    "disabled": "Mui-disabled",
+                                                    "focusVisible": "Mui-focusVisible",
+                                                    "fullWidth": "MuiButton-fullWidth",
+                                                    "label": "MuiButton-label",
+                                                    "outlined": "MuiButton-outlined",
+                                                    "outlinedPrimary": "MuiButton-outlinedPrimary",
+                                                    "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                                    "root": "MuiButton-root",
+                                                    "sizeLarge": "MuiButton-sizeLarge",
+                                                    "sizeSmall": "MuiButton-sizeSmall",
+                                                    "text": "MuiButton-text",
+                                                    "textPrimary": "MuiButton-textPrimary",
+                                                    "textSecondary": "MuiButton-textSecondary",
                                                   }
-                                                  forwardedRef={null}
-                                                  mr={2}
+                                                }
+                                                color="primary"
+                                                disabled={false}
+                                                onClick={[Function]}
+                                                variant="contained"
+                                              >
+                                                <WithStyles(ForwardRef(ButtonBase))
+                                                  className="MuiButton-root create-collection MuiButton-contained MuiButton-containedPrimary"
+                                                  component="button"
+                                                  disabled={false}
+                                                  focusRipple={true}
+                                                  focusVisibleClassName="Mui-focusVisible"
                                                   onClick={[Function]}
-                                                  type="submit"
+                                                  type="button"
                                                 >
-                                                  <button
-                                                    className="PrimaryButton-sc-1cbxa53-0 bVbdII"
-                                                    color="white"
+                                                  <ForwardRef(ButtonBase)
+                                                    className="MuiButton-root create-collection MuiButton-contained MuiButton-containedPrimary"
+                                                    classes={
+                                                      Object {
+                                                        "disabled": "Mui-disabled",
+                                                        "focusVisible": "Mui-focusVisible",
+                                                        "root": "MuiButtonBase-root",
+                                                      }
+                                                    }
+                                                    component="button"
                                                     disabled={false}
-                                                    fontSize={0}
-                                                    fontWeight={700}
+                                                    focusRipple={true}
+                                                    focusVisibleClassName="Mui-focusVisible"
                                                     onClick={[Function]}
-                                                    type="submit"
+                                                    type="button"
                                                   >
-                                                    Create Collection
-                                                  </button>
-                                                </StyledComponent>
-                                              </PrimaryButton>
-                                            </PrimaryButtonComponent>
+                                                    <button
+                                                      className="MuiButtonBase-root MuiButton-root create-collection MuiButton-contained MuiButton-containedPrimary"
+                                                      disabled={false}
+                                                      onBlur={[Function]}
+                                                      onClick={[Function]}
+                                                      onDragLeave={[Function]}
+                                                      onFocus={[Function]}
+                                                      onKeyDown={[Function]}
+                                                      onKeyUp={[Function]}
+                                                      onMouseDown={[Function]}
+                                                      onMouseLeave={[Function]}
+                                                      onMouseUp={[Function]}
+                                                      onTouchEnd={[Function]}
+                                                      onTouchMove={[Function]}
+                                                      onTouchStart={[Function]}
+                                                      tabIndex={0}
+                                                      type="button"
+                                                    >
+                                                      <span
+                                                        className="MuiButton-label"
+                                                      >
+                                                        Create Collection
+                                                      </span>
+                                                      <NoSsr>
+                                                        <WithStyles(undefined)
+                                                          center={false}
+                                                        >
+                                                          <ForwardRef(TouchRipple)
+                                                            center={false}
+                                                            classes={
+                                                              Object {
+                                                                "child": "MuiTouchRipple-child",
+                                                                "childLeaving": "MuiTouchRipple-childLeaving",
+                                                                "childPulsate": "MuiTouchRipple-childPulsate",
+                                                                "ripple": "MuiTouchRipple-ripple",
+                                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                                "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                                "root": "MuiTouchRipple-root",
+                                                              }
+                                                            }
+                                                          >
+                                                            <span
+                                                              className="MuiTouchRipple-root"
+                                                            >
+                                                              <TransitionGroup
+                                                                childFactory={[Function]}
+                                                                component={null}
+                                                                exit={true}
+                                                              />
+                                                            </span>
+                                                          </ForwardRef(TouchRipple)>
+                                                        </WithStyles(undefined)>
+                                                      </NoSsr>
+                                                    </button>
+                                                  </ForwardRef(ButtonBase)>
+                                                </WithStyles(ForwardRef(ButtonBase))>
+                                              </ForwardRef(Button)>
+                                            </WithStyles(ForwardRef(Button))>
                                           </div>
                                         </StyledComponent>
                                       </Stack>

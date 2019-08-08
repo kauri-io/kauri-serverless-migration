@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import SecondaryButton from './SecondaryButton'
-import TertiaryButton from './TertiaryButton'
+import Button from '@material-ui/core/Button'
 import config from '../../config'
 
 const Icon = styled.svg`
@@ -25,13 +24,13 @@ const MediumImportButton = (props: IProps) => {
             href={`https://import.${config.gateway.replace('api.', '')}`}
         >
             {props.border ? (
-                <SecondaryButton border="primary" color="textPrimary">
+                <Button color="primary" variant="outlined">
                     {SVG}Medium Import
-                </SecondaryButton>
+                </Button>
             ) : (
-                <TertiaryButton color="textPrimary">
+                <Button color="primary" variant="text">
                     {SVG}Medium Import
-                </TertiaryButton>
+                </Button>
             )}
         </a>
     )

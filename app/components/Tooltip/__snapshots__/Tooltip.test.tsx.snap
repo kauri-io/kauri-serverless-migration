@@ -207,99 +207,126 @@ exports[`components/Tooltip/ShareArticle should match snapshot 1`] = `
                 }
               }
             >
-              <TertiaryButtonComponent
-                color="black"
-                icon={
-                  <svg
-                    role="img"
-                    viewBox="0 0 448 512"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      className=""
-                      d="M352 320c-22.608 0-43.387 7.819-59.79 20.895l-102.486-64.054a96.551 96.551 0 0 0 0-41.683l102.486-64.054C308.613 184.181 329.392 192 352 192c53.019 0 96-42.981 96-96S405.019 0 352 0s-96 42.981-96 96c0 7.158.79 14.13 2.276 20.841L155.79 180.895C139.387 167.819 118.608 160 96 160c-53.019 0-96 42.981-96 96s42.981 96 96 96c22.608 0 43.387-7.819 59.79-20.895l102.486 64.054A96.301 96.301 0 0 0 256 416c0 53.019 42.981 96 96 96s96-42.981 96-96-42.981-96-96-96z"
-                      fill="#0BA986"
-                    />
-                  </svg>
-                }
+              <WithStyles(ForwardRef(Button))
+                color="primary"
+                variant="text"
               >
-                <TertiaryButton
-                  color="black"
-                  disabled={false}
-                  fontSize={0}
-                  fontWeight={700}
-                  mr={1}
-                  type="button"
-                >
-                  <StyledComponent
-                    color="black"
-                    disabled={false}
-                    fontSize={0}
-                    fontWeight={700}
-                    forwardedComponent={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "attrs": Array [],
-                        "componentStyle": ComponentStyle {
-                          "componentId": "TertiaryButton-sc-1rjobqw-0",
-                          "isStatic": false,
-                          "lastClassName": "MFFdZ",
-                          "rules": Array [
-                            "display:flex;align-items:center;border:none;background-color:transparent;cursor:",
-                            [Function],
-                            ";text-transform:uppercase;color:#fff;opacity:",
-                            [Function],
-                            ";padding:0px;>:first-child{height:18px;width:18px;",
-                            [Function],
-                            ";}:hover{color:",
-                            [Function],
-                            ";}:focus,:active{outline:none;box-shadow:none;}",
-                            [Function],
-                            ";",
-                            [Function],
-                            ";",
-                            [Function],
-                            ";",
-                          ],
-                        },
-                        "displayName": "TertiaryButton",
-                        "foldedComponentIds": Array [],
-                        "render": [Function],
-                        "styledComponentId": "TertiaryButton-sc-1rjobqw-0",
-                        "target": "button",
-                        "toString": [Function],
-                        "warnTooManyClasses": [Function],
-                        "withComponent": [Function],
-                      }
+                <ForwardRef(Button)
+                  classes={
+                    Object {
+                      "colorInherit": "MuiButton-colorInherit",
+                      "contained": "MuiButton-contained",
+                      "containedPrimary": "MuiButton-containedPrimary",
+                      "containedSecondary": "MuiButton-containedSecondary",
+                      "disabled": "Mui-disabled",
+                      "focusVisible": "Mui-focusVisible",
+                      "fullWidth": "MuiButton-fullWidth",
+                      "label": "MuiButton-label",
+                      "outlined": "MuiButton-outlined",
+                      "outlinedPrimary": "MuiButton-outlinedPrimary",
+                      "outlinedSecondary": "MuiButton-outlinedSecondary",
+                      "root": "MuiButton-root",
+                      "sizeLarge": "MuiButton-sizeLarge",
+                      "sizeSmall": "MuiButton-sizeSmall",
+                      "text": "MuiButton-text",
+                      "textPrimary": "MuiButton-textPrimary",
+                      "textSecondary": "MuiButton-textSecondary",
                     }
-                    forwardedRef={null}
-                    mr={1}
+                  }
+                  color="primary"
+                  variant="text"
+                >
+                  <WithStyles(ForwardRef(ButtonBase))
+                    className="MuiButton-root MuiButton-text MuiButton-textPrimary"
+                    component="button"
+                    disabled={false}
+                    focusRipple={true}
+                    focusVisibleClassName="Mui-focusVisible"
                     type="button"
                   >
-                    <button
-                      className="TertiaryButton-sc-1rjobqw-0 MFFdZ"
-                      color="black"
+                    <ForwardRef(ButtonBase)
+                      className="MuiButton-root MuiButton-text MuiButton-textPrimary"
+                      classes={
+                        Object {
+                          "disabled": "Mui-disabled",
+                          "focusVisible": "Mui-focusVisible",
+                          "root": "MuiButtonBase-root",
+                        }
+                      }
+                      component="button"
                       disabled={false}
-                      fontSize={0}
-                      fontWeight={700}
+                      focusRipple={true}
+                      focusVisibleClassName="Mui-focusVisible"
                       type="button"
                     >
-                      <svg
-                        role="img"
-                        viewBox="0 0 448 512"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <button
+                        className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onDragLeave={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchMove={[Function]}
+                        onTouchStart={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        <path
-                          className=""
-                          d="M352 320c-22.608 0-43.387 7.819-59.79 20.895l-102.486-64.054a96.551 96.551 0 0 0 0-41.683l102.486-64.054C308.613 184.181 329.392 192 352 192c53.019 0 96-42.981 96-96S405.019 0 352 0s-96 42.981-96 96c0 7.158.79 14.13 2.276 20.841L155.79 180.895C139.387 167.819 118.608 160 96 160c-53.019 0-96 42.981-96 96s42.981 96 96 96c22.608 0 43.387-7.819 59.79-20.895l102.486 64.054A96.301 96.301 0 0 0 256 416c0 53.019 42.981 96 96 96s96-42.981 96-96-42.981-96-96-96z"
-                          fill="#0BA986"
-                        />
-                      </svg>
-                      Share
-                    </button>
-                  </StyledComponent>
-                </TertiaryButton>
-              </TertiaryButtonComponent>
+                        <span
+                          className="MuiButton-label"
+                        >
+                          <svg
+                            role="img"
+                            viewBox="0 0 448 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              className=""
+                              d="M352 320c-22.608 0-43.387 7.819-59.79 20.895l-102.486-64.054a96.551 96.551 0 0 0 0-41.683l102.486-64.054C308.613 184.181 329.392 192 352 192c53.019 0 96-42.981 96-96S405.019 0 352 0s-96 42.981-96 96c0 7.158.79 14.13 2.276 20.841L155.79 180.895C139.387 167.819 118.608 160 96 160c-53.019 0-96 42.981-96 96s42.981 96 96 96c22.608 0 43.387-7.819 59.79-20.895l102.486 64.054A96.301 96.301 0 0 0 256 416c0 53.019 42.981 96 96 96s96-42.981 96-96-42.981-96-96-96z"
+                              fill="#0BA986"
+                            />
+                          </svg>
+                          Share
+                        </span>
+                        <NoSsr>
+                          <WithStyles(undefined)
+                            center={false}
+                          >
+                            <ForwardRef(TouchRipple)
+                              center={false}
+                              classes={
+                                Object {
+                                  "child": "MuiTouchRipple-child",
+                                  "childLeaving": "MuiTouchRipple-childLeaving",
+                                  "childPulsate": "MuiTouchRipple-childPulsate",
+                                  "ripple": "MuiTouchRipple-ripple",
+                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                  "root": "MuiTouchRipple-root",
+                                }
+                              }
+                            >
+                              <span
+                                className="MuiTouchRipple-root"
+                              >
+                                <TransitionGroup
+                                  childFactory={[Function]}
+                                  component={null}
+                                  exit={true}
+                                />
+                              </span>
+                            </ForwardRef(TouchRipple)>
+                          </WithStyles(undefined)>
+                        </NoSsr>
+                      </button>
+                    </ForwardRef(ButtonBase)>
+                  </WithStyles(ForwardRef(ButtonBase))>
+                </ForwardRef(Button)>
+              </WithStyles(ForwardRef(Button))>
             </div>
           </Tooltip>
         </section>

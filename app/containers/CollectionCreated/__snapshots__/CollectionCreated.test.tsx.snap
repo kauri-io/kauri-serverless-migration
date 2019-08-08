@@ -32,10 +32,12 @@ exports[`containers/CollectionCreated/View should match the snapshot 1`] = `
     userAvatar="https://api.beta.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY"
     userId="37648fc15a8365735289e002d65d44d80c505e8b"
   />
-  <PrimaryButtonComponent
+  <WithStyles(ForwardRef(Button))
+    color="primary"
     onClick={[Function]}
+    variant="contained"
   >
     View Collection
-  </PrimaryButtonComponent>
+  </WithStyles(ForwardRef(Button))>
 </View__Container>
 `;

@@ -4086,82 +4086,120 @@ exports[`containers/ArticleProposed should match snapshot 1`] = `
                     <div
                       className="View__SectionContainer-sc-1fatk72-1 khbunl"
                     >
-                      <PrimaryButtonComponent
+                      <WithStyles(ForwardRef(Button))
+                        color="primary"
                         onClick={[Function]}
+                        variant="contained"
                       >
-                        <PrimaryButton
-                          bg="primary"
-                          color="white"
-                          fontSize={0}
-                          fontWeight={700}
-                          mr={2}
-                          onClick={[Function]}
-                          type="submit"
-                        >
-                          <StyledComponent
-                            bg="primary"
-                            color="white"
-                            fontSize={0}
-                            fontWeight={700}
-                            forwardedComponent={
-                              Object {
-                                "$$typeof": Symbol(react.forward_ref),
-                                "attrs": Array [],
-                                "componentStyle": ComponentStyle {
-                                  "componentId": "PrimaryButton-sc-1cbxa53-0",
-                                  "isStatic": false,
-                                  "lastClassName": "bVbdII",
-                                  "rules": Array [
-                                    "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
-                                    [Function],
-                                    ";height:40px;border-radius:4px;border:none;cursor:pointer;> svg,img{height:16px;",
-                                    [Function],
-                                    ";}text-transform:uppercase;opacity:",
-                                    [Function],
-                                    ";",
-                                    [Function],
-                                    ";",
-                                    [Function],
-                                    ";",
-                                    [Function],
-                                    ";",
-                                    [Function],
-                                    ";:hover{cursor:",
-                                    [Function],
-                                    ";}",
-                                    ";:hover{background-color:",
-                                    [Function],
-                                    ";}",
-                                  ],
-                                },
-                                "displayName": "PrimaryButton",
-                                "foldedComponentIds": Array [],
-                                "render": [Function],
-                                "styledComponentId": "PrimaryButton-sc-1cbxa53-0",
-                                "target": "button",
-                                "toString": [Function],
-                                "warnTooManyClasses": [Function],
-                                "withComponent": [Function],
-                              }
+                        <ForwardRef(Button)
+                          classes={
+                            Object {
+                              "colorInherit": "MuiButton-colorInherit",
+                              "contained": "MuiButton-contained",
+                              "containedPrimary": "MuiButton-containedPrimary",
+                              "containedSecondary": "MuiButton-containedSecondary",
+                              "disabled": "Mui-disabled",
+                              "focusVisible": "Mui-focusVisible",
+                              "fullWidth": "MuiButton-fullWidth",
+                              "label": "MuiButton-label",
+                              "outlined": "MuiButton-outlined",
+                              "outlinedPrimary": "MuiButton-outlinedPrimary",
+                              "outlinedSecondary": "MuiButton-outlinedSecondary",
+                              "root": "MuiButton-root",
+                              "sizeLarge": "MuiButton-sizeLarge",
+                              "sizeSmall": "MuiButton-sizeSmall",
+                              "text": "MuiButton-text",
+                              "textPrimary": "MuiButton-textPrimary",
+                              "textSecondary": "MuiButton-textSecondary",
                             }
-                            forwardedRef={null}
-                            mr={2}
+                          }
+                          color="primary"
+                          onClick={[Function]}
+                          variant="contained"
+                        >
+                          <WithStyles(ForwardRef(ButtonBase))
+                            className="MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                            component="button"
+                            disabled={false}
+                            focusRipple={true}
+                            focusVisibleClassName="Mui-focusVisible"
                             onClick={[Function]}
-                            type="submit"
+                            type="button"
                           >
-                            <button
-                              className="PrimaryButton-sc-1cbxa53-0 bVbdII"
-                              color="white"
-                              fontSize={0}
-                              fontWeight={700}
+                            <ForwardRef(ButtonBase)
+                              className="MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                              classes={
+                                Object {
+                                  "disabled": "Mui-disabled",
+                                  "focusVisible": "Mui-focusVisible",
+                                  "root": "MuiButtonBase-root",
+                                }
+                              }
+                              component="button"
+                              disabled={false}
+                              focusRipple={true}
+                              focusVisibleClassName="Mui-focusVisible"
                               onClick={[Function]}
-                              type="submit"
+                              type="button"
                             >
-                              My Articles
-                            </button>
-                          </StyledComponent>
-                        </PrimaryButton>
-                      </PrimaryButtonComponent>
+                              <button
+                                className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onDragLeave={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                onKeyUp={[Function]}
+                                onMouseDown={[Function]}
+                                onMouseLeave={[Function]}
+                                onMouseUp={[Function]}
+                                onTouchEnd={[Function]}
+                                onTouchMove={[Function]}
+                                onTouchStart={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <span
+                                  className="MuiButton-label"
+                                >
+                                  My Articles
+                                </span>
+                                <NoSsr>
+                                  <WithStyles(undefined)
+                                    center={false}
+                                  >
+                                    <ForwardRef(TouchRipple)
+                                      center={false}
+                                      classes={
+                                        Object {
+                                          "child": "MuiTouchRipple-child",
+                                          "childLeaving": "MuiTouchRipple-childLeaving",
+                                          "childPulsate": "MuiTouchRipple-childPulsate",
+                                          "ripple": "MuiTouchRipple-ripple",
+                                          "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                          "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                          "root": "MuiTouchRipple-root",
+                                        }
+                                      }
+                                    >
+                                      <span
+                                        className="MuiTouchRipple-root"
+                                      >
+                                        <TransitionGroup
+                                          childFactory={[Function]}
+                                          component={null}
+                                          exit={true}
+                                        />
+                                      </span>
+                                    </ForwardRef(TouchRipple)>
+                                  </WithStyles(undefined)>
+                                </NoSsr>
+                              </button>
+                            </ForwardRef(ButtonBase)>
+                          </WithStyles(ForwardRef(ButtonBase))>
+                        </ForwardRef(Button)>
+                      </WithStyles(ForwardRef(Button))>
                     </div>
                   </StyledComponent>
                 </View__SectionContainer>

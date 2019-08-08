@@ -2,7 +2,7 @@ import React from 'react'
 import CollectionCard from '../../components/Card/CollectionCard'
 import styled from 'styled-components'
 import PublicProfileEmptyState from '../../components/PublicProfileEmptyState'
-import PrimaryButton from '../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import { BodyCard } from '../../components/Typography'
 import withPagination from '../../lib/with-pagination'
 import Masonry from '../../components/Masonry'
@@ -135,13 +135,15 @@ const Collections = ({ data, routeChangeAction, isLoggedIn }: IProps) =>
                 title="No Collections Created"
                 primaryButton={
                     isLoggedIn ? (
-                        <PrimaryButton
+                        <Button
+                            color="primary"
+                            variant="contained"
                             onClick={() =>
                                 routeChangeAction('/create-collection')
                             }
                         >
                             Create Collection
-                        </PrimaryButton>
+                        </Button>
                     ) : null
                 }
             />{' '}

@@ -6,7 +6,7 @@ import {
 } from '../../queries/Fragments/__generated__/Community'
 import Masonry from '../../components/Masonry'
 import styled from 'styled-components'
-import PrimaryButton from '../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import AlertView from '../../components/Modal/AlertView'
 import { BodyCard } from '../../components/Typography'
 import { removeResourceVariables } from '../../queries/__generated__/removeResource'
@@ -118,7 +118,9 @@ const RenderResources = (
                 canAccessHoverChildren={isMember}
                 resourceType={owner.type || 'USER'}
                 hoverChildren={() => (
-                    <PrimaryButton
+                    <Button
+                        color="primary"
+                        variant="contained"
                         onClick={() =>
                             openModalAction &&
                             closeModalAction &&
@@ -165,7 +167,7 @@ const RenderResources = (
                         }
                     >
                         Remove Collection
-                    </PrimaryButton>
+                    </Button>
                 )}
                 // linkComponent={(
                 //     childrenProps: React.ReactElement<any>,

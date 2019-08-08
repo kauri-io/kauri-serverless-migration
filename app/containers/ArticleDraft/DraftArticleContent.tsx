@@ -1,6 +1,6 @@
 import Showdown from 'showdown'
 import styled from 'styled-components'
-import TertiaryButton from '../../components/Button/TertiaryButton'
+import Button from '@material-ui/core/Button'
 import { BodyCard } from '../../components/Typography'
 import AlertView from '../../components/Modal/AlertView'
 import { useEffect } from 'react'
@@ -106,10 +106,10 @@ export default ({
                     __html: converter.makeHtml(JSON.parse(content).markdown),
                 }}
             />
-            <TertiaryButton
-                color={'textPrimary'}
-                icon={<DeleteDraftArticleSvgIcon />}
-                handleClick={() =>
+            <Button
+                color="primary"
+                variant="text"
+                onClick={() =>
                     openModalAction({
                         children: (
                             <AlertView
@@ -132,8 +132,9 @@ export default ({
                     })
                 }
             >
+                <DeleteDraftArticleSvgIcon />
                 Delete Draft Article
-            </TertiaryButton>
+            </Button>
         </ContentContainer>
     )
 }

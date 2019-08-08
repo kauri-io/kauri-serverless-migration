@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Title2, BodyCard } from '../Typography'
-import SecondaryButtonComponent from '../Button/SecondaryButton'
+import Button from '@material-ui/core/Button'
 
 const Container = styled.section`
     display: flex;
@@ -48,13 +48,15 @@ const NewsletterBanner: React.FunctionComponent = _ => {
                         Coming soon: Wordpress importer
                     </BodyCard>
                 </ImportBannerCopy>
-                <SecondaryButtonComponent
+                <Button
+                    color="primary"
+                    variant="outlined"
                     onClick={() => {
                         window.location.href = 'https://import.kauri.io'
                     }}
                 >
                     Import Content
-                </SecondaryButtonComponent>
+                </Button>
             </Content>
         </Container>
     )

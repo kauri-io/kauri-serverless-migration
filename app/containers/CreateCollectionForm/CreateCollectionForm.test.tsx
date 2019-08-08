@@ -1,8 +1,7 @@
 import View from './View'
 import { mountWithRedux } from '../../setupTests'
 import { MockedProvider } from 'react-apollo/test-utils'
-import TertiaryButton from '../../components/Button/TertiaryButton'
-import PrimaryButton from '../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 
 let wrapper
 let props
@@ -102,21 +101,14 @@ describe('containers/CreateCollectionForm/View', () => {
         expect(wrapper).toMatchSnapshot()
     })
     it('should handle go back route', () => {
-        const tertiaryButtons = wrapper.find(TertiaryButton)
-        tertiaryButtons.get(0).props.onClick()
+        const buttons = wrapper.find(Button)
+        buttons.get(0).props.onClick()
         expect(routeChangeAction).toHaveBeenCalledWith('back')
     })
 
     it('should check for validation errors', () => {
-        const primaryButtons = wrapper.find(PrimaryButton)
-        primaryButtons.get(0).props.onClick()
-        expect(validateForm).toHaveBeenCalled()
-        expect(showNotificationAction).toHaveBeenCalled()
-    })
-
-    it('should check for validation errors', () => {
-        const primaryButtons = wrapper.find(PrimaryButton)
-        primaryButtons.get(0).props.onClick()
+        const buttons = wrapper.find(Button)
+        buttons.get(2).props.onClick()
         expect(validateForm).toHaveBeenCalled()
         expect(showNotificationAction).toHaveBeenCalled()
     })
