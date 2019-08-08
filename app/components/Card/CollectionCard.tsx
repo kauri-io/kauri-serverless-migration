@@ -69,7 +69,8 @@ export const CollectionCardStyles = makeStyles((theme: Theme) => ({
             display: 'none !important',
         },
     },
-    title: {
+    name: {
+        textAlign: 'left',
         [theme.breakpoints.only('xs')]: { maxWidth: `calc(100% - 100px)` },
     },
     cardActions: {
@@ -120,7 +121,7 @@ interface IProps {
 
 const CollectionCard: React.FC<IProps> = ({
     owner,
-    name: title,
+    name,
     background,
     dateUpdated,
     description,
@@ -130,7 +131,7 @@ const CollectionCard: React.FC<IProps> = ({
     sections,
 }) => {
     const classes = CollectionCardStyles({})
-    const ownerHref = getCollectionURL({ name: title, id }) // TODO update as contributors[0]
+    const ownerHref = getCollectionURL({ name, id }) // TODO update as contributors[0]
 
     const [open, setOpen] = React.useState(false)
 
@@ -184,7 +185,7 @@ const CollectionCard: React.FC<IProps> = ({
                     background ||
                     'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
                 }
-                title={String(title)}
+                title={String(name)}
             />
             <div className={classes.cardActualContent}>
                 <div className={classes.header}>
@@ -199,13 +200,13 @@ const CollectionCard: React.FC<IProps> = ({
                         </Typography>
                     </div>
                     <Link href={href.href} as={href.as}>
-                        <a className={classes.title}>
+                        <a className={classes.name}>
                             <TruncateMarkup lines={1}>
                                 <Typography
-                                    data-testid={`CollectionCard-${id}-title`}
+                                    data-testid={`CollectionCard-${id}-name`}
                                     variant={'h5'}
                                 >
-                                    {title}
+                                    {name}
                                 </Typography>
                             </TruncateMarkup>
                         </a>
@@ -275,7 +276,7 @@ const CollectionCard: React.FC<IProps> = ({
 
                     <div className={classes.statistics}>
                         <Icon data-testid={`CollectionCard-${id}-articleIcon`}>
-                            folder
+                            insert_drive_file
                         </Icon>
                         <Typography
                             data-testid={`CollectionCard-${id}-articleCount`}

@@ -12935,7 +12935,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           prefetch={true}
                                                         >
                                                           <a
-                                                            className="makeStyles-title-141"
+                                                            className="makeStyles-name-141"
                                                             href="/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
                                                             onClick={[Function]}
                                                             onMouseEnter={[Function]}
@@ -13396,7 +13396,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                     className="material-icons MuiIcon-root"
                                                                     data-testid="CollectionCard-5d11f9f8a6afcc0001f621de-articleIcon"
                                                                   >
-                                                                    folder
+                                                                    insert_drive_file
                                                                   </span>
                                                                 </ForwardRef(Icon)>
                                                               </WithStyles(ForwardRef(Icon))>
@@ -14194,7 +14194,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                               <ShareDialog
                                                                 href="/collection?collection_id=5d11f9f8a6afcc0001f621de"
                                                                 id="5d11f9f8a6afcc0001f621de"
-                                                                name="nodejs"
+                                                                name="Flexible, Upgradeable & Highly Available NFTs"
                                                                 onClose={[Function]}
                                                                 open={false}
                                                               >
@@ -27865,7 +27865,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       prefetch={true}
                                                     >
                                                       <a
-                                                        className="makeStyles-title-141"
+                                                        className="makeStyles-name-141"
                                                         href="/defi-collection/5d388fa9dba75a00016a4a75/c"
                                                         onClick={[Function]}
                                                         onMouseEnter={[Function]}
@@ -28321,7 +28321,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 className="material-icons MuiIcon-root"
                                                                 data-testid="CollectionCard-5d388fa9dba75a00016a4a75-articleIcon"
                                                               >
-                                                                folder
+                                                                insert_drive_file
                                                               </span>
                                                             </ForwardRef(Icon)>
                                                           </WithStyles(ForwardRef(Icon))>
@@ -29119,7 +29119,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           <ShareDialog
                                                             href="/collection?collection_id=5d388fa9dba75a00016a4a75"
                                                             id="5d388fa9dba75a00016a4a75"
-                                                            name="nodejs"
+                                                            name="Defi collection"
                                                             onClose={[Function]}
                                                             open={false}
                                                           >
@@ -33481,7 +33481,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       prefetch={true}
                                                     >
                                                       <a
-                                                        className="makeStyles-title-141"
+                                                        className="makeStyles-name-141"
                                                         href="/read-items/5d36c507e95943000108e6a0/c"
                                                         onClick={[Function]}
                                                         onMouseEnter={[Function]}
@@ -33937,7 +33937,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 className="material-icons MuiIcon-root"
                                                                 data-testid="CollectionCard-5d36c507e95943000108e6a0-articleIcon"
                                                               >
-                                                                folder
+                                                                insert_drive_file
                                                               </span>
                                                             </ForwardRef(Icon)>
                                                           </WithStyles(ForwardRef(Icon))>
@@ -34735,7 +34735,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           <ShareDialog
                                                             href="/collection?collection_id=5d36c507e95943000108e6a0"
                                                             id="5d36c507e95943000108e6a0"
-                                                            name="nodejs"
+                                                            name="Read items"
                                                             onClose={[Function]}
                                                             open={false}
                                                           >

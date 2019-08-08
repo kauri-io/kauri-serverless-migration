@@ -138,6 +138,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
     }
     id="1234567890"
     isLoggedIn={true}
+    name="Collection"
     owner={
       Object {
         "avatar": "https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU",
@@ -164,7 +165,6 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
         },
       ]
     }
-    title="Collection"
     version={123}
     voteResult={
       Object {
@@ -230,7 +230,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                 className="makeStyles-desktopMedia-8"
                 data-testid="CollectionCard-1234567890-image"
                 image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                title="undefined"
+                title="Collection"
               >
                 <ForwardRef(CardMedia)
                   className="makeStyles-desktopMedia-8"
@@ -242,7 +242,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                   }
                   data-testid="CollectionCard-1234567890-image"
                   image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                  title="undefined"
+                  title="Collection"
                 >
                   <div
                     className="MuiCardMedia-root makeStyles-desktopMedia-8"
@@ -252,7 +252,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                         "backgroundImage": "url(\\"https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU\\")",
                       }
                     }
-                    title="undefined"
+                    title="Collection"
                   />
                 </ForwardRef(CardMedia)>
               </WithStyles(ForwardRef(CardMedia))>
@@ -925,7 +925,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                     prefetch={true}
                   >
                     <a
-                      className="makeStyles-title-9"
+                      className="makeStyles-name-9"
                       href="h6"
                       onClick={[Function]}
                       onMouseEnter={[Function]}
@@ -938,7 +938,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                         tokenize="characters"
                       >
                         <WithStyles(ForwardRef(Typography))
-                          data-testid="CollectionCard-1234567890-title"
+                          data-testid="CollectionCard-1234567890-name"
                           variant="h5"
                         >
                           <ForwardRef(Typography)
@@ -976,7 +976,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                 "subtitle2": "MuiTypography-subtitle2",
                               }
                             }
-                            data-testid="CollectionCard-1234567890-title"
+                            data-testid="CollectionCard-1234567890-name"
                             theme={
                               Object {
                                 "breakpoints": Object {
@@ -1247,8 +1247,10 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                           >
                             <h5
                               className="MuiTypography-root MuiTypography-h5"
-                              data-testid="CollectionCard-1234567890-title"
-                            />
+                              data-testid="CollectionCard-1234567890-name"
+                            >
+                              Collection
+                            </h5>
                           </ForwardRef(Typography)>
                         </WithStyles(ForwardRef(Typography))>
                       </TruncateMarkup>
@@ -1634,12 +1636,12 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                         className="makeStyles-user-11"
                       >
                         <Link
-                          as="/undefined/1234567890/c"
+                          as="/collection/1234567890/c"
                           href="/collection?collection_id=1234567890"
                           prefetch={true}
                         >
                           <a
-                            href="/undefined/1234567890/c"
+                            href="/collection/1234567890/c"
                             onClick={[Function]}
                             onMouseEnter={[Function]}
                           >
@@ -2022,7 +2024,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                               className="material-icons MuiIcon-root"
                               data-testid="CollectionCard-1234567890-articleIcon"
                             >
-                              folder
+                              insert_drive_file
                             </span>
                           </ForwardRef(Icon)>
                         </WithStyles(ForwardRef(Icon))>
@@ -2820,7 +2822,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                         <ShareDialog
                           href="/collection?collection_id=1234567890"
                           id="1234567890"
-                          name="nodejs"
+                          name="Collection"
                           onClose={[Function]}
                           open={false}
                         >

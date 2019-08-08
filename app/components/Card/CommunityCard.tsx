@@ -80,6 +80,7 @@ export const CommunityCardStyles = makeStyles((theme: Theme) => ({
         },
     },
     name: {
+        textAlign: 'left',
         [theme.breakpoints.only('xs')]: { maxWidth: `calc(100% - 100px)` },
     },
     cardActions: {

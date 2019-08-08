@@ -10,7 +10,7 @@ describe('components/Card/CollectionCard', () => {
         CollectionCardProps = {
             id: '1234567890',
             version: 123,
-            title: 'Collection',
+            name: 'Collection',
             owner: {
                 avatar:
                     'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU',
@@ -61,14 +61,14 @@ describe('components/Card/CollectionCard', () => {
         expect(wrapper).toMatchSnapshot()
     })
 
-    it('should have a title', () => {
+    it('should have a name', () => {
         const wrapper = mountWithTheme(
             <CollectionCard {...CollectionCardProps} />
         )
 
-        const dataTestId = `CollectionCard-${CollectionCardProps.id}-title`
-        const title = wrapper.exists(`[data-testid="${dataTestId}"]`)
-        expect(title).toBeTruthy()
+        const dataTestId = `CollectionCard-${CollectionCardProps.id}-name`
+        const name = wrapper.exists(`[data-testid="${dataTestId}"]`)
+        expect(name).toBeTruthy()
     })
 
     it('should have a description', () => {
