@@ -3,10 +3,7 @@ import Empty from '../PublicProfile/Empty'
 import { Title2, PageDescription } from '../../components/Typography'
 import ArticleCard from '../../components/Card/ArticleCard'
 import { Article } from '../../queries/Fragments/__generated__/Article'
-import {
-    Collection,
-    Collection_owner_PublicUserDTO,
-} from '../../queries/Fragments/__generated__/Collection'
+import { Collection } from '../../queries/Fragments/__generated__/Collection'
 import CollectionCard from '../../components/Card/CollectionCard'
 import { getArticleURL, getCollectionURL } from '../../lib/getURLs'
 
@@ -66,38 +63,6 @@ const CollectionSection: React.SFC<IProps> = props => {
                             )
                         } else if (resource.__typename === 'CollectionDTO') {
                             const collection = resource
-                            const articleCount =
-                                collection.sections &&
-                                collection.sections.reduce((current, next) => {
-                                    if (next && Array.isArray(next.resources)) {
-                                        const articlesInSection = next.resources.filter(
-                                            sectionResource =>
-                                                sectionResource &&
-                                                sectionResource.__typename
-                                                    .toLowerCase()
-                                                    .includes('article')
-                                        )
-                                        current += articlesInSection.length
-                                    }
-                                    return current
-                                }, 0)
-
-                            const collectionCount =
-                                collection.sections &&
-                                collection.sections.reduce((current, next) => {
-                                    if (next && Array.isArray(next.resources)) {
-                                        const collectionsInSection = next.resources.filter(
-                                            sectionResource =>
-                                                sectionResource &&
-                                                sectionResource.__typename
-                                                    .toLowerCase()
-                                                    .includes('collection')
-                                        )
-                                        current += collectionsInSection.length
-                                    }
-                                    return current
-                                }, 0)
-
                             const ownerResource =
                                 collection.owner &&
                                 collection.owner.__typename === 'PublicUserDTO'
@@ -130,38 +95,10 @@ const CollectionSection: React.SFC<IProps> = props => {
 
                             return (
                                 <CollectionCard
+                                    {...collection}
+                                    owner={ownerResource}
                                     href={getCollectionURL(collection)}
                                     key={String(collection.id)}
-                                    id={String(collection.id)}
-                                    articleCount={String(articleCount)}
-                                    collectionCount={String(collectionCount)}
-                                    description={
-                                        collection.description
-                                            ? collection.description
-                                            : ''
-                                    }
-                                    date={collection.dateUpdated}
-                                    name={
-                                        collection.name ? collection.name : ''
-                                    }
-                                    userId={String(
-                                        collection.owner &&
-                                            (collection.owner as Collection_owner_PublicUserDTO)
-                                                .id
-                                    )}
-                                    username={
-                                        collection.owner &&
-                                        (collection.owner as Collection_owner_PublicUserDTO)
-                                            .username
-                                    }
-                                    userAvatar={
-                                        collection.owner &&
-                                        (collection.owner as Collection_owner_PublicUserDTO)
-                                            .avatar
-                                    }
-                                    imageURL={collection.background}
-                                    cardHeight={310}
-                                    resourceType={ownerResource.type || 'USER'}
                                 />
                             )
                         }

@@ -28,17 +28,16 @@ import {
     IShowNotificationAction,
     IShowNotificationPayload,
 } from '../../lib/Epics/ShowNotificationEpic'
-import {
-    IOpenModalAction,
-    ICloseModalAction,
-    IOpenModalPayload,
-} from '../../components/Modal/Module'
 import { ICommunity } from '../../lib/Module'
 import ArticleCardFormView from '../ArticleCardFormView'
 import CollectionCardFormView from '../CollectionCardFormView'
 import { useEffect } from 'react'
 import initUppy from '../../lib/init-uppy'
 import config from '../../config'
+import {
+    openModalAction,
+    closeModalAction,
+} from '../../components/Modal/Module'
 
 const emptySection: Collection_sections = {
     id: null,
@@ -293,11 +292,11 @@ export interface IProps {
         payload: IShowNotificationPayload
     ) => IShowNotificationAction
     routeChangeAction: (route: string) => void
-    openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
     editCollectionAction: any
     createCollectionAction: any
+    openModalAction: typeof openModalAction
+    closeModalAction: typeof closeModalAction
     data?: { getCollection?: ICollection; variables: { id: string } }
-    closeModalAction: () => ICloseModalAction
     userId: string
     username: string
     userAvatar: string
@@ -329,8 +328,6 @@ const CreateCollectionForm: React.FC<
     showNotificationAction,
     routeChangeAction,
     data,
-    openModalAction,
-    closeModalAction,
     username,
     userId,
     userAvatar,
@@ -349,6 +346,11 @@ const CreateCollectionForm: React.FC<
     const [openChooseArticleModal, setOpenChooseArticleModal] = React.useState<
         boolean
     >(false)
+
+    const [
+        openChooseCollectionModal,
+        setOpenChooseCollectionModal,
+    ] = React.useState<boolean>(false)
 
     return (
         <Section>
@@ -689,6 +691,82 @@ const CreateCollectionForm: React.FC<
                                                     }}
                                                 />
 
+                                                <ChooseCollectionModal
+                                                    open={
+                                                        openChooseCollectionModal
+                                                    }
+                                                    currentCollectionIdIfUpdating={
+                                                        id
+                                                    }
+                                                    allOtherChosenCollections={values.sections.filter(
+                                                        (_, sectionIndex) =>
+                                                            index !==
+                                                            sectionIndex
+                                                    )}
+                                                    chosenCollections={pipe(
+                                                        path<
+                                                            [
+                                                                {
+                                                                    type: string
+                                                                }
+                                                            ]
+                                                        >([
+                                                            'sections',
+                                                            index,
+                                                            'resourcesId',
+                                                        ]),
+                                                        defaultTo([] as Array<{
+                                                            type: string
+                                                        }>),
+                                                        filter(
+                                                            ({ type }) =>
+                                                                type.toLowerCase() ===
+                                                                'collection'
+                                                        )
+                                                    )(values)}
+                                                    closeModalAction={() =>
+                                                        setOpenChooseCollectionModal(
+                                                            false
+                                                        )
+                                                    }
+                                                    confirmModal={chosenCollections =>
+                                                        arrayHelpers.form.setFieldValue(
+                                                            `sections[${index}].resourcesId`,
+                                                            (
+                                                                path<
+                                                                    [
+                                                                        {
+                                                                            type
+                                                                            string
+                                                                        }
+                                                                    ]
+                                                                >([
+                                                                    'sections',
+                                                                    index,
+                                                                    'resourcesId',
+                                                                ])(values) || []
+                                                            )
+                                                                .filter(
+                                                                    ({
+                                                                        type,
+                                                                    }) =>
+                                                                        type &&
+                                                                        type.toLowerCase() ===
+                                                                            'article'
+                                                                )
+                                                                .concat(
+                                                                    chosenCollections.map(
+                                                                        collection => ({
+                                                                            ...collection,
+                                                                            type:
+                                                                                'COLLECTION',
+                                                                        })
+                                                                    )
+                                                                )
+                                                        )
+                                                    }
+                                                />
+
                                                 <SectionOptions
                                                     currentSectionIndex={index}
                                                     previousSectionHasArticles={pipe(
@@ -720,90 +798,9 @@ const CreateCollectionForm: React.FC<
                                                         )
                                                     }
                                                     chooseCollection={() =>
-                                                        openModalAction({
-                                                            children: (
-                                                                <ChooseCollectionModal
-                                                                    currentCollectionIdIfUpdating={
-                                                                        id
-                                                                    }
-                                                                    allOtherChosenCollections={values.sections.filter(
-                                                                        (
-                                                                            _,
-                                                                            sectionIndex
-                                                                        ) =>
-                                                                            index !==
-                                                                            sectionIndex
-                                                                    )}
-                                                                    chosenCollections={(
-                                                                        path<
-                                                                            [
-                                                                                {
-                                                                                    type
-                                                                                    string
-                                                                                }
-                                                                            ]
-                                                                        >([
-                                                                            'sections',
-                                                                            index,
-                                                                            'resourcesId',
-                                                                        ])(
-                                                                            values
-                                                                        ) || []
-                                                                    ).filter(
-                                                                        ({
-                                                                            type,
-                                                                        }) =>
-                                                                            type &&
-                                                                            type.toLowerCase() ===
-                                                                                'colllection'
-                                                                    )}
-                                                                    closeModalAction={() =>
-                                                                        closeModalAction()
-                                                                    }
-                                                                    confirmModal={chosenCollections =>
-                                                                        arrayHelpers.form.setFieldValue(
-                                                                            `sections[${index}].resourcesId`,
-                                                                            (
-                                                                                path<
-                                                                                    [
-                                                                                        {
-                                                                                            type
-                                                                                            string
-                                                                                        }
-                                                                                    ]
-                                                                                >(
-                                                                                    [
-                                                                                        'sections',
-                                                                                        index,
-                                                                                        'resourcesId',
-                                                                                    ]
-                                                                                )(
-                                                                                    values
-                                                                                ) ||
-                                                                                []
-                                                                            )
-                                                                                .filter(
-                                                                                    ({
-                                                                                        type,
-                                                                                    }) =>
-                                                                                        type &&
-                                                                                        type.toLowerCase() ===
-                                                                                            'collection'
-                                                                                )
-                                                                                .concat(
-                                                                                    chosenCollections.map(
-                                                                                        collection => ({
-                                                                                            ...collection,
-                                                                                            type:
-                                                                                                'COLLECTION',
-                                                                                        })
-                                                                                    )
-                                                                                )
-                                                                        )
-                                                                    }
-                                                                />
-                                                            ),
-                                                        })
+                                                        setOpenChooseCollectionModal(
+                                                            true
+                                                        )
                                                     }
                                                 />
                                             </SectionSection>

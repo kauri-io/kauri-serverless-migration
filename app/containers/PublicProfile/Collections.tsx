@@ -49,65 +49,16 @@ const Collections = ({ data, routeChangeAction, isLoggedIn }: IProps) =>
         <Masonry>
             {data.searchCollections.content.map(collection => {
                 if (collection) {
-                    const articleCount =
-                        collection.sections &&
-                        collection.sections.reduce((current, next) => {
-                            if (next && Array.isArray(next.resourcesId)) {
-                                const articlesInSection = next.resourcesId.filter(
-                                    sectionResource =>
-                                        sectionResource &&
-                                        sectionResource.type &&
-                                        sectionResource.type
-                                            .toLowerCase()
-                                            .includes('article')
-                                )
-                                current += articlesInSection.length
-                            }
-                            return current
-                        }, 0)
-
-                    const collectionCount =
-                        collection.sections &&
-                        collection.sections.reduce((current, next) => {
-                            if (next && Array.isArray(next.resourcesId)) {
-                                const collectionsInSection = next.resourcesId.filter(
-                                    sectionResource =>
-                                        sectionResource &&
-                                        sectionResource.type &&
-                                        sectionResource.type
-                                            .toLowerCase()
-                                            .includes('collection')
-                                )
-                                current += collectionsInSection.length
-                            }
-                            return current
-                        }, 0)
-
                     const owner = collection.owner as
                         | Collection_owner_CommunityDTO
                         | Collection_owner_PublicUserDTO
+
                     return (
                         <CollectionCard
+                            {...collection}
                             href={getCollectionURL(collection)}
                             key={collection.id}
-                            id={collection.id}
-                            name={collection.name}
-                            date={collection.dateUpdated}
-                            description={String(collection.description)}
-                            resourceType={owner.__typename}
-                            username={
-                                owner.__typename === 'PublicUserDTO'
-                                    ? (owner as Collection_owner_PublicUserDTO)
-                                          .username
-                                    : (owner as Collection_owner_CommunityDTO)
-                                          .communityName
-                            }
-                            userId={owner && owner.id}
-                            userAvatar={owner && owner.avatar}
-                            articleCount={String(articleCount)}
-                            collectionCount={String(collectionCount)}
-                            imageURL={collection.background}
-                            cardHeight={310}
+                            owner={owner}
                         />
                     )
                 } else {

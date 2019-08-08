@@ -10,6 +10,7 @@ export const globalCollectionDetails = gql`
             tags
             background
             dateCreated
+            dateUpdated
             owner {
                 ...UserOwner
                 ...CommunityOwner
