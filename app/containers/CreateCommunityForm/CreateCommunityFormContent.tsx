@@ -1,5 +1,3 @@
-import styled from 'styled-components'
-import TabsComponent from '../../components/Tabs'
 import Manage from '../Community/Manage'
 import { IInvitation } from './ManageMembers/FormInviteMembersPanel'
 import { getCommunity } from '../../queries/__generated__/getCommunity'
@@ -12,8 +10,18 @@ import {
     openModalAction,
     closeModalAction,
 } from '../../components/Modal/Module'
+import { Tabs, Tab } from '@material-ui/core';
+import { useState } from 'react';
 
-const Container = styled.section``
+import { makeStyles, Theme } from '@material-ui/core/styles'
+
+const useStyles = makeStyles((theme: Theme) => ({
+    tabs: {
+        background: theme.palette.common.black,
+        color: theme.palette.common.white
+    }
+}))
+
 
 // const DisplayFormikState = (props: any) => (
 //   <div style={{ margin: "1rem 0", background: "#f6f8fa", padding: ".5rem" }}>
@@ -42,68 +50,51 @@ interface IProps {
     closeModalAction: typeof closeModalAction
 }
 
-const Component: React.SFC<IProps> = props => (
-    <Container>
-        <TabsComponent
-            padContent={true}
-            dark={true}
-            tabs={[
-                {
-                    name: 'Home',
-                },
-                {
-                    name: 'Articles',
-                },
-                {
-                    name: 'Collections',
-                },
-                {
-                    name: 'Manage',
-                },
-                // process.env.NODE_ENV !== "production" && {
-                //   name: "DEBUG",
-                // },
-            ]}
-            panels={[
-                props.isCommunityAdmin ? (
-                    <HomepageContentField
-                        id={String(props.id)}
-                        openModalAction={props.openModalAction}
-                        closeModalAction={props.closeModalAction}
-                        values={props.values}
-                    />
-                ) : (
-                    <HomeContentSectionEmptyState key="home" />
-                ),
-                <ArticlesContentSectionEmptyState key="articles" />,
-                <CollectionsContentSectionEmptyState key="collections" />,
-                <Manage
-                    pageType={'CreateCommunityForm'}
-                    openAddMemberModal={props.openAddMemberModal}
-                    members={
-                        (props.data &&
-                            props.data.getCommunity &&
-                            props.data.getCommunity.members) ||
-                        null
-                    }
-                    pending={null}
-                    pendingUpdates={null}
-                    communityId={props.id}
-                    key="manage"
-                    formInvitations={props.formInvitations}
-                    cancelInvitation={props.cancelInvitation}
-                />,
-                // <ContentSection key="collections">
-                //   <DisplayFormikState
-                //     touched={props.touched}
-                //     errors={props.errors}
-                //     values={props.values}
-                //     isSubmitting={props.isSubmitting}
-                //   />
-                // </ContentSection>,
-            ]}
-        />
-    </Container>
-)
+const HomePanel = (props) => props.isCommunityAdmin ? (
+    <HomepageContentField
+        id={String(props.id)}
+        openModalAction={props.openModalAction}
+        closeModalAction={props.closeModalAction}
+        values={props.values}
+    />
+) : (
+        <HomeContentSectionEmptyState key="home" />
+    )
+
+const ManagePanel = (props) => <Manage
+    pageType={'CreateCommunityForm'}
+    openAddMemberModal={props.openAddMemberModal}
+    members={
+        (props.data &&
+            props.data.getCommunity &&
+            props.data.getCommunity.members) ||
+        null
+    }
+    pending={null}
+    pendingUpdates={null}
+    communityId={props.id}
+    key="manage"
+    formInvitations={props.formInvitations}
+    cancelInvitation={props.cancelInvitation}
+/>
+
+const Component: React.SFC<IProps> = props => {
+    const classes = useStyles()
+    const [tab, setTab] = useState(0)
+    return (
+        <div>
+            <Tabs TabIndicatorProps={{ style: { height: 3 } }} indicatorColor='primary' className={classes.tabs} centered={true} value={tab} onChange={(_e, tab) => setTab(tab)}>
+                <Tab label='Home' />
+                <Tab label='Articles' />
+                <Tab label='Collections' />
+                <Tab label='Manage' />
+            </Tabs>
+            {tab === 0 && <HomePanel {...props} />}
+            {tab === 1 && <ArticlesContentSectionEmptyState key="articles" />}
+            {tab === 2 && <CollectionsContentSectionEmptyState key="collections" />}
+            {tab === 2 && <ManagePanel {...props} />}
+        </div>
+    )
+}
 
 export default Component
