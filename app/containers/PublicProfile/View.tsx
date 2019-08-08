@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Tabs from '../../components/Tabs'
 import Collections from './Collections'
 import Header from './Header'
 import EditableHeader from './EditableHeader'
@@ -27,6 +26,8 @@ import {
     IShowNotificationAction,
 } from '../../lib/Epics/ShowNotificationEpic'
 import { ISaveUserDetailActionType } from '../../components/EditProfileForm/Module'
+import { Tabs, Tab } from '@material-ui/core';
+
 
 interface IProps {
     router: any
@@ -66,6 +67,7 @@ interface IState {
     website: string
     twitter: string
     github: string
+    tab: number
 }
 
 class PublicProfile extends Component<IProps, IState> {
@@ -80,6 +82,7 @@ class PublicProfile extends Component<IProps, IState> {
             website: '',
             twitter: '',
             github: '',
+            tab: 0
         }
     }
 
@@ -148,115 +151,105 @@ class PublicProfile extends Component<IProps, IState> {
                         }
                     />
                 ) : (
-                    <Header
-                        articles={articlesCount}
-                        collections={pipe(
-                            path<ICollection[]>([
-                                'searchCollections',
-                                'content',
-                            ]),
-                            defaultTo([])
-                        )(CollectionQuery)}
-                        currentUser={currentUser}
-                        id={getUserField<string>('id', '')}
-                        avatar={
-                            this.state.avatar ||
-                            getUserField<string>('avatar', '')
-                        }
-                        username={
-                            this.state.username ||
-                            getUserField<string>('username', '')
-                        }
-                        name={
-                            this.state.name || getUserField<string>('name', '')
-                        }
-                        title={
-                            this.state.title ||
-                            getUserField<string>('title', '')
-                        }
-                        website={
-                            this.state.website ||
-                            getUserField<string>('website', '')
-                        }
-                        twitter={
-                            this.state.twitter ||
-                            getUserField<string>(['social', 'twitter'], '')
-                        }
-                        github={
-                            this.state.github ||
-                            getUserField<string>(['social', 'github'], '')
-                        }
-                        toggleEditing={() => this.toggleEditing()}
-                        hostName={hostName}
-                    />
-                )}
-                {isHeaderLoaded && areListsLoaded ? (
-                    <Tabs
-                        dark
-                        router={this.props.router}
-                        tabs={[
-                            {
-                                name: `Articles (${articlesCount})`,
-                            },
-                            {
-                                name: `Collections (${pipe(
-                                    path<number>([
+                            <Header
+                                articles={articlesCount}
+                                collections={pipe(
+                                    path<ICollection[]>([
                                         'searchCollections',
-                                        'totalElements',
+                                        'content',
                                     ]),
-                                    defaultTo(0)
-                                )(CollectionQuery)})`,
-                            },
-                            isOwner
-                                ? {
-                                      name: 'Manage',
-                                  }
-                                : null,
-                        ]}
-                        panels={[
-                            <Published
-                                data={ArticlesQuery as any}
-                                type="published"
-                                isOwner={!!isOwner}
-                                isLoggedIn={!!currentUser}
-                                openModalAction={openModalAction}
-                            />,
-                            <Collections
-                                data={CollectionQuery}
-                                isLoggedIn={!!currentUser}
-                                routeChangeAction={routeChangeAction}
-                            />,
-                            isOwner ? (
-                                <Manage
-                                    userId={this.props.userId}
-                                    ownProfile={OwnProfileQuery}
-                                    draftsQuery={DraftsQuery}
-                                    transfersQuery={PendingTransfersQuery}
-                                    type="manage"
-                                    removeMemberAction={removeMemberAction}
-                                    routeChangeAction={routeChangeAction}
-                                    deleteDraftArticleAction={
-                                        deleteDraftArticleAction
-                                    }
-                                    isOwner={
-                                        getUserField<string>('user', '') ===
-                                        currentUser
-                                    }
-                                    isLoggedIn={!!currentUser}
-                                    closeModalAction={closeModalAction}
-                                    openModalAction={openModalAction}
-                                    rejectArticleTransferAction={
-                                        rejectArticleTransferAction
-                                    }
-                                    acceptArticleTransferAction={
-                                        acceptArticleTransferAction
-                                    }
-                                />
-                            ) : (
-                                <div></div>
-                            ),
-                        ]}
-                    />
+                                    defaultTo([])
+                                )(CollectionQuery)}
+                                currentUser={currentUser}
+                                id={getUserField<string>('id', '')}
+                                avatar={
+                                    this.state.avatar ||
+                                    getUserField<string>('avatar', '')
+                                }
+                                username={
+                                    this.state.username ||
+                                    getUserField<string>('username', '')
+                                }
+                                name={
+                                    this.state.name || getUserField<string>('name', '')
+                                }
+                                title={
+                                    this.state.title ||
+                                    getUserField<string>('title', '')
+                                }
+                                website={
+                                    this.state.website ||
+                                    getUserField<string>('website', '')
+                                }
+                                twitter={
+                                    this.state.twitter ||
+                                    getUserField<string>(['social', 'twitter'], '')
+                                }
+                                github={
+                                    this.state.github ||
+                                    getUserField<string>(['social', 'github'], '')
+                                }
+                                toggleEditing={() => this.toggleEditing()}
+                                hostName={hostName}
+                            />
+                        )}
+                {isHeaderLoaded && areListsLoaded ? (
+                    <>
+                        <Tabs
+                            TabIndicatorProps={{ style: { height: 3 } }}
+                            indicatorColor="primary"
+                            centered={true}
+                            value={this.state.tab}
+                            onChange={(_e, tab) => this.setState({ tab })}
+                        >
+                            <Tab label={`Articles (${articlesCount})`} />
+                            <Tab label={`Collections (${pipe(
+                                path<number>([
+                                    'searchCollections',
+                                    'totalElements',
+                                ]),
+                                defaultTo(0)
+                            )(CollectionQuery)})`} />
+                            {isOwner && <Tab label="Manage" />}
+                        </Tabs>
+                        {this.state.tab === 0 && <Published
+                            data={ArticlesQuery as any}
+                            type="published"
+                            isOwner={!!isOwner}
+                            isLoggedIn={!!currentUser}
+                            openModalAction={openModalAction}
+                        />}
+                        {this.state.tab === 1 && <Collections
+                            data={CollectionQuery}
+                            isLoggedIn={!!currentUser}
+                            routeChangeAction={routeChangeAction}
+                        />}
+                        {this.state.tab === 2 && isOwner && <Manage
+                            userId={this.props.userId}
+                            ownProfile={OwnProfileQuery}
+                            draftsQuery={DraftsQuery}
+                            transfersQuery={PendingTransfersQuery}
+                            type="manage"
+                            removeMemberAction={removeMemberAction}
+                            routeChangeAction={routeChangeAction}
+                            deleteDraftArticleAction={
+                                deleteDraftArticleAction
+                            }
+                            isOwner={
+                                getUserField<string>('user', '') ===
+                                currentUser
+                            }
+                            isLoggedIn={!!currentUser}
+                            closeModalAction={closeModalAction}
+                            openModalAction={openModalAction}
+                            rejectArticleTransferAction={
+                                rejectArticleTransferAction
+                            }
+                            acceptArticleTransferAction={
+                                acceptArticleTransferAction
+                            }
+                        />}
+                    </>
                 ) : !isHeaderLoaded ? null : (
                     <Loading />
                 )}

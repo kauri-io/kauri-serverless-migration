@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import CollectionCard from '../../components/Card/CollectionCard'
 import ChooseCollectionContent, {
     Content,
 } from '../../components/Modal/ChooseCollectionContent'
 import Button from '@material-ui/core/Button'
-import Tabs from '../../components/Tabs'
 import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
 import { searchCollections_searchCollections } from '../../queries/__generated__/searchCollections'
 import { getCollectionURL } from '../../lib/getURLs'
+import { Tab, Tabs } from '@material-ui/core';
 
 const Container = styled.div`
     display: flex;
@@ -45,7 +45,7 @@ const CollectionsContent = ({
                                         ({ id }) =>
                                             id === collection.id ||
                                             currentCollectionIdIfUpdating ===
-                                                collection.id
+                                            collection.id
                                     )
                                 } else {
                                     return collectionId === collection.id
@@ -152,8 +152,8 @@ const CollectionsContent = ({
             </ChooseCollectionContent>
         </Container>
     ) : (
-        <p>You have no published collections!</p>
-    )
+            <p>You have no published collections!</p>
+        )
 
 const PublishedCollections = withPagination(
     CollectionsContent,
@@ -193,26 +193,33 @@ export default (props: IProps) => {
         return <Loading />
     }
 
+    const [tab, setTab] = useState(0)
+
     return (
-        <Tabs
-            centerTabs
-            passChangeTabFunction={props.passChangeTabFunction}
-            tabs={[{ name: 'My Collections' }, { name: 'All Collections' }]}
-            panels={[
-                <PersonalPublishedCollections
-                    {...props}
-                    collections={
-                        props.searchPersonalPublishedCollections
-                            .searchCollections
-                    }
-                />,
-                <PublishedCollections
-                    {...props}
-                    collections={
-                        props.searchPublishedCollections.searchCollections
-                    }
-                />,
-            ]}
-        />
+        <>
+            <Tabs
+                TabIndicatorProps={{ style: { height: 3 } }}
+                indicatorColor="primary"
+                centered={true}
+                value={tab}
+                onChange={(_e, tab) => setTab(tab)}
+            >
+                <Tab label="My Collections" />
+                <Tab label="All Collections" />
+            </Tabs>
+            {tab === 0 && <PersonalPublishedCollections
+                {...props}
+                collections={
+                    props.searchPersonalPublishedCollections
+                        .searchCollections
+                }
+            />}
+            {tab === 1 && <PublishedCollections
+                {...props}
+                collections={
+                    props.searchPublishedCollections.searchCollections
+                }
+            />}
+        </>
     )
 }

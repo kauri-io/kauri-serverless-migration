@@ -5,7 +5,6 @@ import ChooseCollectionContent, {
     Content,
 } from '../../components/Modal/ChooseCollectionContent'
 import Button from '@material-ui/core/Button'
-import Tabs from '../../components/Tabs'
 import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
 import { getCommunity_getCommunity } from '../../queries/__generated__/getCommunity'
@@ -45,7 +44,7 @@ const CollectionsContent = ({
                                         ({ id }) =>
                                             id === collection.id ||
                                             currentCollectionIdIfUpdating ===
-                                                collection.id
+                                            collection.id
                                     )
                                 } else {
                                     return collectionId === collection.id
@@ -152,8 +151,8 @@ const CollectionsContent = ({
             </ChooseCollectionContent>
         </Container>
     ) : (
-        <p>You have no community collections!</p>
-    )
+            <p>You have no community collections!</p>
+        )
 
 const CommunityPublishedCollections = withPagination(
     CollectionsContent,
@@ -183,19 +182,12 @@ export default (props: IProps) => {
     }
 
     return (
-        <Tabs
-            centerTabs
-            passChangeTabFunction={props.passChangeTabFunction}
-            tabs={[{ name: 'Community Collections' }]}
-            panels={[
-                <CommunityPublishedCollections
-                    {...props}
-                    collections={
-                        props.searchCommunityPublishedCollections
-                            .getCommunityContent
-                    }
-                />,
-            ]}
+        <CommunityPublishedCollections
+            {...props}
+            collections={
+                props.searchCommunityPublishedCollections
+                    .getCommunityContent
+            }
         />
     )
 }

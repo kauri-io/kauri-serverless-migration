@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import ArticleCard from '../../components/Card/ArticleCard'
 import ChooseArticleContent, {
     Content,
 } from '../../components/Modal/ChooseArticleContent'
-import Tabs from '../../components/Tabs'
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
 import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
 
@@ -50,8 +51,8 @@ const ArticlesContent = props => {
             </ChooseArticleContent>
         </Container>
     ) : (
-        <p>You have no published articles!</p>
-    )
+            <p>You have no published articles!</p>
+        )
 }
 
 const PublishedArticles = withPagination(
@@ -77,31 +78,27 @@ const ChooseArticleCardComponent = props => {
         return <Loading />
     }
 
+    const [tab, setTab] = useState(0)
     return (
-        <Tabs
-            centerTabs
-            passChangeTabFunction={props.passChangeTabFunction}
-            tabs={[
-                {
-                    name: 'My articles',
-                },
-                {
-                    name: 'All articles',
-                },
-            ]}
-            panels={[
-                <PersonalPublishedArticles
-                    {...props}
-                    articles={
-                        props.searchPersonalPublishedArticles.searchArticles
-                    }
-                />,
-                <PublishedArticles
-                    {...props}
-                    articles={props.searchPublishedArticles.searchArticles}
-                />,
-            ]}
-        />
+        <>
+            <Tabs
+                TabIndicatorProps={{ style: { height: 3 } }}
+                indicatorColor="primary"
+                centered={true}
+                value={tab}
+                onChange={(_e, tab) => setTab(tab)}
+            >
+                <Tab label="My Articles" />
+                <Tab label="All Articles" />
+            </Tabs>
+            { tab === 0 && <PersonalPublishedArticles
+                {...props}
+                articles={
+                    props.searchPersonalPublishedArticles.searchArticles
+                }
+            />}
+            {tab === 1 && <PublishedArticles {...props}  articles={props.searchPublishedArticles.searchArticles} />}
+        </>
     )
 }
 

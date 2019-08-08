@@ -54,21 +54,29 @@ interface IProps {
 }
 
 interface IState {
-    tab: number;
+    tab: number
 }
 
-const CollectionsPanel = ({ collections, removeResourceAction, openModalAction, isMember, closeModalAction, getCommunity }) => (collections && collections.length > 0) ? (
-    <DisplayResources
-        removeResourceAction={removeResourceAction}
-        openModalAction={openModalAction}
-        closeModalAction={closeModalAction}
-        isMember={isMember}
-        type="collections"
-        key="collections"
-        resources={collections}
-        communityId={getCommunity.id}
-    />
-) : (
+const CollectionsPanel = ({
+    collections,
+    removeResourceAction,
+    openModalAction,
+    isMember,
+    closeModalAction,
+    getCommunity,
+}) =>
+    collections && collections.length > 0 ? (
+        <DisplayResources
+            removeResourceAction={removeResourceAction}
+            openModalAction={openModalAction}
+            closeModalAction={closeModalAction}
+            isMember={isMember}
+            type="collections"
+            key="collections"
+            resources={collections}
+            communityId={getCommunity.id}
+        />
+    ) : (
         <EmptyCollections />
     )
 
@@ -76,7 +84,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
     constructor(props) {
         super(props)
         this.state = {
-            tab: 0
+            tab: 0,
         }
     }
     componentDidMount() {
@@ -182,12 +190,15 @@ class CommunityConnection extends React.Component<IProps, IState> {
             'resources',
         ])(homepage)
 
-        const homepageExists = (Array.isArray(homepage) && homepage.length &&
+        const homepageExists =
+            Array.isArray(homepage) &&
+            homepage.length &&
             firstCommunityHomepageSectionResources &&
-            firstCommunityHomepageSectionResources.length)
+            firstCommunityHomepageSectionResources.length
         const canDisplayHomepage = homepageExists || isCommunityAdmin
 
-        const getActualTabId = (id:number) => id === 0 ? 0 : canDisplayHomepage ? id : id -1
+        const getActualTabId = (id: number) =>
+            id === 0 ? 0 : canDisplayHomepage ? id : id - 1
 
         return (
             <>
@@ -206,7 +217,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     description={getCommunity.description}
                     background={String(
                         getCommunity.attributes &&
-                        getCommunity.attributes.background
+                            getCommunity.attributes.background
                     )}
                     social={getCommunity.social}
                     articles={
@@ -237,51 +248,70 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     // curateCommunityResourcesAction={curateCommunityResourcesAction}
                     openAddMemberModal={openAddMemberModal}
                 />
-                <Tabs TabIndicatorProps={{ style: { height: 3 } }} indicatorColor='primary' centered={true} value={this.state.tab} onChange={(_e, tab) => this.setState({ tab })}>
-                    {canDisplayHomepage && <Tab label='Home' />}
+                <Tabs
+                    TabIndicatorProps={{ style: { height: 3 } }}
+                    indicatorColor="primary"
+                    centered={true}
+                    value={this.state.tab}
+                    onChange={(_e, tab) => this.setState({ tab })}
+                >
+                    {canDisplayHomepage && <Tab label="Home" />}
                     <Tab label={`Articles (${articles && articles.length})`} />
-                    <Tab label={`Collections (${collections && collections.length})`} />
-                    {isCreator || isMember && <Tab label='Manage Community' />}
+                    <Tab
+                        label={`Collections (${collections &&
+                            collections.length})`}
+                    />
+                    {isCreator ||
+                        (isMember && <Tab label="Manage Community" />)}
                 </Tabs>
-                {this.state.tab === getActualTabId(0) && canDisplayHomepage && <HomepageResources
-                    routeChangeAction={routeChangeAction}
-                    id={String(getCommunity.id)}
-                    homepage={homepage}
-                    isCommunityAdmin={isCommunityAdmin}
-                    key="home"
-                    isLoggedIn={!!currentUser}
-                    userId={currentUser}
-                    openModalAction={openModalAction}
-                />}
-                {this.state.tab === getActualTabId(1) && <DisplayResources
-                    removeResourceAction={removeResourceAction}
-                    openModalAction={openModalAction}
-                    closeModalAction={closeModalAction}
-                    isMember={isMember}
-                    key="articles"
-                    type="articles"
-                    resources={articles}
-                    communityId={getCommunity.id}
-                />}
-                {this.state.tab === getActualTabId(2) && <CollectionsPanel isMember={isMember}
-                    collections={collections}
-                    removeResourceAction={removeResourceAction}
-                    openModalAction={openModalAction}
-                    closeModalAction={closeModalAction}
-                    getCommunity={getCommunity}
-                />}
-                {this.state.tab === getActualTabId(3) && <Manage
-                    openAddMemberModal={openAddMemberModal}
-                    communityId={String(getCommunity.id)}
-                    key="manage"
-                    members={getCommunity.members}
-                    pending={getCommunity.pending}
-                    pendingUpdates={
-                        this.props.data &&
-                        this.props.data.searchArticles &&
-                        this.props.data.searchArticles.content
-                    }
-                />}
+                {this.state.tab === getActualTabId(0) && canDisplayHomepage && (
+                    <HomepageResources
+                        routeChangeAction={routeChangeAction}
+                        id={String(getCommunity.id)}
+                        homepage={homepage}
+                        isCommunityAdmin={isCommunityAdmin}
+                        key="home"
+                        isLoggedIn={!!currentUser}
+                        userId={currentUser}
+                        openModalAction={openModalAction}
+                    />
+                )}
+                {this.state.tab === getActualTabId(1) && (
+                    <DisplayResources
+                        removeResourceAction={removeResourceAction}
+                        openModalAction={openModalAction}
+                        closeModalAction={closeModalAction}
+                        isMember={isMember}
+                        key="articles"
+                        type="articles"
+                        resources={articles}
+                        communityId={getCommunity.id}
+                    />
+                )}
+                {this.state.tab === getActualTabId(2) && (
+                    <CollectionsPanel
+                        isMember={isMember}
+                        collections={collections}
+                        removeResourceAction={removeResourceAction}
+                        openModalAction={openModalAction}
+                        closeModalAction={closeModalAction}
+                        getCommunity={getCommunity}
+                    />
+                )}
+                {this.state.tab === getActualTabId(3) && (
+                    <Manage
+                        openAddMemberModal={openAddMemberModal}
+                        communityId={String(getCommunity.id)}
+                        key="manage"
+                        members={getCommunity.members}
+                        pending={getCommunity.pending}
+                        pendingUpdates={
+                            this.props.data &&
+                            this.props.data.searchArticles &&
+                            this.props.data.searchArticles.content
+                        }
+                    />
+                )}
             </>
         )
     }

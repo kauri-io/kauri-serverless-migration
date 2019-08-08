@@ -8,8 +8,8 @@ import { makeStyles, Theme } from '@material-ui/core/styles'
 const useStyles = makeStyles((theme: Theme) => ({
     tabs: {
         background: theme.palette.common.black,
-        color: theme.palette.common.white
-    }
+        color: theme.palette.common.white,
+    },
 }))
 
 const ArticleDiscover = () => {
@@ -18,12 +18,19 @@ const ArticleDiscover = () => {
     return (
         <div>
             <Header category={'ARTICLE'} />
-            <Tabs TabIndicatorProps={{ style: { height: 3 } }} indicatorColor='primary' className={classes.tabs} centered={true} value={tab} onChange={(_e, tab) => setTab(tab)}>
-                <Tab label='Trending' />
-                <Tab label='Most Popular' />
-                <Tab label='Last Posted' />
-                <Tab label='Last Updated' />
-                <Tab label='Random' />
+            <Tabs
+                TabIndicatorProps={{ style: { height: 3 } }}
+                indicatorColor="primary"
+                className={classes.tabs}
+                centered={true}
+                value={tab}
+                onChange={(_e, tab) => setTab(tab)}
+            >
+                <Tab label="Trending" />
+                <Tab label="Most Popular" />
+                <Tab label="Last Posted" />
+                <Tab label="Last Updated" />
+                <Tab label="Random" />
             </Tabs>
             {tab === 0 && <List key="hot" scoringMode="TRENDING" />}
             {tab === 1 && <List key="popular" scoringMode="MOST_POPULAR" />}
