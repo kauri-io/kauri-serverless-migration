@@ -33,6 +33,11 @@ export const getCollectionURL = ({ name, id }: ICollectionProps) => ({
     href: `/collection?collection_id=${String(id)}`,
 })
 
+export const getUpdateCollectionURL = ({ id }: ICollectionProps) => ({
+  as: `/collection/${String(id)}/update-collection`,
+  href: `/update-collection?collection_id=${String(id)}`,
+})
+
 interface IProfileProps {
     username?: string | null
     id?: string

@@ -22,6 +22,10 @@
       "dest": "/app/collection?collection_id=$2"
     },
     {
+      "src": "/collection/(.*)/update-collection",
+      "dest": "/app/update-collection?collection_id=$1"
+    },
+    {
       "src": "/(.*)/(.*)/p",
       "dest": "/app/public-profile?user_id=$2"
     },
