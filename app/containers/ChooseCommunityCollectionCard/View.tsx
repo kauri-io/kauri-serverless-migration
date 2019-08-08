@@ -44,7 +44,7 @@ const CollectionsContent = ({
                                         ({ id }) =>
                                             id === collection.id ||
                                             currentCollectionIdIfUpdating ===
-                                            collection.id
+                                                collection.id
                                     )
                                 } else {
                                     return collectionId === collection.id
@@ -151,8 +151,8 @@ const CollectionsContent = ({
             </ChooseCollectionContent>
         </Container>
     ) : (
-            <p>You have no community collections!</p>
-        )
+        <p>You have no community collections!</p>
+    )
 
 const CommunityPublishedCollections = withPagination(
     CollectionsContent,
@@ -185,8 +185,7 @@ export default (props: IProps) => {
         <CommunityPublishedCollections
             {...props}
             collections={
-                props.searchCommunityPublishedCollections
-                    .getCommunityContent
+                props.searchCommunityPublishedCollections.getCommunityContent
             }
         />
     )

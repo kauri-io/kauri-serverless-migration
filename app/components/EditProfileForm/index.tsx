@@ -1,11 +1,12 @@
 import styled from 'styled-components'
-import Input from '../../components/Input/Input'
+import TextField from '@material-ui/core/TextField'
 import UploadLogoButton from '../../components/Button/UploadLogoButton'
 import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
 import EmailCheckbox from '../../components/Checkbox/EmailCheckbox'
 import EmailField from './EmailField'
+import { withStyles } from '@material-ui/styles';
 
-const InputsContainers = styled.div`
+const TextFieldsContainers = styled.div`
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -32,6 +33,23 @@ const Container = styled.div`
     flex-direction: row;
 `
 
+const styles = {
+    input: {
+        '&:hover': {
+            '& .MuiInput-underline::before': {
+                borderBottomColor: 'rgba(255,255,255,0.6)',
+            }
+        },
+        color: 'white',
+        '& .MuiInputBase-root': {
+            color: 'white',
+        },
+        '& .MuiInput-underline::before': {
+            borderBottomColor: 'rgba(255,255,255,0.3)',
+        }
+    }
+};
+
 interface IProps {
     avatar: string
     name: string
@@ -50,6 +68,7 @@ interface IProps {
         payload: string | { newsletter: boolean },
         field: string
     ) => void
+    classes: any
 }
 
 const EditProfileForm = ({
@@ -65,6 +84,7 @@ const EditProfileForm = ({
     status,
     subscriptions,
     updateState,
+    classes
 }: IProps) => {
     return (
         <Container>
@@ -74,53 +94,53 @@ const EditProfileForm = ({
                 color="white"
                 callback={hash => updateState(hash, 'avatar')}
             />
-            <InputsContainers>
-                <Input
+            <TextFieldsContainers>
+                <TextField
                     onChange={e => updateState(e.target.value, 'name')}
-                    fontWeight="normal"
-                    fontSize={6}
                     value={name}
-                    placeHolder="Add your full name"
+                    placeholder="Add your full name"
+                    className={classes.input}
                 />
-                <Input
+                <TextField
                     onChange={e => updateState(e.target.value, 'title')}
-                    fontWeight="normal"
-                    fontSize={3}
                     value={title}
-                    placeHolder="Add job title"
+                    placeholder="Add job title"
+                    className={classes.input}
                 />
-                <Input
+                <TextField
                     onChange={e => updateState(e.target.value, 'username')}
-                    fontWeight="normal"
-                    fontSize={1}
                     value={username}
-                    placeHolder="Add username"
+                    placeholder="Add username"
+                    className={classes.input}
                 />
-                <Input
+                <TextField
                     onChange={e => updateState(e.target.value, 'website')}
-                    fontWeight="normal"
-                    fontSize={1}
                     value={website}
-                    placeHolder="Add Website"
+                    placeholder="Add Website"
+                    className={classes.input}
                 />
                 <Offset>
                     <SocialWebsiteIcon brand="twitter" />
-                    <Input
+                    <TextField
                         onChange={e => updateState(e.target.value, 'twitter')}
-                        fontWeight="normal"
-                        fontSize={1}
+                        className={classes.input}
+                        inputProps={{
+                            className: classes.input
+                        }}
                         value={twitter}
-                        placeHolder="Twitter"
+                        placeholder="Twitter"
                     />
                 </Offset>
                 <Offset>
                     <SocialWebsiteIcon brand="github" />
-                    <Input
+                    <TextField
                         onChange={e => updateState(e.target.value, 'github')}
-                        fontWeight="normal"
-                        fontSize={1}
+                        className={classes.input}
+                        inputProps={{
+                            className: classes.input
+                        }}
                         value={github}
-                        placeHolder="Github"
+                        placeholder="Github"
                     />
                 </Offset>
                 <EmailField
@@ -143,9 +163,9 @@ const EditProfileForm = ({
                         }
                     />
                 </Offset>
-            </InputsContainers>
+            </TextFieldsContainers>
         </Container>
     )
 }
 
-export default EditProfileForm
+export default withStyles(styles)(EditProfileForm);

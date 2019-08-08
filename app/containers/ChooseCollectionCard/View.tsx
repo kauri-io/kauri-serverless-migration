@@ -9,7 +9,7 @@ import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
 import { searchCollections_searchCollections } from '../../queries/__generated__/searchCollections'
 import { getCollectionURL } from '../../lib/getURLs'
-import { Tab, Tabs } from '@material-ui/core';
+import { Tab, Tabs } from '@material-ui/core'
 
 const Container = styled.div`
     display: flex;
@@ -45,7 +45,7 @@ const CollectionsContent = ({
                                         ({ id }) =>
                                             id === collection.id ||
                                             currentCollectionIdIfUpdating ===
-                                            collection.id
+                                                collection.id
                                     )
                                 } else {
                                     return collectionId === collection.id
@@ -152,8 +152,8 @@ const CollectionsContent = ({
             </ChooseCollectionContent>
         </Container>
     ) : (
-            <p>You have no published collections!</p>
-        )
+        <p>You have no published collections!</p>
+    )
 
 const PublishedCollections = withPagination(
     CollectionsContent,
@@ -207,19 +207,23 @@ export default (props: IProps) => {
                 <Tab label="My Collections" />
                 <Tab label="All Collections" />
             </Tabs>
-            {tab === 0 && <PersonalPublishedCollections
-                {...props}
-                collections={
-                    props.searchPersonalPublishedCollections
-                        .searchCollections
-                }
-            />}
-            {tab === 1 && <PublishedCollections
-                {...props}
-                collections={
-                    props.searchPublishedCollections.searchCollections
-                }
-            />}
+            {tab === 0 && (
+                <PersonalPublishedCollections
+                    {...props}
+                    collections={
+                        props.searchPersonalPublishedCollections
+                            .searchCollections
+                    }
+                />
+            )}
+            {tab === 1 && (
+                <PublishedCollections
+                    {...props}
+                    collections={
+                        props.searchPublishedCollections.searchCollections
+                    }
+                />
+            )}
         </>
     )
 }

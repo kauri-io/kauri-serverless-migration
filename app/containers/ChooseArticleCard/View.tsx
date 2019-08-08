@@ -51,8 +51,8 @@ const ArticlesContent = props => {
             </ChooseArticleContent>
         </Container>
     ) : (
-            <p>You have no published articles!</p>
-        )
+        <p>You have no published articles!</p>
+    )
 }
 
 const PublishedArticles = withPagination(
@@ -91,13 +91,20 @@ const ChooseArticleCardComponent = props => {
                 <Tab label="My Articles" />
                 <Tab label="All Articles" />
             </Tabs>
-            { tab === 0 && <PersonalPublishedArticles
-                {...props}
-                articles={
-                    props.searchPersonalPublishedArticles.searchArticles
-                }
-            />}
-            {tab === 1 && <PublishedArticles {...props}  articles={props.searchPublishedArticles.searchArticles} />}
+            {tab === 0 && (
+                <PersonalPublishedArticles
+                    {...props}
+                    articles={
+                        props.searchPersonalPublishedArticles.searchArticles
+                    }
+                />
+            )}
+            {tab === 1 && (
+                <PublishedArticles
+                    {...props}
+                    articles={props.searchPublishedArticles.searchArticles}
+                />
+            )}
         </>
     )
 }

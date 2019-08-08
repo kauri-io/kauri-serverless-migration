@@ -28,31 +28,31 @@ const ArticlesContent = props => {
     return articles &&
         Array.isArray(articles.content) &&
         articles.content.length > 0 ? (
-            <Container>
-                <ChooseArticleContent setRef={setRef}>
-                    {articles.content.map(({ resource: article }) => {
-                        if (allOtherChosenArticles) {
-                            if (
-                                allOtherChosenArticles.find(chosenArticle => {
-                                    if (chosenArticle.resourcesId) {
-                                        return chosenArticle.resourcesId.find(
-                                            ({ id }) => id === article.id
-                                        )
-                                    }
-                                    return chosenArticle.id === article.id
-                                })
-                            ) {
-                                return null
-                            }
+        <Container>
+            <ChooseArticleContent setRef={setRef}>
+                {articles.content.map(({ resource: article }) => {
+                    if (allOtherChosenArticles) {
+                        if (
+                            allOtherChosenArticles.find(chosenArticle => {
+                                if (chosenArticle.resourcesId) {
+                                    return chosenArticle.resourcesId.find(
+                                        ({ id }) => id === article.id
+                                    )
+                                }
+                                return chosenArticle.id === article.id
+                            })
+                        ) {
+                            return null
                         }
+                    }
 
-                        return <ArticleCard {...article} />
-                    })}
-                </ChooseArticleContent>
-            </Container>
-        ) : (
-            <p>You have no community published articles!</p>
-        )
+                    return <ArticleCard {...article} />
+                })}
+            </ChooseArticleContent>
+        </Container>
+    ) : (
+        <p>You have no community published articles!</p>
+    )
 }
 
 const CommunityPublishedArticles = withPagination(
@@ -74,8 +74,7 @@ const ChooseArticleCardComponent = props => {
         <CommunityPublishedArticles
             {...props}
             articles={
-                props.searchCommunityPublishedArticles
-                    .getCommunityContent
+                props.searchCommunityPublishedArticles.getCommunityContent
             }
         />
     )

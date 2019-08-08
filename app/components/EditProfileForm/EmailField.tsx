@@ -1,11 +1,12 @@
 import React, { ChangeEvent } from 'react'
-import Input from '../../components/Input/Input'
+import TextField from '@material-ui/core/TextField'
 import { compose, withApollo } from 'react-apollo'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import theme from '../../lib/theme-config'
 import { Label } from '../../components/Typography'
 import { Tooltip } from 'react-tippy'
+import { withStyles } from '@material-ui/styles';
 
 const Icon = styled.img`
     height: 20px;
@@ -67,7 +68,25 @@ interface IProps {
     email: string
     status: string
     resendEmailVerification: () => void
+    classes: any
 }
+
+const styles = {
+    input: {
+        '&:hover': {
+            '& .MuiInput-underline::before': {
+                borderBottomColor: 'rgba(255,255,255,0.6)',
+            }
+        },
+        color: 'white',
+        '& .MuiInputBase-root': {
+            color: 'white',
+        },
+        '& .MuiInput-underline::before': {
+            borderBottomColor: 'rgba(255,255,255,0.3)',
+        }
+    }
+};
 
 class EmailField extends React.Component<IProps, {}> {
     resendVerificationEmail() {
@@ -116,12 +135,11 @@ class EmailField extends React.Component<IProps, {}> {
                         <Icon src="/static/images/icons8-info.png" />
                     </Tooltip>
                 )}
-                <Input
+                <TextField
+                    className={this.props.classes.input}
                     onChange={this.props.handleChange}
-                    fontWeight={400}
-                    fontSize={1}
                     value={this.props.email}
-                    placeHolder="Add Email"
+                    placeholder="Add Email"
                 />
             </Container>
         )
@@ -138,4 +156,4 @@ export default compose(
         mapStateToProps,
         {}
     )
-)(EmailField)
+)(withStyles(styles)(EmailField))

@@ -26,8 +26,7 @@ import {
     IShowNotificationAction,
 } from '../../lib/Epics/ShowNotificationEpic'
 import { ISaveUserDetailActionType } from '../../components/EditProfileForm/Module'
-import { Tabs, Tab } from '@material-ui/core';
-
+import { Tabs, Tab } from '@material-ui/core'
 
 interface IProps {
     router: any
@@ -82,7 +81,7 @@ class PublicProfile extends Component<IProps, IState> {
             website: '',
             twitter: '',
             github: '',
-            tab: 0
+            tab: 0,
         }
     }
 
@@ -151,48 +150,48 @@ class PublicProfile extends Component<IProps, IState> {
                         }
                     />
                 ) : (
-                            <Header
-                                articles={articlesCount}
-                                collections={pipe(
-                                    path<ICollection[]>([
-                                        'searchCollections',
-                                        'content',
-                                    ]),
-                                    defaultTo([])
-                                )(CollectionQuery)}
-                                currentUser={currentUser}
-                                id={getUserField<string>('id', '')}
-                                avatar={
-                                    this.state.avatar ||
-                                    getUserField<string>('avatar', '')
-                                }
-                                username={
-                                    this.state.username ||
-                                    getUserField<string>('username', '')
-                                }
-                                name={
-                                    this.state.name || getUserField<string>('name', '')
-                                }
-                                title={
-                                    this.state.title ||
-                                    getUserField<string>('title', '')
-                                }
-                                website={
-                                    this.state.website ||
-                                    getUserField<string>('website', '')
-                                }
-                                twitter={
-                                    this.state.twitter ||
-                                    getUserField<string>(['social', 'twitter'], '')
-                                }
-                                github={
-                                    this.state.github ||
-                                    getUserField<string>(['social', 'github'], '')
-                                }
-                                toggleEditing={() => this.toggleEditing()}
-                                hostName={hostName}
-                            />
-                        )}
+                    <Header
+                        articles={articlesCount}
+                        collections={pipe(
+                            path<ICollection[]>([
+                                'searchCollections',
+                                'content',
+                            ]),
+                            defaultTo([])
+                        )(CollectionQuery)}
+                        currentUser={currentUser}
+                        id={getUserField<string>('id', '')}
+                        avatar={
+                            this.state.avatar ||
+                            getUserField<string>('avatar', '')
+                        }
+                        username={
+                            this.state.username ||
+                            getUserField<string>('username', '')
+                        }
+                        name={
+                            this.state.name || getUserField<string>('name', '')
+                        }
+                        title={
+                            this.state.title ||
+                            getUserField<string>('title', '')
+                        }
+                        website={
+                            this.state.website ||
+                            getUserField<string>('website', '')
+                        }
+                        twitter={
+                            this.state.twitter ||
+                            getUserField<string>(['social', 'twitter'], '')
+                        }
+                        github={
+                            this.state.github ||
+                            getUserField<string>(['social', 'github'], '')
+                        }
+                        toggleEditing={() => this.toggleEditing()}
+                        hostName={hostName}
+                    />
+                )}
                 {isHeaderLoaded && areListsLoaded ? (
                     <>
                         <Tabs
@@ -203,52 +202,60 @@ class PublicProfile extends Component<IProps, IState> {
                             onChange={(_e, tab) => this.setState({ tab })}
                         >
                             <Tab label={`Articles (${articlesCount})`} />
-                            <Tab label={`Collections (${pipe(
-                                path<number>([
-                                    'searchCollections',
-                                    'totalElements',
-                                ]),
-                                defaultTo(0)
-                            )(CollectionQuery)})`} />
+                            <Tab
+                                label={`Collections (${pipe(
+                                    path<number>([
+                                        'searchCollections',
+                                        'totalElements',
+                                    ]),
+                                    defaultTo(0)
+                                )(CollectionQuery)})`}
+                            />
                             {isOwner && <Tab label="Manage" />}
                         </Tabs>
-                        {this.state.tab === 0 && <Published
-                            data={ArticlesQuery as any}
-                            type="published"
-                            isOwner={!!isOwner}
-                            isLoggedIn={!!currentUser}
-                            openModalAction={openModalAction}
-                        />}
-                        {this.state.tab === 1 && <Collections
-                            data={CollectionQuery}
-                            isLoggedIn={!!currentUser}
-                            routeChangeAction={routeChangeAction}
-                        />}
-                        {this.state.tab === 2 && isOwner && <Manage
-                            userId={this.props.userId}
-                            ownProfile={OwnProfileQuery}
-                            draftsQuery={DraftsQuery}
-                            transfersQuery={PendingTransfersQuery}
-                            type="manage"
-                            removeMemberAction={removeMemberAction}
-                            routeChangeAction={routeChangeAction}
-                            deleteDraftArticleAction={
-                                deleteDraftArticleAction
-                            }
-                            isOwner={
-                                getUserField<string>('user', '') ===
-                                currentUser
-                            }
-                            isLoggedIn={!!currentUser}
-                            closeModalAction={closeModalAction}
-                            openModalAction={openModalAction}
-                            rejectArticleTransferAction={
-                                rejectArticleTransferAction
-                            }
-                            acceptArticleTransferAction={
-                                acceptArticleTransferAction
-                            }
-                        />}
+                        {this.state.tab === 0 && (
+                            <Published
+                                data={ArticlesQuery as any}
+                                type="published"
+                                isOwner={!!isOwner}
+                                isLoggedIn={!!currentUser}
+                                openModalAction={openModalAction}
+                            />
+                        )}
+                        {this.state.tab === 1 && (
+                            <Collections
+                                data={CollectionQuery}
+                                isLoggedIn={!!currentUser}
+                                routeChangeAction={routeChangeAction}
+                            />
+                        )}
+                        {this.state.tab === 2 && isOwner && (
+                            <Manage
+                                userId={this.props.userId}
+                                ownProfile={OwnProfileQuery}
+                                draftsQuery={DraftsQuery}
+                                transfersQuery={PendingTransfersQuery}
+                                type="manage"
+                                removeMemberAction={removeMemberAction}
+                                routeChangeAction={routeChangeAction}
+                                deleteDraftArticleAction={
+                                    deleteDraftArticleAction
+                                }
+                                isOwner={
+                                    getUserField<string>('user', '') ===
+                                    currentUser
+                                }
+                                isLoggedIn={!!currentUser}
+                                closeModalAction={closeModalAction}
+                                openModalAction={openModalAction}
+                                rejectArticleTransferAction={
+                                    rejectArticleTransferAction
+                                }
+                                acceptArticleTransferAction={
+                                    acceptArticleTransferAction
+                                }
+                            />
+                        )}
                     </>
                 ) : !isHeaderLoaded ? null : (
                     <Loading />
