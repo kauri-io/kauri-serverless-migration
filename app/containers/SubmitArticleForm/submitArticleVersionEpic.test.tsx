@@ -1,6 +1,5 @@
 import testEpic from '../../lib/test-epic'
 import { submitArticleVersionEpic, submitArticleVersionAction } from './Module'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { publishArticleAction } from './PublishArticleModule'
 
@@ -129,11 +128,6 @@ describe('submitArticleVersionEpic', () => {
             updateComment,
         })
         const expectedAction = [
-            routeChangeAction(
-                `/article/${mockGetArticle.id}/v${
-                    mockGetArticle.version
-                }/article-${'drafted'}`
-            ),
             showNotificationAction({
                 description:
                     'Your article has now been drafted to be updated or published in the future',

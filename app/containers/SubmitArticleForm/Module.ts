@@ -6,12 +6,11 @@ import {
     submitNewArticleMutation,
 } from '../../queries/Article'
 import { IDependencies, IReduxState, ICommunity } from '../../lib/Module'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { publishArticleAction, IOwnerPayload } from './PublishArticleModule'
 import { IOption } from '../../containers/PublishingSelector'
 import analytics from '../../lib/analytics'
-import { merge, of, from } from 'rxjs'
+import { of, from } from 'rxjs'
 import { path } from 'ramda'
 import {
     submitNewArticleVariables,
@@ -219,20 +218,13 @@ export const submitArticleEpic: Epic<
                                           version: Number(getArticle.version),
                                       })
                                   )
-                                : merge(
-                                      of(
-                                          routeChangeAction(
-                                              `/article/${getArticle.id}/v${getArticle.version}/article-published`
-                                          )
-                                      ),
-                                      of(
-                                          showNotificationAction({
-                                              description:
-                                                  'Your personal article has now been published!',
-                                              message: 'Article published',
-                                              notificationType: 'success',
-                                          })
-                                      )
+                                : of(
+                                      showNotificationAction({
+                                          description:
+                                              'Your personal article has now been published!',
+                                          message: 'Article published',
+                                          notificationType: 'success',
+                                      })
                                   )
                         }
                         throw new Error('GET ARITCLE WAS EMPTY')
@@ -318,86 +310,55 @@ export const submitArticleVersionEpic: Epic<
                                       version: getArticle.version,
                                   })
                               )
-                            : merge(
-                                  of(
-                                      routeChangeAction(
-                                          `/article/${getArticle.id}/v${
-                                              getArticle.version
-                                          }/article-${
-                                              typeof selfPublish === 'undefined'
-                                                  ? 'drafted'
-                                                  : getArticle.owner.id ===
-                                                        getArticle.authorId ||
-                                                    (
-                                                        path<ICommunity[]>([
-                                                            'value',
-                                                            'app',
-                                                            'user',
-                                                            'communities',
-                                                        ])(state$) || []
+                            : of(
+                                  showNotificationAction({
+                                      description:
+                                          typeof selfPublish === 'undefined'
+                                              ? 'Your article has now been drafted to be updated or published in the future'
+                                              : getArticle.owner.id ===
+                                                    getArticle.authorId ||
+                                                (
+                                                    path<ICommunity[]>([
+                                                        'value',
+                                                        'app',
+                                                        'user',
+                                                        'communities',
+                                                    ])(state$) || []
+                                                )
+                                                    .map(
+                                                        ({ community }) =>
+                                                            community.id
                                                     )
-                                                        .map(
-                                                            ({ community }) =>
-                                                                community.id
-                                                        )
-                                                        .includes(
-                                                            getArticle.owner.id
-                                                        )
-                                                  ? 'published'
-                                                  : 'proposed'
-                                          }`
-                                      )
-                                  ),
-                                  of(
-                                      showNotificationAction({
-                                          description:
-                                              typeof selfPublish === 'undefined'
-                                                  ? 'Your article has now been drafted to be updated or published in the future'
-                                                  : getArticle.owner.id ===
-                                                        getArticle.authorId ||
-                                                    (
-                                                        path<ICommunity[]>([
-                                                            'value',
-                                                            'app',
-                                                            'user',
-                                                            'communities',
-                                                        ])(state$) || []
+                                                    .includes(
+                                                        getArticle.owner.id
                                                     )
-                                                        .map(
-                                                            ({ community }) =>
-                                                                community.id
-                                                        )
-                                                        .includes(
-                                                            getArticle.owner.id
-                                                        )
-                                                  ? 'Your personal article has now been published!'
-                                                  : 'Waiting for it to be reviewed!',
-                                          message: `Article ${
-                                              typeof selfPublish === 'undefined'
-                                                  ? 'drafted'
-                                                  : getArticle.owner.id ===
-                                                        getArticle.authorId ||
-                                                    (
-                                                        path<ICommunity[]>([
-                                                            'value',
-                                                            'app',
-                                                            'user',
-                                                            'communities',
-                                                        ])(state$) || []
+                                              ? 'Your personal article has now been published!'
+                                              : 'Waiting for it to be reviewed!',
+                                      message: `Article ${
+                                          typeof selfPublish === 'undefined'
+                                              ? 'drafted'
+                                              : getArticle.owner.id ===
+                                                    getArticle.authorId ||
+                                                (
+                                                    path<ICommunity[]>([
+                                                        'value',
+                                                        'app',
+                                                        'user',
+                                                        'communities',
+                                                    ])(state$) || []
+                                                )
+                                                    .map(
+                                                        ({ community }) =>
+                                                            community.id
                                                     )
-                                                        .map(
-                                                            ({ community }) =>
-                                                                community.id
-                                                        )
-                                                        .includes(
-                                                            getArticle.owner.id
-                                                        )
-                                                  ? 'published'
-                                                  : 'proposed'
-                                          }`,
-                                          notificationType: 'success',
-                                      })
-                                  )
+                                                    .includes(
+                                                        getArticle.owner.id
+                                                    )
+                                              ? 'published'
+                                              : 'proposed'
+                                      }`,
+                                      notificationType: 'success',
+                                  })
                               )
                     ),
                     catchError(err => {
@@ -481,20 +442,13 @@ export const editArticleEpic: Epic<
                                       version: getArticle.version,
                                   })
                               )
-                            : merge(
-                                  of(
-                                      routeChangeAction(
-                                          `/article/${id}/v${version}/article-updated`
-                                      )
-                                  ),
-                                  of(
-                                      showNotificationAction({
-                                          description:
-                                              'The article version has been updated!',
-                                          message: 'Article updated',
-                                          notificationType: 'info',
-                                      })
-                                  )
+                            : of(
+                                  showNotificationAction({
+                                      description:
+                                          'The article version has been updated!',
+                                      message: 'Article updated',
+                                      notificationType: 'info',
+                                  })
                               )
                     )
                 )
@@ -537,21 +491,14 @@ export const draftArticleEpic: Epic<any, any, {}, IDependencies> = (
                         category: 'article_actions',
                     })
                 }),
-                mergeMap(({ data: { output: { id, version } } }) =>
-                    merge(
-                        of(
-                            showNotificationAction({
-                                description:
-                                    'The draft has just been saved. You can go back and submit it whenever you are ready.',
-                                message: 'Draft Created',
-                                notificationType: 'info',
-                            })
-                        ),
-                        of(
-                            routeChangeAction(
-                                `/article/${id}/v${version}/article-drafted`
-                            )
-                        )
+                mergeMap(() =>
+                    of(
+                        showNotificationAction({
+                            description:
+                                'The draft has just been saved. You can go back and submit it whenever you are ready.',
+                            message: 'Draft Created',
+                            notificationType: 'info',
+                        })
                     )
                 )
             )

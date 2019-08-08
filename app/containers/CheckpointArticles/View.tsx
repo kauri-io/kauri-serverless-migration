@@ -29,7 +29,7 @@ export interface IProps {
     articles?: (searchPersonalArticles_searchArticles_content | null)[]
     articleCheckpointed?: boolean
     checkpointArticlesAction: () => void
-    pageType: 'public-profile' | 'approved-article'
+    pageType: 'public-profile'
     isOwner: boolean
 }
 

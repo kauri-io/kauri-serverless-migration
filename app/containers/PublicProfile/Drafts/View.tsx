@@ -16,11 +16,11 @@ import {
     IDeleteDraftArticlePayload,
 } from '../../ArticleDraft/DeleteDraftArticleModule'
 import { getArticleURL } from '../../../lib/getURLs'
+import Link from 'next/link'
 
 interface IArticlesProps {
     data: searchPersonalArticles
     type: string
-    routeChangeAction: (route: string) => void
     isLoggedIn: boolean
     isOwner: boolean
     openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
@@ -37,7 +37,7 @@ const Centered = styled.div`
     margin-left: 100px;
 `
 
-const Articles: React.FC<IArticlesProps> = ({ data, routeChangeAction }) => {
+const Articles: React.FC<IArticlesProps> = ({ data }) => {
     const articles = data.searchArticles && data.searchArticles.content
     if (articles) {
         return articles && articles.length > 0 ? (
@@ -64,13 +64,13 @@ const Articles: React.FC<IArticlesProps> = ({ data, routeChangeAction }) => {
                     }
                     title="No Saved Drafts"
                     primaryButton={
-                        <Button
-                            color="primary"
-                            variant="contained"
-                            onClick={() => routeChangeAction('/write-article')}
-                        >
-                            Create Article
-                        </Button>
+                        <Link href="/write-article">
+                            <a>
+                                <Button color="primary" variant="contained">
+                                    Create Article
+                                </Button>
+                            </a>
+                        </Link>
                     }
                 />
             </Centered>

@@ -1,6 +1,5 @@
 import testEpic from '../../lib/test-epic'
 import { editArticleEpic, editArticleAction } from './Module'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { publishArticleAction } from './PublishArticleModule'
 
@@ -128,7 +127,6 @@ describe('editArticleEpic', () => {
         })
 
         const expectedAction = [
-            routeChangeAction(`/article/${id}/v${version}/article-updated`),
             showNotificationAction({
                 description: 'The article version has been updated!',
                 message: 'Article updated',

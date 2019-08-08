@@ -1,6 +1,5 @@
 import testEpic from '../../lib/test-epic'
 import { draftArticleEpic, draftArticleAction } from './Module'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 
 jest.mock('../../lib/analytics', () => ({
@@ -65,7 +64,6 @@ describe('draftArticleEpic', () => {
                 message: 'Draft Created',
                 notificationType: 'info',
             }),
-            routeChangeAction(`/article/${id}/v${version}/article-drafted`),
         ]
 
         const resultingActions = await testEpic(

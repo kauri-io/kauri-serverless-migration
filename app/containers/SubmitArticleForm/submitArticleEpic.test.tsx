@@ -1,6 +1,5 @@
 import testEpic from '../../lib/test-epic'
 import { submitArticleEpic, submitArticleAction } from './Module'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { publishArticleAction } from './PublishArticleModule'
 
@@ -64,9 +63,6 @@ describe('submitArticleEpic', () => {
             destination,
         })
         const expectedAction = [
-            routeChangeAction(
-                `/article/${mockGetArticle.id}/v${mockGetArticle.version}/article-published`
-            ),
             showNotificationAction({
                 description: 'Your personal article has now been published!',
                 message: 'Article published',

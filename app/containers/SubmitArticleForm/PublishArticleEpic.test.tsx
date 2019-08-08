@@ -1,5 +1,4 @@
 import testEpic from '../../lib/test-epic'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import {
     publishArticleAction,
@@ -67,9 +66,6 @@ describe('publishArticleEpic', () => {
                 message: 'Article Published',
                 notificationType: 'success',
             }),
-            routeChangeAction(
-                `/article/${id}/v${version}/${'article-published'}`
-            ),
         ]
 
         const resultingActions = await testEpic(
@@ -133,9 +129,6 @@ describe('publishArticleEpic', () => {
                 message: 'Article Published',
                 notificationType: 'success',
             }),
-            routeChangeAction(
-                `/article/${id}/v${version}/${'article-published'}`
-            ),
         ]
 
         const resultingActions = await testEpic(
@@ -197,9 +190,6 @@ describe('publishArticleEpic', () => {
                 message: 'Article submitted',
                 notificationType: 'success',
             }),
-            routeChangeAction(
-                `/article/${id}/v${version}/${'article-proposed'}`
-            ),
         ]
 
         const resultingActions = await testEpic(
