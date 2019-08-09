@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import EditProfileForm from '../../components/EditProfileForm'
 import { pipe, assocPath } from 'ramda'
@@ -9,21 +9,20 @@ import {
 } from '../../lib/Epics/ShowNotificationEpic'
 import { ISaveUserDetailActionType } from '../../components/EditProfileForm/Module'
 import { getMyProfile } from '../../queries/__generated__/getMyProfile'
+import { withStyles } from '@material-ui/styles'
+import { Theme } from '@material-ui/core'
 
-const HeaderContainer = styled.div`
-    background-color: ${props => props.theme.colors.bgPrimary};
-    display: flex;
-    align-items: flex-start;
-    color: ${props => props.theme.colors.white};
-    padding: 2.5em ${props => props.theme.padding};
-`
-
-const ActionsContainer = styled.div`
-    display: flex;
-    width: 200px;
-    justify-content: space-between;
-    color: white;
-`
+const styles = (theme: Theme) => ({
+    container: {
+        background: theme.palette.common.black,
+        padding: theme.spacing(2),
+        width: '100%',
+    },
+    grid: {
+        maxWidth: 1232,
+        margin: 'auto',
+    },
+})
 
 interface IProps {
     resendEmailVerificationAction: () => void
@@ -43,6 +42,7 @@ interface IProps {
             r: string
         }
     }
+    classes: any
 }
 
 interface IState {
@@ -125,43 +125,45 @@ class EditableHeader extends Component<IProps, IState> {
             status,
         } = this.state
         return (
-            <HeaderContainer>
-                <EditProfileForm
-                    name={name}
-                    username={username}
-                    avatar={avatar}
-                    github={github}
-                    twitter={twitter}
-                    website={website}
-                    title={title}
-                    email={email}
-                    status={status}
-                    subscriptions={subscriptions}
-                    resendEmailVerificationAction={
-                        this.props.resendEmailVerificationAction
-                    }
-                    updateState={this.updateState.bind(this)}
-                />
-                <ActionsContainer>
-                    <Button
-                        color="primary"
-                        variant="text"
-                        onClick={() => this.props.toggleEditing()}
-                    >
-                        Discard
-                    </Button>
-                    <Button
-                        fullWidth={true}
-                        color="primary"
-                        variant="contained"
-                        onClick={() => this.handleSubmit()}
-                    >
-                        Save Changes
-                    </Button>
-                </ActionsContainer>
-            </HeaderContainer>
+            <div className={this.props.classes.container}>
+                <Grid className={this.props.classes.grid} container={true}>
+                    <EditProfileForm
+                        name={name}
+                        username={username}
+                        avatar={avatar}
+                        github={github}
+                        twitter={twitter}
+                        website={website}
+                        title={title}
+                        email={email}
+                        status={status}
+                        subscriptions={subscriptions}
+                        resendEmailVerificationAction={
+                            this.props.resendEmailVerificationAction
+                        }
+                        updateState={this.updateState.bind(this)}
+                    />
+                    <Grid item={true}  container={true} alignItems='flex-end'>
+                        <Button
+                            color="primary"
+                            variant="text"
+                            onClick={() => this.props.toggleEditing()}
+                        >
+                            Discard
+                        </Button>
+                        <Button
+                            fullWidth={true}
+                            color="primary"
+                            variant="contained"
+                            onClick={() => this.handleSubmit()}
+                        >
+                            Save Changes
+                        </Button>
+                    </Grid>
+                </Grid>
+            </div>
         )
     }
 }
 
-export default EditableHeader
+export default withStyles(styles)(EditableHeader)

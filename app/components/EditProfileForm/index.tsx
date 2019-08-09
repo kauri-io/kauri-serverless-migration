@@ -1,44 +1,26 @@
-import styled from 'styled-components'
 import TextField from '@material-ui/core/TextField'
 import UploadLogoButton from '../../components/Button/UploadLogoButton'
 import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
-import EmailCheckbox from '../../components/Checkbox/EmailCheckbox'
 import EmailField from './EmailField'
-import { withStyles } from '@material-ui/styles';
+import { withStyles } from '@material-ui/styles'
+import { Grid, Theme, Tooltip, Checkbox } from '@material-ui/core'
+import InputAdornment from '@material-ui/core/InputAdornment'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import { CheckboxProps } from '@material-ui/core/Checkbox';
 
-const TextFieldsContainers = styled.div`
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    margin-left: ${props => props.theme.space[2]}px;
-    justify-content: space-between;
-    height: 230px;
-`
-
-export const StyledUpload = styled(UploadLogoButton)`
-    margin-right: ${props => props.theme.space[1]}px;
-`
-
-const Offset = styled.div<{ margin?: number }>`
-    margin-left: -${props => props.margin || props.theme.space[3]}px;
-    display: flex;
-    flex-direction: row;
-    & > a {
-        margin-right: ${props => props.theme.space[1]}px;
-    }
-`
-
-const Container = styled.div`
-    display: flex;
-    flex-direction: row;
-`
-
-const styles = {
+const styles = (theme: Theme) => ({
+    container: {
+        maxWidth: 400,
+    },
+    inputs: {
+        padding: theme.spacing(0, 2),
+    },
     input: {
+        width: '100%',
         '&:hover': {
             '& .MuiInput-underline::before': {
                 borderBottomColor: 'rgba(255,255,255,0.6)',
-            }
+            },
         },
         color: 'white',
         '& .MuiInputBase-root': {
@@ -46,9 +28,22 @@ const styles = {
         },
         '& .MuiInput-underline::before': {
             borderBottomColor: 'rgba(255,255,255,0.3)',
-        }
+        },
+    },
+    checkboxLabel: {
+        color: theme.palette.common.white
     }
-};
+})
+
+const WhiteChecbox = withStyles((theme) => ({
+    root: {
+        color: theme.palette.common.white,
+        '&$checked': {
+            color: theme.palette.common.white,
+        },
+    },
+    checked: {},
+}))((props: CheckboxProps) => <Checkbox color="default" {...props} />);
 
 interface IProps {
     avatar: string
@@ -84,88 +79,104 @@ const EditProfileForm = ({
     status,
     subscriptions,
     updateState,
-    classes
+    classes,
 }: IProps) => {
     return (
-        <Container>
-            <StyledUpload
-                bg={avatar}
-                text="Profile"
-                color="white"
-                callback={hash => updateState(hash, 'avatar')}
-            />
-            <TextFieldsContainers>
+        <Grid className={classes.container} container={true} sm={12}>
+            <Grid item={true} sm={3}>
+                <UploadLogoButton
+                    bg={avatar}
+                    text="Profile"
+                    color="white"
+                    callback={hash => updateState(hash, 'avatar')}
+                />
+            </Grid>
+            <Grid className={classes.inputs} sm={9}>
                 <TextField
+                    margin="dense"
                     onChange={e => updateState(e.target.value, 'name')}
                     value={name}
                     placeholder="Add your full name"
                     className={classes.input}
                 />
                 <TextField
+                    margin="dense"
                     onChange={e => updateState(e.target.value, 'title')}
                     value={title}
                     placeholder="Add job title"
                     className={classes.input}
                 />
                 <TextField
+                    margin="dense"
                     onChange={e => updateState(e.target.value, 'username')}
                     value={username}
                     placeholder="Add username"
                     className={classes.input}
                 />
                 <TextField
+                    margin="dense"
                     onChange={e => updateState(e.target.value, 'website')}
                     value={website}
                     placeholder="Add Website"
                     className={classes.input}
                 />
-                <Offset>
-                    <SocialWebsiteIcon brand="twitter" />
-                    <TextField
-                        onChange={e => updateState(e.target.value, 'twitter')}
-                        className={classes.input}
-                        inputProps={{
-                            className: classes.input
-                        }}
-                        value={twitter}
-                        placeholder="Twitter"
-                    />
-                </Offset>
-                <Offset>
-                    <SocialWebsiteIcon brand="github" />
-                    <TextField
-                        onChange={e => updateState(e.target.value, 'github')}
-                        className={classes.input}
-                        inputProps={{
-                            className: classes.input
-                        }}
-                        value={github}
-                        placeholder="Github"
-                    />
-                </Offset>
+                <TextField
+                    margin="dense"
+                    onChange={e => updateState(e.target.value, 'twitter')}
+                    className={classes.input}
+                    InputProps={{
+                        className: classes.input,
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <SocialWebsiteIcon brand="twitter" />
+                            </InputAdornment>
+                        ),
+                    }}
+                    value={twitter}
+                    placeholder="Twitter"
+                />
+                <TextField
+                    margin="dense"
+                    onChange={e => updateState(e.target.value, 'github')}
+                    className={classes.input}
+                    InputProps={{
+                        className: classes.input,
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <SocialWebsiteIcon brand="github" />
+                            </InputAdornment>
+                        ),
+                    }}
+                    value={github}
+                    placeholder="Github"
+                />
                 <EmailField
                     resendEmailVerification={resendEmailVerificationAction}
                     email={email}
                     handleChange={e => updateState(e.target.value, 'email')}
                     status={status}
                 />
-                <Offset margin={12}>
-                    <EmailCheckbox
-                        disabled={!email}
-                        checked={subscriptions.newsletter}
-                        onChange={checked =>
-                            updateState(
-                                {
-                                    newsletter: checked,
-                                },
-                                'subscriptions'
-                            )
+                <Tooltip title="Keep this checked to receive our newsletter with the latest tutorials and content series">
+                    <FormControlLabel
+                        className={classes.checkboxLabel}
+                        control={
+                            <WhiteChecbox
+                                onChange={e =>
+                                    updateState(
+                                        { newsletter: e.target.checked },
+                                        'subscriptions'
+                                    )
+                                }
+                                disabled={!email}
+                                checked={subscriptions.newsletter}
+                            />
                         }
+                        label="Newsletter"
                     />
-                </Offset>
-            </TextFieldsContainers>
-        </Container>
+                </Tooltip>
+            </Grid>
+        </Grid>
     )
 }
 
-export default withStyles(styles)(EditProfileForm);
+export default withStyles(styles)(EditProfileForm)

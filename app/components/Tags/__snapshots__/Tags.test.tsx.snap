@@ -831,175 +831,147 @@ exports[`components/Tags/TagInput snapshot should match 1`] = `
                       </defs>
                     </svg>
                   </Plus>
-                  <Input
-                    color="white"
-                    fontSize={0}
-                    fontWeight={600}
+                  <WithStyles(ForwardRef(TextField))
                     onKeyPress={[Function]}
                     onKeyUp={[Function]}
-                    placeHolder="ADD TAG"
-                    textAlign="left"
+                    placeholder="ADD TAG"
                   >
-                    <Input__Wrapper
-                      textAlign="left"
-                    >
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Input__Wrapper-sc-100s1kb-2",
-                              "isStatic": false,
-                              "lastClassName": "ekFmoA",
-                              "rules": Array [
-                                "display:flex;position:relative;align-self:auto;",
-                                [Function],
-                                " ",
-                                [Function],
-                                " ",
-                                [Function],
-                              ],
-                            },
-                            "displayName": "Input__Wrapper",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "Input__Wrapper-sc-100s1kb-2",
-                            "target": "div",
-                            "toString": [Function],
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
+                    <ForwardRef(TextField)
+                      classes={
+                        Object {
+                          "root": "MuiTextField-root",
                         }
-                        forwardedRef={null}
-                        textAlign="left"
+                      }
+                      onKeyPress={[Function]}
+                      onKeyUp={[Function]}
+                      placeholder="ADD TAG"
+                    >
+                      <WithStyles(ForwardRef(FormControl))
+                        className="MuiTextField-root"
+                        onKeyPress={[Function]}
+                        onKeyUp={[Function]}
+                        required={false}
+                        variant="standard"
                       >
-                        <div
-                          className="Input__Wrapper-sc-100s1kb-2 ekFmoA"
+                        <ForwardRef(FormControl)
+                          className="MuiTextField-root"
+                          classes={
+                            Object {
+                              "fullWidth": "MuiFormControl-fullWidth",
+                              "marginDense": "MuiFormControl-marginDense",
+                              "marginNormal": "MuiFormControl-marginNormal",
+                              "root": "MuiFormControl-root",
+                            }
+                          }
+                          onKeyPress={[Function]}
+                          onKeyUp={[Function]}
+                          required={false}
+                          variant="standard"
                         >
-                          <Input__InputComp
-                            color="white"
-                            fontSize={0}
-                            fontWeight={600}
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
+                          <div
+                            className="MuiFormControl-root MuiTextField-root"
                             onKeyPress={[Function]}
                             onKeyUp={[Function]}
-                            placeholder="ADD TAG"
-                            textAlign="left"
-                            value=""
                           >
-                            <StyledComponent
-                              color="white"
-                              fontSize={0}
-                              fontWeight={600}
-                              forwardedComponent={
-                                Object {
-                                  "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": Array [],
-                                  "componentStyle": ComponentStyle {
-                                    "componentId": "Input__InputComp-sc-100s1kb-0",
-                                    "isStatic": false,
-                                    "lastClassName": "ignUYs",
-                                    "rules": Array [
-                                      "text-align:",
-                                      [Function],
-                                      ";font-size:",
-                                      [Function],
-                                      "px;font-weight:",
-                                      [Function],
-                                      ";color:",
-                                      [Function],
-                                      ";background:transparent;width:100%;outline:none;border:none;::-webkit-input-placeholder{color:",
-                                      [Function],
-                                      ";}:focus::-webkit-input-placeholder{text-indent:-999px;}",
-                                    ],
-                                  },
-                                  "displayName": "Input__InputComp",
-                                  "foldedComponentIds": Array [],
-                                  "render": [Function],
-                                  "styledComponentId": "Input__InputComp-sc-100s1kb-0",
-                                  "target": "input",
-                                  "toString": [Function],
-                                  "warnTooManyClasses": [Function],
-                                  "withComponent": [Function],
-                                }
-                              }
-                              forwardedRef={null}
-                              onBlur={[Function]}
-                              onChange={[Function]}
-                              onFocus={[Function]}
-                              onKeyPress={[Function]}
-                              onKeyUp={[Function]}
+                            <WithStyles(ForwardRef(Input))
                               placeholder="ADD TAG"
-                              textAlign="left"
-                              value=""
                             >
-                              <input
-                                className="Input__InputComp-sc-100s1kb-0 ignUYs"
-                                color="white"
-                                fontSize={0}
-                                fontWeight={600}
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                onFocus={[Function]}
-                                onKeyPress={[Function]}
-                                onKeyUp={[Function]}
-                                placeholder="ADD TAG"
-                                value=""
-                              />
-                            </StyledComponent>
-                          </Input__InputComp>
-                          <Input__Underline
-                            fontSize={0}
-                            textAlign="left"
-                          >
-                            <StyledComponent
-                              fontSize={0}
-                              forwardedComponent={
-                                Object {
-                                  "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": Array [],
-                                  "componentStyle": ComponentStyle {
-                                    "componentId": "Input__Underline-sc-100s1kb-1",
-                                    "isStatic": false,
-                                    "lastClassName": "jFXrzX",
-                                    "rules": Array [
-                                      "user-select:none;border-top:2px solid ",
-                                      [Function],
-                                      ";position:",
-                                      [Function],
-                                      " left:0;bottom:0;max-width:100%;height:0px;color:transparent;overflow:hidden;font-size:",
-                                      [Function],
-                                      "px;margin-left:2px;",
-                                    ],
-                                  },
-                                  "displayName": "Input__Underline",
-                                  "foldedComponentIds": Array [],
-                                  "render": [Function],
-                                  "styledComponentId": "Input__Underline-sc-100s1kb-1",
-                                  "target": "span",
-                                  "toString": [Function],
-                                  "warnTooManyClasses": [Function],
-                                  "withComponent": [Function],
+                              <ForwardRef(Input)
+                                classes={
+                                  Object {
+                                    "disabled": "Mui-disabled",
+                                    "error": "Mui-error",
+                                    "focused": "Mui-focused",
+                                    "formControl": "MuiInput-formControl",
+                                    "fullWidth": "MuiInput-fullWidth",
+                                    "input": "MuiInput-input",
+                                    "inputMarginDense": "MuiInput-inputMarginDense",
+                                    "inputMultiline": "MuiInput-inputMultiline",
+                                    "inputTypeSearch": "MuiInput-inputTypeSearch",
+                                    "multiline": "MuiInput-multiline",
+                                    "root": "MuiInput-root",
+                                    "underline": "MuiInput-underline",
+                                  }
                                 }
-                              }
-                              forwardedRef={null}
-                              textAlign="left"
-                            >
-                              <span
-                                className="Input__Underline-sc-100s1kb-1 jFXrzX"
-                                fontSize={0}
+                                placeholder="ADD TAG"
                               >
-                                ADD TAG
-                              </span>
-                            </StyledComponent>
-                          </Input__Underline>
-                        </div>
-                      </StyledComponent>
-                    </Input__Wrapper>
-                  </Input>
+                                <WithStyles(ForwardRef(InputBase))
+                                  classes={
+                                    Object {
+                                      "disabled": "Mui-disabled",
+                                      "error": "Mui-error",
+                                      "focused": "Mui-focused",
+                                      "formControl": "MuiInput-formControl",
+                                      "fullWidth": "MuiInput-fullWidth",
+                                      "input": "MuiInput-input",
+                                      "inputMarginDense": "MuiInput-inputMarginDense",
+                                      "inputMultiline": "MuiInput-inputMultiline",
+                                      "inputTypeSearch": "MuiInput-inputTypeSearch",
+                                      "multiline": "MuiInput-multiline",
+                                      "root": "MuiInput-root MuiInput-underline",
+                                      "underline": null,
+                                    }
+                                  }
+                                  fullWidth={false}
+                                  inputComponent="input"
+                                  multiline={false}
+                                  placeholder="ADD TAG"
+                                  type="text"
+                                >
+                                  <ForwardRef(InputBase)
+                                    classes={
+                                      Object {
+                                        "adornedEnd": "MuiInputBase-adornedEnd",
+                                        "adornedStart": "MuiInputBase-adornedStart",
+                                        "disabled": "Mui-disabled Mui-disabled",
+                                        "error": "Mui-error Mui-error",
+                                        "focused": "Mui-focused Mui-focused",
+                                        "formControl": "MuiInputBase-formControl MuiInput-formControl",
+                                        "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
+                                        "input": "MuiInputBase-input MuiInput-input",
+                                        "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
+                                        "inputAdornedStart": "MuiInputBase-inputAdornedStart",
+                                        "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
+                                        "inputMarginDense": "MuiInputBase-inputMarginDense MuiInput-inputMarginDense",
+                                        "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
+                                        "inputSelect": "MuiInputBase-inputSelect",
+                                        "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
+                                        "marginDense": "MuiInputBase-marginDense",
+                                        "multiline": "MuiInputBase-multiline MuiInput-multiline",
+                                        "root": "MuiInputBase-root MuiInput-root MuiInput-underline",
+                                      }
+                                    }
+                                    fullWidth={false}
+                                    inputComponent="input"
+                                    multiline={false}
+                                    placeholder="ADD TAG"
+                                    type="text"
+                                  >
+                                    <div
+                                      className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+                                      onClick={[Function]}
+                                    >
+                                      <input
+                                        aria-invalid={false}
+                                        className="MuiInputBase-input MuiInput-input"
+                                        disabled={false}
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        onFocus={[Function]}
+                                        placeholder="ADD TAG"
+                                        required={false}
+                                        type="text"
+                                      />
+                                    </div>
+                                  </ForwardRef(InputBase)>
+                                </WithStyles(ForwardRef(InputBase))>
+                              </ForwardRef(Input)>
+                            </WithStyles(ForwardRef(Input))>
+                          </div>
+                        </ForwardRef(FormControl)>
+                      </WithStyles(ForwardRef(FormControl))>
+                    </ForwardRef(TextField)>
+                  </WithStyles(ForwardRef(TextField))>
                 </div>
               </StyledComponent>
             </TagInput__TopRow>
@@ -2006,176 +1978,153 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                               </defs>
                             </svg>
                           </Plus>
-                          <Input
-                            color="white"
-                            fontSize={0}
-                            fontWeight={600}
+                          <WithStyles(ForwardRef(TextField))
                             onChange={[Function]}
                             onKeyPress={[Function]}
                             onKeyUp={[Function]}
-                            placeHolder="ADD TAG"
-                            textAlign="left"
+                            placeholder="ADD TAG"
                           >
-                            <Input__Wrapper
-                              textAlign="left"
-                            >
-                              <StyledComponent
-                                forwardedComponent={
-                                  Object {
-                                    "$$typeof": Symbol(react.forward_ref),
-                                    "attrs": Array [],
-                                    "componentStyle": ComponentStyle {
-                                      "componentId": "Input__Wrapper-sc-100s1kb-2",
-                                      "isStatic": false,
-                                      "lastClassName": "ekFmoA",
-                                      "rules": Array [
-                                        "display:flex;position:relative;align-self:auto;",
-                                        [Function],
-                                        " ",
-                                        [Function],
-                                        " ",
-                                        [Function],
-                                      ],
-                                    },
-                                    "displayName": "Input__Wrapper",
-                                    "foldedComponentIds": Array [],
-                                    "render": [Function],
-                                    "styledComponentId": "Input__Wrapper-sc-100s1kb-2",
-                                    "target": "div",
-                                    "toString": [Function],
-                                    "warnTooManyClasses": [Function],
-                                    "withComponent": [Function],
-                                  }
+                            <ForwardRef(TextField)
+                              classes={
+                                Object {
+                                  "root": "MuiTextField-root",
                                 }
-                                forwardedRef={null}
-                                textAlign="left"
+                              }
+                              onChange={[Function]}
+                              onKeyPress={[Function]}
+                              onKeyUp={[Function]}
+                              placeholder="ADD TAG"
+                            >
+                              <WithStyles(ForwardRef(FormControl))
+                                className="MuiTextField-root"
+                                onKeyPress={[Function]}
+                                onKeyUp={[Function]}
+                                required={false}
+                                variant="standard"
                               >
-                                <div
-                                  className="Input__Wrapper-sc-100s1kb-2 ekFmoA"
+                                <ForwardRef(FormControl)
+                                  className="MuiTextField-root"
+                                  classes={
+                                    Object {
+                                      "fullWidth": "MuiFormControl-fullWidth",
+                                      "marginDense": "MuiFormControl-marginDense",
+                                      "marginNormal": "MuiFormControl-marginNormal",
+                                      "root": "MuiFormControl-root",
+                                    }
+                                  }
+                                  onKeyPress={[Function]}
+                                  onKeyUp={[Function]}
+                                  required={false}
+                                  variant="standard"
                                 >
-                                  <Input__InputComp
-                                    color="white"
-                                    fontSize={0}
-                                    fontWeight={600}
-                                    onBlur={[Function]}
-                                    onChange={[Function]}
-                                    onFocus={[Function]}
+                                  <div
+                                    className="MuiFormControl-root MuiTextField-root"
                                     onKeyPress={[Function]}
                                     onKeyUp={[Function]}
-                                    placeholder="ADD TAG"
-                                    textAlign="left"
-                                    value=""
                                   >
-                                    <StyledComponent
-                                      color="white"
-                                      fontSize={0}
-                                      fontWeight={600}
-                                      forwardedComponent={
-                                        Object {
-                                          "$$typeof": Symbol(react.forward_ref),
-                                          "attrs": Array [],
-                                          "componentStyle": ComponentStyle {
-                                            "componentId": "Input__InputComp-sc-100s1kb-0",
-                                            "isStatic": false,
-                                            "lastClassName": "ignUYs",
-                                            "rules": Array [
-                                              "text-align:",
-                                              [Function],
-                                              ";font-size:",
-                                              [Function],
-                                              "px;font-weight:",
-                                              [Function],
-                                              ";color:",
-                                              [Function],
-                                              ";background:transparent;width:100%;outline:none;border:none;::-webkit-input-placeholder{color:",
-                                              [Function],
-                                              ";}:focus::-webkit-input-placeholder{text-indent:-999px;}",
-                                            ],
-                                          },
-                                          "displayName": "Input__InputComp",
-                                          "foldedComponentIds": Array [],
-                                          "render": [Function],
-                                          "styledComponentId": "Input__InputComp-sc-100s1kb-0",
-                                          "target": "input",
-                                          "toString": [Function],
-                                          "warnTooManyClasses": [Function],
-                                          "withComponent": [Function],
-                                        }
-                                      }
-                                      forwardedRef={null}
-                                      onBlur={[Function]}
+                                    <WithStyles(ForwardRef(Input))
                                       onChange={[Function]}
-                                      onFocus={[Function]}
-                                      onKeyPress={[Function]}
-                                      onKeyUp={[Function]}
                                       placeholder="ADD TAG"
-                                      textAlign="left"
-                                      value=""
                                     >
-                                      <input
-                                        className="Input__InputComp-sc-100s1kb-0 ignUYs"
-                                        color="white"
-                                        fontSize={0}
-                                        fontWeight={600}
-                                        onBlur={[Function]}
-                                        onChange={[Function]}
-                                        onFocus={[Function]}
-                                        onKeyPress={[Function]}
-                                        onKeyUp={[Function]}
-                                        placeholder="ADD TAG"
-                                        value=""
-                                      />
-                                    </StyledComponent>
-                                  </Input__InputComp>
-                                  <Input__Underline
-                                    fontSize={0}
-                                    textAlign="left"
-                                  >
-                                    <StyledComponent
-                                      fontSize={0}
-                                      forwardedComponent={
-                                        Object {
-                                          "$$typeof": Symbol(react.forward_ref),
-                                          "attrs": Array [],
-                                          "componentStyle": ComponentStyle {
-                                            "componentId": "Input__Underline-sc-100s1kb-1",
-                                            "isStatic": false,
-                                            "lastClassName": "jFXrzX",
-                                            "rules": Array [
-                                              "user-select:none;border-top:2px solid ",
-                                              [Function],
-                                              ";position:",
-                                              [Function],
-                                              " left:0;bottom:0;max-width:100%;height:0px;color:transparent;overflow:hidden;font-size:",
-                                              [Function],
-                                              "px;margin-left:2px;",
-                                            ],
-                                          },
-                                          "displayName": "Input__Underline",
-                                          "foldedComponentIds": Array [],
-                                          "render": [Function],
-                                          "styledComponentId": "Input__Underline-sc-100s1kb-1",
-                                          "target": "span",
-                                          "toString": [Function],
-                                          "warnTooManyClasses": [Function],
-                                          "withComponent": [Function],
+                                      <ForwardRef(Input)
+                                        classes={
+                                          Object {
+                                            "disabled": "Mui-disabled",
+                                            "error": "Mui-error",
+                                            "focused": "Mui-focused",
+                                            "formControl": "MuiInput-formControl",
+                                            "fullWidth": "MuiInput-fullWidth",
+                                            "input": "MuiInput-input",
+                                            "inputMarginDense": "MuiInput-inputMarginDense",
+                                            "inputMultiline": "MuiInput-inputMultiline",
+                                            "inputTypeSearch": "MuiInput-inputTypeSearch",
+                                            "multiline": "MuiInput-multiline",
+                                            "root": "MuiInput-root",
+                                            "underline": "MuiInput-underline",
+                                          }
                                         }
-                                      }
-                                      forwardedRef={null}
-                                      textAlign="left"
-                                    >
-                                      <span
-                                        className="Input__Underline-sc-100s1kb-1 jFXrzX"
-                                        fontSize={0}
+                                        onChange={[Function]}
+                                        placeholder="ADD TAG"
                                       >
-                                        ADD TAG
-                                      </span>
-                                    </StyledComponent>
-                                  </Input__Underline>
-                                </div>
-                              </StyledComponent>
-                            </Input__Wrapper>
-                          </Input>
+                                        <WithStyles(ForwardRef(InputBase))
+                                          classes={
+                                            Object {
+                                              "disabled": "Mui-disabled",
+                                              "error": "Mui-error",
+                                              "focused": "Mui-focused",
+                                              "formControl": "MuiInput-formControl",
+                                              "fullWidth": "MuiInput-fullWidth",
+                                              "input": "MuiInput-input",
+                                              "inputMarginDense": "MuiInput-inputMarginDense",
+                                              "inputMultiline": "MuiInput-inputMultiline",
+                                              "inputTypeSearch": "MuiInput-inputTypeSearch",
+                                              "multiline": "MuiInput-multiline",
+                                              "root": "MuiInput-root MuiInput-underline",
+                                              "underline": null,
+                                            }
+                                          }
+                                          fullWidth={false}
+                                          inputComponent="input"
+                                          multiline={false}
+                                          onChange={[Function]}
+                                          placeholder="ADD TAG"
+                                          type="text"
+                                        >
+                                          <ForwardRef(InputBase)
+                                            classes={
+                                              Object {
+                                                "adornedEnd": "MuiInputBase-adornedEnd",
+                                                "adornedStart": "MuiInputBase-adornedStart",
+                                                "disabled": "Mui-disabled Mui-disabled",
+                                                "error": "Mui-error Mui-error",
+                                                "focused": "Mui-focused Mui-focused",
+                                                "formControl": "MuiInputBase-formControl MuiInput-formControl",
+                                                "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
+                                                "input": "MuiInputBase-input MuiInput-input",
+                                                "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
+                                                "inputAdornedStart": "MuiInputBase-inputAdornedStart",
+                                                "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
+                                                "inputMarginDense": "MuiInputBase-inputMarginDense MuiInput-inputMarginDense",
+                                                "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
+                                                "inputSelect": "MuiInputBase-inputSelect",
+                                                "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
+                                                "marginDense": "MuiInputBase-marginDense",
+                                                "multiline": "MuiInputBase-multiline MuiInput-multiline",
+                                                "root": "MuiInputBase-root MuiInput-root MuiInput-underline",
+                                              }
+                                            }
+                                            fullWidth={false}
+                                            inputComponent="input"
+                                            multiline={false}
+                                            onChange={[Function]}
+                                            placeholder="ADD TAG"
+                                            type="text"
+                                          >
+                                            <div
+                                              className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+                                              onClick={[Function]}
+                                            >
+                                              <input
+                                                aria-invalid={false}
+                                                className="MuiInputBase-input MuiInput-input"
+                                                disabled={false}
+                                                onBlur={[Function]}
+                                                onChange={[Function]}
+                                                onFocus={[Function]}
+                                                placeholder="ADD TAG"
+                                                required={false}
+                                                type="text"
+                                              />
+                                            </div>
+                                          </ForwardRef(InputBase)>
+                                        </WithStyles(ForwardRef(InputBase))>
+                                      </ForwardRef(Input)>
+                                    </WithStyles(ForwardRef(Input))>
+                                  </div>
+                                </ForwardRef(FormControl)>
+                              </WithStyles(ForwardRef(FormControl))>
+                            </ForwardRef(TextField)>
+                          </WithStyles(ForwardRef(TextField))>
                         </div>
                       </StyledComponent>
                     </TagInput__TopRow>

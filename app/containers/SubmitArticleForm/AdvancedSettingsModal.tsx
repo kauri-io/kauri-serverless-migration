@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { NavigationText, Label } from '../../components/Typography'
 import Button from '@material-ui/core/Button'
 import ModalHeader from '../../components/Headers/ModalHeader'
-import Input from '../../components/Input/Input'
+import TextField from '@material-ui/core/TextField'
 import {
     IShowNotificationAction,
     IShowNotificationPayload,
@@ -97,14 +97,12 @@ class AdvancedSettingsModal extends React.Component<IProps, IState> {
                     A canonical URL helps search engines give credit to the
                     origin.
                 </Label>
-                <Input
+                <TextField
                     onChange={e =>
                         this.setState({ canonicalURL: e.target.value })
                     }
                     value={this.state.canonicalURL}
-                    color="textPrimary"
-                    placeHolder="Enter a canonical url"
-                    fontSize={3}
+                    placeholder="Enter a canonical url"
                 />
                 <Actions
                     handleConfirm={

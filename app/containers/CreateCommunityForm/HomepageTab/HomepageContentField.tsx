@@ -3,7 +3,7 @@ import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
 import CardContentSection from '../../../components/Section/CardContentSection'
 import { FieldArray, Field } from 'formik'
 import { IFormValues, emptySection } from '../index'
-import Input from '../../../components/Input/Input'
+import TextField from '@material-ui/core/TextField'
 import ArticleCard from '../../ArticleCardFormView'
 import CollectionCard from '../../CollectionCardFormView'
 import { space, SpaceProps, background, BackgroundProps } from 'styled-system'
@@ -222,14 +222,10 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                         type="text"
                                         name={`homepage.${index}.name`}
                                         render={({ field }: any) => (
-                                            <Input
+                                            <TextField
                                                 {...field}
-                                                type="text"
-                                                placeHolder="Add Section Name"
-                                                fontSize={5}
-                                                fontWeight={500}
-                                                color={'primaryTextColor'}
-                                                textAlign={'center'}
+                                                placeholder="Add Section Name"
+
                                             />
                                         )}
                                     />
@@ -237,14 +233,10 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                         type="text"
                                         name={`homepage.${index}.description`}
                                         render={({ field }: any) => (
-                                            <Input
+                                            <TextField
                                                 {...field}
                                                 type="text"
-                                                placeHolder="Add Section Description"
-                                                fontSize={2}
-                                                fontWeight={300}
-                                                color={'primaryTextColor'}
-                                                textAlign={'center'}
+                                                placeholder="Add Section Description"
                                             />
                                         )}
                                     />

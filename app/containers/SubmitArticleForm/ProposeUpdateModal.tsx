@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { NavigationText, BodyCard } from '../../components/Typography'
 import Button from '@material-ui/core/Button'
 import ModalHeader from '../../components/Headers/ModalHeader'
-import Input from '../../components/Input/Input'
+import TextField from '@material-ui/core/TextField'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import CloseIcon from '@material-ui/icons/Close'
 
@@ -93,14 +93,12 @@ class ProposeArticleModal extends React.Component<IProps, IState> {
                         <Title text="Please enter a note to the author explaining your changes. At a minimum, describe what you've changed. Adding detail will greatly increase the likelihood the author will accept and publish your proposed update!" />
                     }
                 />
-                <Input
+                <TextField
                     onChange={e =>
                         this.setState({ updateComment: e.target.value })
                     }
                     value={this.state.updateComment}
-                    color="textPrimary"
-                    placeHolder="Please describe your changes"
-                    fontSize={4}
+                    placeholder="Please describe your changes"
                 />
                 <Actions
                     handleConfirm={

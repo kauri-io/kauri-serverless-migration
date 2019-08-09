@@ -38,22 +38,6 @@
       "dest": "/app/update-article?id=$1&version=$2"
     },
     {
-      "src": "/article/(.*)/v(.*)/article-updated",
-      "dest": "/app/article-updated?article_id=$1&article_version=$2"
-    },
-    {
-      "src": "/article/(.*)/v(.*)/article-published",
-      "dest": "/app/article-published?article_id=$1&article_version=$2"
-    },
-    {
-      "src": "/article/(.*)/v(.*)/article-proposed",
-      "dest": "/app/article-proposed?article_id=$1&article_version=$2"
-    },
-    {
-      "src": "/article/(.*)/v(.*)/article-rejected",
-      "dest": "/app/article-rejected?id=$1&version=$2"
-    },
-    {
       "src": "/(.*)",
       "dest": "/app/$1"
     }

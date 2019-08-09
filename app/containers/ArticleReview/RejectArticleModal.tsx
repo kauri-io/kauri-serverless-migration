@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { NavigationText, BodyCard } from '../../components/Typography'
 import Button from '@material-ui/core/Button'
 import ModalHeader from '../../components/Headers/ModalHeader'
-import Input from '../../components/Input/Input'
+import TextField from '@material-ui/core/TextField'
 import CloseIcon from '@material-ui/icons/Close'
 
 const TitleContainer = styled.div`
@@ -92,14 +92,12 @@ class RejectArticleModal extends React.Component<IProps, IState> {
                         <Title text="Let the contributor know why the article is been rejected. So they can improve the content and submit a corrected version." />
                     }
                 />
-                <Input
+                <TextField
                     onChange={e =>
                         this.setState({ rejectionCause: e.target.value })
                     }
                     value={this.state.rejectionCause}
-                    color="textPrimary"
-                    placeHolder="Add feedback for the contributor"
-                    fontSize={4}
+                    placeholder="Add feedback for the contributor"
                 />
                 <Actions
                     handleConfirm={() =>

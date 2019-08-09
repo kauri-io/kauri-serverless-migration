@@ -20,7 +20,7 @@ const ContentContainer = styled.div`
     @media (min-width: 700px) {
         padding: ${props => props.theme.space[4]}px;
     }
-    @media (min-width: 1280px) {
+    @media (min-width: 1232px) {
         padding: ${props => `${props.theme.space[4]}px ${props.theme.padding}`};
     }
 `

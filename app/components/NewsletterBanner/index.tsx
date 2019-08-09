@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Title2, BodyCard } from '../Typography'
-import { Input } from '../Input'
+import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import * as Yup from 'yup'
 import { useState, FunctionComponent } from 'react'
@@ -88,12 +88,9 @@ const NewsletterBanner: FunctionComponent<IProps> = props => {
                     Subscribe below and receive the latest Ethereum tutorials
                     and project announcements every 2 weeks!
                 </BodyCard>
-                <Input
-                    color="white"
-                    textAlign={'center'}
-                    placeHolder={'Enter your email address'}
-                    fontSize={3}
-                    handleChange={({ target: { value: emailAddress } }) =>
+                <TextField
+                    placeholder={'Enter your email address'}
+                    onChange={({ target: { value: emailAddress } }) =>
                         setState({ emailAddress })
                     }
                     onKeyPress={(e: React.KeyboardEvent) => {
@@ -105,7 +102,7 @@ const NewsletterBanner: FunctionComponent<IProps> = props => {
                     }}
                 >
                     {state.emailAddress}
-                </Input>
+                </TextField>
                 <Button
                     color="primary"
                     variant="contained"

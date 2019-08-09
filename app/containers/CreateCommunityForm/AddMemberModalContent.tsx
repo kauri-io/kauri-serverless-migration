@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Input } from '../../components/Input'
+import TextField from '@material-ui/core/TextField'
 import { BodyCard, Label } from '../../components/Typography'
 import Select, { TooltipContainer } from '../../components/Select'
 import Divider from '../../components/Divider'
@@ -80,14 +80,10 @@ const AddMemberModalContent: React.FunctionComponent<IProps> = ({
                         Enter the potential moderator or admin’s email address
                         to invite them to join!
                     </BodyCard>
-                    <Input
+                    <TextField
                         onChange={handleEmailChange}
                         value={email}
-                        placeHolder="EMAIL ADDRESS"
-                        textAlign="center"
-                        color="textPrimary"
-                        fontSize={1}
-                        fontWeight={500}
+                        placeholder="EMAIL ADDRESS"
                     />
                     <Select value={role} placeHolder="Choose Role">
                         <ChooseRoleOptions

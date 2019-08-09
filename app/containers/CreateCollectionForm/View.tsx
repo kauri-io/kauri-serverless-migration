@@ -9,7 +9,7 @@ import CardContentSection from '../../components/Section/CardContentSection'
 import StatisticsContainer from '../../components/PublicProfile/StatisticsContainer'
 import UserAvatar from '../../components/UserAvatar'
 import { Label } from '../../components/Typography'
-import Input from '../../components/Input/Input'
+import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import showFormValidationErrors from '../../lib/show-form-validation-errors'
 import ChooseArticleModal from './ChooseArticleModal'
@@ -395,11 +395,10 @@ const CreateCollectionForm: React.FC<
                                 type="text"
                                 name="name"
                                 render={({ field }) => (
-                                    <Input
+                                    <TextField
                                         {...field}
-                                        type="text"
-                                        placeHolder="Add collection title"
-                                        fontSize={7}
+                                        placeholder="Add collection title"
+
                                     />
                                 )}
                             />
@@ -408,11 +407,9 @@ const CreateCollectionForm: React.FC<
                                 type="text"
                                 name="description"
                                 render={({ field }) => (
-                                    <Input
+                                    <TextField
                                         {...field}
-                                        type="text"
-                                        placeHolder="Add description"
-                                        fontSize={4}
+                                        placeholder="Add description"
                                     />
                                 )}
                             />
@@ -538,7 +535,7 @@ const CreateCollectionForm: React.FC<
                                                         type="text"
                                                         name={`sections.${index}.name`}
                                                         render={({ field }) => (
-                                                            <Input
+                                                            <TextField
                                                                 {...field}
                                                                 type="text"
                                                                 placeHolder="Add Section Name"
@@ -557,7 +554,7 @@ const CreateCollectionForm: React.FC<
                                                         type="text"
                                                         name={`sections.${index}.description`}
                                                         render={({ field }) => (
-                                                            <Input
+                                                            <TextField
                                                                 {...field}
                                                                 type="text"
                                                                 placeHolder="Add Section Description"

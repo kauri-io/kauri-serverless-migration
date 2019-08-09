@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import { BodyCard } from '../../../components/Typography'
-import Input from '../../../components/Input/Input'
+import TextField from '@material-ui/core/TextField'
 import AddOptions from '../../../components/AddOptions'
 
 const Container = styled.div`
@@ -48,19 +48,11 @@ const CommunityHomepageEmptyState: React.FunctionComponent<IProps> = props => (
                 )
             }
         >
-            <Input
-                placeHolder="Add Section Name"
-                fontSize={5}
-                fontWeight={500}
-                color={'primaryTextColor'}
-                textAlign={'center'}
+            <TextField
+                placeholder="Add Section Name"
             />
-            <Input
-                placeHolder="Add Section Description"
-                fontSize={3}
-                fontWeight={500}
-                color={'primaryTextColor'}
-                textAlign={'center'}
+            <TextField
+                placeholder="Add Section Description"
             />
             <AddOptions>
                 <div />

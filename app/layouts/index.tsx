@@ -14,7 +14,7 @@ const mapStateToProps = (state: IReduxState) => ({
 
 const useStyles = makeStyles((theme: Theme) => ({
     constrained: {
-        maxWidth: 1280,
+        maxWidth: 1232,
     },
     item: {
         width: '100%',

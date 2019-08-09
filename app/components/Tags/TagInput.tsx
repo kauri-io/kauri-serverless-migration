@@ -1,4 +1,4 @@
-import { Input } from '../Input'
+import TextField from '@material-ui/core/TextField'
 import styled from 'styled-components'
 import Plus from './Plus'
 import { ITag } from './types'
@@ -171,7 +171,7 @@ class TagInput extends Component<IProps, IState> {
                 <div>
                     <TopRow>
                         <Plus />
-                        <Input
+                        <TextField
                             onKeyPress={(
                                 e: React.KeyboardEvent<HTMLInputElement>
                             ) => {
@@ -182,11 +182,7 @@ class TagInput extends Component<IProps, IState> {
                             ref={ref => (this.inputRef = ref)}
                             onKeyUp={this.handleKey}
                             onChange={this.props.onChange}
-                            textAlign="left"
-                            fontSize={0}
-                            fontWeight={600}
-                            color="white"
-                            placeHolder="ADD TAG"
+                            placeholder="ADD TAG"
                         />
                     </TopRow>
                 </div>

@@ -6,7 +6,7 @@ import PrimaryHeaderSection from '../../components/Section/PrimaryHeaderSection'
 import { Label } from '../../components/Typography'
 import UploadLogoButtonComponent from '../../components/Button/UploadLogoButton'
 import AddMemberButtonComponent from '../../components/Button/AddMemberButton'
-import { Input } from '../../components/Input'
+import TextField from '@material-ui/core/TextField'
 import UserAvatarComponent from '../../components/UserAvatar'
 import StatisticsContainer from '../../components/PublicProfile/StatisticsContainer'
 import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
@@ -104,11 +104,9 @@ const Component: React.SFC<IProps> = props => (
                         type="text"
                         name="name"
                         render={({ field }: FieldProps<IFormValues>) => (
-                            <Input
+                            <TextField
                                 {...field}
-                                fontSize={7}
-                                fontWeight={500}
-                                placeHolder={'Community Name'}
+                                placeholder={'Community Name'}
                             />
                         )}
                     />
@@ -117,10 +115,9 @@ const Component: React.SFC<IProps> = props => (
                         type="text"
                         name="website"
                         render={({ field }: FieldProps<IFormValues>) => (
-                            <Input
+                            <TextField
                                 {...field}
-                                fontSize={2}
-                                placeHolder={'Website'}
+                                placeholder={'Website'}
                             />
                         )}
                     />
@@ -130,11 +127,9 @@ const Component: React.SFC<IProps> = props => (
                 type="text"
                 name="description"
                 render={({ field }: FieldProps<IFormValues>) => (
-                    <Input
+                    <TextField
                         {...field}
-                        fontSize={3}
-                        fontWeight={500}
-                        placeHolder={'Add description'}
+                        placeholder={'Add description'}
                     />
                 )}
             />
@@ -153,10 +148,9 @@ const Component: React.SFC<IProps> = props => (
                     type="text"
                     name="social.twitter"
                     render={({ field }: FieldProps<IFormValues>) => (
-                        <Input
+                        <TextField
                             {...field}
-                            fontSize={2}
-                            placeHolder={'Twitter'}
+                            placeholder={'Twitter'}
                         />
                     )}
                 />
@@ -168,7 +162,7 @@ const Component: React.SFC<IProps> = props => (
                     type="text"
                     name="social.github"
                     render={({ field }: FieldProps<IFormValues>) => (
-                        <Input {...field} fontSize={2} placeHolder={'Github'} />
+                        <TextField {...field} placeholder={'Github'} />
                     )}
                 />
             </SocialFieldContainer>
