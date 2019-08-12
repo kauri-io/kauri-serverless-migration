@@ -672,7 +672,7 @@ export const acceptCommunityInvitationEpic: Epic<
                       ),
                       mergeMap(({ data }) =>
                           apolloSubscriber<IAcceptInvitationCommandOutput>(
-                              path<string>(['acceptInvitationResult', 'hash'])(
+                              path<string>(['acceptInvitation', 'hash'])(
                                   data
                               ) || ''
                           )
@@ -877,8 +877,7 @@ export const removeMemberEpic: Epic<
                 ),
                 mergeMap(({ data }) =>
                     apolloSubscriber<IRemoveMemberCommandOutput>(
-                        path<string>(['removeMember', 'messageHash'])(data) ||
-                            ''
+                        path<string>(['removeMember', 'hash'])(data) || ''
                     )
                 ),
                 tap(() => apolloClient.resetStore()),

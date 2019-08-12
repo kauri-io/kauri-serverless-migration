@@ -52,7 +52,8 @@ describe('removeMemberEpic', () => {
             mutate: () =>
                 Promise.resolve({
                     data: {
-                        prepareremoveMember: { hash: '1234567890' },
+                        prepareremoveMember: { messageHash: '1234567890' },
+                        removeMember: { hash: '1234567890' },
                     },
                 }),
             query: () =>

@@ -162,29 +162,33 @@ export const verifyEmailEpic: Epic<
             ).pipe(
                 mergeMap(({ data }) =>
                     from(
-                        new Promise<{ data: { output: IVerifyEmailOutput } }>(
-                            (resolve, reject) => {
-                                apollo
-                                    .subscribe({
-                                        query: getEvent,
-                                        variables: path(
+                        new Promise<{
+                            data: { getEvent: { output: IVerifyEmailOutput } }
+                        }>((resolve, reject) => {
+                            apollo
+                                .subscribe({
+                                    query: getEvent,
+                                    variables: {
+                                        hash: path(
                                             ['verifyEmail', 'hash'],
                                             data
                                         ),
-                                    })
-                                    .subscribe({
-                                        error: (err: Error) => reject(err),
-                                        next: (data: {
-                                            data: {
+                                    },
+                                })
+                                .subscribe({
+                                    error: (err: Error) => reject(err),
+                                    next: (data: {
+                                        data: {
+                                            getEvent: {
                                                 output: IVerifyEmailOutput
                                             }
-                                        }) => resolve(data),
-                                    })
-                            }
-                        )
+                                        }
+                                    }) => resolve(data),
+                                })
+                        })
                     )
                 ),
-                mergeMap(({ data: { output } }) =>
+                mergeMap(({ data: { getEvent: { output } } }) =>
                     output && output.childHashes
                         ? forkJoin(
                               output.childHashes.map(

@@ -54,6 +54,7 @@ describe('acceptCommunityInvitationEpic', () => {
                 Promise.resolve({
                     data: {
                         prepareAcceptInvitation: { messageHash: '1234567890' },
+                        acceptInvitation: { hash: '1234567890' },
                     },
                 }),
             query: () =>

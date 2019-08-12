@@ -29,13 +29,13 @@ interface IProps {
     resourceType?: string // card, relatedArticles
 }
 
-const firstTagBulletPointCSS = css`
+const firstTagBulletPointCSS = css<{ color?: string }>`
     &:not(:last-child):after {
         content: '';
     }
     &:before {
         content: '•';
-        color: ${theme.colors.primary};
+        color: ${props => props.color || theme.colors.primary};
         margin: ${theme.space[1] / 2}px;
         font-weight: ${theme.fontWeight[3]};
     }
@@ -49,9 +49,10 @@ const RelatedArticleTagCSS = css`
 export const StyledTag = styled.div<ITagName>`
     cursor: pointer;
     transition: 0.3s;
+    color: ${props => props.color || theme.colors.primary};
     &:not(:last-child):after {
         content: '•';
-        color: ${theme.colors.primary};
+        color: ${props => props.color || theme.colors.primary};
         margin: ${theme.space[1] / 2}px;
         font-weight: ${theme.fontWeight[3]};
     }
