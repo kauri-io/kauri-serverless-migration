@@ -28,7 +28,7 @@ import {
     transferArticleToCommunityAction as transferArticleToCommunity,
 } from './Module'
 import AddMemberButtonComponent from '../../components/Button/AddMemberButton'
-import { getUpdateCommunityURL } from '../../lib/getURLs';
+import { getUpdateCommunityURL } from '../../lib/getURLs'
 
 const TooltipContainer = styled.section`
     display: flex;
@@ -526,7 +526,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                     onClick={() =>
                                         routeChangeAction &&
                                         routeChangeAction(
-                                          getUpdateCommunityURL({ id }).href
+                                            getUpdateCommunityURL({ id }).href
                                         )
                                     }
                                 >

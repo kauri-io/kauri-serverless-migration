@@ -49,7 +49,6 @@ const AddMemberModal: React.FunctionComponent<IProps> = props => {
         ? roles.filter(hardcodedRoles => hardcodedRoles.value === state.role)[0]
               .label
         : role
-
     return (
         <AlertViewComponent
             closeModalAction={() => props.closeModalAction()}

@@ -12,10 +12,10 @@ import withApolloError from '../../../lib/with-apollo-error'
 import { IReduxState } from '../../../lib/Module'
 import { getCommunityContentQuery } from '../../../queries/Community'
 import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    DialogActions,
 } from '@material-ui/core'
 
 const collectionSize = 12

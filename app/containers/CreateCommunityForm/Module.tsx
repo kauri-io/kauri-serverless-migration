@@ -471,7 +471,10 @@ export const updateCommunityEpic: Epic<
                                           of(communityUpdatedAction()),
                                           of(
                                               routeChangeAction(
-                                                getCommunityURL({ id: payload.id, name: payload.name }).href
+                                                  getCommunityURL({
+                                                      id: payload.id,
+                                                      name: payload.name,
+                                                  }).href
                                               )
                                           )
                                       )
@@ -503,9 +506,12 @@ export const updateCommunityEpic: Epic<
                                   ),
                                   of(communityUpdatedAction()),
                                   of(
-                                    routeChangeAction(
-                                      getCommunityURL({ id: payload.id, name: payload.name }).href
-                                    )
+                                      routeChangeAction(
+                                          getCommunityURL({
+                                              id: payload.id,
+                                              name: payload.name,
+                                          }).href
+                                      )
                                   )
                               ).pipe(tap(() => apolloClient.resetStore()))
                     )

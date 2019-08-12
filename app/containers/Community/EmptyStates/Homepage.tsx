@@ -3,7 +3,7 @@ import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import { BodyCard } from '../../../components/Typography'
 import Input from '../../../components/Input/Input'
 import AddOptions from '../../../components/AddOptions'
-import { getUpdateCommunityURL } from '../../../lib/getURLs';
+import { getUpdateCommunityURL } from '../../../lib/getURLs'
 
 const Container = styled.div`
     display: flex;
@@ -45,7 +45,7 @@ const CommunityHomepageEmptyState: React.FunctionComponent<IProps> = props => (
         <OpacityOverlay
             onClick={() =>
                 props.routeChangeAction(
-                  getUpdateCommunityURL({ id: props.id }).href
+                    getUpdateCommunityURL({ id: props.id }).href
                 )
             }
         >

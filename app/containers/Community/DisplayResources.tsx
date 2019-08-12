@@ -148,7 +148,7 @@ const DisplayResources = ({
     // closeModalAction,
     // removeResourceAction,
     type,
-    classes
+    classes,
 }: IProps) => {
     if (
         Array.isArray(resources) &&
