@@ -453,7 +453,7 @@ export const updateCommunityEpic: Epic<
                                       )
                                   ),
                                   combineAll(),
-                                  // .do(signedSignatures =>
+                                  // tap(signedSignatures =>
                                   //     console.log(
                                   //         'signedSignatures combined',
                                   //         signedSignatures
@@ -471,7 +471,7 @@ export const updateCommunityEpic: Epic<
                                           of(communityUpdatedAction()),
                                           of(
                                               routeChangeAction(
-                                                  `/community/${payload.id}/community-updated`
+                                                getCommunityURL({ id: payload.id, name: payload.name }).href
                                               )
                                           )
                                       )
@@ -503,9 +503,9 @@ export const updateCommunityEpic: Epic<
                                   ),
                                   of(communityUpdatedAction()),
                                   of(
-                                      routeChangeAction(
-                                          `/community/${payload.id}/community-updated`
-                                      )
+                                    routeChangeAction(
+                                      getCommunityURL({ id: payload.id, name: payload.name }).href
+                                    )
                                   )
                               ).pipe(tap(() => apolloClient.resetStore()))
                     )

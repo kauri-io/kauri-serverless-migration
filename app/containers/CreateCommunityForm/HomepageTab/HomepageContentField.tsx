@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import React from 'react'
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
 import CardContentSection from '../../../components/Section/CardContentSection'
 import { FieldArray, Field } from 'formik'
@@ -204,9 +205,16 @@ interface IProps {
 const HomepageContentField: React.FunctionComponent<IProps> = ({
     id,
     values,
-    openModalAction,
-    closeModalAction,
 }) => {
+    const [openChooseArticleModal, setOpenChooseArticleModal] = React.useState<
+        boolean
+    >(false)
+
+    const [
+        openChooseCollectionModal,
+        setOpenChooseCollectionModal,
+    ] = React.useState<boolean>(false)
+
     return (
         <ContentSection bg="tertiaryBackgroundColor">
             <FieldArray
@@ -330,6 +338,179 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                         </Droppable>
                                     </DragDropContext>
 
+                                    {
+                                        // TODO: CHANGE TO CHOOSEARTICLEMODAL COMPONENT BECAUSE PHASE 2 :-1:
+                                    }
+                                    <ChooseCommunityArticleModal
+                                        open={openChooseArticleModal}
+                                        id={id}
+                                        allOtherChosenArticles={
+                                            values.homepage &&
+                                            values.homepage.filter(
+                                                (_, sectionIndex) =>
+                                                    index !== sectionIndex
+                                            )
+                                        }
+                                        chosenArticles={pipe(
+                                            path<
+                                                Array<{
+                                                    type: string
+                                                }>
+                                            >([
+                                                'homepage',
+                                                index,
+                                                'resourcesId',
+                                            ]),
+                                            defaultTo([]),
+                                            filter(
+                                                (resourceId: any) =>
+                                                    resourceId &&
+                                                    resourceId.type.toLowerCase() ===
+                                                        'article'
+                                            )
+                                        )(values)}
+                                        closeModalAction={() =>
+                                            setOpenChooseArticleModal(false)
+                                        }
+                                        confirmModal={(
+                                            chosenArticles: [
+                                                {
+                                                    id: string
+                                                    version: number
+                                                }
+                                            ]
+                                        ) => {
+                                            arrayHelpers.form.setFieldValue(
+                                                `homepage[${index}].resourcesId`,
+                                                pipe(
+                                                    path<
+                                                        Array<{
+                                                            type: string
+                                                            id: string
+                                                            version: number
+                                                        }>
+                                                    >([
+                                                        'homepage',
+                                                        index,
+                                                        'resourcesId',
+                                                    ]),
+                                                    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
+                                                    // @ts-ignore
+                                                    defaultTo([]),
+                                                    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
+                                                    // @ts-ignore
+                                                    filter<
+                                                        Array<{
+                                                            type: string
+                                                            id: string
+                                                            version: number
+                                                        }>
+                                                    >(
+                                                        resourceId =>
+                                                            resourceId &&
+                                                            // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
+                                                            // @ts-ignore
+                                                            resourceId.type &&
+                                                            // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
+                                                            // @ts-ignore
+                                                            resourceId.type.toLowerCase() ===
+                                                                'collection'
+                                                    ),
+                                                    defaultTo([]),
+                                                    concat(
+                                                        chosenArticles.map(
+                                                            article =>
+                                                                article && {
+                                                                    ...article,
+                                                                    type:
+                                                                        'ARTICLE',
+                                                                }
+                                                        )
+                                                    )
+                                                )(values)
+                                            )
+
+                                            setOpenChooseCollectionModal(false)
+                                        }}
+                                    />
+
+                                    {/* // TODO: CHANGE TO CHOOSECOLLECTIONMODAL COMPONENT BECAUSE PHASE 2 :-1: */}
+                                    <ChooseCommunityCollectionModal
+                                        open={openChooseCollectionModal}
+                                        id={id}
+                                        currentCollectionIdIfUpdating={'1337'}
+                                        allOtherChosenCollections={
+                                            values.homepage &&
+                                            values.homepage.filter(
+                                                (_, sectionIndex) =>
+                                                    index !== sectionIndex
+                                            )
+                                        }
+                                        chosenCollections={pipe(
+                                            path([
+                                                'homepage',
+                                                index,
+                                                'resourcesId',
+                                            ]),
+                                            // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
+                                            // @ts-ignore
+                                            defaultTo([]),
+                                            // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
+                                            // @ts-ignore
+                                            filter<
+                                                Array<{
+                                                    type: string
+                                                    id: string
+                                                }>
+                                            >(
+                                                resourceId =>
+                                                    resourceId &&
+                                                    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
+                                                    // @ts-ignore
+                                                    resourceId.type.toLowerCase() ===
+                                                        'collection'
+                                            )
+                                        )(values)}
+                                        closeModalAction={() =>
+                                            setOpenChooseCollectionModal(false)
+                                        }
+                                        confirmModal={(
+                                            chosenCollections: [{ id: string }]
+                                        ) => {
+                                            arrayHelpers.form.setFieldValue(
+                                                `homepage[${index}].resourcesId`,
+                                                pipe(
+                                                    path([
+                                                        'homepage',
+                                                        index,
+                                                        'resourcesId',
+                                                    ]),
+                                                    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
+                                                    // @ts-ignore
+                                                    defaultTo([]),
+                                                    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
+                                                    // @ts-ignore
+                                                    filter(
+                                                        ({ type }) =>
+                                                            type.toLowerCase() ===
+                                                            'article' // TODO: check?
+                                                    ),
+                                                    concat(
+                                                        chosenCollections.map(
+                                                            collection => ({
+                                                                ...collection,
+                                                                type:
+                                                                    'COLLECTION',
+                                                            })
+                                                        )
+                                                    )
+                                                )(values)
+                                            )
+
+                                            setOpenChooseCollectionModal(false)
+                                        }}
+                                    />
+
                                     <SectionOptions
                                         currentSectionIndex={index}
                                         previousSectionHasArticles={pipe(
@@ -349,201 +530,10 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                             arrayHelpers.remove(index)
                                         }
                                         chooseArticle={() =>
-                                            openModalAction({
-                                                children: (
-                                                    // TODO: CHANGE TO CHOOSEARTICLEMODAL COMPONENT BECAUSE PHASE 2 :-1:
-                                                    <ChooseCommunityArticleModal
-                                                        id={id}
-                                                        allOtherChosenArticles={
-                                                            values.homepage &&
-                                                            values.homepage.filter(
-                                                                (
-                                                                    _,
-                                                                    sectionIndex
-                                                                ) =>
-                                                                    index !==
-                                                                    sectionIndex
-                                                            )
-                                                        }
-                                                        chosenArticles={pipe(
-                                                            path<
-                                                                Array<{
-                                                                    type: string
-                                                                }>
-                                                            >([
-                                                                'homepage',
-                                                                index,
-                                                                'resourcesId',
-                                                            ]),
-                                                            defaultTo([]),
-                                                            filter(
-                                                                (
-                                                                    resourceId: any
-                                                                ) =>
-                                                                    resourceId &&
-                                                                    resourceId.type.toLowerCase() ===
-                                                                        'article'
-                                                            )
-                                                        )(values)}
-                                                        closeModalAction={() =>
-                                                            closeModalAction()
-                                                        }
-                                                        confirmModal={(
-                                                            chosenArticles: [
-                                                                {
-                                                                    id: string
-                                                                    version: number
-                                                                }
-                                                            ]
-                                                        ) =>
-                                                            arrayHelpers.form.setFieldValue(
-                                                                `homepage[${index}].resourcesId`,
-                                                                pipe(
-                                                                    path<
-                                                                        Array<{
-                                                                            type: string
-                                                                            id: string
-                                                                            version: number
-                                                                        }>
-                                                                    >([
-                                                                        'homepage',
-                                                                        index,
-                                                                        'resourcesId',
-                                                                    ]),
-                                                                    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                                                    // @ts-ignore
-                                                                    defaultTo(
-                                                                        []
-                                                                    ),
-                                                                    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                                                    // @ts-ignore
-                                                                    filter<
-                                                                        Array<{
-                                                                            type: string
-                                                                            id: string
-                                                                            version: number
-                                                                        }>
-                                                                    >(
-                                                                        resourceId =>
-                                                                            resourceId &&
-                                                                            // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                                                            // @ts-ignore
-                                                                            resourceId.type &&
-                                                                            // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                                                            // @ts-ignore
-                                                                            resourceId.type.toLowerCase() ===
-                                                                                'collection'
-                                                                    ),
-                                                                    defaultTo(
-                                                                        []
-                                                                    ),
-                                                                    concat(
-                                                                        chosenArticles.map(
-                                                                            article =>
-                                                                                article && {
-                                                                                    ...article,
-                                                                                    type:
-                                                                                        'ARTICLE',
-                                                                                }
-                                                                        )
-                                                                    )
-                                                                )(values)
-                                                            )
-                                                        }
-                                                    />
-                                                ),
-                                            })
+                                            setOpenChooseArticleModal(true)
                                         }
                                         chooseCollection={() =>
-                                            openModalAction({
-                                                children: (
-                                                    // TODO: CHANGE TO CHOOSECOLLECTIONMODAL COMPONENT BECAUSE PHASE 2 :-1:
-                                                    <ChooseCommunityCollectionModal
-                                                        id={id}
-                                                        currentCollectionIdIfUpdating={
-                                                            '1337'
-                                                        }
-                                                        allOtherChosenCollections={
-                                                            values.homepage &&
-                                                            values.homepage.filter(
-                                                                (
-                                                                    _,
-                                                                    sectionIndex
-                                                                ) =>
-                                                                    index !==
-                                                                    sectionIndex
-                                                            )
-                                                        }
-                                                        chosenCollections={pipe(
-                                                            path([
-                                                                'homepage',
-                                                                index,
-                                                                'resourcesId',
-                                                            ]),
-                                                            // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                                            // @ts-ignore
-                                                            defaultTo([]),
-                                                            // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                                            // @ts-ignore
-                                                            filter<
-                                                                Array<{
-                                                                    type: string
-                                                                    id: string
-                                                                }>
-                                                            >(
-                                                                resourceId =>
-                                                                    resourceId &&
-                                                                    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                                                    // @ts-ignore
-                                                                    resourceId.type.toLowerCase() ===
-                                                                        'collection'
-                                                            )
-                                                        )(values)}
-                                                        closeModalAction={() =>
-                                                            closeModalAction()
-                                                        }
-                                                        confirmModal={(
-                                                            chosenCollections: [
-                                                                { id: string }
-                                                            ]
-                                                        ) =>
-                                                            arrayHelpers.form.setFieldValue(
-                                                                `homepage[${index}].resourcesId`,
-                                                                pipe(
-                                                                    path([
-                                                                        'homepage',
-                                                                        index,
-                                                                        'resourcesId',
-                                                                    ]),
-                                                                    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                                                    // @ts-ignore
-                                                                    defaultTo(
-                                                                        []
-                                                                    ),
-                                                                    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                                                    // @ts-ignore
-                                                                    filter(
-                                                                        ({
-                                                                            type,
-                                                                        }) =>
-                                                                            type.toLowerCase() ===
-                                                                            'article' // TODO: check?
-                                                                    ),
-                                                                    concat(
-                                                                        chosenCollections.map(
-                                                                            collection => ({
-                                                                                ...collection,
-                                                                                type:
-                                                                                    'COLLECTION',
-                                                                            })
-                                                                        )
-                                                                    )
-                                                                )(values)
-                                                            )
-                                                        }
-                                                    />
-                                                ),
-                                            })
+                                            setOpenChooseCollectionModal(true)
                                         }
                                     />
                                 </Section>
