@@ -60,6 +60,7 @@ export const CommunityCardStyles = makeStyles((theme: Theme) => ({
         height: 24,
     },
     content: {
+        textAlign: 'left',
         cursor: 'pointer',
         height: '100%',
         padding: '0px !important',

@@ -7046,8 +7046,8 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           description="Java is one of the worlds most popular programming languages used in global-scale applications by developers everywhere. This community brings together developers and projects at the forefront of bringing Ethereum support to this rich language ecosystem."
                                           href={
                                             Object {
-                                              "as": "/java-ethereum/5d2f30daaba2920001c82409/cm",
-                                              "href": "/community_id=5d2f30daaba2920001c82409",
+                                              "as": "/java-ethereum/5d2f30daaba2920001c82409/com",
+                                              "href": "/community?community_id=5d2f30daaba2920001c82409",
                                             }
                                           }
                                           id="5d2f30daaba2920001c82409"
@@ -7497,13 +7497,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           </WithStyles(ForwardRef(Typography))>
                                                         </div>
                                                         <Link
-                                                          as="/java-ethereum/5d2f30daaba2920001c82409/cm"
-                                                          href="/community_id=5d2f30daaba2920001c82409"
+                                                          as="/java-ethereum/5d2f30daaba2920001c82409/com"
+                                                          href="/community?community_id=5d2f30daaba2920001c82409"
                                                           prefetch={true}
                                                         >
                                                           <a
                                                             className="makeStyles-name-11"
-                                                            href="/java-ethereum/5d2f30daaba2920001c82409/cm"
+                                                            href="/java-ethereum/5d2f30daaba2920001c82409/com"
                                                             onClick={[Function]}
                                                             onMouseEnter={[Function]}
                                                           >
@@ -7534,12 +7534,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                               data-testid="CommunityCard-5d2f30daaba2920001c82409-description"
                                                             >
                                                               <Link
-                                                                as="/java-ethereum/5d2f30daaba2920001c82409/cm"
-                                                                href="/community_id=5d2f30daaba2920001c82409"
+                                                                as="/java-ethereum/5d2f30daaba2920001c82409/com"
+                                                                href="/community?community_id=5d2f30daaba2920001c82409"
                                                                 prefetch={true}
                                                               >
                                                                 <a
-                                                                  href="/java-ethereum/5d2f30daaba2920001c82409/cm"
+                                                                  href="/java-ethereum/5d2f30daaba2920001c82409/com"
                                                                   onClick={[Function]}
                                                                   onMouseEnter={[Function]}
                                                                 >
@@ -8397,7 +8397,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                                 </ForwardRef(IconButton)>
                                                               </WithStyles(ForwardRef(IconButton))>
                                                               <ShareDialog
-                                                                href="/community_id=5d2f30daaba2920001c82409"
+                                                                href="/community?community_id=5d2f30daaba2920001c82409"
                                                                 id="5d2f30daaba2920001c82409"
                                                                 name="Java Ethereum"
                                                                 onClose={[Function]}

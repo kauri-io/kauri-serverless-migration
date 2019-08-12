@@ -106,7 +106,6 @@ const CollectionsContent = ({
         <p>You have no published collections!</p>
     )
 
-
 const PublishedCollections = withPagination(
     CollectionsContent,
     'searchCollections',

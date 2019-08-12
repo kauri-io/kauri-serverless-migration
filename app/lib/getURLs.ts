@@ -33,7 +33,9 @@ export const getCollectionURL = ({ name, id }: ICollectionProps) => ({
     href: `/collection?collection_id=${String(id)}`,
 })
 
-export const getUpdateCollectionURL = ({ id }: ICollectionProps) => ({
+export const getUpdateCollectionURL = ({
+    id,
+}: Pick<ICollectionProps, 'id'>) => ({
     as: `/collection/${String(id)}/update-collection`,
     href: `/update-collection?collection_id=${String(id)}`,
 })
@@ -55,6 +57,11 @@ interface ICommunityProps {
 }
 
 export const getCommunityURL = ({ name, id }: ICommunityProps) => ({
-    as: `/${slugify(String(name), { lower: true })}/${String(id)}/cm`,
-    href: `/community_id=${String(id)}`,
+    as: `/${slugify(String(name), { lower: true })}/${String(id)}/com`,
+    href: `/community?community_id=${String(id)}`,
+})
+
+export const getUpdateCommunityURL = ({ id }: Pick<ICommunityProps, 'id'>) => ({
+    as: `/community/${String(id)}/update-community`,
+    href: `/update-community?community_id=${String(id)}`,
 })

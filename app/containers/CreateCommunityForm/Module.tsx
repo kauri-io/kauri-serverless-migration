@@ -40,6 +40,7 @@ import {
     prepareCreateCommunityVariables,
     prepareCreateCommunity,
 } from '../../queries/__generated__/prepareCreateCommunity'
+import { getCommunityURL } from '../../lib/getURLs'
 
 interface ICommunityCreatedCommandOutput {
     error?: string
@@ -302,7 +303,12 @@ export const createCommunityEpic: Epic<
                                                 ),
                                                 of(
                                                     routeChangeAction(
-                                                        `/community/${id}/community-created`
+                                                        getCommunityURL({
+                                                            name:
+                                                                actions.payload
+                                                                    .name,
+                                                            id,
+                                                        }).href
                                                     )
                                                 )
                                             )
@@ -447,7 +453,7 @@ export const updateCommunityEpic: Epic<
                                       )
                                   ),
                                   combineAll(),
-                                  // .do(signedSignatures =>
+                                  // tap(signedSignatures =>
                                   //     console.log(
                                   //         'signedSignatures combined',
                                   //         signedSignatures
@@ -465,7 +471,10 @@ export const updateCommunityEpic: Epic<
                                           of(communityUpdatedAction()),
                                           of(
                                               routeChangeAction(
-                                                  `/community/${payload.id}/community-updated`
+                                                  getCommunityURL({
+                                                      id: payload.id,
+                                                      name: payload.name,
+                                                  }).href
                                               )
                                           )
                                       )
@@ -498,7 +507,10 @@ export const updateCommunityEpic: Epic<
                                   of(communityUpdatedAction()),
                                   of(
                                       routeChangeAction(
-                                          `/community/${payload.id}/community-updated`
+                                          getCommunityURL({
+                                              id: payload.id,
+                                              name: payload.name,
+                                          }).href
                                       )
                                   )
                               ).pipe(tap(() => apolloClient.resetStore()))

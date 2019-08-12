@@ -37,6 +37,7 @@ describe('transferArticleToCommunityEpic', () => {
             owner: { id: '123', name: 'Alice', type: 'USER' },
             author: { id: '123', name: 'Alice' },
         }
+        const mockCallback = () => {}
 
         const mockApolloSubscriber = () =>
             Promise.resolve({
@@ -68,13 +69,16 @@ describe('transferArticleToCommunityEpic', () => {
 
         const communityId = 'Community ID'
 
-        const sourceAction = transferArticleToCommunityAction({
-            id,
-            recipient: {
-                id: communityId,
-                type: 'COMMUNITY' as any,
+        const sourceAction = transferArticleToCommunityAction(
+            {
+                id,
+                recipient: {
+                    id: communityId,
+                    type: 'COMMUNITY' as any,
+                },
             },
-        })
+            mockCallback
+        )
 
         const expectedAction = [
             articleTransferredToCommunityAction(),
