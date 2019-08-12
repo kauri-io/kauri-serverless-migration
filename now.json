@@ -22,6 +22,14 @@
       "dest": "/app/collection?collection_id=$2"
     },
     {
+      "src": "/(.*)/(.*)/com",
+      "dest": "/app/community?community_id=$2"
+    },
+    {
+      "src": "/community/(.*)/update-community",
+      "dest": "/app/update-community?community_id=$1"
+    },
+    {
       "src": "/collection/(.*)/update-collection",
       "dest": "/app/update-collection?collection_id=$1"
     },
