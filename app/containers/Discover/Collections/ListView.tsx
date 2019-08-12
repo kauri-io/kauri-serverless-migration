@@ -151,7 +151,7 @@ class Collections extends Component<IProps> {
 }
 
 export default withStyles({
-  grid: {
-    paddingTop: '24px',
-},
+    grid: {
+        paddingTop: '24px',
+    },
 })(Collections)

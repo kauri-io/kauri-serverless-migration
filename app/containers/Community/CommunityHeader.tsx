@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import {
     Title1,
@@ -309,10 +310,10 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
     members,
     // isCreator,
     routeChangeAction,
-    openModalAction,
+    // openModalAction,
     isMember,
     isCommunityAdmin,
-    closeModalAction,
+    // closeModalAction,
     // curateCommunityResourcesAction,
     openAddMemberModal,
     transferArticleToCommunityAction,
@@ -367,27 +368,10 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
     //       />
     //     ),
     //   });
+    const [open, setOpen] = React.useState<boolean>(false)
 
-    const addCommunityArticleAction = () =>
-        openModalAction({
-            children: (
-                <ChooseArticleModal
-                    limit={1}
-                    allOtherChosenArticles={articles || []}
-                    chosenArticles={[]}
-                    closeModalAction={closeModalAction}
-                    confirmModal={(chosenArticles: IArticle[]) => {
-                        transferArticleToCommunityAction({
-                            id: chosenArticles[0].id,
-                            recipient: {
-                                id,
-                                type: 'COMMUNITY' as any,
-                            },
-                        })
-                    }}
-                />
-            ),
-        })
+    const openAddCommunityArticleModal = () => setOpen(true)
+    const closeAddCommunityArticleModal = () => setOpen(false)
 
     return (
         <Wrapper>
@@ -400,6 +384,27 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                     image={background}
                 />
             )}
+            <ChooseArticleModal
+                open={open}
+                limit={1}
+                allOtherChosenArticles={articles || []}
+                chosenArticles={[]}
+                closeModalAction={closeAddCommunityArticleModal}
+                confirmModal={(chosenArticles: IArticle[]) => {
+                    transferArticleToCommunityAction(
+                        {
+                            id: chosenArticles[0].id,
+                            recipient: {
+                                id,
+                                type: 'COMMUNITY' as any,
+                            },
+                        },
+                        () => {
+                            closeAddCommunityArticleModal()
+                        }
+                    )
+                }}
+            />
             <Container>
                 <ContentRow>
                     <Column>
@@ -566,7 +571,9 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                 // >
                                 <PrimaryButtonComponent
                                     bgHover={'primary'}
-                                    onClick={() => addCommunityArticleAction()}
+                                    onClick={() =>
+                                        openAddCommunityArticleModal()
+                                    }
                                 >
                                     Add Content
                                 </PrimaryButtonComponent>

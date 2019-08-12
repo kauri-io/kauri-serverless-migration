@@ -113,6 +113,7 @@ export interface IRemoveMemberAction {
 interface ITransferArticleToCommunityAction {
     type: 'TRANSFER_ARTICLE_TO_COMMUNITY'
     payload: initiateArticleTransferVariables
+    callback: () => void
 }
 
 interface IApproveResourceAction {
@@ -261,8 +262,10 @@ export const sendCommunityInvitationAction = (
 })
 
 export const transferArticleToCommunityAction = (
-    payload: initiateArticleTransferVariables
+    payload: initiateArticleTransferVariables,
+    callback: () => void
 ): ITransferArticleToCommunityAction => ({
+    callback,
     payload,
     type: TRANSFER_ARTICLE_TO_COMMUNITY,
 })
@@ -1125,7 +1128,7 @@ export const transferArticleToCommunityEpic: Epic<
 > = (action$, _, { apolloClient, apolloSubscriber, personalSign }) =>
     action$.pipe(
         ofType(TRANSFER_ARTICLE_TO_COMMUNITY),
-        switchMap(({ payload }) =>
+        switchMap(({ payload, callback }) =>
             from(
                 apolloClient.mutate<
                     initiateArticleTransfer,
@@ -1230,6 +1233,7 @@ export const transferArticleToCommunityEpic: Epic<
                                               )
                                           )
                             ),
+                            tap(() => callback && callback()),
                             catchError(err => {
                                 console.error(err)
                                 return of(

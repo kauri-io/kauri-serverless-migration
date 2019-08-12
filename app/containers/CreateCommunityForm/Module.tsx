@@ -40,7 +40,7 @@ import {
     prepareCreateCommunityVariables,
     prepareCreateCommunity,
 } from '../../queries/__generated__/prepareCreateCommunity'
-import { getCommunityURL } from '../../lib/getURLs';
+import { getCommunityURL } from '../../lib/getURLs'
 
 interface ICommunityCreatedCommandOutput {
     error?: string
@@ -303,7 +303,12 @@ export const createCommunityEpic: Epic<
                                                 ),
                                                 of(
                                                     routeChangeAction(
-                                                      getCommunityURL({ name: actions.payload.name, id }).href
+                                                        getCommunityURL({
+                                                            name:
+                                                                actions.payload
+                                                                    .name,
+                                                            id,
+                                                        }).href
                                                     )
                                                 )
                                             )

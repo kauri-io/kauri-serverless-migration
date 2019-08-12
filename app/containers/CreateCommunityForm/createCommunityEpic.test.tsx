@@ -6,7 +6,7 @@ import {
 } from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
-import { getCommunityURL } from '../../lib/getURLs';
+import { getCommunityURL } from '../../lib/getURLs'
 
 describe('createCommunityEpic', () => {
     beforeAll(() => {
@@ -90,7 +90,7 @@ describe('createCommunityEpic', () => {
 
         const sourceAction = createCommunityAction(
             {
-              name: communityName,
+                name: communityName,
                 invitations,
             },
             () => {}
@@ -103,7 +103,9 @@ describe('createCommunityEpic', () => {
                 notificationType: 'info',
             }),
             communityCreatedAction({ transactionHash }),
-            routeChangeAction(getCommunityURL({ name: communityName, id: communityId }).href),
+            routeChangeAction(
+                getCommunityURL({ name: communityName, id: communityId }).href
+            ),
         ]
 
         const resultingActions = await testEpic(

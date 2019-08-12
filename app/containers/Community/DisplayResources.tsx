@@ -4,18 +4,14 @@ import {
     Community_approved_CollectionDTO,
     Community_approved_ArticleDTO,
 } from '../../queries/Fragments/__generated__/Community'
-import Masonry from '../../components/Masonry'
-import styled from 'styled-components'
+import { Container, Grid, withStyles } from '@material-ui/core'
 import { removeResourceVariables } from '../../queries/__generated__/removeResource'
 import ArticlesEmptyState from './EmptyStates/Articles'
 import CollectionsEmptyState from './EmptyStates/Collections'
 import { getArticleURL, getCollectionURL } from '../../lib/getURLs'
 
-const Container = styled.div`
-    margin-left: ${props => props.theme.space[3]}px;
-`
-
 interface IProps {
+    classes?: any
     type?: string
     resources?: any
     communityId: string | null
@@ -70,10 +66,13 @@ const RenderResources = () =>
 
                       username: '',
                   }
+
+        let Card: React.ReactNode = null
+
         if (article.__typename === 'ArticleDTO') {
-            return <ArticleCard href={getArticleURL(article)} {...article} />
+            Card = <ArticleCard href={getArticleURL(article)} {...article} />
         } else if (article.__typename === 'CollectionDTO') {
-            return (
+            Card = (
                 <CollectionCard
                     {...article}
                     href={getCollectionURL(article)}
@@ -134,6 +133,11 @@ const RenderResources = () =>
         } else {
             return null
         }
+        return (
+            <Grid key={article.id} item xs={12} sm={12} lg={6}>
+                {Card}
+            </Grid>
+        )
     }
 
 const DisplayResources = ({
@@ -144,6 +148,7 @@ const DisplayResources = ({
     // closeModalAction,
     // removeResourceAction,
     type,
+    classes
 }: IProps) => {
     if (
         Array.isArray(resources) &&
@@ -153,32 +158,8 @@ const DisplayResources = ({
         return <RenderEmptyState type={type} />
     }
     return (
-        <Masonry>
-            {Array.isArray(resources) && resources.length
-                ? resources.map(
-                      RenderResources()
-                      // isMember,
-                      // communityId,
-                      // openModalAction,
-                      // closeModalAction,
-                      // removeResourceAction
-                  )
-                : null}
-        </Masonry>
-    )
-}
-
-export const DisplayManagedResources = ({
-    resources,
-}: // communityId,
-// isMember,
-// openModalAction,
-// closeModalAction,
-// removeResourceAction,
-IProps & { review?: boolean }) => {
-    return (
         <Container>
-            <Masonry withPadding={false}>
+            <Grid className={classes.grid} container spacing={3}>
                 {Array.isArray(resources) && resources.length
                     ? resources.map(
                           RenderResources()
@@ -189,9 +170,46 @@ IProps & { review?: boolean }) => {
                           // removeResourceAction
                       )
                     : null}
-            </Masonry>
+            </Grid>
         </Container>
     )
 }
 
-export default DisplayResources
+const DisplayManagedResourcesComponent = ({
+    resources,
+    classes,
+}: // communityId,
+// isMember,
+// openModalAction,
+// closeModalAction,
+// removeResourceAction,
+IProps & { review?: boolean }) => {
+    return (
+        <Container>
+            <Grid className={classes.grid} container spacing={3}>
+                {Array.isArray(resources) && resources.length
+                    ? resources.map(
+                          RenderResources()
+                          // isMember,
+                          // communityId,
+                          // openModalAction,
+                          // closeModalAction,
+                          // removeResourceAction
+                      )
+                    : null}
+            </Grid>
+        </Container>
+    )
+}
+
+export const DisplayManagedResources = withStyles({
+    grid: {
+        paddingTop: '24px',
+    },
+})(DisplayManagedResourcesComponent)
+
+export default withStyles({
+    grid: {
+        paddingTop: '24px',
+    },
+})(DisplayResources)
