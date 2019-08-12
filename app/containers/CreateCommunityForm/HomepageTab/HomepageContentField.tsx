@@ -83,7 +83,7 @@ const renderResourceSection = (
                         <DraggableResourceContainer
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
-                            ref={provided.ref}
+                            ref={provided.innerRef}
                             id="article-card"
                         >
                             <ArticleCard
@@ -132,7 +132,7 @@ const renderResourceSection = (
                         <DraggableResourceContainer
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
-                            ref={provided.ref}
+                            ref={provided.innerRef}
                             id="collection-card"
                         >
                             <CollectionCard
@@ -308,7 +308,7 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                             {(provided): any => (
                                                 <CardContentSection
                                                     {...provided.droppableProps}
-                                                    ref={provided.ref}
+                                                    ref={provided.innerRef}
                                                 >
                                                     {/* Section id */}
                                                     {section &&

@@ -18,12 +18,12 @@
       "dest": "/app/article?article_id=$2"
     },
     {
-      "src": "/(.*)/(.*)/c",
-      "dest": "/app/collection?collection_id=$2"
-    },
-    {
       "src": "/(.*)/(.*)/com",
       "dest": "/app/community?community_id=$2"
+    },
+    {
+      "src": "/(.*)/(.*)/c",
+      "dest": "/app/collection?collection_id=$2"
     },
     {
       "src": "/community/(.*)/update-community",
