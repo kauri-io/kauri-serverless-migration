@@ -50,6 +50,7 @@ export const CollectionCardStyles = makeStyles((theme: Theme) => ({
         },
     },
     content: {
+        textAlign: 'left',
         cursor: 'pointer',
         height: '100%',
         padding: '0px !important',
