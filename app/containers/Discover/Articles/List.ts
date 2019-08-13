@@ -5,7 +5,10 @@ import { connect } from 'react-redux'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import withLoading from '../../../lib/with-loading'
 import withPagination from '../../../lib/with-pagination'
-import { openModalAction, closeModalAction } from '../../../components/Modal/Module'
+import {
+    openModalAction,
+    closeModalAction,
+} from '../../../components/Modal/Module'
 import { addArticleToCollectionAction } from '../../AddToCollection/Module'
 import config from '../../../config'
 
@@ -29,7 +32,12 @@ const QUERY_NAME = 'ArticlesQuery'
 export default compose(
     connect(
         mapStateToProps,
-        { routeChangeAction, openModalAction, addArticleToCollectionAction, closeModalAction }
+        {
+            routeChangeAction,
+            openModalAction,
+            addArticleToCollectionAction,
+            closeModalAction,
+        }
     ),
     graphql(globalSearchApprovedArticles, {
         name: QUERY_NAME,
