@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
+
 const WhiteChecbox = withStyles(theme => ({
     root: {
         color: theme.palette.common.white,
@@ -62,6 +63,7 @@ interface IProps {
         payload: string | { newsletter: boolean },
         field: string
     ) => void
+    classes: any
 }
 
 const EditProfileForm = ({
@@ -77,6 +79,7 @@ const EditProfileForm = ({
     status,
     subscriptions,
     updateState,
+    classes,
 }: IProps) => {
     const classes = useStyles()
     return (
@@ -177,4 +180,4 @@ const EditProfileForm = ({
     )
 }
 
-export default EditProfileForm
+export default withStyles(styles)(EditProfileForm)

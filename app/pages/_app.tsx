@@ -3,10 +3,6 @@ import Head from 'next/head'
 import React from 'react'
 import analytics from '../lib/analytics'
 
-
-
-
-
 class MyApp extends App {
     constructor(props) {
         super(props)
