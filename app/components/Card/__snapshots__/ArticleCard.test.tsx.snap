@@ -2530,6 +2530,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                     "Naked": Object {
                                       "$$typeof": Symbol(react.forward_ref),
                                       "propTypes": Object {
+                                        "children": [Function],
                                         "className": [Function],
                                         "classes": [Function],
                                         "invisible": [Function],
@@ -3227,35 +3228,57 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                 role="menu"
                                                 tabindex="-1"
                                               >
-                                                <ul
-                                                  class="MuiList-root MuiList-padding"
-                                                  role="menu"
+                                                <li
+                                                  aria-disabled="false"
+                                                  class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                  role="menuitem"
                                                   tabindex="-1"
                                                 >
-                                                  <li
-                                                    aria-disabled="false"
-                                                    class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root makeStyles-menuItem-13 MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                    role="menuitem"
-                                                    tabindex="-1"
+                                                  <div
+                                                    class="MuiListItemIcon-root"
+                                                  >
+                                                    <span
+                                                      aria-hidden="true"
+                                                      class="material-icons MuiIcon-root"
+                                                    >
+                                                      share
+                                                    </span>
+                                                  </div>
+                                                  <span
+                                                    class="MuiTypography-root"
                                                   >
                                                     Share
+                                                  </span>
+                                                  <span
+                                                    class="MuiTouchRipple-root"
+                                                  />
+                                                </li>
+                                                <li
+                                                  aria-disabled="false"
+                                                  class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                  data-testid="ArticleCard-1234567890-addToCollectionButton"
+                                                  role="menuitem"
+                                                  tabindex="-1"
+                                                >
+                                                  <div
+                                                    class="MuiListItemIcon-root"
+                                                  >
                                                     <span
-                                                      class="MuiTouchRipple-root"
-                                                    />
-                                                  </li>
-                                                  <li
-                                                    aria-disabled="false"
-                                                    class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                    data-testid="ArticleCard-1234567890-addToCollectionButton"
-                                                    role="menuitem"
-                                                    tabindex="-1"
+                                                      aria-hidden="true"
+                                                      class="material-icons MuiIcon-root"
+                                                    >
+                                                      folder
+                                                    </span>
+                                                  </div>
+                                                  <span
+                                                    class="MuiTypography-root"
                                                   >
                                                     Add To Collection
-                                                    <span
-                                                      class="MuiTouchRipple-root"
-                                                    />
-                                                  </li>
-                                                </ul>
+                                                  </span>
+                                                  <span
+                                                    class="MuiTouchRipple-root"
+                                                  />
+                                                </li>
                                               </ul>
                                             </div>
                                             <div
@@ -3440,312 +3463,989 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                             role="menu"
                                                             tabIndex={-1}
                                                           >
-                                                            <ForwardRef(MenuList)
+                                                            <WithStyles(ForwardRef(MenuItem))
                                                               key=".0"
+                                                              onClick={[Function]}
                                                             >
-                                                              <WithStyles(ForwardRef(List))
-                                                                onKeyDown={[Function]}
-                                                                role="menu"
-                                                                tabIndex={-1}
+                                                              <ForwardRef(MenuItem)
+                                                                classes={
+                                                                  Object {
+                                                                    "dense": "MuiMenuItem-dense",
+                                                                    "gutters": "MuiMenuItem-gutters",
+                                                                    "root": "MuiMenuItem-root",
+                                                                    "selected": "Mui-selected",
+                                                                  }
+                                                                }
+                                                                onClick={[Function]}
                                                               >
-                                                                <ForwardRef(List)
+                                                                <WithStyles(ForwardRef(ListItem))
+                                                                  button={true}
+                                                                  className="MuiMenuItem-root MuiMenuItem-gutters"
                                                                   classes={
                                                                     Object {
-                                                                      "dense": "MuiList-dense",
-                                                                      "padding": "MuiList-padding",
-                                                                      "root": "MuiList-root",
-                                                                      "subheader": "MuiList-subheader",
+                                                                      "dense": "MuiMenuItem-dense",
                                                                     }
                                                                   }
-                                                                  onKeyDown={[Function]}
-                                                                  role="menu"
+                                                                  component="li"
+                                                                  disableGutters={false}
+                                                                  onClick={[Function]}
+                                                                  role="menuitem"
                                                                   tabIndex={-1}
                                                                 >
-                                                                  <ul
-                                                                    className="MuiList-root MuiList-padding"
-                                                                    onKeyDown={[Function]}
-                                                                    role="menu"
+                                                                  <ForwardRef(ListItem)
+                                                                    button={true}
+                                                                    className="MuiMenuItem-root MuiMenuItem-gutters"
+                                                                    classes={
+                                                                      Object {
+                                                                        "alignItemsFlexStart": "MuiListItem-alignItemsFlexStart",
+                                                                        "button": "MuiListItem-button",
+                                                                        "container": "MuiListItem-container",
+                                                                        "dense": "MuiListItem-dense MuiMenuItem-dense",
+                                                                        "disabled": "Mui-disabled",
+                                                                        "divider": "MuiListItem-divider",
+                                                                        "focusVisible": "Mui-focusVisible",
+                                                                        "gutters": "MuiListItem-gutters",
+                                                                        "root": "MuiListItem-root",
+                                                                        "secondaryAction": "MuiListItem-secondaryAction",
+                                                                        "selected": "Mui-selected",
+                                                                      }
+                                                                    }
+                                                                    component="li"
+                                                                    disableGutters={false}
+                                                                    onClick={[Function]}
+                                                                    role="menuitem"
                                                                     tabIndex={-1}
                                                                   >
-                                                                    <WithStyles(ForwardRef(MenuItem))
-                                                                      className="makeStyles-menuItem-13"
+                                                                    <WithStyles(ForwardRef(ButtonBase))
+                                                                      className="MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                                      component="li"
+                                                                      disabled={false}
+                                                                      focusVisibleClassName="Mui-focusVisible"
                                                                       onClick={[Function]}
+                                                                      role="menuitem"
+                                                                      tabIndex={-1}
                                                                     >
-                                                                      <ForwardRef(MenuItem)
-                                                                        className="makeStyles-menuItem-13"
+                                                                      <ForwardRef(ButtonBase)
+                                                                        className="MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
                                                                         classes={
                                                                           Object {
-                                                                            "dense": "MuiMenuItem-dense",
-                                                                            "gutters": "MuiMenuItem-gutters",
-                                                                            "root": "MuiMenuItem-root",
-                                                                            "selected": "Mui-selected",
+                                                                            "disabled": "Mui-disabled",
+                                                                            "focusVisible": "Mui-focusVisible",
+                                                                            "root": "MuiButtonBase-root",
                                                                           }
                                                                         }
+                                                                        component="li"
+                                                                        disabled={false}
+                                                                        focusVisibleClassName="Mui-focusVisible"
                                                                         onClick={[Function]}
+                                                                        role="menuitem"
+                                                                        tabIndex={-1}
                                                                       >
-                                                                        <WithStyles(ForwardRef(ListItem))
-                                                                          button={true}
-                                                                          className="MuiMenuItem-root makeStyles-menuItem-13 MuiMenuItem-gutters"
-                                                                          classes={
-                                                                            Object {
-                                                                              "dense": "MuiMenuItem-dense",
-                                                                            }
-                                                                          }
-                                                                          component="li"
-                                                                          disableGutters={false}
+                                                                        <li
+                                                                          aria-disabled={false}
+                                                                          className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                                          onBlur={[Function]}
                                                                           onClick={[Function]}
+                                                                          onDragLeave={[Function]}
+                                                                          onFocus={[Function]}
+                                                                          onKeyDown={[Function]}
+                                                                          onKeyUp={[Function]}
+                                                                          onMouseDown={[Function]}
+                                                                          onMouseLeave={[Function]}
+                                                                          onMouseUp={[Function]}
+                                                                          onTouchEnd={[Function]}
+                                                                          onTouchMove={[Function]}
+                                                                          onTouchStart={[Function]}
                                                                           role="menuitem"
                                                                           tabIndex={-1}
                                                                         >
-                                                                          <ForwardRef(ListItem)
-                                                                            button={true}
-                                                                            className="MuiMenuItem-root makeStyles-menuItem-13 MuiMenuItem-gutters"
-                                                                            classes={
-                                                                              Object {
-                                                                                "alignItemsFlexStart": "MuiListItem-alignItemsFlexStart",
-                                                                                "button": "MuiListItem-button",
-                                                                                "container": "MuiListItem-container",
-                                                                                "dense": "MuiListItem-dense MuiMenuItem-dense",
-                                                                                "disabled": "Mui-disabled",
-                                                                                "divider": "MuiListItem-divider",
-                                                                                "focusVisible": "Mui-focusVisible",
-                                                                                "gutters": "MuiListItem-gutters",
-                                                                                "root": "MuiListItem-root",
-                                                                                "secondaryAction": "MuiListItem-secondaryAction",
-                                                                                "selected": "Mui-selected",
-                                                                              }
-                                                                            }
-                                                                            component="li"
-                                                                            disableGutters={false}
-                                                                            onClick={[Function]}
-                                                                            role="menuitem"
-                                                                            tabIndex={-1}
+                                                                          <WithStyles(ForwardRef(ListItemIcon))
+                                                                            key=".0"
                                                                           >
-                                                                            <WithStyles(ForwardRef(ButtonBase))
-                                                                              className="MuiListItem-root MuiMenuItem-root makeStyles-menuItem-13 MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                              component="li"
-                                                                              disabled={false}
-                                                                              focusVisibleClassName="Mui-focusVisible"
-                                                                              onClick={[Function]}
-                                                                              role="menuitem"
-                                                                              tabIndex={-1}
+                                                                            <ForwardRef(ListItemIcon)
+                                                                              classes={
+                                                                                Object {
+                                                                                  "alignItemsFlexStart": "MuiListItemIcon-alignItemsFlexStart",
+                                                                                  "root": "MuiListItemIcon-root",
+                                                                                }
+                                                                              }
                                                                             >
-                                                                              <ForwardRef(ButtonBase)
-                                                                                className="MuiListItem-root MuiMenuItem-root makeStyles-menuItem-13 MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                                              <div
+                                                                                className="MuiListItemIcon-root"
+                                                                              >
+                                                                                <WithStyles(ForwardRef(Icon))>
+                                                                                  <ForwardRef(Icon)
+                                                                                    classes={
+                                                                                      Object {
+                                                                                        "colorAction": "MuiIcon-colorAction",
+                                                                                        "colorDisabled": "MuiIcon-colorDisabled",
+                                                                                        "colorError": "MuiIcon-colorError",
+                                                                                        "colorPrimary": "MuiIcon-colorPrimary",
+                                                                                        "colorSecondary": "MuiIcon-colorSecondary",
+                                                                                        "fontSizeInherit": "MuiIcon-fontSizeInherit",
+                                                                                        "fontSizeLarge": "MuiIcon-fontSizeLarge",
+                                                                                        "fontSizeSmall": "MuiIcon-fontSizeSmall",
+                                                                                        "root": "MuiIcon-root",
+                                                                                      }
+                                                                                    }
+                                                                                  >
+                                                                                    <span
+                                                                                      aria-hidden={true}
+                                                                                      className="material-icons MuiIcon-root"
+                                                                                    >
+                                                                                      share
+                                                                                    </span>
+                                                                                  </ForwardRef(Icon)>
+                                                                                </WithStyles(ForwardRef(Icon))>
+                                                                              </div>
+                                                                            </ForwardRef(ListItemIcon)>
+                                                                          </WithStyles(ForwardRef(ListItemIcon))>
+                                                                          <WithStyles(ForwardRef(Typography))
+                                                                            key=".1"
+                                                                            variant="inherit"
+                                                                          >
+                                                                            <ForwardRef(Typography)
+                                                                              classes={
+                                                                                Object {
+                                                                                  "alignCenter": "MuiTypography-alignCenter",
+                                                                                  "alignJustify": "MuiTypography-alignJustify",
+                                                                                  "alignLeft": "MuiTypography-alignLeft",
+                                                                                  "alignRight": "MuiTypography-alignRight",
+                                                                                  "body1": "MuiTypography-body1",
+                                                                                  "body2": "MuiTypography-body2",
+                                                                                  "button": "MuiTypography-button",
+                                                                                  "caption": "MuiTypography-caption",
+                                                                                  "colorError": "MuiTypography-colorError",
+                                                                                  "colorInherit": "MuiTypography-colorInherit",
+                                                                                  "colorPrimary": "MuiTypography-colorPrimary",
+                                                                                  "colorSecondary": "MuiTypography-colorSecondary",
+                                                                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                                  "displayBlock": "MuiTypography-displayBlock",
+                                                                                  "displayInline": "MuiTypography-displayInline",
+                                                                                  "gutterBottom": "MuiTypography-gutterBottom",
+                                                                                  "h1": "MuiTypography-h1",
+                                                                                  "h2": "MuiTypography-h2",
+                                                                                  "h3": "MuiTypography-h3",
+                                                                                  "h4": "MuiTypography-h4",
+                                                                                  "h5": "MuiTypography-h5",
+                                                                                  "h6": "MuiTypography-h6",
+                                                                                  "noWrap": "MuiTypography-noWrap",
+                                                                                  "overline": "MuiTypography-overline",
+                                                                                  "paragraph": "MuiTypography-paragraph",
+                                                                                  "root": "MuiTypography-root",
+                                                                                  "srOnly": "MuiTypography-srOnly",
+                                                                                  "subtitle1": "MuiTypography-subtitle1",
+                                                                                  "subtitle2": "MuiTypography-subtitle2",
+                                                                                }
+                                                                              }
+                                                                              theme={
+                                                                                Object {
+                                                                                  "breakpoints": Object {
+                                                                                    "between": [Function],
+                                                                                    "down": [Function],
+                                                                                    "keys": Array [
+                                                                                      "xs",
+                                                                                      "sm",
+                                                                                      "md",
+                                                                                      "lg",
+                                                                                      "xl",
+                                                                                    ],
+                                                                                    "only": [Function],
+                                                                                    "up": [Function],
+                                                                                    "values": Object {
+                                                                                      "lg": 1280,
+                                                                                      "md": 960,
+                                                                                      "sm": 600,
+                                                                                      "xl": 1920,
+                                                                                      "xs": 0,
+                                                                                    },
+                                                                                    "width": [Function],
+                                                                                  },
+                                                                                  "direction": "ltr",
+                                                                                  "mixins": Object {
+                                                                                    "gutters": [Function],
+                                                                                    "toolbar": Object {
+                                                                                      "@media (min-width:0px) and (orientation: landscape)": Object {
+                                                                                        "minHeight": 48,
+                                                                                      },
+                                                                                      "@media (min-width:600px)": Object {
+                                                                                        "minHeight": 64,
+                                                                                      },
+                                                                                      "minHeight": 56,
+                                                                                    },
+                                                                                  },
+                                                                                  "overrides": Object {},
+                                                                                  "palette": Object {
+                                                                                    "action": Object {
+                                                                                      "active": "rgba(0, 0, 0, 0.54)",
+                                                                                      "disabled": "rgba(0, 0, 0, 0.26)",
+                                                                                      "disabledBackground": "rgba(0, 0, 0, 0.12)",
+                                                                                      "hover": "rgba(0, 0, 0, 0.08)",
+                                                                                      "hoverOpacity": 0.08,
+                                                                                      "selected": "rgba(0, 0, 0, 0.14)",
+                                                                                    },
+                                                                                    "augmentColor": [Function],
+                                                                                    "background": Object {
+                                                                                      "default": "#fafafa",
+                                                                                      "paper": "#fff",
+                                                                                    },
+                                                                                    "common": Object {
+                                                                                      "black": "#000",
+                                                                                      "white": "#fff",
+                                                                                    },
+                                                                                    "contrastThreshold": 3,
+                                                                                    "divider": "rgba(0, 0, 0, 0.12)",
+                                                                                    "error": Object {
+                                                                                      "contrastText": "#fff",
+                                                                                      "dark": "#d32f2f",
+                                                                                      "light": "#e57373",
+                                                                                      "main": "#f44336",
+                                                                                    },
+                                                                                    "getContrastText": [Function],
+                                                                                    "grey": Object {
+                                                                                      "100": "#f5f5f5",
+                                                                                      "200": "#eeeeee",
+                                                                                      "300": "#e0e0e0",
+                                                                                      "400": "#bdbdbd",
+                                                                                      "50": "#fafafa",
+                                                                                      "500": "#9e9e9e",
+                                                                                      "600": "#757575",
+                                                                                      "700": "#616161",
+                                                                                      "800": "#424242",
+                                                                                      "900": "#212121",
+                                                                                      "A100": "#d5d5d5",
+                                                                                      "A200": "#aaaaaa",
+                                                                                      "A400": "#303030",
+                                                                                      "A700": "#616161",
+                                                                                    },
+                                                                                    "primary": Object {
+                                                                                      "contrastText": "#fff",
+                                                                                      "dark": "#303f9f",
+                                                                                      "light": "#7986cb",
+                                                                                      "main": "#3f51b5",
+                                                                                    },
+                                                                                    "secondary": Object {
+                                                                                      "contrastText": "#fff",
+                                                                                      "dark": "#c51162",
+                                                                                      "light": "#ff4081",
+                                                                                      "main": "#f50057",
+                                                                                    },
+                                                                                    "text": Object {
+                                                                                      "disabled": "rgba(0, 0, 0, 0.38)",
+                                                                                      "hint": "rgba(0, 0, 0, 0.38)",
+                                                                                      "primary": "rgba(0, 0, 0, 0.87)",
+                                                                                      "secondary": "rgba(0, 0, 0, 0.54)",
+                                                                                    },
+                                                                                    "tonalOffset": 0.2,
+                                                                                    "type": "light",
+                                                                                  },
+                                                                                  "props": Object {},
+                                                                                  "shadows": Array [
+                                                                                    "none",
+                                                                                    "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+                                                                                    "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+                                                                                    "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+                                                                                    "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+                                                                                    "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+                                                                                    "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+                                                                                    "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+                                                                                    "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+                                                                                    "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+                                                                                    "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+                                                                                    "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+                                                                                    "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+                                                                                    "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+                                                                                    "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+                                                                                    "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+                                                                                    "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+                                                                                    "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+                                                                                    "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+                                                                                    "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+                                                                                    "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+                                                                                    "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+                                                                                    "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+                                                                                    "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+                                                                                    "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+                                                                                  ],
+                                                                                  "shape": Object {
+                                                                                    "borderRadius": 4,
+                                                                                  },
+                                                                                  "spacing": [Function],
+                                                                                  "transitions": Object {
+                                                                                    "create": [Function],
+                                                                                    "duration": Object {
+                                                                                      "complex": 375,
+                                                                                      "enteringScreen": 225,
+                                                                                      "leavingScreen": 195,
+                                                                                      "short": 250,
+                                                                                      "shorter": 200,
+                                                                                      "shortest": 150,
+                                                                                      "standard": 300,
+                                                                                    },
+                                                                                    "easing": Object {
+                                                                                      "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+                                                                                      "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+                                                                                      "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+                                                                                      "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+                                                                                    },
+                                                                                    "getAutoHeightDuration": [Function],
+                                                                                  },
+                                                                                  "typography": Object {
+                                                                                    "body1": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "1rem",
+                                                                                      "fontWeight": 400,
+                                                                                      "letterSpacing": "0.00938em",
+                                                                                      "lineHeight": 1.5,
+                                                                                    },
+                                                                                    "body2": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "0.875rem",
+                                                                                      "fontWeight": 400,
+                                                                                      "letterSpacing": "0.01071em",
+                                                                                      "lineHeight": 1.43,
+                                                                                    },
+                                                                                    "button": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "0.875rem",
+                                                                                      "fontWeight": 500,
+                                                                                      "letterSpacing": "0.02857em",
+                                                                                      "lineHeight": 1.75,
+                                                                                      "textTransform": "uppercase",
+                                                                                    },
+                                                                                    "caption": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "0.75rem",
+                                                                                      "fontWeight": 400,
+                                                                                      "letterSpacing": "0.03333em",
+                                                                                      "lineHeight": 1.66,
+                                                                                    },
+                                                                                    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                    "fontSize": 14,
+                                                                                    "fontWeightBold": 700,
+                                                                                    "fontWeightLight": 300,
+                                                                                    "fontWeightMedium": 500,
+                                                                                    "fontWeightRegular": 400,
+                                                                                    "h1": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "6rem",
+                                                                                      "fontWeight": 300,
+                                                                                      "letterSpacing": "-0.01562em",
+                                                                                      "lineHeight": 1,
+                                                                                    },
+                                                                                    "h2": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "3.75rem",
+                                                                                      "fontWeight": 300,
+                                                                                      "letterSpacing": "-0.00833em",
+                                                                                      "lineHeight": 1,
+                                                                                    },
+                                                                                    "h3": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "3rem",
+                                                                                      "fontWeight": 400,
+                                                                                      "letterSpacing": "0em",
+                                                                                      "lineHeight": 1.04,
+                                                                                    },
+                                                                                    "h4": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "2.125rem",
+                                                                                      "fontWeight": 400,
+                                                                                      "letterSpacing": "0.00735em",
+                                                                                      "lineHeight": 1.17,
+                                                                                    },
+                                                                                    "h5": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "1.5rem",
+                                                                                      "fontWeight": 400,
+                                                                                      "letterSpacing": "0em",
+                                                                                      "lineHeight": 1.33,
+                                                                                    },
+                                                                                    "h6": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "1.25rem",
+                                                                                      "fontWeight": 500,
+                                                                                      "letterSpacing": "0.0075em",
+                                                                                      "lineHeight": 1.6,
+                                                                                    },
+                                                                                    "htmlFontSize": 16,
+                                                                                    "overline": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "0.75rem",
+                                                                                      "fontWeight": 400,
+                                                                                      "letterSpacing": "0.08333em",
+                                                                                      "lineHeight": 2.66,
+                                                                                      "textTransform": "uppercase",
+                                                                                    },
+                                                                                    "pxToRem": [Function],
+                                                                                    "round": [Function],
+                                                                                    "subtitle1": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "1rem",
+                                                                                      "fontWeight": 400,
+                                                                                      "letterSpacing": "0.00938em",
+                                                                                      "lineHeight": 1.75,
+                                                                                    },
+                                                                                    "subtitle2": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "0.875rem",
+                                                                                      "fontWeight": 500,
+                                                                                      "letterSpacing": "0.00714em",
+                                                                                      "lineHeight": 1.57,
+                                                                                    },
+                                                                                  },
+                                                                                  "zIndex": Object {
+                                                                                    "appBar": 1100,
+                                                                                    "drawer": 1200,
+                                                                                    "mobileStepper": 1000,
+                                                                                    "modal": 1300,
+                                                                                    "snackbar": 1400,
+                                                                                    "tooltip": 1500,
+                                                                                  },
+                                                                                }
+                                                                              }
+                                                                              variant="inherit"
+                                                                            >
+                                                                              <span
+                                                                                className="MuiTypography-root"
+                                                                              >
+                                                                                Share
+                                                                              </span>
+                                                                            </ForwardRef(Typography)>
+                                                                          </WithStyles(ForwardRef(Typography))>
+                                                                          <NoSsr>
+                                                                            <WithStyles(undefined)
+                                                                              center={false}
+                                                                            >
+                                                                              <ForwardRef(TouchRipple)
+                                                                                center={false}
                                                                                 classes={
                                                                                   Object {
-                                                                                    "disabled": "Mui-disabled",
-                                                                                    "focusVisible": "Mui-focusVisible",
-                                                                                    "root": "MuiButtonBase-root",
+                                                                                    "child": "MuiTouchRipple-child",
+                                                                                    "childLeaving": "MuiTouchRipple-childLeaving",
+                                                                                    "childPulsate": "MuiTouchRipple-childPulsate",
+                                                                                    "ripple": "MuiTouchRipple-ripple",
+                                                                                    "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                                                    "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                                                    "root": "MuiTouchRipple-root",
                                                                                   }
                                                                                 }
-                                                                                component="li"
-                                                                                disabled={false}
-                                                                                focusVisibleClassName="Mui-focusVisible"
-                                                                                onClick={[Function]}
-                                                                                role="menuitem"
-                                                                                tabIndex={-1}
                                                                               >
-                                                                                <li
-                                                                                  aria-disabled={false}
-                                                                                  className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root makeStyles-menuItem-13 MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                  onBlur={[Function]}
-                                                                                  onClick={[Function]}
-                                                                                  onDragLeave={[Function]}
-                                                                                  onFocus={[Function]}
-                                                                                  onKeyDown={[Function]}
-                                                                                  onKeyUp={[Function]}
-                                                                                  onMouseDown={[Function]}
-                                                                                  onMouseLeave={[Function]}
-                                                                                  onMouseUp={[Function]}
-                                                                                  onTouchEnd={[Function]}
-                                                                                  onTouchMove={[Function]}
-                                                                                  onTouchStart={[Function]}
-                                                                                  role="menuitem"
-                                                                                  tabIndex={-1}
+                                                                                <span
+                                                                                  className="MuiTouchRipple-root"
                                                                                 >
-                                                                                  Share
-                                                                                  <NoSsr>
-                                                                                    <WithStyles(undefined)
-                                                                                      center={false}
-                                                                                    >
-                                                                                      <ForwardRef(TouchRipple)
-                                                                                        center={false}
-                                                                                        classes={
-                                                                                          Object {
-                                                                                            "child": "MuiTouchRipple-child",
-                                                                                            "childLeaving": "MuiTouchRipple-childLeaving",
-                                                                                            "childPulsate": "MuiTouchRipple-childPulsate",
-                                                                                            "ripple": "MuiTouchRipple-ripple",
-                                                                                            "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                                                                                            "rippleVisible": "MuiTouchRipple-rippleVisible",
-                                                                                            "root": "MuiTouchRipple-root",
-                                                                                          }
-                                                                                        }
-                                                                                      >
-                                                                                        <span
-                                                                                          className="MuiTouchRipple-root"
-                                                                                        >
-                                                                                          <TransitionGroup
-                                                                                            childFactory={[Function]}
-                                                                                            component={null}
-                                                                                            exit={true}
-                                                                                          />
-                                                                                        </span>
-                                                                                      </ForwardRef(TouchRipple)>
-                                                                                    </WithStyles(undefined)>
-                                                                                  </NoSsr>
-                                                                                </li>
-                                                                              </ForwardRef(ButtonBase)>
-                                                                            </WithStyles(ForwardRef(ButtonBase))>
-                                                                          </ForwardRef(ListItem)>
-                                                                        </WithStyles(ForwardRef(ListItem))>
-                                                                      </ForwardRef(MenuItem)>
-                                                                    </WithStyles(ForwardRef(MenuItem))>
-                                                                    <WithStyles(ForwardRef(MenuItem))
+                                                                                  <TransitionGroup
+                                                                                    childFactory={[Function]}
+                                                                                    component={null}
+                                                                                    exit={true}
+                                                                                  />
+                                                                                </span>
+                                                                              </ForwardRef(TouchRipple)>
+                                                                            </WithStyles(undefined)>
+                                                                          </NoSsr>
+                                                                        </li>
+                                                                      </ForwardRef(ButtonBase)>
+                                                                    </WithStyles(ForwardRef(ButtonBase))>
+                                                                  </ForwardRef(ListItem)>
+                                                                </WithStyles(ForwardRef(ListItem))>
+                                                              </ForwardRef(MenuItem)>
+                                                            </WithStyles(ForwardRef(MenuItem))>
+                                                            <WithStyles(ForwardRef(MenuItem))
+                                                              data-testid="ArticleCard-1234567890-addToCollectionButton"
+                                                              key=".1"
+                                                              onClick={[Function]}
+                                                            >
+                                                              <ForwardRef(MenuItem)
+                                                                classes={
+                                                                  Object {
+                                                                    "dense": "MuiMenuItem-dense",
+                                                                    "gutters": "MuiMenuItem-gutters",
+                                                                    "root": "MuiMenuItem-root",
+                                                                    "selected": "Mui-selected",
+                                                                  }
+                                                                }
+                                                                data-testid="ArticleCard-1234567890-addToCollectionButton"
+                                                                onClick={[Function]}
+                                                              >
+                                                                <WithStyles(ForwardRef(ListItem))
+                                                                  button={true}
+                                                                  className="MuiMenuItem-root MuiMenuItem-gutters"
+                                                                  classes={
+                                                                    Object {
+                                                                      "dense": "MuiMenuItem-dense",
+                                                                    }
+                                                                  }
+                                                                  component="li"
+                                                                  data-testid="ArticleCard-1234567890-addToCollectionButton"
+                                                                  disableGutters={false}
+                                                                  onClick={[Function]}
+                                                                  role="menuitem"
+                                                                  tabIndex={-1}
+                                                                >
+                                                                  <ForwardRef(ListItem)
+                                                                    button={true}
+                                                                    className="MuiMenuItem-root MuiMenuItem-gutters"
+                                                                    classes={
+                                                                      Object {
+                                                                        "alignItemsFlexStart": "MuiListItem-alignItemsFlexStart",
+                                                                        "button": "MuiListItem-button",
+                                                                        "container": "MuiListItem-container",
+                                                                        "dense": "MuiListItem-dense MuiMenuItem-dense",
+                                                                        "disabled": "Mui-disabled",
+                                                                        "divider": "MuiListItem-divider",
+                                                                        "focusVisible": "Mui-focusVisible",
+                                                                        "gutters": "MuiListItem-gutters",
+                                                                        "root": "MuiListItem-root",
+                                                                        "secondaryAction": "MuiListItem-secondaryAction",
+                                                                        "selected": "Mui-selected",
+                                                                      }
+                                                                    }
+                                                                    component="li"
+                                                                    data-testid="ArticleCard-1234567890-addToCollectionButton"
+                                                                    disableGutters={false}
+                                                                    onClick={[Function]}
+                                                                    role="menuitem"
+                                                                    tabIndex={-1}
+                                                                  >
+                                                                    <WithStyles(ForwardRef(ButtonBase))
+                                                                      className="MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                                      component="li"
                                                                       data-testid="ArticleCard-1234567890-addToCollectionButton"
+                                                                      disabled={false}
+                                                                      focusVisibleClassName="Mui-focusVisible"
                                                                       onClick={[Function]}
+                                                                      role="menuitem"
+                                                                      tabIndex={-1}
                                                                     >
-                                                                      <ForwardRef(MenuItem)
+                                                                      <ForwardRef(ButtonBase)
+                                                                        className="MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
                                                                         classes={
                                                                           Object {
-                                                                            "dense": "MuiMenuItem-dense",
-                                                                            "gutters": "MuiMenuItem-gutters",
-                                                                            "root": "MuiMenuItem-root",
-                                                                            "selected": "Mui-selected",
+                                                                            "disabled": "Mui-disabled",
+                                                                            "focusVisible": "Mui-focusVisible",
+                                                                            "root": "MuiButtonBase-root",
                                                                           }
                                                                         }
+                                                                        component="li"
                                                                         data-testid="ArticleCard-1234567890-addToCollectionButton"
+                                                                        disabled={false}
+                                                                        focusVisibleClassName="Mui-focusVisible"
                                                                         onClick={[Function]}
+                                                                        role="menuitem"
+                                                                        tabIndex={-1}
                                                                       >
-                                                                        <WithStyles(ForwardRef(ListItem))
-                                                                          button={true}
-                                                                          className="MuiMenuItem-root MuiMenuItem-gutters"
-                                                                          classes={
-                                                                            Object {
-                                                                              "dense": "MuiMenuItem-dense",
-                                                                            }
-                                                                          }
-                                                                          component="li"
+                                                                        <li
+                                                                          aria-disabled={false}
+                                                                          className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
                                                                           data-testid="ArticleCard-1234567890-addToCollectionButton"
-                                                                          disableGutters={false}
+                                                                          onBlur={[Function]}
                                                                           onClick={[Function]}
+                                                                          onDragLeave={[Function]}
+                                                                          onFocus={[Function]}
+                                                                          onKeyDown={[Function]}
+                                                                          onKeyUp={[Function]}
+                                                                          onMouseDown={[Function]}
+                                                                          onMouseLeave={[Function]}
+                                                                          onMouseUp={[Function]}
+                                                                          onTouchEnd={[Function]}
+                                                                          onTouchMove={[Function]}
+                                                                          onTouchStart={[Function]}
                                                                           role="menuitem"
                                                                           tabIndex={-1}
                                                                         >
-                                                                          <ForwardRef(ListItem)
-                                                                            button={true}
-                                                                            className="MuiMenuItem-root MuiMenuItem-gutters"
-                                                                            classes={
-                                                                              Object {
-                                                                                "alignItemsFlexStart": "MuiListItem-alignItemsFlexStart",
-                                                                                "button": "MuiListItem-button",
-                                                                                "container": "MuiListItem-container",
-                                                                                "dense": "MuiListItem-dense MuiMenuItem-dense",
-                                                                                "disabled": "Mui-disabled",
-                                                                                "divider": "MuiListItem-divider",
-                                                                                "focusVisible": "Mui-focusVisible",
-                                                                                "gutters": "MuiListItem-gutters",
-                                                                                "root": "MuiListItem-root",
-                                                                                "secondaryAction": "MuiListItem-secondaryAction",
-                                                                                "selected": "Mui-selected",
-                                                                              }
-                                                                            }
-                                                                            component="li"
-                                                                            data-testid="ArticleCard-1234567890-addToCollectionButton"
-                                                                            disableGutters={false}
-                                                                            onClick={[Function]}
-                                                                            role="menuitem"
-                                                                            tabIndex={-1}
+                                                                          <WithStyles(ForwardRef(ListItemIcon))
+                                                                            key=".0"
                                                                           >
-                                                                            <WithStyles(ForwardRef(ButtonBase))
-                                                                              className="MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                              component="li"
-                                                                              data-testid="ArticleCard-1234567890-addToCollectionButton"
-                                                                              disabled={false}
-                                                                              focusVisibleClassName="Mui-focusVisible"
-                                                                              onClick={[Function]}
-                                                                              role="menuitem"
-                                                                              tabIndex={-1}
+                                                                            <ForwardRef(ListItemIcon)
+                                                                              classes={
+                                                                                Object {
+                                                                                  "alignItemsFlexStart": "MuiListItemIcon-alignItemsFlexStart",
+                                                                                  "root": "MuiListItemIcon-root",
+                                                                                }
+                                                                              }
                                                                             >
-                                                                              <ForwardRef(ButtonBase)
-                                                                                className="MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                                              <div
+                                                                                className="MuiListItemIcon-root"
+                                                                              >
+                                                                                <WithStyles(ForwardRef(Icon))>
+                                                                                  <ForwardRef(Icon)
+                                                                                    classes={
+                                                                                      Object {
+                                                                                        "colorAction": "MuiIcon-colorAction",
+                                                                                        "colorDisabled": "MuiIcon-colorDisabled",
+                                                                                        "colorError": "MuiIcon-colorError",
+                                                                                        "colorPrimary": "MuiIcon-colorPrimary",
+                                                                                        "colorSecondary": "MuiIcon-colorSecondary",
+                                                                                        "fontSizeInherit": "MuiIcon-fontSizeInherit",
+                                                                                        "fontSizeLarge": "MuiIcon-fontSizeLarge",
+                                                                                        "fontSizeSmall": "MuiIcon-fontSizeSmall",
+                                                                                        "root": "MuiIcon-root",
+                                                                                      }
+                                                                                    }
+                                                                                  >
+                                                                                    <span
+                                                                                      aria-hidden={true}
+                                                                                      className="material-icons MuiIcon-root"
+                                                                                    >
+                                                                                      folder
+                                                                                    </span>
+                                                                                  </ForwardRef(Icon)>
+                                                                                </WithStyles(ForwardRef(Icon))>
+                                                                              </div>
+                                                                            </ForwardRef(ListItemIcon)>
+                                                                          </WithStyles(ForwardRef(ListItemIcon))>
+                                                                          <WithStyles(ForwardRef(Typography))
+                                                                            key=".1"
+                                                                            variant="inherit"
+                                                                          >
+                                                                            <ForwardRef(Typography)
+                                                                              classes={
+                                                                                Object {
+                                                                                  "alignCenter": "MuiTypography-alignCenter",
+                                                                                  "alignJustify": "MuiTypography-alignJustify",
+                                                                                  "alignLeft": "MuiTypography-alignLeft",
+                                                                                  "alignRight": "MuiTypography-alignRight",
+                                                                                  "body1": "MuiTypography-body1",
+                                                                                  "body2": "MuiTypography-body2",
+                                                                                  "button": "MuiTypography-button",
+                                                                                  "caption": "MuiTypography-caption",
+                                                                                  "colorError": "MuiTypography-colorError",
+                                                                                  "colorInherit": "MuiTypography-colorInherit",
+                                                                                  "colorPrimary": "MuiTypography-colorPrimary",
+                                                                                  "colorSecondary": "MuiTypography-colorSecondary",
+                                                                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                                  "displayBlock": "MuiTypography-displayBlock",
+                                                                                  "displayInline": "MuiTypography-displayInline",
+                                                                                  "gutterBottom": "MuiTypography-gutterBottom",
+                                                                                  "h1": "MuiTypography-h1",
+                                                                                  "h2": "MuiTypography-h2",
+                                                                                  "h3": "MuiTypography-h3",
+                                                                                  "h4": "MuiTypography-h4",
+                                                                                  "h5": "MuiTypography-h5",
+                                                                                  "h6": "MuiTypography-h6",
+                                                                                  "noWrap": "MuiTypography-noWrap",
+                                                                                  "overline": "MuiTypography-overline",
+                                                                                  "paragraph": "MuiTypography-paragraph",
+                                                                                  "root": "MuiTypography-root",
+                                                                                  "srOnly": "MuiTypography-srOnly",
+                                                                                  "subtitle1": "MuiTypography-subtitle1",
+                                                                                  "subtitle2": "MuiTypography-subtitle2",
+                                                                                }
+                                                                              }
+                                                                              theme={
+                                                                                Object {
+                                                                                  "breakpoints": Object {
+                                                                                    "between": [Function],
+                                                                                    "down": [Function],
+                                                                                    "keys": Array [
+                                                                                      "xs",
+                                                                                      "sm",
+                                                                                      "md",
+                                                                                      "lg",
+                                                                                      "xl",
+                                                                                    ],
+                                                                                    "only": [Function],
+                                                                                    "up": [Function],
+                                                                                    "values": Object {
+                                                                                      "lg": 1280,
+                                                                                      "md": 960,
+                                                                                      "sm": 600,
+                                                                                      "xl": 1920,
+                                                                                      "xs": 0,
+                                                                                    },
+                                                                                    "width": [Function],
+                                                                                  },
+                                                                                  "direction": "ltr",
+                                                                                  "mixins": Object {
+                                                                                    "gutters": [Function],
+                                                                                    "toolbar": Object {
+                                                                                      "@media (min-width:0px) and (orientation: landscape)": Object {
+                                                                                        "minHeight": 48,
+                                                                                      },
+                                                                                      "@media (min-width:600px)": Object {
+                                                                                        "minHeight": 64,
+                                                                                      },
+                                                                                      "minHeight": 56,
+                                                                                    },
+                                                                                  },
+                                                                                  "overrides": Object {},
+                                                                                  "palette": Object {
+                                                                                    "action": Object {
+                                                                                      "active": "rgba(0, 0, 0, 0.54)",
+                                                                                      "disabled": "rgba(0, 0, 0, 0.26)",
+                                                                                      "disabledBackground": "rgba(0, 0, 0, 0.12)",
+                                                                                      "hover": "rgba(0, 0, 0, 0.08)",
+                                                                                      "hoverOpacity": 0.08,
+                                                                                      "selected": "rgba(0, 0, 0, 0.14)",
+                                                                                    },
+                                                                                    "augmentColor": [Function],
+                                                                                    "background": Object {
+                                                                                      "default": "#fafafa",
+                                                                                      "paper": "#fff",
+                                                                                    },
+                                                                                    "common": Object {
+                                                                                      "black": "#000",
+                                                                                      "white": "#fff",
+                                                                                    },
+                                                                                    "contrastThreshold": 3,
+                                                                                    "divider": "rgba(0, 0, 0, 0.12)",
+                                                                                    "error": Object {
+                                                                                      "contrastText": "#fff",
+                                                                                      "dark": "#d32f2f",
+                                                                                      "light": "#e57373",
+                                                                                      "main": "#f44336",
+                                                                                    },
+                                                                                    "getContrastText": [Function],
+                                                                                    "grey": Object {
+                                                                                      "100": "#f5f5f5",
+                                                                                      "200": "#eeeeee",
+                                                                                      "300": "#e0e0e0",
+                                                                                      "400": "#bdbdbd",
+                                                                                      "50": "#fafafa",
+                                                                                      "500": "#9e9e9e",
+                                                                                      "600": "#757575",
+                                                                                      "700": "#616161",
+                                                                                      "800": "#424242",
+                                                                                      "900": "#212121",
+                                                                                      "A100": "#d5d5d5",
+                                                                                      "A200": "#aaaaaa",
+                                                                                      "A400": "#303030",
+                                                                                      "A700": "#616161",
+                                                                                    },
+                                                                                    "primary": Object {
+                                                                                      "contrastText": "#fff",
+                                                                                      "dark": "#303f9f",
+                                                                                      "light": "#7986cb",
+                                                                                      "main": "#3f51b5",
+                                                                                    },
+                                                                                    "secondary": Object {
+                                                                                      "contrastText": "#fff",
+                                                                                      "dark": "#c51162",
+                                                                                      "light": "#ff4081",
+                                                                                      "main": "#f50057",
+                                                                                    },
+                                                                                    "text": Object {
+                                                                                      "disabled": "rgba(0, 0, 0, 0.38)",
+                                                                                      "hint": "rgba(0, 0, 0, 0.38)",
+                                                                                      "primary": "rgba(0, 0, 0, 0.87)",
+                                                                                      "secondary": "rgba(0, 0, 0, 0.54)",
+                                                                                    },
+                                                                                    "tonalOffset": 0.2,
+                                                                                    "type": "light",
+                                                                                  },
+                                                                                  "props": Object {},
+                                                                                  "shadows": Array [
+                                                                                    "none",
+                                                                                    "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+                                                                                    "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+                                                                                    "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+                                                                                    "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+                                                                                    "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+                                                                                    "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+                                                                                    "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+                                                                                    "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+                                                                                    "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+                                                                                    "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+                                                                                    "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+                                                                                    "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+                                                                                    "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+                                                                                    "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+                                                                                    "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+                                                                                    "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+                                                                                    "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+                                                                                    "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+                                                                                    "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+                                                                                    "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+                                                                                    "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+                                                                                    "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+                                                                                    "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+                                                                                    "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+                                                                                  ],
+                                                                                  "shape": Object {
+                                                                                    "borderRadius": 4,
+                                                                                  },
+                                                                                  "spacing": [Function],
+                                                                                  "transitions": Object {
+                                                                                    "create": [Function],
+                                                                                    "duration": Object {
+                                                                                      "complex": 375,
+                                                                                      "enteringScreen": 225,
+                                                                                      "leavingScreen": 195,
+                                                                                      "short": 250,
+                                                                                      "shorter": 200,
+                                                                                      "shortest": 150,
+                                                                                      "standard": 300,
+                                                                                    },
+                                                                                    "easing": Object {
+                                                                                      "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+                                                                                      "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+                                                                                      "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+                                                                                      "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+                                                                                    },
+                                                                                    "getAutoHeightDuration": [Function],
+                                                                                  },
+                                                                                  "typography": Object {
+                                                                                    "body1": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "1rem",
+                                                                                      "fontWeight": 400,
+                                                                                      "letterSpacing": "0.00938em",
+                                                                                      "lineHeight": 1.5,
+                                                                                    },
+                                                                                    "body2": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "0.875rem",
+                                                                                      "fontWeight": 400,
+                                                                                      "letterSpacing": "0.01071em",
+                                                                                      "lineHeight": 1.43,
+                                                                                    },
+                                                                                    "button": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "0.875rem",
+                                                                                      "fontWeight": 500,
+                                                                                      "letterSpacing": "0.02857em",
+                                                                                      "lineHeight": 1.75,
+                                                                                      "textTransform": "uppercase",
+                                                                                    },
+                                                                                    "caption": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "0.75rem",
+                                                                                      "fontWeight": 400,
+                                                                                      "letterSpacing": "0.03333em",
+                                                                                      "lineHeight": 1.66,
+                                                                                    },
+                                                                                    "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                    "fontSize": 14,
+                                                                                    "fontWeightBold": 700,
+                                                                                    "fontWeightLight": 300,
+                                                                                    "fontWeightMedium": 500,
+                                                                                    "fontWeightRegular": 400,
+                                                                                    "h1": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "6rem",
+                                                                                      "fontWeight": 300,
+                                                                                      "letterSpacing": "-0.01562em",
+                                                                                      "lineHeight": 1,
+                                                                                    },
+                                                                                    "h2": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "3.75rem",
+                                                                                      "fontWeight": 300,
+                                                                                      "letterSpacing": "-0.00833em",
+                                                                                      "lineHeight": 1,
+                                                                                    },
+                                                                                    "h3": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "3rem",
+                                                                                      "fontWeight": 400,
+                                                                                      "letterSpacing": "0em",
+                                                                                      "lineHeight": 1.04,
+                                                                                    },
+                                                                                    "h4": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "2.125rem",
+                                                                                      "fontWeight": 400,
+                                                                                      "letterSpacing": "0.00735em",
+                                                                                      "lineHeight": 1.17,
+                                                                                    },
+                                                                                    "h5": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "1.5rem",
+                                                                                      "fontWeight": 400,
+                                                                                      "letterSpacing": "0em",
+                                                                                      "lineHeight": 1.33,
+                                                                                    },
+                                                                                    "h6": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "1.25rem",
+                                                                                      "fontWeight": 500,
+                                                                                      "letterSpacing": "0.0075em",
+                                                                                      "lineHeight": 1.6,
+                                                                                    },
+                                                                                    "htmlFontSize": 16,
+                                                                                    "overline": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "0.75rem",
+                                                                                      "fontWeight": 400,
+                                                                                      "letterSpacing": "0.08333em",
+                                                                                      "lineHeight": 2.66,
+                                                                                      "textTransform": "uppercase",
+                                                                                    },
+                                                                                    "pxToRem": [Function],
+                                                                                    "round": [Function],
+                                                                                    "subtitle1": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "1rem",
+                                                                                      "fontWeight": 400,
+                                                                                      "letterSpacing": "0.00938em",
+                                                                                      "lineHeight": 1.75,
+                                                                                    },
+                                                                                    "subtitle2": Object {
+                                                                                      "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                                                                                      "fontSize": "0.875rem",
+                                                                                      "fontWeight": 500,
+                                                                                      "letterSpacing": "0.00714em",
+                                                                                      "lineHeight": 1.57,
+                                                                                    },
+                                                                                  },
+                                                                                  "zIndex": Object {
+                                                                                    "appBar": 1100,
+                                                                                    "drawer": 1200,
+                                                                                    "mobileStepper": 1000,
+                                                                                    "modal": 1300,
+                                                                                    "snackbar": 1400,
+                                                                                    "tooltip": 1500,
+                                                                                  },
+                                                                                }
+                                                                              }
+                                                                              variant="inherit"
+                                                                            >
+                                                                              <span
+                                                                                className="MuiTypography-root"
+                                                                              >
+                                                                                Add To Collection
+                                                                              </span>
+                                                                            </ForwardRef(Typography)>
+                                                                          </WithStyles(ForwardRef(Typography))>
+                                                                          <NoSsr>
+                                                                            <WithStyles(undefined)
+                                                                              center={false}
+                                                                            >
+                                                                              <ForwardRef(TouchRipple)
+                                                                                center={false}
                                                                                 classes={
                                                                                   Object {
-                                                                                    "disabled": "Mui-disabled",
-                                                                                    "focusVisible": "Mui-focusVisible",
-                                                                                    "root": "MuiButtonBase-root",
+                                                                                    "child": "MuiTouchRipple-child",
+                                                                                    "childLeaving": "MuiTouchRipple-childLeaving",
+                                                                                    "childPulsate": "MuiTouchRipple-childPulsate",
+                                                                                    "ripple": "MuiTouchRipple-ripple",
+                                                                                    "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                                                    "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                                                    "root": "MuiTouchRipple-root",
                                                                                   }
                                                                                 }
-                                                                                component="li"
-                                                                                data-testid="ArticleCard-1234567890-addToCollectionButton"
-                                                                                disabled={false}
-                                                                                focusVisibleClassName="Mui-focusVisible"
-                                                                                onClick={[Function]}
-                                                                                role="menuitem"
-                                                                                tabIndex={-1}
                                                                               >
-                                                                                <li
-                                                                                  aria-disabled={false}
-                                                                                  className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                  data-testid="ArticleCard-1234567890-addToCollectionButton"
-                                                                                  onBlur={[Function]}
-                                                                                  onClick={[Function]}
-                                                                                  onDragLeave={[Function]}
-                                                                                  onFocus={[Function]}
-                                                                                  onKeyDown={[Function]}
-                                                                                  onKeyUp={[Function]}
-                                                                                  onMouseDown={[Function]}
-                                                                                  onMouseLeave={[Function]}
-                                                                                  onMouseUp={[Function]}
-                                                                                  onTouchEnd={[Function]}
-                                                                                  onTouchMove={[Function]}
-                                                                                  onTouchStart={[Function]}
-                                                                                  role="menuitem"
-                                                                                  tabIndex={-1}
+                                                                                <span
+                                                                                  className="MuiTouchRipple-root"
                                                                                 >
-                                                                                  Add To Collection
-                                                                                  <NoSsr>
-                                                                                    <WithStyles(undefined)
-                                                                                      center={false}
-                                                                                    >
-                                                                                      <ForwardRef(TouchRipple)
-                                                                                        center={false}
-                                                                                        classes={
-                                                                                          Object {
-                                                                                            "child": "MuiTouchRipple-child",
-                                                                                            "childLeaving": "MuiTouchRipple-childLeaving",
-                                                                                            "childPulsate": "MuiTouchRipple-childPulsate",
-                                                                                            "ripple": "MuiTouchRipple-ripple",
-                                                                                            "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                                                                                            "rippleVisible": "MuiTouchRipple-rippleVisible",
-                                                                                            "root": "MuiTouchRipple-root",
-                                                                                          }
-                                                                                        }
-                                                                                      >
-                                                                                        <span
-                                                                                          className="MuiTouchRipple-root"
-                                                                                        >
-                                                                                          <TransitionGroup
-                                                                                            childFactory={[Function]}
-                                                                                            component={null}
-                                                                                            exit={true}
-                                                                                          />
-                                                                                        </span>
-                                                                                      </ForwardRef(TouchRipple)>
-                                                                                    </WithStyles(undefined)>
-                                                                                  </NoSsr>
-                                                                                </li>
-                                                                              </ForwardRef(ButtonBase)>
-                                                                            </WithStyles(ForwardRef(ButtonBase))>
-                                                                          </ForwardRef(ListItem)>
-                                                                        </WithStyles(ForwardRef(ListItem))>
-                                                                      </ForwardRef(MenuItem)>
-                                                                    </WithStyles(ForwardRef(MenuItem))>
-                                                                  </ul>
-                                                                </ForwardRef(List)>
-                                                              </WithStyles(ForwardRef(List))>
-                                                            </ForwardRef(MenuList)>
+                                                                                  <TransitionGroup
+                                                                                    childFactory={[Function]}
+                                                                                    component={null}
+                                                                                    exit={true}
+                                                                                  />
+                                                                                </span>
+                                                                              </ForwardRef(TouchRipple)>
+                                                                            </WithStyles(undefined)>
+                                                                          </NoSsr>
+                                                                        </li>
+                                                                      </ForwardRef(ButtonBase)>
+                                                                    </WithStyles(ForwardRef(ButtonBase))>
+                                                                  </ForwardRef(ListItem)>
+                                                                </WithStyles(ForwardRef(ListItem))>
+                                                              </ForwardRef(MenuItem)>
+                                                            </WithStyles(ForwardRef(MenuItem))>
                                                           </ul>
                                                         </ForwardRef(List)>
                                                       </WithStyles(ForwardRef(List))>
