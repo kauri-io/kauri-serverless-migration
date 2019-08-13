@@ -1,10 +1,9 @@
 import { Epic, ofType } from 'redux-observable'
 import { IDependencies, IReduxState } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
 import analytics from '../../lib/analytics'
-import { merge, of, from } from 'rxjs'
+import { of, from } from 'rxjs'
 import { switchMap, mergeMap, tap } from 'rxjs/operators'
 import { ICommunity } from '../PublicProfile/Manage/MyCommunities'
 import { publishArticleMutation } from '../../queries/Article'
@@ -132,33 +131,16 @@ export const publishArticleEpic: Epic<any, any, IReduxState, IDependencies> = (
                         )
                     }),
                     mergeMap(() =>
-                        merge(
-                            of(
-                                showNotificationAction({
-                                    description: canPublish
-                                        ? `Your article has been published.`
-                                        : `Your article has been submitted for review.`,
-                                    message: canPublish
-                                        ? 'Article Published'
-                                        : 'Article submitted',
-                                    notificationType: 'success',
-                                })
-                            ),
-                            of(
-                                routeChangeAction(
-                                    `/article/${id}/v${version}/${
-                                        !owner ||
-                                        (owner && owner.id === contributor) ||
-                                        userCommunities
-                                            .map(
-                                                ({ community }) => community.id
-                                            )
-                                            .includes(owner.id)
-                                            ? 'article-published'
-                                            : 'article-proposed'
-                                    }`
-                                )
-                            )
+                        of(
+                            showNotificationAction({
+                                description: canPublish
+                                    ? `Your article has been published.`
+                                    : `Your article has been submitted for review.`,
+                                message: canPublish
+                                    ? 'Article Published'
+                                    : 'Article submitted',
+                                notificationType: 'success',
+                            })
                         )
                     )
                 )

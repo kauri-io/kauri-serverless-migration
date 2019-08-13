@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { NavigationText, BodyCard } from '../../components/Typography'
-import PrimaryButton from '../../components/Button/PrimaryButton'
-import TertiaryButton from '../../components/Button/TertiaryButton'
+import Button from '@material-ui/core/Button'
 import ModalHeader from '../../components/Headers/ModalHeader'
-import Input from '../../components/Input/Input'
+import TextField from '@material-ui/core/TextField'
+import CloseIcon from '@material-ui/icons/Close'
 
 const TitleContainer = styled.div`
     display: flex;
@@ -29,13 +29,6 @@ const ActionsContainer = styled.div`
     }
 `
 
-const CloseIcon = () => (
-    <img
-        style={{ rotate: '45deg' }}
-        src="https://png.icons8.com/material-two-tone/50/000000/delete-sign.png"
-    />
-)
-
 const Actions = ({
     handleClose,
     handleConfirm,
@@ -44,21 +37,20 @@ const Actions = ({
     handleConfirm: any
 }) => (
     <ActionsContainer>
-        <TertiaryButton
-            icon={<CloseIcon />}
-            onClick={() => handleClose()}
-            color="textPrimary"
-        >
+        <Button color="primary" onClick={() => handleClose()}>
+            <CloseIcon />
             Close
-        </TertiaryButton>
-        <PrimaryButton
+        </Button>
+        <Button
+            color="primary"
+            variant="contained"
             onClick={() => {
                 handleConfirm()
                 handleClose()
             }}
         >
             Confirm
-        </PrimaryButton>
+        </Button>
     </ActionsContainer>
 )
 
@@ -100,14 +92,12 @@ class RejectArticleModal extends React.Component<IProps, IState> {
                         <Title text="Let the contributor know why the article is been rejected. So they can improve the content and submit a corrected version." />
                     }
                 />
-                <Input
+                <TextField
                     onChange={e =>
                         this.setState({ rejectionCause: e.target.value })
                     }
                     value={this.state.rejectionCause}
-                    color="textPrimary"
-                    placeHolder="Add feedback for the contributor"
-                    fontSize={4}
+                    placeholder="Add feedback for the contributor"
                 />
                 <Actions
                     handleConfirm={() =>

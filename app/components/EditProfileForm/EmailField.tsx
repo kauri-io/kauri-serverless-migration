@@ -1,26 +1,18 @@
 import React, { ChangeEvent } from 'react'
-import Input from '../../components/Input/Input'
+import TextField from '@material-ui/core/TextField'
 import { compose, withApollo } from 'react-apollo'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import theme from '../../lib/theme-config'
 import { Label } from '../../components/Typography'
 import { Tooltip } from 'react-tippy'
+import { withStyles } from '@material-ui/styles'
+import { InputAdornment } from '@material-ui/core'
 
 const Icon = styled.img`
     height: 20px;
     width: 20px;
     margin-right: ${props => props.theme.space[1]}px;
-`
-
-const Container = styled.div`
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    > .tooltip-body {
-        margin-top: 5px;
-    }
 `
 
 const TooltipContainer = styled.section`
@@ -67,66 +59,90 @@ interface IProps {
     email: string
     status: string
     resendEmailVerification: () => void
+    classes: any
 }
 
-class EmailField extends React.Component<IProps, {}> {
-    resendVerificationEmail() {
-        this.props.resendEmailVerification()
-    }
-
-    render() {
-        return (
-            <Container>
-                {this.props.status === 'CREATED' && (
-                    <Tooltip
-                        html={
-                            <TooltipContainer>
-                                <TooltipArrow />
-                                <Label>Email Verification</Label>
-                                <Label
-                                    className="resend"
-                                    onClick={() =>
-                                        this.resendVerificationEmail()
-                                    }
-                                >
-                                    Resend
-                                </Label>
-                            </TooltipContainer>
-                        }
-                        position="top"
-                        trigger="mouseenter"
-                        unmountHTMLWhenHide={true}
-                        interactive={true}
-                    >
-                        <Icon src="/static/images/icons8-info.png" />
-                    </Tooltip>
-                )}
-                {this.props.status === 'EMAIL_VERIFIED' && (
-                    <Tooltip
-                        html={
-                            <TooltipContainer>
-                                <TooltipArrow />
-                                <Label>Email Verified</Label>
-                            </TooltipContainer>
-                        }
-                        position="top"
-                        trigger="mouseenter"
-                        unmountHTMLWhenHide={true}
-                    >
-                        <Icon src="/static/images/icons8-info.png" />
-                    </Tooltip>
-                )}
-                <Input
-                    onChange={this.props.handleChange}
-                    fontWeight={400}
-                    fontSize={1}
-                    value={this.props.email}
-                    placeHolder="Add Email"
-                />
-            </Container>
-        )
-    }
+const styles = {
+    input: {
+        width: '100%',
+        '&:hover': {
+            '& .MuiInput-underline::before': {
+                borderBottomColor: 'rgba(255,255,255,0.6)',
+            },
+        },
+        color: 'white',
+        '& .MuiInputBase-root': {
+            color: 'white',
+        },
+        '& .MuiInput-underline::before': {
+            borderBottomColor: 'rgba(255,255,255,0.3)',
+        },
+    },
 }
+
+const EmailStatus = ({ status, resendEmailVerification }) =>
+    status === 'CREATED' ? (
+        <Tooltip
+            html={
+                <TooltipContainer>
+                    <TooltipArrow />
+                    <Label>Email Verification</Label>
+                    <Label
+                        className="resend"
+                        onClick={() => resendEmailVerification()}
+                    >
+                        Resend
+                    </Label>
+                </TooltipContainer>
+            }
+            position="top"
+            trigger="mouseenter"
+            unmountHTMLWhenHide={true}
+            interactive={true}
+        >
+            <Icon src="/static/images/icons8-info.png" />
+        </Tooltip>
+    ) : (
+        <Tooltip
+            html={
+                <TooltipContainer>
+                    <TooltipArrow />
+                    <Label>Email Verified</Label>
+                </TooltipContainer>
+            }
+            position="top"
+            trigger="mouseenter"
+            unmountHTMLWhenHide={true}
+        >
+            <Icon src="/static/images/icons8-info.png" />
+        </Tooltip>
+    )
+
+const EmailField = ({
+    classes,
+    handleChange,
+    email,
+    resendEmailVerification,
+    status,
+}: IProps) => (
+    <TextField
+        margin="dense"
+        className={classes.input}
+        onChange={handleChange}
+        value={email}
+        placeholder="Add Email"
+        InputProps={{
+            startAdornment: (
+                <InputAdornment position="start">
+                    <EmailStatus
+                        status={status}
+                        resendEmailVerification={resendEmailVerification}
+                    />
+                </InputAdornment>
+            ),
+        }}
+    />
+)
 
 const mapStateToProps = () => {
     return {}
@@ -138,4 +154,4 @@ export default compose(
         mapStateToProps,
         {}
     )
-)(EmailField)
+)(withStyles(styles)(EmailField))

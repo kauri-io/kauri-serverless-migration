@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import { NavigationText, Label } from '../../components/Typography'
-import PrimaryButton from '../../components/Button/PrimaryButton'
-import TertiaryButton from '../../components/Button/TertiaryButton'
+import Button from '@material-ui/core/Button'
 import ModalHeader from '../../components/Headers/ModalHeader'
-import Input from '../../components/Input/Input'
+import TextField from '@material-ui/core/TextField'
 import {
     IShowNotificationAction,
     IShowNotificationPayload,
 } from '../../lib/Epics/ShowNotificationEpic'
+import CloseIcon from '@material-ui/icons/Close'
 
 const TitleContainer = styled.div`
     display: flex;
@@ -32,13 +32,6 @@ const ActionsContainer = styled.div`
     }
 `
 
-const CloseIcon = () => (
-    <img
-        style={{ rotate: '45deg' }}
-        src="https://png.icons8.com/material-two-tone/50/000000/delete-sign.png"
-    />
-)
-
 const Actions = ({
     handleClose,
     handleConfirm,
@@ -47,21 +40,20 @@ const Actions = ({
     handleConfirm: any
 }) => (
     <ActionsContainer>
-        <TertiaryButton
-            icon={<CloseIcon />}
-            onClick={() => handleClose()}
-            color="textPrimary"
-        >
+        <Button color="primary" onClick={() => handleClose()} variant="text">
+            <CloseIcon />
             Close
-        </TertiaryButton>
-        <PrimaryButton
+        </Button>
+        <Button
+            color="primary"
+            variant="contained"
             onClick={() => {
                 handleClose()
                 handleConfirm()
             }}
         >
             Confirm
-        </PrimaryButton>
+        </Button>
     </ActionsContainer>
 )
 
@@ -105,14 +97,12 @@ class AdvancedSettingsModal extends React.Component<IProps, IState> {
                     A canonical URL helps search engines give credit to the
                     origin.
                 </Label>
-                <Input
+                <TextField
                     onChange={e =>
                         this.setState({ canonicalURL: e.target.value })
                     }
                     value={this.state.canonicalURL}
-                    color="textPrimary"
-                    placeHolder="Enter a canonical url"
-                    fontSize={3}
+                    placeholder="Enter a canonical url"
                 />
                 <Actions
                     handleConfirm={

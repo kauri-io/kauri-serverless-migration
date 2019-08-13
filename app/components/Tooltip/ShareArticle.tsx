@@ -1,4 +1,4 @@
-import TertiaryButton from '../Button/TertiaryButton'
+import Button from '@material-ui/core/Button'
 import { Tooltip } from 'react-tippy'
 import { ShareButtons } from './ShareButtons'
 import styled from 'styled-components'
@@ -42,7 +42,7 @@ const TooltipArrow = styled.div`
     border-radius: 2px;
 `
 
-const icon = (
+const Icon = (
     <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
         <path
             fill="#0BA986"
@@ -69,7 +69,7 @@ interface IProps {
 }
 
 const Container: React.SFC<IProps> = props => {
-    const { url, title, color } = props
+    const { url, title } = props
     return (
         <ReferenceContainer>
             <Tooltip
@@ -78,9 +78,10 @@ const Container: React.SFC<IProps> = props => {
                 trigger="click"
                 unmountHTMLWhenHide={true}
             >
-                <TertiaryButton color={color} icon={icon}>
+                <Button color="primary" variant="text">
+                    {Icon}
                     Share
-                </TertiaryButton>
+                </Button>
             </Tooltip>
         </ReferenceContainer>
     )

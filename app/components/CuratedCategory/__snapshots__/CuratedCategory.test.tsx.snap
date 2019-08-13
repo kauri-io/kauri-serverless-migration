@@ -140,13 +140,13 @@ exports[`components/CuratedCategory should match snapshot 1`] = `
             "componentStyle": ComponentStyle {
               "componentId": "CuratedCategory__Container-sc-7fcfjn-0",
               "isStatic": false,
-              "lastClassName": "doQpHS",
+              "lastClassName": "cILmbH",
               "rules": Array [
                 "display:flex;z-index:1;position:relative;flex-direction:column;width:",
                 "288",
                 "px;height:90px;background:",
                 [Function],
-                ";border-radius:4px;@media (max-width:",
+                ";cursor:pointer;border-radius:4px;@media (max-width:",
                 [Function],
                 "){height:60px;width:170px;> a{z-index:9001;}> a > div > *:last-child{display:none;}}",
               ],
@@ -164,7 +164,7 @@ exports[`components/CuratedCategory should match snapshot 1`] = `
         forwardedRef={null}
       >
         <div
-          className="CuratedCategory__Container-sc-7fcfjn-0 doQpHS"
+          className="CuratedCategory__Container-sc-7fcfjn-0 cILmbH"
         >
           <Image
             asBackground={true}

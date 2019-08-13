@@ -2,8 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { find, filter, reduce, union } from 'ramda'
 import { BodyCard } from '../../components/Typography'
-import PrimaryButton from '../../components/Button/PrimaryButton'
-import TertiaryButton from '../../components/Button/TertiaryButton'
+import Button from '@material-ui/core/Button'
 import ChooseArticleCard from '../ChooseArticleCard/View'
 // import ModalHeader from '../../components/Headers/ModalHeader'
 import ChooseResourceModalSearch from './ChooseResourceModalSearch'
@@ -12,6 +11,7 @@ import { compose, graphql } from 'react-apollo'
 import { searchApprovedArticles } from '../../queries/Article'
 import withApolloError from '../../lib/with-apollo-error'
 import { IReduxState } from '../../lib/Module'
+import CloseIcon from '@material-ui/icons/Close'
 import {
     Dialog,
     DialogTitle,
@@ -54,13 +54,6 @@ const ActionsContainer = styled.div`
     }
 `
 
-const CloseIcon = () => (
-    <img
-        style={{ rotate: '45deg' }}
-        src="https://png.icons8.com/material-two-tone/50/000000/delete-sign.png"
-    />
-)
-
 const Actions: React.FunctionComponent<any> = ({
     handleClose,
     handleConfirm,
@@ -76,21 +69,20 @@ const Actions: React.FunctionComponent<any> = ({
             query={searchPublishedArticles}
             changeTab={changeTab}
         />
-        <TertiaryButton
-            icon={<CloseIcon />}
-            onClick={() => handleClose()}
-            color="textPrimary"
-        >
+        <Button color="primary" onClick={() => handleClose()} variant="text">
+            <CloseIcon />
             Close
-        </TertiaryButton>
-        <PrimaryButton
+        </Button>
+        <Button
+            color="primary"
+            variant="contained"
             onClick={() => {
                 handleConfirm(chosenArticles)
                 handleClose()
             }}
         >
             Confirm
-        </PrimaryButton>
+        </Button>
     </ActionsContainer>
 )
 

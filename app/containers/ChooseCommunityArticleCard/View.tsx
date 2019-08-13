@@ -4,7 +4,6 @@ import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
 import { Grid } from '@material-ui/core'
 import { getArticleURL } from '../../lib/getURLs'
-import TabsComponent from '../../components/Tabs'
 
 const ArticlesContent = props => {
     const { articles, setRef, allOtherChosenArticles } = props
@@ -83,23 +82,11 @@ const ChooseArticleCardComponent = props => {
     }
 
     return (
-        <TabsComponent
-            centerTabs
-            passChangeTabFunction={props.passChangeTabFunction}
-            tabs={[
-                {
-                    name: 'Community articles',
-                },
-            ]}
-            panels={[
-                <CommunityPublishedArticles
-                    {...props}
-                    articles={
-                        props.searchCommunityPublishedArticles
-                            .getCommunityContent
-                    }
-                />,
-            ]}
+        <CommunityPublishedArticles
+            {...props}
+            articles={
+                props.searchCommunityPublishedArticles.getCommunityContent
+            }
         />
     )
 }

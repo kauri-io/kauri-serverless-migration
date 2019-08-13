@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import ArticleCard from '../../../components/Card/ArticleCard'
 import withPagination from '../../../lib/with-pagination'
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
-import PrimaryButton from '../../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import Masonry from '../../../components/Masonry'
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
 import {
@@ -16,11 +16,11 @@ import {
     IDeleteDraftArticlePayload,
 } from '../../ArticleDraft/DeleteDraftArticleModule'
 import { getArticleURL } from '../../../lib/getURLs'
+import Link from 'next/link'
 
 interface IArticlesProps {
     data: searchPersonalArticles
     type: string
-    routeChangeAction: (route: string) => void
     isLoggedIn: boolean
     isOwner: boolean
     openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
@@ -37,7 +37,7 @@ const Centered = styled.div`
     margin-left: 100px;
 `
 
-const Articles: React.FC<IArticlesProps> = ({ data, routeChangeAction }) => {
+const Articles: React.FC<IArticlesProps> = ({ data }) => {
     const articles = data.searchArticles && data.searchArticles.content
     if (articles) {
         return articles && articles.length > 0 ? (
@@ -64,11 +64,13 @@ const Articles: React.FC<IArticlesProps> = ({ data, routeChangeAction }) => {
                     }
                     title="No Saved Drafts"
                     primaryButton={
-                        <PrimaryButton
-                            onClick={() => routeChangeAction('/write-article')}
-                        >
-                            Create Article
-                        </PrimaryButton>
+                        <Link href="/write-article">
+                            <a>
+                                <Button color="primary" variant="contained">
+                                    Create Article
+                                </Button>
+                            </a>
+                        </Link>
                     }
                 />
             </Centered>

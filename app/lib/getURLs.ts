@@ -15,6 +15,11 @@ export const getArticleURL = (
                 as: `/draft/${id}/${version}`,
                 href: `/draft?id=${id}&version=${version}`,
             }
+        case 'review':
+            return {
+                as: `/review/${id}/${version}`,
+                href: `/article-review?id=${id}&version=${version}`,
+            }
         default:
             return {
                 as: `/${slugify(title, { lower: true })}/${id}/a`,
@@ -44,11 +49,14 @@ interface IProfileProps {
     username?: string | null
     id?: string
     urlType?: string
+    userId?: string
 }
 
-export const getProfileURL = ({ username, id }: IProfileProps) => ({
-    as: `/${slugify(String(username), { lower: true })}/${String(id)}/p`,
-    href: `/public-profile?user_id=${String(id)}`,
+export const getProfileURL = ({ username, id, userId }: IProfileProps) => ({
+    as: `/${slugify(String(username), { lower: true })}/${String(
+        id || userId
+    )}/p`,
+    href: `/public-profile?user_id=${String(id || userId)}`,
 })
 
 interface ICommunityProps {

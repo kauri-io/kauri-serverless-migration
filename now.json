@@ -26,6 +26,10 @@
       "dest": "/app/collection?collection_id=$2"
     },
     {
+      "src": "/(.*)/(.*)/cm",
+      "dest": "/app/community?communityId=$2"
+    },
+    {
       "src": "/community/(.*)/update-community",
       "dest": "/app/update-community?community_id=$1"
     },
@@ -44,14 +48,6 @@
     {
       "src": "/article/(.*)/v(.*)/update-article",
       "dest": "/app/update-article?id=$1&version=$2"
-    },
-    {
-      "src": "/article/(.*)/v(.*)/article-updated",
-      "dest": "/app/article-updated?article_id=$1&article_version=$2"
-    },
-    {
-      "src": "/article/(.*)/v(.*)/article-published",
-      "dest": "/app/article-published?article_id=$1&article_version=$2"
     },
     {
       "src": "/(.*)",

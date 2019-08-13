@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Title2 } from '../Typography'
 import { RenderCardContent } from '../CuratedLists'
-import SecondaryButtonComponent from '../Button/SecondaryButton'
+import Button from '@material-ui/core/Button'
 import theme from '../../lib/theme-config'
 import Link from 'next/link'
 
@@ -67,25 +67,17 @@ const LatestContent: React.FunctionComponent<IProps> = props => {
             <AllContentButtonsContainer>
                 <Link href="/articles" as="/articles">
                     <a>
-                        <SecondaryButtonComponent
-                            color="textPrimary"
-                            width={'140px'}
-                            border={'primary'}
-                        >
+                        <Button color="primary" variant="outlined">
                             All Articles
-                        </SecondaryButtonComponent>
+                        </Button>
                     </a>
                 </Link>
 
                 <Link href="/collections" as="/collections">
                     <a>
-                        <SecondaryButtonComponent
-                            color="textPrimary"
-                            width={'140px'}
-                            border={'primary'}
-                        >
+                        <Button color="primary" variant="outlined">
                             All Collections
-                        </SecondaryButtonComponent>
+                        </Button>
                     </a>
                 </Link>
             </AllContentButtonsContainer>

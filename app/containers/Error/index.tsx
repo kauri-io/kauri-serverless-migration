@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import PrimaryButton from '../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import Link from 'next/link'
 
 const ErrorContainer = styled.div`
@@ -29,7 +29,9 @@ const Error = () => (
         <Copy>Sorry, something went wrong :(</Copy>
         <Link href="/" as="/">
             <a>
-                <PrimaryButton>Go to homepage</PrimaryButton>
+                <Button color="primary" variant="contained">
+                    Go to homepage
+                </Button>
             </a>
         </Link>
     </ErrorContainer>

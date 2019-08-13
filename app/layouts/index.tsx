@@ -14,7 +14,7 @@ const mapStateToProps = (state: IReduxState) => ({
 
 const useStyles = makeStyles((theme: Theme) => ({
     constrained: {
-        maxWidth: 1280,
+        maxWidth: 1232,
     },
     item: {
         width: '100%',
@@ -39,12 +39,7 @@ interface IProps {
     children: any
 }
 
-const Layout = ({
-    isModalOpen,
-    children,
-    maxWidthConstrained,
-    user,
-}: IProps) => {
+const Layout = ({ isModalOpen, children, maxWidthConstrained }: IProps) => {
     const classes = useStyles({})
     return (
         <Grid container={true}>

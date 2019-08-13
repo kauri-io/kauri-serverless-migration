@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import PrimaryButton from '../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import { H1, H3 } from '../../components/Typography'
 import Loading from '../../components/Loading'
 
@@ -100,11 +100,13 @@ class EmailActivation extends React.Component<IProps, IState> {
                         Your email address has now been verified
                     </H3>
                     {Image}
-                    <PrimaryButton
+                    <Button
+                        color="primary"
+                        variant="contained"
                         onClick={() => this.props.routeChangeAction('/')}
                     >
                         Go To Homepage
-                    </PrimaryButton>
+                    </Button>
                 </VerifyEmailContainer>
             )
         } else {
@@ -118,11 +120,13 @@ class EmailActivation extends React.Component<IProps, IState> {
                                 click the button to receive a new valid link.
                             </H3>
                             {Image}
-                            <PrimaryButton
+                            <Button
+                                color="primary"
+                                variant="contained"
                                 onClick={() => this.resendEmailVerification()}
                             >
                                 Resend Email
-                            </PrimaryButton>
+                            </Button>
                         </>
                     )}
                     {this.state.status === 'resent' && (

@@ -1,14 +1,13 @@
 import { ofType, Epic } from 'redux-observable'
 import { IDependencies, IReduxState } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import generatePublishArticleHash from '../../lib/generate-publish-article-hash'
 import {
     approveArticleMutation,
     rejectArticleMutation,
 } from '../../queries/Article'
 import analytics from '../../lib/analytics'
-import { from, merge, of } from 'rxjs'
+import { from, of } from 'rxjs'
 import { switchMap, mergeMap, tap, catchError } from 'rxjs/operators'
 import {
     approveArticle,
@@ -93,20 +92,12 @@ export const approveArticleEpic: Epic<
                     ),
                     tap(() => apolloClient.resetStore()),
                     mergeMap(() =>
-                        merge(
-                            of(
-                                routeChangeAction(
-                                    `/article/${id}/v${version}/article-${'published'}`
-                                )
-                            ),
-                            of(
-                                showNotificationAction({
-                                    description:
-                                        'The update has been approved!',
-                                    message: `Article approved`,
-                                    notificationType: 'success',
-                                })
-                            )
+                        of(
+                            showNotificationAction({
+                                description: 'The update has been approved!',
+                                message: `Article approved`,
+                                notificationType: 'success',
+                            })
                         )
                     ),
                     catchError(err => {
@@ -170,19 +161,12 @@ export const rejectArticleEpic: Epic<
                     })
                 ),
                 mergeMap(() =>
-                    merge(
-                        of(
-                            routeChangeAction(
-                                `/article/${id}/v${version}/article-rejected`
-                            )
-                        ),
-                        of(
-                            showNotificationAction({
-                                description: `It will not show up in your approvals queue anymore!`,
-                                message: 'Article rejected!',
-                                notificationType: 'success',
-                            })
-                        )
+                    of(
+                        showNotificationAction({
+                            description: `It will not show up in your approvals queue anymore!`,
+                            message: 'Article rejected!',
+                            notificationType: 'success',
+                        })
                     )
                 )
             )

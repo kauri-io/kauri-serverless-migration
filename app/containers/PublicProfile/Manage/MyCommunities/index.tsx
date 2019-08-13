@@ -2,7 +2,7 @@ import Container from './Container'
 import Table, { Line } from './Table'
 import { H3, BodyCard } from '../../../../components/Typography'
 import styled from 'styled-components'
-import PrimaryButtonComponent from '../../../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 
 export interface ICommunity {
     role: string
@@ -46,11 +46,13 @@ const NoCommunities: React.FunctionComponent<
         <BodyCard>You are not part of any communities yet.</BodyCard>
         <Line />
         <Center>
-            <PrimaryButtonComponent
+            <Button
+                color="primary"
+                variant="contained"
                 onClick={() => routeChangeAction(`/create-community`)}
             >
                 Create Community
-            </PrimaryButtonComponent>
+            </Button>
         </Center>
     </Container>
 )

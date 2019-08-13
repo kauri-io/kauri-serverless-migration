@@ -6,7 +6,6 @@ import {
 } from '../../queries/__generated__/getCommunity'
 import { getCommunityAndPendingArticles_searchArticles } from '../../queries/__generated__/getCommunityAndPendingArticles'
 import CommunityHeader from './CommunityHeader'
-import Tabs from '../../components/Tabs'
 import DisplayResources from './DisplayResources'
 import Manage from './Manage'
 import { propEq, path, any } from 'ramda'
@@ -28,6 +27,8 @@ import { routeChangeAction as routeChange } from '../../lib/Epics/RouteChangeEpi
 import { showNotificationAction as showNotification } from '../../lib/Epics/ShowNotificationEpic'
 import { openModalAction as openModal } from '../../components/Modal/Module'
 import { sendInvitationVariables } from '../../queries/__generated__/sendInvitation'
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
 
 interface IProps {
     client?: ApolloClient<{}>
@@ -52,7 +53,40 @@ interface IProps {
     showNotificationAction: typeof showNotification
 }
 
-class CommunityConnection extends React.Component<IProps> {
+interface IState {
+    tab: number
+}
+
+const CollectionsPanel = ({
+    collections,
+    removeResourceAction,
+    openModalAction,
+    isMember,
+    closeModalAction,
+    getCommunity,
+}) =>
+    collections && collections.length > 0 ? (
+        <DisplayResources
+            removeResourceAction={removeResourceAction}
+            openModalAction={openModalAction}
+            closeModalAction={closeModalAction}
+            isMember={isMember}
+            type="collections"
+            key="collections"
+            resources={collections}
+            communityId={getCommunity.id}
+        />
+    ) : (
+        <EmptyCollections />
+    )
+
+class CommunityConnection extends React.Component<IProps, IState> {
+    constructor(props) {
+        super(props)
+        this.state = {
+            tab: 0,
+        }
+    }
     componentDidMount() {
         this.props.client &&
             this.props.client.mutate({
@@ -103,7 +137,6 @@ class CommunityConnection extends React.Component<IProps> {
         if (!this.props.data || !this.props.data.getCommunity) {
             return null
         }
-
         const {
             secret,
             data: { getCommunity },
@@ -157,6 +190,16 @@ class CommunityConnection extends React.Component<IProps> {
             'resources',
         ])(homepage)
 
+        const homepageExists =
+            Array.isArray(homepage) &&
+            homepage.length &&
+            firstCommunityHomepageSectionResources &&
+            firstCommunityHomepageSectionResources.length
+        const canDisplayHomepage = homepageExists || isCommunityAdmin
+
+        const getActualTabId = (id: number) =>
+            id === 0 ? 0 : canDisplayHomepage ? id : id - 1
+
         return (
             <>
                 <CommunityHeader
@@ -206,73 +249,69 @@ class CommunityConnection extends React.Component<IProps> {
                     openAddMemberModal={openAddMemberModal}
                 />
                 <Tabs
-                    dark={true}
-                    tabs={[
-                        (Array.isArray(homepage) &&
-                            homepage.length &&
-                            firstCommunityHomepageSectionResources &&
-                            firstCommunityHomepageSectionResources.length) ||
-                        isCommunityAdmin
-                            ? { name: 'Home' }
-                            : null,
-                        { name: `Articles (${articles && articles.length})` },
-                        {
-                            name: `Collections (${collections &&
-                                collections.length})`,
-                        },
-                        isCreator || isMember
-                            ? { name: 'Manage Community' }
-                            : null,
-                    ]}
-                    panels={[
-                        <HomepageResources
-                            routeChangeAction={routeChangeAction}
-                            id={String(getCommunity.id)}
-                            homepage={homepage}
-                            isCommunityAdmin={isCommunityAdmin}
-                            key="home"
-                            isLoggedIn={!!currentUser}
-                            userId={currentUser}
-                            openModalAction={openModalAction}
-                        />,
-                        <DisplayResources
-                            removeResourceAction={removeResourceAction}
-                            openModalAction={openModalAction}
-                            closeModalAction={closeModalAction}
-                            isMember={isMember}
-                            key="articles"
-                            type="articles"
-                            resources={articles}
-                            communityId={getCommunity.id}
-                        />,
-                        collections && collections.length > 0 ? (
-                            <DisplayResources
-                                removeResourceAction={removeResourceAction}
-                                openModalAction={openModalAction}
-                                closeModalAction={closeModalAction}
-                                isMember={isMember}
-                                type="collections"
-                                key="collections"
-                                resources={collections}
-                                communityId={getCommunity.id}
-                            />
-                        ) : (
-                            <EmptyCollections />
-                        ),
-                        <Manage
-                            openAddMemberModal={openAddMemberModal}
-                            communityId={String(getCommunity.id)}
-                            key="manage"
-                            members={getCommunity.members}
-                            pending={getCommunity.pending}
-                            pendingUpdates={
-                                this.props.data &&
-                                this.props.data.searchArticles &&
-                                this.props.data.searchArticles.content
-                            }
-                        />,
-                    ]}
-                />
+                    TabIndicatorProps={{ style: { height: 3 } }}
+                    indicatorColor="primary"
+                    centered={true}
+                    value={this.state.tab}
+                    onChange={(_e, tab) => this.setState({ tab })}
+                >
+                    {canDisplayHomepage && <Tab label="Home" />}
+                    <Tab label={`Articles (${articles && articles.length})`} />
+                    <Tab
+                        label={`Collections (${collections &&
+                            collections.length})`}
+                    />
+                    {isCreator ||
+                        (isMember && <Tab label="Manage Community" />)}
+                </Tabs>
+                {this.state.tab === getActualTabId(0) && canDisplayHomepage && (
+                    <HomepageResources
+                        routeChangeAction={routeChangeAction}
+                        id={String(getCommunity.id)}
+                        homepage={homepage}
+                        isCommunityAdmin={isCommunityAdmin}
+                        key="home"
+                        isLoggedIn={!!currentUser}
+                        userId={currentUser}
+                        openModalAction={openModalAction}
+                    />
+                )}
+                {this.state.tab === getActualTabId(1) && (
+                    <DisplayResources
+                        removeResourceAction={removeResourceAction}
+                        openModalAction={openModalAction}
+                        closeModalAction={closeModalAction}
+                        isMember={isMember}
+                        key="articles"
+                        type="articles"
+                        resources={articles}
+                        communityId={getCommunity.id}
+                    />
+                )}
+                {this.state.tab === getActualTabId(2) && (
+                    <CollectionsPanel
+                        isMember={isMember}
+                        collections={collections}
+                        removeResourceAction={removeResourceAction}
+                        openModalAction={openModalAction}
+                        closeModalAction={closeModalAction}
+                        getCommunity={getCommunity}
+                    />
+                )}
+                {this.state.tab === getActualTabId(3) && (
+                    <Manage
+                        openAddMemberModal={openAddMemberModal}
+                        communityId={String(getCommunity.id)}
+                        key="manage"
+                        members={getCommunity.members}
+                        pending={getCommunity.pending}
+                        pendingUpdates={
+                            this.props.data &&
+                            this.props.data.searchArticles &&
+                            this.props.data.searchArticles.content
+                        }
+                    />
+                )}
             </>
         )
     }

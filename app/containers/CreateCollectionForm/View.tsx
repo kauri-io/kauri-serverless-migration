@@ -10,9 +10,8 @@ import CardContentSection from '../../components/Section/CardContentSection'
 import StatisticsContainer from '../../components/PublicProfile/StatisticsContainer'
 import UserAvatar from '../../components/UserAvatar'
 import { Label } from '../../components/Typography'
-import Input from '../../components/Input/Input'
-import PrimaryButton from '../../components/Button/PrimaryButton'
-import TertiaryButton from '../../components/Button/TertiaryButton'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
 import showFormValidationErrors from '../../lib/show-form-validation-errors'
 import ChooseArticleModal from './ChooseArticleModal'
 import ChooseCollectionModal, { ICollection } from './ChooseCollectionModal'
@@ -34,6 +33,8 @@ import CollectionCardFormView from '../CollectionCardFormView'
 import { useEffect } from 'react'
 import initUppy from '../../lib/init-uppy'
 import config from '../../config'
+import UploadIcon from '@material-ui/icons/CloudUpload'
+import BackIcon from '@material-ui/icons/ArrowLeft'
 import {
     openModalAction,
     closeModalAction,
@@ -137,10 +138,6 @@ const CreateCollectionCurators = styled.div`
     display: flex;
     align-items: center;
 `
-
-const UploadIcon = () => (
-    <img src="https://png.icons8.com/color/50/000000/upload.png" />
-)
 
 const DisplayFormikState = props => (
     <div style={{ margin: '1rem 0', background: '#f6f8fa', padding: '.5rem' }}>
@@ -249,9 +246,9 @@ const renderResourceSection = (
                 </Draggable>
             )
         )}
-        <TertiaryButton
-            color="primaryTextColor"
-            icon={<RemoveIcon />}
+        <Button
+            color="primary"
+            variant="text"
             onClick={() =>
                 arrayHelpers.form.setFieldValue(
                     `sections[${index}][${mappingKey}]`,
@@ -268,8 +265,9 @@ const renderResourceSection = (
                 )
             } // Remove current resource index
         >
+            <RemoveIcon />
             {`Remove ${resource.type}`}
-        </TertiaryButton>
+        </Button>
     </ResourceSection>
 )
 
@@ -306,15 +304,6 @@ export interface IProps {
         version: string
     }
 }
-
-const BackIcon = styled.div`
-    width: 10px !important;
-    height: 14px !important;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-right: 10px solid ${props => props.theme.colors['primary']};
-`
-
 const CreateCollectionForm: React.FC<
     InjectedFormikProps<IProps, IFormValues>
 > = ({
@@ -363,30 +352,30 @@ const CreateCollectionForm: React.FC<
                     }
                 >
                     <Stack alignItems={['', 'center']}>
-                        <TertiaryButton
+                        <Button
+                            variant="text"
                             data-testid={`CreateCollectionForm-back`}
                             onClick={() => routeChangeAction('back')}
-                            icon={<BackIcon />}
                         >
+                            <BackIcon />
                             Cancel Collection
-                        </TertiaryButton>
+                        </Button>
                     </Stack>
                     <Stack
                         alignItems={['', 'center']}
                         justifyContent={['', 'center']}
                     >
-                        <TertiaryButton
-                            icon={<UploadIcon />}
-                            className="background-upload"
-                        >
+                        <Button variant="text" className="background-upload">
+                            <UploadIcon />
                             Background Image
-                        </TertiaryButton>
+                        </Button>
                     </Stack>
                     <Stack
                         alignItems={['', 'center']}
                         justifyContent={['', 'end']}
                     >
-                        <PrimaryButton
+                        <Button
+                            variant="contained"
                             disabled={isSubmitting}
                             type="submit"
                             onClick={() =>
@@ -397,7 +386,7 @@ const CreateCollectionForm: React.FC<
                             }
                         >
                             {data ? 'Update Collection' : 'Create Collection'}
-                        </PrimaryButton>
+                        </Button>
                     </Stack>
                 </ActionsSection>
 
@@ -408,11 +397,10 @@ const CreateCollectionForm: React.FC<
                             type="text"
                             name="name"
                             render={({ field }) => (
-                                <Input
+                                <TextField
                                     {...field}
                                     type="text"
-                                    placeHolder="Add collection title"
-                                    fontSize={7}
+                                    placeholder="Add collection title"
                                 />
                             )}
                         />
@@ -421,11 +409,10 @@ const CreateCollectionForm: React.FC<
                             type="text"
                             name="description"
                             render={({ field }) => (
-                                <Input
+                                <TextField
                                     {...field}
                                     type="text"
-                                    placeHolder="Add description"
-                                    fontSize={4}
+                                    placeholder="Add description"
                                 />
                             )}
                         />
@@ -449,9 +436,11 @@ const CreateCollectionForm: React.FC<
                         {/* TODO: WAIT FOR BACKEND */}
                         {/* <AddTagButton color='white' /> */}
                         <CreateCollectionActionsPlaceHolder>
-                            {/* <PrimaryButton>Follow Collection</PrimaryButton> */}
-                            {/* <TertiaryButton>Up vote</TertiaryButton> */}
-                            {/* <TertiaryButton icon={<ShareIcon />}>Share</TertiaryButton> */}
+                            {/* <Button variant='contained'>Follow Collection</Button> */}
+                            {/* <Button
+                                variant='text'>Up vote</Button> */}
+                            {/* <Button
+                                variant='text' icon={<ShareIcon />}>Share</Button> */}
                         </CreateCollectionActionsPlaceHolder>
                     </CreateCollectionDetails>
                     <Stack
@@ -546,11 +535,10 @@ const CreateCollectionForm: React.FC<
                                                     type="text"
                                                     name={`sections.${index}.name`}
                                                     render={({ field }) => (
-                                                        <Input
+                                                        <TextField
                                                             {...field}
                                                             type="text"
-                                                            placeHolder="Add Section Name"
-                                                            fontSize={5}
+                                                            placeholder="Add Section Name"
                                                             fontWeight={500}
                                                             color={
                                                                 'primaryTextColor'
@@ -563,11 +551,10 @@ const CreateCollectionForm: React.FC<
                                                     type="text"
                                                     name={`sections.${index}.description`}
                                                     render={({ field }) => (
-                                                        <Input
+                                                        <TextField
                                                             {...field}
                                                             type="text"
-                                                            placeHolder="Add Section Description"
-                                                            fontSize={2}
+                                                            placeholder="Add Section Description"
                                                             fontWeight={300}
                                                             color={
                                                                 'primaryTextColor'

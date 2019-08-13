@@ -1,7 +1,8 @@
 import testEpic from '../../lib/test-epic'
 import { draftArticleEpic, draftArticleAction } from './Module'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { getArticleURL } from '../../lib/getURLs'
 
 jest.mock('../../lib/analytics', () => ({
     track: jest.fn(),
@@ -27,9 +28,11 @@ describe('draftArticleEpic', () => {
         const subject = 'LJLREW68184'
         const attributes = { background: 'asdfghjkl' }
         const tags = []
+        const title = 'Test Title'
         const mockGetArticle = {
             id,
             version,
+            title,
             contentHash: 'LJLREW68184',
             contributor: 'abc',
             authorId: id,
@@ -38,7 +41,9 @@ describe('draftArticleEpic', () => {
             author: { id: '123', name: 'Alice' },
         }
         const mockApolloSubscriber = () =>
-            Promise.resolve({ data: { getEvent: { output: { id, version } } } })
+            Promise.resolve({
+                data: { getEvent: { output: { id, version, title } } },
+            })
         const mockApolloClient = {
             mutate: () =>
                 Promise.resolve({
@@ -65,7 +70,7 @@ describe('draftArticleEpic', () => {
                 message: 'Draft Created',
                 notificationType: 'info',
             }),
-            routeChangeAction(`/article/${id}/v${version}/article-drafted`),
+            routeChangeAction(getArticleURL(mockGetArticle).as),
         ]
 
         const resultingActions = await testEpic(

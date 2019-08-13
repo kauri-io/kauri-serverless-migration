@@ -326,250 +326,262 @@ exports[`components/NewsletterBanner should match snapshot 1`] = `
                       </span>
                     </StyledComponent>
                   </Typography__component>
-                  <Input
-                    color="white"
-                    fontSize={3}
-                    handleChange={[Function]}
+                  <WithStyles(ForwardRef(TextField))
+                    onChange={[Function]}
                     onKeyPress={[Function]}
-                    placeHolder="Enter your email address"
-                    textAlign="center"
+                    placeholder="Enter your email address"
                   >
-                    <Input__Wrapper
-                      textAlign="center"
-                    >
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Input__Wrapper-sc-100s1kb-2",
-                              "isStatic": false,
-                              "lastClassName": "cAYXgm",
-                              "rules": Array [
-                                "display:flex;position:relative;align-self:auto;",
-                                [Function],
-                                " ",
-                                [Function],
-                                " ",
-                                [Function],
-                              ],
-                            },
-                            "displayName": "Input__Wrapper",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "Input__Wrapper-sc-100s1kb-2",
-                            "target": "div",
-                            "toString": [Function],
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
+                    <ForwardRef(TextField)
+                      classes={
+                        Object {
+                          "root": "MuiTextField-root",
                         }
-                        forwardedRef={null}
-                        textAlign="center"
+                      }
+                      onChange={[Function]}
+                      onKeyPress={[Function]}
+                      placeholder="Enter your email address"
+                    >
+                      <WithStyles(ForwardRef(FormControl))
+                        className="MuiTextField-root"
+                        onKeyPress={[Function]}
+                        required={false}
+                        variant="standard"
                       >
-                        <div
-                          className="Input__Wrapper-sc-100s1kb-2 cAYXgm"
+                        <ForwardRef(FormControl)
+                          className="MuiTextField-root"
+                          classes={
+                            Object {
+                              "fullWidth": "MuiFormControl-fullWidth",
+                              "marginDense": "MuiFormControl-marginDense",
+                              "marginNormal": "MuiFormControl-marginNormal",
+                              "root": "MuiFormControl-root",
+                            }
+                          }
+                          onKeyPress={[Function]}
+                          required={false}
+                          variant="standard"
                         >
-                          <Input__InputComp
-                            color="white"
-                            fontSize={3}
-                            fontWeight={400}
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onFocus={[Function]}
+                          <div
+                            className="MuiFormControl-root MuiTextField-root"
                             onKeyPress={[Function]}
-                            onKeyUp={[Function]}
-                            placeholder="Enter your email address"
-                            textAlign="center"
-                            value=""
                           >
-                            <StyledComponent
-                              color="white"
-                              fontSize={3}
-                              fontWeight={400}
-                              forwardedComponent={
-                                Object {
-                                  "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": Array [],
-                                  "componentStyle": ComponentStyle {
-                                    "componentId": "Input__InputComp-sc-100s1kb-0",
-                                    "isStatic": false,
-                                    "lastClassName": "kGODxV",
-                                    "rules": Array [
-                                      "text-align:",
-                                      [Function],
-                                      ";font-size:",
-                                      [Function],
-                                      "px;font-weight:",
-                                      [Function],
-                                      ";color:",
-                                      [Function],
-                                      ";background:transparent;width:100%;outline:none;border:none;::-webkit-input-placeholder{color:",
-                                      [Function],
-                                      ";}:focus::-webkit-input-placeholder{text-indent:-999px;}",
-                                    ],
-                                  },
-                                  "displayName": "Input__InputComp",
-                                  "foldedComponentIds": Array [],
-                                  "render": [Function],
-                                  "styledComponentId": "Input__InputComp-sc-100s1kb-0",
-                                  "target": "input",
-                                  "toString": [Function],
-                                  "warnTooManyClasses": [Function],
-                                  "withComponent": [Function],
-                                }
-                              }
-                              forwardedRef={null}
-                              onBlur={[Function]}
+                            <WithStyles(ForwardRef(Input))
                               onChange={[Function]}
-                              onFocus={[Function]}
-                              onKeyPress={[Function]}
-                              onKeyUp={[Function]}
                               placeholder="Enter your email address"
-                              textAlign="center"
-                              value=""
                             >
-                              <input
-                                className="Input__InputComp-sc-100s1kb-0 kGODxV"
-                                color="white"
-                                fontSize={3}
-                                fontWeight={400}
-                                onBlur={[Function]}
-                                onChange={[Function]}
-                                onFocus={[Function]}
-                                onKeyPress={[Function]}
-                                onKeyUp={[Function]}
-                                placeholder="Enter your email address"
-                                value=""
-                              />
-                            </StyledComponent>
-                          </Input__InputComp>
-                          <Input__Underline
-                            fontSize={3}
-                            textAlign="center"
-                          >
-                            <StyledComponent
-                              fontSize={3}
-                              forwardedComponent={
-                                Object {
-                                  "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": Array [],
-                                  "componentStyle": ComponentStyle {
-                                    "componentId": "Input__Underline-sc-100s1kb-1",
-                                    "isStatic": false,
-                                    "lastClassName": "hyDdeC",
-                                    "rules": Array [
-                                      "user-select:none;border-top:2px solid ",
-                                      [Function],
-                                      ";position:",
-                                      [Function],
-                                      " left:0;bottom:0;max-width:100%;height:0px;color:transparent;overflow:hidden;font-size:",
-                                      [Function],
-                                      "px;margin-left:2px;",
-                                    ],
-                                  },
-                                  "displayName": "Input__Underline",
-                                  "foldedComponentIds": Array [],
-                                  "render": [Function],
-                                  "styledComponentId": "Input__Underline-sc-100s1kb-1",
-                                  "target": "span",
-                                  "toString": [Function],
-                                  "warnTooManyClasses": [Function],
-                                  "withComponent": [Function],
+                              <ForwardRef(Input)
+                                classes={
+                                  Object {
+                                    "disabled": "Mui-disabled",
+                                    "error": "Mui-error",
+                                    "focused": "Mui-focused",
+                                    "formControl": "MuiInput-formControl",
+                                    "fullWidth": "MuiInput-fullWidth",
+                                    "input": "MuiInput-input",
+                                    "inputMarginDense": "MuiInput-inputMarginDense",
+                                    "inputMultiline": "MuiInput-inputMultiline",
+                                    "inputTypeSearch": "MuiInput-inputTypeSearch",
+                                    "multiline": "MuiInput-multiline",
+                                    "root": "MuiInput-root",
+                                    "underline": "MuiInput-underline",
+                                  }
                                 }
-                              }
-                              forwardedRef={null}
-                              textAlign="center"
-                            >
-                              <span
-                                className="Input__Underline-sc-100s1kb-1 hyDdeC"
-                                fontSize={3}
+                                onChange={[Function]}
+                                placeholder="Enter your email address"
                               >
-                                Enter your email address
-                              </span>
-                            </StyledComponent>
-                          </Input__Underline>
-                        </div>
-                      </StyledComponent>
-                    </Input__Wrapper>
-                  </Input>
-                  <PrimaryButtonComponent
+                                <WithStyles(ForwardRef(InputBase))
+                                  classes={
+                                    Object {
+                                      "disabled": "Mui-disabled",
+                                      "error": "Mui-error",
+                                      "focused": "Mui-focused",
+                                      "formControl": "MuiInput-formControl",
+                                      "fullWidth": "MuiInput-fullWidth",
+                                      "input": "MuiInput-input",
+                                      "inputMarginDense": "MuiInput-inputMarginDense",
+                                      "inputMultiline": "MuiInput-inputMultiline",
+                                      "inputTypeSearch": "MuiInput-inputTypeSearch",
+                                      "multiline": "MuiInput-multiline",
+                                      "root": "MuiInput-root MuiInput-underline",
+                                      "underline": null,
+                                    }
+                                  }
+                                  fullWidth={false}
+                                  inputComponent="input"
+                                  multiline={false}
+                                  onChange={[Function]}
+                                  placeholder="Enter your email address"
+                                  type="text"
+                                >
+                                  <ForwardRef(InputBase)
+                                    classes={
+                                      Object {
+                                        "adornedEnd": "MuiInputBase-adornedEnd",
+                                        "adornedStart": "MuiInputBase-adornedStart",
+                                        "disabled": "Mui-disabled Mui-disabled",
+                                        "error": "Mui-error Mui-error",
+                                        "focused": "Mui-focused Mui-focused",
+                                        "formControl": "MuiInputBase-formControl MuiInput-formControl",
+                                        "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
+                                        "input": "MuiInputBase-input MuiInput-input",
+                                        "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
+                                        "inputAdornedStart": "MuiInputBase-inputAdornedStart",
+                                        "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
+                                        "inputMarginDense": "MuiInputBase-inputMarginDense MuiInput-inputMarginDense",
+                                        "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
+                                        "inputSelect": "MuiInputBase-inputSelect",
+                                        "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
+                                        "marginDense": "MuiInputBase-marginDense",
+                                        "multiline": "MuiInputBase-multiline MuiInput-multiline",
+                                        "root": "MuiInputBase-root MuiInput-root MuiInput-underline",
+                                      }
+                                    }
+                                    fullWidth={false}
+                                    inputComponent="input"
+                                    multiline={false}
+                                    onChange={[Function]}
+                                    placeholder="Enter your email address"
+                                    type="text"
+                                  >
+                                    <div
+                                      className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+                                      onClick={[Function]}
+                                    >
+                                      <input
+                                        aria-invalid={false}
+                                        className="MuiInputBase-input MuiInput-input"
+                                        disabled={false}
+                                        onBlur={[Function]}
+                                        onChange={[Function]}
+                                        onFocus={[Function]}
+                                        placeholder="Enter your email address"
+                                        required={false}
+                                        type="text"
+                                      />
+                                    </div>
+                                  </ForwardRef(InputBase)>
+                                </WithStyles(ForwardRef(InputBase))>
+                              </ForwardRef(Input)>
+                            </WithStyles(ForwardRef(Input))>
+                          </div>
+                        </ForwardRef(FormControl)>
+                      </WithStyles(ForwardRef(FormControl))>
+                    </ForwardRef(TextField)>
+                  </WithStyles(ForwardRef(TextField))>
+                  <WithStyles(ForwardRef(Button))
+                    color="primary"
                     onClick={[Function]}
+                    variant="contained"
                   >
-                    <PrimaryButton
-                      bg="primary"
-                      color="white"
-                      fontSize={0}
-                      fontWeight={700}
-                      mr={2}
-                      onClick={[Function]}
-                      type="submit"
-                    >
-                      <StyledComponent
-                        bg="primary"
-                        color="white"
-                        fontSize={0}
-                        fontWeight={700}
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "PrimaryButton-sc-1cbxa53-0",
-                              "isStatic": false,
-                              "lastClassName": "bVbdII",
-                              "rules": Array [
-                                "display:flex;align-items:center;justify-content:center;min-width:136px;max-width:150px;",
-                                [Function],
-                                ";height:40px;border-radius:4px;border:none;cursor:pointer;> svg,img{height:16px;",
-                                [Function],
-                                ";}text-transform:uppercase;opacity:",
-                                [Function],
-                                ";",
-                                [Function],
-                                ";",
-                                [Function],
-                                ";",
-                                [Function],
-                                ";",
-                                [Function],
-                                ";:hover{cursor:",
-                                [Function],
-                                ";}",
-                                ";:hover{background-color:",
-                                [Function],
-                                ";}",
-                              ],
-                            },
-                            "displayName": "PrimaryButton",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "PrimaryButton-sc-1cbxa53-0",
-                            "target": "button",
-                            "toString": [Function],
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
+                    <ForwardRef(Button)
+                      classes={
+                        Object {
+                          "colorInherit": "MuiButton-colorInherit",
+                          "contained": "MuiButton-contained",
+                          "containedPrimary": "MuiButton-containedPrimary",
+                          "containedSecondary": "MuiButton-containedSecondary",
+                          "disabled": "Mui-disabled",
+                          "focusVisible": "Mui-focusVisible",
+                          "fullWidth": "MuiButton-fullWidth",
+                          "label": "MuiButton-label",
+                          "outlined": "MuiButton-outlined",
+                          "outlinedPrimary": "MuiButton-outlinedPrimary",
+                          "outlinedSecondary": "MuiButton-outlinedSecondary",
+                          "root": "MuiButton-root",
+                          "sizeLarge": "MuiButton-sizeLarge",
+                          "sizeSmall": "MuiButton-sizeSmall",
+                          "text": "MuiButton-text",
+                          "textPrimary": "MuiButton-textPrimary",
+                          "textSecondary": "MuiButton-textSecondary",
                         }
-                        forwardedRef={null}
-                        mr={2}
+                      }
+                      color="primary"
+                      onClick={[Function]}
+                      variant="contained"
+                    >
+                      <WithStyles(ForwardRef(ButtonBase))
+                        className="MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                        component="button"
+                        disabled={false}
+                        focusRipple={true}
+                        focusVisibleClassName="Mui-focusVisible"
                         onClick={[Function]}
-                        type="submit"
+                        type="button"
                       >
-                        <button
-                          className="PrimaryButton-sc-1cbxa53-0 bVbdII"
-                          color="white"
-                          fontSize={0}
-                          fontWeight={700}
+                        <ForwardRef(ButtonBase)
+                          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                          classes={
+                            Object {
+                              "disabled": "Mui-disabled",
+                              "focusVisible": "Mui-focusVisible",
+                              "root": "MuiButtonBase-root",
+                            }
+                          }
+                          component="button"
+                          disabled={false}
+                          focusRipple={true}
+                          focusVisibleClassName="Mui-focusVisible"
                           onClick={[Function]}
-                          type="submit"
+                          type="button"
                         >
-                          Subscribe
-                        </button>
-                      </StyledComponent>
-                    </PrimaryButton>
-                  </PrimaryButtonComponent>
+                          <button
+                            className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                            disabled={false}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onDragLeave={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchEnd={[Function]}
+                            onTouchMove={[Function]}
+                            onTouchStart={[Function]}
+                            tabIndex={0}
+                            type="button"
+                          >
+                            <span
+                              className="MuiButton-label"
+                            >
+                              Subscribe
+                            </span>
+                            <NoSsr>
+                              <WithStyles(undefined)
+                                center={false}
+                              >
+                                <ForwardRef(TouchRipple)
+                                  center={false}
+                                  classes={
+                                    Object {
+                                      "child": "MuiTouchRipple-child",
+                                      "childLeaving": "MuiTouchRipple-childLeaving",
+                                      "childPulsate": "MuiTouchRipple-childPulsate",
+                                      "ripple": "MuiTouchRipple-ripple",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                      "root": "MuiTouchRipple-root",
+                                    }
+                                  }
+                                >
+                                  <span
+                                    className="MuiTouchRipple-root"
+                                  >
+                                    <TransitionGroup
+                                      childFactory={[Function]}
+                                      component={null}
+                                      exit={true}
+                                    />
+                                  </span>
+                                </ForwardRef(TouchRipple)>
+                              </WithStyles(undefined)>
+                            </NoSsr>
+                          </button>
+                        </ForwardRef(ButtonBase)>
+                      </WithStyles(ForwardRef(ButtonBase))>
+                    </ForwardRef(Button)>
+                  </WithStyles(ForwardRef(Button))>
                 </section>
               </StyledComponent>
             </NewsletterBanner__Content>

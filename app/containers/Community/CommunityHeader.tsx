@@ -14,7 +14,7 @@ import anchorme from 'anchorme'
 import ShareCommunity from '../../components/Tooltip/ShareArticle'
 import UserAvatar from '../../components/UserAvatar'
 // import { Tooltip } from "react-tippy";
-import PrimaryButtonComponent from '../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import ChooseArticleModal, {
     IArticle,
 } from '../CreateCollectionForm/ChooseArticleModal'
@@ -522,7 +522,9 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                         </Row>
                         <ActionsRow>
                             {isCommunityAdmin && (
-                                <PrimaryButtonComponent
+                                <Button
+                                    color="primary"
+                                    variant="contained"
                                     onClick={() =>
                                         routeChangeAction &&
                                         routeChangeAction(
@@ -531,7 +533,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                     }
                                 >
                                     Update Community
-                                </PrimaryButtonComponent>
+                                </Button>
                             )}
                             {/* {isMember && (
                 <Tooltip
@@ -570,14 +572,14 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                 //   }
                                 //   interactive={true}
                                 // >
-                                <PrimaryButtonComponent
-                                    bgHover={'primary'}
+                                <Button
+                                    variant="contained"
                                     onClick={() =>
                                         openAddCommunityArticleModal()
                                     }
                                 >
                                     Add Content
-                                </PrimaryButtonComponent>
+                                </Button>
                                 // </Tooltip>
                             )}
                         </ActionsRow>

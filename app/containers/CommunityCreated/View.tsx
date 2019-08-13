@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import CommunityCard from '../../components/Card/CommunityCard'
 import Head from 'next/head'
-import PrimaryButton from '../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import { Title2, BodyCard } from '../../components/Typography'
 import { getCommunity } from '../../queries/__generated__/getCommunity'
 import { getCommunityURL } from '../../lib/getURLs'
@@ -71,13 +71,15 @@ const CommunityCreated = (props: IProps) => {
                     key={String(id)}
                     href={getCommunityURL(props.data.getCommunity)}
                 />
-                <PrimaryButton
+                <Button
+                    color="primary"
+                    variant="contained"
                     onClick={() =>
                         routeChangeAction(`/community/${String(id)}`)
                     }
                 >
                     View Community
-                </PrimaryButton>
+                </Button>
             </Container>
         )
     }

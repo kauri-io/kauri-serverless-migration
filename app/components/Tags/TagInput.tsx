@@ -1,8 +1,27 @@
-import { Input } from '../Input'
+import TextField from '@material-ui/core/TextField'
 import styled from 'styled-components'
 import Plus from './Plus'
 import { ITag } from './types'
 import { Component } from 'react'
+import { withStyles } from '@material-ui/styles'
+
+const styles = () => ({
+    input: {
+        width: '100%',
+        '&:hover': {
+            '& .MuiInput-underline::before': {
+                borderBottomColor: 'rgba(255,255,255,0.6)',
+            },
+        },
+        color: 'white',
+        '& .MuiInputBase-root': {
+            color: 'white',
+        },
+        '& .MuiInput-underline::before': {
+            borderBottomColor: 'rgba(255,255,255,0.3)',
+        },
+    },
+})
 
 interface IProps {
     availableTags?: ITag[]
@@ -11,6 +30,7 @@ interface IProps {
     onSelect?: (tag: ITag) => void
     handleEnterKey: (val: string) => void
     removeLastTag: () => void
+    classes: any
 }
 
 interface IState {
@@ -83,8 +103,6 @@ const Result = styled.div`
 `
 
 class TagInput extends Component<IProps, IState> {
-    private inputRef: any | null
-
     constructor(props: IProps) {
         super(props)
         this.state = {
@@ -94,13 +112,11 @@ class TagInput extends Component<IProps, IState> {
         }
         this.handleKey = this.handleKey.bind(this)
         this.handleClick = this.handleClick.bind(this)
-        this.inputRef = null
     }
 
     public handleClick(tag: ITag) {
         if (this.props.onSelect) {
             this.props.onSelect(tag)
-            this.inputRef.editValue('')
             ;(document.activeElement as HTMLElement).blur()
         }
         this.setState({ value: '', selectedIndex: 0 })
@@ -115,8 +131,6 @@ class TagInput extends Component<IProps, IState> {
                     ? this.props.availableTags[this.state.selectedIndex].tag
                     : e.currentTarget.value
             )
-            this.inputRef.value = ''
-            this.inputRef.editValue('')
             this.setState({ value: '', selectedIndex: 0 })
         }
         if (
@@ -143,9 +157,11 @@ class TagInput extends Component<IProps, IState> {
             const newIndex =
                 currentIndex <= 0 ? availableLength : (currentIndex -= 1)
             this.setState({ selectedIndex: newIndex })
-        } else {
-            this.setState({ value: e.currentTarget.value })
         }
+    }
+
+    updateState(e: React.ChangeEvent<HTMLInputElement>) {
+        this.setState({ value: e.target.value })
     }
 
     public render() {
@@ -171,7 +187,8 @@ class TagInput extends Component<IProps, IState> {
                 <div>
                     <TopRow>
                         <Plus />
-                        <Input
+                        <TextField
+                            className={this.props.classes.input}
                             onKeyPress={(
                                 e: React.KeyboardEvent<HTMLInputElement>
                             ) => {
@@ -179,18 +196,19 @@ class TagInput extends Component<IProps, IState> {
                                     e.preventDefault()
                                 }
                             }}
-                            ref={ref => (this.inputRef = ref)}
                             onKeyUp={this.handleKey}
-                            onChange={this.props.onChange}
-                            textAlign="left"
-                            fontSize={0}
-                            fontWeight={600}
-                            color="white"
-                            placeHolder="ADD TAG"
+                            onChange={(
+                                e: React.ChangeEvent<HTMLInputElement>
+                            ) => {
+                                this.props.onChange && this.props.onChange(e)
+                                this.updateState(e)
+                            }}
+                            placeholder="ADD TAG"
+                            value={this.state.value}
                         />
                     </TopRow>
                 </div>
-                {this.state.value.length > 0 && (
+                {this.state.value && this.state.value.length > 0 && (
                     <Results>
                         {Array.isArray(available) &&
                             available.map((i, index) => (
@@ -231,4 +249,4 @@ class TagInput extends Component<IProps, IState> {
     }
 }
 
-export default TagInput
+export default withStyles(styles)(TagInput)

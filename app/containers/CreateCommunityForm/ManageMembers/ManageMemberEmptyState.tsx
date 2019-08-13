@@ -1,5 +1,5 @@
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
-import PrimaryButtonComponent from '../../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import styled from 'styled-components'
 
 const ManageMemberEmptyStateContainer = styled.section`
@@ -23,9 +23,13 @@ const ManageMemberEmptyState: React.SFC<{
             }
             title="Moderators"
             primaryButton={
-                <PrimaryButtonComponent type={'button'} onClick={handleClick}>
+                <Button
+                    color="primary"
+                    variant="contained"
+                    onClick={handleClick}
+                >
                     Invite Member
-                </PrimaryButtonComponent>
+                </Button>
             }
         />
     </ManageMemberEmptyStateContainer>

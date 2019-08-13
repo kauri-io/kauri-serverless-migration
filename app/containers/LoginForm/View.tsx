@@ -1,7 +1,7 @@
 import React, { SyntheticEvent } from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
-import PrimaryButton from '../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import { Title2, BodyArticle } from '../../components/Typography'
 
 import { IRegisterAction } from './Module'
@@ -162,13 +162,14 @@ class LoginForm extends React.Component<{
                     Sign in using Web3 enabled provider. (MetaMask, Status,
                     Coinbase Wallet)
                 </BodyArticle>
-                <PrimaryButton
+                <Button
+                    color="primary"
+                    variant="contained"
                     disabled={isSubmitting}
-                    type="submit"
                     onClick={() => this.props.handleSubmit()}
                 >
                     SIGN IN
-                </PrimaryButton>
+                </Button>
             </LoginContainer>
         )
     }

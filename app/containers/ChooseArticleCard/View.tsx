@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ArticleCard from '../../components/Card/ArticleCard'
-import Tabs from '../../components/Tabs'
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
 import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
 import { getArticleURL } from '../../lib/getURLs'
@@ -88,31 +89,34 @@ const ChooseArticleCardComponent = props => {
         return <Loading />
     }
 
+    const [tab, setTab] = useState(0)
     return (
-        <Tabs
-            centerTabs
-            passChangeTabFunction={props.passChangeTabFunction}
-            tabs={[
-                {
-                    name: 'My articles',
-                },
-                {
-                    name: 'All articles',
-                },
-            ]}
-            panels={[
+        <>
+            <Tabs
+                TabIndicatorProps={{ style: { height: 3 } }}
+                indicatorColor="primary"
+                centered={true}
+                value={tab}
+                onChange={(_e, tab) => setTab(tab)}
+            >
+                <Tab label="My Articles" />
+                <Tab label="All Articles" />
+            </Tabs>
+            {tab === 0 && (
                 <PersonalPublishedArticles
                     {...props}
                     articles={
                         props.searchPersonalPublishedArticles.searchArticles
                     }
-                />,
+                />
+            )}
+            {tab === 1 && (
                 <PublishedArticles
                     {...props}
                     articles={props.searchPublishedArticles.searchArticles}
-                />,
-            ]}
-        />
+                />
+            )}
+        </>
     )
 }
 

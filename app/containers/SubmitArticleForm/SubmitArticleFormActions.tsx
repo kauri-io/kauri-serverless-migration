@@ -1,48 +1,34 @@
 import React, { useEffect } from 'react'
-import styled from 'styled-components'
-import Stack from 'stack-styled'
-import ActionsSection from '../../components/Section/ActionsSection'
-import PrimaryButton from '../../components/Button/PrimaryButton'
-import SecondaryButton from '../../components/Button/SecondaryButton'
-import TertiaryButton from '../../components/Button/TertiaryButton'
+import Button from '@material-ui/core/Button'
 import ProposeUpdateModal from './ProposeUpdateModal'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import initUppy from '../../lib/init-uppy'
 import config from '../../config'
+import UploadIcon from '@material-ui/icons/CloudUpload'
+import BackIcon from '@material-ui/icons/ArrowLeft'
+import Grid from '@material-ui/core/Grid'
+import { makeStyles, Theme } from '@material-ui/core/styles'
 
-const UploadIcon = () => (
-    <img src="https://png.icons8.com/color/50/000000/upload.png" />
-)
-
-const BackIcon = styled.div`
-    width: 10px !important;
-    height: 14px !important;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-right: 10px solid ${props => props.theme.colors.primary};
-`
-
-const SubmitArticleFormActions = styled.section`
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    background-color: ${props => props.theme.primaryTextColor};
-    & > div {
-        z-index: 10;
+export const useStyles = makeStyles((theme: Theme) => {
+    return {
+        container: {
+            backgroundColor: theme.palette.common.black,
+            padding: theme.spacing(2, 0),
+        },
+        actions: {
+            maxWidth: 1232,
+            margin: 'auto',
+        },
+        buttons: {
+            '& button': {
+                marginLeft: theme.spacing(2),
+            },
+        },
+        uploadIcon: {
+            marginRight: theme.spacing(2),
+        },
     }
-`
-
-const ContainerRow = styled.div`
-    display: flex;
-    align-self: center;
-    justify-self: flex-end;
-    > :not(:last-child) {
-        margin-right: ${props => props.theme.space[2]}px;
-    }
-    > :last-child {
-        margin-right: 0px;
-    }
-`
+})
 
 interface IProps {
     routeChangeAction: (route: string) => void
@@ -99,43 +85,57 @@ export default ({
             })
         })
     }, [])
+
+    const classes = useStyles()
     return (
-        <SubmitArticleFormActions>
-            <ActionsSection
-                width={'100%'}
-                justifyContent={['', 'start']}
-                gridAutoFlow={['', 'column']}
-                gridTemplateColumns="minmax(auto, 1fr) minmax(auto, 1fr) minmax(auto, 1fr)"
-            >
-                <TertiaryButton
-                    icon={<BackIcon />}
-                    onClick={() => routeChangeAction('back')}
-                >
-                    <span>Go Back</span>
-                </TertiaryButton>
-                <Stack
-                    alignItems={['', 'center']}
-                    justifyContent={['', 'center']}
-                    gridAutoFlow={['row']}
-                    gap={20}
-                >
-                    <TertiaryButton
-                        className="background-upload"
-                        icon={<UploadIcon />}
+        <div className={classes.container}>
+            <Grid className={classes.actions} sm={12} container={true}>
+                <Grid item={true} sm={4}>
+                    <Button
+                        color="secondary"
+                        variant="text"
+                        onClick={() => routeChangeAction('back')}
                     >
+                        <BackIcon />
+                        <span>Go Back</span>
+                    </Button>
+                </Grid>
+                <Grid justify="center" item={true} container={true} sm={4}>
+                    <Button
+                        color="secondary"
+                        className="background-upload"
+                        variant="text"
+                    >
+                        <UploadIcon className={classes.uploadIcon} />
                         Upload Background
-                    </TertiaryButton>
-                </Stack>
-                <ContainerRow>
-                    <SecondaryButton onClick={handleSubmit('draft')}>
+                    </Button>
+                </Grid>
+                <Grid
+                    className={classes.buttons}
+                    sm={4}
+                    item={true}
+                    container={true}
+                    justify="flex-end"
+                >
+                    <Button
+                        color="secondary"
+                        variant="outlined"
+                        onClick={handleSubmit('draft') as any}
+                    >
                         Save draft
-                    </SecondaryButton>
+                    </Button>
                     {isOwner(status, owner, userId, communities) ? (
-                        <PrimaryButton onClick={selectDestination}>
+                        <Button
+                            color="primary"
+                            variant="contained"
+                            onClick={selectDestination}
+                        >
                             Publish Article
-                        </PrimaryButton>
+                        </Button>
                     ) : (
-                        <PrimaryButton
+                        <Button
+                            color="primary"
+                            variant="contained"
                             onClick={() =>
                                 openModalAction({
                                     children: (
@@ -153,10 +153,10 @@ export default ({
                             }
                         >
                             Propose Update
-                        </PrimaryButton>
+                        </Button>
                     )}
-                </ContainerRow>
-            </ActionsSection>
-        </SubmitArticleFormActions>
+                </Grid>
+            </Grid>
+        </div>
     )
 }

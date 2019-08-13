@@ -1,6 +1,5 @@
 import testEpic from '../../lib/test-epic'
 import { approveArticleEpic, approveArticleAction } from './Module'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 
 jest.mock('../../lib/analytics', () => ({
@@ -43,9 +42,6 @@ describe('approveArticleEpic', () => {
             version,
         })
         const expectedAction = [
-            routeChangeAction(
-                `/article/${id}/v${version}/article-${'published'}`
-            ),
             showNotificationAction({
                 description: 'The update has been approved!',
                 message: `Article approved`,

@@ -1,4 +1,4 @@
-import PrimaryButton from '../../../components/Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import MediumImportButton from '../../../components/Button/MediumImportButton'
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
 import { BodyCard } from '../../../components/Typography'
@@ -48,7 +48,9 @@ export default ({ isLoggedIn, isOwner }) => (
                 isOwner ? (
                     <Link href="/write-article">
                         <a>
-                            <PrimaryButton>Create Article</PrimaryButton>
+                            <Button color="primary" variant="contained">
+                                Create Article
+                            </Button>
                         </a>
                     </Link>
                 ) : (

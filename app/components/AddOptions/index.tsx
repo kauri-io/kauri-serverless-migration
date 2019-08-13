@@ -1,7 +1,7 @@
 import { Tooltip } from 'react-tippy'
 import styled from 'styled-components'
 import { H6 } from '../Typography'
-import AddIcon from '../Icon/AddIcon'
+import AddIcon from '@material-ui/icons/Add'
 
 const AddButton = styled.div`
     display: flex;

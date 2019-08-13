@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import Loading from '../../components/Loading'
-import TertiaryButton from '../../components/Button/TertiaryButton'
+import Button from '@material-ui/core/Button'
 export const CheckpointArticlesIcon = () => (
     <svg
         width="20"
@@ -62,15 +62,16 @@ class CTA extends Component<IProps, IState> {
             return <Loading />
         }
         return (
-            <TertiaryButton
-                color={'textPrimary'}
-                icon={<CheckpointArticlesIcon />}
+            <Button
+                color="primary"
+                variant="text"
                 onClick={() => this.props.checkpointArticlesAction()}
             >
+                <CheckpointArticlesIcon />
                 {this.props.pageType === 'public-profile'
                     ? 'Submit Articles On-chain'
                     : 'Submit Article On-chain'}
-            </TertiaryButton>
+            </Button>
         )
     }
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import CollectionCard from '../../components/Card/CollectionCard'
-import Tabs from '../../components/Tabs'
 import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
 import { getCommunity_getCommunity } from '../../queries/__generated__/getCommunity'
@@ -134,19 +133,11 @@ export default (props: IProps) => {
     }
 
     return (
-        <Tabs
-            centerTabs
-            passChangeTabFunction={props.passChangeTabFunction}
-            tabs={[{ name: 'Community Collections' }]}
-            panels={[
-                <CommunityPublishedCollections
-                    {...props}
-                    collections={
-                        props.searchCommunityPublishedCollections
-                            .getCommunityContent
-                    }
-                />,
-            ]}
+        <CommunityPublishedCollections
+            {...props}
+            collections={
+                props.searchCommunityPublishedCollections.getCommunityContent
+            }
         />
     )
 }

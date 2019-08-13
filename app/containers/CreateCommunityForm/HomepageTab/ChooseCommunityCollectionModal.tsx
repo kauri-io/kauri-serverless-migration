@@ -2,8 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { find, reduce, union } from 'ramda'
 import { BodyCard } from '../../../components/Typography'
-import PrimaryButton from '../../../components/Button/PrimaryButton'
-import TertiaryButton from '../../../components/Button/TertiaryButton'
+import Button from '@material-ui/core/Button'
 import ChooseCommunityCollectionCard from '../../ChooseCommunityCollectionCard/View'
 // import ModalHeader from '../../../components/Headers/ModalHeader'
 import { connect } from 'react-redux'
@@ -11,6 +10,7 @@ import { compose, graphql } from 'react-apollo'
 import withApolloError from '../../../lib/with-apollo-error'
 import { IReduxState } from '../../../lib/Module'
 import { getCommunityContentQuery } from '../../../queries/Community'
+import CloseIcon from '@material-ui/icons/Close'
 import {
     Dialog,
     DialogTitle,
@@ -43,34 +43,26 @@ const ActionsContainer = styled.div`
     }
 `
 
-const CloseIcon = () => (
-    <img
-        style={{ rotate: '45deg' }}
-        src="https://png.icons8.com/material-two-tone/50/000000/delete-sign.png"
-    />
-)
-
 const Actions: React.FunctionComponent<any> = ({
     handleClose,
     handleConfirm,
     chosenCollections,
 }) => (
     <ActionsContainer>
-        <TertiaryButton
-            icon={<CloseIcon />}
-            onClick={() => handleClose()}
-            color="textPrimary"
-        >
+        <Button color="primary" variant="text" onClick={() => handleClose()}>
+            <CloseIcon />
             Close
-        </TertiaryButton>
-        <PrimaryButton
+        </Button>
+        <Button
+            color="primary"
+            variant="contained"
             onClick={() => {
                 handleConfirm(chosenCollections)
                 handleClose()
             }}
         >
             Confirm
-        </PrimaryButton>
+        </Button>
     </ActionsContainer>
 )
 

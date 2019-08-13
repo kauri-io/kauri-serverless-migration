@@ -1,29 +1,39 @@
-import PrimaryButton from './PrimaryButton'
-import SecondaryButton from './SecondaryButton'
-import TertiaryButton from './TertiaryButton'
+import Button from '@material-ui/core/Button'
 import AddMemberButton from './AddMemberButton'
 import MediumImportButton from './MediumImportButton'
 import UploadLogoButton from './UploadLogoButton'
 import AddTagButton from './AddTagButton'
 import { mountWithTheme } from '../../setupTests'
 
-describe('components/PrimaryButton', () => {
+describe('components/Button', () => {
     it('should match snapshot', () => {
-        const wrapper = mountWithTheme(<PrimaryButton>Test</PrimaryButton>)
+        const wrapper = mountWithTheme(
+            <Button color="primary" variant="contained">
+                Test
+            </Button>
+        )
         expect(wrapper).toMatchSnapshot()
     })
 })
 
 describe('components/SecondaryButton', () => {
     it('should match snapshot', () => {
-        const wrapper = mountWithTheme(<SecondaryButton>Test</SecondaryButton>)
+        const wrapper = mountWithTheme(
+            <Button color="primary" variant="outlined">
+                Test
+            </Button>
+        )
         expect(wrapper).toMatchSnapshot()
     })
 })
 
 describe('components/TertiaryButton', () => {
     it('should match snapshot', () => {
-        const wrapper = mountWithTheme(<TertiaryButton>Test</TertiaryButton>)
+        const wrapper = mountWithTheme(
+            <Button color="primary" variant="text">
+                Test
+            </Button>
+        )
         expect(wrapper).toMatchSnapshot()
     })
 })

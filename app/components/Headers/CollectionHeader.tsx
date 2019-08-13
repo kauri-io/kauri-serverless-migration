@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Title1, Label, PageDescription } from '../Typography'
 import ShareArticle from '../Tooltip/ShareArticle'
 import UserAvatar from '../UserAvatar'
-import PrimaryButton from '../Button/PrimaryButton'
+import Button from '@material-ui/core/Button'
 import StatisticsContainer from '../PublicProfile/StatisticsContainer'
 import { TagList } from '../Tags'
 import { getUpdateCollectionURL } from '../../lib/getURLs'
@@ -154,7 +154,8 @@ const Container: React.SFC<IProps> = props => {
                     />
                 )}
                 {userId === ownerId || isMemberOfCommunityOwner ? (
-                    <PrimaryButton
+                    <Button
+                        variant="contained"
                         onClick={() =>
                             routeChangeAction(
                                 getUpdateCollectionURL({ id }).href
@@ -162,10 +163,12 @@ const Container: React.SFC<IProps> = props => {
                         }
                     >
                         Update Collection
-                    </PrimaryButton>
+                    </Button>
                 ) : null}
                 {proposedCommunityId && (
-                    <PrimaryButton
+                    <Button
+                        color="primary"
+                        variant="contained"
                         onClick={() =>
                             approveResourceAction &&
                             approveResourceAction({
@@ -175,7 +178,7 @@ const Container: React.SFC<IProps> = props => {
                         }
                     >
                         Approve community proposed collection
-                    </PrimaryButton>
+                    </Button>
                 )}
             </RightSide>
         </CollectionHeaderSection>
