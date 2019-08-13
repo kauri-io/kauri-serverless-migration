@@ -144,6 +144,7 @@ class TagInput extends Component<IProps, IState> {
                 currentIndex <= 0 ? availableLength : (currentIndex -= 1)
             this.setState({ selectedIndex: newIndex })
         } else {
+            console.log(e.currentTarget)
             this.setState({ value: e.currentTarget.value })
         }
     }
@@ -186,7 +187,7 @@ class TagInput extends Component<IProps, IState> {
                         />
                     </TopRow>
                 </div>
-                {this.state.value.length > 0 && (
+                {this.state.value && this.state.value.length > 0 && (
                     <Results>
                         {Array.isArray(available) &&
                             available.map((i, index) => (

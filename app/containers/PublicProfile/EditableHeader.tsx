@@ -143,7 +143,7 @@ class EditableHeader extends Component<IProps, IState> {
                         }
                         updateState={this.updateState.bind(this)}
                     />
-                    <Grid item={true}  container={true} alignItems='flex-end'>
+                    <Grid item={true} container={true} alignItems="flex-end">
                         <Button
                             color="primary"
                             variant="text"

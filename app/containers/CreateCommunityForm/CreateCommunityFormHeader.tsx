@@ -115,10 +115,7 @@ const Component: React.SFC<IProps> = props => (
                         type="text"
                         name="website"
                         render={({ field }: FieldProps<IFormValues>) => (
-                            <TextField
-                                {...field}
-                                placeholder={'Website'}
-                            />
+                            <TextField {...field} placeholder={'Website'} />
                         )}
                     />
                 </MainFields>
@@ -127,10 +124,7 @@ const Component: React.SFC<IProps> = props => (
                 type="text"
                 name="description"
                 render={({ field }: FieldProps<IFormValues>) => (
-                    <TextField
-                        {...field}
-                        placeholder={'Add description'}
-                    />
+                    <TextField {...field} placeholder={'Add description'} />
                 )}
             />
 
@@ -148,10 +142,7 @@ const Component: React.SFC<IProps> = props => (
                     type="text"
                     name="social.twitter"
                     render={({ field }: FieldProps<IFormValues>) => (
-                        <TextField
-                            {...field}
-                            placeholder={'Twitter'}
-                        />
+                        <TextField {...field} placeholder={'Twitter'} />
                     )}
                 />
             </SocialFieldContainer>

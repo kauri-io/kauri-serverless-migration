@@ -29,8 +29,8 @@ import {
     editArticleVersionVariables,
     editArticleVersion,
 } from '../../queries/__generated__/editArticleVersion'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic';
-import { getArticleURL } from '../../lib/getURLs';
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { getArticleURL } from '../../lib/getURLs'
 
 interface IGetArticleResult {
     getArticle: {
@@ -493,29 +493,26 @@ export const draftArticleEpic: Epic<any, any, {}, IDependencies> = (
                         category: 'article_actions',
                     })
                 }),
-                mergeMap(
-                    ({
-                        data: {
-                            getEvent: {
-                                output
-                            },
-                        },
-                    }) =>
-                        merge(
-                            of(
-                                showNotificationAction({
-                                    description:
-                                        'The draft has just been saved. You can go back and submit it whenever you are ready.',
-                                    message: 'Draft Created',
-                                    notificationType: 'info',
-                                })
-                            ),
-                            of(
-                                routeChangeAction(
-                                   getArticleURL(output as { title: string, id: string, version: number}).as
-                                )
+                mergeMap(({ data: { getEvent: { output } } }) =>
+                    merge(
+                        of(
+                            showNotificationAction({
+                                description:
+                                    'The draft has just been saved. You can go back and submit it whenever you are ready.',
+                                message: 'Draft Created',
+                                notificationType: 'info',
+                            })
+                        ),
+                        of(
+                            routeChangeAction(
+                                getArticleURL(output as {
+                                    title: string
+                                    id: string
+                                    version: number
+                                }).as
                             )
                         )
+                    )
                 )
             )
         )

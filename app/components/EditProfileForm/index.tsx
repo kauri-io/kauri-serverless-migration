@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/styles'
 import { Grid, Theme, Tooltip, Checkbox } from '@material-ui/core'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
-import { CheckboxProps } from '@material-ui/core/Checkbox';
+import { CheckboxProps } from '@material-ui/core/Checkbox'
 
 const styles = (theme: Theme) => ({
     container: {
@@ -31,11 +31,11 @@ const styles = (theme: Theme) => ({
         },
     },
     checkboxLabel: {
-        color: theme.palette.common.white
-    }
+        color: theme.palette.common.white,
+    },
 })
 
-const WhiteChecbox = withStyles((theme) => ({
+const WhiteChecbox = withStyles(theme => ({
     root: {
         color: theme.palette.common.white,
         '&$checked': {
@@ -43,7 +43,7 @@ const WhiteChecbox = withStyles((theme) => ({
         },
     },
     checked: {},
-}))((props: CheckboxProps) => <Checkbox color="default" {...props} />);
+}))((props: CheckboxProps) => <Checkbox color="default" {...props} />)
 
 interface IProps {
     avatar: string

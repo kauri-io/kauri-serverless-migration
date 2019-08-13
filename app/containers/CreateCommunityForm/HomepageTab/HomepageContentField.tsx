@@ -233,7 +233,6 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                             <TextField
                                                 {...field}
                                                 placeholder="Add Section Name"
-
                                             />
                                         )}
                                     />

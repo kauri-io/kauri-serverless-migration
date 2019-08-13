@@ -34,7 +34,7 @@ const CollectionsContent = ({
                                         ({ id }) =>
                                             id === collection.id ||
                                             currentCollectionIdIfUpdating ===
-                                            collection.id
+                                                collection.id
                                     )
                                 } else {
                                     return collectionId === collection.id
@@ -63,39 +63,39 @@ const CollectionsContent = ({
                                 href={getCollectionURL(collection)}
                                 key={collection.id}
                                 isLoggedIn={!!userId}
-                            // hoverChildren={({ hideDispatch }) => (
-                            //     <React.Fragment>
-                            //         <PrimaryButton
-                            //             onClick={() => {
-                            //                 chooseCollection({
-                            //                     id: collection.id,
-                            //                     version: collection.version,
-                            //                 })
-                            //                 hideDispatch()
-                            //             }}
-                            //         >
-                            //             Choose
-                            //         </PrimaryButton>
-                            //         <SecondaryButton
-                            //             onClick={() =>
-                            //                 window.open(
-                            //                     `${window.location.origin}/collection/${collection.id}`,
-                            //                     '_blank'
-                            //                 )
-                            //             }
-                            //         >
-                            //             View
-                            //         </SecondaryButton>
-                            //     </React.Fragment>
-                            // )}
-                            // isChosenCollection={
-                            //     !!chosenCollections.find(
-                            //         ({ id, version }) =>
-                            //             collection.id === id &&
-                            //             collection.version === version
-                            //     )
-                            // }
-                            // triggerHoverChildrenOnFullCardClick
+                                // hoverChildren={({ hideDispatch }) => (
+                                //     <React.Fragment>
+                                //         <PrimaryButton
+                                //             onClick={() => {
+                                //                 chooseCollection({
+                                //                     id: collection.id,
+                                //                     version: collection.version,
+                                //                 })
+                                //                 hideDispatch()
+                                //             }}
+                                //         >
+                                //             Choose
+                                //         </PrimaryButton>
+                                //         <SecondaryButton
+                                //             onClick={() =>
+                                //                 window.open(
+                                //                     `${window.location.origin}/collection/${collection.id}`,
+                                //                     '_blank'
+                                //                 )
+                                //             }
+                                //         >
+                                //             View
+                                //         </SecondaryButton>
+                                //     </React.Fragment>
+                                // )}
+                                // isChosenCollection={
+                                //     !!chosenCollections.find(
+                                //         ({ id, version }) =>
+                                //             collection.id === id &&
+                                //             collection.version === version
+                                //     )
+                                // }
+                                // triggerHoverChildrenOnFullCardClick
                             />
                         </Grid>
                     )
@@ -103,8 +103,8 @@ const CollectionsContent = ({
             </Grid>
         </div>
     ) : (
-            <p>You have no published collections!</p>
-        )
+        <p>You have no published collections!</p>
+    )
 
 const PublishedCollections = withPagination(
     CollectionsContent,

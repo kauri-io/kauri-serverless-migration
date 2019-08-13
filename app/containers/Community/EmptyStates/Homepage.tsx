@@ -49,12 +49,8 @@ const CommunityHomepageEmptyState: React.FunctionComponent<IProps> = props => (
                 )
             }
         >
-            <TextField
-                placeholder="Add Section Name"
-            />
-            <TextField
-                placeholder="Add Section Description"
-            />
+            <TextField placeholder="Add Section Name" />
+            <TextField placeholder="Add Section Description" />
             <AddOptions>
                 <div />
             </AddOptions>

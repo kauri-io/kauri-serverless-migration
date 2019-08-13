@@ -155,7 +155,7 @@ const Container: React.SFC<IProps> = props => {
                 )}
                 {userId === ownerId || isMemberOfCommunityOwner ? (
                     <Button
-                        variant='contained'
+                        variant="contained"
                         onClick={() =>
                             routeChangeAction(
                                 getUpdateCollectionURL({ id }).href
