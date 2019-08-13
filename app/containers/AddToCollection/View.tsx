@@ -22,14 +22,14 @@ interface IChosen {
 
 interface IProps {
     closeModalAction: () => void
-    userId: string
+    userId: string | null
     routeChangeAction: (route: string) => void
     articleId: string
     addArticleToCollectionAction: typeof addArticleToCollectionAction
     version: number
 }
 
-const Component: React.FunctionComponent<IProps> = ({
+const AddToCollectionComponent: React.FunctionComponent<IProps> = ({
     closeModalAction,
     userId,
     routeChangeAction,
@@ -205,4 +205,4 @@ const Component: React.FunctionComponent<IProps> = ({
     )
 }
 
-export default Component
+export default AddToCollectionComponent

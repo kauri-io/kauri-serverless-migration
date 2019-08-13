@@ -15945,7 +15945,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
         }
       }
     >
-      <Component
+      <AddToCollectionComponent
         addArticleToCollectionAction={[MockFunction]}
         articleId="123"
         closeModalAction={[MockFunction]}
@@ -16796,7 +16796,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
             </div>
           </LoadingComponent>
         </Query>
-      </Component>
+      </AddToCollectionComponent>
     </ApolloProvider>
   </MockedProvider>
 </ThemeProvider>

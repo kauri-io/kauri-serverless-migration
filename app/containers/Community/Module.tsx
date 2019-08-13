@@ -94,6 +94,7 @@ import {
     finaliseArticleTransfer,
     finaliseArticleTransferVariables,
 } from '../../queries/__generated__/finaliseArticleTransfer'
+import { getCommunityURL } from '../../lib/getURLs'
 
 interface IWaitForInvitationReconciliationPayload {
     id: string
@@ -607,7 +608,10 @@ export const waitForInvitationReconciliationEpic: Epic<
                     )
                 ),
                 tap(() => {
-                    window.location.href = `/community/${payload.id}`
+                    window.location.href = getCommunityURL({
+                        id: payload.id,
+                        name: 'accepted',
+                    }).href
                 }),
                 catchError(err => {
                     console.error(err)
@@ -981,7 +985,11 @@ export const changeMemberRoleEpic: Epic<
                                 ) || ''
                             )
                         ),
-                        tap(() => apolloClient.resetStore()),
+                        tap(() => {
+                            setTimeout(() => {
+                                apolloClient.resetStore()
+                            }, 4000)
+                        }),
                         mergeMap(() =>
                             merge(
                                 of(closeModalAction()),
