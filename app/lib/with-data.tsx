@@ -13,6 +13,29 @@ import mixpanel from 'mixpanel-browser'
 import initRedux from './init-redux'
 import initApollo from './init-apollo'
 
+import { ThemeProvider as MaterialThemeProvider } from '@material-ui/styles'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import { createMuiTheme } from '@material-ui/core/styles'
+
+const theme = createMuiTheme({
+    palette: {
+        common: {
+            black: '#1E2428',
+        },
+        background: {
+            default: '#f5f5f5',
+        },
+        primary: {
+            main: '#0BA986',
+        },
+        secondary: {
+            main: '#ffffff',
+        },
+        contrastThreshold: 3,
+        tonalOffset: 0.2,
+    },
+})
+
 import { setHostNameAction } from './Module'
 import userDetailsEpic, {
     fetchUserDetailsAction,
@@ -282,6 +305,8 @@ export default (ComposedComponent: any) =>
 
         render() {
             return (
+                <MaterialThemeProvider theme={theme}>
+                <CssBaseline />
                 <Provider store={this.redux}>
                     <ApolloProvider client={apollo}>
                         <SnackbarProvider maxSnack={3}>
@@ -300,6 +325,7 @@ export default (ComposedComponent: any) =>
                         </SnackbarProvider>
                     </ApolloProvider>
                 </Provider>
+                </MaterialThemeProvider>
             )
         }
     }

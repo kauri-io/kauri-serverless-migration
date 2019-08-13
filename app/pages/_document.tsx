@@ -3,6 +3,7 @@ import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 import { ServerStyleSheets } from '@material-ui/styles'
 
+
 // const isProduction = process.env.config === 'production'
 
 interface IProps {
@@ -76,8 +77,10 @@ export default class MyDocument extends Document<IProps> {
                     <style>{`a { color: inherit; text-decoration: none;} .uppy-DashboardTab:last-child{display: none !important;} `}</style>
                 </Head>
                 <body>
+
                     <Main />
                     <NextScript />
+                    
                 </body>
             </html>
         )
