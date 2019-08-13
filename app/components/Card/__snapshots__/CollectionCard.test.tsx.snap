@@ -2864,6 +2864,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                     "Naked": Object {
                                       "$$typeof": Symbol(react.forward_ref),
                                       "propTypes": Object {
+                                        "children": [Function],
                                         "className": [Function],
                                         "classes": [Function],
                                         "invisible": [Function],

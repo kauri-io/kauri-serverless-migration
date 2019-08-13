@@ -5,7 +5,7 @@ import CardContent from '@material-ui/core/CardContent'
 import Avatar from '@material-ui/core/Avatar'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-import { Typography, MenuList } from '@material-ui/core'
+import { Typography, ListItemIcon } from '@material-ui/core'
 import { Theme, makeStyles } from '@material-ui/core/styles'
 import TruncateMarkup from 'react-truncate-markup'
 import moment from 'moment'
@@ -332,32 +332,28 @@ const ArticleCard: React.FC<IProps> = ({
                             open={Boolean(anchorEl)}
                             onClose={handleClose}
                         >
-                            <MenuList>
+                            <MenuItem onClick={handleClickShareDialogOpen}>
+                                <ListItemIcon>
+                                    <Icon>share</Icon>
+                                </ListItemIcon>
+                                <Typography variant="inherit">Share</Typography>
+                            </MenuItem>
+                            {isLoggedIn && (
                                 <MenuItem
-                                    className={classes.menuItem}
-                                    onClick={handleClickShareDialogOpen}
+                                    data-testid={`ArticleCard-${id}-addToCollectionButton`}
+                                    onClick={() => {
+                                        addArticleToCollectionAction &&
+                                            addArticleToCollectionAction()
+                                    }}
                                 >
-                                    Share
-                                </MenuItem>
-                                {isLoggedIn && (
-                                    <MenuItem
-                                        data-testid={`ArticleCard-${id}-addToCollectionButton`}
-                                        onClick={() => {
-                                            // console.log(
-                                            //     addArticleToCollectionAction
-                                            // )
-                                            // console.log(
-                                            //     addArticleToCollectionAction &&
-                                            //         addArticleToCollectionAction()
-                                            // )
-                                            addArticleToCollectionAction &&
-                                                addArticleToCollectionAction()
-                                        }}
-                                    >
+                                    <ListItemIcon>
+                                        <Icon>folder</Icon>
+                                    </ListItemIcon>
+                                    <Typography variant="inherit">
                                         Add To Collection
-                                    </MenuItem>
-                                )}
-                            </MenuList>
+                                    </Typography>
+                                </MenuItem>
+                            )}
                         </Menu>
                     </div>
                 </CardActions>

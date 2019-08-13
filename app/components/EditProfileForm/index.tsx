@@ -79,7 +79,6 @@ const EditProfileForm = ({
     status,
     subscriptions,
     updateState,
-    classes,
 }: IProps) => {
     const classes = useStyles()
     return (
@@ -180,4 +179,4 @@ const EditProfileForm = ({
     )
 }
 
-export default withStyles(styles)(EditProfileForm)
+export default EditProfileForm

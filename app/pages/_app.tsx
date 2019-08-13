@@ -9,6 +9,14 @@ class MyApp extends App {
         ;(process as any).browser && analytics.init()
     }
 
+    componentDidMount() {
+        // Remove the server-side injected CSS.
+        const jssStyles = document.querySelector('#jss-server-side')
+        if (jssStyles) {
+            jssStyles.parentNode!.removeChild(jssStyles)
+        }
+    }
+
     render() {
         analytics.page(this.props.router)
         const { Component, pageProps } = this.props
