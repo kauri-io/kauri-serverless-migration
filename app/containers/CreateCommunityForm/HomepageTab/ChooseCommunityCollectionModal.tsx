@@ -4,13 +4,19 @@ import { find, reduce, union } from 'ramda'
 import { BodyCard } from '../../../components/Typography'
 import Button from '@material-ui/core/Button'
 import ChooseCommunityCollectionCard from '../../ChooseCommunityCollectionCard/View'
-import ModalHeader from '../../../components/Headers/ModalHeader'
+// import ModalHeader from '../../../components/Headers/ModalHeader'
 import { connect } from 'react-redux'
 import { compose, graphql } from 'react-apollo'
 import withApolloError from '../../../lib/with-apollo-error'
 import { IReduxState } from '../../../lib/Module'
 import { getCommunityContentQuery } from '../../../queries/Community'
 import CloseIcon from '@material-ui/icons/Close'
+import {
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    DialogActions,
+} from '@material-ui/core'
 
 const collectionSize = 12
 
@@ -60,17 +66,8 @@ const Actions: React.FunctionComponent<any> = ({
     </ActionsContainer>
 )
 
-const ContentContainer = styled.section`
-    display: flex;
-    flex-direction: column;
-    height: 620px;
-    width: 980px;
-    > :first-child {
-        margin-bottom: ${props => props.theme.space[3]}px;
-    }
-`
-
 interface IProps {
+    open: boolean
     userId: string
     closeModalAction: () => void
     confirmModal: (collections: Array<{ id: string }>) => void
@@ -123,49 +120,54 @@ class ChooseCollectionModal extends React.Component<IProps, IState> {
             closeModalAction,
             confirmModal,
             currentCollectionIdIfUpdating,
+            open,
         } = this.props
 
         return (
-            <ContentContainer>
+            <Dialog
+                open={open}
+                fullWidth={true}
+                onClose={() => closeModalAction()}
+                aria-labelledby="scroll-dialog-title"
+            >
                 {/* {JSON.stringify(this.state)} */}
-                <ModalHeader
-                    actions={
-                        <Actions
-                            userId={this.props.userId}
-                            searchCommunityPublishedCollections={
-                                this.props.searchCommunityPublishedCollections
-                            }
-                            chosenCollections={this.state.chosenCollections}
-                            handleConfirm={confirmModal}
-                            handleClose={() => closeModalAction()}
-                            currentTab={this.state.currentTab}
-                            changeTab={this.state.changeTab}
-                        />
-                    }
-                    title={
-                        <Title
-                            chosenCollections={this.state.chosenCollections}
-                        />
-                    }
-                />
-                <ChooseCommunityCollectionCard
-                    userId={this.props.userId}
-                    searchCommunityPublishedCollections={
-                        this.props.searchCommunityPublishedCollections
-                    }
-                    currentCollectionIdIfUpdating={
-                        currentCollectionIdIfUpdating
-                    }
-                    allOtherChosenCollections={
-                        this.props.allOtherChosenCollections
-                    }
-                    chosenCollections={this.state.chosenCollections}
-                    chooseCollection={this.chooseCollection}
-                    passChangeTabFunction={(changeTab: any) =>
-                        this.setState({ ...this.state, changeTab })
-                    }
-                />
-            </ContentContainer>
+                <DialogTitle id="scroll-dialog-title">
+                    <Title chosenCollections={this.state.chosenCollections} />
+                </DialogTitle>
+
+                <DialogContent dividers={true}>
+                    <ChooseCommunityCollectionCard
+                        userId={this.props.userId}
+                        searchCommunityPublishedCollections={
+                            this.props.searchCommunityPublishedCollections
+                        }
+                        currentCollectionIdIfUpdating={
+                            currentCollectionIdIfUpdating
+                        }
+                        allOtherChosenCollections={
+                            this.props.allOtherChosenCollections
+                        }
+                        chosenCollections={this.state.chosenCollections}
+                        chooseCollection={this.chooseCollection}
+                        passChangeTabFunction={(changeTab: any) =>
+                            this.setState({ ...this.state, changeTab })
+                        }
+                    />
+                </DialogContent>
+                <DialogActions>
+                    <Actions
+                        userId={this.props.userId}
+                        searchCommunityPublishedCollections={
+                            this.props.searchCommunityPublishedCollections
+                        }
+                        chosenCollections={this.state.chosenCollections}
+                        handleConfirm={confirmModal}
+                        handleClose={() => closeModalAction()}
+                        currentTab={this.state.currentTab}
+                        changeTab={this.state.changeTab}
+                    />
+                </DialogActions>
+            </Dialog>
         )
     }
 }

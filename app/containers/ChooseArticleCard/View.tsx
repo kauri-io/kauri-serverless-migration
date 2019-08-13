@@ -1,36 +1,28 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
 import ArticleCard from '../../components/Card/ArticleCard'
-import ChooseArticleContent, {
-    Content,
-} from '../../components/Modal/ChooseArticleContent'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
-
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    width: 100%;
-    height: 100%;
-
-    ${Content} {
-        padding-top: 10px;
-    }
-`
+import { getArticleURL } from '../../lib/getURLs'
+import { Grid } from '@material-ui/core'
 
 const ArticlesContent = props => {
-    const { articles, setRef, allOtherChosenArticles } = props
+    const { articles, allOtherChosenArticles, setRef } = props
     if (!articles) {
         return null
     }
 
     return articles && articles.content.length > 0 ? (
-        <Container>
-            <ChooseArticleContent setRef={setRef}>
+        <div
+            ref={ref => {
+                // console.log(setRef)
+                setRef && setRef(ref)
+            }}
+        >
+            <Grid container spacing={3}>
                 {articles.content.map(article => {
+                    const { title, id, version } = article
                     if (allOtherChosenArticles) {
                         if (
                             allOtherChosenArticles.find(chosenArticle => {
@@ -46,10 +38,29 @@ const ArticlesContent = props => {
                         }
                     }
 
-                    return <ArticleCard {...article} />
+                    return (
+                        <Grid
+                            key={article.id}
+                            item
+                            xs={12}
+                            sm={12}
+                            lg={12}
+                            onClick={() =>
+                                props.chooseArticle({
+                                    id: article.id,
+                                    version: article.version,
+                                })
+                            }
+                        >
+                            <ArticleCard
+                                {...article}
+                                href={getArticleURL({ title, id, version })}
+                            />
+                        </Grid>
+                    )
                 })}
-            </ChooseArticleContent>
-        </Container>
+            </Grid>
+        </div>
     ) : (
         <p>You have no published articles!</p>
     )

@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import {
     Title1,
@@ -27,6 +28,7 @@ import {
     transferArticleToCommunityAction as transferArticleToCommunity,
 } from './Module'
 import AddMemberButtonComponent from '../../components/Button/AddMemberButton'
+import { getUpdateCommunityURL } from '../../lib/getURLs'
 
 const TooltipContainer = styled.section`
     display: flex;
@@ -309,10 +311,10 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
     members,
     // isCreator,
     routeChangeAction,
-    openModalAction,
+    // openModalAction,
     isMember,
     isCommunityAdmin,
-    closeModalAction,
+    // closeModalAction,
     // curateCommunityResourcesAction,
     openAddMemberModal,
     transferArticleToCommunityAction,
@@ -367,27 +369,10 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
     //       />
     //     ),
     //   });
+    const [open, setOpen] = React.useState<boolean>(false)
 
-    const addCommunityArticleAction = () =>
-        openModalAction({
-            children: (
-                <ChooseArticleModal
-                    limit={1}
-                    allOtherChosenArticles={articles || []}
-                    chosenArticles={[]}
-                    closeModalAction={closeModalAction}
-                    confirmModal={(chosenArticles: IArticle[]) => {
-                        transferArticleToCommunityAction({
-                            id: chosenArticles[0].id,
-                            recipient: {
-                                id,
-                                type: 'COMMUNITY' as any,
-                            },
-                        })
-                    }}
-                />
-            ),
-        })
+    const openAddCommunityArticleModal = () => setOpen(true)
+    const closeAddCommunityArticleModal = () => setOpen(false)
 
     return (
         <Wrapper>
@@ -400,6 +385,27 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                     image={background}
                 />
             )}
+            <ChooseArticleModal
+                open={open}
+                limit={1}
+                allOtherChosenArticles={articles || []}
+                chosenArticles={[]}
+                closeModalAction={closeAddCommunityArticleModal}
+                confirmModal={(chosenArticles: IArticle[]) => {
+                    transferArticleToCommunityAction(
+                        {
+                            id: chosenArticles[0].id,
+                            recipient: {
+                                id,
+                                type: 'COMMUNITY' as any,
+                            },
+                        },
+                        () => {
+                            closeAddCommunityArticleModal()
+                        }
+                    )
+                }}
+            />
             <Container>
                 <ContentRow>
                     <Column>
@@ -522,7 +528,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                     onClick={() =>
                                         routeChangeAction &&
                                         routeChangeAction(
-                                            `/community/${id}/update-community`
+                                            getUpdateCommunityURL({ id }).href
                                         )
                                     }
                                 >
@@ -567,9 +573,10 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                 //   interactive={true}
                                 // >
                                 <Button
-                                    color="primary"
-                                    variant="contained"
-                                    onClick={() => addCommunityArticleAction()}
+                                    variant='contained'
+                                    onClick={() =>
+                                        openAddCommunityArticleModal()
+                                    }
                                 >
                                     Add Content
                                 </Button>

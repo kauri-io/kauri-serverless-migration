@@ -200,8 +200,10 @@ export const verifyEmailEpic: Epic<
                                                       reject(err),
                                                   next: (data: {
                                                       data: {
-                                                          output: {
-                                                              hash: string
+                                                          getEvent: {
+                                                              output: {
+                                                                  hash: string
+                                                              }
                                                           }
                                                       }
                                                   }) => resolve(data),

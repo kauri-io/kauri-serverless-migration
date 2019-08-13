@@ -7,6 +7,7 @@ import withApolloError from '../../lib/with-apollo-error'
 import ArticleCard from '../../components/Card/ArticleCard'
 import { IReduxState } from '../../lib/Module'
 import { getArticleVariables } from '../../queries/__generated__/getArticle'
+import { getArticleURL } from '../../lib/getURLs'
 
 const mapStateToProps = (state: IReduxState) => ({
     hostName: state.app && state.app.hostName,
@@ -21,7 +22,7 @@ interface IProps {
 const View: React.FunctionComponent<IProps> = ({
     data: { getArticle: article },
 }) => {
-    return <ArticleCard {...article} />
+    return <ArticleCard {...article} href={getArticleURL(article)} />
 }
 
 export default compose(

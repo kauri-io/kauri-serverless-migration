@@ -13,6 +13,7 @@ import {
     getCollectionURL,
     getCommunityURL,
 } from '../../lib/getURLs'
+
 export const RenderCardContent = () => (
     card: Article | Collection | Community
 ) => {
@@ -26,41 +27,6 @@ export const RenderCardContent = () => (
                 />
             )
         case 'CollectionDTO':
-            const articleCount =
-                card.sections &&
-                card.sections.reduce((current, next) => {
-                    if (next && Array.isArray(next.resources)) {
-                        const articlesInSection = next.resources.filter(
-                            sectionResource => {
-                                return (
-                                    sectionResource &&
-                                    sectionResource.__typename
-                                        .toLowerCase()
-                                        .includes('article')
-                                )
-                            }
-                        )
-                        return articlesInSection.length + current
-                    }
-                    return current
-                }, 0)
-
-            const collectionCount =
-                card.sections &&
-                card.sections.reduce((current, next) => {
-                    if (next && Array.isArray(next.resources)) {
-                        const collectionsInSection = next.resources.filter(
-                            sectionResource =>
-                                sectionResource &&
-                                sectionResource.__typename
-                                    .toLowerCase()
-                                    .includes('collection')
-                        )
-                        return collectionsInSection.length + current
-                    }
-                    return current
-                }, 0)
-
             const typedOwner =
                 card &&
                 (card.owner as
@@ -69,24 +35,10 @@ export const RenderCardContent = () => (
 
             return (
                 <CollectionCard
+                    {...card}
                     href={getCollectionURL(card)}
                     key={card.id}
-                    id={String(card.id)}
-                    resourceType="CollectionDTO"
-                    name={String(card.name)}
-                    date={card.dateUpdated}
-                    description={String(card.description)}
-                    username={
-                        typedOwner && typedOwner.__typename === 'PublicUserDTO'
-                            ? typedOwner.username
-                            : typedOwner.communityName
-                    }
-                    userId={String(typedOwner && typedOwner.id)}
-                    userAvatar={typedOwner && typedOwner.avatar}
-                    articleCount={String(articleCount)}
-                    collectionCount={String(collectionCount)}
-                    imageURL={card.background}
-                    cardHeight={310}
+                    owner={typedOwner}
                 />
             )
         case 'CommunityDTO': {

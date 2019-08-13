@@ -26,7 +26,7 @@ describe('createCollectionEpic', () => {
         const id = '1234567890-'
         const version = 123
         const mockApolloSubscriber = () =>
-            Promise.resolve({ data: { output: { id, version } } })
+            Promise.resolve({ data: { getEvent: { output: { id, version } } } })
         const mockApolloClient = {
             mutate: () =>
                 Promise.resolve({

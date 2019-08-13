@@ -22,6 +22,7 @@ import {
     composeCollection,
     composeCollectionVariables,
 } from '../../queries/__generated__/composeCollection'
+import { getCollectionURL } from '../../lib/getURLs'
 
 export interface ICreateCollectionPayload {
     name: string
@@ -131,8 +132,12 @@ export const composeCollectionEpic: Epic<
                                     category: 'collection_actions',
                                     sections: sections.length,
                                     resources: sections.reduce(
-                                        (all, item) =>
-                                            (all += item.resources.length),
+                                        (all, section) =>
+                                            (all += updating
+                                                ? section.resources &&
+                                                  section.resources.length
+                                                : (section as any).resourcesId
+                                                      .length),
                                         0
                                     ),
                                 }
@@ -153,11 +158,13 @@ export const composeCollectionEpic: Epic<
                                 ),
                                 of(
                                     routeChangeAction(
-                                        `/collection/${id}/collection-${
-                                            typeof updating !== 'undefined'
-                                                ? 'updated'
-                                                : 'created'
-                                        }`
+                                        getCollectionURL({
+                                            name:
+                                                typeof updating !== 'undefined'
+                                                    ? 'collection-updated'
+                                                    : 'collection-created',
+                                            id,
+                                        }).href
                                     )
                                 )
                             )
@@ -225,7 +232,8 @@ export const createCollectionEpic: Epic<
                                 ''
                         )
                     ),
-                    map(({ data: { output: { id } } }) =>
+                    tap(console.log),
+                    map(({ data: { getEvent: { output: { id } } } }) =>
                         composeCollectionAction(
                             { id, sections, tags },
                             callback
@@ -268,8 +276,8 @@ export const editCollectionEpic: Epic<
                                 ''
                         )
                     ),
-                    // tap(console.log),
-                    map(({ data: { output: { id } } }) =>
+                    tap(console.log),
+                    map(({ data: { getEvent: { output: { id } } } }) =>
                         composeCollectionAction(
                             { id, sections, updating: true },
                             callback

@@ -24,37 +24,6 @@ const View: React.FunctionComponent<IProps> = ({ data }) => {
     }
 
     const { getCollection: collection } = data
-    const articleCount =
-        collection.sections &&
-        collection.sections.reduce((current: any, next: any) => {
-            if (next && Array.isArray(next.resources)) {
-                const articlesInSection = next.resources.filter(
-                    (sectionResource: any) =>
-                        sectionResource &&
-                        sectionResource.__typename
-                            .toLowerCase()
-                            .includes('article')
-                )
-                current += articlesInSection.length
-            }
-            return current
-        }, 0)
-
-    const collectionCount =
-        collection.sections &&
-        collection.sections.reduce((current: any, next: any) => {
-            if (next && Array.isArray(next.resources)) {
-                const collectionsInSection = next.resources.filter(
-                    (sectionResource: any) =>
-                        sectionResource &&
-                        sectionResource.__typename
-                            .toLowerCase()
-                            .includes('collection')
-                )
-                current += collectionsInSection.length
-            }
-            return current
-        }, 0)
 
     const owner =
         collection.owner && collection.owner.__typename === 'PublicUserDTO'
@@ -80,20 +49,10 @@ const View: React.FunctionComponent<IProps> = ({ data }) => {
 
     return (
         <CollectionCard
+            {...collection}
             href={getCollectionURL(collection)}
-            cardHeight={310}
             key={collection.id}
-            id={collection.id}
-            articleCount={articleCount}
-            collectionCount={collectionCount}
-            description={collection.description}
-            date={collection.dateUpdated}
-            name={collection.name}
-            userId={collection.owner && collection.owner.id}
-            username={collection.owner && collection.owner.name}
-            userAvatar={collection.owner && collection.owner.avatar}
-            imageURL={collection.background}
-            resourceType={owner.type || 'USER'}
+            owner={owner}
         />
     )
 }

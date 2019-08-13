@@ -2727,7 +2727,7 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                           </ForwardRef(IconButton)>
                         </WithStyles(ForwardRef(IconButton))>
                         <ShareDialog
-                          href="/community_id=1234567890"
+                          href="/community?community_id=1234567890"
                           id="1234567890"
                           name="Community"
                           onClose={[Function]}

@@ -28,7 +28,7 @@ describe('composeCollectionEpic', () => {
         const id = '1234567890-'
         const version = 123
         const mockApolloSubscriber = () =>
-            Promise.resolve({ data: { output: { id, version } } })
+            Promise.resolve({ data: { getEvent: { output: { id, version } } } })
         const mockApolloClient = {
             mutate: () =>
                 Promise.resolve({
@@ -75,7 +75,7 @@ describe('composeCollectionEpic', () => {
                 message: 'Collection updated!',
                 description: 'Your collection is now available for viewing!',
             }),
-            routeChangeAction(`/collection/${id}/collection-${'updated'}`),
+            routeChangeAction(`/collection?collection_id=${id}`),
         ]
 
         const resultingActions = await testEpic(
@@ -108,7 +108,7 @@ describe('composeCollectionEpic', () => {
         const id = '1234567890-'
         const version = 123
         const mockApolloSubscriber = () =>
-            Promise.resolve({ data: { output: { id, version } } })
+            Promise.resolve({ data: { getEvent: { output: { id, version } } } })
         const mockApolloClient = {
             mutate: () =>
                 Promise.resolve({
@@ -154,7 +154,7 @@ describe('composeCollectionEpic', () => {
                 message: 'Collection created!',
                 description: 'Your collection is now available for viewing!',
             }),
-            routeChangeAction(`/collection/${id}/collection-${'created'}`),
+            routeChangeAction(`/collection?collection_id=${id}`),
         ]
 
         const resultingActions = await testEpic(

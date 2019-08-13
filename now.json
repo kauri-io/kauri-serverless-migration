@@ -18,12 +18,24 @@
       "dest": "/app/article?article_id=$2"
     },
     {
+      "src": "/(.*)/(.*)/com",
+      "dest": "/app/community?community_id=$2"
+    },
+    {
       "src": "/(.*)/(.*)/c",
       "dest": "/app/collection?collection_id=$2"
     },
     {
       "src": "/(.*)/(.*)/cm",
       "dest": "/app/community?communityId=$2"
+    },
+    {
+      "src": "/community/(.*)/update-community",
+      "dest": "/app/update-community?community_id=$1"
+    },
+    {
+      "src": "/collection/(.*)/update-collection",
+      "dest": "/app/update-collection?collection_id=$1"
     },
     {
       "src": "/(.*)/(.*)/p",

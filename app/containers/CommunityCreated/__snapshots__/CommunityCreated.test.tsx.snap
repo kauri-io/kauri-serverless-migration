@@ -892,8 +892,8 @@ exports[`containers/CommunityCreated/View should match the snapshot 1`] = `
     }
     href={
       Object {
-        "as": "/java-ethereum/5d2f30daaba2920001c82409/cm",
-        "href": "/community_id=5d2f30daaba2920001c82409",
+        "as": "/java-ethereum/5d2f30daaba2920001c82409/com",
+        "href": "/community?community_id=5d2f30daaba2920001c82409",
       }
     }
     id="5d2f30daaba2920001c82409"

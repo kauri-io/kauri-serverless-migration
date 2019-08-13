@@ -113,6 +113,7 @@ export interface IRemoveMemberAction {
 interface ITransferArticleToCommunityAction {
     type: 'TRANSFER_ARTICLE_TO_COMMUNITY'
     payload: initiateArticleTransferVariables
+    callback: () => void
 }
 
 interface IApproveResourceAction {
@@ -261,8 +262,10 @@ export const sendCommunityInvitationAction = (
 })
 
 export const transferArticleToCommunityAction = (
-    payload: initiateArticleTransferVariables
+    payload: initiateArticleTransferVariables,
+    callback: () => void
 ): ITransferArticleToCommunityAction => ({
+    callback,
     payload,
     type: TRANSFER_ARTICLE_TO_COMMUNITY,
 })
@@ -386,7 +389,7 @@ export const curateCommunityResourcesEpic: Epic<
                         ) || ''
                     )
                 ),
-                mergeMap(({ data: { output: { error } } }) =>
+                mergeMap(({ data: { getEvent: { output: { error } } } }) =>
                     error
                         ? of(
                               showNotificationAction({
@@ -443,7 +446,7 @@ export const approveResourceEpic: Epic<
                         path<string>(['approveResource', 'hash'])(data) || ''
                     )
                 ),
-                mergeMap(({ data: { output: { error } } }) =>
+                mergeMap(({ data: { getEvent: { output: { error } } } }) =>
                     error
                         ? of(
                               showNotificationAction({
@@ -673,7 +676,9 @@ export const acceptCommunityInvitationEpic: Epic<
                       mergeMap(
                           ({
                               data: {
-                                  output: { error, transactionHash },
+                                  getEvent: {
+                                      output: { error, transactionHash },
+                                  },
                               },
                           }) => {
                               if (typeof error === 'string') {
@@ -873,7 +878,7 @@ export const removeMemberEpic: Epic<
                     )
                 ),
                 tap(() => apolloClient.resetStore()),
-                switchMap(({ data: { output: { error } } }) => {
+                switchMap(({ data: { getEvent: { output: { error } } } }) => {
                     if (error) {
                         console.log(error)
                         if (error.includes('cannot be removed')) {
@@ -1077,7 +1082,7 @@ export const removeResourceEpic: Epic<
                         path<string>(['removeResource', 'hash'])(data) || ''
                     )
                 ),
-                mergeMap(({ data: { output: { error } } }) =>
+                mergeMap(({ data: { getEvent: { output: { error } } } }) =>
                     error
                         ? merge(
                               of(closeModalAction()),
@@ -1123,7 +1128,7 @@ export const transferArticleToCommunityEpic: Epic<
 > = (action$, _, { apolloClient, apolloSubscriber, personalSign }) =>
     action$.pipe(
         ofType(TRANSFER_ARTICLE_TO_COMMUNITY),
-        switchMap(({ payload }) =>
+        switchMap(({ payload, callback }) =>
             from(
                 apolloClient.mutate<
                     initiateArticleTransfer,
@@ -1143,12 +1148,14 @@ export const transferArticleToCommunityEpic: Epic<
                 switchMap(
                     ({
                         data: {
-                            output: {
-                                id,
-                                version,
-                                hash,
-                                articleAuthor,
-                                dateCreated,
+                            getEvent: {
+                                output: {
+                                    id,
+                                    version,
+                                    hash,
+                                    articleAuthor,
+                                    dateCreated,
+                                },
                             },
                         },
                     }) => {
@@ -1191,33 +1198,42 @@ export const transferArticleToCommunityEpic: Epic<
                                     category: 'article_actions',
                                 })
                             ),
-                            mergeMap(({ data: { output: { error } } }) =>
-                                error
-                                    ? merge(
-                                          of(closeModalAction()),
-                                          of(
-                                              showNotificationAction({
-                                                  description: `There was an error transferring the article, please try again.`,
-                                                  message: 'Error',
-                                                  notificationType: 'error',
-                                              })
+                            mergeMap(
+                                ({
+                                    data: {
+                                        getEvent: {
+                                            output: { error },
+                                        },
+                                    },
+                                }) =>
+                                    error
+                                        ? merge(
+                                              of(closeModalAction()),
+                                              of(
+                                                  showNotificationAction({
+                                                      description: `There was an error transferring the article, please try again.`,
+                                                      message: 'Error',
+                                                      notificationType: 'error',
+                                                  })
+                                              )
                                           )
-                                      )
-                                    : merge(
-                                          of(
-                                              articleTransferredToCommunityAction()
-                                          ),
-                                          of(closeModalAction()),
-                                          of(
-                                              showNotificationAction({
-                                                  description: `Your selected article was successfully transferred to the community!`,
-                                                  message:
-                                                      'Article Transferred',
-                                                  notificationType: 'success',
-                                              })
+                                        : merge(
+                                              of(
+                                                  articleTransferredToCommunityAction()
+                                              ),
+                                              of(closeModalAction()),
+                                              of(
+                                                  showNotificationAction({
+                                                      description: `Your selected article was successfully transferred to the community!`,
+                                                      message:
+                                                          'Article Transferred',
+                                                      notificationType:
+                                                          'success',
+                                                  })
+                                              )
                                           )
-                                      )
                             ),
+                            tap(() => callback && callback()),
                             catchError(err => {
                                 console.error(err)
                                 return of(

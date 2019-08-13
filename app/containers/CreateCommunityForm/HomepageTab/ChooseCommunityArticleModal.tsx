@@ -4,7 +4,6 @@ import { find, filter, reduce, union } from 'ramda'
 import { BodyCard } from '../../../components/Typography'
 import Button from '@material-ui/core/Button'
 import ChooseCommunityArticleCard from '../../ChooseCommunityArticleCard/View'
-import ModalHeader from '../../../components/Headers/ModalHeader'
 import ChooseResourceModalSearch from '../../CreateCollectionForm/ChooseResourceModalSearch'
 import { connect } from 'react-redux'
 import { compose, graphql } from 'react-apollo'
@@ -12,6 +11,12 @@ import withApolloError from '../../../lib/with-apollo-error'
 import { IReduxState } from '../../../lib/Module'
 import { getCommunityContentQuery } from '../../../queries/Community'
 import CloseIcon from '@material-ui/icons/Close'
+import {
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    DialogActions,
+} from '@material-ui/core'
 
 const articleSize = 12
 
@@ -80,17 +85,8 @@ const Actions: React.FunctionComponent<any> = ({
     </ActionsContainer>
 )
 
-const ContentContainer = styled.section`
-    display: flex;
-    flex-direction: column;
-    height: 620px;
-    width: 980px;
-    > :first-child {
-        margin-bottom: ${props => props.theme.space[3]}px;
-    }
-`
-
 interface IProps {
+    open: boolean
     limit?: number
     userId: string
     closeModalAction: () => void
@@ -106,7 +102,7 @@ interface IState {
     changeTab: (index: number) => void
 }
 
-class ChooseArticleModal extends React.Component<IProps, IState> {
+class ChooseCommunityArticleModal extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props)
         this.state = {
@@ -161,46 +157,54 @@ class ChooseArticleModal extends React.Component<IProps, IState> {
     }
 
     render() {
-        const { closeModalAction, confirmModal } = this.props
+        const { closeModalAction, confirmModal, open } = this.props
 
         return (
-            <ContentContainer>
+            <Dialog
+                open={open}
+                fullWidth={true}
+                onClose={() => closeModalAction()}
+                aria-labelledby="scroll-dialog-title"
+            >
                 {/* {JSON.stringify(this.state)} */}
-                <ModalHeader
-                    actions={
-                        <Actions
-                            userId={this.props.userId}
-                            searchCommunityPublishedArticles={
-                                this.props.searchCommunityPublishedArticles
-                            }
-                            searchPublishedArticles={null}
-                            chosenArticles={this.state.chosenArticles}
-                            handleConfirm={confirmModal}
-                            handleClose={() => closeModalAction()}
-                            changeTab={this.state.changeTab}
-                            currentTab={this.state.currentTab}
-                        />
-                    }
-                    title={
-                        <Title
-                            limit={this.props.limit}
-                            chosenArticles={this.state.chosenArticles}
-                        />
-                    }
-                />
-                <ChooseCommunityArticleCard
-                    userId={this.props.userId}
-                    searchCommunityPublishedArticles={
-                        this.props.searchCommunityPublishedArticles
-                    }
-                    allOtherChosenArticles={this.props.allOtherChosenArticles}
-                    chosenArticles={this.state.chosenArticles}
-                    chooseArticle={this.chooseArticle}
-                    passChangeTabFunction={(changeTab: any) =>
-                        this.setState({ ...this.state, changeTab })
-                    }
-                />
-            </ContentContainer>
+                <DialogTitle id="scroll-dialog-title">
+                    <Title
+                        limit={this.props.limit}
+                        chosenArticles={this.state.chosenArticles}
+                    />
+                </DialogTitle>
+
+                <DialogContent dividers={true}>
+                    <ChooseCommunityArticleCard
+                        userId={this.props.userId}
+                        searchCommunityPublishedArticles={
+                            this.props.searchCommunityPublishedArticles
+                        }
+                        allOtherChosenArticles={
+                            this.props.allOtherChosenArticles
+                        }
+                        chosenArticles={this.state.chosenArticles}
+                        chooseArticle={this.chooseArticle}
+                        passChangeTabFunction={(changeTab: any) =>
+                            this.setState({ ...this.state, changeTab })
+                        }
+                    />
+                </DialogContent>
+                <DialogActions>
+                    <Actions
+                        userId={this.props.userId}
+                        searchCommunityPublishedArticles={
+                            this.props.searchCommunityPublishedArticles
+                        }
+                        searchPublishedArticles={null}
+                        chosenArticles={this.state.chosenArticles}
+                        handleConfirm={confirmModal}
+                        handleClose={() => closeModalAction()}
+                        changeTab={this.state.changeTab}
+                        currentTab={this.state.currentTab}
+                    />
+                </DialogActions>
+            </Dialog>
         )
     }
 }
@@ -228,4 +232,4 @@ export default compose(
         }),
     }),
     withApolloError()
-)(ChooseArticleModal)
+)(ChooseCommunityArticleModal)

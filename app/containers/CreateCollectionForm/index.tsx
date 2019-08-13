@@ -36,13 +36,10 @@ export interface IFormValues {
     tags: ITag[] | null
 }
 
-const emptySection: Collection_sections = {
-    id: null,
-    __typename: 'SectionDTO',
+const emptySection: any = {
     name: '',
     description: null,
     resourcesId: [],
-    resources: [],
 }
 
 function getCollectionField<T>(field: string, data: any) {

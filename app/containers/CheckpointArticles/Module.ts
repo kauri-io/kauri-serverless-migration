@@ -58,12 +58,14 @@ export const checkpointArticlesEpic: Epic<
                 switchMap(
                     ({
                         data: {
-                            output: {
-                                merkleRoot,
-                                checkpointHash,
-                                signatureV,
-                                signatureR,
-                                signatureS,
+                            getEvent: {
+                                output: {
+                                    merkleRoot,
+                                    checkpointHash,
+                                    signatureV,
+                                    signatureR,
+                                    signatureS,
+                                },
                             },
                         },
                     }) =>

@@ -108,7 +108,7 @@ export const editArticle = gql`
 export const searchApprovedArticles = gql`
     query searchApprovedArticles(
         $size: Int = 500
-        $text: String!
+        $text: String
         $category: String
         $sort: String = "dateCreated"
         $page: Int = 0

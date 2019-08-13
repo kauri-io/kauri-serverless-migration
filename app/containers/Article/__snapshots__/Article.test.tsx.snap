@@ -3775,6 +3775,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                               aria-label="test author username 2"
                                                               className="makeStyles-avatar-162"
                                                               data-testid="ArticleCard-1232-avatar"
+                                                              sizes="24"
                                                               src="test avatar 2"
                                                             >
                                                               <ForwardRef(Avatar)
@@ -3788,6 +3789,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                   }
                                                                 }
                                                                 data-testid="ArticleCard-1232-avatar"
+                                                                sizes="24"
                                                                 src="test avatar 2"
                                                               >
                                                                 <div
@@ -3797,6 +3799,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                 >
                                                                   <img
                                                                     className="MuiAvatar-img"
+                                                                    sizes="24"
                                                                     src="test avatar 2"
                                                                   />
                                                                 </div>
@@ -7516,6 +7519,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                               aria-label="test author username 3"
                                                               className="makeStyles-avatar-162"
                                                               data-testid="ArticleCard-1233-avatar"
+                                                              sizes="24"
                                                               src="test avatar 3"
                                                             >
                                                               <ForwardRef(Avatar)
@@ -7529,6 +7533,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                   }
                                                                 }
                                                                 data-testid="ArticleCard-1233-avatar"
+                                                                sizes="24"
                                                                 src="test avatar 3"
                                                               >
                                                                 <div
@@ -7538,6 +7543,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                 >
                                                                   <img
                                                                     className="MuiAvatar-img"
+                                                                    sizes="24"
                                                                     src="test avatar 3"
                                                                   />
                                                                 </div>

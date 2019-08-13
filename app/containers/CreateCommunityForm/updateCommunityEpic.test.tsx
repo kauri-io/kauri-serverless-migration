@@ -6,6 +6,7 @@ import {
 } from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { getCommunityURL } from '../../lib/getURLs'
 
 describe('updateCommunityEpic', () => {
     beforeAll(() => {
@@ -47,9 +48,11 @@ describe('updateCommunityEpic', () => {
         const mockApolloSubscriber = () =>
             Promise.resolve({
                 data: {
-                    output: {
-                        id,
-                        transactionHash,
+                    getEvent: {
+                        output: {
+                            id,
+                            transactionHash,
+                        },
                     },
                 },
             })
@@ -76,6 +79,7 @@ describe('updateCommunityEpic', () => {
         }
 
         const communityId = 'Community ID'
+        const communityName = 'Alice'
         const email = 'test@example.com'
         const invitations: any = [
             {
@@ -87,7 +91,7 @@ describe('updateCommunityEpic', () => {
         const sourceAction = updateCommunityAction(
             {
                 id: communityId,
-                name: 'Alice',
+                name: communityName,
                 homepage: [],
                 invitations,
             },
@@ -101,7 +105,9 @@ describe('updateCommunityEpic', () => {
                 notificationType: 'success',
             }),
             communityUpdatedAction(),
-            routeChangeAction(`/community/${communityId}/community-updated`),
+            routeChangeAction(
+                getCommunityURL({ id: communityId, name: communityName }).href
+            ),
         ]
 
         const resultingActions = await testEpic(

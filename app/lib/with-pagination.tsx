@@ -101,6 +101,7 @@ function withPagination(
         }
 
         handleOnScroll = () => {
+            console.log('hs')
             const scrollTop =
                 (this.childRefElement && this.childRefElement.scrollTop) ||
                 (document.scrollingElement &&

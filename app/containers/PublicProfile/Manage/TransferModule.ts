@@ -147,11 +147,13 @@ export const acceptArticleTransferEpic: Epic<
                 mergeMap(
                     ({
                         data: {
-                            output: {
-                                hash,
-                                version,
-                                articleAuthor,
-                                dateCreated,
+                            getEvent: {
+                                output: {
+                                    hash,
+                                    version,
+                                    articleAuthor,
+                                    dateCreated,
+                                },
                             },
                         },
                     }) =>

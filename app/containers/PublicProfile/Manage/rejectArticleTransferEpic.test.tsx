@@ -36,7 +36,7 @@ describe('rejectArticleTransferEpic', () => {
             author: { id: '123', name: 'Alice' },
         }
         const mockApolloSubscriber = () =>
-            Promise.resolve({ data: { output: { id, version } } })
+            Promise.resolve({ data: { getEvent: { output: { id, version } } } })
         const mockApolloClient = {
             mutate: () =>
                 Promise.resolve({

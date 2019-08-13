@@ -1,23 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
 import ArticleCard from '../../components/Card/ArticleCard'
-import ChooseArticleContent, {
-    Content,
-} from '../../components/Modal/ChooseArticleContent'
 import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
-
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    width: 100%;
-    height: 100%;
-
-    ${Content} {
-        padding-top: 10px;
-    }
-`
+import { Grid } from '@material-ui/core'
+import { getArticleURL } from '../../lib/getURLs'
 
 const ArticlesContent = props => {
     const { articles, setRef, allOtherChosenArticles } = props
@@ -28,9 +14,15 @@ const ArticlesContent = props => {
     return articles &&
         Array.isArray(articles.content) &&
         articles.content.length > 0 ? (
-        <Container>
-            <ChooseArticleContent setRef={setRef}>
+        <div
+            ref={ref => {
+                // console.log(setRef)
+                setRef && setRef(ref)
+            }}
+        >
+            <Grid container spacing={3}>
                 {articles.content.map(({ resource: article }) => {
+                    const { title, id, version } = article
                     if (allOtherChosenArticles) {
                         if (
                             allOtherChosenArticles.find(chosenArticle => {
@@ -46,10 +38,29 @@ const ArticlesContent = props => {
                         }
                     }
 
-                    return <ArticleCard {...article} />
+                    return (
+                        <Grid
+                            key={article.id}
+                            item
+                            xs={12}
+                            sm={12}
+                            lg={12}
+                            onClick={() =>
+                                props.chooseArticle({
+                                    id: article.id,
+                                    version: article.version,
+                                })
+                            }
+                        >
+                            <ArticleCard
+                                {...article}
+                                href={getArticleURL({ title, id, version })}
+                            />
+                        </Grid>
+                    )
                 })}
-            </ChooseArticleContent>
-        </Container>
+            </Grid>
+        </div>
     ) : (
         <p>You have no community published articles!</p>
     )

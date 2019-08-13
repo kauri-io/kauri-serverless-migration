@@ -2,18 +2,15 @@ import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
 import CollectionCard from '../../../components/Card/CollectionCard'
-import Masonry from '../../../components/Masonry'
+import { Grid, Container, withStyles } from '@material-ui/core'
 import Loading from '../../../components/Loading'
 import {
     searchAutocompleteCollections_searchAutocomplete,
     searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO,
-    searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO_owner_CommunityDTO,
-    searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO,
+    // searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO_owner_CommunityDTO,
+    // searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO,
 } from '../../../queries/__generated__/searchAutocompleteCollections'
-import theme from '../../../lib/theme-config'
 import { getCollectionURL } from '../../../lib/getURLs'
-
-const DEFAULT_CARD_WIDTH = theme.DEFAULT_CARD_WIDTH
 
 interface IProps {
     CollectionQuery: {
@@ -22,6 +19,7 @@ interface IProps {
     }
     hostName: string
     routeChangeAction(route: string): void
+    classes: { grid: any }
 }
 
 export const CollectionsContainer = styled.div`
@@ -61,173 +59,99 @@ class Collections extends Component<IProps> {
                         href={`https://${this.props.hostName}/collections`}
                     />
                 </Head>
-                {searchAutocomplete ? (
-                    <Masonry>
-                        {searchAutocomplete &&
-                            searchAutocomplete.content &&
-                            searchAutocomplete.content.map(collection => {
-                                const collectionResource =
-                                    collection &&
-                                    (collection.resource as searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO)
-                                const articleCount =
-                                    collectionResource &&
-                                    collectionResource.sections &&
-                                    collectionResource.sections.reduce(
-                                        (current, next) => {
-                                            if (
-                                                next &&
-                                                Array.isArray(next.resourcesId)
-                                            ) {
-                                                const articlesInSection = next.resourcesId.filter(
-                                                    sectionResource =>
-                                                        sectionResource &&
-                                                        sectionResource.type &&
-                                                        sectionResource.type
-                                                            .toLowerCase()
-                                                            .includes('article')
-                                                )
-                                                current +=
-                                                    articlesInSection.length
-                                            }
-                                            return current
-                                        },
-                                        0
-                                    )
+                <Container>
+                    {searchAutocomplete ? (
+                        <Grid
+                            className={this.props.classes.grid}
+                            container
+                            spacing={3}
+                        >
+                            {searchAutocomplete &&
+                                searchAutocomplete.content &&
+                                searchAutocomplete.content.map(collection => {
+                                    const collectionResource =
+                                        collection &&
+                                        (collection.resource as searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO)
 
-                                const collectionCount =
-                                    collectionResource &&
-                                    collectionResource.sections &&
-                                    collectionResource.sections.reduce(
-                                        (current, next) => {
-                                            if (
-                                                next &&
-                                                Array.isArray(next.resourcesId)
-                                            ) {
-                                                const collectionsInSection = next.resourcesId.filter(
-                                                    sectionResource =>
-                                                        sectionResource &&
-                                                        sectionResource.type &&
-                                                        sectionResource.type
-                                                            .toLowerCase()
-                                                            .includes(
-                                                                'collection'
-                                                            )
-                                                )
-                                                current +=
-                                                    collectionsInSection.length
-                                            }
-                                            return current
-                                        },
-                                        0
-                                    )
+                                    if (collectionResource) {
+                                        const owner =
+                                            collectionResource &&
+                                            collectionResource.owner &&
+                                            collectionResource.owner
+                                                .__typename === 'PublicUserDTO'
+                                                ? {
+                                                      avatar:
+                                                          collectionResource
+                                                              .owner.avatar,
+                                                      id:
+                                                          collectionResource
+                                                              .owner.id ||
+                                                          'not_found',
+                                                      type: 'USER',
+                                                      username:
+                                                          collectionResource
+                                                              .owner.username,
+                                                  }
+                                                : collectionResource &&
+                                                  collectionResource.owner &&
+                                                  collectionResource.owner
+                                                      .__typename ===
+                                                      'CommunityDTO'
+                                                ? {
+                                                      avatar:
+                                                          collectionResource
+                                                              .owner.avatar,
+                                                      id:
+                                                          collectionResource
+                                                              .owner.id ||
+                                                          'not_found',
+                                                      type: 'COMMUNITY',
+                                                      username:
+                                                          collectionResource
+                                                              .owner
+                                                              .communityName,
+                                                  }
+                                                : {
+                                                      avatar: '',
+                                                      id: '',
+                                                      username: '',
+                                                  }
 
-                                const typedOwner =
-                                    collectionResource &&
-                                    (collectionResource.owner as
-                                        | searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO_owner_CommunityDTO
-                                        | searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO)
-
-                                const owner =
-                                    collectionResource &&
-                                    collectionResource.owner &&
-                                    collectionResource.owner.__typename ===
-                                        'PublicUserDTO'
-                                        ? {
-                                              avatar:
-                                                  collectionResource.owner
-                                                      .avatar,
-                                              id:
-                                                  collectionResource.owner.id ||
-                                                  'not_found',
-                                              type: 'USER',
-                                              username:
-                                                  collectionResource.owner
-                                                      .username,
-                                          }
-                                        : collectionResource &&
-                                          collectionResource.owner &&
-                                          collectionResource.owner
-                                              .__typename === 'CommunityDTO'
-                                        ? {
-                                              avatar:
-                                                  collectionResource.owner
-                                                      .avatar,
-                                              id:
-                                                  collectionResource.owner.id ||
-                                                  'not_found',
-                                              type: 'COMMUNITY',
-                                              username:
-                                                  collectionResource.owner
-                                                      .communityName,
-                                          }
-                                        : {
-                                              avatar: '',
-                                              id: '',
-                                              username: '',
-                                          }
-
-                                return (
-                                    <CollectionCard
-                                        href={getCollectionURL(
-                                            collectionResource as searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO
-                                        )}
-                                        key={String(
-                                            collectionResource &&
-                                                collectionResource.id
-                                        )}
-                                        id={String(
-                                            collectionResource &&
-                                                collectionResource.id
-                                        )}
-                                        name={
-                                            (collectionResource &&
-                                                collectionResource.name) ||
-                                            ''
-                                        }
-                                        description={
-                                            (collectionResource &&
-                                                collectionResource.description) ||
-                                            ''
-                                        }
-                                        username={
-                                            typedOwner &&
-                                            typedOwner.__typename ===
-                                                'PublicUserDTO'
-                                                ? typedOwner.username
-                                                : typedOwner &&
-                                                  typedOwner.communityName
-                                        }
-                                        userId={String(
-                                            typedOwner && typedOwner.id
-                                        )}
-                                        userAvatar={
-                                            typedOwner && typedOwner.avatar
-                                        }
-                                        imageURL={
-                                            collectionResource &&
-                                            collectionResource.background
-                                        }
-                                        articleCount={String(articleCount)}
-                                        collectionCount={String(
-                                            collectionCount
-                                        )}
-                                        date={
-                                            collectionResource &&
-                                            collectionResource.dateUpdated
-                                        }
-                                        cardHeight={310}
-                                        cardWidth={DEFAULT_CARD_WIDTH}
-                                        resourceType={owner.type || 'USER'}
-                                    />
-                                )
-                            })}
-                    </Masonry>
-                ) : (
-                    <Loading />
-                )}
+                                        return (
+                                            <Grid
+                                                key={collectionResource.id}
+                                                item
+                                                xs={12}
+                                                sm={12}
+                                                lg={6}
+                                            >
+                                                <CollectionCard
+                                                    {...collectionResource}
+                                                    owner={owner}
+                                                    href={getCollectionURL(
+                                                        collectionResource as searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO
+                                                    )}
+                                                    key={String(
+                                                        collectionResource &&
+                                                            collectionResource.id
+                                                    )}
+                                                />
+                                            </Grid>
+                                        )
+                                    }
+                                })}
+                        </Grid>
+                    ) : (
+                        <Loading />
+                    )}
+                </Container>
             </Fragment>
         )
     }
 }
 
-export default Collections
+export default withStyles({
+    grid: {
+        paddingTop: '24px',
+    },
+})(Collections)
