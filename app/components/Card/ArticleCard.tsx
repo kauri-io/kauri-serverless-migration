@@ -146,6 +146,7 @@ interface IProps {
     voteResult: {
         sum: number
     } | null
+    addArticleToCollectionAction?: () => void
 }
 
 const ArticleCard: React.FC<IProps> = ({
@@ -161,6 +162,7 @@ const ArticleCard: React.FC<IProps> = ({
     comments,
     voteResult,
     isLoggedIn = false,
+    addArticleToCollectionAction,
 }) => {
     const classes = ArticleCardStyles({})
     const authorHref = getProfileURL(author as Article_author) // TODO update as contributors[0]
@@ -340,7 +342,17 @@ const ArticleCard: React.FC<IProps> = ({
                                 {isLoggedIn && (
                                     <MenuItem
                                         data-testid={`ArticleCard-${id}-addToCollectionButton`}
-                                        onClick={handleClose}
+                                        onClick={() => {
+                                            // console.log(
+                                            //     addArticleToCollectionAction
+                                            // )
+                                            // console.log(
+                                            //     addArticleToCollectionAction &&
+                                            //         addArticleToCollectionAction()
+                                            // )
+                                            addArticleToCollectionAction &&
+                                                addArticleToCollectionAction()
+                                        }}
                                     >
                                         Add To Collection
                                     </MenuItem>

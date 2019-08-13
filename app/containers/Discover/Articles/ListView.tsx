@@ -8,6 +8,12 @@ import {
 } from '../../../queries/__generated__/searchAutocompleteArticles'
 import { getArticleURL } from '../../../lib/getURLs'
 import { Grid, Container, withStyles } from '@material-ui/core'
+import {
+    openModalAction,
+    closeModalAction,
+} from '../../../components/Modal/Module'
+import AddToCollection from '../../AddToCollection'
+import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 
 interface IProps {
     ArticlesQuery: {
@@ -16,8 +22,11 @@ interface IProps {
     }
     hostName: string
     isLoggedIn: boolean
-    openModalAction: (payload: { children: React.ReactElement<any> }) => void
     classes: { grid: any }
+    openModalAction: typeof openModalAction
+    closeModalAction: typeof closeModalAction
+    routeChangeAction: typeof routeChangeAction
+    userId: string | null
 }
 
 class Articles extends Component<IProps> {
@@ -69,8 +78,24 @@ class Articles extends Component<IProps> {
                                         lg={6}
                                     >
                                         <ArticleCard
-                                            href={getArticleURL(article)}
                                             {...article}
+                                            href={getArticleURL(article)}
+                                            isLoggedIn={this.props.isLoggedIn}
+                                            addArticleToCollectionAction={() =>
+                                                this.props.openModalAction({
+                                                    children: (
+                                                        <AddToCollection
+                                                            articleId={
+                                                                article.id || ''
+                                                            }
+                                                            version={
+                                                                article.version ||
+                                                                1
+                                                            }
+                                                        />
+                                                    ),
+                                                })
+                                            }
                                         />
                                     </Grid>
                                 )
