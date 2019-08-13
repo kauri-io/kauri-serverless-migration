@@ -127,6 +127,7 @@ class EditableHeader extends Component<IProps, IState> {
         return (
             <div className={this.props.classes.container}>
                 <Grid className={this.props.classes.grid} container={true}>
+                    <Grid item={true} sm={4}>
                     <EditProfileForm
                         name={name}
                         username={username}
@@ -143,7 +144,8 @@ class EditableHeader extends Component<IProps, IState> {
                         }
                         updateState={this.updateState.bind(this)}
                     />
-                    <Grid item={true} container={true} alignItems="flex-end">
+                    </Grid>
+                    <Grid  sm={8} container={true} item={true} alignItems='flex-start' justify="flex-end">
                         <Button
                             color="primary"
                             variant="text"
@@ -152,7 +154,6 @@ class EditableHeader extends Component<IProps, IState> {
                             Discard
                         </Button>
                         <Button
-                            fullWidth={true}
                             color="primary"
                             variant="contained"
                             onClick={() => this.handleSubmit()}

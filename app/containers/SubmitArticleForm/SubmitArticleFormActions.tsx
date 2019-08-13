@@ -89,7 +89,7 @@ export default ({
     const classes = useStyles()
     return (
         <div className={classes.container}>
-            <Grid className={classes.actions} sm={12} container={true}>
+            <Grid className={classes.actions} container={true}>
                 <Grid item={true} sm={4}>
                     <Button
                         color="secondary"
@@ -100,7 +100,7 @@ export default ({
                         <span>Go Back</span>
                     </Button>
                 </Grid>
-                <Grid justify="center" item={true} container={true} sm={4}>
+                <Grid justify='center' container={true} item={true} sm={4}>
                     <Button
                         color="secondary"
                         className="background-upload"
@@ -114,9 +114,11 @@ export default ({
                     className={classes.buttons}
                     sm={4}
                     item={true}
-                    container={true}
-                    justify="flex-end"
                 >
+                    <Grid container={true}
+                   justify='flex-end'>
+
+                    
                     <Button
                         color="secondary"
                         variant="outlined"
@@ -155,6 +157,7 @@ export default ({
                             Propose Update
                         </Button>
                     )}
+                    </Grid>
                 </Grid>
             </Grid>
         </div>

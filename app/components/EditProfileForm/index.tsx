@@ -2,15 +2,15 @@ import TextField from '@material-ui/core/TextField'
 import UploadLogoButton from '../../components/Button/UploadLogoButton'
 import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
 import EmailField from './EmailField'
-import { withStyles } from '@material-ui/styles'
+import { withStyles, makeStyles } from '@material-ui/styles'
 import { Grid, Theme, Tooltip, Checkbox } from '@material-ui/core'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import { CheckboxProps } from '@material-ui/core/Checkbox'
 
-const styles = (theme: Theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
     container: {
-        maxWidth: 400,
+        maxWidth: '400px !important',
     },
     inputs: {
         padding: theme.spacing(0, 2),
@@ -33,7 +33,8 @@ const styles = (theme: Theme) => ({
     checkboxLabel: {
         color: theme.palette.common.white,
     },
-})
+}))
+
 
 const WhiteChecbox = withStyles(theme => ({
     root: {
@@ -42,8 +43,7 @@ const WhiteChecbox = withStyles(theme => ({
             color: theme.palette.common.white,
         },
     },
-    checked: {},
-}))((props: CheckboxProps) => <Checkbox color="default" {...props} />)
+}))((props: CheckboxProps) => <Checkbox {...props} />)
 
 interface IProps {
     avatar: string
@@ -81,6 +81,7 @@ const EditProfileForm = ({
     updateState,
     classes,
 }: IProps) => {
+    const classes = useStyles()
     return (
         <Grid className={classes.container} container={true} sm={12}>
             <Grid item={true} sm={3}>
