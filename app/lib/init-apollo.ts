@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-unfetch'
 import { ApolloClient } from 'apollo-client'
-import { HttpLink } from 'apollo-link-http'
-import { ApolloLink, split } from 'apollo-link'
+import { createHttpLink } from 'apollo-link-http'
+import { split } from 'apollo-link'
 import { WebSocketLink } from 'apollo-link-ws'
 import {
     InMemoryCache,
@@ -12,44 +12,23 @@ import { getMainDefinition } from 'apollo-utilities'
 import introspectionQueryResultData from '../fragmentTypes.json'
 import config from '../config'
 
-// Polyfill fetch() on the server (used by apollo-client)
-if (!global.window) {
-    global.fetch = fetch
-}
-
 const fragmentMatcher = new IntrospectionFragmentMatcher({
     introspectionQueryResultData,
 })
 
 export function create(initialState, { getToken }) {
-    // console.log('create apollo instance')
     const apiURL = config.gateway
-    let httpLink = new HttpLink({
-        uri: `http${
-            process.env.NODE_ENV === 'development'
-                ? 's'
-                : global.window
-                ? 's'
-                : ''
-        }://${apiURL}/graphql`,
-    })
     const token = getToken()
-    // console.log(token);
-    // console.log(apiURL);
-    const authMiddlewareLink = new ApolloLink((operation, next) => {
-        operation.setContext({
-            headers: {
-                'X-Auth-Token': token ? `Bearer ${token}` : null,
-            },
-        })
-        // @ts-ignore
-        return next(operation)
+
+    let link = createHttpLink({
+        fetch,
+        uri: `https://${apiURL}/graphql`,
+        credentials: 'same-origin',
+        useGETForQueries: false,
+        headers: {
+            'X-Auth-Token': token ? `Bearer ${token}` : null,
+        },
     })
-
-    // @ts-ignore
-    httpLink = authMiddlewareLink.concat(httpLink)
-
-    let link = httpLink
 
     if (global.window && token) {
         const xAuthToken = global.window.encodeURI(`Bearer ${token}`)
@@ -75,7 +54,7 @@ export function create(initialState, { getToken }) {
                 )
             },
             wsLink,
-            httpLink
+            link
         )
     }
 
@@ -92,14 +71,18 @@ export function create(initialState, { getToken }) {
         },
     })
 
-    return new ApolloClient({
+    const client = new ApolloClient({
         // @ts-ignore
         initialState,
         connectToDevTools: true,
-        ssrMode: !global.window, // Disables forceFetch on the server (so queries are only run once)
-        cache: cache.restore(initialState || {}),
+        ssrMode: true,
+        // Remember that this is the interface the SSR server will use to connect to the
+        // API server, so we need to ensure it isn't firewalled, etc
         link,
+        cache: cache.restore(initialState || {}),
     })
+
+    return client
 }
 
 export default function initApollo(initialState, options) {

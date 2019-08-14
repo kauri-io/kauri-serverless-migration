@@ -10,6 +10,11 @@ export const getArticleURL = (
     type?: string
 ) => {
     switch (type) {
+        case 'update':
+            return {
+                href: `/app/update-article?id=${id}&version=${version}`,
+                as: `/article/${id}/v${version}/update-article`,
+            }
         case 'draft':
             return {
                 as: `/draft/${id}/${version}`,
@@ -45,14 +50,14 @@ export const getUpdateCollectionURL = ({
     href: `/update-collection?collection_id=${String(id)}`,
 })
 
-interface IProfileProps {
+export interface IProfileLinkProps {
     username?: string | null
     id?: string
     urlType?: string
     userId?: string
 }
 
-export const getProfileURL = ({ username, id, userId }: IProfileProps) => ({
+export const getProfileURL = ({ username, id, userId }: IProfileLinkProps) => ({
     as: `/${slugify(String(username), { lower: true })}/${String(
         id || userId
     )}/p`,
