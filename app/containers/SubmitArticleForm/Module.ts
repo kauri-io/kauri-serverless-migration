@@ -505,11 +505,14 @@ export const draftArticleEpic: Epic<any, any, {}, IDependencies> = (
                         ),
                         of(
                             routeChangeAction(
-                                getArticleURL(output as {
-                                    title: string
-                                    id: string
-                                    version: number
-                                }).as
+                                getArticleURL(
+                                    {
+                                        title: subject,
+                                        id: output.id,
+                                        version: output.version,
+                                    },
+                                    'update'
+                                ).as
                             )
                         )
                     )

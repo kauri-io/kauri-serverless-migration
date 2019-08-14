@@ -4,6 +4,7 @@ import {
     publishArticleAction,
     publishArticleEpic,
 } from './PublishArticleModule'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 jest.mock('../../lib/analytics', () => ({
     track: jest.fn(),
@@ -66,13 +67,20 @@ describe('publishArticleEpic', () => {
                 message: 'Article Published',
                 notificationType: 'success',
             }),
+            routeChangeAction('/test-username/123/p'),
         ]
 
         const resultingActions = await testEpic(
             publishArticleEpic,
             sourceAction,
             {
-                app: { user: { communities: [{ community: { id: '123' } }] } },
+                app: {
+                    user: {
+                        userId: '123',
+                        username: 'test username',
+                        communities: [{ community: { id: '123' } }],
+                    },
+                },
             },
             {
                 apolloClient: mockApolloClient,
@@ -129,12 +137,20 @@ describe('publishArticleEpic', () => {
                 message: 'Article Published',
                 notificationType: 'success',
             }),
+            routeChangeAction(`/test-username/123/p`),
         ]
 
         const resultingActions = await testEpic(
             publishArticleEpic,
             sourceAction,
-            {},
+            {
+                app: {
+                    user: {
+                        username: 'test username',
+                        userId: '123',
+                    },
+                },
+            },
             {
                 apolloClient: mockApolloClient,
                 apolloSubscriber: mockApolloSubscriber,
@@ -190,12 +206,20 @@ describe('publishArticleEpic', () => {
                 message: 'Article submitted',
                 notificationType: 'success',
             }),
+            routeChangeAction(`/test-username/123/p`),
         ]
 
         const resultingActions = await testEpic(
             publishArticleEpic,
             sourceAction,
-            {},
+            {
+                app: {
+                    user: {
+                        username: 'test username',
+                        userId: '123',
+                    },
+                },
+            },
             {
                 apolloClient: mockApolloClient,
                 apolloSubscriber: mockApolloSubscriber,

@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-
 const WhiteChecbox = withStyles(theme => ({
     root: {
         color: theme.palette.common.white,

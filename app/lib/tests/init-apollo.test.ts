@@ -18,7 +18,7 @@ describe('lib/init-apollo', () => {
         expect(getToken).toHaveBeenCalled()
         expect(FakeApolloClient).toHaveBeenCalledWith(
             expect.objectContaining({
-                ssrMode: false,
+                ssrMode: true,
             })
         )
     })
