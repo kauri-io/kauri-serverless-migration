@@ -63,7 +63,6 @@ interface IProps {
         payload: string | { newsletter: boolean },
         field: string
     ) => void
-    classes: any
 }
 
 const EditProfileForm = ({

@@ -11,12 +11,9 @@ import {
     Avatar,
     Icon,
     IconButton,
-    Dialog,
-    List,
-    DialogTitle,
 } from '@material-ui/core'
 import TruncateMarkup from 'react-truncate-markup'
-import { ShareButtons } from '../Tooltip/ShareButtons'
+import ShareDialog from './ShareDialog'
 
 export const CommunityCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -110,39 +107,6 @@ export const CommunityCardStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-interface IShareDialogProps {
-    id: string
-    href: string
-    name: string | null
-    open: boolean
-    onClose: () => void
-}
-
-export const ShareDialog: React.FC<IShareDialogProps> = ({
-    onClose,
-    open,
-    id,
-    name,
-    href,
-}) => (
-    <Dialog
-        data-testid={`Card-${id}-shareDialog`}
-        onClose={onClose}
-        aria-labelledby="share-dialog"
-        open={open}
-    >
-        <DialogTitle id="share-dialog-title">
-            Choose social platform to share on
-        </DialogTitle>
-        <List>
-            <ShareButtons
-                onClose={onClose}
-                title={String(name)}
-                url={`${global.window && global.window.location.origin}${href}`}
-            ></ShareButtons>
-        </List>
-    </Dialog>
-)
 
 interface IMember {
     id: string
@@ -354,7 +318,7 @@ const CommunityCard: React.FC<IProps> = ({
                             name={name}
                             id={id}
                             open={open}
-                            onClose={handleClose}
+                            handleClose={handleClose}
                         ></ShareDialog>
                     </div>
                 </CardActions>
