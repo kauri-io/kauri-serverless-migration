@@ -3,14 +3,18 @@ import Head from 'next/head'
 import React from 'react'
 import analytics from '../lib/analytics'
 
-
-
-
-
 class MyApp extends App {
     constructor(props) {
         super(props)
         ;(process as any).browser && analytics.init()
+    }
+
+    componentDidMount() {
+        // Remove the server-side injected CSS.
+        const jssStyles = document.querySelector('#jss-server-side')
+        if (jssStyles) {
+            jssStyles.parentNode!.removeChild(jssStyles)
+        }
     }
 
     render() {
@@ -33,8 +37,7 @@ class MyApp extends App {
                     />
                 </Head>
 
-                    <Component {...pageProps} />
-                
+                <Component {...pageProps} />
             </Container>
         )
     }

@@ -306,25 +306,25 @@ export default (ComposedComponent: any) =>
         render() {
             return (
                 <MaterialThemeProvider theme={theme}>
-                <CssBaseline />
-                <Provider store={this.redux}>
-                    <ApolloProvider client={apollo}>
-                        <SnackbarProvider maxSnack={3}>
-                            <ThemeProvider theme={themeConfig}>
-                                <>
-                                    <ComposedComponent
-                                        {...this.props}
-                                        web3={
-                                            global.window
-                                                ? global.window.web3
-                                                : global.window
-                                        }
-                                    />
-                                </>
-                            </ThemeProvider>
-                        </SnackbarProvider>
-                    </ApolloProvider>
-                </Provider>
+                    <CssBaseline />
+                    <Provider store={this.redux}>
+                        <ApolloProvider client={apollo}>
+                            <SnackbarProvider maxSnack={3}>
+                                <ThemeProvider theme={themeConfig}>
+                                    <>
+                                        <ComposedComponent
+                                            {...this.props}
+                                            web3={
+                                                global.window
+                                                    ? global.window.web3
+                                                    : global.window
+                                            }
+                                        />
+                                    </>
+                                </ThemeProvider>
+                            </SnackbarProvider>
+                        </ApolloProvider>
+                    </Provider>
                 </MaterialThemeProvider>
             )
         }
