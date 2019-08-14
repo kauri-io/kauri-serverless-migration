@@ -15,7 +15,7 @@ import {
 } from '@material-ui/core'
 import TruncateMarkup from 'react-truncate-markup'
 import useridTrim from '../../lib/userid-trim'
-import { ShareDialog } from './CommunityCard'
+import ShareDialog from './ShareDialog'
 
 export const CollectionCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -305,11 +305,11 @@ const CollectionCard: React.FC<IProps> = ({
                             <Icon>share</Icon>
                         </IconButton>
                         <ShareDialog
-                            id={id}
+                            href={getCollectionURL({ name, id }).href}
                             name={name}
+                            id={id}
                             open={open}
-                            onClose={handleClose}
-                            href={getCollectionURL({ id, name }).href}
+                            handleClose={handleClose}
                         ></ShareDialog>
                     </div>
                 </CardActions>
