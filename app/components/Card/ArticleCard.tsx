@@ -15,7 +15,7 @@ import { Article_author } from '../../queries/Fragments/__generated__/Article'
 import IconButton from '@material-ui/core/IconButton'
 import Icon from '@material-ui/core/Icon'
 import { useState } from 'react'
-import { ShareDialog } from './CommunityCard'
+import ShareDialog from './ShareDialog'
 
 export const ArticleCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -321,7 +321,7 @@ const ArticleCard: React.FC<IProps> = ({
                             name={title}
                             id={id}
                             open={shareDialogOpen}
-                            onClose={handleShareDialogClose}
+                            handleClose={handleShareDialogClose}
                         ></ShareDialog>
 
                         <Menu
