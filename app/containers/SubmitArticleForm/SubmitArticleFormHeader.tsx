@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         position: 'relative',
     },
     container: {
-        maxWidth: 1232,
+        maxWidth: 1242,
         padding: theme.spacing(2, 0),
         margin: 'auto',
     },

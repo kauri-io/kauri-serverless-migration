@@ -411,7 +411,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                     "componentStyle": ComponentStyle {
                       "componentId": "DraftArticleHeader__HeaderContainer-ldqftc-0",
                       "isStatic": false,
-                      "lastClassName": "bZLJxn",
+                      "lastClassName": "caojGY",
                       "rules": Array [
                         "display:flex;flex-direction:row;width:100%;position:relative;align-items:center;height:260px;margin-top:-76px;background:",
                         [Function],
@@ -423,7 +423,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                         [Function],
                         "px;& button{display:none;}}@media (min-width:700px){padding:",
                         [Function],
-                        "px;}@media (min-width:1232px){padding:",
+                        "px;}@media (min-width:1242px){padding:",
                         [Function],
                         ";}",
                       ],
@@ -441,7 +441,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                 forwardedRef={null}
               >
                 <div
-                  className="DraftArticleHeader__HeaderContainer-ldqftc-0 bZLJxn"
+                  className="DraftArticleHeader__HeaderContainer-ldqftc-0 caojGY"
                 >
                   <DraftArticleHeader__InfoContainer>
                     <StyledComponent
@@ -1062,13 +1062,13 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                     "componentStyle": ComponentStyle {
                       "componentId": "DraftArticleContent__ContentContainer-sc-1x9teyd-0",
                       "isStatic": false,
-                      "lastClassName": "vSnpt",
+                      "lastClassName": "fjxIaK",
                       "rules": Array [
                         "display:flex;flex-direction:row;flex:1;align-items:flex-start;@media (max-width:700px){padding:",
                         [Function],
                         "px;& button{display:none;}}@media (min-width:700px){padding:",
                         [Function],
-                        "px;}@media (min-width:1232px){padding:",
+                        "px;}@media (min-width:1242px){padding:",
                         [Function],
                         ";}",
                       ],
@@ -1086,7 +1086,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                 forwardedRef={null}
               >
                 <div
-                  className="DraftArticleContent__ContentContainer-sc-1x9teyd-0 vSnpt"
+                  className="DraftArticleContent__ContentContainer-sc-1x9teyd-0 fjxIaK"
                 >
                   <DraftArticleContent__Content
                     dangerouslySetInnerHTML={
