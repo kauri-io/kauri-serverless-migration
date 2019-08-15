@@ -16,6 +16,7 @@ import IconButton from '@material-ui/core/IconButton'
 import Icon from '@material-ui/core/Icon'
 import { useState } from 'react'
 import ShareDialog from './ShareDialog'
+import useridTrim from '../../lib/userid-trim'
 
 export const ArticleCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -45,6 +46,7 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
         },
     },
     content: {
+        textAlign: 'left',
         cursor: 'pointer',
         height: '100%',
         padding: '0px !important',
@@ -126,7 +128,7 @@ interface IProps {
     author: {
         name: string | null
         username: string | null
-        id: string | null
+        id: string
         avatar: string | null
     } | null
     attributes: {
@@ -271,7 +273,10 @@ const ArticleCard: React.FC<IProps> = ({
                             className={classes.author}
                         >
                             {author &&
-                                (author.name || author.username || author.id)}
+                                (author.name ||
+                                    author.username ||
+                                    (typeof author.id === 'string' &&
+                                        useridTrim(author.id)))}
                         </Typography>
                         <Typography
                             data-testid={`ArticleCard-${id}-date`}

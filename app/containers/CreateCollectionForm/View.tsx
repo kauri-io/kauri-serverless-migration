@@ -194,13 +194,47 @@ const renderResourceSection = (
             ['sections', index, mappingKey, resourceIndex, 'version'],
             values
         ) ? (
+            <Draggable
+                index={resourceIndex}
+                draggableId={`${path(
+                    ['sections', index, mappingKey, resourceIndex, 'id'],
+                    values
+                )}-${path(
+                    ['sections', index, mappingKey, resourceIndex, 'version'],
+                    values
+                )}`}
+            >
+                {provided => (
+                    <DraggableResourceContainer
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        ref={provided.innerRef}
+                        id="article-card"
+                    >
+                        <ArticleCardFormView
+                            id={String(
+                                path(
+                                    [
+                                        'sections',
+                                        index,
+                                        mappingKey,
+                                        resourceIndex,
+                                        'id',
+                                    ],
+                                    values
+                                )
+                            )}
+                        />
+                        {provided.placeholder}
+                    </DraggableResourceContainer>
+                )}
+            </Draggable>
+        ) : (
+            path(['sections', index, mappingKey, resourceIndex], values) && (
                 <Draggable
                     index={resourceIndex}
                     draggableId={`${path(
                         ['sections', index, mappingKey, resourceIndex, 'id'],
-                        values
-                    )}-${path(
-                        ['sections', index, mappingKey, resourceIndex, 'version'],
                         values
                     )}`}
                 >
@@ -209,9 +243,9 @@ const renderResourceSection = (
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                             ref={provided.innerRef}
-                            id="article-card"
+                            id="collection-card"
                         >
-                            <ArticleCardFormView
+                            <CollectionCardFormView
                                 id={String(
                                     path(
                                         [
@@ -229,42 +263,8 @@ const renderResourceSection = (
                         </DraggableResourceContainer>
                     )}
                 </Draggable>
-            ) : (
-                path(['sections', index, mappingKey, resourceIndex], values) && (
-                    <Draggable
-                        index={resourceIndex}
-                        draggableId={`${path(
-                            ['sections', index, mappingKey, resourceIndex, 'id'],
-                            values
-                        )}`}
-                    >
-                        {provided => (
-                            <DraggableResourceContainer
-                                {...provided.draggableProps}
-                                {...provided.dragHandleProps}
-                                ref={provided.innerRef}
-                                id="collection-card"
-                            >
-                                <CollectionCardFormView
-                                    id={String(
-                                        path(
-                                            [
-                                                'sections',
-                                                index,
-                                                mappingKey,
-                                                resourceIndex,
-                                                'id',
-                                            ],
-                                            values
-                                        )
-                                    )}
-                                />
-                                {provided.placeholder}
-                            </DraggableResourceContainer>
-                        )}
-                    </Draggable>
-                )
-            )}
+            )
+        )}
         <Button
             color="primary"
             variant="text"
@@ -272,15 +272,15 @@ const renderResourceSection = (
                 arrayHelpers.form.setFieldValue(
                     `sections[${index}][${mappingKey}]`,
                     Array.isArray(section[mappingKey]) &&
-                    (!resourceIndex
-                        ? section[mappingKey].length > 1
-                            ? section[mappingKey].splice(1)
-                            : []
-                        : remove(
-                            resourceIndex,
-                            resourceIndex,
-                            section[mappingKey]
-                        ))
+                        (!resourceIndex
+                            ? section[mappingKey].length > 1
+                                ? section[mappingKey].splice(1)
+                                : []
+                            : remove(
+                                  resourceIndex,
+                                  resourceIndex,
+                                  section[mappingKey]
+                              ))
                 )
             } // Remove current resource index
         >
@@ -340,25 +340,25 @@ const CreateCollectionForm: React.FC<
     userId,
     userAvatar,
 }) => {
-        useEffect(() => {
-            const uppy = initUppy({
-                allowGifs: false,
-                trigger: '.background-upload',
-            })
-            uppy.on('upload-success', (_data, data2) => {
-                const url = `https://${config.gateway}:443/ipfs/${data2.body.hash}`
-                setFieldValue('background', url)
-            })
-        }, [])
+    useEffect(() => {
+        const uppy = initUppy({
+            allowGifs: false,
+            trigger: '.background-upload',
+        })
+        uppy.on('upload-success', (_data, data2) => {
+            const url = `https://${config.gateway}:443/ipfs/${data2.body.hash}`
+            setFieldValue('background', url)
+        })
+    }, [])
 
-        const [openChooseArticleModal, setOpenChooseArticleModal] = React.useState<
-            boolean
-        >(false)
+    const [openChooseArticleModal, setOpenChooseArticleModal] = React.useState<
+        boolean
+    >(false)
 
-        const [
-            openChooseCollectionModal,
-            setOpenChooseCollectionModal,
-        ] = React.useState<boolean>(false)
+    const [
+        openChooseCollectionModal,
+        setOpenChooseCollectionModal,
+    ] = React.useState<boolean>(false)
     const classes = useStyles()
 
     return (
@@ -411,31 +411,36 @@ const CreateCollectionForm: React.FC<
                                 )
                             }
                         >
-                            <Button color='secondary' variant="text" className="background-upload">
+                            <Button
+                                color="secondary"
+                                variant="text"
+                                className="background-upload"
+                            >
                                 <UploadIcon className={classes.uploadIcon} />
                                 Background Image
-                        </Button>
-                        </Stack>
-                        <Stack
-                            alignItems={['', 'center']}
-                            justifyContent={['', 'end']}
-                        >
-                            <Button
-                                variant="contained"
-                                color='primary'
-                                disabled={isSubmitting}
-                                type="submit"
-                                onClick={() =>
-                                    showFormValidationErrors(
-                                        validateForm,
-                                        showNotificationAction
-                                    )
-                                }
-                            >
-                                {data ? 'Update Collection' : 'Create Collection'}
                             </Button>
-                        </Stack>
-                    </ActionsSection>
+                        </Button>
+                    </Stack>
+                    <Stack
+                        alignItems={['', 'center']}
+                        justifyContent={['', 'end']}
+                    >
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            disabled={isSubmitting}
+                            type="submit"
+                            onClick={() =>
+                                showFormValidationErrors(
+                                    validateForm,
+                                    showNotificationAction
+                                )
+                            }
+                        >
+                            {data ? 'Update Collection' : 'Create Collection'}
+                        </Button>
+                    </Stack>
+                </ActionsSection>
 
                 <PrimaryHeaderSection backgroundURL={values.background}>
                     <CreateCollectionDetails>
@@ -472,398 +477,398 @@ const CreateCollectionForm: React.FC<
                             )}
                         />
 
-                            <FieldArray
-                                name="tags"
-                                render={arrayHelpers => (
-                                    <TagSelector
-                                        updateTags={tags =>
-                                            arrayHelpers.form.setFieldValue(
-                                                'tags',
-                                                tags
-                                            )
-                                        }
-                                        tags={values.tags || []}
-                                    />
-                                )}
-                            />
-                            {/* <ErrorMessage name='description' render={(message: string) => <ErrorMessageRenderer>{message}</ErrorMessageRenderer>} /> */}
+                        <FieldArray
+                            name="tags"
+                            render={arrayHelpers => (
+                                <TagSelector
+                                    updateTags={tags =>
+                                        arrayHelpers.form.setFieldValue(
+                                            'tags',
+                                            tags
+                                        )
+                                    }
+                                    tags={values.tags || []}
+                                />
+                            )}
+                        />
+                        {/* <ErrorMessage name='description' render={(message: string) => <ErrorMessageRenderer>{message}</ErrorMessageRenderer>} /> */}
 
-                            {/* TODO: WAIT FOR BACKEND */}
-                            {/* <AddTagButton color='white' /> */}
-                            <CreateCollectionActionsPlaceHolder>
-                                {/* <Button variant='contained'>Follow Collection</Button> */}
-                                {/* <Button
+                        {/* TODO: WAIT FOR BACKEND */}
+                        {/* <AddTagButton color='white' /> */}
+                        <CreateCollectionActionsPlaceHolder>
+                            {/* <Button variant='contained'>Follow Collection</Button> */}
+                            {/* <Button
                                 variant='text'>Up vote</Button> */}
-                                {/* <Button
+                            {/* <Button
                                 variant='text' icon={<ShareIcon />}>Share</Button> */}
-                            </CreateCollectionActionsPlaceHolder>
-                        </CreateCollectionDetails>
-                        <Stack
-                            alignItems={['', 'center']}
-                            justifyContent={['', 'end']}
-                        >
-                            <CreateCollectionMetaDetails>
-                                <CreateCollectionCuratorDetails>
-                                    <StatisticsContainer
-                                        pageType="CreateCollectionPage"
-                                        statistics={[
-                                            {
-                                                name: 'Articles',
-                                                count: pipe(
-                                                    map<any, any>(
-                                                        section =>
-                                                            section &&
-                                                            section.resourcesId
-                                                    ),
-                                                    reduce((current, next) => {
-                                                        const articlesInSection = next.filter(
+                        </CreateCollectionActionsPlaceHolder>
+                    </CreateCollectionDetails>
+                    <Stack
+                        alignItems={['', 'center']}
+                        justifyContent={['', 'end']}
+                    >
+                        <CreateCollectionMetaDetails>
+                            <CreateCollectionCuratorDetails>
+                                <StatisticsContainer
+                                    pageType="CreateCollectionPage"
+                                    statistics={[
+                                        {
+                                            name: 'Articles',
+                                            count: pipe(
+                                                map<any, any>(
+                                                    section =>
+                                                        section &&
+                                                        section.resourcesId
+                                                ),
+                                                reduce((current, next) => {
+                                                    const articlesInSection = next.filter(
+                                                        ({ type }) =>
+                                                            type.toLowerCase() ===
+                                                            'article'
+                                                    )
+                                                    if (articlesInSection) {
+                                                        return (
+                                                            current +
+                                                            articlesInSection.length
+                                                        )
+                                                    }
+                                                    return current
+                                                }, 0)
+                                            )(values.sections),
+                                        },
+                                        {
+                                            name: 'Collections',
+                                            count: pipe(
+                                                map<any, any>(
+                                                    ({ resourcesId }) =>
+                                                        resourcesId
+                                                ),
+                                                reduce((current, next) => {
+                                                    const collectionsInSection = next.filter(
+                                                        ({ type }) =>
+                                                            type.toLowerCase() ===
+                                                            'collection'
+                                                    )
+                                                    if (collectionsInSection) {
+                                                        return (
+                                                            current +
+                                                            collectionsInSection.length
+                                                        )
+                                                    }
+                                                    return current
+                                                }, 0)
+                                            )(values.sections),
+                                        },
+                                    ]}
+                                />
+                                <Label color="white">Curator</Label>
+                                <CreateCollectionCurators>
+                                    <UserAvatar
+                                        variant="white"
+                                        fullWidth
+                                        username={username}
+                                        userId={userId}
+                                        avatar={userAvatar}
+                                    />
+                                    {/* <AddMemberButton /> */}
+                                </CreateCollectionCurators>
+                            </CreateCollectionCuratorDetails>
+                        </CreateCollectionMetaDetails>
+                    </Stack>
+                </PrimaryHeaderSection>
+
+                <ContentSection>
+                    <FieldArray
+                        name="sections"
+                        render={arrayHelpers => (
+                            <>
+                                {/* {console.log(arrayHelpers)} */}
+                                {values.sections &&
+                                    values.sections.length > 0 &&
+                                    values.sections.map(
+                                        (
+                                            section: Collection_sections,
+                                            index
+                                        ) => (
+                                            <SectionSection key={index} mt={4}>
+                                                <Field
+                                                    type="text"
+                                                    name={`sections.${index}.name`}
+                                                    render={({ field }) => (
+                                                        <TextField
+                                                            {...field}
+                                                            type="text"
+                                                            placeholder="Add Section Name"
+                                                            fontWeight={500}
+                                                            color={
+                                                                'primaryTextColor'
+                                                            }
+                                                            textAlign={'center'}
+                                                        />
+                                                    )}
+                                                />
+                                                <Field
+                                                    type="text"
+                                                    name={`sections.${index}.description`}
+                                                    render={({ field }) => (
+                                                        <TextField
+                                                            {...field}
+                                                            type="text"
+                                                            placeholder="Add Section Description"
+                                                            fontWeight={300}
+                                                            color={
+                                                                'primaryTextColor'
+                                                            }
+                                                            textAlign={'center'}
+                                                        />
+                                                    )}
+                                                />
+
+                                                <DragDropContext
+                                                    onDragEnd={handleDragEnd(
+                                                        arrayHelpers,
+                                                        index,
+                                                        values
+                                                    )}
+                                                >
+                                                    <Droppable
+                                                        direction={'vertical'}
+                                                        droppableId={
+                                                            section.id || '0'
+                                                        }
+                                                    >
+                                                        {provided => (
+                                                            <CardContentSection
+                                                                {...provided.droppableProps}
+                                                                ref={
+                                                                    provided.innerRef
+                                                                }
+                                                            >
+                                                                {/* Section id */}
+                                                                {section.resourcesId &&
+                                                                    Array.isArray(
+                                                                        section.resourcesId
+                                                                    ) &&
+                                                                    section.resourcesId.map(
+                                                                        renderResourceSection(
+                                                                            index,
+                                                                            arrayHelpers,
+                                                                            section,
+                                                                            values,
+                                                                            'resourcesId'
+                                                                        )
+                                                                    )}
+                                                            </CardContentSection>
+                                                        )}
+                                                    </Droppable>
+                                                </DragDropContext>
+                                                <ChooseArticleModal
+                                                    open={
+                                                        openChooseArticleModal
+                                                    }
+                                                    allOtherChosenArticles={values.sections.filter(
+                                                        (_, sectionIndex) =>
+                                                            index !==
+                                                            sectionIndex
+                                                    )}
+                                                    chosenArticles={pipe(
+                                                        path<
+                                                            [
+                                                                {
+                                                                    type: string
+                                                                }
+                                                            ]
+                                                        >([
+                                                            'sections',
+                                                            index,
+                                                            'resourcesId',
+                                                        ]),
+                                                        defaultTo([] as Array<{
+                                                            type: string
+                                                        }>),
+                                                        filter(
                                                             ({ type }) =>
                                                                 type.toLowerCase() ===
                                                                 'article'
                                                         )
-                                                        if (articlesInSection) {
-                                                            return (
-                                                                current +
-                                                                articlesInSection.length
+                                                    )(values)}
+                                                    closeModalAction={() =>
+                                                        setOpenChooseArticleModal(
+                                                            false
+                                                        )
+                                                    }
+                                                    confirmModal={chosenArticles => {
+                                                        arrayHelpers.form.setFieldValue(
+                                                            `sections[${index}].resourcesId`,
+                                                            (
+                                                                path<
+                                                                    [
+                                                                        {
+                                                                            type
+                                                                            string
+                                                                        }
+                                                                    ]
+                                                                >([
+                                                                    'sections',
+                                                                    index,
+                                                                    'resourcesId',
+                                                                ])(values) || []
                                                             )
-                                                        }
-                                                        return current
-                                                    }, 0)
-                                                )(values.sections),
-                                            },
-                                            {
-                                                name: 'Collections',
-                                                count: pipe(
-                                                    map<any, any>(
-                                                        ({ resourcesId }) =>
-                                                            resourcesId
-                                                    ),
-                                                    reduce((current, next) => {
-                                                        const collectionsInSection = next.filter(
+                                                                .filter(
+                                                                    ({
+                                                                        type,
+                                                                    }) =>
+                                                                        type &&
+                                                                        type.toLowerCase() ===
+                                                                            'collection'
+                                                                )
+                                                                .concat(
+                                                                    chosenArticles.map(
+                                                                        article => ({
+                                                                            ...article,
+                                                                            type:
+                                                                                'ARTICLE',
+                                                                        })
+                                                                    )
+                                                                )
+                                                        )
+                                                        setOpenChooseArticleModal(
+                                                            false
+                                                        )
+                                                    }}
+                                                />
+
+                                                <ChooseCollectionModal
+                                                    open={
+                                                        openChooseCollectionModal
+                                                    }
+                                                    currentCollectionIdIfUpdating={
+                                                        id
+                                                    }
+                                                    allOtherChosenCollections={values.sections.filter(
+                                                        (_, sectionIndex) =>
+                                                            index !==
+                                                            sectionIndex
+                                                    )}
+                                                    chosenCollections={pipe(
+                                                        path<
+                                                            [
+                                                                {
+                                                                    type: string
+                                                                }
+                                                            ]
+                                                        >([
+                                                            'sections',
+                                                            index,
+                                                            'resourcesId',
+                                                        ]),
+                                                        defaultTo([] as Array<{
+                                                            type: string
+                                                        }>),
+                                                        filter(
                                                             ({ type }) =>
                                                                 type.toLowerCase() ===
                                                                 'collection'
                                                         )
-                                                        if (collectionsInSection) {
-                                                            return (
-                                                                current +
-                                                                collectionsInSection.length
+                                                    )(values)}
+                                                    closeModalAction={() =>
+                                                        setOpenChooseCollectionModal(
+                                                            false
+                                                        )
+                                                    }
+                                                    confirmModal={chosenCollections =>
+                                                        arrayHelpers.form.setFieldValue(
+                                                            `sections[${index}].resourcesId`,
+                                                            (
+                                                                path<
+                                                                    [
+                                                                        {
+                                                                            type
+                                                                            string
+                                                                        }
+                                                                    ]
+                                                                >([
+                                                                    'sections',
+                                                                    index,
+                                                                    'resourcesId',
+                                                                ])(values) || []
                                                             )
-                                                        }
-                                                        return current
-                                                    }, 0)
-                                                )(values.sections),
-                                            },
-                                        ]}
-                                    />
-                                    <Label color="white">Curator</Label>
-                                    <CreateCollectionCurators>
-                                        <UserAvatar
-                                            variant="white"
-                                            fullWidth
-                                            username={username}
-                                            userId={userId}
-                                            avatar={userAvatar}
-                                        />
-                                        {/* <AddMemberButton /> */}
-                                    </CreateCollectionCurators>
-                                </CreateCollectionCuratorDetails>
-                            </CreateCollectionMetaDetails>
-                        </Stack>
-                    </PrimaryHeaderSection>
-
-                    <ContentSection>
-                        <FieldArray
-                            name="sections"
-                            render={arrayHelpers => (
-                                <>
-                                    {/* {console.log(arrayHelpers)} */}
-                                    {values.sections &&
-                                        values.sections.length > 0 &&
-                                        values.sections.map(
-                                            (
-                                                section: Collection_sections,
-                                                index
-                                            ) => (
-                                                    <SectionSection key={index} mt={4}>
-                                                        <Field
-                                                            type="text"
-                                                            name={`sections.${index}.name`}
-                                                            render={({ field }) => (
-                                                                <TextField
-                                                                    {...field}
-                                                                    type="text"
-                                                                    placeholder="Add Section Name"
-                                                                    fontWeight={500}
-                                                                    color={
-                                                                        'primaryTextColor'
-                                                                    }
-                                                                    textAlign={'center'}
-                                                                />
-                                                            )}
-                                                        />
-                                                        <Field
-                                                            type="text"
-                                                            name={`sections.${index}.description`}
-                                                            render={({ field }) => (
-                                                                <TextField
-                                                                    {...field}
-                                                                    type="text"
-                                                                    placeholder="Add Section Description"
-                                                                    fontWeight={300}
-                                                                    color={
-                                                                        'primaryTextColor'
-                                                                    }
-                                                                    textAlign={'center'}
-                                                                />
-                                                            )}
-                                                        />
-
-                                                        <DragDropContext
-                                                            onDragEnd={handleDragEnd(
-                                                                arrayHelpers,
-                                                                index,
-                                                                values
-                                                            )}
-                                                        >
-                                                            <Droppable
-                                                                direction={'vertical'}
-                                                                droppableId={
-                                                                    section.id || '0'
-                                                                }
-                                                            >
-                                                                {provided => (
-                                                                    <CardContentSection
-                                                                        {...provided.droppableProps}
-                                                                        ref={
-                                                                            provided.innerRef
-                                                                        }
-                                                                    >
-                                                                        {/* Section id */}
-                                                                        {section.resourcesId &&
-                                                                            Array.isArray(
-                                                                                section.resourcesId
-                                                                            ) &&
-                                                                            section.resourcesId.map(
-                                                                                renderResourceSection(
-                                                                                    index,
-                                                                                    arrayHelpers,
-                                                                                    section,
-                                                                                    values,
-                                                                                    'resourcesId'
-                                                                                )
-                                                                            )}
-                                                                    </CardContentSection>
-                                                                )}
-                                                            </Droppable>
-                                                        </DragDropContext>
-                                                        <ChooseArticleModal
-                                                            open={
-                                                                openChooseArticleModal
-                                                            }
-                                                            allOtherChosenArticles={values.sections.filter(
-                                                                (_, sectionIndex) =>
-                                                                    index !==
-                                                                    sectionIndex
-                                                            )}
-                                                            chosenArticles={pipe(
-                                                                path<
-                                                                    [
-                                                                        {
-                                                                            type: string
-                                                                        }
-                                                                    ]
-                                                                >([
-                                                                    'sections',
-                                                                    index,
-                                                                    'resourcesId',
-                                                                ]),
-                                                                defaultTo([] as Array<{
-                                                                    type: string
-                                                                }>),
-                                                                filter(
-                                                                    ({ type }) =>
+                                                                .filter(
+                                                                    ({
+                                                                        type,
+                                                                    }) =>
+                                                                        type &&
                                                                         type.toLowerCase() ===
-                                                                        'article'
+                                                                            'article'
                                                                 )
-                                                            )(values)}
-                                                            closeModalAction={() =>
-                                                                setOpenChooseArticleModal(
-                                                                    false
-                                                                )
-                                                            }
-                                                            confirmModal={chosenArticles => {
-                                                                arrayHelpers.form.setFieldValue(
-                                                                    `sections[${index}].resourcesId`,
-                                                                    (
-                                                                        path<
-                                                                            [
-                                                                                {
-                                                                                    type
-                                                                                    string
-                                                                                }
-                                                                            ]
-                                                                        >([
-                                                                            'sections',
-                                                                            index,
-                                                                            'resourcesId',
-                                                                        ])(values) || []
+                                                                .concat(
+                                                                    chosenCollections.map(
+                                                                        collection => ({
+                                                                            ...collection,
+                                                                            type:
+                                                                                'COLLECTION',
+                                                                        })
                                                                     )
-                                                                        .filter(
-                                                                            ({
-                                                                                type,
-                                                                            }) =>
-                                                                                type &&
-                                                                                type.toLowerCase() ===
-                                                                                'collection'
-                                                                        )
-                                                                        .concat(
-                                                                            chosenArticles.map(
-                                                                                article => ({
-                                                                                    ...article,
-                                                                                    type:
-                                                                                        'ARTICLE',
-                                                                                })
-                                                                            )
-                                                                        )
                                                                 )
-                                                                setOpenChooseArticleModal(
-                                                                    false
-                                                                )
-                                                            }}
-                                                        />
+                                                        )
+                                                    }
+                                                />
 
-                                                        <ChooseCollectionModal
-                                                            open={
-                                                                openChooseCollectionModal
-                                                            }
-                                                            currentCollectionIdIfUpdating={
-                                                                id
-                                                            }
-                                                            allOtherChosenCollections={values.sections.filter(
-                                                                (_, sectionIndex) =>
-                                                                    index !==
-                                                                    sectionIndex
-                                                            )}
-                                                            chosenCollections={pipe(
-                                                                path<
-                                                                    [
-                                                                        {
-                                                                            type: string
-                                                                        }
-                                                                    ]
-                                                                >([
-                                                                    'sections',
-                                                                    index,
-                                                                    'resourcesId',
-                                                                ]),
-                                                                defaultTo([] as Array<{
-                                                                    type: string
-                                                                }>),
-                                                                filter(
-                                                                    ({ type }) =>
-                                                                        type.toLowerCase() ===
-                                                                        'collection'
-                                                                )
-                                                            )(values)}
-                                                            closeModalAction={() =>
-                                                                setOpenChooseCollectionModal(
-                                                                    false
-                                                                )
-                                                            }
-                                                            confirmModal={chosenCollections =>
-                                                                arrayHelpers.form.setFieldValue(
-                                                                    `sections[${index}].resourcesId`,
-                                                                    (
-                                                                        path<
-                                                                            [
-                                                                                {
-                                                                                    type
-                                                                                    string
-                                                                                }
-                                                                            ]
-                                                                        >([
-                                                                            'sections',
-                                                                            index,
-                                                                            'resourcesId',
-                                                                        ])(values) || []
-                                                                    )
-                                                                        .filter(
-                                                                            ({
-                                                                                type,
-                                                                            }) =>
-                                                                                type &&
-                                                                                type.toLowerCase() ===
-                                                                                'article'
-                                                                        )
-                                                                        .concat(
-                                                                            chosenCollections.map(
-                                                                                collection => ({
-                                                                                    ...collection,
-                                                                                    type:
-                                                                                        'COLLECTION',
-                                                                                })
-                                                                            )
-                                                                        )
-                                                                )
-                                                            }
-                                                        />
-
-                                                        <SectionOptions
-                                                            currentSectionIndex={index}
-                                                            previousSectionHasArticles={pipe(
-                                                                path<any>([
-                                                                    'sections',
-                                                                    index > 0
-                                                                        ? index
-                                                                        : 0,
-                                                                    'resourcesId',
-                                                                ]),
-                                                                defaultTo([]),
-                                                                resourcesId =>
-                                                                    resourcesId.length,
-                                                                Boolean
-                                                            )(values)}
-                                                            addNewSection={() =>
-                                                                arrayHelpers.push(
-                                                                    emptySection
-                                                                )
-                                                            }
-                                                            removeSection={() =>
-                                                                arrayHelpers.remove(
-                                                                    index
-                                                                )
-                                                            }
-                                                            chooseArticle={() =>
-                                                                setOpenChooseArticleModal(
-                                                                    true
-                                                                )
-                                                            }
-                                                            chooseCollection={() =>
-                                                                setOpenChooseCollectionModal(
-                                                                    true
-                                                                )
-                                                            }
-                                                        />
-                                                    </SectionSection>
-                                                )
-                                        )}
-                                </>
-                            )}
-                        />
-
-                        {process.env.NODE_ENV !== 'production' && (
-                            <DisplayFormikState
-                                touched={touched}
-                                errors={errors}
-                                values={values}
-                                isSubmitting={isSubmitting}
-                            />
+                                                <SectionOptions
+                                                    currentSectionIndex={index}
+                                                    previousSectionHasArticles={pipe(
+                                                        path<any>([
+                                                            'sections',
+                                                            index > 0
+                                                                ? index
+                                                                : 0,
+                                                            'resourcesId',
+                                                        ]),
+                                                        defaultTo([]),
+                                                        resourcesId =>
+                                                            resourcesId.length,
+                                                        Boolean
+                                                    )(values)}
+                                                    addNewSection={() =>
+                                                        arrayHelpers.push(
+                                                            emptySection
+                                                        )
+                                                    }
+                                                    removeSection={() =>
+                                                        arrayHelpers.remove(
+                                                            index
+                                                        )
+                                                    }
+                                                    chooseArticle={() =>
+                                                        setOpenChooseArticleModal(
+                                                            true
+                                                        )
+                                                    }
+                                                    chooseCollection={() =>
+                                                        setOpenChooseCollectionModal(
+                                                            true
+                                                        )
+                                                    }
+                                                />
+                                            </SectionSection>
+                                        )
+                                    )}
+                            </>
                         )}
-                    </ContentSection>
-                </Form>
-            </Section>
-        )
-    }
+                    />
+
+                    {process.env.NODE_ENV !== 'production' && (
+                        <DisplayFormikState
+                            touched={touched}
+                            errors={errors}
+                            values={values}
+                            isSubmitting={isSubmitting}
+                        />
+                    )}
+                </ContentSection>
+            </Form>
+        </Section>
+    )
+}
 
 export default CreateCollectionForm

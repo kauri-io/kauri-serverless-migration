@@ -8,13 +8,13 @@ describe('components/Card/ArticleCard', () => {
     beforeAll(() => {
         global.console.warn = jest.fn()
         ArticleCardProps = {
-            id: '1234567890',
+            id: '0x12...',
             version: 123,
             title: 'Article',
             author: {
                 avatar:
                     'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU',
-                id: '1234567890',
+                id: '0x12...',
                 name: 'test name',
                 username: 'test username',
             },
@@ -32,7 +32,7 @@ describe('components/Card/ArticleCard', () => {
                     {
                         posted: '1994-06-13T00:05:32.000Z',
                         author: {
-                            id: '1234567890',
+                            id: '0x12...',
                             name: 'test name',
                             username: 'test username',
                             avatar:
