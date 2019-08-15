@@ -1,10 +1,9 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
-import theme from '../../lib/theme-config'
 import { IAttributesPayload } from './Module'
-import { CreateRequestSecondaryHeader as SubmitArticleFormHeader } from './Legacy/CreateRequestSecondaryHeader'
-import { TopicActionsContainer as SubmitArticleFormSubjectContainer } from './Legacy/TopicActionsContainer'
 import TagSelector from '../../components/TagSelector'
+import { Grid, TextField } from '@material-ui/core'
+import { Theme, makeStyles } from '@material-ui/core/styles'
+import Image from '../../components/Image'
 
 interface IProps {
     getFieldValue: (field: string) => any
@@ -17,147 +16,50 @@ interface IProps {
     tags: string[]
 }
 
-const errorBorderCss = css`
-    border: 2px solid ${props => props.theme.errorRedColor};
-`
-
 const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
         e.preventDefault()
     }
 }
 
-export const InputWrapper = styled.div<{ maxlength: number }>`
-    margin-left: 10px;
-    position: relative;
-    align-self: auto;
-`
-
-const Overlay = styled.div`
-    display: flex;
-    align-items: center;
-    background: ${props => props.theme && props.theme.colors.bgPrimary};
-    opacity: 0.8;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-`
-
-export const ArticleSubject = styled.input<{ hasErrors: boolean }>`
-    display: inline-block;
-    margin-left: 0px;
-    background: none;
-    background-color: transparent;
-    border: none;
-    color: white;
-    height: 45px;
-    font-size: 26px;
-    font-weight: 500;
-    padding: 0;
-    padding-bottom: 2px;
-    * {
-        border: 1px solid #fff;
-        font-size: 20px;
-        font-weight: 500;
-    }
-    ::-webkit-input-placeholder {
-        color: #fff;
-        text-decoration: underline;
-        text-decoration-color: ${props => props.theme.primaryColor};
-    }
-    :focus::-webkit-input-placeholder {
-        text-indent: -999px;
-    }
-    ::-moz-placeholder {
-        color: #fff;
-    }
-    :focus::-moz-placeholder {
-        text-indent: -999px;
-    }
-    ${({ hasErrors }) => hasErrors && errorBorderCss};
-`
-
-const articleUnderlineSpanCss = css`
-    font-size: 26px !important;
-`
-export const UnderlineSpan = styled.span<{ type: string }>`
-    user-select: none;
-    border-top: 3px solid ${props => props.theme.primaryColor};
-    left: 0;
-    bottom: 0;
-    max-width: 100%;
-    height: 0;
-    color: transparent;
-    overflow: hidden;
-    font-size: 12px;
-    ${props =>
-        (props.type === 'article' || props.type === 'request') &&
-        articleUnderlineSpanCss};
-`
-
-const SubmitArticleFormSubject = ({
-    getFieldDecorator,
-    getFieldError,
-    getFieldValue,
-    setFieldsValue,
-    subject,
-    tags,
-}: IProps) => (
-    <SubmitArticleFormSubjectContainer>
-        <InputWrapper maxlength={150}>
-            {getFieldDecorator('subject', {
-                initialValue: subject,
-                rules: [
-                    {
-                        max: 150,
-                        message: 'Please input the subject of the article!',
-                        required: true,
-                        whitespace: true,
-                    },
-                ],
-            })(
-                <ArticleSubject
-                    onKeyPress={handleKeyPress}
-                    placeholder="Add Article Title"
-                    maxLength={100}
-                    hasErrors={
-                        getFieldError('subject') &&
-                        getFieldError('subject').length > 0
-                    }
-                    style={{
-                        alignSelf: 'flex-start',
-                        width: '100%',
-                    }}
-                />
-            )}
-            <UnderlineSpan type="article">
-                {typeof getFieldValue('subject') === 'string' &&
-                    getFieldValue('subject').replace(/ /g, '\u00a0')}
-            </UnderlineSpan>
-            <TagSelector
-                tags={tags}
-                setFieldsValue={setFieldsValue}
-                getFieldDecorator={getFieldDecorator}
-            />
-        </InputWrapper>
-    </SubmitArticleFormSubjectContainer>
-)
-
 const getBG = (
     getFieldValue: (field: string) => any,
     attributes?: IAttributesPayload
 ) => {
     const formValue = getFieldValue('attributes')
+    console.log(formValue)
     if (formValue && typeof formValue.background === 'string') {
-        return `background-image: url(${formValue.background}); background-size: cover; background-position: center center;`
+        return formValue.background
     }
     if (attributes && attributes.background) {
-        return `background-image: url(${attributes.background}); background-size: cover; background-position: center center;`
+        return attributes.background
     }
-    return 'background: #1E2428;'
 }
+
+const useStyles = makeStyles((theme: Theme) => ({
+    root: {
+        backgroundColor: theme.palette.common.black,
+        position: 'relative',
+    },
+    container: {
+        maxWidth: 1232,
+        padding: theme.spacing(2, 0),
+        margin: 'auto',
+    },
+    titleInput: {
+        margin: theme.spacing(2, 0),
+        fontSize: 32,
+        color: theme.palette.common.white,
+        '&:hover': {
+            '&:before': {
+                borderBottomColor: 'rgba(255,255,255,0.6) !important',
+            },
+        },
+        '&:before': {
+            borderBottomColor: 'rgba(255,255,255,0.3)',
+        },
+    },
+}))
 
 export default ({
     getFieldError,
@@ -167,24 +69,60 @@ export default ({
     getFieldValue,
     setFieldsValue,
     attributes,
-}: IProps) => (
-    <SubmitArticleFormHeader
-        bg={getBG(getFieldValue, attributes)}
-        type="article"
-        theme={theme}
-    >
-        {getFieldDecorator('attributes', {
-            initialValue: {},
-        })(<div />)}
-        <Overlay />
-        <SubmitArticleFormSubject
-            getFieldError={getFieldError}
-            getFieldValue={getFieldValue}
-            subject={subject}
-            tags={tags}
-            getFieldDecorator={getFieldDecorator}
-            setFieldsValue={setFieldsValue}
-            attributes={attributes}
-        />
-    </SubmitArticleFormHeader>
-)
+}: IProps) => {
+    const classes = useStyles()
+    const bg = getBG(getFieldValue, attributes)
+    return (
+        <Grid className={classes.root}>
+            {bg && (
+                <Image
+                    width="100%"
+                    height="100%"
+                    image={bg}
+                    asBackground={true}
+                    overlay={{
+                        color: '#000',
+                        opacity: 0.8,
+                    }}
+                />
+            )}
+            {getFieldDecorator('attributes', {
+                initialValue: {},
+            })(<div />)}
+            <Grid className={classes.container}>
+                {getFieldDecorator('subject', {
+                    initialValue: subject,
+                    rules: [
+                        {
+                            max: 150,
+                            message: 'Please input the subject of the article!',
+                            required: true,
+                            whitespace: true,
+                        },
+                    ],
+                })(
+                    <TextField
+                        onKeyPress={handleKeyPress}
+                        placeholder="Add Article Title"
+                        error={
+                            getFieldError('subject') &&
+                            getFieldError('subject').length > 0
+                        }
+                        style={{
+                            alignSelf: 'flex-start',
+                            width: '100%',
+                        }}
+                        InputProps={{
+                            className: classes.titleInput,
+                        }}
+                    />
+                )}
+                <TagSelector
+                    tags={tags}
+                    setFieldsValue={setFieldsValue}
+                    getFieldDecorator={getFieldDecorator}
+                />
+            </Grid>
+        </Grid>
+    )
+}
