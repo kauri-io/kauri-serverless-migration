@@ -107,7 +107,6 @@ export const CommunityCardStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-
 interface IMember {
     id: string
     username: string | null
