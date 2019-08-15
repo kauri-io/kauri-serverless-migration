@@ -12,6 +12,21 @@ import StatisticsContainer from '../../components/PublicProfile/StatisticsContai
 import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
 import { IFormValues } from './index'
 import TagSelector from '../../components/TagSelector'
+import { Theme, makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles((theme: Theme) => ({
+    input: {
+        color: theme.palette.common.white,
+        '&:hover': {
+            '&:before': {
+                borderBottomColor: 'rgba(255,255,255,0.6) !important',
+            },
+        },
+        '&:before': {
+            borderBottomColor: 'rgba(255,255,255,0.3)',
+        },
+    },
+}))
 
 const LeftSide = styled.section`
     display: flex;
@@ -88,108 +103,126 @@ interface IProps {
     username: string | null
 }
 
-const Component: React.SFC<IProps> = props => (
-    <PrimaryHeaderSection backgroundURL={props.background}>
-        <LeftSide>
-            <MainDetails>
-                <UploadLogoButtonComponent
-                    callback={url => props.setFieldValue('avatar', url)}
-                    bg={String(props.avatar)}
-                    text="Logo"
-                    color="white"
-                />
-
-                <MainFields>
-                    <Field
-                        type="text"
-                        name="name"
-                        render={({ field }: FieldProps<IFormValues>) => (
-                            <TextField
-                                {...field}
-                                placeholder={'Community Name'}
-                            />
-                        )}
+const Component: React.SFC<IProps> = props => {
+    const classes = useStyles()
+    return (
+        <PrimaryHeaderSection backgroundURL={props.background}>
+            <LeftSide>
+                <MainDetails>
+                    <UploadLogoButtonComponent
+                        callback={url => props.setFieldValue('avatar', url)}
+                        bg={String(props.avatar)}
+                        text="Logo"
+                        color="white"
                     />
 
-                    <Field
-                        type="text"
-                        name="website"
-                        render={({ field }: FieldProps<IFormValues>) => (
-                            <TextField {...field} placeholder={'Website'} />
-                        )}
-                    />
-                </MainFields>
-            </MainDetails>
-            <Field
-                type="text"
-                name="description"
-                render={({ field }: FieldProps<IFormValues>) => (
-                    <TextField {...field} placeholder={'Add description'} />
-                )}
-            />
+                    <MainFields>
+                        <Field
+                            type="text"
+                            name="name"
+                            render={({ field }: FieldProps<IFormValues>) => (
+                                <TextField
+                                    {...field}
+                                    placeholder={'Community Name'}
+                                    InputProps={{
+                                        className: classes.input,
+                                    }}
+                                />
+                            )}
+                        />
 
-            <TagSelector
-                maxTags={7}
-                tags={props.tags || []}
-                updateTags={(tags: string[]) =>
-                    props.setFieldValue('tags', tags)
-                }
-            />
-
-            <SocialFieldContainer>
-                <SocialWebsiteIcon brand={'twitter'} />
+                        <Field
+                            type="text"
+                            name="website"
+                            render={({ field }: FieldProps<IFormValues>) => (
+                                <TextField
+                                    {...field}
+                                    placeholder={'Website'}
+                                    InputProps={{
+                                        className: classes.input,
+                                    }}
+                                />
+                            )}
+                        />
+                    </MainFields>
+                </MainDetails>
                 <Field
                     type="text"
-                    name="social.twitter"
+                    name="description"
                     render={({ field }: FieldProps<IFormValues>) => (
-                        <TextField {...field} placeholder={'Twitter'} />
+                        <TextField
+                            {...field}
+                            placeholder={'Add description'}
+                            InputProps={{
+                                className: classes.input,
+                            }}
+                        />
                     )}
                 />
-            </SocialFieldContainer>
 
-            <SocialFieldContainer>
-                <SocialWebsiteIcon brand={'github'} />
-                <Field
-                    type="text"
-                    name="social.github"
-                    render={({ field }: FieldProps<IFormValues>) => (
-                        <TextField {...field} placeholder={'Github'} />
-                    )}
+                <TagSelector
+                    maxTags={7}
+                    tags={props.tags || []}
+                    updateTags={(tags: string[]) =>
+                        props.setFieldValue('tags', tags)
+                    }
                 />
-            </SocialFieldContainer>
-        </LeftSide>
-        <Stack
-            gridAutoFlow={['row']}
-            alignItems={['', 'center']}
-            justifyContent={['', 'end']}
-            gap={0}
-        >
-            <CreateCommunityDetails mr={4}>
-                <StatisticsContainer
-                    pageType={'CreateCommunityPage'}
-                    statistics={[
-                        { name: 'Articles', count: 0 },
-                        { name: 'Collections', count: 0 },
-                    ]}
-                />
-                <Label textAlign="center" color="white">
-                    Moderators
-                </Label>
-                <CreateCommunityMembersContainer>
-                    <UserAvatarComponent
-                        fullWidth={true}
-                        variant="white"
-                        username={props.username}
-                        userId={props.userId}
-                        avatar={props.userAvatar}
+
+                <SocialFieldContainer>
+                    <SocialWebsiteIcon brand={'twitter'} />
+                    <Field
+                        type="text"
+                        name="social.twitter"
+                        render={({ field }: FieldProps<IFormValues>) => (
+                            <TextField {...field} placeholder={'Twitter'} />
+                        )}
                     />
-                    <AddMemberButtonComponent
-                        onClick={() => props.openAddMemberModal()}
+                </SocialFieldContainer>
+
+                <SocialFieldContainer>
+                    <SocialWebsiteIcon brand={'github'} />
+                    <Field
+                        type="text"
+                        name="social.github"
+                        render={({ field }: FieldProps<IFormValues>) => (
+                            <TextField {...field} placeholder={'Github'} />
+                        )}
                     />
-                </CreateCommunityMembersContainer>
-            </CreateCommunityDetails>
-        </Stack>
-    </PrimaryHeaderSection>
-)
+                </SocialFieldContainer>
+            </LeftSide>
+            <Stack
+                gridAutoFlow={['row']}
+                alignItems={['', 'center']}
+                justifyContent={['', 'end']}
+                gap={0}
+            >
+                <CreateCommunityDetails mr={4}>
+                    <StatisticsContainer
+                        pageType={'CreateCommunityPage'}
+                        statistics={[
+                            { name: 'Articles', count: 0 },
+                            { name: 'Collections', count: 0 },
+                        ]}
+                    />
+                    <Label textAlign="center" color="white">
+                        Moderators
+                    </Label>
+                    <CreateCommunityMembersContainer>
+                        <UserAvatarComponent
+                            fullWidth={true}
+                            variant="white"
+                            username={props.username}
+                            userId={props.userId}
+                            avatar={props.userAvatar}
+                        />
+                        <AddMemberButtonComponent
+                            onClick={() => props.openAddMemberModal()}
+                        />
+                    </CreateCommunityMembersContainer>
+                </CreateCommunityDetails>
+            </Stack>
+        </PrimaryHeaderSection>
+    )
+}
 
 export default Component

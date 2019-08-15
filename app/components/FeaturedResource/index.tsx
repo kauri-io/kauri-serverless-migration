@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import UserAvatarComponent, {
     IProps as UserAvatarComponentProps,
 } from '../UserAvatar'
@@ -7,50 +6,20 @@ import TagList from '../Tags/TagList'
 import Button from '@material-ui/core/Button'
 import slugify from 'slugify'
 import Link from 'next/link'
+import { Grid } from '@material-ui/core'
+import { makeStyles, Theme } from '@material-ui/core/styles'
 
-const ContentSection = styled.div`
-    display: flex;
-    @media (max-width: ${props => props.theme.breakpoints[0]}) {
-        flex-direction: column;
-        > :first-child {
-            margin-bottom: ${props => props.theme.space[3]}px;
-        }
-    }
-    ${props => props.theme.padContent};
-`
-
-const ResourceDetailsContainer = styled.section`
-    display: flex;
-    flex-direction: column;
-    flex: 3;
-    > :not(:last-child) {
-        margin-bottom: ${props => props.theme.space[2]}px;
-    }
-`
-
-const ViewContainer = styled.section`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-`
-
-export const FeaturedResourceContainer = styled.div`
-    display: flex;
-    width: 100%;
-    background: white;
-    flex-direction: column;
-    padding: ${props => props.theme.space[3]}px 0px;
-    background: white;
-    @media (max-width: ${props => props.theme.breakpoints[0]}) {
-        padding: ${props => props.theme.space[3]}px
-            ${props => props.theme.space[2]}px;
-        ${ViewContainer} {
-            align-items: flex-start;
-        }
-    }
-`
+const useStyles = makeStyles((theme: Theme) => ({
+    root: {
+        background: theme.palette.common.white,
+        width: '100%',
+        padding: theme.spacing(2, 0),
+    },
+    container: {
+        maxWidth: 1242,
+        margin: 'auto',
+    },
+}))
 
 interface IProps {
     id: string
@@ -76,10 +45,11 @@ const FeaturedResource: React.FunctionComponent<
     ownerResourceType,
 }) => {
     const slug = slugify(title, { lower: true })
+    const classes = useStyles()
     return (
-        <FeaturedResourceContainer>
-            <ContentSection>
-                <ResourceDetailsContainer>
+        <Grid className={classes.root}>
+            <Grid container={true} className={classes.container} spacing={2}>
+                <Grid item={true} sm={9} direction="column" container={true}>
                     <Label>Featured</Label>
                     <Link
                         href={
@@ -113,8 +83,14 @@ const FeaturedResource: React.FunctionComponent<
                             />
                         </a>
                     </Link>
-                </ResourceDetailsContainer>
-                <ViewContainer>
+                </Grid>
+                <Grid
+                    item={true}
+                    sm={3}
+                    container={true}
+                    justify="center"
+                    alignItems="center"
+                >
                     <Link
                         href={
                             resourceType === 'article'
@@ -126,14 +102,15 @@ const FeaturedResource: React.FunctionComponent<
                     >
                         <a>
                             <Button
+                                fullWidth={true}
                                 color="primary"
                                 variant="outlined"
                             >{`View ${resourceType}`}</Button>
                         </a>
                     </Link>
-                </ViewContainer>
-            </ContentSection>
-        </FeaturedResourceContainer>
+                </Grid>
+            </Grid>
+        </Grid>
     )
 }
 

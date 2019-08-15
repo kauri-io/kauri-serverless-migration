@@ -19,7 +19,7 @@ const styles = (theme: Theme) => ({
         width: '100%',
     },
     grid: {
-        maxWidth: 1232,
+        maxWidth: 1242,
         margin: 'auto',
     },
 })

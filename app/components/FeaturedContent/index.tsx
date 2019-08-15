@@ -1,207 +1,68 @@
-import styled from 'styled-components'
-import ResourceRow from '../SearchResults/ResourceRowWithImage' // IProps as ResourceRowProps,
-import { Title2 } from '../Typography'
-import { RenderCardContent } from '../CuratedLists'
-import theme from '../../lib/theme-config'
-
-const DEFAULT_CARD_WIDTH = theme.DEFAULT_CARD_WIDTH
-
-const Container = styled.section`
-    display: flex;
-    flex-direction: column;
-    padding: 0px;
-    > :first-child {
-        margin-bottom: ${props => props.theme.space[2]}px;
-    }
-    @media (max-width: ${props => props.theme.breakpoints[2]}) {
-        > h3 {
-            padding: 0px ${props => props.theme.space[2]}px;
-        }
-    }
-`
-
-const ResourceContainer = styled(Container)`
-    padding: 0px;
-    > :not(:last-child) {
-        margin-bottom: ${props => props.theme.space[2]}px;
-    }
-    @media (max-width: ${props => props.theme.breakpoints[2]}) {
-        align-items: center;
-    }
-`
-
-const DesktopResourceContainer = styled(ResourceContainer)`
-    @media (max-width: ${props => props.theme.breakpoints[2]}) {
-        display: none;
-    }
-`
-
-const MobileResourceContainer = styled(ResourceContainer)`
-    @media (max-width: ${props => props.theme.breakpoints[2]}) {
-        display: grid;
-        width: 100vw;
-        > :not(:first-child) {
-            justify-content: center;
-        }
-        grid-template-columns: repeat(
-            auto-fill,
-            minmax(${DEFAULT_CARD_WIDTH}px, ${DEFAULT_CARD_WIDTH}px)
-        );
-        grid-gap: ${props => props.theme.space[2]}px
-            ${props => props.theme.space[3]}px;
-    }
-    @media (max-width: ${props => props.theme.breakpoints[0]}) {
-        justify-content: center;
-    }
-    @media (min-width: ${props => props.theme.breakpoints[2]}) {
-        display: none;
-    }
-`
+import Typography from '@material-ui/core/Typography'
+import { Grid } from '@material-ui/core'
+import CollectionCard from '../Card/CollectionCard'
+import ArticleCard from '../Card/ArticleCard'
+import {
+    getArticleURL,
+    getCollectionURL,
+    getCommunityURL,
+} from '../../lib/getURLs'
+import CommunityCard from '../Card/CommunityCard'
 
 interface IProps {
     content: any[]
     Link: React.ReactNode
 }
 
-const RenderMobileFeaturedContent: React.FunctionComponent<IProps> = props => {
+const FeaturedContent: React.FunctionComponent<IProps> = ({ content }) => {
     return (
-        <MobileResourceContainer>
-            {props.content.map(({ resource }, key) => {
-                const articleCount =
-                    resource.sections &&
-                    resource.sections.reduce((current: number, next: any) => {
-                        if (next && Array.isArray(next.resources)) {
-                            const articlesInSection = next.resources.filter(
-                                (sectionResource: any) => {
-                                    return (
-                                        sectionResource &&
-                                        sectionResource.__typename
-                                            .toLowerCase()
-                                            .includes('article')
-                                    )
-                                }
-                            )
-                            return articlesInSection.length + current
-                        }
-                        return current
-                    }, 0)
+        <Grid direction="column" sm={9} spacing={2} container={true}>
+            <Grid>
+                <Typography variant="h5">Featured Content</Typography>
+            </Grid>
+            {content.map(({ resource }: { resource: any }) => {
+                switch (resource.__typename) {
+                    case 'ArticleDTO': {
+                        return (
+                            <Grid item={true}>
+                                <ArticleCard
+                                    {...resource}
+                                    href={getArticleURL(resource)}
+                                />
+                            </Grid>
+                        )
+                    }
 
-                const collectionCount =
-                    resource.sections &&
-                    resource.sections.reduce((current: number, next: any) => {
-                        if (next && Array.isArray(next.resources)) {
-                            const collectionsInSection = next.resources.filter(
-                                (sectionResource: any) =>
-                                    sectionResource &&
-                                    sectionResource.__typename
-                                        .toLowerCase()
-                                        .includes('collection')
-                            )
-                            return collectionsInSection.length + current
-                        }
-                        return current
-                    }, 0)
+                    case 'CollectionDTO': {
+                        return (
+                            <Grid item={true}>
+                                {' '}
+                                <CollectionCard
+                                    {...resource}
+                                    href={getCollectionURL(resource)}
+                                />
+                            </Grid>
+                        )
+                    }
 
-                const RenderedCard = RenderCardContent()
+                    case 'CommunityDTO':
+                        return (
+                            <Grid item={true}>
+                                {' '}
+                                <CommunityCard
+                                    {...resource}
+                                    href={getCommunityURL(resource)}
+                                />
+                            </Grid>
+                        )
 
-                return (
-                    <RenderedCard
-                        key={key}
-                        {...resource}
-                        articleCount={articleCount}
-                        collectionCount={collectionCount}
-                    />
-                )
+                    default: {
+                        return null
+                    }
+                }
             })}
-        </MobileResourceContainer>
+        </Grid>
     )
 }
-
-const RenderDesktopFeaturedContent: React.FunctionComponent<IProps> = ({
-    content,
-}) => (
-    <DesktopResourceContainer>
-        {content.map(({ resource }: { resource: any }) => {
-            switch (resource.__typename) {
-                case 'ArticleDTO': {
-                    return (
-                        <ResourceRow
-                            resourceType={resource.__typename
-                                .split('DTO')[0]
-                                .toLowerCase()}
-                            key={String(resource.id)}
-                            id={String(resource.id)}
-                            version={Number(resource.version)}
-                            title={String(resource.title)}
-                            description={String(resource.description)}
-                            tags={
-                                (resource.tags &&
-                                    resource.tags.map((tag: string) =>
-                                        tag ? tag : ''
-                                    )) ||
-                                []
-                            }
-                            username={
-                                (resource.owner as any).username ||
-                                (resource.owner as any).name
-                            }
-                            userId={(resource.owner as any).id}
-                            userAvatar={(resource.owner as any).avatar}
-                            date={resource.datePublished}
-                            ownerType={'USER'}
-                            imageURL={
-                                resource &&
-                                resource.attributes &&
-                                resource.attributes.background
-                            }
-                        />
-                    )
-                }
-
-                case 'CollectionDTO': {
-                    return (
-                        <ResourceRow
-                            resourceType={resource.__typename
-                                .split('DTO')[0]
-                                .toLowerCase()}
-                            key={String(resource.id)}
-                            id={String(resource.id)}
-                            title={String(resource.name)}
-                            description={String(resource.description)}
-                            tags={
-                                (resource.tags &&
-                                    resource.tags.map((tag: string) =>
-                                        tag ? tag : ''
-                                    )) ||
-                                []
-                            }
-                            username={
-                                (resource.owner as any).username ||
-                                (resource.owner as any).name
-                            }
-                            userId={(resource.owner as any).id}
-                            userAvatar={(resource.owner as any).avatar}
-                            date={resource.dateUpdated}
-                            ownerType={'USER'}
-                            imageURL={resource.background}
-                        />
-                    )
-                }
-
-                default: {
-                    return null
-                }
-            }
-        })}
-    </DesktopResourceContainer>
-)
-
-const FeaturedContent: React.FunctionComponent<IProps> = props => (
-    <Container>
-        <Title2>Featured Content</Title2>
-        <RenderDesktopFeaturedContent {...props} />
-        <RenderMobileFeaturedContent {...props} />
-    </Container>
-)
 
 export default FeaturedContent

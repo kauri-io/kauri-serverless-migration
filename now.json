@@ -3,7 +3,7 @@
   "name": "kauri-serverless",
   "build": {
     "env": {
-      "config": "development-config"
+      "config": "development"
     }
   },
   "builds": [

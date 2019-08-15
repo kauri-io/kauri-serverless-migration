@@ -16,7 +16,7 @@ export const useStyles = makeStyles((theme: Theme) => {
             padding: theme.spacing(2, 0),
         },
         actions: {
-            maxWidth: 1232,
+            maxWidth: 1242,
             margin: 'auto',
         },
         buttons: {

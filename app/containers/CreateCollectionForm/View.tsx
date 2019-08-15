@@ -359,33 +359,57 @@ const CreateCollectionForm: React.FC<
             openChooseCollectionModal,
             setOpenChooseCollectionModal,
         ] = React.useState<boolean>(false)
+    const classes = useStyles()
 
-        const classes = useStyles()
-
-        return (
-            <Section>
-                <Form>
-                    <ActionsSection
-                        bg={
-                            (typeof values.background === 'string' &&
-                                'transparent') ||
-                            'bgPrimary'
-                        }
-                    >
-                        <Stack alignItems={['', 'center']}>
-                            <Button
-                                color='secondary'
-                                variant="text"
-                                data-testid={`CreateCollectionForm-back`}
-                                onClick={() => routeChangeAction('back')}
-                            >
-                                <BackIcon />
-                                Cancel Collection
+    return (
+        <Section>
+            <Form>
+                <ActionsSection
+                    bg={
+                        (typeof values.background === 'string' &&
+                            'transparent') ||
+                        'bgPrimary'
+                    }
+                >
+                    <Stack alignItems={['', 'center']}>
+                        <Button
+                            color="secondary"
+                            variant="text"
+                            data-testid={`CreateCollectionForm-back`}
+                            onClick={() => routeChangeAction('back')}
+                        >
+                            <BackIcon />
+                            Cancel Collection
                         </Button>
-                        </Stack>
-                        <Stack
-                            alignItems={['', 'center']}
-                            justifyContent={['', 'center']}
+                    </Stack>
+                    <Stack
+                        alignItems={['', 'center']}
+                        justifyContent={['', 'center']}
+                    >
+                        <Button
+                            color="secondary"
+                            variant="text"
+                            className="background-upload"
+                        >
+                            <UploadIcon className={classes.uploadIcon} />
+                            Background Image
+                        </Button>
+                    </Stack>
+                    <Stack
+                        alignItems={['', 'center']}
+                        justifyContent={['', 'end']}
+                    >
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            disabled={isSubmitting}
+                            type="submit"
+                            onClick={() =>
+                                showFormValidationErrors(
+                                    validateForm,
+                                    showNotificationAction
+                                )
+                            }
                         >
                             <Button color='secondary' variant="text" className="background-upload">
                                 <UploadIcon className={classes.uploadIcon} />
@@ -413,40 +437,40 @@ const CreateCollectionForm: React.FC<
                         </Stack>
                     </ActionsSection>
 
-                    <PrimaryHeaderSection backgroundURL={values.background}>
-                        <CreateCollectionDetails>
-                            <Label color="white">Collection</Label>
-                            <Field
-                                type="text"
-                                name="name"
-                                render={({ field }) => (
-                                    <TextField
-                                        {...field}
-                                        type="text"
-                                        placeholder="Add collection title"
-                                        InputProps={{
-                                            className: classes.input
-                                        }}
-                                        margin='normal'
-                                    />
-                                )}
-                            />
-                            {/* <ErrorMessage name='name' render={(message: string) => <ErrorMessageRenderer>{message}</ErrorMessageRenderer>} /> */}
-                            <Field
-                                type="text"
-                                name="description"
-                                render={({ field }) => (
-                                    <TextField
-                                        {...field}
-                                        type="text"
-                                        placeholder="Add description"
-                                        InputProps={{
-                                            className: classes.input
-                                        }}
-                                        margin='normal'
-                                    />
-                                )}
-                            />
+                <PrimaryHeaderSection backgroundURL={values.background}>
+                    <CreateCollectionDetails>
+                        <Label color="white">Collection</Label>
+                        <Field
+                            type="text"
+                            name="name"
+                            render={({ field }) => (
+                                <TextField
+                                    {...field}
+                                    type="text"
+                                    placeholder="Add collection title"
+                                    InputProps={{
+                                        className: classes.input,
+                                    }}
+                                    margin="normal"
+                                />
+                            )}
+                        />
+                        {/* <ErrorMessage name='name' render={(message: string) => <ErrorMessageRenderer>{message}</ErrorMessageRenderer>} /> */}
+                        <Field
+                            type="text"
+                            name="description"
+                            render={({ field }) => (
+                                <TextField
+                                    {...field}
+                                    type="text"
+                                    placeholder="Add description"
+                                    InputProps={{
+                                        className: classes.input,
+                                    }}
+                                    margin="normal"
+                                />
+                            )}
+                        />
 
                             <FieldArray
                                 name="tags"
