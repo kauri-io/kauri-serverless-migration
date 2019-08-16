@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import CollectionCard from '../../components/Card/CollectionCard'
 import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
@@ -145,6 +145,10 @@ export default (props: IProps) => {
     }
 
     const [tab, setTab] = useState(0)
+    useEffect(() => {
+        props.passChangeTabFunction(setTab)
+        return () => {}
+    }, [])
 
     return (
         <>

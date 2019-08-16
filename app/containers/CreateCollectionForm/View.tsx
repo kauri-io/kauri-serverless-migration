@@ -411,32 +411,6 @@ const CreateCollectionForm: React.FC<
                                 )
                             }
                         >
-                            <Button
-                                color="secondary"
-                                variant="text"
-                                className="background-upload"
-                            >
-                                <UploadIcon className={classes.uploadIcon} />
-                                Background Image
-                            </Button>
-                        </Button>
-                    </Stack>
-                    <Stack
-                        alignItems={['', 'center']}
-                        justifyContent={['', 'end']}
-                    >
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            disabled={isSubmitting}
-                            type="submit"
-                            onClick={() =>
-                                showFormValidationErrors(
-                                    validateForm,
-                                    showNotificationAction
-                                )
-                            }
-                        >
                             {data ? 'Update Collection' : 'Create Collection'}
                         </Button>
                     </Stack>
@@ -603,7 +577,6 @@ const CreateCollectionForm: React.FC<
                                                             color={
                                                                 'primaryTextColor'
                                                             }
-                                                            textAlign={'center'}
                                                         />
                                                     )}
                                                 />
@@ -619,7 +592,6 @@ const CreateCollectionForm: React.FC<
                                                             color={
                                                                 'primaryTextColor'
                                                             }
-                                                            textAlign={'center'}
                                                         />
                                                     )}
                                                 />
