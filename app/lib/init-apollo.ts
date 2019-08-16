@@ -12,6 +12,8 @@ import { getMainDefinition } from 'apollo-utilities'
 import introspectionQueryResultData from '../fragmentTypes.json'
 import config from '../config'
 
+let apolloClient = null
+
 const fragmentMatcher = new IntrospectionFragmentMatcher({
     introspectionQueryResultData,
 })
@@ -86,5 +88,16 @@ export function create(initialState, { getToken }) {
 }
 
 export default function initApollo(initialState, options) {
-    return create(initialState, options)
+    // Make sure to create a new client for every server-side request so that data
+    // isn't shared between connections (which would be bad)
+    if (!global.window) {
+        return create(initialState, options)
+    }
+
+    // Reuse client on the client-side
+    if (!apolloClient) {
+        apolloClient = create(initialState, options)
+    }
+
+    return apolloClient
 }

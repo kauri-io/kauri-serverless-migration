@@ -85,11 +85,10 @@ interface IProps {
     stateApollo: any
 }
 
-export let apollo: ApolloClient<NormalizedCacheObject>
-
 export default (ComposedComponent: any) =>
     class WithData extends React.Component<IProps> {
         redux: any
+        apollo: ApolloClient<NormalizedCacheObject>
         static async getInitialProps(context) {
             const url = { query: context.query, pathname: context.pathname }
             const hostName =
@@ -129,14 +128,12 @@ export default (ComposedComponent: any) =>
 
             // Setup a server-side one-time-use apollo client for initial props and
             // rendering (on server)
-            apollo = apollo
-                ? apollo
-                : initApollo(
-                      {},
-                      {
-                          getToken: () => parsedToken,
-                      }
-                  )
+            const apollo = initApollo(
+                {},
+                {
+                    getToken: () => parsedToken,
+                }
+            )
             const redux = initRedux(apollo, stateRedux)
 
             // Set userId from cookie
@@ -241,14 +238,12 @@ export default (ComposedComponent: any) =>
 
         constructor(props) {
             super(props)
-            apollo = apollo
-                ? apollo
-                : initApollo(this.props.stateApollo.apollo.data, {
-                      getToken: () => props.parsedToken,
-                      hostName: props.hostName,
-                  })
+            this.apollo = initApollo(this.props.stateApollo.apollo.data, {
+                getToken: () => props.parsedToken,
+                hostName: props.hostName,
+            })
 
-            this.redux = initRedux(apollo, this.props.stateRedux)
+            this.redux = initRedux(this.apollo, this.props.stateRedux)
         }
 
         componentDidMount() {
@@ -303,12 +298,19 @@ export default (ComposedComponent: any) =>
             })
         }
 
+        componentWillUnmount() {
+            if (global.window && this.apollo && this.apollo.stop) {
+                console.log('Unsubscribing WebSocket')
+                this.apollo.stop()
+            }
+        }
+
         render() {
             return (
                 <MaterialThemeProvider theme={theme}>
                     <CssBaseline />
                     <Provider store={this.redux}>
-                        <ApolloProvider client={apollo}>
+                        <ApolloProvider client={this.apollo}>
                             <SnackbarProvider maxSnack={3}>
                                 <ThemeProvider theme={themeConfig}>
                                     <>
