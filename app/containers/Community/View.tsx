@@ -261,8 +261,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         label={`Collections (${collections &&
                             collections.length})`}
                     />
-                    {isCreator ||
-                        (isMember && <Tab label="Manage Community" />)}
+                    {(( isCreator || isMember ) && <Tab label="Manage Community" />)}
                 </Tabs>
                 {this.state.tab === getActualTabId(0) && canDisplayHomepage && (
                     <HomepageResources
