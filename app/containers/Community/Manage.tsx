@@ -32,6 +32,7 @@ const Column = styled.div`
 interface IProps {
     cancelInvitation?: (payload: { index: number }) => void
     communityId: string | null
+    isCommunityAdmin: boolean
     pendingUpdates: any
     pending: Array<getCommunity_getCommunity_pending | null> | null
     members: Array<getCommunity_getCommunity_members | null> | null
@@ -43,6 +44,7 @@ interface IProps {
 const Manage: React.FunctionComponent<IProps> = ({
     pending,
     members,
+    isCommunityAdmin,
     communityId,
     pendingUpdates,
     openAddMemberModal,
@@ -50,7 +52,7 @@ const Manage: React.FunctionComponent<IProps> = ({
     cancelInvitation,
     formInvitations,
 }) => {
-    const [tabIndex, setTabIndex] = useState(0)
+    const [tabIndex, setTabIndex] = useState(isCommunityAdmin ? 0 : 1)
     const pendingArticles =
         pending && pending.filter(i => i && i.__typename === 'ArticleDTO')
     const pendingCollections =
@@ -59,12 +61,14 @@ const Manage: React.FunctionComponent<IProps> = ({
     return (
         <Container>
             <Column>
-                <ResourceCategory
-                    active={tabIndex === 0}
-                    category="Manage Members"
-                    amount={members ? members.length : 0}
-                    onClick={() => setTabIndex(0)}
-                />
+                {isCommunityAdmin && (
+                    <ResourceCategory
+                        active={tabIndex === 0}
+                        category="Manage Members"
+                        amount={members ? members.length : 0}
+                        onClick={() => setTabIndex(0)}
+                    />
+                )}
                 {pageType !== 'CreateCommunityForm' && (
                     <ResourceCategory
                         active={tabIndex === 1}

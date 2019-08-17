@@ -304,6 +304,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         openAddMemberModal={openAddMemberModal}
                         communityId={String(getCommunity.id)}
                         key="manage"
+                        isCommunityAdmin={isCommunityAdmin}
                         members={getCommunity.members}
                         pending={getCommunity.pending}
                         pendingUpdates={
