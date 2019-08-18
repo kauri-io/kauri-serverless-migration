@@ -63,6 +63,7 @@ const HomePanel = props =>
 
 const ManagePanel = props => (
     <Manage
+        isCommunityAdmin={true}
         pageType={'CreateCommunityForm'}
         openAddMemberModal={props.openAddMemberModal}
         members={
@@ -103,7 +104,7 @@ const Component: React.SFC<IProps> = props => {
             {tab === 2 && (
                 <CollectionsContentSectionEmptyState key="collections" />
             )}
-            {tab === 2 && <ManagePanel {...props} />}
+            {tab === 3 && <ManagePanel {...props} />}
         </div>
     )
 }

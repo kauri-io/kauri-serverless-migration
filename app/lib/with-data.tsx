@@ -298,13 +298,6 @@ export default (ComposedComponent: any) =>
             })
         }
 
-        componentWillUnmount() {
-            if (global.window && this.apollo && this.apollo.stop) {
-                console.log('Unsubscribing WebSocket')
-                this.apollo.stop()
-            }
-        }
-
         render() {
             return (
                 <MaterialThemeProvider theme={theme}>
