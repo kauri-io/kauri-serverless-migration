@@ -3613,36 +3613,48 @@ exports[`containers/Article should match snapshot 1`] = `
                                                         </TruncateMarkup>
                                                       </a>
                                                     </Link>
-                                                    <WithStyles(ForwardRef(CardMedia))
-                                                      className="makeStyles-mobileMedia-168"
-                                                      data-testid="ArticleCard-1232-image"
-                                                      image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                                                      title="test title 2"
+                                                    <Link
+                                                      as="/test-title-2/1232/a"
+                                                      href="/article?article_id=1232"
+                                                      prefetch={true}
                                                     >
-                                                      <ForwardRef(CardMedia)
+                                                      <WithStyles(ForwardRef(CardMedia))
                                                         className="makeStyles-mobileMedia-168"
-                                                        classes={
-                                                          Object {
-                                                            "media": "MuiCardMedia-media",
-                                                            "root": "MuiCardMedia-root",
-                                                          }
-                                                        }
                                                         data-testid="ArticleCard-1232-image"
                                                         image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                                        onClick={[Function]}
+                                                        onMouseEnter={[Function]}
                                                         title="test title 2"
                                                       >
-                                                        <div
-                                                          className="MuiCardMedia-root makeStyles-mobileMedia-168"
-                                                          data-testid="ArticleCard-1232-image"
-                                                          style={
+                                                        <ForwardRef(CardMedia)
+                                                          className="makeStyles-mobileMedia-168"
+                                                          classes={
                                                             Object {
-                                                              "backgroundImage": "url(\\"https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU\\")",
+                                                              "media": "MuiCardMedia-media",
+                                                              "root": "MuiCardMedia-root",
                                                             }
                                                           }
+                                                          data-testid="ArticleCard-1232-image"
+                                                          image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                                          onClick={[Function]}
+                                                          onMouseEnter={[Function]}
                                                           title="test title 2"
-                                                        />
-                                                      </ForwardRef(CardMedia)>
-                                                    </WithStyles(ForwardRef(CardMedia))>
+                                                        >
+                                                          <div
+                                                            className="MuiCardMedia-root makeStyles-mobileMedia-168"
+                                                            data-testid="ArticleCard-1232-image"
+                                                            onClick={[Function]}
+                                                            onMouseEnter={[Function]}
+                                                            style={
+                                                              Object {
+                                                                "backgroundImage": "url(\\"https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU\\")",
+                                                              }
+                                                            }
+                                                            title="test title 2"
+                                                          />
+                                                        </ForwardRef(CardMedia)>
+                                                      </WithStyles(ForwardRef(CardMedia))>
+                                                    </Link>
                                                   </div>
                                                   <Link
                                                     as="/test-title-2/1232/a"
@@ -7050,36 +7062,48 @@ exports[`containers/Article should match snapshot 1`] = `
                                                     </ForwardRef(CardActions)>
                                                   </WithStyles(ForwardRef(CardActions))>
                                                 </div>
-                                                <WithStyles(ForwardRef(CardMedia))
-                                                  className="makeStyles-desktopMedia-169"
-                                                  data-testid="ArticleCard-1232-image"
-                                                  image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                                                  title="test title 2"
+                                                <Link
+                                                  as="/test-title-2/1232/a"
+                                                  href="/article?article_id=1232"
+                                                  prefetch={true}
                                                 >
-                                                  <ForwardRef(CardMedia)
-                                                    className="makeStyles-desktopMedia-169"
-                                                    classes={
-                                                      Object {
-                                                        "media": "MuiCardMedia-media",
-                                                        "root": "MuiCardMedia-root",
-                                                      }
-                                                    }
-                                                    data-testid="ArticleCard-1232-image"
-                                                    image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                                                    title="test title 2"
+                                                  <a
+                                                    href="/test-title-2/1232/a"
+                                                    onClick={[Function]}
+                                                    onMouseEnter={[Function]}
                                                   >
-                                                    <div
-                                                      className="MuiCardMedia-root makeStyles-desktopMedia-169"
+                                                    <WithStyles(ForwardRef(CardMedia))
+                                                      className="makeStyles-desktopMedia-169"
                                                       data-testid="ArticleCard-1232-image"
-                                                      style={
-                                                        Object {
-                                                          "backgroundImage": "url(\\"https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU\\")",
-                                                        }
-                                                      }
+                                                      image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
                                                       title="test title 2"
-                                                    />
-                                                  </ForwardRef(CardMedia)>
-                                                </WithStyles(ForwardRef(CardMedia))>
+                                                    >
+                                                      <ForwardRef(CardMedia)
+                                                        className="makeStyles-desktopMedia-169"
+                                                        classes={
+                                                          Object {
+                                                            "media": "MuiCardMedia-media",
+                                                            "root": "MuiCardMedia-root",
+                                                          }
+                                                        }
+                                                        data-testid="ArticleCard-1232-image"
+                                                        image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                                        title="test title 2"
+                                                      >
+                                                        <div
+                                                          className="MuiCardMedia-root makeStyles-desktopMedia-169"
+                                                          data-testid="ArticleCard-1232-image"
+                                                          style={
+                                                            Object {
+                                                              "backgroundImage": "url(\\"https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU\\")",
+                                                            }
+                                                          }
+                                                          title="test title 2"
+                                                        />
+                                                      </ForwardRef(CardMedia)>
+                                                    </WithStyles(ForwardRef(CardMedia))>
+                                                  </a>
+                                                </Link>
                                               </div>
                                             </ForwardRef(Paper)>
                                           </WithStyles(ForwardRef(Paper))>
@@ -7695,36 +7719,48 @@ exports[`containers/Article should match snapshot 1`] = `
                                                         </TruncateMarkup>
                                                       </a>
                                                     </Link>
-                                                    <WithStyles(ForwardRef(CardMedia))
-                                                      className="makeStyles-mobileMedia-168"
-                                                      data-testid="ArticleCard-1233-image"
-                                                      image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                                                      title="test title 3"
+                                                    <Link
+                                                      as="/test-title-3/1233/a"
+                                                      href="/article?article_id=1233"
+                                                      prefetch={true}
                                                     >
-                                                      <ForwardRef(CardMedia)
+                                                      <WithStyles(ForwardRef(CardMedia))
                                                         className="makeStyles-mobileMedia-168"
-                                                        classes={
-                                                          Object {
-                                                            "media": "MuiCardMedia-media",
-                                                            "root": "MuiCardMedia-root",
-                                                          }
-                                                        }
                                                         data-testid="ArticleCard-1233-image"
                                                         image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                                        onClick={[Function]}
+                                                        onMouseEnter={[Function]}
                                                         title="test title 3"
                                                       >
-                                                        <div
-                                                          className="MuiCardMedia-root makeStyles-mobileMedia-168"
-                                                          data-testid="ArticleCard-1233-image"
-                                                          style={
+                                                        <ForwardRef(CardMedia)
+                                                          className="makeStyles-mobileMedia-168"
+                                                          classes={
                                                             Object {
-                                                              "backgroundImage": "url(\\"https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU\\")",
+                                                              "media": "MuiCardMedia-media",
+                                                              "root": "MuiCardMedia-root",
                                                             }
                                                           }
+                                                          data-testid="ArticleCard-1233-image"
+                                                          image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                                          onClick={[Function]}
+                                                          onMouseEnter={[Function]}
                                                           title="test title 3"
-                                                        />
-                                                      </ForwardRef(CardMedia)>
-                                                    </WithStyles(ForwardRef(CardMedia))>
+                                                        >
+                                                          <div
+                                                            className="MuiCardMedia-root makeStyles-mobileMedia-168"
+                                                            data-testid="ArticleCard-1233-image"
+                                                            onClick={[Function]}
+                                                            onMouseEnter={[Function]}
+                                                            style={
+                                                              Object {
+                                                                "backgroundImage": "url(\\"https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU\\")",
+                                                              }
+                                                            }
+                                                            title="test title 3"
+                                                          />
+                                                        </ForwardRef(CardMedia)>
+                                                      </WithStyles(ForwardRef(CardMedia))>
+                                                    </Link>
                                                   </div>
                                                   <Link
                                                     as="/test-title-3/1233/a"
@@ -11132,36 +11168,48 @@ exports[`containers/Article should match snapshot 1`] = `
                                                     </ForwardRef(CardActions)>
                                                   </WithStyles(ForwardRef(CardActions))>
                                                 </div>
-                                                <WithStyles(ForwardRef(CardMedia))
-                                                  className="makeStyles-desktopMedia-169"
-                                                  data-testid="ArticleCard-1233-image"
-                                                  image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                                                  title="test title 3"
+                                                <Link
+                                                  as="/test-title-3/1233/a"
+                                                  href="/article?article_id=1233"
+                                                  prefetch={true}
                                                 >
-                                                  <ForwardRef(CardMedia)
-                                                    className="makeStyles-desktopMedia-169"
-                                                    classes={
-                                                      Object {
-                                                        "media": "MuiCardMedia-media",
-                                                        "root": "MuiCardMedia-root",
-                                                      }
-                                                    }
-                                                    data-testid="ArticleCard-1233-image"
-                                                    image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                                                    title="test title 3"
+                                                  <a
+                                                    href="/test-title-3/1233/a"
+                                                    onClick={[Function]}
+                                                    onMouseEnter={[Function]}
                                                   >
-                                                    <div
-                                                      className="MuiCardMedia-root makeStyles-desktopMedia-169"
+                                                    <WithStyles(ForwardRef(CardMedia))
+                                                      className="makeStyles-desktopMedia-169"
                                                       data-testid="ArticleCard-1233-image"
-                                                      style={
-                                                        Object {
-                                                          "backgroundImage": "url(\\"https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU\\")",
-                                                        }
-                                                      }
+                                                      image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
                                                       title="test title 3"
-                                                    />
-                                                  </ForwardRef(CardMedia)>
-                                                </WithStyles(ForwardRef(CardMedia))>
+                                                    >
+                                                      <ForwardRef(CardMedia)
+                                                        className="makeStyles-desktopMedia-169"
+                                                        classes={
+                                                          Object {
+                                                            "media": "MuiCardMedia-media",
+                                                            "root": "MuiCardMedia-root",
+                                                          }
+                                                        }
+                                                        data-testid="ArticleCard-1233-image"
+                                                        image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                                        title="test title 3"
+                                                      >
+                                                        <div
+                                                          className="MuiCardMedia-root makeStyles-desktopMedia-169"
+                                                          data-testid="ArticleCard-1233-image"
+                                                          style={
+                                                            Object {
+                                                              "backgroundImage": "url(\\"https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU\\")",
+                                                            }
+                                                          }
+                                                          title="test title 3"
+                                                        />
+                                                      </ForwardRef(CardMedia)>
+                                                    </WithStyles(ForwardRef(CardMedia))>
+                                                  </a>
+                                                </Link>
                                               </div>
                                             </ForwardRef(Paper)>
                                           </WithStyles(ForwardRef(Paper))>

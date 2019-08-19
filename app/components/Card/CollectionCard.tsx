@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import Link from 'next/link'
-import { getCollectionURL } from '../../lib/getURLs'
+import { getCollectionURL, getProfileURL } from '../../lib/getURLs'
 import { Theme, makeStyles } from '@material-ui/core/styles'
 import {
     Card,
@@ -133,7 +133,12 @@ const CollectionCard: React.FC<IProps> = ({
     sections,
 }) => {
     const classes = CollectionCardStyles({})
-    const ownerHref = getCollectionURL({ name, id }) // TODO update as contributors[0]
+    const ownerHref = owner
+        ? getProfileURL({
+              id: owner.id,
+              username: owner.name || owner.username,
+          })
+        : getCollectionURL({ id, name }) // TODO update as contributors[0]
 
     const [open, setOpen] = React.useState(false)
 
@@ -180,20 +185,30 @@ const CollectionCard: React.FC<IProps> = ({
             key={id}
             className={`${classes.card} ${className ? className : ''}`}
         >
-            <CardMedia
-                data-testid={`CollectionCard-${id}-image`}
-                className={classes.desktopMedia}
-                image={
-                    background ||
-                    'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
-                }
-                title={String(name)}
-            />
+            <Link href={href.href} as={href.as}>
+                <a>
+                    <CardMedia
+                        data-testid={`CollectionCard-${id}-image`}
+                        className={classes.desktopMedia}
+                        image={
+                            background ||
+                            'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
+                        }
+                        title={String(name)}
+                    />
+                </a>
+            </Link>
             <div className={classes.cardActualContent}>
                 <div className={classes.header}>
                     <div className={classes.stripHeader}>
-                        <Icon>folder</Icon>
-                        <Typography variant="subtitle2">Collection</Typography>
+                        <Link href={href.href} as={href.as}>
+                            <a className={classes.name}>
+                                <Icon>folder</Icon>
+                                <Typography variant="subtitle2">
+                                    Collection
+                                </Typography>
+                            </a>
+                        </Link>
                         <Typography
                             data-testid={`CollectionCard-${id}-date`}
                             variant="body2"
@@ -248,16 +263,20 @@ const CollectionCard: React.FC<IProps> = ({
                                 />
                             </a>
                         </Link>
-                        <Typography
-                            data-testid={`CollectionCard-${id}-owner`}
-                            variant="subtitle2"
-                            className={classes.owner}
-                        >
-                            {owner &&
-                                (owner.name ||
-                                    owner.username ||
-                                    useridTrim(owner.id))}
-                        </Typography>
+                        <Link href={ownerHref.href} as={ownerHref.as}>
+                            <a>
+                                <Typography
+                                    data-testid={`CollectionCard-${id}-owner`}
+                                    variant="subtitle2"
+                                    className={classes.owner}
+                                >
+                                    {owner &&
+                                        (owner.name ||
+                                            owner.username ||
+                                            useridTrim(owner.id))}
+                                </Typography>
+                            </a>
+                        </Link>
                     </div>
 
                     <div className={classes.statistics}>

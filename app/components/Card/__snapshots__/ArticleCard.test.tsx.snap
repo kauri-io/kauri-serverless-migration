@@ -836,36 +836,48 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                         </TruncateMarkup>
                       </a>
                     </Link>
-                    <WithStyles(ForwardRef(CardMedia))
-                      className="makeStyles-mobileMedia-7"
-                      data-testid="ArticleCard-0x12...-image"
-                      image="https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg"
-                      title="Article"
+                    <Link
+                      as="h6"
+                      href="https://kauri.io"
+                      prefetch={true}
                     >
-                      <ForwardRef(CardMedia)
+                      <WithStyles(ForwardRef(CardMedia))
                         className="makeStyles-mobileMedia-7"
-                        classes={
-                          Object {
-                            "media": "MuiCardMedia-media",
-                            "root": "MuiCardMedia-root",
-                          }
-                        }
                         data-testid="ArticleCard-0x12...-image"
                         image="https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg"
+                        onClick={[Function]}
+                        onMouseEnter={[Function]}
                         title="Article"
                       >
-                        <div
-                          className="MuiCardMedia-root makeStyles-mobileMedia-7"
-                          data-testid="ArticleCard-0x12...-image"
-                          style={
+                        <ForwardRef(CardMedia)
+                          className="makeStyles-mobileMedia-7"
+                          classes={
                             Object {
-                              "backgroundImage": "url(\\"https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg\\")",
+                              "media": "MuiCardMedia-media",
+                              "root": "MuiCardMedia-root",
                             }
                           }
+                          data-testid="ArticleCard-0x12...-image"
+                          image="https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg"
+                          onClick={[Function]}
+                          onMouseEnter={[Function]}
                           title="Article"
-                        />
-                      </ForwardRef(CardMedia)>
-                    </WithStyles(ForwardRef(CardMedia))>
+                        >
+                          <div
+                            className="MuiCardMedia-root makeStyles-mobileMedia-7"
+                            data-testid="ArticleCard-0x12...-image"
+                            onClick={[Function]}
+                            onMouseEnter={[Function]}
+                            style={
+                              Object {
+                                "backgroundImage": "url(\\"https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg\\")",
+                              }
+                            }
+                            title="Article"
+                          />
+                        </ForwardRef(CardMedia)>
+                      </WithStyles(ForwardRef(CardMedia))>
+                    </Link>
                   </div>
                   <Link
                     as="h6"
@@ -4740,36 +4752,48 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                     </ForwardRef(CardActions)>
                   </WithStyles(ForwardRef(CardActions))>
                 </div>
-                <WithStyles(ForwardRef(CardMedia))
-                  className="makeStyles-desktopMedia-8"
-                  data-testid="ArticleCard-0x12...-image"
-                  image="https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg"
-                  title="Article"
+                <Link
+                  as="h6"
+                  href="https://kauri.io"
+                  prefetch={true}
                 >
-                  <ForwardRef(CardMedia)
-                    className="makeStyles-desktopMedia-8"
-                    classes={
-                      Object {
-                        "media": "MuiCardMedia-media",
-                        "root": "MuiCardMedia-root",
-                      }
-                    }
-                    data-testid="ArticleCard-0x12...-image"
-                    image="https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg"
-                    title="Article"
+                  <a
+                    href="h6"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
                   >
-                    <div
-                      className="MuiCardMedia-root makeStyles-desktopMedia-8"
+                    <WithStyles(ForwardRef(CardMedia))
+                      className="makeStyles-desktopMedia-8"
                       data-testid="ArticleCard-0x12...-image"
-                      style={
-                        Object {
-                          "backgroundImage": "url(\\"https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg\\")",
-                        }
-                      }
+                      image="https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg"
                       title="Article"
-                    />
-                  </ForwardRef(CardMedia)>
-                </WithStyles(ForwardRef(CardMedia))>
+                    >
+                      <ForwardRef(CardMedia)
+                        className="makeStyles-desktopMedia-8"
+                        classes={
+                          Object {
+                            "media": "MuiCardMedia-media",
+                            "root": "MuiCardMedia-root",
+                          }
+                        }
+                        data-testid="ArticleCard-0x12...-image"
+                        image="https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg"
+                        title="Article"
+                      >
+                        <div
+                          className="MuiCardMedia-root makeStyles-desktopMedia-8"
+                          data-testid="ArticleCard-0x12...-image"
+                          style={
+                            Object {
+                              "backgroundImage": "url(\\"https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg\\")",
+                            }
+                          }
+                          title="Article"
+                        />
+                      </ForwardRef(CardMedia)>
+                    </WithStyles(ForwardRef(CardMedia))>
+                  </a>
+                </Link>
               </div>
             </ForwardRef(Paper)>
           </WithStyles(ForwardRef(Paper))>

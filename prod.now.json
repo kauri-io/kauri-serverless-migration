@@ -50,6 +50,10 @@
       "dest": "/app/update-article?id=$1&version=$2"
     },
     {
+      "src": "/activate/(.*)",
+      "dest": "/app/activate?uuid=$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/app/$1"
     }
