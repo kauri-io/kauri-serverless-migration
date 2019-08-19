@@ -63,6 +63,14 @@ export const homePageContentQuery = gql`
             communityName: name
             description
             website
+            members {
+                id
+                name
+                username
+                avatar
+                role
+                status
+            }
             avatar
             social
             tags

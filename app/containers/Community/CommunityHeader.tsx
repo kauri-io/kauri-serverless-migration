@@ -460,6 +460,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                     </Column>
                     <RightSide>
                         <Statistics
+                            pageType="CollectionPage"
                             statistics={[
                                 { name: 'Articles', count: articleCount },
                                 { name: 'Collections', count: collectionCount },

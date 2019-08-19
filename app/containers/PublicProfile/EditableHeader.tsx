@@ -152,7 +152,7 @@ class EditableHeader extends Component<IProps, IState> {
                         sm={8}
                         container={true}
                         item={true}
-                        alignItems="flex-start"
+                        alignItems="center"
                         justify="flex-end"
                     >
                         <Button

@@ -33,6 +33,7 @@ export const PublicProfileCardStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
         padding: theme.spacing(2),
         height: 152,
+        maxWidth: 870,
     },
     cardActualContent: {
         display: 'flex',

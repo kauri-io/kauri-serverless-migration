@@ -31,6 +31,7 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
             alignSelf: 'center',
         },
         height: 184,
+        maxWidth: 870
     },
     cardActualContent: {
         display: 'flex',
@@ -50,16 +51,16 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
         cursor: 'pointer',
         height: '100%',
         padding: '0px !important',
-        paddingLeft: `${theme.spacing(1.5)}px !important`,
+        paddingLeft: `${theme.spacing(2)}px !important`,
         [theme.breakpoints.only('xs')]: {
             display: 'none !important',
         },
     },
     header: {
         display: 'flex',
-        paddingTop: theme.spacing(1.5),
-        paddingLeft: theme.spacing(1.5),
-        paddingRight: theme.spacing(1.5),
+        paddingTop: theme.spacing(2),
+        paddingLeft: theme.spacing(2),
+        paddingRight: theme.spacing(2),
         cursor: 'pointer',
     },
     mobileMedia: {
@@ -83,7 +84,7 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
         borderRadius: '4px',
         height: 152,
         width: 152,
-        marginRight: theme.spacing(1.5),
+        marginRight: theme.spacing(2),
         [theme.breakpoints.only('xs')]: {
             display: 'none !important',
         },
@@ -95,8 +96,8 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
         marginTop: 'auto',
         alignItems: 'center',
-        paddingBottom: theme.spacing(1.5),
-        paddingLeft: theme.spacing(1.5),
+        paddingBottom: theme.spacing(2),
+        paddingLeft: theme.spacing(2),
     },
     user: {
         display: 'flex',
@@ -105,7 +106,7 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
             marginRight: theme.spacing(1),
         },
         '& > *': {
-            lineHeight: '1.57 !important',
+            lineHeight: '27 !important',
         },
     },
     statistics: {
@@ -117,7 +118,7 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
         },
     },
     menuItem: {
-        padding: theme.spacing(0, 1.5),
+        padding: theme.spacing(0, 2),
     },
 }))
 
