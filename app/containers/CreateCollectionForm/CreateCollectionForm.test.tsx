@@ -1,7 +1,7 @@
 import View from './View'
 import { mountWithRedux } from '../../setupTests'
 import { MockedProvider } from 'react-apollo/test-utils'
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import { Formik } from 'formik'
 
 let wrapper

@@ -3,7 +3,7 @@ import UserAvatarComponent, {
 } from '../UserAvatar'
 import { Label, Title2, BodyCard } from '../Typography'
 import TagList from '../Tags/TagList'
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import slugify from 'slugify'
 import Link from 'next/link'
 import { Grid } from '@material-ui/core'

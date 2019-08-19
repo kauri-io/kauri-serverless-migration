@@ -2322,7 +2322,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                         className="MuiTypography-root MuiTypography-body2"
                                                       >
                                                         Last Updated 
-                                                        7 months ago
+                                                        8 months ago
                                                       </p>
                                                     </ForwardRef(Typography)>
                                                   </WithStyles(ForwardRef(Typography))>

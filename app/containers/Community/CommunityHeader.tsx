@@ -14,7 +14,7 @@ import anchorme from 'anchorme'
 import ShareCommunity from '../../components/Tooltip/ShareArticle'
 import UserAvatar from '../../components/UserAvatar'
 // import { Tooltip } from "react-tippy";
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import ChooseArticleModal, {
     IArticle,
 } from '../CreateCollectionForm/ChooseArticleModal'

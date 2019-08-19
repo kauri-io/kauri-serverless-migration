@@ -1,4 +1,4 @@
-import Button from '@material-ui/core/Button'
+import Button from '../../../components/Button'
 import MediumImportButton from '../../../components/Button/MediumImportButton'
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
 import { BodyCard } from '../../../components/Typography'

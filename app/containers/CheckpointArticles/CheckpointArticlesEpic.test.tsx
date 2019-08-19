@@ -22,30 +22,20 @@ describe('checkpointArticlesEpic', () => {
         }
     })
 
-    it('publishes a new article version since they are a member of the community that owns it', async () => {
+    it('checkpoints the articles', async () => {
         const mockPersonalSign = () => Promise.resolve('abc')
-        const id = '1234567890-'
-        const version = 123
-        const mockGetArticle = {
-            id,
-            version,
-            contentHash: 'LJLREW68184',
-            contributor: 'abc',
-            authorId: id,
-            dateCreated: '2019',
-            owner: { id: '123', name: 'Alice', type: 'COMMUNITY' },
-            author: { id: '123', name: 'Alice' },
-        }
+        const commandResult = 'checkpointCreated'
+        const checkpointHash = 'QmPeiAe7X4dUAzYaK8XfZ74qQscUrs6fbgqNpijW8uAZuU'
         const mockApolloSubscriber = () =>
-            Promise.resolve({ data: { getEvent: { output: { id, version } } } })
+            Promise.resolve({
+                data: {
+                    getEvent: { output: { checkpointHash, commandResult } },
+                },
+            })
         const mockApolloClient = {
             mutate: () =>
                 Promise.resolve({
                     data: { checkpointArticles: { hash: '1234567890' } },
-                }),
-            query: () =>
-                Promise.resolve({
-                    data: { getArticle: mockGetArticle },
                 }),
             resetStore: () => {},
         }
@@ -63,9 +53,7 @@ describe('checkpointArticlesEpic', () => {
         const mockWeb3GetGasPrice = () => from(Promise.resolve(10000))
         const mockSmartContracts = () => ({
             KauriCore: {
-                checkpointArticles: {
-                    sendTransaction: () => Promise.resolve('transactionHash'),
-                },
+                checkpointArticles: () => Promise.resolve('transactionHash'),
             },
         })
 

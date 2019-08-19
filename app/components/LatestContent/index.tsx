@@ -1,7 +1,7 @@
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import Link from 'next/link'
 import { Grid, Typography } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, Theme } from '@material-ui/core/styles'
 import {
     getArticleURL,
     getCollectionURL,
@@ -11,10 +11,13 @@ import ArticleCard from '../Card/ArticleCard'
 import CollectionCard from '../Card/CollectionCard'
 import CommunityCard from '../Card/CommunityCard'
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme: Theme) => ({
     container: {
         maxWidth: 1242,
         margin: 'auto',
+        '& > *': {
+            marginBottom: theme.spacing(1),
+        },
     },
 }))
 
@@ -71,8 +74,8 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                     }
                 })}
             </Grid>
-            <Grid justify="space-around" container={true}>
-                <Grid item={true}>
+            <Grid justify="center" spacing={2} container={true}>
+                <Grid container={true} justify="flex-end" sm={6} item={true}>
                     <Link href="/articles" as="/articles">
                         <a>
                             <Button color="primary" variant="outlined">
@@ -82,7 +85,7 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                     </Link>
                 </Grid>
 
-                <Grid item={true}>
+                <Grid sm={6} item={true}>
                     <Link href="/collections" as="/collections">
                         <a>
                             <Button color="primary" variant="outlined">

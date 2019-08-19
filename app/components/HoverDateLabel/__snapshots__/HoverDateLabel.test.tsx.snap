@@ -6,7 +6,7 @@ exports[`components/HoverDateLabel should match snapshot 1`] = `
   onMouseLeave={[Function]}
 >
   <Typography__component>
-    Posted 7 months ago
+    Posted 8 months ago
   </Typography__component>
 </div>
 `;

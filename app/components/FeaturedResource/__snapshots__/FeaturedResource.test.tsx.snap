@@ -1119,117 +1119,125 @@ exports[`components/FeaturedResource should match snapshot 1`] = `
                           onClick={[Function]}
                           onMouseEnter={[Function]}
                         >
-                          <WithStyles(ForwardRef(Button))
+                          <ButtonComp
                             color="primary"
                             fullWidth={true}
                             variant="outlined"
                           >
-                            <ForwardRef(Button)
-                              classes={
-                                Object {
-                                  "colorInherit": "MuiButton-colorInherit",
-                                  "contained": "MuiButton-contained",
-                                  "containedPrimary": "MuiButton-containedPrimary",
-                                  "containedSecondary": "MuiButton-containedSecondary",
-                                  "disabled": "Mui-disabled",
-                                  "focusVisible": "Mui-focusVisible",
-                                  "fullWidth": "MuiButton-fullWidth",
-                                  "label": "MuiButton-label",
-                                  "outlined": "MuiButton-outlined",
-                                  "outlinedPrimary": "MuiButton-outlinedPrimary",
-                                  "outlinedSecondary": "MuiButton-outlinedSecondary",
-                                  "root": "MuiButton-root",
-                                  "sizeLarge": "MuiButton-sizeLarge",
-                                  "sizeSmall": "MuiButton-sizeSmall",
-                                  "text": "MuiButton-text",
-                                  "textPrimary": "MuiButton-textPrimary",
-                                  "textSecondary": "MuiButton-textSecondary",
-                                }
-                              }
+                            <WithStyles(ForwardRef(Button))
+                              className=""
                               color="primary"
                               fullWidth={true}
                               variant="outlined"
                             >
-                              <WithStyles(ForwardRef(ButtonBase))
-                                className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-fullWidth"
-                                component="button"
-                                disabled={false}
-                                focusRipple={true}
-                                focusVisibleClassName="Mui-focusVisible"
-                                type="button"
-                              >
-                                <ForwardRef(ButtonBase)
-                                  className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-fullWidth"
-                                  classes={
-                                    Object {
-                                      "disabled": "Mui-disabled",
-                                      "focusVisible": "Mui-focusVisible",
-                                      "root": "MuiButtonBase-root",
-                                    }
+                              <ForwardRef(Button)
+                                className=""
+                                classes={
+                                  Object {
+                                    "colorInherit": "MuiButton-colorInherit",
+                                    "contained": "MuiButton-contained",
+                                    "containedPrimary": "MuiButton-containedPrimary",
+                                    "containedSecondary": "MuiButton-containedSecondary",
+                                    "disabled": "Mui-disabled",
+                                    "focusVisible": "Mui-focusVisible",
+                                    "fullWidth": "MuiButton-fullWidth",
+                                    "label": "MuiButton-label",
+                                    "outlined": "MuiButton-outlined",
+                                    "outlinedPrimary": "MuiButton-outlinedPrimary",
+                                    "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                    "root": "MuiButton-root",
+                                    "sizeLarge": "MuiButton-sizeLarge",
+                                    "sizeSmall": "MuiButton-sizeSmall",
+                                    "text": "MuiButton-text",
+                                    "textPrimary": "MuiButton-textPrimary",
+                                    "textSecondary": "MuiButton-textSecondary",
                                   }
+                                }
+                                color="primary"
+                                fullWidth={true}
+                                variant="outlined"
+                              >
+                                <WithStyles(ForwardRef(ButtonBase))
+                                  className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-fullWidth"
                                   component="button"
                                   disabled={false}
                                   focusRipple={true}
                                   focusVisibleClassName="Mui-focusVisible"
                                   type="button"
                                 >
-                                  <button
-                                    className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-fullWidth"
+                                  <ForwardRef(ButtonBase)
+                                    className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-fullWidth"
+                                    classes={
+                                      Object {
+                                        "disabled": "Mui-disabled",
+                                        "focusVisible": "Mui-focusVisible",
+                                        "root": "MuiButtonBase-root",
+                                      }
+                                    }
+                                    component="button"
                                     disabled={false}
-                                    onBlur={[Function]}
-                                    onDragLeave={[Function]}
-                                    onFocus={[Function]}
-                                    onKeyDown={[Function]}
-                                    onKeyUp={[Function]}
-                                    onMouseDown={[Function]}
-                                    onMouseLeave={[Function]}
-                                    onMouseUp={[Function]}
-                                    onTouchEnd={[Function]}
-                                    onTouchMove={[Function]}
-                                    onTouchStart={[Function]}
-                                    tabIndex={0}
+                                    focusRipple={true}
+                                    focusVisibleClassName="Mui-focusVisible"
                                     type="button"
                                   >
-                                    <span
-                                      className="MuiButton-label"
+                                    <button
+                                      className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-fullWidth"
+                                      disabled={false}
+                                      onBlur={[Function]}
+                                      onDragLeave={[Function]}
+                                      onFocus={[Function]}
+                                      onKeyDown={[Function]}
+                                      onKeyUp={[Function]}
+                                      onMouseDown={[Function]}
+                                      onMouseLeave={[Function]}
+                                      onMouseUp={[Function]}
+                                      onTouchEnd={[Function]}
+                                      onTouchMove={[Function]}
+                                      onTouchStart={[Function]}
+                                      tabIndex={0}
+                                      type="button"
                                     >
-                                      View ARTICLE
-                                    </span>
-                                    <NoSsr>
-                                      <WithStyles(undefined)
-                                        center={false}
+                                      <span
+                                        className="MuiButton-label"
                                       >
-                                        <ForwardRef(TouchRipple)
+                                        View ARTICLE
+                                      </span>
+                                      <NoSsr>
+                                        <WithStyles(undefined)
                                           center={false}
-                                          classes={
-                                            Object {
-                                              "child": "MuiTouchRipple-child",
-                                              "childLeaving": "MuiTouchRipple-childLeaving",
-                                              "childPulsate": "MuiTouchRipple-childPulsate",
-                                              "ripple": "MuiTouchRipple-ripple",
-                                              "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                                              "rippleVisible": "MuiTouchRipple-rippleVisible",
-                                              "root": "MuiTouchRipple-root",
-                                            }
-                                          }
                                         >
-                                          <span
-                                            className="MuiTouchRipple-root"
+                                          <ForwardRef(TouchRipple)
+                                            center={false}
+                                            classes={
+                                              Object {
+                                                "child": "MuiTouchRipple-child",
+                                                "childLeaving": "MuiTouchRipple-childLeaving",
+                                                "childPulsate": "MuiTouchRipple-childPulsate",
+                                                "ripple": "MuiTouchRipple-ripple",
+                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                "root": "MuiTouchRipple-root",
+                                              }
+                                            }
                                           >
-                                            <TransitionGroup
-                                              childFactory={[Function]}
-                                              component={null}
-                                              exit={true}
-                                            />
-                                          </span>
-                                        </ForwardRef(TouchRipple)>
-                                      </WithStyles(undefined)>
-                                    </NoSsr>
-                                  </button>
-                                </ForwardRef(ButtonBase)>
-                              </WithStyles(ForwardRef(ButtonBase))>
-                            </ForwardRef(Button)>
-                          </WithStyles(ForwardRef(Button))>
+                                            <span
+                                              className="MuiTouchRipple-root"
+                                            >
+                                              <TransitionGroup
+                                                childFactory={[Function]}
+                                                component={null}
+                                                exit={true}
+                                              />
+                                            </span>
+                                          </ForwardRef(TouchRipple)>
+                                        </WithStyles(undefined)>
+                                      </NoSsr>
+                                    </button>
+                                  </ForwardRef(ButtonBase)>
+                                </WithStyles(ForwardRef(ButtonBase))>
+                              </ForwardRef(Button)>
+                            </WithStyles(ForwardRef(Button))>
+                          </ButtonComp>
                         </a>
                       </Link>
                     </div>

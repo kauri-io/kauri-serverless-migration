@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Title1, BodyCard } from '../Typography'
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import Stack from 'stack-styled'
 import Link from 'next/link'
 

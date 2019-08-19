@@ -1,5 +1,6 @@
-import { Observable } from 'rxjs'
+import { from, of } from 'rxjs'
 import { showNotificationAction } from './Epics/ShowNotificationEpic'
+import { catchError } from 'rxjs/operators'
 
 const networkNames = {
     1: 'Main',
@@ -31,16 +32,17 @@ const getNetwork = () =>
 
 const web3GetNetwork = () =>
     global.window.web3 && global.window.web3.version
-        ? Observable.fromPromise(getNetwork()).catch(err => {
-              console.error(err)
-              if (err.message.includes('Metamask locked!')) {
-                  return Observable.throw(new Error('Metamask locked!'))
-              } else if (err.message.includes('Wrong network')) {
-                  return Observable.throw(new Error('Wrong network'))
-              }
-              return Observable.throw(new Error('Submission error'))
-          })
-        : Observable.of(
+        ? from(getNetwork()).pipe(
+              catchError(err => {
+                  if (err.message.includes('Metamask locked!')) {
+                      throw new Error('Metamask locked!')
+                  } else if (err.message.includes('Wrong network')) {
+                      throw new Error('Wrong network')
+                  }
+                  throw new Error('Submission error')
+              })
+          )
+        : of(
               showNotificationAction({
                   notificationType: 'error',
                   message: 'Wrong network',

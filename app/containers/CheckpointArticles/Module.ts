@@ -35,7 +35,6 @@ export const checkpointArticlesEpic: Epic<
     {
         apolloClient,
         smartContracts,
-        web3,
         web3GetNetwork,
         apolloSubscriber,
         getGasPrice,
@@ -71,17 +70,14 @@ export const checkpointArticlesEpic: Epic<
                     }) =>
                         from(getGasPrice()).pipe(
                             mergeMap<number, string>(gasPrice =>
-                                (smartContracts().KauriCore
-                                    .checkpointArticles as any).sendTransaction(
+                                smartContracts().KauriCore.checkpointArticles(
                                     merkleRoot,
                                     checkpointHash,
                                     signatureV,
                                     signatureR,
                                     signatureS,
                                     {
-                                        from: web3.eth.accounts[0],
                                         value: 0,
-                                        gas: 250000,
                                         gasPrice,
                                     }
                                 )

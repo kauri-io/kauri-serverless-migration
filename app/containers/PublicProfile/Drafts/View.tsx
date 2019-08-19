@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import ArticleCard from '../../../components/Card/ArticleCard'
 import withPagination from '../../../lib/with-pagination'
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
-import Button from '@material-ui/core/Button'
+import Button from '../../../components/Button'
 import Masonry from '../../../components/Masonry'
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
 import {

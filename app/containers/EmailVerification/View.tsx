@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import { H1, H3 } from '../../components/Typography'
 import Loading from '../../components/Loading'
 

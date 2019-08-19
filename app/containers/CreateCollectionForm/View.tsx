@@ -11,7 +11,7 @@ import StatisticsContainer from '../../components/PublicProfile/StatisticsContai
 import UserAvatar from '../../components/UserAvatar'
 import { Label } from '../../components/Typography'
 import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import showFormValidationErrors from '../../lib/show-form-validation-errors'
 import ChooseArticleModal from './ChooseArticleModal'
 import ChooseCollectionModal, { ICollection } from './ChooseCollectionModal'

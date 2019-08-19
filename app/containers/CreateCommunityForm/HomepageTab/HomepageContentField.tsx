@@ -9,7 +9,7 @@ import ArticleCard from '../../ArticleCardFormView'
 import CollectionCard from '../../CollectionCardFormView'
 import { space, SpaceProps, background, BackgroundProps } from 'styled-system'
 import { path, defaultTo, pipe, filter, remove, concat } from 'ramda'
-import Button from '@material-ui/core/Button'
+import Button from '../../../components/Button'
 import SectionOptions from '../../CreateCollectionForm/SectionOptions'
 import {
     openModalAction as openModal,

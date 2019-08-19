@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import anchorme from 'anchorme'
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import StatisticsContainer from '../../components/PublicProfile/StatisticsContainer'
 import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
 import UserAvatar from '../../components/UserAvatar'

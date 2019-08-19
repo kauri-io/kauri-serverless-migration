@@ -2,7 +2,7 @@ import Container from './Container'
 import Table, { Line } from './Table'
 import { H3, BodyCard } from '../../../../components/Typography'
 import styled from 'styled-components'
-import Button from '@material-ui/core/Button'
+import Button from '../../../../components/Button'
 
 export interface ICommunity {
     role: string

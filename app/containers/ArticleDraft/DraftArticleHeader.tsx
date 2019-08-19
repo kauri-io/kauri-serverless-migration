@@ -3,7 +3,7 @@ import moment from 'moment'
 import { TagList } from '../../components/Tags'
 import { Label, Title1 } from '../../components/Typography'
 import Image from '../../components/Image'
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import PublishingSelector, {
     IOption,
 } from '../../containers/PublishingSelector'

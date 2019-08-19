@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import EditProfileForm from '../../components/EditProfileForm'
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import Loading from '../../components/Loading'
 import analytics from '../../lib/analytics'
 import moment from 'moment'

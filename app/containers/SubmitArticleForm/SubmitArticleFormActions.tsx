@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import ProposeUpdateModal from './ProposeUpdateModal'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import initUppy from '../../lib/init-uppy'

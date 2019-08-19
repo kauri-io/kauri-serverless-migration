@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import Loading from '../../components/Loading'
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 export const CheckpointArticlesIcon = () => (
     <svg
         width="20"
@@ -45,6 +45,7 @@ class CTA extends Component<IProps, IState> {
     }
 
     async loadWeb3() {
+        console.log(' Loading web3')
         const sm = await import('../../lib/init-smart-contracts')
         sm.initSmartContracts(global.window.web3, (result, err) => {
             if (err) {
