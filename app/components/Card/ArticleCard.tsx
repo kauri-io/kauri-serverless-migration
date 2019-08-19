@@ -41,6 +41,7 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
         },
     },
     author: {
+        cursor: 'pointer',
         [theme.breakpoints.only('xs')]: {
             display: 'none !important',
         },
@@ -208,15 +209,17 @@ const ArticleCard: React.FC<IProps> = ({
                             </TruncateMarkup>
                         </a>
                     </Link>
-                    <CardMedia
-                        data-testid={`ArticleCard-${id}-image`}
-                        className={classes.mobileMedia}
-                        image={
-                            (attributes && attributes.background) ||
-                            'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
-                        }
-                        title={String(title)}
-                    />
+                    <Link href={href.href} as={href.as}>
+                        <CardMedia
+                            data-testid={`ArticleCard-${id}-image`}
+                            className={classes.mobileMedia}
+                            image={
+                                (attributes && attributes.background) ||
+                                'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
+                            }
+                            title={String(title)}
+                        />
+                    </Link>
                 </div>
                 <Link href={href.href} as={href.as}>
                     <a>
@@ -267,17 +270,21 @@ const ArticleCard: React.FC<IProps> = ({
                                 )}
                             </a>
                         </Link>
-                        <Typography
-                            data-testid={`ArticleCard-${id}-author`}
-                            variant="subtitle2"
-                            className={classes.author}
-                        >
-                            {author &&
-                                (author.name ||
-                                    author.username ||
-                                    (typeof author.id === 'string' &&
-                                        useridTrim(author.id)))}
-                        </Typography>
+                        <Link href={authorHref.href} as={authorHref.as}>
+                            <a>
+                                <Typography
+                                    data-testid={`ArticleCard-${id}-author`}
+                                    variant="subtitle2"
+                                    className={classes.author}
+                                >
+                                    {author &&
+                                        (author.name ||
+                                            author.username ||
+                                            (typeof author.id === 'string' &&
+                                                useridTrim(author.id)))}
+                                </Typography>
+                            </a>
+                        </Link>
                         <Typography
                             data-testid={`ArticleCard-${id}-date`}
                             variant="body2"
@@ -363,15 +370,19 @@ const ArticleCard: React.FC<IProps> = ({
                     </div>
                 </CardActions>
             </div>
-            <CardMedia
-                data-testid={`ArticleCard-${id}-image`}
-                className={classes.desktopMedia}
-                image={
-                    (attributes && attributes.background) ||
-                    'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
-                }
-                title={String(title)}
-            />
+            <Link href={href.href} as={href.as}>
+                <a>
+                    <CardMedia
+                        data-testid={`ArticleCard-${id}-image`}
+                        className={classes.desktopMedia}
+                        image={
+                            (attributes && attributes.background) ||
+                            'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
+                        }
+                        title={String(title)}
+                    />
+                </a>
+            </Link>
         </Card>
     )
 }

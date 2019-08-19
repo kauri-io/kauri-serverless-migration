@@ -201,15 +201,19 @@ const CommunityCard: React.FC<IProps> = ({
             key={id}
             className={`${classes.card} ${className ? className : ''}`}
         >
-            <CardMedia
-                data-testid={`CommunityCard-${id}-image`}
-                className={classes.desktopMedia}
-                image={
-                    (attributes && attributes.background) ||
-                    'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
-                }
-                title={String(name)}
-            />
+            <Link href={href.href} as={href.as}>
+                <a>
+                    <CardMedia
+                        data-testid={`CommunityCard-${id}-image`}
+                        className={classes.desktopMedia}
+                        image={
+                            (attributes && attributes.background) ||
+                            'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
+                        }
+                        title={String(name)}
+                    />
+                </a>
+            </Link>
             <div className={classes.cardActualContent}>
                 <div className={classes.header}>
                     <div className={classes.stripHeader}>
