@@ -200,8 +200,14 @@ const CollectionCard: React.FC<IProps> = ({
             <div className={classes.cardActualContent}>
                 <div className={classes.header}>
                     <div className={classes.stripHeader}>
-                        <Icon>folder</Icon>
-                        <Typography variant="subtitle2">Collection</Typography>
+                        <Link href={href.href} as={href.as}>
+                            <a className={classes.name}>
+                                <Icon>folder</Icon>
+                                <Typography variant="subtitle2">
+                                    Collection
+                                </Typography>
+                            </a>
+                        </Link>
                         <Typography
                             data-testid={`CollectionCard-${id}-date`}
                             variant="body2"
