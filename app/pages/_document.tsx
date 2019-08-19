@@ -23,10 +23,13 @@ export default class MyDocument extends Document<IProps> {
 
         const page = renderPage()
 
+        const initialProps = await Document.getInitialProps(ctx);
+
         return {
             ...page,
+            ...initialProps,
             styleTags,
-            styles: <React.Fragment>{sheets.getStyleElement()}</React.Fragment>,
+            styles: <React.Fragment>{initialProps.styles}{sheets.getStyleElement()}</React.Fragment>,
         }
     }
 
