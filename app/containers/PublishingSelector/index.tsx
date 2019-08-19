@@ -103,6 +103,7 @@ const PublishingSelector = (props: IProps) => {
             confirmButtonAction={(
                 e: React.SyntheticEvent<HTMLButtonElement>
             ) => {
+                e && e.preventDefault()
                 props.handleSubmit(destination, e)
                 props.closeModalAction()
             }}

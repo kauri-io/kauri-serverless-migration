@@ -66,6 +66,7 @@ const Component: React.FunctionComponent<IProps> = props => {
 
                 <Grid sm={6} item={true} container={true} justify="flex-end">
                     <Button
+                        type="submit"
                         color="primary"
                         variant="contained"
                         disabled={props.isSubmitting}

@@ -8,11 +8,18 @@ import { prepareChangeMemberRoleVariables } from '../../../queries/__generated__
 import { removeMemberVariables } from '../../../queries/__generated__/removeMember'
 
 const Header = styled.div`
+    display: flex;
     padding-top: ${props => props.theme.space[2]}px;
     padding-bottom: ${props => props.theme.space[2]}px;
     padding-left: ${props => props.theme.space[2]}px;
     padding-right: ${props => props.theme.space[2]}px;
     border-bottom: 2px solid ${props => props.theme.divider};
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    > :first-child {
+        margin-right: auto;
+    }
 `
 
 const Footer = styled.div`

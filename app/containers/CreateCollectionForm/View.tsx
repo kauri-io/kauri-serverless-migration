@@ -359,7 +359,6 @@ const CreateCollectionForm: React.FC<
         openChooseCollectionModal,
         setOpenChooseCollectionModal,
     ] = React.useState<boolean>(false)
-
     const classes = useStyles()
 
     return (
@@ -578,7 +577,6 @@ const CreateCollectionForm: React.FC<
                                                             color={
                                                                 'primaryTextColor'
                                                             }
-                                                            textAlign={'center'}
                                                         />
                                                     )}
                                                 />
@@ -594,7 +592,6 @@ const CreateCollectionForm: React.FC<
                                                             color={
                                                                 'primaryTextColor'
                                                             }
-                                                            textAlign={'center'}
                                                         />
                                                     )}
                                                 />

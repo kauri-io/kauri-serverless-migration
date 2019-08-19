@@ -1,4 +1,4 @@
-export default (user: string) =>
+export default (user: string): string =>
     (user.substring(0, 2) === '0x' ? '' : '0x') +
     user.substring(0, 4) +
     '...' +

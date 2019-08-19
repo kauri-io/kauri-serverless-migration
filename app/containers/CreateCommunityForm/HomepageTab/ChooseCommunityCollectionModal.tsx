@@ -18,7 +18,7 @@ import {
     DialogActions,
 } from '@material-ui/core'
 
-const collectionSize = 12
+const collectionSize = 50
 
 const TitleContainer = styled.div`
     display: flex;

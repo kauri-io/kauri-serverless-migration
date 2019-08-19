@@ -1,11 +1,16 @@
-import { apollo } from './with-data'
+import initApollo from './init-apollo'
 import { getEvent } from '../queries/Module'
+import cookie from 'cookie'
+
+const token = cookie.parse((global.document && global.document.cookie) || '')[
+    'TOKEN'
+]
 
 export const apolloChildHashesSubscriber = childHashes =>
     childHashes.map(
         hash =>
             new Promise((resolve, reject) =>
-                apollo
+                initApollo({}, { getToken: () => token })
                     .subscribe({
                         query: getEvent,
                         variables: { hash },
@@ -17,12 +22,12 @@ export const apolloChildHashesSubscriber = childHashes =>
             )
     )
 
-export const apolloHashSubscriber = (hash: string) => {
+export const apolloHashSubscriber = (hash: string, event?: string) => {
     return new Promise((resolve, reject) =>
-        apollo
+        initApollo({}, token)
             .subscribe({
                 query: getEvent,
-                variables: { hash },
+                variables: { hash: event ? `${hash}-${event}` : hash },
             })
             .subscribe({
                 next: data => resolve(data),

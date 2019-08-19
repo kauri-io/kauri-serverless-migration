@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ArticleCard from '../../components/Card/ArticleCard'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
@@ -90,6 +90,11 @@ const ChooseArticleCardComponent = props => {
     }
 
     const [tab, setTab] = useState(0)
+    useEffect(() => {
+        props.passChangeTabFunction(setTab)
+        return () => {}
+    }, [])
+
     return (
         <>
             <Tabs

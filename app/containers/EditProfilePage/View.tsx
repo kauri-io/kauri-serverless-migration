@@ -158,7 +158,7 @@ class OnboardingEditProfile extends Component<IProps, IState> {
                         ? this.props.router.query.r + '?redirected=true'
                         : this.props.router.query.r
             } else {
-                newRedirectURL = getProfileURL(this.props.user as any).as
+                newRedirectURL = getProfileURL(this.props.user as any).href
             }
             return this.props.routeChangeAction(newRedirectURL)
         }

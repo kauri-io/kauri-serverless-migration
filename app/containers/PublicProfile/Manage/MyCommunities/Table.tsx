@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Label } from '../../../../components/Typography'
 import Link from '../../../../components/Link'
 import { ICommunity } from './index'
+import { getCommunityURL } from '../../../../lib/getURLs'
 
 interface ICell {
     bold?: boolean
@@ -89,7 +90,7 @@ const Table: React.FunctionComponent<IProps> = props => {
                                 </Label>
                             </Cell>
                             <Cell flex={0} hoverable={true}>
-                                <Link href={`/community/${community.id}`}>
+                                <Link href={getCommunityURL(community).href}>
                                     <Label>View Community</Label>
                                 </Link>
                             </Cell>

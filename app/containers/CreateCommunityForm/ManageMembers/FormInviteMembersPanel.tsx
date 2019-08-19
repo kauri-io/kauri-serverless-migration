@@ -8,6 +8,9 @@ const Header = styled.div`
     padding-bottom: ${props => props.theme.space[2]}px;
     padding-left: ${props => props.theme.space[2]}px;
     padding-right: ${props => props.theme.space[2]}px;
+    > *:first-child {
+        margin-right: ${props => props.theme.space[2]}px;
+    }
     border-bottom: 2px solid ${props => props.theme.divider};
 `
 

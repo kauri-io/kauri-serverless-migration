@@ -19,8 +19,9 @@ import {
 import { from, of, forkJoin } from 'rxjs'
 import { mergeMap, tap, switchMap, map } from 'rxjs/operators'
 import { regenerateEmailVerificationCode } from '../../queries/__generated__/regenerateEmailVerificationCode'
-import { apollo } from '../../lib/with-data'
+import initApollo from '../../lib/init-apollo'
 import { path } from 'ramda'
+import cookie from 'cookie'
 
 interface IVerifyEmailAction {
     callback: any
@@ -112,7 +113,15 @@ export const emailSubscribeEpic: Epic<
                 new Promise<{
                     data: { output: IEmailSubscribeOutput }
                 }>((resolve, reject) => {
-                    apollo
+                    initApollo(
+                        {},
+                        {
+                            getToken: () =>
+                                cookie.parse(
+                                    global.document && global.document.cookie
+                                )['TOKEN'],
+                        }
+                    )
                         .subscribe({
                             query: getEvent,
                             variables: path(['subscribe', 'hash'], data),
@@ -162,35 +171,58 @@ export const verifyEmailEpic: Epic<
             ).pipe(
                 mergeMap(({ data }) =>
                     from(
-                        new Promise<{ data: { output: IVerifyEmailOutput } }>(
-                            (resolve, reject) => {
-                                apollo
-                                    .subscribe({
-                                        query: getEvent,
-                                        variables: path(
+                        new Promise<{
+                            data: { getEvent: { output: IVerifyEmailOutput } }
+                        }>((resolve, reject) => {
+                            initApollo(
+                                {},
+                                {
+                                    getToken: () =>
+                                        cookie.parse(
+                                            global.document &&
+                                                global.document.cookie
+                                        )['TOKEN'],
+                                }
+                            )
+                                .subscribe({
+                                    query: getEvent,
+                                    variables: {
+                                        hash: path(
                                             ['verifyEmail', 'hash'],
                                             data
                                         ),
-                                    })
-                                    .subscribe({
-                                        error: (err: Error) => reject(err),
-                                        next: (data: {
-                                            data: {
+                                    },
+                                })
+                                .subscribe({
+                                    error: (err: Error) => reject(err),
+                                    next: (data: {
+                                        data: {
+                                            getEvent: {
                                                 output: IVerifyEmailOutput
                                             }
-                                        }) => resolve(data),
-                                    })
-                            }
-                        )
+                                        }
+                                    }) => resolve(data),
+                                })
+                        })
                     )
                 ),
-                mergeMap(({ data: { output } }) =>
+                mergeMap(({ data: { getEvent: { output } } }) =>
                     output && output.childHashes
                         ? forkJoin(
                               output.childHashes.map(
                                   hash =>
                                       new Promise((resolve, reject) =>
-                                          apollo
+                                          initApollo(
+                                              {},
+                                              {
+                                                  getToken: () =>
+                                                      cookie.parse(
+                                                          global.document &&
+                                                              global.document
+                                                                  .cookie
+                                                      )['TOKEN'],
+                                              }
+                                          )
                                               .subscribe({
                                                   query: getEvent,
                                                   variables: { hash },

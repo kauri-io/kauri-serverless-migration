@@ -633,10 +633,12 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                         "componentStyle": ComponentStyle {
                                           "componentId": "TagList__StyledTag-ipfhd9-1",
                                           "isStatic": false,
-                                          "lastClassName": "eGuhSG",
+                                          "lastClassName": "kEVsZi",
                                           "rules": Array [
-                                            "cursor:pointer;transition:0.3s;&:not(:last-child):after{content:'•';color:",
-                                            "#0BA986",
+                                            "cursor:pointer;transition:0.3s;color:",
+                                            [Function],
+                                            ";&:not(:last-child):after{content:'•';color:",
+                                            [Function],
                                             ";margin:",
                                             "5",
                                             "px;font-weight:",
@@ -665,7 +667,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                     onClick={[Function]}
                                   >
                                     <div
-                                      className="TagList__StyledTag-ipfhd9-1 eGuhSG"
+                                      className="TagList__StyledTag-ipfhd9-1 kEVsZi"
                                       color="white"
                                       onClick={[Function]}
                                     >
@@ -688,10 +690,12 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                         "componentStyle": ComponentStyle {
                                           "componentId": "TagList__StyledTag-ipfhd9-1",
                                           "isStatic": false,
-                                          "lastClassName": "eGuhSG",
+                                          "lastClassName": "kEVsZi",
                                           "rules": Array [
-                                            "cursor:pointer;transition:0.3s;&:not(:last-child):after{content:'•';color:",
-                                            "#0BA986",
+                                            "cursor:pointer;transition:0.3s;color:",
+                                            [Function],
+                                            ";&:not(:last-child):after{content:'•';color:",
+                                            [Function],
                                             ";margin:",
                                             "5",
                                             "px;font-weight:",
@@ -720,7 +724,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                     onClick={[Function]}
                                   >
                                     <div
-                                      className="TagList__StyledTag-ipfhd9-1 eGuhSG"
+                                      className="TagList__StyledTag-ipfhd9-1 kEVsZi"
                                       color="white"
                                       onClick={[Function]}
                                     >

@@ -18,7 +18,7 @@ import {
     DialogActions,
 } from '@material-ui/core'
 
-const articleSize = 12
+const articleSize = 50
 
 export interface IArticle {
     id: string
