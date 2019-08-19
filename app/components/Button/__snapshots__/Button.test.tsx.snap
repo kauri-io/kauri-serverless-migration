@@ -1475,6 +1475,7 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
       color="textPrimary"
       fontSize={0}
       height="100px"
+      onClick={[Function]}
       type="button"
       width="100px"
     >
@@ -1526,6 +1527,7 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
         }
         forwardedRef={null}
         height="100px"
+        onClick={[Function]}
         type="button"
         width="100px"
       >
@@ -1534,6 +1536,7 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
           color="textPrimary"
           fontSize={0}
           height="100px"
+          onClick={[Function]}
           type="button"
           width="100px"
         >

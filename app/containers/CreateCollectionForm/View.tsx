@@ -323,6 +323,8 @@ export interface IProps {
         version: string
     }
 }
+
+let uppy
 const CreateCollectionForm: React.FC<
     InjectedFormikProps<IProps, IFormValues>
 > = ({
@@ -341,9 +343,8 @@ const CreateCollectionForm: React.FC<
     userAvatar,
 }) => {
     useEffect(() => {
-        const uppy = initUppy({
+        uppy = initUppy({
             allowGifs: false,
-            trigger: '.background-upload',
         })
         uppy.on('upload-success', (_data, data2) => {
             const url = `https://${config.gateway}:443/ipfs/${data2.body.hash}`
@@ -390,6 +391,9 @@ const CreateCollectionForm: React.FC<
                             color="secondary"
                             variant="text"
                             className="background-upload"
+                            onClick={() =>
+                                uppy.getPlugin('Dashboard').openModal()
+                            }
                         >
                             <UploadIcon className={classes.uploadIcon} />
                             Background Image

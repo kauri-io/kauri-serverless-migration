@@ -56,6 +56,8 @@ const isOwner = (
     !owner ||
     owner === userId
 
+let uppy
+
 export default ({
     routeChangeAction,
     handleSubmit,
@@ -71,9 +73,8 @@ export default ({
     communities,
 }: IProps) => {
     useEffect(() => {
-        const uppy = initUppy({
+        uppy = initUppy({
             allowGifs: false,
-            trigger: '.background-upload',
         })
         getFieldDecorator('attributes')
         uppy.on('upload-success', (_data, data2) => {
@@ -105,6 +106,7 @@ export default ({
                         color="secondary"
                         className="background-upload"
                         variant="text"
+                        onClick={() => uppy.getPlugin('Dashboard').openModal()}
                     >
                         <UploadIcon className={classes.uploadIcon} />
                         Upload Background

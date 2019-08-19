@@ -69,6 +69,7 @@ interface IProps extends IButtonProps {
     callback: (hash: string) => void
 }
 
+let uppy
 const UploadLogoButtonComponent: React.FunctionComponent<IProps> = ({
     bg,
     fontSize = 0,
@@ -83,7 +84,7 @@ const UploadLogoButtonComponent: React.FunctionComponent<IProps> = ({
     callback,
 }) => {
     useEffect(() => {
-        const uppy = initUppy({ allowGifs: false, trigger: '.image-upload' })
+        uppy = initUppy({ allowGifs: false })
         uppy.on('upload-success', (_data, data2) =>
             callback(`https://${config.gateway}:443/ipfs/${data2.body.hash}`)
         )
@@ -95,7 +96,10 @@ const UploadLogoButtonComponent: React.FunctionComponent<IProps> = ({
             height={height}
             width={width}
             disabled={disabled}
-            onClick={onClick || handleClick}
+            onClick={() => {
+                uppy.getPlugin('Dashboard').openModal()
+                ;(onClick && onClick()) || (handleClick && handleClick())
+            }}
             color={color}
             fontSize={fontSize}
             type="button"
