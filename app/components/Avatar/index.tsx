@@ -12,24 +12,8 @@ interface IProps {
     avatar?: string | null
     withName: boolean
     className?: string
+    size?: number
 }
-
-const useStyles = makeStyles((theme: Theme) => ({
-    container: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        height: 24,
-    },
-    avatar: {
-        height: '100%',
-        marginRight: theme.spacing(1),
-        borderRadius: 2,
-    },
-    username: {
-        textTransform: 'capitalize',
-    },
-}))
 
 const AvatarComp = ({
     avatar,
@@ -38,7 +22,25 @@ const AvatarComp = ({
     name,
     username,
     withName,
+    size,
 }: IProps) => {
+    const useStyles = makeStyles((theme: Theme) => ({
+        container: {
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            height: size || 24,
+        },
+        avatar: {
+            height: '100%',
+            marginRight: theme.spacing(1),
+            borderRadius: 2,
+        },
+        username: {
+            textTransform: 'capitalize',
+        },
+    }))
+
     const classes = useStyles()
     return (
         <div className={className || classes.container}>

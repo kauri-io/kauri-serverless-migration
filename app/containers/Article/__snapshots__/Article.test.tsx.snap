@@ -4054,18 +4054,18 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                 withName={true}
                                                               >
                                                                 <div
-                                                                  className="makeStyles-container-146"
+                                                                  className="makeStyles-container-208"
                                                                 >
                                                                   <img
-                                                                    className="makeStyles-avatar-147"
+                                                                    className="makeStyles-avatar-209"
                                                                     src="test avatar 2"
                                                                   />
                                                                   <WithStyles(ForwardRef(Typography))
-                                                                    className="makeStyles-username-148"
+                                                                    className="makeStyles-username-210"
                                                                     variant="subtitle2"
                                                                   >
                                                                     <ForwardRef(Typography)
-                                                                      className="makeStyles-username-148"
+                                                                      className="makeStyles-username-210"
                                                                       classes={
                                                                         Object {
                                                                           "alignCenter": "MuiTypography-alignCenter",
@@ -4369,7 +4369,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                       variant="subtitle2"
                                                                     >
                                                                       <h6
-                                                                        className="MuiTypography-root makeStyles-username-148 MuiTypography-subtitle2"
+                                                                        className="MuiTypography-root makeStyles-username-210 MuiTypography-subtitle2"
                                                                       >
                                                                         test author name 2
                                                                       </h6>
@@ -5533,12 +5533,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                             <ShareDialogComponent
                                                               classes={
                                                                 Object {
-                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-233",
-                                                                  "closeButton": "ShareDialogComponent-closeButton-230",
-                                                                  "container": "ShareDialogComponent-container-231",
-                                                                  "icon": "ShareDialogComponent-icon-232",
-                                                                  "iconContainer": "ShareDialogComponent-iconContainer-234",
-                                                                  "root": "ShareDialogComponent-root-229",
+                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-236",
+                                                                  "closeButton": "ShareDialogComponent-closeButton-233",
+                                                                  "container": "ShareDialogComponent-container-234",
+                                                                  "icon": "ShareDialogComponent-icon-235",
+                                                                  "iconContainer": "ShareDialogComponent-iconContainer-237",
+                                                                  "root": "ShareDialogComponent-root-232",
                                                                 }
                                                               }
                                                               handleClose={[Function]}
@@ -8160,18 +8160,18 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                 withName={true}
                                                               >
                                                                 <div
-                                                                  className="makeStyles-container-146"
+                                                                  className="makeStyles-container-255"
                                                                 >
                                                                   <img
-                                                                    className="makeStyles-avatar-147"
+                                                                    className="makeStyles-avatar-256"
                                                                     src="test avatar 3"
                                                                   />
                                                                   <WithStyles(ForwardRef(Typography))
-                                                                    className="makeStyles-username-148"
+                                                                    className="makeStyles-username-257"
                                                                     variant="subtitle2"
                                                                   >
                                                                     <ForwardRef(Typography)
-                                                                      className="makeStyles-username-148"
+                                                                      className="makeStyles-username-257"
                                                                       classes={
                                                                         Object {
                                                                           "alignCenter": "MuiTypography-alignCenter",
@@ -8475,7 +8475,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                       variant="subtitle2"
                                                                     >
                                                                       <h6
-                                                                        className="MuiTypography-root makeStyles-username-148 MuiTypography-subtitle2"
+                                                                        className="MuiTypography-root makeStyles-username-257 MuiTypography-subtitle2"
                                                                       >
                                                                         test author name 3
                                                                       </h6>
@@ -9639,12 +9639,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                             <ShareDialogComponent
                                                               classes={
                                                                 Object {
-                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-233",
-                                                                  "closeButton": "ShareDialogComponent-closeButton-230",
-                                                                  "container": "ShareDialogComponent-container-231",
-                                                                  "icon": "ShareDialogComponent-icon-232",
-                                                                  "iconContainer": "ShareDialogComponent-iconContainer-234",
-                                                                  "root": "ShareDialogComponent-root-229",
+                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-236",
+                                                                  "closeButton": "ShareDialogComponent-closeButton-233",
+                                                                  "container": "ShareDialogComponent-container-234",
+                                                                  "icon": "ShareDialogComponent-icon-235",
+                                                                  "iconContainer": "ShareDialogComponent-iconContainer-237",
+                                                                  "root": "ShareDialogComponent-root-232",
                                                                 }
                                                               }
                                                               handleClose={[Function]}
