@@ -283,7 +283,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                       prefetch={true}
                     >
                       <a
-                        className="makeStyles-name-9"
+                        className="makeStyles-stripHeader-2"
                         href="h6"
                         onClick={[Function]}
                         onMouseEnter={[Function]}
