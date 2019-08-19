@@ -21,7 +21,7 @@ export interface addArticleToCollection {
    * Add a resource into a section
    * This operation can only be performed by the collection owner.
    */
-  addCollectionResource: addArticleToCollection_addCollectionResource | null;
+  addCollectionResource: addArticleToCollection_addCollectionResource;
 }
 
 export interface addArticleToCollectionVariables {

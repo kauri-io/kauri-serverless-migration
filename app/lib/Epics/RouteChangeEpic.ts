@@ -15,7 +15,7 @@ export const routeChange = (payload: IRouteChangePayload): any => {
         window.location.href.indexOf('redirected=true') !== -1 &&
         payload === 'back'
     ) {
-        return Router.push('/') // TODO figure out how to do route change
+        return Router.push('/')
     } else {
         return payload === 'back' ? Router.back() : Router.push(payload)
     }

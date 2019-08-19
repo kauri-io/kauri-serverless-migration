@@ -1,12 +1,11 @@
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
-import Avatar from '@material-ui/core/Avatar'
+import Avatar from '../Avatar'
 import { Typography, Icon, CardActions } from '@material-ui/core'
 import { Theme, makeStyles } from '@material-ui/core/styles'
 import TruncateMarkup from 'react-truncate-markup'
 import Link from 'next/link'
 import { getProfileURL } from '../../lib/getURLs'
-import useridTrim from '../../lib/userid-trim'
 
 export const PublicProfileCardStyles = makeStyles((theme: Theme) => ({
     profileLabel: {
@@ -109,25 +108,15 @@ const PublicProfileCard: React.FC<IProps> = ({
             className={`${classes.card} ${className ? className : ''}`}
         >
             <div className={classes.avatarContainer}>
-                {avatar ? (
-                    <Avatar
-                        sizes={'152'}
-                        className={classes.avatar}
-                        src={avatar}
-                        aria-label={String(username)}
-                        data-testid={`PublicProfileCard-${id}-avatar`}
-                    />
-                ) : (
-                    <Avatar
-                        sizes={'152'}
-                        data-testid={`PublicProfileCard-${id}-avatar`}
-                        className={classes.avatar}
-                        aria-label={String(username)}
-                    >
-                        {(username && username.charAt(0)) ||
-                            useridTrim(id).charAt(0)}
-                    </Avatar>
-                )}
+                <Avatar
+                    aria-label={String(username)}
+                    id={String(id)}
+                    name={name}
+                    username={username}
+                    avatar={avatar}
+                    withName={false}
+                    data-testid={`PublicProfileCard-${id}-avatar`}
+                />
             </div>
 
             <div className={classes.cardActualContent}>

@@ -19,7 +19,7 @@ export interface acceptArticleTransfer {
    * Accept an article transfer.
    * This operation can only be performed by the recipient of the transfer.
    */
-  acceptArticleTransfer: acceptArticleTransfer_acceptArticleTransfer | null;
+  acceptArticleTransfer: acceptArticleTransfer_acceptArticleTransfer;
 }
 
 export interface acceptArticleTransferVariables {

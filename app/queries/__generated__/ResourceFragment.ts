@@ -2,7 +2,7 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { ResourceTypeInput } from "./../../__generated__/globalTypes";
+import { ResourceTypeInput, CommunityPermissionInput, UserStatusInput } from "./../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL fragment: ResourceFragment
@@ -131,7 +131,7 @@ export interface ResourceFragment_CollectionDTO_sections {
   /**
    * load the resources within this section
    */
-  resources: (ResourceFragment_CollectionDTO_sections_resources | null)[] | null;
+  resources: (ResourceFragment_CollectionDTO_sections_resources | null)[];
 }
 
 export interface ResourceFragment_CollectionDTO_resourceIdentifier {
@@ -369,15 +369,15 @@ export interface ResourceFragment_ArticleDTO {
   /**
    * Get a paginated list of comments for this article
    */
-  comments: ResourceFragment_ArticleDTO_comments | null;
+  comments: ResourceFragment_ArticleDTO_comments;
   /**
    * Get vote result for the article
    */
-  voteResult: ResourceFragment_ArticleDTO_voteResult | null;
+  voteResult: ResourceFragment_ArticleDTO_voteResult;
   /**
    * Article author (full profile)
    */
-  author: ResourceFragment_ArticleDTO_author | null;
+  author: ResourceFragment_ArticleDTO_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -402,6 +402,31 @@ export interface ResourceFragment_CommunityDTO_creator {
    * User full name
    */
   publicUserName: string | null;
+}
+
+export interface ResourceFragment_CommunityDTO_members {
+  __typename: "CommunityMemberDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  role: CommunityPermissionInput | null;
+  /**
+   * User status
+   */
+  status: UserStatusInput | null;
 }
 
 export interface ResourceFragment_CommunityDTO_approvedId {
@@ -475,7 +500,7 @@ export interface ResourceFragment_CommunityDTO {
   /**
    * Community creator (full profile)
    */
-  creator: ResourceFragment_CommunityDTO_creator | null;
+  creator: ResourceFragment_CommunityDTO_creator;
   /**
    * Community Name
    */
@@ -488,6 +513,10 @@ export interface ResourceFragment_CommunityDTO {
    * Community Website
    */
   website: string | null;
+  /**
+   * Community members list (full profile)
+   */
+  members: (ResourceFragment_CommunityDTO_members | null)[];
   /**
    * Community avatar image URI
    */
@@ -515,7 +544,7 @@ export interface ResourceFragment_CommunityDTO {
   /**
    * load the approved curated resources associated to this community
    */
-  approved: (ResourceFragment_CommunityDTO_approved | null)[] | null;
+  approved: (ResourceFragment_CommunityDTO_approved | null)[];
 }
 
 export type ResourceFragment = ResourceFragment_PublicUserDTO | ResourceFragment_CollectionDTO | ResourceFragment_ArticleDTO | ResourceFragment_CommunityDTO;

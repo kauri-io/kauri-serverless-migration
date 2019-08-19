@@ -21,7 +21,7 @@ export interface sendInvitation {
    * Send an invitation to join te community (execute call).
    * This operation can only be performed by a community admin
    */
-  sendInvitation: sendInvitation_sendInvitation | null;
+  sendInvitation: sendInvitation_sendInvitation;
 }
 
 export interface sendInvitationVariables {

@@ -16,7 +16,7 @@ export interface prepareRemoveMember {
    * Remove a member from the community (prepare call, return a meta-tx hash to sign).
    * This operation can only be performed by a community admin
    */
-  prepareRemoveMember: prepareRemoveMember_prepareRemoveMember | null;
+  prepareRemoveMember: prepareRemoveMember_prepareRemoveMember;
 }
 
 export interface prepareRemoveMemberVariables {

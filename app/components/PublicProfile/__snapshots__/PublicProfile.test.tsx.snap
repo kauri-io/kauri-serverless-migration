@@ -16,90 +16,358 @@ exports[`components/PublicProfile/SocialWebsiteIcon should match snapshot 1`] = 
   <ThemeProvider
     theme={
       Object {
-        "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
-        "bg": Object {
+        "breakpoints": Object {
+          "between": [Function],
+          "down": [Function],
+          "keys": Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ],
+          "only": [Function],
+          "up": [Function],
+          "values": Object {
+            "lg": 1280,
+            "md": 960,
+            "sm": 600,
+            "xl": 1920,
+            "xs": 0,
+          },
+          "width": [Function],
+        },
+        "direction": "ltr",
+        "mixins": Object {
+          "gutters": [Function],
+          "toolbar": Object {
+            "@media (min-width:0px) and (orientation: landscape)": Object {
+              "minHeight": 48,
+            },
+            "@media (min-width:600px)": Object {
+              "minHeight": 64,
+            },
+            "minHeight": 56,
+          },
+        },
+        "overrides": Object {},
+        "palette": Object {
+          "action": Object {
+            "active": "rgba(0, 0, 0, 0.54)",
+            "disabled": "rgba(0, 0, 0, 0.26)",
+            "disabledBackground": "rgba(0, 0, 0, 0.12)",
+            "hover": "rgba(0, 0, 0, 0.08)",
+            "hoverOpacity": 0.08,
+            "selected": "rgba(0, 0, 0, 0.14)",
+          },
+          "augmentColor": [Function],
+          "background": Object {
+            "default": "#f5f5f5",
+            "paper": "#fff",
+          },
+          "common": Object {
+            "black": "#1E2428",
+            "white": "#fff",
+          },
+          "contrastThreshold": 3,
+          "divider": "rgba(0, 0, 0, 0.12)",
+          "error": Object {
+            "contrastText": "#fff",
+            "dark": "#d32f2f",
+            "light": "#e57373",
+            "main": "#f44336",
+          },
+          "getContrastText": [Function],
+          "grey": Object {
+            "100": "#f5f5f5",
+            "200": "#eeeeee",
+            "300": "#e0e0e0",
+            "400": "#bdbdbd",
+            "50": "#fafafa",
+            "500": "#9e9e9e",
+            "600": "#757575",
+            "700": "#616161",
+            "800": "#424242",
+            "900": "#212121",
+            "A100": "#d5d5d5",
+            "A200": "#aaaaaa",
+            "A400": "#303030",
+            "A700": "#616161",
+          },
+          "primary": Object {
+            "contrastText": "rgba(0, 0, 0, 0.87)",
+            "dark": "rgb(7, 118, 93)",
+            "light": "rgb(59, 186, 158)",
+            "main": "#0BA986",
+          },
+          "secondary": Object {
+            "contrastText": "rgba(0, 0, 0, 0.87)",
+            "dark": "rgb(178, 178, 178)",
+            "light": "rgb(255, 255, 255)",
+            "main": "#ffffff",
+          },
+          "text": Object {
+            "disabled": "rgba(0, 0, 0, 0.38)",
+            "hint": "rgba(0, 0, 0, 0.38)",
+            "primary": "rgba(0, 0, 0, 0.87)",
+            "secondary": "rgba(0, 0, 0, 0.54)",
+          },
+          "tonalOffset": 0.2,
+          "type": "light",
+        },
+        "props": Object {},
+        "shadows": Array [
+          "none",
+          "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+          "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+          "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+          "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+          "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+          "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+          "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+          "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+          "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+          "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+          "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+          "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+          "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+          "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+          "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+          "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+          "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+          "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+        ],
+        "shape": Object {
+          "borderRadius": 4,
+        },
+        "spacing": [Function],
+        "transitions": Object {
+          "create": [Function],
+          "duration": Object {
+            "complex": 375,
+            "enteringScreen": 225,
+            "leavingScreen": 195,
+            "short": 250,
+            "shorter": 200,
+            "shortest": 150,
+            "standard": 300,
+          },
+          "easing": Object {
+            "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+            "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+            "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+            "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+          },
+          "getAutoHeightDuration": [Function],
+        },
+        "typography": Object {
+          "body1": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "1rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.00938em",
+            "lineHeight": 1.5,
+          },
+          "body2": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.875rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.01071em",
+            "lineHeight": 1.43,
+          },
+          "button": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.875rem",
+            "fontWeight": 500,
+            "letterSpacing": "0.02857em",
+            "lineHeight": 1.75,
+            "textTransform": "uppercase",
+          },
+          "caption": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.75rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.03333em",
+            "lineHeight": 1.66,
+          },
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": 14,
+          "fontWeightBold": 700,
+          "fontWeightLight": 300,
+          "fontWeightMedium": 500,
+          "fontWeightRegular": 400,
+          "h1": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "6rem",
+            "fontWeight": 300,
+            "letterSpacing": "-0.01562em",
+            "lineHeight": 1,
+          },
+          "h2": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "3.75rem",
+            "fontWeight": 300,
+            "letterSpacing": "-0.00833em",
+            "lineHeight": 1,
+          },
+          "h3": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "3rem",
+            "fontWeight": 400,
+            "letterSpacing": "0em",
+            "lineHeight": 1.04,
+          },
+          "h4": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "2.125rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.00735em",
+            "lineHeight": 1.17,
+          },
+          "h5": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "1.5rem",
+            "fontWeight": 400,
+            "letterSpacing": "0em",
+            "lineHeight": 1.33,
+          },
+          "h6": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "1.25rem",
+            "fontWeight": 500,
+            "letterSpacing": "0.0075em",
+            "lineHeight": 1.6,
+          },
+          "htmlFontSize": 16,
+          "overline": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.75rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.08333em",
+            "lineHeight": 2.66,
+            "textTransform": "uppercase",
+          },
+          "pxToRem": [Function],
+          "round": [Function],
+          "subtitle1": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "1rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.00938em",
+            "lineHeight": 1.75,
+          },
+          "subtitle2": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.875rem",
+            "fontWeight": 500,
+            "letterSpacing": "0.00714em",
+            "lineHeight": 1.57,
+          },
+        },
+        "zIndex": Object {
+          "appBar": 1100,
+          "drawer": 1200,
+          "mobileStepper": 1000,
+          "modal": 1300,
+          "snackbar": 1400,
+          "tooltip": 1500,
+        },
+      }
+    }
+  >
+    <ThemeProvider
+      theme={
+        Object {
+          "DEFAULT_CARD_WIDTH": 288,
+          "MAIN_BODY_WIDTH": 1242,
+          "bg": Object {
+            "bgPrimary": "#1E2428",
+            "bgSecondary": "#1E3D3B",
+            "borderTextArea": "#979797",
+            "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+            "disabledBackgroundColor": "#D6D6D6",
+            "disabledTextColor": "#9B9B9B",
+            "divider": "#EBEBEB",
+            "errorRedColor": "#C03030",
+            "hoverTextColor": "#108E72",
+            "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+            "paddingTop": "2.5em",
+            "primary": "#0BA986",
+            "primaryColor": "#0BA986",
+            "primaryDark": "#11856B",
+            "primaryTextColor": "#1E2428",
+            "secondary": "#11856B",
+            "secondaryBlue": "rgb(81, 123, 162, 1)",
+            "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+            "secondaryColor": "#1E3D3B",
+            "secondaryTextColor": "#283035",
+            "tertiaryBackgroundColor": "#F7F7F7",
+            "textPrimary": "#1E2428",
+            "white": "#FFFFFF",
+          },
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
           "borderTextArea": "#979797",
+          "breakpoints": Array [
+            "500px",
+            "52em",
+            "1242px",
+          ],
+          "colors": Object {
+            "bgPrimary": "#1E2428",
+            "bgSecondary": "#1E3D3B",
+            "borderTextArea": "#979797",
+            "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+            "disabledBackgroundColor": "#D6D6D6",
+            "disabledTextColor": "#9B9B9B",
+            "divider": "#EBEBEB",
+            "errorRedColor": "#C03030",
+            "hoverTextColor": "#108E72",
+            "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+            "paddingTop": "2.5em",
+            "primary": "#0BA986",
+            "primaryColor": "#0BA986",
+            "primaryDark": "#11856B",
+            "primaryTextColor": "#1E2428",
+            "secondary": "#11856B",
+            "secondaryBlue": "rgb(81, 123, 162, 1)",
+            "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+            "secondaryColor": "#1E3D3B",
+            "secondaryTextColor": "#283035",
+            "tertiaryBackgroundColor": "#F7F7F7",
+            "textPrimary": "#1E2428",
+            "white": "#FFFFFF",
+          },
           "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
           "disabledBackgroundColor": "#D6D6D6",
           "disabledTextColor": "#9B9B9B",
           "divider": "#EBEBEB",
           "errorRedColor": "#C03030",
+          "fontSizes": Array [
+            11,
+            13,
+            14,
+            16,
+            18,
+            20,
+            22,
+            28,
+            32,
+          ],
+          "fontWeight": Array [
+            300,
+            "normal",
+            500,
+            700,
+          ],
           "hoverTextColor": "#108E72",
-          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-          "paddingTop": "2.5em",
-          "primary": "#0BA986",
-          "primaryColor": "#0BA986",
-          "primaryDark": "#11856B",
-          "primaryTextColor": "#1E2428",
-          "secondary": "#11856B",
-          "secondaryBlue": "rgb(81, 123, 162, 1)",
-          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-          "secondaryColor": "#1E3D3B",
-          "secondaryTextColor": "#283035",
-          "tertiaryBackgroundColor": "#F7F7F7",
-          "textPrimary": "#1E2428",
-          "white": "#FFFFFF",
-        },
-        "bgPrimary": "#1E2428",
-        "bgSecondary": "#1E3D3B",
-        "borderTextArea": "#979797",
-        "breakpoints": Array [
-          "500px",
-          "52em",
-          "1242px",
-        ],
-        "colors": Object {
-          "bgPrimary": "#1E2428",
-          "bgSecondary": "#1E3D3B",
-          "borderTextArea": "#979797",
-          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-          "disabledBackgroundColor": "#D6D6D6",
-          "disabledTextColor": "#9B9B9B",
-          "divider": "#EBEBEB",
-          "errorRedColor": "#C03030",
-          "hoverTextColor": "#108E72",
-          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-          "paddingTop": "2.5em",
-          "primary": "#0BA986",
-          "primaryColor": "#0BA986",
-          "primaryDark": "#11856B",
-          "primaryTextColor": "#1E2428",
-          "secondary": "#11856B",
-          "secondaryBlue": "rgb(81, 123, 162, 1)",
-          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-          "secondaryColor": "#1E3D3B",
-          "secondaryTextColor": "#283035",
-          "tertiaryBackgroundColor": "#F7F7F7",
-          "textPrimary": "#1E2428",
-          "white": "#FFFFFF",
-        },
-        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-        "disabledBackgroundColor": "#D6D6D6",
-        "disabledTextColor": "#9B9B9B",
-        "divider": "#EBEBEB",
-        "errorRedColor": "#C03030",
-        "fontSizes": Array [
-          11,
-          13,
-          14,
-          16,
-          18,
-          20,
-          22,
-          28,
-          32,
-        ],
-        "fontWeight": Array [
-          300,
-          "normal",
-          500,
-          700,
-        ],
-        "hoverTextColor": "#108E72",
-        "padContent": "
+          "padContent": "
     max-width: 1242px;
     margin-left: auto;
     margin-right: auto;
@@ -110,79 +378,80 @@ exports[`components/PublicProfile/SocialWebsiteIcon should match snapshot 1`] = 
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
-        "paddingTop": "2.5em",
-        "primary": "#0BA986",
-        "primaryColor": "#0BA986",
-        "primaryDark": "#11856B",
-        "primaryTextColor": "#1E2428",
-        "secondary": "#11856B",
-        "secondaryBlue": "rgb(81, 123, 162, 1)",
-        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-        "secondaryColor": "#1E3D3B",
-        "secondaryTextColor": "#283035",
-        "space": Array [
-          0,
-          10,
-          15,
-          30,
-          60,
-        ],
-        "tertiaryBackgroundColor": "#F7F7F7",
-        "textPrimary": "#1E2428",
-        "white": "#FFFFFF",
+          "padding": "calc((100vw - 1242px) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "space": Array [
+            0,
+            10,
+            15,
+            30,
+            60,
+          ],
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        }
       }
-    }
-  >
-    <SocialWebsiteIcon
-      brand="twitter"
     >
-      <a
-        target="_blank"
+      <SocialWebsiteIcon
+        brand="twitter"
       >
-        <SocialWebsiteIcon__InvertSocialIcon
-          height={20}
-          src="https://unpkg.com/simple-icons@latest/icons/twitter.svg"
-          width={20}
+        <a
+          target="_blank"
         >
-          <StyledComponent
-            forwardedComponent={
-              Object {
-                "$$typeof": Symbol(react.forward_ref),
-                "attrs": Array [],
-                "componentStyle": ComponentStyle {
-                  "componentId": "SocialWebsiteIcon__InvertSocialIcon-sc-1n3fjnh-0",
-                  "isStatic": true,
-                  "lastClassName": "dyAGBL",
-                  "rules": Array [
-                    "filter:invert(100%);",
-                  ],
-                },
-                "displayName": "SocialWebsiteIcon__InvertSocialIcon",
-                "foldedComponentIds": Array [],
-                "render": [Function],
-                "styledComponentId": "SocialWebsiteIcon__InvertSocialIcon-sc-1n3fjnh-0",
-                "target": "img",
-                "toString": [Function],
-                "warnTooManyClasses": [Function],
-                "withComponent": [Function],
-              }
-            }
-            forwardedRef={null}
+          <SocialWebsiteIcon__InvertSocialIcon
             height={20}
             src="https://unpkg.com/simple-icons@latest/icons/twitter.svg"
             width={20}
           >
-            <img
-              className="SocialWebsiteIcon__InvertSocialIcon-sc-1n3fjnh-0 dyAGBL"
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "SocialWebsiteIcon__InvertSocialIcon-sc-1n3fjnh-0",
+                    "isStatic": true,
+                    "lastClassName": "dyAGBL",
+                    "rules": Array [
+                      "filter:invert(100%);",
+                    ],
+                  },
+                  "displayName": "SocialWebsiteIcon__InvertSocialIcon",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "SocialWebsiteIcon__InvertSocialIcon-sc-1n3fjnh-0",
+                  "target": "img",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
               height={20}
               src="https://unpkg.com/simple-icons@latest/icons/twitter.svg"
               width={20}
-            />
-          </StyledComponent>
-        </SocialWebsiteIcon__InvertSocialIcon>
-      </a>
-    </SocialWebsiteIcon>
+            >
+              <img
+                className="SocialWebsiteIcon__InvertSocialIcon-sc-1n3fjnh-0 dyAGBL"
+                height={20}
+                src="https://unpkg.com/simple-icons@latest/icons/twitter.svg"
+                width={20}
+              />
+            </StyledComponent>
+          </SocialWebsiteIcon__InvertSocialIcon>
+        </a>
+      </SocialWebsiteIcon>
+    </ThemeProvider>
   </ThemeProvider>
 </Provider>
 `;
@@ -203,90 +472,358 @@ exports[`components/PublicProfile/StatisticCount should match snapshot 1`] = `
   <ThemeProvider
     theme={
       Object {
-        "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
-        "bg": Object {
+        "breakpoints": Object {
+          "between": [Function],
+          "down": [Function],
+          "keys": Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ],
+          "only": [Function],
+          "up": [Function],
+          "values": Object {
+            "lg": 1280,
+            "md": 960,
+            "sm": 600,
+            "xl": 1920,
+            "xs": 0,
+          },
+          "width": [Function],
+        },
+        "direction": "ltr",
+        "mixins": Object {
+          "gutters": [Function],
+          "toolbar": Object {
+            "@media (min-width:0px) and (orientation: landscape)": Object {
+              "minHeight": 48,
+            },
+            "@media (min-width:600px)": Object {
+              "minHeight": 64,
+            },
+            "minHeight": 56,
+          },
+        },
+        "overrides": Object {},
+        "palette": Object {
+          "action": Object {
+            "active": "rgba(0, 0, 0, 0.54)",
+            "disabled": "rgba(0, 0, 0, 0.26)",
+            "disabledBackground": "rgba(0, 0, 0, 0.12)",
+            "hover": "rgba(0, 0, 0, 0.08)",
+            "hoverOpacity": 0.08,
+            "selected": "rgba(0, 0, 0, 0.14)",
+          },
+          "augmentColor": [Function],
+          "background": Object {
+            "default": "#f5f5f5",
+            "paper": "#fff",
+          },
+          "common": Object {
+            "black": "#1E2428",
+            "white": "#fff",
+          },
+          "contrastThreshold": 3,
+          "divider": "rgba(0, 0, 0, 0.12)",
+          "error": Object {
+            "contrastText": "#fff",
+            "dark": "#d32f2f",
+            "light": "#e57373",
+            "main": "#f44336",
+          },
+          "getContrastText": [Function],
+          "grey": Object {
+            "100": "#f5f5f5",
+            "200": "#eeeeee",
+            "300": "#e0e0e0",
+            "400": "#bdbdbd",
+            "50": "#fafafa",
+            "500": "#9e9e9e",
+            "600": "#757575",
+            "700": "#616161",
+            "800": "#424242",
+            "900": "#212121",
+            "A100": "#d5d5d5",
+            "A200": "#aaaaaa",
+            "A400": "#303030",
+            "A700": "#616161",
+          },
+          "primary": Object {
+            "contrastText": "rgba(0, 0, 0, 0.87)",
+            "dark": "rgb(7, 118, 93)",
+            "light": "rgb(59, 186, 158)",
+            "main": "#0BA986",
+          },
+          "secondary": Object {
+            "contrastText": "rgba(0, 0, 0, 0.87)",
+            "dark": "rgb(178, 178, 178)",
+            "light": "rgb(255, 255, 255)",
+            "main": "#ffffff",
+          },
+          "text": Object {
+            "disabled": "rgba(0, 0, 0, 0.38)",
+            "hint": "rgba(0, 0, 0, 0.38)",
+            "primary": "rgba(0, 0, 0, 0.87)",
+            "secondary": "rgba(0, 0, 0, 0.54)",
+          },
+          "tonalOffset": 0.2,
+          "type": "light",
+        },
+        "props": Object {},
+        "shadows": Array [
+          "none",
+          "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+          "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+          "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+          "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+          "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+          "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+          "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+          "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+          "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+          "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+          "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+          "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+          "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+          "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+          "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+          "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+          "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+          "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+        ],
+        "shape": Object {
+          "borderRadius": 4,
+        },
+        "spacing": [Function],
+        "transitions": Object {
+          "create": [Function],
+          "duration": Object {
+            "complex": 375,
+            "enteringScreen": 225,
+            "leavingScreen": 195,
+            "short": 250,
+            "shorter": 200,
+            "shortest": 150,
+            "standard": 300,
+          },
+          "easing": Object {
+            "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+            "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+            "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+            "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+          },
+          "getAutoHeightDuration": [Function],
+        },
+        "typography": Object {
+          "body1": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "1rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.00938em",
+            "lineHeight": 1.5,
+          },
+          "body2": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.875rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.01071em",
+            "lineHeight": 1.43,
+          },
+          "button": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.875rem",
+            "fontWeight": 500,
+            "letterSpacing": "0.02857em",
+            "lineHeight": 1.75,
+            "textTransform": "uppercase",
+          },
+          "caption": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.75rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.03333em",
+            "lineHeight": 1.66,
+          },
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": 14,
+          "fontWeightBold": 700,
+          "fontWeightLight": 300,
+          "fontWeightMedium": 500,
+          "fontWeightRegular": 400,
+          "h1": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "6rem",
+            "fontWeight": 300,
+            "letterSpacing": "-0.01562em",
+            "lineHeight": 1,
+          },
+          "h2": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "3.75rem",
+            "fontWeight": 300,
+            "letterSpacing": "-0.00833em",
+            "lineHeight": 1,
+          },
+          "h3": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "3rem",
+            "fontWeight": 400,
+            "letterSpacing": "0em",
+            "lineHeight": 1.04,
+          },
+          "h4": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "2.125rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.00735em",
+            "lineHeight": 1.17,
+          },
+          "h5": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "1.5rem",
+            "fontWeight": 400,
+            "letterSpacing": "0em",
+            "lineHeight": 1.33,
+          },
+          "h6": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "1.25rem",
+            "fontWeight": 500,
+            "letterSpacing": "0.0075em",
+            "lineHeight": 1.6,
+          },
+          "htmlFontSize": 16,
+          "overline": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.75rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.08333em",
+            "lineHeight": 2.66,
+            "textTransform": "uppercase",
+          },
+          "pxToRem": [Function],
+          "round": [Function],
+          "subtitle1": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "1rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.00938em",
+            "lineHeight": 1.75,
+          },
+          "subtitle2": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.875rem",
+            "fontWeight": 500,
+            "letterSpacing": "0.00714em",
+            "lineHeight": 1.57,
+          },
+        },
+        "zIndex": Object {
+          "appBar": 1100,
+          "drawer": 1200,
+          "mobileStepper": 1000,
+          "modal": 1300,
+          "snackbar": 1400,
+          "tooltip": 1500,
+        },
+      }
+    }
+  >
+    <ThemeProvider
+      theme={
+        Object {
+          "DEFAULT_CARD_WIDTH": 288,
+          "MAIN_BODY_WIDTH": 1242,
+          "bg": Object {
+            "bgPrimary": "#1E2428",
+            "bgSecondary": "#1E3D3B",
+            "borderTextArea": "#979797",
+            "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+            "disabledBackgroundColor": "#D6D6D6",
+            "disabledTextColor": "#9B9B9B",
+            "divider": "#EBEBEB",
+            "errorRedColor": "#C03030",
+            "hoverTextColor": "#108E72",
+            "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+            "paddingTop": "2.5em",
+            "primary": "#0BA986",
+            "primaryColor": "#0BA986",
+            "primaryDark": "#11856B",
+            "primaryTextColor": "#1E2428",
+            "secondary": "#11856B",
+            "secondaryBlue": "rgb(81, 123, 162, 1)",
+            "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+            "secondaryColor": "#1E3D3B",
+            "secondaryTextColor": "#283035",
+            "tertiaryBackgroundColor": "#F7F7F7",
+            "textPrimary": "#1E2428",
+            "white": "#FFFFFF",
+          },
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
           "borderTextArea": "#979797",
+          "breakpoints": Array [
+            "500px",
+            "52em",
+            "1242px",
+          ],
+          "colors": Object {
+            "bgPrimary": "#1E2428",
+            "bgSecondary": "#1E3D3B",
+            "borderTextArea": "#979797",
+            "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+            "disabledBackgroundColor": "#D6D6D6",
+            "disabledTextColor": "#9B9B9B",
+            "divider": "#EBEBEB",
+            "errorRedColor": "#C03030",
+            "hoverTextColor": "#108E72",
+            "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+            "paddingTop": "2.5em",
+            "primary": "#0BA986",
+            "primaryColor": "#0BA986",
+            "primaryDark": "#11856B",
+            "primaryTextColor": "#1E2428",
+            "secondary": "#11856B",
+            "secondaryBlue": "rgb(81, 123, 162, 1)",
+            "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+            "secondaryColor": "#1E3D3B",
+            "secondaryTextColor": "#283035",
+            "tertiaryBackgroundColor": "#F7F7F7",
+            "textPrimary": "#1E2428",
+            "white": "#FFFFFF",
+          },
           "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
           "disabledBackgroundColor": "#D6D6D6",
           "disabledTextColor": "#9B9B9B",
           "divider": "#EBEBEB",
           "errorRedColor": "#C03030",
+          "fontSizes": Array [
+            11,
+            13,
+            14,
+            16,
+            18,
+            20,
+            22,
+            28,
+            32,
+          ],
+          "fontWeight": Array [
+            300,
+            "normal",
+            500,
+            700,
+          ],
           "hoverTextColor": "#108E72",
-          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-          "paddingTop": "2.5em",
-          "primary": "#0BA986",
-          "primaryColor": "#0BA986",
-          "primaryDark": "#11856B",
-          "primaryTextColor": "#1E2428",
-          "secondary": "#11856B",
-          "secondaryBlue": "rgb(81, 123, 162, 1)",
-          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-          "secondaryColor": "#1E3D3B",
-          "secondaryTextColor": "#283035",
-          "tertiaryBackgroundColor": "#F7F7F7",
-          "textPrimary": "#1E2428",
-          "white": "#FFFFFF",
-        },
-        "bgPrimary": "#1E2428",
-        "bgSecondary": "#1E3D3B",
-        "borderTextArea": "#979797",
-        "breakpoints": Array [
-          "500px",
-          "52em",
-          "1242px",
-        ],
-        "colors": Object {
-          "bgPrimary": "#1E2428",
-          "bgSecondary": "#1E3D3B",
-          "borderTextArea": "#979797",
-          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-          "disabledBackgroundColor": "#D6D6D6",
-          "disabledTextColor": "#9B9B9B",
-          "divider": "#EBEBEB",
-          "errorRedColor": "#C03030",
-          "hoverTextColor": "#108E72",
-          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-          "paddingTop": "2.5em",
-          "primary": "#0BA986",
-          "primaryColor": "#0BA986",
-          "primaryDark": "#11856B",
-          "primaryTextColor": "#1E2428",
-          "secondary": "#11856B",
-          "secondaryBlue": "rgb(81, 123, 162, 1)",
-          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-          "secondaryColor": "#1E3D3B",
-          "secondaryTextColor": "#283035",
-          "tertiaryBackgroundColor": "#F7F7F7",
-          "textPrimary": "#1E2428",
-          "white": "#FFFFFF",
-        },
-        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-        "disabledBackgroundColor": "#D6D6D6",
-        "disabledTextColor": "#9B9B9B",
-        "divider": "#EBEBEB",
-        "errorRedColor": "#C03030",
-        "fontSizes": Array [
-          11,
-          13,
-          14,
-          16,
-          18,
-          20,
-          22,
-          28,
-          32,
-        ],
-        "fontWeight": Array [
-          300,
-          "normal",
-          500,
-          700,
-        ],
-        "hoverTextColor": "#108E72",
-        "padContent": "
+          "padContent": "
     max-width: 1242px;
     margin-left: auto;
     margin-right: auto;
@@ -297,156 +834,157 @@ exports[`components/PublicProfile/StatisticCount should match snapshot 1`] = `
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
-        "paddingTop": "2.5em",
-        "primary": "#0BA986",
-        "primaryColor": "#0BA986",
-        "primaryDark": "#11856B",
-        "primaryTextColor": "#1E2428",
-        "secondary": "#11856B",
-        "secondaryBlue": "rgb(81, 123, 162, 1)",
-        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-        "secondaryColor": "#1E3D3B",
-        "secondaryTextColor": "#283035",
-        "space": Array [
-          0,
-          10,
-          15,
-          30,
-          60,
-        ],
-        "tertiaryBackgroundColor": "#F7F7F7",
-        "textPrimary": "#1E2428",
-        "white": "#FFFFFF",
+          "padding": "calc((100vw - 1242px) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "space": Array [
+            0,
+            10,
+            15,
+            30,
+            60,
+          ],
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        }
       }
-    }
-  >
-    <Container
-      count={4}
-      name="test"
-      pageType="collection"
     >
-      <StatisticCount__SectionContainer
-        key="test"
+      <Container
+        count={4}
+        name="test"
+        pageType="collection"
       >
-        <StyledComponent
-          forwardedComponent={
-            Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "attrs": Array [],
-              "componentStyle": ComponentStyle {
-                "componentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
-                "isStatic": true,
-                "lastClassName": "hBrKEM",
-                "rules": Array [
-                  "display:flex;flex-direction:column;align-items:center;max-width:150px;",
-                ],
-              },
-              "displayName": "StatisticCount__SectionContainer",
-              "foldedComponentIds": Array [],
-              "render": [Function],
-              "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
-              "target": "section",
-              "toString": [Function],
-              "warnTooManyClasses": [Function],
-              "withComponent": [Function],
-            }
-          }
-          forwardedRef={null}
+        <StatisticCount__SectionContainer
+          key="test"
         >
-          <section
-            className="StatisticCount__SectionContainer-sc-1xyux9h-1 hBrKEM"
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
+                  "isStatic": true,
+                  "lastClassName": "hBrKEM",
+                  "rules": Array [
+                    "display:flex;flex-direction:column;align-items:center;max-width:150px;",
+                  ],
+                },
+                "displayName": "StatisticCount__SectionContainer",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
+                "target": "section",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
           >
-            <StatisticCount__Count
-              pageType="collection"
+            <section
+              className="StatisticCount__SectionContainer-sc-1xyux9h-1 hBrKEM"
             >
-              <StyledComponent
-                forwardedComponent={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "StatisticCount__Count-sc-1xyux9h-0",
-                      "isStatic": false,
-                      "lastClassName": "dTPpIr",
-                      "rules": Array [
-                        "color:white;font-size:",
-                        [Function],
-                        "px;font-weight:",
-                        [Function],
-                        ";margin:0px;margin-bottom:",
-                        [Function],
-                        "px;opacity:",
-                        [Function],
-                        ";",
-                      ],
-                    },
-                    "displayName": "StatisticCount__Count",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
-                    "target": "h3",
-                    "toString": [Function],
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
-                  }
-                }
-                forwardedRef={null}
+              <StatisticCount__Count
                 pageType="collection"
               >
-                <h3
-                  className="StatisticCount__Count-sc-1xyux9h-0 dTPpIr"
-                >
-                  4
-                </h3>
-              </StyledComponent>
-            </StatisticCount__Count>
-            <StatisticCount__Name
-              pageType="collection"
-            >
-              <StyledComponent
-                forwardedComponent={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "StatisticCount__Name-sc-1xyux9h-2",
-                      "isStatic": false,
-                      "lastClassName": "ivYcUc",
-                      "rules": Array [
-                        "color:white;font-size:",
-                        [Function],
-                        "px;font-weight:",
-                        [Function],
-                        ";opacity:",
-                        [Function],
-                        ";text-transform:uppercase;",
-                      ],
-                    },
-                    "displayName": "StatisticCount__Name",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
-                    "target": "span",
-                    "toString": [Function],
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "StatisticCount__Count-sc-1xyux9h-0",
+                        "isStatic": false,
+                        "lastClassName": "dTPpIr",
+                        "rules": Array [
+                          "color:white;font-size:",
+                          [Function],
+                          "px;font-weight:",
+                          [Function],
+                          ";margin:0px;margin-bottom:",
+                          [Function],
+                          "px;opacity:",
+                          [Function],
+                          ";",
+                        ],
+                      },
+                      "displayName": "StatisticCount__Count",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
+                      "target": "h3",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
                   }
-                }
-                forwardedRef={null}
+                  forwardedRef={null}
+                  pageType="collection"
+                >
+                  <h3
+                    className="StatisticCount__Count-sc-1xyux9h-0 dTPpIr"
+                  >
+                    4
+                  </h3>
+                </StyledComponent>
+              </StatisticCount__Count>
+              <StatisticCount__Name
                 pageType="collection"
               >
-                <span
-                  className="StatisticCount__Name-sc-1xyux9h-2 ivYcUc"
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "StatisticCount__Name-sc-1xyux9h-2",
+                        "isStatic": false,
+                        "lastClassName": "ivYcUc",
+                        "rules": Array [
+                          "color:white;font-size:",
+                          [Function],
+                          "px;font-weight:",
+                          [Function],
+                          ";opacity:",
+                          [Function],
+                          ";text-transform:uppercase;",
+                        ],
+                      },
+                      "displayName": "StatisticCount__Name",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
+                      "target": "span",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                  pageType="collection"
                 >
-                  tests
-                </span>
-              </StyledComponent>
-            </StatisticCount__Name>
-          </section>
-        </StyledComponent>
-      </StatisticCount__SectionContainer>
-    </Container>
+                  <span
+                    className="StatisticCount__Name-sc-1xyux9h-2 ivYcUc"
+                  >
+                    tests
+                  </span>
+                </StyledComponent>
+              </StatisticCount__Name>
+            </section>
+          </StyledComponent>
+        </StatisticCount__SectionContainer>
+      </Container>
+    </ThemeProvider>
   </ThemeProvider>
 </Provider>
 `;
@@ -467,90 +1005,358 @@ exports[`components/PublicProfile/StatisticsContainer should match snapshot 1`] 
   <ThemeProvider
     theme={
       Object {
-        "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
-        "bg": Object {
+        "breakpoints": Object {
+          "between": [Function],
+          "down": [Function],
+          "keys": Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ],
+          "only": [Function],
+          "up": [Function],
+          "values": Object {
+            "lg": 1280,
+            "md": 960,
+            "sm": 600,
+            "xl": 1920,
+            "xs": 0,
+          },
+          "width": [Function],
+        },
+        "direction": "ltr",
+        "mixins": Object {
+          "gutters": [Function],
+          "toolbar": Object {
+            "@media (min-width:0px) and (orientation: landscape)": Object {
+              "minHeight": 48,
+            },
+            "@media (min-width:600px)": Object {
+              "minHeight": 64,
+            },
+            "minHeight": 56,
+          },
+        },
+        "overrides": Object {},
+        "palette": Object {
+          "action": Object {
+            "active": "rgba(0, 0, 0, 0.54)",
+            "disabled": "rgba(0, 0, 0, 0.26)",
+            "disabledBackground": "rgba(0, 0, 0, 0.12)",
+            "hover": "rgba(0, 0, 0, 0.08)",
+            "hoverOpacity": 0.08,
+            "selected": "rgba(0, 0, 0, 0.14)",
+          },
+          "augmentColor": [Function],
+          "background": Object {
+            "default": "#f5f5f5",
+            "paper": "#fff",
+          },
+          "common": Object {
+            "black": "#1E2428",
+            "white": "#fff",
+          },
+          "contrastThreshold": 3,
+          "divider": "rgba(0, 0, 0, 0.12)",
+          "error": Object {
+            "contrastText": "#fff",
+            "dark": "#d32f2f",
+            "light": "#e57373",
+            "main": "#f44336",
+          },
+          "getContrastText": [Function],
+          "grey": Object {
+            "100": "#f5f5f5",
+            "200": "#eeeeee",
+            "300": "#e0e0e0",
+            "400": "#bdbdbd",
+            "50": "#fafafa",
+            "500": "#9e9e9e",
+            "600": "#757575",
+            "700": "#616161",
+            "800": "#424242",
+            "900": "#212121",
+            "A100": "#d5d5d5",
+            "A200": "#aaaaaa",
+            "A400": "#303030",
+            "A700": "#616161",
+          },
+          "primary": Object {
+            "contrastText": "rgba(0, 0, 0, 0.87)",
+            "dark": "rgb(7, 118, 93)",
+            "light": "rgb(59, 186, 158)",
+            "main": "#0BA986",
+          },
+          "secondary": Object {
+            "contrastText": "rgba(0, 0, 0, 0.87)",
+            "dark": "rgb(178, 178, 178)",
+            "light": "rgb(255, 255, 255)",
+            "main": "#ffffff",
+          },
+          "text": Object {
+            "disabled": "rgba(0, 0, 0, 0.38)",
+            "hint": "rgba(0, 0, 0, 0.38)",
+            "primary": "rgba(0, 0, 0, 0.87)",
+            "secondary": "rgba(0, 0, 0, 0.54)",
+          },
+          "tonalOffset": 0.2,
+          "type": "light",
+        },
+        "props": Object {},
+        "shadows": Array [
+          "none",
+          "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+          "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+          "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+          "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+          "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+          "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+          "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+          "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+          "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+          "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+          "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+          "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+          "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+          "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+          "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+          "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+          "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+          "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+        ],
+        "shape": Object {
+          "borderRadius": 4,
+        },
+        "spacing": [Function],
+        "transitions": Object {
+          "create": [Function],
+          "duration": Object {
+            "complex": 375,
+            "enteringScreen": 225,
+            "leavingScreen": 195,
+            "short": 250,
+            "shorter": 200,
+            "shortest": 150,
+            "standard": 300,
+          },
+          "easing": Object {
+            "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+            "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+            "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+            "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+          },
+          "getAutoHeightDuration": [Function],
+        },
+        "typography": Object {
+          "body1": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "1rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.00938em",
+            "lineHeight": 1.5,
+          },
+          "body2": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.875rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.01071em",
+            "lineHeight": 1.43,
+          },
+          "button": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.875rem",
+            "fontWeight": 500,
+            "letterSpacing": "0.02857em",
+            "lineHeight": 1.75,
+            "textTransform": "uppercase",
+          },
+          "caption": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.75rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.03333em",
+            "lineHeight": 1.66,
+          },
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": 14,
+          "fontWeightBold": 700,
+          "fontWeightLight": 300,
+          "fontWeightMedium": 500,
+          "fontWeightRegular": 400,
+          "h1": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "6rem",
+            "fontWeight": 300,
+            "letterSpacing": "-0.01562em",
+            "lineHeight": 1,
+          },
+          "h2": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "3.75rem",
+            "fontWeight": 300,
+            "letterSpacing": "-0.00833em",
+            "lineHeight": 1,
+          },
+          "h3": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "3rem",
+            "fontWeight": 400,
+            "letterSpacing": "0em",
+            "lineHeight": 1.04,
+          },
+          "h4": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "2.125rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.00735em",
+            "lineHeight": 1.17,
+          },
+          "h5": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "1.5rem",
+            "fontWeight": 400,
+            "letterSpacing": "0em",
+            "lineHeight": 1.33,
+          },
+          "h6": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "1.25rem",
+            "fontWeight": 500,
+            "letterSpacing": "0.0075em",
+            "lineHeight": 1.6,
+          },
+          "htmlFontSize": 16,
+          "overline": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.75rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.08333em",
+            "lineHeight": 2.66,
+            "textTransform": "uppercase",
+          },
+          "pxToRem": [Function],
+          "round": [Function],
+          "subtitle1": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "1rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.00938em",
+            "lineHeight": 1.75,
+          },
+          "subtitle2": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.875rem",
+            "fontWeight": 500,
+            "letterSpacing": "0.00714em",
+            "lineHeight": 1.57,
+          },
+        },
+        "zIndex": Object {
+          "appBar": 1100,
+          "drawer": 1200,
+          "mobileStepper": 1000,
+          "modal": 1300,
+          "snackbar": 1400,
+          "tooltip": 1500,
+        },
+      }
+    }
+  >
+    <ThemeProvider
+      theme={
+        Object {
+          "DEFAULT_CARD_WIDTH": 288,
+          "MAIN_BODY_WIDTH": 1242,
+          "bg": Object {
+            "bgPrimary": "#1E2428",
+            "bgSecondary": "#1E3D3B",
+            "borderTextArea": "#979797",
+            "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+            "disabledBackgroundColor": "#D6D6D6",
+            "disabledTextColor": "#9B9B9B",
+            "divider": "#EBEBEB",
+            "errorRedColor": "#C03030",
+            "hoverTextColor": "#108E72",
+            "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+            "paddingTop": "2.5em",
+            "primary": "#0BA986",
+            "primaryColor": "#0BA986",
+            "primaryDark": "#11856B",
+            "primaryTextColor": "#1E2428",
+            "secondary": "#11856B",
+            "secondaryBlue": "rgb(81, 123, 162, 1)",
+            "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+            "secondaryColor": "#1E3D3B",
+            "secondaryTextColor": "#283035",
+            "tertiaryBackgroundColor": "#F7F7F7",
+            "textPrimary": "#1E2428",
+            "white": "#FFFFFF",
+          },
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
           "borderTextArea": "#979797",
+          "breakpoints": Array [
+            "500px",
+            "52em",
+            "1242px",
+          ],
+          "colors": Object {
+            "bgPrimary": "#1E2428",
+            "bgSecondary": "#1E3D3B",
+            "borderTextArea": "#979797",
+            "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+            "disabledBackgroundColor": "#D6D6D6",
+            "disabledTextColor": "#9B9B9B",
+            "divider": "#EBEBEB",
+            "errorRedColor": "#C03030",
+            "hoverTextColor": "#108E72",
+            "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+            "paddingTop": "2.5em",
+            "primary": "#0BA986",
+            "primaryColor": "#0BA986",
+            "primaryDark": "#11856B",
+            "primaryTextColor": "#1E2428",
+            "secondary": "#11856B",
+            "secondaryBlue": "rgb(81, 123, 162, 1)",
+            "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+            "secondaryColor": "#1E3D3B",
+            "secondaryTextColor": "#283035",
+            "tertiaryBackgroundColor": "#F7F7F7",
+            "textPrimary": "#1E2428",
+            "white": "#FFFFFF",
+          },
           "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
           "disabledBackgroundColor": "#D6D6D6",
           "disabledTextColor": "#9B9B9B",
           "divider": "#EBEBEB",
           "errorRedColor": "#C03030",
+          "fontSizes": Array [
+            11,
+            13,
+            14,
+            16,
+            18,
+            20,
+            22,
+            28,
+            32,
+          ],
+          "fontWeight": Array [
+            300,
+            "normal",
+            500,
+            700,
+          ],
           "hoverTextColor": "#108E72",
-          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-          "paddingTop": "2.5em",
-          "primary": "#0BA986",
-          "primaryColor": "#0BA986",
-          "primaryDark": "#11856B",
-          "primaryTextColor": "#1E2428",
-          "secondary": "#11856B",
-          "secondaryBlue": "rgb(81, 123, 162, 1)",
-          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-          "secondaryColor": "#1E3D3B",
-          "secondaryTextColor": "#283035",
-          "tertiaryBackgroundColor": "#F7F7F7",
-          "textPrimary": "#1E2428",
-          "white": "#FFFFFF",
-        },
-        "bgPrimary": "#1E2428",
-        "bgSecondary": "#1E3D3B",
-        "borderTextArea": "#979797",
-        "breakpoints": Array [
-          "500px",
-          "52em",
-          "1242px",
-        ],
-        "colors": Object {
-          "bgPrimary": "#1E2428",
-          "bgSecondary": "#1E3D3B",
-          "borderTextArea": "#979797",
-          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-          "disabledBackgroundColor": "#D6D6D6",
-          "disabledTextColor": "#9B9B9B",
-          "divider": "#EBEBEB",
-          "errorRedColor": "#C03030",
-          "hoverTextColor": "#108E72",
-          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-          "paddingTop": "2.5em",
-          "primary": "#0BA986",
-          "primaryColor": "#0BA986",
-          "primaryDark": "#11856B",
-          "primaryTextColor": "#1E2428",
-          "secondary": "#11856B",
-          "secondaryBlue": "rgb(81, 123, 162, 1)",
-          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-          "secondaryColor": "#1E3D3B",
-          "secondaryTextColor": "#283035",
-          "tertiaryBackgroundColor": "#F7F7F7",
-          "textPrimary": "#1E2428",
-          "white": "#FFFFFF",
-        },
-        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-        "disabledBackgroundColor": "#D6D6D6",
-        "disabledTextColor": "#9B9B9B",
-        "divider": "#EBEBEB",
-        "errorRedColor": "#C03030",
-        "fontSizes": Array [
-          11,
-          13,
-          14,
-          16,
-          18,
-          20,
-          22,
-          28,
-          32,
-        ],
-        "fontWeight": Array [
-          300,
-          "normal",
-          500,
-          700,
-        ],
-        "hoverTextColor": "#108E72",
-        "padContent": "
+          "padContent": "
     max-width: 1242px;
     margin-left: auto;
     margin-right: auto;
@@ -561,335 +1367,336 @@ exports[`components/PublicProfile/StatisticsContainer should match snapshot 1`] 
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
-        "paddingTop": "2.5em",
-        "primary": "#0BA986",
-        "primaryColor": "#0BA986",
-        "primaryDark": "#11856B",
-        "primaryTextColor": "#1E2428",
-        "secondary": "#11856B",
-        "secondaryBlue": "rgb(81, 123, 162, 1)",
-        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-        "secondaryColor": "#1E3D3B",
-        "secondaryTextColor": "#283035",
-        "space": Array [
-          0,
-          10,
-          15,
-          30,
-          60,
-        ],
-        "tertiaryBackgroundColor": "#F7F7F7",
-        "textPrimary": "#1E2428",
-        "white": "#FFFFFF",
-      }
-    }
-  >
-    <Container
-      statistics={
-        Array [
-          Object {
-            "count": 4,
-            "name": "test",
-            "pageType": "collection",
-          },
-          Object {
-            "count": 4,
-            "name": "test2",
-            "pageType": "collection",
-          },
-        ]
+          "padding": "calc((100vw - 1242px) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "space": Array [
+            0,
+            10,
+            15,
+            30,
+            60,
+          ],
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        }
       }
     >
-      <StatisticsContainer>
-        <StyledComponent
-          forwardedComponent={
+      <Container
+        statistics={
+          Array [
             Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "attrs": Array [],
-              "componentStyle": ComponentStyle {
-                "componentId": "StatisticsContainer-sc-18atadq-0",
-                "isStatic": false,
-                "lastClassName": "kulLJ",
-                "rules": Array [
-                  "display:flex;flex-direction:row;>:not(:first-child){margin-left:",
-                  [Function],
-                  "px;}",
-                ],
-              },
-              "displayName": "StatisticsContainer",
-              "foldedComponentIds": Array [],
-              "render": [Function],
-              "styledComponentId": "StatisticsContainer-sc-18atadq-0",
-              "target": "section",
-              "toString": [Function],
-              "warnTooManyClasses": [Function],
-              "withComponent": [Function],
+              "count": 4,
+              "name": "test",
+              "pageType": "collection",
+            },
+            Object {
+              "count": 4,
+              "name": "test2",
+              "pageType": "collection",
+            },
+          ]
+        }
+      >
+        <StatisticsContainer>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "StatisticsContainer-sc-18atadq-0",
+                  "isStatic": false,
+                  "lastClassName": "kulLJ",
+                  "rules": Array [
+                    "display:flex;flex-direction:row;>:not(:first-child){margin-left:",
+                    [Function],
+                    "px;}",
+                  ],
+                },
+                "displayName": "StatisticsContainer",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "StatisticsContainer-sc-18atadq-0",
+                "target": "section",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
             }
-          }
-          forwardedRef={null}
-        >
-          <section
-            className="StatisticsContainer-sc-18atadq-0 kulLJ"
+            forwardedRef={null}
           >
-            <Container
-              count={4}
-              key="test"
-              name="test"
-              pageType="undefined"
+            <section
+              className="StatisticsContainer-sc-18atadq-0 kulLJ"
             >
-              <StatisticCount__SectionContainer
+              <Container
+                count={4}
                 key="test"
+                name="test"
+                pageType="undefined"
               >
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
-                        "isStatic": true,
-                        "lastClassName": "hBrKEM",
-                        "rules": Array [
-                          "display:flex;flex-direction:column;align-items:center;max-width:150px;",
-                        ],
-                      },
-                      "displayName": "StatisticCount__SectionContainer",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
-                      "target": "section",
-                      "toString": [Function],
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
-                    }
-                  }
-                  forwardedRef={null}
+                <StatisticCount__SectionContainer
+                  key="test"
                 >
-                  <section
-                    className="StatisticCount__SectionContainer-sc-1xyux9h-1 hBrKEM"
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
+                          "isStatic": true,
+                          "lastClassName": "hBrKEM",
+                          "rules": Array [
+                            "display:flex;flex-direction:column;align-items:center;max-width:150px;",
+                          ],
+                        },
+                        "displayName": "StatisticCount__SectionContainer",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
+                        "target": "section",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
                   >
-                    <StatisticCount__Count
-                      pageType="undefined"
+                    <section
+                      className="StatisticCount__SectionContainer-sc-1xyux9h-1 hBrKEM"
                     >
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "StatisticCount__Count-sc-1xyux9h-0",
-                              "isStatic": false,
-                              "lastClassName": "dTPpIr",
-                              "rules": Array [
-                                "color:white;font-size:",
-                                [Function],
-                                "px;font-weight:",
-                                [Function],
-                                ";margin:0px;margin-bottom:",
-                                [Function],
-                                "px;opacity:",
-                                [Function],
-                                ";",
-                              ],
-                            },
-                            "displayName": "StatisticCount__Count",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
-                            "target": "h3",
-                            "toString": [Function],
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
+                      <StatisticCount__Count
                         pageType="undefined"
                       >
-                        <h3
-                          className="StatisticCount__Count-sc-1xyux9h-0 dTPpIr"
-                        >
-                          4
-                        </h3>
-                      </StyledComponent>
-                    </StatisticCount__Count>
-                    <StatisticCount__Name
-                      pageType="undefined"
-                    >
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "StatisticCount__Name-sc-1xyux9h-2",
-                              "isStatic": false,
-                              "lastClassName": "ivYcUc",
-                              "rules": Array [
-                                "color:white;font-size:",
-                                [Function],
-                                "px;font-weight:",
-                                [Function],
-                                ";opacity:",
-                                [Function],
-                                ";text-transform:uppercase;",
-                              ],
-                            },
-                            "displayName": "StatisticCount__Name",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
-                            "target": "span",
-                            "toString": [Function],
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "StatisticCount__Count-sc-1xyux9h-0",
+                                "isStatic": false,
+                                "lastClassName": "dTPpIr",
+                                "rules": Array [
+                                  "color:white;font-size:",
+                                  [Function],
+                                  "px;font-weight:",
+                                  [Function],
+                                  ";margin:0px;margin-bottom:",
+                                  [Function],
+                                  "px;opacity:",
+                                  [Function],
+                                  ";",
+                                ],
+                              },
+                              "displayName": "StatisticCount__Count",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
+                              "target": "h3",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
                           }
-                        }
-                        forwardedRef={null}
+                          forwardedRef={null}
+                          pageType="undefined"
+                        >
+                          <h3
+                            className="StatisticCount__Count-sc-1xyux9h-0 dTPpIr"
+                          >
+                            4
+                          </h3>
+                        </StyledComponent>
+                      </StatisticCount__Count>
+                      <StatisticCount__Name
                         pageType="undefined"
                       >
-                        <span
-                          className="StatisticCount__Name-sc-1xyux9h-2 ivYcUc"
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "StatisticCount__Name-sc-1xyux9h-2",
+                                "isStatic": false,
+                                "lastClassName": "ivYcUc",
+                                "rules": Array [
+                                  "color:white;font-size:",
+                                  [Function],
+                                  "px;font-weight:",
+                                  [Function],
+                                  ";opacity:",
+                                  [Function],
+                                  ";text-transform:uppercase;",
+                                ],
+                              },
+                              "displayName": "StatisticCount__Name",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
+                              "target": "span",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                          pageType="undefined"
                         >
-                          tests
-                        </span>
-                      </StyledComponent>
-                    </StatisticCount__Name>
-                  </section>
-                </StyledComponent>
-              </StatisticCount__SectionContainer>
-            </Container>
-            <Container
-              count={4}
-              key="test2"
-              name="test2"
-              pageType="undefined"
-            >
-              <StatisticCount__SectionContainer
+                          <span
+                            className="StatisticCount__Name-sc-1xyux9h-2 ivYcUc"
+                          >
+                            tests
+                          </span>
+                        </StyledComponent>
+                      </StatisticCount__Name>
+                    </section>
+                  </StyledComponent>
+                </StatisticCount__SectionContainer>
+              </Container>
+              <Container
+                count={4}
                 key="test2"
+                name="test2"
+                pageType="undefined"
               >
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
-                        "isStatic": true,
-                        "lastClassName": "hBrKEM",
-                        "rules": Array [
-                          "display:flex;flex-direction:column;align-items:center;max-width:150px;",
-                        ],
-                      },
-                      "displayName": "StatisticCount__SectionContainer",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
-                      "target": "section",
-                      "toString": [Function],
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
-                    }
-                  }
-                  forwardedRef={null}
+                <StatisticCount__SectionContainer
+                  key="test2"
                 >
-                  <section
-                    className="StatisticCount__SectionContainer-sc-1xyux9h-1 hBrKEM"
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
+                          "isStatic": true,
+                          "lastClassName": "hBrKEM",
+                          "rules": Array [
+                            "display:flex;flex-direction:column;align-items:center;max-width:150px;",
+                          ],
+                        },
+                        "displayName": "StatisticCount__SectionContainer",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
+                        "target": "section",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
                   >
-                    <StatisticCount__Count
-                      pageType="undefined"
+                    <section
+                      className="StatisticCount__SectionContainer-sc-1xyux9h-1 hBrKEM"
                     >
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "StatisticCount__Count-sc-1xyux9h-0",
-                              "isStatic": false,
-                              "lastClassName": "dTPpIr",
-                              "rules": Array [
-                                "color:white;font-size:",
-                                [Function],
-                                "px;font-weight:",
-                                [Function],
-                                ";margin:0px;margin-bottom:",
-                                [Function],
-                                "px;opacity:",
-                                [Function],
-                                ";",
-                              ],
-                            },
-                            "displayName": "StatisticCount__Count",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
-                            "target": "h3",
-                            "toString": [Function],
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
+                      <StatisticCount__Count
                         pageType="undefined"
                       >
-                        <h3
-                          className="StatisticCount__Count-sc-1xyux9h-0 dTPpIr"
-                        >
-                          4
-                        </h3>
-                      </StyledComponent>
-                    </StatisticCount__Count>
-                    <StatisticCount__Name
-                      pageType="undefined"
-                    >
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "StatisticCount__Name-sc-1xyux9h-2",
-                              "isStatic": false,
-                              "lastClassName": "ivYcUc",
-                              "rules": Array [
-                                "color:white;font-size:",
-                                [Function],
-                                "px;font-weight:",
-                                [Function],
-                                ";opacity:",
-                                [Function],
-                                ";text-transform:uppercase;",
-                              ],
-                            },
-                            "displayName": "StatisticCount__Name",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
-                            "target": "span",
-                            "toString": [Function],
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "StatisticCount__Count-sc-1xyux9h-0",
+                                "isStatic": false,
+                                "lastClassName": "dTPpIr",
+                                "rules": Array [
+                                  "color:white;font-size:",
+                                  [Function],
+                                  "px;font-weight:",
+                                  [Function],
+                                  ";margin:0px;margin-bottom:",
+                                  [Function],
+                                  "px;opacity:",
+                                  [Function],
+                                  ";",
+                                ],
+                              },
+                              "displayName": "StatisticCount__Count",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
+                              "target": "h3",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
                           }
-                        }
-                        forwardedRef={null}
+                          forwardedRef={null}
+                          pageType="undefined"
+                        >
+                          <h3
+                            className="StatisticCount__Count-sc-1xyux9h-0 dTPpIr"
+                          >
+                            4
+                          </h3>
+                        </StyledComponent>
+                      </StatisticCount__Count>
+                      <StatisticCount__Name
                         pageType="undefined"
                       >
-                        <span
-                          className="StatisticCount__Name-sc-1xyux9h-2 ivYcUc"
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "StatisticCount__Name-sc-1xyux9h-2",
+                                "isStatic": false,
+                                "lastClassName": "ivYcUc",
+                                "rules": Array [
+                                  "color:white;font-size:",
+                                  [Function],
+                                  "px;font-weight:",
+                                  [Function],
+                                  ";opacity:",
+                                  [Function],
+                                  ";text-transform:uppercase;",
+                                ],
+                              },
+                              "displayName": "StatisticCount__Name",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
+                              "target": "span",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                          pageType="undefined"
                         >
-                          test2s
-                        </span>
-                      </StyledComponent>
-                    </StatisticCount__Name>
-                  </section>
-                </StyledComponent>
-              </StatisticCount__SectionContainer>
-            </Container>
-          </section>
-        </StyledComponent>
-      </StatisticsContainer>
-    </Container>
+                          <span
+                            className="StatisticCount__Name-sc-1xyux9h-2 ivYcUc"
+                          >
+                            test2s
+                          </span>
+                        </StyledComponent>
+                      </StatisticCount__Name>
+                    </section>
+                  </StyledComponent>
+                </StatisticCount__SectionContainer>
+              </Container>
+            </section>
+          </StyledComponent>
+        </StatisticsContainer>
+      </Container>
+    </ThemeProvider>
   </ThemeProvider>
 </Provider>
 `;

@@ -43,7 +43,7 @@ export interface searchTags {
    * Search tags
    * This operation can be performed anonymously
    */
-  searchTags: searchTags_searchTags | null;
+  searchTags: searchTags_searchTags;
 }
 
 export interface searchTagsVariables {

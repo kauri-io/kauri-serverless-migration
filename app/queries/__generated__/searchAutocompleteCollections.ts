@@ -185,7 +185,7 @@ export interface searchAutocompleteCollections_searchAutocomplete_content {
   /**
    * load the resource associated to this search match
    */
-  resource: searchAutocompleteCollections_searchAutocomplete_content_resource | null;
+  resource: searchAutocompleteCollections_searchAutocomplete_content_resource;
 }
 
 export interface searchAutocompleteCollections_searchAutocomplete {
@@ -213,7 +213,7 @@ export interface searchAutocompleteCollections {
    * Perform a parametrized global search query with autocomplete, pagination, sorting and filtering
    * This operation can be performed anonymously
    */
-  searchAutocomplete: searchAutocompleteCollections_searchAutocomplete | null;
+  searchAutocomplete: searchAutocompleteCollections_searchAutocomplete;
 }
 
 export interface searchAutocompleteCollectionsVariables {

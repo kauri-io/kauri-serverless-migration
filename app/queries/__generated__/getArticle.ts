@@ -85,11 +85,11 @@ export interface getArticle_getArticle {
   /**
    * Get vote result for the article
    */
-  voteResult: getArticle_getArticle_voteResult | null;
+  voteResult: getArticle_getArticle_voteResult;
   /**
    * Article author (full profile)
    */
-  author: getArticle_getArticle_author | null;
+  author: getArticle_getArticle_author;
   resourceIdentifier: getArticle_getArticle_resourceIdentifier | null;
 }
 
@@ -101,7 +101,7 @@ export interface getArticle {
    * any status if false) or the latest published version (if true).
    * This operation can be performed anonymously
    */
-  getArticle: getArticle_getArticle | null;
+  getArticle: getArticle_getArticle;
 }
 
 export interface getArticleVariables {

@@ -17,7 +17,7 @@ import { ThemeProvider as MaterialThemeProvider } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { createMuiTheme } from '@material-ui/core/styles'
 
-const theme = createMuiTheme({
+export const theme = createMuiTheme({
     palette: {
         common: {
             black: '#1E2428',

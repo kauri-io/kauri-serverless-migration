@@ -4,90 +4,358 @@ exports[`components/Tooltip/ShareArticle should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
-      "DEFAULT_CARD_WIDTH": 288,
-      "MAIN_BODY_WIDTH": 1242,
-      "bg": Object {
+      "breakpoints": Object {
+        "between": [Function],
+        "down": [Function],
+        "keys": Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ],
+        "only": [Function],
+        "up": [Function],
+        "values": Object {
+          "lg": 1280,
+          "md": 960,
+          "sm": 600,
+          "xl": 1920,
+          "xs": 0,
+        },
+        "width": [Function],
+      },
+      "direction": "ltr",
+      "mixins": Object {
+        "gutters": [Function],
+        "toolbar": Object {
+          "@media (min-width:0px) and (orientation: landscape)": Object {
+            "minHeight": 48,
+          },
+          "@media (min-width:600px)": Object {
+            "minHeight": 64,
+          },
+          "minHeight": 56,
+        },
+      },
+      "overrides": Object {},
+      "palette": Object {
+        "action": Object {
+          "active": "rgba(0, 0, 0, 0.54)",
+          "disabled": "rgba(0, 0, 0, 0.26)",
+          "disabledBackground": "rgba(0, 0, 0, 0.12)",
+          "hover": "rgba(0, 0, 0, 0.08)",
+          "hoverOpacity": 0.08,
+          "selected": "rgba(0, 0, 0, 0.14)",
+        },
+        "augmentColor": [Function],
+        "background": Object {
+          "default": "#f5f5f5",
+          "paper": "#fff",
+        },
+        "common": Object {
+          "black": "#1E2428",
+          "white": "#fff",
+        },
+        "contrastThreshold": 3,
+        "divider": "rgba(0, 0, 0, 0.12)",
+        "error": Object {
+          "contrastText": "#fff",
+          "dark": "#d32f2f",
+          "light": "#e57373",
+          "main": "#f44336",
+        },
+        "getContrastText": [Function],
+        "grey": Object {
+          "100": "#f5f5f5",
+          "200": "#eeeeee",
+          "300": "#e0e0e0",
+          "400": "#bdbdbd",
+          "50": "#fafafa",
+          "500": "#9e9e9e",
+          "600": "#757575",
+          "700": "#616161",
+          "800": "#424242",
+          "900": "#212121",
+          "A100": "#d5d5d5",
+          "A200": "#aaaaaa",
+          "A400": "#303030",
+          "A700": "#616161",
+        },
+        "primary": Object {
+          "contrastText": "rgba(0, 0, 0, 0.87)",
+          "dark": "rgb(7, 118, 93)",
+          "light": "rgb(59, 186, 158)",
+          "main": "#0BA986",
+        },
+        "secondary": Object {
+          "contrastText": "rgba(0, 0, 0, 0.87)",
+          "dark": "rgb(178, 178, 178)",
+          "light": "rgb(255, 255, 255)",
+          "main": "#ffffff",
+        },
+        "text": Object {
+          "disabled": "rgba(0, 0, 0, 0.38)",
+          "hint": "rgba(0, 0, 0, 0.38)",
+          "primary": "rgba(0, 0, 0, 0.87)",
+          "secondary": "rgba(0, 0, 0, 0.54)",
+        },
+        "tonalOffset": 0.2,
+        "type": "light",
+      },
+      "props": Object {},
+      "shadows": Array [
+        "none",
+        "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+        "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+        "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+        "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+        "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+        "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+        "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+        "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+        "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+        "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+        "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+        "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+        "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+        "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+        "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+        "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+        "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+        "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+        "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+        "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+        "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+        "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+        "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+        "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+      ],
+      "shape": Object {
+        "borderRadius": 4,
+      },
+      "spacing": [Function],
+      "transitions": Object {
+        "create": [Function],
+        "duration": Object {
+          "complex": 375,
+          "enteringScreen": 225,
+          "leavingScreen": 195,
+          "short": 250,
+          "shorter": 200,
+          "shortest": 150,
+          "standard": 300,
+        },
+        "easing": Object {
+          "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+          "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+          "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+        },
+        "getAutoHeightDuration": [Function],
+      },
+      "typography": Object {
+        "body1": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.00938em",
+          "lineHeight": 1.5,
+        },
+        "body2": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.01071em",
+          "lineHeight": 1.43,
+        },
+        "button": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 500,
+          "letterSpacing": "0.02857em",
+          "lineHeight": 1.75,
+          "textTransform": "uppercase",
+        },
+        "caption": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.75rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.03333em",
+          "lineHeight": 1.66,
+        },
+        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+        "fontSize": 14,
+        "fontWeightBold": 700,
+        "fontWeightLight": 300,
+        "fontWeightMedium": 500,
+        "fontWeightRegular": 400,
+        "h1": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "6rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.01562em",
+          "lineHeight": 1,
+        },
+        "h2": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "3.75rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.00833em",
+          "lineHeight": 1,
+        },
+        "h3": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "3rem",
+          "fontWeight": 400,
+          "letterSpacing": "0em",
+          "lineHeight": 1.04,
+        },
+        "h4": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "2.125rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.00735em",
+          "lineHeight": 1.17,
+        },
+        "h5": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1.5rem",
+          "fontWeight": 400,
+          "letterSpacing": "0em",
+          "lineHeight": 1.33,
+        },
+        "h6": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1.25rem",
+          "fontWeight": 500,
+          "letterSpacing": "0.0075em",
+          "lineHeight": 1.6,
+        },
+        "htmlFontSize": 16,
+        "overline": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.75rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.08333em",
+          "lineHeight": 2.66,
+          "textTransform": "uppercase",
+        },
+        "pxToRem": [Function],
+        "round": [Function],
+        "subtitle1": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.00938em",
+          "lineHeight": 1.75,
+        },
+        "subtitle2": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 500,
+          "letterSpacing": "0.00714em",
+          "lineHeight": 1.57,
+        },
+      },
+      "zIndex": Object {
+        "appBar": 1100,
+        "drawer": 1200,
+        "mobileStepper": 1000,
+        "modal": 1300,
+        "snackbar": 1400,
+        "tooltip": 1500,
+      },
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
         "bgPrimary": "#1E2428",
         "bgSecondary": "#1E3D3B",
         "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
         "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
         "disabledBackgroundColor": "#D6D6D6",
         "disabledTextColor": "#9B9B9B",
         "divider": "#EBEBEB",
         "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
         "hoverTextColor": "#108E72",
-        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-        "paddingTop": "2.5em",
-        "primary": "#0BA986",
-        "primaryColor": "#0BA986",
-        "primaryDark": "#11856B",
-        "primaryTextColor": "#1E2428",
-        "secondary": "#11856B",
-        "secondaryBlue": "rgb(81, 123, 162, 1)",
-        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-        "secondaryColor": "#1E3D3B",
-        "secondaryTextColor": "#283035",
-        "tertiaryBackgroundColor": "#F7F7F7",
-        "textPrimary": "#1E2428",
-        "white": "#FFFFFF",
-      },
-      "bgPrimary": "#1E2428",
-      "bgSecondary": "#1E3D3B",
-      "borderTextArea": "#979797",
-      "breakpoints": Array [
-        "500px",
-        "52em",
-        "1242px",
-      ],
-      "colors": Object {
-        "bgPrimary": "#1E2428",
-        "bgSecondary": "#1E3D3B",
-        "borderTextArea": "#979797",
-        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-        "disabledBackgroundColor": "#D6D6D6",
-        "disabledTextColor": "#9B9B9B",
-        "divider": "#EBEBEB",
-        "errorRedColor": "#C03030",
-        "hoverTextColor": "#108E72",
-        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-        "paddingTop": "2.5em",
-        "primary": "#0BA986",
-        "primaryColor": "#0BA986",
-        "primaryDark": "#11856B",
-        "primaryTextColor": "#1E2428",
-        "secondary": "#11856B",
-        "secondaryBlue": "rgb(81, 123, 162, 1)",
-        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-        "secondaryColor": "#1E3D3B",
-        "secondaryTextColor": "#283035",
-        "tertiaryBackgroundColor": "#F7F7F7",
-        "textPrimary": "#1E2428",
-        "white": "#FFFFFF",
-      },
-      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-      "disabledBackgroundColor": "#D6D6D6",
-      "disabledTextColor": "#9B9B9B",
-      "divider": "#EBEBEB",
-      "errorRedColor": "#C03030",
-      "fontSizes": Array [
-        11,
-        13,
-        14,
-        16,
-        18,
-        20,
-        22,
-        28,
-        32,
-      ],
-      "fontWeight": Array [
-        300,
-        "normal",
-        500,
-        700,
-      ],
-      "hoverTextColor": "#108E72",
-      "padContent": "
+        "padContent": "
     max-width: 1242px;
     margin-left: auto;
     margin-right: auto;
@@ -98,248 +366,249 @@ exports[`components/Tooltip/ShareArticle should match snapshot 1`] = `
       min-width: 90%;
     }
   ",
-      "padding": "calc((100vw - 1242px) / 2)",
-      "paddingTop": "2.5em",
-      "primary": "#0BA986",
-      "primaryColor": "#0BA986",
-      "primaryDark": "#11856B",
-      "primaryTextColor": "#1E2428",
-      "secondary": "#11856B",
-      "secondaryBlue": "rgb(81, 123, 162, 1)",
-      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-      "secondaryColor": "#1E3D3B",
-      "secondaryTextColor": "#283035",
-      "space": Array [
-        0,
-        10,
-        15,
-        30,
-        60,
-      ],
-      "tertiaryBackgroundColor": "#F7F7F7",
-      "textPrimary": "#1E2428",
-      "white": "#FFFFFF",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
     }
-  }
->
-  <Container
-    color="black"
-    title="test"
-    url="test"
   >
-    <ShareArticle__ReferenceContainer>
-      <StyledComponent
-        forwardedComponent={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "componentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
-              "isStatic": true,
-              "lastClassName": "hNNjpZ",
-              "rules": Array [
-                "display:flex;width:",
-                "70",
-                "px;",
-              ],
-            },
-            "displayName": "ShareArticle__ReferenceContainer",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
-            "target": "section",
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          }
-        }
-        forwardedRef={null}
-      >
-        <section
-          className="ShareArticle__ReferenceContainer-sc-1qj1dsq-0 hNNjpZ"
-        >
-          <Tooltip
-            animateFill={true}
-            animation="shift"
-            arrow={false}
-            arrowSize="regular"
-            className=""
-            delay={0}
-            disabled={false}
-            distance={10}
-            duration={375}
-            followCursor={false}
-            hideDelay={0}
-            hideDuration={375}
-            hideOnClick={true}
-            html={
-              <Content
-                title="test"
-                url="test"
-              />
+    <Container
+      color="black"
+      title="test"
+      url="test"
+    >
+      <ShareArticle__ReferenceContainer>
+        <StyledComponent
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
+                "isStatic": true,
+                "lastClassName": "hNNjpZ",
+                "rules": Array [
+                  "display:flex;width:",
+                  "70",
+                  "px;",
+                ],
+              },
+              "displayName": "ShareArticle__ReferenceContainer",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
+              "target": "section",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
             }
-            inertia={false}
-            interactive={false}
-            interactiveBorder={2}
-            multiple={false}
-            offset={0}
-            onHidden={[Function]}
-            onHide={[Function]}
-            onRequestClose={[Function]}
-            onShow={[Function]}
-            onShown={[Function]}
-            popperOptions={Object {}}
-            position="bottom"
-            size="regular"
-            sticky={false}
-            stickyDuration={200}
-            style={Object {}}
-            theme="dark"
-            touchHold={false}
-            trigger="click"
-            unmountHTMLWhenHide={true}
+          }
+          forwardedRef={null}
+        >
+          <section
+            className="ShareArticle__ReferenceContainer-sc-1qj1dsq-0 hNNjpZ"
           >
-            <div
+            <Tooltip
+              animateFill={true}
+              animation="shift"
+              arrow={false}
+              arrowSize="regular"
               className=""
-              style={
-                Object {
-                  "display": "inline",
-                }
+              delay={0}
+              disabled={false}
+              distance={10}
+              duration={375}
+              followCursor={false}
+              hideDelay={0}
+              hideDuration={375}
+              hideOnClick={true}
+              html={
+                <Content
+                  title="test"
+                  url="test"
+                />
               }
+              inertia={false}
+              interactive={false}
+              interactiveBorder={2}
+              multiple={false}
+              offset={0}
+              onHidden={[Function]}
+              onHide={[Function]}
+              onRequestClose={[Function]}
+              onShow={[Function]}
+              onShown={[Function]}
+              popperOptions={Object {}}
+              position="bottom"
+              size="regular"
+              sticky={false}
+              stickyDuration={200}
+              style={Object {}}
+              theme="dark"
+              touchHold={false}
+              trigger="click"
+              unmountHTMLWhenHide={true}
             >
-              <ButtonComp
-                color="primary"
-                variant="text"
+              <div
+                className=""
+                style={
+                  Object {
+                    "display": "inline",
+                  }
+                }
               >
-                <WithStyles(ForwardRef(Button))
-                  className=""
+                <ButtonComp
                   color="primary"
                   variant="text"
                 >
-                  <ForwardRef(Button)
+                  <WithStyles(ForwardRef(Button))
                     className=""
-                    classes={
-                      Object {
-                        "colorInherit": "MuiButton-colorInherit",
-                        "contained": "MuiButton-contained",
-                        "containedPrimary": "MuiButton-containedPrimary",
-                        "containedSecondary": "MuiButton-containedSecondary",
-                        "disabled": "Mui-disabled",
-                        "focusVisible": "Mui-focusVisible",
-                        "fullWidth": "MuiButton-fullWidth",
-                        "label": "MuiButton-label",
-                        "outlined": "MuiButton-outlined",
-                        "outlinedPrimary": "MuiButton-outlinedPrimary",
-                        "outlinedSecondary": "MuiButton-outlinedSecondary",
-                        "root": "MuiButton-root",
-                        "sizeLarge": "MuiButton-sizeLarge",
-                        "sizeSmall": "MuiButton-sizeSmall",
-                        "text": "MuiButton-text",
-                        "textPrimary": "MuiButton-textPrimary",
-                        "textSecondary": "MuiButton-textSecondary",
-                      }
-                    }
                     color="primary"
                     variant="text"
                   >
-                    <WithStyles(ForwardRef(ButtonBase))
-                      className="MuiButton-root MuiButton-text MuiButton-textPrimary"
-                      component="button"
-                      disabled={false}
-                      focusRipple={true}
-                      focusVisibleClassName="Mui-focusVisible"
-                      type="button"
-                    >
-                      <ForwardRef(ButtonBase)
-                        className="MuiButton-root MuiButton-text MuiButton-textPrimary"
-                        classes={
-                          Object {
-                            "disabled": "Mui-disabled",
-                            "focusVisible": "Mui-focusVisible",
-                            "root": "MuiButtonBase-root",
-                          }
+                    <ForwardRef(Button)
+                      className=""
+                      classes={
+                        Object {
+                          "colorInherit": "MuiButton-colorInherit",
+                          "contained": "MuiButton-contained",
+                          "containedPrimary": "MuiButton-containedPrimary",
+                          "containedSecondary": "MuiButton-containedSecondary",
+                          "disabled": "Mui-disabled",
+                          "focusVisible": "Mui-focusVisible",
+                          "fullWidth": "MuiButton-fullWidth",
+                          "label": "MuiButton-label",
+                          "outlined": "MuiButton-outlined",
+                          "outlinedPrimary": "MuiButton-outlinedPrimary",
+                          "outlinedSecondary": "MuiButton-outlinedSecondary",
+                          "root": "MuiButton-root",
+                          "sizeLarge": "MuiButton-sizeLarge",
+                          "sizeSmall": "MuiButton-sizeSmall",
+                          "text": "MuiButton-text",
+                          "textPrimary": "MuiButton-textPrimary",
+                          "textSecondary": "MuiButton-textSecondary",
                         }
+                      }
+                      color="primary"
+                      variant="text"
+                    >
+                      <WithStyles(ForwardRef(ButtonBase))
+                        className="MuiButton-root MuiButton-text MuiButton-textPrimary"
                         component="button"
                         disabled={false}
                         focusRipple={true}
                         focusVisibleClassName="Mui-focusVisible"
                         type="button"
                       >
-                        <button
-                          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
+                        <ForwardRef(ButtonBase)
+                          className="MuiButton-root MuiButton-text MuiButton-textPrimary"
+                          classes={
+                            Object {
+                              "disabled": "Mui-disabled",
+                              "focusVisible": "Mui-focusVisible",
+                              "root": "MuiButtonBase-root",
+                            }
+                          }
+                          component="button"
                           disabled={false}
-                          onBlur={[Function]}
-                          onDragLeave={[Function]}
-                          onFocus={[Function]}
-                          onKeyDown={[Function]}
-                          onKeyUp={[Function]}
-                          onMouseDown={[Function]}
-                          onMouseLeave={[Function]}
-                          onMouseUp={[Function]}
-                          onTouchEnd={[Function]}
-                          onTouchMove={[Function]}
-                          onTouchStart={[Function]}
-                          tabIndex={0}
+                          focusRipple={true}
+                          focusVisibleClassName="Mui-focusVisible"
                           type="button"
                         >
-                          <span
-                            className="MuiButton-label"
+                          <button
+                            className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
+                            disabled={false}
+                            onBlur={[Function]}
+                            onDragLeave={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchEnd={[Function]}
+                            onTouchMove={[Function]}
+                            onTouchStart={[Function]}
+                            tabIndex={0}
+                            type="button"
                           >
-                            <svg
-                              role="img"
-                              viewBox="0 0 448 512"
-                              xmlns="http://www.w3.org/2000/svg"
+                            <span
+                              className="MuiButton-label"
                             >
-                              <path
-                                className=""
-                                d="M352 320c-22.608 0-43.387 7.819-59.79 20.895l-102.486-64.054a96.551 96.551 0 0 0 0-41.683l102.486-64.054C308.613 184.181 329.392 192 352 192c53.019 0 96-42.981 96-96S405.019 0 352 0s-96 42.981-96 96c0 7.158.79 14.13 2.276 20.841L155.79 180.895C139.387 167.819 118.608 160 96 160c-53.019 0-96 42.981-96 96s42.981 96 96 96c22.608 0 43.387-7.819 59.79-20.895l102.486 64.054A96.301 96.301 0 0 0 256 416c0 53.019 42.981 96 96 96s96-42.981 96-96-42.981-96-96-96z"
-                                fill="#0BA986"
-                              />
-                            </svg>
-                            Share
-                          </span>
-                          <NoSsr>
-                            <WithStyles(undefined)
-                              center={false}
-                            >
-                              <ForwardRef(TouchRipple)
-                                center={false}
-                                classes={
-                                  Object {
-                                    "child": "MuiTouchRipple-child",
-                                    "childLeaving": "MuiTouchRipple-childLeaving",
-                                    "childPulsate": "MuiTouchRipple-childPulsate",
-                                    "ripple": "MuiTouchRipple-ripple",
-                                    "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                                    "rippleVisible": "MuiTouchRipple-rippleVisible",
-                                    "root": "MuiTouchRipple-root",
-                                  }
-                                }
+                              <svg
+                                role="img"
+                                viewBox="0 0 448 512"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <span
-                                  className="MuiTouchRipple-root"
+                                <path
+                                  className=""
+                                  d="M352 320c-22.608 0-43.387 7.819-59.79 20.895l-102.486-64.054a96.551 96.551 0 0 0 0-41.683l102.486-64.054C308.613 184.181 329.392 192 352 192c53.019 0 96-42.981 96-96S405.019 0 352 0s-96 42.981-96 96c0 7.158.79 14.13 2.276 20.841L155.79 180.895C139.387 167.819 118.608 160 96 160c-53.019 0-96 42.981-96 96s42.981 96 96 96c22.608 0 43.387-7.819 59.79-20.895l102.486 64.054A96.301 96.301 0 0 0 256 416c0 53.019 42.981 96 96 96s96-42.981 96-96-42.981-96-96-96z"
+                                  fill="#0BA986"
+                                />
+                              </svg>
+                              Share
+                            </span>
+                            <NoSsr>
+                              <WithStyles(undefined)
+                                center={false}
+                              >
+                                <ForwardRef(TouchRipple)
+                                  center={false}
+                                  classes={
+                                    Object {
+                                      "child": "MuiTouchRipple-child",
+                                      "childLeaving": "MuiTouchRipple-childLeaving",
+                                      "childPulsate": "MuiTouchRipple-childPulsate",
+                                      "ripple": "MuiTouchRipple-ripple",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                      "root": "MuiTouchRipple-root",
+                                    }
+                                  }
                                 >
-                                  <TransitionGroup
-                                    childFactory={[Function]}
-                                    component={null}
-                                    exit={true}
-                                  />
-                                </span>
-                              </ForwardRef(TouchRipple)>
-                            </WithStyles(undefined)>
-                          </NoSsr>
-                        </button>
-                      </ForwardRef(ButtonBase)>
-                    </WithStyles(ForwardRef(ButtonBase))>
-                  </ForwardRef(Button)>
-                </WithStyles(ForwardRef(Button))>
-              </ButtonComp>
-            </div>
-          </Tooltip>
-        </section>
-      </StyledComponent>
-    </ShareArticle__ReferenceContainer>
-  </Container>
+                                  <span
+                                    className="MuiTouchRipple-root"
+                                  >
+                                    <TransitionGroup
+                                      childFactory={[Function]}
+                                      component={null}
+                                      exit={true}
+                                    />
+                                  </span>
+                                </ForwardRef(TouchRipple)>
+                              </WithStyles(undefined)>
+                            </NoSsr>
+                          </button>
+                        </ForwardRef(ButtonBase)>
+                      </WithStyles(ForwardRef(ButtonBase))>
+                    </ForwardRef(Button)>
+                  </WithStyles(ForwardRef(Button))>
+                </ButtonComp>
+              </div>
+            </Tooltip>
+          </section>
+        </StyledComponent>
+      </ShareArticle__ReferenceContainer>
+    </Container>
+  </ThemeProvider>
 </ThemeProvider>
 `;
 
@@ -347,90 +616,358 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
-      "DEFAULT_CARD_WIDTH": 288,
-      "MAIN_BODY_WIDTH": 1242,
-      "bg": Object {
+      "breakpoints": Object {
+        "between": [Function],
+        "down": [Function],
+        "keys": Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ],
+        "only": [Function],
+        "up": [Function],
+        "values": Object {
+          "lg": 1280,
+          "md": 960,
+          "sm": 600,
+          "xl": 1920,
+          "xs": 0,
+        },
+        "width": [Function],
+      },
+      "direction": "ltr",
+      "mixins": Object {
+        "gutters": [Function],
+        "toolbar": Object {
+          "@media (min-width:0px) and (orientation: landscape)": Object {
+            "minHeight": 48,
+          },
+          "@media (min-width:600px)": Object {
+            "minHeight": 64,
+          },
+          "minHeight": 56,
+        },
+      },
+      "overrides": Object {},
+      "palette": Object {
+        "action": Object {
+          "active": "rgba(0, 0, 0, 0.54)",
+          "disabled": "rgba(0, 0, 0, 0.26)",
+          "disabledBackground": "rgba(0, 0, 0, 0.12)",
+          "hover": "rgba(0, 0, 0, 0.08)",
+          "hoverOpacity": 0.08,
+          "selected": "rgba(0, 0, 0, 0.14)",
+        },
+        "augmentColor": [Function],
+        "background": Object {
+          "default": "#f5f5f5",
+          "paper": "#fff",
+        },
+        "common": Object {
+          "black": "#1E2428",
+          "white": "#fff",
+        },
+        "contrastThreshold": 3,
+        "divider": "rgba(0, 0, 0, 0.12)",
+        "error": Object {
+          "contrastText": "#fff",
+          "dark": "#d32f2f",
+          "light": "#e57373",
+          "main": "#f44336",
+        },
+        "getContrastText": [Function],
+        "grey": Object {
+          "100": "#f5f5f5",
+          "200": "#eeeeee",
+          "300": "#e0e0e0",
+          "400": "#bdbdbd",
+          "50": "#fafafa",
+          "500": "#9e9e9e",
+          "600": "#757575",
+          "700": "#616161",
+          "800": "#424242",
+          "900": "#212121",
+          "A100": "#d5d5d5",
+          "A200": "#aaaaaa",
+          "A400": "#303030",
+          "A700": "#616161",
+        },
+        "primary": Object {
+          "contrastText": "rgba(0, 0, 0, 0.87)",
+          "dark": "rgb(7, 118, 93)",
+          "light": "rgb(59, 186, 158)",
+          "main": "#0BA986",
+        },
+        "secondary": Object {
+          "contrastText": "rgba(0, 0, 0, 0.87)",
+          "dark": "rgb(178, 178, 178)",
+          "light": "rgb(255, 255, 255)",
+          "main": "#ffffff",
+        },
+        "text": Object {
+          "disabled": "rgba(0, 0, 0, 0.38)",
+          "hint": "rgba(0, 0, 0, 0.38)",
+          "primary": "rgba(0, 0, 0, 0.87)",
+          "secondary": "rgba(0, 0, 0, 0.54)",
+        },
+        "tonalOffset": 0.2,
+        "type": "light",
+      },
+      "props": Object {},
+      "shadows": Array [
+        "none",
+        "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+        "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+        "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+        "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+        "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+        "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+        "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+        "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+        "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+        "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+        "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+        "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+        "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+        "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+        "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+        "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+        "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+        "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+        "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+        "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+        "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+        "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+        "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+        "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+      ],
+      "shape": Object {
+        "borderRadius": 4,
+      },
+      "spacing": [Function],
+      "transitions": Object {
+        "create": [Function],
+        "duration": Object {
+          "complex": 375,
+          "enteringScreen": 225,
+          "leavingScreen": 195,
+          "short": 250,
+          "shorter": 200,
+          "shortest": 150,
+          "standard": 300,
+        },
+        "easing": Object {
+          "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+          "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+          "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+        },
+        "getAutoHeightDuration": [Function],
+      },
+      "typography": Object {
+        "body1": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.00938em",
+          "lineHeight": 1.5,
+        },
+        "body2": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.01071em",
+          "lineHeight": 1.43,
+        },
+        "button": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 500,
+          "letterSpacing": "0.02857em",
+          "lineHeight": 1.75,
+          "textTransform": "uppercase",
+        },
+        "caption": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.75rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.03333em",
+          "lineHeight": 1.66,
+        },
+        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+        "fontSize": 14,
+        "fontWeightBold": 700,
+        "fontWeightLight": 300,
+        "fontWeightMedium": 500,
+        "fontWeightRegular": 400,
+        "h1": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "6rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.01562em",
+          "lineHeight": 1,
+        },
+        "h2": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "3.75rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.00833em",
+          "lineHeight": 1,
+        },
+        "h3": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "3rem",
+          "fontWeight": 400,
+          "letterSpacing": "0em",
+          "lineHeight": 1.04,
+        },
+        "h4": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "2.125rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.00735em",
+          "lineHeight": 1.17,
+        },
+        "h5": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1.5rem",
+          "fontWeight": 400,
+          "letterSpacing": "0em",
+          "lineHeight": 1.33,
+        },
+        "h6": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1.25rem",
+          "fontWeight": 500,
+          "letterSpacing": "0.0075em",
+          "lineHeight": 1.6,
+        },
+        "htmlFontSize": 16,
+        "overline": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.75rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.08333em",
+          "lineHeight": 2.66,
+          "textTransform": "uppercase",
+        },
+        "pxToRem": [Function],
+        "round": [Function],
+        "subtitle1": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.00938em",
+          "lineHeight": 1.75,
+        },
+        "subtitle2": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 500,
+          "letterSpacing": "0.00714em",
+          "lineHeight": 1.57,
+        },
+      },
+      "zIndex": Object {
+        "appBar": 1100,
+        "drawer": 1200,
+        "mobileStepper": 1000,
+        "modal": 1300,
+        "snackbar": 1400,
+        "tooltip": 1500,
+      },
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
         "bgPrimary": "#1E2428",
         "bgSecondary": "#1E3D3B",
         "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
         "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
         "disabledBackgroundColor": "#D6D6D6",
         "disabledTextColor": "#9B9B9B",
         "divider": "#EBEBEB",
         "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
         "hoverTextColor": "#108E72",
-        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-        "paddingTop": "2.5em",
-        "primary": "#0BA986",
-        "primaryColor": "#0BA986",
-        "primaryDark": "#11856B",
-        "primaryTextColor": "#1E2428",
-        "secondary": "#11856B",
-        "secondaryBlue": "rgb(81, 123, 162, 1)",
-        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-        "secondaryColor": "#1E3D3B",
-        "secondaryTextColor": "#283035",
-        "tertiaryBackgroundColor": "#F7F7F7",
-        "textPrimary": "#1E2428",
-        "white": "#FFFFFF",
-      },
-      "bgPrimary": "#1E2428",
-      "bgSecondary": "#1E3D3B",
-      "borderTextArea": "#979797",
-      "breakpoints": Array [
-        "500px",
-        "52em",
-        "1242px",
-      ],
-      "colors": Object {
-        "bgPrimary": "#1E2428",
-        "bgSecondary": "#1E3D3B",
-        "borderTextArea": "#979797",
-        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-        "disabledBackgroundColor": "#D6D6D6",
-        "disabledTextColor": "#9B9B9B",
-        "divider": "#EBEBEB",
-        "errorRedColor": "#C03030",
-        "hoverTextColor": "#108E72",
-        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-        "paddingTop": "2.5em",
-        "primary": "#0BA986",
-        "primaryColor": "#0BA986",
-        "primaryDark": "#11856B",
-        "primaryTextColor": "#1E2428",
-        "secondary": "#11856B",
-        "secondaryBlue": "rgb(81, 123, 162, 1)",
-        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-        "secondaryColor": "#1E3D3B",
-        "secondaryTextColor": "#283035",
-        "tertiaryBackgroundColor": "#F7F7F7",
-        "textPrimary": "#1E2428",
-        "white": "#FFFFFF",
-      },
-      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-      "disabledBackgroundColor": "#D6D6D6",
-      "disabledTextColor": "#9B9B9B",
-      "divider": "#EBEBEB",
-      "errorRedColor": "#C03030",
-      "fontSizes": Array [
-        11,
-        13,
-        14,
-        16,
-        18,
-        20,
-        22,
-        28,
-        32,
-      ],
-      "fontWeight": Array [
-        300,
-        "normal",
-        500,
-        700,
-      ],
-      "hoverTextColor": "#108E72",
-      "padContent": "
+        "padContent": "
     max-width: 1242px;
     margin-left: auto;
     margin-right: auto;
@@ -441,375 +978,267 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
       min-width: 90%;
     }
   ",
-      "padding": "calc((100vw - 1242px) / 2)",
-      "paddingTop": "2.5em",
-      "primary": "#0BA986",
-      "primaryColor": "#0BA986",
-      "primaryDark": "#11856B",
-      "primaryTextColor": "#1E2428",
-      "secondary": "#11856B",
-      "secondaryBlue": "rgb(81, 123, 162, 1)",
-      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-      "secondaryColor": "#1E3D3B",
-      "secondaryTextColor": "#283035",
-      "space": Array [
-        0,
-        10,
-        15,
-        30,
-        60,
-      ],
-      "tertiaryBackgroundColor": "#F7F7F7",
-      "textPrimary": "#1E2428",
-      "white": "#FFFFFF",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
     }
-  }
->
-  <ShareButtons
-    title="test"
-    url="test"
   >
-    <ShareButtons__Container>
-      <StyledComponent
-        forwardedComponent={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "componentId": "ShareButtons__Container-sc-1pgq0v7-0",
-              "isStatic": false,
-              "lastClassName": "jTmMWV",
-              "rules": Array [
-                "display:flex;flex-direction:",
-                [Function],
-                ";align-items:center;padding:8px;& > *{margin:8px;cursor:pointer;}",
-              ],
-            },
-            "displayName": "ShareButtons__Container",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "ShareButtons__Container-sc-1pgq0v7-0",
-            "target": "div",
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
+    <ShareButtons
+      title="test"
+      url="test"
+    >
+      <ShareButtons__Container>
+        <StyledComponent
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "ShareButtons__Container-sc-1pgq0v7-0",
+                "isStatic": false,
+                "lastClassName": "jTmMWV",
+                "rules": Array [
+                  "display:flex;flex-direction:",
+                  [Function],
+                  ";align-items:center;padding:8px;& > *{margin:8px;cursor:pointer;}",
+                ],
+              },
+              "displayName": "ShareButtons__Container",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "ShareButtons__Container-sc-1pgq0v7-0",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
           }
-        }
-        forwardedRef={null}
-      >
-        <div
-          className="ShareButtons__Container-sc-1pgq0v7-0 jTmMWV"
+          forwardedRef={null}
         >
-          <CreatedButton
-            onShareWindowClose={[Function]}
-            title="test"
-            url="test"
-            windowHeight={600}
-            windowWidth={750}
+          <div
+            className="ShareButtons__Container-sc-1pgq0v7-0 jTmMWV"
           >
-            <ShareButton
-              disabledStyle={
-                Object {
-                  "opacity": 0.6,
-                }
-              }
-              network="linkedin"
-              networkLink={[Function]}
+            <CreatedButton
               onShareWindowClose={[Function]}
-              openWindow={true}
-              opts={Object {}}
-              role="button"
-              tabIndex="0"
               title="test"
               url="test"
               windowHeight={600}
-              windowPosition="windowCenter"
               windowWidth={750}
             >
-              <div
-                aria-label="linkedin"
-                className="SocialMediaShareButton SocialMediaShareButton--linkedin"
-                onClick={[Function]}
-                onKeyPress={[Function]}
+              <ShareButton
+                disabledStyle={
+                  Object {
+                    "opacity": 0.6,
+                  }
+                }
+                network="linkedin"
+                networkLink={[Function]}
+                onShareWindowClose={[Function]}
+                openWindow={true}
+                opts={Object {}}
                 role="button"
-                style={Object {}}
                 tabIndex="0"
+                title="test"
+                url="test"
+                windowHeight={600}
+                windowPosition="windowCenter"
+                windowWidth={750}
               >
-                <Icon
-                  borderRadius={0}
-                  className=""
-                  iconBgStyle={Object {}}
-                  logoFillColor="white"
-                  round={true}
-                  size={30}
+                <div
+                  aria-label="linkedin"
+                  className="SocialMediaShareButton SocialMediaShareButton--linkedin"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  style={Object {}}
+                  tabIndex="0"
                 >
-                  <div
-                    style={
-                      Object {
-                        "height": 30,
-                        "width": 30,
-                      }
-                    }
+                  <Icon
+                    borderRadius={0}
+                    className=""
+                    iconBgStyle={Object {}}
+                    logoFillColor="white"
+                    round={true}
+                    size={30}
                   >
-                    <svg
-                      className="social-icon social-icon--linkedin "
-                      height={30}
-                      viewBox="0 0 64 64"
-                      width={30}
+                    <div
+                      style={
+                        Object {
+                          "height": 30,
+                          "width": 30,
+                        }
+                      }
                     >
-                      <g>
-                        <circle
-                          cx="32"
-                          cy="32"
-                          fill="#007fb1"
-                          r="31"
-                          style={Object {}}
-                        />
-                      </g>
-                      <g>
-                        <path
-                          d="M20.4,44h5.4V26.6h-5.4V44z M23.1,18c-1.7,0-3.1,1.4-3.1,3.1c0,1.7,1.4,3.1,3.1,3.1 c1.7,0,3.1-1.4,3.1-3.1C26.2,19.4,24.8,18,23.1,18z M39.5,26.2c-2.6,0-4.4,1.4-5.1,2.8h-0.1v-2.4h-5.2V44h5.4v-8.6 c0-2.3,0.4-4.5,3.2-4.5c2.8,0,2.8,2.6,2.8,4.6V44H46v-9.5C46,29.8,45,26.2,39.5,26.2z"
-                          fill="white"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                </Icon>
-              </div>
-            </ShareButton>
-          </CreatedButton>
-          <CreatedButton
-            onShareWindowClose={[Function]}
-            title="test"
-            url="test"
-            windowHeight={400}
-            windowWidth={550}
-          >
-            <ShareButton
-              disabledStyle={
-                Object {
-                  "opacity": 0.6,
-                }
-              }
-              network="twitter"
-              networkLink={[Function]}
+                      <svg
+                        className="social-icon social-icon--linkedin "
+                        height={30}
+                        viewBox="0 0 64 64"
+                        width={30}
+                      >
+                        <g>
+                          <circle
+                            cx="32"
+                            cy="32"
+                            fill="#007fb1"
+                            r="31"
+                            style={Object {}}
+                          />
+                        </g>
+                        <g>
+                          <path
+                            d="M20.4,44h5.4V26.6h-5.4V44z M23.1,18c-1.7,0-3.1,1.4-3.1,3.1c0,1.7,1.4,3.1,3.1,3.1 c1.7,0,3.1-1.4,3.1-3.1C26.2,19.4,24.8,18,23.1,18z M39.5,26.2c-2.6,0-4.4,1.4-5.1,2.8h-0.1v-2.4h-5.2V44h5.4v-8.6 c0-2.3,0.4-4.5,3.2-4.5c2.8,0,2.8,2.6,2.8,4.6V44H46v-9.5C46,29.8,45,26.2,39.5,26.2z"
+                            fill="white"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+                  </Icon>
+                </div>
+              </ShareButton>
+            </CreatedButton>
+            <CreatedButton
               onShareWindowClose={[Function]}
-              openWindow={true}
-              opts={
-                Object {
-                  "hashtags": undefined,
-                  "title": "test",
-                  "via": undefined,
-                }
-              }
-              role="button"
-              tabIndex="0"
               title="test"
               url="test"
               windowHeight={400}
-              windowPosition="windowCenter"
               windowWidth={550}
             >
-              <div
-                aria-label="twitter"
-                className="SocialMediaShareButton SocialMediaShareButton--twitter"
-                onClick={[Function]}
-                onKeyPress={[Function]}
+              <ShareButton
+                disabledStyle={
+                  Object {
+                    "opacity": 0.6,
+                  }
+                }
+                network="twitter"
+                networkLink={[Function]}
+                onShareWindowClose={[Function]}
+                openWindow={true}
+                opts={
+                  Object {
+                    "hashtags": undefined,
+                    "title": "test",
+                    "via": undefined,
+                  }
+                }
                 role="button"
-                style={Object {}}
                 tabIndex="0"
+                title="test"
+                url="test"
+                windowHeight={400}
+                windowPosition="windowCenter"
+                windowWidth={550}
               >
-                <Icon
-                  borderRadius={0}
-                  className=""
-                  iconBgStyle={Object {}}
-                  logoFillColor="white"
-                  round={true}
-                  size={30}
+                <div
+                  aria-label="twitter"
+                  className="SocialMediaShareButton SocialMediaShareButton--twitter"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  style={Object {}}
+                  tabIndex="0"
                 >
-                  <div
-                    style={
-                      Object {
-                        "height": 30,
-                        "width": 30,
-                      }
-                    }
+                  <Icon
+                    borderRadius={0}
+                    className=""
+                    iconBgStyle={Object {}}
+                    logoFillColor="white"
+                    round={true}
+                    size={30}
                   >
-                    <svg
-                      className="social-icon social-icon--twitter "
-                      height={30}
-                      viewBox="0 0 64 64"
-                      width={30}
+                    <div
+                      style={
+                        Object {
+                          "height": 30,
+                          "width": 30,
+                        }
+                      }
                     >
-                      <g>
-                        <circle
-                          cx="32"
-                          cy="32"
-                          fill="#00aced"
-                          r="31"
-                          style={Object {}}
-                        />
-                      </g>
-                      <g>
-                        <path
-                          d="M48,22.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6 C41.7,19.8,40,19,38.2,19c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5c-5.5-0.3-10.3-2.9-13.5-6.9c-0.6,1-0.9,2.1-0.9,3.3 c0,2.3,1.2,4.3,2.9,5.5c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1 c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,2.9,10.1,2.9c12.1,0,18.7-10,18.7-18.7 c0-0.3,0-0.6,0-0.8C46,24.5,47.1,23.4,48,22.1z"
-                          fill="white"
-                        />
-                      </g>
-                    </svg>
-                  </div>
-                </Icon>
-              </div>
-            </ShareButton>
-          </CreatedButton>
-          <CreatedButton
-            onShareWindowClose={[Function]}
-            title="test"
-            url="test"
-            windowHeight={460}
-            windowWidth={660}
-          >
-            <ShareButton
-              disabledStyle={
-                Object {
-                  "opacity": 0.6,
-                }
-              }
-              network="reddit"
-              networkLink={[Function]}
+                      <svg
+                        className="social-icon social-icon--twitter "
+                        height={30}
+                        viewBox="0 0 64 64"
+                        width={30}
+                      >
+                        <g>
+                          <circle
+                            cx="32"
+                            cy="32"
+                            fill="#00aced"
+                            r="31"
+                            style={Object {}}
+                          />
+                        </g>
+                        <g>
+                          <path
+                            d="M48,22.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6 C41.7,19.8,40,19,38.2,19c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5c-5.5-0.3-10.3-2.9-13.5-6.9c-0.6,1-0.9,2.1-0.9,3.3 c0,2.3,1.2,4.3,2.9,5.5c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1 c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,2.9,10.1,2.9c12.1,0,18.7-10,18.7-18.7 c0-0.3,0-0.6,0-0.8C46,24.5,47.1,23.4,48,22.1z"
+                            fill="white"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+                  </Icon>
+                </div>
+              </ShareButton>
+            </CreatedButton>
+            <CreatedButton
               onShareWindowClose={[Function]}
-              openWindow={true}
-              opts={
-                Object {
-                  "title": "test",
-                }
-              }
-              role="button"
-              tabIndex="0"
               title="test"
               url="test"
               windowHeight={460}
-              windowPosition="windowCenter"
               windowWidth={660}
             >
-              <div
-                aria-label="reddit"
-                className="SocialMediaShareButton SocialMediaShareButton--reddit"
-                onClick={[Function]}
-                onKeyPress={[Function]}
-                role="button"
-                style={Object {}}
-                tabIndex="0"
-              >
-                <RedditIcon>
-                  <ShareButtons__ShareSocialIcon>
-                    <StyledComponent
-                      forwardedComponent={
-                        Object {
-                          "$$typeof": Symbol(react.forward_ref),
-                          "attrs": Array [],
-                          "componentStyle": ComponentStyle {
-                            "componentId": "ShareButtons__ShareSocialIcon-sc-1pgq0v7-2",
-                            "isStatic": true,
-                            "lastClassName": "gEMyhK",
-                            "rules": Array [
-                              "height:",
-                              "30",
-                              "px;width:",
-                              "30",
-                              "px;",
-                            ],
-                          },
-                          "displayName": "ShareButtons__ShareSocialIcon",
-                          "foldedComponentIds": Array [],
-                          "render": [Function],
-                          "styledComponentId": "ShareButtons__ShareSocialIcon-sc-1pgq0v7-2",
-                          "target": "div",
-                          "toString": [Function],
-                          "warnTooManyClasses": [Function],
-                          "withComponent": [Function],
-                        }
-                      }
-                      forwardedRef={null}
-                    >
-                      <div
-                        className="ShareButtons__ShareSocialIcon-sc-1pgq0v7-2 gEMyhK"
-                      >
-                        <svg
-                          className="social-icon social-icon--reddit "
-                          height="30"
-                          viewBox="0 0 64 64"
-                          width="30"
-                        >
-                          <g>
-                             
-                            <circle
-                              cx="32"
-                              cy="32"
-                              fill="#FF4500"
-                              r="31"
-                            />
-                             
-                          </g>
-                          <g>
-                            <path
-                              d="m 52.8165,31.942362 c 0,-2.4803 -2.0264,-4.4965 -4.5169,-4.4965 -1.2155,0 -2.3171,0.4862 -3.128,1.2682 -3.077,-2.0247 -7.2403,-3.3133 -11.8507,-3.4782 l 2.5211,-7.9373 6.8272,1.5997 -0.0102,0.0986 c 0,2.0281 1.6575,3.6771 3.6958,3.6771 2.0366,0 3.6924,-1.649 3.6924,-3.6771 0,-2.0281 -1.6575,-3.6788 -3.6924,-3.6788 -1.564,0 -2.8968,0.9758 -3.4357,2.3443 l -7.3593,-1.7255 c -0.3213,-0.0782 -0.6477,0.1071 -0.748,0.4233 L 32,25.212062 c -4.8246,0.0578 -9.1953,1.3566 -12.41,3.4425 -0.8058,-0.7446 -1.8751,-1.2104 -3.0583,-1.2104 -2.4905,0 -4.5152,2.0179 -4.5152,4.4982 0,1.649 0.9061,3.0787 2.2389,3.8607 -0.0884,0.4794 -0.1462,0.9639 -0.1462,1.4569 0,6.6487 8.1736,12.0581 18.2223,12.0581 10.0487,0 18.224,-5.4094 18.224,-12.0581 0,-0.4658 -0.0493,-0.9248 -0.1275,-1.377 1.4144,-0.7599 2.3885,-2.2304 2.3885,-3.9406 z m -29.2808,3.0872 c 0,-1.4756 1.207,-2.6775 2.6894,-2.6775 1.4824,0 2.6877,1.2019 2.6877,2.6775 0,1.4756 -1.2053,2.6758 -2.6877,2.6758 -1.4824,0 -2.6894,-1.2002 -2.6894,-2.6758 z m 15.4037,7.9373 c -1.3549,1.3481 -3.4816,2.0043 -6.5008,2.0043 l -0.0221,-0.0051 -0.0221,0.0051 c -3.0209,0 -5.1476,-0.6562 -6.5008,-2.0043 -0.2465,-0.2448 -0.2465,-0.6443 0,-0.8891 0.2465,-0.2465 0.6477,-0.2465 0.8942,0 1.105,1.0999 2.9393,1.6337 5.6066,1.6337 l 0.0221,0.0051 0.0221,-0.0051 c 2.6673,0 4.5016,-0.5355 5.6066,-1.6354 0.2465,-0.2465 0.6477,-0.2448 0.8942,0 0.2465,0.2465 0.2465,0.6443 0,0.8908 z m -0.3213,-5.2615 c -1.4824,0 -2.6877,-1.2002 -2.6877,-2.6758 0,-1.4756 1.2053,-2.6775 2.6877,-2.6775 1.4824,0 2.6877,1.2019 2.6877,2.6775 0,1.4756 -1.2053,2.6758 -2.6877,2.6758 z"
-                              fill="white"
-                            />
-                          </g>
-                        </svg>
-                      </div>
-                    </StyledComponent>
-                  </ShareButtons__ShareSocialIcon>
-                </RedditIcon>
-              </div>
-            </ShareButton>
-          </CreatedButton>
-          <HackerNewsShareButton
-            share={[Function]}
-            title="test"
-            url="test"
-          >
-            <ShareButtons__HNShareButton
-              onClick={[Function]}
-            >
-              <StyledComponent
-                forwardedComponent={
+              <ShareButton
+                disabledStyle={
                   Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "ShareButtons__HNShareButton-sc-1pgq0v7-1",
-                      "isStatic": true,
-                      "lastClassName": "dADeXm",
-                      "rules": Array [
-                        "height:",
-                        "30",
-                        "px;width:",
-                        "30",
-                        "px;border-radius:",
-                        "15",
-                        "px;",
-                      ],
-                    },
-                    "displayName": "ShareButtons__HNShareButton",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "ShareButtons__HNShareButton-sc-1pgq0v7-1",
-                    "target": "div",
-                    "toString": [Function],
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
+                    "opacity": 0.6,
                   }
                 }
-                forwardedRef={null}
-                onClick={[Function]}
+                network="reddit"
+                networkLink={[Function]}
+                onShareWindowClose={[Function]}
+                openWindow={true}
+                opts={
+                  Object {
+                    "title": "test",
+                  }
+                }
+                role="button"
+                tabIndex="0"
+                title="test"
+                url="test"
+                windowHeight={460}
+                windowPosition="windowCenter"
+                windowWidth={660}
               >
                 <div
-                  className="ShareButtons__HNShareButton-sc-1pgq0v7-1 dADeXm"
+                  aria-label="reddit"
+                  className="SocialMediaShareButton SocialMediaShareButton--reddit"
                   onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  style={Object {}}
+                  tabIndex="0"
                 >
-                  <HackerNewsIcon>
+                  <RedditIcon>
                     <ShareButtons__ShareSocialIcon>
                       <StyledComponent
                         forwardedComponent={
@@ -844,71 +1273,180 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
                           className="ShareButtons__ShareSocialIcon-sc-1pgq0v7-2 gEMyhK"
                         >
                           <svg
-                            height="30px"
-                            version="1.1"
-                            viewBox="0 0 30 30"
-                            width="30px"
-                            xmlns="http://www.w3.org/2000/svg"
+                            className="social-icon social-icon--reddit "
+                            height="30"
+                            viewBox="0 0 64 64"
+                            width="30"
                           >
-                            <defs>
+                            <g>
+                               
                               <circle
-                                cx="14.8935398"
-                                cy="14.8938053"
-                                id="path-1"
-                                r="14.8932743"
+                                cx="32"
+                                cy="32"
+                                fill="#FF4500"
+                                r="31"
                               />
-                            </defs>
-                            <g
-                              fill="#FF6602"
-                              fillRule="evenodd"
-                              id="Page-1"
-                              stroke="none"
-                              strokeWidth="1"
-                            >
-                              <g
-                                id="Basic-UI-Framework"
-                                transform="translate(-151.000000, -2005.000000)"
-                              >
-                                <g
-                                  id="hackernews"
-                                  transform="translate(151.000000, 2005.000000)"
-                                >
-                                  <mask
-                                    fill="white"
-                                    id="mask-2"
-                                  >
-                                    <use
-                                      xlinkHref="#path-1"
-                                    />
-                                  </mask>
-                                  <use
-                                    fill="#FFFFFF"
-                                    fillRule="nonzero"
-                                    id="Oval"
-                                    xlinkHref="#path-1"
-                                  />
-                                  <path
-                                    d="M0,30 L30,30 L30,0 L0,0 L0,30 Z M16.0034802,16.6192355 L16.0034802,22.1686842 L13.9925279,22.1686842 L13.9925279,16.6192355 L9.048125,6.83006579 L11.3771585,6.83006579 L14.9929751,14.2006238 L18.7524311,6.83006579 L20.935625,6.83006579 L16.0034802,16.6192355 Z"
-                                    fill="#FF6602"
-                                    id="Fill-1"
-                                    mask="url(#mask-2)"
-                                  />
-                                </g>
-                              </g>
+                               
+                            </g>
+                            <g>
+                              <path
+                                d="m 52.8165,31.942362 c 0,-2.4803 -2.0264,-4.4965 -4.5169,-4.4965 -1.2155,0 -2.3171,0.4862 -3.128,1.2682 -3.077,-2.0247 -7.2403,-3.3133 -11.8507,-3.4782 l 2.5211,-7.9373 6.8272,1.5997 -0.0102,0.0986 c 0,2.0281 1.6575,3.6771 3.6958,3.6771 2.0366,0 3.6924,-1.649 3.6924,-3.6771 0,-2.0281 -1.6575,-3.6788 -3.6924,-3.6788 -1.564,0 -2.8968,0.9758 -3.4357,2.3443 l -7.3593,-1.7255 c -0.3213,-0.0782 -0.6477,0.1071 -0.748,0.4233 L 32,25.212062 c -4.8246,0.0578 -9.1953,1.3566 -12.41,3.4425 -0.8058,-0.7446 -1.8751,-1.2104 -3.0583,-1.2104 -2.4905,0 -4.5152,2.0179 -4.5152,4.4982 0,1.649 0.9061,3.0787 2.2389,3.8607 -0.0884,0.4794 -0.1462,0.9639 -0.1462,1.4569 0,6.6487 8.1736,12.0581 18.2223,12.0581 10.0487,0 18.224,-5.4094 18.224,-12.0581 0,-0.4658 -0.0493,-0.9248 -0.1275,-1.377 1.4144,-0.7599 2.3885,-2.2304 2.3885,-3.9406 z m -29.2808,3.0872 c 0,-1.4756 1.207,-2.6775 2.6894,-2.6775 1.4824,0 2.6877,1.2019 2.6877,2.6775 0,1.4756 -1.2053,2.6758 -2.6877,2.6758 -1.4824,0 -2.6894,-1.2002 -2.6894,-2.6758 z m 15.4037,7.9373 c -1.3549,1.3481 -3.4816,2.0043 -6.5008,2.0043 l -0.0221,-0.0051 -0.0221,0.0051 c -3.0209,0 -5.1476,-0.6562 -6.5008,-2.0043 -0.2465,-0.2448 -0.2465,-0.6443 0,-0.8891 0.2465,-0.2465 0.6477,-0.2465 0.8942,0 1.105,1.0999 2.9393,1.6337 5.6066,1.6337 l 0.0221,0.0051 0.0221,-0.0051 c 2.6673,0 4.5016,-0.5355 5.6066,-1.6354 0.2465,-0.2465 0.6477,-0.2448 0.8942,0 0.2465,0.2465 0.2465,0.6443 0,0.8908 z m -0.3213,-5.2615 c -1.4824,0 -2.6877,-1.2002 -2.6877,-2.6758 0,-1.4756 1.2053,-2.6775 2.6877,-2.6775 1.4824,0 2.6877,1.2019 2.6877,2.6775 0,1.4756 -1.2053,2.6758 -2.6877,2.6758 z"
+                                fill="white"
+                              />
                             </g>
                           </svg>
                         </div>
                       </StyledComponent>
                     </ShareButtons__ShareSocialIcon>
-                  </HackerNewsIcon>
+                  </RedditIcon>
                 </div>
-              </StyledComponent>
-            </ShareButtons__HNShareButton>
-          </HackerNewsShareButton>
-        </div>
-      </StyledComponent>
-    </ShareButtons__Container>
-  </ShareButtons>
+              </ShareButton>
+            </CreatedButton>
+            <HackerNewsShareButton
+              share={[Function]}
+              title="test"
+              url="test"
+            >
+              <ShareButtons__HNShareButton
+                onClick={[Function]}
+              >
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "ShareButtons__HNShareButton-sc-1pgq0v7-1",
+                        "isStatic": true,
+                        "lastClassName": "dADeXm",
+                        "rules": Array [
+                          "height:",
+                          "30",
+                          "px;width:",
+                          "30",
+                          "px;border-radius:",
+                          "15",
+                          "px;",
+                        ],
+                      },
+                      "displayName": "ShareButtons__HNShareButton",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "ShareButtons__HNShareButton-sc-1pgq0v7-1",
+                      "target": "div",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                  onClick={[Function]}
+                >
+                  <div
+                    className="ShareButtons__HNShareButton-sc-1pgq0v7-1 dADeXm"
+                    onClick={[Function]}
+                  >
+                    <HackerNewsIcon>
+                      <ShareButtons__ShareSocialIcon>
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "ShareButtons__ShareSocialIcon-sc-1pgq0v7-2",
+                                "isStatic": true,
+                                "lastClassName": "gEMyhK",
+                                "rules": Array [
+                                  "height:",
+                                  "30",
+                                  "px;width:",
+                                  "30",
+                                  "px;",
+                                ],
+                              },
+                              "displayName": "ShareButtons__ShareSocialIcon",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "ShareButtons__ShareSocialIcon-sc-1pgq0v7-2",
+                              "target": "div",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                        >
+                          <div
+                            className="ShareButtons__ShareSocialIcon-sc-1pgq0v7-2 gEMyhK"
+                          >
+                            <svg
+                              height="30px"
+                              version="1.1"
+                              viewBox="0 0 30 30"
+                              width="30px"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <defs>
+                                <circle
+                                  cx="14.8935398"
+                                  cy="14.8938053"
+                                  id="path-1"
+                                  r="14.8932743"
+                                />
+                              </defs>
+                              <g
+                                fill="#FF6602"
+                                fillRule="evenodd"
+                                id="Page-1"
+                                stroke="none"
+                                strokeWidth="1"
+                              >
+                                <g
+                                  id="Basic-UI-Framework"
+                                  transform="translate(-151.000000, -2005.000000)"
+                                >
+                                  <g
+                                    id="hackernews"
+                                    transform="translate(151.000000, 2005.000000)"
+                                  >
+                                    <mask
+                                      fill="white"
+                                      id="mask-2"
+                                    >
+                                      <use
+                                        xlinkHref="#path-1"
+                                      />
+                                    </mask>
+                                    <use
+                                      fill="#FFFFFF"
+                                      fillRule="nonzero"
+                                      id="Oval"
+                                      xlinkHref="#path-1"
+                                    />
+                                    <path
+                                      d="M0,30 L30,30 L30,0 L0,0 L0,30 Z M16.0034802,16.6192355 L16.0034802,22.1686842 L13.9925279,22.1686842 L13.9925279,16.6192355 L9.048125,6.83006579 L11.3771585,6.83006579 L14.9929751,14.2006238 L18.7524311,6.83006579 L20.935625,6.83006579 L16.0034802,16.6192355 Z"
+                                      fill="#FF6602"
+                                      id="Fill-1"
+                                      mask="url(#mask-2)"
+                                    />
+                                  </g>
+                                </g>
+                              </g>
+                            </svg>
+                          </div>
+                        </StyledComponent>
+                      </ShareButtons__ShareSocialIcon>
+                    </HackerNewsIcon>
+                  </div>
+                </StyledComponent>
+              </ShareButtons__HNShareButton>
+            </HackerNewsShareButton>
+          </div>
+        </StyledComponent>
+      </ShareButtons__Container>
+    </ShareButtons>
+  </ThemeProvider>
 </ThemeProvider>
 `;
 
@@ -916,90 +1454,358 @@ exports[`components/Tooltip/Tooltip should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
-      "DEFAULT_CARD_WIDTH": 288,
-      "MAIN_BODY_WIDTH": 1242,
-      "bg": Object {
+      "breakpoints": Object {
+        "between": [Function],
+        "down": [Function],
+        "keys": Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ],
+        "only": [Function],
+        "up": [Function],
+        "values": Object {
+          "lg": 1280,
+          "md": 960,
+          "sm": 600,
+          "xl": 1920,
+          "xs": 0,
+        },
+        "width": [Function],
+      },
+      "direction": "ltr",
+      "mixins": Object {
+        "gutters": [Function],
+        "toolbar": Object {
+          "@media (min-width:0px) and (orientation: landscape)": Object {
+            "minHeight": 48,
+          },
+          "@media (min-width:600px)": Object {
+            "minHeight": 64,
+          },
+          "minHeight": 56,
+        },
+      },
+      "overrides": Object {},
+      "palette": Object {
+        "action": Object {
+          "active": "rgba(0, 0, 0, 0.54)",
+          "disabled": "rgba(0, 0, 0, 0.26)",
+          "disabledBackground": "rgba(0, 0, 0, 0.12)",
+          "hover": "rgba(0, 0, 0, 0.08)",
+          "hoverOpacity": 0.08,
+          "selected": "rgba(0, 0, 0, 0.14)",
+        },
+        "augmentColor": [Function],
+        "background": Object {
+          "default": "#f5f5f5",
+          "paper": "#fff",
+        },
+        "common": Object {
+          "black": "#1E2428",
+          "white": "#fff",
+        },
+        "contrastThreshold": 3,
+        "divider": "rgba(0, 0, 0, 0.12)",
+        "error": Object {
+          "contrastText": "#fff",
+          "dark": "#d32f2f",
+          "light": "#e57373",
+          "main": "#f44336",
+        },
+        "getContrastText": [Function],
+        "grey": Object {
+          "100": "#f5f5f5",
+          "200": "#eeeeee",
+          "300": "#e0e0e0",
+          "400": "#bdbdbd",
+          "50": "#fafafa",
+          "500": "#9e9e9e",
+          "600": "#757575",
+          "700": "#616161",
+          "800": "#424242",
+          "900": "#212121",
+          "A100": "#d5d5d5",
+          "A200": "#aaaaaa",
+          "A400": "#303030",
+          "A700": "#616161",
+        },
+        "primary": Object {
+          "contrastText": "rgba(0, 0, 0, 0.87)",
+          "dark": "rgb(7, 118, 93)",
+          "light": "rgb(59, 186, 158)",
+          "main": "#0BA986",
+        },
+        "secondary": Object {
+          "contrastText": "rgba(0, 0, 0, 0.87)",
+          "dark": "rgb(178, 178, 178)",
+          "light": "rgb(255, 255, 255)",
+          "main": "#ffffff",
+        },
+        "text": Object {
+          "disabled": "rgba(0, 0, 0, 0.38)",
+          "hint": "rgba(0, 0, 0, 0.38)",
+          "primary": "rgba(0, 0, 0, 0.87)",
+          "secondary": "rgba(0, 0, 0, 0.54)",
+        },
+        "tonalOffset": 0.2,
+        "type": "light",
+      },
+      "props": Object {},
+      "shadows": Array [
+        "none",
+        "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+        "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+        "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+        "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+        "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+        "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+        "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+        "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+        "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+        "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+        "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+        "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+        "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+        "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+        "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+        "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+        "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+        "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+        "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+        "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+        "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+        "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+        "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+        "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+      ],
+      "shape": Object {
+        "borderRadius": 4,
+      },
+      "spacing": [Function],
+      "transitions": Object {
+        "create": [Function],
+        "duration": Object {
+          "complex": 375,
+          "enteringScreen": 225,
+          "leavingScreen": 195,
+          "short": 250,
+          "shorter": 200,
+          "shortest": 150,
+          "standard": 300,
+        },
+        "easing": Object {
+          "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+          "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+          "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+        },
+        "getAutoHeightDuration": [Function],
+      },
+      "typography": Object {
+        "body1": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.00938em",
+          "lineHeight": 1.5,
+        },
+        "body2": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.01071em",
+          "lineHeight": 1.43,
+        },
+        "button": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 500,
+          "letterSpacing": "0.02857em",
+          "lineHeight": 1.75,
+          "textTransform": "uppercase",
+        },
+        "caption": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.75rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.03333em",
+          "lineHeight": 1.66,
+        },
+        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+        "fontSize": 14,
+        "fontWeightBold": 700,
+        "fontWeightLight": 300,
+        "fontWeightMedium": 500,
+        "fontWeightRegular": 400,
+        "h1": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "6rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.01562em",
+          "lineHeight": 1,
+        },
+        "h2": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "3.75rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.00833em",
+          "lineHeight": 1,
+        },
+        "h3": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "3rem",
+          "fontWeight": 400,
+          "letterSpacing": "0em",
+          "lineHeight": 1.04,
+        },
+        "h4": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "2.125rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.00735em",
+          "lineHeight": 1.17,
+        },
+        "h5": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1.5rem",
+          "fontWeight": 400,
+          "letterSpacing": "0em",
+          "lineHeight": 1.33,
+        },
+        "h6": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1.25rem",
+          "fontWeight": 500,
+          "letterSpacing": "0.0075em",
+          "lineHeight": 1.6,
+        },
+        "htmlFontSize": 16,
+        "overline": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.75rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.08333em",
+          "lineHeight": 2.66,
+          "textTransform": "uppercase",
+        },
+        "pxToRem": [Function],
+        "round": [Function],
+        "subtitle1": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.00938em",
+          "lineHeight": 1.75,
+        },
+        "subtitle2": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 500,
+          "letterSpacing": "0.00714em",
+          "lineHeight": 1.57,
+        },
+      },
+      "zIndex": Object {
+        "appBar": 1100,
+        "drawer": 1200,
+        "mobileStepper": 1000,
+        "modal": 1300,
+        "snackbar": 1400,
+        "tooltip": 1500,
+      },
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
         "bgPrimary": "#1E2428",
         "bgSecondary": "#1E3D3B",
         "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
         "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
         "disabledBackgroundColor": "#D6D6D6",
         "disabledTextColor": "#9B9B9B",
         "divider": "#EBEBEB",
         "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
         "hoverTextColor": "#108E72",
-        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-        "paddingTop": "2.5em",
-        "primary": "#0BA986",
-        "primaryColor": "#0BA986",
-        "primaryDark": "#11856B",
-        "primaryTextColor": "#1E2428",
-        "secondary": "#11856B",
-        "secondaryBlue": "rgb(81, 123, 162, 1)",
-        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-        "secondaryColor": "#1E3D3B",
-        "secondaryTextColor": "#283035",
-        "tertiaryBackgroundColor": "#F7F7F7",
-        "textPrimary": "#1E2428",
-        "white": "#FFFFFF",
-      },
-      "bgPrimary": "#1E2428",
-      "bgSecondary": "#1E3D3B",
-      "borderTextArea": "#979797",
-      "breakpoints": Array [
-        "500px",
-        "52em",
-        "1242px",
-      ],
-      "colors": Object {
-        "bgPrimary": "#1E2428",
-        "bgSecondary": "#1E3D3B",
-        "borderTextArea": "#979797",
-        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-        "disabledBackgroundColor": "#D6D6D6",
-        "disabledTextColor": "#9B9B9B",
-        "divider": "#EBEBEB",
-        "errorRedColor": "#C03030",
-        "hoverTextColor": "#108E72",
-        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-        "paddingTop": "2.5em",
-        "primary": "#0BA986",
-        "primaryColor": "#0BA986",
-        "primaryDark": "#11856B",
-        "primaryTextColor": "#1E2428",
-        "secondary": "#11856B",
-        "secondaryBlue": "rgb(81, 123, 162, 1)",
-        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-        "secondaryColor": "#1E3D3B",
-        "secondaryTextColor": "#283035",
-        "tertiaryBackgroundColor": "#F7F7F7",
-        "textPrimary": "#1E2428",
-        "white": "#FFFFFF",
-      },
-      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-      "disabledBackgroundColor": "#D6D6D6",
-      "disabledTextColor": "#9B9B9B",
-      "divider": "#EBEBEB",
-      "errorRedColor": "#C03030",
-      "fontSizes": Array [
-        11,
-        13,
-        14,
-        16,
-        18,
-        20,
-        22,
-        28,
-        32,
-      ],
-      "fontWeight": Array [
-        300,
-        "normal",
-        500,
-        700,
-      ],
-      "hoverTextColor": "#108E72",
-      "padContent": "
+        "padContent": "
     max-width: 1242px;
     margin-left: auto;
     margin-right: auto;
@@ -1010,135 +1816,136 @@ exports[`components/Tooltip/Tooltip should match snapshot 1`] = `
       min-width: 90%;
     }
   ",
-      "padding": "calc((100vw - 1242px) / 2)",
-      "paddingTop": "2.5em",
-      "primary": "#0BA986",
-      "primaryColor": "#0BA986",
-      "primaryDark": "#11856B",
-      "primaryTextColor": "#1E2428",
-      "secondary": "#11856B",
-      "secondaryBlue": "rgb(81, 123, 162, 1)",
-      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-      "secondaryColor": "#1E3D3B",
-      "secondaryTextColor": "#283035",
-      "space": Array [
-        0,
-        10,
-        15,
-        30,
-        60,
-      ],
-      "tertiaryBackgroundColor": "#F7F7F7",
-      "textPrimary": "#1E2428",
-      "white": "#FFFFFF",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
     }
-  }
->
-  <Tooltip>
-    <Tooltip__Container>
-      <StyledComponent
-        forwardedComponent={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "componentId": "Tooltip__Container-yd5128-0",
-              "isStatic": true,
-              "lastClassName": "gGEFSv",
-              "rules": Array [
-                "flex-direction:column;display:flex;align-items:center;z-index:999;> .header{display:flex;height:100%;}> *:not(.header){opacity:0;}&:hover{> *{opacity:1;display:flex;}}",
-              ],
-            },
-            "displayName": "Tooltip__Container",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "Tooltip__Container-yd5128-0",
-            "target": "div",
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
+  >
+    <Tooltip>
+      <Tooltip__Container>
+        <StyledComponent
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "Tooltip__Container-yd5128-0",
+                "isStatic": true,
+                "lastClassName": "gGEFSv",
+                "rules": Array [
+                  "flex-direction:column;display:flex;align-items:center;z-index:999;> .header{display:flex;height:100%;}> *:not(.header){opacity:0;}&:hover{> *{opacity:1;display:flex;}}",
+                ],
+              },
+              "displayName": "Tooltip__Container",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "Tooltip__Container-yd5128-0",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
           }
-        }
-        forwardedRef={null}
-      >
-        <div
-          className="Tooltip__Container-yd5128-0 gGEFSv"
+          forwardedRef={null}
         >
           <div
-            className="header"
-          />
-          <Tooltip__UpArrow>
-            <StyledComponent
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "Tooltip__UpArrow-yd5128-1",
-                    "isStatic": true,
-                    "lastClassName": "eNbAAH",
-                    "rules": Array [
-                      "width:14px;height:14px;transform:rotate(45deg);position:absolute;top:74%;background:white;border-radius:2px;",
-                    ],
-                  },
-                  "displayName": "Tooltip__UpArrow",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "Tooltip__UpArrow-yd5128-1",
-                  "target": "div",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
-              }
-              forwardedRef={null}
-            >
-              <div
-                className="Tooltip__UpArrow-yd5128-1 eNbAAH"
-              />
-            </StyledComponent>
-          </Tooltip__UpArrow>
-          <Tooltip__TooltipBody
-            className="tooltip-body"
+            className="Tooltip__Container-yd5128-0 gGEFSv"
           >
-            <StyledComponent
-              className="tooltip-body"
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "Tooltip__TooltipBody-yd5128-2",
-                    "isStatic": true,
-                    "lastClassName": "tLBOh",
-                    "rules": Array [
-                      "background:white;flex-direction:column;color:black;border-radius:4px;transition:all 0.2s;position:absolute;top:80%;display:none;box-shadow:0px 2px 4px rgba(0,0,0,0.1);",
-                    ],
-                  },
-                  "displayName": "Tooltip__TooltipBody",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "Tooltip__TooltipBody-yd5128-2",
-                  "target": "div",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
+            <div
+              className="header"
+            />
+            <Tooltip__UpArrow>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Tooltip__UpArrow-yd5128-1",
+                      "isStatic": true,
+                      "lastClassName": "eNbAAH",
+                      "rules": Array [
+                        "width:14px;height:14px;transform:rotate(45deg);position:absolute;top:74%;background:white;border-radius:2px;",
+                      ],
+                    },
+                    "displayName": "Tooltip__UpArrow",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "Tooltip__UpArrow-yd5128-1",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
                 }
-              }
-              forwardedRef={null}
-            >
-              <div
-                className="tooltip-body Tooltip__TooltipBody-yd5128-2 tLBOh"
+                forwardedRef={null}
               >
-                <div>
-                  Test
+                <div
+                  className="Tooltip__UpArrow-yd5128-1 eNbAAH"
+                />
+              </StyledComponent>
+            </Tooltip__UpArrow>
+            <Tooltip__TooltipBody
+              className="tooltip-body"
+            >
+              <StyledComponent
+                className="tooltip-body"
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Tooltip__TooltipBody-yd5128-2",
+                      "isStatic": true,
+                      "lastClassName": "tLBOh",
+                      "rules": Array [
+                        "background:white;flex-direction:column;color:black;border-radius:4px;transition:all 0.2s;position:absolute;top:80%;display:none;box-shadow:0px 2px 4px rgba(0,0,0,0.1);",
+                      ],
+                    },
+                    "displayName": "Tooltip__TooltipBody",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "Tooltip__TooltipBody-yd5128-2",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="tooltip-body Tooltip__TooltipBody-yd5128-2 tLBOh"
+                >
+                  <div>
+                    Test
+                  </div>
                 </div>
-              </div>
-            </StyledComponent>
-          </Tooltip__TooltipBody>
-        </div>
-      </StyledComponent>
-    </Tooltip__Container>
-  </Tooltip>
+              </StyledComponent>
+            </Tooltip__TooltipBody>
+          </div>
+        </StyledComponent>
+      </Tooltip__Container>
+    </Tooltip>
+  </ThemeProvider>
 </ThemeProvider>
 `;

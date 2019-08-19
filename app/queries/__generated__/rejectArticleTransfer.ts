@@ -19,7 +19,7 @@ export interface rejectArticleTransfer {
    * Reject an article transfer.
    * This operation can only be performed by the recipient of the transfer.
    */
-  rejectArticleTransfer: rejectArticleTransfer_rejectArticleTransfer | null;
+  rejectArticleTransfer: rejectArticleTransfer_rejectArticleTransfer;
 }
 
 export interface rejectArticleTransferVariables {

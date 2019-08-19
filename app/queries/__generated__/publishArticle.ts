@@ -21,7 +21,7 @@ export interface publishArticle {
    * Publish a draft article version.
    * This operation can only be performed by the author of the article
    */
-  publishArticle: publishArticle_publishArticle | null;
+  publishArticle: publishArticle_publishArticle;
 }
 
 export interface publishArticleVariables {

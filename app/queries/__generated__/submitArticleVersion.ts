@@ -19,7 +19,7 @@ export interface submitArticleVersion {
    * Submit a new article version
    * This operation can only be performed by logged user
    */
-  submitArticleVersion: submitArticleVersion_submitArticleVersion | null;
+  submitArticleVersion: submitArticleVersion_submitArticleVersion;
 }
 
 export interface submitArticleVersionVariables {

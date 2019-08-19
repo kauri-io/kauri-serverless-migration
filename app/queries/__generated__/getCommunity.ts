@@ -194,7 +194,7 @@ export interface getCommunity_getCommunity_homepage_resources_ArticleDTO {
   /**
    * Article author (full profile)
    */
-  author: getCommunity_getCommunity_homepage_resources_ArticleDTO_author | null;
+  author: getCommunity_getCommunity_homepage_resources_ArticleDTO_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -210,7 +210,7 @@ export interface getCommunity_getCommunity_homepage_resources_ArticleDTO {
   /**
    * Get vote result for the article
    */
-  voteResult: getCommunity_getCommunity_homepage_resources_ArticleDTO_voteResult | null;
+  voteResult: getCommunity_getCommunity_homepage_resources_ArticleDTO_voteResult;
 }
 
 export interface getCommunity_getCommunity_homepage_resources_CollectionDTO_resourceIdentifier {
@@ -398,7 +398,7 @@ export interface getCommunity_getCommunity_homepage {
   /**
    * load the resources within this section
    */
-  resources: (getCommunity_getCommunity_homepage_resources | null)[] | null;
+  resources: (getCommunity_getCommunity_homepage_resources | null)[];
 }
 
 export interface getCommunity_getCommunity_members {
@@ -632,7 +632,7 @@ export interface getCommunity_getCommunity_approved_ArticleDTO_comments_content 
   /**
    * Comment author (full profile)
    */
-  author: getCommunity_getCommunity_approved_ArticleDTO_comments_content_author | null;
+  author: getCommunity_getCommunity_approved_ArticleDTO_comments_content_author;
   /**
    * Date the comment was published
    */
@@ -726,11 +726,11 @@ export interface getCommunity_getCommunity_approved_ArticleDTO {
   /**
    * Get vote result for the article
    */
-  voteResult: getCommunity_getCommunity_approved_ArticleDTO_voteResult | null;
+  voteResult: getCommunity_getCommunity_approved_ArticleDTO_voteResult;
   /**
    * Article author (full profile)
    */
-  author: getCommunity_getCommunity_approved_ArticleDTO_author | null;
+  author: getCommunity_getCommunity_approved_ArticleDTO_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -738,7 +738,7 @@ export interface getCommunity_getCommunity_approved_ArticleDTO {
   /**
    * Get a paginated list of comments for this article
    */
-  comments: getCommunity_getCommunity_approved_ArticleDTO_comments | null;
+  comments: getCommunity_getCommunity_approved_ArticleDTO_comments;
   /**
    * The comment describing this version update of the article
    */
@@ -864,7 +864,7 @@ export interface getCommunity_getCommunity_approved_CollectionDTO_sections {
   /**
    * load the resources within this section
    */
-  resources: (getCommunity_getCommunity_approved_CollectionDTO_sections_resources | null)[] | null;
+  resources: (getCommunity_getCommunity_approved_CollectionDTO_sections_resources | null)[];
 }
 
 export interface getCommunity_getCommunity_approved_CollectionDTO_resourceIdentifier {
@@ -1100,7 +1100,7 @@ export interface getCommunity_getCommunity_pending_ArticleDTO_comments_content {
   /**
    * Comment author (full profile)
    */
-  author: getCommunity_getCommunity_pending_ArticleDTO_comments_content_author | null;
+  author: getCommunity_getCommunity_pending_ArticleDTO_comments_content_author;
   /**
    * Date the comment was published
    */
@@ -1194,11 +1194,11 @@ export interface getCommunity_getCommunity_pending_ArticleDTO {
   /**
    * Get vote result for the article
    */
-  voteResult: getCommunity_getCommunity_pending_ArticleDTO_voteResult | null;
+  voteResult: getCommunity_getCommunity_pending_ArticleDTO_voteResult;
   /**
    * Article author (full profile)
    */
-  author: getCommunity_getCommunity_pending_ArticleDTO_author | null;
+  author: getCommunity_getCommunity_pending_ArticleDTO_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -1206,7 +1206,7 @@ export interface getCommunity_getCommunity_pending_ArticleDTO {
   /**
    * Get a paginated list of comments for this article
    */
-  comments: getCommunity_getCommunity_pending_ArticleDTO_comments | null;
+  comments: getCommunity_getCommunity_pending_ArticleDTO_comments;
   /**
    * The comment describing this version update of the article
    */
@@ -1332,7 +1332,7 @@ export interface getCommunity_getCommunity_pending_CollectionDTO_sections {
   /**
    * load the resources within this section
    */
-  resources: (getCommunity_getCommunity_pending_CollectionDTO_sections_resources | null)[] | null;
+  resources: (getCommunity_getCommunity_pending_CollectionDTO_sections_resources | null)[];
 }
 
 export interface getCommunity_getCommunity_pending_CollectionDTO_resourceIdentifier {
@@ -1407,7 +1407,7 @@ export interface getCommunity_getCommunity {
   /**
    * Community creator (full profile)
    */
-  creator: getCommunity_getCommunity_creator | null;
+  creator: getCommunity_getCommunity_creator;
   /**
    * Community Name
    */
@@ -1448,7 +1448,7 @@ export interface getCommunity_getCommunity {
   /**
    * Community members list (full profile)
    */
-  members: (getCommunity_getCommunity_members | null)[] | null;
+  members: (getCommunity_getCommunity_members | null)[];
   /**
    * List of approved curated content
    */
@@ -1460,11 +1460,11 @@ export interface getCommunity_getCommunity {
   /**
    * load the approved curated resources associated to this community
    */
-  approved: (getCommunity_getCommunity_approved | null)[] | null;
+  approved: (getCommunity_getCommunity_approved | null)[];
   /**
    * load the pending curated resources associated to this community
    */
-  pending: (getCommunity_getCommunity_pending | null)[] | null;
+  pending: (getCommunity_getCommunity_pending | null)[];
 }
 
 export interface getCommunity {
@@ -1472,7 +1472,7 @@ export interface getCommunity {
    * Get a community by ID.
    * This operation can be performed anonymously
    */
-  getCommunity: getCommunity_getCommunity | null;
+  getCommunity: getCommunity_getCommunity;
 }
 
 export interface getCommunityVariables {

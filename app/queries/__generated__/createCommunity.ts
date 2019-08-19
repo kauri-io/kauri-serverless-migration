@@ -21,7 +21,7 @@ export interface createCommunity {
    * Create a community (excute call).
    * This operation can only be performed by a logged user
    */
-  createCommunity: createCommunity_createCommunity | null;
+  createCommunity: createCommunity_createCommunity;
 }
 
 export interface createCommunityVariables {

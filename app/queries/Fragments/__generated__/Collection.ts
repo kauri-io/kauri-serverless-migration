@@ -127,7 +127,7 @@ export interface Collection_sections {
   /**
    * load the resources within this section
    */
-  resources: (Collection_sections_resources | null)[] | null;
+  resources: (Collection_sections_resources | null)[];
 }
 
 export interface Collection_resourceIdentifier {

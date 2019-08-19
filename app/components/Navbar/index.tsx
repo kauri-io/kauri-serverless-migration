@@ -14,9 +14,9 @@ import AccountCircle from '@material-ui/icons/AccountCircle'
 import MoreIcon from '@material-ui/icons/MoreVert'
 import Link from 'next/link'
 import { logout } from './Module'
-import { Avatar } from '@material-ui/core'
 import { withRouter, Router } from 'next/router'
 import { getProfileURL } from '../../lib/getURLs'
+import Avatar from '../../components/Avatar'
 
 const useStyles = makeStyles((theme: Theme) => {
     return {
@@ -242,10 +242,15 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                 }
             >
                 <IconButton color="inherit">
-                    {!user ? (
+                    {!user || !user.id ? (
                         <AccountCircle className={classes.avatar} />
                     ) : (
-                        <Avatar className={classes.avatar} src={user.avatar} />
+                        <Avatar
+                            className={classes.avatar}
+                            avatar={user.avatar}
+                            id={user.id}
+                            withName={false}
+                        />
                     )}
                 </IconButton>
                 <p>Profile</p>
@@ -358,18 +363,13 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                         >
                             {!user ? (
                                 <AccountCircle className={classes.avatar} />
-                            ) : user.avatar ? (
+                            ) : (
                                 <Avatar
                                     className={classes.avatar}
-                                    src={user.avatar}
+                                    avatar={user.avatar}
+                                    id={user.id}
+                                    withName={false}
                                 />
-                            ) : (
-                                <Avatar className={classes.avatar}>
-                                    {user &&
-                                        (user.username
-                                            ? user.username.charAt(0)
-                                            : user.id.charAt(0).toUpperCase())}
-                                </Avatar>
                             )}
                         </IconButton>
                     </div>

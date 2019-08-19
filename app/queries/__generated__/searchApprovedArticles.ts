@@ -186,7 +186,7 @@ export interface searchApprovedArticles_searchArticles_content_comments_content 
   /**
    * Comment author (full profile)
    */
-  author: searchApprovedArticles_searchArticles_content_comments_content_author | null;
+  author: searchApprovedArticles_searchArticles_content_comments_content_author;
   /**
    * Date the comment was published
    */
@@ -280,11 +280,11 @@ export interface searchApprovedArticles_searchArticles_content {
   /**
    * Get vote result for the article
    */
-  voteResult: searchApprovedArticles_searchArticles_content_voteResult | null;
+  voteResult: searchApprovedArticles_searchArticles_content_voteResult;
   /**
    * Article author (full profile)
    */
-  author: searchApprovedArticles_searchArticles_content_author | null;
+  author: searchApprovedArticles_searchArticles_content_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -292,7 +292,7 @@ export interface searchApprovedArticles_searchArticles_content {
   /**
    * Get a paginated list of comments for this article
    */
-  comments: searchApprovedArticles_searchArticles_content_comments | null;
+  comments: searchApprovedArticles_searchArticles_content_comments;
   /**
    * The comment describing this version update of the article
    */
@@ -324,12 +324,12 @@ export interface searchApprovedArticles {
    * Search articles with pagination, sorting and filters.
    * This operation can be performed anonymously
    */
-  searchArticles: searchApprovedArticles_searchArticles | null;
+  searchArticles: searchApprovedArticles_searchArticles;
 }
 
 export interface searchApprovedArticlesVariables {
   size?: number | null;
-  text: string;
+  text?: string | null;
   category?: string | null;
   sort?: string | null;
   page?: number | null;

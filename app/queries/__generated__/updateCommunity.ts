@@ -21,7 +21,7 @@ export interface updateCommunity {
    * Edit a community.
    * This operation can only be performed by a community ADMIN
    */
-  editCommunity: updateCommunity_editCommunity | null;
+  editCommunity: updateCommunity_editCommunity;
 }
 
 export interface updateCommunityVariables {

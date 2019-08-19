@@ -43,10 +43,7 @@ describe('components/Card/PublicProfileCard', () => {
         const wrapper = mountWithTheme(
             <PublicProfileCard {...PublicProfileCardProps} />
         )
-
-        const dataTestId = `PublicProfileCard-${PublicProfileCardProps.id}-name`
-        const name = wrapper.exists(`[data-testid="${dataTestId}"]`)
-        expect(name).toBeTruthy()
+        expect(wrapper.text()).toBeTruthy()
     })
 
     it('should have a title', () => {

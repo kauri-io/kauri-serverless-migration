@@ -53,7 +53,7 @@ export interface searchCommunities_searchCommunities_content {
   /**
    * Community members list (full profile)
    */
-  members: (searchCommunities_searchCommunities_content_members | null)[] | null;
+  members: (searchCommunities_searchCommunities_content_members | null)[];
   /**
    * Community custom attribtes
    */
@@ -113,7 +113,7 @@ export interface searchCommunities {
    * Search communities with pagination, sorting and filters.
    * This operation can be performed anonymously
    */
-  searchCommunities: searchCommunities_searchCommunities | null;
+  searchCommunities: searchCommunities_searchCommunities;
 }
 
 export interface searchCommunitiesVariables {

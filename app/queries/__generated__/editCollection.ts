@@ -19,7 +19,7 @@ export interface editCollection {
    * Create or Edit a collection
    * This operation can only be performed by logged user (create) or the collection owner (edit)
    */
-  createCollection: editCollection_createCollection | null;
+  createCollection: editCollection_createCollection;
 }
 
 export interface editCollectionVariables {

@@ -153,7 +153,7 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_A
   /**
    * Get vote result for the article
    */
-  voteResult: searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_voteResult | null;
+  voteResult: searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_voteResult;
   /**
    * load the article owner (user or community resource type)
    */
@@ -321,7 +321,7 @@ export interface searchResultsAutocomplete_searchAutocomplete_content {
   /**
    * load the resource associated to this search match
    */
-  resource: searchResultsAutocomplete_searchAutocomplete_content_resource | null;
+  resource: searchResultsAutocomplete_searchAutocomplete_content_resource;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete {
@@ -349,7 +349,7 @@ export interface searchResultsAutocomplete {
    * Perform a parametrized global search query with autocomplete, pagination, sorting and filtering
    * This operation can be performed anonymously
    */
-  searchAutocomplete: searchResultsAutocomplete_searchAutocomplete | null;
+  searchAutocomplete: searchResultsAutocomplete_searchAutocomplete;
 }
 
 export interface searchResultsAutocompleteVariables {

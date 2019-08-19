@@ -21,7 +21,7 @@ export interface vote {
    * Record a vote (+1/-1) against a resource. One vote allowed per user and per resource
    * This operation can only be performed by a logged user.
    */
-  vote: vote_vote | null;
+  vote: vote_vote;
 }
 
 export interface voteVariables {

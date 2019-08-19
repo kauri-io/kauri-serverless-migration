@@ -2,7 +2,7 @@ import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
-import Avatar from '@material-ui/core/Avatar'
+import Avatar from '../Avatar'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import { Typography, ListItemIcon } from '@material-ui/core'
@@ -16,7 +16,6 @@ import IconButton from '@material-ui/core/IconButton'
 import Icon from '@material-ui/core/Icon'
 import { useState } from 'react'
 import ShareDialog from './ShareDialog'
-import useridTrim from '../../lib/userid-trim'
 
 export const ArticleCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -31,7 +30,7 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
             alignSelf: 'center',
         },
         height: 184,
-        maxWidth: 870
+        maxWidth: 870,
     },
     cardActualContent: {
         display: 'flex',
@@ -98,6 +97,7 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
         alignItems: 'center',
         paddingBottom: theme.spacing(2),
         paddingLeft: theme.spacing(2),
+        maxHeight: 83,
     },
     user: {
         display: 'flex',
@@ -242,43 +242,19 @@ const ArticleCard: React.FC<IProps> = ({
                     <div className={classes.user}>
                         <Link href={authorHref.href} as={authorHref.as}>
                             <a>
-                                {author && author.avatar ? (
-                                    <Avatar
-                                        sizes={'24'}
-                                        className={classes.avatar}
-                                        src={author && author.avatar}
-                                        aria-label={String(
-                                            author && author.username
-                                        )}
-                                        data-testid={`ArticleCard-${id}-avatar`}
-                                    />
-                                ) : (
-                                    <Avatar
-                                        sizes={'24'}
-                                        data-testid={`ArticleCard-${id}-avatar`}
-                                        className={classes.avatar}
-                                        aria-label={String(
-                                            author && author.username
-                                        )}
-                                    >
-                                        {author &&
-                                            author.username &&
-                                            author.username.charAt(0)}
-                                    </Avatar>
-                                )}
+                                <Avatar
+                                    aria-label={String(
+                                        author && author.username
+                                    )}
+                                    data-testid={`ArticleCard-${id}-author`}
+                                    id={String(author && author.id)}
+                                    name={author && author.name}
+                                    username={author && author.username}
+                                    avatar={author && author.avatar}
+                                    withName={true}
+                                />
                             </a>
                         </Link>
-                        <Typography
-                            data-testid={`ArticleCard-${id}-author`}
-                            variant="subtitle2"
-                            className={classes.author}
-                        >
-                            {author &&
-                                (author.name ||
-                                    author.username ||
-                                    (typeof author.id === 'string' &&
-                                        useridTrim(author.id)))}
-                        </Typography>
                         <Typography
                             data-testid={`ArticleCard-${id}-date`}
                             variant="body2"

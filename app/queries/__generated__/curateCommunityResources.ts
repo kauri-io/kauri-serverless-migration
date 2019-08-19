@@ -23,7 +23,7 @@ export interface curateCommunityResources {
    * community members, the resource is automatically approved and curated,
    * otherwise pending approval)
    */
-  curateResources: curateCommunityResources_curateResources | null;
+  curateResources: curateCommunityResources_curateResources;
 }
 
 export interface curateCommunityResourcesVariables {

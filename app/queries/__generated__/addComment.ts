@@ -21,7 +21,7 @@ export interface addComment {
    * Add a comment on a resource
    * This operation can only be performed by a logged user.
    */
-  addComment: addComment_addComment | null;
+  addComment: addComment_addComment;
 }
 
 export interface addCommentVariables {

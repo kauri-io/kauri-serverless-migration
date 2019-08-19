@@ -21,7 +21,7 @@ export interface changeMemberRole {
    * Change a member role within the community (execute call).
    * This operation can only be performed by a community admin
    */
-  changeMemberRole: changeMemberRole_changeMemberRole | null;
+  changeMemberRole: changeMemberRole_changeMemberRole;
 }
 
 export interface changeMemberRoleVariables {

@@ -186,7 +186,7 @@ export interface getArticleTransfers_getArticleTransfers_content_article_comment
   /**
    * Comment author (full profile)
    */
-  author: getArticleTransfers_getArticleTransfers_content_article_comments_content_author | null;
+  author: getArticleTransfers_getArticleTransfers_content_article_comments_content_author;
   /**
    * Date the comment was published
    */
@@ -280,11 +280,11 @@ export interface getArticleTransfers_getArticleTransfers_content_article {
   /**
    * Get vote result for the article
    */
-  voteResult: getArticleTransfers_getArticleTransfers_content_article_voteResult | null;
+  voteResult: getArticleTransfers_getArticleTransfers_content_article_voteResult;
   /**
    * Article author (full profile)
    */
-  author: getArticleTransfers_getArticleTransfers_content_article_author | null;
+  author: getArticleTransfers_getArticleTransfers_content_article_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -292,7 +292,7 @@ export interface getArticleTransfers_getArticleTransfers_content_article {
   /**
    * Get a paginated list of comments for this article
    */
-  comments: getArticleTransfers_getArticleTransfers_content_article_comments | null;
+  comments: getArticleTransfers_getArticleTransfers_content_article_comments;
   /**
    * The comment describing this version update of the article
    */
@@ -372,7 +372,7 @@ export interface getArticleTransfers {
    * Get Article transfers for a given recipient user account with pagination and sorting.
    * This operation can be performed anonymously
    */
-  getArticleTransfers: getArticleTransfers_getArticleTransfers | null;
+  getArticleTransfers: getArticleTransfers_getArticleTransfers;
 }
 
 export interface getArticleTransfersVariables {

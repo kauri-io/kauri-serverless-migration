@@ -19,7 +19,7 @@ export interface getTotalArticlesCount {
    * Search articles with pagination, sorting and filters.
    * This operation can be performed anonymously
    */
-  searchArticles: getTotalArticlesCount_searchArticles | null;
+  searchArticles: getTotalArticlesCount_searchArticles;
 }
 
 export interface getTotalArticlesCountVariables {

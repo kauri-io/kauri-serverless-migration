@@ -21,7 +21,7 @@ export interface composeCollection {
    * Compose a collection with sections and articles
    * This operation can only be performed by the collection owner.
    */
-  composeCollection: composeCollection_composeCollection | null;
+  composeCollection: composeCollection_composeCollection;
 }
 
 export interface composeCollectionVariables {

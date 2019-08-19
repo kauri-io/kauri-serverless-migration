@@ -19,7 +19,7 @@ export interface prepareCreateCommunity {
    * Create a community (prepare call, return a meta-tx hash to sign).
    * This operation can only be performed by a logged user
    */
-  prepareCreateCommunity: prepareCreateCommunity_prepareCreateCommunity | null;
+  prepareCreateCommunity: prepareCreateCommunity_prepareCreateCommunity;
 }
 
 export interface prepareCreateCommunityVariables {
