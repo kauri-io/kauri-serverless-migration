@@ -96,19 +96,8 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
         marginTop: 'auto',
         alignItems: 'center',
-        paddingBottom: theme.spacing(2),
         paddingLeft: theme.spacing(2),
         maxHeight: 83,
-    },
-    user: {
-        display: 'flex',
-        alignItems: 'center',
-        '& > *:not(:last-child)': {
-            marginRight: theme.spacing(1),
-        },
-        '& > *': {
-            lineHeight: '27 !important',
-        },
     },
     statistics: {
         display: 'flex',
@@ -242,29 +231,25 @@ const ArticleCard: React.FC<IProps> = ({
                     </a>
                 </Link>
                 <CardActions className={classes.cardActions}>
-                    <div className={classes.user}>
-                        <Link href={authorHref.href} as={authorHref.as}>
-                            <a>
-                                <Avatar
-                                    aria-label={String(
-                                        author && author.username
-                                    )}
-                                    data-testid={`ArticleCard-${id}-author`}
-                                    id={String(author && author.id)}
-                                    name={author && author.name}
-                                    username={author && author.username}
-                                    avatar={author && author.avatar}
-                                    withName={true}
-                                />
-                            </a>
-                        </Link>
-                        <Typography
-                            data-testid={`ArticleCard-${id}-date`}
-                            variant="body2"
-                        >
-                            {moment(String(datePublished)).format('DD MMM YY')}
-                        </Typography>
-                    </div>
+                    <Link href={authorHref.href} as={authorHref.as}>
+                        <a>
+                            <Avatar
+                                aria-label={String(author && author.username)}
+                                data-testid={`ArticleCard-${id}-author`}
+                                id={String(author && author.id)}
+                                name={author && author.name}
+                                username={author && author.username}
+                                avatar={author && author.avatar}
+                                withName={true}
+                            />
+                        </a>
+                    </Link>
+                    <Typography
+                        data-testid={`ArticleCard-${id}-date`}
+                        variant="body2"
+                    >
+                        {moment(String(datePublished)).format('DD MMM YY')}
+                    </Typography>
 
                     <div className={classes.statistics}>
                         <Icon data-testid={`ArticleCard-${id}-commentIcon`}>

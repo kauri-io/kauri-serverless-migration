@@ -191,7 +191,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                         <MenuItem>Create Collection</MenuItem>
                     </a>
                 </Link>
-                <Link href="/create-commmunity">
+                <Link href="/create-community">
                     <a>
                         <MenuItem>Create Community</MenuItem>
                     </a>

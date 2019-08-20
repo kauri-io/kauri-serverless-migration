@@ -111,7 +111,7 @@ export const emailSubscribeEpic: Epic<
         mergeMap(({ data }) =>
             from(
                 new Promise<{
-                    data: { output: IEmailSubscribeOutput }
+                    data: { getEvent: { output: IEmailSubscribeOutput } }
                 }>((resolve, reject) => {
                     initApollo(
                         {},
@@ -124,13 +124,17 @@ export const emailSubscribeEpic: Epic<
                     )
                         .subscribe({
                             query: getEvent,
-                            variables: path(['subscribe', 'hash'], data),
+                            variables: {
+                                hash: path<string>(['subscribe', 'hash'], data),
+                            },
                         })
                         .subscribe({
                             error: (err: Error) => reject(err),
                             next: (data: {
                                 data: {
-                                    output: IEmailSubscribeOutput
+                                    getEvent: {
+                                        output: IEmailSubscribeOutput
+                                    }
                                 }
                             }) => resolve(data),
                         })
@@ -138,7 +142,7 @@ export const emailSubscribeEpic: Epic<
             )
         ),
         tap(() => apolloClient.resetStore()),
-        mergeMap(({ data: { output } }) =>
+        mergeMap(({ data: { getEvent: { output } } }) =>
             output && output.commandResult
                 ? of(
                       showNotificationAction({

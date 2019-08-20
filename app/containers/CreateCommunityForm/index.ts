@@ -198,15 +198,13 @@ export default compose(
             avatar: Yup.string().typeError(
                 'Please upload a .png or .jpeg file as a logo in order to continue'
             ),
-            description: Yup.string()
-                .min(2)
-                .required('Required'),
-            name: Yup.string()
-                .min(2)
-                .required('Required'),
+            description: Yup.string().required(
+                'Give your community a description'
+            ),
+            name: Yup.string().required('Give your community a name'),
             tags: Yup.array()
                 .min(1)
-                .required('Required'),
+                .required('Add a tag to your community to save'),
         }),
     })
 )(View)

@@ -35,7 +35,7 @@
     },
     {
       "src": "/community/(.*)/approve",
-      "dest": "/app/approve-invitation?community_id=$1"
+      "dest": "/app/approve?community_id=$1"
     },
     {
       "src": "/collection/(.*)/update-collection",
