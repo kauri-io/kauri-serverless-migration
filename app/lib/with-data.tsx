@@ -205,7 +205,6 @@ export default (ComposedComponent: any) =>
                             </ApolloProvider>
                         </Provider>
                     </MaterialThemeProvider>
-
                 )
                 try {
                     await getDataFromTree(app, {

@@ -32,7 +32,7 @@ export default class MyDocument extends Document<IProps> {
                         {initialProps.styles}
                         {materialSheets.getStyleElement()}
                         {styledComponentsSheet.getStyleElement()}
-                        {flush () || null}
+                        {flush() || null}
                     </React.Fragment>
                 ),
             }
