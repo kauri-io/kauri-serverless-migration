@@ -202,7 +202,7 @@ const CollectionCard: React.FC<IProps> = ({
                 <div className={classes.header}>
                     <div className={classes.stripHeader}>
                         <Link href={href.href} as={href.as}>
-                            <a className={classes.name}>
+                            <a className={classes.stripHeader}>
                                 <Icon>folder</Icon>
                                 <Typography variant="subtitle2">
                                     Collection

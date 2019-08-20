@@ -38,11 +38,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
+let uppy
 const Component: React.FunctionComponent<IProps> = props => {
     useEffect(() => {
-        const uppy = initUppy({
+        uppy = initUppy({
             allowGifs: false,
-            trigger: '.background-upload',
         })
         uppy.on('upload-success', (_data, data2) => {
             const url = `https://${config.gateway}:443/ipfs/${data2.body.hash}`
@@ -58,6 +58,7 @@ const Component: React.FunctionComponent<IProps> = props => {
                         color="secondary"
                         variant="text"
                         className="background-upload"
+                        onClick={() => uppy.getPlugin('Dashboard').openModal()}
                     >
                         <UploadIcon className={classes.uploadIcon} />
                         Background Image

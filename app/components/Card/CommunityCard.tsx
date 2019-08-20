@@ -213,7 +213,7 @@ const CommunityCard: React.FC<IProps> = ({
                 <div className={classes.header}>
                     <div className={classes.stripHeader}>
                         <Link href={href.href} as={href.as}>
-                            <a>
+                            <a className={classes.stripHeader}>
                                 <Icon>people</Icon>
                                 <Typography variant="subtitle2">
                                     Community

@@ -10,23 +10,32 @@ interface IProps {
 }
 
 export default class MyDocument extends Document<IProps> {
-    static async getInitialProps({ renderPage }) {
-        const sheet = new ServerStyleSheet()
-        const styleTags = sheet.getStyleElement()
-        const sheets = new ServerStyleSheets()
-        const originalRenderPage = renderPage
+    static async getInitialProps(ctx) {
+        const styledComponentsSheet = new ServerStyleSheet()
+        const materialSheets = new ServerStyleSheets()
+        const originalRenderPage = ctx.renderPage
 
-        renderPage = () =>
-            originalRenderPage({
-                enhanceApp: App => props => sheets.collect(<App {...props} />),
-            })
-
-        const page = renderPage()
-
-        return {
-            ...page,
-            styleTags,
-            styles: <React.Fragment>{sheets.getStyleElement()}</React.Fragment>,
+        try {
+            ctx.renderPage = () =>
+                originalRenderPage({
+                    enhanceApp: App => props =>
+                        styledComponentsSheet.collectStyles(
+                            materialSheets.collect(<App {...props} />)
+                        ),
+                })
+            const initialProps = await Document.getInitialProps(ctx)
+            return {
+                ...initialProps,
+                styles: (
+                    <React.Fragment>
+                        {initialProps.styles}
+                        {materialSheets.getStyleElement()}
+                        {styledComponentsSheet.getStyleElement()}
+                    </React.Fragment>
+                ),
+            }
+        } finally {
+            styledComponentsSheet.seal()
         }
     }
 
@@ -72,7 +81,6 @@ export default class MyDocument extends Document<IProps> {
                         name="viewport"
                         content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
                     />
-                    {this.props.styleTags}
                     <style>{`a { color: inherit; text-decoration: none;} .uppy-DashboardTab:last-child{display: none !important;} `}</style>
                 </Head>
                 <body>

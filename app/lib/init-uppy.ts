@@ -13,7 +13,13 @@ export const parseCookies = (ctx: any, options?: any) => {
     return cookie.parse(cookieToParse, options)
 }
 
-const initUppy = ({ allowGifs, trigger }) => {
+const initUppy = ({
+    allowGifs,
+    trigger,
+}: {
+    allowGifs: boolean
+    trigger?: string
+}) => {
     const parsedToken = parseCookies({}, {})['TOKEN']
     const uppy = Uppy(config.uppyConfig)
         .use(Dashboard, {
@@ -22,10 +28,10 @@ const initUppy = ({ allowGifs, trigger }) => {
             showProgressDetails: true,
             proudlyDisplayPoweredByUppy: false,
             closeAfterFinish: true,
-            trigger,
             note: `PNG ${
                 !allowGifs ? ', GIF' : ''
             } or JPEG images only, up to 10 MB`,
+            trigger,
             locale: {
                 strings: {
                     dropPaste:
