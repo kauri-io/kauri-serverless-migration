@@ -2,6 +2,7 @@ import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 import { ServerStyleSheets } from '@material-ui/styles'
+import flush from 'styled-jsx/server'
 
 // const isProduction = process.env.config === 'production'
 
@@ -31,6 +32,7 @@ export default class MyDocument extends Document<IProps> {
                         {initialProps.styles}
                         {materialSheets.getStyleElement()}
                         {styledComponentsSheet.getStyleElement()}
+                        {flush () || null}
                     </React.Fragment>
                 ),
             }

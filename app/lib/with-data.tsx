@@ -188,20 +188,24 @@ export default (ComposedComponent: any) =>
 
                 // Run all graphql queries
                 const app = (
-                    <Provider store={redux}>
-                        <ApolloProvider client={apollo}>
-                            <SnackbarProvider maxSnack={3}>
-                                <ThemeProvider theme={themeConfig}>
-                                    <>
-                                        <ComposedComponent
-                                            url={url}
-                                            {...composedInitialProps}
-                                        />
-                                    </>
-                                </ThemeProvider>
-                            </SnackbarProvider>
-                        </ApolloProvider>
-                    </Provider>
+                    <MaterialThemeProvider theme={theme}>
+                        <CssBaseline />
+                        <Provider store={redux}>
+                            <ApolloProvider client={apollo}>
+                                <SnackbarProvider maxSnack={3}>
+                                    <ThemeProvider theme={themeConfig}>
+                                        <>
+                                            <ComposedComponent
+                                                url={url}
+                                                {...composedInitialProps}
+                                            />
+                                        </>
+                                    </ThemeProvider>
+                                </SnackbarProvider>
+                            </ApolloProvider>
+                        </Provider>
+                    </MaterialThemeProvider>
+
                 )
                 try {
                     await getDataFromTree(app, {
