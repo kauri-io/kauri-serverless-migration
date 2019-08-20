@@ -117,20 +117,27 @@ export const saveUserDetailsEpic: Epic<
                     }),
                     catchError(err => {
                         console.log(err)
-                        const notificationPayload = err.includes(
-                            'already uses this email'
-                        )
-                            ? {
-                                  notificationType: 'error' as any,
-                                  message: 'Submission error',
-                                  description:
-                                      'A user already uses this email!',
-                              }
-                            : {
-                                  notificationType: 'error' as any,
-                                  message: 'Submission error',
-                                  description: 'Please try again',
-                              }
+                        let notificationPayload
+                        if (err.includes('already uses this email')) {
+                            notificationPayload = {
+                                notificationType: 'error' as any,
+                                message: 'Submission error',
+                                description: 'A user already uses this email!',
+                            }
+                        } else if (err.includes('already uses this username')) {
+                            notificationPayload = {
+                                notificationType: 'error' as any,
+                                message: 'Submission error',
+                                description:
+                                    'A user already uses this username!',
+                            }
+                        } else {
+                            notificationPayload = {
+                                notificationType: 'error' as any,
+                                message: 'Submission error',
+                                description: 'Please try again',
+                            }
+                        }
                         return of(showNotificationAction(notificationPayload))
                     })
                 )

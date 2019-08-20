@@ -122,8 +122,6 @@ class Collections extends Component<IProps> {
                                                 key={collectionResource.id}
                                                 item
                                                 xs={12}
-                                                sm={12}
-                                                lg={6}
                                             >
                                                 <CollectionCard
                                                     {...collectionResource}
@@ -152,6 +150,8 @@ class Collections extends Component<IProps> {
 
 export default withStyles({
     grid: {
-        paddingTop: '24px',
+        padding: '24px 0',
+        margin: 'auto',
+        maxWidth: 870,
     },
 })(Collections)

@@ -56,8 +56,6 @@ class Communities extends Component<IProps> {
                                                 key={community.id}
                                                 item
                                                 xs={12}
-                                                sm={12}
-                                                lg={6}
                                             >
                                                 <CommunityCard
                                                     {...community}
@@ -81,6 +79,8 @@ class Communities extends Component<IProps> {
 
 export default withStyles({
     grid: {
-        paddingTop: '24px',
+        padding: '24px 0',
+        margin: 'auto',
+        maxWidth: 870,
     },
 })(Communities)

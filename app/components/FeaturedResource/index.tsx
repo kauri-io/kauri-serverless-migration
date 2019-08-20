@@ -1,6 +1,4 @@
-import UserAvatarComponent, {
-    IProps as UserAvatarComponentProps,
-} from '../UserAvatar'
+import Avatar from '../Avatar'
 import { Label, Title2, BodyCard } from '../Typography'
 import TagList from '../Tags/TagList'
 import Button from '../../components/Button'
@@ -32,7 +30,7 @@ interface IProps {
 }
 
 const FeaturedResource: React.FunctionComponent<
-    IProps & UserAvatarComponentProps
+    IProps & { userId: string; username: string; avatar: string }
 > = ({
     title,
     description,
@@ -68,21 +66,14 @@ const FeaturedResource: React.FunctionComponent<
                         </a>
                     </Link>
                     <TagList maxTags={3} color="textPrimary" tags={tags} />
-                    <Link
-                        href={
-                            ownerResourceType === 'COMMUNITY'
-                                ? `/community/${userId}`
-                                : `/public-profile/${userId}`
-                        }
-                    >
-                        <a>
-                            <UserAvatarComponent
-                                userId={userId}
-                                username={username}
-                                avatar={avatar}
-                            />
-                        </a>
-                    </Link>
+
+                    <Avatar
+                        id={userId}
+                        username={username}
+                        avatar={avatar}
+                        type={ownerResourceType}
+                        withName={true}
+                    />
                 </Grid>
                 <Grid
                     item={true}

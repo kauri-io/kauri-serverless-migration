@@ -4,6 +4,8 @@ import { Theme } from '@material-ui/core'
 import useridTrim from '../../lib/userid-trim'
 import { makeStyles } from '@material-ui/styles'
 import makeBlockie from 'ethereum-blockies-base64'
+import Link from 'next/link'
+import { getProfileURL, getCommunityURL } from '../../lib/getURLs'
 
 interface IProps {
     id: string
@@ -13,6 +15,9 @@ interface IProps {
     withName: boolean
     className?: string
     size?: number
+    color?: 'primary' | 'secondary'
+    type?: string
+    ignoreLink?: boolean
 }
 
 const AvatarComp = ({
@@ -23,6 +28,8 @@ const AvatarComp = ({
     username,
     withName,
     size,
+    color,
+    type,
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
@@ -42,19 +49,37 @@ const AvatarComp = ({
     }))
 
     const classes = useStyles()
+    const url =
+        type === 'COMMUNITY'
+            ? getCommunityURL({
+                  name: String(name),
+                  id,
+              })
+            : getProfileURL({
+                  username,
+                  id,
+              })
     return (
-        <div className={className || classes.container}>
-            {avatar ? (
-                <img className={classes.avatar} src={avatar} />
-            ) : (
-                <img className={classes.avatar} src={makeBlockie(id)} />
-            )}
-            {withName && (
-                <Typography className={classes.username} variant="subtitle2">
-                    {name || username || useridTrim(id)}
-                </Typography>
-            )}
-        </div>
+        <Link as={url.as} href={url.href}>
+            <a>
+                <div className={className || classes.container}>
+                    {avatar ? (
+                        <img className={classes.avatar} src={avatar} />
+                    ) : (
+                        <img className={classes.avatar} src={makeBlockie(id)} />
+                    )}
+                    {withName && (
+                        <Typography
+                            color={color}
+                            className={classes.username}
+                            variant="subtitle2"
+                        >
+                            {name || username || useridTrim(id)}
+                        </Typography>
+                    )}
+                </div>
+            </a>
+        </Link>
     )
 }
 

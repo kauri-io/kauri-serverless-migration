@@ -115,7 +115,7 @@ describe('components/Card/CollectionCard', () => {
             <CollectionCard {...CollectionCardProps} />
         )
 
-        const dataTestId = `CollectionCard-${CollectionCardProps.id}-owner`
+        const dataTestId = `CollectionCard-${CollectionCardProps.id}-avatar`
         const owner = wrapper.find(`[data-testid="${dataTestId}"]`).first()
         expect(owner.text()).toBe(CollectionCardProps.owner.name)
     })
@@ -128,7 +128,7 @@ describe('components/Card/CollectionCard', () => {
             />
         )
 
-        const dataTestId = `CollectionCard-${CollectionCardProps.id}-owner`
+        const dataTestId = `CollectionCard-${CollectionCardProps.id}-avatar`
         const owner = wrapper.find(`[data-testid="${dataTestId}"]`).first()
         expect(owner.text()).toBe(CollectionCardProps.owner.username)
     })
@@ -145,7 +145,7 @@ describe('components/Card/CollectionCard', () => {
             />
         )
 
-        const dataTestId = `CollectionCard-${CollectionCardProps.id}-owner`
+        const dataTestId = `CollectionCard-${CollectionCardProps.id}-avatar`
         const owner = wrapper.find(`[data-testid="${dataTestId}"]`).first()
         expect(owner.text()).toBe(
             `0x${CollectionCardProps.owner.id.substring(0, 4)}...`

@@ -60,6 +60,7 @@ interface IProps {
     status: string
     resendEmailVerification: () => void
     classes: any
+    oldEmail: string | null
 }
 
 const styles = {
@@ -124,6 +125,7 @@ const EmailField = ({
     email,
     resendEmailVerification,
     status,
+    oldEmail,
 }: IProps) => (
     <TextField
         margin="dense"
@@ -132,7 +134,7 @@ const EmailField = ({
         value={email}
         placeholder="Add Email"
         InputProps={{
-            startAdornment: (
+            startAdornment: oldEmail && (
                 <InputAdornment position="start">
                     <EmailStatus
                         status={status}

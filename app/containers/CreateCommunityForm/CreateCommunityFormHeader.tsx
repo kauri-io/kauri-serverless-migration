@@ -7,7 +7,7 @@ import { Label } from '../../components/Typography'
 import UploadLogoButtonComponent from '../../components/Button/UploadLogoButton'
 import AddMemberButtonComponent from '../../components/Button/AddMemberButton'
 import TextField from '@material-ui/core/TextField'
-import UserAvatarComponent from '../../components/UserAvatar'
+import Avatar from '../../components/Avatar'
 import StatisticsContainer from '../../components/PublicProfile/StatisticsContainer'
 import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
 import { IFormValues } from './index'
@@ -208,12 +208,12 @@ const Component: React.SFC<IProps> = props => {
                         Moderators
                     </Label>
                     <CreateCommunityMembersContainer>
-                        <UserAvatarComponent
-                            fullWidth={true}
-                            variant="white"
+                        <Avatar
+                            color="secondary"
                             username={props.username}
-                            userId={props.userId}
+                            id={props.userId}
                             avatar={props.userAvatar}
+                            withName={true}
                         />
                         <AddMemberButtonComponent
                             onClick={() => props.openAddMemberModal()}

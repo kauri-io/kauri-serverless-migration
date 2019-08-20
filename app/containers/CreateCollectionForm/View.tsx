@@ -8,7 +8,7 @@ import ActionsSection from '../../components/Section/ActionsSection'
 import PrimaryHeaderSection from '../../components/Section/PrimaryHeaderSection'
 import CardContentSection from '../../components/Section/CardContentSection'
 import StatisticsContainer from '../../components/PublicProfile/StatisticsContainer'
-import UserAvatar from '../../components/UserAvatar'
+import Avatar from '../../components/Avatar'
 import { Label } from '../../components/Typography'
 import TextField from '@material-ui/core/TextField'
 import Button from '../../components/Button'
@@ -541,12 +541,12 @@ const CreateCollectionForm: React.FC<
                                 />
                                 <Label color="white">Curator</Label>
                                 <CreateCollectionCurators>
-                                    <UserAvatar
-                                        variant="white"
-                                        fullWidth
+                                    <Avatar
+                                        color="secondary"
                                         username={username}
-                                        userId={userId}
+                                        id={userId}
                                         avatar={userAvatar}
+                                        withName={true}
                                     />
                                     {/* <AddMemberButton /> */}
                                 </CreateCollectionCurators>

@@ -8,6 +8,7 @@ jest.mock('../../lib/analytics', () => ({
 let props = {
     contributors: [
         {
+            id: 'test ID',
             avatar: 'test url',
             username: 'test username',
         },

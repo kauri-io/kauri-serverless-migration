@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import Link from 'next/link'
-import { getCollectionURL, getProfileURL } from '../../lib/getURLs'
+import { getCollectionURL } from '../../lib/getURLs'
 import { Theme, makeStyles } from '@material-ui/core/styles'
 import {
     Card,
@@ -13,7 +13,6 @@ import {
     IconButton,
 } from '@material-ui/core'
 import TruncateMarkup from 'react-truncate-markup'
-import useridTrim from '../../lib/userid-trim'
 import ShareDialog from './ShareDialog'
 import Avatar from '../Avatar'
 
@@ -133,12 +132,6 @@ const CollectionCard: React.FC<IProps> = ({
     sections,
 }) => {
     const classes = CollectionCardStyles({})
-    const ownerHref = owner
-        ? getProfileURL({
-              id: owner.id,
-              username: owner.name || owner.username,
-          })
-        : getCollectionURL({ id, name }) // TODO update as contributors[0]
 
     const [open, setOpen] = React.useState(false)
 
@@ -250,33 +243,15 @@ const CollectionCard: React.FC<IProps> = ({
                 </div>
                 <CardActions className={classes.cardActions}>
                     <div className={classes.user}>
-                        <Link href={ownerHref.href} as={ownerHref.as}>
-                            <a>
-                                <Avatar
-                                    aria-label={String(owner && owner.username)}
-                                    data-testid={`CollectionCard-${id}-avatar`}
-                                    id={String(owner && owner.id)}
-                                    name={owner && owner.name}
-                                    username={owner && owner.username}
-                                    avatar={owner && owner.avatar}
-                                    withName={true}
-                                />
-                            </a>
-                        </Link>
-                        <Link href={ownerHref.href} as={ownerHref.as}>
-                            <a>
-                                <Typography
-                                    data-testid={`CollectionCard-${id}-owner`}
-                                    variant="subtitle2"
-                                    className={classes.owner}
-                                >
-                                    {owner &&
-                                        (owner.name ||
-                                            owner.username ||
-                                            useridTrim(owner.id))}
-                                </Typography>
-                            </a>
-                        </Link>
+                        <Avatar
+                            aria-label={String(owner && owner.username)}
+                            data-testid={`CollectionCard-${id}-avatar`}
+                            id={String(owner && owner.id)}
+                            name={owner && owner.name}
+                            username={owner && owner.username}
+                            avatar={owner && owner.avatar}
+                            withName={true}
+                        />
                     </div>
 
                     <div className={classes.statistics}>

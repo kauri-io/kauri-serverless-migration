@@ -1257,24 +1257,24 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                         <div
                           className="makeStyles-user-11"
                         >
-                          <Link
-                            as="/test-username/0x12.../p"
-                            href="/public-profile?user_id=0x12..."
-                            prefetch={true}
+                          <AvatarComp
+                            aria-label="test username"
+                            avatar="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                            data-testid="ArticleCard-0x12...-author"
+                            id="0x12..."
+                            name="test name"
+                            username="test username"
+                            withName={true}
                           >
-                            <a
-                              href="/test-username/0x12.../p"
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
+                            <Link
+                              as="/test-username/0x12.../p"
+                              href="/public-profile?user_id=0x12..."
+                              prefetch={true}
                             >
-                              <AvatarComp
-                                aria-label="test username"
-                                avatar="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                                data-testid="ArticleCard-0x12...-author"
-                                id="0x12..."
-                                name="test name"
-                                username="test username"
-                                withName={true}
+                              <a
+                                href="/test-username/0x12.../p"
+                                onClick={[Function]}
+                                onMouseEnter={[Function]}
                               >
                                 <div
                                   className="makeStyles-container-77"
@@ -1599,9 +1599,9 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                     </ForwardRef(Typography)>
                                   </WithStyles(ForwardRef(Typography))>
                                 </div>
-                              </AvatarComp>
-                            </a>
-                          </Link>
+                              </a>
+                            </Link>
+                          </AvatarComp>
                           <WithStyles(ForwardRef(Typography))
                             data-testid="ArticleCard-0x12...-date"
                             variant="body2"

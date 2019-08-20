@@ -12,7 +12,10 @@ const mockStore = configureStore(middlewares)
 
 const initialState = {
     app: {
-        user: null
+        user: {
+            id: 'testid',
+            communities: []
+        }
     }
 }
 const store = mockStore(initialState)

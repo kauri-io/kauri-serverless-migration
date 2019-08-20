@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { getProfileURL, getCommunityURL } from '../../lib/getURLs'
+import { getCommunityURL } from '../../lib/getURLs'
 import { Theme, makeStyles } from '@material-ui/core/styles'
 import {
     Card,
@@ -120,27 +120,22 @@ interface IMember {
 }
 
 interface IMemberProps {
-    memberHref: { as: string; href: string }
     member: IMember
     id: string
     classes: any
 }
 
-const Member: React.FC<IMemberProps> = ({ member, id, memberHref }) =>
+const Member: React.FC<IMemberProps> = ({ member, id }) =>
     member && (
-        <Link href={memberHref.href} as={memberHref.as}>
-            <a>
-                <Avatar
-                    aria-label={String(member && member.username)}
-                    data-testid={`CommunityCard-${id}-avatar`}
-                    id={String(member && member.id)}
-                    name={member && member.name}
-                    username={member && member.username}
-                    avatar={member && member.avatar}
-                    withName={false}
-                />
-            </a>
-        </Link>
+        <Avatar
+            aria-label={String(member && member.username)}
+            data-testid={`CommunityCard-${id}-avatar`}
+            id={String(member && member.id)}
+            name={member && member.name}
+            username={member && member.username}
+            avatar={member && member.avatar}
+            withName={false}
+        />
     )
 
 interface IProps {
@@ -265,10 +260,6 @@ const CommunityCard: React.FC<IProps> = ({
                                             // TODO update as contributors[0]
                                             member={member}
                                             id={id}
-                                            memberHref={getProfileURL({
-                                                username: member.username,
-                                                id,
-                                            })}
                                         ></Member>
                                     )
                             )}

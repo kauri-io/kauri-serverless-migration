@@ -12,7 +12,7 @@ import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
 import Statistics from '../../components/PublicProfile/StatisticsContainer'
 import anchorme from 'anchorme'
 import ShareCommunity from '../../components/Tooltip/ShareArticle'
-import UserAvatar from '../../components/UserAvatar'
+import Avatar from '../../components/Avatar'
 // import { Tooltip } from "react-tippy";
 import Button from '../../components/Button'
 import ChooseArticleModal, {
@@ -480,32 +480,18 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                             <Row>
                                                 {members.map(i =>
                                                     i ? (
-                                                        <UserAvatar
+                                                        <Avatar
                                                             key={String(i.id)}
-                                                            userId={String(
-                                                                i.id
-                                                            )}
+                                                            id={String(i.id)}
                                                             username={
                                                                 i.name || null
                                                             }
-                                                            borderRadius="4px"
-                                                            height={30}
-                                                            width={30}
                                                             avatar={
                                                                 i.avatar || null
                                                             }
-                                                            variant="white"
-                                                            hideUsername={true}
-                                                        >
-                                                            {i.avatar
-                                                                ? ''
-                                                                : (name || id)
-                                                                      .substring(
-                                                                          0,
-                                                                          1
-                                                                      )
-                                                                      .toUpperCase()}
-                                                        </UserAvatar>
+                                                            color="secondary"
+                                                            withName={false}
+                                                        />
                                                     ) : null
                                                 )}
                                                 {isCommunityAdmin && (

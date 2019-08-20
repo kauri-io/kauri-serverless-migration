@@ -4,15 +4,12 @@ import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import ArticleOutline from './components/ArticleOutline'
 import Image from '../../components/Image'
-import ArticleAvatar from './components/ArticleAvatar'
+import Avatar from '../../components/Avatar'
 import ArticleActions from './components/ArticleActions'
 import ArticleCard from '../../components/Card/ArticleCard'
 import { relatedArticles } from '../../queries/__generated__/relatedArticles'
 
-import {
-    Article,
-    Article_author,
-} from '../../queries/Fragments/__generated__/Article'
+import { Article } from '../../queries/Fragments/__generated__/Article'
 import Hidden from '@material-ui/core/Hidden'
 import { ArticleStyles } from './styles'
 import VoteWidget from './components/VoteWidget'
@@ -53,12 +50,12 @@ const ArticleComp = ({
             attributes,
             title,
             voteResult,
-            datePublished,
             version,
         },
     },
 }: IProps) => {
     const classes = ArticleStyles({})
+    const author = contributors && contributors[0]
     return (
         <>
             <Grid
@@ -107,13 +104,12 @@ const ArticleComp = ({
                             justify="space-between"
                         >
                             <Grid item={true} sm={6}>
-                                {contributors && contributors[0] && (
-                                    <ArticleAvatar
-                                        author={
-                                            contributors[0] as Article_author
-                                        }
-                                        datePublished={datePublished}
-                                        classes={classes}
+                                {author && (
+                                    <Avatar
+                                        avatar={author.avatar}
+                                        username={author.username}
+                                        id={author.id}
+                                        withName={true}
                                     />
                                 )}
                             </Grid>

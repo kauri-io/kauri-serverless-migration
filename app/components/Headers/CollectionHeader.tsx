@@ -2,7 +2,7 @@ import moment from 'moment'
 import styled from 'styled-components'
 import { Title1, Label, PageDescription } from '../Typography'
 import ShareArticle from '../Tooltip/ShareArticle'
-import UserAvatar from '../UserAvatar'
+import Avatar from '../Avatar'
 import Button from '../../components/Button'
 import StatisticsContainer from '../PublicProfile/StatisticsContainer'
 import { TagList } from '../Tags'
@@ -83,7 +83,6 @@ const Container: React.SFC<IProps> = props => {
         articleCount,
         description,
         id,
-        linkComponent,
         name,
         ownerId,
         updated,
@@ -130,29 +129,13 @@ const Container: React.SFC<IProps> = props => {
                 />
 
                 <Label color="white">Curator</Label>
-                {linkComponent ? (
-                    linkComponent(
-                        <UserAvatar
-                            cardType={'COLLECTION'}
-                            imageURL={imageURL}
-                            variant="white"
-                            fullWidth={true}
-                            username={username}
-                            avatar={userAvatar}
-                            userId={ownerId}
-                        />
-                    )
-                ) : (
-                    <UserAvatar
-                        imageURL={imageURL}
-                        cardType={'COLLECTION'}
-                        variant="white"
-                        username={username}
-                        avatar={userAvatar}
-                        fullWidth={true}
-                        userId={ownerId}
-                    />
-                )}
+                <Avatar
+                    color="secondary"
+                    username={username}
+                    id={userId}
+                    avatar={userAvatar || imageURL}
+                    withName={true}
+                />
                 {userId === ownerId || isMemberOfCommunityOwner ? (
                     <Button
                         variant="contained"
