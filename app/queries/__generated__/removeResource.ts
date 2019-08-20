@@ -21,7 +21,7 @@ export interface removeResource {
    * Remove an approved or pending curated resource from a community.
    * This operation can only be performed by a communinity moderator or admin.
    */
-  removeResource: removeResource_removeResource | null;
+  removeResource: removeResource_removeResource;
 }
 
 export interface removeResourceVariables {

@@ -1,6 +1,6 @@
 import Showdown from 'showdown'
 import styled from 'styled-components'
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import { BodyCard } from '../../components/Typography'
 import AlertView from '../../components/Modal/AlertView'
 import { useEffect } from 'react'

@@ -19,7 +19,7 @@ export interface revokeInvitation {
    * Revoke a pending invitation (execute call).
    * This operation can only be performed by a community admin
    */
-  revokeInvitation: revokeInvitation_revokeInvitation | null;
+  revokeInvitation: revokeInvitation_revokeInvitation;
 }
 
 export interface revokeInvitationVariables {

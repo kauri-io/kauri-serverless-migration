@@ -1,5 +1,5 @@
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
-import Button from '@material-ui/core/Button'
+import Button from '../../../components/Button'
 import styled from 'styled-components'
 
 const ManageMemberEmptyStateContainer = styled.section`

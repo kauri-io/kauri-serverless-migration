@@ -19,7 +19,7 @@ export interface saveUser {
    * Save user profile.
    * This operation can only be performed by a logged user.
    */
-  saveUser: saveUser_saveUser | null;
+  saveUser: saveUser_saveUser;
 }
 
 export interface saveUserVariables {

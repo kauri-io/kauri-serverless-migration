@@ -190,7 +190,7 @@ export interface getCommunityContent_getCommunityContent_content_resource_Articl
   /**
    * Comment author (full profile)
    */
-  author: getCommunityContent_getCommunityContent_content_resource_ArticleDTO_comments_content_author | null;
+  author: getCommunityContent_getCommunityContent_content_resource_ArticleDTO_comments_content_author;
   /**
    * Date the comment was published
    */
@@ -284,11 +284,11 @@ export interface getCommunityContent_getCommunityContent_content_resource_Articl
   /**
    * Get vote result for the article
    */
-  voteResult: getCommunityContent_getCommunityContent_content_resource_ArticleDTO_voteResult | null;
+  voteResult: getCommunityContent_getCommunityContent_content_resource_ArticleDTO_voteResult;
   /**
    * Article author (full profile)
    */
-  author: getCommunityContent_getCommunityContent_content_resource_ArticleDTO_author | null;
+  author: getCommunityContent_getCommunityContent_content_resource_ArticleDTO_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -296,7 +296,7 @@ export interface getCommunityContent_getCommunityContent_content_resource_Articl
   /**
    * Get a paginated list of comments for this article
    */
-  comments: getCommunityContent_getCommunityContent_content_resource_ArticleDTO_comments | null;
+  comments: getCommunityContent_getCommunityContent_content_resource_ArticleDTO_comments;
   /**
    * The comment describing this version update of the article
    */
@@ -422,7 +422,7 @@ export interface getCommunityContent_getCommunityContent_content_resource_Collec
   /**
    * load the resources within this section
    */
-  resources: (getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources | null)[] | null;
+  resources: (getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources | null)[];
 }
 
 export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_resourceIdentifier {
@@ -489,7 +489,7 @@ export interface getCommunityContent_getCommunityContent_content {
   /**
    * load the resource
    */
-  resource: getCommunityContent_getCommunityContent_content_resource | null;
+  resource: getCommunityContent_getCommunityContent_content_resource;
 }
 
 export interface getCommunityContent_getCommunityContent {
@@ -513,7 +513,7 @@ export interface getCommunityContent {
    * Get community curated content list with filter, sorting and pagination.
    * This operation can be performed anonymously.
    */
-  getCommunityContent: getCommunityContent_getCommunityContent | null;
+  getCommunityContent: getCommunityContent_getCommunityContent;
 }
 
 export interface getCommunityContentVariables {

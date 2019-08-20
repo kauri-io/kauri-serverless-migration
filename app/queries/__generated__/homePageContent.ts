@@ -2,7 +2,7 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { ResourceTypeInput } from "./../../__generated__/globalTypes";
+import { ResourceTypeInput, CommunityPermissionInput, UserStatusInput } from "./../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: homePageContent
@@ -150,7 +150,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
   /**
    * load the resources within this section
    */
-  resources: (homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources | null)[] | null;
+  resources: (homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources | null)[];
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_resourceIdentifier {
@@ -388,15 +388,15 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
   /**
    * Get a paginated list of comments for this article
    */
-  comments: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_comments | null;
+  comments: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_comments;
   /**
    * Get vote result for the article
    */
-  voteResult: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_voteResult | null;
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_voteResult;
   /**
    * Article author (full profile)
    */
-  author: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_author | null;
+  author: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -421,6 +421,31 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
    * User full name
    */
   publicUserName: string | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_members {
+  __typename: "CommunityMemberDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  role: CommunityPermissionInput | null;
+  /**
+   * User status
+   */
+  status: UserStatusInput | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_approvedId {
@@ -494,7 +519,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
   /**
    * Community creator (full profile)
    */
-  creator: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_creator | null;
+  creator: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_creator;
   /**
    * Community Name
    */
@@ -507,6 +532,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
    * Community Website
    */
   website: string | null;
+  /**
+   * Community members list (full profile)
+   */
+  members: (homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_members | null)[];
   /**
    * Community avatar image URI
    */
@@ -534,7 +563,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
   /**
    * load the approved curated resources associated to this community
    */
-  approved: (homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_approved | null)[] | null;
+  approved: (homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_approved | null)[];
 }
 
 export type homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource = homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO;
@@ -544,7 +573,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
   /**
    * load the resource
    */
-  resource: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource | null;
+  resource: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured {
@@ -597,7 +626,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_TopContri
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_TopContributors_content {
   __typename: "ResourceIdentifier";
-  user: homePageContent_getLatestHomepageDescriptor_rows_main_TopContributors_content_user | null;
+  user: homePageContent_getLatestHomepageDescriptor_rows_main_TopContributors_content_user;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_TopContributors {
@@ -730,7 +759,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
   /**
    * load the resources within this section
    */
-  resources: (homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources | null)[] | null;
+  resources: (homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources | null)[];
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_resourceIdentifier {
@@ -968,15 +997,15 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
   /**
    * Get a paginated list of comments for this article
    */
-  comments: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_comments | null;
+  comments: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_comments;
   /**
    * Get vote result for the article
    */
-  voteResult: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_voteResult | null;
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_voteResult;
   /**
    * Article author (full profile)
    */
-  author: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_author | null;
+  author: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -1001,6 +1030,31 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
    * User full name
    */
   publicUserName: string | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_members {
+  __typename: "CommunityMemberDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  role: CommunityPermissionInput | null;
+  /**
+   * User status
+   */
+  status: UserStatusInput | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_approvedId {
@@ -1074,7 +1128,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
   /**
    * Community creator (full profile)
    */
-  creator: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_creator | null;
+  creator: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_creator;
   /**
    * Community Name
    */
@@ -1087,6 +1141,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
    * Community Website
    */
   website: string | null;
+  /**
+   * Community members list (full profile)
+   */
+  members: (homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_members | null)[];
   /**
    * Community avatar image URI
    */
@@ -1114,7 +1172,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
   /**
    * load the approved curated resources associated to this community
    */
-  approved: (homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_approved | null)[] | null;
+  approved: (homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_approved | null)[];
 }
 
 export type homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource = homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO;
@@ -1124,7 +1182,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
   /**
    * load the resource
    */
-  resource: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource | null;
+  resource: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo {
@@ -1257,7 +1315,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
   /**
    * load the resources within this section
    */
-  resources: (homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources | null)[] | null;
+  resources: (homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources | null)[];
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_resourceIdentifier {
@@ -1495,15 +1553,15 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
   /**
    * Get a paginated list of comments for this article
    */
-  comments: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_comments | null;
+  comments: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_comments;
   /**
    * Get vote result for the article
    */
-  voteResult: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_voteResult | null;
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_voteResult;
   /**
    * Article author (full profile)
    */
-  author: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_author | null;
+  author: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -1528,6 +1586,31 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
    * User full name
    */
   publicUserName: string | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_members {
+  __typename: "CommunityMemberDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  role: CommunityPermissionInput | null;
+  /**
+   * User status
+   */
+  status: UserStatusInput | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_approvedId {
@@ -1601,7 +1684,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
   /**
    * Community creator (full profile)
    */
-  creator: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_creator | null;
+  creator: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_creator;
   /**
    * Community Name
    */
@@ -1614,6 +1697,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
    * Community Website
    */
   website: string | null;
+  /**
+   * Community members list (full profile)
+   */
+  members: (homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_members | null)[];
   /**
    * Community avatar image URI
    */
@@ -1641,7 +1728,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
   /**
    * load the approved curated resources associated to this community
    */
-  approved: (homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_approved | null)[] | null;
+  approved: (homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_approved | null)[];
 }
 
 export type homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content = homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO;
@@ -1809,7 +1896,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
   /**
    * load the resources within this section
    */
-  resources: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources | null)[] | null;
+  resources: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources | null)[];
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_resourceIdentifier {
@@ -2047,15 +2134,15 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
   /**
    * Get a paginated list of comments for this article
    */
-  comments: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_comments | null;
+  comments: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_comments;
   /**
    * Get vote result for the article
    */
-  voteResult: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_voteResult | null;
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_voteResult;
   /**
    * Article author (full profile)
    */
-  author: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_author | null;
+  author: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -2080,6 +2167,31 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
    * User full name
    */
   publicUserName: string | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_members {
+  __typename: "CommunityMemberDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  role: CommunityPermissionInput | null;
+  /**
+   * User status
+   */
+  status: UserStatusInput | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_approvedId {
@@ -2153,7 +2265,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
   /**
    * Community creator (full profile)
    */
-  creator: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_creator | null;
+  creator: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_creator;
   /**
    * Community Name
    */
@@ -2166,6 +2278,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
    * Community Website
    */
   website: string | null;
+  /**
+   * Community members list (full profile)
+   */
+  members: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_members | null)[];
   /**
    * Community avatar image URI
    */
@@ -2193,7 +2309,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
   /**
    * load the approved curated resources associated to this community
    */
-  approved: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_approved | null)[] | null;
+  approved: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_approved | null)[];
 }
 
 export type homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource = homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO;
@@ -2203,7 +2319,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
   /**
    * load the resource
    */
-  resource: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource | null;
+  resource: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured {
@@ -2256,7 +2372,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_TopCon
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_TopContributors_content {
   __typename: "ResourceIdentifier";
-  user: homePageContent_getLatestHomepageDescriptor_rows_sidebar_TopContributors_content_user | null;
+  user: homePageContent_getLatestHomepageDescriptor_rows_sidebar_TopContributors_content_user;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_TopContributors {
@@ -2389,7 +2505,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
   /**
    * load the resources within this section
    */
-  resources: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources | null)[] | null;
+  resources: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources | null)[];
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_resourceIdentifier {
@@ -2627,15 +2743,15 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
   /**
    * Get a paginated list of comments for this article
    */
-  comments: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_comments | null;
+  comments: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_comments;
   /**
    * Get vote result for the article
    */
-  voteResult: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_voteResult | null;
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_voteResult;
   /**
    * Article author (full profile)
    */
-  author: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_author | null;
+  author: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -2660,6 +2776,31 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
    * User full name
    */
   publicUserName: string | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_members {
+  __typename: "CommunityMemberDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  role: CommunityPermissionInput | null;
+  /**
+   * User status
+   */
+  status: UserStatusInput | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_approvedId {
@@ -2733,7 +2874,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
   /**
    * Community creator (full profile)
    */
-  creator: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_creator | null;
+  creator: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_creator;
   /**
    * Community Name
    */
@@ -2746,6 +2887,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
    * Community Website
    */
   website: string | null;
+  /**
+   * Community members list (full profile)
+   */
+  members: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_members | null)[];
   /**
    * Community avatar image URI
    */
@@ -2773,7 +2918,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
   /**
    * load the approved curated resources associated to this community
    */
-  approved: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_approved | null)[] | null;
+  approved: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_approved | null)[];
 }
 
 export type homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource = homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO;
@@ -2783,7 +2928,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
   /**
    * load the resource
    */
-  resource: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource | null;
+  resource: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo {
@@ -2916,7 +3061,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
   /**
    * load the resources within this section
    */
-  resources: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources | null)[] | null;
+  resources: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources | null)[];
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_resourceIdentifier {
@@ -3154,15 +3299,15 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
   /**
    * Get a paginated list of comments for this article
    */
-  comments: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_comments | null;
+  comments: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_comments;
   /**
    * Get vote result for the article
    */
-  voteResult: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_voteResult | null;
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_voteResult;
   /**
    * Article author (full profile)
    */
-  author: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_author | null;
+  author: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -3187,6 +3332,31 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
    * User full name
    */
   publicUserName: string | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_members {
+  __typename: "CommunityMemberDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  role: CommunityPermissionInput | null;
+  /**
+   * User status
+   */
+  status: UserStatusInput | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_approvedId {
@@ -3260,7 +3430,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
   /**
    * Community creator (full profile)
    */
-  creator: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_creator | null;
+  creator: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_creator;
   /**
    * Community Name
    */
@@ -3273,6 +3443,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
    * Community Website
    */
   website: string | null;
+  /**
+   * Community members list (full profile)
+   */
+  members: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_members | null)[];
   /**
    * Community avatar image URI
    */
@@ -3300,7 +3474,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
   /**
    * load the approved curated resources associated to this community
    */
-  approved: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_approved | null)[] | null;
+  approved: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_approved | null)[];
 }
 
 export type homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content = homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO;
@@ -3342,7 +3516,7 @@ export interface homePageContent {
    * Get the Homepage schema descriptor with the ability to fetch and populate the homepage schema
    * This operation can be performed anonymously
    */
-  getLatestHomepageDescriptor: homePageContent_getLatestHomepageDescriptor | null;
+  getLatestHomepageDescriptor: homePageContent_getLatestHomepageDescriptor;
 }
 
 export interface homePageContentVariables {

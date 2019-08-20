@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid'
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import EditProfileForm from '../../components/EditProfileForm'
 import { pipe, assocPath } from 'ramda'
 import {
@@ -21,6 +21,9 @@ const styles = (theme: Theme) => ({
     grid: {
         maxWidth: 1242,
         margin: 'auto',
+    },
+    saveButton: {
+        color: theme.palette.common.white,
     },
 })
 
@@ -149,7 +152,7 @@ class EditableHeader extends Component<IProps, IState> {
                         sm={8}
                         container={true}
                         item={true}
-                        alignItems="flex-start"
+                        alignItems="center"
                         justify="flex-end"
                     >
                         <Button
@@ -160,6 +163,7 @@ class EditableHeader extends Component<IProps, IState> {
                             Discard
                         </Button>
                         <Button
+                            className={this.props.classes.saveButton}
                             color="primary"
                             variant="contained"
                             onClick={() => this.handleSubmit()}

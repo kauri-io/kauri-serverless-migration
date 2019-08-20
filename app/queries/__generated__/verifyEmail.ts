@@ -19,7 +19,7 @@ export interface verifyEmail {
    * Action to verify an email (open the verification link sent by email)
    * This operation can only be performed by a logged user.
    */
-  verifyEmail: verifyEmail_verifyEmail | null;
+  verifyEmail: verifyEmail_verifyEmail;
 }
 
 export interface verifyEmailVariables {

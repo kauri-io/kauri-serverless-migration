@@ -14,9 +14,9 @@ import AccountCircle from '@material-ui/icons/AccountCircle'
 import MoreIcon from '@material-ui/icons/MoreVert'
 import Link from 'next/link'
 import { logout } from './Module'
-import { Avatar } from '@material-ui/core'
 import { withRouter, Router } from 'next/router'
 import { getProfileURL } from '../../lib/getURLs'
+import Avatar from '../../components/Avatar'
 
 const useStyles = makeStyles((theme: Theme) => {
     return {
@@ -47,7 +47,6 @@ const useStyles = makeStyles((theme: Theme) => {
             '& ul': {
                 display: 'flex',
                 flexDirection: 'column',
-                padding: theme.spacing(2),
             },
         },
         menuButton: {
@@ -126,29 +125,45 @@ interface IProps {
 
 const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
     const classes = useStyles({})
-    const [anchorEl, setAnchorEl] = React.useState<
+    const [accountAnchorEl, setAccountAnchorEl] = React.useState<
         HTMLLIElement | HTMLButtonElement | null
     >(null)
+
+    const [createAnchorEl, setCreateAnchorEl] = React.useState<
+        HTMLLIElement | HTMLButtonElement | null
+    >(null)
+
     const [
         mobileMoreAnchorEl,
         setMobileMoreAnchorEl,
     ] = React.useState<HTMLButtonElement | null>(null)
 
-    const isMenuOpen = Boolean(anchorEl)
+    const isMenuOpen = Boolean(accountAnchorEl)
+    const isCreateMenuOpen = Boolean(createAnchorEl)
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
 
     const handleProfileMenuOpen = (
         event: React.MouseEvent<HTMLLIElement | HTMLButtonElement>
     ) => {
-        setAnchorEl(event.currentTarget)
+        setAccountAnchorEl(event.currentTarget)
     }
 
     function handleMobileMenuClose() {
         setMobileMoreAnchorEl(null)
     }
 
+    function handleCreateMenuClose() {
+        setCreateAnchorEl(null)
+    }
+
+    const handleCreateMenuOpen = (
+        event: React.MouseEvent<HTMLLIElement | HTMLButtonElement>
+    ) => {
+        setCreateAnchorEl(event.currentTarget)
+    }
+
     function handleMenuClose() {
-        setAnchorEl(null)
+        setAccountAnchorEl(null)
         handleMobileMenuClose()
     }
 
@@ -159,29 +174,57 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
     }
 
     const renderMenu = (
-        <Menu
-            anchorEl={anchorEl}
-            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-            open={isMenuOpen}
-            onClose={handleMenuClose}
-            className={classes.menu}
-        >
-            {user && (
-                <Link
-                    href={getProfileURL(user).href}
-                    as={getProfileURL(user).as}
-                >
+        <>
+            <Menu
+                open={isCreateMenuOpen}
+                anchorEl={createAnchorEl}
+                onClose={handleCreateMenuClose}
+            >
+                <Link href="/write-article">
                     <a>
-                        <MenuItem>My Profile</MenuItem>
+                        <MenuItem>Write Article</MenuItem>
                     </a>
                 </Link>
-            )}
 
-            <MenuItem className={classes.padded} onClick={logout}>
-                Logout
-            </MenuItem>
-        </Menu>
+                <Link href="/create-collection">
+                    <a>
+                        <MenuItem>Create Collection</MenuItem>
+                    </a>
+                </Link>
+                <Link href="/create-commmunity">
+                    <a>
+                        <MenuItem>Create Community</MenuItem>
+                    </a>
+                </Link>
+                <a href="https://import.kauri.io" target="_blank">
+                    <MenuItem>Import Content</MenuItem>
+                </a>
+            </Menu>
+
+            <Menu
+                anchorEl={accountAnchorEl}
+                anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+                transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+                open={isMenuOpen}
+                onClose={handleMenuClose}
+                className={classes.menu}
+            >
+                {user && (
+                    <Link
+                        href={getProfileURL(user).href}
+                        as={getProfileURL(user).as}
+                    >
+                        <a>
+                            <MenuItem>My Profile</MenuItem>
+                        </a>
+                    </Link>
+                )}
+
+                <MenuItem className={classes.padded} onClick={logout}>
+                    Logout
+                </MenuItem>
+            </Menu>
+        </>
     )
 
     const renderMobileMenu = (
@@ -199,10 +242,15 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                 }
             >
                 <IconButton color="inherit">
-                    {!user ? (
+                    {!user || !user.id ? (
                         <AccountCircle className={classes.avatar} />
                     ) : (
-                        <Avatar className={classes.avatar} src={user.avatar} />
+                        <Avatar
+                            className={classes.avatar}
+                            avatar={user.avatar}
+                            id={user.id}
+                            withName={false}
+                        />
                     )}
                 </IconButton>
                 <p>Profile</p>
@@ -292,6 +340,13 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                             }}
                         />
                     </div>
+                    <Typography
+                        variant="button"
+                        className={classes.navlink}
+                        onClick={handleCreateMenuOpen}
+                    >
+                        Create
+                    </Typography>
                     <div className={classes.sectionDesktop}>
                         <IconButton
                             edge="end"
@@ -308,18 +363,13 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                         >
                             {!user ? (
                                 <AccountCircle className={classes.avatar} />
-                            ) : user.avatar ? (
+                            ) : (
                                 <Avatar
                                     className={classes.avatar}
-                                    src={user.avatar}
+                                    avatar={user.avatar}
+                                    id={user.id}
+                                    withName={false}
                                 />
-                            ) : (
-                                <Avatar className={classes.avatar}>
-                                    {user &&
-                                        (user.username
-                                            ? user.username.charAt(0)
-                                            : user.id.charAt(0).toUpperCase())}
-                                </Avatar>
                             )}
                         </IconButton>
                     </div>

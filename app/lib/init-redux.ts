@@ -8,6 +8,7 @@ import { rootReducer, rootEpic } from './root'
 import apolloSubscriber, {
     apolloChildHashesSubscriber,
 } from './apollo-subscriber'
+import getGasPrice from './web3-get-gas-price'
 
 // Get the Redux DevTools extension and fallback to a no-op function
 let devtools = f => f
@@ -32,6 +33,7 @@ function create(apollo: any, initialState = {}) {
         apolloChildHashesSubscriber,
         web3GetNetwork,
         personalSign,
+        getGasPrice,
     }
 
     const combinedReducers = combineReducers({

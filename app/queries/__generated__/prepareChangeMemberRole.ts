@@ -18,7 +18,7 @@ export interface prepareChangeMemberRole {
    * Change a member role within the community (prepare call, return a meta-tx hash to sign).
    * This operation can only be performed by a community admin
    */
-  prepareChangeMemberRole: prepareChangeMemberRole_prepareChangeMemberRole | null;
+  prepareChangeMemberRole: prepareChangeMemberRole_prepareChangeMemberRole;
 }
 
 export interface prepareChangeMemberRoleVariables {

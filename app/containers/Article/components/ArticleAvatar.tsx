@@ -1,5 +1,5 @@
 import moment from 'moment'
-import Avatar from '@material-ui/core/Avatar'
+import Avatar from '../../../components/Avatar'
 import Grid from '@material-ui/core/Grid'
 import { Article_author } from '../../../queries/Fragments/__generated__/Article'
 import Typography from '@material-ui/core/Typography'
@@ -18,27 +18,16 @@ const AvatarComp = ({
     return (
         <Grid container={true}>
             <Grid item={true} className={classes.authorAvatar}>
-                {avatar ? (
-                    <Avatar
-                        alt={
-                            name
-                                ? name
-                                : username
-                                ? username
-                                : id
-                                ? id
-                                : 'Anonymous'
-                        }
-                        src={avatar}
-                    />
-                ) : (
-                    <Avatar>{!avatar && username && username.charAt(0)}</Avatar>
-                )}
+                <Avatar
+                    aria-label={String(username)}
+                    id={String(id)}
+                    name={name}
+                    username={username}
+                    avatar={avatar}
+                    withName={true}
+                />
             </Grid>
             <Grid>
-                <Typography variant="body2">
-                    {name ? name : username ? username : id ? id : 'Anonymous'}
-                </Typography>
                 <Typography variant="body2">
                     Last Updated {moment(datePublished).fromNow()}
                 </Typography>

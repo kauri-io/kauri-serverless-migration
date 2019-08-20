@@ -258,7 +258,7 @@ export interface getCollection_getCollection_sections_resources_ArticleDTO_comme
   /**
    * Comment author (full profile)
    */
-  author: getCollection_getCollection_sections_resources_ArticleDTO_comments_content_author | null;
+  author: getCollection_getCollection_sections_resources_ArticleDTO_comments_content_author;
   /**
    * Date the comment was published
    */
@@ -352,11 +352,11 @@ export interface getCollection_getCollection_sections_resources_ArticleDTO {
   /**
    * Get vote result for the article
    */
-  voteResult: getCollection_getCollection_sections_resources_ArticleDTO_voteResult | null;
+  voteResult: getCollection_getCollection_sections_resources_ArticleDTO_voteResult;
   /**
    * Article author (full profile)
    */
-  author: getCollection_getCollection_sections_resources_ArticleDTO_author | null;
+  author: getCollection_getCollection_sections_resources_ArticleDTO_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -364,7 +364,7 @@ export interface getCollection_getCollection_sections_resources_ArticleDTO {
   /**
    * Get a paginated list of comments for this article
    */
-  comments: getCollection_getCollection_sections_resources_ArticleDTO_comments | null;
+  comments: getCollection_getCollection_sections_resources_ArticleDTO_comments;
   /**
    * The comment describing this version update of the article
    */
@@ -490,7 +490,7 @@ export interface getCollection_getCollection_sections_resources_CollectionDTO_se
   /**
    * load the resources within this section
    */
-  resources: (getCollection_getCollection_sections_resources_CollectionDTO_sections_resources | null)[] | null;
+  resources: (getCollection_getCollection_sections_resources_CollectionDTO_sections_resources | null)[];
 }
 
 export interface getCollection_getCollection_sections_resources_CollectionDTO_resourceIdentifier {
@@ -557,7 +557,7 @@ export interface getCollection_getCollection_sections {
   /**
    * load the resources within this section
    */
-  resources: (getCollection_getCollection_sections_resources | null)[] | null;
+  resources: (getCollection_getCollection_sections_resources | null)[];
 }
 
 export interface getCollection_getCollection_resourceIdentifier {
@@ -599,6 +599,10 @@ export interface getCollection_getCollection {
    */
   dateCreated: any;
   /**
+   * Last date updated
+   */
+  dateUpdated: any;
+  /**
    * load the collection owner (user or community resource type)
    */
   owner: getCollection_getCollection_owner | null;
@@ -614,7 +618,7 @@ export interface getCollection {
    * Get a collection by ID
    * This operation can be performed anonymously
    */
-  getCollection: getCollection_getCollection | null;
+  getCollection: getCollection_getCollection;
 }
 
 export interface getCollectionVariables {

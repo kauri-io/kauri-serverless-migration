@@ -19,5 +19,5 @@ export interface regenerateEmailVerificationCode {
    * Regenerate an email verification code
    * This operation can only be performed by a logged user.
    */
-  regenerateEmailVerificationCode: regenerateEmailVerificationCode_regenerateEmailVerificationCode | null;
+  regenerateEmailVerificationCode: regenerateEmailVerificationCode_regenerateEmailVerificationCode;
 }

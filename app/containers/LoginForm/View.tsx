@@ -1,7 +1,7 @@
 import React, { SyntheticEvent } from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import { Title2, BodyArticle } from '../../components/Typography'
 
 import { IRegisterAction } from './Module'

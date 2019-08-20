@@ -65,7 +65,7 @@ export interface getCommunityInvitations {
    * Get community invitations list with filter, sorting and pagination.
    * This operation can only be performed by a community ADMIN.
    */
-  getCommunityInvitations: getCommunityInvitations_getCommunityInvitations | null;
+  getCommunityInvitations: getCommunityInvitations_getCommunityInvitations;
 }
 
 export interface getCommunityInvitationsVariables {

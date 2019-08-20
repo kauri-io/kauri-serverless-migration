@@ -4,90 +4,358 @@ exports[`components/SignupBanner should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
-      "DEFAULT_CARD_WIDTH": 288,
-      "MAIN_BODY_WIDTH": 1242,
-      "bg": Object {
+      "breakpoints": Object {
+        "between": [Function],
+        "down": [Function],
+        "keys": Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ],
+        "only": [Function],
+        "up": [Function],
+        "values": Object {
+          "lg": 1280,
+          "md": 960,
+          "sm": 600,
+          "xl": 1920,
+          "xs": 0,
+        },
+        "width": [Function],
+      },
+      "direction": "ltr",
+      "mixins": Object {
+        "gutters": [Function],
+        "toolbar": Object {
+          "@media (min-width:0px) and (orientation: landscape)": Object {
+            "minHeight": 48,
+          },
+          "@media (min-width:600px)": Object {
+            "minHeight": 64,
+          },
+          "minHeight": 56,
+        },
+      },
+      "overrides": Object {},
+      "palette": Object {
+        "action": Object {
+          "active": "rgba(0, 0, 0, 0.54)",
+          "disabled": "rgba(0, 0, 0, 0.26)",
+          "disabledBackground": "rgba(0, 0, 0, 0.12)",
+          "hover": "rgba(0, 0, 0, 0.08)",
+          "hoverOpacity": 0.08,
+          "selected": "rgba(0, 0, 0, 0.14)",
+        },
+        "augmentColor": [Function],
+        "background": Object {
+          "default": "#f5f5f5",
+          "paper": "#fff",
+        },
+        "common": Object {
+          "black": "#1E2428",
+          "white": "#fff",
+        },
+        "contrastThreshold": 3,
+        "divider": "rgba(0, 0, 0, 0.12)",
+        "error": Object {
+          "contrastText": "#fff",
+          "dark": "#d32f2f",
+          "light": "#e57373",
+          "main": "#f44336",
+        },
+        "getContrastText": [Function],
+        "grey": Object {
+          "100": "#f5f5f5",
+          "200": "#eeeeee",
+          "300": "#e0e0e0",
+          "400": "#bdbdbd",
+          "50": "#fafafa",
+          "500": "#9e9e9e",
+          "600": "#757575",
+          "700": "#616161",
+          "800": "#424242",
+          "900": "#212121",
+          "A100": "#d5d5d5",
+          "A200": "#aaaaaa",
+          "A400": "#303030",
+          "A700": "#616161",
+        },
+        "primary": Object {
+          "contrastText": "rgba(0, 0, 0, 0.87)",
+          "dark": "rgb(7, 118, 93)",
+          "light": "rgb(59, 186, 158)",
+          "main": "#0BA986",
+        },
+        "secondary": Object {
+          "contrastText": "rgba(0, 0, 0, 0.87)",
+          "dark": "rgb(178, 178, 178)",
+          "light": "rgb(255, 255, 255)",
+          "main": "#ffffff",
+        },
+        "text": Object {
+          "disabled": "rgba(0, 0, 0, 0.38)",
+          "hint": "rgba(0, 0, 0, 0.38)",
+          "primary": "rgba(0, 0, 0, 0.87)",
+          "secondary": "rgba(0, 0, 0, 0.54)",
+        },
+        "tonalOffset": 0.2,
+        "type": "light",
+      },
+      "props": Object {},
+      "shadows": Array [
+        "none",
+        "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+        "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+        "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+        "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+        "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+        "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+        "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+        "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+        "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+        "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+        "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+        "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+        "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+        "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+        "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+        "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+        "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+        "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+        "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+        "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+        "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+        "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+        "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+        "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+      ],
+      "shape": Object {
+        "borderRadius": 4,
+      },
+      "spacing": [Function],
+      "transitions": Object {
+        "create": [Function],
+        "duration": Object {
+          "complex": 375,
+          "enteringScreen": 225,
+          "leavingScreen": 195,
+          "short": 250,
+          "shorter": 200,
+          "shortest": 150,
+          "standard": 300,
+        },
+        "easing": Object {
+          "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+          "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+          "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+        },
+        "getAutoHeightDuration": [Function],
+      },
+      "typography": Object {
+        "body1": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.00938em",
+          "lineHeight": 1.5,
+        },
+        "body2": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.01071em",
+          "lineHeight": 1.43,
+        },
+        "button": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 500,
+          "letterSpacing": "0.02857em",
+          "lineHeight": 1.75,
+          "textTransform": "uppercase",
+        },
+        "caption": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.75rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.03333em",
+          "lineHeight": 1.66,
+        },
+        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+        "fontSize": 14,
+        "fontWeightBold": 700,
+        "fontWeightLight": 300,
+        "fontWeightMedium": 500,
+        "fontWeightRegular": 400,
+        "h1": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "6rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.01562em",
+          "lineHeight": 1,
+        },
+        "h2": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "3.75rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.00833em",
+          "lineHeight": 1,
+        },
+        "h3": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "3rem",
+          "fontWeight": 400,
+          "letterSpacing": "0em",
+          "lineHeight": 1.04,
+        },
+        "h4": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "2.125rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.00735em",
+          "lineHeight": 1.17,
+        },
+        "h5": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1.5rem",
+          "fontWeight": 400,
+          "letterSpacing": "0em",
+          "lineHeight": 1.33,
+        },
+        "h6": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1.25rem",
+          "fontWeight": 500,
+          "letterSpacing": "0.0075em",
+          "lineHeight": 1.6,
+        },
+        "htmlFontSize": 16,
+        "overline": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.75rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.08333em",
+          "lineHeight": 2.66,
+          "textTransform": "uppercase",
+        },
+        "pxToRem": [Function],
+        "round": [Function],
+        "subtitle1": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.00938em",
+          "lineHeight": 1.75,
+        },
+        "subtitle2": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 500,
+          "letterSpacing": "0.00714em",
+          "lineHeight": 1.57,
+        },
+      },
+      "zIndex": Object {
+        "appBar": 1100,
+        "drawer": 1200,
+        "mobileStepper": 1000,
+        "modal": 1300,
+        "snackbar": 1400,
+        "tooltip": 1500,
+      },
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
         "bgPrimary": "#1E2428",
         "bgSecondary": "#1E3D3B",
         "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
         "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
         "disabledBackgroundColor": "#D6D6D6",
         "disabledTextColor": "#9B9B9B",
         "divider": "#EBEBEB",
         "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
         "hoverTextColor": "#108E72",
-        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-        "paddingTop": "2.5em",
-        "primary": "#0BA986",
-        "primaryColor": "#0BA986",
-        "primaryDark": "#11856B",
-        "primaryTextColor": "#1E2428",
-        "secondary": "#11856B",
-        "secondaryBlue": "rgb(81, 123, 162, 1)",
-        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-        "secondaryColor": "#1E3D3B",
-        "secondaryTextColor": "#283035",
-        "tertiaryBackgroundColor": "#F7F7F7",
-        "textPrimary": "#1E2428",
-        "white": "#FFFFFF",
-      },
-      "bgPrimary": "#1E2428",
-      "bgSecondary": "#1E3D3B",
-      "borderTextArea": "#979797",
-      "breakpoints": Array [
-        "500px",
-        "52em",
-        "1242px",
-      ],
-      "colors": Object {
-        "bgPrimary": "#1E2428",
-        "bgSecondary": "#1E3D3B",
-        "borderTextArea": "#979797",
-        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-        "disabledBackgroundColor": "#D6D6D6",
-        "disabledTextColor": "#9B9B9B",
-        "divider": "#EBEBEB",
-        "errorRedColor": "#C03030",
-        "hoverTextColor": "#108E72",
-        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-        "paddingTop": "2.5em",
-        "primary": "#0BA986",
-        "primaryColor": "#0BA986",
-        "primaryDark": "#11856B",
-        "primaryTextColor": "#1E2428",
-        "secondary": "#11856B",
-        "secondaryBlue": "rgb(81, 123, 162, 1)",
-        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-        "secondaryColor": "#1E3D3B",
-        "secondaryTextColor": "#283035",
-        "tertiaryBackgroundColor": "#F7F7F7",
-        "textPrimary": "#1E2428",
-        "white": "#FFFFFF",
-      },
-      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-      "disabledBackgroundColor": "#D6D6D6",
-      "disabledTextColor": "#9B9B9B",
-      "divider": "#EBEBEB",
-      "errorRedColor": "#C03030",
-      "fontSizes": Array [
-        11,
-        13,
-        14,
-        16,
-        18,
-        20,
-        22,
-        28,
-        32,
-      ],
-      "fontWeight": Array [
-        300,
-        "normal",
-        500,
-        700,
-      ],
-      "hoverTextColor": "#108E72",
-      "padContent": "
+        "padContent": "
     max-width: 1242px;
     margin-left: auto;
     margin-right: auto;
@@ -98,168 +366,37 @@ exports[`components/SignupBanner should match snapshot 1`] = `
       min-width: 90%;
     }
   ",
-      "padding": "calc((100vw - 1242px) / 2)",
-      "paddingTop": "2.5em",
-      "primary": "#0BA986",
-      "primaryColor": "#0BA986",
-      "primaryDark": "#11856B",
-      "primaryTextColor": "#1E2428",
-      "secondary": "#11856B",
-      "secondaryBlue": "rgb(81, 123, 162, 1)",
-      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-      "secondaryColor": "#1E3D3B",
-      "secondaryTextColor": "#283035",
-      "space": Array [
-        0,
-        10,
-        15,
-        30,
-        60,
-      ],
-      "tertiaryBackgroundColor": "#F7F7F7",
-      "textPrimary": "#1E2428",
-      "white": "#FFFFFF",
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
+        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
+      }
     }
-  }
->
-  <SignupBanner>
-    <SignupBanner__SignupBannerStack
-      alignItems={
-        Array [
-          "",
-        ]
-      }
-      gap={30}
-      gridAutoFlow={
-        Array [
-          "column",
-        ]
-      }
-      justifyContent={
-        Array [
-          "",
-        ]
-      }
-    >
-      <StyledComponent
+  >
+    <SignupBanner>
+      <SignupBanner__SignupBannerStack
         alignItems={
           Array [
             "",
           ]
         }
-        forwardedComponent={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "_foldedDefaultProps": Object {
-              "gap": 2,
-            },
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "componentId": "SignupBanner__SignupBannerStack-sc-1hxzf8p-2",
-              "isStatic": false,
-              "lastClassName": "ieQzri",
-              "rules": Array [
-                "box-sizing: border-box;",
-                "display: grid;",
-                [Function],
-                [Function],
-                [Function],
-                [Function],
-                [Function],
-                "padding:",
-                [Function],
-                "px ",
-                [Function],
-                ";background:",
-                [Function],
-                ";@media (max-width:",
-                [Function],
-                "){padding:",
-                [Function],
-                "px ",
-                [Function],
-                "px;}",
-              ],
-            },
-            "displayName": "SignupBanner__SignupBannerStack",
-            "foldedComponentIds": Array [
-              "sc-bdVaJa",
-            ],
-            "propTypes": Object {
-              "alignContent": [Function],
-              "alignItems": [Function],
-              "alignSelf": [Function],
-              "display": [Function],
-              "flex": [Function],
-              "flexBasis": [Function],
-              "flexDirection": [Function],
-              "flexGrow": [Function],
-              "flexShrink": [Function],
-              "flexWrap": [Function],
-              "gap": [Function],
-              "gridArea": [Function],
-              "gridAutoColumns": [Function],
-              "gridAutoFlow": [Function],
-              "gridAutoRows": [Function],
-              "gridColumn": [Function],
-              "gridColumnGap": [Function],
-              "gridGap": [Function],
-              "gridRow": [Function],
-              "gridRowGap": [Function],
-              "gridTemplateAreas": [Function],
-              "gridTemplateColumns": [Function],
-              "gridTemplateRows": [Function],
-              "height": [Function],
-              "justifyContent": [Function],
-              "justifyItems": [Function],
-              "justifySelf": [Function],
-              "m": [Function],
-              "margin": [Function],
-              "marginBottom": [Function],
-              "marginLeft": [Function],
-              "marginRight": [Function],
-              "marginTop": [Function],
-              "marginX": [Function],
-              "marginY": [Function],
-              "maxHeight": [Function],
-              "maxWidth": [Function],
-              "mb": [Function],
-              "minHeight": [Function],
-              "minWidth": [Function],
-              "ml": [Function],
-              "mr": [Function],
-              "mt": [Function],
-              "mx": [Function],
-              "my": [Function],
-              "order": [Function],
-              "overflow": [Function],
-              "p": [Function],
-              "padding": [Function],
-              "paddingBottom": [Function],
-              "paddingLeft": [Function],
-              "paddingRight": [Function],
-              "paddingTop": [Function],
-              "paddingX": [Function],
-              "paddingY": [Function],
-              "pb": [Function],
-              "pl": [Function],
-              "pr": [Function],
-              "pt": [Function],
-              "px": [Function],
-              "py": [Function],
-              "size": [Function],
-              "verticalAlign": [Function],
-              "width": [Function],
-            },
-            "render": [Function],
-            "styledComponentId": "SignupBanner__SignupBannerStack-sc-1hxzf8p-2",
-            "target": "div",
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          }
-        }
-        forwardedRef={null}
         gap={30}
         gridAutoFlow={
           Array [
@@ -272,418 +409,564 @@ exports[`components/SignupBanner should match snapshot 1`] = `
           ]
         }
       >
-        <div
-          className="sc-bdVaJa SignupBanner__SignupBannerStack-sc-1hxzf8p-2 ieQzri"
+        <StyledComponent
+          alignItems={
+            Array [
+              "",
+            ]
+          }
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "_foldedDefaultProps": Object {
+                "gap": 2,
+              },
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "SignupBanner__SignupBannerStack-sc-1hxzf8p-2",
+                "isStatic": false,
+                "lastClassName": "ieQzri",
+                "rules": Array [
+                  "box-sizing: border-box;",
+                  "display: grid;",
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  "padding:",
+                  [Function],
+                  "px ",
+                  [Function],
+                  ";background:",
+                  [Function],
+                  ";@media (max-width:",
+                  [Function],
+                  "){padding:",
+                  [Function],
+                  "px ",
+                  [Function],
+                  "px;}",
+                ],
+              },
+              "displayName": "SignupBanner__SignupBannerStack",
+              "foldedComponentIds": Array [
+                "sc-bdVaJa",
+              ],
+              "propTypes": Object {
+                "alignContent": [Function],
+                "alignItems": [Function],
+                "alignSelf": [Function],
+                "display": [Function],
+                "flex": [Function],
+                "flexBasis": [Function],
+                "flexDirection": [Function],
+                "flexGrow": [Function],
+                "flexShrink": [Function],
+                "flexWrap": [Function],
+                "gap": [Function],
+                "gridArea": [Function],
+                "gridAutoColumns": [Function],
+                "gridAutoFlow": [Function],
+                "gridAutoRows": [Function],
+                "gridColumn": [Function],
+                "gridColumnGap": [Function],
+                "gridGap": [Function],
+                "gridRow": [Function],
+                "gridRowGap": [Function],
+                "gridTemplateAreas": [Function],
+                "gridTemplateColumns": [Function],
+                "gridTemplateRows": [Function],
+                "height": [Function],
+                "justifyContent": [Function],
+                "justifyItems": [Function],
+                "justifySelf": [Function],
+                "m": [Function],
+                "margin": [Function],
+                "marginBottom": [Function],
+                "marginLeft": [Function],
+                "marginRight": [Function],
+                "marginTop": [Function],
+                "marginX": [Function],
+                "marginY": [Function],
+                "maxHeight": [Function],
+                "maxWidth": [Function],
+                "mb": [Function],
+                "minHeight": [Function],
+                "minWidth": [Function],
+                "ml": [Function],
+                "mr": [Function],
+                "mt": [Function],
+                "mx": [Function],
+                "my": [Function],
+                "order": [Function],
+                "overflow": [Function],
+                "p": [Function],
+                "padding": [Function],
+                "paddingBottom": [Function],
+                "paddingLeft": [Function],
+                "paddingRight": [Function],
+                "paddingTop": [Function],
+                "paddingX": [Function],
+                "paddingY": [Function],
+                "pb": [Function],
+                "pl": [Function],
+                "pr": [Function],
+                "pt": [Function],
+                "px": [Function],
+                "py": [Function],
+                "size": [Function],
+                "verticalAlign": [Function],
+                "width": [Function],
+              },
+              "render": [Function],
+              "styledComponentId": "SignupBanner__SignupBannerStack-sc-1hxzf8p-2",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
+          gap={30}
+          gridAutoFlow={
+            Array [
+              "column",
+            ]
+          }
+          justifyContent={
+            Array [
+              "",
+            ]
+          }
         >
-          <SignupBanner__ResourceDetailsContainer>
-            <StyledComponent
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "SignupBanner__ResourceDetailsContainer-sc-1hxzf8p-0",
-                    "isStatic": false,
-                    "lastClassName": "jkhksa",
-                    "rules": Array [
-                      "display:flex;flex-direction:column;max-width:700px;>:not(:last-child){margin-bottom:",
-                      [Function],
-                      "px;}",
-                    ],
-                  },
-                  "displayName": "SignupBanner__ResourceDetailsContainer",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "SignupBanner__ResourceDetailsContainer-sc-1hxzf8p-0",
-                  "target": "section",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
+          <div
+            className="sc-bdVaJa SignupBanner__SignupBannerStack-sc-1hxzf8p-2 ieQzri"
+          >
+            <SignupBanner__ResourceDetailsContainer>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "SignupBanner__ResourceDetailsContainer-sc-1hxzf8p-0",
+                      "isStatic": false,
+                      "lastClassName": "jkhksa",
+                      "rules": Array [
+                        "display:flex;flex-direction:column;max-width:700px;>:not(:last-child){margin-bottom:",
+                        [Function],
+                        "px;}",
+                      ],
+                    },
+                    "displayName": "SignupBanner__ResourceDetailsContainer",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "SignupBanner__ResourceDetailsContainer-sc-1hxzf8p-0",
+                    "target": "section",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
                 }
-              }
-              forwardedRef={null}
-            >
-              <section
-                className="SignupBanner__ResourceDetailsContainer-sc-1hxzf8p-0 jkhksa"
+                forwardedRef={null}
               >
-                <Typography__styledComponent
-                  color="white"
+                <section
+                  className="SignupBanner__ResourceDetailsContainer-sc-1hxzf8p-0 jkhksa"
                 >
-                  <StyledComponent
+                  <Typography__styledComponent
                     color="white"
-                    forwardedComponent={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "attrs": Array [],
-                        "componentStyle": ComponentStyle {
-                          "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                          "isStatic": false,
-                          "lastClassName": "iLJkHN",
-                          "rules": Array [
-                            "color:",
-                            [Function],
-                            ";margin:0px;font-weight:",
-                            "500",
-                            ";",
-                            ";font-size:",
-                            "28",
-                            "px;text-transform:",
-                            [Function],
-                            ";text-align:",
-                            [Function],
-                            ";:hover{color:",
-                            [Function],
-                            ";cursor:",
-                            [Function],
-                            ";}",
-                          ],
-                        },
-                        "displayName": "Typography__styledComponent",
-                        "foldedComponentIds": Array [],
-                        "render": [Function],
-                        "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                        "target": "span",
-                        "toString": [Function],
-                        "warnTooManyClasses": [Function],
-                        "withComponent": [Function],
-                      }
-                    }
-                    forwardedRef={null}
                   >
-                    <span
-                      className="Typography__styledComponent-sc-36xkf6-5 iLJkHN"
+                    <StyledComponent
                       color="white"
-                    >
-                      Learn to Build on Ethereum with Kauri
-                    </span>
-                  </StyledComponent>
-                </Typography__styledComponent>
-                <Typography__component
-                  color="white"
-                >
-                  <StyledComponent
-                    color="white"
-                    forwardedComponent={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "attrs": Array [],
-                        "componentStyle": ComponentStyle {
-                          "componentId": "Typography__component-sc-36xkf6-4",
-                          "isStatic": false,
-                          "lastClassName": "dvuWvG",
-                          "rules": Array [
-                            "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
-                            [Function],
-                            "px;line-height:18px;color:",
-                            [Function],
-                            ";",
-                            ";",
-                            [Function],
-                            ";",
-                          ],
-                        },
-                        "displayName": "Typography__component",
-                        "foldedComponentIds": Array [],
-                        "render": [Function],
-                        "styledComponentId": "Typography__component-sc-36xkf6-4",
-                        "target": "span",
-                        "toString": [Function],
-                        "warnTooManyClasses": [Function],
-                        "withComponent": [Function],
-                      }
-                    }
-                    forwardedRef={null}
-                  >
-                    <span
-                      className="Typography__component-sc-36xkf6-4 dvuWvG"
-                      color="white"
-                    >
-                      Articles, Tutorials, Documentation and Best Practices
-                    </span>
-                  </StyledComponent>
-                </Typography__component>
-              </section>
-            </StyledComponent>
-          </SignupBanner__ResourceDetailsContainer>
-          <SignupBanner__ViewContainer>
-            <StyledComponent
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "SignupBanner__ViewContainer-sc-1hxzf8p-1",
-                    "isStatic": false,
-                    "lastClassName": "iebiGj",
-                    "rules": Array [
-                      "display:flex;flex-direction:row;margin-left:auto;>:first-child{margin-right:",
-                      [Function],
-                      "px;}@media (max-width:",
-                      [Function],
-                      "){display:none;}",
-                    ],
-                  },
-                  "displayName": "SignupBanner__ViewContainer",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "SignupBanner__ViewContainer-sc-1hxzf8p-1",
-                  "target": "section",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
-              }
-              forwardedRef={null}
-            >
-              <section
-                className="SignupBanner__ViewContainer-sc-1hxzf8p-1 iebiGj"
-              >
-                <Link
-                  href="/login"
-                  prefetch={true}
-                >
-                  <a
-                    href="/login"
-                    onClick={[Function]}
-                    onMouseEnter={[Function]}
-                  >
-                    <WithStyles(ForwardRef(Button))
-                      color="primary"
-                      variant="contained"
-                    >
-                      <ForwardRef(Button)
-                        classes={
-                          Object {
-                            "colorInherit": "MuiButton-colorInherit",
-                            "contained": "MuiButton-contained",
-                            "containedPrimary": "MuiButton-containedPrimary",
-                            "containedSecondary": "MuiButton-containedSecondary",
-                            "disabled": "Mui-disabled",
-                            "focusVisible": "Mui-focusVisible",
-                            "fullWidth": "MuiButton-fullWidth",
-                            "label": "MuiButton-label",
-                            "outlined": "MuiButton-outlined",
-                            "outlinedPrimary": "MuiButton-outlinedPrimary",
-                            "outlinedSecondary": "MuiButton-outlinedSecondary",
-                            "root": "MuiButton-root",
-                            "sizeLarge": "MuiButton-sizeLarge",
-                            "sizeSmall": "MuiButton-sizeSmall",
-                            "text": "MuiButton-text",
-                            "textPrimary": "MuiButton-textPrimary",
-                            "textSecondary": "MuiButton-textSecondary",
-                          }
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                            "isStatic": false,
+                            "lastClassName": "iLJkHN",
+                            "rules": Array [
+                              "color:",
+                              [Function],
+                              ";margin:0px;font-weight:",
+                              "500",
+                              ";",
+                              ";font-size:",
+                              "28",
+                              "px;text-transform:",
+                              [Function],
+                              ";text-align:",
+                              [Function],
+                              ";:hover{color:",
+                              [Function],
+                              ";cursor:",
+                              [Function],
+                              ";}",
+                            ],
+                          },
+                          "displayName": "Typography__styledComponent",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                          "target": "span",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
                         }
+                      }
+                      forwardedRef={null}
+                    >
+                      <span
+                        className="Typography__styledComponent-sc-36xkf6-5 iLJkHN"
+                        color="white"
+                      >
+                        Learn to Build on Ethereum with Kauri
+                      </span>
+                    </StyledComponent>
+                  </Typography__styledComponent>
+                  <Typography__component
+                    color="white"
+                  >
+                    <StyledComponent
+                      color="white"
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "Typography__component-sc-36xkf6-4",
+                            "isStatic": false,
+                            "lastClassName": "dvuWvG",
+                            "rules": Array [
+                              "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
+                              [Function],
+                              "px;line-height:18px;color:",
+                              [Function],
+                              ";",
+                              ";",
+                              [Function],
+                              ";",
+                            ],
+                          },
+                          "displayName": "Typography__component",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "Typography__component-sc-36xkf6-4",
+                          "target": "span",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <span
+                        className="Typography__component-sc-36xkf6-4 dvuWvG"
+                        color="white"
+                      >
+                        Articles, Tutorials, Documentation and Best Practices
+                      </span>
+                    </StyledComponent>
+                  </Typography__component>
+                </section>
+              </StyledComponent>
+            </SignupBanner__ResourceDetailsContainer>
+            <SignupBanner__ViewContainer>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "SignupBanner__ViewContainer-sc-1hxzf8p-1",
+                      "isStatic": false,
+                      "lastClassName": "iebiGj",
+                      "rules": Array [
+                        "display:flex;flex-direction:row;margin-left:auto;>:first-child{margin-right:",
+                        [Function],
+                        "px;}@media (max-width:",
+                        [Function],
+                        "){display:none;}",
+                      ],
+                    },
+                    "displayName": "SignupBanner__ViewContainer",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "SignupBanner__ViewContainer-sc-1hxzf8p-1",
+                    "target": "section",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <section
+                  className="SignupBanner__ViewContainer-sc-1hxzf8p-1 iebiGj"
+                >
+                  <Link
+                    href="/login"
+                    prefetch={true}
+                  >
+                    <a
+                      href="/login"
+                      onClick={[Function]}
+                      onMouseEnter={[Function]}
+                    >
+                      <ButtonComp
                         color="primary"
                         variant="contained"
                       >
-                        <WithStyles(ForwardRef(ButtonBase))
-                          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary"
-                          component="button"
-                          disabled={false}
-                          focusRipple={true}
-                          focusVisibleClassName="Mui-focusVisible"
-                          type="button"
+                        <WithStyles(ForwardRef(Button))
+                          className="makeStyles-main-1"
+                          color="primary"
+                          variant="contained"
                         >
-                          <ForwardRef(ButtonBase)
-                            className="MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                          <ForwardRef(Button)
+                            className="makeStyles-main-1"
                             classes={
                               Object {
+                                "colorInherit": "MuiButton-colorInherit",
+                                "contained": "MuiButton-contained",
+                                "containedPrimary": "MuiButton-containedPrimary",
+                                "containedSecondary": "MuiButton-containedSecondary",
                                 "disabled": "Mui-disabled",
                                 "focusVisible": "Mui-focusVisible",
-                                "root": "MuiButtonBase-root",
+                                "fullWidth": "MuiButton-fullWidth",
+                                "label": "MuiButton-label",
+                                "outlined": "MuiButton-outlined",
+                                "outlinedPrimary": "MuiButton-outlinedPrimary",
+                                "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                "root": "MuiButton-root",
+                                "sizeLarge": "MuiButton-sizeLarge",
+                                "sizeSmall": "MuiButton-sizeSmall",
+                                "text": "MuiButton-text",
+                                "textPrimary": "MuiButton-textPrimary",
+                                "textSecondary": "MuiButton-textSecondary",
                               }
                             }
-                            component="button"
-                            disabled={false}
-                            focusRipple={true}
-                            focusVisibleClassName="Mui-focusVisible"
-                            type="button"
+                            color="primary"
+                            variant="contained"
                           >
-                            <button
-                              className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+                            <WithStyles(ForwardRef(ButtonBase))
+                              className="MuiButton-root makeStyles-main-1 MuiButton-contained MuiButton-containedPrimary"
+                              component="button"
                               disabled={false}
-                              onBlur={[Function]}
-                              onDragLeave={[Function]}
-                              onFocus={[Function]}
-                              onKeyDown={[Function]}
-                              onKeyUp={[Function]}
-                              onMouseDown={[Function]}
-                              onMouseLeave={[Function]}
-                              onMouseUp={[Function]}
-                              onTouchEnd={[Function]}
-                              onTouchMove={[Function]}
-                              onTouchStart={[Function]}
-                              tabIndex={0}
+                              focusRipple={true}
+                              focusVisibleClassName="Mui-focusVisible"
                               type="button"
                             >
-                              <span
-                                className="MuiButton-label"
+                              <ForwardRef(ButtonBase)
+                                className="MuiButton-root makeStyles-main-1 MuiButton-contained MuiButton-containedPrimary"
+                                classes={
+                                  Object {
+                                    "disabled": "Mui-disabled",
+                                    "focusVisible": "Mui-focusVisible",
+                                    "root": "MuiButtonBase-root",
+                                  }
+                                }
+                                component="button"
+                                disabled={false}
+                                focusRipple={true}
+                                focusVisibleClassName="Mui-focusVisible"
+                                type="button"
                               >
-                                Sign up
-                              </span>
-                              <NoSsr>
-                                <WithStyles(undefined)
-                                  center={false}
+                                <button
+                                  className="MuiButtonBase-root MuiButton-root makeStyles-main-1 MuiButton-contained MuiButton-containedPrimary"
+                                  disabled={false}
+                                  onBlur={[Function]}
+                                  onDragLeave={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  onKeyUp={[Function]}
+                                  onMouseDown={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseUp={[Function]}
+                                  onTouchEnd={[Function]}
+                                  onTouchMove={[Function]}
+                                  onTouchStart={[Function]}
+                                  tabIndex={0}
+                                  type="button"
                                 >
-                                  <ForwardRef(TouchRipple)
-                                    center={false}
-                                    classes={
-                                      Object {
-                                        "child": "MuiTouchRipple-child",
-                                        "childLeaving": "MuiTouchRipple-childLeaving",
-                                        "childPulsate": "MuiTouchRipple-childPulsate",
-                                        "ripple": "MuiTouchRipple-ripple",
-                                        "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                                        "rippleVisible": "MuiTouchRipple-rippleVisible",
-                                        "root": "MuiTouchRipple-root",
-                                      }
-                                    }
+                                  <span
+                                    className="MuiButton-label"
                                   >
-                                    <span
-                                      className="MuiTouchRipple-root"
+                                    Sign up
+                                  </span>
+                                  <NoSsr>
+                                    <WithStyles(undefined)
+                                      center={false}
                                     >
-                                      <TransitionGroup
-                                        childFactory={[Function]}
-                                        component={null}
-                                        exit={true}
-                                      />
-                                    </span>
-                                  </ForwardRef(TouchRipple)>
-                                </WithStyles(undefined)>
-                              </NoSsr>
-                            </button>
-                          </ForwardRef(ButtonBase)>
-                        </WithStyles(ForwardRef(ButtonBase))>
-                      </ForwardRef(Button)>
-                    </WithStyles(ForwardRef(Button))>
-                  </a>
-                </Link>
-                <Link
-                  href="/help"
-                  prefetch={true}
-                >
-                  <a
+                                      <ForwardRef(TouchRipple)
+                                        center={false}
+                                        classes={
+                                          Object {
+                                            "child": "MuiTouchRipple-child",
+                                            "childLeaving": "MuiTouchRipple-childLeaving",
+                                            "childPulsate": "MuiTouchRipple-childPulsate",
+                                            "ripple": "MuiTouchRipple-ripple",
+                                            "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                            "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                            "root": "MuiTouchRipple-root",
+                                          }
+                                        }
+                                      >
+                                        <span
+                                          className="MuiTouchRipple-root"
+                                        >
+                                          <TransitionGroup
+                                            childFactory={[Function]}
+                                            component={null}
+                                            exit={true}
+                                          />
+                                        </span>
+                                      </ForwardRef(TouchRipple)>
+                                    </WithStyles(undefined)>
+                                  </NoSsr>
+                                </button>
+                              </ForwardRef(ButtonBase)>
+                            </WithStyles(ForwardRef(ButtonBase))>
+                          </ForwardRef(Button)>
+                        </WithStyles(ForwardRef(Button))>
+                      </ButtonComp>
+                    </a>
+                  </Link>
+                  <Link
                     href="/help"
-                    onClick={[Function]}
-                    onMouseEnter={[Function]}
+                    prefetch={true}
                   >
-                    <WithStyles(ForwardRef(Button))
-                      color="primary"
-                      variant="outlined"
+                    <a
+                      href="/help"
+                      onClick={[Function]}
+                      onMouseEnter={[Function]}
                     >
-                      <ForwardRef(Button)
-                        classes={
-                          Object {
-                            "colorInherit": "MuiButton-colorInherit",
-                            "contained": "MuiButton-contained",
-                            "containedPrimary": "MuiButton-containedPrimary",
-                            "containedSecondary": "MuiButton-containedSecondary",
-                            "disabled": "Mui-disabled",
-                            "focusVisible": "Mui-focusVisible",
-                            "fullWidth": "MuiButton-fullWidth",
-                            "label": "MuiButton-label",
-                            "outlined": "MuiButton-outlined",
-                            "outlinedPrimary": "MuiButton-outlinedPrimary",
-                            "outlinedSecondary": "MuiButton-outlinedSecondary",
-                            "root": "MuiButton-root",
-                            "sizeLarge": "MuiButton-sizeLarge",
-                            "sizeSmall": "MuiButton-sizeSmall",
-                            "text": "MuiButton-text",
-                            "textPrimary": "MuiButton-textPrimary",
-                            "textSecondary": "MuiButton-textSecondary",
-                          }
-                        }
+                      <ButtonComp
                         color="primary"
                         variant="outlined"
                       >
-                        <WithStyles(ForwardRef(ButtonBase))
-                          className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
-                          component="button"
-                          disabled={false}
-                          focusRipple={true}
-                          focusVisibleClassName="Mui-focusVisible"
-                          type="button"
+                        <WithStyles(ForwardRef(Button))
+                          className=""
+                          color="primary"
+                          variant="outlined"
                         >
-                          <ForwardRef(ButtonBase)
-                            className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                          <ForwardRef(Button)
+                            className=""
                             classes={
                               Object {
+                                "colorInherit": "MuiButton-colorInherit",
+                                "contained": "MuiButton-contained",
+                                "containedPrimary": "MuiButton-containedPrimary",
+                                "containedSecondary": "MuiButton-containedSecondary",
                                 "disabled": "Mui-disabled",
                                 "focusVisible": "Mui-focusVisible",
-                                "root": "MuiButtonBase-root",
+                                "fullWidth": "MuiButton-fullWidth",
+                                "label": "MuiButton-label",
+                                "outlined": "MuiButton-outlined",
+                                "outlinedPrimary": "MuiButton-outlinedPrimary",
+                                "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                "root": "MuiButton-root",
+                                "sizeLarge": "MuiButton-sizeLarge",
+                                "sizeSmall": "MuiButton-sizeSmall",
+                                "text": "MuiButton-text",
+                                "textPrimary": "MuiButton-textPrimary",
+                                "textSecondary": "MuiButton-textSecondary",
                               }
                             }
-                            component="button"
-                            disabled={false}
-                            focusRipple={true}
-                            focusVisibleClassName="Mui-focusVisible"
-                            type="button"
+                            color="primary"
+                            variant="outlined"
                           >
-                            <button
-                              className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                            <WithStyles(ForwardRef(ButtonBase))
+                              className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                              component="button"
                               disabled={false}
-                              onBlur={[Function]}
-                              onDragLeave={[Function]}
-                              onFocus={[Function]}
-                              onKeyDown={[Function]}
-                              onKeyUp={[Function]}
-                              onMouseDown={[Function]}
-                              onMouseLeave={[Function]}
-                              onMouseUp={[Function]}
-                              onTouchEnd={[Function]}
-                              onTouchMove={[Function]}
-                              onTouchStart={[Function]}
-                              tabIndex={0}
+                              focusRipple={true}
+                              focusVisibleClassName="Mui-focusVisible"
                               type="button"
                             >
-                              <span
-                                className="MuiButton-label"
+                              <ForwardRef(ButtonBase)
+                                className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                                classes={
+                                  Object {
+                                    "disabled": "Mui-disabled",
+                                    "focusVisible": "Mui-focusVisible",
+                                    "root": "MuiButtonBase-root",
+                                  }
+                                }
+                                component="button"
+                                disabled={false}
+                                focusRipple={true}
+                                focusVisibleClassName="Mui-focusVisible"
+                                type="button"
                               >
-                                Learn more
-                              </span>
-                              <NoSsr>
-                                <WithStyles(undefined)
-                                  center={false}
+                                <button
+                                  className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                                  disabled={false}
+                                  onBlur={[Function]}
+                                  onDragLeave={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  onKeyUp={[Function]}
+                                  onMouseDown={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseUp={[Function]}
+                                  onTouchEnd={[Function]}
+                                  onTouchMove={[Function]}
+                                  onTouchStart={[Function]}
+                                  tabIndex={0}
+                                  type="button"
                                 >
-                                  <ForwardRef(TouchRipple)
-                                    center={false}
-                                    classes={
-                                      Object {
-                                        "child": "MuiTouchRipple-child",
-                                        "childLeaving": "MuiTouchRipple-childLeaving",
-                                        "childPulsate": "MuiTouchRipple-childPulsate",
-                                        "ripple": "MuiTouchRipple-ripple",
-                                        "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                                        "rippleVisible": "MuiTouchRipple-rippleVisible",
-                                        "root": "MuiTouchRipple-root",
-                                      }
-                                    }
+                                  <span
+                                    className="MuiButton-label"
                                   >
-                                    <span
-                                      className="MuiTouchRipple-root"
+                                    Learn more
+                                  </span>
+                                  <NoSsr>
+                                    <WithStyles(undefined)
+                                      center={false}
                                     >
-                                      <TransitionGroup
-                                        childFactory={[Function]}
-                                        component={null}
-                                        exit={true}
-                                      />
-                                    </span>
-                                  </ForwardRef(TouchRipple)>
-                                </WithStyles(undefined)>
-                              </NoSsr>
-                            </button>
-                          </ForwardRef(ButtonBase)>
-                        </WithStyles(ForwardRef(ButtonBase))>
-                      </ForwardRef(Button)>
-                    </WithStyles(ForwardRef(Button))>
-                  </a>
-                </Link>
-              </section>
-            </StyledComponent>
-          </SignupBanner__ViewContainer>
-        </div>
-      </StyledComponent>
-    </SignupBanner__SignupBannerStack>
-  </SignupBanner>
+                                      <ForwardRef(TouchRipple)
+                                        center={false}
+                                        classes={
+                                          Object {
+                                            "child": "MuiTouchRipple-child",
+                                            "childLeaving": "MuiTouchRipple-childLeaving",
+                                            "childPulsate": "MuiTouchRipple-childPulsate",
+                                            "ripple": "MuiTouchRipple-ripple",
+                                            "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                            "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                            "root": "MuiTouchRipple-root",
+                                          }
+                                        }
+                                      >
+                                        <span
+                                          className="MuiTouchRipple-root"
+                                        >
+                                          <TransitionGroup
+                                            childFactory={[Function]}
+                                            component={null}
+                                            exit={true}
+                                          />
+                                        </span>
+                                      </ForwardRef(TouchRipple)>
+                                    </WithStyles(undefined)>
+                                  </NoSsr>
+                                </button>
+                              </ForwardRef(ButtonBase)>
+                            </WithStyles(ForwardRef(ButtonBase))>
+                          </ForwardRef(Button)>
+                        </WithStyles(ForwardRef(Button))>
+                      </ButtonComp>
+                    </a>
+                  </Link>
+                </section>
+              </StyledComponent>
+            </SignupBanner__ViewContainer>
+          </div>
+        </StyledComponent>
+      </SignupBanner__SignupBannerStack>
+    </SignupBanner>
+  </ThemeProvider>
 </ThemeProvider>
 `;

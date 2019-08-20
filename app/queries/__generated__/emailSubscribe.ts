@@ -18,7 +18,7 @@ export interface emailSubscribe {
   /**
    * Opt-in/Opt-out to a list of subscriptions (newsletter)
    */
-  subscribe: emailSubscribe_subscribe | null;
+  subscribe: emailSubscribe_subscribe;
 }
 
 export interface emailSubscribeVariables {

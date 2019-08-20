@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import anchorme from 'anchorme'
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import StatisticsContainer from '../../components/PublicProfile/StatisticsContainer'
 import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
-import UserAvatar from '../../components/UserAvatar'
 import Head from 'next/head'
 import { ICollection } from '../CreateCollectionForm/ChooseCollectionModal'
+import Avatar from '../../components/Avatar'
 
 const PublicProfileHeader = styled.div`
     background-color: #1e2428;
@@ -73,20 +73,6 @@ const Links = styled.div`
     & > a {
         margin-right: ${props => props.theme.space[1]}px;
     }
-`
-
-const Avatar = styled.div`
-    background: #0ba986;
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    font-size: ${props => props.theme && props.theme.fontSizes[5]}px;
-    font-weight: 700;
-    margin-right: ${props => props.theme.space[2]}px;
 `
 
 const getURL = (string, type) => {
@@ -165,19 +151,7 @@ const ProfileHeader = ({
             <meta name="twitter:creator" content="@kauri_io" />
             <meta name="twitter:image" content={avatar} />
         </Head>
-        {avatar ? (
-            <UserAvatar
-                hideUsername
-                borderRadius="4px"
-                height={100}
-                width={100}
-                avatar={avatar}
-            >
-                {avatar ? '' : (name || id).substring(0, 1).toUpperCase()}
-            </UserAvatar>
-        ) : (
-            <Avatar>{(name || id).substring(0, 1).toUpperCase()}</Avatar>
-        )}
+        <Avatar id={id} avatar={avatar} size={100} withName={false} />
         <DetailsContainer>
             {username || name ? (
                 <Fragment>

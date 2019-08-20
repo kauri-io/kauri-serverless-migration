@@ -1,4 +1,4 @@
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import AddMemberButton from './AddMemberButton'
 import MediumImportButton from './MediumImportButton'
 import UploadLogoButton from './UploadLogoButton'

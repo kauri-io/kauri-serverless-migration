@@ -16,90 +16,358 @@ exports[`components/Select should match snapshot 1`] = `
   <ThemeProvider
     theme={
       Object {
-        "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
-        "bg": Object {
+        "breakpoints": Object {
+          "between": [Function],
+          "down": [Function],
+          "keys": Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ],
+          "only": [Function],
+          "up": [Function],
+          "values": Object {
+            "lg": 1280,
+            "md": 960,
+            "sm": 600,
+            "xl": 1920,
+            "xs": 0,
+          },
+          "width": [Function],
+        },
+        "direction": "ltr",
+        "mixins": Object {
+          "gutters": [Function],
+          "toolbar": Object {
+            "@media (min-width:0px) and (orientation: landscape)": Object {
+              "minHeight": 48,
+            },
+            "@media (min-width:600px)": Object {
+              "minHeight": 64,
+            },
+            "minHeight": 56,
+          },
+        },
+        "overrides": Object {},
+        "palette": Object {
+          "action": Object {
+            "active": "rgba(0, 0, 0, 0.54)",
+            "disabled": "rgba(0, 0, 0, 0.26)",
+            "disabledBackground": "rgba(0, 0, 0, 0.12)",
+            "hover": "rgba(0, 0, 0, 0.08)",
+            "hoverOpacity": 0.08,
+            "selected": "rgba(0, 0, 0, 0.14)",
+          },
+          "augmentColor": [Function],
+          "background": Object {
+            "default": "#f5f5f5",
+            "paper": "#fff",
+          },
+          "common": Object {
+            "black": "#1E2428",
+            "white": "#fff",
+          },
+          "contrastThreshold": 3,
+          "divider": "rgba(0, 0, 0, 0.12)",
+          "error": Object {
+            "contrastText": "#fff",
+            "dark": "#d32f2f",
+            "light": "#e57373",
+            "main": "#f44336",
+          },
+          "getContrastText": [Function],
+          "grey": Object {
+            "100": "#f5f5f5",
+            "200": "#eeeeee",
+            "300": "#e0e0e0",
+            "400": "#bdbdbd",
+            "50": "#fafafa",
+            "500": "#9e9e9e",
+            "600": "#757575",
+            "700": "#616161",
+            "800": "#424242",
+            "900": "#212121",
+            "A100": "#d5d5d5",
+            "A200": "#aaaaaa",
+            "A400": "#303030",
+            "A700": "#616161",
+          },
+          "primary": Object {
+            "contrastText": "rgba(0, 0, 0, 0.87)",
+            "dark": "rgb(7, 118, 93)",
+            "light": "rgb(59, 186, 158)",
+            "main": "#0BA986",
+          },
+          "secondary": Object {
+            "contrastText": "rgba(0, 0, 0, 0.87)",
+            "dark": "rgb(178, 178, 178)",
+            "light": "rgb(255, 255, 255)",
+            "main": "#ffffff",
+          },
+          "text": Object {
+            "disabled": "rgba(0, 0, 0, 0.38)",
+            "hint": "rgba(0, 0, 0, 0.38)",
+            "primary": "rgba(0, 0, 0, 0.87)",
+            "secondary": "rgba(0, 0, 0, 0.54)",
+          },
+          "tonalOffset": 0.2,
+          "type": "light",
+        },
+        "props": Object {},
+        "shadows": Array [
+          "none",
+          "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+          "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+          "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+          "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+          "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+          "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+          "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+          "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+          "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+          "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+          "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+          "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+          "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+          "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+          "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+          "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+          "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+          "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+          "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+          "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+          "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+        ],
+        "shape": Object {
+          "borderRadius": 4,
+        },
+        "spacing": [Function],
+        "transitions": Object {
+          "create": [Function],
+          "duration": Object {
+            "complex": 375,
+            "enteringScreen": 225,
+            "leavingScreen": 195,
+            "short": 250,
+            "shorter": 200,
+            "shortest": 150,
+            "standard": 300,
+          },
+          "easing": Object {
+            "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+            "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+            "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+            "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+          },
+          "getAutoHeightDuration": [Function],
+        },
+        "typography": Object {
+          "body1": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "1rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.00938em",
+            "lineHeight": 1.5,
+          },
+          "body2": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.875rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.01071em",
+            "lineHeight": 1.43,
+          },
+          "button": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.875rem",
+            "fontWeight": 500,
+            "letterSpacing": "0.02857em",
+            "lineHeight": 1.75,
+            "textTransform": "uppercase",
+          },
+          "caption": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.75rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.03333em",
+            "lineHeight": 1.66,
+          },
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": 14,
+          "fontWeightBold": 700,
+          "fontWeightLight": 300,
+          "fontWeightMedium": 500,
+          "fontWeightRegular": 400,
+          "h1": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "6rem",
+            "fontWeight": 300,
+            "letterSpacing": "-0.01562em",
+            "lineHeight": 1,
+          },
+          "h2": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "3.75rem",
+            "fontWeight": 300,
+            "letterSpacing": "-0.00833em",
+            "lineHeight": 1,
+          },
+          "h3": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "3rem",
+            "fontWeight": 400,
+            "letterSpacing": "0em",
+            "lineHeight": 1.04,
+          },
+          "h4": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "2.125rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.00735em",
+            "lineHeight": 1.17,
+          },
+          "h5": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "1.5rem",
+            "fontWeight": 400,
+            "letterSpacing": "0em",
+            "lineHeight": 1.33,
+          },
+          "h6": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "1.25rem",
+            "fontWeight": 500,
+            "letterSpacing": "0.0075em",
+            "lineHeight": 1.6,
+          },
+          "htmlFontSize": 16,
+          "overline": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.75rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.08333em",
+            "lineHeight": 2.66,
+            "textTransform": "uppercase",
+          },
+          "pxToRem": [Function],
+          "round": [Function],
+          "subtitle1": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "1rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.00938em",
+            "lineHeight": 1.75,
+          },
+          "subtitle2": Object {
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": "0.875rem",
+            "fontWeight": 500,
+            "letterSpacing": "0.00714em",
+            "lineHeight": 1.57,
+          },
+        },
+        "zIndex": Object {
+          "appBar": 1100,
+          "drawer": 1200,
+          "mobileStepper": 1000,
+          "modal": 1300,
+          "snackbar": 1400,
+          "tooltip": 1500,
+        },
+      }
+    }
+  >
+    <ThemeProvider
+      theme={
+        Object {
+          "DEFAULT_CARD_WIDTH": 288,
+          "MAIN_BODY_WIDTH": 1242,
+          "bg": Object {
+            "bgPrimary": "#1E2428",
+            "bgSecondary": "#1E3D3B",
+            "borderTextArea": "#979797",
+            "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+            "disabledBackgroundColor": "#D6D6D6",
+            "disabledTextColor": "#9B9B9B",
+            "divider": "#EBEBEB",
+            "errorRedColor": "#C03030",
+            "hoverTextColor": "#108E72",
+            "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+            "paddingTop": "2.5em",
+            "primary": "#0BA986",
+            "primaryColor": "#0BA986",
+            "primaryDark": "#11856B",
+            "primaryTextColor": "#1E2428",
+            "secondary": "#11856B",
+            "secondaryBlue": "rgb(81, 123, 162, 1)",
+            "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+            "secondaryColor": "#1E3D3B",
+            "secondaryTextColor": "#283035",
+            "tertiaryBackgroundColor": "#F7F7F7",
+            "textPrimary": "#1E2428",
+            "white": "#FFFFFF",
+          },
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
           "borderTextArea": "#979797",
+          "breakpoints": Array [
+            "500px",
+            "52em",
+            "1242px",
+          ],
+          "colors": Object {
+            "bgPrimary": "#1E2428",
+            "bgSecondary": "#1E3D3B",
+            "borderTextArea": "#979797",
+            "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+            "disabledBackgroundColor": "#D6D6D6",
+            "disabledTextColor": "#9B9B9B",
+            "divider": "#EBEBEB",
+            "errorRedColor": "#C03030",
+            "hoverTextColor": "#108E72",
+            "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+            "paddingTop": "2.5em",
+            "primary": "#0BA986",
+            "primaryColor": "#0BA986",
+            "primaryDark": "#11856B",
+            "primaryTextColor": "#1E2428",
+            "secondary": "#11856B",
+            "secondaryBlue": "rgb(81, 123, 162, 1)",
+            "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+            "secondaryColor": "#1E3D3B",
+            "secondaryTextColor": "#283035",
+            "tertiaryBackgroundColor": "#F7F7F7",
+            "textPrimary": "#1E2428",
+            "white": "#FFFFFF",
+          },
           "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
           "disabledBackgroundColor": "#D6D6D6",
           "disabledTextColor": "#9B9B9B",
           "divider": "#EBEBEB",
           "errorRedColor": "#C03030",
+          "fontSizes": Array [
+            11,
+            13,
+            14,
+            16,
+            18,
+            20,
+            22,
+            28,
+            32,
+          ],
+          "fontWeight": Array [
+            300,
+            "normal",
+            500,
+            700,
+          ],
           "hoverTextColor": "#108E72",
-          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-          "paddingTop": "2.5em",
-          "primary": "#0BA986",
-          "primaryColor": "#0BA986",
-          "primaryDark": "#11856B",
-          "primaryTextColor": "#1E2428",
-          "secondary": "#11856B",
-          "secondaryBlue": "rgb(81, 123, 162, 1)",
-          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-          "secondaryColor": "#1E3D3B",
-          "secondaryTextColor": "#283035",
-          "tertiaryBackgroundColor": "#F7F7F7",
-          "textPrimary": "#1E2428",
-          "white": "#FFFFFF",
-        },
-        "bgPrimary": "#1E2428",
-        "bgSecondary": "#1E3D3B",
-        "borderTextArea": "#979797",
-        "breakpoints": Array [
-          "500px",
-          "52em",
-          "1242px",
-        ],
-        "colors": Object {
-          "bgPrimary": "#1E2428",
-          "bgSecondary": "#1E3D3B",
-          "borderTextArea": "#979797",
-          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-          "disabledBackgroundColor": "#D6D6D6",
-          "disabledTextColor": "#9B9B9B",
-          "divider": "#EBEBEB",
-          "errorRedColor": "#C03030",
-          "hoverTextColor": "#108E72",
-          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-          "paddingTop": "2.5em",
-          "primary": "#0BA986",
-          "primaryColor": "#0BA986",
-          "primaryDark": "#11856B",
-          "primaryTextColor": "#1E2428",
-          "secondary": "#11856B",
-          "secondaryBlue": "rgb(81, 123, 162, 1)",
-          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-          "secondaryColor": "#1E3D3B",
-          "secondaryTextColor": "#283035",
-          "tertiaryBackgroundColor": "#F7F7F7",
-          "textPrimary": "#1E2428",
-          "white": "#FFFFFF",
-        },
-        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-        "disabledBackgroundColor": "#D6D6D6",
-        "disabledTextColor": "#9B9B9B",
-        "divider": "#EBEBEB",
-        "errorRedColor": "#C03030",
-        "fontSizes": Array [
-          11,
-          13,
-          14,
-          16,
-          18,
-          20,
-          22,
-          28,
-          32,
-        ],
-        "fontWeight": Array [
-          300,
-          "normal",
-          500,
-          700,
-        ],
-        "hoverTextColor": "#108E72",
-        "padContent": "
+          "padContent": "
     max-width: 1242px;
     margin-left: auto;
     margin-right: auto;
@@ -110,241 +378,242 @@ exports[`components/Select should match snapshot 1`] = `
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
-        "paddingTop": "2.5em",
-        "primary": "#0BA986",
-        "primaryColor": "#0BA986",
-        "primaryDark": "#11856B",
-        "primaryTextColor": "#1E2428",
-        "secondary": "#11856B",
-        "secondaryBlue": "rgb(81, 123, 162, 1)",
-        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-        "secondaryColor": "#1E3D3B",
-        "secondaryTextColor": "#283035",
-        "space": Array [
-          0,
-          10,
-          15,
-          30,
-          60,
-        ],
-        "tertiaryBackgroundColor": "#F7F7F7",
-        "textPrimary": "#1E2428",
-        "white": "#FFFFFF",
-      }
-    }
-  >
-    <_default
-      placeHolder="select me"
-      value="test"
-    >
-      <Tooltip
-        animateFill={true}
-        animation="shift"
-        arrow={false}
-        arrowSize="regular"
-        className="aids"
-        delay={0}
-        disabled={false}
-        distance={10}
-        duration={375}
-        followCursor={false}
-        hideDelay={0}
-        hideDuration={375}
-        hideOnClick={true}
-        html={
-          <div>
-            Test
-          </div>
+          "padding": "calc((100vw - 1242px) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "space": Array [
+            0,
+            10,
+            15,
+            30,
+            60,
+          ],
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
         }
-        inertia={false}
-        interactive={false}
-        interactiveBorder={2}
-        multiple={false}
-        offset={0}
-        onHidden={[Function]}
-        onHide={[Function]}
-        onRequestClose={[Function]}
-        onShow={[Function]}
-        onShown={[Function]}
-        popperOptions={Object {}}
-        position="bottom"
-        size="regular"
-        sticky={false}
-        stickyDuration={200}
-        style={Object {}}
-        theme="dark"
-        touchHold={false}
-        trigger="click"
-        unmountHTMLWhenHide={true}
+      }
+    >
+      <_default
+        placeHolder="select me"
+        value="test"
       >
-        <div
+        <Tooltip
+          animateFill={true}
+          animation="shift"
+          arrow={false}
+          arrowSize="regular"
           className="aids"
-          style={
-            Object {
-              "display": "inline",
-            }
+          delay={0}
+          disabled={false}
+          distance={10}
+          duration={375}
+          followCursor={false}
+          hideDelay={0}
+          hideDuration={375}
+          hideOnClick={true}
+          html={
+            <div>
+              Test
+            </div>
           }
+          inertia={false}
+          interactive={false}
+          interactiveBorder={2}
+          multiple={false}
+          offset={0}
+          onHidden={[Function]}
+          onHide={[Function]}
+          onRequestClose={[Function]}
+          onShow={[Function]}
+          onShown={[Function]}
+          popperOptions={Object {}}
+          position="bottom"
+          size="regular"
+          sticky={false}
+          stickyDuration={200}
+          style={Object {}}
+          theme="dark"
+          touchHold={false}
+          trigger="click"
+          unmountHTMLWhenHide={true}
         >
-          <Select>
-            <StyledComponent
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "Select-sc-8hcz1c-2",
-                    "isStatic": false,
-                    "lastClassName": "imEBQo",
-                    "rules": Array [
-                      "display:flex;flex-direction:row;justify-content:center;width:300px;height:40px;cursor:pointer;align-items:center;border:1px solid ",
-                      [Function],
-                      ";box-sizing:border-box;border-radius:4px;:hover{border:1px solid ",
-                      [Function],
-                      ";}>:first-child{margin:auto;}>:last-child{margin-right:",
-                      [Function],
-                      "px;}",
-                    ],
-                  },
-                  "displayName": "Select",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "Select-sc-8hcz1c-2",
-                  "target": "div",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
+          <div
+            className="aids"
+            style={
+              Object {
+                "display": "inline",
               }
-              forwardedRef={null}
-            >
-              <div
-                className="Select-sc-8hcz1c-2 imEBQo"
+            }
+          >
+            <Select>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "Select-sc-8hcz1c-2",
+                      "isStatic": false,
+                      "lastClassName": "imEBQo",
+                      "rules": Array [
+                        "display:flex;flex-direction:row;justify-content:center;width:300px;height:40px;cursor:pointer;align-items:center;border:1px solid ",
+                        [Function],
+                        ";box-sizing:border-box;border-radius:4px;:hover{border:1px solid ",
+                        [Function],
+                        ";}>:first-child{margin:auto;}>:last-child{margin-right:",
+                        [Function],
+                        "px;}",
+                      ],
+                    },
+                    "displayName": "Select",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "Select-sc-8hcz1c-2",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
               >
-                <Typography__component
-                  textTransform="uppercase"
+                <div
+                  className="Select-sc-8hcz1c-2 imEBQo"
                 >
-                  <StyledComponent
-                    forwardedComponent={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "attrs": Array [],
-                        "componentStyle": ComponentStyle {
-                          "componentId": "Typography__component-sc-36xkf6-0",
-                          "isStatic": false,
-                          "lastClassName": "kALGmD",
-                          "rules": Array [
-                            "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
-                            [Function],
-                            ";text-align:",
-                            [Function],
-                            ";",
-                            [Function],
-                            " ",
-                            [Function],
-                          ],
-                        },
-                        "displayName": "Typography__component",
-                        "foldedComponentIds": Array [],
-                        "render": [Function],
-                        "styledComponentId": "Typography__component-sc-36xkf6-0",
-                        "target": "span",
-                        "toString": [Function],
-                        "warnTooManyClasses": [Function],
-                        "withComponent": [Function],
-                      }
-                    }
-                    forwardedRef={null}
+                  <Typography__component
                     textTransform="uppercase"
                   >
-                    <span
-                      className="Typography__component-sc-36xkf6-0 kALGmD"
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "Typography__component-sc-36xkf6-0",
+                            "isStatic": false,
+                            "lastClassName": "kALGmD",
+                            "rules": Array [
+                              "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                              [Function],
+                              ";text-align:",
+                              [Function],
+                              ";",
+                              [Function],
+                              " ",
+                              [Function],
+                            ],
+                          },
+                          "displayName": "Typography__component",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "Typography__component-sc-36xkf6-0",
+                          "target": "span",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                      textTransform="uppercase"
                     >
-                      test
-                    </span>
-                  </StyledComponent>
-                </Typography__component>
-                <DownArrowIcon>
-                  <svg
-                    fill="none"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    width="12"
-                    xlinkHref="http://www.w3.org/1999/xlink"
-                  >
-                    <rect
-                      fill="url(#pattern0)"
+                      <span
+                        className="Typography__component-sc-36xkf6-0 kALGmD"
+                      >
+                        test
+                      </span>
+                    </StyledComponent>
+                  </Typography__component>
+                  <DownArrowIcon>
+                    <svg
+                      fill="none"
                       height="12"
-                      transform="rotate(90 12 0)"
+                      viewBox="0 0 12 12"
                       width="12"
-                      x="12"
-                    />
-                    <mask
-                      height="12"
-                      id="mask0"
-                      mask-type="alpha"
-                      maskUnits="userSpaceOnUse"
-                      width="12"
-                      x="0"
-                      y="0"
+                      xlinkHref="http://www.w3.org/1999/xlink"
                     >
                       <rect
-                        fill="url(#pattern1)"
+                        fill="url(#pattern0)"
                         height="12"
                         transform="rotate(90 12 0)"
                         width="12"
                         x="12"
                       />
-                    </mask>
-                    <g
-                      mask="url(#mask0)"
-                    >
-                      <rect
-                        fill="#0BA986"
+                      <mask
                         height="12"
-                        transform="rotate(90 12 0)"
+                        id="mask0"
+                        mask-type="alpha"
+                        maskUnits="userSpaceOnUse"
                         width="12"
-                        x="12"
-                      />
-                    </g>
-                    <defs>
-                      <pattern
-                        height="1"
-                        id="pattern0"
-                        patternContentUnits="objectBoundingBox"
-                        width="1"
+                        x="0"
+                        y="0"
                       >
-                        <use
-                          transform="scale(0.00961538)"
-                          xlinkHref="#image0"
+                        <rect
+                          fill="url(#pattern1)"
+                          height="12"
+                          transform="rotate(90 12 0)"
+                          width="12"
+                          x="12"
                         />
-                      </pattern>
-                      <pattern
-                        height="1"
-                        id="pattern1"
-                        patternContentUnits="objectBoundingBox"
-                        width="1"
+                      </mask>
+                      <g
+                        mask="url(#mask0)"
                       >
-                        <use
-                          transform="scale(0.00961538)"
-                          xlinkHref="#image0"
+                        <rect
+                          fill="#0BA986"
+                          height="12"
+                          transform="rotate(90 12 0)"
+                          width="12"
+                          x="12"
                         />
-                      </pattern>
-                      <image
-                        height="104"
-                        id="image0"
-                        width="104"
-                        xlinkHref="data:image/png;base64,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"
-                      />
-                    </defs>
-                  </svg>
-                </DownArrowIcon>
-              </div>
-            </StyledComponent>
-          </Select>
-        </div>
-      </Tooltip>
-    </_default>
+                      </g>
+                      <defs>
+                        <pattern
+                          height="1"
+                          id="pattern0"
+                          patternContentUnits="objectBoundingBox"
+                          width="1"
+                        >
+                          <use
+                            transform="scale(0.00961538)"
+                            xlinkHref="#image0"
+                          />
+                        </pattern>
+                        <pattern
+                          height="1"
+                          id="pattern1"
+                          patternContentUnits="objectBoundingBox"
+                          width="1"
+                        >
+                          <use
+                            transform="scale(0.00961538)"
+                            xlinkHref="#image0"
+                          />
+                        </pattern>
+                        <image
+                          height="104"
+                          id="image0"
+                          width="104"
+                          xlinkHref="data:image/png;base64,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"
+                        />
+                      </defs>
+                    </svg>
+                  </DownArrowIcon>
+                </div>
+              </StyledComponent>
+            </Select>
+          </div>
+        </Tooltip>
+      </_default>
+    </ThemeProvider>
   </ThemeProvider>
 </Provider>
 `;

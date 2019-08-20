@@ -186,7 +186,7 @@ export interface Article_comments_content {
   /**
    * Comment author (full profile)
    */
-  author: Article_comments_content_author | null;
+  author: Article_comments_content_author;
   /**
    * Date the comment was published
    */
@@ -280,11 +280,11 @@ export interface Article {
   /**
    * Get vote result for the article
    */
-  voteResult: Article_voteResult | null;
+  voteResult: Article_voteResult;
   /**
    * Article author (full profile)
    */
-  author: Article_author | null;
+  author: Article_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -292,7 +292,7 @@ export interface Article {
   /**
    * Get a paginated list of comments for this article
    */
-  comments: Article_comments | null;
+  comments: Article_comments;
   /**
    * The comment describing this version update of the article
    */

@@ -127,7 +127,7 @@ export interface searchCollections_searchCollections_content_sections {
   /**
    * load the resources within this section
    */
-  resources: (searchCollections_searchCollections_content_sections_resources | null)[] | null;
+  resources: (searchCollections_searchCollections_content_sections_resources | null)[];
 }
 
 export interface searchCollections_searchCollections_content_resourceIdentifier {
@@ -192,7 +192,7 @@ export interface searchCollections {
    * Search collections with pagination, sorting and filters.
    * This operation can be performed anonymously
    */
-  searchCollections: searchCollections_searchCollections | null;
+  searchCollections: searchCollections_searchCollections;
 }
 
 export interface searchCollectionsVariables {

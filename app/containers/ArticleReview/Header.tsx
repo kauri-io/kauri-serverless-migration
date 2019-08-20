@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Title1, Label } from '../../components/Typography'
 import Image from '../../components/Image'
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import moment from 'moment'
 import theme from '../../lib/theme-config'
 import RejectArticleModal from './RejectArticleModal'

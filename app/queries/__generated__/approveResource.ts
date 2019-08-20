@@ -21,7 +21,7 @@ export interface approveResource {
    * Approve a pending curated resource to a community.
    * This operation can only be performed by a communinity moderator or admin.
    */
-  approveResource: approveResource_approveResource | null;
+  approveResource: approveResource_approveResource;
 }
 
 export interface approveResourceVariables {

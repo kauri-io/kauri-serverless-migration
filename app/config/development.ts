@@ -5,7 +5,7 @@ export default {
     monolithExternalApi: 'api.dev.kauri.io',
     gateway: 'api.dev.kauri.io',
     gethBlockchain: '35.231.60.112:8545',
-    KauriCommunityId: '3e174cdcf9744ee3898f6a3badc3288b',
+    KauriCommunityId: '5d2c6edefe402500014349f5',
     uppyConfig,
     analyticsTokens: {
         mixpanel: '627c5ccb5bf7da1d079aef2efaa807c2',

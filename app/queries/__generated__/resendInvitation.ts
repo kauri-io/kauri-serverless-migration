@@ -19,7 +19,7 @@ export interface resendInvitation {
    * Resend a pending invitation.
    * This operation can only be performed by a community admin
    */
-  resendInvitation: resendInvitation_resendInvitation | null;
+  resendInvitation: resendInvitation_resendInvitation;
 }
 
 export interface resendInvitationVariables {

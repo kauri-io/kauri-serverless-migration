@@ -23,7 +23,7 @@ export interface getCollectionTitle {
    * Get a collection by ID
    * This operation can be performed anonymously
    */
-  getCollection: getCollectionTitle_getCollection | null;
+  getCollection: getCollectionTitle_getCollection;
 }
 
 export interface getCollectionTitleVariables {

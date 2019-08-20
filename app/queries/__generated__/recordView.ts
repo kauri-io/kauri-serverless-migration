@@ -21,7 +21,7 @@ export interface recordView {
    * Record a view against a resource. A buffer prevents to record more than one view per IP and per hour and per resource.
    * This operation can be performed anonymously.
    */
-  recordView: recordView_recordView | null;
+  recordView: recordView_recordView;
 }
 
 export interface recordViewVariables {

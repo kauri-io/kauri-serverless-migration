@@ -4,90 +4,358 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
 <ThemeProvider
   theme={
     Object {
-      "DEFAULT_CARD_WIDTH": 288,
-      "MAIN_BODY_WIDTH": 1242,
-      "bg": Object {
+      "breakpoints": Object {
+        "between": [Function],
+        "down": [Function],
+        "keys": Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ],
+        "only": [Function],
+        "up": [Function],
+        "values": Object {
+          "lg": 1280,
+          "md": 960,
+          "sm": 600,
+          "xl": 1920,
+          "xs": 0,
+        },
+        "width": [Function],
+      },
+      "direction": "ltr",
+      "mixins": Object {
+        "gutters": [Function],
+        "toolbar": Object {
+          "@media (min-width:0px) and (orientation: landscape)": Object {
+            "minHeight": 48,
+          },
+          "@media (min-width:600px)": Object {
+            "minHeight": 64,
+          },
+          "minHeight": 56,
+        },
+      },
+      "overrides": Object {},
+      "palette": Object {
+        "action": Object {
+          "active": "rgba(0, 0, 0, 0.54)",
+          "disabled": "rgba(0, 0, 0, 0.26)",
+          "disabledBackground": "rgba(0, 0, 0, 0.12)",
+          "hover": "rgba(0, 0, 0, 0.08)",
+          "hoverOpacity": 0.08,
+          "selected": "rgba(0, 0, 0, 0.14)",
+        },
+        "augmentColor": [Function],
+        "background": Object {
+          "default": "#f5f5f5",
+          "paper": "#fff",
+        },
+        "common": Object {
+          "black": "#1E2428",
+          "white": "#fff",
+        },
+        "contrastThreshold": 3,
+        "divider": "rgba(0, 0, 0, 0.12)",
+        "error": Object {
+          "contrastText": "#fff",
+          "dark": "#d32f2f",
+          "light": "#e57373",
+          "main": "#f44336",
+        },
+        "getContrastText": [Function],
+        "grey": Object {
+          "100": "#f5f5f5",
+          "200": "#eeeeee",
+          "300": "#e0e0e0",
+          "400": "#bdbdbd",
+          "50": "#fafafa",
+          "500": "#9e9e9e",
+          "600": "#757575",
+          "700": "#616161",
+          "800": "#424242",
+          "900": "#212121",
+          "A100": "#d5d5d5",
+          "A200": "#aaaaaa",
+          "A400": "#303030",
+          "A700": "#616161",
+        },
+        "primary": Object {
+          "contrastText": "rgba(0, 0, 0, 0.87)",
+          "dark": "rgb(7, 118, 93)",
+          "light": "rgb(59, 186, 158)",
+          "main": "#0BA986",
+        },
+        "secondary": Object {
+          "contrastText": "rgba(0, 0, 0, 0.87)",
+          "dark": "rgb(178, 178, 178)",
+          "light": "rgb(255, 255, 255)",
+          "main": "#ffffff",
+        },
+        "text": Object {
+          "disabled": "rgba(0, 0, 0, 0.38)",
+          "hint": "rgba(0, 0, 0, 0.38)",
+          "primary": "rgba(0, 0, 0, 0.87)",
+          "secondary": "rgba(0, 0, 0, 0.54)",
+        },
+        "tonalOffset": 0.2,
+        "type": "light",
+      },
+      "props": Object {},
+      "shadows": Array [
+        "none",
+        "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
+        "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
+        "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+        "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+        "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+        "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+        "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+        "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+        "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+        "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+        "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+        "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+        "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+        "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+        "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+        "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+        "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+        "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+        "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+        "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+        "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+        "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+        "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+        "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+      ],
+      "shape": Object {
+        "borderRadius": 4,
+      },
+      "spacing": [Function],
+      "transitions": Object {
+        "create": [Function],
+        "duration": Object {
+          "complex": 375,
+          "enteringScreen": 225,
+          "leavingScreen": 195,
+          "short": 250,
+          "shorter": 200,
+          "shortest": 150,
+          "standard": 300,
+        },
+        "easing": Object {
+          "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+          "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+          "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+        },
+        "getAutoHeightDuration": [Function],
+      },
+      "typography": Object {
+        "body1": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.00938em",
+          "lineHeight": 1.5,
+        },
+        "body2": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.01071em",
+          "lineHeight": 1.43,
+        },
+        "button": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 500,
+          "letterSpacing": "0.02857em",
+          "lineHeight": 1.75,
+          "textTransform": "uppercase",
+        },
+        "caption": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.75rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.03333em",
+          "lineHeight": 1.66,
+        },
+        "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+        "fontSize": 14,
+        "fontWeightBold": 700,
+        "fontWeightLight": 300,
+        "fontWeightMedium": 500,
+        "fontWeightRegular": 400,
+        "h1": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "6rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.01562em",
+          "lineHeight": 1,
+        },
+        "h2": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "3.75rem",
+          "fontWeight": 300,
+          "letterSpacing": "-0.00833em",
+          "lineHeight": 1,
+        },
+        "h3": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "3rem",
+          "fontWeight": 400,
+          "letterSpacing": "0em",
+          "lineHeight": 1.04,
+        },
+        "h4": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "2.125rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.00735em",
+          "lineHeight": 1.17,
+        },
+        "h5": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1.5rem",
+          "fontWeight": 400,
+          "letterSpacing": "0em",
+          "lineHeight": 1.33,
+        },
+        "h6": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1.25rem",
+          "fontWeight": 500,
+          "letterSpacing": "0.0075em",
+          "lineHeight": 1.6,
+        },
+        "htmlFontSize": 16,
+        "overline": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.75rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.08333em",
+          "lineHeight": 2.66,
+          "textTransform": "uppercase",
+        },
+        "pxToRem": [Function],
+        "round": [Function],
+        "subtitle1": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "1rem",
+          "fontWeight": 400,
+          "letterSpacing": "0.00938em",
+          "lineHeight": 1.75,
+        },
+        "subtitle2": Object {
+          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": 500,
+          "letterSpacing": "0.00714em",
+          "lineHeight": 1.57,
+        },
+      },
+      "zIndex": Object {
+        "appBar": 1100,
+        "drawer": 1200,
+        "mobileStepper": 1000,
+        "modal": 1300,
+        "snackbar": 1400,
+        "tooltip": 1500,
+      },
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "DEFAULT_CARD_WIDTH": 288,
+        "MAIN_BODY_WIDTH": 1242,
+        "bg": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
         "bgPrimary": "#1E2428",
         "bgSecondary": "#1E3D3B",
         "borderTextArea": "#979797",
+        "breakpoints": Array [
+          "500px",
+          "52em",
+          "1242px",
+        ],
+        "colors": Object {
+          "bgPrimary": "#1E2428",
+          "bgSecondary": "#1E3D3B",
+          "borderTextArea": "#979797",
+          "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
+          "disabledBackgroundColor": "#D6D6D6",
+          "disabledTextColor": "#9B9B9B",
+          "divider": "#EBEBEB",
+          "errorRedColor": "#C03030",
+          "hoverTextColor": "#108E72",
+          "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
+          "paddingTop": "2.5em",
+          "primary": "#0BA986",
+          "primaryColor": "#0BA986",
+          "primaryDark": "#11856B",
+          "primaryTextColor": "#1E2428",
+          "secondary": "#11856B",
+          "secondaryBlue": "rgb(81, 123, 162, 1)",
+          "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+          "secondaryColor": "#1E3D3B",
+          "secondaryTextColor": "#283035",
+          "tertiaryBackgroundColor": "#F7F7F7",
+          "textPrimary": "#1E2428",
+          "white": "#FFFFFF",
+        },
         "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
         "disabledBackgroundColor": "#D6D6D6",
         "disabledTextColor": "#9B9B9B",
         "divider": "#EBEBEB",
         "errorRedColor": "#C03030",
+        "fontSizes": Array [
+          11,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          28,
+          32,
+        ],
+        "fontWeight": Array [
+          300,
+          "normal",
+          500,
+          700,
+        ],
         "hoverTextColor": "#108E72",
-        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-        "paddingTop": "2.5em",
-        "primary": "#0BA986",
-        "primaryColor": "#0BA986",
-        "primaryDark": "#11856B",
-        "primaryTextColor": "#1E2428",
-        "secondary": "#11856B",
-        "secondaryBlue": "rgb(81, 123, 162, 1)",
-        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-        "secondaryColor": "#1E3D3B",
-        "secondaryTextColor": "#283035",
-        "tertiaryBackgroundColor": "#F7F7F7",
-        "textPrimary": "#1E2428",
-        "white": "#FFFFFF",
-      },
-      "bgPrimary": "#1E2428",
-      "bgSecondary": "#1E3D3B",
-      "borderTextArea": "#979797",
-      "breakpoints": Array [
-        "500px",
-        "52em",
-        "1242px",
-      ],
-      "colors": Object {
-        "bgPrimary": "#1E2428",
-        "bgSecondary": "#1E3D3B",
-        "borderTextArea": "#979797",
-        "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-        "disabledBackgroundColor": "#D6D6D6",
-        "disabledTextColor": "#9B9B9B",
-        "divider": "#EBEBEB",
-        "errorRedColor": "#C03030",
-        "hoverTextColor": "#108E72",
-        "padding": "calc((100vw - \${props => props.theme.breakpoints[2]}) / 2)",
-        "paddingTop": "2.5em",
-        "primary": "#0BA986",
-        "primaryColor": "#0BA986",
-        "primaryDark": "#11856B",
-        "primaryTextColor": "#1E2428",
-        "secondary": "#11856B",
-        "secondaryBlue": "rgb(81, 123, 162, 1)",
-        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-        "secondaryColor": "#1E3D3B",
-        "secondaryTextColor": "#283035",
-        "tertiaryBackgroundColor": "#F7F7F7",
-        "textPrimary": "#1E2428",
-        "white": "#FFFFFF",
-      },
-      "contentBorder": "1px solid rgba(30, 36, 40, 0.19)",
-      "disabledBackgroundColor": "#D6D6D6",
-      "disabledTextColor": "#9B9B9B",
-      "divider": "#EBEBEB",
-      "errorRedColor": "#C03030",
-      "fontSizes": Array [
-        11,
-        13,
-        14,
-        16,
-        18,
-        20,
-        22,
-        28,
-        32,
-      ],
-      "fontWeight": Array [
-        300,
-        "normal",
-        500,
-        700,
-      ],
-      "hoverTextColor": "#108E72",
-      "padContent": "
+        "padContent": "
     max-width: 1242px;
     margin-left: auto;
     margin-right: auto;
@@ -98,150 +366,111 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
       min-width: 90%;
     }
   ",
-      "padding": "calc((100vw - 1242px) / 2)",
-      "paddingTop": "2.5em",
-      "primary": "#0BA986",
-      "primaryColor": "#0BA986",
-      "primaryDark": "#11856B",
-      "primaryTextColor": "#1E2428",
-      "secondary": "#11856B",
-      "secondaryBlue": "rgb(81, 123, 162, 1)",
-      "secondaryBlueDark": "rgb(81, 118, 142, 1)",
-      "secondaryColor": "#1E3D3B",
-      "secondaryTextColor": "#283035",
-      "space": Array [
-        0,
-        10,
-        15,
-        30,
-        60,
-      ],
-      "tertiaryBackgroundColor": "#F7F7F7",
-      "textPrimary": "#1E2428",
-      "white": "#FFFFFF",
-    }
-  }
->
-  <Container
-    articleCount={2}
-    collectionCount={5}
-    description="test description"
-    id="123"
-    imageURL="Image URL"
-    isMemberOfCommunityOwner={false}
-    linkComponent={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            <UserAvatarComponent
-              avatar="avatar url"
-              cardType="COLLECTION"
-              fullWidth={true}
-              imageURL="Image URL"
-              userId="345"
-              username="test username"
-              variant="white"
-            />,
-          ],
+        "padding": "calc((100vw - 1242px) / 2)",
+        "paddingTop": "2.5em",
+        "primary": "#0BA986",
+        "primaryColor": "#0BA986",
+        "primaryDark": "#11856B",
+        "primaryTextColor": "#1E2428",
+        "secondary": "#11856B",
+        "secondaryBlue": "rgb(81, 123, 162, 1)",
+        "secondaryBlueDark": "rgb(81, 118, 142, 1)",
+        "secondaryColor": "#1E3D3B",
+        "secondaryTextColor": "#283035",
+        "space": Array [
+          0,
+          10,
+          15,
+          30,
+          60,
         ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
+        "tertiaryBackgroundColor": "#F7F7F7",
+        "textPrimary": "#1E2428",
+        "white": "#FFFFFF",
       }
     }
-    name="test collection"
-    ownerId="345"
-    routeChangeAction={[MockFunction]}
-    tags={
-      Array [
-        "test",
-        "jest",
-      ]
-    }
-    updated="2019-01-01"
-    url="test url"
-    userAvatar="avatar url"
-    userId="678"
-    username="test username"
   >
-    <CollectionHeader__CollectionHeaderSection>
-      <StyledComponent
-        forwardedComponent={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "attrs": Array [],
-            "componentStyle": ComponentStyle {
-              "componentId": "CollectionHeader__CollectionHeaderSection-sc-5lmo96-0",
-              "isStatic": false,
-              "lastClassName": "egRpFZ",
-              "rules": Array [
-                "display:flex;width:100%;flex-direction:row;z-index:1;padding:",
-                [Function],
-                "px ",
-                [Function],
-                " ",
-                [Function],
-                "px;@media (max-width:500px){flex-direction:column;}",
-              ],
+    <Container
+      articleCount={2}
+      collectionCount={5}
+      description="test description"
+      id="123"
+      imageURL="Image URL"
+      isMemberOfCommunityOwner={false}
+      linkComponent={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              <UserAvatarComponent
+                avatar="avatar url"
+                cardType="COLLECTION"
+                fullWidth={true}
+                imageURL="Image URL"
+                userId="345"
+                username="test username"
+                variant="white"
+              />,
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
             },
-            "displayName": "CollectionHeader__CollectionHeaderSection",
-            "foldedComponentIds": Array [],
-            "render": [Function],
-            "styledComponentId": "CollectionHeader__CollectionHeaderSection-sc-5lmo96-0",
-            "target": "section",
-            "toString": [Function],
-            "warnTooManyClasses": [Function],
-            "withComponent": [Function],
-          }
+          ],
         }
-        forwardedRef={null}
-      >
-        <section
-          className="CollectionHeader__CollectionHeaderSection-sc-5lmo96-0 egRpFZ"
-        >
-          <CollectionHeader__LeftSide
-            tags={
-              Array [
-                "test",
-                "jest",
-              ]
+      }
+      name="test collection"
+      ownerId="345"
+      routeChangeAction={[MockFunction]}
+      tags={
+        Array [
+          "test",
+          "jest",
+        ]
+      }
+      updated="2019-01-01"
+      url="test url"
+      userAvatar="avatar url"
+      userId="678"
+      username="test username"
+    >
+      <CollectionHeader__CollectionHeaderSection>
+        <StyledComponent
+          forwardedComponent={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "CollectionHeader__CollectionHeaderSection-sc-5lmo96-0",
+                "isStatic": false,
+                "lastClassName": "egRpFZ",
+                "rules": Array [
+                  "display:flex;width:100%;flex-direction:row;z-index:1;padding:",
+                  [Function],
+                  "px ",
+                  [Function],
+                  " ",
+                  [Function],
+                  "px;@media (max-width:500px){flex-direction:column;}",
+                ],
+              },
+              "displayName": "CollectionHeader__CollectionHeaderSection",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "CollectionHeader__CollectionHeaderSection-sc-5lmo96-0",
+              "target": "section",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
             }
+          }
+          forwardedRef={null}
+        >
+          <section
+            className="CollectionHeader__CollectionHeaderSection-sc-5lmo96-0 egRpFZ"
           >
-            <StyledComponent
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "CollectionHeader__LeftSide-sc-5lmo96-1",
-                    "isStatic": false,
-                    "lastClassName": "JomUO",
-                    "rules": Array [
-                      "display:flex;flex:3;flex-direction:column;color:white;>:nth-child(2){margin-top:",
-                      [Function],
-                      "px;}>:nth-last-child(2){margin-bottom:",
-                      [Function],
-                      "px;}>:last-child{margin-top:",
-                      [Function],
-                      "px;}@media (max-width:500px){padding:",
-                      [Function],
-                      "px;}",
-                    ],
-                  },
-                  "displayName": "CollectionHeader__LeftSide",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "CollectionHeader__LeftSide-sc-5lmo96-1",
-                  "target": "div",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
-              }
-              forwardedRef={null}
+            <CollectionHeader__LeftSide
               tags={
                 Array [
                   "test",
@@ -249,190 +478,74 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                 ]
               }
             >
-              <div
-                className="CollectionHeader__LeftSide-sc-5lmo96-1 JomUO"
-              >
-                <Typography__component>
-                  <StyledComponent
-                    forwardedComponent={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "attrs": Array [],
-                        "componentStyle": ComponentStyle {
-                          "componentId": "Typography__component-sc-36xkf6-0",
-                          "isStatic": false,
-                          "lastClassName": "jMarAF",
-                          "rules": Array [
-                            "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
-                            [Function],
-                            ";text-align:",
-                            [Function],
-                            ";",
-                            [Function],
-                            " ",
-                            [Function],
-                          ],
-                        },
-                        "displayName": "Typography__component",
-                        "foldedComponentIds": Array [],
-                        "render": [Function],
-                        "styledComponentId": "Typography__component-sc-36xkf6-0",
-                        "target": "span",
-                        "toString": [Function],
-                        "warnTooManyClasses": [Function],
-                        "withComponent": [Function],
-                      }
-                    }
-                    forwardedRef={null}
-                  >
-                    <span
-                      className="Typography__component-sc-36xkf6-0 kALGmD"
-                    >
-                      Collection Updated 
-                      8 months ago
-                    </span>
-                  </StyledComponent>
-                </Typography__component>
-                <Typography__styledComponent
-                  color="white"
-                >
-                  <StyledComponent
-                    color="white"
-                    forwardedComponent={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "attrs": Array [],
-                        "componentStyle": ComponentStyle {
-                          "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                          "isStatic": false,
-                          "lastClassName": "iLJkHN",
-                          "rules": Array [
-                            "color:",
-                            [Function],
-                            ";margin:0px;font-weight:",
-                            "500",
-                            ";",
-                            ";font-size:",
-                            "28",
-                            "px;text-transform:",
-                            [Function],
-                            ";text-align:",
-                            [Function],
-                            ";:hover{color:",
-                            [Function],
-                            ";cursor:",
-                            [Function],
-                            ";}",
-                          ],
-                        },
-                        "displayName": "Typography__styledComponent",
-                        "foldedComponentIds": Array [],
-                        "render": [Function],
-                        "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                        "target": "span",
-                        "toString": [Function],
-                        "warnTooManyClasses": [Function],
-                        "withComponent": [Function],
-                      }
-                    }
-                    forwardedRef={null}
-                  >
-                    <span
-                      className="Typography__styledComponent-sc-36xkf6-5 iLJkHN"
-                      color="white"
-                    >
-                      test collection
-                    </span>
-                  </StyledComponent>
-                </Typography__styledComponent>
-                <Typography__styledComponent
-                  color="white"
-                >
-                  <StyledComponent
-                    color="white"
-                    forwardedComponent={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "attrs": Array [],
-                        "componentStyle": ComponentStyle {
-                          "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                          "isStatic": false,
-                          "lastClassName": "cjrhSn",
-                          "rules": Array [
-                            "color:",
-                            [Function],
-                            ";margin:0px;font-weight:",
-                            "bold",
-                            ";",
-                            ";font-size:",
-                            "16",
-                            "px;text-transform:",
-                            [Function],
-                            ";text-align:",
-                            [Function],
-                            ";:hover{color:",
-                            [Function],
-                            ";cursor:",
-                            [Function],
-                            ";}",
-                          ],
-                        },
-                        "displayName": "Typography__styledComponent",
-                        "foldedComponentIds": Array [],
-                        "render": [Function],
-                        "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                        "target": "span",
-                        "toString": [Function],
-                        "warnTooManyClasses": [Function],
-                        "withComponent": [Function],
-                      }
-                    }
-                    forwardedRef={null}
-                  >
-                    <span
-                      className="Typography__styledComponent-sc-36xkf6-5 cjrhSn"
-                      color="white"
-                    >
-                      test description
-                    </span>
-                  </StyledComponent>
-                </Typography__styledComponent>
-                <TagList
-                  color="white"
-                  maxTags={5}
-                  routeChangeAction={[MockFunction]}
-                  tags={
-                    Array [
-                      "test",
-                      "jest",
-                    ]
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "CollectionHeader__LeftSide-sc-5lmo96-1",
+                      "isStatic": false,
+                      "lastClassName": "JomUO",
+                      "rules": Array [
+                        "display:flex;flex:3;flex-direction:column;color:white;>:nth-child(2){margin-top:",
+                        [Function],
+                        "px;}>:nth-last-child(2){margin-bottom:",
+                        [Function],
+                        "px;}>:last-child{margin-top:",
+                        [Function],
+                        "px;}@media (max-width:500px){padding:",
+                        [Function],
+                        "px;}",
+                      ],
+                    },
+                    "displayName": "CollectionHeader__LeftSide",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "CollectionHeader__LeftSide-sc-5lmo96-1",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
                   }
+                }
+                forwardedRef={null}
+                tags={
+                  Array [
+                    "test",
+                    "jest",
+                  ]
+                }
+              >
+                <div
+                  className="CollectionHeader__LeftSide-sc-5lmo96-1 JomUO"
                 >
-                  <TagList__Container>
+                  <Typography__component>
                     <StyledComponent
                       forwardedComponent={
                         Object {
                           "$$typeof": Symbol(react.forward_ref),
                           "attrs": Array [],
                           "componentStyle": ComponentStyle {
-                            "componentId": "TagList__Container-ipfhd9-0",
+                            "componentId": "Typography__component-sc-36xkf6-0",
                             "isStatic": false,
-                            "lastClassName": "ihYPdv",
+                            "lastClassName": "jMarAF",
                             "rules": Array [
-                              "display:flex;margin:",
-                              "10",
-                              "px 0 0 0;flex-direction:",
+                              "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
                               [Function],
-                              ";flex-wrap:wrap;justify-content:",
+                              ";text-align:",
                               [Function],
                               ";",
+                              [Function],
+                              " ",
+                              [Function],
                             ],
                           },
-                          "displayName": "TagList__Container",
+                          "displayName": "Typography__component",
                           "foldedComponentIds": Array [],
                           "render": [Function],
-                          "styledComponentId": "TagList__Container-ipfhd9-0",
-                          "target": "div",
+                          "styledComponentId": "Typography__component-sc-36xkf6-0",
+                          "target": "span",
                           "toString": [Function],
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
@@ -440,153 +553,51 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                       }
                       forwardedRef={null}
                     >
-                      <div
-                        className="TagList__Container-ipfhd9-0 ihYPdv"
+                      <span
+                        className="Typography__component-sc-36xkf6-0 kALGmD"
                       >
-                        <TagList__StyledTag
-                          color="white"
-                          hiddenTags={false}
-                          key="0"
-                          onClick={[Function]}
-                        >
-                          <StyledComponent
-                            color="white"
-                            forwardedComponent={
-                              Object {
-                                "$$typeof": Symbol(react.forward_ref),
-                                "attrs": Array [],
-                                "componentStyle": ComponentStyle {
-                                  "componentId": "TagList__StyledTag-ipfhd9-1",
-                                  "isStatic": false,
-                                  "lastClassName": "kEVsZi",
-                                  "rules": Array [
-                                    "cursor:pointer;transition:0.3s;color:",
-                                    [Function],
-                                    ";&:not(:last-child):after{content:'•';color:",
-                                    [Function],
-                                    ";margin:",
-                                    "5",
-                                    "px;font-weight:",
-                                    "700",
-                                    ";}&:hover{color:",
-                                    "#0BA986",
-                                    ";}",
-                                    [Function],
-                                    ";",
-                                    [Function],
-                                    ";",
-                                  ],
-                                },
-                                "displayName": "TagList__StyledTag",
-                                "foldedComponentIds": Array [],
-                                "render": [Function],
-                                "styledComponentId": "TagList__StyledTag-ipfhd9-1",
-                                "target": "div",
-                                "toString": [Function],
-                                "warnTooManyClasses": [Function],
-                                "withComponent": [Function],
-                              }
-                            }
-                            forwardedRef={null}
-                            hiddenTags={false}
-                            onClick={[Function]}
-                          >
-                            <div
-                              className="TagList__StyledTag-ipfhd9-1 kEVsZi"
-                              color="white"
-                              onClick={[Function]}
-                            >
-                              test
-                            </div>
-                          </StyledComponent>
-                        </TagList__StyledTag>
-                        <TagList__StyledTag
-                          color="white"
-                          hiddenTags={false}
-                          key="1"
-                          onClick={[Function]}
-                        >
-                          <StyledComponent
-                            color="white"
-                            forwardedComponent={
-                              Object {
-                                "$$typeof": Symbol(react.forward_ref),
-                                "attrs": Array [],
-                                "componentStyle": ComponentStyle {
-                                  "componentId": "TagList__StyledTag-ipfhd9-1",
-                                  "isStatic": false,
-                                  "lastClassName": "kEVsZi",
-                                  "rules": Array [
-                                    "cursor:pointer;transition:0.3s;color:",
-                                    [Function],
-                                    ";&:not(:last-child):after{content:'•';color:",
-                                    [Function],
-                                    ";margin:",
-                                    "5",
-                                    "px;font-weight:",
-                                    "700",
-                                    ";}&:hover{color:",
-                                    "#0BA986",
-                                    ";}",
-                                    [Function],
-                                    ";",
-                                    [Function],
-                                    ";",
-                                  ],
-                                },
-                                "displayName": "TagList__StyledTag",
-                                "foldedComponentIds": Array [],
-                                "render": [Function],
-                                "styledComponentId": "TagList__StyledTag-ipfhd9-1",
-                                "target": "div",
-                                "toString": [Function],
-                                "warnTooManyClasses": [Function],
-                                "withComponent": [Function],
-                              }
-                            }
-                            forwardedRef={null}
-                            hiddenTags={false}
-                            onClick={[Function]}
-                          >
-                            <div
-                              className="TagList__StyledTag-ipfhd9-1 kEVsZi"
-                              color="white"
-                              onClick={[Function]}
-                            >
-                              jest
-                            </div>
-                          </StyledComponent>
-                        </TagList__StyledTag>
-                      </div>
+                        Collection Updated 
+                        8 months ago
+                      </span>
                     </StyledComponent>
-                  </TagList__Container>
-                </TagList>
-                <Container
-                  color="white"
-                  title="test collection"
-                  url="test url"
-                >
-                  <ShareArticle__ReferenceContainer>
+                  </Typography__component>
+                  <Typography__styledComponent
+                    color="white"
+                  >
                     <StyledComponent
+                      color="white"
                       forwardedComponent={
                         Object {
                           "$$typeof": Symbol(react.forward_ref),
                           "attrs": Array [],
                           "componentStyle": ComponentStyle {
-                            "componentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
-                            "isStatic": true,
-                            "lastClassName": "hNNjpZ",
+                            "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                            "isStatic": false,
+                            "lastClassName": "iLJkHN",
                             "rules": Array [
-                              "display:flex;width:",
-                              "70",
-                              "px;",
+                              "color:",
+                              [Function],
+                              ";margin:0px;font-weight:",
+                              "500",
+                              ";",
+                              ";font-size:",
+                              "28",
+                              "px;text-transform:",
+                              [Function],
+                              ";text-align:",
+                              [Function],
+                              ";:hover{color:",
+                              [Function],
+                              ";cursor:",
+                              [Function],
+                              ";}",
                             ],
                           },
-                          "displayName": "ShareArticle__ReferenceContainer",
+                          "displayName": "Typography__styledComponent",
                           "foldedComponentIds": Array [],
                           "render": [Function],
-                          "styledComponentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
-                          "target": "section",
+                          "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                          "target": "span",
                           "toString": [Function],
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
@@ -594,258 +605,819 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                       }
                       forwardedRef={null}
                     >
-                      <section
-                        className="ShareArticle__ReferenceContainer-sc-1qj1dsq-0 hNNjpZ"
+                      <span
+                        className="Typography__styledComponent-sc-36xkf6-5 iLJkHN"
+                        color="white"
                       >
-                        <Tooltip
-                          animateFill={true}
-                          animation="shift"
-                          arrow={false}
-                          arrowSize="regular"
-                          className=""
-                          delay={0}
-                          disabled={false}
-                          distance={10}
-                          duration={375}
-                          followCursor={false}
-                          hideDelay={0}
-                          hideDuration={375}
-                          hideOnClick={true}
-                          html={
-                            <Content
-                              title="test collection"
-                              url="test url"
-                            />
+                        test collection
+                      </span>
+                    </StyledComponent>
+                  </Typography__styledComponent>
+                  <Typography__styledComponent
+                    color="white"
+                  >
+                    <StyledComponent
+                      color="white"
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                            "isStatic": false,
+                            "lastClassName": "cjrhSn",
+                            "rules": Array [
+                              "color:",
+                              [Function],
+                              ";margin:0px;font-weight:",
+                              "bold",
+                              ";",
+                              ";font-size:",
+                              "16",
+                              "px;text-transform:",
+                              [Function],
+                              ";text-align:",
+                              [Function],
+                              ";:hover{color:",
+                              [Function],
+                              ";cursor:",
+                              [Function],
+                              ";}",
+                            ],
+                          },
+                          "displayName": "Typography__styledComponent",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                          "target": "span",
+                          "toString": [Function],
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                    >
+                      <span
+                        className="Typography__styledComponent-sc-36xkf6-5 cjrhSn"
+                        color="white"
+                      >
+                        test description
+                      </span>
+                    </StyledComponent>
+                  </Typography__styledComponent>
+                  <TagList
+                    color="white"
+                    maxTags={5}
+                    routeChangeAction={[MockFunction]}
+                    tags={
+                      Array [
+                        "test",
+                        "jest",
+                      ]
+                    }
+                  >
+                    <TagList__Container>
+                      <StyledComponent
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "TagList__Container-ipfhd9-0",
+                              "isStatic": false,
+                              "lastClassName": "ihYPdv",
+                              "rules": Array [
+                                "display:flex;margin:",
+                                "10",
+                                "px 0 0 0;flex-direction:",
+                                [Function],
+                                ";flex-wrap:wrap;justify-content:",
+                                [Function],
+                                ";",
+                              ],
+                            },
+                            "displayName": "TagList__Container",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "TagList__Container-ipfhd9-0",
+                            "target": "div",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
                           }
-                          inertia={false}
-                          interactive={false}
-                          interactiveBorder={2}
-                          multiple={false}
-                          offset={0}
-                          onHidden={[Function]}
-                          onHide={[Function]}
-                          onRequestClose={[Function]}
-                          onShow={[Function]}
-                          onShown={[Function]}
-                          popperOptions={Object {}}
-                          position="bottom"
-                          size="regular"
-                          sticky={false}
-                          stickyDuration={200}
-                          style={Object {}}
-                          theme="dark"
-                          touchHold={false}
-                          trigger="click"
-                          unmountHTMLWhenHide={true}
+                        }
+                        forwardedRef={null}
+                      >
+                        <div
+                          className="TagList__Container-ipfhd9-0 ihYPdv"
                         >
-                          <div
-                            className=""
-                            style={
-                              Object {
-                                "display": "inline",
-                              }
-                            }
+                          <TagList__StyledTag
+                            color="white"
+                            hiddenTags={false}
+                            key="0"
+                            onClick={[Function]}
                           >
-                            <WithStyles(ForwardRef(Button))
-                              color="primary"
-                              variant="text"
-                            >
-                              <ForwardRef(Button)
-                                classes={
-                                  Object {
-                                    "colorInherit": "MuiButton-colorInherit",
-                                    "contained": "MuiButton-contained",
-                                    "containedPrimary": "MuiButton-containedPrimary",
-                                    "containedSecondary": "MuiButton-containedSecondary",
-                                    "disabled": "Mui-disabled",
-                                    "focusVisible": "Mui-focusVisible",
-                                    "fullWidth": "MuiButton-fullWidth",
-                                    "label": "MuiButton-label",
-                                    "outlined": "MuiButton-outlined",
-                                    "outlinedPrimary": "MuiButton-outlinedPrimary",
-                                    "outlinedSecondary": "MuiButton-outlinedSecondary",
-                                    "root": "MuiButton-root",
-                                    "sizeLarge": "MuiButton-sizeLarge",
-                                    "sizeSmall": "MuiButton-sizeSmall",
-                                    "text": "MuiButton-text",
-                                    "textPrimary": "MuiButton-textPrimary",
-                                    "textSecondary": "MuiButton-textSecondary",
-                                  }
+                            <StyledComponent
+                              color="white"
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "TagList__StyledTag-ipfhd9-1",
+                                    "isStatic": false,
+                                    "lastClassName": "kEVsZi",
+                                    "rules": Array [
+                                      "cursor:pointer;transition:0.3s;color:",
+                                      [Function],
+                                      ";&:not(:last-child):after{content:'•';color:",
+                                      [Function],
+                                      ";margin:",
+                                      "5",
+                                      "px;font-weight:",
+                                      "700",
+                                      ";}&:hover{color:",
+                                      "#0BA986",
+                                      ";}",
+                                      [Function],
+                                      ";",
+                                      [Function],
+                                      ";",
+                                    ],
+                                  },
+                                  "displayName": "TagList__StyledTag",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "TagList__StyledTag-ipfhd9-1",
+                                  "target": "div",
+                                  "toString": [Function],
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
                                 }
+                              }
+                              forwardedRef={null}
+                              hiddenTags={false}
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="TagList__StyledTag-ipfhd9-1 kEVsZi"
+                                color="white"
+                                onClick={[Function]}
+                              >
+                                test
+                              </div>
+                            </StyledComponent>
+                          </TagList__StyledTag>
+                          <TagList__StyledTag
+                            color="white"
+                            hiddenTags={false}
+                            key="1"
+                            onClick={[Function]}
+                          >
+                            <StyledComponent
+                              color="white"
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "TagList__StyledTag-ipfhd9-1",
+                                    "isStatic": false,
+                                    "lastClassName": "kEVsZi",
+                                    "rules": Array [
+                                      "cursor:pointer;transition:0.3s;color:",
+                                      [Function],
+                                      ";&:not(:last-child):after{content:'•';color:",
+                                      [Function],
+                                      ";margin:",
+                                      "5",
+                                      "px;font-weight:",
+                                      "700",
+                                      ";}&:hover{color:",
+                                      "#0BA986",
+                                      ";}",
+                                      [Function],
+                                      ";",
+                                      [Function],
+                                      ";",
+                                    ],
+                                  },
+                                  "displayName": "TagList__StyledTag",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "TagList__StyledTag-ipfhd9-1",
+                                  "target": "div",
+                                  "toString": [Function],
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                              hiddenTags={false}
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="TagList__StyledTag-ipfhd9-1 kEVsZi"
+                                color="white"
+                                onClick={[Function]}
+                              >
+                                jest
+                              </div>
+                            </StyledComponent>
+                          </TagList__StyledTag>
+                        </div>
+                      </StyledComponent>
+                    </TagList__Container>
+                  </TagList>
+                  <Container
+                    color="white"
+                    title="test collection"
+                    url="test url"
+                  >
+                    <ShareArticle__ReferenceContainer>
+                      <StyledComponent
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
+                              "isStatic": true,
+                              "lastClassName": "hNNjpZ",
+                              "rules": Array [
+                                "display:flex;width:",
+                                "70",
+                                "px;",
+                              ],
+                            },
+                            "displayName": "ShareArticle__ReferenceContainer",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
+                            "target": "section",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                      >
+                        <section
+                          className="ShareArticle__ReferenceContainer-sc-1qj1dsq-0 hNNjpZ"
+                        >
+                          <Tooltip
+                            animateFill={true}
+                            animation="shift"
+                            arrow={false}
+                            arrowSize="regular"
+                            className=""
+                            delay={0}
+                            disabled={false}
+                            distance={10}
+                            duration={375}
+                            followCursor={false}
+                            hideDelay={0}
+                            hideDuration={375}
+                            hideOnClick={true}
+                            html={
+                              <Content
+                                title="test collection"
+                                url="test url"
+                              />
+                            }
+                            inertia={false}
+                            interactive={false}
+                            interactiveBorder={2}
+                            multiple={false}
+                            offset={0}
+                            onHidden={[Function]}
+                            onHide={[Function]}
+                            onRequestClose={[Function]}
+                            onShow={[Function]}
+                            onShown={[Function]}
+                            popperOptions={Object {}}
+                            position="bottom"
+                            size="regular"
+                            sticky={false}
+                            stickyDuration={200}
+                            style={Object {}}
+                            theme="dark"
+                            touchHold={false}
+                            trigger="click"
+                            unmountHTMLWhenHide={true}
+                          >
+                            <div
+                              className=""
+                              style={
+                                Object {
+                                  "display": "inline",
+                                }
+                              }
+                            >
+                              <ButtonComp
                                 color="primary"
                                 variant="text"
                               >
-                                <WithStyles(ForwardRef(ButtonBase))
-                                  className="MuiButton-root MuiButton-text MuiButton-textPrimary"
-                                  component="button"
-                                  disabled={false}
-                                  focusRipple={true}
-                                  focusVisibleClassName="Mui-focusVisible"
-                                  type="button"
+                                <WithStyles(ForwardRef(Button))
+                                  className=""
+                                  color="primary"
+                                  variant="text"
                                 >
-                                  <ForwardRef(ButtonBase)
-                                    className="MuiButton-root MuiButton-text MuiButton-textPrimary"
+                                  <ForwardRef(Button)
+                                    className=""
                                     classes={
                                       Object {
+                                        "colorInherit": "MuiButton-colorInherit",
+                                        "contained": "MuiButton-contained",
+                                        "containedPrimary": "MuiButton-containedPrimary",
+                                        "containedSecondary": "MuiButton-containedSecondary",
                                         "disabled": "Mui-disabled",
                                         "focusVisible": "Mui-focusVisible",
-                                        "root": "MuiButtonBase-root",
+                                        "fullWidth": "MuiButton-fullWidth",
+                                        "label": "MuiButton-label",
+                                        "outlined": "MuiButton-outlined",
+                                        "outlinedPrimary": "MuiButton-outlinedPrimary",
+                                        "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                        "root": "MuiButton-root",
+                                        "sizeLarge": "MuiButton-sizeLarge",
+                                        "sizeSmall": "MuiButton-sizeSmall",
+                                        "text": "MuiButton-text",
+                                        "textPrimary": "MuiButton-textPrimary",
+                                        "textSecondary": "MuiButton-textSecondary",
                                       }
                                     }
-                                    component="button"
-                                    disabled={false}
-                                    focusRipple={true}
-                                    focusVisibleClassName="Mui-focusVisible"
-                                    type="button"
+                                    color="primary"
+                                    variant="text"
                                   >
-                                    <button
-                                      className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
+                                    <WithStyles(ForwardRef(ButtonBase))
+                                      className="MuiButton-root MuiButton-text MuiButton-textPrimary"
+                                      component="button"
                                       disabled={false}
-                                      onBlur={[Function]}
-                                      onDragLeave={[Function]}
-                                      onFocus={[Function]}
-                                      onKeyDown={[Function]}
-                                      onKeyUp={[Function]}
-                                      onMouseDown={[Function]}
-                                      onMouseLeave={[Function]}
-                                      onMouseUp={[Function]}
-                                      onTouchEnd={[Function]}
-                                      onTouchMove={[Function]}
-                                      onTouchStart={[Function]}
-                                      tabIndex={0}
+                                      focusRipple={true}
+                                      focusVisibleClassName="Mui-focusVisible"
                                       type="button"
                                     >
-                                      <span
-                                        className="MuiButton-label"
+                                      <ForwardRef(ButtonBase)
+                                        className="MuiButton-root MuiButton-text MuiButton-textPrimary"
+                                        classes={
+                                          Object {
+                                            "disabled": "Mui-disabled",
+                                            "focusVisible": "Mui-focusVisible",
+                                            "root": "MuiButtonBase-root",
+                                          }
+                                        }
+                                        component="button"
+                                        disabled={false}
+                                        focusRipple={true}
+                                        focusVisibleClassName="Mui-focusVisible"
+                                        type="button"
                                       >
-                                        <svg
-                                          role="img"
-                                          viewBox="0 0 448 512"
-                                          xmlns="http://www.w3.org/2000/svg"
+                                        <button
+                                          className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
+                                          disabled={false}
+                                          onBlur={[Function]}
+                                          onDragLeave={[Function]}
+                                          onFocus={[Function]}
+                                          onKeyDown={[Function]}
+                                          onKeyUp={[Function]}
+                                          onMouseDown={[Function]}
+                                          onMouseLeave={[Function]}
+                                          onMouseUp={[Function]}
+                                          onTouchEnd={[Function]}
+                                          onTouchMove={[Function]}
+                                          onTouchStart={[Function]}
+                                          tabIndex={0}
+                                          type="button"
                                         >
-                                          <path
-                                            className=""
-                                            d="M352 320c-22.608 0-43.387 7.819-59.79 20.895l-102.486-64.054a96.551 96.551 0 0 0 0-41.683l102.486-64.054C308.613 184.181 329.392 192 352 192c53.019 0 96-42.981 96-96S405.019 0 352 0s-96 42.981-96 96c0 7.158.79 14.13 2.276 20.841L155.79 180.895C139.387 167.819 118.608 160 96 160c-53.019 0-96 42.981-96 96s42.981 96 96 96c22.608 0 43.387-7.819 59.79-20.895l102.486 64.054A96.301 96.301 0 0 0 256 416c0 53.019 42.981 96 96 96s96-42.981 96-96-42.981-96-96-96z"
-                                            fill="#0BA986"
-                                          />
-                                        </svg>
-                                        Share
-                                      </span>
-                                      <NoSsr>
-                                        <WithStyles(undefined)
-                                          center={false}
-                                        >
-                                          <ForwardRef(TouchRipple)
-                                            center={false}
-                                            classes={
-                                              Object {
-                                                "child": "MuiTouchRipple-child",
-                                                "childLeaving": "MuiTouchRipple-childLeaving",
-                                                "childPulsate": "MuiTouchRipple-childPulsate",
-                                                "ripple": "MuiTouchRipple-ripple",
-                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                                                "rippleVisible": "MuiTouchRipple-rippleVisible",
-                                                "root": "MuiTouchRipple-root",
-                                              }
-                                            }
+                                          <span
+                                            className="MuiButton-label"
                                           >
-                                            <span
-                                              className="MuiTouchRipple-root"
+                                            <svg
+                                              role="img"
+                                              viewBox="0 0 448 512"
+                                              xmlns="http://www.w3.org/2000/svg"
                                             >
-                                              <TransitionGroup
-                                                childFactory={[Function]}
-                                                component={null}
-                                                exit={true}
+                                              <path
+                                                className=""
+                                                d="M352 320c-22.608 0-43.387 7.819-59.79 20.895l-102.486-64.054a96.551 96.551 0 0 0 0-41.683l102.486-64.054C308.613 184.181 329.392 192 352 192c53.019 0 96-42.981 96-96S405.019 0 352 0s-96 42.981-96 96c0 7.158.79 14.13 2.276 20.841L155.79 180.895C139.387 167.819 118.608 160 96 160c-53.019 0-96 42.981-96 96s42.981 96 96 96c22.608 0 43.387-7.819 59.79-20.895l102.486 64.054A96.301 96.301 0 0 0 256 416c0 53.019 42.981 96 96 96s96-42.981 96-96-42.981-96-96-96z"
+                                                fill="#0BA986"
                                               />
-                                            </span>
-                                          </ForwardRef(TouchRipple)>
-                                        </WithStyles(undefined)>
-                                      </NoSsr>
-                                    </button>
-                                  </ForwardRef(ButtonBase)>
-                                </WithStyles(ForwardRef(ButtonBase))>
-                              </ForwardRef(Button)>
-                            </WithStyles(ForwardRef(Button))>
-                          </div>
-                        </Tooltip>
-                      </section>
-                    </StyledComponent>
-                  </ShareArticle__ReferenceContainer>
-                </Container>
-              </div>
-            </StyledComponent>
-          </CollectionHeader__LeftSide>
-          <CollectionHeader__RightSide>
-            <StyledComponent
-              forwardedComponent={
-                Object {
-                  "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
-                  "componentStyle": ComponentStyle {
-                    "componentId": "CollectionHeader__RightSide-sc-5lmo96-2",
-                    "isStatic": false,
-                    "lastClassName": "gynFVV",
-                    "rules": Array [
-                      "display:flex;flex:1;align-items:center;justify-content:center;flex-direction:column;>:first-child{margin-bottom:",
-                      [Function],
-                      "px;}>:nth-child(2){margin-bottom:",
-                      [Function],
-                      "px;}> button:last-child{margin-top:",
-                      [Function],
-                      "px;}",
-                    ],
-                  },
-                  "displayName": "CollectionHeader__RightSide",
-                  "foldedComponentIds": Array [],
-                  "render": [Function],
-                  "styledComponentId": "CollectionHeader__RightSide-sc-5lmo96-2",
-                  "target": "div",
-                  "toString": [Function],
-                  "warnTooManyClasses": [Function],
-                  "withComponent": [Function],
-                }
-              }
-              forwardedRef={null}
-            >
-              <div
-                className="CollectionHeader__RightSide-sc-5lmo96-2 gynFVV"
-              >
-                <Container
-                  pageType="CollectionPage"
-                  statistics={
-                    Array [
-                      Object {
-                        "count": 2,
-                        "name": "Articles",
-                      },
-                      Object {
-                        "count": 5,
-                        "name": "Collections",
-                      },
-                    ]
+                                            </svg>
+                                            Share
+                                          </span>
+                                          <NoSsr>
+                                            <WithStyles(undefined)
+                                              center={false}
+                                            >
+                                              <ForwardRef(TouchRipple)
+                                                center={false}
+                                                classes={
+                                                  Object {
+                                                    "child": "MuiTouchRipple-child",
+                                                    "childLeaving": "MuiTouchRipple-childLeaving",
+                                                    "childPulsate": "MuiTouchRipple-childPulsate",
+                                                    "ripple": "MuiTouchRipple-ripple",
+                                                    "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                    "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                    "root": "MuiTouchRipple-root",
+                                                  }
+                                                }
+                                              >
+                                                <span
+                                                  className="MuiTouchRipple-root"
+                                                >
+                                                  <TransitionGroup
+                                                    childFactory={[Function]}
+                                                    component={null}
+                                                    exit={true}
+                                                  />
+                                                </span>
+                                              </ForwardRef(TouchRipple)>
+                                            </WithStyles(undefined)>
+                                          </NoSsr>
+                                        </button>
+                                      </ForwardRef(ButtonBase)>
+                                    </WithStyles(ForwardRef(ButtonBase))>
+                                  </ForwardRef(Button)>
+                                </WithStyles(ForwardRef(Button))>
+                              </ButtonComp>
+                            </div>
+                          </Tooltip>
+                        </section>
+                      </StyledComponent>
+                    </ShareArticle__ReferenceContainer>
+                  </Container>
+                </div>
+              </StyledComponent>
+            </CollectionHeader__LeftSide>
+            <CollectionHeader__RightSide>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "CollectionHeader__RightSide-sc-5lmo96-2",
+                      "isStatic": false,
+                      "lastClassName": "gynFVV",
+                      "rules": Array [
+                        "display:flex;flex:1;align-items:center;justify-content:center;flex-direction:column;>:first-child{margin-bottom:",
+                        [Function],
+                        "px;}>:nth-child(2){margin-bottom:",
+                        [Function],
+                        "px;}> button:last-child{margin-top:",
+                        [Function],
+                        "px;}",
+                      ],
+                    },
+                    "displayName": "CollectionHeader__RightSide",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "CollectionHeader__RightSide-sc-5lmo96-2",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
                   }
+                }
+                forwardedRef={null}
+              >
+                <div
+                  className="CollectionHeader__RightSide-sc-5lmo96-2 gynFVV"
                 >
-                  <StatisticsContainer>
+                  <Container
+                    pageType="CollectionPage"
+                    statistics={
+                      Array [
+                        Object {
+                          "count": 2,
+                          "name": "Articles",
+                        },
+                        Object {
+                          "count": 5,
+                          "name": "Collections",
+                        },
+                      ]
+                    }
+                  >
+                    <StatisticsContainer>
+                      <StyledComponent
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "StatisticsContainer-sc-18atadq-0",
+                              "isStatic": false,
+                              "lastClassName": "kulLJ",
+                              "rules": Array [
+                                "display:flex;flex-direction:row;>:not(:first-child){margin-left:",
+                                [Function],
+                                "px;}",
+                              ],
+                            },
+                            "displayName": "StatisticsContainer",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "StatisticsContainer-sc-18atadq-0",
+                            "target": "section",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                      >
+                        <section
+                          className="StatisticsContainer-sc-18atadq-0 kulLJ"
+                        >
+                          <Container
+                            count={2}
+                            key="Articles"
+                            name="Articles"
+                            pageType="CollectionPage"
+                          >
+                            <StatisticCount__SectionContainer
+                              key="Articles"
+                            >
+                              <StyledComponent
+                                forwardedComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "attrs": Array [],
+                                    "componentStyle": ComponentStyle {
+                                      "componentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
+                                      "isStatic": true,
+                                      "lastClassName": "hBrKEM",
+                                      "rules": Array [
+                                        "display:flex;flex-direction:column;align-items:center;max-width:150px;",
+                                      ],
+                                    },
+                                    "displayName": "StatisticCount__SectionContainer",
+                                    "foldedComponentIds": Array [],
+                                    "render": [Function],
+                                    "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
+                                    "target": "section",
+                                    "toString": [Function],
+                                    "warnTooManyClasses": [Function],
+                                    "withComponent": [Function],
+                                  }
+                                }
+                                forwardedRef={null}
+                              >
+                                <section
+                                  className="StatisticCount__SectionContainer-sc-1xyux9h-1 hBrKEM"
+                                >
+                                  <StatisticCount__Count
+                                    pageType="CollectionPage"
+                                  >
+                                    <StyledComponent
+                                      forwardedComponent={
+                                        Object {
+                                          "$$typeof": Symbol(react.forward_ref),
+                                          "attrs": Array [],
+                                          "componentStyle": ComponentStyle {
+                                            "componentId": "StatisticCount__Count-sc-1xyux9h-0",
+                                            "isStatic": false,
+                                            "lastClassName": "hyOXiO",
+                                            "rules": Array [
+                                              "color:white;font-size:",
+                                              [Function],
+                                              "px;font-weight:",
+                                              [Function],
+                                              ";margin:0px;margin-bottom:",
+                                              [Function],
+                                              "px;opacity:",
+                                              [Function],
+                                              ";",
+                                            ],
+                                          },
+                                          "displayName": "StatisticCount__Count",
+                                          "foldedComponentIds": Array [],
+                                          "render": [Function],
+                                          "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
+                                          "target": "h3",
+                                          "toString": [Function],
+                                          "warnTooManyClasses": [Function],
+                                          "withComponent": [Function],
+                                        }
+                                      }
+                                      forwardedRef={null}
+                                      pageType="CollectionPage"
+                                    >
+                                      <h3
+                                        className="StatisticCount__Count-sc-1xyux9h-0 hyOXiO"
+                                      >
+                                        2
+                                      </h3>
+                                    </StyledComponent>
+                                  </StatisticCount__Count>
+                                  <StatisticCount__Name
+                                    pageType="CollectionPage"
+                                  >
+                                    <StyledComponent
+                                      forwardedComponent={
+                                        Object {
+                                          "$$typeof": Symbol(react.forward_ref),
+                                          "attrs": Array [],
+                                          "componentStyle": ComponentStyle {
+                                            "componentId": "StatisticCount__Name-sc-1xyux9h-2",
+                                            "isStatic": false,
+                                            "lastClassName": "glOdbU",
+                                            "rules": Array [
+                                              "color:white;font-size:",
+                                              [Function],
+                                              "px;font-weight:",
+                                              [Function],
+                                              ";opacity:",
+                                              [Function],
+                                              ";text-transform:uppercase;",
+                                            ],
+                                          },
+                                          "displayName": "StatisticCount__Name",
+                                          "foldedComponentIds": Array [],
+                                          "render": [Function],
+                                          "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
+                                          "target": "span",
+                                          "toString": [Function],
+                                          "warnTooManyClasses": [Function],
+                                          "withComponent": [Function],
+                                        }
+                                      }
+                                      forwardedRef={null}
+                                      pageType="CollectionPage"
+                                    >
+                                      <span
+                                        className="StatisticCount__Name-sc-1xyux9h-2 glOdbU"
+                                      >
+                                        Articles
+                                      </span>
+                                    </StyledComponent>
+                                  </StatisticCount__Name>
+                                </section>
+                              </StyledComponent>
+                            </StatisticCount__SectionContainer>
+                          </Container>
+                          <Container
+                            count={5}
+                            key="Collections"
+                            name="Collections"
+                            pageType="CollectionPage"
+                          >
+                            <StatisticCount__SectionContainer
+                              key="Collections"
+                            >
+                              <StyledComponent
+                                forwardedComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "attrs": Array [],
+                                    "componentStyle": ComponentStyle {
+                                      "componentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
+                                      "isStatic": true,
+                                      "lastClassName": "hBrKEM",
+                                      "rules": Array [
+                                        "display:flex;flex-direction:column;align-items:center;max-width:150px;",
+                                      ],
+                                    },
+                                    "displayName": "StatisticCount__SectionContainer",
+                                    "foldedComponentIds": Array [],
+                                    "render": [Function],
+                                    "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
+                                    "target": "section",
+                                    "toString": [Function],
+                                    "warnTooManyClasses": [Function],
+                                    "withComponent": [Function],
+                                  }
+                                }
+                                forwardedRef={null}
+                              >
+                                <section
+                                  className="StatisticCount__SectionContainer-sc-1xyux9h-1 hBrKEM"
+                                >
+                                  <StatisticCount__Count
+                                    pageType="CollectionPage"
+                                  >
+                                    <StyledComponent
+                                      forwardedComponent={
+                                        Object {
+                                          "$$typeof": Symbol(react.forward_ref),
+                                          "attrs": Array [],
+                                          "componentStyle": ComponentStyle {
+                                            "componentId": "StatisticCount__Count-sc-1xyux9h-0",
+                                            "isStatic": false,
+                                            "lastClassName": "hyOXiO",
+                                            "rules": Array [
+                                              "color:white;font-size:",
+                                              [Function],
+                                              "px;font-weight:",
+                                              [Function],
+                                              ";margin:0px;margin-bottom:",
+                                              [Function],
+                                              "px;opacity:",
+                                              [Function],
+                                              ";",
+                                            ],
+                                          },
+                                          "displayName": "StatisticCount__Count",
+                                          "foldedComponentIds": Array [],
+                                          "render": [Function],
+                                          "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
+                                          "target": "h3",
+                                          "toString": [Function],
+                                          "warnTooManyClasses": [Function],
+                                          "withComponent": [Function],
+                                        }
+                                      }
+                                      forwardedRef={null}
+                                      pageType="CollectionPage"
+                                    >
+                                      <h3
+                                        className="StatisticCount__Count-sc-1xyux9h-0 hyOXiO"
+                                      >
+                                        5
+                                      </h3>
+                                    </StyledComponent>
+                                  </StatisticCount__Count>
+                                  <StatisticCount__Name
+                                    pageType="CollectionPage"
+                                  >
+                                    <StyledComponent
+                                      forwardedComponent={
+                                        Object {
+                                          "$$typeof": Symbol(react.forward_ref),
+                                          "attrs": Array [],
+                                          "componentStyle": ComponentStyle {
+                                            "componentId": "StatisticCount__Name-sc-1xyux9h-2",
+                                            "isStatic": false,
+                                            "lastClassName": "glOdbU",
+                                            "rules": Array [
+                                              "color:white;font-size:",
+                                              [Function],
+                                              "px;font-weight:",
+                                              [Function],
+                                              ";opacity:",
+                                              [Function],
+                                              ";text-transform:uppercase;",
+                                            ],
+                                          },
+                                          "displayName": "StatisticCount__Name",
+                                          "foldedComponentIds": Array [],
+                                          "render": [Function],
+                                          "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
+                                          "target": "span",
+                                          "toString": [Function],
+                                          "warnTooManyClasses": [Function],
+                                          "withComponent": [Function],
+                                        }
+                                      }
+                                      forwardedRef={null}
+                                      pageType="CollectionPage"
+                                    >
+                                      <span
+                                        className="StatisticCount__Name-sc-1xyux9h-2 glOdbU"
+                                      >
+                                        Collections
+                                      </span>
+                                    </StyledComponent>
+                                  </StatisticCount__Name>
+                                </section>
+                              </StyledComponent>
+                            </StatisticCount__SectionContainer>
+                          </Container>
+                        </section>
+                      </StyledComponent>
+                    </StatisticsContainer>
+                  </Container>
+                  <Typography__component
+                    color="white"
+                  >
                     <StyledComponent
+                      color="white"
                       forwardedComponent={
                         Object {
                           "$$typeof": Symbol(react.forward_ref),
                           "attrs": Array [],
                           "componentStyle": ComponentStyle {
-                            "componentId": "StatisticsContainer-sc-18atadq-0",
+                            "componentId": "Typography__component-sc-36xkf6-0",
                             "isStatic": false,
-                            "lastClassName": "kulLJ",
+                            "lastClassName": "jMarAF",
                             "rules": Array [
-                              "display:flex;flex-direction:row;>:not(:first-child){margin-left:",
+                              "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
                               [Function],
-                              "px;}",
+                              ";text-align:",
+                              [Function],
+                              ";",
+                              [Function],
+                              " ",
+                              [Function],
                             ],
                           },
-                          "displayName": "StatisticsContainer",
+                          "displayName": "Typography__component",
                           "foldedComponentIds": Array [],
                           "render": [Function],
-                          "styledComponentId": "StatisticsContainer-sc-18atadq-0",
-                          "target": "section",
+                          "styledComponentId": "Typography__component-sc-36xkf6-0",
+                          "target": "span",
                           "toString": [Function],
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
@@ -853,317 +1425,21 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                       }
                       forwardedRef={null}
                     >
-                      <section
-                        className="StatisticsContainer-sc-18atadq-0 kulLJ"
+                      <span
+                        className="Typography__component-sc-36xkf6-0 jMarAF"
+                        color="white"
                       >
-                        <Container
-                          count={2}
-                          key="Articles"
-                          name="Articles"
-                          pageType="CollectionPage"
-                        >
-                          <StatisticCount__SectionContainer
-                            key="Articles"
-                          >
-                            <StyledComponent
-                              forwardedComponent={
-                                Object {
-                                  "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": Array [],
-                                  "componentStyle": ComponentStyle {
-                                    "componentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
-                                    "isStatic": true,
-                                    "lastClassName": "hBrKEM",
-                                    "rules": Array [
-                                      "display:flex;flex-direction:column;align-items:center;max-width:150px;",
-                                    ],
-                                  },
-                                  "displayName": "StatisticCount__SectionContainer",
-                                  "foldedComponentIds": Array [],
-                                  "render": [Function],
-                                  "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
-                                  "target": "section",
-                                  "toString": [Function],
-                                  "warnTooManyClasses": [Function],
-                                  "withComponent": [Function],
-                                }
-                              }
-                              forwardedRef={null}
-                            >
-                              <section
-                                className="StatisticCount__SectionContainer-sc-1xyux9h-1 hBrKEM"
-                              >
-                                <StatisticCount__Count
-                                  pageType="CollectionPage"
-                                >
-                                  <StyledComponent
-                                    forwardedComponent={
-                                      Object {
-                                        "$$typeof": Symbol(react.forward_ref),
-                                        "attrs": Array [],
-                                        "componentStyle": ComponentStyle {
-                                          "componentId": "StatisticCount__Count-sc-1xyux9h-0",
-                                          "isStatic": false,
-                                          "lastClassName": "hyOXiO",
-                                          "rules": Array [
-                                            "color:white;font-size:",
-                                            [Function],
-                                            "px;font-weight:",
-                                            [Function],
-                                            ";margin:0px;margin-bottom:",
-                                            [Function],
-                                            "px;opacity:",
-                                            [Function],
-                                            ";",
-                                          ],
-                                        },
-                                        "displayName": "StatisticCount__Count",
-                                        "foldedComponentIds": Array [],
-                                        "render": [Function],
-                                        "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
-                                        "target": "h3",
-                                        "toString": [Function],
-                                        "warnTooManyClasses": [Function],
-                                        "withComponent": [Function],
-                                      }
-                                    }
-                                    forwardedRef={null}
-                                    pageType="CollectionPage"
-                                  >
-                                    <h3
-                                      className="StatisticCount__Count-sc-1xyux9h-0 hyOXiO"
-                                    >
-                                      2
-                                    </h3>
-                                  </StyledComponent>
-                                </StatisticCount__Count>
-                                <StatisticCount__Name
-                                  pageType="CollectionPage"
-                                >
-                                  <StyledComponent
-                                    forwardedComponent={
-                                      Object {
-                                        "$$typeof": Symbol(react.forward_ref),
-                                        "attrs": Array [],
-                                        "componentStyle": ComponentStyle {
-                                          "componentId": "StatisticCount__Name-sc-1xyux9h-2",
-                                          "isStatic": false,
-                                          "lastClassName": "glOdbU",
-                                          "rules": Array [
-                                            "color:white;font-size:",
-                                            [Function],
-                                            "px;font-weight:",
-                                            [Function],
-                                            ";opacity:",
-                                            [Function],
-                                            ";text-transform:uppercase;",
-                                          ],
-                                        },
-                                        "displayName": "StatisticCount__Name",
-                                        "foldedComponentIds": Array [],
-                                        "render": [Function],
-                                        "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
-                                        "target": "span",
-                                        "toString": [Function],
-                                        "warnTooManyClasses": [Function],
-                                        "withComponent": [Function],
-                                      }
-                                    }
-                                    forwardedRef={null}
-                                    pageType="CollectionPage"
-                                  >
-                                    <span
-                                      className="StatisticCount__Name-sc-1xyux9h-2 glOdbU"
-                                    >
-                                      Articles
-                                    </span>
-                                  </StyledComponent>
-                                </StatisticCount__Name>
-                              </section>
-                            </StyledComponent>
-                          </StatisticCount__SectionContainer>
-                        </Container>
-                        <Container
-                          count={5}
-                          key="Collections"
-                          name="Collections"
-                          pageType="CollectionPage"
-                        >
-                          <StatisticCount__SectionContainer
-                            key="Collections"
-                          >
-                            <StyledComponent
-                              forwardedComponent={
-                                Object {
-                                  "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": Array [],
-                                  "componentStyle": ComponentStyle {
-                                    "componentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
-                                    "isStatic": true,
-                                    "lastClassName": "hBrKEM",
-                                    "rules": Array [
-                                      "display:flex;flex-direction:column;align-items:center;max-width:150px;",
-                                    ],
-                                  },
-                                  "displayName": "StatisticCount__SectionContainer",
-                                  "foldedComponentIds": Array [],
-                                  "render": [Function],
-                                  "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
-                                  "target": "section",
-                                  "toString": [Function],
-                                  "warnTooManyClasses": [Function],
-                                  "withComponent": [Function],
-                                }
-                              }
-                              forwardedRef={null}
-                            >
-                              <section
-                                className="StatisticCount__SectionContainer-sc-1xyux9h-1 hBrKEM"
-                              >
-                                <StatisticCount__Count
-                                  pageType="CollectionPage"
-                                >
-                                  <StyledComponent
-                                    forwardedComponent={
-                                      Object {
-                                        "$$typeof": Symbol(react.forward_ref),
-                                        "attrs": Array [],
-                                        "componentStyle": ComponentStyle {
-                                          "componentId": "StatisticCount__Count-sc-1xyux9h-0",
-                                          "isStatic": false,
-                                          "lastClassName": "hyOXiO",
-                                          "rules": Array [
-                                            "color:white;font-size:",
-                                            [Function],
-                                            "px;font-weight:",
-                                            [Function],
-                                            ";margin:0px;margin-bottom:",
-                                            [Function],
-                                            "px;opacity:",
-                                            [Function],
-                                            ";",
-                                          ],
-                                        },
-                                        "displayName": "StatisticCount__Count",
-                                        "foldedComponentIds": Array [],
-                                        "render": [Function],
-                                        "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
-                                        "target": "h3",
-                                        "toString": [Function],
-                                        "warnTooManyClasses": [Function],
-                                        "withComponent": [Function],
-                                      }
-                                    }
-                                    forwardedRef={null}
-                                    pageType="CollectionPage"
-                                  >
-                                    <h3
-                                      className="StatisticCount__Count-sc-1xyux9h-0 hyOXiO"
-                                    >
-                                      5
-                                    </h3>
-                                  </StyledComponent>
-                                </StatisticCount__Count>
-                                <StatisticCount__Name
-                                  pageType="CollectionPage"
-                                >
-                                  <StyledComponent
-                                    forwardedComponent={
-                                      Object {
-                                        "$$typeof": Symbol(react.forward_ref),
-                                        "attrs": Array [],
-                                        "componentStyle": ComponentStyle {
-                                          "componentId": "StatisticCount__Name-sc-1xyux9h-2",
-                                          "isStatic": false,
-                                          "lastClassName": "glOdbU",
-                                          "rules": Array [
-                                            "color:white;font-size:",
-                                            [Function],
-                                            "px;font-weight:",
-                                            [Function],
-                                            ";opacity:",
-                                            [Function],
-                                            ";text-transform:uppercase;",
-                                          ],
-                                        },
-                                        "displayName": "StatisticCount__Name",
-                                        "foldedComponentIds": Array [],
-                                        "render": [Function],
-                                        "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
-                                        "target": "span",
-                                        "toString": [Function],
-                                        "warnTooManyClasses": [Function],
-                                        "withComponent": [Function],
-                                      }
-                                    }
-                                    forwardedRef={null}
-                                    pageType="CollectionPage"
-                                  >
-                                    <span
-                                      className="StatisticCount__Name-sc-1xyux9h-2 glOdbU"
-                                    >
-                                      Collections
-                                    </span>
-                                  </StyledComponent>
-                                </StatisticCount__Name>
-                              </section>
-                            </StyledComponent>
-                          </StatisticCount__SectionContainer>
-                        </Container>
-                      </section>
+                        Curator
+                      </span>
                     </StyledComponent>
-                  </StatisticsContainer>
-                </Container>
-                <Typography__component
-                  color="white"
-                >
-                  <StyledComponent
-                    color="white"
-                    forwardedComponent={
-                      Object {
-                        "$$typeof": Symbol(react.forward_ref),
-                        "attrs": Array [],
-                        "componentStyle": ComponentStyle {
-                          "componentId": "Typography__component-sc-36xkf6-0",
-                          "isStatic": false,
-                          "lastClassName": "jMarAF",
-                          "rules": Array [
-                            "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
-                            [Function],
-                            ";text-align:",
-                            [Function],
-                            ";",
-                            [Function],
-                            " ",
-                            [Function],
-                          ],
-                        },
-                        "displayName": "Typography__component",
-                        "foldedComponentIds": Array [],
-                        "render": [Function],
-                        "styledComponentId": "Typography__component-sc-36xkf6-0",
-                        "target": "span",
-                        "toString": [Function],
-                        "warnTooManyClasses": [Function],
-                        "withComponent": [Function],
-                      }
-                    }
-                    forwardedRef={null}
-                  >
-                    <span
-                      className="Typography__component-sc-36xkf6-0 jMarAF"
-                      color="white"
-                    >
-                      Curator
-                    </span>
-                  </StyledComponent>
-                </Typography__component>
-              </div>
-            </StyledComponent>
-          </CollectionHeader__RightSide>
-        </section>
-      </StyledComponent>
-    </CollectionHeader__CollectionHeaderSection>
-  </Container>
+                  </Typography__component>
+                </div>
+              </StyledComponent>
+            </CollectionHeader__RightSide>
+          </section>
+        </StyledComponent>
+      </CollectionHeader__CollectionHeaderSection>
+    </Container>
+  </ThemeProvider>
 </ThemeProvider>
 `;

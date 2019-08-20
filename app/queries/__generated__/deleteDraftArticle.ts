@@ -19,7 +19,7 @@ export interface deleteDraftArticle {
    * Delete one of your draft articles
    * This operation can only be performed by the article author
    */
-  cancelArticle: deleteDraftArticle_cancelArticle | null;
+  cancelArticle: deleteDraftArticle_cancelArticle;
 }
 
 export interface deleteDraftArticleVariables {

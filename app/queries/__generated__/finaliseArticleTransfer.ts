@@ -19,7 +19,7 @@ export interface finaliseArticleTransfer {
    * Finalise an article transfer (publish a new version).
    * This operation can only be performed by the recipient of the transfer.
    */
-  finaliseArticleTransfer: finaliseArticleTransfer_finaliseArticleTransfer | null;
+  finaliseArticleTransfer: finaliseArticleTransfer_finaliseArticleTransfer;
 }
 
 export interface finaliseArticleTransferVariables {

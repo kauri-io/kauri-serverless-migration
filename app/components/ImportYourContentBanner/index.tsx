@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Title2, BodyCard } from '../Typography'
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 
 const Container = styled.section`
     display: flex;

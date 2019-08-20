@@ -30,7 +30,7 @@ export interface getMyProfile_getMyProfile_communities_community {
   /**
    * Community members list (full profile)
    */
-  members: (getMyProfile_getMyProfile_communities_community_members | null)[] | null;
+  members: (getMyProfile_getMyProfile_communities_community_members | null)[];
 }
 
 export interface getMyProfile_getMyProfile_communities {
@@ -86,7 +86,7 @@ export interface getMyProfile_getMyProfile {
   /**
    * Get communities the user is member of mapped by role
    */
-  communities: (getMyProfile_getMyProfile_communities | null)[] | null;
+  communities: (getMyProfile_getMyProfile_communities | null)[];
   /**
    * Retrieve user subsriptions (subscription name : status true/false)
    */
@@ -102,5 +102,5 @@ export interface getMyProfile {
    * Retrieve user profile (public and private information) corresponding to the token.
    * This operation can only be performed by a logged user.
    */
-  getMyProfile: getMyProfile_getMyProfile | null;
+  getMyProfile: getMyProfile_getMyProfile;
 }

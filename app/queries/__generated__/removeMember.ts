@@ -19,7 +19,7 @@ export interface removeMember {
    * Remove a member from the community (execute call).
    * This operation can only be performed by a community admin
    */
-  removeMember: removeMember_removeMember | null;
+  removeMember: removeMember_removeMember;
 }
 
 export interface removeMemberVariables {

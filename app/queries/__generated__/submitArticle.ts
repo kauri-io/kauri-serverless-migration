@@ -19,7 +19,7 @@ export interface submitArticle {
    * Submit an draft article
    * This operation can only be performed by logged user
    */
-  submitArticle: submitArticle_submitArticle | null;
+  submitArticle: submitArticle_submitArticle;
 }
 
 export interface submitArticleVariables {

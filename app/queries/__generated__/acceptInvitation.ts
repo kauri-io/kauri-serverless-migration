@@ -19,7 +19,7 @@ export interface acceptInvitation {
    * Accept an invitation (execute call).
    * This operation can only be performed by a community admin
    */
-  acceptInvitation: acceptInvitation_acceptInvitation | null;
+  acceptInvitation: acceptInvitation_acceptInvitation;
 }
 
 export interface acceptInvitationVariables {

@@ -20,7 +20,7 @@ export interface editArticleVersion {
    * This operation can only be performed by the author of the article
    * This operation can only be performed during the DRAFT stage
    */
-  editArticleVersion: editArticleVersion_editArticleVersion | null;
+  editArticleVersion: editArticleVersion_editArticleVersion;
 }
 
 export interface editArticleVersionVariables {

@@ -21,7 +21,7 @@ export interface initiateArticleTransfer {
    * Initialise an article transfer.
    * This operation can only be performed by the article owner
    */
-  initiateArticleTransfer: initiateArticleTransfer_initiateArticleTransfer | null;
+  initiateArticleTransfer: initiateArticleTransfer_initiateArticleTransfer;
 }
 
 export interface initiateArticleTransferVariables {

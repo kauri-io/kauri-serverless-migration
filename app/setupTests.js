@@ -4,6 +4,8 @@ import theme from './lib/theme-config'
 import { ThemeProvider } from 'styled-components'
 import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
+import { ThemeProvider as MaterialTheme } from '@material-ui/styles'
+import { theme as materialTheme } from './lib/with-data'
 
 const middlewares = []
 const mockStore = configureStore(middlewares)
@@ -27,20 +29,20 @@ const observeMock = {
 window.IntersectionObserver = () => observeMock
 
 export const mountWithTheme = children =>
-    mount(<ThemeProvider theme={theme}>{children}</ThemeProvider>)
+    mount(<MaterialTheme theme={materialTheme}><ThemeProvider theme={theme}>{children}</ThemeProvider></MaterialTheme>)
 
 export const renderWithTheme = children =>
-    render(<ThemeProvider theme={theme}>{children}</ThemeProvider>)
+    render(<MaterialTheme theme={materialTheme}><ThemeProvider theme={theme}>{children}</ThemeProvider></MaterialTheme>)
 
 export const shallowWithTheme = children =>
-    shallow(<ThemeProvider theme={theme}>{children}</ThemeProvider>)
+    shallow(<MaterialTheme theme={materialTheme}><ThemeProvider theme={theme}>{children}</ThemeProvider></MaterialTheme>)
 
 
 export const mountWithRedux = children =>
-    mount(<Provider store={store}><ThemeProvider theme={theme}>{children}</ThemeProvider></Provider>)
+    mount(<Provider store={store}><MaterialTheme theme={materialTheme}><ThemeProvider theme={theme}>{children}</ThemeProvider></MaterialTheme></Provider>)
 
 export const renderWithRedux = children =>
-    render(<Provider store={store}><ThemeProvider theme={theme}>{children}</ThemeProvider></Provider>)
+    render(<Provider store={store}><MaterialTheme theme={materialTheme}><ThemeProvider theme={theme}>{children}</ThemeProvider></MaterialTheme></Provider>)
 
 export const shallowWithRedux = children =>
-    shallow(<Provider store={store}><ThemeProvider theme={theme}>{children}</ThemeProvider></Provider>)
+    shallow(<Provider store={store}><MaterialTheme theme={materialTheme}><ThemeProvider theme={theme}>{children}</ThemeProvider></MaterialTheme></Provider>)

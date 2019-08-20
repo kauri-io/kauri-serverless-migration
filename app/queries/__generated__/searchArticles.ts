@@ -125,7 +125,7 @@ export interface searchArticles_searchArticles_content_comments_content {
   /**
    * Comment author (full profile)
    */
-  author: searchArticles_searchArticles_content_comments_content_author | null;
+  author: searchArticles_searchArticles_content_comments_content_author;
   /**
    * Comment
    */
@@ -197,7 +197,7 @@ export interface searchArticles_searchArticles_content {
   /**
    * Article author (full profile)
    */
-  author: searchArticles_searchArticles_content_author | null;
+  author: searchArticles_searchArticles_content_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -221,11 +221,11 @@ export interface searchArticles_searchArticles_content {
   /**
    * Get vote result for the article
    */
-  voteResult: searchArticles_searchArticles_content_voteResult | null;
+  voteResult: searchArticles_searchArticles_content_voteResult;
   /**
    * Get a paginated list of comments for this article
    */
-  comments: searchArticles_searchArticles_content_comments | null;
+  comments: searchArticles_searchArticles_content_comments;
   resourceIdentifier: searchArticles_searchArticles_content_resourceIdentifier | null;
 }
 
@@ -250,7 +250,7 @@ export interface searchArticles {
    * Search articles with pagination, sorting and filters.
    * This operation can be performed anonymously
    */
-  searchArticles: searchArticles_searchArticles | null;
+  searchArticles: searchArticles_searchArticles;
 }
 
 export interface searchArticlesVariables {

@@ -5,3 +5,4 @@ app/output
 app/coverage
 *.test.tsx
 *.test.ts
+*.snap

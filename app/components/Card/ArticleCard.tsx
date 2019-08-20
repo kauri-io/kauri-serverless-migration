@@ -2,7 +2,7 @@ import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
-import Avatar from '@material-ui/core/Avatar'
+import Avatar from '../Avatar'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import { Typography, ListItemIcon } from '@material-ui/core'
@@ -16,7 +16,6 @@ import IconButton from '@material-ui/core/IconButton'
 import Icon from '@material-ui/core/Icon'
 import { useState } from 'react'
 import ShareDialog from './ShareDialog'
-import useridTrim from '../../lib/userid-trim'
 
 export const ArticleCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -31,6 +30,7 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
             alignSelf: 'center',
         },
         height: 184,
+        maxWidth: 870,
     },
     cardActualContent: {
         display: 'flex',
@@ -51,16 +51,16 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
         cursor: 'pointer',
         height: '100%',
         padding: '0px !important',
-        paddingLeft: `${theme.spacing(1.5)}px !important`,
+        paddingLeft: `${theme.spacing(2)}px !important`,
         [theme.breakpoints.only('xs')]: {
             display: 'none !important',
         },
     },
     header: {
         display: 'flex',
-        paddingTop: theme.spacing(1.5),
-        paddingLeft: theme.spacing(1.5),
-        paddingRight: theme.spacing(1.5),
+        paddingTop: theme.spacing(2),
+        paddingLeft: theme.spacing(2),
+        paddingRight: theme.spacing(2),
         cursor: 'pointer',
     },
     mobileMedia: {
@@ -84,7 +84,7 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
         borderRadius: '4px',
         height: 152,
         width: 152,
-        marginRight: theme.spacing(1.5),
+        marginRight: theme.spacing(2),
         [theme.breakpoints.only('xs')]: {
             display: 'none !important',
         },
@@ -96,8 +96,9 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
         marginTop: 'auto',
         alignItems: 'center',
-        paddingBottom: theme.spacing(1.5),
-        paddingLeft: theme.spacing(1.5),
+        paddingBottom: theme.spacing(2),
+        paddingLeft: theme.spacing(2),
+        maxHeight: 83,
     },
     user: {
         display: 'flex',
@@ -106,7 +107,7 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
             marginRight: theme.spacing(1),
         },
         '& > *': {
-            lineHeight: '1.57 !important',
+            lineHeight: '27 !important',
         },
     },
     statistics: {
@@ -118,7 +119,7 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
         },
     },
     menuItem: {
-        padding: theme.spacing(0, 1.5),
+        padding: theme.spacing(0, 2),
     },
 }))
 
@@ -239,45 +240,17 @@ const ArticleCard: React.FC<IProps> = ({
                     <div className={classes.user}>
                         <Link href={authorHref.href} as={authorHref.as}>
                             <a>
-                                {author && author.avatar ? (
-                                    <Avatar
-                                        sizes={'24'}
-                                        className={classes.avatar}
-                                        src={author && author.avatar}
-                                        aria-label={String(
-                                            author && author.username
-                                        )}
-                                        data-testid={`ArticleCard-${id}-avatar`}
-                                    />
-                                ) : (
-                                    <Avatar
-                                        sizes={'24'}
-                                        data-testid={`ArticleCard-${id}-avatar`}
-                                        className={classes.avatar}
-                                        aria-label={String(
-                                            author && author.username
-                                        )}
-                                    >
-                                        {author &&
-                                            author.username &&
-                                            author.username.charAt(0)}
-                                    </Avatar>
-                                )}
-                            </a>
-                        </Link>
-                        <Link href={authorHref.href} as={authorHref.as}>
-                            <a>
-                                <Typography
+                                <Avatar
+                                    aria-label={String(
+                                        author && author.username
+                                    )}
                                     data-testid={`ArticleCard-${id}-author`}
-                                    variant="subtitle2"
-                                    className={classes.author}
-                                >
-                                    {author &&
-                                        (author.name ||
-                                            author.username ||
-                                            (typeof author.id === 'string' &&
-                                                useridTrim(author.id)))}
-                                </Typography>
+                                    id={String(author && author.id)}
+                                    name={author && author.name}
+                                    username={author && author.username}
+                                    avatar={author && author.avatar}
+                                    withName={true}
+                                />
                             </a>
                         </Link>
                         <Typography

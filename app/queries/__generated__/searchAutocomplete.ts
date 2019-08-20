@@ -29,7 +29,7 @@ export interface searchAutocomplete {
    * Perform a parametrized global search query with autocomplete, pagination, sorting and filtering
    * This operation can be performed anonymously
    */
-  searchAutocomplete: searchAutocomplete_searchAutocomplete | null;
+  searchAutocomplete: searchAutocomplete_searchAutocomplete;
 }
 
 export interface searchAutocompleteVariables {

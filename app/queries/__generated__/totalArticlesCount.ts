@@ -21,7 +21,7 @@ export interface totalArticlesCount {
    * Search articles with pagination, sorting and filters.
    * This operation can be performed anonymously
    */
-  searchArticles: totalArticlesCount_searchArticles | null;
+  searchArticles: totalArticlesCount_searchArticles;
 }
 
 export interface totalArticlesCountVariables {

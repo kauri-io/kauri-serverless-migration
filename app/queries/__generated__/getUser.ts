@@ -43,7 +43,7 @@ export interface getUser {
    * Retrieve a user profile (public information only).
    * This operation can be performed anonymously.
    */
-  getUser: getUser_getUser | null;
+  getUser: getUser_getUser;
 }
 
 export interface getUserVariables {

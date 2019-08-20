@@ -81,7 +81,7 @@ export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO 
   /**
    * Article author (full profile)
    */
-  author: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_author | null;
+  author: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_author;
   /**
    * Date created
    */
@@ -113,11 +113,11 @@ export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO 
   /**
    * Get a paginated list of comments for this article
    */
-  comments: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_comments | null;
+  comments: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_comments;
   /**
    * Get vote result for the article
    */
-  voteResult: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_voteResult | null;
+  voteResult: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_voteResult;
 }
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_resourceIdentifier {
@@ -209,7 +209,7 @@ export interface relatedArticles_searchMoreLikeThis_content {
   /**
    * load the resource associated to this search match
    */
-  resource: relatedArticles_searchMoreLikeThis_content_resource | null;
+  resource: relatedArticles_searchMoreLikeThis_content_resource;
 }
 
 export interface relatedArticles_searchMoreLikeThis {
@@ -237,7 +237,7 @@ export interface relatedArticles {
    * Perform a parametrized global search query to find related resources with pagination, sorting and filtering
    * This operation can be performed anonymously
    */
-  searchMoreLikeThis: relatedArticles_searchMoreLikeThis | null;
+  searchMoreLikeThis: relatedArticles_searchMoreLikeThis;
 }
 
 export interface relatedArticlesVariables {

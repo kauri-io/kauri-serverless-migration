@@ -8,12 +8,12 @@ import {
     CardMedia,
     CardContent,
     CardActions,
-    Avatar,
     Icon,
     IconButton,
 } from '@material-ui/core'
 import TruncateMarkup from 'react-truncate-markup'
 import ShareDialog from './ShareDialog'
+import Avatar from '../Avatar'
 
 export const CommunityCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -33,6 +33,7 @@ export const CommunityCardStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
         padding: theme.spacing(2),
         height: 184,
+        maxWidth: 870,
     },
     cardActualContent: {
         display: 'flex',
@@ -55,6 +56,10 @@ export const CommunityCardStyles = makeStyles((theme: Theme) => ({
         backgroundColor: theme.palette.primary.main,
         width: 24,
         height: 24,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 2,
     },
     content: {
         textAlign: 'left',
@@ -121,29 +126,19 @@ interface IMemberProps {
     classes: any
 }
 
-const Member: React.FC<IMemberProps> = ({ member, id, classes, memberHref }) =>
+const Member: React.FC<IMemberProps> = ({ member, id, memberHref }) =>
     member && (
         <Link href={memberHref.href} as={memberHref.as}>
             <a>
-                {member && member.avatar ? (
-                    <Avatar
-                        className={classes.avatar}
-                        src={member && member.avatar}
-                        aria-label={String(member && member.username)}
-                        data-testid={`CommunityCard-${id}-avatar`}
-                    />
-                ) : (
-                    <Avatar
-                        data-testid={`CommunityCard-${id}-avatar`}
-                        className={classes.avatar}
-                        aria-label={String(member && member.username)}
-                    >
-                        {(member &&
-                            member.username &&
-                            member.username.charAt(0)) ||
-                            (member && member.id && member.id.charAt(0))}
-                    </Avatar>
-                )}
+                <Avatar
+                    aria-label={String(member && member.username)}
+                    data-testid={`CommunityCard-${id}-avatar`}
+                    id={String(member && member.id)}
+                    name={member && member.name}
+                    username={member && member.username}
+                    avatar={member && member.avatar}
+                    withName={false}
+                />
             </a>
         </Link>
     )
@@ -278,7 +273,7 @@ const CommunityCard: React.FC<IProps> = ({
                                     )
                             )}
                         {members && members.length > 3 ? (
-                            <Avatar
+                            <div
                                 data-testid={`CommunityCard-${id}-moreMembers`}
                                 className={classes.moreMembers}
                                 aria-label={'more-members'}
@@ -289,7 +284,7 @@ const CommunityCard: React.FC<IProps> = ({
                                 >
                                     {`+${members.length - 3}`}
                                 </Typography>
-                            </Avatar>
+                            </div>
                         ) : null}
                     </div>
 

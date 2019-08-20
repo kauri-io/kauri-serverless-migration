@@ -22,7 +22,7 @@ export interface getArticleTitle {
    * any status if false) or the latest published version (if true).
    * This operation can be performed anonymously
    */
-  getArticle: getArticleTitle_getArticle | null;
+  getArticle: getArticleTitle_getArticle;
 }
 
 export interface getArticleTitleVariables {

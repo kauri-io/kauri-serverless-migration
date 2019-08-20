@@ -186,7 +186,7 @@ export interface searchPendingArticles_searchArticles_content_comments_content {
   /**
    * Comment author (full profile)
    */
-  author: searchPendingArticles_searchArticles_content_comments_content_author | null;
+  author: searchPendingArticles_searchArticles_content_comments_content_author;
   /**
    * Date the comment was published
    */
@@ -280,11 +280,11 @@ export interface searchPendingArticles_searchArticles_content {
   /**
    * Get vote result for the article
    */
-  voteResult: searchPendingArticles_searchArticles_content_voteResult | null;
+  voteResult: searchPendingArticles_searchArticles_content_voteResult;
   /**
    * Article author (full profile)
    */
-  author: searchPendingArticles_searchArticles_content_author | null;
+  author: searchPendingArticles_searchArticles_content_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -292,7 +292,7 @@ export interface searchPendingArticles_searchArticles_content {
   /**
    * Get a paginated list of comments for this article
    */
-  comments: searchPendingArticles_searchArticles_content_comments | null;
+  comments: searchPendingArticles_searchArticles_content_comments;
   /**
    * The comment describing this version update of the article
    */
@@ -316,7 +316,7 @@ export interface searchPendingArticles {
    * Search articles with pagination, sorting and filters.
    * This operation can be performed anonymously
    */
-  searchArticles: searchPendingArticles_searchArticles | null;
+  searchArticles: searchPendingArticles_searchArticles;
 }
 
 export interface searchPendingArticlesVariables {

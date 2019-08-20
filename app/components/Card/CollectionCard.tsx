@@ -9,13 +9,13 @@ import {
     CardMedia,
     CardContent,
     CardActions,
-    Avatar,
     Icon,
     IconButton,
 } from '@material-ui/core'
 import TruncateMarkup from 'react-truncate-markup'
 import useridTrim from '../../lib/userid-trim'
 import ShareDialog from './ShareDialog'
+import Avatar from '../Avatar'
 
 export const CollectionCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -35,6 +35,7 @@ export const CollectionCardStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
         padding: theme.spacing(2),
         height: 184,
+        maxWidth: 870,
     },
     cardActualContent: {
         display: 'flex',
@@ -251,31 +252,15 @@ const CollectionCard: React.FC<IProps> = ({
                     <div className={classes.user}>
                         <Link href={ownerHref.href} as={ownerHref.as}>
                             <a>
-                                {owner && owner.avatar ? (
-                                    <Avatar
-                                        className={classes.avatar}
-                                        src={owner && owner.avatar}
-                                        aria-label={String(
-                                            owner && owner.username
-                                        )}
-                                        data-testid={`CollectionCard-${id}-avatar`}
-                                    />
-                                ) : (
-                                    <Avatar
-                                        data-testid={`CollectionCard-${id}-avatar`}
-                                        className={classes.avatar}
-                                        aria-label={String(
-                                            owner && owner.username
-                                        )}
-                                    >
-                                        {(owner &&
-                                            owner.username &&
-                                            owner.username.charAt(0)) ||
-                                            (owner &&
-                                                owner.id &&
-                                                owner.id.charAt(0))}
-                                    </Avatar>
-                                )}
+                                <Avatar
+                                    aria-label={String(owner && owner.username)}
+                                    data-testid={`CollectionCard-${id}-avatar`}
+                                    id={String(owner && owner.id)}
+                                    name={owner && owner.name}
+                                    username={owner && owner.username}
+                                    avatar={owner && owner.avatar}
+                                    withName={true}
+                                />
                             </a>
                         </Link>
                         <Link href={ownerHref.href} as={ownerHref.as}>

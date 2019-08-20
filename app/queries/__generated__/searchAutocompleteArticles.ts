@@ -202,7 +202,7 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
   /**
    * Comment author (full profile)
    */
-  author: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_comments_content_author | null;
+  author: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_comments_content_author;
   /**
    * Date the comment was published
    */
@@ -296,11 +296,11 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
   /**
    * Get vote result for the article
    */
-  voteResult: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_voteResult | null;
+  voteResult: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_voteResult;
   /**
    * Article author (full profile)
    */
-  author: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_author | null;
+  author: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_author;
   /**
    * load the article owner (user or community resource type)
    */
@@ -308,7 +308,7 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
   /**
    * Get a paginated list of comments for this article
    */
-  comments: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_comments | null;
+  comments: searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_comments;
   /**
    * The comment describing this version update of the article
    */
@@ -323,7 +323,7 @@ export interface searchAutocompleteArticles_searchAutocomplete_content {
   /**
    * load the resource associated to this search match
    */
-  resource: searchAutocompleteArticles_searchAutocomplete_content_resource | null;
+  resource: searchAutocompleteArticles_searchAutocomplete_content_resource;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete {
@@ -351,7 +351,7 @@ export interface searchAutocompleteArticles {
    * Perform a parametrized global search query with autocomplete, pagination, sorting and filtering
    * This operation can be performed anonymously
    */
-  searchAutocomplete: searchAutocompleteArticles_searchAutocomplete | null;
+  searchAutocomplete: searchAutocompleteArticles_searchAutocomplete;
 }
 
 export interface searchAutocompleteArticlesVariables {

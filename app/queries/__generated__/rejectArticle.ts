@@ -20,7 +20,7 @@ export interface rejectArticle {
    * article passes to a PENDING status, requiring an owner to approve/reject the version.
    * This operation can only be performed by the article owner
    */
-  rejectArticle: rejectArticle_rejectArticle | null;
+  rejectArticle: rejectArticle_rejectArticle;
 }
 
 export interface rejectArticleVariables {
