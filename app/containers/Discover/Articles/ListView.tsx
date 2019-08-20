@@ -70,13 +70,7 @@ class Articles extends Component<IProps> {
                                 }
 
                                 return (
-                                    <Grid
-                                        key={article.id}
-                                        item
-                                        xs={12}
-                                        sm={12}
-                                        lg={6}
-                                    >
+                                    <Grid key={article.id} item xs={12}>
                                         <ArticleCard
                                             {...article}
                                             href={getArticleURL(article)}
@@ -113,5 +107,7 @@ class Articles extends Component<IProps> {
 export default withStyles({
     grid: {
         paddingTop: '24px',
+        maxWidth: 870,
+        margin: 'auto',
     },
 })(Articles)

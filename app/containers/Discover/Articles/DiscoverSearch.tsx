@@ -32,6 +32,7 @@ const SearchInput = styled.input`
     background: transparent;
     height: 40px;
     outline: none;
+    color: white;
     padding: 0 ${props => props.theme.space[1]}px;
 `
 interface ISearchWrapperProps {

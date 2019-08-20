@@ -72,10 +72,12 @@ interface IState {
     website: string
     email: string
     title: string
-    github: string
+    social: {
+        github: string
+        twitter: string
+    }
     avatar: string
     status: string
-    twitter: string
     pendingSubmit: boolean
     subscriptions: {
         newsletter: boolean
@@ -164,7 +166,13 @@ class OnboardingEditProfile extends Component<IProps, IState> {
         }
     }
 
-    updateState(payload: string | { newsletter: boolean }, field: string) {
+    updateState(
+        payload:
+            | string
+            | { newsletter: boolean }
+            | { github: string | null; twitter: string | null },
+        field: string
+    ) {
         const newState = this.state
         newState[field] = payload
         this.setState(newState)
@@ -176,8 +184,7 @@ class OnboardingEditProfile extends Component<IProps, IState> {
             username,
             email,
             title,
-            twitter,
-            github,
+            social,
             avatar,
             website,
             subscriptions,
@@ -199,8 +206,8 @@ class OnboardingEditProfile extends Component<IProps, IState> {
                         name={name}
                         username={username}
                         avatar={avatar}
-                        github={github}
-                        twitter={twitter}
+                        github={social && social.github}
+                        twitter={social && social.twitter}
                         website={website}
                         title={title}
                         email={email}

@@ -1,11 +1,7 @@
 import { Title2 } from '../Typography'
 import TopResourcesSection from '../Section/TopResourcesSection'
-import UserAvatarComponent, {
-    IProps as UserAvatarComponentProps,
-} from '../UserAvatar'
+import Avatar from '../Avatar'
 import styled from 'styled-components'
-import Link from 'next/link'
-import { getProfileURL } from '../../lib/getURLs'
 
 const ContributorsContainer = styled.div`
     display: flex;
@@ -16,23 +12,22 @@ const ContributorsContainer = styled.div`
 `
 
 interface IProps {
-    contributors: UserAvatarComponentProps[]
+    contributors: Array<{ username: string; id: string; avatar: string }>
 }
 
 const TopContributors: React.FunctionComponent<IProps> = ({ contributors }) => (
     <TopResourcesSection>
         <Title2>Top Contributors</Title2>
         <ContributorsContainer>
-            {contributors.map((contributor, index) => {
-                const url = getProfileURL(contributor)
-                return (
-                    <Link key={index} href={url.href} as={url.as}>
-                        <a>
-                            <UserAvatarComponent {...contributor} />
-                        </a>
-                    </Link>
-                )
-            })}
+            {contributors.map((contributor, index) => (
+                <Avatar
+                    key={index}
+                    withName={true}
+                    username={contributor.username}
+                    id={contributor.id}
+                    avatar={contributor.avatar}
+                />
+            ))}
         </ContributorsContainer>
     </TopResourcesSection>
 )

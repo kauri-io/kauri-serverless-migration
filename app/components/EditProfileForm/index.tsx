@@ -7,6 +7,7 @@ import { Grid, Theme, Tooltip, Checkbox } from '@material-ui/core'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import { CheckboxProps } from '@material-ui/core/Checkbox'
+import { useState } from 'react'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -50,8 +51,8 @@ interface IProps {
     title: string
     username: string
     website: string
-    github: string
-    twitter: string
+    github: string | null
+    twitter: string | null
     email: string
     status: string
     subscriptions: {
@@ -59,7 +60,10 @@ interface IProps {
     }
     resendEmailVerificationAction: () => void
     updateState: (
-        payload: string | { newsletter: boolean },
+        payload:
+            | string
+            | { newsletter: boolean }
+            | { twitter: string | null; github: string | null },
         field: string
     ) => void
 }
@@ -79,6 +83,7 @@ const EditProfileForm = ({
     updateState,
 }: IProps) => {
     const classes = useStyles()
+    const [oldEmail] = useState(email)
     return (
         <Grid className={classes.container} container={true} sm={12}>
             <Grid item={true} sm={3}>
@@ -120,7 +125,12 @@ const EditProfileForm = ({
                 />
                 <TextField
                     margin="dense"
-                    onChange={e => updateState(e.target.value, 'twitter')}
+                    onChange={e =>
+                        updateState(
+                            { twitter: e.target.value, github },
+                            'social'
+                        )
+                    }
                     className={classes.input}
                     InputProps={{
                         className: classes.input,
@@ -135,7 +145,12 @@ const EditProfileForm = ({
                 />
                 <TextField
                     margin="dense"
-                    onChange={e => updateState(e.target.value, 'github')}
+                    onChange={e =>
+                        updateState(
+                            { github: e.target.value, twitter },
+                            'social'
+                        )
+                    }
                     className={classes.input}
                     InputProps={{
                         className: classes.input,
@@ -153,6 +168,7 @@ const EditProfileForm = ({
                     email={email}
                     handleChange={e => updateState(e.target.value, 'email')}
                     status={status}
+                    oldEmail={oldEmail}
                 />
                 <Tooltip title="Keep this checked to receive our newsletter with the latest tutorials and content series">
                     <FormControlLabel

@@ -1,6 +1,6 @@
 import moment from 'moment'
 import styled from 'styled-components'
-import UserAvatar from '../UserAvatar'
+import Avatar from '../Avatar'
 import { Label, H1, BodyCard } from '../Typography'
 import TagList from '../Tags/TagList'
 import Image from '../Image'
@@ -138,24 +138,13 @@ const ResourceRowWithImage: React.SFC<IProps> = ({
                 </Link>
                 <Divider />
                 <Footer>
-                    <Link
-                        href={
-                            ownerType === 'COMMUNITY'
-                                ? `/community/${userId}`
-                                : `/public-profile/${userId}`
-                        }
-                    >
-                        <a>
-                            <UserAvatar
-                                imageURL={imageURL}
-                                cardType="ARTICLE"
-                                fullWidth={true}
-                                username={username}
-                                userId={userId}
-                                avatar={userAvatar}
-                            />
-                        </a>
-                    </Link>
+                    <Avatar
+                        username={username}
+                        id={userId}
+                        avatar={userAvatar}
+                        type={ownerType}
+                        withName={true}
+                    />
                 </Footer>
             </Container>
         </ResourceRow>

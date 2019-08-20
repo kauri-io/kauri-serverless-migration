@@ -190,7 +190,7 @@ export const totalArticlesCount = gql`
 export const searchPersonalArticles = gql`
     query searchPersonalArticles(
         $userId: String
-        $size: Int = 8
+        $size: Int = 6
         $page: Int = 0
         $text: String
     ) {

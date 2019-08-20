@@ -9,8 +9,9 @@ let props = {
     tags: ['test'],
     resourceType: 'ARTICLE',
     ownerResourceType: 'COMMUNITY',
-    linkComponent: jest.fn(),
     avatar: 'avatar url',
+    userId: 'test user id',
+    username: 'test username',
 }
 
 describe('components/FeaturedResource', () => {
