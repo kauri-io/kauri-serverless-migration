@@ -7,7 +7,6 @@ import { ThemeProvider } from 'styled-components'
 import { ethers } from 'ethers'
 import { Subject } from 'rxjs'
 import { ActionsObservable } from 'redux-observable'
-import { SnackbarProvider } from 'notistack'
 import fetch from 'isomorphic-unfetch'
 import mixpanel from 'mixpanel-browser'
 import initRedux from './init-redux'
@@ -192,7 +191,6 @@ export default (ComposedComponent: any) =>
                         <CssBaseline />
                         <Provider store={redux}>
                             <ApolloProvider client={apollo}>
-                                <SnackbarProvider maxSnack={3}>
                                     <ThemeProvider theme={themeConfig}>
                                         <>
                                             <ComposedComponent
@@ -201,7 +199,6 @@ export default (ComposedComponent: any) =>
                                             />
                                         </>
                                     </ThemeProvider>
-                                </SnackbarProvider>
                             </ApolloProvider>
                         </Provider>
                     </MaterialThemeProvider>
@@ -307,7 +304,6 @@ export default (ComposedComponent: any) =>
                     <CssBaseline />
                     <Provider store={this.redux}>
                         <ApolloProvider client={this.apollo}>
-                            <SnackbarProvider maxSnack={3}>
                                 <ThemeProvider theme={themeConfig}>
                                     <>
                                         <ComposedComponent
@@ -320,7 +316,6 @@ export default (ComposedComponent: any) =>
                                         />
                                     </>
                                 </ThemeProvider>
-                            </SnackbarProvider>
                         </ApolloProvider>
                     </Provider>
                 </MaterialThemeProvider>
