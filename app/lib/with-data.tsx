@@ -191,14 +191,14 @@ export default (ComposedComponent: any) =>
                         <CssBaseline />
                         <Provider store={redux}>
                             <ApolloProvider client={apollo}>
-                                    <ThemeProvider theme={themeConfig}>
-                                        <>
-                                            <ComposedComponent
-                                                url={url}
-                                                {...composedInitialProps}
-                                            />
-                                        </>
-                                    </ThemeProvider>
+                                <ThemeProvider theme={themeConfig}>
+                                    <>
+                                        <ComposedComponent
+                                            url={url}
+                                            {...composedInitialProps}
+                                        />
+                                    </>
+                                </ThemeProvider>
                             </ApolloProvider>
                         </Provider>
                     </MaterialThemeProvider>
@@ -304,18 +304,18 @@ export default (ComposedComponent: any) =>
                     <CssBaseline />
                     <Provider store={this.redux}>
                         <ApolloProvider client={this.apollo}>
-                                <ThemeProvider theme={themeConfig}>
-                                    <>
-                                        <ComposedComponent
-                                            {...this.props}
-                                            web3={
-                                                global.window
-                                                    ? global.window.web3
-                                                    : global.window
-                                            }
-                                        />
-                                    </>
-                                </ThemeProvider>
+                            <ThemeProvider theme={themeConfig}>
+                                <>
+                                    <ComposedComponent
+                                        {...this.props}
+                                        web3={
+                                            global.window
+                                                ? global.window.web3
+                                                : global.window
+                                        }
+                                    />
+                                </>
+                            </ThemeProvider>
                         </ApolloProvider>
                     </Provider>
                 </MaterialThemeProvider>

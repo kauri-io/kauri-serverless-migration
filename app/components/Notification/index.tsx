@@ -28,7 +28,9 @@ const styles = theme =>
     })
 
 class Notification extends React.Component<
-    WithStyles<typeof styles> & { notification: IShowNotificationPayload | null | undefined },
+    WithStyles<typeof styles> & {
+        notification: IShowNotificationPayload | null | undefined
+    },
     { open: boolean }
 > {
     constructor(props) {
@@ -46,8 +48,10 @@ class Notification extends React.Component<
 
     shouldComponentUpdate(nextProps, nextState) {
         // Only re-render when snackbar is going from closed to open
-      return this.state.open !== nextState.open || this.props.notification !== nextProps.notification
-
+        return (
+            this.state.open !== nextState.open ||
+            this.props.notification !== nextProps.notification
+        )
     }
 
     closeNotification = () => {
@@ -93,6 +97,8 @@ class Notification extends React.Component<
 }
 
 export default connect(
-    (state: IReduxState) => ({ notification: state.app && state.app.notification }),
+    (state: IReduxState) => ({
+        notification: state.app && state.app.notification,
+    }),
     {}
 )(withStyles(styles)(Notification))
