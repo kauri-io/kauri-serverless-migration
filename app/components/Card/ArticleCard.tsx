@@ -88,6 +88,9 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
             display: 'none !important',
         },
     },
+    menuButton: {
+        padding: 0,
+    },
     title: {
         [theme.breakpoints.only('xs')]: { maxWidth: `calc(100% - 100px)` },
     },
@@ -240,23 +243,21 @@ const ArticleCard: React.FC<IProps> = ({
                     </a>
                 </Link>
                 <CardActions className={classes.cardActions}>
-                    <div className={classes.user}>
-                        <Avatar
-                            aria-label={String(author && author.username)}
-                            data-testid={`ArticleCard-${id}-author`}
-                            id={String(author && author.id)}
-                            name={author && author.name}
-                            username={author && author.username}
-                            avatar={author && author.avatar}
-                            withName={true}
-                        />
-                        <Typography
-                            data-testid={`ArticleCard-${id}-date`}
-                            variant="body2"
-                        >
-                            {moment(String(datePublished)).format('DD MMM YY')}
-                        </Typography>
-                    </div>
+                    <Avatar
+                        aria-label={String(author && author.username)}
+                        data-testid={`ArticleCard-${id}-author`}
+                        id={String(author && author.id)}
+                        name={author && author.name}
+                        username={author && author.username}
+                        avatar={author && author.avatar}
+                        withName={true}
+                    />
+                    <Typography
+                        data-testid={`ArticleCard-${id}-date`}
+                        variant="body2"
+                    >
+                        {moment(String(datePublished)).format('DD MMM YY')}
+                    </Typography>
 
                     <div className={classes.statistics}>
                         <Icon data-testid={`ArticleCard-${id}-commentIcon`}>
@@ -284,6 +285,7 @@ const ArticleCard: React.FC<IProps> = ({
                             data-testid={`ArticleCard-${id}-moreOptionsButton`}
                             aria-label="simple-menu"
                             aria-haspopup="true"
+                            className={classes.menuButton}
                         >
                             <Icon>more_vert</Icon>
                         </IconButton>
