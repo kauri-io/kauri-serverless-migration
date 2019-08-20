@@ -33,7 +33,7 @@ const Notification: React.FC = () => {
         <Snackbar
             open={!!notification && !!notification.message}
             anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-            autoHideDuration={4000}
+            autoHideDuration={1000}
         >
             <SnackbarContent
                 className={

@@ -54,10 +54,14 @@ interface IState {
     website: string
     email: string
     title: string
-    github: string
+
     avatar: string
+    social: {
+        github: string
+        twitter: string
+    } | null
     status: string
-    twitter: string
+
     pendingSubmit: boolean
     subscriptions: {
         newsletter: boolean
@@ -86,6 +90,8 @@ class EditableHeader extends Component<IProps, IState> {
             assocPath(['redirectURL'], route)
         )(this.state)
 
+        console.log(payload)
+
         this.props.saveUserDetailsAction(payload, (pendingSubmit: any) => {
             this.setState({ pendingSubmit })
         })
@@ -108,7 +114,13 @@ class EditableHeader extends Component<IProps, IState> {
         }
     }
 
-    updateState(payload: string | { newsletter: boolean }, field: string) {
+    updateState(
+        payload:
+            | string
+            | { github: string | null; twitter: string | null }
+            | { newsletter: boolean },
+        field: string
+    ) {
         const newState = this.state
         newState[field] = payload
         this.setState(newState)
@@ -120,8 +132,7 @@ class EditableHeader extends Component<IProps, IState> {
             username,
             email,
             title,
-            twitter,
-            github,
+            social,
             avatar,
             website,
             subscriptions,
@@ -135,8 +146,8 @@ class EditableHeader extends Component<IProps, IState> {
                             name={name}
                             username={username}
                             avatar={avatar}
-                            github={github}
-                            twitter={twitter}
+                            github={social && social.github}
+                            twitter={social && social.twitter}
                             website={website}
                             title={title}
                             email={email}

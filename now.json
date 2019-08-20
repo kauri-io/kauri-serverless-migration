@@ -8,11 +8,23 @@
   },
   "builds": [
     {
+      "src": "app/static/**",
+      "use": "@now/static"
+    },
+    {
       "src": "app/package.json",
       "use": "@now/next"
     }
   ],
   "routes": [
+    {
+      "src": "/robots.txt",
+      "dest": "/app/static/robots.txt"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/app/static/favicon/favicon.ico"
+    },
     {
       "src": "/(.*)/(.*)/a",
       "dest": "/app/article?article_id=$2"
@@ -24,10 +36,6 @@
     {
       "src": "/(.*)/(.*)/c",
       "dest": "/app/collection?collection_id=$2"
-    },
-    {
-      "src": "/(.*)/(.*)/cm",
-      "dest": "/app/community?communityId=$2"
     },
     {
       "src": "/community/(.*)/update-community",

@@ -50,8 +50,8 @@ interface IProps {
     title: string
     username: string
     website: string
-    github: string
-    twitter: string
+    github: string | null
+    twitter: string | null
     email: string
     status: string
     subscriptions: {
@@ -59,7 +59,10 @@ interface IProps {
     }
     resendEmailVerificationAction: () => void
     updateState: (
-        payload: string | { newsletter: boolean },
+        payload:
+            | string
+            | { newsletter: boolean }
+            | { twitter: string | null; github: string | null },
         field: string
     ) => void
 }
@@ -120,7 +123,12 @@ const EditProfileForm = ({
                 />
                 <TextField
                     margin="dense"
-                    onChange={e => updateState(e.target.value, 'twitter')}
+                    onChange={e =>
+                        updateState(
+                            { twitter: e.target.value, github },
+                            'social'
+                        )
+                    }
                     className={classes.input}
                     InputProps={{
                         className: classes.input,
@@ -135,7 +143,12 @@ const EditProfileForm = ({
                 />
                 <TextField
                     margin="dense"
-                    onChange={e => updateState(e.target.value, 'github')}
+                    onChange={e =>
+                        updateState(
+                            { github: e.target.value, twitter },
+                            'social'
+                        )
+                    }
                     className={classes.input}
                     InputProps={{
                         className: classes.input,

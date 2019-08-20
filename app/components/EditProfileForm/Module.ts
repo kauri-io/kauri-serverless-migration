@@ -44,8 +44,7 @@ export const saveUserDetailsEpic: Epic<
                     website,
                     email,
                     name,
-                    twitter,
-                    github,
+                    social,
                     subscriptions,
                     redirectURL,
                 },
@@ -61,10 +60,7 @@ export const saveUserDetailsEpic: Epic<
                             email,
                             title,
                             name,
-                            social: (twitter || github) && {
-                                twitter,
-                                github,
-                            },
+                            social,
                             subscriptions,
                         },
                     })

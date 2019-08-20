@@ -67,7 +67,46 @@ export default class MyDocument extends Document<IProps> {
             </script>
           )} */}
                     <meta charSet="UTF-8" />
-                    <link rel="icon" href="/favicon.ico" />
+                    <link
+                        key="icon-apple"
+                        rel="apple-touch-icon"
+                        sizes="180x180"
+                        href="/static/favicon/apple-touch-icon.png"
+                    />
+                    <link
+                        key="icon-32"
+                        rel="icon"
+                        type="image/png"
+                        sizes="32x32"
+                        href="/static/favicon/favicon-32x32.png"
+                    />
+                    <link
+                        key="icon-16"
+                        rel="icon"
+                        type="image/png"
+                        sizes="16x16"
+                        href="/static/favicon/favicon-16x16.png"
+                    />
+                    <meta
+                        key="apple-name"
+                        name="apple-mobile-web-app-title"
+                        content="Kauri"
+                    />
+                    <meta
+                        key="app-name"
+                        name="application-name"
+                        content="Kauri"
+                    />
+                    <meta
+                        key="ms-name"
+                        name="msapplication-TileColor"
+                        content="#da532c"
+                    />
+                    <meta
+                        key="theme-color"
+                        name="theme-color"
+                        content="#8e00d2"
+                    />
                     <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver" />
                     <script
                         defer

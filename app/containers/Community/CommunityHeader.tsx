@@ -574,6 +574,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                 //   interactive={true}
                                 // >
                                 <Button
+                                    color="primary"
                                     variant="contained"
                                     onClick={() =>
                                         openAddCommunityArticleModal()
