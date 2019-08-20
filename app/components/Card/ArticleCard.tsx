@@ -184,6 +184,11 @@ const ArticleCard: React.FC<IProps> = ({
         setShareDialogOpen(true)
     }
 
+    function handleClickShareDialogClose() {
+        setShareDialogOpen(false)
+        handleClose()
+    }
+
     return (
         <Card
             key={id}
@@ -293,7 +298,7 @@ const ArticleCard: React.FC<IProps> = ({
                             name={title}
                             id={id}
                             open={shareDialogOpen}
-                            handleClose={() => {}}
+                            handleClose={handleClickShareDialogClose}
                         ></ShareDialog>
 
                         <Menu

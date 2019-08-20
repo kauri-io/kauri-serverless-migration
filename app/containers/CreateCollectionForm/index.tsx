@@ -140,13 +140,17 @@ export default compose<
             name: Yup.string()
                 .min(2, 'Too Short!')
                 .max(100, 'Too Long!')
-                .required('Required'),
-            description: Yup.string().min(2, 'Too Short!'),
-            tags: Yup.array().min(1, 'Minimum one tag'),
+                .required('Give your collection a name'),
+            description: Yup.string().required(
+                'Give your collection a description'
+            ),
+            tags: Yup.array().min(1, 'Add a tag to your collection to save'),
             sections: Yup.array(
                 Yup.object().shape({
                     // name: Yup.string().required("Missing section name!"),
-                    resourcesId: Yup.array().required('Missing a resource!'),
+                    resourcesId: Yup.array().required(
+                        'You must include an article or another collection per section to save your collection'
+                    ),
                 })
             ),
         }),

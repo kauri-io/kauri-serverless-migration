@@ -1,4 +1,5 @@
 import { showNotificationAction } from './Epics/ShowNotificationEpic'
+import { tail, compose, head, toUpper } from 'ramda'
 
 type ValidateOnSubmit = (
     validateForm: any,
@@ -11,18 +12,18 @@ const validateOnSubmit: ValidateOnSubmit = (
     callback
 ) =>
     validateForm().then((errors: { [errKey: string]: string | unknown }) => {
-        const capitalize = (str: string) => {
-            const cap = str.toLowerCase()
-            cap.charAt(0).toUpperCase()
-            return cap
-        }
+        const capitalize = (s: string) =>
+            compose<string, string, string>(
+                toUpper,
+                head
+            )(s) + tail(s)
 
         if (Object.keys(errors).length > 0) {
             return Object.keys(errors).map((errKey, i) => {
                 if (typeof errors[errKey] === 'string') {
                     showNotification({
                         description: errors[errKey] as string,
-                        message: `${capitalize(errKey)} Validation error!`,
+                        message: `${capitalize(errKey)}`,
                         notificationType: 'error',
                     })
                 } else {
@@ -32,8 +33,7 @@ const validateOnSubmit: ValidateOnSubmit = (
                         Object.values(nestedErrors).map(err =>
                             showNotification({
                                 description: err,
-                                message: `${capitalize(errKey)} ${i +
-                                    1} Validation error!`,
+                                message: `${capitalize(errKey)} ${i + 1}`,
                                 notificationType: 'error',
                             })
                         )
