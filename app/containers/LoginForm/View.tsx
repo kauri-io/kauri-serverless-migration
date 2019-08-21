@@ -153,7 +153,6 @@ class LoginForm extends React.Component<{
     }
 
     render() {
-        const { isSubmitting } = this.props
 
         return (
             <LoginContainer>
