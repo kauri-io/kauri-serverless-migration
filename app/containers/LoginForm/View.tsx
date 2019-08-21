@@ -165,7 +165,6 @@ class LoginForm extends React.Component<{
                 <Button
                     color="primary"
                     variant="contained"
-                    disabled={isSubmitting}
                     onClick={() => this.props.handleSubmit()}
                 >
                     SIGN IN
