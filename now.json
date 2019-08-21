@@ -27,11 +27,41 @@
     },
     {
       "src": "/(.*)/(.*)/a",
-      "dest": "/app/article?article_id=$2"
+      "dest": "/app/article?article_id=$2&slug=$1"
+    },
+    {
+      "src": "/article/(.*)/(.*)/(.*)",
+      "status": 301,
+      "headers": {
+        "Location": "/$3/$1/a"
+      }
+    },
+    {
+      "src": "/article/(.*)",
+      "dest": "/app/article?article_id=$1"
+    },
+    {
+      "src": "/article/(.*)/(.*)",
+      "dest": "/app/article?article_id=$1"
     },
     {
       "src": "/(.*)/(.*)/com",
       "dest": "/app/community?community_id=$2"
+    },
+    {
+      "src": "/(.*)/(.*)/c",
+      "dest": "/app/collection?collection_id=$2&slug=$1"
+    },
+    {
+      "src": "/collection/(.*)/(.*)",
+      "status": 301,
+      "headers": {
+        "Location": "/$2/$1/c"
+      }
+    },
+    {
+      "src": "/collection/(.*)",
+      "dest": "/app/collection?collection_id=$1"
     },
     {
       "src": "/(.*)/(.*)/c",
