@@ -178,6 +178,8 @@ Apparently nested file system api does not work in production due to Zeit Now
 
 Currently uses Showdown for MD parsing, could convert to remark
 
+Could use prism for code highlighting
+
 ## Collection + Community
 
 Uses Formik for sections as arrays + React DnD for card DOM interactions
