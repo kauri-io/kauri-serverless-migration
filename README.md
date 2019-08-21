@@ -12,14 +12,14 @@ sudo n 10.15.3
 
 cd app && yarn
 
-yarn dev;
+yarn global add now
+
+now login; Ask Davide for rest of this 0_o
+
+now dev;
 open localhost:3000
 
 > Extra
-
-- yarn global add now
-
-  now login; Ask Davide for rest of this 0_o
 
 - Redux devtools browser extension
 - Apollo browser extension
