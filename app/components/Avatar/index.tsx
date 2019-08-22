@@ -61,13 +61,13 @@ const AvatarComp = ({
         <Link as={url.as} href={url.href}>
             <a>
                 <div className={className || classes.container}>
-                        <Image
-                            className={classes.avatar}
-                            image={avatar ? avatar : makeBlockie(id)}
-                            width={size || 24}
-                            height={size || 24}
-                            borderRadius={'2px'}
-                        />
+                    <Image
+                        className={classes.avatar}
+                        image={avatar ? avatar : makeBlockie(id)}
+                        width={size || 24}
+                        height={size || 24}
+                        borderRadius={'2px'}
+                    />
                     {withName && (
                         <Typography
                             color={color}

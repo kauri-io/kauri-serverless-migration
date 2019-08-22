@@ -1,7 +1,6 @@
 import Image, { getURL } from './index'
 import { mountWithTheme } from '../../setupTests'
 
-
 jest.mock('../../config')
 
 import config from '../../config'
@@ -18,8 +17,7 @@ describe('components/Image', () => {
     })
 
     it('should return the plain url on development', () => {
-        config.useCloudImage = false,
-        config.cloudImageId = 'cloudImageId'
+        ;(config.useCloudImage = false), (config.cloudImageId = 'cloudImageId')
         const result = getURL(url, 10, 10)
         expect(result).toBe(url)
     })

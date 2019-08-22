@@ -153,8 +153,6 @@ class LoginForm extends React.Component<{
     }
 
     render() {
-        const { isSubmitting } = this.props
-
         return (
             <LoginContainer>
                 <Title2 color="white">Web3 Sign in</Title2>
@@ -165,7 +163,6 @@ class LoginForm extends React.Component<{
                 <Button
                     color="primary"
                     variant="contained"
-                    disabled={isSubmitting}
                     onClick={() => this.props.handleSubmit()}
                 >
                     SIGN IN

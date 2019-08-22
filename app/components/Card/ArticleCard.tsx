@@ -88,6 +88,9 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
             display: 'none !important',
         },
     },
+    menuButton: {
+        padding: 0,
+    },
     title: {
         [theme.breakpoints.only('xs')]: { maxWidth: `calc(100% - 100px)` },
     },
@@ -284,6 +287,7 @@ const ArticleCard: React.FC<IProps> = ({
                             data-testid={`ArticleCard-${id}-moreOptionsButton`}
                             aria-label="simple-menu"
                             aria-haspopup="true"
+                            className={classes.menuButton}
                         >
                             <Icon>more_vert</Icon>
                         </IconButton>
