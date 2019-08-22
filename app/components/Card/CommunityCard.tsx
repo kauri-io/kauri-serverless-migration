@@ -5,7 +5,6 @@ import { Theme, makeStyles } from '@material-ui/core/styles'
 import {
     Card,
     Typography,
-    CardMedia,
     CardContent,
     CardActions,
     Icon,
@@ -14,6 +13,7 @@ import {
 import TruncateMarkup from 'react-truncate-markup'
 import ShareDialog from './ShareDialog'
 import Avatar from '../Avatar'
+import Image from '../Image'
 
 export const CommunityCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -193,14 +193,16 @@ const CommunityCard: React.FC<IProps> = ({
         >
             <Link href={href.href} as={href.as}>
                 <a>
-                    <CardMedia
-                        data-testid={`CommunityCard-${id}-image`}
+                    <Image
                         className={classes.desktopMedia}
+                        data-testid={`CommunityCard-${id}-image`}
+                        width={152}
+                        height={152}
                         image={
                             (attributes && attributes.background) ||
                             'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
                         }
-                        title={String(name)}
+                        borderRadius="4px"
                     />
                 </a>
             </Link>
@@ -217,14 +219,12 @@ const CommunityCard: React.FC<IProps> = ({
                         </Link>
                     </div>
                     <Link href={href.href} as={href.as}>
-                        <a className={classes.name}>
+                        <a
+                            data-testid={`CommunityCard-${id}-name`}
+                            className={classes.name}
+                        >
                             <TruncateMarkup lines={1}>
-                                <Typography
-                                    data-testid={`CommunityCard-${id}-name`}
-                                    variant={'h5'}
-                                >
-                                    {name}
-                                </Typography>
+                                <Typography variant={'h5'}>{name}</Typography>
                             </TruncateMarkup>
                         </a>
                     </Link>

@@ -390,7 +390,7 @@ exports[`components/Image should match snapshot 1`] = `
       }
     }
   >
-    <Image
+    <ForwardRef
       image="http://test.com/image.png"
       width={100}
     >
@@ -465,7 +465,7 @@ exports[`components/Image should match snapshot 1`] = `
           </StyledComponent>
         </Image__Img>
       </InView>
-    </Image>
+    </ForwardRef>
   </ThemeProvider>
 </ThemeProvider>
 `;
