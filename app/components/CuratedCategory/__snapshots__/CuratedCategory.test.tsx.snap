@@ -434,7 +434,7 @@ exports[`components/CuratedCategory should match snapshot 1`] = `
           <div
             className="CuratedCategory__Container-sc-7fcfjn-0 cILmbH"
           >
-            <Image
+            <ForwardRef
               asBackground={true}
               borderRadius="4px"
               height="90px"
@@ -543,7 +543,7 @@ exports[`components/CuratedCategory should match snapshot 1`] = `
                   </StyledComponent>
                 </Image__Img>
               </InView>
-            </Image>
+            </ForwardRef>
             <CuratedCategory__Content>
               <StyledComponent
                 forwardedComponent={

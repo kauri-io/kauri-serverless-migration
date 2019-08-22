@@ -1,6 +1,5 @@
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
-import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
 import Avatar from '../Avatar'
 import Menu from '@material-ui/core/Menu'
@@ -15,6 +14,7 @@ import IconButton from '@material-ui/core/IconButton'
 import Icon from '@material-ui/core/Icon'
 import { useState } from 'react'
 import ShareDialog from './ShareDialog'
+import Image from '../Image'
 
 export const ArticleCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -109,7 +109,7 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
             marginRight: theme.spacing(1),
         },
         '& > *': {
-            lineHeight: '27 !important',
+            lineHeight: '27px !important',
         },
     },
     statistics: {
@@ -200,26 +200,26 @@ const ArticleCard: React.FC<IProps> = ({
             <div className={classes.cardActualContent}>
                 <div className={classes.header}>
                     <Link href={href.href} as={href.as}>
-                        <a className={classes.title}>
+                        <a
+                            data-testid={`ArticleCard-${id}-title`}
+                            className={classes.title}
+                        >
                             <TruncateMarkup lines={2}>
-                                <Typography
-                                    data-testid={`ArticleCard-${id}-title`}
-                                    variant={'h5'}
-                                >
-                                    {title}
-                                </Typography>
+                                <Typography variant={'h5'}>{title}</Typography>
                             </TruncateMarkup>
                         </a>
                     </Link>
                     <Link href={href.href} as={href.as}>
-                        <CardMedia
-                            data-testid={`ArticleCard-${id}-image`}
+                        <Image
                             className={classes.mobileMedia}
+                            data-testid={`ArticleCard-${id}-image`}
+                            width={76}
+                            height={76}
                             image={
                                 (attributes && attributes.background) ||
                                 'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
                             }
-                            title={String(title)}
+                            borderRadius="4px"
                         />
                     </Link>
                 </div>
@@ -341,14 +341,16 @@ const ArticleCard: React.FC<IProps> = ({
             </div>
             <Link href={href.href} as={href.as}>
                 <a>
-                    <CardMedia
-                        data-testid={`ArticleCard-${id}-image`}
+                    <Image
                         className={classes.desktopMedia}
+                        data-testid={`ArticleCard-${id}-image`}
+                        width={152}
+                        height={152}
                         image={
                             (attributes && attributes.background) ||
                             'https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU'
                         }
-                        title={String(title)}
+                        borderRadius="4px"
                     />
                 </a>
             </Link>

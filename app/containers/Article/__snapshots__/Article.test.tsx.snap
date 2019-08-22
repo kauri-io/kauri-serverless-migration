@@ -2676,6 +2676,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                     >
                                                       <a
                                                         className="makeStyles-title-171"
+                                                        data-testid="ArticleCard-1232-title"
                                                         href="/test-title-2/1232/a"
                                                         onClick={[Function]}
                                                         onMouseEnter={[Function]}
@@ -2688,7 +2689,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                           tokenize="characters"
                                                         >
                                                           <WithStyles(ForwardRef(Typography))
-                                                            data-testid="ArticleCard-1232-title"
                                                             variant="h5"
                                                           >
                                                             <ForwardRef(Typography)
@@ -2726,7 +2726,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                   "subtitle2": "MuiTypography-subtitle2",
                                                                 }
                                                               }
-                                                              data-testid="ArticleCard-1232-title"
                                                               theme={
                                                                 Object {
                                                                   "breakpoints": Object {
@@ -2997,7 +2996,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                             >
                                                               <h5
                                                                 className="MuiTypography-root MuiTypography-h5"
-                                                                data-testid="ArticleCard-1232-title"
                                                               >
                                                                 test title 2
                                                               </h5>
@@ -3011,42 +3009,104 @@ exports[`containers/Article should match snapshot 1`] = `
                                                       href="/article?article_id=1232"
                                                       prefetch={true}
                                                     >
-                                                      <WithStyles(ForwardRef(CardMedia))
+                                                      <ForwardRef
+                                                        borderRadius="4px"
                                                         className="makeStyles-mobileMedia-168"
                                                         data-testid="ArticleCard-1232-image"
+                                                        height={76}
                                                         image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
                                                         onClick={[Function]}
                                                         onMouseEnter={[Function]}
-                                                        title="test title 2"
+                                                        width={76}
                                                       >
-                                                        <ForwardRef(CardMedia)
-                                                          className="makeStyles-mobileMedia-168"
-                                                          classes={
-                                                            Object {
-                                                              "media": "MuiCardMedia-media",
-                                                              "root": "MuiCardMedia-root",
-                                                            }
-                                                          }
-                                                          data-testid="ArticleCard-1232-image"
-                                                          image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                                                          onClick={[Function]}
-                                                          onMouseEnter={[Function]}
-                                                          title="test title 2"
+                                                        <InView
+                                                          rootMargin="200px 0px"
+                                                          threshold={0}
+                                                          triggerOnce={true}
                                                         >
-                                                          <div
-                                                            className="MuiCardMedia-root makeStyles-mobileMedia-168"
+                                                          <Image__Img
+                                                            borderRadius="4px"
+                                                            className="makeStyles-mobileMedia-168"
                                                             data-testid="ArticleCard-1232-image"
+                                                            height={76}
+                                                            image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                                            inView={false}
                                                             onClick={[Function]}
                                                             onMouseEnter={[Function]}
-                                                            style={
-                                                              Object {
-                                                                "backgroundImage": "url(\\"https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU\\")",
+                                                            width={76}
+                                                          >
+                                                            <StyledComponent
+                                                              borderRadius="4px"
+                                                              className="makeStyles-mobileMedia-168"
+                                                              data-testid="ArticleCard-1232-image"
+                                                              forwardedComponent={
+                                                                Object {
+                                                                  "$$typeof": Symbol(react.forward_ref),
+                                                                  "attrs": Array [],
+                                                                  "componentStyle": ComponentStyle {
+                                                                    "componentId": "Image__Img-sc-1jpuda7-0",
+                                                                    "isStatic": false,
+                                                                    "lastClassName": "ewhrzK",
+                                                                    "rules": Array [
+                                                                      "height:",
+                                                                      [Function],
+                                                                      ";width:",
+                                                                      [Function],
+                                                                      ";",
+                                                                      [Function],
+                                                                      ";background:",
+                                                                      [Function],
+                                                                      ";background-size:cover;opacity:",
+                                                                      [Function],
+                                                                      ";transition:opacity ",
+                                                                      [Function],
+                                                                      "s;",
+                                                                      [Function],
+                                                                      ";",
+                                                                      [Function],
+                                                                      ";position:",
+                                                                      [Function],
+                                                                      ";",
+                                                                      [Function],
+                                                                      ";",
+                                                                      [Function],
+                                                                      ";",
+                                                                      [Function],
+                                                                      " ",
+                                                                      [Function],
+                                                                      ";",
+                                                                    ],
+                                                                  },
+                                                                  "displayName": "Image__Img",
+                                                                  "foldedComponentIds": Array [],
+                                                                  "render": [Function],
+                                                                  "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                                                                  "target": "div",
+                                                                  "toString": [Function],
+                                                                  "warnTooManyClasses": [Function],
+                                                                  "withComponent": [Function],
+                                                                }
                                                               }
-                                                            }
-                                                            title="test title 2"
-                                                          />
-                                                        </ForwardRef(CardMedia)>
-                                                      </WithStyles(ForwardRef(CardMedia))>
+                                                              forwardedRef={[Function]}
+                                                              height={76}
+                                                              image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                                              inView={false}
+                                                              onClick={[Function]}
+                                                              onMouseEnter={[Function]}
+                                                              width={76}
+                                                            >
+                                                              <div
+                                                                className="makeStyles-mobileMedia-168 Image__Img-sc-1jpuda7-0 ifAOXd"
+                                                                data-testid="ArticleCard-1232-image"
+                                                                height={76}
+                                                                onClick={[Function]}
+                                                                onMouseEnter={[Function]}
+                                                                width={76}
+                                                              />
+                                                            </StyledComponent>
+                                                          </Image__Img>
+                                                        </InView>
+                                                      </ForwardRef>
                                                     </Link>
                                                   </div>
                                                   <Link
@@ -3441,6 +3501,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                               href="/public-profile?user_id=6792"
                                                               prefetch={true}
                                                             >
+<<<<<<< HEAD
                                                               <a
                                                                 href="/test-author-username-2/6792/p"
                                                                 onClick={[Function]}
@@ -3574,6 +3635,53 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                           "subtitle1": "MuiTypography-subtitle1",
                                                                           "subtitle2": "MuiTypography-subtitle2",
                                                                         }
+=======
+                                                              <div
+                                                                className="makeStyles-container-207"
+                                                              >
+                                                                <img
+                                                                  className="makeStyles-avatar-208"
+                                                                  src="test avatar 2"
+                                                                />
+                                                                <WithStyles(ForwardRef(Typography))
+                                                                  className="makeStyles-username-209"
+                                                                  variant="subtitle2"
+                                                                >
+                                                                  <ForwardRef(Typography)
+                                                                    className="makeStyles-username-209"
+                                                                    classes={
+                                                                      Object {
+                                                                        "alignCenter": "MuiTypography-alignCenter",
+                                                                        "alignJustify": "MuiTypography-alignJustify",
+                                                                        "alignLeft": "MuiTypography-alignLeft",
+                                                                        "alignRight": "MuiTypography-alignRight",
+                                                                        "body1": "MuiTypography-body1",
+                                                                        "body2": "MuiTypography-body2",
+                                                                        "button": "MuiTypography-button",
+                                                                        "caption": "MuiTypography-caption",
+                                                                        "colorError": "MuiTypography-colorError",
+                                                                        "colorInherit": "MuiTypography-colorInherit",
+                                                                        "colorPrimary": "MuiTypography-colorPrimary",
+                                                                        "colorSecondary": "MuiTypography-colorSecondary",
+                                                                        "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                        "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                        "displayBlock": "MuiTypography-displayBlock",
+                                                                        "displayInline": "MuiTypography-displayInline",
+                                                                        "gutterBottom": "MuiTypography-gutterBottom",
+                                                                        "h1": "MuiTypography-h1",
+                                                                        "h2": "MuiTypography-h2",
+                                                                        "h3": "MuiTypography-h3",
+                                                                        "h4": "MuiTypography-h4",
+                                                                        "h5": "MuiTypography-h5",
+                                                                        "h6": "MuiTypography-h6",
+                                                                        "noWrap": "MuiTypography-noWrap",
+                                                                        "overline": "MuiTypography-overline",
+                                                                        "paragraph": "MuiTypography-paragraph",
+                                                                        "root": "MuiTypography-root",
+                                                                        "srOnly": "MuiTypography-srOnly",
+                                                                        "subtitle1": "MuiTypography-subtitle1",
+                                                                        "subtitle2": "MuiTypography-subtitle2",
+>>>>>>> Make cards use the Image component + fix the weird ass lineHeight mess up and share dialog magic trick
                                                                       }
                                                                       theme={
                                                                         Object {
@@ -3841,7 +3949,15 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                           },
                                                                         }
                                                                       }
+<<<<<<< HEAD
                                                                       variant="subtitle2"
+=======
+                                                                    }
+                                                                    variant="subtitle2"
+                                                                  >
+                                                                    <h6
+                                                                      className="MuiTypography-root makeStyles-username-209 MuiTypography-subtitle2"
+>>>>>>> Make cards use the Image component + fix the weird ass lineHeight mess up and share dialog magic trick
                                                                     >
                                                                       <h6
                                                                         className="MuiTypography-root makeStyles-username-211 MuiTypography-subtitle2"
@@ -5010,12 +5126,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                             <ShareDialogComponent
                                                               classes={
                                                                 Object {
-                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-237",
-                                                                  "closeButton": "ShareDialogComponent-closeButton-234",
-                                                                  "container": "ShareDialogComponent-container-235",
-                                                                  "icon": "ShareDialogComponent-icon-236",
-                                                                  "iconContainer": "ShareDialogComponent-iconContainer-238",
-                                                                  "root": "ShareDialogComponent-root-233",
+                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-235",
+                                                                  "closeButton": "ShareDialogComponent-closeButton-232",
+                                                                  "container": "ShareDialogComponent-container-233",
+                                                                  "icon": "ShareDialogComponent-icon-234",
+                                                                  "iconContainer": "ShareDialogComponent-iconContainer-236",
+                                                                  "root": "ShareDialogComponent-root-231",
                                                                 }
                                                               }
                                                               handleClose={[Function]}
@@ -6549,36 +6665,96 @@ exports[`containers/Article should match snapshot 1`] = `
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
-                                                    <WithStyles(ForwardRef(CardMedia))
+                                                    <ForwardRef
+                                                      borderRadius="4px"
                                                       className="makeStyles-desktopMedia-169"
                                                       data-testid="ArticleCard-1232-image"
+                                                      height={152}
                                                       image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                                                      title="test title 2"
+                                                      width={152}
                                                     >
-                                                      <ForwardRef(CardMedia)
-                                                        className="makeStyles-desktopMedia-169"
-                                                        classes={
-                                                          Object {
-                                                            "media": "MuiCardMedia-media",
-                                                            "root": "MuiCardMedia-root",
-                                                          }
-                                                        }
-                                                        data-testid="ArticleCard-1232-image"
-                                                        image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                                                        title="test title 2"
+                                                      <InView
+                                                        rootMargin="200px 0px"
+                                                        threshold={0}
+                                                        triggerOnce={true}
                                                       >
-                                                        <div
-                                                          className="MuiCardMedia-root makeStyles-desktopMedia-169"
+                                                        <Image__Img
+                                                          borderRadius="4px"
+                                                          className="makeStyles-desktopMedia-169"
                                                           data-testid="ArticleCard-1232-image"
-                                                          style={
-                                                            Object {
-                                                              "backgroundImage": "url(\\"https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU\\")",
+                                                          height={152}
+                                                          image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                                          inView={false}
+                                                          width={152}
+                                                        >
+                                                          <StyledComponent
+                                                            borderRadius="4px"
+                                                            className="makeStyles-desktopMedia-169"
+                                                            data-testid="ArticleCard-1232-image"
+                                                            forwardedComponent={
+                                                              Object {
+                                                                "$$typeof": Symbol(react.forward_ref),
+                                                                "attrs": Array [],
+                                                                "componentStyle": ComponentStyle {
+                                                                  "componentId": "Image__Img-sc-1jpuda7-0",
+                                                                  "isStatic": false,
+                                                                  "lastClassName": "ewhrzK",
+                                                                  "rules": Array [
+                                                                    "height:",
+                                                                    [Function],
+                                                                    ";width:",
+                                                                    [Function],
+                                                                    ";",
+                                                                    [Function],
+                                                                    ";background:",
+                                                                    [Function],
+                                                                    ";background-size:cover;opacity:",
+                                                                    [Function],
+                                                                    ";transition:opacity ",
+                                                                    [Function],
+                                                                    "s;",
+                                                                    [Function],
+                                                                    ";",
+                                                                    [Function],
+                                                                    ";position:",
+                                                                    [Function],
+                                                                    ";",
+                                                                    [Function],
+                                                                    ";",
+                                                                    [Function],
+                                                                    ";",
+                                                                    [Function],
+                                                                    " ",
+                                                                    [Function],
+                                                                    ";",
+                                                                  ],
+                                                                },
+                                                                "displayName": "Image__Img",
+                                                                "foldedComponentIds": Array [],
+                                                                "render": [Function],
+                                                                "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                                                                "target": "div",
+                                                                "toString": [Function],
+                                                                "warnTooManyClasses": [Function],
+                                                                "withComponent": [Function],
+                                                              }
                                                             }
-                                                          }
-                                                          title="test title 2"
-                                                        />
-                                                      </ForwardRef(CardMedia)>
-                                                    </WithStyles(ForwardRef(CardMedia))>
+                                                            forwardedRef={[Function]}
+                                                            height={152}
+                                                            image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                                            inView={false}
+                                                            width={152}
+                                                          >
+                                                            <div
+                                                              className="makeStyles-desktopMedia-169 Image__Img-sc-1jpuda7-0 ewhrzK"
+                                                              data-testid="ArticleCard-1232-image"
+                                                              height={152}
+                                                              width={152}
+                                                            />
+                                                          </StyledComponent>
+                                                        </Image__Img>
+                                                      </InView>
+                                                    </ForwardRef>
                                                   </a>
                                                 </Link>
                                               </div>
@@ -6866,6 +7042,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                     >
                                                       <a
                                                         className="makeStyles-title-171"
+                                                        data-testid="ArticleCard-1233-title"
                                                         href="/test-title-3/1233/a"
                                                         onClick={[Function]}
                                                         onMouseEnter={[Function]}
@@ -6878,7 +7055,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                           tokenize="characters"
                                                         >
                                                           <WithStyles(ForwardRef(Typography))
-                                                            data-testid="ArticleCard-1233-title"
                                                             variant="h5"
                                                           >
                                                             <ForwardRef(Typography)
@@ -6916,7 +7092,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                   "subtitle2": "MuiTypography-subtitle2",
                                                                 }
                                                               }
-                                                              data-testid="ArticleCard-1233-title"
                                                               theme={
                                                                 Object {
                                                                   "breakpoints": Object {
@@ -7187,7 +7362,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                             >
                                                               <h5
                                                                 className="MuiTypography-root MuiTypography-h5"
-                                                                data-testid="ArticleCard-1233-title"
                                                               >
                                                                 test title 3
                                                               </h5>
@@ -7201,42 +7375,104 @@ exports[`containers/Article should match snapshot 1`] = `
                                                       href="/article?article_id=1233"
                                                       prefetch={true}
                                                     >
-                                                      <WithStyles(ForwardRef(CardMedia))
+                                                      <ForwardRef
+                                                        borderRadius="4px"
                                                         className="makeStyles-mobileMedia-168"
                                                         data-testid="ArticleCard-1233-image"
+                                                        height={76}
                                                         image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
                                                         onClick={[Function]}
                                                         onMouseEnter={[Function]}
-                                                        title="test title 3"
+                                                        width={76}
                                                       >
-                                                        <ForwardRef(CardMedia)
-                                                          className="makeStyles-mobileMedia-168"
-                                                          classes={
-                                                            Object {
-                                                              "media": "MuiCardMedia-media",
-                                                              "root": "MuiCardMedia-root",
-                                                            }
-                                                          }
-                                                          data-testid="ArticleCard-1233-image"
-                                                          image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                                                          onClick={[Function]}
-                                                          onMouseEnter={[Function]}
-                                                          title="test title 3"
+                                                        <InView
+                                                          rootMargin="200px 0px"
+                                                          threshold={0}
+                                                          triggerOnce={true}
                                                         >
-                                                          <div
-                                                            className="MuiCardMedia-root makeStyles-mobileMedia-168"
+                                                          <Image__Img
+                                                            borderRadius="4px"
+                                                            className="makeStyles-mobileMedia-168"
                                                             data-testid="ArticleCard-1233-image"
+                                                            height={76}
+                                                            image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                                            inView={false}
                                                             onClick={[Function]}
                                                             onMouseEnter={[Function]}
-                                                            style={
-                                                              Object {
-                                                                "backgroundImage": "url(\\"https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU\\")",
+                                                            width={76}
+                                                          >
+                                                            <StyledComponent
+                                                              borderRadius="4px"
+                                                              className="makeStyles-mobileMedia-168"
+                                                              data-testid="ArticleCard-1233-image"
+                                                              forwardedComponent={
+                                                                Object {
+                                                                  "$$typeof": Symbol(react.forward_ref),
+                                                                  "attrs": Array [],
+                                                                  "componentStyle": ComponentStyle {
+                                                                    "componentId": "Image__Img-sc-1jpuda7-0",
+                                                                    "isStatic": false,
+                                                                    "lastClassName": "ewhrzK",
+                                                                    "rules": Array [
+                                                                      "height:",
+                                                                      [Function],
+                                                                      ";width:",
+                                                                      [Function],
+                                                                      ";",
+                                                                      [Function],
+                                                                      ";background:",
+                                                                      [Function],
+                                                                      ";background-size:cover;opacity:",
+                                                                      [Function],
+                                                                      ";transition:opacity ",
+                                                                      [Function],
+                                                                      "s;",
+                                                                      [Function],
+                                                                      ";",
+                                                                      [Function],
+                                                                      ";position:",
+                                                                      [Function],
+                                                                      ";",
+                                                                      [Function],
+                                                                      ";",
+                                                                      [Function],
+                                                                      ";",
+                                                                      [Function],
+                                                                      " ",
+                                                                      [Function],
+                                                                      ";",
+                                                                    ],
+                                                                  },
+                                                                  "displayName": "Image__Img",
+                                                                  "foldedComponentIds": Array [],
+                                                                  "render": [Function],
+                                                                  "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                                                                  "target": "div",
+                                                                  "toString": [Function],
+                                                                  "warnTooManyClasses": [Function],
+                                                                  "withComponent": [Function],
+                                                                }
                                                               }
-                                                            }
-                                                            title="test title 3"
-                                                          />
-                                                        </ForwardRef(CardMedia)>
-                                                      </WithStyles(ForwardRef(CardMedia))>
+                                                              forwardedRef={[Function]}
+                                                              height={76}
+                                                              image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                                              inView={false}
+                                                              onClick={[Function]}
+                                                              onMouseEnter={[Function]}
+                                                              width={76}
+                                                            >
+                                                              <div
+                                                                className="makeStyles-mobileMedia-168 Image__Img-sc-1jpuda7-0 ifAOXd"
+                                                                data-testid="ArticleCard-1233-image"
+                                                                height={76}
+                                                                onClick={[Function]}
+                                                                onMouseEnter={[Function]}
+                                                                width={76}
+                                                              />
+                                                            </StyledComponent>
+                                                          </Image__Img>
+                                                        </InView>
+                                                      </ForwardRef>
                                                     </Link>
                                                   </div>
                                                   <Link
@@ -7631,6 +7867,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                               href="/public-profile?user_id=6793"
                                                               prefetch={true}
                                                             >
+<<<<<<< HEAD
                                                               <a
                                                                 href="/test-author-username-3/6793/p"
                                                                 onClick={[Function]}
@@ -7764,6 +8001,53 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                           "subtitle1": "MuiTypography-subtitle1",
                                                                           "subtitle2": "MuiTypography-subtitle2",
                                                                         }
+=======
+                                                              <div
+                                                                className="makeStyles-container-254"
+                                                              >
+                                                                <img
+                                                                  className="makeStyles-avatar-255"
+                                                                  src="test avatar 3"
+                                                                />
+                                                                <WithStyles(ForwardRef(Typography))
+                                                                  className="makeStyles-username-256"
+                                                                  variant="subtitle2"
+                                                                >
+                                                                  <ForwardRef(Typography)
+                                                                    className="makeStyles-username-256"
+                                                                    classes={
+                                                                      Object {
+                                                                        "alignCenter": "MuiTypography-alignCenter",
+                                                                        "alignJustify": "MuiTypography-alignJustify",
+                                                                        "alignLeft": "MuiTypography-alignLeft",
+                                                                        "alignRight": "MuiTypography-alignRight",
+                                                                        "body1": "MuiTypography-body1",
+                                                                        "body2": "MuiTypography-body2",
+                                                                        "button": "MuiTypography-button",
+                                                                        "caption": "MuiTypography-caption",
+                                                                        "colorError": "MuiTypography-colorError",
+                                                                        "colorInherit": "MuiTypography-colorInherit",
+                                                                        "colorPrimary": "MuiTypography-colorPrimary",
+                                                                        "colorSecondary": "MuiTypography-colorSecondary",
+                                                                        "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                        "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                        "displayBlock": "MuiTypography-displayBlock",
+                                                                        "displayInline": "MuiTypography-displayInline",
+                                                                        "gutterBottom": "MuiTypography-gutterBottom",
+                                                                        "h1": "MuiTypography-h1",
+                                                                        "h2": "MuiTypography-h2",
+                                                                        "h3": "MuiTypography-h3",
+                                                                        "h4": "MuiTypography-h4",
+                                                                        "h5": "MuiTypography-h5",
+                                                                        "h6": "MuiTypography-h6",
+                                                                        "noWrap": "MuiTypography-noWrap",
+                                                                        "overline": "MuiTypography-overline",
+                                                                        "paragraph": "MuiTypography-paragraph",
+                                                                        "root": "MuiTypography-root",
+                                                                        "srOnly": "MuiTypography-srOnly",
+                                                                        "subtitle1": "MuiTypography-subtitle1",
+                                                                        "subtitle2": "MuiTypography-subtitle2",
+>>>>>>> Make cards use the Image component + fix the weird ass lineHeight mess up and share dialog magic trick
                                                                       }
                                                                       theme={
                                                                         Object {
@@ -8031,7 +8315,15 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                           },
                                                                         }
                                                                       }
+<<<<<<< HEAD
                                                                       variant="subtitle2"
+=======
+                                                                    }
+                                                                    variant="subtitle2"
+                                                                  >
+                                                                    <h6
+                                                                      className="MuiTypography-root makeStyles-username-256 MuiTypography-subtitle2"
+>>>>>>> Make cards use the Image component + fix the weird ass lineHeight mess up and share dialog magic trick
                                                                     >
                                                                       <h6
                                                                         className="MuiTypography-root makeStyles-username-258 MuiTypography-subtitle2"
@@ -9200,12 +9492,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                             <ShareDialogComponent
                                                               classes={
                                                                 Object {
-                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-237",
-                                                                  "closeButton": "ShareDialogComponent-closeButton-234",
-                                                                  "container": "ShareDialogComponent-container-235",
-                                                                  "icon": "ShareDialogComponent-icon-236",
-                                                                  "iconContainer": "ShareDialogComponent-iconContainer-238",
-                                                                  "root": "ShareDialogComponent-root-233",
+                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-235",
+                                                                  "closeButton": "ShareDialogComponent-closeButton-232",
+                                                                  "container": "ShareDialogComponent-container-233",
+                                                                  "icon": "ShareDialogComponent-icon-234",
+                                                                  "iconContainer": "ShareDialogComponent-iconContainer-236",
+                                                                  "root": "ShareDialogComponent-root-231",
                                                                 }
                                                               }
                                                               handleClose={[Function]}
@@ -10739,36 +11031,96 @@ exports[`containers/Article should match snapshot 1`] = `
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
-                                                    <WithStyles(ForwardRef(CardMedia))
+                                                    <ForwardRef
+                                                      borderRadius="4px"
                                                       className="makeStyles-desktopMedia-169"
                                                       data-testid="ArticleCard-1233-image"
+                                                      height={152}
                                                       image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                                                      title="test title 3"
+                                                      width={152}
                                                     >
-                                                      <ForwardRef(CardMedia)
-                                                        className="makeStyles-desktopMedia-169"
-                                                        classes={
-                                                          Object {
-                                                            "media": "MuiCardMedia-media",
-                                                            "root": "MuiCardMedia-root",
-                                                          }
-                                                        }
-                                                        data-testid="ArticleCard-1233-image"
-                                                        image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                                                        title="test title 3"
+                                                      <InView
+                                                        rootMargin="200px 0px"
+                                                        threshold={0}
+                                                        triggerOnce={true}
                                                       >
-                                                        <div
-                                                          className="MuiCardMedia-root makeStyles-desktopMedia-169"
+                                                        <Image__Img
+                                                          borderRadius="4px"
+                                                          className="makeStyles-desktopMedia-169"
                                                           data-testid="ArticleCard-1233-image"
-                                                          style={
-                                                            Object {
-                                                              "backgroundImage": "url(\\"https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU\\")",
+                                                          height={152}
+                                                          image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                                          inView={false}
+                                                          width={152}
+                                                        >
+                                                          <StyledComponent
+                                                            borderRadius="4px"
+                                                            className="makeStyles-desktopMedia-169"
+                                                            data-testid="ArticleCard-1233-image"
+                                                            forwardedComponent={
+                                                              Object {
+                                                                "$$typeof": Symbol(react.forward_ref),
+                                                                "attrs": Array [],
+                                                                "componentStyle": ComponentStyle {
+                                                                  "componentId": "Image__Img-sc-1jpuda7-0",
+                                                                  "isStatic": false,
+                                                                  "lastClassName": "ewhrzK",
+                                                                  "rules": Array [
+                                                                    "height:",
+                                                                    [Function],
+                                                                    ";width:",
+                                                                    [Function],
+                                                                    ";",
+                                                                    [Function],
+                                                                    ";background:",
+                                                                    [Function],
+                                                                    ";background-size:cover;opacity:",
+                                                                    [Function],
+                                                                    ";transition:opacity ",
+                                                                    [Function],
+                                                                    "s;",
+                                                                    [Function],
+                                                                    ";",
+                                                                    [Function],
+                                                                    ";position:",
+                                                                    [Function],
+                                                                    ";",
+                                                                    [Function],
+                                                                    ";",
+                                                                    [Function],
+                                                                    ";",
+                                                                    [Function],
+                                                                    " ",
+                                                                    [Function],
+                                                                    ";",
+                                                                  ],
+                                                                },
+                                                                "displayName": "Image__Img",
+                                                                "foldedComponentIds": Array [],
+                                                                "render": [Function],
+                                                                "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                                                                "target": "div",
+                                                                "toString": [Function],
+                                                                "warnTooManyClasses": [Function],
+                                                                "withComponent": [Function],
+                                                              }
                                                             }
-                                                          }
-                                                          title="test title 3"
-                                                        />
-                                                      </ForwardRef(CardMedia)>
-                                                    </WithStyles(ForwardRef(CardMedia))>
+                                                            forwardedRef={[Function]}
+                                                            height={152}
+                                                            image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                                            inView={false}
+                                                            width={152}
+                                                          >
+                                                            <div
+                                                              className="makeStyles-desktopMedia-169 Image__Img-sc-1jpuda7-0 ewhrzK"
+                                                              data-testid="ArticleCard-1233-image"
+                                                              height={152}
+                                                              width={152}
+                                                            />
+                                                          </StyledComponent>
+                                                        </Image__Img>
+                                                      </InView>
+                                                    </ForwardRef>
                                                   </a>
                                                 </Link>
                                               </div>

@@ -1,3 +1,4 @@
+import React from 'react'
 import styled, { css } from 'styled-components'
 import { InView } from 'react-intersection-observer'
 import config from '../../config'
@@ -110,13 +111,16 @@ const Img = styled.div<ImgProps>`
         (props.mobileHeight || props.mobileWidth) && mobileDimensionsCSS};
 `
 
-const Image = (props: ImgProps) => (
-    <InView rootMargin={'200px 0px'} triggerOnce={true}>
-        {({ inView, ref }) => (
-            <Img {...props} ref={ref} inView={inView}>
-                {props.children}
-            </Img>
-        )}
-    </InView>
+const Image = React.forwardRef(
+    (props: ImgProps, _innerRef: React.Ref<HTMLLIElement>) => (
+        <InView rootMargin={'200px 0px'} triggerOnce={true}>
+            {({ inView, ref }) => (
+                <Img {...props} ref={ref} inView={inView}>
+                    {props.children}
+                </Img>
+            )}
+        </InView>
+    )
 )
+
 export default Image

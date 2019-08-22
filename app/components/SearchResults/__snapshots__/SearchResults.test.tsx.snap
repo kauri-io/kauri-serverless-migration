@@ -464,7 +464,7 @@ exports[`components/ResourceRowWithImage should match snapshot 1`] = `
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
-                  <Image
+                  <ForwardRef
                     borderBottomLeftRadius="4px"
                     borderTopLeftRadius="4px"
                     height={195}
@@ -549,7 +549,7 @@ exports[`components/ResourceRowWithImage should match snapshot 1`] = `
                         </StyledComponent>
                       </Image__Img>
                     </InView>
-                  </Image>
+                  </ForwardRef>
                 </a>
               </Link>
               <ResourceRowWithImage__Container>
