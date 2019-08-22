@@ -535,10 +535,92 @@ exports[`components/TopContributors should match snapshot 1`] = `
                         <div
                           className="makeStyles-container-1"
                         >
-                          <img
+                          <Image
+                            borderRadius="2px"
                             className="makeStyles-avatar-2"
-                            src="test url"
-                          />
+                            height={24}
+                            image="test url"
+                            width={24}
+                          >
+                            <InView
+                              rootMargin="200px 0px"
+                              threshold={0}
+                              triggerOnce={true}
+                            >
+                              <Image__Img
+                                borderRadius="2px"
+                                className="makeStyles-avatar-2"
+                                height={24}
+                                image="test url"
+                                inView={false}
+                                width={24}
+                              >
+                                <StyledComponent
+                                  borderRadius="2px"
+                                  className="makeStyles-avatar-2"
+                                  forwardedComponent={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "attrs": Array [],
+                                      "componentStyle": ComponentStyle {
+                                        "componentId": "Image__Img-sc-1jpuda7-0",
+                                        "isStatic": false,
+                                        "lastClassName": "fFzdZc",
+                                        "rules": Array [
+                                          "height:",
+                                          [Function],
+                                          ";width:",
+                                          [Function],
+                                          ";",
+                                          [Function],
+                                          ";background:",
+                                          [Function],
+                                          ";background-size:cover;opacity:",
+                                          [Function],
+                                          ";transition:opacity ",
+                                          [Function],
+                                          "s;",
+                                          [Function],
+                                          ";",
+                                          [Function],
+                                          ";position:",
+                                          [Function],
+                                          ";",
+                                          [Function],
+                                          ";",
+                                          [Function],
+                                          ";",
+                                          [Function],
+                                          " ",
+                                          [Function],
+                                          ";",
+                                        ],
+                                      },
+                                      "displayName": "Image__Img",
+                                      "foldedComponentIds": Array [],
+                                      "render": [Function],
+                                      "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                                      "target": "div",
+                                      "toString": [Function],
+                                      "warnTooManyClasses": [Function],
+                                      "withComponent": [Function],
+                                    }
+                                  }
+                                  forwardedRef={[Function]}
+                                  height={24}
+                                  image="test url"
+                                  inView={false}
+                                  width={24}
+                                >
+                                  <div
+                                    className="makeStyles-avatar-2 Image__Img-sc-1jpuda7-0 fFzdZc"
+                                    height={24}
+                                    width={24}
+                                  />
+                                </StyledComponent>
+                              </Image__Img>
+                            </InView>
+                          </Image>
                           <WithStyles(ForwardRef(Typography))
                             className="makeStyles-username-3"
                             variant="subtitle2"

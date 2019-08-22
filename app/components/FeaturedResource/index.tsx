@@ -50,8 +50,6 @@ const FeaturedResource: React.FunctionComponent<
 
     let resourceURL
 
-    console.log(resourceType)
-
     if (resourceType === 'article') {
         resourceURL = getArticleURL({
             id,

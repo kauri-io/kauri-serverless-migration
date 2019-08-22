@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { InView } from 'react-intersection-observer'
+import config from '../../config'
 
 interface ImgProps {
     image: string
@@ -25,8 +26,6 @@ interface ImgProps {
 
 export const getURL = (
     url: string,
-    env: string,
-    cloudImageId: string,
     height?: number | string,
     width?: number | string
 ) => {
@@ -34,17 +33,16 @@ export const getURL = (
     const widthParam = typeof width === 'number' ? width : null
     const getCDNURL = () => {
         if (heightParam && !widthParam) {
-            return `https://${cloudImageId}.cloudimg.io/crop/2560x${heightParam}/webp/${url}`
+            return `https://${config.cloudImageId}.cloudimg.io/crop/2560x${heightParam}/webp/${url}`
         } else if (widthParam && !heightParam) {
-            return `https://${cloudImageId}.cloudimg.io/${widthParam}/webp/${url}`
+            return `https://${config.cloudImageId}.cloudimg.io/${widthParam}/webp/${url}`
         } else if (widthParam && heightParam) {
-            return `https://${cloudImageId}.cloudimg.io/crop/${widthParam}x${heightParam}/webp/${url}`
+            return `https://${config.cloudImageId}.cloudimg.io/crop/${widthParam}x${heightParam}/webp/${url}`
         } else {
-            return `https://${cloudImageId}.cloudimg.io/width/2560/webp/${url}`
+            return `https://${config.cloudImageId}.cloudimg.io/width/2560/webp/${url}`
         }
     }
-
-    if (env === 'production') {
+    if (config.useCloudImage) {
         return getCDNURL()
     } else {
         return url
@@ -69,8 +67,6 @@ const Img = styled.div<ImgProps>`
             props.inView
                 ? `url(${getURL(
                       props.image,
-                      String(process.env.config),
-                      String(process.env.cloudImageId),
                       props.height,
                       props.width
                   )}) center center`
