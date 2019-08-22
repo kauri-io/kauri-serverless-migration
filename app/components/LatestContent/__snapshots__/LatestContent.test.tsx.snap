@@ -960,7 +960,7 @@ exports[`components/LatestContent should match snapshot 1`] = `
             </WithStyles(ForwardRef(Grid))>
             <WithStyles(ForwardRef(Grid))
               container={true}
-              justify="center"
+              justify="flex-start"
               spacing={2}
             >
               <ForwardRef(Grid)
@@ -1072,17 +1072,17 @@ exports[`components/LatestContent should match snapshot 1`] = `
                   }
                 }
                 container={true}
-                justify="center"
+                justify="flex-start"
                 spacing={2}
               >
                 <div
-                  className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
+                  className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
                 >
                   <WithStyles(ForwardRef(Grid))
                     container={true}
                     item={true}
                     justify="flex-end"
-                    sm={6}
+                    sm={4}
                   >
                     <ForwardRef(Grid)
                       classes={
@@ -1195,10 +1195,10 @@ exports[`components/LatestContent should match snapshot 1`] = `
                       container={true}
                       item={true}
                       justify="flex-end"
-                      sm={6}
+                      sm={4}
                     >
                       <div
-                        className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-sm-6"
+                        className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-flex-end MuiGrid-grid-sm-4"
                       >
                         <Link
                           as="/articles"
@@ -1333,7 +1333,7 @@ exports[`components/LatestContent should match snapshot 1`] = `
                   </WithStyles(ForwardRef(Grid))>
                   <WithStyles(ForwardRef(Grid))
                     item={true}
-                    sm={6}
+                    sm={4}
                   >
                     <ForwardRef(Grid)
                       classes={
@@ -1444,10 +1444,10 @@ exports[`components/LatestContent should match snapshot 1`] = `
                         }
                       }
                       item={true}
-                      sm={6}
+                      sm={4}
                     >
                       <div
-                        className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-6"
+                        className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-4"
                       >
                         <Link
                           as="/collections"

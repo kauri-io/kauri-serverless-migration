@@ -11,6 +11,7 @@ import fetch from 'isomorphic-unfetch'
 import mixpanel from 'mixpanel-browser'
 import initRedux from './init-redux'
 import initApollo from './init-apollo'
+import { handleRedirects } from './redirects'
 
 import { ThemeProvider as MaterialThemeProvider } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -225,6 +226,8 @@ export default (ComposedComponent: any) =>
                 }
             }
             stateRedux = redux && redux.getState()
+
+            handleRedirects(context, stateApollo, url)
 
             return {
                 ua,

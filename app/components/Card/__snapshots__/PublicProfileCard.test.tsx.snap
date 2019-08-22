@@ -478,10 +478,92 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                         <div
                           className="makeStyles-container-40"
                         >
-                          <img
+                          <Image
+                            borderRadius="2px"
                             className="makeStyles-avatar-41"
-                            src="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                          />
+                            height={24}
+                            image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                            width={24}
+                          >
+                            <InView
+                              rootMargin="200px 0px"
+                              threshold={0}
+                              triggerOnce={true}
+                            >
+                              <Image__Img
+                                borderRadius="2px"
+                                className="makeStyles-avatar-41"
+                                height={24}
+                                image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                inView={false}
+                                width={24}
+                              >
+                                <StyledComponent
+                                  borderRadius="2px"
+                                  className="makeStyles-avatar-41"
+                                  forwardedComponent={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "attrs": Array [],
+                                      "componentStyle": ComponentStyle {
+                                        "componentId": "Image__Img-sc-1jpuda7-0",
+                                        "isStatic": false,
+                                        "lastClassName": "fFzdZc",
+                                        "rules": Array [
+                                          "height:",
+                                          [Function],
+                                          ";width:",
+                                          [Function],
+                                          ";",
+                                          [Function],
+                                          ";background:",
+                                          [Function],
+                                          ";background-size:cover;opacity:",
+                                          [Function],
+                                          ";transition:opacity ",
+                                          [Function],
+                                          "s;",
+                                          [Function],
+                                          ";",
+                                          [Function],
+                                          ";position:",
+                                          [Function],
+                                          ";",
+                                          [Function],
+                                          ";",
+                                          [Function],
+                                          ";",
+                                          [Function],
+                                          " ",
+                                          [Function],
+                                          ";",
+                                        ],
+                                      },
+                                      "displayName": "Image__Img",
+                                      "foldedComponentIds": Array [],
+                                      "render": [Function],
+                                      "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                                      "target": "div",
+                                      "toString": [Function],
+                                      "warnTooManyClasses": [Function],
+                                      "withComponent": [Function],
+                                    }
+                                  }
+                                  forwardedRef={[Function]}
+                                  height={24}
+                                  image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                  inView={false}
+                                  width={24}
+                                >
+                                  <div
+                                    className="makeStyles-avatar-41 Image__Img-sc-1jpuda7-0 fFzdZc"
+                                    height={24}
+                                    width={24}
+                                  />
+                                </StyledComponent>
+                              </Image__Img>
+                            </InView>
+                          </Image>
                         </div>
                       </a>
                     </Link>

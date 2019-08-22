@@ -36,7 +36,7 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                     switch (resource.__typename) {
                         case 'ArticleDTO': {
                             return (
-                                <Grid item={true} sm={6}>
+                                <Grid item={true} sm={12}>
                                     <ArticleCard
                                         {...resource}
                                         href={getArticleURL(resource)}
@@ -47,7 +47,7 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
 
                         case 'CollectionDTO': {
                             return (
-                                <Grid item={true} sm={6}>
+                                <Grid item={true} sm={12}>
                                     {' '}
                                     <CollectionCard
                                         {...resource}
@@ -59,7 +59,7 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
 
                         case 'CommunityDTO':
                             return (
-                                <Grid item={true} sm={6}>
+                                <Grid item={true} sm={12}>
                                     {' '}
                                     <CommunityCard
                                         {...resource}
@@ -74,8 +74,8 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                     }
                 })}
             </Grid>
-            <Grid justify="center" spacing={2} container={true}>
-                <Grid container={true} justify="flex-end" sm={6} item={true}>
+            <Grid justify="flex-start" spacing={2} container={true}>
+                <Grid container={true} justify="flex-end" sm={4} item={true}>
                     <Link href="/articles" as="/articles">
                         <a>
                             <Button color="primary" variant="outlined">
@@ -85,7 +85,7 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                     </Link>
                 </Grid>
 
-                <Grid sm={6} item={true}>
+                <Grid sm={4} item={true}>
                     <Link href="/collections" as="/collections">
                         <a>
                             <Button color="primary" variant="outlined">

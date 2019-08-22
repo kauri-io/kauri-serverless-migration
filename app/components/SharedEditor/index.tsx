@@ -101,9 +101,7 @@ export class SharedEditor extends React.Component<IProps> {
             )
             this.props.handleChange(mdeState)
         }
-        if (process.env.NODE_ENV !== 'development') {
-            window.addEventListener('beforeunload', this.handleCloseBrowserTab)
-        }
+        window.addEventListener('beforeunload', this.handleCloseBrowserTab)
         global.window.setFieldsValue = this.props.setFieldsValue
         global.window.getFieldsValue = this.props.getFieldsValue
     }

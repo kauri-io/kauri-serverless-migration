@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/styles'
 import makeBlockie from 'ethereum-blockies-base64'
 import Link from 'next/link'
 import { getProfileURL, getCommunityURL } from '../../lib/getURLs'
+import Image from '../Image'
 
 interface IProps {
     id: string
@@ -36,12 +37,9 @@ const AvatarComp = ({
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
-            height: size || 24,
         },
         avatar: {
-            height: '100%',
             marginRight: theme.spacing(1),
-            borderRadius: 2,
         },
         username: {
             textTransform: 'capitalize',
@@ -63,11 +61,13 @@ const AvatarComp = ({
         <Link as={url.as} href={url.href}>
             <a>
                 <div className={className || classes.container}>
-                    {avatar ? (
-                        <img className={classes.avatar} src={avatar} />
-                    ) : (
-                        <img className={classes.avatar} src={makeBlockie(id)} />
-                    )}
+                    <Image
+                        className={classes.avatar}
+                        image={avatar ? avatar : makeBlockie(id)}
+                        width={size || 24}
+                        height={size || 24}
+                        borderRadius={'2px'}
+                    />
                     {withName && (
                         <Typography
                             color={color}

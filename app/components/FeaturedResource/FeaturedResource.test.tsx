@@ -7,7 +7,7 @@ let props = {
     title: 'Test Title',
     description: 'test description',
     tags: ['test'],
-    resourceType: 'ARTICLE',
+    resourceType: 'article',
     ownerResourceType: 'COMMUNITY',
     avatar: 'avatar url',
     userId: 'test user id',

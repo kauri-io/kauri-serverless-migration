@@ -243,21 +243,23 @@ const ArticleCard: React.FC<IProps> = ({
                     </a>
                 </Link>
                 <CardActions className={classes.cardActions}>
-                    <Avatar
-                        aria-label={String(author && author.username)}
-                        data-testid={`ArticleCard-${id}-author`}
-                        id={String(author && author.id)}
-                        name={author && author.name}
-                        username={author && author.username}
-                        avatar={author && author.avatar}
-                        withName={true}
-                    />
-                    <Typography
-                        data-testid={`ArticleCard-${id}-date`}
-                        variant="body2"
-                    >
-                        {moment(String(datePublished)).format('DD MMM YY')}
-                    </Typography>
+                    <div className={classes.user}>
+                        <Avatar
+                            aria-label={String(author && author.username)}
+                            data-testid={`ArticleCard-${id}-author`}
+                            id={String(author && author.id)}
+                            name={author && author.name}
+                            username={author && author.username}
+                            avatar={author && author.avatar}
+                            withName={true}
+                        />
+                        <Typography
+                            data-testid={`ArticleCard-${id}-date`}
+                            variant="body2"
+                        >
+                            {moment(String(datePublished)).format('DD MMM YY')}
+                        </Typography>
+                    </div>
 
                     <div className={classes.statistics}>
                         <Icon data-testid={`ArticleCard-${id}-commentIcon`}>

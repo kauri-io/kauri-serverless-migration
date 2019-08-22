@@ -19,4 +19,6 @@ export default {
     environment: 'production',
     appId: 'kauri',
     clientId: 'kauri-gateway',
+    cloudImageId: 'asdgvdoyen',
+    useCloudImage: false,
 }

@@ -395,7 +395,7 @@ exports[`components/FeaturedResource should match snapshot 1`] = `
       description="test description"
       id="11"
       ownerResourceType="COMMUNITY"
-      resourceType="ARTICLE"
+      resourceType="article"
       tags={
         Array [
           "test",
@@ -805,11 +805,11 @@ exports[`components/FeaturedResource should match snapshot 1`] = `
                           </StyledComponent>
                         </Typography__component>
                         <Link
-                          href="/community/11"
+                          href="/test-title/11/a"
                           prefetch={true}
                         >
                           <a
-                            href="/community/11"
+                            href="/test-title/11/a"
                             onClick={[Function]}
                             onMouseEnter={[Function]}
                           >
@@ -1016,22 +1016,104 @@ exports[`components/FeaturedResource should match snapshot 1`] = `
                           withName={true}
                         >
                           <Link
-                            as="/undefined/test user id/com"
+                            as="/undefined/test user id/cm"
                             href="/community?community_id=test user id"
                             prefetch={true}
                           >
                             <a
-                              href="/undefined/test user id/com"
+                              href="/undefined/test user id/cm"
                               onClick={[Function]}
                               onMouseEnter={[Function]}
                             >
                               <div
                                 className="makeStyles-container-106"
                               >
-                                <img
+                                <Image
+                                  borderRadius="2px"
                                   className="makeStyles-avatar-107"
-                                  src="avatar url"
-                                />
+                                  height={24}
+                                  image="avatar url"
+                                  width={24}
+                                >
+                                  <InView
+                                    rootMargin="200px 0px"
+                                    threshold={0}
+                                    triggerOnce={true}
+                                  >
+                                    <Image__Img
+                                      borderRadius="2px"
+                                      className="makeStyles-avatar-107"
+                                      height={24}
+                                      image="avatar url"
+                                      inView={false}
+                                      width={24}
+                                    >
+                                      <StyledComponent
+                                        borderRadius="2px"
+                                        className="makeStyles-avatar-107"
+                                        forwardedComponent={
+                                          Object {
+                                            "$$typeof": Symbol(react.forward_ref),
+                                            "attrs": Array [],
+                                            "componentStyle": ComponentStyle {
+                                              "componentId": "Image__Img-sc-1jpuda7-0",
+                                              "isStatic": false,
+                                              "lastClassName": "fFzdZc",
+                                              "rules": Array [
+                                                "height:",
+                                                [Function],
+                                                ";width:",
+                                                [Function],
+                                                ";",
+                                                [Function],
+                                                ";background:",
+                                                [Function],
+                                                ";background-size:cover;opacity:",
+                                                [Function],
+                                                ";transition:opacity ",
+                                                [Function],
+                                                "s;",
+                                                [Function],
+                                                ";",
+                                                [Function],
+                                                ";position:",
+                                                [Function],
+                                                ";",
+                                                [Function],
+                                                ";",
+                                                [Function],
+                                                ";",
+                                                [Function],
+                                                " ",
+                                                [Function],
+                                                ";",
+                                              ],
+                                            },
+                                            "displayName": "Image__Img",
+                                            "foldedComponentIds": Array [],
+                                            "render": [Function],
+                                            "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                                            "target": "div",
+                                            "toString": [Function],
+                                            "warnTooManyClasses": [Function],
+                                            "withComponent": [Function],
+                                          }
+                                        }
+                                        forwardedRef={[Function]}
+                                        height={24}
+                                        image="avatar url"
+                                        inView={false}
+                                        width={24}
+                                      >
+                                        <div
+                                          className="makeStyles-avatar-107 Image__Img-sc-1jpuda7-0 fFzdZc"
+                                          height={24}
+                                          width={24}
+                                        />
+                                      </StyledComponent>
+                                    </Image__Img>
+                                  </InView>
+                                </Image>
                                 <WithStyles(ForwardRef(Typography))
                                   className="makeStyles-username-108"
                                   variant="subtitle2"
@@ -1479,11 +1561,11 @@ exports[`components/FeaturedResource should match snapshot 1`] = `
                         className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-sm-3"
                       >
                         <Link
-                          href="/community/11"
+                          href="/test-title/11/a"
                           prefetch={true}
                         >
                           <a
-                            href="/community/11"
+                            href="/test-title/11/a"
                             onClick={[Function]}
                             onMouseEnter={[Function]}
                           >
@@ -1568,7 +1650,7 @@ exports[`components/FeaturedResource should match snapshot 1`] = `
                                         <span
                                           className="MuiButton-label"
                                         >
-                                          View ARTICLE
+                                          View article
                                         </span>
                                         <NoSsr>
                                           <WithStyles(undefined)
