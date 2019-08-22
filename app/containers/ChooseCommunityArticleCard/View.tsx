@@ -2,11 +2,30 @@ import React from 'react'
 import ArticleCard from '../../components/Card/ArticleCard'
 import withPagination from '../../lib/with-pagination'
 import Loading from '../../components/Loading'
-import { Grid } from '@material-ui/core'
+import { Grid, makeStyles, Theme } from '@material-ui/core'
 import { getArticleURL } from '../../lib/getURLs'
 
+const useStyles = makeStyles((theme: Theme) => ({
+    chosenResource: {
+        '& > :first-child': {
+            boxShadow: `0 0 0 2px ${theme.palette.primary.main}`,
+            pointerEvents: 'none',
+            borderRadius: '4px',
+        },
+        cursor: 'pointer',
+    },
+    unchosenResource: {
+        '& > :first-child': {
+            pointerEvents: 'none',
+            borderRadius: '4px',
+        },
+        cursor: 'pointer',
+    },
+}))
+
 const ArticlesContent = props => {
-    const { articles, setRef, allOtherChosenArticles } = props
+    const { articles, setRef, allOtherChosenArticles, chosenArticles } = props
+    const classes = useStyles()
     if (!articles) {
         return null
     }
@@ -52,10 +71,20 @@ const ArticlesContent = props => {
                                 })
                             }
                         >
-                            <ArticleCard
-                                {...article}
-                                href={getArticleURL({ title, id, version })}
-                            />
+                            <div
+                                className={
+                                    chosenArticles.find(
+                                        ({ id }) => id === article.id
+                                    )
+                                        ? classes.chosenResource
+                                        : classes.unchosenResource
+                                }
+                            >
+                                <ArticleCard
+                                    {...article}
+                                    href={getArticleURL({ title, id, version })}
+                                />
+                            </div>
                         </Grid>
                     )
                 })}
