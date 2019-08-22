@@ -70,7 +70,7 @@ interface ICommunityProps {
 }
 
 export const getCommunityURL = ({ name, id }: ICommunityProps) => ({
-    as: `/${slugify(String(name), { lower: true })}/${String(id)}/com`,
+    as: `/${slugify(String(name), { lower: true })}/${String(id)}/cm`,
     href: `/community?community_id=${String(id)}`,
 })
 

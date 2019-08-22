@@ -82,11 +82,8 @@ describe('Redirects', () => {
             const mockApolloState = {
                 apollo: {
                     data: {
-                        '12345': {
-                            title: 'test title',
-                        },
-                        'ResourceIdentifier:1234': {
-                            version: '5',
+                        'CommunityDTO:1234': {
+                            name: 'test name',
                         },
                     },
                 },
@@ -94,7 +91,7 @@ describe('Redirects', () => {
 
             const mockUrl = {
                 query: {
-                    article_id: '1234',
+                    community_id: '1234',
                 },
             }
             redirectCommunity(mockContext, mockApolloState, mockUrl)
@@ -104,7 +101,7 @@ describe('Redirects', () => {
         })
         it('should do the correct 301 redirect', () => {
             expect(writeHead).toHaveBeenCalledWith(301, {
-                Location: '/test-title/1234/a',
+                Location: '/test-name/1234/cm',
             })
         })
     })
@@ -114,11 +111,8 @@ describe('Redirects', () => {
             const mockApolloState = {
                 apollo: {
                     data: {
-                        '12345': {
-                            title: 'test title',
-                        },
-                        'ResourceIdentifier:1234': {
-                            version: '5',
+                        'PublicUserDTO:1234': {
+                            username: 'test username',
                         },
                     },
                 },
@@ -126,7 +120,7 @@ describe('Redirects', () => {
 
             const mockUrl = {
                 query: {
-                    article_id: '1234',
+                    user_id: '1234',
                 },
             }
             redirectProfile(mockContext, mockApolloState, mockUrl)
@@ -136,7 +130,7 @@ describe('Redirects', () => {
         })
         it('should do the correct 301 redirect', () => {
             expect(writeHead).toHaveBeenCalledWith(301, {
-                Location: '/test-title/1234/a',
+                Location: '/test-username/1234/p',
             })
         })
     })

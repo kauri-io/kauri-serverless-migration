@@ -938,12 +938,12 @@ exports[`components/ResourceRowWithImage should match snapshot 1`] = `
                             withName={true}
                           >
                             <Link
-                              as="/undefined/0x/com"
+                              as="/undefined/0x/cm"
                               href="/community?community_id=0x"
                               prefetch={true}
                             >
                               <a
-                                href="/undefined/0x/com"
+                                href="/undefined/0x/cm"
                                 onClick={[Function]}
                                 onMouseEnter={[Function]}
                               >

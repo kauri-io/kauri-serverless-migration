@@ -11,7 +11,7 @@ import fetch from 'isomorphic-unfetch'
 import mixpanel from 'mixpanel-browser'
 import initRedux from './init-redux'
 import initApollo from './init-apollo'
-import { redirectArticle, redirectCollection } from './redirects'
+import { handleRedirects } from './redirects'
 
 import { ThemeProvider as MaterialThemeProvider } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -227,16 +227,7 @@ export default (ComposedComponent: any) =>
             }
             stateRedux = redux && redux.getState()
 
-            // Handle legacy unslugged urls, access apollo cache gets the title for slug genereation
-            // https://kauri.io/article/cc41c516e62a4ca593f5ecdd86bdf299/v4
-            // https://kauri.io/article/cc41c516e62a4ca593f5ecdd86bdf299
-            if (url.pathname === '/article' && !url.query.slug) {
-                redirectArticle(context, stateApollo, url)
-            }
-
-            if (url.pathname === '/collection' && !url.query.slug) {
-                redirectCollection(context, stateApollo, url)
-            }
+            handleRedirects(context, stateApollo, url)
 
             return {
                 ua,

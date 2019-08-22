@@ -31,13 +31,6 @@
     },
     {
       "src": "/article/(.*)/(.*)/(.*)",
-      "status": 301,
-      "headers": {
-        "Location": "/$3/$1/a"
-      }
-    },
-    {
-      "src": "/article/(.*)",
       "dest": "/app/article?article_id=$1"
     },
     {
@@ -45,8 +38,20 @@
       "dest": "/app/article?article_id=$1"
     },
     {
-      "src": "/(.*)/(.*)/com",
-      "dest": "/app/community?community_id=$2"
+      "src": "/article/(.*)",
+      "dest": "/app/article?article_id=$1"
+    },
+    {
+      "src": "/(.*)/(.*)/cm",
+      "dest": "/app/community?community_id=$2&slug=$1"
+    },
+    {
+      "src": "/community/(.*)/(.*)",
+      "dest": "/app/community?community_id=$1"
+    },
+    {
+      "src": "/community/(.*)",
+      "dest": "/app/community?community_id=$1"
     },
     {
       "src": "/(.*)/(.*)/c",
@@ -54,18 +59,11 @@
     },
     {
       "src": "/collection/(.*)/(.*)",
-      "status": 301,
-      "headers": {
-        "Location": "/$2/$1/c"
-      }
+      "dest": "/app/collection?collection_id=$1"
     },
     {
       "src": "/collection/(.*)",
       "dest": "/app/collection?collection_id=$1"
-    },
-    {
-      "src": "/(.*)/(.*)/c",
-      "dest": "/app/collection?collection_id=$2"
     },
     {
       "src": "/community/(.*)/update-community",
@@ -81,7 +79,11 @@
     },
     {
       "src": "/(.*)/(.*)/p",
-      "dest": "/app/public-profile?user_id=$2"
+      "dest": "/app/public-profile?user_id=$2&slug=$1"
+    },
+    {
+      "src": "/public-profile/(.*)",
+      "dest": "/app/public-profile?user_id=$1"
     },
     {
       "src": "draft/(.*)/(.*)",

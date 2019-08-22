@@ -2,10 +2,14 @@ import Avatar from '../Avatar'
 import { Label, Title2, BodyCard } from '../Typography'
 import TagList from '../Tags/TagList'
 import Button from '../../components/Button'
-import slugify from 'slugify'
 import Link from 'next/link'
 import { Grid } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
+import {
+    getArticleURL,
+    getCollectionURL,
+    getCommunityURL,
+} from '../../lib/getURLs'
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -42,22 +46,37 @@ const FeaturedResource: React.FunctionComponent<
     avatar,
     ownerResourceType,
 }) => {
-    const slug = slugify(title, { lower: true })
     const classes = useStyles()
+
+    let resourceURL
+
+    console.log(resourceType)
+
+    if (resourceType === 'article') {
+        resourceURL = getArticleURL({
+            id,
+            title,
+        })
+    }
+    if (resourceType === 'collection') {
+        resourceURL = getCollectionURL({
+            id,
+            name,
+        })
+    }
+    if (resourceType == 'community') {
+        resourceURL = getCommunityURL({
+            id,
+            name,
+        })
+    }
+
     return (
         <Grid className={classes.root}>
             <Grid container={true} className={classes.container} spacing={2}>
                 <Grid item={true} sm={9} direction="column" container={true}>
                     <Label>Featured</Label>
-                    <Link
-                        href={
-                            resourceType === 'article'
-                                ? `/${slug}/${id}/a`
-                                : resourceType === 'collection'
-                                ? `/${slugify(name, { lower: true })}/${id}/c`
-                                : `/community/${id}`
-                        }
-                    >
+                    <Link href={resourceURL.as}>
                         <a>
                             <Title2>{title && String(title)}</Title2>
                             <BodyCard>
@@ -82,15 +101,7 @@ const FeaturedResource: React.FunctionComponent<
                     justify="center"
                     alignItems="center"
                 >
-                    <Link
-                        href={
-                            resourceType === 'article'
-                                ? `/${slug}/${id}/a`
-                                : resourceType === 'collection'
-                                ? `/${slugify(name, { lower: true })}/${id}/c`
-                                : `/community/${id}`
-                        }
-                    >
+                    <Link href={resourceURL.as}>
                         <a>
                             <Button
                                 fullWidth={true}

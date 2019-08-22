@@ -395,7 +395,7 @@ exports[`components/FeaturedResource should match snapshot 1`] = `
       description="test description"
       id="11"
       ownerResourceType="COMMUNITY"
-      resourceType="ARTICLE"
+      resourceType="article"
       tags={
         Array [
           "test",
@@ -805,11 +805,11 @@ exports[`components/FeaturedResource should match snapshot 1`] = `
                           </StyledComponent>
                         </Typography__component>
                         <Link
-                          href="/community/11"
+                          href="/test-title/11/a"
                           prefetch={true}
                         >
                           <a
-                            href="/community/11"
+                            href="/test-title/11/a"
                             onClick={[Function]}
                             onMouseEnter={[Function]}
                           >
@@ -1016,12 +1016,12 @@ exports[`components/FeaturedResource should match snapshot 1`] = `
                           withName={true}
                         >
                           <Link
-                            as="/undefined/test user id/com"
+                            as="/undefined/test user id/cm"
                             href="/community?community_id=test user id"
                             prefetch={true}
                           >
                             <a
-                              href="/undefined/test user id/com"
+                              href="/undefined/test user id/cm"
                               onClick={[Function]}
                               onMouseEnter={[Function]}
                             >
@@ -1479,11 +1479,11 @@ exports[`components/FeaturedResource should match snapshot 1`] = `
                         className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-sm-3"
                       >
                         <Link
-                          href="/community/11"
+                          href="/test-title/11/a"
                           prefetch={true}
                         >
                           <a
-                            href="/community/11"
+                            href="/test-title/11/a"
                             onClick={[Function]}
                             onMouseEnter={[Function]}
                           >
@@ -1568,7 +1568,7 @@ exports[`components/FeaturedResource should match snapshot 1`] = `
                                         <span
                                           className="MuiButton-label"
                                         >
-                                          View ARTICLE
+                                          View article
                                         </span>
                                         <NoSsr>
                                           <WithStyles(undefined)
