@@ -212,14 +212,12 @@ const CollectionCard: React.FC<IProps> = ({
                         </Typography>
                     </div>
                     <Link href={href.href} as={href.as}>
-                        <a className={classes.name}>
+                        <a
+                            data-testid={`CollectionCard-${id}-name`}
+                            className={classes.name}
+                        >
                             <TruncateMarkup lines={1}>
-                                <Typography
-                                    data-testid={`CollectionCard-${id}-name`}
-                                    variant={'h5'}
-                                >
-                                    {name}
-                                </Typography>
+                                <Typography variant={'h5'}>{name}</Typography>
                             </TruncateMarkup>
                         </a>
                     </Link>

@@ -950,7 +950,7 @@ exports[`components/ResourceRowWithImage should match snapshot 1`] = `
                                 <div
                                   className="makeStyles-container-1"
                                 >
-                                  <Image
+                                  <ForwardRef
                                     borderRadius="2px"
                                     className="makeStyles-avatar-2"
                                     height={24}
@@ -1035,7 +1035,7 @@ exports[`components/ResourceRowWithImage should match snapshot 1`] = `
                                         </StyledComponent>
                                       </Image__Img>
                                     </InView>
-                                  </Image>
+                                  </ForwardRef>
                                   <WithStyles(ForwardRef(Typography))
                                     className="makeStyles-username-3"
                                     variant="subtitle2"

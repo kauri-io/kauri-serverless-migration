@@ -219,14 +219,12 @@ const CommunityCard: React.FC<IProps> = ({
                         </Link>
                     </div>
                     <Link href={href.href} as={href.as}>
-                        <a className={classes.name}>
+                        <a
+                            data-testid={`CommunityCard-${id}-name`}
+                            className={classes.name}
+                        >
                             <TruncateMarkup lines={1}>
-                                <Typography
-                                    data-testid={`CommunityCard-${id}-name`}
-                                    variant={'h5'}
-                                >
-                                    {name}
-                                </Typography>
+                                <Typography variant={'h5'}>{name}</Typography>
                             </TruncateMarkup>
                         </a>
                     </Link>

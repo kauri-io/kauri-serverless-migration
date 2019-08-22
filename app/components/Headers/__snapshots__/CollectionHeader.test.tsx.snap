@@ -1344,7 +1344,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                         <div
                           className="makeStyles-container-10"
                         >
-                          <Image
+                          <ForwardRef
                             borderRadius="2px"
                             className="makeStyles-avatar-11"
                             height={24}
@@ -1429,7 +1429,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                                 </StyledComponent>
                               </Image__Img>
                             </InView>
-                          </Image>
+                          </ForwardRef>
                           <WithStyles(ForwardRef(Typography))
                             className="makeStyles-username-12"
                             color="secondary"

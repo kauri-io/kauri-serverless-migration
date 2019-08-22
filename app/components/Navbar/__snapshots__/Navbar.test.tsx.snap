@@ -2658,7 +2658,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                                                   <div
                                                     className="makeStyles-avatar-1"
                                                   >
-                                                    <Image
+                                                    <ForwardRef
                                                       borderRadius="2px"
                                                       className="makeStyles-avatar-126"
                                                       height={24}
@@ -2743,7 +2743,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                                                           </StyledComponent>
                                                         </Image__Img>
                                                       </InView>
-                                                    </Image>
+                                                    </ForwardRef>
                                                   </div>
                                                 </a>
                                               </Link>

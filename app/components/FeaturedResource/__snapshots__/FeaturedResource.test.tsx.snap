@@ -1028,7 +1028,7 @@ exports[`components/FeaturedResource should match snapshot 1`] = `
                               <div
                                 className="makeStyles-container-106"
                               >
-                                <Image
+                                <ForwardRef
                                   borderRadius="2px"
                                   className="makeStyles-avatar-107"
                                   height={24}
@@ -1113,7 +1113,7 @@ exports[`components/FeaturedResource should match snapshot 1`] = `
                                       </StyledComponent>
                                     </Image__Img>
                                   </InView>
-                                </Image>
+                                </ForwardRef>
                                 <WithStyles(ForwardRef(Typography))
                                   className="makeStyles-username-108"
                                   variant="subtitle2"
