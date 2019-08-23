@@ -35,6 +35,7 @@ const SearchInput = styled.input`
     border-radius: 4px;
     background: transparent;
     height: 40px;
+    color: white;
     outline: none;
     padding: 0 ${props => props.theme.space[1]}px;
 `

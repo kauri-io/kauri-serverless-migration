@@ -421,9 +421,12 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                             <Column>
                                 <Title1 color="white">{name}</Title1>
                                 {website && (
-                                    <a target="_blank" href={website}>
+                                    <a
+                                        target="_blank"
+                                        href={getURL(website, 'website')}
+                                    >
                                         <BodyCard color="white">
-                                            {website}
+                                            {getURL(website, 'website')}
                                         </BodyCard>
                                     </a>
                                 )}

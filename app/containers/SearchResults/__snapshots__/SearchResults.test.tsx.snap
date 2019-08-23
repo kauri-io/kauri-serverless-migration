@@ -882,9 +882,9 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                                           "componentStyle": ComponentStyle {
                                             "componentId": "ResourceSearch__SearchInput-sc-7ioqrv-0",
                                             "isStatic": false,
-                                            "lastClassName": "fTtWOd",
+                                            "lastClassName": "sDUOI",
                                             "rules": Array [
-                                              "border:1px solid white;border-radius:4px;background:transparent;height:40px;outline:none;padding:0 ",
+                                              "border:1px solid white;border-radius:4px;background:transparent;height:40px;color:white;outline:none;padding:0 ",
                                               [Function],
                                               "px;",
                                             ],
@@ -904,7 +904,7 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                                       value="eth"
                                     >
                                       <input
-                                        className="ResourceSearch__SearchInput-sc-7ioqrv-0 fTtWOd"
+                                        className="ResourceSearch__SearchInput-sc-7ioqrv-0 sDUOI"
                                         onChange={[Function]}
                                         value="eth"
                                       />

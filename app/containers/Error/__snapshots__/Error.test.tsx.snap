@@ -390,7 +390,9 @@ exports[`containers/Error should match snapshot 1`] = `
       }
     }
   >
-    <Error>
+    <Error
+      code="404"
+    >
       <Error__ErrorContainer>
         <StyledComponent
           forwardedComponent={

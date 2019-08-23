@@ -23,9 +23,9 @@ const Copy = styled.div`
     margin-bottom: ${props => props.theme.space[3]}px;
 `
 
-const Error = () => (
+const Error = ({ code }: { code: string }) => (
     <ErrorContainer>
-        <Code>404</Code>
+        <Code>{code}</Code>
         <Copy>Sorry, something went wrong :(</Copy>
         <Link href="/" as="/">
             <a>

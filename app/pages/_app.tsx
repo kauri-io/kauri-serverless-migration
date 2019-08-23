@@ -15,6 +15,25 @@ class MyApp extends App {
         if (jssStyles) {
             jssStyles.parentNode!.removeChild(jssStyles)
         }
+
+        window.addEventListener('beforeunload', this.handleCloseBrowserTab) // Enable close tab warning
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('beforeunload', this.handleCloseBrowserTab)
+    }
+
+    handleCloseBrowserTab = e => {
+        // Cancel the event as stated by the standard.
+        if (
+            window.location.pathname === '/write-article' ||
+            window.location.pathname.indexOf('/update-article') !== -1
+        ) {
+            e.preventDefault()
+            // Chrome requires returnValue to be set.
+            e.returnValue =
+                'Do you want to leave this site? Changes you made may not be saved'
+        }
     }
 
     render() {
