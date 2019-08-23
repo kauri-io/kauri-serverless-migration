@@ -12,7 +12,7 @@ const ContributorsContainer = styled.div`
 `
 
 interface IProps {
-    contributors: Array<{ username: string; id: string; avatar: string }>
+    contributors: Array<{ username: string; userId: string; avatar: string }>
 }
 
 const TopContributors: React.FunctionComponent<IProps> = ({ contributors }) => (
@@ -24,7 +24,7 @@ const TopContributors: React.FunctionComponent<IProps> = ({ contributors }) => (
                     key={index}
                     withName={true}
                     username={contributor.username}
-                    id={contributor.id}
+                    id={contributor.userId}
                     avatar={contributor.avatar}
                 />
             ))}

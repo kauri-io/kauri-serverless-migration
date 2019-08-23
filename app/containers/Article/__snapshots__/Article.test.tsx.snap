@@ -2272,13 +2272,17 @@ exports[`containers/Article should match snapshot 1`] = `
                           className="makeStyles-content-5"
                           id="content"
                         >
-                          <div
-                            dangerouslySetInnerHTML={
-                              Object {
-                                "__html": "<p>test contet 1</p>",
+                          <_default
+                            content="{\\"markdown\\" : \\"test contet 1\\"}"
+                          >
+                            <div
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "<p>test contet 1</p>",
+                                }
                               }
-                            }
-                          />
+                            />
+                          </_default>
                         </div>
                         <WithStyles(ForwardRef(Grid))
                           container={true}

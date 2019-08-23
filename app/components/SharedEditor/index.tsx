@@ -62,14 +62,6 @@ export class SharedEditor extends React.Component<IProps> {
         extensions: ['highlightjs'],
     })
 
-    handleCloseBrowserTab = e => {
-        // Cancel the event as stated by the standard.
-        e.preventDefault()
-        // Chrome requires returnValue to be set.
-        e.returnValue =
-            'Do you want to leave this site? Changes you made may not be saved'
-    }
-
     componentDidUpdate() {
         if (document.querySelector('.mde-preview')) {
             map(block => hljs.highlightBlock(block))(
@@ -101,13 +93,9 @@ export class SharedEditor extends React.Component<IProps> {
             )
             this.props.handleChange(mdeState)
         }
-        window.addEventListener('beforeunload', this.handleCloseBrowserTab)
+
         global.window.setFieldsValue = this.props.setFieldsValue
         global.window.getFieldsValue = this.props.getFieldsValue
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('beforeunload', this.handleCloseBrowserTab)
     }
 
     render() {

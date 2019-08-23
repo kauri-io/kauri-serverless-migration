@@ -395,7 +395,7 @@ exports[`components/TopContributors should match snapshot 1`] = `
         Array [
           Object {
             "avatar": "test url",
-            "id": "test ID",
+            "userId": "test ID",
             "username": "test username",
           },
         ]

@@ -1,5 +1,4 @@
 import Grid from '@material-ui/core/Grid'
-import ShowDown from 'showdown'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import ArticleOutline from './components/ArticleOutline'
@@ -8,15 +7,13 @@ import Avatar from '../../components/Avatar'
 import ArticleActions from './components/ArticleActions'
 import ArticleCard from '../../components/Card/ArticleCard'
 import { relatedArticles } from '../../queries/__generated__/relatedArticles'
-
+import MDRenderer from '../../components/Markdown/Renderer'
 import { Article } from '../../queries/Fragments/__generated__/Article'
 import Hidden from '@material-ui/core/Hidden'
 import { ArticleStyles } from './styles'
 import VoteWidget from './components/VoteWidget'
 import slugify from 'slugify'
 import { getArticleURL } from '../../lib/getURLs'
-
-const converter = new ShowDown.Converter()
 
 interface IProps {
     id: string
@@ -132,13 +129,7 @@ const ArticleComp = ({
                         />
                     )}
                     <div id="content" className={classes.content}>
-                        <div
-                            dangerouslySetInnerHTML={{
-                                __html: converter.makeHtml(
-                                    JSON.parse(String(content)).markdown
-                                ),
-                            }}
-                        />
+                        <MDRenderer content={content} />
                     </div>
                     <Grid spacing={3} justify="center" container={true}>
                         {searchMoreLikeThis &&

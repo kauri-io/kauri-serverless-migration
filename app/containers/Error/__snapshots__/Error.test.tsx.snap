@@ -450,9 +450,7 @@ exports[`containers/Error should match snapshot 1`] = `
               >
                 <div
                   className="Error__Code-sc-9zpcuf-1 gGjEEd"
-                >
-                  404
-                </div>
+                />
               </StyledComponent>
             </Error__Code>
             <Error__Copy>

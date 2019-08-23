@@ -9,7 +9,7 @@ class ErrorPage extends React.Component {
     render() {
         return (
             <App>
-                <Error />
+                <Error code="500" />
             </App>
         )
     }
