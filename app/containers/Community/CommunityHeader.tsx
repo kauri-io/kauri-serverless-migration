@@ -385,6 +385,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                 />
             )}
             <ChooseArticleModal
+                hideAllArticlesTab={true}
                 open={open}
                 limit={1}
                 allOtherChosenArticles={articles || []}
