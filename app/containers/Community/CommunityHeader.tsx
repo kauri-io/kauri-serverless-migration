@@ -373,10 +373,9 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
 
     const openAddCommunityArticleModal = () => setOpen(true)
     const closeAddCommunityArticleModal = () => setOpen(false)
-
     return (
         <Wrapper>
-            {background && (
+            {typeof background === 'string' && (
                 <Image
                     height="100%"
                     width="100%"

@@ -215,10 +215,10 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     name={getCommunity.name}
                     website={getCommunity.website}
                     description={getCommunity.description}
-                    background={String(
+                    background={
                         getCommunity.attributes &&
                             getCommunity.attributes.background
-                    )}
+                    }
                     social={getCommunity.social}
                     articles={
                         getCommunity.approved &&
