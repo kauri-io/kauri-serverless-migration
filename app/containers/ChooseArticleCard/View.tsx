@@ -134,7 +134,7 @@ const ChooseArticleCardComponent = props => {
                 onChange={(_e, tab) => setTab(tab)}
             >
                 <Tab label="My Articles" />
-                <Tab label="All Articles" />
+                {!props.hideAllArticlesTab && <Tab label="All Articles" />}
             </Tabs>
             {tab === 0 && (
                 <PersonalPublishedArticles

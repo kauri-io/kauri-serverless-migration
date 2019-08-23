@@ -591,7 +591,9 @@ export const waitForInvitationReconciliationEpic: Epic<
             ).pipe(
                 mergeMap(({ data }) =>
                     apolloSubscriber<IAcceptInvitationCommandOutput>(
-                        path<string>(['output', 'transactionHash'])(data) || '',
+                        path<string>(['getEvent', 'output', 'transactionHash'])(
+                            data
+                        ) || '',
                         'MemberAdded'
                     )
                 ),

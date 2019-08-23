@@ -96,6 +96,7 @@ interface IProps {
     searchPublishedArticles: any
     searchPersonalPublishedArticles: any
     open: boolean
+    hideAllArticlesTab?: boolean
 }
 
 interface IState {
@@ -178,6 +179,7 @@ class ChooseArticleModal extends React.Component<IProps, IState> {
 
                 <DialogContent dividers={true}>
                     <ChooseArticleCard
+                        hideAllArticlesTab={this.props.hideAllArticlesTab}
                         userId={this.props.userId}
                         searchPersonalPublishedArticles={
                             this.props.searchPersonalPublishedArticles

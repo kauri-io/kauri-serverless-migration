@@ -373,10 +373,9 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
 
     const openAddCommunityArticleModal = () => setOpen(true)
     const closeAddCommunityArticleModal = () => setOpen(false)
-
     return (
         <Wrapper>
-            {background && (
+            {typeof background === 'string' && (
                 <Image
                     height="100%"
                     width="100%"
@@ -386,6 +385,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                 />
             )}
             <ChooseArticleModal
+                hideAllArticlesTab={true}
                 open={open}
                 limit={1}
                 allOtherChosenArticles={articles || []}

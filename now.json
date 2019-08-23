@@ -46,6 +46,10 @@
       "dest": "/app/community?community_id=$2&slug=$1"
     },
     {
+      "src": "/community/(.*)/approve",
+      "dest": "/app/approve?community_id=$1"
+    },
+    {
       "src": "/community/(.*)/(.*)",
       "dest": "/app/community?community_id=$1"
     },
@@ -69,10 +73,7 @@
       "src": "/community/(.*)/update-community",
       "dest": "/app/update-community?community_id=$1"
     },
-    {
-      "src": "/community/(.*)/approve",
-      "dest": "/app/approve?community_id=$1"
-    },
+
     {
       "src": "/collection/(.*)/update-collection",
       "dest": "/app/update-collection?collection_id=$1"
