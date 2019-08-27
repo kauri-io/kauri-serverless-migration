@@ -30,15 +30,13 @@ const useStyles = makeStyles((theme: Theme) => ({
         '& .MuiInput-underline::before': {
             borderBottomColor: 'rgba(255,255,255,0.3)',
         },
-
     },
     checkboxLabel: {
         color: theme.palette.common.white,
         '& .Mui-disabled': {
             color: theme.palette.common.white,
             opacity: 0.3,
-
-        }
+        },
     },
 }))
 
