@@ -1,10 +1,9 @@
-import Showdown from 'showdown'
 import styled from 'styled-components'
 import Button from '../../components/Button'
 import { BodyCard } from '../../components/Typography'
 import AlertView from '../../components/Modal/AlertView'
-import { useEffect } from 'react'
-import { hljs } from '../../lib/hljs'
+
+import MDRenderer from '../../components/Markdown/Renderer'
 
 const ContentContainer = styled.div`
     display: flex;
@@ -24,23 +23,6 @@ const ContentContainer = styled.div`
         padding: ${props => `${props.theme.space[4]}px ${props.theme.padding}`};
     }
 `
-
-const Content = styled.div`
-    max-width: 930px;
-    width: 100%;
-    & img {
-        max-width: 100%;
-    }
-
-    & pre {
-        padding: ${props => props.theme.space[1]}px;
-        background: ${props => props.theme.colors.bgPrimary};
-        border-radius: 4px;
-        color: white;
-    }
-`
-
-const converter = new Showdown.Converter()
 
 const DeleteDraftArticleSvgIcon = () => (
     <svg
@@ -93,19 +75,9 @@ export default ({
     openModalAction,
     deleteDraftArticleAction,
 }: IProps) => {
-    useEffect(() => {
-        document.querySelectorAll('pre code').forEach(block => {
-            hljs.highlightBlock(block)
-        })
-    }, [])
-
     return (
         <ContentContainer>
-            <Content
-                dangerouslySetInnerHTML={{
-                    __html: converter.makeHtml(JSON.parse(content).markdown),
-                }}
-            />
+            <MDRenderer content={content} />
             <Button
                 color="primary"
                 variant="text"
