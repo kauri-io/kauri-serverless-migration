@@ -131,7 +131,11 @@ const ArticleComp = ({
                     <div id="content" className={classes.content}>
                         <MDRenderer content={content} />
                     </div>
-                    <Grid spacing={3} justify="center" container={true}>
+                    <Grid
+                        className={classes.related}
+                        spacing={3}
+                        container={true}
+                    >
                         {searchMoreLikeThis &&
                             searchMoreLikeThis.content &&
                             searchMoreLikeThis.content.map(
@@ -140,7 +144,7 @@ const ArticleComp = ({
                                     recommendedArticle.resource &&
                                     recommendedArticle.resource.__typename ===
                                         'ArticleDTO' ? (
-                                        <Grid item={true} sm={6} key={key}>
+                                        <Grid item={true} sm={12} key={key}>
                                             <ArticleCard
                                                 className={classes.card}
                                                 href={getArticleURL(

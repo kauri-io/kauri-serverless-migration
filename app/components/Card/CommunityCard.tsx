@@ -141,6 +141,7 @@ const Member: React.FC<IMemberProps> = ({ member, id }) =>
 interface IProps {
     id: string
     name: string | null
+    communityName?: string | null
     description: string | null
     attributes: any | null
     className?: string
@@ -154,6 +155,7 @@ interface IProps {
 
 const CommunityCard: React.FC<IProps> = ({
     name,
+    communityName,
     attributes,
     description,
     className,
@@ -224,7 +226,9 @@ const CommunityCard: React.FC<IProps> = ({
                             className={classes.name}
                         >
                             <TruncateMarkup lines={1}>
-                                <Typography variant={'h5'}>{name}</Typography>
+                                <Typography variant={'h5'}>
+                                    {name || communityName}
+                                </Typography>
                             </TruncateMarkup>
                         </a>
                     </Link>

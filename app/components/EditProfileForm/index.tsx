@@ -33,6 +33,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     checkboxLabel: {
         color: theme.palette.common.white,
+        '& .Mui-disabled': {
+            color: theme.palette.common.white,
+            opacity: 0.3,
+        },
     },
 }))
 

@@ -51,7 +51,10 @@ const FeaturedContent: React.FunctionComponent<IProps> = ({ content }) => {
                                 {' '}
                                 <CommunityCard
                                     {...resource}
-                                    href={getCommunityURL(resource)}
+                                    href={getCommunityURL({
+                                        name: resource.communityName,
+                                        id: resource.id,
+                                    })}
                                 />
                             </Grid>
                         )
