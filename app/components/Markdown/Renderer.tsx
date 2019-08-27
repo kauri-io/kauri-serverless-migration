@@ -4,8 +4,16 @@ import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
 import config from '../../config'
 import { makeStyles, Theme } from '@material-ui/core/styles'
-import Prism from 'prismjs'
+import Button from '../Button'
 import 'prismjs/themes/prism-okaidia.css'
+import Prism from 'prismjs/components/prism-core'
+import 'prismjs/components/prism-clike'
+import 'prismjs/components/prism-java'
+import 'prismjs/components/prism-javascript'
+import 'prismjs/components/prism-typescript'
+import 'prismjs/components/prism-bash'
+import 'prismjs/components/prism-kotlin'
+import 'prismjs/components/prism-python'
 
 const CustomIMG = props => {
     const useStyles = makeStyles(() => ({
@@ -48,20 +56,36 @@ const CustomCodeBlock = props => {
             background: theme.palette.common.black,
             color: theme.palette.common.white,
             padding: theme.spacing(2),
+            top: 0,
+            left: 0,
+            right: 0,
+            zIndex: 1,
         },
     }))
     const classes = useStyles()
+    const language = props.className
+        ? props.className.replace('lang-', '')
+        : 'bash'
     return (
-        <code
-            className={classes.code}
-            dangerouslySetInnerHTML={{
-                __html: Prism.highlight(
-                    props.children,
-                    Prism.languages.javascript,
-                    'javascript'
-                ),
-            }}
-        />
+        <div>
+            <Button
+                variant="outlined"
+                color="primary"
+                onClick={() => navigator.clipboard.writeText(props.children)}
+            >
+                Copy to clipboard
+            </Button>
+            <code
+                className={classes.code}
+                dangerouslySetInnerHTML={{
+                    __html: Prism.highlight(
+                        props.children,
+                        Prism.languages[language],
+                        language
+                    ),
+                }}
+            />
+        </div>
     )
 }
 
