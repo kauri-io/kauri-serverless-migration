@@ -12,12 +12,6 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
         card: {},
         centralColumn: {},
         content: {
-            '& img': {
-                borderRadius: 4,
-                display: 'block',
-                margin: 'auto',
-                maxWidth: '100%',
-            },
             background: theme.palette.common.white,
             padding: theme.spacing(3),
         },
