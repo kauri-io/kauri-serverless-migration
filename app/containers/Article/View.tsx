@@ -131,7 +131,11 @@ const ArticleComp = ({
                     <div id="content" className={classes.content}>
                         <MDRenderer content={content} />
                     </div>
-                    <Grid className={classes.related} spacing={3} container={true}>
+                    <Grid
+                        className={classes.related}
+                        spacing={3}
+                        container={true}
+                    >
                         {searchMoreLikeThis &&
                             searchMoreLikeThis.content &&
                             searchMoreLikeThis.content.map(

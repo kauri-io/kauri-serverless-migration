@@ -744,13 +744,13 @@ exports[`containers/Article should match snapshot 1`] = `
             voteAction={[MockFunction]}
           >
             <WithStyles(ForwardRef(Grid))
-              className="makeStyles-root-12"
+              className="makeStyles-root-13"
               container={true}
               justify="center"
               spacing={3}
             >
               <ForwardRef(Grid)
-                className="makeStyles-root-12"
+                className="makeStyles-root-13"
                 classes={
                   Object {
                     "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -863,7 +863,7 @@ exports[`containers/Article should match snapshot 1`] = `
                 spacing={3}
               >
                 <div
-                  className="MuiGrid-root makeStyles-root-12 MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-justify-xs-center"
+                  className="MuiGrid-root makeStyles-root-13 MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-justify-xs-center"
                 >
                   <Hidden
                     smDown={true}
@@ -1006,7 +1006,7 @@ exports[`containers/Article should match snapshot 1`] = `
                         className="MuiGrid-root makeStyles-centralColumn-4 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-8 MuiGrid-grid-md-8"
                       >
                         <div
-                          className="makeStyles-header-10"
+                          className="makeStyles-header-11"
                         >
                           <WithStyles(ForwardRef(Typography))
                             color="inherit"
@@ -1326,12 +1326,12 @@ exports[`containers/Article should match snapshot 1`] = `
                             </ForwardRef(Typography)>
                           </WithStyles(ForwardRef(Typography))>
                           <WithStyles(ForwardRef(Grid))
-                            className="makeStyles-controls-6"
+                            className="makeStyles-controls-7"
                             container={true}
                             justify="space-between"
                           >
                             <ForwardRef(Grid)
-                              className="makeStyles-controls-6"
+                              className="makeStyles-controls-7"
                               classes={
                                 Object {
                                   "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -1443,7 +1443,7 @@ exports[`containers/Article should match snapshot 1`] = `
                               justify="space-between"
                             >
                               <div
-                                className="MuiGrid-root makeStyles-controls-6 MuiGrid-container MuiGrid-justify-xs-space-between"
+                                className="MuiGrid-root makeStyles-controls-7 MuiGrid-container MuiGrid-justify-xs-space-between"
                               >
                                 <WithStyles(ForwardRef(Grid))
                                   item={true}
@@ -1580,11 +1580,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                             onMouseEnter={[Function]}
                                           >
                                             <div
-                                              className="makeStyles-container-146"
+                                              className="makeStyles-container-147"
                                             >
                                               <ForwardRef
                                                 borderRadius="2px"
-                                                className="makeStyles-avatar-147"
+                                                className="makeStyles-avatar-148"
                                                 height={24}
                                                 image="test avatar 1"
                                                 width={24}
@@ -1596,7 +1596,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                 >
                                                   <Image__Img
                                                     borderRadius="2px"
-                                                    className="makeStyles-avatar-147"
+                                                    className="makeStyles-avatar-148"
                                                     height={24}
                                                     image="test avatar 1"
                                                     inView={false}
@@ -1604,7 +1604,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                   >
                                                     <StyledComponent
                                                       borderRadius="2px"
-                                                      className="makeStyles-avatar-147"
+                                                      className="makeStyles-avatar-148"
                                                       forwardedComponent={
                                                         Object {
                                                           "$$typeof": Symbol(react.forward_ref),
@@ -1660,7 +1660,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                       width={24}
                                                     >
                                                       <div
-                                                        className="makeStyles-avatar-147 Image__Img-sc-1jpuda7-0 fFzdZc"
+                                                        className="makeStyles-avatar-148 Image__Img-sc-1jpuda7-0 fFzdZc"
                                                         height={24}
                                                         width={24}
                                                       />
@@ -1669,11 +1669,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                 </InView>
                                               </ForwardRef>
                                               <WithStyles(ForwardRef(Typography))
-                                                className="makeStyles-username-148"
+                                                className="makeStyles-username-149"
                                                 variant="subtitle2"
                                               >
                                                 <ForwardRef(Typography)
-                                                  className="makeStyles-username-148"
+                                                  className="makeStyles-username-149"
                                                   classes={
                                                     Object {
                                                       "alignCenter": "MuiTypography-alignCenter",
@@ -1977,7 +1977,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                   variant="subtitle2"
                                                 >
                                                   <h6
-                                                    className="MuiTypography-root makeStyles-username-148 MuiTypography-subtitle2"
+                                                    className="MuiTypography-root makeStyles-username-149 MuiTypography-subtitle2"
                                                   >
                                                     test author username 1
                                                   </h6>
@@ -2000,11 +2000,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                   version={1}
                                 >
                                   <WithStyles(ForwardRef(Grid))
-                                    className="makeStyles-buttons-149"
+                                    className="makeStyles-buttons-150"
                                     item={true}
                                   >
                                     <ForwardRef(Grid)
-                                      className="makeStyles-buttons-149"
+                                      className="makeStyles-buttons-150"
                                       classes={
                                         Object {
                                           "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -2115,20 +2115,20 @@ exports[`containers/Article should match snapshot 1`] = `
                                       item={true}
                                     >
                                       <div
-                                        className="MuiGrid-root makeStyles-buttons-149 MuiGrid-item"
+                                        className="MuiGrid-root makeStyles-buttons-150 MuiGrid-item"
                                       >
                                         <ForwardRef
-                                          className="makeStyles-hover-150"
+                                          className="makeStyles-hover-151"
                                           color="primary"
                                           onClick={[Function]}
                                         >
                                           <WithStyles(ForwardRef(SvgIcon))
-                                            className="makeStyles-hover-150"
+                                            className="makeStyles-hover-151"
                                             color="primary"
                                             onClick={[Function]}
                                           >
                                             <ForwardRef(SvgIcon)
-                                              className="makeStyles-hover-150"
+                                              className="makeStyles-hover-151"
                                               classes={
                                                 Object {
                                                   "colorAction": "MuiSvgIcon-colorAction",
@@ -2147,7 +2147,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             >
                                               <svg
                                                 aria-hidden="true"
-                                                className="MuiSvgIcon-root makeStyles-hover-150 MuiSvgIcon-colorPrimary"
+                                                className="MuiSvgIcon-root makeStyles-hover-151 MuiSvgIcon-colorPrimary"
                                                 focusable="false"
                                                 onClick={[Function]}
                                                 role="presentation"
@@ -2162,19 +2162,19 @@ exports[`containers/Article should match snapshot 1`] = `
                                         </ForwardRef>
                                         <ForwardRef
                                           aria-describedby="1231"
-                                          className="makeStyles-hover-150"
+                                          className="makeStyles-hover-151"
                                           color="primary"
                                           onClick={[Function]}
                                         >
                                           <WithStyles(ForwardRef(SvgIcon))
                                             aria-describedby="1231"
-                                            className="makeStyles-hover-150"
+                                            className="makeStyles-hover-151"
                                             color="primary"
                                             onClick={[Function]}
                                           >
                                             <ForwardRef(SvgIcon)
                                               aria-describedby="1231"
-                                              className="makeStyles-hover-150"
+                                              className="makeStyles-hover-151"
                                               classes={
                                                 Object {
                                                   "colorAction": "MuiSvgIcon-colorAction",
@@ -2194,7 +2194,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                               <svg
                                                 aria-describedby="1231"
                                                 aria-hidden="true"
-                                                className="MuiSvgIcon-root makeStyles-hover-150 MuiSvgIcon-colorPrimary"
+                                                className="MuiSvgIcon-root makeStyles-hover-151 MuiSvgIcon-colorPrimary"
                                                 focusable="false"
                                                 onClick={[Function]}
                                                 role="presentation"
@@ -4120,11 +4120,12 @@ exports[`containers/Article should match snapshot 1`] = `
                           </_default>
                         </div>
                         <WithStyles(ForwardRef(Grid))
+                          className="makeStyles-related-6"
                           container={true}
-                          justify="center"
                           spacing={3}
                         >
                           <ForwardRef(Grid)
+                            className="makeStyles-related-6"
                             classes={
                               Object {
                                 "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -4233,16 +4234,15 @@ exports[`containers/Article should match snapshot 1`] = `
                               }
                             }
                             container={true}
-                            justify="center"
                             spacing={3}
                           >
                             <div
-                              className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-justify-xs-center"
+                              className="MuiGrid-root makeStyles-related-6 MuiGrid-container MuiGrid-spacing-xs-3"
                             >
                               <WithStyles(ForwardRef(Grid))
                                 item={true}
                                 key="0"
-                                sm={6}
+                                sm={12}
                               >
                                 <ForwardRef(Grid)
                                   classes={
@@ -4353,10 +4353,10 @@ exports[`containers/Article should match snapshot 1`] = `
                                     }
                                   }
                                   item={true}
-                                  sm={6}
+                                  sm={12}
                                 >
                                   <div
-                                    className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-6"
+                                    className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12"
                                   >
                                     <ArticleCard
                                       __typename="ArticleDTO"
@@ -4449,11 +4449,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                       }
                                     >
                                       <WithStyles(ForwardRef(Card))
-                                        className="makeStyles-card-163 makeStyles-card-3"
+                                        className="makeStyles-card-164 makeStyles-card-3"
                                         key="1232"
                                       >
                                         <ForwardRef(Card)
-                                          className="makeStyles-card-163 makeStyles-card-3"
+                                          className="makeStyles-card-164 makeStyles-card-3"
                                           classes={
                                             Object {
                                               "root": "MuiCard-root",
@@ -4461,11 +4461,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                           }
                                         >
                                           <WithStyles(ForwardRef(Paper))
-                                            className="MuiCard-root makeStyles-card-163 makeStyles-card-3"
+                                            className="MuiCard-root makeStyles-card-164 makeStyles-card-3"
                                             elevation={1}
                                           >
                                             <ForwardRef(Paper)
-                                              className="MuiCard-root makeStyles-card-163 makeStyles-card-3"
+                                              className="MuiCard-root makeStyles-card-164 makeStyles-card-3"
                                               classes={
                                                 Object {
                                                   "elevation0": "MuiPaper-elevation0",
@@ -4500,13 +4500,13 @@ exports[`containers/Article should match snapshot 1`] = `
                                               elevation={1}
                                             >
                                               <div
-                                                className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-163 makeStyles-card-3 MuiPaper-rounded"
+                                                className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-164 makeStyles-card-3 MuiPaper-rounded"
                                               >
                                                 <div
-                                                  className="makeStyles-cardActualContent-164"
+                                                  className="makeStyles-cardActualContent-165"
                                                 >
                                                   <div
-                                                    className="makeStyles-header-167"
+                                                    className="makeStyles-header-168"
                                                   >
                                                     <Link
                                                       as="/test-title-2/1232/a"
@@ -4514,7 +4514,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                       prefetch={true}
                                                     >
                                                       <a
-                                                        className="makeStyles-title-171"
+                                                        className="makeStyles-title-172"
                                                         data-testid="ArticleCard-1232-title"
                                                         href="/test-title-2/1232/a"
                                                         onClick={[Function]}
@@ -4850,7 +4850,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                     >
                                                       <ForwardRef
                                                         borderRadius="4px"
-                                                        className="makeStyles-mobileMedia-168"
+                                                        className="makeStyles-mobileMedia-169"
                                                         data-testid="ArticleCard-1232-image"
                                                         height={76}
                                                         image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
@@ -4865,7 +4865,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                         >
                                                           <Image__Img
                                                             borderRadius="4px"
-                                                            className="makeStyles-mobileMedia-168"
+                                                            className="makeStyles-mobileMedia-169"
                                                             data-testid="ArticleCard-1232-image"
                                                             height={76}
                                                             image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
@@ -4876,7 +4876,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                           >
                                                             <StyledComponent
                                                               borderRadius="4px"
-                                                              className="makeStyles-mobileMedia-168"
+                                                              className="makeStyles-mobileMedia-169"
                                                               data-testid="ArticleCard-1232-image"
                                                               forwardedComponent={
                                                                 Object {
@@ -4935,7 +4935,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                               width={76}
                                                             >
                                                               <div
-                                                                className="makeStyles-mobileMedia-168 Image__Img-sc-1jpuda7-0 ifAOXd"
+                                                                className="makeStyles-mobileMedia-169 Image__Img-sc-1jpuda7-0 ifAOXd"
                                                                 data-testid="ArticleCard-1232-image"
                                                                 height={76}
                                                                 onClick={[Function]}
@@ -4959,11 +4959,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                       onMouseEnter={[Function]}
                                                     >
                                                       <WithStyles(ForwardRef(CardContent))
-                                                        className="makeStyles-content-166"
+                                                        className="makeStyles-content-167"
                                                         data-testid="ArticleCard-1232-description"
                                                       >
                                                         <ForwardRef(CardContent)
-                                                          className="makeStyles-content-166"
+                                                          className="makeStyles-content-167"
                                                           classes={
                                                             Object {
                                                               "root": "MuiCardContent-root",
@@ -4972,7 +4972,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                           data-testid="ArticleCard-1232-description"
                                                         >
                                                           <div
-                                                            className="MuiCardContent-root makeStyles-content-166"
+                                                            className="MuiCardContent-root makeStyles-content-167"
                                                             data-testid="ArticleCard-1232-description"
                                                           >
                                                             <TruncateMarkup
@@ -5309,10 +5309,10 @@ exports[`containers/Article should match snapshot 1`] = `
                                                     </a>
                                                   </Link>
                                                   <WithStyles(ForwardRef(CardActions))
-                                                    className="makeStyles-cardActions-172"
+                                                    className="makeStyles-cardActions-173"
                                                   >
                                                     <ForwardRef(CardActions)
-                                                      className="makeStyles-cardActions-172"
+                                                      className="makeStyles-cardActions-173"
                                                       classes={
                                                         Object {
                                                           "root": "MuiCardActions-root",
@@ -5321,10 +5321,10 @@ exports[`containers/Article should match snapshot 1`] = `
                                                       }
                                                     >
                                                       <div
-                                                        className="MuiCardActions-root makeStyles-cardActions-172 MuiCardActions-spacing"
+                                                        className="MuiCardActions-root makeStyles-cardActions-173 MuiCardActions-spacing"
                                                       >
                                                         <div
-                                                          className="makeStyles-user-173"
+                                                          className="makeStyles-user-174"
                                                         >
                                                           <AvatarComp
                                                             aria-label="test author username 2"
@@ -5346,11 +5346,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                 onMouseEnter={[Function]}
                                                               >
                                                                 <div
-                                                                  className="makeStyles-container-207"
+                                                                  className="makeStyles-container-208"
                                                                 >
                                                                   <ForwardRef
                                                                     borderRadius="2px"
-                                                                    className="makeStyles-avatar-208"
+                                                                    className="makeStyles-avatar-209"
                                                                     height={24}
                                                                     image="test avatar 2"
                                                                     width={24}
@@ -5362,7 +5362,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                     >
                                                                       <Image__Img
                                                                         borderRadius="2px"
-                                                                        className="makeStyles-avatar-208"
+                                                                        className="makeStyles-avatar-209"
                                                                         height={24}
                                                                         image="test avatar 2"
                                                                         inView={false}
@@ -5370,7 +5370,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                       >
                                                                         <StyledComponent
                                                                           borderRadius="2px"
-                                                                          className="makeStyles-avatar-208"
+                                                                          className="makeStyles-avatar-209"
                                                                           forwardedComponent={
                                                                             Object {
                                                                               "$$typeof": Symbol(react.forward_ref),
@@ -5426,7 +5426,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                           width={24}
                                                                         >
                                                                           <div
-                                                                            className="makeStyles-avatar-208 Image__Img-sc-1jpuda7-0 fFzdZc"
+                                                                            className="makeStyles-avatar-209 Image__Img-sc-1jpuda7-0 fFzdZc"
                                                                             height={24}
                                                                             width={24}
                                                                           />
@@ -5435,11 +5435,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                     </InView>
                                                                   </ForwardRef>
                                                                   <WithStyles(ForwardRef(Typography))
-                                                                    className="makeStyles-username-209"
+                                                                    className="makeStyles-username-210"
                                                                     variant="subtitle2"
                                                                   >
                                                                     <ForwardRef(Typography)
-                                                                      className="makeStyles-username-209"
+                                                                      className="makeStyles-username-210"
                                                                       classes={
                                                                         Object {
                                                                           "alignCenter": "MuiTypography-alignCenter",
@@ -5743,7 +5743,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                       variant="subtitle2"
                                                                     >
                                                                       <h6
-                                                                        className="MuiTypography-root makeStyles-username-209 MuiTypography-subtitle2"
+                                                                        className="MuiTypography-root makeStyles-username-210 MuiTypography-subtitle2"
                                                                       >
                                                                         test author name 2
                                                                       </h6>
@@ -6071,7 +6071,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                           </WithStyles(ForwardRef(Typography))>
                                                         </div>
                                                         <div
-                                                          className="makeStyles-statistics-174"
+                                                          className="makeStyles-statistics-175"
                                                         >
                                                           <WithStyles(ForwardRef(Icon))
                                                             data-testid="ArticleCard-1232-commentIcon"
@@ -6764,14 +6764,14 @@ exports[`containers/Article should match snapshot 1`] = `
                                                           <WithStyles(ForwardRef(IconButton))
                                                             aria-haspopup="true"
                                                             aria-label="simple-menu"
-                                                            className="makeStyles-menuButton-170"
+                                                            className="makeStyles-menuButton-171"
                                                             data-testid="ArticleCard-1232-moreOptionsButton"
                                                             onClick={[Function]}
                                                           >
                                                             <ForwardRef(IconButton)
                                                               aria-haspopup="true"
                                                               aria-label="simple-menu"
-                                                              className="makeStyles-menuButton-170"
+                                                              className="makeStyles-menuButton-171"
                                                               classes={
                                                                 Object {
                                                                   "colorInherit": "MuiIconButton-colorInherit",
@@ -6792,7 +6792,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                 aria-haspopup="true"
                                                                 aria-label="simple-menu"
                                                                 centerRipple={true}
-                                                                className="MuiIconButton-root makeStyles-menuButton-170"
+                                                                className="MuiIconButton-root makeStyles-menuButton-171"
                                                                 data-testid="ArticleCard-1232-moreOptionsButton"
                                                                 disabled={false}
                                                                 focusRipple={true}
@@ -6802,7 +6802,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                   aria-haspopup="true"
                                                                   aria-label="simple-menu"
                                                                   centerRipple={true}
-                                                                  className="MuiIconButton-root makeStyles-menuButton-170"
+                                                                  className="MuiIconButton-root makeStyles-menuButton-171"
                                                                   classes={
                                                                     Object {
                                                                       "disabled": "Mui-disabled",
@@ -6818,7 +6818,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                   <button
                                                                     aria-haspopup="true"
                                                                     aria-label="simple-menu"
-                                                                    className="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-170"
+                                                                    className="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-171"
                                                                     data-testid="ArticleCard-1232-moreOptionsButton"
                                                                     disabled={false}
                                                                     onBlur={[Function]}
@@ -6909,12 +6909,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                             <ShareDialogComponent
                                                               classes={
                                                                 Object {
-                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-235",
-                                                                  "closeButton": "ShareDialogComponent-closeButton-232",
-                                                                  "container": "ShareDialogComponent-container-233",
-                                                                  "icon": "ShareDialogComponent-icon-234",
-                                                                  "iconContainer": "ShareDialogComponent-iconContainer-236",
-                                                                  "root": "ShareDialogComponent-root-231",
+                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-236",
+                                                                  "closeButton": "ShareDialogComponent-closeButton-233",
+                                                                  "container": "ShareDialogComponent-container-234",
+                                                                  "icon": "ShareDialogComponent-icon-235",
+                                                                  "iconContainer": "ShareDialogComponent-iconContainer-237",
+                                                                  "root": "ShareDialogComponent-root-232",
                                                                 }
                                                               }
                                                               handleClose={[Function]}
@@ -8450,7 +8450,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                   >
                                                     <ForwardRef
                                                       borderRadius="4px"
-                                                      className="makeStyles-desktopMedia-169"
+                                                      className="makeStyles-desktopMedia-170"
                                                       data-testid="ArticleCard-1232-image"
                                                       height={152}
                                                       image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
@@ -8463,7 +8463,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                       >
                                                         <Image__Img
                                                           borderRadius="4px"
-                                                          className="makeStyles-desktopMedia-169"
+                                                          className="makeStyles-desktopMedia-170"
                                                           data-testid="ArticleCard-1232-image"
                                                           height={152}
                                                           image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
@@ -8472,7 +8472,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                         >
                                                           <StyledComponent
                                                             borderRadius="4px"
-                                                            className="makeStyles-desktopMedia-169"
+                                                            className="makeStyles-desktopMedia-170"
                                                             data-testid="ArticleCard-1232-image"
                                                             forwardedComponent={
                                                               Object {
@@ -8529,7 +8529,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                             width={152}
                                                           >
                                                             <div
-                                                              className="makeStyles-desktopMedia-169 Image__Img-sc-1jpuda7-0 ewhrzK"
+                                                              className="makeStyles-desktopMedia-170 Image__Img-sc-1jpuda7-0 ewhrzK"
                                                               data-testid="ArticleCard-1232-image"
                                                               height={152}
                                                               width={152}
@@ -8552,7 +8552,7 @@ exports[`containers/Article should match snapshot 1`] = `
                               <WithStyles(ForwardRef(Grid))
                                 item={true}
                                 key="1"
-                                sm={6}
+                                sm={12}
                               >
                                 <ForwardRef(Grid)
                                   classes={
@@ -8663,10 +8663,10 @@ exports[`containers/Article should match snapshot 1`] = `
                                     }
                                   }
                                   item={true}
-                                  sm={6}
+                                  sm={12}
                                 >
                                   <div
-                                    className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-6"
+                                    className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12"
                                   >
                                     <ArticleCard
                                       __typename="ArticleDTO"
@@ -8759,11 +8759,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                       }
                                     >
                                       <WithStyles(ForwardRef(Card))
-                                        className="makeStyles-card-163 makeStyles-card-3"
+                                        className="makeStyles-card-164 makeStyles-card-3"
                                         key="1233"
                                       >
                                         <ForwardRef(Card)
-                                          className="makeStyles-card-163 makeStyles-card-3"
+                                          className="makeStyles-card-164 makeStyles-card-3"
                                           classes={
                                             Object {
                                               "root": "MuiCard-root",
@@ -8771,11 +8771,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                           }
                                         >
                                           <WithStyles(ForwardRef(Paper))
-                                            className="MuiCard-root makeStyles-card-163 makeStyles-card-3"
+                                            className="MuiCard-root makeStyles-card-164 makeStyles-card-3"
                                             elevation={1}
                                           >
                                             <ForwardRef(Paper)
-                                              className="MuiCard-root makeStyles-card-163 makeStyles-card-3"
+                                              className="MuiCard-root makeStyles-card-164 makeStyles-card-3"
                                               classes={
                                                 Object {
                                                   "elevation0": "MuiPaper-elevation0",
@@ -8810,13 +8810,13 @@ exports[`containers/Article should match snapshot 1`] = `
                                               elevation={1}
                                             >
                                               <div
-                                                className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-163 makeStyles-card-3 MuiPaper-rounded"
+                                                className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-164 makeStyles-card-3 MuiPaper-rounded"
                                               >
                                                 <div
-                                                  className="makeStyles-cardActualContent-164"
+                                                  className="makeStyles-cardActualContent-165"
                                                 >
                                                   <div
-                                                    className="makeStyles-header-167"
+                                                    className="makeStyles-header-168"
                                                   >
                                                     <Link
                                                       as="/test-title-3/1233/a"
@@ -8824,7 +8824,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                       prefetch={true}
                                                     >
                                                       <a
-                                                        className="makeStyles-title-171"
+                                                        className="makeStyles-title-172"
                                                         data-testid="ArticleCard-1233-title"
                                                         href="/test-title-3/1233/a"
                                                         onClick={[Function]}
@@ -9160,7 +9160,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                     >
                                                       <ForwardRef
                                                         borderRadius="4px"
-                                                        className="makeStyles-mobileMedia-168"
+                                                        className="makeStyles-mobileMedia-169"
                                                         data-testid="ArticleCard-1233-image"
                                                         height={76}
                                                         image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
@@ -9175,7 +9175,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                         >
                                                           <Image__Img
                                                             borderRadius="4px"
-                                                            className="makeStyles-mobileMedia-168"
+                                                            className="makeStyles-mobileMedia-169"
                                                             data-testid="ArticleCard-1233-image"
                                                             height={76}
                                                             image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
@@ -9186,7 +9186,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                           >
                                                             <StyledComponent
                                                               borderRadius="4px"
-                                                              className="makeStyles-mobileMedia-168"
+                                                              className="makeStyles-mobileMedia-169"
                                                               data-testid="ArticleCard-1233-image"
                                                               forwardedComponent={
                                                                 Object {
@@ -9245,7 +9245,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                               width={76}
                                                             >
                                                               <div
-                                                                className="makeStyles-mobileMedia-168 Image__Img-sc-1jpuda7-0 ifAOXd"
+                                                                className="makeStyles-mobileMedia-169 Image__Img-sc-1jpuda7-0 ifAOXd"
                                                                 data-testid="ArticleCard-1233-image"
                                                                 height={76}
                                                                 onClick={[Function]}
@@ -9269,11 +9269,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                       onMouseEnter={[Function]}
                                                     >
                                                       <WithStyles(ForwardRef(CardContent))
-                                                        className="makeStyles-content-166"
+                                                        className="makeStyles-content-167"
                                                         data-testid="ArticleCard-1233-description"
                                                       >
                                                         <ForwardRef(CardContent)
-                                                          className="makeStyles-content-166"
+                                                          className="makeStyles-content-167"
                                                           classes={
                                                             Object {
                                                               "root": "MuiCardContent-root",
@@ -9282,7 +9282,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                           data-testid="ArticleCard-1233-description"
                                                         >
                                                           <div
-                                                            className="MuiCardContent-root makeStyles-content-166"
+                                                            className="MuiCardContent-root makeStyles-content-167"
                                                             data-testid="ArticleCard-1233-description"
                                                           >
                                                             <TruncateMarkup
@@ -9619,10 +9619,10 @@ exports[`containers/Article should match snapshot 1`] = `
                                                     </a>
                                                   </Link>
                                                   <WithStyles(ForwardRef(CardActions))
-                                                    className="makeStyles-cardActions-172"
+                                                    className="makeStyles-cardActions-173"
                                                   >
                                                     <ForwardRef(CardActions)
-                                                      className="makeStyles-cardActions-172"
+                                                      className="makeStyles-cardActions-173"
                                                       classes={
                                                         Object {
                                                           "root": "MuiCardActions-root",
@@ -9631,10 +9631,10 @@ exports[`containers/Article should match snapshot 1`] = `
                                                       }
                                                     >
                                                       <div
-                                                        className="MuiCardActions-root makeStyles-cardActions-172 MuiCardActions-spacing"
+                                                        className="MuiCardActions-root makeStyles-cardActions-173 MuiCardActions-spacing"
                                                       >
                                                         <div
-                                                          className="makeStyles-user-173"
+                                                          className="makeStyles-user-174"
                                                         >
                                                           <AvatarComp
                                                             aria-label="test author username 3"
@@ -9656,11 +9656,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                 onMouseEnter={[Function]}
                                                               >
                                                                 <div
-                                                                  className="makeStyles-container-254"
+                                                                  className="makeStyles-container-255"
                                                                 >
                                                                   <ForwardRef
                                                                     borderRadius="2px"
-                                                                    className="makeStyles-avatar-255"
+                                                                    className="makeStyles-avatar-256"
                                                                     height={24}
                                                                     image="test avatar 3"
                                                                     width={24}
@@ -9672,7 +9672,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                     >
                                                                       <Image__Img
                                                                         borderRadius="2px"
-                                                                        className="makeStyles-avatar-255"
+                                                                        className="makeStyles-avatar-256"
                                                                         height={24}
                                                                         image="test avatar 3"
                                                                         inView={false}
@@ -9680,7 +9680,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                       >
                                                                         <StyledComponent
                                                                           borderRadius="2px"
-                                                                          className="makeStyles-avatar-255"
+                                                                          className="makeStyles-avatar-256"
                                                                           forwardedComponent={
                                                                             Object {
                                                                               "$$typeof": Symbol(react.forward_ref),
@@ -9736,7 +9736,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                           width={24}
                                                                         >
                                                                           <div
-                                                                            className="makeStyles-avatar-255 Image__Img-sc-1jpuda7-0 fFzdZc"
+                                                                            className="makeStyles-avatar-256 Image__Img-sc-1jpuda7-0 fFzdZc"
                                                                             height={24}
                                                                             width={24}
                                                                           />
@@ -9745,11 +9745,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                     </InView>
                                                                   </ForwardRef>
                                                                   <WithStyles(ForwardRef(Typography))
-                                                                    className="makeStyles-username-256"
+                                                                    className="makeStyles-username-257"
                                                                     variant="subtitle2"
                                                                   >
                                                                     <ForwardRef(Typography)
-                                                                      className="makeStyles-username-256"
+                                                                      className="makeStyles-username-257"
                                                                       classes={
                                                                         Object {
                                                                           "alignCenter": "MuiTypography-alignCenter",
@@ -10053,7 +10053,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                       variant="subtitle2"
                                                                     >
                                                                       <h6
-                                                                        className="MuiTypography-root makeStyles-username-256 MuiTypography-subtitle2"
+                                                                        className="MuiTypography-root makeStyles-username-257 MuiTypography-subtitle2"
                                                                       >
                                                                         test author name 3
                                                                       </h6>
@@ -10381,7 +10381,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                           </WithStyles(ForwardRef(Typography))>
                                                         </div>
                                                         <div
-                                                          className="makeStyles-statistics-174"
+                                                          className="makeStyles-statistics-175"
                                                         >
                                                           <WithStyles(ForwardRef(Icon))
                                                             data-testid="ArticleCard-1233-commentIcon"
@@ -11074,14 +11074,14 @@ exports[`containers/Article should match snapshot 1`] = `
                                                           <WithStyles(ForwardRef(IconButton))
                                                             aria-haspopup="true"
                                                             aria-label="simple-menu"
-                                                            className="makeStyles-menuButton-170"
+                                                            className="makeStyles-menuButton-171"
                                                             data-testid="ArticleCard-1233-moreOptionsButton"
                                                             onClick={[Function]}
                                                           >
                                                             <ForwardRef(IconButton)
                                                               aria-haspopup="true"
                                                               aria-label="simple-menu"
-                                                              className="makeStyles-menuButton-170"
+                                                              className="makeStyles-menuButton-171"
                                                               classes={
                                                                 Object {
                                                                   "colorInherit": "MuiIconButton-colorInherit",
@@ -11102,7 +11102,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                 aria-haspopup="true"
                                                                 aria-label="simple-menu"
                                                                 centerRipple={true}
-                                                                className="MuiIconButton-root makeStyles-menuButton-170"
+                                                                className="MuiIconButton-root makeStyles-menuButton-171"
                                                                 data-testid="ArticleCard-1233-moreOptionsButton"
                                                                 disabled={false}
                                                                 focusRipple={true}
@@ -11112,7 +11112,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                   aria-haspopup="true"
                                                                   aria-label="simple-menu"
                                                                   centerRipple={true}
-                                                                  className="MuiIconButton-root makeStyles-menuButton-170"
+                                                                  className="MuiIconButton-root makeStyles-menuButton-171"
                                                                   classes={
                                                                     Object {
                                                                       "disabled": "Mui-disabled",
@@ -11128,7 +11128,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                   <button
                                                                     aria-haspopup="true"
                                                                     aria-label="simple-menu"
-                                                                    className="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-170"
+                                                                    className="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-171"
                                                                     data-testid="ArticleCard-1233-moreOptionsButton"
                                                                     disabled={false}
                                                                     onBlur={[Function]}
@@ -11219,12 +11219,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                             <ShareDialogComponent
                                                               classes={
                                                                 Object {
-                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-235",
-                                                                  "closeButton": "ShareDialogComponent-closeButton-232",
-                                                                  "container": "ShareDialogComponent-container-233",
-                                                                  "icon": "ShareDialogComponent-icon-234",
-                                                                  "iconContainer": "ShareDialogComponent-iconContainer-236",
-                                                                  "root": "ShareDialogComponent-root-231",
+                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-236",
+                                                                  "closeButton": "ShareDialogComponent-closeButton-233",
+                                                                  "container": "ShareDialogComponent-container-234",
+                                                                  "icon": "ShareDialogComponent-icon-235",
+                                                                  "iconContainer": "ShareDialogComponent-iconContainer-237",
+                                                                  "root": "ShareDialogComponent-root-232",
                                                                 }
                                                               }
                                                               handleClose={[Function]}
@@ -12760,7 +12760,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                   >
                                                     <ForwardRef
                                                       borderRadius="4px"
-                                                      className="makeStyles-desktopMedia-169"
+                                                      className="makeStyles-desktopMedia-170"
                                                       data-testid="ArticleCard-1233-image"
                                                       height={152}
                                                       image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
@@ -12773,7 +12773,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                       >
                                                         <Image__Img
                                                           borderRadius="4px"
-                                                          className="makeStyles-desktopMedia-169"
+                                                          className="makeStyles-desktopMedia-170"
                                                           data-testid="ArticleCard-1233-image"
                                                           height={152}
                                                           image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
@@ -12782,7 +12782,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                         >
                                                           <StyledComponent
                                                             borderRadius="4px"
-                                                            className="makeStyles-desktopMedia-169"
+                                                            className="makeStyles-desktopMedia-170"
                                                             data-testid="ArticleCard-1233-image"
                                                             forwardedComponent={
                                                               Object {
@@ -12839,7 +12839,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                             width={152}
                                                           >
                                                             <div
-                                                              className="makeStyles-desktopMedia-169 Image__Img-sc-1jpuda7-0 ewhrzK"
+                                                              className="makeStyles-desktopMedia-170 Image__Img-sc-1jpuda7-0 ewhrzK"
                                                               data-testid="ArticleCard-1233-image"
                                                               height={152}
                                                               width={152}
