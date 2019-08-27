@@ -226,7 +226,9 @@ const CommunityCard: React.FC<IProps> = ({
                             className={classes.name}
                         >
                             <TruncateMarkup lines={1}>
-                                <Typography variant={'h5'}>{name || communityName}</Typography>
+                                <Typography variant={'h5'}>
+                                    {name || communityName}
+                                </Typography>
                             </TruncateMarkup>
                         </a>
                     </Link>

@@ -17,7 +17,7 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
         },
         related: {
             marginTop: theme.spacing(3),
-            marginBottom: theme.spacing(3)
+            marginBottom: theme.spacing(3),
         },
         controls: {
             '& svg': {
