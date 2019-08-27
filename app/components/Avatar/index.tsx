@@ -40,6 +40,9 @@ const AvatarComp = ({
         },
         avatar: {
             marginRight: theme.spacing(1),
+            borderRadius: 2,
+            height: size || 24,
+            width: size || 24
         },
         username: {
             textTransform: 'capitalize',
@@ -61,13 +64,13 @@ const AvatarComp = ({
         <Link as={url.as} href={url.href}>
             <a>
                 <div className={className || classes.container}>
-                    <Image
+                    { avatar ? <Image
                         className={classes.avatar}
-                        image={avatar ? avatar : makeBlockie(id)}
+                        image={avatar }
                         width={size || 24}
                         height={size || 24}
                         borderRadius={'2px'}
-                    />
+                    /> : <img className={classes.avatar} src={makeBlockie(id)} /> }
                     {withName && (
                         <Typography
                             color={color}
