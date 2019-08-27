@@ -5,6 +5,7 @@ import config from '../../config'
 const Icon = styled.svg`
     height: 18px;
     width: 18px;
+    margin-right: 8px;
 `
 
 const SVG = (

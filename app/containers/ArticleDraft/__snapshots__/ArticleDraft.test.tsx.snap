@@ -1376,8 +1376,8 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                   <div
                     className="DraftArticleContent__ContentContainer-sc-1x9teyd-0 fjxIaK"
                   >
-                    <_default
-                      content="{\\"markdown\\" : \\"test contet 1\\"}"
+                    <Renderer
+                      markdown="test contet 1"
                     >
                       <Markdown
                         options={
@@ -3221,7 +3221,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                           test contet 1
                         </span>
                       </Markdown>
-                    </_default>
+                    </Renderer>
                     <ButtonComp
                       color="primary"
                       onClick={[Function]}

@@ -1,46 +1,21 @@
 import React from 'react'
 import { EditorState, ContentState } from 'draft-js'
-import { css } from 'styled-components'
 import ReactMde, { DraftUtil } from '@rej156/react-mde'
-import Showdown from 'showdown'
 import { getDefaultCommands } from '@rej156/react-mde/lib/js/commands'
-import { map } from 'ramda'
-import { hljs } from '../../lib/hljs'
 import uploadImageCommand from '../../lib/reactmde-commands/upload-image'
 import youtubeCommand from '../../lib/reactmde-commands/youtube'
 import mediumImport from '../../lib/reactmde-commands/mediumImport'
 import advancedModalCommand from '../../lib/reactmde-commands/advanced-modal'
 import Head from 'next/head'
 import { MdeState } from '@rej156/react-mde/lib/definitions/types'
-
-export const errorBorderCss = css`
-    position: absolute;
-    z-index: 1000;
-    width: 950px;
-    height: 22em;
-    border: 2px solid ${props => props.theme.errorRedColor};
-`
+import MDRenderer from '../Markdown/Renderer'
+import { renderToStaticMarkup } from 'react-dom/server'
 
 let reactMdeCommands = getDefaultCommands()
 reactMdeCommands[2][5] = mediumImport
 reactMdeCommands[1][3] = uploadImageCommand
 reactMdeCommands[1][5] = youtubeCommand
 reactMdeCommands[2][4] = advancedModalCommand
-
-Showdown.extension('highlightjs', function() {
-    return [
-        {
-            type: 'output',
-            regex: new RegExp('<code>', 'g'),
-            replace: '<code class="hljs">',
-        },
-        {
-            type: 'output',
-            regex: new RegExp('<code \\b[^>]*>', 'g'),
-            replace: '<code class="hljs">',
-        },
-    ]
-})
 
 interface IProps {
     editorState: {
@@ -54,31 +29,9 @@ interface IProps {
 
 export class SharedEditor extends React.Component<IProps> {
     commands = reactMdeCommands
-    converter = new Showdown.Converter({
-        tables: true,
-        simplifiedAutoLink: true,
-        strikethrough: true,
-        tasklists: true,
-        extensions: ['highlightjs'],
-    })
-
-    componentDidUpdate() {
-        if (document.querySelector('.mde-preview')) {
-            map(block => hljs.highlightBlock(block))(
-                Array.from(document.querySelectorAll('pre code'))
-            )
-        }
-    }
 
     async componentDidMount() {
         if (this.props.editorState) {
-            const converter = new Showdown.Converter({
-                tables: true,
-                simplifiedAutoLink: true,
-                strikethrough: true,
-                tasklists: true,
-                extensions: ['highlightjs'],
-            })
             const mdeState = await DraftUtil.getMdeStateFromDraftState(
                 (this.props.editorState &&
                     this.props.editorState.draftEditorState) ||
@@ -89,7 +42,10 @@ export class SharedEditor extends React.Component<IProps> {
                                 : this.props.editorState.markdown
                         )
                     ),
-                markdown => Promise.resolve(converter.makeHtml(markdown))
+                markdown =>
+                    Promise.resolve(
+                        renderToStaticMarkup(<MDRenderer markdown={markdown} />)
+                    )
             )
             this.props.handleChange(mdeState)
         }
@@ -119,7 +75,11 @@ export class SharedEditor extends React.Component<IProps> {
                     onChange={handleChange}
                     editorState={editorState}
                     generateMarkdownPreview={markdown =>
-                        Promise.resolve(this.converter.makeHtml(markdown))
+                        Promise.resolve(
+                            renderToStaticMarkup(
+                                <MDRenderer markdown={markdown} />
+                            )
+                        )
                     }
                 />
             </div>

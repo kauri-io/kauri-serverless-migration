@@ -43,13 +43,12 @@ import userDetailsEpic, {
 import themeConfig from './theme-config'
 
 // import "highlightjs/styles/vs2015.css";
-import '@rej156/react-mde/lib/styles/css/react-mde-all.css'
+import '@rej156/react-mde/lib/styles/css/react-mde-toolbar.css'
 import '../static/css/redraft-image.css'
 // import "draft-js-inline-toolbar-plugin/lib/plugin.css"
 import '@uppy/core/dist/style.min.css'
 import '@uppy/dashboard/dist/style.min.css'
 import '@uppy/url/dist/style.min.css'
-import 'prismjs/themes/prism-okaidia.css'
 import analytics from './analytics'
 import ApolloClient from 'apollo-client'
 import { NormalizedCacheObject } from 'apollo-cache-inmemory'

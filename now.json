@@ -26,6 +26,10 @@
       "dest": "/app/static/favicon/favicon.ico"
     },
     {
+      "src": "/article/(.*)/v(.*)/update-article",
+      "dest": "/app/update-article?id=$1&version=$2"
+    },
+    {
       "src": "/(.*)/(.*)/a",
       "dest": "/app/article?article_id=$2&slug=$1"
     },
@@ -88,10 +92,6 @@
     {
       "src": "draft/(.*)/(.*)",
       "dest": "/app/draft?id=$1&version=$2"
-    },
-    {
-      "src": "/article/(.*)/v(.*)/update-article",
-      "dest": "/app/update-article?id=$1&version=$2"
     },
     {
       "src": "/activate/(.*)",

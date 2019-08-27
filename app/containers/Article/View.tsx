@@ -129,7 +129,7 @@ const ArticleComp = ({
                         />
                     )}
                     <div id="content" className={classes.content}>
-                        <MDRenderer content={content} />
+                        <MDRenderer markdown={JSON.parse(content).markdown} />
                     </div>
                     <Grid
                         className={classes.related}

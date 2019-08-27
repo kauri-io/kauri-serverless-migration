@@ -122,7 +122,33 @@ export default class MyDocument extends Document<IProps> {
                         name="viewport"
                         content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
                     />
-                    <style>{`a { color: inherit; text-decoration: none;} .uppy-DashboardTab:last-child{display: none !important;} `}</style>
+                    <style>{`
+                    a { color: inherit; text-decoration: none;}
+                    .uppy-DashboardTab:last-child{
+                        display: none !important;
+                    }
+                    .mde-tabs {
+                        display: flex;
+                    }
+                    .mde-tab {
+                        background: transparent;
+                        padding: 8px;
+                        margin-top: 8px;
+                        border: none;
+                        cursor: pointer;
+                    }
+                    .mde-tab-activated {
+                        margin-bottom: -1px;
+                        margin-top: 8px;
+                        border-top-left-radius: 2px;
+                        border-top-right-radius: 2px;
+                        background: white;
+                        padding: 8px;
+                        border:1px solid #c8ccd0;
+                        border-bottom: none;
+                        cursor: pointer;
+                    }
+                    `}</style>
                 </Head>
                 <body>
                     <Main />

@@ -5,6 +5,7 @@ import Link from '@material-ui/core/Link'
 import config from '../../config'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import Prism from 'prismjs'
+import 'prismjs/themes/prism-okaidia.css'
 
 const CustomIMG = props => {
     const useStyles = makeStyles(() => ({
@@ -103,10 +104,8 @@ const options = {
     },
 }
 
-export default ({ content }) => {
-    return (
-        <ReactMarkdown options={options}>
-            {JSON.parse(content).markdown}
-        </ReactMarkdown>
-    )
+const Renderer = ({ markdown }) => {
+    return <ReactMarkdown options={options}>{markdown}</ReactMarkdown>
 }
+
+export default Renderer

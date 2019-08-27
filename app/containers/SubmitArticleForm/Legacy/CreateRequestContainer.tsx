@@ -11,6 +11,7 @@ const approvedArticleContainerCss = css`
 `
 
 export const CreateRequestContainer = styled.div<{ type?: string }>`
+    z-index: 1;
     width: 100%;
     @media (max-width: 500px) {
         width: 100%;

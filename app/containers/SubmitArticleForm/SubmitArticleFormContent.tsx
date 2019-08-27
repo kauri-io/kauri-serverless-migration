@@ -119,10 +119,12 @@ class SubmitArticleFormText extends React.Component<
 
 export const RandomLineThatGoesAcrossTheContent = styled.div`
     width: 100%;
-    height: 48px;
+    height: 44px;
     left: 0;
     position: absolute;
     border-bottom: 1px solid #c8ccd0;
+    background: #f9f9f9;
+    z-index: 0;
 `
 
 export default (props: IProps) => {

@@ -2272,8 +2272,8 @@ exports[`containers/Article should match snapshot 1`] = `
                           className="makeStyles-content-5"
                           id="content"
                         >
-                          <_default
-                            content="{\\"markdown\\" : \\"test contet 1\\"}"
+                          <Renderer
+                            markdown="test contet 1"
                           >
                             <Markdown
                               options={
@@ -4117,7 +4117,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                 test contet 1
                               </span>
                             </Markdown>
-                          </_default>
+                          </Renderer>
                         </div>
                         <WithStyles(ForwardRef(Grid))
                           className="makeStyles-related-6"

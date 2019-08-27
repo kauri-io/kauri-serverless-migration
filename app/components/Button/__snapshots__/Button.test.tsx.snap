@@ -1895,9 +1895,9 @@ exports[`components/MediumImportButton should match snapshot 1`] = `
                               "componentStyle": ComponentStyle {
                                 "componentId": "MediumImportButton__Icon-sc-1nnwman-0",
                                 "isStatic": true,
-                                "lastClassName": "ftCtCs",
+                                "lastClassName": "kpgAfi",
                                 "rules": Array [
-                                  "height:18px;width:18px;",
+                                  "height:18px;width:18px;margin-right:8px;",
                                 ],
                               },
                               "displayName": "MediumImportButton__Icon",
@@ -1914,7 +1914,7 @@ exports[`components/MediumImportButton should match snapshot 1`] = `
                           viewBox="0 0 24 24"
                         >
                           <svg
-                            className="MediumImportButton__Icon-sc-1nnwman-0 ftCtCs"
+                            className="MediumImportButton__Icon-sc-1nnwman-0 kpgAfi"
                             viewBox="0 0 24 24"
                           >
                             <path

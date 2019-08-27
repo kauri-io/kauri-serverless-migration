@@ -77,7 +77,7 @@ export default ({
 }: IProps) => {
     return (
         <ContentContainer>
-            <MDRenderer content={content} />
+            <MDRenderer markdown={JSON.parse(content).markdown} />
             <Button
                 color="primary"
                 variant="text"
