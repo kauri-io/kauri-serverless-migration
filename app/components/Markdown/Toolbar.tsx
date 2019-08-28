@@ -11,17 +11,11 @@ import ListIcon from '@material-ui/icons/FormatListBulletedOutlined'
 import NumberedListIcon from '@material-ui/icons/FormatListNumberedOutlined'
 // import TableIcon from '@material-ui/icons/TableChartOutlined'
 import { makeStyles } from '@material-ui/styles'
-import { Theme, Tooltip, } from '@material-ui/core';
+import { Theme, Tooltip } from '@material-ui/core'
 
-import URLModal from './URLModal';
+import URLModal from './URLModal'
 
-const Toolbar = ({
-    format,
-    compact,
-    openModalAction,
-    closeModalAction
-}) => {
-
+const Toolbar = ({ format, compact, openModalAction, closeModalAction }) => {
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
             display: 'flex',
@@ -29,59 +23,117 @@ const Toolbar = ({
         },
         iconButton: {
             cursor: 'pointer',
-            margin: theme.spacing(1)
+            margin: theme.spacing(1),
         },
         urlContainer: {
             display: 'flex',
             flexDirection: 'column',
-            width: 400
-        }
+            width: 400,
+        },
     }))
     const classes = useStyles()
 
     return (
         <div className={classes.container}>
-            <Tooltip title='bold'>
-                <div className={classes.iconButton} onClick={() => format('bold')}>
+            <Tooltip title="bold">
+                <div
+                    className={classes.iconButton}
+                    onClick={() => format('bold')}
+                >
                     <BoldIcon />
                 </div>
             </Tooltip>
-            <Tooltip title='italic'>
-                <div className={classes.iconButton} onClick={() => format('italic')}>
+            <Tooltip title="italic">
+                <div
+                    className={classes.iconButton}
+                    onClick={() => format('italic')}
+                >
                     <ItalicIcon />
                 </div>
             </Tooltip>
-            {!compact && <Tooltip title='strike-through'><div className={classes.iconButton} onClick={() => format('strike')}>
-                <StrikeIcon />
-            </div></Tooltip>}
-            <Tooltip title='code'><div className={classes.iconButton} onClick={() => format('code')}>
-                <CodeIcon />
-            </div></Tooltip>
-            <Tooltip title='quote'><div className={classes.iconButton} onClick={() => format('quote')}>
-                <QuoteIcon />
-            </div></Tooltip>
-            {!compact && <Tooltip title='title'><div className={classes.iconButton} onClick={() => format('title')}>
-                <TitleIcon />
-            </div></Tooltip>}
-            <Tooltip title='list'><div className={classes.iconButton} onClick={() => format('list')}>
-                <ListIcon />
-            </div></Tooltip>
-            <Tooltip title='numbered list'><div className={classes.iconButton} onClick={() => format('numbered-list')}>
-                <NumberedListIcon />
-            </div></Tooltip>
-            {!compact && <Tooltip title='upload image'><div id='article-image-upload' className={classes.iconButton}>
-                <ImageIcon />
-            </div></Tooltip>}
+            {!compact && (
+                <Tooltip title="strike-through">
+                    <div
+                        className={classes.iconButton}
+                        onClick={() => format('strike')}
+                    >
+                        <StrikeIcon />
+                    </div>
+                </Tooltip>
+            )}
+            <Tooltip title="code">
+                <div
+                    className={classes.iconButton}
+                    onClick={() => format('code')}
+                >
+                    <CodeIcon />
+                </div>
+            </Tooltip>
+            <Tooltip title="quote">
+                <div
+                    className={classes.iconButton}
+                    onClick={() => format('quote')}
+                >
+                    <QuoteIcon />
+                </div>
+            </Tooltip>
+            {!compact && (
+                <Tooltip title="title">
+                    <div
+                        className={classes.iconButton}
+                        onClick={() => format('title')}
+                    >
+                        <TitleIcon />
+                    </div>
+                </Tooltip>
+            )}
+            <Tooltip title="list">
+                <div
+                    className={classes.iconButton}
+                    onClick={() => format('list')}
+                >
+                    <ListIcon />
+                </div>
+            </Tooltip>
+            <Tooltip title="numbered list">
+                <div
+                    className={classes.iconButton}
+                    onClick={() => format('numbered-list')}
+                >
+                    <NumberedListIcon />
+                </div>
+            </Tooltip>
+            {!compact && (
+                <Tooltip title="upload image">
+                    <div
+                        id="article-image-upload"
+                        className={classes.iconButton}
+                    >
+                        <ImageIcon />
+                    </div>
+                </Tooltip>
+            )}
             {/* {!compact && <Tooltip title='embed video'><div className={classes.iconButton}>
                 <VideoIcon />
             </div></Tooltip>} */}
-            <Tooltip title='Hyperlink'><div
-            onClick={() => openModalAction({
-                children: <URLModal format={format} classes={classes} closeModalAction={closeModalAction} />
-            })}
-            className={classes.iconButton}>
-                <LinkIcon />
-            </div></Tooltip>
+            <Tooltip title="Hyperlink">
+                <div
+                    onClick={() =>
+                        openModalAction({
+                            children: (
+                                <URLModal
+                                    format={format}
+                                    classes={classes}
+                                    closeModalAction={closeModalAction}
+                                />
+                            ),
+                        })
+                    }
+                    className={classes.iconButton}
+                >
+                    <LinkIcon />
+                </div>
+            </Tooltip>
             {/* 
             <Tooltip title=''></Tooltip><div className={classes.iconButton}>
                 <TableIcon />

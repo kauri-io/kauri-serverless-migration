@@ -427,7 +427,13 @@ class SubmitArticleForm extends React.Component<IProps> {
                     attributes={articleData && articleData.attributes}
                     tags={articleData && articleData.tags}
                 />
-                <Editor withTabs={true} withToolbar={true} compact={false} openModalAction={this.props.openModalAction} closeModalAction={this.props.closeModalAction}/>
+                <Editor
+                    withTabs={true}
+                    withToolbar={true}
+                    compact={false}
+                    openModalAction={this.props.openModalAction}
+                    closeModalAction={this.props.closeModalAction}
+                />
                 {/* <SubmitArticleForm.Content
                     {...this.props.form}
                     id={articleData && articleData.id}
