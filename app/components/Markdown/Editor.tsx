@@ -8,6 +8,7 @@ import Button from '../Button'
 import { useEffect } from 'react'
 import initUppy from '../../lib/init-uppy'
 import config from '../../config'
+import Metadata from './Metadata'
 
 let uppy: { on: (arg0: string, arg1: (_data: any, data2: any) => void) => void }
 
@@ -37,11 +38,12 @@ const Editor = ({
     compact,
     openModalAction,
     closeModalAction,
-    onChange
+    onChange,
+    text,
 }) => {
     const classes = useStyles()
     const [tab, setTab] = useState(0)
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState(text)
 
     const format = (type: string, url?: string, text?: string) => {
         console.log(type, url, text)
@@ -55,7 +57,7 @@ const Editor = ({
             const output = formatMarkdown(start, end, value, type, url, text)
             input.value = output
             setValue(output)
-            onChange(value)
+            onChange(output)
         }
     }
 
@@ -81,7 +83,7 @@ const Editor = ({
                 >
                     <Tab label="Editor" />
                     <Tab label="Preview" />
-                    <Tab label="Advanced" />
+                    <Tab label="Metadata" />
                     <Tab label="Import" />
                 </Tabs>
             )}
@@ -106,6 +108,7 @@ const Editor = ({
                 />
             )}
             {tab === 1 && <Renderer markdown={value} />}
+            {tab === 2 && <Metadata />}
             {tab === 3 && (
                 <>
                     <Button variant="text" color="primary">

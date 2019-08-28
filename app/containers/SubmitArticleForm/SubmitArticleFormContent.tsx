@@ -1,16 +1,10 @@
 import React from 'react'
-import { EditorState, ContentState } from 'draft-js'
-import styled from 'styled-components'
-import { CreateRequestContent as SubmitArticleFormContent } from './Legacy/CreateRequestContent'
-
-import { CreateRequestContainer as SubmitArticleFormContainer } from './Legacy/CreateRequestContainer'
-
 import { ISubmitArticlePayload } from './Module'
 import Editor from '../../components/Markdown/Editor'
 
 interface IProps {
-    openModalAction: ({ children }: { children: any }) => void;
-    closeModalAction: () => void;
+    openModalAction: ({ children }: { children: any }) => void
+    closeModalAction: () => void
     submitArticleAction: (payload: ISubmitArticlePayload) => void
     id?: string
     data: any
@@ -23,131 +17,32 @@ interface IProps {
     setFieldsValue: ({ text }: { text: string }) => void
     getFieldError: (err: string) => any
     text?: string
+    attributes: any
 }
-
-interface IState {
-    editorState: any
-}
-
-interface ISubmitArticleFormTextProps {
-    openModalAction: ({ children }: { children: any }) => void;
-    closeModalAction: () => void;
-    getFieldError: any
-    text: any
-    setFieldsValue: any
-    getFieldsValue: any
-    getFieldDecorator: any
-}
-
-class SubmitArticleFormText extends React.Component<
-    ISubmitArticleFormTextProps,
-    IState
-    > {
-    constructor(props: ISubmitArticleFormTextProps) {
-        super(props)
-        if (props.text) {
-            const rawData = ContentState.createFromText(
-                JSON.parse(props.text).markdown
-            )
-            const newEditorState = EditorState.createWithContent(rawData)
-
-            this.state = {
-                editorState: { draftEditorState: newEditorState },
-            }
-        } else {
-            const rawData = ContentState.createFromText('')
-            const newEditorState = EditorState.createWithContent(rawData)
-
-            this.state = {
-                editorState: { draftEditorState: newEditorState },
-            }
-        }
-    }
-
-    componentDidMount() {
-        if (this.props.text) {
-            const rawData = ContentState.createFromText(
-                JSON.parse(this.props.text).markdown
-            )
-            const newEditorState = EditorState.createWithContent(rawData)
-
-            this.setState({
-                editorState: { draftEditorState: newEditorState },
-            })
-        } else {
-            const rawData = ContentState.createFromText('')
-            const newEditorState = EditorState.createWithContent(rawData)
-
-            this.setState({
-                editorState: { draftEditorState: newEditorState },
-            })
-        }
-    }
-
-    handleChange = (editorState: any) => {
-        this.setState(
-            {
-                editorState,
-            },
-            () =>
-                this.props.setFieldsValue({
-                    text: editorState && editorState.markdown,
-                })
-        )
-    }
-
-    render() {
-        return this.props.getFieldDecorator('text', {
-            initialValue:
-                typeof this.props.text === 'string'
-                    ? JSON.stringify({ markdown: this.props.text })
-                    : null,
-            rules: [
-                {
-                    message:
-                        'Empty articles cannot be saved or published. Start writing!',
-                    required: true,
-                    whitespace: true,
-                },
-            ],
-        })(
-            <Editor
-                withTabs={true}
-                withToolbar={true}
-                compact={false}
-                openModalAction={this.props.openModalAction}
-                closeModalAction={this.props.closeModalAction}
-                onChange={(value) => this.props.setFieldsValue({ text: value})}
-            />
-        )
-    }
-}
-
-export const RandomLineThatGoesAcrossTheContent = styled.div`
-    width: 100%;
-    height: 44px;
-    left: 0;
-    position: absolute;
-    border-bottom: 1px solid #c8ccd0;
-    background: #f9f9f9;
-    z-index: 0;
-`
 
 export default (props: IProps) => {
-    return (
-        <SubmitArticleFormContent>
-            <RandomLineThatGoesAcrossTheContent />
-            <SubmitArticleFormContainer>
-                <SubmitArticleFormText
-                    openModalAction={props.openModalAction}
-                    closeModalAction={props.closeModalAction}
-                    getFieldError={props.getFieldError}
-                    text={props.text}
-                    getFieldsValue={props.getFieldsValue}
-                    setFieldsValue={props.setFieldsValue}
-                    getFieldDecorator={props.getFieldDecorator}
-                />
-            </SubmitArticleFormContainer>
-        </SubmitArticleFormContent>
+    return props.getFieldDecorator('text', {
+        initialValue:
+            typeof props.text === 'string'
+                ? JSON.stringify({ markdown: props.text })
+                : null,
+        rules: [
+            {
+                message:
+                    'Empty articles cannot be saved or published. Start writing!',
+                required: true,
+                whitespace: true,
+            },
+        ],
+    })(
+        <Editor
+            withTabs={true}
+            withToolbar={true}
+            compact={false}
+            text={props.text ? JSON.parse(props.text).markdown : ''}
+            openModalAction={props.openModalAction}
+            closeModalAction={props.closeModalAction}
+            onChange={value => props.setFieldsValue({ text: value })}
+        />
     )
 }

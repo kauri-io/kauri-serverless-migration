@@ -22,7 +22,7 @@ export default (
         case 'bold':
             return wrapInToken(start, end, value, '**')
         case 'italic':
-            return wrapInToken(start, end, value, '__')
+            return wrapInToken(start, end, value, '_')
         case 'strike':
             return wrapInToken(start, end, value, '~~')
         case 'code':
