@@ -18,6 +18,7 @@ import {
     ISubmitArticleVersionPayload,
     IDraftArticleActionPayload,
 } from './Module'
+import Editor from '../../components/Markdown/Editor'
 
 import { IPublishArticlePayload } from './PublishArticleModule'
 import Loading from '../../components/Loading'
@@ -426,7 +427,8 @@ class SubmitArticleForm extends React.Component<IProps> {
                     attributes={articleData && articleData.attributes}
                     tags={articleData && articleData.tags}
                 />
-                <SubmitArticleForm.Content
+                <Editor withTabs={true} withToolbar={true} compact={false} openModalAction={this.props.openModalAction} closeModalAction={this.props.closeModalAction}/>
+                {/* <SubmitArticleForm.Content
                     {...this.props.form}
                     id={articleData && articleData.id}
                     text={articleData && articleData.content}
@@ -459,7 +461,7 @@ class SubmitArticleForm extends React.Component<IProps> {
                                   articleData.author.avatar) ||
                               this.props.userAvatar
                     }
-                />
+                /> */}
             </Form>
         )
     }

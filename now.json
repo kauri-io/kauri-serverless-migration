@@ -26,6 +26,10 @@
       "dest": "/app/static/favicon/favicon.ico"
     },
     {
+      "src": "/write-article",
+      "dest": "/app/write-article"
+    },
+    {
       "src": "/article/(.*)/v(.*)/update-article",
       "dest": "/app/update-article?id=$1&version=$2"
     },
