@@ -1,14 +1,16 @@
 import React from 'react'
 import { EditorState, ContentState } from 'draft-js'
-import SharedEditor from '../../components/SharedEditor'
 import styled from 'styled-components'
 import { CreateRequestContent as SubmitArticleFormContent } from './Legacy/CreateRequestContent'
 
 import { CreateRequestContainer as SubmitArticleFormContainer } from './Legacy/CreateRequestContainer'
 
 import { ISubmitArticlePayload } from './Module'
+import Editor from '../../components/Markdown/Editor'
 
 interface IProps {
+    openModalAction: ({ children }: { children: any }) => void;
+    closeModalAction: () => void;
     submitArticleAction: (payload: ISubmitArticlePayload) => void
     id?: string
     data: any
@@ -28,6 +30,8 @@ interface IState {
 }
 
 interface ISubmitArticleFormTextProps {
+    openModalAction: ({ children }: { children: any }) => void;
+    closeModalAction: () => void;
     getFieldError: any
     text: any
     setFieldsValue: any
@@ -38,7 +42,7 @@ interface ISubmitArticleFormTextProps {
 class SubmitArticleFormText extends React.Component<
     ISubmitArticleFormTextProps,
     IState
-> {
+    > {
     constructor(props: ISubmitArticleFormTextProps) {
         super(props)
         if (props.text) {
@@ -107,11 +111,13 @@ class SubmitArticleFormText extends React.Component<
                 },
             ],
         })(
-            <SharedEditor
-                setFieldsValue={this.props.setFieldsValue}
-                getFieldsValue={this.props.getFieldsValue}
-                editorState={this.state.editorState}
-                handleChange={this.handleChange}
+            <Editor
+                withTabs={true}
+                withToolbar={true}
+                compact={false}
+                openModalAction={this.props.openModalAction}
+                closeModalAction={this.props.closeModalAction}
+                onChange={(value) => this.props.setFieldsValue({ text: value})}
             />
         )
     }
@@ -133,6 +139,8 @@ export default (props: IProps) => {
             <RandomLineThatGoesAcrossTheContent />
             <SubmitArticleFormContainer>
                 <SubmitArticleFormText
+                    openModalAction={props.openModalAction}
+                    closeModalAction={props.closeModalAction}
                     getFieldError={props.getFieldError}
                     text={props.text}
                     getFieldsValue={props.getFieldsValue}

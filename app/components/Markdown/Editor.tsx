@@ -37,6 +37,7 @@ const Editor = ({
     compact,
     openModalAction,
     closeModalAction,
+    onChange
 }) => {
     const classes = useStyles()
     const [tab, setTab] = useState(0)
@@ -54,6 +55,7 @@ const Editor = ({
             const output = formatMarkdown(start, end, value, type, url, text)
             input.value = output
             setValue(output)
+            onChange(value)
         }
     }
 
@@ -93,7 +95,10 @@ const Editor = ({
             )}
             {tab === 0 && (
                 <textarea
-                    onChange={e => setValue(e.target.value)}
+                    onChange={e => {
+                        setValue(e.target.value)
+                        onChange(e.target.value)
+                    }}
                     value={value}
                     id="editor-text-area"
                     className={classes.editor}
