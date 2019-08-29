@@ -68,6 +68,7 @@ const Collections = ({ data, routeChangeAction, isLoggedIn }: IProps) =>
         </Masonry>
     ) : (
         <Centered>
+            {console.log(routeChangeAction)}
             <PublicProfileEmptyState
                 iconSrc={'/static/images/icons/no-collections-created.svg'}
                 description={

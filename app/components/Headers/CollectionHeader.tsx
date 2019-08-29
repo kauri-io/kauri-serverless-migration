@@ -138,6 +138,7 @@ const Container: React.SFC<IProps> = props => {
                 />
                 {userId === ownerId || isMemberOfCommunityOwner ? (
                     <Button
+                        color="primary"
                         variant="contained"
                         onClick={() =>
                             routeChangeAction(
