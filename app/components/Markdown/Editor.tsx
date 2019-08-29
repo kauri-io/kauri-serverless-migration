@@ -30,6 +30,10 @@ const useStyles = makeStyles((theme: Theme) => ({
         border: 'none',
         paddingTop: theme.spacing(2),
     },
+    root: {
+        width: '100%',
+        background: theme.palette.common.white,
+    },
 }))
 
 const Editor = ({
@@ -73,52 +77,54 @@ const Editor = ({
     }, [])
 
     return (
-        <div className={classes.editorContainer}>
-            {withTabs && (
-                <Tabs
-                    TabIndicatorProps={{ style: { height: 3 } }}
-                    indicatorColor="primary"
-                    value={tab}
-                    onChange={(_e, tab) => setTab(tab)}
-                >
-                    <Tab label="Editor" />
-                    <Tab label="Preview" />
-                    <Tab label="Metadata" />
-                    <Tab label="Import" />
-                </Tabs>
-            )}
-            {tab === 0 && withToolbar && (
-                <Toolbar
-                    closeModalAction={closeModalAction}
-                    openModalAction={openModalAction}
-                    compact={compact}
-                    format={format}
-                />
-            )}
-            {tab === 0 && (
-                <textarea
-                    onChange={e => {
-                        setValue(e.target.value)
-                        onChange(e.target.value)
-                    }}
-                    value={value}
-                    id="editor-text-area"
-                    className={classes.editor}
-                    placeholder="Start writing..."
-                />
-            )}
-            {tab === 1 && <Renderer markdown={value} />}
-            {tab === 2 && <Metadata />}
-            {tab === 3 && (
-                <>
-                    <Button variant="text" color="primary">
-                        Import from Wordpress
-                    </Button>
-                    <Button variant="text" color="primary">
-                        Import from Medium
-                    </Button>
-                </>
-            )}
+        <div className={classes.root}>
+            <div className={classes.editorContainer}>
+                {withTabs && (
+                    <Tabs
+                        TabIndicatorProps={{ style: { height: 3 } }}
+                        indicatorColor="primary"
+                        value={tab}
+                        onChange={(_e, tab) => setTab(tab)}
+                    >
+                        <Tab label="Editor" />
+                        <Tab label="Preview" />
+                        <Tab label="Metadata" />
+                        <Tab label="Import" />
+                    </Tabs>
+                )}
+                {tab === 0 && withToolbar && (
+                    <Toolbar
+                        closeModalAction={closeModalAction}
+                        openModalAction={openModalAction}
+                        compact={compact}
+                        format={format}
+                    />
+                )}
+                {tab === 0 && (
+                    <textarea
+                        onChange={e => {
+                            setValue(e.target.value)
+                            onChange(e.target.value)
+                        }}
+                        value={value}
+                        id="editor-text-area"
+                        className={classes.editor}
+                        placeholder="Start writing..."
+                    />
+                )}
+                {tab === 1 && <Renderer markdown={value} />}
+                {tab === 2 && <Metadata />}
+                {tab === 3 && (
+                    <>
+                        <Button variant="text" color="primary">
+                            Import from Wordpress
+                        </Button>
+                        <Button variant="text" color="primary">
+                            Import from Medium
+                        </Button>
+                    </>
+                )}
+            </div>
         </div>
     )
 }

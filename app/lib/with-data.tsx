@@ -41,11 +41,6 @@ import userDetailsEpic, {
     fetchUserDetailsAction,
 } from './Epics/FetchUserDetailsEpic'
 import themeConfig from './theme-config'
-
-// import "highlightjs/styles/vs2015.css";
-import '@rej156/react-mde/lib/styles/css/react-mde-toolbar.css'
-import '../static/css/redraft-image.css'
-// import "draft-js-inline-toolbar-plugin/lib/plugin.css"
 import '@uppy/core/dist/style.min.css'
 import '@uppy/dashboard/dist/style.min.css'
 import '@uppy/url/dist/style.min.css'
