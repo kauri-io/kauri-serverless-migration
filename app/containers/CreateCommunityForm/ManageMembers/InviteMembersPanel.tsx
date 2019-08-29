@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { Title2, BodyCard, Label } from '../../../components/Typography'
-import { resendInvitationAction as resendInvitation } from '../../Community/Module'
+import { resendInvitationAction as resendInvitation, sendCommunityInvitationAction as sendCommunityInvitation } from '../../Community/Module'
 import { revokeInvitationVariables } from '../../../queries/__generated__/revokeInvitation'
 
 const Header = styled.div`
@@ -109,7 +109,13 @@ const InvitationRow: React.FunctionComponent<{
     invitation: IInvitation
     revokeInvitationAction: any
     resendInvitationAction: () => void
-}> = ({ invitation, revokeInvitationAction, resendInvitationAction }) => (
+    sendCommunityInvitationAction: () => void
+}> = ({
+    invitation,
+    revokeInvitationAction,
+    resendInvitationAction,
+    sendCommunityInvitationAction,
+}) => (
     <InviteMemberContainer>
         <Label>{String(invitation.status).replace('_', ' ')}</Label>
         <InviteMemberContent>
@@ -119,6 +125,15 @@ const InvitationRow: React.FunctionComponent<{
                     color="primary"
                     hoverColor="hoverTextColor"
                     onClick={() => resendInvitationAction()}
+                >
+                    RESEND
+                </Label>
+            )}
+            {invitation.status === 'EXPIRED' && (
+                <Label
+                    color="primary"
+                    hoverColor="hoverTextColor"
+                    onClick={() => sendCommunityInvitationAction()}
                 >
                     RESEND
                 </Label>
@@ -138,6 +153,7 @@ interface IProps {
         payload: Pick<revokeInvitationVariables, 'invitationId' | 'id'>
     ) => void
     resendInvitationAction: typeof resendInvitation
+    sendCommunityInvitationAction: typeof sendCommunityInvitation;
     id: string
 }
 
@@ -172,6 +188,19 @@ const InvitationsPanel: React.SFC<IProps> = props => {
                                 props.invitations && (
                                     <Fragment>
                                         <InvitationRow
+                                            sendCommunityInvitationAction={() =>
+                                                props.sendCommunityInvitationAction &&
+                                                props.sendCommunityInvitationAction(
+                                                    {
+                                                        id: props.id,
+                                                        invitation: {
+                                                            email:
+                                                                invitation.recipientEmail,
+                                                            role: invitation.recipientRole as any,
+                                                        },
+                                                    }
+                                                )
+                                            }
                                             resendInvitationAction={() =>
                                                 props.resendInvitationAction &&
                                                 props.resendInvitationAction({

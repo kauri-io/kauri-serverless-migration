@@ -129,7 +129,7 @@ interface IRemoveResourceAction {
 
 interface ISendCommunityInvitationAction {
     type: 'SEND_COMMUNITY_INVITATION'
-    payload: sendInvitationVariables
+    payload: prepareSendInvitationVariables
 }
 
 interface IRevokeInvitationAction {
@@ -256,7 +256,7 @@ export const approveResourceAction = (
 })
 
 export const sendCommunityInvitationAction = (
-    payload: sendInvitationVariables
+    payload: prepareSendInvitationVariables
 ): ISendCommunityInvitationAction => ({
     payload,
     type: SEND_COMMUNITY_INVITATION,
