@@ -1,7 +1,10 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { Title2, BodyCard, Label } from '../../../components/Typography'
-import { resendInvitationAction as resendInvitation, sendCommunityInvitationAction as sendCommunityInvitation } from '../../Community/Module'
+import {
+    resendInvitationAction as resendInvitation,
+    sendCommunityInvitationAction as sendCommunityInvitation,
+} from '../../Community/Module'
 import { revokeInvitationVariables } from '../../../queries/__generated__/revokeInvitation'
 
 const Header = styled.div`
@@ -153,7 +156,7 @@ interface IProps {
         payload: Pick<revokeInvitationVariables, 'invitationId' | 'id'>
     ) => void
     resendInvitationAction: typeof resendInvitation
-    sendCommunityInvitationAction: typeof sendCommunityInvitation;
+    sendCommunityInvitationAction: typeof sendCommunityInvitation
     id: string
 }
 

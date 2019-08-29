@@ -14,7 +14,7 @@ import {
     removeMemberAction,
     changeMemberRoleAction,
     resendInvitationAction,
-    sendCommunityInvitationAction
+    sendCommunityInvitationAction,
 } from '../../Community/Module'
 
 const mapStateToProps = (
