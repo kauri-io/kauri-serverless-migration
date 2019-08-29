@@ -4,7 +4,7 @@ import EditProfileForm from '../../components/EditProfileForm'
 import Button from '../../components/Button'
 import Loading from '../../components/Loading'
 import analytics from '../../lib/analytics'
-import moment from 'moment'
+import moment from 'moment-mini'
 import {
     IShowNotificationPayload,
     IShowNotificationAction,

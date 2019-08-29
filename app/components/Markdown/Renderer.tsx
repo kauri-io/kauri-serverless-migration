@@ -5,7 +5,6 @@ import Link from '@material-ui/core/Link'
 import config from '../../config'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import Prism from 'prismjs'
-import 'prismjs/themes/prism-okaidia.css'
 
 const CustomIMG = props => {
     const useStyles = makeStyles(() => ({

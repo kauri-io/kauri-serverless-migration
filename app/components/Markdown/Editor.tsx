@@ -50,7 +50,6 @@ const Editor = ({
     const [value, setValue] = useState(text)
 
     const format = (type: string, url?: string, text?: string) => {
-        console.log(type, url, text)
         const input = document.getElementById(
             'editor-text-area'
         ) as HTMLTextAreaElement

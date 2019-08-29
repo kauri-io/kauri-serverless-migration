@@ -1,4 +1,4 @@
-import moment from 'moment'
+import moment from 'moment-mini'
 import styled from 'styled-components'
 import Avatar from '../Avatar'
 import { Label, H1, BodyCard } from '../Typography'

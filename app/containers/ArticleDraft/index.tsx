@@ -1,7 +1,7 @@
 import { compose, graphql } from 'react-apollo'
 import { connect } from 'react-redux'
 import { deleteDraftArticleAction } from './DeleteDraftArticleModule'
-import { publishArticleAction } from '../SubmitArticleForm/PublishArticleModule'
+import { publishArticleAction } from '../WriteArticle/PublishArticleModule'
 import { getArticleQuery } from '../../queries/Article'
 import { IReduxState } from '../../lib/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'

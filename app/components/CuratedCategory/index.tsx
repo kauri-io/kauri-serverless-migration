@@ -64,16 +64,14 @@ interface IProps {
     category: string
     description: string
     background: string | null
-    linkComponent: (
-        childrenProps: React.ReactElement<any>
-    ) => React.ReactElement<any>
+    link?: string
 }
 
 const CuratedCategory: React.FunctionComponent<IProps> = ({
     category,
     description,
-    linkComponent,
     background,
+    link,
 }) => (
     <Container background={background}>
         {background && (
@@ -88,14 +86,14 @@ const CuratedCategory: React.FunctionComponent<IProps> = ({
                 borderRadius={'4px'}
             />
         )}
-        {linkComponent(
+        <a href={link}>
             <Content>
                 <Label textTransform="uppercase" color="white">
                     {category}
                 </Label>
                 <BodyCard color="white">{description}</BodyCard>
             </Content>
-        )}
+        </a>
     </Container>
 )
 

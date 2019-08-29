@@ -1,4 +1,4 @@
-import moment from 'moment'
+import moment from 'moment-mini'
 import Avatar from '../../../components/Avatar'
 import Grid from '@material-ui/core/Grid'
 import { Article_author } from '../../../queries/Fragments/__generated__/Article'

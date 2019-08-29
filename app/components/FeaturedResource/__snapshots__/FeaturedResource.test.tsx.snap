@@ -805,7 +805,8 @@ exports[`components/FeaturedResource should match snapshot 1`] = `
                           </StyledComponent>
                         </Typography__component>
                         <Link
-                          href="/test-title/11/a"
+                          as="/test-title/11/a"
+                          href="/article?article_id=11"
                           prefetch={true}
                         >
                           <a
@@ -1561,7 +1562,8 @@ exports[`components/FeaturedResource should match snapshot 1`] = `
                         className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-justify-xs-center MuiGrid-grid-sm-3"
                       >
                         <Link
-                          href="/test-title/11/a"
+                          as="/test-title/11/a"
+                          href="/article?article_id=11"
                           prefetch={true}
                         >
                           <a

@@ -12,7 +12,7 @@ import mixpanel from 'mixpanel-browser'
 import initRedux from './init-redux'
 import initApollo from './init-apollo'
 import { handleRedirects } from './redirects'
-
+import 'prismjs/themes/prism-okaidia.css'
 import { ThemeProvider as MaterialThemeProvider } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { createMuiTheme } from '@material-ui/core/styles'

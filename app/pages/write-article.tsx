@@ -2,17 +2,15 @@ import React from 'react'
 import { withApollo, compose } from 'react-apollo'
 import withData from '../lib/with-data'
 import App from '../layouts'
-import SubmitArticleForm from '../containers/SubmitArticleForm'
-import { withRouter, Router } from 'next/router'
+import WriteArticle from '../containers/WriteArticle/View'
 
-const WriteArticle: React.FC<{ router: Router }> = ({ router }) => (
+const WriteArticlePage = () => (
     <App>
-        <SubmitArticleForm templateId={router.query.template_id} />
+        <WriteArticle />
     </App>
 )
 
 export default compose(
     withData,
-    withApollo,
-    withRouter
-)(WriteArticle)
+    withApollo
+)(WriteArticlePage)
