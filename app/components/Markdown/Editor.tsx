@@ -111,7 +111,7 @@ const Editor = ({
                         placeholder="Start writing..."
                     />
                 )}
-                {tab === 1 && <Renderer markdown={value} />}
+                {tab === 1 && <Renderer markdown={value || ''} />}
                 {tab === 2 && <Metadata />}
                 {tab === 3 && (
                     <>
