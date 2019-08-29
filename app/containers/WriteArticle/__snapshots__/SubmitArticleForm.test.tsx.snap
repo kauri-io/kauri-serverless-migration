@@ -9,12 +9,9 @@ exports[`containers/WriteArticle/View should match the snapshot 1`] = `
         "canonical": null,
       }
     }
-    communities={Array []}
     handleSubmit={[Function]}
-    owner="test"
     selectDestination={[Function]}
     setAttributes={[Function]}
-    status="test"
   />
   <_default
     attributes={
@@ -26,10 +23,12 @@ exports[`containers/WriteArticle/View should match the snapshot 1`] = `
     setTags={[Function]}
     setTitle={[Function]}
     tags={Array []}
+    title={null}
   />
   <Editor
     compact={false}
     onChange={[Function]}
+    text={null}
     withTabs={true}
     withToolbar={true}
   />

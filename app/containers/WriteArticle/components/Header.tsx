@@ -2,7 +2,6 @@ import { Grid, TextField, makeStyles, Theme } from '@material-ui/core'
 import TagSelector from '../../../components/TagSelector'
 
 export default ({ title, setTitle, tags, setTags, attributes }) => {
-    console.log(setTags)
     const useStyles = makeStyles((theme: Theme) => ({
         root: {
             background: theme.palette.common.black,
@@ -42,7 +41,7 @@ export default ({ title, setTitle, tags, setTags, attributes }) => {
                     value={title}
                     onChange={e => setTitle(e.target.value)}
                 />
-                <TagSelector tags={tags} />
+                <TagSelector updateTags={setTags} tags={tags} />
             </Grid>
         </div>
     )

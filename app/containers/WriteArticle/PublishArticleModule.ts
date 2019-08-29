@@ -73,6 +73,7 @@ export const publishArticleEpic: Epic<any, any, IReduxState, IDependencies> = (
                     updateComment,
                 },
             }) => {
+                console.log(contributor)
                 const signatureToSign = generatePublishArticleHash(
                     id,
                     version,
