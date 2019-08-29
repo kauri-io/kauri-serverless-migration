@@ -17,7 +17,6 @@ import { logout } from './Module'
 import { withRouter, Router } from 'next/router'
 import { getProfileURL } from '../../lib/getURLs'
 import Avatar from '../../components/Avatar'
-import Button from '../Button'
 
 const useStyles = makeStyles((theme: Theme) => {
     return {
@@ -87,7 +86,7 @@ const useStyles = makeStyles((theme: Theme) => {
             display: 'flex',
             height: '100%',
             justifyContent: 'center',
-            width: theme.spacing(7),
+            cursor: 'pointer',
         },
         sectionDesktop: {
             display: 'none',
@@ -324,9 +323,6 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                     </Link>
                     <div className={classes.grow} />
                     <div className={classes.searchClass}>
-                        <div className={classes.searchIconClass}>
-                            <SearchIcon />
-                        </div>
                         <InputBase
                             placeholder="Search…"
                             onKeyUp={e => {
@@ -341,16 +337,16 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                             }}
                             value={search}
                         />
-                        <Button
+                        <div
+                            className={classes.searchIconClass}
                             onClick={() =>
+                                search &&
+                                search.length > 0 &&
                                 router.push(`/search-results?q=${search}`)
                             }
-                            size="small"
-                            color="primary"
-                            variant="outlined"
                         >
-                            Search
-                        </Button>
+                            <SearchIcon />
+                        </div>
                     </div>
                     <Typography
                         variant="button"
