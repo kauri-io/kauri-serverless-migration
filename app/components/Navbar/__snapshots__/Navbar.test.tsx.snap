@@ -2646,15 +2646,13 @@ exports[`components/Navbar should match snapshot 1`] = `
                                             <AvatarComp
                                               className="makeStyles-avatar-1"
                                               id="testid"
+                                              ignoreLink={true}
                                               withName={false}
                                             >
                                               <Link
-                                                as="/undefined/testid/p"
-                                                href="/public-profile?user_id=testid"
                                                 prefetch={true}
                                               >
                                                 <a
-                                                  href="/undefined/testid/p"
                                                   onClick={[Function]}
                                                   onMouseEnter={[Function]}
                                                 >

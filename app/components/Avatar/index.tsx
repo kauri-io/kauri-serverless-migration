@@ -31,6 +31,7 @@ const AvatarComp = ({
     size,
     color,
     type,
+    ignoreLink
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
@@ -53,15 +54,15 @@ const AvatarComp = ({
     const url =
         type === 'COMMUNITY'
             ? getCommunityURL({
-                  name: String(name),
-                  id,
-              })
+                name: String(name),
+                id,
+            })
             : getProfileURL({
-                  username,
-                  id,
-              })
+                username,
+                id,
+            })
     return (
-        <Link as={url.as} href={url.href}>
+        <Link as={!ignoreLink ? url.as : undefined} href={!ignoreLink ? url.href : undefined}>
             <a>
                 <div className={className || classes.container}>
                     {avatar ? (
@@ -73,8 +74,8 @@ const AvatarComp = ({
                             borderRadius={'2px'}
                         />
                     ) : (
-                        <img className={classes.avatar} src={makeBlockie(id)} />
-                    )}
+                            <img className={classes.avatar} src={makeBlockie(id)} />
+                        )}
                     {withName && (
                         <Typography
                             color={color}

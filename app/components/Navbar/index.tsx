@@ -251,6 +251,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                             avatar={user.avatar}
                             id={user.id}
                             withName={false}
+                            ignoreLink={true}
                         />
                     )}
                 </IconButton>
@@ -377,6 +378,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                                     avatar={user.avatar}
                                     id={user.id}
                                     withName={false}
+                                    ignoreLink={true}
                                 />
                             )}
                         </IconButton>
