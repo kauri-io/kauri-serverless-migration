@@ -1,12 +1,10 @@
 import { Grid, TextField, makeStyles, Theme } from '@material-ui/core'
 import TagSelector from '../../../components/TagSelector'
 
-export default ({ title, setTitle, tags, setTags, attributes }) => {
+export default ({ title, setTitle, tags, setTags }) => {
     const useStyles = makeStyles((theme: Theme) => ({
         root: {
             background: theme.palette.common.black,
-            backgroundImage: `url(${attributes.background}) center center`,
-            backgroundSize: 'cover',
             width: '100%',
         },
         container: {

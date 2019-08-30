@@ -9,6 +9,7 @@ import PublishingSelector, {
     IOption,
 } from '../../containers/PublishingSelector'
 import { path } from 'ramda'
+import Image from '../../components/Image'
 
 export interface IAttributes {
     background: string | null
@@ -311,27 +312,38 @@ const ArticleEditor = props => {
 
     return (
         <>
-            <Actions
-                owner={props.userId}
-                status={props.status}
-                selectDestination={selectDestination}
-                handleSubmit={handleSubmit}
-                communities={props.communities}
-                openModalAction={props.openModalAction}
-                closeModalAction={props.closeModalAction}
-                showNotificationAction={props.showNotificationAction}
-                userId={props.userId}
-                routeChangeAction={props.routeChangeAction}
-                setAttributes={setAttributes}
-                attributes={attributes}
-            />
-            <Header
-                title={subject}
-                setTitle={setSubject}
-                tags={tags}
-                setTags={setTags}
-                attributes={attributes}
-            />
+            <div style={{ position: 'relative' }}>
+                {attributes.background && (
+                    <Image
+                        height="100%"
+                        width="100%"
+                        overlay={{ opacity: 0.5 }}
+                        asBackground={true}
+                        image={attributes.background}
+                    />
+                )}
+                <Actions
+                    owner={props.userId}
+                    status={props.status}
+                    selectDestination={selectDestination}
+                    handleSubmit={handleSubmit}
+                    communities={props.communities}
+                    openModalAction={props.openModalAction}
+                    closeModalAction={props.closeModalAction}
+                    showNotificationAction={props.showNotificationAction}
+                    userId={props.userId}
+                    routeChangeAction={props.routeChangeAction}
+                    setAttributes={setAttributes}
+                    attributes={attributes}
+                />
+                <Header
+                    title={subject}
+                    setTitle={setSubject}
+                    tags={tags}
+                    setTags={setTags}
+                />
+            </div>
+
             <Editor
                 withTabs={true}
                 withToolbar={true}

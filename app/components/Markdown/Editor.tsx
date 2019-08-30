@@ -5,12 +5,7 @@ import formatMarkdown from './format'
 import { useState } from 'react'
 import Renderer from './Renderer'
 import Button from '../Button'
-import { useEffect } from 'react'
-import initUppy from '../../lib/init-uppy'
-import config from '../../config'
 import Metadata from './Metadata'
-
-let uppy: { on: (arg0: string, arg1: (_data: any, data2: any) => void) => void }
 
 const useStyles = makeStyles((theme: Theme) => ({
     editorContainer: {
@@ -64,17 +59,6 @@ const Editor = ({
         }
     }
 
-    useEffect(() => {
-        uppy = initUppy({
-            allowGifs: true,
-            trigger: '#article-image-upload',
-        })
-        uppy.on('upload-success', (_data, data2) => {
-            const url = `https://${config.gateway}:443/ipfs/${data2.body.hash}`
-            format('image', url)
-        })
-    }, [])
-
     return (
         <div className={classes.root}>
             <div className={classes.editorContainer}>
@@ -104,6 +88,12 @@ const Editor = ({
                         onChange={e => {
                             setValue(e.target.value)
                             onChange(e.target.value)
+                        }}
+                        onKeyDown={e => {
+                            if (e.keyCode === 9) {
+                                e.preventDefault()
+                                e.currentTarget.value += '\t'
+                            }
                         }}
                         value={value}
                         id="editor-text-area"

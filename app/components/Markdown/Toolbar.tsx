@@ -14,8 +14,29 @@ import { makeStyles } from '@material-ui/styles'
 import { Theme, Tooltip } from '@material-ui/core'
 
 import URLModal from './URLModal'
+import { useEffect } from 'react'
+import initUppy from '../../lib/init-uppy'
+import config from '../../config'
 
 const Toolbar = ({ format, compact, openModalAction, closeModalAction }) => {
+    let uppy: {
+        on: (arg0: string, arg1: (_data: any, data2: any) => void) => void
+        close: () => void | (() => void | undefined)
+    }
+
+    useEffect(() => {
+        uppy = initUppy({
+            allowGifs: true,
+            trigger: '#article-image-upload',
+        })
+        uppy.on('upload-success', (_data, data2) => {
+            const url = `https://${config.gateway}:443/ipfs/${data2.body.hash}`
+            format('image', url)
+        })
+        return () => {
+            uppy.close()
+        }
+    }, [])
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
             display: 'flex',

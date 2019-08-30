@@ -2,29 +2,31 @@
 
 exports[`containers/WriteArticle/View should match the snapshot 1`] = `
 <Fragment>
-  <_default
-    attributes={
+  <div
+    style={
       Object {
-        "background": null,
-        "canonical": null,
+        "position": "relative",
       }
     }
-    handleSubmit={[Function]}
-    selectDestination={[Function]}
-    setAttributes={[Function]}
-  />
-  <_default
-    attributes={
-      Object {
-        "background": null,
-        "canonical": null,
+  >
+    <_default
+      attributes={
+        Object {
+          "background": null,
+          "canonical": null,
+        }
       }
-    }
-    setTags={[Function]}
-    setTitle={[Function]}
-    tags={Array []}
-    title={null}
-  />
+      handleSubmit={[Function]}
+      selectDestination={[Function]}
+      setAttributes={[Function]}
+    />
+    <_default
+      setTags={[Function]}
+      setTitle={[Function]}
+      tags={Array []}
+      title={null}
+    />
+  </div>
   <Editor
     compact={false}
     onChange={[Function]}
