@@ -92,7 +92,14 @@ const Editor = ({
                         onKeyDown={e => {
                             if (e.keyCode === 9) {
                                 e.preventDefault()
-                                e.currentTarget.value += '\t'
+                                const start = e.currentTarget.selectionStart
+                                const value = e.currentTarget.value
+                                e.currentTarget.value = [
+                                    value.slice(0, start),
+                                    '\t',
+                                    value.slice(start),
+                                ].join('')
+                                e.currentTarget.selectionEnd = start + 1
                             }
                         }}
                         value={value}

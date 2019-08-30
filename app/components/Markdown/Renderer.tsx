@@ -6,105 +6,128 @@ import config from '../../config'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import Prism from 'prismjs'
 
-const CustomIMG = props => {
-    const useStyles = makeStyles(() => ({
+const Renderer = ({ markdown }) => {
+    const useStyles = makeStyles((theme: Theme) => ({
         image: {
             borderRadius: 4,
             display: 'block',
             margin: 'auto',
             maxWidth: '100%',
         },
-    }))
-
-    const classes = useStyles()
-    return (
-        <img
-            className={classes.image}
-            src={
-                config.useCloudImage
-                    ? props.src
-                          .replace(
-                              /https:\/\/api.beta.kauri.io:443\/ipfs\//g,
-                              `https://${config.cloudImageId}.cloudimg.io/cdn/n/twebp/https://api.beta.kauri.io:443/ipfs/`
-                          )
-                          .replace(
-                              /https:\/\/api.kauri.io:443\/ipfs\//g,
-                              `https://${config.cloudImageId}.cloudimg.io/cdn/n/twebp/https://api.beta.kauri.io:443/ipfs/`
-                          )
-                    : props.src
-            }
-        />
-    )
-}
-
-const CustomCodeBlock = props => {
-    const useStyles = makeStyles((theme: Theme) => ({
         code: {
             borderRadius: 4,
-            display: 'block',
             margin: 'auto',
             maxWidth: '100%',
             background: theme.palette.common.black,
             color: theme.palette.common.white,
-            padding: theme.spacing(2),
+            padding: theme.spacing(1),
         },
-    }))
-    const classes = useStyles()
-    return (
-        <code
-            className={classes.code}
-            dangerouslySetInnerHTML={{
-                __html: Prism.highlight(
-                    props.children,
-                    Prism.languages.javascript,
-                    'javascript'
-                ),
-            }}
-        />
-    )
-}
-
-const options = {
-    overrides: {
-        h1: {
-            component: Typography,
-            props: {
-                gutterBottom: true,
-                variant: 'h4',
+        quote: {
+            padding: theme.spacing(1),
+            borderLeft: `3px solid ${theme.palette.primary.main}`,
+            '& p': {
+                margin: 0,
             },
         },
-        h2: {
-            component: Typography,
-            props: { gutterBottom: true, variant: 'h6' },
+        rendered: {
+            '& pre code': {
+                display: 'block',
+            },
         },
-        h3: {
-            component: Typography,
-            props: { gutterBottom: true, variant: 'subtitle1' },
-        },
-        h4: {
-            component: Typography,
-            props: { gutterBottom: true, variant: 'caption', paragraph: true },
-        },
-        p: { component: Typography, props: { paragraph: true } },
-        a: { component: Link },
-        li: {
-            component: ({ ...props }) => (
-                <li>
-                    <Typography component="span" {...props} />
-                </li>
-            ),
-        },
-        img: {
-            component: CustomIMG,
-        },
-        code: {
-            component: CustomCodeBlock,
-        },
-    },
-}
+    }))
 
-const Renderer = ({ markdown }) => {
-    return <ReactMarkdown options={options}>{markdown}</ReactMarkdown>
+    const classes = useStyles()
+
+    const CustomIMG = props => {
+        return (
+            <img
+                className={classes.image}
+                src={
+                    config.useCloudImage
+                        ? props.src
+                              .replace(
+                                  /https:\/\/api.beta.kauri.io:443\/ipfs\//g,
+                                  `https://${config.cloudImageId}.cloudimg.io/cdn/n/twebp/https://api.beta.kauri.io:443/ipfs/`
+                              )
+                              .replace(
+                                  /https:\/\/api.kauri.io:443\/ipfs\//g,
+                                  `https://${config.cloudImageId}.cloudimg.io/cdn/n/twebp/https://api.beta.kauri.io:443/ipfs/`
+                              )
+                        : props.src
+                }
+            />
+        )
+    }
+
+    const CustomCodeBlock = props => {
+        return (
+            <code
+                className={classes.code}
+                dangerouslySetInnerHTML={{
+                    __html: Prism.highlight(
+                        props.children,
+                        Prism.languages.javascript,
+                        'javascript'
+                    ),
+                }}
+            />
+        )
+    }
+
+    const options = {
+        overrides: {
+            blockquote: {
+                component: Typography,
+                props: {
+                    className: classes.quote,
+                },
+            },
+            h1: {
+                component: Typography,
+                props: {
+                    gutterBottom: true,
+                    variant: 'h4',
+                },
+            },
+            h2: {
+                component: Typography,
+                props: { gutterBottom: true, variant: 'h6' },
+            },
+            h3: {
+                component: Typography,
+                props: { gutterBottom: true, variant: 'subtitle1' },
+            },
+            h4: {
+                component: Typography,
+                props: {
+                    gutterBottom: true,
+                    variant: 'caption',
+                    paragraph: true,
+                },
+            },
+            p: { component: Typography, props: { paragraph: true } },
+            a: { component: Link },
+            li: {
+                component: ({ ...props }) => (
+                    <li>
+                        <Typography component="span" {...props} />
+                    </li>
+                ),
+            },
+            img: {
+                component: CustomIMG,
+            },
+            code: {
+                component: CustomCodeBlock,
+            },
+        },
+    }
+
+    return (
+        <div className={classes.rendered}>
+            <ReactMarkdown options={options}>{markdown}</ReactMarkdown>
+        </div>
+    )
 }
 
 export default Renderer

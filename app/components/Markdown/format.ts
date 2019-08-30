@@ -28,7 +28,7 @@ export default (
         case 'code':
             const selection = value.slice(start, end)
             if (/\r|\n/.exec(selection)) {
-                return wrapInToken(start, end, value, '\n```\n')
+                return wrapInToken(start, end, value, '\n\n```\n')
             } else {
                 return wrapInToken(start, end, value, '`')
             }
