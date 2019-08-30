@@ -10,6 +10,8 @@ import PublishingSelector, {
 } from '../../containers/PublishingSelector'
 import { path } from 'ramda'
 import Image from '../../components/Image'
+import Button from '../../components/Button'
+import { Typography, Grid } from '@material-ui/core'
 
 export interface IAttributes {
     background: string | null
@@ -17,6 +19,23 @@ export interface IAttributes {
 }
 
 const ArticleEditor = props => {
+    const article = props.data && props.data.getArticle
+    const key = article ? `${article.id}-${article.version}` : 'unsaved-article'
+    let cache = {}
+
+    const [subject, setSubject] = useState(article ? article.title : null)
+    const [tags, setTags] = useState(article ? article.tags : [])
+    const [content, setTextValue] = useState(
+        article ? JSON.parse(article.content).markdown : null
+    )
+    const [attributes, setAttributes] = useState(
+        article
+            ? article.attributes
+            : {
+                  background: null,
+                  canonical: null,
+              }
+    )
     // Component did mount
     useEffect(() => {
         const {
@@ -27,6 +46,10 @@ const ArticleEditor = props => {
             openModalAction,
             closeModalAction,
         } = props
+
+        cache = JSON.parse(
+            window.localStorage.getItem('article-editor-cache') || '{}'
+        )
         if (!userId) {
             routeChangeAction(`/login?r=${router.asPath}&redirected=true`)
         } else {
@@ -69,25 +92,91 @@ const ArticleEditor = props => {
                 })
             }
         }
+        // Track opening the editor
         analytics.track('Write Article Start', {
             category: 'generic',
         })
+        // Show prompt if article version is found
+        showPromptIfUnsavedChanges()
     }, [])
 
-    const article = props.data && props.data.getArticle
-    const [subject, setSubject] = useState(article ? article.title : null)
-    const [tags, setTags] = useState(article ? article.tags : [])
-    const [textValue, setTextValue] = useState(
-        article ? JSON.parse(article.content).markdown : null
-    )
-    const [attributes, setAttributes] = useState(
-        article
-            ? article.attributes
-            : {
-                  background: null,
-                  canonical: null,
-              }
-    )
+    const updateState = newState => {
+        setTextValue(newState.content)
+        setSubject(newState.subject)
+    }
+
+    const showPromptIfUnsavedChanges = () => {
+        const item = cache[key]
+        if (
+            item &&
+            (!article ||
+                item.content !== JSON.parse(article.content).markdown ||
+                item.subject !== article.title)
+        ) {
+            props.openModalAction({
+                children: (
+                    <div>
+                        <Typography variant="h5">
+                            Unsaved Changes Detected
+                        </Typography>
+                        <Grid
+                            style={{ padding: 20 }}
+                            container={true}
+                            spacing={3}
+                            justify="space-between"
+                        >
+                            <Button
+                                onClick={() => props.closeModalAction()}
+                                variant="outlined"
+                                color="primary"
+                            >
+                                Ignore
+                            </Button>
+                            <Button
+                                onClick={() => {
+                                    updateState(item)
+                                    props.closeModalAction()
+                                }}
+                                variant="contained"
+                                color="primary"
+                            >
+                                Restore Changes
+                            </Button>
+                        </Grid>
+                    </div>
+                ),
+            })
+        }
+    }
+
+    // // this saves edits to a given article version (or an unsaved article) to local storage
+    useEffect(() => {
+        const item = (cache[key] = {
+            subject,
+            tags,
+            content,
+            attributes,
+            updated: Date.now(),
+        })
+        if (
+            article &&
+            (item.subject !== article.subject ||
+                item.content !== article.content)
+        ) {
+            window.localStorage.setItem(
+                'article-editor-cache',
+                JSON.stringify(cache)
+            )
+        } else if (
+            !article &&
+            (item.subject !== null || item.content !== null)
+        ) {
+            window.localStorage.setItem(
+                'article-editor-cache',
+                JSON.stringify(cache)
+            )
+        }
+    }, [subject, tags, content, attributes])
 
     const handleSubmit = (
         submissionType: string,
@@ -109,7 +198,7 @@ const ArticleEditor = props => {
         } = props
 
         const articleData: any = props.data && props.data.getArticle
-        const text = JSON.stringify({ markdown: textValue })
+        const text = JSON.stringify({ markdown: content })
 
         // NEW DRAFT
         if (!articleData && submissionType === 'draft') {
@@ -348,11 +437,10 @@ const ArticleEditor = props => {
                 withTabs={true}
                 withToolbar={true}
                 compact={false}
-                text={textValue}
-                // attributes={attributes}
+                text={content}
                 openModalAction={props.openModalAction}
                 closeModalAction={props.closeModalAction}
-                onChange={textValue => setTextValue(textValue)}
+                onChange={content => setTextValue(content)}
             />
             {process.env.config === 'development' && (
                 <div
@@ -366,7 +454,7 @@ const ArticleEditor = props => {
                         <code>Title:</code> {subject}
                     </div>
                     <div>
-                        <code>Text:</code> {textValue}
+                        <code>Text:</code> {content}
                     </div>
                     <div>
                         <code>Attributes:</code>

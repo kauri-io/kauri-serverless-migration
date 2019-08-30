@@ -8,10 +8,14 @@ import {
     searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO,
     searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_CommunityDTO,
 } from '../../queries/__generated__/searchResultsAutocomplete'
-import ArticleCard from '../../components/Card/ArticleCard';
-import { getArticleURL, getCollectionURL, getCommunityURL } from '../../lib/getURLs';
-import CollectionCard from '../../components/Card/CollectionCard';
-import CommunityCard from '../../components/Card/CommunityCard';
+import ArticleCard from '../../components/Card/ArticleCard'
+import {
+    getArticleURL,
+    getCollectionURL,
+    getCommunityURL,
+} from '../../lib/getURLs'
+import CollectionCard from '../../components/Card/CollectionCard'
+import CommunityCard from '../../components/Card/CommunityCard'
 
 const ResourceSection = styled.section`
     display: flex;
@@ -87,7 +91,12 @@ class ResourceRows extends React.Component<
                                             isArticleResource(resource.resource)
                                         ) {
                                             return (
-                                                <ArticleCard href={getArticleURL(resource.resource)} {...resource.resource}/>
+                                                <ArticleCard
+                                                    href={getArticleURL(
+                                                        resource.resource
+                                                    )}
+                                                    {...resource.resource}
+                                                />
                                             )
                                         }
                                     case 'COLLECTION':
@@ -96,11 +105,18 @@ class ResourceRows extends React.Component<
                                                 resource.resource
                                             )
                                         ) {
-                                            const typedOwner = resource.resource.owner as
+                                            const typedOwner = resource.resource
+                                                .owner as
                                                 | searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO
                                                 | searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_CommunityDTO
                                             return (
-                                                <CollectionCard  href={getCollectionURL(resource.resource)} {...resource.resource} owner={typedOwner} />
+                                                <CollectionCard
+                                                    href={getCollectionURL(
+                                                        resource.resource
+                                                    )}
+                                                    {...resource.resource}
+                                                    owner={typedOwner}
+                                                />
                                             )
                                         }
                                     case 'COMMUNITY':
@@ -110,7 +126,12 @@ class ResourceRows extends React.Component<
                                             )
                                         ) {
                                             return (
-                                                <CommunityCard href={getCommunityURL(resource.resource)} {...resource.resource} />
+                                                <CommunityCard
+                                                    href={getCommunityURL(
+                                                        resource.resource
+                                                    )}
+                                                    {...resource.resource}
+                                                />
                                             )
                                         }
                                     default:

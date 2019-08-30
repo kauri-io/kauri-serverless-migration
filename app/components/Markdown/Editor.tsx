@@ -42,7 +42,6 @@ const Editor = ({
 }) => {
     const classes = useStyles()
     const [tab, setTab] = useState(0)
-    const [value, setValue] = useState(text)
 
     const format = (type: string, url?: string, text?: string) => {
         const input = document.getElementById(
@@ -54,7 +53,6 @@ const Editor = ({
             const value = input.value
             const output = formatMarkdown(start, end, value, type, url, text)
             input.value = output
-            setValue(output)
             onChange(output)
         }
     }
@@ -86,7 +84,6 @@ const Editor = ({
                 {tab === 0 && (
                     <textarea
                         onChange={e => {
-                            setValue(e.target.value)
                             onChange(e.target.value)
                         }}
                         onKeyDown={e => {
@@ -102,13 +99,13 @@ const Editor = ({
                                 e.currentTarget.selectionEnd = start + 1
                             }
                         }}
-                        value={value}
+                        value={text}
                         id="editor-text-area"
                         className={classes.editor}
                         placeholder="Start writing..."
                     />
                 )}
-                {tab === 1 && <Renderer markdown={value || ''} />}
+                {tab === 1 && <Renderer markdown={text || ''} />}
                 {tab === 2 && <Metadata />}
                 {tab === 3 && (
                     <>
