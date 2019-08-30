@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import ResourceRowWithImage from '../../components/SearchResults/ResourceRowWithImage'
 import {
     searchResultsAutocomplete_searchAutocomplete_content,
     searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO,
@@ -9,6 +8,10 @@ import {
     searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO,
     searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_CommunityDTO,
 } from '../../queries/__generated__/searchResultsAutocomplete'
+import ArticleCard from '../../components/Card/ArticleCard';
+import { getArticleURL, getCollectionURL, getCommunityURL } from '../../lib/getURLs';
+import CollectionCard from '../../components/Card/CollectionCard';
+import CommunityCard from '../../components/Card/CommunityCard';
 
 const ResourceSection = styled.section`
     display: flex;
@@ -35,8 +38,6 @@ const isCommunityResource = (
     resource: any
 ): resource is searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO =>
     resource !== 'undefined'
-
-const isArticleTags = (tags: any): tags is string[] => Array.isArray(tags)
 
 interface IProps {
     totalElementsBreakdown: IElementsBreakdown
@@ -85,69 +86,8 @@ class ResourceRows extends React.Component<
                                         if (
                                             isArticleResource(resource.resource)
                                         ) {
-                                            const {
-                                                id,
-                                                version,
-                                                title,
-                                                description,
-                                                datePublished,
-                                                tags,
-                                                owner,
-                                                attributes,
-                                                __typename,
-                                            } = resource.resource
-
-                                            const typedOwner = owner as
-                                                | searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO
-                                                | searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_CommunityDTO
                                             return (
-                                                <ResourceRowWithImage
-                                                    resourceType={__typename
-                                                        .split('DTO')[0]
-                                                        .toLowerCase()}
-                                                    key={String(id)}
-                                                    id={String(id)}
-                                                    version={Number(version)}
-                                                    date={datePublished}
-                                                    title={String(title)}
-                                                    description={description}
-                                                    userId={
-                                                        (typedOwner &&
-                                                            String(
-                                                                typedOwner.id
-                                                            )) ||
-                                                        ''
-                                                    }
-                                                    ownerType={
-                                                        typedOwner.resourceIdentifier
-                                                            ? String(
-                                                                  typedOwner
-                                                                      .resourceIdentifier
-                                                                      .type ||
-                                                                      'USER'
-                                                              )
-                                                            : 'USER'
-                                                    }
-                                                    username={
-                                                        typedOwner.__typename ===
-                                                        'PublicUserDTO'
-                                                            ? typedOwner.username
-                                                            : typedOwner.communityName
-                                                    }
-                                                    userAvatar={
-                                                        typedOwner &&
-                                                        typedOwner.avatar
-                                                    }
-                                                    imageURL={
-                                                        attributes &&
-                                                        attributes.background
-                                                    }
-                                                    tags={
-                                                        isArticleTags(tags)
-                                                            ? tags
-                                                            : []
-                                                    }
-                                                />
+                                                <ArticleCard href={getArticleURL(resource.resource)} {...resource.resource}/>
                                             )
                                         }
                                     case 'COLLECTION':
@@ -156,66 +96,11 @@ class ResourceRows extends React.Component<
                                                 resource.resource
                                             )
                                         ) {
-                                            const {
-                                                id,
-                                                name,
-                                                description,
-                                                dateUpdated,
-                                                tags,
-                                                owner,
-                                                background,
-                                                __typename,
-                                            } = resource.resource
-
-                                            const typedOwner = owner as
+                                            const typedOwner = resource.resource.owner as
                                                 | searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO
                                                 | searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_CommunityDTO
                                             return (
-                                                <ResourceRowWithImage
-                                                    resourceType={__typename
-                                                        .split('DTO')[0]
-                                                        .toLowerCase()}
-                                                    key={String(id)}
-                                                    id={String(id)}
-                                                    date={dateUpdated}
-                                                    title={String(name)}
-                                                    description={String(
-                                                        description
-                                                    )}
-                                                    userId={
-                                                        (typedOwner &&
-                                                            String(
-                                                                typedOwner.id
-                                                            )) ||
-                                                        ''
-                                                    }
-                                                    username={
-                                                        typedOwner.__typename ===
-                                                        'PublicUserDTO'
-                                                            ? typedOwner.username
-                                                            : typedOwner.communityName
-                                                    }
-                                                    ownerType={
-                                                        typedOwner.resourceIdentifier
-                                                            ? String(
-                                                                  typedOwner
-                                                                      .resourceIdentifier
-                                                                      .type ||
-                                                                      'USER'
-                                                              )
-                                                            : 'USER'
-                                                    }
-                                                    userAvatar={
-                                                        typedOwner &&
-                                                        typedOwner.avatar
-                                                    }
-                                                    imageURL={background}
-                                                    tags={
-                                                        isArticleTags(tags)
-                                                            ? tags
-                                                            : []
-                                                    }
-                                                />
+                                                <CollectionCard  href={getCollectionURL(resource.resource)} {...resource.resource} owner={typedOwner} />
                                             )
                                         }
                                     case 'COMMUNITY':
@@ -224,35 +109,8 @@ class ResourceRows extends React.Component<
                                                 resource.resource
                                             )
                                         ) {
-                                            const {
-                                                id,
-                                                name,
-                                                description,
-                                                dateUpdated,
-                                                // creatorId,
-                                                avatar,
-                                                __typename,
-                                            } = resource.resource
-
                                             return (
-                                                <ResourceRowWithImage
-                                                    resourceType={__typename
-                                                        .split('DTO')[0]
-                                                        .toLowerCase()}
-                                                    key={String(id)}
-                                                    id={String(id)}
-                                                    ownerType={'COMMUNITY'}
-                                                    date={dateUpdated}
-                                                    title={String(name)}
-                                                    description={String(
-                                                        description
-                                                    )}
-                                                    userId={String(id)}
-                                                    username={name}
-                                                    userAvatar={avatar}
-                                                    imageURL={avatar}
-                                                    tags={[]}
-                                                />
+                                                <CommunityCard href={getCommunityURL(resource.resource)} {...resource.resource} />
                                             )
                                         }
                                     default:
