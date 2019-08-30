@@ -75,6 +75,7 @@ const Renderer = ({ markdown }) => {
     }
 
     const options = {
+        forceBlock: true,
         overrides: {
             blockquote: {
                 component: Typography,
