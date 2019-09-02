@@ -16,12 +16,14 @@ const useStyles = makeStyles((theme: Theme) => ({
         maxWidth: 1242,
         width: '100%',
         margin: 'auto',
+        minHeight: 400
     },
     editor: {
         fontSize: '1.3em',
         resize: 'vertical',
         border: 'none',
         paddingTop: theme.spacing(2),
+        flex: 1
     },
     root: {
         width: '100%',

@@ -5,6 +5,9 @@ import Link from '@material-ui/core/Link'
 import config from '../../config'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import Prism from 'prismjs'
+import katex from 'katex'
+// import 'katex/dist/katex.css'
+import './katex.css'
 
 const Renderer = ({ markdown }) => {
     const useStyles = makeStyles((theme: Theme) => ({
@@ -34,6 +37,13 @@ const Renderer = ({ markdown }) => {
                 display: 'block',
             },
         },
+        katex: {
+            fontSize: '2em',
+            background: theme.palette.common.black,
+            color: theme.palette.common.white,
+            padding: theme.spacing(2),
+            borderRadius: 4
+        }
     }))
 
     const classes = useStyles()
@@ -45,14 +55,14 @@ const Renderer = ({ markdown }) => {
                 src={
                     config.useCloudImage
                         ? props.src
-                              .replace(
-                                  /https:\/\/api.beta.kauri.io:443\/ipfs\//g,
-                                  `https://${config.cloudImageId}.cloudimg.io/cdn/n/twebp/https://api.beta.kauri.io:443/ipfs/`
-                              )
-                              .replace(
-                                  /https:\/\/api.kauri.io:443\/ipfs\//g,
-                                  `https://${config.cloudImageId}.cloudimg.io/cdn/n/twebp/https://api.beta.kauri.io:443/ipfs/`
-                              )
+                            .replace(
+                                /https:\/\/api.beta.kauri.io:443\/ipfs\//g,
+                                `https://${config.cloudImageId}.cloudimg.io/cdn/n/twebp/https://api.beta.kauri.io:443/ipfs/`
+                            )
+                            .replace(
+                                /https:\/\/api.kauri.io:443\/ipfs\//g,
+                                `https://${config.cloudImageId}.cloudimg.io/cdn/n/twebp/https://api.beta.kauri.io:443/ipfs/`
+                            )
                         : props.src
                 }
             />
@@ -60,18 +70,22 @@ const Renderer = ({ markdown }) => {
     }
 
     const CustomCodeBlock = props => {
-        return (
-            <code
-                className={classes.code}
-                dangerouslySetInnerHTML={{
-                    __html: Prism.highlight(
-                        props.children,
-                        Prism.languages.javascript,
-                        'javascript'
-                    ),
-                }}
-            />
-        )
+        if (props.className === 'lang-latex') {
+            return  <div className={classes.katex} dangerouslySetInnerHTML={{ __html: katex.renderToString(props.children, { throwOnError: false, displayMode: true}) }} />
+        } else {
+            return (
+                <code
+                    className={classes.code}
+                    dangerouslySetInnerHTML={{
+                        __html: Prism.highlight(
+                            props.children,
+                            Prism.languages.javascript,
+                            'javascript'
+                        ),
+                    }}
+                />
+            )
+        }
     }
 
     const options = {
