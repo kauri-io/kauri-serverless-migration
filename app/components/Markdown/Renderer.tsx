@@ -42,8 +42,8 @@ const Renderer = ({ markdown }) => {
             background: theme.palette.common.black,
             color: theme.palette.common.white,
             padding: theme.spacing(2),
-            borderRadius: 4
-        }
+            borderRadius: 4,
+        },
     }))
 
     const classes = useStyles()
@@ -55,14 +55,14 @@ const Renderer = ({ markdown }) => {
                 src={
                     config.useCloudImage
                         ? props.src
-                            .replace(
-                                /https:\/\/api.beta.kauri.io:443\/ipfs\//g,
-                                `https://${config.cloudImageId}.cloudimg.io/cdn/n/twebp/https://api.beta.kauri.io:443/ipfs/`
-                            )
-                            .replace(
-                                /https:\/\/api.kauri.io:443\/ipfs\//g,
-                                `https://${config.cloudImageId}.cloudimg.io/cdn/n/twebp/https://api.beta.kauri.io:443/ipfs/`
-                            )
+                              .replace(
+                                  /https:\/\/api.beta.kauri.io:443\/ipfs\//g,
+                                  `https://${config.cloudImageId}.cloudimg.io/cdn/n/twebp/https://api.beta.kauri.io:443/ipfs/`
+                              )
+                              .replace(
+                                  /https:\/\/api.kauri.io:443\/ipfs\//g,
+                                  `https://${config.cloudImageId}.cloudimg.io/cdn/n/twebp/https://api.beta.kauri.io:443/ipfs/`
+                              )
                         : props.src
                 }
             />
@@ -71,7 +71,17 @@ const Renderer = ({ markdown }) => {
 
     const CustomCodeBlock = props => {
         if (props.className === 'lang-latex') {
-            return  <div className={classes.katex} dangerouslySetInnerHTML={{ __html: katex.renderToString(props.children, { throwOnError: false, displayMode: true}) }} />
+            return (
+                <div
+                    className={classes.katex}
+                    dangerouslySetInnerHTML={{
+                        __html: katex.renderToString(props.children, {
+                            throwOnError: false,
+                            displayMode: true,
+                        }),
+                    }}
+                />
+            )
         } else {
             return (
                 <code

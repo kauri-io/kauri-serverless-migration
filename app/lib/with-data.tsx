@@ -47,6 +47,7 @@ import '@uppy/url/dist/style.min.css'
 import analytics from './analytics'
 import ApolloClient from 'apollo-client'
 import { NormalizedCacheObject } from 'apollo-cache-inmemory'
+import '../components/Markdown/katex.css'
 
 const config = require('../config').default
 

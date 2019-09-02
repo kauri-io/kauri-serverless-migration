@@ -48,6 +48,7 @@ export default ({
                     <Grid item={true} sm={11}>
                         <div className={classes.editorWrapper}>
                             <Editor
+                                minHeight={80}
                                 text={comment}
                                 withTabs={false}
                                 withToolbar={true}
@@ -64,7 +65,7 @@ export default ({
                                         parent: {
                                             id: article.id,
                                             type: article.type,
-                                            version: article.version
+                                            version: article.version,
                                         },
                                         body: comment,
                                     })
