@@ -64,6 +64,7 @@ export default ({
                                         parent: {
                                             id: article.id,
                                             type: article.type,
+                                            version: article.version
                                         },
                                         body: comment,
                                     })
