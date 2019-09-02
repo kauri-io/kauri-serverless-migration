@@ -14,6 +14,7 @@ import { ArticleStyles } from './styles'
 import VoteWidget from './components/VoteWidget'
 import slugify from 'slugify'
 import { getArticleURL } from '../../lib/getURLs'
+import Comments from './components/ArticleComments'
 
 interface IProps {
     id: string
@@ -48,6 +49,7 @@ const ArticleComp = ({
             title,
             voteResult,
             version,
+            comments
         },
     },
 }: IProps) => {
@@ -131,6 +133,7 @@ const ArticleComp = ({
                     <div id="content" className={classes.content}>
                         <MDRenderer markdown={JSON.parse(content).markdown} />
                     </div>
+                    <Comments comments={comments} />
                     <Grid
                         className={classes.related}
                         spacing={3}
@@ -141,19 +144,19 @@ const ArticleComp = ({
                             searchMoreLikeThis.content.map(
                                 (recommendedArticle, key: number) =>
                                     recommendedArticle &&
-                                    recommendedArticle.resource &&
-                                    recommendedArticle.resource.__typename ===
+                                        recommendedArticle.resource &&
+                                        recommendedArticle.resource.__typename ===
                                         'ArticleDTO' ? (
-                                        <Grid item={true} sm={12} key={key}>
-                                            <ArticleCard
-                                                className={classes.card}
-                                                href={getArticleURL(
-                                                    recommendedArticle.resource
-                                                )}
-                                                {...recommendedArticle.resource}
-                                            />
-                                        </Grid>
-                                    ) : null
+                                            <Grid item={true} sm={12} key={key}>
+                                                <ArticleCard
+                                                    className={classes.card}
+                                                    href={getArticleURL(
+                                                        recommendedArticle.resource
+                                                    )}
+                                                    {...recommendedArticle.resource}
+                                                />
+                                            </Grid>
+                                        ) : null
                             )}
                     </Grid>
                 </Grid>
