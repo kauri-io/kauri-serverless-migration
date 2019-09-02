@@ -14,6 +14,7 @@ import { ArticleStyles } from './styles'
 import VoteWidget from './components/VoteWidget'
 import slugify from 'slugify'
 import { getArticleURL } from '../../lib/getURLs'
+import Comments from './components/ArticleComments'
 
 interface IProps {
     id: string
@@ -29,6 +30,7 @@ interface IProps {
     openModalAction: (children: any) => void
     // closeModalAction: () => void;
     hostName: string
+    addCommentAction: (e: string) => void
 }
 
 const ArticleComp = ({
@@ -37,6 +39,7 @@ const ArticleComp = ({
     hostName,
     voteAction,
     routeChangeAction,
+    addCommentAction,
     userId,
     RelatedArticles: { searchMoreLikeThis },
     data: {
@@ -48,6 +51,8 @@ const ArticleComp = ({
             title,
             voteResult,
             version,
+            comments,
+            resourceIdentifier,
         },
     },
 }: IProps) => {
@@ -111,6 +116,10 @@ const ArticleComp = ({
                                 )}
                             </Grid>
                             <ArticleActions
+                                article={{
+                                    id,
+                                    title
+                                }}
                                 userId={userId}
                                 id={String(id)}
                                 version={Number(version)}
@@ -131,6 +140,12 @@ const ArticleComp = ({
                     <div id="content" className={classes.content}>
                         <MDRenderer markdown={JSON.parse(content).markdown} />
                     </div>
+                    <Comments
+                        article={resourceIdentifier}
+                        addCommentAction={addCommentAction}
+                        userId={userId}
+                        comments={comments}
+                    />
                     <Grid
                         className={classes.related}
                         spacing={3}

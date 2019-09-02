@@ -6,30 +6,18 @@ import { useState } from 'react'
 import Renderer from './Renderer'
 import Button from '../Button'
 import Metadata from './Metadata'
+import { IOpenModalAction, ICloseModalAction } from '../Modal/Module'
 
-const useStyles = makeStyles((theme: Theme) => ({
-    editorContainer: {
-        background: theme.palette.common.white,
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: 580,
-        padding: theme.spacing(2),
-        maxWidth: 1242,
-        width: '100%',
-        margin: 'auto',
-    },
-    editor: {
-        fontSize: '1.3em',
-        resize: 'none',
-        minHeight: 400,
-        border: 'none',
-        paddingTop: theme.spacing(2),
-    },
-    root: {
-        width: '100%',
-        background: theme.palette.common.white,
-    },
-}))
+interface IProps {
+    withTabs: boolean
+    withToolbar: boolean
+    compact: boolean
+    openModalAction?: IOpenModalAction
+    closeModalAction?: ICloseModalAction
+    onChange: (e: string) => void
+    text: string
+    minHeight?: number
+}
 
 const Editor = ({
     withTabs,
@@ -39,7 +27,30 @@ const Editor = ({
     closeModalAction,
     onChange,
     text,
-}) => {
+    minHeight,
+}: IProps) => {
+    const useStyles = makeStyles((theme: Theme) => ({
+        editorContainer: {
+            background: theme.palette.common.white,
+            display: 'flex',
+            flexDirection: 'column',
+            maxWidth: 1242,
+            width: '100%',
+            margin: 'auto',
+            minHeight: minHeight ? minHeight : 400,
+        },
+        editor: {
+            fontSize: '16px',
+            resize: 'vertical',
+            border: 'none',
+            paddingTop: theme.spacing(2),
+            flex: 1,
+        },
+        root: {
+            width: '100%',
+            background: theme.palette.common.white,
+        },
+    }))
     const classes = useStyles()
     const [tab, setTab] = useState(0)
 

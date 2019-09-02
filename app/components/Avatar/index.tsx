@@ -47,6 +47,7 @@ const AvatarComp = ({
         },
         username: {
             textTransform: 'capitalize',
+            fontWeight: 'bold',
         },
     }))
 

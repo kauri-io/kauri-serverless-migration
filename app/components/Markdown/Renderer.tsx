@@ -5,6 +5,7 @@ import Link from '@material-ui/core/Link'
 import config from '../../config'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import Prism from 'prismjs'
+import katex from 'katex'
 
 const Renderer = ({ markdown }) => {
     const useStyles = makeStyles((theme: Theme) => ({
@@ -21,6 +22,7 @@ const Renderer = ({ markdown }) => {
             background: theme.palette.common.black,
             color: theme.palette.common.white,
             padding: theme.spacing(1),
+            fontSize: 16
         },
         quote: {
             padding: theme.spacing(1),
@@ -33,6 +35,11 @@ const Renderer = ({ markdown }) => {
             '& pre code': {
                 display: 'block',
             },
+        },
+        katex: {
+            fontSize: '2em',
+            padding: theme.spacing(2),
+            borderRadius: 4,
         },
     }))
 
@@ -60,18 +67,32 @@ const Renderer = ({ markdown }) => {
     }
 
     const CustomCodeBlock = props => {
-        return (
-            <code
-                className={classes.code}
-                dangerouslySetInnerHTML={{
-                    __html: Prism.highlight(
-                        props.children,
-                        Prism.languages.javascript,
-                        'javascript'
-                    ),
-                }}
-            />
-        )
+        if (props.className === 'lang-latex') {
+            return (
+                <div
+                    className={classes.katex}
+                    dangerouslySetInnerHTML={{
+                        __html: katex.renderToString(props.children, {
+                            throwOnError: false,
+                            displayMode: true,
+                        }),
+                    }}
+                />
+            )
+        } else {
+            return (
+                <code
+                    className={classes.code}
+                    dangerouslySetInnerHTML={{
+                        __html: Prism.highlight(
+                            props.children,
+                            Prism.languages.javascript,
+                            'javascript'
+                        ),
+                    }}
+                />
+            )
+        }
     }
 
     const options = {

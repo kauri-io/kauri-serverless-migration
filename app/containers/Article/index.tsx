@@ -1,10 +1,9 @@
 import { compose, graphql } from 'react-apollo'
 import { connect } from 'react-redux'
 import { getArticleQuery, relatedArticles } from '../../queries/Article'
-// import { addCommentAction } from "../AddCommentForm/Module";
 import withLoading from '../../lib/with-loading'
 import withApolloError from '../../lib/with-apollo-error'
-import { voteAction } from './Module'
+import { voteAction, addCommentAction } from './Module'
 import View from './View'
 import { IReduxState } from '../../lib/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
@@ -23,6 +22,7 @@ export default compose(
     connect(
         mapStateToProps,
         {
+            addCommentAction,
             closeModalAction,
             openModalAction,
             routeChangeAction,
