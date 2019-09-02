@@ -41,7 +41,7 @@ export default ({
                 {content.length} Comment{content.length !== 1 ? 's' : ''}
             </Typography>
             <div className={classes.container}>
-                <Grid container={true}>
+                {userId && <Grid container={true}>
                     <Grid item={true} sm={1}>
                         <Avatar size={40} withName={false} id={userId} />
                     </Grid>
@@ -75,7 +75,7 @@ export default ({
                             </Button>
                         </div>
                     </Grid>
-                </Grid>
+                </Grid>}
 
                 {content.map(comment => (
                     <Comment {...comment} />

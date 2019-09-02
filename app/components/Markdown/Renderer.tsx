@@ -22,6 +22,7 @@ const Renderer = ({ markdown }) => {
             background: theme.palette.common.black,
             color: theme.palette.common.white,
             padding: theme.spacing(1),
+            fontSize: 16
         },
         quote: {
             padding: theme.spacing(1),
@@ -37,8 +38,6 @@ const Renderer = ({ markdown }) => {
         },
         katex: {
             fontSize: '2em',
-            background: theme.palette.common.black,
-            color: theme.palette.common.white,
             padding: theme.spacing(2),
             borderRadius: 4,
         },

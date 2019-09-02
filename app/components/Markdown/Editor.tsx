@@ -40,7 +40,7 @@ const Editor = ({
             minHeight: minHeight ? minHeight : 400,
         },
         editor: {
-            fontSize: '1.3em',
+            fontSize: '16px',
             resize: 'vertical',
             border: 'none',
             paddingTop: theme.spacing(2),

@@ -116,6 +116,10 @@ const ArticleComp = ({
                                 )}
                             </Grid>
                             <ArticleActions
+                                article={{
+                                    id,
+                                    title
+                                }}
                                 userId={userId}
                                 id={String(id)}
                                 version={Number(version)}
