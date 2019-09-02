@@ -12,6 +12,7 @@ import { path } from 'ramda'
 import Image from '../../components/Image'
 import Button from '../../components/Button'
 import { Typography, Grid } from '@material-ui/core'
+import { setArticleCacheItem, getArticleCachedItem } from '../../lib/editor-cache';
 
 export interface IAttributes {
     background: string | null
@@ -21,7 +22,6 @@ export interface IAttributes {
 const ArticleEditor = props => {
     const article = props.data && props.data.getArticle
     const key = article ? `${article.id}-${article.version}` : 'unsaved-article'
-    let cache = {}
 
     const [subject, setSubject] = useState(article ? article.title : null)
     const [tags, setTags] = useState(article ? article.tags : [])
@@ -46,10 +46,6 @@ const ArticleEditor = props => {
             openModalAction,
             closeModalAction,
         } = props
-
-        cache = JSON.parse(
-            window.localStorage.getItem('article-editor-cache') || '{}'
-        )
         if (!userId) {
             routeChangeAction(`/login?r=${router.asPath}&redirected=true`)
         } else {
@@ -106,7 +102,7 @@ const ArticleEditor = props => {
     }
 
     const showPromptIfUnsavedChanges = () => {
-        const item = cache[key]
+        const item = getArticleCachedItem(key)
         if (
             item &&
             (!article ||
@@ -151,31 +147,7 @@ const ArticleEditor = props => {
 
     // // this saves edits to a given article version (or an unsaved article) to local storage
     useEffect(() => {
-        const item = (cache[key] = {
-            subject,
-            tags,
-            content,
-            attributes,
-            updated: Date.now(),
-        })
-        if (
-            article &&
-            (item.subject !== article.subject ||
-                item.content !== article.content)
-        ) {
-            window.localStorage.setItem(
-                'article-editor-cache',
-                JSON.stringify(cache)
-            )
-        } else if (
-            !article &&
-            (item.subject !== null || item.content !== null)
-        ) {
-            window.localStorage.setItem(
-                'article-editor-cache',
-                JSON.stringify(cache)
-            )
-        }
+        setArticleCacheItem(key, subject, tags, content,attributes,article)
     }, [subject, tags, content, attributes])
 
     const handleSubmit = (
