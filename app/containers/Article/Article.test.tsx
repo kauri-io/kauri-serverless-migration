@@ -21,6 +21,7 @@ describe('containers/Article', () => {
             data: {
                 getArticle: article1,
             },
+            addCommentAction: jest.fn(),
             RelatedArticles: {
                 searchMoreLikeThis: {
                     totalElements: 2,

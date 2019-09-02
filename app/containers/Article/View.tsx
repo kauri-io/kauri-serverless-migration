@@ -30,6 +30,7 @@ interface IProps {
     openModalAction: (children: any) => void
     // closeModalAction: () => void;
     hostName: string
+    addCommentAction: (e: string) => void
 }
 
 const ArticleComp = ({
@@ -38,6 +39,7 @@ const ArticleComp = ({
     hostName,
     voteAction,
     routeChangeAction,
+    addCommentAction,
     userId,
     RelatedArticles: { searchMoreLikeThis },
     data: {
@@ -49,7 +51,8 @@ const ArticleComp = ({
             title,
             voteResult,
             version,
-            comments
+            comments,
+            resourceIdentifier,
         },
     },
 }: IProps) => {
@@ -133,7 +136,12 @@ const ArticleComp = ({
                     <div id="content" className={classes.content}>
                         <MDRenderer markdown={JSON.parse(content).markdown} />
                     </div>
-                    <Comments comments={comments} />
+                    <Comments
+                        article={resourceIdentifier}
+                        addCommentAction={addCommentAction}
+                        userId={userId}
+                        comments={comments}
+                    />
                     <Grid
                         className={classes.related}
                         spacing={3}
@@ -144,19 +152,19 @@ const ArticleComp = ({
                             searchMoreLikeThis.content.map(
                                 (recommendedArticle, key: number) =>
                                     recommendedArticle &&
-                                        recommendedArticle.resource &&
-                                        recommendedArticle.resource.__typename ===
+                                    recommendedArticle.resource &&
+                                    recommendedArticle.resource.__typename ===
                                         'ArticleDTO' ? (
-                                            <Grid item={true} sm={12} key={key}>
-                                                <ArticleCard
-                                                    className={classes.card}
-                                                    href={getArticleURL(
-                                                        recommendedArticle.resource
-                                                    )}
-                                                    {...recommendedArticle.resource}
-                                                />
-                                            </Grid>
-                                        ) : null
+                                        <Grid item={true} sm={12} key={key}>
+                                            <ArticleCard
+                                                className={classes.card}
+                                                href={getArticleURL(
+                                                    recommendedArticle.resource
+                                                )}
+                                                {...recommendedArticle.resource}
+                                            />
+                                        </Grid>
+                                    ) : null
                             )}
                     </Grid>
                 </Grid>
