@@ -1,3 +1,3 @@
 - add elastic search JS snippet https://www.elastic.co/guide/en/apm/agent/js-base/master/intro.html
-- convert all urls to use generator functions
 - do not request drafts pending and awaiting on public profiles
+- remove all linkComponent instances

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { IReduxState, ICommunity } from '../../lib/Module'
-import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -86,7 +86,7 @@ const useStyles = makeStyles((theme: Theme) => {
             display: 'flex',
             height: '100%',
             justifyContent: 'center',
-            width: theme.spacing(7),
+            cursor: 'pointer',
         },
         sectionDesktop: {
             display: 'none',
@@ -125,6 +125,7 @@ interface IProps {
 
 const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
     const classes = useStyles({})
+    const [search, setSearch] = useState()
     const [accountAnchorEl, setAccountAnchorEl] = React.useState<
         HTMLLIElement | HTMLButtonElement | null
     >(null)
@@ -180,7 +181,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                 anchorEl={createAnchorEl}
                 onClose={handleCreateMenuClose}
             >
-                <Link href="/write-article">
+                <Link as="/write-article" href="/write-article">
                     <a>
                         <MenuItem>Write Article</MenuItem>
                     </a>
@@ -196,7 +197,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                         <MenuItem>Create Community</MenuItem>
                     </a>
                 </Link>
-                <a href="https://import.kauri.io" target="_blank">
+                <a href="https://import.kauri.io" target="__blank">
                     <MenuItem>Import Content</MenuItem>
                 </a>
             </Menu>
@@ -250,6 +251,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                             avatar={user.avatar}
                             id={user.id}
                             withName={false}
+                            ignoreLink={true}
                         />
                     )}
                 </IconButton>
@@ -322,23 +324,30 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                     </Link>
                     <div className={classes.grow} />
                     <div className={classes.searchClass}>
-                        <div className={classes.searchIconClass}>
-                            <SearchIcon />
-                        </div>
                         <InputBase
                             placeholder="Search…"
                             onKeyUp={e => {
                                 if (e.key === 'Enter') {
-                                    router.push(
-                                        `/search-results?q=${e.currentTarget.value}`
-                                    )
+                                    router.push(`/search-results?q=${search}`)
                                 }
                             }}
+                            onChange={e => setSearch(e.target.value)}
                             classes={{
                                 input: classes.inputInput,
                                 root: classes.inputRoot,
                             }}
+                            value={search}
                         />
+                        <div
+                            className={classes.searchIconClass}
+                            onClick={() =>
+                                search &&
+                                search.length > 0 &&
+                                router.push(`/search-results?q=${search}`)
+                            }
+                        >
+                            <SearchIcon />
+                        </div>
                     </div>
                     <Typography
                         variant="button"
@@ -369,6 +378,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                                     avatar={user.avatar}
                                     id={user.id}
                                     withName={false}
+                                    ignoreLink={true}
                                 />
                             )}
                         </IconButton>

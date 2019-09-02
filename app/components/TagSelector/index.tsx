@@ -93,34 +93,13 @@ class TagSelectorContainer extends React.Component<IProps, IState> {
 
     render() {
         return (
-            <>
-                {this.props.getFieldDecorator ? (
-                    this.props.getFieldDecorator('tags', {
-                        rules: [
-                            {
-                                message: 'Please enter at least one tag',
-                                required: true,
-                            },
-                        ],
-                    })(
-                        <TagSelector
-                            tags={this.state.tags}
-                            fetchMatches={this.fetchMatches}
-                            onChange={this.updateTags}
-                            availableTags={this.state.availableTags}
-                            maxTags={7}
-                        />
-                    )
-                ) : (
-                    <TagSelector
-                        tags={this.state.tags}
-                        fetchMatches={this.fetchMatches}
-                        onChange={this.updateTags}
-                        availableTags={this.state.availableTags}
-                        maxTags={7}
-                    />
-                )}
-            </>
+            <TagSelector
+                tags={this.state.tags}
+                fetchMatches={this.fetchMatches}
+                onChange={this.updateTags}
+                availableTags={this.state.availableTags}
+                maxTags={7}
+            />
         )
     }
 }

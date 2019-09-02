@@ -8,13 +8,13 @@ import {
     rejectArticleEpic,
     approveArticleEpic,
 } from '../containers/ArticleReview/Module'
-import { publishArticleEpic } from '../containers/SubmitArticleForm/PublishArticleModule'
+import { publishArticleEpic } from '../containers/WriteArticle/PublishArticleModule'
 import {
     submitArticleEpic,
     submitArticleVersionEpic,
     editArticleEpic,
     draftArticleEpic,
-} from '../containers/SubmitArticleForm/Module'
+} from '../containers/WriteArticle/Module'
 import { checkpointArticlesEpic } from '../containers/CheckpointArticles/Module'
 import {
     createCollectionEpic,

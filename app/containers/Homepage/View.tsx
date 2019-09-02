@@ -128,23 +128,15 @@ export const HomePageComponent = (props: {
                                                                     background={
                                                                         category.image
                                                                     }
-                                                                    linkComponent={children => (
-                                                                        <Link
-                                                                            href={String(
-                                                                                category.link
-                                                                            )}
-                                                                        >
-                                                                            {
-                                                                                children
-                                                                            }
-                                                                        </Link>
-                                                                    )}
                                                                     category={String(
                                                                         category.propertyName
                                                                     )}
                                                                     description={String(
                                                                         category.description
                                                                     )}
+                                                                    link={
+                                                                        category.link
+                                                                    }
                                                                 />
                                                             )
                                                     )}

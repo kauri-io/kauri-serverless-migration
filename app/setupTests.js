@@ -23,13 +23,13 @@ const store = mockStore(initialState)
 
 Enzyme.configure({ adapter: new Adapter() })
 
-const observeMock = {
+const IntersectionObserver = jest.fn(() => ({
     unobserve: () => null,
     observe: () => null,
     disconnect: () => null, // maybe not needed
-}
+}))
 
-window.IntersectionObserver = () => observeMock
+window.IntersectionObserver = IntersectionObserver
 
 export const mountWithTheme = children =>
     mount(<MaterialTheme theme={materialTheme}><ThemeProvider theme={theme}>{children}</ThemeProvider></MaterialTheme>)

@@ -89,9 +89,29 @@ export const searchResultsAutocomplete = gql`
                         voteResult {
                             sum
                         }
+                        author {
+                            id
+                            name
+                            username
+                            avatar
+                        }
                         owner {
                             ...UserOwner
                             ...CommunityOwner
+                        }
+                        comments {
+                            content {
+                                author {
+                                    id
+                                    name
+                                    username
+                                    avatar
+                                }
+                                posted
+                                body
+                            }
+                            totalPages
+                            totalElements
                         }
                     }
 
@@ -110,6 +130,21 @@ export const searchResultsAutocomplete = gql`
                             type
                             id
                         }
+                        sections {
+                            id
+                            name
+                            description
+                            resourcesId {
+                                id
+                                type
+                            }
+                            resources {
+                                ... on ArticleDTO {
+                                    id
+                                    version
+                                }
+                            }
+                        }
                     }
                     ... on CommunityDTO {
                         id
@@ -121,6 +156,19 @@ export const searchResultsAutocomplete = gql`
                         website
                         avatar
                         social
+                        attributes
+                        members {
+                            id
+                            name
+                            username
+                            avatar
+                            role
+                            status
+                        }
+                        approvedId {
+                            id
+                            type
+                        }
                     }
                 }
             }

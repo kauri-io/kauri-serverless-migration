@@ -74,7 +74,7 @@ const FeaturedResource: React.FunctionComponent<
             <Grid container={true} className={classes.container} spacing={2}>
                 <Grid item={true} sm={9} direction="column" container={true}>
                     <Label>Featured</Label>
-                    <Link href={resourceURL.as}>
+                    <Link as={resourceURL.as} href={resourceURL.href}>
                         <a>
                             <Title2>{title && String(title)}</Title2>
                             <BodyCard>
@@ -99,7 +99,7 @@ const FeaturedResource: React.FunctionComponent<
                     justify="center"
                     alignItems="center"
                 >
-                    <Link href={resourceURL.as}>
+                    <Link href={resourceURL.href} as={resourceURL.as}>
                         <a>
                             <Button
                                 fullWidth={true}

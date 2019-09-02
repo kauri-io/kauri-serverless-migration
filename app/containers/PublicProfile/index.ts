@@ -23,6 +23,7 @@ import { removeMemberAction } from '../Community/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { saveUserDetailsAction } from '../../components/EditProfileForm/Module'
 import { resendEmailVerificationAction } from '../EmailVerification/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 const mapStateToProps = state => {
     return {
@@ -45,6 +46,7 @@ export default compose(
             saveUserDetailsAction,
             resendEmailVerificationAction,
             showNotificationAction,
+            routeChangeAction,
         }
     ),
     graphql(searchPersonalArticles, {

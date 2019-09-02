@@ -544,132 +544,134 @@ exports[`components/CuratedCategory should match snapshot 1`] = `
                 </Image__Img>
               </InView>
             </ForwardRef>
-            <CuratedCategory__Content>
-              <StyledComponent
-                forwardedComponent={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "CuratedCategory__Content-sc-7fcfjn-1",
-                      "isStatic": false,
-                      "lastClassName": "kdSZBI",
-                      "rules": Array [
-                        "display:flex;z-index:9001;width:100%;position:absolute;flex-direction:column;text-overflow:ellipsis;padding:",
-                        [Function],
-                        "px;overflow-x:hidden;>:first-child{margin-bottom:",
-                        [Function],
-                        "px;}",
-                      ],
-                    },
-                    "displayName": "CuratedCategory__Content",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "CuratedCategory__Content-sc-7fcfjn-1",
-                    "target": "div",
-                    "toString": [Function],
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
+            <a>
+              <CuratedCategory__Content>
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "CuratedCategory__Content-sc-7fcfjn-1",
+                        "isStatic": false,
+                        "lastClassName": "kdSZBI",
+                        "rules": Array [
+                          "display:flex;z-index:9001;width:100%;position:absolute;flex-direction:column;text-overflow:ellipsis;padding:",
+                          [Function],
+                          "px;overflow-x:hidden;>:first-child{margin-bottom:",
+                          [Function],
+                          "px;}",
+                        ],
+                      },
+                      "displayName": "CuratedCategory__Content",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "CuratedCategory__Content-sc-7fcfjn-1",
+                      "target": "div",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
                   }
-                }
-                forwardedRef={null}
-              >
-                <div
-                  className="CuratedCategory__Content-sc-7fcfjn-1 kdSZBI"
+                  forwardedRef={null}
                 >
-                  <Typography__component
-                    color="white"
-                    textTransform="uppercase"
+                  <div
+                    className="CuratedCategory__Content-sc-7fcfjn-1 kdSZBI"
                   >
-                    <StyledComponent
+                    <Typography__component
                       color="white"
-                      forwardedComponent={
-                        Object {
-                          "$$typeof": Symbol(react.forward_ref),
-                          "attrs": Array [],
-                          "componentStyle": ComponentStyle {
-                            "componentId": "Typography__component-sc-36xkf6-0",
-                            "isStatic": false,
-                            "lastClassName": "jMarAF",
-                            "rules": Array [
-                              "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
-                              [Function],
-                              ";text-align:",
-                              [Function],
-                              ";",
-                              [Function],
-                              " ",
-                              [Function],
-                            ],
-                          },
-                          "displayName": "Typography__component",
-                          "foldedComponentIds": Array [],
-                          "render": [Function],
-                          "styledComponentId": "Typography__component-sc-36xkf6-0",
-                          "target": "span",
-                          "toString": [Function],
-                          "warnTooManyClasses": [Function],
-                          "withComponent": [Function],
-                        }
-                      }
-                      forwardedRef={null}
                       textTransform="uppercase"
                     >
-                      <span
-                        className="Typography__component-sc-36xkf6-0 jMarAF"
+                      <StyledComponent
                         color="white"
-                      >
-                        test
-                      </span>
-                    </StyledComponent>
-                  </Typography__component>
-                  <Typography__component
-                    color="white"
-                  >
-                    <StyledComponent
-                      color="white"
-                      forwardedComponent={
-                        Object {
-                          "$$typeof": Symbol(react.forward_ref),
-                          "attrs": Array [],
-                          "componentStyle": ComponentStyle {
-                            "componentId": "Typography__component-sc-36xkf6-4",
-                            "isStatic": false,
-                            "lastClassName": "dvuWvG",
-                            "rules": Array [
-                              "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
-                              [Function],
-                              "px;line-height:18px;color:",
-                              [Function],
-                              ";",
-                              ";",
-                              [Function],
-                              ";",
-                            ],
-                          },
-                          "displayName": "Typography__component",
-                          "foldedComponentIds": Array [],
-                          "render": [Function],
-                          "styledComponentId": "Typography__component-sc-36xkf6-4",
-                          "target": "span",
-                          "toString": [Function],
-                          "warnTooManyClasses": [Function],
-                          "withComponent": [Function],
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "Typography__component-sc-36xkf6-0",
+                              "isStatic": false,
+                              "lastClassName": "jMarAF",
+                              "rules": Array [
+                                "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
+                                [Function],
+                                ";text-align:",
+                                [Function],
+                                ";",
+                                [Function],
+                                " ",
+                                [Function],
+                              ],
+                            },
+                            "displayName": "Typography__component",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "Typography__component-sc-36xkf6-0",
+                            "target": "span",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
                         }
-                      }
-                      forwardedRef={null}
-                    >
-                      <span
-                        className="Typography__component-sc-36xkf6-4 dvuWvG"
-                        color="white"
+                        forwardedRef={null}
+                        textTransform="uppercase"
                       >
-                        test
-                      </span>
-                    </StyledComponent>
-                  </Typography__component>
-                </div>
-              </StyledComponent>
-            </CuratedCategory__Content>
+                        <span
+                          className="Typography__component-sc-36xkf6-0 jMarAF"
+                          color="white"
+                        >
+                          test
+                        </span>
+                      </StyledComponent>
+                    </Typography__component>
+                    <Typography__component
+                      color="white"
+                    >
+                      <StyledComponent
+                        color="white"
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "Typography__component-sc-36xkf6-4",
+                              "isStatic": false,
+                              "lastClassName": "dvuWvG",
+                              "rules": Array [
+                                "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
+                                [Function],
+                                "px;line-height:18px;color:",
+                                [Function],
+                                ";",
+                                ";",
+                                [Function],
+                                ";",
+                              ],
+                            },
+                            "displayName": "Typography__component",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "Typography__component-sc-36xkf6-4",
+                            "target": "span",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                      >
+                        <span
+                          className="Typography__component-sc-36xkf6-4 dvuWvG"
+                          color="white"
+                        >
+                          test
+                        </span>
+                      </StyledComponent>
+                    </Typography__component>
+                  </div>
+                </StyledComponent>
+              </CuratedCategory__Content>
+            </a>
           </div>
         </StyledComponent>
       </CuratedCategory__Container>

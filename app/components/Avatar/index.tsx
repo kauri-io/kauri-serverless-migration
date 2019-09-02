@@ -31,6 +31,7 @@ const AvatarComp = ({
     size,
     color,
     type,
+    ignoreLink,
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
@@ -61,7 +62,10 @@ const AvatarComp = ({
                   id,
               })
     return (
-        <Link as={url.as} href={url.href}>
+        <Link
+            as={!ignoreLink ? url.as : undefined}
+            href={!ignoreLink ? url.href : undefined}
+        >
             <a>
                 <div className={className || classes.container}>
                     {avatar ? (

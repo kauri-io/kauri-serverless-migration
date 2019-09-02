@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import moment from 'moment'
+import moment from 'moment-mini'
 import { TagList } from '../../components/Tags'
 import { Label, Title1 } from '../../components/Typography'
 import Image from '../../components/Image'

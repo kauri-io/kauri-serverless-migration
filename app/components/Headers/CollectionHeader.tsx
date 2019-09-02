@@ -1,4 +1,4 @@
-import moment from 'moment'
+import moment from 'moment-mini'
 import styled from 'styled-components'
 import { Title1, Label, PageDescription } from '../Typography'
 import ShareArticle from '../Tooltip/ShareArticle'
@@ -138,6 +138,7 @@ const Container: React.SFC<IProps> = props => {
                 />
                 {userId === ownerId || isMemberOfCommunityOwner ? (
                     <Button
+                        color="primary"
                         variant="contained"
                         onClick={() =>
                             routeChangeAction(

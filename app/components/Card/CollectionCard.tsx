@@ -1,5 +1,5 @@
 import React from 'react'
-import moment from 'moment'
+import moment from 'moment-mini'
 import Link from 'next/link'
 import { getCollectionURL } from '../../lib/getURLs'
 import { Theme, makeStyles } from '@material-ui/core/styles'

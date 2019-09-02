@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`containers/WriteArticle/View should match the snapshot 1`] = `
+<Fragment>
+  <div
+    style={
+      Object {
+        "position": "relative",
+      }
+    }
+  >
+    <_default
+      attributes={
+        Object {
+          "background": null,
+          "canonical": null,
+        }
+      }
+      handleSubmit={[Function]}
+      selectDestination={[Function]}
+      setAttributes={[Function]}
+    />
+    <_default
+      setTags={[Function]}
+      setTitle={[Function]}
+      tags={Array []}
+      title={null}
+    />
+  </div>
+  <Editor
+    compact={false}
+    onChange={[Function]}
+    text={null}
+    withTabs={true}
+    withToolbar={true}
+  />
+</Fragment>
+`;

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Label } from '../Typography'
-import moment from 'moment'
+import moment from 'moment-mini'
 
 export type HoverDateStatus = 'PUBLISHED' | 'DRAFT'
 
