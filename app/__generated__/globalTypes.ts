@@ -119,6 +119,13 @@ export interface CommunityFilterInput {
   statusIn?: (CommunityStatusInput | null)[] | null;
 }
 
+export interface CommunityInvitationFilterInput {
+  dateAddedGreaterThan?: any | null;
+  dateAddedLessThan?: any | null;
+  deduplicateByEmail?: boolean | null;
+  statusIn?: (CommunityInvitationStatusInput | null)[] | null;
+}
+
 export interface CommunityResourceFilterInput {
   resourceTypeEquals?: ResourceTypeInput | null;
   statusEquals?: CommunityResourceStatusInput | null;

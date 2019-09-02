@@ -12,7 +12,10 @@ import { path } from 'ramda'
 import Image from '../../components/Image'
 import Button from '../../components/Button'
 import { Typography, Grid } from '@material-ui/core'
-import { setArticleCacheItem, getArticleCachedItem } from '../../lib/editor-cache';
+import {
+    setArticleCacheItem,
+    getArticleCachedItem,
+} from '../../lib/editor-cache'
 
 export interface IAttributes {
     background: string | null
@@ -147,7 +150,7 @@ const ArticleEditor = props => {
 
     // // this saves edits to a given article version (or an unsaved article) to local storage
     useEffect(() => {
-        setArticleCacheItem(key, subject, tags, content,attributes,article)
+        setArticleCacheItem(key, subject, tags, content, attributes, article)
     }, [subject, tags, content, attributes])
 
     const handleSubmit = (

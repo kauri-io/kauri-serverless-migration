@@ -31,7 +31,7 @@ import {
 } from '../../queries/__generated__/editArticleVersion'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { getArticleURL } from '../../lib/getURLs'
-import { clearCachedItem } from '../../lib/editor-cache';
+// import { clearCachedItem } from '../../lib/editor-cache'
 
 interface IGetArticleResult {
     getArticle: {

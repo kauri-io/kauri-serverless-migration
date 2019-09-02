@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import {
     changeMemberRoleAction as changeMemberRole,
     resendInvitationAction as resendInvitation,
+    sendCommunityInvitationAction as sendCommunityInvitation,
 } from '../../Community/Module'
 import { prepareChangeMemberRoleVariables } from '../../../queries/__generated__/prepareChangeMemberRole'
 import { openModalAction as openModal } from '../../../components/Modal/Module'
@@ -45,6 +46,7 @@ interface IProps {
     openModalAction: typeof openModal
     changeMemberRoleAction: typeof changeMemberRole
     resendInvitationAction: typeof resendInvitation
+    sendCommunityInvitationAction: typeof sendCommunityInvitation
 }
 
 interface IRole {
@@ -115,6 +117,9 @@ class ManageMembers extends Component<IProps, IRole> {
                                 props.invitations.length >= 1)) && (
                             <InviteMembersPanel
                                 id={String(props.id)}
+                                sendCommunityInvitationAction={
+                                    props.sendCommunityInvitationAction
+                                }
                                 resendInvitationAction={
                                     props.resendInvitationAction
                                 }
@@ -175,6 +180,9 @@ class ManageMembers extends Component<IProps, IRole> {
                                 Array.isArray(props.invitations) &&
                                 props.invitations.length >= 1)) && (
                             <InviteMembersPanel
+                                sendCommunityInvitationAction={
+                                    props.sendCommunityInvitationAction
+                                }
                                 resendInvitationAction={
                                     props.resendInvitationAction
                                 }
@@ -216,6 +224,9 @@ class ManageMembers extends Component<IProps, IRole> {
                     members={props.members}
                 />
                 <InviteMembersPanel
+                    sendCommunityInvitationAction={
+                        props.sendCommunityInvitationAction
+                    }
                     resendInvitationAction={props.resendInvitationAction}
                     id={String(props.id)}
                     revokeInvitationAction={props.revokeInvitationAction}

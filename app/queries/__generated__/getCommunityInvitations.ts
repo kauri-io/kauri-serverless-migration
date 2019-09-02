@@ -2,7 +2,7 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { DirectionInput, CommunityInvitationStatusInput, CommunityPermissionInput } from "./../../__generated__/globalTypes";
+import { DirectionInput, CommunityInvitationFilterInput, CommunityInvitationStatusInput, CommunityPermissionInput } from "./../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: getCommunityInvitations
@@ -74,4 +74,5 @@ export interface getCommunityInvitationsVariables {
   size?: number | null;
   sort?: string | null;
   dir?: DirectionInput | null;
+  filter?: CommunityInvitationFilterInput | null;
 }
