@@ -6,8 +6,6 @@ import config from '../../config'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import Prism from 'prismjs'
 import katex from 'katex'
-// import 'katex/dist/katex.css'
-import './katex.css'
 
 const Renderer = ({ markdown }) => {
     const useStyles = makeStyles((theme: Theme) => ({
