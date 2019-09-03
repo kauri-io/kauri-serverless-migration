@@ -32,11 +32,11 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
         <Grid direction="column" container={true} className={classes.container}>
             <Typography variant="h5">Latest Content</Typography>
             <Grid container={true} spacing={2}>
-                {content.map((resource: any) => {
+                {content.map((resource: any, key) => {
                     switch (resource.__typename) {
                         case 'ArticleDTO': {
                             return (
-                                <Grid item={true} sm={12}>
+                                <Grid key={key} item={true} sm={12}>
                                     <ArticleCard
                                         {...resource}
                                         href={getArticleURL(resource)}
@@ -47,7 +47,7 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
 
                         case 'CollectionDTO': {
                             return (
-                                <Grid item={true} sm={12}>
+                                <Grid key={key} item={true} sm={12}>
                                     {' '}
                                     <CollectionCard
                                         {...resource}
@@ -59,7 +59,7 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
 
                         case 'CommunityDTO':
                             return (
-                                <Grid item={true} sm={12}>
+                                <Grid key={key} item={true} sm={12}>
                                     {' '}
                                     <CommunityCard
                                         {...resource}

@@ -56,7 +56,7 @@ const handleEmailAddress = (props: IProps, state: IState) => async () => {
 
 const NewsletterBanner: FunctionComponent<IProps> = props => {
     const [state, setState] = useState<IState>({
-        emailAddress: null,
+        emailAddress: '',
     })
 
     const classes = useStyles()

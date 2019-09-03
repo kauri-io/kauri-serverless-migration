@@ -17,10 +17,7 @@ import LatestContent from '../../components/LatestContent'
 import NewsletterBanner from '../../components/NewsletterBanner'
 import ImportYourContentBanner from '../../components/ImportYourContentBanner'
 import FeaturedResource from '../../components/FeaturedResource'
-import CuratedCategory, {
-    CuratedCategoriesSection,
-} from '../../components/CuratedCategory'
-import Link from 'next/link'
+import CuratedCategories from '../../components/CuratedCategories'
 import { IShowNotificationPayload } from '../../lib/Epics/ShowNotificationEpic'
 import Head from 'next/head'
 
@@ -114,33 +111,9 @@ export const HomePageComponent = (props: {
                                     case 'Categories': {
                                         if (mainRow.content) {
                                             return (
-                                                <CuratedCategoriesSection
-                                                    key={String(mainRow.type)}
-                                                >
-                                                    {mainRow.content.map(
-                                                        (
-                                                            category,
-                                                            categoryIndex
-                                                        ) =>
-                                                            category && (
-                                                                <CuratedCategory
-                                                                    key={`${category.propertyName}-${categoryIndex}`}
-                                                                    background={
-                                                                        category.image
-                                                                    }
-                                                                    category={String(
-                                                                        category.propertyName
-                                                                    )}
-                                                                    description={String(
-                                                                        category.description
-                                                                    )}
-                                                                    link={
-                                                                        category.link
-                                                                    }
-                                                                />
-                                                            )
-                                                    )}
-                                                </CuratedCategoriesSection>
+                                                <CuratedCategories
+                                                    content={mainRow.content}
+                                                />
                                             )
                                         }
                                     }
@@ -150,7 +123,6 @@ export const HomePageComponent = (props: {
                                             return (
                                                 <FeaturedContent
                                                     key="featured-content"
-                                                    Link={Link}
                                                     content={mainRow.content}
                                                 />
                                             )

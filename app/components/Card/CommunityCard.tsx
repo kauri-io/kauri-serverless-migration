@@ -143,7 +143,7 @@ interface IProps {
     name: string | null
     communityName?: string | null
     description: string | null
-    attributes: any | null
+    avatar: string | null
     className?: string
     href: {
         as: string
@@ -156,13 +156,13 @@ interface IProps {
 const CommunityCard: React.FC<IProps> = ({
     name,
     communityName,
-    attributes,
     description,
     className,
     href,
     id,
     approvedId,
     members,
+    avatar,
 }) => {
     const classes = CommunityCardStyles({})
 
@@ -201,7 +201,7 @@ const CommunityCard: React.FC<IProps> = ({
                         width={152}
                         height={152}
                         image={
-                            (attributes && attributes.background) ||
+                            avatar ||
                             'https://dev.kauri.io/static/images/DefaultCommunity.png'
                         }
                         borderRadius="4px"
