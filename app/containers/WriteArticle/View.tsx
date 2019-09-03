@@ -416,6 +416,8 @@ const ArticleEditor = props => {
                 openModalAction={props.openModalAction}
                 closeModalAction={props.closeModalAction}
                 onChange={content => setTextValue(content)}
+                attributes={attributes}
+                setAttributes={setAttributes}
             />
             {process.env.config === 'development' && (
                 <div

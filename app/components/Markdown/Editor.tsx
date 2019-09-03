@@ -7,6 +7,7 @@ import Renderer from './Renderer'
 import Button from '../Button'
 import Metadata from './Metadata'
 import { IOpenModalAction, ICloseModalAction } from '../Modal/Module'
+import { IAttributes } from '../../containers/WriteArticle/View'
 
 interface IProps {
     withTabs: boolean
@@ -17,6 +18,8 @@ interface IProps {
     onChange: (e: string) => void
     text: string
     minHeight?: number
+    attributes?: IAttributes
+    setAttributes?: (a: IAttributes) => void
 }
 
 const Editor = ({
@@ -28,6 +31,8 @@ const Editor = ({
     onChange,
     text,
     minHeight,
+    attributes,
+    setAttributes
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
         editorContainer: {
@@ -117,7 +122,7 @@ const Editor = ({
                     />
                 )}
                 {tab === 1 && <Renderer markdown={text || ''} />}
-                {tab === 2 && <Metadata />}
+                {tab === 2 && <Metadata attributes={attributes} setAttributes={setAttributes}/>}
                 {tab === 3 && (
                     <>
                         <Button variant="text" color="primary">
