@@ -523,6 +523,7 @@ exports[`components/CuratedCategory should match snapshot 1`] = `
           >
             <WithStyles(ForwardRef(Grid))
               item={true}
+              key="0"
               md={3}
               sm={6}
               xs={12}

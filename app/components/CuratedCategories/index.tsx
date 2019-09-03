@@ -32,11 +32,10 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const CuratedCategory = ({ content }) => {
     const classes = useStyles()
-    console.log(content)
     return (
         <Grid container={true} className={classes.container} spacing={2}>
-            {content.map(category => (
-                <Grid item={true} md={3} sm={6} xs={12}>
+            {content.map((category, key) => (
+                <Grid key={key} item={true} md={3} sm={6} xs={12}>
                     <Link href={category.link}>
                         <a className={classes.link}>
                             {category.image && (

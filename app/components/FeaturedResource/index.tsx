@@ -1,9 +1,8 @@
 import Avatar from '../Avatar'
-import { Label, Title2, BodyCard } from '../Typography'
 import TagList from '../Tags/TagList'
 import Button from '../../components/Button'
 import Link from 'next/link'
-import { Grid } from '@material-ui/core'
+import { Grid, Typography } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import {
     getArticleURL,
@@ -20,6 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     container: {
         maxWidth: 1242,
         margin: 'auto',
+        width: '100%',
     },
 }))
 
@@ -71,19 +71,20 @@ const FeaturedResource: React.FunctionComponent<
 
     return (
         <Grid className={classes.root}>
-            <Grid container={true} className={classes.container} spacing={2}>
-                <Grid item={true} sm={9} direction="column" container={true}>
-                    <Label>Featured</Label>
+            <Grid container={true} className={classes.container} spacing={4}>
+                <Grid item={true} sm={12} md={9}>
                     <Link as={resourceURL.as} href={resourceURL.href}>
                         <a>
-                            <Title2>{title && String(title)}</Title2>
-                            <BodyCard>
+                            <Typography variant="caption">Featured</Typography>
+                            <Typography variant="h5">
+                                {title && String(title)}
+                            </Typography>
+                            <Typography variant="body1">
                                 {description && String(description)}
-                            </BodyCard>
+                            </Typography>
                         </a>
                     </Link>
                     <TagList maxTags={3} color="textPrimary" tags={tags} />
-
                     <Avatar
                         id={userId}
                         username={username}
@@ -94,7 +95,8 @@ const FeaturedResource: React.FunctionComponent<
                 </Grid>
                 <Grid
                     item={true}
-                    sm={3}
+                    sm={12}
+                    md={3}
                     container={true}
                     justify="center"
                     alignItems="center"
