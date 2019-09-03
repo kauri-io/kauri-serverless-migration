@@ -36,7 +36,7 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                     switch (resource.__typename) {
                         case 'ArticleDTO': {
                             return (
-                                <Grid key={key} item={true} sm={12}>
+                                <Grid key={key} item={true} xs={12}>
                                     <ArticleCard
                                         {...resource}
                                         href={getArticleURL(resource)}
