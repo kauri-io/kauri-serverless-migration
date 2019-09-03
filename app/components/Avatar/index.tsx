@@ -62,35 +62,35 @@ const AvatarComp = ({
                   username,
                   id,
               })
+
+    const AvatarContent = (
+        <div className={className || classes.container}>
+            {avatar ? (
+                <Image
+                    className={classes.avatar}
+                    image={avatar}
+                    width={size || 24}
+                    height={size || 24}
+                    borderRadius={'2px'}
+                />
+            ) : (
+                <img className={classes.avatar} src={makeBlockie(id)} />
+            )}
+            {withName && (
+                <Typography
+                    color={color}
+                    className={classes.username}
+                    variant="subtitle2"
+                >
+                    {name || username || useridTrim(id)}
+                </Typography>
+            )}
+        </div>
+    )
+    if (ignoreLink) return AvatarContent
     return (
-        <Link
-            as={!ignoreLink ? url.as : undefined}
-            href={!ignoreLink ? url.href : undefined}
-        >
-            <a>
-                <div className={className || classes.container}>
-                    {avatar ? (
-                        <Image
-                            className={classes.avatar}
-                            image={avatar}
-                            width={size || 24}
-                            height={size || 24}
-                            borderRadius={'2px'}
-                        />
-                    ) : (
-                        <img className={classes.avatar} src={makeBlockie(id)} />
-                    )}
-                    {withName && (
-                        <Typography
-                            color={color}
-                            className={classes.username}
-                            variant="subtitle2"
-                        >
-                            {name || username || useridTrim(id)}
-                        </Typography>
-                    )}
-                </div>
-            </a>
+        <Link as={url.as} href={url.href}>
+            <a>{AvatarContent}</a>
         </Link>
     )
 }

@@ -398,7 +398,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
       }
       author={
         Object {
-          "avatar": "https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU",
+          "avatar": "https://dev.kauri.io/static/images/DefaultArticle.png",
           "id": "0x12...",
           "name": "test name",
           "username": "test username",
@@ -684,7 +684,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                         >
                           <AvatarComp
                             aria-label="test username"
-                            avatar="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                            avatar="https://dev.kauri.io/static/images/DefaultArticle.png"
                             data-testid="ArticleCard-0x12...-author"
                             id="0x12..."
                             name="test name"
@@ -708,7 +708,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                     borderRadius="2px"
                                     className="makeStyles-avatar-77"
                                     height={24}
-                                    image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                    image="https://dev.kauri.io/static/images/DefaultArticle.png"
                                     width={24}
                                   >
                                     <InView
@@ -720,7 +720,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                         borderRadius="2px"
                                         className="makeStyles-avatar-77"
                                         height={24}
-                                        image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                        image="https://dev.kauri.io/static/images/DefaultArticle.png"
                                         inView={false}
                                         width={24}
                                       >
@@ -777,7 +777,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                           }
                                           forwardedRef={[Function]}
                                           height={24}
-                                          image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                                          image="https://dev.kauri.io/static/images/DefaultArticle.png"
                                           inView={false}
                                           width={24}
                                         >

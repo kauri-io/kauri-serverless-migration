@@ -80,6 +80,7 @@
         "styled-system": "^5.0.12",
         "subscriptions-transport-ws": "^0.9.16",
         "superagent": "^5.1.0",
+        "test": "^0.6.0",
         "url": "^0.11.0",
         "yup": "^0.27.0"
     },

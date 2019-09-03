@@ -118,7 +118,7 @@ const ArticleComp = ({
                             <ArticleActions
                                 article={{
                                     id,
-                                    title
+                                    title,
                                 }}
                                 userId={userId}
                                 id={String(id)}

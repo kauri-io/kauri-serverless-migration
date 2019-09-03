@@ -6,7 +6,7 @@ import StyledFooter, { footerHeight } from '../components/Footer'
 import Modal from '../components/Modal'
 import Notification from '../components/Notification'
 import { makeStyles, Theme } from '@material-ui/core/styles'
-import { IReduxState, ICommunity } from '../lib/Module'
+import { IReduxState } from '../lib/Module'
 
 const mapStateToProps = (state: IReduxState) => ({
     isModalOpen: state.modal.isModalOpen,
@@ -26,9 +26,6 @@ const useStyles = makeStyles((theme: Theme) => ({
         marginRight: 'auto',
         minHeight: `calc(100vh - ${footerHeight}px)`,
         overflow: 'hidden',
-        [theme.breakpoints.down('sm')]: {
-            paddingTop: 48,
-        },
         paddingTop: 64,
     },
 }))

@@ -1,6 +1,6 @@
 import Button from '../../components/Button'
 import Link from 'next/link'
-import { Grid, Typography } from '@material-ui/core'
+import { Grid, Typography, Hidden } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import {
     getArticleURL,
@@ -32,11 +32,11 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
         <Grid direction="column" container={true} className={classes.container}>
             <Typography variant="h5">Latest Content</Typography>
             <Grid container={true} spacing={2}>
-                {content.map((resource: any) => {
+                {content.map((resource: any, key) => {
                     switch (resource.__typename) {
                         case 'ArticleDTO': {
                             return (
-                                <Grid item={true} sm={12}>
+                                <Grid key={key} item={true} xs={12}>
                                     <ArticleCard
                                         {...resource}
                                         href={getArticleURL(resource)}
@@ -47,7 +47,7 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
 
                         case 'CollectionDTO': {
                             return (
-                                <Grid item={true} sm={12}>
+                                <Grid key={key} item={true} sm={12}>
                                     {' '}
                                     <CollectionCard
                                         {...resource}
@@ -59,7 +59,7 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
 
                         case 'CommunityDTO':
                             return (
-                                <Grid item={true} sm={12}>
+                                <Grid key={key} item={true} sm={12}>
                                     {' '}
                                     <CommunityCard
                                         {...resource}
@@ -78,7 +78,13 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                 })}
             </Grid>
             <Grid justify="flex-start" spacing={2} container={true}>
-                <Grid container={true} justify="flex-end" sm={4} item={true}>
+                <Grid
+                    container={true}
+                    justify="flex-end"
+                    sm={6}
+                    md={4}
+                    item={true}
+                >
                     <Link href="/articles" as="/articles">
                         <a>
                             <Button color="primary" variant="outlined">
@@ -87,8 +93,11 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                         </a>
                     </Link>
                 </Grid>
+                <Hidden smDown={true}>
+                    <Grid item={true} md={1} />
+                </Hidden>
 
-                <Grid sm={4} item={true}>
+                <Grid sm={6} md={4} item={true}>
                     <Link href="/collections" as="/collections">
                         <a>
                             <Button color="primary" variant="outlined">

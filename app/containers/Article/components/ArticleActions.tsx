@@ -10,9 +10,9 @@ import Popover from '@material-ui/core/Popover'
 import { useState } from 'react'
 import { ShareButtons } from '../../../components/Tooltip/ShareButtons'
 import Edit from '@material-ui/icons/Edit'
-import { getArticleURL } from '../../../lib/getURLs';
-import Link from 'next/link';
-import { Tooltip } from '@material-ui/core';
+import { getArticleURL } from '../../../lib/getURLs'
+import Link from 'next/link'
+import { Tooltip } from '@material-ui/core'
 
 export const ArticleActionStyles = makeStyles((theme: Theme) => ({
     buttons: {
@@ -40,7 +40,7 @@ interface IProps {
     hostName: string
     routeChangeAction: (route: string) => void
     article: {
-        id,
+        id
         title
     }
 }
@@ -53,7 +53,7 @@ export default ({
     routeChangeAction,
     title,
     hostName,
-    article
+    article,
 }: IProps) => {
     const classes = ArticleActionStyles({})
     const [anchorEl, setAnchorEl] = useState<SVGSVGElement | null>(null)
@@ -70,43 +70,44 @@ export default ({
     return (
         <Grid item={true} className={classes.buttons}>
             {/* <Bookmark color="primary" /> */}
-            <Tooltip title='Update article'>
+            <Tooltip title="Update article">
                 <div>
-                <Link href={href.href} as={href.as} >
-                    <a>
-                        <Edit className={classes.hover} color="primary" />
-                    </a>
-                </Link></div>
+                    <Link href={href.href} as={href.as}>
+                        <a>
+                            <Edit className={classes.hover} color="primary" />
+                        </a>
+                    </Link>
+                </div>
             </Tooltip>
-            <Tooltip title='Add to collection'>
-            <Add
-                className={classes.hover}
-                color="primary"
-                onClick={() =>
-                    userId
-                        ? openModalAction({
-                            children: (
-                                <AddToCollectionConnection
-                                    articleId={String(id)}
-                                    version={Number(version)}
-                                />
-                            ),
-                        })
-                        : routeChangeAction(
-                            `/login?r=/${slugify(title, {
-                                lower: true,
-                            })}/${id}/a`
-                        )
-                }
-            />
+            <Tooltip title="Add to collection">
+                <Add
+                    className={classes.hover}
+                    color="primary"
+                    onClick={() =>
+                        userId
+                            ? openModalAction({
+                                  children: (
+                                      <AddToCollectionConnection
+                                          articleId={String(id)}
+                                          version={Number(version)}
+                                      />
+                                  ),
+                              })
+                            : routeChangeAction(
+                                  `/login?r=/${slugify(title, {
+                                      lower: true,
+                                  })}/${id}/a`
+                              )
+                    }
+                />
             </Tooltip>
-            <Tooltip title='share'>
-            <Share
-                aria-describedby={id}
-                onClick={handleClick}
-                className={classes.hover}
-                color="primary"
-            />
+            <Tooltip title="share">
+                <Share
+                    aria-describedby={id}
+                    onClick={handleClick}
+                    className={classes.hover}
+                    color="primary"
+                />
             </Tooltip>
             <Popover
                 id={id}

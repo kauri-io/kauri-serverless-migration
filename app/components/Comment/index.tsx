@@ -10,8 +10,8 @@ const useStyles = makeStyles((theme: Theme) => ({
         paddingTop: theme.spacing(2),
         margin: theme.spacing(2, 0),
         '&:first-child': {
-            border: 'none'
-        }
+            border: 'none',
+        },
     },
     text: {
         margin: theme.spacing(1, 0),

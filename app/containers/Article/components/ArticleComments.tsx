@@ -41,41 +41,43 @@ export default ({
                 {content.length} Comment{content.length !== 1 ? 's' : ''}
             </Typography>
             <div className={classes.container}>
-                {userId && <Grid container={true}>
-                    <Grid item={true} sm={1}>
-                        <Avatar size={40} withName={false} id={userId} />
+                {userId && (
+                    <Grid container={true}>
+                        <Grid item={true} sm={1}>
+                            <Avatar size={40} withName={false} id={userId} />
+                        </Grid>
+                        <Grid item={true} sm={11}>
+                            <div className={classes.editorWrapper}>
+                                <Editor
+                                    minHeight={80}
+                                    text={comment}
+                                    withTabs={false}
+                                    withToolbar={true}
+                                    compact={true}
+                                    onChange={e => setComment(e)}
+                                />
+                            </div>
+                            <div className={classes.button}>
+                                <Button
+                                    color="primary"
+                                    variant="text"
+                                    onClick={() =>
+                                        addCommentAction({
+                                            parent: {
+                                                id: article.id,
+                                                type: article.type,
+                                                version: article.version,
+                                            },
+                                            body: comment,
+                                        })
+                                    }
+                                >
+                                    Leave Comment
+                                </Button>
+                            </div>
+                        </Grid>
                     </Grid>
-                    <Grid item={true} sm={11}>
-                        <div className={classes.editorWrapper}>
-                            <Editor
-                                minHeight={80}
-                                text={comment}
-                                withTabs={false}
-                                withToolbar={true}
-                                compact={true}
-                                onChange={e => setComment(e)}
-                            />
-                        </div>
-                        <div className={classes.button}>
-                            <Button
-                                color="primary"
-                                variant="text"
-                                onClick={() =>
-                                    addCommentAction({
-                                        parent: {
-                                            id: article.id,
-                                            type: article.type,
-                                            version: article.version,
-                                        },
-                                        body: comment,
-                                    })
-                                }
-                            >
-                                Leave Comment
-                            </Button>
-                        </div>
-                    </Grid>
-                </Grid>}
+                )}
 
                 {content.map(comment => (
                     <Comment {...comment} />

@@ -1211,7 +1211,7 @@ exports[`components/NewsletterBanner should match snapshot 1`] = `
                 onChange={[Function]}
                 onKeyPress={[Function]}
                 placeholder="Enter your email address"
-                value={null}
+                value=""
               >
                 <ForwardRef(TextField)
                   InputProps={
@@ -1228,7 +1228,7 @@ exports[`components/NewsletterBanner should match snapshot 1`] = `
                   onChange={[Function]}
                   onKeyPress={[Function]}
                   placeholder="Enter your email address"
-                  value={null}
+                  value=""
                 >
                   <WithStyles(ForwardRef(FormControl))
                     className="MuiTextField-root"
@@ -1260,7 +1260,7 @@ exports[`components/NewsletterBanner should match snapshot 1`] = `
                           className="makeStyles-input-3"
                           onChange={[Function]}
                           placeholder="Enter your email address"
-                          value={null}
+                          value=""
                         >
                           <ForwardRef(Input)
                             className="makeStyles-input-3"
@@ -1282,7 +1282,7 @@ exports[`components/NewsletterBanner should match snapshot 1`] = `
                             }
                             onChange={[Function]}
                             placeholder="Enter your email address"
-                            value={null}
+                            value=""
                           >
                             <WithStyles(ForwardRef(InputBase))
                               className="makeStyles-input-3"
@@ -1308,7 +1308,7 @@ exports[`components/NewsletterBanner should match snapshot 1`] = `
                               onChange={[Function]}
                               placeholder="Enter your email address"
                               type="text"
-                              value={null}
+                              value=""
                             >
                               <ForwardRef(InputBase)
                                 className="makeStyles-input-3"
@@ -1340,7 +1340,7 @@ exports[`components/NewsletterBanner should match snapshot 1`] = `
                                 onChange={[Function]}
                                 placeholder="Enter your email address"
                                 type="text"
-                                value={null}
+                                value=""
                               >
                                 <div
                                   className="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-input-3 MuiInputBase-formControl MuiInput-formControl"
@@ -1356,7 +1356,7 @@ exports[`components/NewsletterBanner should match snapshot 1`] = `
                                     placeholder="Enter your email address"
                                     required={false}
                                     type="text"
-                                    value={null}
+                                    value=""
                                   />
                                 </div>
                               </ForwardRef(InputBase)>

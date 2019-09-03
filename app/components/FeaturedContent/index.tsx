@@ -1,5 +1,9 @@
 import Typography from '@material-ui/core/Typography'
-import { Grid } from '@material-ui/core'
+import {
+    Grid,
+    Theme,
+    // Theme
+} from '@material-ui/core'
 import CollectionCard from '../Card/CollectionCard'
 import ArticleCard from '../Card/ArticleCard'
 import {
@@ -8,55 +12,59 @@ import {
     getCommunityURL,
 } from '../../lib/getURLs'
 import CommunityCard from '../Card/CommunityCard'
+import { makeStyles } from '@material-ui/styles'
 
 interface IProps {
     content: any[]
-    Link: React.ReactNode
 }
 
 const FeaturedContent: React.FunctionComponent<IProps> = ({ content }) => {
+    const useStyles = makeStyles((theme: Theme) => ({
+        container: {
+            maxWidth: (1242 / 12) * 9,
+            marginLeft: 'auto',
+            width: '100%',
+            '& > *': {
+                marginBottom: theme.spacing(2),
+            },
+        },
+    }))
+    const classes = useStyles()
     return (
-        <Grid direction="column" sm={9} spacing={2} container={true}>
-            <Grid>
-                <Typography variant="h5">Featured Content</Typography>
-            </Grid>
-            {content.map(({ resource }: { resource: any }) => {
+        <Grid className={classes.container}>
+            <Typography variant="h5">Featured Content</Typography>
+            {content.map(({ resource }: { resource: any }, key) => {
                 switch (resource.__typename) {
                     case 'ArticleDTO': {
                         return (
-                            <Grid item={true}>
-                                <ArticleCard
-                                    {...resource}
-                                    href={getArticleURL(resource)}
-                                />
-                            </Grid>
+                            <ArticleCard
+                                key={key}
+                                {...resource}
+                                href={getArticleURL(resource)}
+                            />
                         )
                     }
 
                     case 'CollectionDTO': {
                         return (
-                            <Grid item={true}>
-                                {' '}
-                                <CollectionCard
-                                    {...resource}
-                                    href={getCollectionURL(resource)}
-                                />
-                            </Grid>
+                            <CollectionCard
+                                key={key}
+                                {...resource}
+                                href={getCollectionURL(resource)}
+                            />
                         )
                     }
 
                     case 'CommunityDTO':
                         return (
-                            <Grid item={true}>
-                                {' '}
-                                <CommunityCard
-                                    {...resource}
-                                    href={getCommunityURL({
-                                        name: resource.communityName,
-                                        id: resource.id,
-                                    })}
-                                />
-                            </Grid>
+                            <CommunityCard
+                                key={key}
+                                {...resource}
+                                href={getCommunityURL({
+                                    name: resource.communityName,
+                                    id: resource.id,
+                                })}
+                            />
                         )
 
                     default: {

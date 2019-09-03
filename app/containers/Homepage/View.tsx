@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import { homePageContentQuery as query } from '../../queries/Homepage'
 import {
     homePageContent,
@@ -17,50 +16,11 @@ import LatestContent from '../../components/LatestContent'
 import NewsletterBanner from '../../components/NewsletterBanner'
 import ImportYourContentBanner from '../../components/ImportYourContentBanner'
 import FeaturedResource from '../../components/FeaturedResource'
-import CuratedCategory, {
-    CuratedCategoriesSection,
-} from '../../components/CuratedCategory'
-import Link from 'next/link'
+import CuratedCategories from '../../components/CuratedCategories'
 import { IShowNotificationPayload } from '../../lib/Epics/ShowNotificationEpic'
 import Head from 'next/head'
-
-// import mockData from "./mock";
-
-const HomePageSection = styled.section`
-    display: flex;
-    flex-direction: column;
-    > :nth-last-child(2),
-    > :last-child {
-        margin-bottom: 0px;
-    }
-`
-
-const HomePageRow = styled.section<{ padContent: boolean }>`
-    display: flex;
-    flex-direction: row;
-    margin-bottom: ${props => props.theme.space[3]}px;
-    > :not(:last-child) {
-        margin-right: ${props => props.theme.space[3]}px;
-    }
-    ${props => props.padContent && props.theme.padContent};
-    @media (max-width: ${props => props.theme.breakpoints[2]}) {
-        flex-direction: column;
-        > :not(:last-child) {
-            margin-right: 0px;
-        }
-    }
-`
-
-const SideRow = styled.section`
-    display: flex;
-    flex-direction: column;
-    > :not(:last-child) {
-        margin-bottom: ${props => props.theme.space[3]}px;
-    }
-    @media (max-width: ${props => props.theme.breakpoints[2]}) {
-        display: none;
-    }
-`
+import { Grid, Theme, Hidden } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
 
 interface IProps {
     isLoggedIn: boolean
@@ -79,198 +39,118 @@ export const HomePageComponent = (props: {
     emailSubscribeAction: (emailAddress: string, callback?: any) => void
     showNotificationAction: (payload: IShowNotificationPayload) => void
     routeChangeAction: any
-}) => (
-    <HomePageSection>
-        <Head>
-            <title>
-                Beginner to Advanced Blockchain & Ethereum Tutorials - Kauri
-            </title>
-            <meta property="og:url" content="https://kauri.io" />
-            <meta
-                property="og:image"
-                content="https://api.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY"
-            />
-            <meta
-                name="description"
-                content={
-                    'Learn Blockchain and Ethereum with Kauri, Articles, Tutorials, Guides, Documentation and Best Practices. Focused on Getting Started, Scaling, Privacy, Storage, Defi, Gaming, UX and much more.'
-                }
-            />
-        </Head>
+}) => {
+    const useStyles = makeStyles((theme: Theme) => ({
+        root: {
+            width: '100%',
+            background: theme.palette.common.white,
+        },
+        section: {
+            maxWidth: 1242,
+            width: '100%',
+            margin: 'auto',
+        },
+        sidebar: {},
+    }))
+    const classes = useStyles()
+    return (
+        <div>
+            <Head>
+                <title>
+                    Beginner to Advanced Blockchain & Ethereum Tutorials - Kauri
+                </title>
+                <meta property="og:url" content="https://kauri.io" />
+                <meta
+                    property="og:image"
+                    content="https://api.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY"
+                />
+                <meta
+                    name="description"
+                    content={
+                        'Learn Blockchain and Ethereum with Kauri, Articles, Tutorials, Guides, Documentation and Best Practices. Focused on Getting Started, Scaling, Privacy, Storage, Defi, Gaming, UX and much more.'
+                    }
+                />
+            </Head>
 
-        {!props.isLoggedIn && <SignupBanner />}
+            {!props.isLoggedIn && <SignupBanner />}
 
-        {props.data.getLatestHomepageDescriptor.rows.map((row, index) => {
-            return (
-                <HomePageRow
-                    key={index}
-                    padContent={Boolean(row && row.main && row.sidebar)}
-                >
-                    {row &&
-                        row.main &&
-                        row.main.map(mainRow => {
-                            if (mainRow) {
-                                switch (mainRow.__typename) {
-                                    case 'Categories': {
-                                        if (mainRow.content) {
+            {props.data.getLatestHomepageDescriptor.rows.map((row, index) => {
+                const hasSidebar = row.sidebar !== null
+                return (
+                    <Grid container={true} className={classes.root} key={index}>
+                        <Grid
+                            container={true}
+                            className={classes.section}
+                            spacing={2}
+                        >
+                            <Grid item={true} md={hasSidebar ? 9 : 12}>
+                                {row.main.map(main => {
+                                    switch (main.type) {
+                                        case 'CATEGORIES':
                                             return (
-                                                <CuratedCategoriesSection
-                                                    key={String(mainRow.type)}
-                                                >
-                                                    {mainRow.content.map(
-                                                        (
-                                                            category,
-                                                            categoryIndex
-                                                        ) =>
-                                                            category && (
-                                                                <CuratedCategory
-                                                                    key={`${category.propertyName}-${categoryIndex}`}
-                                                                    background={
-                                                                        category.image
-                                                                    }
-                                                                    category={String(
-                                                                        category.propertyName
-                                                                    )}
-                                                                    description={String(
-                                                                        category.description
-                                                                    )}
-                                                                    link={
-                                                                        category.link
-                                                                    }
-                                                                />
-                                                            )
-                                                    )}
-                                                </CuratedCategoriesSection>
+                                                <CuratedCategories
+                                                    content={main.content}
+                                                    key="CATEGORIES"
+                                                />
                                             )
-                                        }
-                                    }
+                                        case 'PROMO':
+                                            const resource = main.content.map(
+                                                (content: any) => {
+                                                    if (content !== null) {
+                                                        return content.resource
+                                                    }
+                                                }
+                                            )
 
-                                    case 'Featured': {
-                                        if (mainRow.content) {
+                                            return (
+                                                <FeaturedResource
+                                                    key="featured-resource"
+                                                    {...resource[0]}
+                                                    {...resource[0].owner}
+                                                    id={resource[0].id}
+                                                    userId={
+                                                        resource[0].owner.id
+                                                    }
+                                                    resourceType={resource[0].resourceIdentifier.type.toLowerCase()}
+                                                    ownerResourceType={resource[0].owner.resourceIdentifier.type.toLowerCase()}
+                                                />
+                                            )
+
+                                        case 'FEATURED':
                                             return (
                                                 <FeaturedContent
                                                     key="featured-content"
-                                                    Link={Link}
-                                                    content={mainRow.content}
+                                                    content={main.content}
                                                 />
                                             )
-                                        }
-                                    }
 
-                                    case 'Promo': {
-                                        if (mainRow.__typename === 'Promo') {
-                                            if (
-                                                mainRow.content &&
-                                                mainRow.content.length > 0
-                                            ) {
-                                                const resource = mainRow.content.map(
-                                                    (content: any) => {
-                                                        if (content !== null) {
-                                                            return content.resource
-                                                        }
-                                                    }
-                                                )
-
-                                                // console.log(resource[0]);
-
-                                                return (
-                                                    <FeaturedResource
-                                                        key="featured-resource"
-                                                        {...resource[0]}
-                                                        {...resource[0].owner}
-                                                        id={resource[0].id}
-                                                        userId={
-                                                            resource[0].owner.id
-                                                        }
-                                                        resourceType={resource[0].resourceIdentifier.type.toLowerCase()}
-                                                        ownerResourceType={resource[0].owner.resourceIdentifier.type.toLowerCase()}
-                                                    />
-                                                )
-                                            }
-                                        }
-                                    }
-
-                                    case 'LatestContent': {
-                                        if (
-                                            mainRow.__typename ===
-                                            'LatestContent'
-                                        ) {
-                                            if (
-                                                mainRow.content &&
-                                                mainRow.content.length > 0
-                                            ) {
-                                                const content = mainRow.content
-                                                return (
-                                                    <LatestContent
-                                                        key="latest-content"
-                                                        content={content}
-                                                    />
-                                                )
-                                            }
-                                        }
-                                    }
-
-                                    case 'Newsletter': {
-                                        if (
-                                            mainRow.__typename === 'Newsletter'
-                                        ) {
+                                        case 'LATEST_CONTENT':
+                                            const content = main.content
                                             return (
-                                                <NewsletterBanner
-                                                    key="newsletter-banner"
-                                                    handleSubmit={emailAddress =>
-                                                        props.emailSubscribeAction(
-                                                            emailAddress
-                                                        )
-                                                    }
-                                                    handleError={() => {
-                                                        props.showNotificationAction(
-                                                            {
-                                                                description:
-                                                                    'Please enter a valid email address!',
-                                                                message:
-                                                                    'Invalid Email address',
-                                                                notificationType:
-                                                                    'error',
-                                                            }
-                                                        )
-                                                    }}
+                                                <LatestContent
+                                                    key="latest-content"
+                                                    content={content}
                                                 />
                                             )
-                                        }
-                                    }
 
-                                    case 'Import': {
-                                        if (mainRow.__typename === 'Import') {
-                                            return (
-                                                <ImportYourContentBanner key="import" />
-                                            )
-                                        }
+                                        default:
+                                            return null
                                     }
+                                })}
+                            </Grid>
 
-                                    default: {
-                                        return (
-                                            <p>
-                                                Main row type needs implementing
-                                            </p>
-                                        )
-                                    }
-                                }
-                            }
-                        })}
-                    {row &&
-                        row.sidebar &&
-                        // Filter out latestcontent sidebar
-                        row.sidebar.find(sideBar =>
-                            sideBar
-                                ? sideBar.__typename !== 'LatestContent'
-                                : false
-                        ) && (
-                            <SideRow>
-                                {row &&
-                                    row.sidebar &&
-                                    row.sidebar.map(sideBar => {
-                                        if (sideBar) {
-                                            switch (sideBar.__typename) {
+                            {hasSidebar && (
+                                <Hidden smDown={true}>
+                                    <Grid
+                                        className={classes.sidebar}
+                                        item={true}
+                                        sm={3}
+                                        container={true}
+                                        spacing={2}
+                                        direction="column"
+                                    >
+                                        {row.sidebar.map(sidebar => {
+                                            switch (sidebar.__typename) {
                                                 case 'Actions': {
                                                     return (
                                                         <PublishYourOwnContentCTA
@@ -278,18 +158,18 @@ export const HomePageComponent = (props: {
                                                                 props.isLoggedIn
                                                             }
                                                             key={
-                                                                sideBar.__typename
+                                                                sidebar.__typename
                                                             }
                                                             content={
-                                                                sideBar.content
+                                                                sidebar.content
                                                             }
                                                         />
                                                     )
                                                 }
 
                                                 case 'TopTags': {
-                                                    if (sideBar.content) {
-                                                        const tags = sideBar.content.map(
+                                                    if (sidebar.content) {
+                                                        const tags = sidebar.content.map(
                                                             tag =>
                                                                 (tag &&
                                                                     tag.tagName) ||
@@ -312,12 +192,12 @@ export const HomePageComponent = (props: {
 
                                                 case 'TopContributors': {
                                                     if (
-                                                        sideBar.content &&
-                                                        sideBar.__typename ===
+                                                        sidebar.content &&
+                                                        sidebar.__typename ===
                                                             'TopContributors'
                                                     ) {
-                                                        if (sideBar.content) {
-                                                            const contributors = sideBar.content.map(
+                                                        if (sidebar.content) {
+                                                            const contributors = sidebar.content.map(
                                                                 contributor =>
                                                                     (contributor &&
                                                                         contributor.user && {
@@ -357,24 +237,62 @@ export const HomePageComponent = (props: {
                                                         }
                                                     }
                                                 }
-
-                                                case 'LatestContent': {
-                                                    return null
-                                                }
-
-                                                default: {
-                                                    return null
-                                                }
                                             }
-                                        }
-                                    })}
-                            </SideRow>
-                        )}
-                </HomePageRow>
-            )
-        })}
-    </HomePageSection>
-)
+                                        })}
+                                    </Grid>
+                                </Hidden>
+                            )}
+                        </Grid>
+                    </Grid>
+                )
+            })}
+
+            {props.data.getLatestHomepageDescriptor.rows.map((row, index) => {
+                return (
+                    <Grid container={true} className={classes.root} key={index}>
+                        <Grid item={true} sm={12}>
+                            {row.main.map(main => {
+                                switch (main.type) {
+                                    case 'NEWSLETTER':
+                                        return (
+                                            <NewsletterBanner
+                                                key="newsletter-banner"
+                                                handleSubmit={emailAddress =>
+                                                    props.emailSubscribeAction(
+                                                        emailAddress
+                                                    )
+                                                }
+                                                handleError={() => {
+                                                    props.showNotificationAction(
+                                                        {
+                                                            description:
+                                                                'Please enter a valid email address!',
+                                                            message:
+                                                                'Invalid Email address',
+                                                            notificationType:
+                                                                'error',
+                                                        }
+                                                    )
+                                                }}
+                                            />
+                                        )
+
+                                    case 'IMPORT':
+                                        return (
+                                            <ImportYourContentBanner key="import" />
+                                        )
+
+                                    default:
+                                        return null
+                                }
+                            })}
+                        </Grid>
+                    </Grid>
+                )
+            })}
+        </div>
+    )
+}
 
 const HomePageComponentWrapper: React.FunctionComponent<IProps> = props => {
     return (

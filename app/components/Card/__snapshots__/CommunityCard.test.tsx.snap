@@ -531,7 +531,7 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                       className="makeStyles-desktopMedia-10"
                       data-testid="CommunityCard-1234567890-image"
                       height={152}
-                      image="https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg"
+                      image="https://dev.kauri.io/static/images/DefaultCommunity.png"
                       width={152}
                     >
                       <InView
@@ -544,7 +544,7 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                           className="makeStyles-desktopMedia-10"
                           data-testid="CommunityCard-1234567890-image"
                           height={152}
-                          image="https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg"
+                          image="https://dev.kauri.io/static/images/DefaultCommunity.png"
                           inView={false}
                           width={152}
                         >
@@ -602,7 +602,7 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                             }
                             forwardedRef={[Function]}
                             height={152}
-                            image="https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg"
+                            image="https://dev.kauri.io/static/images/DefaultCommunity.png"
                             inView={false}
                             width={152}
                           >

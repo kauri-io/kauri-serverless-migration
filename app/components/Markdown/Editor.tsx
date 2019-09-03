@@ -32,7 +32,7 @@ const Editor = ({
     text,
     minHeight,
     attributes,
-    setAttributes
+    setAttributes,
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
         editorContainer: {
@@ -122,7 +122,12 @@ const Editor = ({
                     />
                 )}
                 {tab === 1 && <Renderer markdown={text || ''} />}
-                {tab === 2 && <Metadata attributes={attributes} setAttributes={setAttributes}/>}
+                {tab === 2 && (
+                    <Metadata
+                        attributes={attributes}
+                        setAttributes={setAttributes}
+                    />
+                )}
                 {tab === 3 && (
                     <>
                         <Button variant="text" color="primary">
