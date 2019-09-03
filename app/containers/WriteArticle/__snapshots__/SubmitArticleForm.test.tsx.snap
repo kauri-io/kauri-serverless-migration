@@ -28,8 +28,15 @@ exports[`containers/WriteArticle/View should match the snapshot 1`] = `
     />
   </div>
   <Editor
+    attributes={
+      Object {
+        "background": null,
+        "canonical": null,
+      }
+    }
     compact={false}
     onChange={[Function]}
+    setAttributes={[Function]}
     text={null}
     withTabs={true}
     withToolbar={true}

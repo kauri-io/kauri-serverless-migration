@@ -78,7 +78,11 @@ export const HomePageComponent = (props: {
                 const hasSidebar = row.sidebar !== null
                 return (
                     <Grid container={true} className={classes.root} key={index}>
-                        <Grid container={true} className={classes.section} spacing={2}>
+                        <Grid
+                            container={true}
+                            className={classes.section}
+                            spacing={2}
+                        >
                             <Grid item={true} md={hasSidebar ? 9 : 12}>
                                 {row.main.map(main => {
                                     switch (main.type) {
@@ -92,9 +96,7 @@ export const HomePageComponent = (props: {
                                         case 'PROMO':
                                             const resource = main.content.map(
                                                 (content: any) => {
-                                                    if (
-                                                        content !== null
-                                                    ) {
+                                                    if (content !== null) {
                                                         return content.resource
                                                     }
                                                 }
@@ -104,12 +106,10 @@ export const HomePageComponent = (props: {
                                                 <FeaturedResource
                                                     key="featured-resource"
                                                     {...resource[0]}
-                                                    {...resource[0]
-                                                        .owner}
+                                                    {...resource[0].owner}
                                                     id={resource[0].id}
                                                     userId={
-                                                        resource[0]
-                                                            .owner.id
+                                                        resource[0].owner.id
                                                     }
                                                     resourceType={resource[0].resourceIdentifier.type.toLowerCase()}
                                                     ownerResourceType={resource[0].owner.resourceIdentifier.type.toLowerCase()}
@@ -126,10 +126,12 @@ export const HomePageComponent = (props: {
 
                                         case 'LATEST_CONTENT':
                                             const content = main.content
-                                            return  <LatestContent
+                                            return (
+                                                <LatestContent
                                                     key="latest-content"
                                                     content={content}
                                                 />
+                                            )
 
                                         default:
                                             return null
@@ -139,101 +141,105 @@ export const HomePageComponent = (props: {
 
                             {hasSidebar && (
                                 <Hidden smDown={true}>
-                                <Grid
-                                    className={classes.sidebar}
-                                    item={true}
-                                    sm={3}
-                                    container={true}
-                                    spacing={2}
-                                    direction='column'
-                                >
-                                    {row.sidebar.map(sidebar => {
-                                        switch (sidebar.__typename) {
-                                            case 'Actions': {
-                                                return (
-                                                    <PublishYourOwnContentCTA
-                                                        isLoggedIn={
-                                                            props.isLoggedIn
-                                                        }
-                                                        key={sidebar.__typename}
-                                                        content={
-                                                            sidebar.content
-                                                        }
-                                                    />
-                                                )
-                                            }
-
-                                            case 'TopTags': {
-                                                if (sidebar.content) {
-                                                    const tags = sidebar.content.map(
-                                                        tag =>
-                                                            (tag &&
-                                                                tag.tagName) ||
-                                                            ''
-                                                    )
-
+                                    <Grid
+                                        className={classes.sidebar}
+                                        item={true}
+                                        sm={3}
+                                        container={true}
+                                        spacing={2}
+                                        direction="column"
+                                    >
+                                        {row.sidebar.map(sidebar => {
+                                            switch (sidebar.__typename) {
+                                                case 'Actions': {
                                                     return (
-                                                        <TopTags
-                                                            key={'top tags'}
-                                                            routeChangeAction={
-                                                                props.routeChangeAction
+                                                        <PublishYourOwnContentCTA
+                                                            isLoggedIn={
+                                                                props.isLoggedIn
                                                             }
-                                                            tags={
-                                                                tags as string[]
+                                                            key={
+                                                                sidebar.__typename
+                                                            }
+                                                            content={
+                                                                sidebar.content
                                                             }
                                                         />
                                                     )
                                                 }
-                                            }
 
-                                            case 'TopContributors': {
-                                                if (
-                                                    sidebar.content &&
-                                                    sidebar.__typename ===
-                                                    'TopContributors'
-                                                ) {
+                                                case 'TopTags': {
                                                     if (sidebar.content) {
-                                                        const contributors = sidebar.content.map(
-                                                            contributor =>
-                                                                (contributor &&
-                                                                    contributor.user && {
-                                                                        avatar:
-                                                                            contributor
-                                                                                .user
-                                                                                .avatar,
-                                                                        userId: String(
-                                                                            contributor
-                                                                                .user
-                                                                                .id
-                                                                        ),
-                                                                        username:
-                                                                            contributor
-                                                                                .user
-                                                                                .username,
-                                                                    }) || {
-                                                                    avatar: '',
-                                                                    userId: '',
-                                                                    username:
-                                                                        '',
-                                                                }
+                                                        const tags = sidebar.content.map(
+                                                            tag =>
+                                                                (tag &&
+                                                                    tag.tagName) ||
+                                                                ''
                                                         )
 
                                                         return (
-                                                            <TopContributors
-                                                                key={
-                                                                    'top contributors'
+                                                            <TopTags
+                                                                key={'top tags'}
+                                                                routeChangeAction={
+                                                                    props.routeChangeAction
                                                                 }
-                                                                contributors={
-                                                                    contributors
+                                                                tags={
+                                                                    tags as string[]
                                                                 }
                                                             />
                                                         )
                                                     }
                                                 }
+
+                                                case 'TopContributors': {
+                                                    if (
+                                                        sidebar.content &&
+                                                        sidebar.__typename ===
+                                                            'TopContributors'
+                                                    ) {
+                                                        if (sidebar.content) {
+                                                            const contributors = sidebar.content.map(
+                                                                contributor =>
+                                                                    (contributor &&
+                                                                        contributor.user && {
+                                                                            avatar:
+                                                                                contributor
+                                                                                    .user
+                                                                                    .avatar,
+                                                                            userId: String(
+                                                                                contributor
+                                                                                    .user
+                                                                                    .id
+                                                                            ),
+                                                                            username:
+                                                                                contributor
+                                                                                    .user
+                                                                                    .username,
+                                                                        }) || {
+                                                                        avatar:
+                                                                            '',
+                                                                        userId:
+                                                                            '',
+                                                                        username:
+                                                                            '',
+                                                                    }
+                                                            )
+
+                                                            return (
+                                                                <TopContributors
+                                                                    key={
+                                                                        'top contributors'
+                                                                    }
+                                                                    contributors={
+                                                                        contributors
+                                                                    }
+                                                                />
+                                                            )
+                                                        }
+                                                    }
+                                                }
                                             }
-                                        }
-                                    })}
-                                </Grid>
+                                        })}
+                                    </Grid>
                                 </Hidden>
                             )}
                         </Grid>
@@ -272,7 +278,9 @@ export const HomePageComponent = (props: {
                                         )
 
                                     case 'IMPORT':
-                                        return <ImportYourContentBanner key="import" />
+                                        return (
+                                            <ImportYourContentBanner key="import" />
+                                        )
 
                                     default:
                                         return null

@@ -78,7 +78,13 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                 })}
             </Grid>
             <Grid justify="flex-start" spacing={2} container={true}>
-                <Grid container={true} justify="flex-end" sm={6} md={4} item={true}>
+                <Grid
+                    container={true}
+                    justify="flex-end"
+                    sm={6}
+                    md={4}
+                    item={true}
+                >
                     <Link href="/articles" as="/articles">
                         <a>
                             <Button color="primary" variant="outlined">
@@ -87,8 +93,9 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                         </a>
                     </Link>
                 </Grid>
-                <Hidden smDown={true}><Grid item={true}  md={1} /></Hidden>
-                
+                <Hidden smDown={true}>
+                    <Grid item={true} md={1} />
+                </Hidden>
 
                 <Grid sm={6} md={4} item={true}>
                     <Link href="/collections" as="/collections">
