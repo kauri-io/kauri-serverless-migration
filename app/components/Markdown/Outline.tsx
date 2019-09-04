@@ -105,6 +105,9 @@ const Renderer = ({ markdown }) => {
             hr: {
                 component: () => null,
             },
+            table: {
+                component: () => null,
+            },
         },
     }
 
