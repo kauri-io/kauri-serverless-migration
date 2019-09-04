@@ -5,6 +5,7 @@ import {
     searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO,
     searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO,
     searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO,
+    searchResultsAutocomplete_searchAutocomplete_content_resource_PublicUserDTO,
     searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO,
     searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_CommunityDTO,
 } from '../../queries/__generated__/searchResultsAutocomplete'
@@ -16,6 +17,7 @@ import {
 } from '../../lib/getURLs'
 import CollectionCard from '../../components/Card/CollectionCard'
 import CommunityCard from '../../components/Card/CommunityCard'
+import PublicProfileCard from '../../components/Card/PublicProfileCard'
 
 const ResourceSection = styled.section`
     display: flex;
@@ -23,6 +25,7 @@ const ResourceSection = styled.section`
     > div:not(:last-child) {
         margin-bottom: ${props => props.theme.space[2]}px;
     }
+    flex: 1
 `
 interface IElementsBreakdown {
     [key: string]: number
@@ -43,6 +46,11 @@ const isCommunityResource = (
 ): resource is searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO =>
     resource !== 'undefined'
 
+const isProfileResource = (
+    resource: any
+): resource is searchResultsAutocomplete_searchAutocomplete_content_resource_PublicUserDTO =>
+    resource !== 'undefined'
+
 interface IProps {
     totalElementsBreakdown: IElementsBreakdown
     loading: boolean
@@ -60,7 +68,7 @@ interface ISearchResultsAutocompleteData {
 
 class ResourceRows extends React.Component<
     IProps & ISearchResultsAutocompleteData
-> {
+    > {
     render() {
         const values = Object.keys(this.props.totalElementsBreakdown).map(
             key => this.props.totalElementsBreakdown[key]
@@ -71,20 +79,20 @@ class ResourceRows extends React.Component<
                     this.props.data.searchAutocomplete &&
                     Array.isArray(
                         this.props.data &&
-                            this.props.data.searchAutocomplete.content
+                        this.props.data.searchAutocomplete.content
                     ) &&
                     this.props.data.searchAutocomplete.content
                         .filter(
                             resource =>
                                 resource.resourceIdentifier &&
                                 resource.resourceIdentifier.type ===
-                                    this.props.viewedSearchCategory
+                                this.props.viewedSearchCategory
                         )
                         .map(resource => {
                             if (resource) {
                                 switch (
-                                    resource.resourceIdentifier &&
-                                        resource.resourceIdentifier.type
+                                resource.resourceIdentifier &&
+                                resource.resourceIdentifier.type
                                 ) {
                                     case 'ARTICLE':
                                         if (
@@ -134,6 +142,17 @@ class ResourceRows extends React.Component<
                                                 />
                                             )
                                         }
+                                    case 'USER':
+                                        if (isProfileResource(resource.resource)) {
+                                            return <PublicProfileCard
+                                                name={resource.resource.publicUserName}
+                                                articleCount={0}
+                                                collectionCount={0}
+                                                title={resource.resource.userTitle}
+                                                {...resource.resource}
+                                            />
+                                        }
+
                                     default:
                                         return null
                                 }

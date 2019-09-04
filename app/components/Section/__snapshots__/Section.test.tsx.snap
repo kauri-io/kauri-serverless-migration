@@ -2430,7 +2430,7 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "ContentSection__ContentSectionStack-sc-1mwbgto-0",
                   "isStatic": false,
-                  "lastClassName": "heQKhv",
+                  "lastClassName": "dqeWMW",
                   "rules": Array [
                     "background:",
                     [Function],
@@ -2438,7 +2438,7 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                     [Function],
                     " ",
                     [Function],
-                    ";",
+                    ";display:flex;",
                   ],
                 },
                 "displayName": "ContentSection__ContentSectionStack",
@@ -2474,7 +2474,7 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                 ]
               }
               background="tertiaryBackgroundColor"
-              className="ContentSection__ContentSectionStack-sc-1mwbgto-0 heQKhv"
+              className="ContentSection__ContentSectionStack-sc-1mwbgto-0 dqeWMW"
               gap={30}
               gridAutoFlow={
                 Array [
@@ -2497,7 +2497,7 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                   ]
                 }
                 background="tertiaryBackgroundColor"
-                className="ContentSection__ContentSectionStack-sc-1mwbgto-0 heQKhv"
+                className="ContentSection__ContentSectionStack-sc-1mwbgto-0 dqeWMW"
                 gap={30}
                 gridAutoFlow={
                   Array [
@@ -2520,7 +2520,7 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                     ]
                   }
                   background="tertiaryBackgroundColor"
-                  className="ContentSection__ContentSectionStack-sc-1mwbgto-0 heQKhv"
+                  className="ContentSection__ContentSectionStack-sc-1mwbgto-0 dqeWMW"
                   forwardedComponent={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -2634,7 +2634,7 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                   }
                 >
                   <div
-                    className="ContentSection__ContentSectionStack-sc-1mwbgto-0 heQKhv sc-bdVaJa fGetdg"
+                    className="ContentSection__ContentSectionStack-sc-1mwbgto-0 dqeWMW sc-bdVaJa fGetdg"
                   />
                 </StyledComponent>
               </Stack>

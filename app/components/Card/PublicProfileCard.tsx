@@ -29,6 +29,7 @@ export const PublicProfileCardStyles = makeStyles((theme: Theme) => ({
         alignItems: 'center',
     },
     card: {
+        width: '100%',
         display: 'flex',
         padding: theme.spacing(2),
         height: 152,

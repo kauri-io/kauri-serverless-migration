@@ -27,7 +27,6 @@ interface IProps {
 
 const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
     const classes = useStyles()
-    console.log(classes)
     return (
         <Grid direction="column" container={true} className={classes.container}>
             <Typography variant="h5">Latest Content</Typography>
