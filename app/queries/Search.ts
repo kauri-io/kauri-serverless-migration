@@ -73,6 +73,13 @@ export const searchResultsAutocomplete = gql`
                     type
                 }
                 resource {
+                    ... on PublicUserDTO {
+                        id
+                        username
+                        publicUserName : name
+                        avatar
+                        userTitle : title
+                    }
                     ... on ArticleDTO {
                         id
                         version

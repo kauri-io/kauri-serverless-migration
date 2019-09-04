@@ -20,8 +20,32 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resourceId
   type: ResourceTypeInput;
 }
 
+export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityInvitationDTO {
+  __typename: "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+}
+
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  /**
+   * User title
+   */
+  userTitle: string | null;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_voteResult {
@@ -500,7 +524,7 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_C
   approvedId: (searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO_approvedId | null)[] | null;
 }
 
-export type searchResultsAutocomplete_searchAutocomplete_content_resource = searchResultsAutocomplete_searchAutocomplete_content_resource_PublicUserDTO | searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO | searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO | searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO;
+export type searchResultsAutocomplete_searchAutocomplete_content_resource = searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityInvitationDTO | searchResultsAutocomplete_searchAutocomplete_content_resource_PublicUserDTO | searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO | searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO | searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO;
 
 export interface searchResultsAutocomplete_searchAutocomplete_content {
   __typename: "SearchResultDTO";

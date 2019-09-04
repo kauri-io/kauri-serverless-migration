@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import withLoading from '../../../lib/with-loading'
 import withPagination from '../../../lib/with-pagination'
+import config from '../../../config'
 
 interface IState {
     app: {
@@ -26,7 +27,11 @@ export default compose(
     graphql(getAllCommunities, {
         name: QUERY_NAME,
         options: () => ({
-            variables: {},
+            variables: {
+                filter: {
+                    mustNotIncludeUserId: config.testingAccounts,
+                },
+            },
         }),
     }),
     withLoading()
