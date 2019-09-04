@@ -2294,7 +2294,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                     "useStyles": [Function],
                                   },
                                   "props": Object {
-                                    "aria-type": "title",
+                                    "aria-label": "title",
                                     "gutterBottom": true,
                                     "variant": "h4",
                                   },
@@ -2598,7 +2598,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                     "useStyles": [Function],
                                   },
                                   "props": Object {
-                                    "aria-type": "title",
+                                    "aria-label": "title",
                                     "gutterBottom": true,
                                     "variant": "h5",
                                   },
@@ -2902,7 +2902,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                     "useStyles": [Function],
                                   },
                                   "props": Object {
-                                    "aria-type": "title",
+                                    "aria-label": "title",
                                     "gutterBottom": true,
                                     "variant": "h6",
                                   },
@@ -3206,7 +3206,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                     "useStyles": [Function],
                                   },
                                   "props": Object {
-                                    "aria-type": "title",
+                                    "aria-label": "title",
                                     "gutterBottom": true,
                                     "paragraph": true,
                                     "variant": "h6",
@@ -3511,7 +3511,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                     "useStyles": [Function],
                                   },
                                   "props": Object {
-                                    "aria-type": "title",
+                                    "aria-label": "title",
                                     "gutterBottom": true,
                                     "paragraph": true,
                                     "variant": "h6",
@@ -3816,7 +3816,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                     "useStyles": [Function],
                                   },
                                   "props": Object {
-                                    "aria-type": "title",
+                                    "aria-label": "title",
                                     "gutterBottom": true,
                                     "paragraph": true,
                                     "variant": "h6",

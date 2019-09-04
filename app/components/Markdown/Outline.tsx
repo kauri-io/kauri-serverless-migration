@@ -2,19 +2,29 @@ import React, { useEffect, useState } from 'react'
 import ReactMarkdown from 'markdown-to-jsx'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles, Theme } from '@material-ui/core'
+import Loading from '../Loading'
 
-const Renderer = ({ markdown }) => {
-    const elList = document.querySelectorAll('[aria-type="title"]')
+const OFFSET = 80
+
+const Renderer = ({ markdown, withComments, commentsCount }) => {
+    const elList = document.querySelectorAll('[aria-label="title"]')
+    const [loading, setLoading] = useState(true)
     const [selected, setSelected] = useState(0)
+
     const handleScroll = () => {
+        const checkpoint = window.scrollY + OFFSET
         for (let i = 0; i < elList.length; i++) {
-            if (elList[i.toString()].offsetTop > window.scrollY) {
+            const heading = elList[i.toString()]
+            if (
+                checkpoint > heading.offsetTop - 50 &&
+                checkpoint < heading.offsetTop + 50
+            ) {
                 setSelected(i)
-                return
             }
         }
     }
     useEffect(() => {
+        setTimeout(() => setLoading(false), 1000)
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
@@ -29,7 +39,7 @@ const Renderer = ({ markdown }) => {
     const Heading = ({ children, indent }) => {
         const titleIndex = getTitleIndex()
         const targetEl = elList[titleIndex.toString()]
-        const offsetTop = targetEl.offsetTop - 80
+        const offsetTop = targetEl.offsetTop - OFFSET
         const inView = titleIndex === selected
 
         const useStyles = makeStyles((theme: Theme) => ({
@@ -108,15 +118,27 @@ const Renderer = ({ markdown }) => {
             table: {
                 component: () => null,
             },
+            br: {
+                component: () => null,
+            },
         },
     }
 
     return (
         <div>
-            <Typography align="left" variant="h6">
-                Contents
-            </Typography>
-            <ReactMarkdown options={options}>{markdown}</ReactMarkdown>
+            {loading ? (
+                <Loading />
+            ) : (
+                <>
+                    <Typography align="left" variant="h6">
+                        Contents
+                    </Typography>
+                    <ReactMarkdown options={options}>{markdown}</ReactMarkdown>
+                    {withComments && (
+                        <Heading indent={0}>Comments ({commentsCount})</Heading>
+                    )}
+                </>
+            )}
         </div>
     )
 }

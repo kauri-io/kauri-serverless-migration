@@ -109,7 +109,7 @@ const Renderer = ({ markdown }) => {
                 props: {
                     gutterBottom: true,
                     variant: 'h4',
-                    'aria-type': 'title',
+                    'aria-label': 'title',
                 },
             },
             h2: {
@@ -117,7 +117,7 @@ const Renderer = ({ markdown }) => {
                 props: {
                     gutterBottom: true,
                     variant: 'h5',
-                    'aria-type': 'title',
+                    'aria-label': 'title',
                 },
             },
             h3: {
@@ -125,7 +125,7 @@ const Renderer = ({ markdown }) => {
                 props: {
                     gutterBottom: true,
                     variant: 'h6',
-                    'aria-type': 'title',
+                    'aria-label': 'title',
                 },
             },
             h4: {
@@ -133,7 +133,7 @@ const Renderer = ({ markdown }) => {
                 props: {
                     gutterBottom: true,
                     variant: 'h6',
-                    'aria-type': 'title',
+                    'aria-label': 'title',
                     paragraph: true,
                 },
             },
@@ -142,7 +142,7 @@ const Renderer = ({ markdown }) => {
                 props: {
                     gutterBottom: true,
                     variant: 'h6',
-                    'aria-type': 'title',
+                    'aria-label': 'title',
                     paragraph: true,
                 },
             },
@@ -151,7 +151,7 @@ const Renderer = ({ markdown }) => {
                 props: {
                     gutterBottom: true,
                     variant: 'h6',
-                    'aria-type': 'title',
+                    'aria-label': 'title',
                     paragraph: true,
                 },
             },

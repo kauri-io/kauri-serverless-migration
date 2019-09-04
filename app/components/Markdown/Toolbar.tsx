@@ -25,16 +25,18 @@ const Toolbar = ({ format, compact, openModalAction, closeModalAction }) => {
     }
 
     useEffect(() => {
-        uppy = initUppy({
-            allowGifs: true,
-            trigger: '#article-image-upload',
-        })
-        uppy.on('upload-success', (_data, data2) => {
-            const url = `https://${config.gateway}:443/ipfs/${data2.body.hash}`
-            format('image', url)
-        })
-        return () => {
-            uppy.close()
+        if (!compact) {
+            uppy = initUppy({
+                allowGifs: true,
+                trigger: '#article-image-upload',
+            })
+            uppy.on('upload-success', (_data, data2) => {
+                const url = `https://${config.gateway}:443/ipfs/${data2.body.hash}`
+                format('image', url)
+            })
+            return () => {
+                uppy.close()
+            }
         }
     }, [])
     const useStyles = makeStyles((theme: Theme) => ({

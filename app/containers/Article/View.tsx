@@ -178,6 +178,11 @@ const ArticleComp = ({
                             {process.browser && (
                                 <ArticleOutline
                                     markdown={JSON.parse(content).markdown}
+                                    withComments={true}
+                                    commentsCount={
+                                        (comments && comments.content.length) ||
+                                        0
+                                    }
                                 />
                             )}
                         </div>
