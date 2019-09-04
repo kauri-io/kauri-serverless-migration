@@ -12,8 +12,7 @@ describe('components/Card/ArticleCard', () => {
             version: 123,
             title: 'Article',
             author: {
-                avatar:
-                'https://dev.kauri.io/static/images/DefaultArticle.png',
+                avatar: 'https://dev.kauri.io/static/images/DefaultArticle.png',
                 id: '0x12...',
                 name: 'test name',
                 username: 'test username',

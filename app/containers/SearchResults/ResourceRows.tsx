@@ -25,7 +25,7 @@ const ResourceSection = styled.section`
     > div:not(:last-child) {
         margin-bottom: ${props => props.theme.space[2]}px;
     }
-    flex: 1
+    flex: 1;
 `
 interface IElementsBreakdown {
     [key: string]: number
@@ -68,7 +68,7 @@ interface ISearchResultsAutocompleteData {
 
 class ResourceRows extends React.Component<
     IProps & ISearchResultsAutocompleteData
-    > {
+> {
     render() {
         const values = Object.keys(this.props.totalElementsBreakdown).map(
             key => this.props.totalElementsBreakdown[key]
@@ -79,20 +79,20 @@ class ResourceRows extends React.Component<
                     this.props.data.searchAutocomplete &&
                     Array.isArray(
                         this.props.data &&
-                        this.props.data.searchAutocomplete.content
+                            this.props.data.searchAutocomplete.content
                     ) &&
                     this.props.data.searchAutocomplete.content
                         .filter(
                             resource =>
                                 resource.resourceIdentifier &&
                                 resource.resourceIdentifier.type ===
-                                this.props.viewedSearchCategory
+                                    this.props.viewedSearchCategory
                         )
                         .map(resource => {
                             if (resource) {
                                 switch (
-                                resource.resourceIdentifier &&
-                                resource.resourceIdentifier.type
+                                    resource.resourceIdentifier &&
+                                        resource.resourceIdentifier.type
                                 ) {
                                     case 'ARTICLE':
                                         if (
@@ -143,14 +143,24 @@ class ResourceRows extends React.Component<
                                             )
                                         }
                                     case 'USER':
-                                        if (isProfileResource(resource.resource)) {
-                                            return <PublicProfileCard
-                                                name={resource.resource.publicUserName}
-                                                articleCount={0}
-                                                collectionCount={0}
-                                                title={resource.resource.userTitle}
-                                                {...resource.resource}
-                                            />
+                                        if (
+                                            isProfileResource(resource.resource)
+                                        ) {
+                                            return (
+                                                <PublicProfileCard
+                                                    name={
+                                                        resource.resource
+                                                            .publicUserName
+                                                    }
+                                                    articleCount={0}
+                                                    collectionCount={0}
+                                                    title={
+                                                        resource.resource
+                                                            .userTitle
+                                                    }
+                                                    {...resource.resource}
+                                                />
+                                            )
                                         }
 
                                     default:

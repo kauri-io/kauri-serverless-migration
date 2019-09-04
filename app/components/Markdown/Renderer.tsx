@@ -109,21 +109,49 @@ const Renderer = ({ markdown }) => {
                 props: {
                     gutterBottom: true,
                     variant: 'h4',
+                    'aria-label': 'title',
                 },
             },
             h2: {
                 component: Typography,
-                props: { gutterBottom: true, variant: 'h6' },
+                props: {
+                    gutterBottom: true,
+                    variant: 'h5',
+                    'aria-label': 'title',
+                },
             },
             h3: {
                 component: Typography,
-                props: { gutterBottom: true, variant: 'subtitle1' },
+                props: {
+                    gutterBottom: true,
+                    variant: 'h6',
+                    'aria-label': 'title',
+                },
             },
             h4: {
                 component: Typography,
                 props: {
                     gutterBottom: true,
-                    variant: 'caption',
+                    variant: 'h6',
+                    'aria-label': 'title',
+                    paragraph: true,
+                },
+            },
+            h5: {
+                component: Typography,
+                props: {
+                    gutterBottom: true,
+                    variant: 'h6',
+                    'aria-label': 'title',
+                    paragraph: true,
+                },
+            },
+            h6: {
+                component: Typography,
+                props: {
+                    gutterBottom: true,
+                    variant: 'h6',
+                    'aria-label': 'title',
                     paragraph: true,
                 },
             },
