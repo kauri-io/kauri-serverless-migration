@@ -40,7 +40,6 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             position: 'fixed',
         },
         floaterRight: {
-            alignItems: 'center',
             display: 'flex',
             flexDirection: 'column',
             height: '100%',

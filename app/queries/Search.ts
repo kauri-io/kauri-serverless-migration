@@ -76,9 +76,9 @@ export const searchResultsAutocomplete = gql`
                     ... on PublicUserDTO {
                         id
                         username
-                        publicUserName : name
+                        publicUserName: name
                         avatar
-                        userTitle : title
+                        userTitle: title
                     }
                     ... on ArticleDTO {
                         id

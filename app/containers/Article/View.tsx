@@ -1,7 +1,7 @@
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
-import ArticleOutline from './components/ArticleOutline'
+import ArticleOutline from '../../components/Markdown/Outline'
 import Image from '../../components/Image'
 import Avatar from '../../components/Avatar'
 import ArticleActions from './components/ArticleActions'
@@ -175,7 +175,11 @@ const ArticleComp = ({
                 <Hidden smDown={true}>
                     <Grid item={true} xs={false} sm={2}>
                         <div className={classes.floaterRight}>
-                            <ArticleOutline />
+                            {process.browser && (
+                                <ArticleOutline
+                                    markdown={JSON.parse(content).markdown}
+                                />
+                            )}
                         </div>
                     </Grid>
                 </Hidden>

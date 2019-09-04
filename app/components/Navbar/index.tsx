@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) => {
             flexGrow: 1,
         },
         inputInput: {
-            padding: theme.spacing(1, 1, 1, 7),
+            padding: theme.spacing(1, 2),
             transition: theme.transitions.create('width'),
             width: '100%',
             [theme.breakpoints.up('md')]: {
