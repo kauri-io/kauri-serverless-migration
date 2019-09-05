@@ -68,7 +68,7 @@ interface ISearchResultsAutocompleteData {
 
 class ResourceRows extends React.Component<
     IProps & ISearchResultsAutocompleteData
-    > {
+> {
     render() {
         const values = Object.keys(this.props.totalElementsBreakdown).map(
             key => this.props.totalElementsBreakdown[key]
@@ -79,20 +79,20 @@ class ResourceRows extends React.Component<
                     this.props.data.searchAutocomplete &&
                     Array.isArray(
                         this.props.data &&
-                        this.props.data.searchAutocomplete.content
+                            this.props.data.searchAutocomplete.content
                     ) &&
                     this.props.data.searchAutocomplete.content
                         .filter(
                             resource =>
                                 resource.resourceIdentifier &&
                                 resource.resourceIdentifier.type ===
-                                this.props.viewedSearchCategory
+                                    this.props.viewedSearchCategory
                         )
                         .map(resource => {
                             if (resource) {
                                 switch (
-                                resource.resourceIdentifier &&
-                                resource.resourceIdentifier.type
+                                    resource.resourceIdentifier &&
+                                        resource.resourceIdentifier.type
                                 ) {
                                     case 'ARTICLE':
                                         if (
