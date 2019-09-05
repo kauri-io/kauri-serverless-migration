@@ -2,14 +2,19 @@ import React, { Component, Fragment } from 'react'
 import Head from 'next/head'
 import CommunityCard from '../../../components/Card/CommunityCard'
 import Loading from '../../../components/Loading'
-import { searchCommunities_searchCommunities } from '../../../queries/__generated__/searchCommunities'
+import {
+    searchResultsAutocomplete_searchAutocomplete_content,
+    searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO,
+} from '../../../queries/__generated__/searchResultsAutocomplete'
 import { getCommunityURL } from '../../../lib/getURLs'
 import { Grid, Container, withStyles } from '@material-ui/core'
 
 interface IProps {
     CommunityQuery: {
         error: string
-        searchCommunities?: searchCommunities_searchCommunities
+        searchAutocomplete: {
+            content: searchResultsAutocomplete_searchAutocomplete_content[]
+        }
     }
     hostName: string
     routeChangeAction(route: string): void
@@ -22,7 +27,7 @@ class Communities extends Component<IProps> {
             return null
         } // TODO replace with an error message if exists
 
-        const { searchCommunities } = this.props.CommunityQuery
+        const { searchAutocomplete } = this.props.CommunityQuery
 
         return (
             <Fragment>
@@ -41,32 +46,28 @@ class Communities extends Component<IProps> {
                     />
                 </Head>
                 <Container>
-                    {searchCommunities ? (
+                    {searchAutocomplete ? (
                         <Grid
                             className={this.props.classes.grid}
                             container
                             spacing={3}
                         >
-                            {searchCommunities &&
-                                searchCommunities.content &&
-                                searchCommunities.content.map(
-                                    community =>
-                                        community && (
-                                            <Grid
+                            {searchAutocomplete &&
+                                searchAutocomplete.content &&
+                                searchAutocomplete.content.map(item => {
+                                    const community = item.resource as searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO
+                                    return (
+                                        <Grid key={community.id} item xs={12}>
+                                            <CommunityCard
+                                                {...community}
                                                 key={community.id}
-                                                item
-                                                xs={12}
-                                            >
-                                                <CommunityCard
-                                                    {...community}
-                                                    key={community.id}
-                                                    href={getCommunityURL(
-                                                        community
-                                                    )}
-                                                />
-                                            </Grid>
-                                        )
-                                )}
+                                                href={getCommunityURL(
+                                                    community
+                                                )}
+                                            />
+                                        </Grid>
+                                    )
+                                })}
                         </Grid>
                     ) : (
                         <Loading />
