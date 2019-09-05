@@ -40,8 +40,9 @@ interface IProps {
     hostName: string
     routeChangeAction: (route: string) => void
     article: {
-        id
-        title
+        id: string
+        title: string
+        version: number
     }
 }
 

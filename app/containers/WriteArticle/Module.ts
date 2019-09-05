@@ -31,7 +31,7 @@ import {
 } from '../../queries/__generated__/editArticleVersion'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { getArticleURL } from '../../lib/getURLs'
-// import { clearCachedItem } from '../../lib/editor-cache'
+import { clearCachedItem } from '../../lib/editor-cache'
 
 interface IGetArticleResult {
     getArticle: {
@@ -194,7 +194,9 @@ export const submitArticleEpic: Epic<
                             },
                         })
                     ),
-                    // tap(h => console.log(h)),
+                    tap(() => {
+                        clearCachedItem('unsaved-article')
+                    }),
                     mergeMap(({ data: { getArticle } }) => {
                         if (getArticle) {
                             return typeof selfPublish !== 'undefined'
@@ -288,7 +290,6 @@ export const submitArticleVersionEpic: Epic<
                             ) || ''
                         )
                     ),
-                    tap(console.log),
                     mergeMap(({ data: { getEvent: { output } } }) =>
                         apolloClient.query<IGetArticleResult>({
                             fetchPolicy: 'network-only',
@@ -300,6 +301,9 @@ export const submitArticleVersionEpic: Epic<
                         })
                     ),
                     // tap(h => console.log(h)),
+                    tap(({ data: { getArticle } }) => {
+                        clearCachedItem(getArticle.id)
+                    }),
                     mergeMap(({ data: { getArticle } }) =>
                         typeof selfPublish !== 'undefined'
                             ? of(
@@ -432,7 +436,10 @@ export const editArticleEpic: Epic<
                             },
                         })
                     ),
-
+                    tap(() => {
+                        const key = !id ? 'unsaved-article' : id
+                        clearCachedItem(key)
+                    }),
                     mergeMap<any, any>(({ data: { getArticle } }) =>
                         typeof selfPublish !== 'undefined'
                             ? of(
@@ -493,6 +500,10 @@ export const draftArticleEpic: Epic<any, any, {}, IDependencies> = (
                     analytics.track('Create Draft', {
                         category: 'article_actions',
                     })
+                }),
+                tap(() => {
+                    const key = 'unsaved-article'
+                    clearCachedItem(key)
                 }),
                 mergeMap(({ data: { getEvent: { output } } }) =>
                     merge(

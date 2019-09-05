@@ -61,6 +61,7 @@ const ArticleComp = ({
     const author = contributors && contributors[0]
     const canonicalUrl = attributes.canonical
     return (
+
         <>  
             {canonicalUrl && canonicalUrl.length > 0 &&
                 <Head>
@@ -129,6 +130,7 @@ const ArticleComp = ({
                                 article={{
                                     id,
                                     title,
+                                    version,
                                 }}
                                 userId={userId}
                                 id={String(id)}

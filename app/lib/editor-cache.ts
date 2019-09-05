@@ -2,11 +2,11 @@ const ARTICLE_CACHE = 'article-editor-cache'
 
 let cache = {}
 
-// export const clearCachedItem = key => {
-//     cache = JSON.parse(window.localStorage.getItem(ARTICLE_CACHE) || '{}')
-//     delete cache[key]
-//     window.localStorage.setItem(ARTICLE_CACHE, JSON.stringify(cache))
-// }
+export const clearCachedItem = key => {
+    cache = JSON.parse(window.localStorage.getItem(ARTICLE_CACHE) || '{}')
+    delete cache[key]
+    window.localStorage.setItem(ARTICLE_CACHE, JSON.stringify(cache))
+}
 
 export const getArticleCachedItem = key => {
     cache = JSON.parse(window.localStorage.getItem(ARTICLE_CACHE) || '{}')

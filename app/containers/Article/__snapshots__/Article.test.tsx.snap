@@ -1996,6 +1996,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                     Object {
                                       "id": "1231",
                                       "title": "test title 1",
+                                      "version": 1,
                                     }
                                   }
                                   hostName="test hostname"
@@ -2420,12 +2421,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                               title="Update article"
                                             >
                                               <Link
-                                                as="/article/1231/vundefined/update-article"
-                                                href="/app/update-article?id=1231&version=undefined"
+                                                as="/article/1231/v1/update-article"
+                                                href="/app/update-article?id=1231&version=1"
                                                 prefetch={true}
                                               >
                                                 <a
-                                                  href="/article/1231/vundefined/update-article"
+                                                  href="/article/1231/v1/update-article"
                                                   onClick={[Function]}
                                                   onMouseEnter={[Function]}
                                                 >
@@ -2478,7 +2479,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                   title="Update article"
                                                 >
                                                   <a
-                                                    href="/article/1231/vundefined/update-article"
+                                                    href="/article/1231/v1/update-article"
                                                   >
                                                     <svg
                                                       aria-hidden="true"
