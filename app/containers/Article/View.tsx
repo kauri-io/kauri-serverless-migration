@@ -1,7 +1,7 @@
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
-import ArticleOutline from './components/ArticleOutline'
+import ArticleOutline from '../../components/Markdown/Outline'
 import Image from '../../components/Image'
 import Avatar from '../../components/Avatar'
 import ArticleActions from './components/ArticleActions'
@@ -15,6 +15,7 @@ import VoteWidget from './components/VoteWidget'
 import slugify from 'slugify'
 import { getArticleURL } from '../../lib/getURLs'
 import Comments from './components/ArticleComments'
+import Head from 'next/head'
 
 interface IProps {
     id: string
@@ -58,8 +59,17 @@ const ArticleComp = ({
 }: IProps) => {
     const classes = ArticleStyles({})
     const author = contributors && contributors[0]
+    const canonicalUrl = attributes.canonical
     return (
-        <>
+        <>  
+            {canonicalUrl && canonicalUrl.length > 0 &&
+                <Head>
+                    <link
+                        rel="canonical"
+                        href={canonicalUrl}
+                    />
+                </Head>
+            }
             <Grid
                 className={classes.root}
                 container={true}
@@ -175,7 +185,16 @@ const ArticleComp = ({
                 <Hidden smDown={true}>
                     <Grid item={true} xs={false} sm={2}>
                         <div className={classes.floaterRight}>
-                            <ArticleOutline />
+                            {process.browser && (
+                                <ArticleOutline
+                                    markdown={JSON.parse(content).markdown}
+                                    withComments={true}
+                                    commentsCount={
+                                        (comments && comments.content.length) ||
+                                        0
+                                    }
+                                />
+                            )}
                         </div>
                     </Grid>
                 </Hidden>

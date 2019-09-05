@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="154px" height="154px" viewBox="0 0 154 154" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Collection</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="-2.84217094e-14" y="0" width="154" height="154" rx="4"></rect>
+        <path d="M92.3395843,123.81273 C80.0462056,116.207642 51.0207768,78.4357008 18,63.8436538 C52.342587,41.4867764 76.586653,37.2675148 81.9364486,36 C103.969338,54.3355565 121.15831,80.9707304 130.612245,112.314809 C113.619097,120.954745 98.8915201,127.85836 92.3395843,123.81273" id="path-3"></path>
+        <filter x="-21.3%" y="-27.0%" width="142.6%" height="153.9%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.682352941   0 0 0 0 0.160784314  0 0 0 0.4 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Collection" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Bitmap-Copy-8">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+            <g id="Fill-27" mask="url(#mask-2)">
+                <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                <use fill="#FFAE29" fill-rule="evenodd" xlink:href="#path-3"></use>
+            </g>
+        </g>
+        <g id="24px-(1)" transform="translate(62.000000, 65.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M11.7142857,0.571428571 L3.14285714,0.571428571 C1.57142857,0.571428571 0.3,1.85714286 0.3,3.42857143 L0.285714286,20.5714286 C0.285714286,22.1428571 1.57142857,23.4285714 3.14285714,23.4285714 L26,23.4285714 C27.5714286,23.4285714 28.8571429,22.1428571 28.8571429,20.5714286 L28.8571429,6.28571429 C28.8571429,4.71428571 27.5714286,3.42857143 26,3.42857143 L14.5714286,3.42857143 L11.7142857,0.571428571 Z" id="Path"></path>
+        </g>
+    </g>
+</svg>

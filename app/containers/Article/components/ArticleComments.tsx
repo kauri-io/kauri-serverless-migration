@@ -36,8 +36,12 @@ export default ({
     const [comment, setComment] = useState('')
     const classes = useStyles()
     return (
-        <>
-            <Typography className={classes.title} variant="h6">
+        <div>
+            <Typography
+                aria-label="title"
+                className={classes.title}
+                variant="h6"
+            >
                 {content.length} Comment{content.length !== 1 ? 's' : ''}
             </Typography>
             <div className={classes.container}>
@@ -83,6 +87,6 @@ export default ({
                     <Comment {...comment} />
                 ))}
             </div>
-        </>
+        </div>
     )
 }

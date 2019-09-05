@@ -25,7 +25,7 @@ const ResourceSection = styled.section`
     > div:not(:last-child) {
         margin-bottom: ${props => props.theme.space[2]}px;
     }
-    flex: 1
+    flex: 1;
 `
 interface IElementsBreakdown {
     [key: string]: number
@@ -143,14 +143,24 @@ class ResourceRows extends React.Component<
                                             )
                                         }
                                     case 'USER':
-                                        if (isProfileResource(resource.resource)) {
-                                            return <PublicProfileCard
-                                                name={resource.resource.publicUserName}
-                                                articleCount={0}
-                                                collectionCount={0}
-                                                title={resource.resource.userTitle}
-                                                {...resource.resource}
-                                            />
+                                        if (
+                                            isProfileResource(resource.resource)
+                                        ) {
+                                            return (
+                                                <PublicProfileCard
+                                                    name={
+                                                        resource.resource
+                                                            .publicUserName
+                                                    }
+                                                    articleCount={0}
+                                                    collectionCount={0}
+                                                    title={
+                                                        resource.resource
+                                                            .userTitle
+                                                    }
+                                                    {...resource.resource}
+                                                />
+                                            )
                                         }
 
                                     default:
