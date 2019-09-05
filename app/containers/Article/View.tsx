@@ -15,6 +15,7 @@ import VoteWidget from './components/VoteWidget'
 import slugify from 'slugify'
 import { getArticleURL } from '../../lib/getURLs'
 import Comments from './components/ArticleComments'
+import Head from 'next/head'
 
 interface IProps {
     id: string
@@ -58,8 +59,17 @@ const ArticleComp = ({
 }: IProps) => {
     const classes = ArticleStyles({})
     const author = contributors && contributors[0]
+    const canonicalUrl = attributes.canonical
     return (
-        <>
+        <>  
+            {canonicalUrl && canonicalUrl.length > 0 &&
+                <Head>
+                    <link
+                        rel="canonical"
+                        href={canonicalUrl}
+                    />
+                </Head>
+            }
             <Grid
                 className={classes.root}
                 container={true}
