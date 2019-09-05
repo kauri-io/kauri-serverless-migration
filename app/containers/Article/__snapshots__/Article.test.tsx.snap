@@ -1613,7 +1613,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                           "componentStyle": ComponentStyle {
                                                             "componentId": "Image__Img-sc-1jpuda7-0",
                                                             "isStatic": false,
-                                                            "lastClassName": "ewhrzK",
+                                                            "lastClassName": "fFzdZc",
                                                             "rules": Array [
                                                               "height:",
                                                               [Function],
@@ -10553,104 +10553,13 @@ exports[`containers/Article should match snapshot 1`] = `
                                                       href="/article?article_id=1232"
                                                       prefetch={true}
                                                     >
-                                                      <ForwardRef
-                                                        borderRadius="4px"
+                                                      <img
                                                         className="makeStyles-mobileMedia-216"
                                                         data-testid="ArticleCard-1232-image"
-                                                        height={76}
-                                                        image="https://dev.kauri.io/static/images/DefaultArticle.png"
                                                         onClick={[Function]}
                                                         onMouseEnter={[Function]}
-                                                        width={76}
-                                                      >
-                                                        <InView
-                                                          rootMargin="200px 0px"
-                                                          threshold={0}
-                                                          triggerOnce={true}
-                                                        >
-                                                          <Image__Img
-                                                            borderRadius="4px"
-                                                            className="makeStyles-mobileMedia-216"
-                                                            data-testid="ArticleCard-1232-image"
-                                                            height={76}
-                                                            image="https://dev.kauri.io/static/images/DefaultArticle.png"
-                                                            inView={false}
-                                                            onClick={[Function]}
-                                                            onMouseEnter={[Function]}
-                                                            width={76}
-                                                          >
-                                                            <StyledComponent
-                                                              borderRadius="4px"
-                                                              className="makeStyles-mobileMedia-216"
-                                                              data-testid="ArticleCard-1232-image"
-                                                              forwardedComponent={
-                                                                Object {
-                                                                  "$$typeof": Symbol(react.forward_ref),
-                                                                  "attrs": Array [],
-                                                                  "componentStyle": ComponentStyle {
-                                                                    "componentId": "Image__Img-sc-1jpuda7-0",
-                                                                    "isStatic": false,
-                                                                    "lastClassName": "ewhrzK",
-                                                                    "rules": Array [
-                                                                      "height:",
-                                                                      [Function],
-                                                                      ";width:",
-                                                                      [Function],
-                                                                      ";",
-                                                                      [Function],
-                                                                      ";background:",
-                                                                      [Function],
-                                                                      ";background-size:cover;opacity:",
-                                                                      [Function],
-                                                                      ";transition:opacity ",
-                                                                      [Function],
-                                                                      "s;",
-                                                                      [Function],
-                                                                      ";",
-                                                                      [Function],
-                                                                      ";position:",
-                                                                      [Function],
-                                                                      ";",
-                                                                      [Function],
-                                                                      ";",
-                                                                      [Function],
-                                                                      ";",
-                                                                      [Function],
-                                                                      " ",
-                                                                      [Function],
-                                                                      ";",
-                                                                    ],
-                                                                  },
-                                                                  "displayName": "Image__Img",
-                                                                  "foldedComponentIds": Array [],
-                                                                  "render": [Function],
-                                                                  "styledComponentId": "Image__Img-sc-1jpuda7-0",
-                                                                  "target": "div",
-                                                                  "toString": [Function],
-                                                                  "warnTooManyClasses": [Function],
-                                                                  "withComponent": [Function],
-                                                                }
-                                                              }
-                                                              forwardedRef={[Function]}
-                                                              height={76}
-                                                              image="https://dev.kauri.io/static/images/DefaultArticle.png"
-                                                              inView={false}
-                                                              onClick={[Function]}
-                                                              onMouseEnter={[Function]}
-                                                              width={76}
-                                                            >
-                                                              <div
-                                                                className="makeStyles-mobileMedia-216 Image__Img-sc-1jpuda7-0 ifAOXd"
-                                                                data-testid="ArticleCard-1232-image"
-                                                                height={76}
-                                                                onClick={[Function]}
-                                                                onMouseEnter={[Function]}
-                                                                width={76}
-                                                              />
-                                                            </StyledComponent>
-                                                          </Image__Img>
-                                                        </InView>
-                                                      </ForwardRef>
+                                                        src="/static/images/DefaultArticle.svg"
+                                                      />
                                                     </Link>
                                                   </div>
                                                   <Link
@@ -11083,7 +10992,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                               "componentStyle": ComponentStyle {
                                                                                 "componentId": "Image__Img-sc-1jpuda7-0",
                                                                                 "isStatic": false,
-                                                                                "lastClassName": "ewhrzK",
+                                                                                "lastClassName": "fFzdZc",
                                                                                 "rules": Array [
                                                                                   "height:",
                                                                                   [Function],
@@ -14153,96 +14062,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
-                                                    <ForwardRef
-                                                      borderRadius="4px"
+                                                    <img
                                                       className="makeStyles-desktopMedia-217"
                                                       data-testid="ArticleCard-1232-image"
-                                                      height={152}
-                                                      image="https://dev.kauri.io/static/images/DefaultArticle.png"
-                                                      width={152}
-                                                    >
-                                                      <InView
-                                                        rootMargin="200px 0px"
-                                                        threshold={0}
-                                                        triggerOnce={true}
-                                                      >
-                                                        <Image__Img
-                                                          borderRadius="4px"
-                                                          className="makeStyles-desktopMedia-217"
-                                                          data-testid="ArticleCard-1232-image"
-                                                          height={152}
-                                                          image="https://dev.kauri.io/static/images/DefaultArticle.png"
-                                                          inView={false}
-                                                          width={152}
-                                                        >
-                                                          <StyledComponent
-                                                            borderRadius="4px"
-                                                            className="makeStyles-desktopMedia-217"
-                                                            data-testid="ArticleCard-1232-image"
-                                                            forwardedComponent={
-                                                              Object {
-                                                                "$$typeof": Symbol(react.forward_ref),
-                                                                "attrs": Array [],
-                                                                "componentStyle": ComponentStyle {
-                                                                  "componentId": "Image__Img-sc-1jpuda7-0",
-                                                                  "isStatic": false,
-                                                                  "lastClassName": "ewhrzK",
-                                                                  "rules": Array [
-                                                                    "height:",
-                                                                    [Function],
-                                                                    ";width:",
-                                                                    [Function],
-                                                                    ";",
-                                                                    [Function],
-                                                                    ";background:",
-                                                                    [Function],
-                                                                    ";background-size:cover;opacity:",
-                                                                    [Function],
-                                                                    ";transition:opacity ",
-                                                                    [Function],
-                                                                    "s;",
-                                                                    [Function],
-                                                                    ";",
-                                                                    [Function],
-                                                                    ";position:",
-                                                                    [Function],
-                                                                    ";",
-                                                                    [Function],
-                                                                    ";",
-                                                                    [Function],
-                                                                    ";",
-                                                                    [Function],
-                                                                    " ",
-                                                                    [Function],
-                                                                    ";",
-                                                                  ],
-                                                                },
-                                                                "displayName": "Image__Img",
-                                                                "foldedComponentIds": Array [],
-                                                                "render": [Function],
-                                                                "styledComponentId": "Image__Img-sc-1jpuda7-0",
-                                                                "target": "div",
-                                                                "toString": [Function],
-                                                                "warnTooManyClasses": [Function],
-                                                                "withComponent": [Function],
-                                                              }
-                                                            }
-                                                            forwardedRef={[Function]}
-                                                            height={152}
-                                                            image="https://dev.kauri.io/static/images/DefaultArticle.png"
-                                                            inView={false}
-                                                            width={152}
-                                                          >
-                                                            <div
-                                                              className="makeStyles-desktopMedia-217 Image__Img-sc-1jpuda7-0 ewhrzK"
-                                                              data-testid="ArticleCard-1232-image"
-                                                              height={152}
-                                                              width={152}
-                                                            />
-                                                          </StyledComponent>
-                                                        </Image__Img>
-                                                      </InView>
-                                                    </ForwardRef>
+                                                      src="/static/images/DefaultArticle.svg"
+                                                    />
                                                   </a>
                                                 </Link>
                                               </div>
@@ -14863,104 +14687,13 @@ exports[`containers/Article should match snapshot 1`] = `
                                                       href="/article?article_id=1233"
                                                       prefetch={true}
                                                     >
-                                                      <ForwardRef
-                                                        borderRadius="4px"
+                                                      <img
                                                         className="makeStyles-mobileMedia-216"
                                                         data-testid="ArticleCard-1233-image"
-                                                        height={76}
-                                                        image="https://dev.kauri.io/static/images/DefaultArticle.png"
                                                         onClick={[Function]}
                                                         onMouseEnter={[Function]}
-                                                        width={76}
-                                                      >
-                                                        <InView
-                                                          rootMargin="200px 0px"
-                                                          threshold={0}
-                                                          triggerOnce={true}
-                                                        >
-                                                          <Image__Img
-                                                            borderRadius="4px"
-                                                            className="makeStyles-mobileMedia-216"
-                                                            data-testid="ArticleCard-1233-image"
-                                                            height={76}
-                                                            image="https://dev.kauri.io/static/images/DefaultArticle.png"
-                                                            inView={false}
-                                                            onClick={[Function]}
-                                                            onMouseEnter={[Function]}
-                                                            width={76}
-                                                          >
-                                                            <StyledComponent
-                                                              borderRadius="4px"
-                                                              className="makeStyles-mobileMedia-216"
-                                                              data-testid="ArticleCard-1233-image"
-                                                              forwardedComponent={
-                                                                Object {
-                                                                  "$$typeof": Symbol(react.forward_ref),
-                                                                  "attrs": Array [],
-                                                                  "componentStyle": ComponentStyle {
-                                                                    "componentId": "Image__Img-sc-1jpuda7-0",
-                                                                    "isStatic": false,
-                                                                    "lastClassName": "ewhrzK",
-                                                                    "rules": Array [
-                                                                      "height:",
-                                                                      [Function],
-                                                                      ";width:",
-                                                                      [Function],
-                                                                      ";",
-                                                                      [Function],
-                                                                      ";background:",
-                                                                      [Function],
-                                                                      ";background-size:cover;opacity:",
-                                                                      [Function],
-                                                                      ";transition:opacity ",
-                                                                      [Function],
-                                                                      "s;",
-                                                                      [Function],
-                                                                      ";",
-                                                                      [Function],
-                                                                      ";position:",
-                                                                      [Function],
-                                                                      ";",
-                                                                      [Function],
-                                                                      ";",
-                                                                      [Function],
-                                                                      ";",
-                                                                      [Function],
-                                                                      " ",
-                                                                      [Function],
-                                                                      ";",
-                                                                    ],
-                                                                  },
-                                                                  "displayName": "Image__Img",
-                                                                  "foldedComponentIds": Array [],
-                                                                  "render": [Function],
-                                                                  "styledComponentId": "Image__Img-sc-1jpuda7-0",
-                                                                  "target": "div",
-                                                                  "toString": [Function],
-                                                                  "warnTooManyClasses": [Function],
-                                                                  "withComponent": [Function],
-                                                                }
-                                                              }
-                                                              forwardedRef={[Function]}
-                                                              height={76}
-                                                              image="https://dev.kauri.io/static/images/DefaultArticle.png"
-                                                              inView={false}
-                                                              onClick={[Function]}
-                                                              onMouseEnter={[Function]}
-                                                              width={76}
-                                                            >
-                                                              <div
-                                                                className="makeStyles-mobileMedia-216 Image__Img-sc-1jpuda7-0 ifAOXd"
-                                                                data-testid="ArticleCard-1233-image"
-                                                                height={76}
-                                                                onClick={[Function]}
-                                                                onMouseEnter={[Function]}
-                                                                width={76}
-                                                              />
-                                                            </StyledComponent>
-                                                          </Image__Img>
-                                                        </InView>
-                                                      </ForwardRef>
+                                                        src="/static/images/DefaultArticle.svg"
+                                                      />
                                                     </Link>
                                                   </div>
                                                   <Link
@@ -15393,7 +15126,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                               "componentStyle": ComponentStyle {
                                                                                 "componentId": "Image__Img-sc-1jpuda7-0",
                                                                                 "isStatic": false,
-                                                                                "lastClassName": "ewhrzK",
+                                                                                "lastClassName": "fFzdZc",
                                                                                 "rules": Array [
                                                                                   "height:",
                                                                                   [Function],
@@ -18463,96 +18196,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
                                                   >
-                                                    <ForwardRef
-                                                      borderRadius="4px"
+                                                    <img
                                                       className="makeStyles-desktopMedia-217"
                                                       data-testid="ArticleCard-1233-image"
-                                                      height={152}
-                                                      image="https://dev.kauri.io/static/images/DefaultArticle.png"
-                                                      width={152}
-                                                    >
-                                                      <InView
-                                                        rootMargin="200px 0px"
-                                                        threshold={0}
-                                                        triggerOnce={true}
-                                                      >
-                                                        <Image__Img
-                                                          borderRadius="4px"
-                                                          className="makeStyles-desktopMedia-217"
-                                                          data-testid="ArticleCard-1233-image"
-                                                          height={152}
-                                                          image="https://dev.kauri.io/static/images/DefaultArticle.png"
-                                                          inView={false}
-                                                          width={152}
-                                                        >
-                                                          <StyledComponent
-                                                            borderRadius="4px"
-                                                            className="makeStyles-desktopMedia-217"
-                                                            data-testid="ArticleCard-1233-image"
-                                                            forwardedComponent={
-                                                              Object {
-                                                                "$$typeof": Symbol(react.forward_ref),
-                                                                "attrs": Array [],
-                                                                "componentStyle": ComponentStyle {
-                                                                  "componentId": "Image__Img-sc-1jpuda7-0",
-                                                                  "isStatic": false,
-                                                                  "lastClassName": "ewhrzK",
-                                                                  "rules": Array [
-                                                                    "height:",
-                                                                    [Function],
-                                                                    ";width:",
-                                                                    [Function],
-                                                                    ";",
-                                                                    [Function],
-                                                                    ";background:",
-                                                                    [Function],
-                                                                    ";background-size:cover;opacity:",
-                                                                    [Function],
-                                                                    ";transition:opacity ",
-                                                                    [Function],
-                                                                    "s;",
-                                                                    [Function],
-                                                                    ";",
-                                                                    [Function],
-                                                                    ";position:",
-                                                                    [Function],
-                                                                    ";",
-                                                                    [Function],
-                                                                    ";",
-                                                                    [Function],
-                                                                    ";",
-                                                                    [Function],
-                                                                    " ",
-                                                                    [Function],
-                                                                    ";",
-                                                                  ],
-                                                                },
-                                                                "displayName": "Image__Img",
-                                                                "foldedComponentIds": Array [],
-                                                                "render": [Function],
-                                                                "styledComponentId": "Image__Img-sc-1jpuda7-0",
-                                                                "target": "div",
-                                                                "toString": [Function],
-                                                                "warnTooManyClasses": [Function],
-                                                                "withComponent": [Function],
-                                                              }
-                                                            }
-                                                            forwardedRef={[Function]}
-                                                            height={152}
-                                                            image="https://dev.kauri.io/static/images/DefaultArticle.png"
-                                                            inView={false}
-                                                            width={152}
-                                                          >
-                                                            <div
-                                                              className="makeStyles-desktopMedia-217 Image__Img-sc-1jpuda7-0 ewhrzK"
-                                                              data-testid="ArticleCard-1233-image"
-                                                              height={152}
-                                                              width={152}
-                                                            />
-                                                          </StyledComponent>
-                                                        </Image__Img>
-                                                      </InView>
-                                                    </ForwardRef>
+                                                      src="/static/images/DefaultArticle.svg"
+                                                    />
                                                   </a>
                                                 </Link>
                                               </div>

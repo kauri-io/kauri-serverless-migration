@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="154px" height="154px" viewBox="0 0 154 154" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Article</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="-2.84217094e-14" y="0" width="154" height="154" rx="4"></rect>
+        <path d="M68.6207348,43.1090063 C70.4799964,43.3305078 107.790927,43.9966999 138,58.4191883 C120.776928,73.3916014 96.9619944,105.896002 85.6924722,110.040421 C74.4205363,114.185728 38.7213164,103.576214 16,103.285256 C29.971343,72.6234938 54.9068636,49.0575998 56.1902273,47.6803832 C59.3092212,44.2812644 64.0690194,42.5308264 68.6207348,43.1090063" id="path-3"></path>
+        <filter x="-19.7%" y="-35.3%" width="139.3%" height="170.6%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0549019608   0 0 0 0 0.662745098   0 0 0 0 0.525490196  0 0 0 0.4 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Article" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+        <g id="Fill-39" mask="url(#mask-2)">
+            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+            <use fill="#0EA986" fill-rule="evenodd" xlink:href="#path-3"></use>
+        </g>
+        <path d="M68.8,63 C67.26,63 66.014,64.26 66.014,65.8 L66,88.2 C66,89.74 67.246,91 68.786,91 L85.6,91 C87.14,91 88.4,89.74 88.4,88.2 L88.4,71.4 L80,63 L68.8,63 Z M78.6,72.8 L78.6,65.1 L86.3,72.8 L78.6,72.8 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-2)"></path>
+    </g>
+</svg>

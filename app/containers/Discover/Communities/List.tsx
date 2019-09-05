@@ -1,6 +1,6 @@
 import Communities from './ListView'
 import { compose, graphql } from 'react-apollo'
-import { getAllCommunities } from '../../../queries/Community'
+import { searchResultsAutocomplete } from '../../../queries/Search'
 import { connect } from 'react-redux'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import withLoading from '../../../lib/with-loading'
@@ -24,15 +24,18 @@ export default compose(
         mapStateToProps,
         { routeChangeAction }
     ),
-    graphql(getAllCommunities, {
+    graphql(searchResultsAutocomplete, {
         name: QUERY_NAME,
         options: () => ({
             variables: {
+                page: 0,
+                size: 10,
                 filter: {
+                    type: 'COMMUNITY',
                     mustNotIncludeUserId: config.testingAccounts,
                 },
             },
         }),
     }),
     withLoading()
-)(withPagination(Communities, 'searchCommunities', QUERY_NAME))
+)(withPagination(Communities, 'searchAutocomplete', QUERY_NAME))

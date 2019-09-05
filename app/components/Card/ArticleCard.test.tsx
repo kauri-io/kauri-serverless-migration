@@ -92,11 +92,11 @@ describe('components/Card/ArticleCard', () => {
             <ArticleCard {...ArticleCardPropsWithoutBackgroundAttribute} />
         )
         const dataTestId = `ArticleCard-${ArticleCardProps.id}-image`
-        const { image } = wrapper
+        const { src } = wrapper
             .find(`[data-testid="${dataTestId}"]`)
             .first()
             .props()
-        expect(image).toEqual(ArticleCardProps.author.avatar)
+        expect(src).toEqual('/static/images/DefaultArticle.svg')
     })
 
     it('should show the author name by default', () => {

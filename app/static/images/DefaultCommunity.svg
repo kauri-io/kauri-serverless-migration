@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="154px" height="154px" viewBox="0 0 154 154" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Collection Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="-2.84217094e-14" y="0" width="154" height="154" rx="4"></rect>
+        <path d="M68.3954648,44.1058002 C70.193767,44.3207869 106.281389,44.9673852 135.5,58.9656828 C118.841619,73.4977308 95.8075028,105.046119 84.9074731,109.068644 C74.0051089,113.09203 39.4763552,102.794561 17.5,102.51216 C31.0132662,72.7522146 55.1312287,49.8794351 56.372515,48.5427249 C59.3892468,45.2435801 63.992986,43.5446257 68.3954648,44.1058002" id="path-3"></path>
+        <filter x="-20.3%" y="-36.4%" width="140.7%" height="172.7%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.168627451   0 0 0 0 0.188235294   0 0 0 0 0.223529412  0 0 0 0.4 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Collection-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Bitmap-Copy-8">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+        </g>
+        <g id="24px-(1)" transform="translate(62.000000, 65.000000)"></g>
+        <g id="Fill-39" transform="translate(76.500000, 77.000000) scale(-1, -1) translate(-76.500000, -77.000000) ">
+            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+            <use fill="#2B3039" fill-rule="evenodd" xlink:href="#path-3"></use>
+        </g>
+        <path d="M81.6666667,75.8333333 C83.6033333,75.8333333 85.155,74.27 85.155,72.3333333 C85.155,70.3966667 83.6033333,68.8333333 81.6666667,68.8333333 C79.73,68.8333333 78.1666667,70.3966667 78.1666667,72.3333333 C78.1666667,74.27 79.73,75.8333333 81.6666667,75.8333333 Z M72.3333333,75.8333333 C74.27,75.8333333 75.8216667,74.27 75.8216667,72.3333333 C75.8216667,70.3966667 74.27,68.8333333 72.3333333,68.8333333 C70.3966667,68.8333333 68.8333333,70.3966667 68.8333333,72.3333333 C68.8333333,74.27 70.3966667,75.8333333 72.3333333,75.8333333 Z M72.3333333,78.1666667 C69.615,78.1666667 64.1666667,79.5316667 64.1666667,82.25 L64.1666667,85.1666667 L80.5,85.1666667 L80.5,82.25 C80.5,79.5316667 75.0516667,78.1666667 72.3333333,78.1666667 Z M81.6666667,78.1666667 C81.3283333,78.1666667 80.9433333,78.19 80.535,78.225 C81.8883333,79.205 82.8333333,80.5233333 82.8333333,82.25 L82.8333333,85.1666667 L89.8333333,85.1666667 L89.8333333,82.25 C89.8333333,79.5316667 84.385,78.1666667 81.6666667,78.1666667 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>

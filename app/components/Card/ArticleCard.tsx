@@ -210,17 +210,22 @@ const ArticleCard: React.FC<IProps> = ({
                         </a>
                     </Link>
                     <Link href={href.href} as={href.as}>
-                        <Image
-                            className={classes.mobileMedia}
-                            data-testid={`ArticleCard-${id}-image`}
-                            width={76}
-                            height={76}
-                            image={
-                                (attributes && attributes.background) ||
-                                `https://dev.kauri.io/static/images/DefaultArticle.png`
-                            }
-                            borderRadius="4px"
-                        />
+                        {attributes && attributes.background ? (
+                            <Image
+                                className={classes.mobileMedia}
+                                data-testid={`ArticleCard-${id}-image`}
+                                width={76}
+                                height={76}
+                                image={attributes.background}
+                                borderRadius="4px"
+                            />
+                        ) : (
+                            <img
+                                className={classes.mobileMedia}
+                                data-testid={`ArticleCard-${id}-image`}
+                                src="/static/images/DefaultArticle.svg"
+                            />
+                        )}
                     </Link>
                 </div>
                 <Link href={href.href} as={href.as}>
@@ -341,17 +346,22 @@ const ArticleCard: React.FC<IProps> = ({
             </div>
             <Link href={href.href} as={href.as}>
                 <a>
-                    <Image
-                        className={classes.desktopMedia}
-                        data-testid={`ArticleCard-${id}-image`}
-                        width={152}
-                        height={152}
-                        image={
-                            (attributes && attributes.background) ||
-                            `https://dev.kauri.io/static/images/DefaultArticle.png`
-                        }
-                        borderRadius="4px"
-                    />
+                    {attributes && attributes.background ? (
+                        <Image
+                            className={classes.desktopMedia}
+                            data-testid={`ArticleCard-${id}-image`}
+                            width={152}
+                            height={152}
+                            image={attributes.background}
+                            borderRadius="4px"
+                        />
+                    ) : (
+                        <img
+                            className={classes.desktopMedia}
+                            data-testid={`ArticleCard-${id}-image`}
+                            src="/static/images/DefaultArticle.svg"
+                        />
+                    )}
                 </a>
             </Link>
         </Card>
