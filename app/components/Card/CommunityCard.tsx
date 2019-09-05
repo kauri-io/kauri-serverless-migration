@@ -195,17 +195,22 @@ const CommunityCard: React.FC<IProps> = ({
         >
             <Link href={href.href} as={href.as}>
                 <a>
-                    <Image
-                        className={classes.desktopMedia}
-                        data-testid={`CommunityCard-${id}-image`}
-                        width={152}
-                        height={152}
-                        image={
-                            avatar ||
-                            'https://dev.kauri.io/static/images/DefaultCommunity.png'
-                        }
-                        borderRadius="4px"
-                    />
+                    {avatar ? (
+                        <Image
+                            className={classes.desktopMedia}
+                            data-testid={`CommunityCard-${id}-image`}
+                            width={152}
+                            height={152}
+                            image={avatar}
+                            borderRadius="4px"
+                        />
+                    ) : (
+                        <img
+                            className={classes.desktopMedia}
+                            data-testid={`CommunityCard-${id}-image`}
+                            src="/static/images/DefaultCommunity.svg"
+                        />
+                    )}
                 </a>
             </Link>
             <div className={classes.cardActualContent}>
