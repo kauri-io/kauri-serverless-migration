@@ -119,11 +119,11 @@ describe('components/Card/CommunityCard', () => {
             <CommunityCard {...CommunityCardPropsWithoutBackgroundAttribute} />
         )
         const dataTestId = `CommunityCard-${CommunityCardProps.id}-image`
-        const { image } = wrapper
+        const { src } = wrapper
             .find(`[data-testid="${dataTestId}"]`)
             .first()
             .props()
-        expect(image).toEqual(CommunityCardProps.owner.avatar)
+        expect(src).toEqual('/static/images/DefaultCommunity.svg')
     })
 
     it('should show the member avatars with a maximum of 3 but show the moreMembers if over', () => {

@@ -180,17 +180,22 @@ const CollectionCard: React.FC<IProps> = ({
         >
             <Link href={href.href} as={href.as}>
                 <a>
-                    <Image
-                        className={classes.desktopMedia}
-                        data-testid={`CollectionCard-${id}-image`}
-                        width={152}
-                        height={152}
-                        image={
-                            background ||
-                            'https://dev.kauri.io/static/images/DefaultCollection.png'
-                        }
-                        borderRadius="4px"
-                    />
+                    {background ? (
+                        <Image
+                            className={classes.desktopMedia}
+                            data-testid={`CollectionCard-${id}-image`}
+                            width={152}
+                            height={152}
+                            image={background}
+                            borderRadius="4px"
+                        />
+                    ) : (
+                        <img
+                            className={classes.desktopMedia}
+                            data-testid={`CollectionCard-${id}-image`}
+                            src="/static/images/DefaultCollection.svg"
+                        />
+                    )}
                 </a>
             </Link>
             <div className={classes.cardActualContent}>

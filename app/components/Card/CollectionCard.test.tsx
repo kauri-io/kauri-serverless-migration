@@ -103,11 +103,11 @@ describe('components/Card/CollectionCard', () => {
             />
         )
         const dataTestId = `CollectionCard-${CollectionCardProps.id}-image`
-        const { image } = wrapper
+        const { src } = wrapper
             .find(`[data-testid="${dataTestId}"]`)
             .first()
             .props()
-        expect(image).toEqual(CollectionCardProps.owner.avatar)
+        expect(src).toEqual('/static/images/DefaultCollection.svg')
     })
 
     it('should show the owner name by default', () => {

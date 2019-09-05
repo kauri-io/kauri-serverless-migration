@@ -24,7 +24,7 @@ export interface IAttributes {
 
 const ArticleEditor = props => {
     const article = props.data && props.data.getArticle
-    const key = article ? `${article.id}-${article.version}` : 'unsaved-article'
+    const key = article ? article.id : 'unsaved-article'
 
     const [subject, setSubject] = useState(article ? article.title : null)
     const [tags, setTags] = useState(article ? article.tags : [])
