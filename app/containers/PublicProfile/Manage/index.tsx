@@ -1,14 +1,13 @@
 import React from 'react'
 import withPagination from '../../../lib/with-pagination'
-import CategorySection from '../../../components/Section/CategorySection'
 import ResourceCategory from '../../../components/ResourceCategory'
 import Drafts from '../Drafts/View'
 import Awaiting from '../Awaiting/View'
 import Pending from '../Pending/View'
 import Transfers from './Transfers'
 import MyCommunities from './MyCommunities'
-import styled from 'styled-components'
 import { path } from 'ramda'
+import { Grid, makeStyles, Theme } from '@material-ui/core'
 
 const categories = [
     'drafts',
@@ -16,16 +15,6 @@ const categories = [
     'submitted updates',
     // "communities",
 ]
-
-const ManageContentSection = styled.section`
-    display: flex;
-    flex-direction: row;
-    padding-top: ${props => props.theme.paddingTop};
-    ${props => props.theme.padContent};
-    > :first-child {
-        margin-right: ${props => props.theme.space[3]}px;
-    }
-`
 
 interface IState {
     currentCategory: string
@@ -62,47 +51,69 @@ const Manage: React.FunctionComponent<
         categories.push('communities')
     }
 
+    const useStyles = makeStyles((theme: Theme) => ({
+        container: {
+            maxWidth: 1242,
+            marginLeft: `auto`,
+            marginRight: 'auto',
+            marginTop: theme.spacing(2),
+        },
+    }))
+    const classes = useStyles()
+
     return (
-        <ManageContentSection>
-            <CategorySection>
+        <Grid className={classes.container} container={true}>
+            <Grid
+                sm={3}
+                container={true}
+                item={true}
+                spacing={2}
+                direction="column"
+            >
                 {categories.map(category => (
-                    <ResourceCategory
-                        key={category}
-                        active={category === state.currentCategory}
-                        category={category}
-                        amount={null}
-                        onClick={() => setState({ currentCategory: category })}
-                    />
+                    <Grid item={true}>
+                        <ResourceCategory
+                            key={category}
+                            active={category === state.currentCategory}
+                            category={category}
+                            amount={null}
+                            onClick={() =>
+                                setState({ currentCategory: category })
+                            }
+                        />
+                    </Grid>
                 ))}
-            </CategorySection>
-            {state.currentCategory === 'drafts' && (
-                <Drafts {...props} data={props.draftsQuery} />
-            )}
-            {state.currentCategory === 'awaiting approval' && (
-                <Awaiting
-                    {...props}
-                    communities={
-                        Array.isArray(communities) &&
-                        communities.map(({ community: { id } }) => id)
-                    }
-                />
-            )}
-            {state.currentCategory === 'submitted updates' && (
-                <Pending
-                    {...props}
-                    communities={
-                        Array.isArray(communities) &&
-                        communities.map(({ community: { id } }) => id)
-                    }
-                />
-            )}
-            {state.currentCategory === 'pending transfers' && (
-                <Transfers {...props} data={transfers} />
-            )}
-            {state.currentCategory === 'communities' && (
-                <MyCommunities {...props} data={communities} />
-            )}
-        </ManageContentSection>
+            </Grid>
+            <Grid sm={9} item={true}>
+                {state.currentCategory === 'drafts' && (
+                    <Drafts {...props} data={props.draftsQuery} />
+                )}
+                {state.currentCategory === 'awaiting approval' && (
+                    <Awaiting
+                        {...props}
+                        communities={
+                            Array.isArray(communities) &&
+                            communities.map(({ community: { id } }) => id)
+                        }
+                    />
+                )}
+                {state.currentCategory === 'submitted updates' && (
+                    <Pending
+                        {...props}
+                        communities={
+                            Array.isArray(communities) &&
+                            communities.map(({ community: { id } }) => id)
+                        }
+                    />
+                )}
+                {state.currentCategory === 'pending transfers' && (
+                    <Transfers {...props} data={transfers} />
+                )}
+                {state.currentCategory === 'communities' && (
+                    <MyCommunities {...props} data={communities} />
+                )}
+            </Grid>
+        </Grid>
     )
 }
 //

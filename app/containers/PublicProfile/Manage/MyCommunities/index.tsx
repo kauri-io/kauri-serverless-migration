@@ -1,8 +1,7 @@
-import Container from './Container'
-import Table, { Line } from './Table'
+import Table from './Table'
 import { H3, BodyCard } from '../../../../components/Typography'
-import styled from 'styled-components'
 import Button from '../../../../components/Button'
+import { Grid, makeStyles, Theme } from '@material-ui/core'
 
 export interface ICommunity {
     role: string
@@ -30,22 +29,13 @@ interface IProps {
     }
 }
 
-const Center = styled.div`
-    display: flex;
-    > * {
-        margin: 0 auto;
-        margin-top: ${props => props.theme.space[3]}px;
-    }
-`
-
 const NoCommunities: React.FunctionComponent<
     Pick<IProps, 'routeChangeAction'>
 > = ({ routeChangeAction }) => (
-    <Container>
+    <Grid>
         <H3>Communities</H3>
         <BodyCard>You are not part of any communities yet.</BodyCard>
-        <Line />
-        <Center>
+        <Grid>
             <Button
                 color="primary"
                 variant="contained"
@@ -53,13 +43,19 @@ const NoCommunities: React.FunctionComponent<
             >
                 Create Community
             </Button>
-        </Center>
-    </Container>
+        </Grid>
+    </Grid>
 )
 
-const MyCommunities: React.FunctionComponent<IProps> = props =>
-    Array.isArray(props.data) && props.data.length ? (
-        <Container>
+const MyCommunities: React.FunctionComponent<IProps> = props => {
+    const useStyles = makeStyles((theme: Theme) => ({
+        table: {
+            margin: theme.spacing(2),
+        },
+    }))
+    const classes = useStyles()
+    return Array.isArray(props.data) && props.data.length ? (
+        <Grid className={classes.table} container={true} direction="column">
             <H3>Communities</H3>
             <BodyCard>
                 The communities you manage and moderate are displayed below;
@@ -69,9 +65,9 @@ const MyCommunities: React.FunctionComponent<IProps> = props =>
                 userId={props.ownProfile.getMyProfile.id}
                 data={props.data}
             />
-        </Container>
+        </Grid>
     ) : (
         <NoCommunities routeChangeAction={props.routeChangeAction} />
     )
-
+}
 export default MyCommunities

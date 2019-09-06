@@ -1,10 +1,8 @@
 import React, { Fragment } from 'react'
-import styled from 'styled-components'
 import ArticleCard from '../../../components/Card/ArticleCard'
 import withPagination from '../../../lib/with-pagination'
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
 import Button from '../../../components/Button'
-import Masonry from '../../../components/Masonry'
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
 import {
     IOpenModalAction,
@@ -17,6 +15,7 @@ import {
 } from '../../ArticleDraft/DeleteDraftArticleModule'
 import { getArticleURL } from '../../../lib/getURLs'
 import Link from 'next/link'
+import { Grid } from '@material-ui/core'
 
 interface IArticlesProps {
     data: searchPersonalArticles
@@ -31,31 +30,32 @@ interface IArticlesProps {
     ) => IDeleteDraftArticleAction
 }
 
-const Centered = styled.div`
-    display: flex;
-    justify-content: center;
-    margin-left: 100px;
-`
-
 const Articles: React.FC<IArticlesProps> = ({ data }) => {
     const articles = data.searchArticles && data.searchArticles.content
     if (articles) {
         return articles && articles.length > 0 ? (
             <Fragment>
-                <Masonry withPadding={false}>
+                <Grid container={true} spacing={2} justify="center">
                     {articles.map(
                         article =>
                             article && (
-                                <ArticleCard
-                                    href={getArticleURL(article, 'draft')}
-                                    {...article}
-                                />
+                                <Grid
+                                    item={true}
+                                    sm={12}
+                                    container={true}
+                                    justify="center"
+                                >
+                                    <ArticleCard
+                                        href={getArticleURL(article, 'draft')}
+                                        {...article}
+                                    />
+                                </Grid>
                             )
                     )}
-                </Masonry>
+                </Grid>
             </Fragment>
         ) : (
-            <Centered>
+            <Grid>
                 <PublicProfileEmptyState
                     moveIconLeftBecauseCSS
                     iconSrc={'/static/images/icons/no-saved-drafts.svg'}
@@ -73,7 +73,7 @@ const Articles: React.FC<IArticlesProps> = ({ data }) => {
                         </Link>
                     }
                 />
-            </Centered>
+            </Grid>
         )
     }
     return null

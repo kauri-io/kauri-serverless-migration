@@ -1,11 +1,8 @@
 import React, { Fragment } from 'react'
-import styled from 'styled-components'
 import ArticleCard from '../../../components/Card/ArticleCard'
 import CheckpointArticles from '../../CheckpointArticles'
 import withPagination from '../../../lib/with-pagination'
-import Masonry from '../../../components/Masonry'
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
-import { BodyCard } from '../../../components/Typography'
 import withLoading from '../../../lib/with-loading'
 import withApolloError from '../../../lib/with-apollo-error'
 import { searchAwaitingApproval } from '../../../queries/Article'
@@ -17,6 +14,7 @@ import {
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
 import { ICommunity } from '../../../lib/Module'
 import { getArticleURL } from '../../../lib/getURLs'
+import { Grid, Typography } from '@material-ui/core'
 
 interface IArticlesProps {
     data: searchPersonalArticles
@@ -26,17 +24,6 @@ interface IArticlesProps {
     isOwner: boolean
     openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
 }
-
-const DescriptionContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-`
-
-const Centered = styled.div`
-    display: flex;
-    justify-content: center;
-    margin-left: 100px;
-`
 
 const Articles = ({ data, type, isOwner }: IArticlesProps) => {
     const articles = data.searchArticles && data.searchArticles.content
@@ -49,40 +36,47 @@ const Articles = ({ data, type, isOwner }: IArticlesProps) => {
                     articles={articles}
                 />
             )}
-            <Masonry withPadding={false}>
+            <Grid container={true} spacing={2} justify="center">
                 {articles &&
                     articles.map(article => {
                         return (
                             article && (
-                                <ArticleCard
-                                    href={getArticleURL(article, 'review')}
-                                    {...article}
-                                />
+                                <Grid
+                                    item={true}
+                                    sm={12}
+                                    container={true}
+                                    justify="center"
+                                >
+                                    <ArticleCard
+                                        href={getArticleURL(article, 'review')}
+                                        {...article}
+                                    />
+                                </Grid>
                             )
                         )
                     })}
-            </Masonry>
+            </Grid>
         </Fragment>
     ) : (
-        <Centered>
+        <Grid>
             <PublicProfileEmptyState
                 iconSrc={'/static/images/icons/no-articles-for-approval.svg'}
                 description={
-                    <DescriptionContainer>
-                        <BodyCard>
+                    <Grid>
+                        <Typography>
                             If another user on Kauri suggests edits to one of
                             your published articles, you'll be asked to approve
                             or reject them.
-                        </BodyCard>
-                        <BodyCard>
+                        </Typography>
+                        <Typography>
                             These pending edits will appear here until you do
                             so.
-                        </BodyCard>
-                    </DescriptionContainer>
+                        </Typography>
+                    </Grid>
                 }
                 title="No Articles For Approval"
             />
-        </Centered>
+        </Grid>
     )
 }
 
