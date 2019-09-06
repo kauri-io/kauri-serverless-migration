@@ -1,6 +1,5 @@
-import Container from './Container'
 import Table from './Table'
-import { H3, BodyCard } from '../../../../components/Typography'
+import { Grid, Typography, makeStyles, Theme } from '@material-ui/core'
 
 interface IProps {
     data: ITransfer[]
@@ -25,20 +24,28 @@ export interface ITransfer {
     }
 }
 
-const Transfers = (props: IProps) => (
-    <Container>
-        <H3>Ownership Transfers Requests</H3>
-        <BodyCard>
-            Pending transfer requests appear here. By accepting, you will gain
-            full control over the content of the transferred article. Rejecting
-            will remove it from the queue.
-        </BodyCard>
-        <Table
-            acceptArticleTransferAction={props.acceptArticleTransferAction}
-            rejectArticleTransferAction={props.rejectArticleTransferAction}
-            data={props.data}
-        />
-    </Container>
-)
+const Transfers = (props: IProps) => {
+    const useStyles = makeStyles((theme: Theme) => ({
+        table: {
+            margin: theme.spacing(2),
+        },
+    }))
+    const classes = useStyles()
+    return (
+        <Grid className={classes.table}>
+            <Typography variant="h5">Ownership Transfers Requests</Typography>
+            <Typography>
+                Pending transfer requests appear here. By accepting, you will
+                gain full control over the content of the transferred article.
+                Rejecting will remove it from the queue.
+            </Typography>
+            <Table
+                acceptArticleTransferAction={props.acceptArticleTransferAction}
+                rejectArticleTransferAction={props.rejectArticleTransferAction}
+                data={props.data}
+            />
+        </Grid>
+    )
+}
 
 export default Transfers

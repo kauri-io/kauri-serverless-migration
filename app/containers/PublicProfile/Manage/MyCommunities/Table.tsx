@@ -1,14 +1,13 @@
-import styled from 'styled-components'
 import { Label } from '../../../../components/Typography'
 import Link from '../../../../components/Link'
 import { ICommunity } from './index'
 import { getCommunityURL } from '../../../../lib/getURLs'
-
-interface ICell {
-    bold?: boolean
-    flex?: number
-    hoverable?: boolean
-}
+import Table from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
+import TableCell from '@material-ui/core/TableCell'
+import TableHead from '@material-ui/core/TableHead'
+import TableRow from '@material-ui/core/TableRow'
+import { Grid } from '@material-ui/core'
 
 interface IProps {
     removeMemberAction: (payload: {
@@ -19,86 +18,79 @@ interface IProps {
     data: ICommunity[]
 }
 
-const Row = styled.div`
-    display: flex;
-    flex-direction: row;
-`
-
-const Cell = styled('div')<ICell>`
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex: ${props => (props.flex ? props.flex : 1)};
-    padding: ${props => props.theme.space[2]}px 0;
-    ${props =>
-        props.hoverable
-            ? `& > span {
-        cursor: pointer; color: ${props.theme.colors.primary};
-        transition: all 0.3s;
-         &:hover {
-             color: ${props.theme.colors.primaryDark};
-         }
-    }`
-            : ''}
-`
-
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    padding-top: ${props => props.theme.space[2]}px;
-`
-
-export const Line = styled.div`
-    width: 100%;
-    height: 2px;
-    background: ${props => props.theme.colors.disabledBackgroundColor};
-`
-
-const Table: React.FunctionComponent<IProps> = props => {
+const TableComp: React.FunctionComponent<IProps> = props => {
     return (
-        <Container>
-            <Line />
-            {props.data &&
-                props.data.map(({ community }) => {
-                    const currentCommunityUser = community.members.find(
-                        ({ id }) => id === props.userId
-                    )
-                    let currentCommunityUserRole = ''
-                    if (community.members && currentCommunityUser) {
-                        currentCommunityUserRole = currentCommunityUser.role
-                    }
+        <Table>
+            <TableHead>
+                <TableRow>
+                    <TableCell>Role</TableCell>
+                    <TableCell>Community Name</TableCell>
+                    <TableCell align="center">Actions</TableCell>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                {props.data &&
+                    props.data.map(({ community }) => {
+                        const currentCommunityUser = community.members.find(
+                            ({ id }) => id === props.userId
+                        )
+                        let currentCommunityUserRole = ''
+                        if (community.members && currentCommunityUser) {
+                            currentCommunityUserRole = currentCommunityUser.role
+                        }
 
-                    return (
-                        <Row key={community.id}>
-                            <Cell flex={0}>
-                                <Label>{currentCommunityUserRole}</Label>
-                            </Cell>
-                            <Cell flex={4}>
-                                <Label>{community.name}</Label>
-                            </Cell>
-                            <Cell flex={0} hoverable={true}>
-                                <Label
-                                    onClick={() =>
-                                        props.removeMemberAction({
-                                            account: props.userId,
-                                            id: community.id,
-                                        })
-                                    }
-                                    hoverColor={'hoverTextColor'}
-                                >
-                                    Leave Community
-                                </Label>
-                            </Cell>
-                            <Cell flex={0} hoverable={true}>
-                                <Link href={getCommunityURL(community).href}>
-                                    <Label>View Community</Label>
-                                </Link>
-                            </Cell>
-                        </Row>
-                    )
-                })}
-        </Container>
+                        return (
+                            <TableRow key={community.id}>
+                                <TableCell>
+                                    <Label>{currentCommunityUserRole}</Label>
+                                </TableCell>
+                                <TableCell>
+                                    <Label>{community.name}</Label>
+                                </TableCell>
+                                <TableCell>
+                                    <Grid
+                                        container={true}
+                                        justify="space-around"
+                                    >
+                                        <Grid item={true}>
+                                            <Label
+                                                onClick={() =>
+                                                    props.removeMemberAction({
+                                                        account: props.userId,
+                                                        id: community.id,
+                                                    })
+                                                }
+                                                hoverColor={'hoverTextColor'}
+                                            >
+                                                Leave Community
+                                            </Label>
+                                        </Grid>
+                                        <Grid item={true}>
+                                            <Link
+                                                href={
+                                                    getCommunityURL(community)
+                                                        .href
+                                                }
+                                            >
+                                                <a>
+                                                    <Label
+                                                        hoverColor={
+                                                            'hoverTextColor'
+                                                        }
+                                                    >
+                                                        View Community
+                                                    </Label>
+                                                </a>
+                                            </Link>
+                                        </Grid>
+                                    </Grid>
+                                </TableCell>
+                            </TableRow>
+                        )
+                    })}
+            </TableBody>
+        </Table>
     )
 }
 
-export default Table
+export default TableComp

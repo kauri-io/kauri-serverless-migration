@@ -1,6 +1,6 @@
 import Button from '../../components/Button'
 import Link from 'next/link'
-import { Grid, Typography, Hidden } from '@material-ui/core'
+import { Grid, Typography } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import {
     getArticleURL,
@@ -18,6 +18,13 @@ const useStyles = makeStyles((theme: Theme) => ({
         '& > *': {
             marginBottom: theme.spacing(1),
         },
+    },
+    buttons: {
+        maxWidth: 870,
+    },
+    button: {
+        display: 'flex',
+        justifyContent: 'center',
     },
 }))
 
@@ -75,35 +82,30 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                         }
                     }
                 })}
-            </Grid>
-            <Grid justify="flex-start" spacing={2} container={true}>
                 <Grid
+                    justify="center"
+                    spacing={2}
                     container={true}
-                    justify="flex-end"
-                    sm={6}
-                    md={4}
-                    item={true}
+                    className={classes.buttons}
                 >
-                    <Link href="/articles" as="/articles">
-                        <a>
-                            <Button color="primary" variant="outlined">
-                                All Articles
-                            </Button>
-                        </a>
-                    </Link>
-                </Grid>
-                <Hidden smDown={true}>
-                    <Grid item={true} md={1} />
-                </Hidden>
-
-                <Grid sm={6} md={4} item={true}>
-                    <Link href="/collections" as="/collections">
-                        <a>
-                            <Button color="primary" variant="outlined">
-                                All Collections
-                            </Button>
-                        </a>
-                    </Link>
+                    <Grid sm={6} item={true} className={classes.button}>
+                        <Link href="/articles" as="/articles">
+                            <a>
+                                <Button color="primary" variant="outlined">
+                                    All Articles
+                                </Button>
+                            </a>
+                        </Link>
+                    </Grid>
+                    <Grid sm={6} item={true} className={classes.button}>
+                        <Link href="/collections" as="/collections">
+                            <a>
+                                <Button color="primary" variant="outlined">
+                                    All Collections
+                                </Button>
+                            </a>
+                        </Link>
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>

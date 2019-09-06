@@ -29,6 +29,7 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
             alignSelf: 'center',
         },
         height: 184,
+        width: '100%',
         maxWidth: 870,
     },
     cardActualContent: {

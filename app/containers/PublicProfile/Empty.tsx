@@ -1,23 +1,11 @@
-import styled from 'styled-components'
-import ContentContainer from './PublicProfileContentContainer'
-
-const EmptyContainer = styled(ContentContainer)`
-    flex-direction: column;
-    width: fit-content;
-    align-items: center;
-    margin: auto;
-`
-
-const Image = styled.img`
-    margin-top: ${props => props.theme.space[3]}px;
-    margin-bottom: ${props => props.theme.space[3]}px;
-`
+import { Grid } from '@material-ui/core'
+import Image from '../../components/Image'
 
 const Empty: React.SFC = ({ children }) => (
-    <EmptyContainer>
-        <Image src="/static/images/empty.png" />
+    <Grid>
+        <Image width={100} image="/static/images/empty.png" />
         {children}
-    </EmptyContainer>
+    </Grid>
 )
 
 export default Empty

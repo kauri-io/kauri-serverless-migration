@@ -1,42 +1,15 @@
 import React from 'react'
 import CollectionCard from '../../components/Card/CollectionCard'
-import styled from 'styled-components'
 import PublicProfileEmptyState from '../../components/PublicProfileEmptyState'
 import Button from '../../components/Button'
-import { BodyCard } from '../../components/Typography'
 import withPagination from '../../lib/with-pagination'
-import Masonry from '../../components/Masonry'
 import { getCollectionsForUser } from '../../queries/__generated__/getCollectionsForUser'
 import {
     Collection_owner_CommunityDTO,
     Collection_owner_PublicUserDTO,
 } from '../../queries/Fragments/__generated__/Collection'
 import { getCollectionURL } from '../../lib/getURLs'
-
-const Centered = styled.div`
-    display: flex;
-    justify-content: center;
-    margin-top: ${props => props.theme.paddingTop};
-`
-
-const DescriptionContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-`
-
-export const CollectionsContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex: 1;
-    flex-wrap: wrap;
-    padding-top: 1em;
-    padding-bottom: 0px;
-    max-width: ${props => props.theme.breakpoints[2]};
-    > div {
-        margin: 15px;
-    }
-`
+import { Grid, Typography, makeStyles, Theme } from '@material-ui/core'
 
 interface IProps {
     data: getCollectionsForUser
@@ -44,9 +17,16 @@ interface IProps {
     isLoggedIn: boolean
 }
 
-const Collections = ({ data, routeChangeAction, isLoggedIn }: IProps) =>
-    data.searchCollections && data.searchCollections.content.length > 0 ? (
-        <Masonry>
+const Collections = ({ data, routeChangeAction, isLoggedIn }: IProps) => {
+    const useStyles = makeStyles((theme: Theme) => ({
+        container: {
+            paddingTop: theme.spacing(4),
+        },
+    }))
+    const classes = useStyles()
+    return data.searchCollections &&
+        data.searchCollections.content.length > 0 ? (
+        <Grid className={classes.container} container={true} spacing={2}>
             {data.searchCollections.content.map(collection => {
                 if (collection) {
                     const owner = collection.owner as
@@ -54,35 +34,41 @@ const Collections = ({ data, routeChangeAction, isLoggedIn }: IProps) =>
                         | Collection_owner_PublicUserDTO
 
                     return (
-                        <CollectionCard
-                            {...collection}
-                            href={getCollectionURL(collection)}
-                            key={collection.id}
-                            owner={owner}
-                        />
+                        <Grid
+                            item={true}
+                            sm={12}
+                            container={true}
+                            justify="center"
+                        >
+                            <CollectionCard
+                                {...collection}
+                                href={getCollectionURL(collection)}
+                                key={collection.id}
+                                owner={owner}
+                            />
+                        </Grid>
                     )
                 } else {
                     return null
                 }
             })}
-        </Masonry>
+        </Grid>
     ) : (
-        <Centered>
-            {console.log(routeChangeAction)}
+        <Grid justify="center">
             <PublicProfileEmptyState
                 iconSrc={'/static/images/icons/no-collections-created.svg'}
                 description={
-                    <DescriptionContainer>
-                        <BodyCard>
+                    <Grid>
+                        <Typography>
                             Collections are ways to group and organize articles
                             on Kauri.
-                        </BodyCard>
-                        <BodyCard>
+                        </Typography>
+                        <Typography>
                             Common collections are tutorial series, articles
                             about a single product, multiple projects, or even
                             just a user's favourite articles
-                        </BodyCard>
-                    </DescriptionContainer>
+                        </Typography>
+                    </Grid>
                 }
                 title="No Collections Created"
                 primaryButton={
@@ -99,7 +85,8 @@ const Collections = ({ data, routeChangeAction, isLoggedIn }: IProps) =>
                     ) : null
                 }
             />{' '}
-        </Centered>
+        </Grid>
     )
+}
 
 export default withPagination(Collections, 'searchCollections')

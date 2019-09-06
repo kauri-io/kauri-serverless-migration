@@ -6,7 +6,7 @@ import withPagination from '../../../lib/with-pagination'
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
 import { getArticleURL } from '../../../lib/getURLs'
 import Empty from './Empty'
-import { Grid, Container } from '@material-ui/core'
+import { Grid, makeStyles, Theme } from '@material-ui/core'
 
 export interface IArticlesProps {
     data: searchPersonalArticles
@@ -23,9 +23,20 @@ const Articles: React.FC<IArticlesProps> = ({
     isOwner,
 }) => {
     const articles = data.searchArticles && data.searchArticles.content
+    const useStyles = makeStyles((theme: Theme) => ({
+        container: {
+            paddingTop: theme.spacing(4),
+        },
+    }))
+    const classes = useStyles()
     if (articles) {
         return articles.length > 0 ? (
-            <Container>
+            <Grid
+                className={classes.container}
+                container
+                spacing={2}
+                justify="center"
+            >
                 {typeof type === 'string' &&
                     type === 'published' &&
                     isOwner && (
@@ -35,26 +46,24 @@ const Articles: React.FC<IArticlesProps> = ({
                             articles={articles}
                         />
                     )}
-                <Grid container spacing={3}>
-                    {articles.map(
-                        article =>
-                            article && (
-                                <Grid
-                                    key={article.id}
-                                    item
-                                    xs={12}
-                                    sm={12}
-                                    lg={6}
-                                >
-                                    <ArticleCard
-                                        href={getArticleURL(article)}
-                                        {...article}
-                                    />
-                                </Grid>
-                            )
-                    )}
-                </Grid>
-            </Container>
+                {articles.map(
+                    article =>
+                        article && (
+                            <Grid
+                                key={article.id}
+                                item
+                                xs={12}
+                                container={true}
+                                justify="center"
+                            >
+                                <ArticleCard
+                                    href={getArticleURL(article)}
+                                    {...article}
+                                />
+                            </Grid>
+                        )
+                )}
+            </Grid>
         ) : (
             <Empty isLoggedIn={isLoggedIn} isOwner={isOwner} />
         )

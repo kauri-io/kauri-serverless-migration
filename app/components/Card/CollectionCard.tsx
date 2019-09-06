@@ -35,6 +35,7 @@ export const CollectionCardStyles = makeStyles((theme: Theme) => ({
         padding: theme.spacing(2),
         height: 184,
         maxWidth: 870,
+        width: '100%',
     },
     cardActualContent: {
         display: 'flex',
