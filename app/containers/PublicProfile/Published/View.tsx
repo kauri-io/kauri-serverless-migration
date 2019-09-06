@@ -34,7 +34,7 @@ const Articles: React.FC<IArticlesProps> = ({
             <Grid
                 className={classes.container}
                 container
-                spacing={3}
+                spacing={2}
                 justify="center"
             >
                 {typeof type === 'string' &&
