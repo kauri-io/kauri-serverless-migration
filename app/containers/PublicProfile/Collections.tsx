@@ -9,7 +9,7 @@ import {
     Collection_owner_PublicUserDTO,
 } from '../../queries/Fragments/__generated__/Collection'
 import { getCollectionURL } from '../../lib/getURLs'
-import { Grid, Typography } from '@material-ui/core'
+import { Grid, Typography, makeStyles, Theme } from '@material-ui/core'
 
 interface IProps {
     data: getCollectionsForUser
@@ -17,9 +17,16 @@ interface IProps {
     isLoggedIn: boolean
 }
 
-const Collections = ({ data, routeChangeAction, isLoggedIn }: IProps) =>
-    data.searchCollections && data.searchCollections.content.length > 0 ? (
-        <Grid container={true} spacing={2}>
+const Collections = ({ data, routeChangeAction, isLoggedIn }: IProps) => {
+    const useStyles = makeStyles((theme: Theme) => ({
+        container: {
+            paddingTop: theme.spacing(4),
+        },
+    }))
+    const classes = useStyles()
+    return data.searchCollections &&
+        data.searchCollections.content.length > 0 ? (
+        <Grid className={classes.container} container={true} spacing={2}>
             {data.searchCollections.content.map(collection => {
                 if (collection) {
                     const owner = collection.owner as
@@ -80,5 +87,6 @@ const Collections = ({ data, routeChangeAction, isLoggedIn }: IProps) =>
             />{' '}
         </Grid>
     )
+}
 
 export default withPagination(Collections, 'searchCollections')
