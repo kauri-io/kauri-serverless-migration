@@ -1,0 +1,4 @@
+Sitemap: https://kauri.io/sitemap
+
+User-agent: *
+Disallow: /
