@@ -36,6 +36,7 @@ exports[`containers/WriteArticle/View should match the snapshot 1`] = `
     }
     compact={false}
     onChange={[Function]}
+    onValidationError={[Function]}
     setAttributes={[Function]}
     text={null}
     withTabs={true}

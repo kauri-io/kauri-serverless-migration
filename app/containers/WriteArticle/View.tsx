@@ -40,6 +40,9 @@ const ArticleEditor = props => {
                   canonical: null,
               }
     )
+
+    const [validationError, setValidationError] = useState('')
+
     // Component did mount
     useEffect(() => {
         const {
@@ -180,6 +183,11 @@ const ArticleEditor = props => {
 
         const articleData: any = props.data && props.data.getArticle
         const text = JSON.stringify({ markdown: content })
+
+        if (validationError && validationError.length > 0) {
+            console.log("ERROR: ", validationError);
+            return;
+        }
 
         // NEW DRAFT
         if (!articleData && submissionType === 'draft') {
@@ -424,6 +432,7 @@ const ArticleEditor = props => {
                 onChange={content => setTextValue(content)}
                 attributes={attributes}
                 setAttributes={setAttributes}
+                onValidationError={setValidationError}
             />
             {process.env.config === 'development' && (
                 <div
