@@ -172,7 +172,9 @@ const ProfileHeader = ({
                                 target="_blank"
                                 href={getURL(website, 'website')}
                             >
-                                <Typography color='secondary'>{website}</Typography>
+                                <Typography color="secondary">
+                                    {website}
+                                </Typography>
                             </a>
                         )}
                     </Grid>

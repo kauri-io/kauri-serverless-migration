@@ -259,12 +259,16 @@ const ArticleCard: React.FC<IProps> = ({
                             avatar={author && author.avatar}
                             withName={true}
                         />
-                        <Typography
-                            data-testid={`ArticleCard-${id}-date`}
-                            variant="body2"
-                        >
-                            {moment(String(datePublished)).format('DD MMM YY')}
-                        </Typography>
+                        {datePublished && (
+                            <Typography
+                                data-testid={`ArticleCard-${id}-date`}
+                                variant="body2"
+                            >
+                                {moment(String(datePublished)).format(
+                                    'DD MMM YY'
+                                )}
+                            </Typography>
+                        )}
                     </div>
 
                     <div className={classes.statistics}>

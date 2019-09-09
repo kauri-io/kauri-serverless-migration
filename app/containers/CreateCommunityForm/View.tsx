@@ -15,6 +15,7 @@ import {
 } from '../../components/Modal/Module'
 import AddMemberModal from './AddMemberModal'
 import { remove } from 'ramda'
+import { accountCheck } from '../../lib/accountCheck'
 
 export interface IProps {
     id: string | null
@@ -52,6 +53,12 @@ const Section = styled.section`
 const Component: React.SFC<
     InjectedFormikProps<IProps, IFormValues>
 > = props => {
+    if (process.browser && !accountCheck()) {
+        props.routeChangeAction(
+            `/account-check?page=${window.location.pathname}`
+        )
+    }
+
     const openAddMemberModal = () =>
         props.openModalAction({
             children: (

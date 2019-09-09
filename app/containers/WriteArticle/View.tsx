@@ -16,6 +16,7 @@ import {
     setArticleCacheItem,
     getArticleCachedItem,
 } from '../../lib/editor-cache'
+import { accountCheck } from '../../lib/accountCheck'
 
 export interface IAttributes {
     background: string | null
@@ -49,6 +50,7 @@ const ArticleEditor = props => {
             openModalAction,
             closeModalAction,
         } = props
+
         if (!userId) {
             routeChangeAction(`/login?r=${router.asPath}&redirected=true`)
         } else {
@@ -89,6 +91,10 @@ const ArticleEditor = props => {
                         />
                     ),
                 })
+            } else if (!accountCheck()) {
+                routeChangeAction(
+                    `/account-check?page=${window.location.pathname}`
+                )
             }
         }
         // Track opening the editor

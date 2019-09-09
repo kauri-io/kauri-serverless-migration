@@ -1,9 +1,12 @@
 {
   "version": 2,
   "name": "kauri-serverless",
+  "alias": [
+    "kauri.io"
+  ],
   "build": {
     "env": {
-      "config": "development"
+      "config": "production"
     }
   },
   "builds": [
@@ -19,7 +22,7 @@
   "routes": [
     {
       "src": "/robots.txt",
-      "dest": "/app/static/development/robots.txt"
+      "dest": "/app/static/robots.txt"
     },
     {
       "src": "/favicon.ico",

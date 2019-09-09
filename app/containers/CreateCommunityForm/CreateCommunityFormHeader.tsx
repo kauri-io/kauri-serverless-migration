@@ -174,7 +174,13 @@ const Component: React.SFC<IProps> = props => {
                         type="text"
                         name="social.twitter"
                         render={({ field }: FieldProps<IFormValues>) => (
-                            <TextField {...field} placeholder={'Twitter'} />
+                            <TextField
+                                InputProps={{
+                                    className: classes.input,
+                                }}
+                                {...field}
+                                placeholder={'Twitter'}
+                            />
                         )}
                     />
                 </SocialFieldContainer>
@@ -185,7 +191,13 @@ const Component: React.SFC<IProps> = props => {
                         type="text"
                         name="social.github"
                         render={({ field }: FieldProps<IFormValues>) => (
-                            <TextField {...field} placeholder={'Github'} />
+                            <TextField
+                                InputProps={{
+                                    className: classes.input,
+                                }}
+                                {...field}
+                                placeholder={'Github'}
+                            />
                         )}
                     />
                 </SocialFieldContainer>

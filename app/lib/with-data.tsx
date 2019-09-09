@@ -1,5 +1,4 @@
 import React from 'react'
-import cookie from 'cookie'
 import Head from 'next/head'
 import { Provider } from 'react-redux'
 import { ApolloProvider, getDataFromTree } from 'react-apollo'
@@ -16,6 +15,8 @@ import 'prismjs/themes/prism-okaidia.css'
 import { ThemeProvider as MaterialThemeProvider } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { createMuiTheme } from '@material-ui/core/styles'
+import { parseCookies } from './cookies'
+import cookie from 'cookie'
 
 export const theme = createMuiTheme({
     palette: {
@@ -68,14 +69,6 @@ export const dispatchEpic = (epic, action, state = {}, dependencies = {}) => {
 
     return promised
 }
-export const parseCookies = (ctx: any, options?: any) => {
-    let cookieToParse =
-        ctx.req && ctx.req.headers.cookie && ctx.req.headers.cookie
-    if (process.browser) cookieToParse = global.window.document.cookie
-    if (!cookieToParse) return {}
-    return cookie.parse(cookieToParse, options)
-}
-
 interface IProps {
     stateRedux: any
     stateApollo: any

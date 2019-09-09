@@ -9,6 +9,8 @@ const personalSign = (data: string) =>
             web3.currentProvider
         )
 
+        console.log('********** PERSONAL SIGN ********')
+
         web3Provider.listAccounts().then(accounts => {
             if (accounts.length > 1) {
                 global.window.ethereum &&
