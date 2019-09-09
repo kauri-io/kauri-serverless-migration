@@ -1,3 +1,5 @@
 import production from './production'
 import development from './development'
-export default process.env.config === 'config' ? production : development
+
+console.log('***** CONFIG: ', process.env.config)
+export default process.env.config === 'production' ? production : development
