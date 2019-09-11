@@ -183,10 +183,15 @@ const ArticleEditor = props => {
 
         const articleData: any = props.data && props.data.getArticle
         const text = JSON.stringify({ markdown: content })
+        const showNotificationAction = props.showNotificationAction
 
         if (validationError && validationError.length > 0) {
             console.log("ERROR: ", validationError);
-            return;
+            return showNotificationAction({
+                description: 'Validation Error',
+                message: validationError,
+                notificationType: 'error',
+            })
         }
 
         // NEW DRAFT
@@ -298,7 +303,7 @@ const ArticleEditor = props => {
                         updateComment,
                     })
                 } else {
-                    console.log('Generic Error')
+                    return genericSubmissionError(showNotificationAction)
                 }
             case 'DRAFT':
                 if (
@@ -339,13 +344,24 @@ const ArticleEditor = props => {
                         version,
                     })
                 } else {
-                    console.log('Generic Error')
+                    return genericSubmissionError(showNotificationAction)
                 }
             case 'PENDING':
             // pending articles should not be shown in the editor
             default:
-                console.log('Generic Error')
+                return genericSubmissionError(showNotificationAction)
         }
+    }
+
+    const genericSubmissionError = (showNotificationAction) => {
+
+        console.log('Generic Error');
+
+        return showNotificationAction({
+            description: 'Generic Error',
+            message: 'Submission',
+            notificationType: 'error',
+        })
     }
 
     const selectDestination = () => {
