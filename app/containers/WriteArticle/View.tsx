@@ -185,13 +185,28 @@ const ArticleEditor = props => {
         const text = JSON.stringify({ markdown: content })
         const showNotificationAction = props.showNotificationAction
 
-        if (validationError && validationError.length > 0) {
-            console.log("ERROR: ", validationError);
+        const createErrorNotificationAction = (desc, msg?) => {
+            console.log('ERROR: ', desc)
+
+            if(!msg) {
+                msg = `Error`
+            }
             return showNotificationAction({
-                description: 'Validation Error',
-                message: validationError,
+                description: desc,
+                message: msg,
                 notificationType: 'error',
             })
+        }
+
+        // VALIDATION
+        if (validationError && validationError.length > 0) {
+            return createErrorNotificationAction(validationError);
+        }
+
+        if (!subject || subject === null) {
+            return createErrorNotificationAction('Please give your article a title')
+        } else if (!tags || tags === null || tags.length === 0) {
+            return createErrorNotificationAction('Please set at least 1 tag for your article')
         }
 
         // NEW DRAFT
@@ -303,7 +318,7 @@ const ArticleEditor = props => {
                         updateComment,
                     })
                 } else {
-                    return genericSubmissionError(showNotificationAction)
+                    return createErrorNotificationAction('Generic Error', 'Submission')
                 }
             case 'DRAFT':
                 if (
@@ -344,24 +359,13 @@ const ArticleEditor = props => {
                         version,
                     })
                 } else {
-                    return genericSubmissionError(showNotificationAction)
+                    return createErrorNotificationAction('Generic Error', 'Submission')
                 }
             case 'PENDING':
             // pending articles should not be shown in the editor
             default:
-                return genericSubmissionError(showNotificationAction)
+                return createErrorNotificationAction('Generic Error', 'Submission')
         }
-    }
-
-    const genericSubmissionError = (showNotificationAction) => {
-
-        console.log('Generic Error');
-
-        return showNotificationAction({
-            description: 'Generic Error',
-            message: 'Submission',
-            notificationType: 'error',
-        })
     }
 
     const selectDestination = () => {
