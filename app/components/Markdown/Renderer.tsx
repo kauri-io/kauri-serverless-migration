@@ -23,6 +23,7 @@ const Renderer = ({ markdown }) => {
             color: theme.palette.common.white,
             padding: theme.spacing(0, 1),
             fontSize: 16,
+            overflowX : 'auto'
         },
         quote: {
             padding: theme.spacing(1),
