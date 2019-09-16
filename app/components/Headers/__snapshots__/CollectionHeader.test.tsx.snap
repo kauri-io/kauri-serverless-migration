@@ -535,7 +535,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                         className="Typography__component-sc-36xkf6-0 kALGmD"
                       >
                         Collection Updated 
-                        8 months ago
+                        9 months ago
                       </span>
                     </StyledComponent>
                   </Typography__component>

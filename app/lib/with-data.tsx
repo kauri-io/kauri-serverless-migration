@@ -257,16 +257,13 @@ export default (ComposedComponent: any) =>
                         // User denied account access...
                     }
                     // Supports Metamask and Mist, and other wallets that provide 'web3'.
-                } else if (
-                    typeof global.window &&
-                    global.window.web3 !== 'undefined'
-                ) {
+                } else if (global.window && global.window.web3) {
                     // Use the Mist/wallet provider.
-                    ;(global.window.web3 = new ethers.providers.Web3Provider(
+                    global.window.web3 = new ethers.providers.Web3Provider(
                         global.window.web3.currentProvider
-                    )),
-                        // track web3 status
-                        analytics.setWeb3Status(true)
+                    )
+                    // track web3 status
+                    analytics.setWeb3Status(true)
                 } else {
                     analytics.setWeb3Status(false)
                     // No web3 detected. Show an error to the user or use Infura: https://infura.io/

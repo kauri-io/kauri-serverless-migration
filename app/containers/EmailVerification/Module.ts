@@ -17,11 +17,12 @@ import {
     emailSubscribeVariables,
 } from '../../queries/__generated__/emailSubscribe'
 import { from, of, forkJoin } from 'rxjs'
-import { mergeMap, tap, switchMap, map } from 'rxjs/operators'
+import { mergeMap, tap, switchMap, map, catchError } from 'rxjs/operators'
 import { regenerateEmailVerificationCode } from '../../queries/__generated__/regenerateEmailVerificationCode'
 import initApollo from '../../lib/init-apollo'
 import { path } from 'ramda'
 import cookie from 'cookie'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 interface IVerifyEmailAction {
     callback: any
@@ -252,7 +253,8 @@ export const verifyEmailEpic: Epic<
                           )
                         : of(emailVerificationFail())
                 ),
-                tap(callback)
+                tap(callback),
+                catchError(() => of(routeChangeAction('/500')))
             )
         )
     )
