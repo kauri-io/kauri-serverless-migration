@@ -8,7 +8,7 @@ export default ({ attributes, setAttributes, onValidationError }) => {
     const validate = canonicalValue => {
         let err = ''
         if (canonicalValue && !isUrl(canonicalValue)) {
-            err = 'Not a valid url'
+            err = 'Not a valid canonical url'
         }
 
         setError(err)

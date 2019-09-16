@@ -183,10 +183,30 @@ const ArticleEditor = props => {
 
         const articleData: any = props.data && props.data.getArticle
         const text = JSON.stringify({ markdown: content })
+        const showNotificationAction = props.showNotificationAction
 
+        const createErrorNotificationAction = (desc, msg?) => {
+            console.log('ERROR: ', desc)
+
+            if(!msg) {
+                msg = `Error`
+            }
+            return showNotificationAction({
+                description: desc,
+                message: msg,
+                notificationType: 'error',
+            })
+        }
+
+        // VALIDATION
         if (validationError && validationError.length > 0) {
-            console.log("ERROR: ", validationError);
-            return;
+            return createErrorNotificationAction(validationError);
+        }
+
+        if (!subject || subject === null) {
+            return createErrorNotificationAction('Please give your article a title')
+        } else if (!tags || tags === null || tags.length === 0) {
+            return createErrorNotificationAction('Please set at least 1 tag for your article')
         }
 
         // NEW DRAFT
@@ -298,7 +318,7 @@ const ArticleEditor = props => {
                         updateComment,
                     })
                 } else {
-                    console.log('Generic Error')
+                    return createErrorNotificationAction('Generic Error', 'Submission')
                 }
             case 'DRAFT':
                 if (
@@ -339,12 +359,12 @@ const ArticleEditor = props => {
                         version,
                     })
                 } else {
-                    console.log('Generic Error')
+                    return createErrorNotificationAction('Generic Error', 'Submission')
                 }
             case 'PENDING':
             // pending articles should not be shown in the editor
             default:
-                console.log('Generic Error')
+                return createErrorNotificationAction('Generic Error', 'Submission')
         }
     }
 
