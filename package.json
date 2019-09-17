@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "deploy-prod": "now --prod",
-    "deploy-dev": "now -A dev.now.json && now alias -A dev.now.json",
-    "dev": "now dev -A dev.now.json"
+    "deploy-prod": "now -A prod.now.json --prod",
+    "deploy-dev": "now"
   }
 }

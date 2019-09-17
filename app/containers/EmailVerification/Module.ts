@@ -17,11 +17,12 @@ import {
     emailSubscribeVariables,
 } from '../../queries/__generated__/emailSubscribe'
 import { from, of, forkJoin } from 'rxjs'
-import { mergeMap, tap, switchMap, map } from 'rxjs/operators'
+import { mergeMap, tap, switchMap, map, catchError } from 'rxjs/operators'
 import { regenerateEmailVerificationCode } from '../../queries/__generated__/regenerateEmailVerificationCode'
 import initApollo from '../../lib/init-apollo'
 import { path } from 'ramda'
 import cookie from 'cookie'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 interface IVerifyEmailAction {
     callback: any
@@ -161,7 +162,11 @@ export const verifyEmailEpic: Epic<
     any,
     IReduxState,
     IDependencies
-> = (action$, _, { apolloClient }) =>
+> = (
+    action$,
+    _,
+    { apolloClient, apolloSubscriber, apolloChildHashesSubscriber }
+) =>
     action$.pipe(
         ofType(VERIFY_EMAIL),
         switchMap(({ code, callback }: IVerifyEmailAction) =>
@@ -174,77 +179,15 @@ export const verifyEmailEpic: Epic<
                 })
             ).pipe(
                 mergeMap(({ data }) =>
-                    from(
-                        new Promise<{
-                            data: { getEvent: { output: IVerifyEmailOutput } }
-                        }>((resolve, reject) => {
-                            initApollo(
-                                {},
-                                {
-                                    getToken: () =>
-                                        cookie.parse(
-                                            global.document &&
-                                                global.document.cookie
-                                        )['TOKEN'],
-                                }
-                            )
-                                .subscribe({
-                                    query: getEvent,
-                                    variables: {
-                                        hash: path(
-                                            ['verifyEmail', 'hash'],
-                                            data
-                                        ),
-                                    },
-                                })
-                                .subscribe({
-                                    error: (err: Error) => reject(err),
-                                    next: (data: {
-                                        data: {
-                                            getEvent: {
-                                                output: IVerifyEmailOutput
-                                            }
-                                        }
-                                    }) => resolve(data),
-                                })
-                        })
+                    apolloSubscriber(
+                        path<string>(['verifyEmail', 'hash'])(data) || ''
                     )
                 ),
                 mergeMap(({ data: { getEvent: { output } } }) =>
-                    output && output.childHashes
+                    output && (output as IVerifyEmailOutput).childHashes
                         ? forkJoin(
-                              output.childHashes.map(
-                                  hash =>
-                                      new Promise((resolve, reject) =>
-                                          initApollo(
-                                              {},
-                                              {
-                                                  getToken: () =>
-                                                      cookie.parse(
-                                                          global.document &&
-                                                              global.document
-                                                                  .cookie
-                                                      )['TOKEN'],
-                                              }
-                                          )
-                                              .subscribe({
-                                                  query: getEvent,
-                                                  variables: { hash },
-                                              })
-                                              .subscribe({
-                                                  error: (err: Error) =>
-                                                      reject(err),
-                                                  next: (data: {
-                                                      data: {
-                                                          getEvent: {
-                                                              output: {
-                                                                  hash: string
-                                                              }
-                                                          }
-                                                      }
-                                                  }) => resolve(data),
-                                              })
-                                      )
+                              apolloChildHashesSubscriber(
+                                  (output as IVerifyEmailOutput).childHashes
                               )
                           ).pipe(
                               map(() => emailVerifiedAction()),
@@ -252,7 +195,8 @@ export const verifyEmailEpic: Epic<
                           )
                         : of(emailVerificationFail())
                 ),
-                tap(callback)
+                tap(callback),
+                catchError(() => of(routeChangeAction('/500')))
             )
         )
     )

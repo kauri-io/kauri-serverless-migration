@@ -188,7 +188,7 @@ const ArticleEditor = props => {
         const createErrorNotificationAction = (desc, msg?) => {
             console.log('ERROR: ', desc)
 
-            if(!msg) {
+            if (!msg) {
                 msg = `Error`
             }
             return showNotificationAction({
@@ -200,13 +200,17 @@ const ArticleEditor = props => {
 
         // VALIDATION
         if (validationError && validationError.length > 0) {
-            return createErrorNotificationAction(validationError);
+            return createErrorNotificationAction(validationError)
         }
 
         if (!subject || subject === null) {
-            return createErrorNotificationAction('Please give your article a title')
+            return createErrorNotificationAction(
+                'Please give your article a title'
+            )
         } else if (!tags || tags === null || tags.length === 0) {
-            return createErrorNotificationAction('Please set at least 1 tag for your article')
+            return createErrorNotificationAction(
+                'Please set at least 1 tag for your article'
+            )
         }
 
         // NEW DRAFT
@@ -318,7 +322,10 @@ const ArticleEditor = props => {
                         updateComment,
                     })
                 } else {
-                    return createErrorNotificationAction('Generic Error', 'Submission')
+                    return createErrorNotificationAction(
+                        'Generic Error',
+                        'Submission'
+                    )
                 }
             case 'DRAFT':
                 if (
@@ -359,12 +366,18 @@ const ArticleEditor = props => {
                         version,
                     })
                 } else {
-                    return createErrorNotificationAction('Generic Error', 'Submission')
+                    return createErrorNotificationAction(
+                        'Generic Error',
+                        'Submission'
+                    )
                 }
             case 'PENDING':
             // pending articles should not be shown in the editor
             default:
-                return createErrorNotificationAction('Generic Error', 'Submission')
+                return createErrorNotificationAction(
+                    'Generic Error',
+                    'Submission'
+                )
         }
     }
 
