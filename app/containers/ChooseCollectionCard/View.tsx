@@ -35,9 +35,29 @@ const CollectionsContent = ({
 }) => {
     const classes = useStyles()
 
-    return collections &&
+    const collectionsToDisplay = collections &&
         collections.content &&
-        collections.content.length > 0 ? (
+        collections.content.filter(collection => {
+            // Don't show chosen Collections from other sections
+            return !(allOtherChosenCollections.find(
+                ({ resourcesId, id: collectionId }) => {
+                    if (resourcesId) {
+                        return resourcesId.find(
+                            ({ id }) =>
+                                id === collection.id ||
+                                currentCollectionIdIfUpdating ===
+                                    collection.id
+                        )
+                    } else {
+                        return collectionId === collection.id
+                    }
+                }
+            //Also don't show the current collection!
+            ) || collection.id === currentCollectionIdIfUpdating)
+        })
+
+    return collectionsToDisplay &&
+        collectionsToDisplay.length > 0 ? (
         <div
             ref={ref => {
                 // console.log(setRef)
@@ -45,27 +65,7 @@ const CollectionsContent = ({
             }}
         >
             <Grid container spacing={3}>
-                {collections.content.map(collection => {
-                    // Don't show chosen Collections from other sections
-                    if (
-                        allOtherChosenCollections.find(
-                            ({ resourcesId, id: collectionId }) => {
-                                if (resourcesId) {
-                                    return resourcesId.find(
-                                        ({ id }) =>
-                                            id === collection.id ||
-                                            currentCollectionIdIfUpdating ===
-                                                collection.id
-                                    )
-                                } else {
-                                    return collectionId === collection.id
-                                }
-                            }
-                        )
-                    ) {
-                        return null
-                    }
-
+                {collectionsToDisplay.map(collection => {
                     return (
                         <Grid
                             key={collection.id}
@@ -134,7 +134,7 @@ const CollectionsContent = ({
             </Grid>
         </div>
     ) : (
-        <p>You have no published collections!</p>
+        <p>You have no published collections to select!</p>
     )
 }
 
