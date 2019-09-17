@@ -62,7 +62,6 @@ export const deleteDraftArticleEpic: Epic<
                     analytics.track('Delete Draft', {
                         category: 'article_actions',
                     })
-                    apolloClient.resetStore()
                     return typeof callback === 'function' && callback()
                 }),
                 mergeMap(() =>
