@@ -32,11 +32,12 @@ export function create(initialState, { getToken }) {
         },
     })
 
-    if (global.window && token) {
+    console.log('STARTING WS', global.window, token)
+    if (global.window) {
         const xAuthToken = global.window.encodeURI(`Bearer ${token}`)
         const wsLink = new WebSocketLink({
             uri:
-                token === 'DUMMYVERIFICATIONTOKEN'
+                token === 'DUMMYVERIFICATIONTOKEN' || !token
                     ? `wss://${apiURL}/socket/graphql`
                     : `wss://${apiURL}/socket/graphql?X-Auth-Token=${xAuthToken}`,
             options: {
