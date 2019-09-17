@@ -95,8 +95,12 @@ const ArticleEditor = props => {
                     ),
                 })
             } else if (!accountCheck()) {
-                routeChangeAction(
-                    `/account-check?page=${window.location.pathname}`
+                setTimeout(
+                    () =>
+                        routeChangeAction(
+                            `/account-check?page=${window.location.pathname}`
+                        ),
+                    1000
                 )
             }
         }
