@@ -35,29 +35,31 @@ const CollectionsContent = ({
 }) => {
     const classes = useStyles()
 
-    const collectionsToDisplay = collections &&
+    const collectionsToDisplay =
+        collections &&
         collections.content &&
         collections.content.filter(collection => {
             // Don't show chosen Collections from other sections
-            return !(allOtherChosenCollections.find(
-                ({ resourcesId, id: collectionId }) => {
-                    if (resourcesId) {
-                        return resourcesId.find(
-                            ({ id }) =>
-                                id === collection.id ||
-                                currentCollectionIdIfUpdating ===
-                                    collection.id
-                        )
-                    } else {
-                        return collectionId === collection.id
+            return !(
+                allOtherChosenCollections.find(
+                    ({ resourcesId, id: collectionId }) => {
+                        if (resourcesId) {
+                            return resourcesId.find(
+                                ({ id }) =>
+                                    id === collection.id ||
+                                    currentCollectionIdIfUpdating ===
+                                        collection.id
+                            )
+                        } else {
+                            return collectionId === collection.id
+                        }
                     }
-                }
-            //Also don't show the current collection!
-            ) || collection.id === currentCollectionIdIfUpdating)
+                    //Also don't show the current collection!
+                ) || collection.id === currentCollectionIdIfUpdating
+            )
         })
 
-    return collectionsToDisplay &&
-        collectionsToDisplay.length > 0 ? (
+    return collectionsToDisplay && collectionsToDisplay.length > 0 ? (
         <div
             ref={ref => {
                 // console.log(setRef)
