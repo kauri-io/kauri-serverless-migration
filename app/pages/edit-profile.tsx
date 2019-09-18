@@ -4,12 +4,13 @@ import withData from '../lib/with-data'
 import App from '../layouts'
 import EditProfilePage from '../containers/EditProfilePage'
 import { withRouter } from 'next/router'
+import { withTransaction } from '@elastic/apm-rum-react'
 
-const EditProfile = ({ router }) => (
+const EditProfile = withTransaction('edit-profile','page')(({ router }) => (
     <App>
         <EditProfilePage router={router} />
     </App>
-)
+))
 
 export default compose(
     withData,

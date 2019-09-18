@@ -17,6 +17,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { parseCookies } from './cookies'
 import cookie from 'cookie'
+import apm from './apm'
 
 export const theme = createMuiTheme({
     palette: {
@@ -288,6 +289,7 @@ export default (ComposedComponent: any) =>
         }
 
         render() {
+            apm.setInitialPageLoadName("Initial Load")
             return (
                 <MaterialThemeProvider theme={theme}>
                     <CssBaseline />
