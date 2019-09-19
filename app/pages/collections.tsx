@@ -5,7 +5,7 @@ import App from '../layouts'
 import Collections from '../containers/Discover/Collections'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const CollectionsPage = withTransaction('collections','page')(() => (
+const CollectionsPage = withTransaction('collections', 'page')(() => (
     <App>
         <Collections />
     </App>

@@ -10,7 +10,7 @@ const apm = initApm({
 
     // Set service version (required for sourcemap feature)
     serviceVersion: '1',
-    distributedTracingOrigins: [`https://${config.gateway}`]
+    distributedTracingOrigins: [`https://${config.gateway}`],
 })
 
 export default apm

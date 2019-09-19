@@ -6,11 +6,13 @@ import App from '../layouts'
 import CreateCommunityConnection from '../containers/CreateCommunity'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const CreateCommunity = withTransaction('update-community','page')(({ router }) => (
-    <App>
-        <CreateCommunityConnection id={router.query['community_id']} />
-    </App>
-))
+const CreateCommunity = withTransaction('update-community', 'page')(
+    ({ router }) => (
+        <App>
+            <CreateCommunityConnection id={router.query['community_id']} />
+        </App>
+    )
+)
 
 export default compose(
     withData,

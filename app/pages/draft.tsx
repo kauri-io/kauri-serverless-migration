@@ -6,7 +6,7 @@ import ArticleDraft from '../containers/ArticleDraft'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const ArticleDraftPage = withTransaction('draft','page')(({ router }) => (
+const ArticleDraftPage = withTransaction('draft', 'page')(({ router }) => (
     <App>
         <ArticleDraft id={router.query.id} version={router.query.version} />
     </App>

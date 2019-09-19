@@ -6,7 +6,7 @@ import EditProfilePage from '../containers/EditProfilePage'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const EditProfile = withTransaction('edit-profile','page')(({ router }) => (
+const EditProfile = withTransaction('edit-profile', 'page')(({ router }) => (
     <App>
         <EditProfilePage router={router} />
     </App>

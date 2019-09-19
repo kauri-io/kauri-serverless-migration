@@ -3,7 +3,6 @@ import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 import { ServerStyleSheets } from '@material-ui/styles'
 import flush from 'styled-jsx/server'
-import apm from '../lib/apm'
 
 // const isProduction = process.env.config === 'production'
 
@@ -43,7 +42,6 @@ export default class MyDocument extends Document<IProps> {
     }
 
     render() {
-        apm.setInitialPageLoadName("Initial Load")
         return (
             <html lang="en">
                 <Head>

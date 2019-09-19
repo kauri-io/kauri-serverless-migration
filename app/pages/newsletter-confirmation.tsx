@@ -6,7 +6,10 @@ import NewsletterConfirmation from '../containers/NewsletterConfirmation'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const NewsletterConfirmationPage = withTransaction('newsletter-confirmation','page')(() => (
+const NewsletterConfirmationPage = withTransaction(
+    'newsletter-confirmation',
+    'page'
+)(() => (
     <App>
         <NewsletterConfirmation />
     </App>

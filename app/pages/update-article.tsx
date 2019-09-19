@@ -6,7 +6,7 @@ import WriteArticle from '../containers/WriteArticle'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const ViewArticle = withTransaction('update-article','page')(({ router }) => (
+const ViewArticle = withTransaction('update-article', 'page')(({ router }) => (
     <App>
         <WriteArticle
             id={router.query['id']}

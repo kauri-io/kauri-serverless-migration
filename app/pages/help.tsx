@@ -7,7 +7,7 @@ import { withRouter } from 'next/router'
 import config from '../config'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const HelpPage = withTransaction('help','page')(() => (
+const HelpPage = withTransaction('help', 'page')(() => (
     <App>
         <Community communityId={config.KauriCommunityId} />
     </App>

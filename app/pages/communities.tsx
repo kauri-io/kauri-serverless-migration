@@ -6,7 +6,7 @@ import Communities from '../containers/Discover/Communities'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const CommunitiesPage = withTransaction('communities','page')(({ router }) => (
+const CommunitiesPage = withTransaction('communities', 'page')(({ router }) => (
     <App>
         <Communities />
     </App>

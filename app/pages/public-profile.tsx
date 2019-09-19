@@ -6,7 +6,7 @@ import PublicProfile from '../containers/PublicProfile'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const PublicProfilePage = withTransaction('public-profile','page')(props => (
+const PublicProfilePage = withTransaction('public-profile', 'page')(props => (
     <App>
         <PublicProfile
             userId={

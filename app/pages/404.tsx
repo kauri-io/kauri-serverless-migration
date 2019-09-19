@@ -6,11 +6,11 @@ import Error from '../containers/Error'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const ErrorPage = withTransaction('404', 'page')(() =>
+const ErrorPage = withTransaction('404', 'page')(() => (
     <App>
         <Error code="404" />
     </App>
-)
+))
 
 export default compose(
     withData,
