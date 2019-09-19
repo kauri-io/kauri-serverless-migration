@@ -1,12 +1,11 @@
 import PublicProfile from './View'
 import { compose, graphql } from 'react-apollo'
 import {
-    searchPersonalArticles,
     searchPersonalDrafts,
     getArticleTransfers,
 } from '../../queries/Article'
 import { getUserDetails, getOwnProfile } from '../../queries/User'
-import { getCollectionsForUser } from '../../queries/Collection'
+
 import { deleteDraftArticleAction } from '../ArticleDraft/DeleteDraftArticleModule'
 import {
     closeModalAction,
@@ -49,16 +48,6 @@ export default compose(
             routeChangeAction,
         }
     ),
-    graphql(searchPersonalArticles, {
-        name: 'ArticlesQuery',
-        options: ({ userId }: { userId: string }) => ({
-            fetchPolicy: 'cache-and-network',
-            variables: {
-                userId,
-                page: 0,
-            },
-        }),
-    }),
     graphql(getUserDetails, {
         name: 'UserQuery',
         options: ({ userId }: { userId: string }) => ({
@@ -79,20 +68,7 @@ export default compose(
             },
         }),
     }),
-    graphql(getCollectionsForUser, {
-        name: 'CollectionQuery',
-        options: ({ userId }: { userId: string }) => ({
-            fetchPolicy: 'cache-and-network',
-            variables: {
-                page: 0,
-                sort: 'dateUpdated',
-                dir: 'DESC',
-                filter: {
-                    ownerIdEquals: userId,
-                },
-            },
-        }),
-    }),
+
     graphql(searchPersonalDrafts, {
         name: 'DraftsQuery',
         options: ({ userId }: { userId: string }) => ({
