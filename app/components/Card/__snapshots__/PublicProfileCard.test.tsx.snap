@@ -466,12 +466,12 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                     withName={false}
                   >
                     <Link
-                      as="/test-username/1234567890/p"
-                      href="/public-profile?user_id=1234567890"
+                      as="/test username/p"
+                      href="/public-profile?username=test username"
                       prefetch={true}
                     >
                       <a
-                        href="/test-username/1234567890/p"
+                        href="/test username/p"
                         onClick={[Function]}
                         onMouseEnter={[Function]}
                       >
@@ -920,13 +920,13 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                       </WithStyles(ForwardRef(Typography))>
                     </div>
                     <Link
-                      as="/publicprofile/1234567890/p"
-                      href="/public-profile?user_id=1234567890"
+                      as="/PublicProfile/p"
+                      href="/public-profile?username=PublicProfile"
                       prefetch={true}
                     >
                       <a
                         className="makeStyles-name-9"
-                        href="/publicprofile/1234567890/p"
+                        href="/PublicProfile/p"
                         onClick={[Function]}
                         onMouseEnter={[Function]}
                       >
@@ -1252,12 +1252,12 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                     </Link>
                   </div>
                   <Link
-                    as="/publicprofile/1234567890/p"
-                    href="/public-profile?user_id=1234567890"
+                    as="/PublicProfile/p"
+                    href="/public-profile?username=PublicProfile"
                     prefetch={true}
                   >
                     <a
-                      href="/publicprofile/1234567890/p"
+                      href="/PublicProfile/p"
                       onClick={[Function]}
                       onMouseEnter={[Function]}
                     >

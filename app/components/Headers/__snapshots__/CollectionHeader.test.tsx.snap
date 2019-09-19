@@ -1332,12 +1332,12 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                     withName={true}
                   >
                     <Link
-                      as="/test-username/678/p"
-                      href="/public-profile?user_id=678"
+                      as="/test username/p"
+                      href="/public-profile?username=test username"
                       prefetch={true}
                     >
                       <a
-                        href="/test-username/678/p"
+                        href="/test username/p"
                         onClick={[Function]}
                         onMouseEnter={[Function]}
                       >

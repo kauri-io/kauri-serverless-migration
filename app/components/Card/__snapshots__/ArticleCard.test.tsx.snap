@@ -692,12 +692,12 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                             withName={true}
                           >
                             <Link
-                              as="/test-username/0x12.../p"
-                              href="/public-profile?user_id=0x12..."
+                              as="/test username/p"
+                              href="/public-profile?username=test username"
                               prefetch={true}
                             >
                               <a
-                                href="/test-username/0x12.../p"
+                                href="/test username/p"
                                 onClick={[Function]}
                                 onMouseEnter={[Function]}
                               >

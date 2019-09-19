@@ -11,7 +11,7 @@ const PublicProfilePage = props => (
             userId={
                 props.router &&
                 props.router.query &&
-                props.router.query['user_id']
+                props.router.query['username']
             }
             routeChangeAction={props.routeChangAction}
             router={props.router}

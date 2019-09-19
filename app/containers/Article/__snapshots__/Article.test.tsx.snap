@@ -1571,12 +1571,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                         withName={true}
                                       >
                                         <Link
-                                          as="/test-author-username-1/6791/p"
-                                          href="/public-profile?user_id=6791"
+                                          as="/test author username 1/p"
+                                          href="/public-profile?username=test author username 1"
                                           prefetch={true}
                                         >
                                           <a
-                                            href="/test-author-username-1/6791/p"
+                                            href="/test author username 1/p"
                                             onClick={[Function]}
                                             onMouseEnter={[Function]}
                                           >
@@ -6994,12 +6994,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                             withName={false}
                                           >
                                             <Link
-                                              as="/undefined/234/p"
-                                              href="/public-profile?user_id=234"
+                                              as="/undefined/p"
+                                              href="/public-profile?username=undefined"
                                               prefetch={true}
                                             >
                                               <a
-                                                href="/undefined/234/p"
+                                                href="/undefined/p"
                                                 onClick={[Function]}
                                                 onMouseEnter={[Function]}
                                               >
@@ -10951,12 +10951,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                             withName={true}
                                                           >
                                                             <Link
-                                                              as="/test-author-username-2/6792/p"
-                                                              href="/public-profile?user_id=6792"
+                                                              as="/test author username 2/p"
+                                                              href="/public-profile?username=test author username 2"
                                                               prefetch={true}
                                                             >
                                                               <a
-                                                                href="/test-author-username-2/6792/p"
+                                                                href="/test author username 2/p"
                                                                 onClick={[Function]}
                                                                 onMouseEnter={[Function]}
                                                               >
@@ -15085,12 +15085,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                             withName={true}
                                                           >
                                                             <Link
-                                                              as="/test-author-username-3/6793/p"
-                                                              href="/public-profile?user_id=6793"
+                                                              as="/test author username 3/p"
+                                                              href="/public-profile?username=test author username 3"
                                                               prefetch={true}
                                                             >
                                                               <a
-                                                                href="/test-author-username-3/6793/p"
+                                                                href="/test author username 3/p"
                                                                 onClick={[Function]}
                                                                 onMouseEnter={[Function]}
                                                               >

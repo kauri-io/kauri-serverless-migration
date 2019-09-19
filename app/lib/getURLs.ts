@@ -57,11 +57,9 @@ export interface IProfileLinkProps {
     userId?: string
 }
 
-export const getProfileURL = ({ username, id, userId }: IProfileLinkProps) => ({
-    as: `/${slugify(String(username), { lower: true })}/${String(
-        id || userId
-    )}/p`,
-    href: `/public-profile?user_id=${String(id || userId)}`,
+export const getProfileURL = ({ username }: IProfileLinkProps) => ({
+    as: `/${username}/p`,
+    href: `/public-profile?username=${username}`,
 })
 
 interface ICommunityProps {

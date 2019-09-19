@@ -523,12 +523,12 @@ exports[`components/TopContributors should match snapshot 1`] = `
                     withName={true}
                   >
                     <Link
-                      as="/test-username/test ID/p"
-                      href="/public-profile?user_id=test ID"
+                      as="/test username/p"
+                      href="/public-profile?username=test username"
                       prefetch={true}
                     >
                       <a
-                        href="/test-username/test ID/p"
+                        href="/test username/p"
                         onClick={[Function]}
                         onMouseEnter={[Function]}
                       >

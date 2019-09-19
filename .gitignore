@@ -3,3 +3,4 @@ app/.next
 .DS_Store
 app/output
 app/coverage
+.code-workspace
