@@ -3,7 +3,7 @@ import Collections from './Collections'
 import Header from './Header'
 import EditableHeader from './EditableHeader'
 import Loading from '../../components/Loading'
-import Published from './Published/View'
+import Published from './Published'
 import Manage from './Manage'
 import { getUser } from '../../queries/__generated__/getUser'
 import { getMyProfile } from '../../queries/__generated__/getMyProfile'
@@ -19,7 +19,6 @@ import {
     openModalAction,
     closeModalAction,
 } from '../../components/Modal/Module'
-import { ICollection } from '../CreateCollectionForm/ChooseCollectionModal'
 import { pipe, path, defaultTo } from 'ramda'
 import {
     IShowNotificationPayload,
@@ -32,7 +31,6 @@ interface IProps {
     router: any
     userId: string
     UserQuery: getUser
-    ArticlesQuery: searchPersonalArticles
     CollectionQuery: getCollectionsForUser
     DraftsQuery: searchPersonalArticles
     OwnProfileQuery: getMyProfile
@@ -92,8 +90,6 @@ class PublicProfile extends Component<IProps, IState> {
     render() {
         const {
             UserQuery,
-            ArticlesQuery,
-            CollectionQuery,
             DraftsQuery,
             OwnProfileQuery,
             PendingTransfersQuery,
@@ -109,22 +105,16 @@ class PublicProfile extends Component<IProps, IState> {
             saveUserDetailsAction,
             showNotificationAction,
             resendEmailVerificationAction,
+            userId,
         } = this.props
 
-        const isHeaderLoaded =
-            typeof UserQuery.getUser === 'object' &&
-            typeof ArticlesQuery.searchArticles === 'object' &&
-            typeof CollectionQuery.searchCollections === 'object'
+        const isHeaderLoaded = typeof UserQuery.getUser === 'object'
 
         const areListsLoaded = typeof DraftsQuery.searchArticles === 'object'
 
         const isEditing = this.state.isEditing
         const isOwner =
             UserQuery.getUser && UserQuery.getUser.id === currentUser
-        const articlesCount = pipe(
-            path<number>(['searchArticles', 'totalElements']),
-            defaultTo(0)
-        )(ArticlesQuery)
 
         function getUserField<T>(field: string | string[], defaultValue: T): T {
             return pipe(
@@ -151,14 +141,8 @@ class PublicProfile extends Component<IProps, IState> {
                     />
                 ) : (
                     <Header
-                        articles={articlesCount}
-                        collections={pipe(
-                            path<ICollection[]>([
-                                'searchCollections',
-                                'content',
-                            ]),
-                            defaultTo([])
-                        )(CollectionQuery)}
+                        articles={2}
+                        collections={[]}
                         currentUser={currentUser}
                         id={getUserField<string>('id', '')}
                         avatar={
@@ -201,21 +185,13 @@ class PublicProfile extends Component<IProps, IState> {
                             value={this.state.tab}
                             onChange={(_e, tab) => this.setState({ tab })}
                         >
-                            <Tab label={`Articles (${articlesCount})`} />
-                            <Tab
-                                label={`Collections (${pipe(
-                                    path<number>([
-                                        'searchCollections',
-                                        'totalElements',
-                                    ]),
-                                    defaultTo(0)
-                                )(CollectionQuery)})`}
-                            />
+                            <Tab label={`Articles`} />
+                            <Tab label={`Collections`} />
                             {isOwner && <Tab label="Manage" />}
                         </Tabs>
                         {this.state.tab === 0 && (
                             <Published
-                                data={ArticlesQuery as any}
+                                userId={userId}
                                 type="published"
                                 isOwner={!!isOwner}
                                 isLoggedIn={!!currentUser}
@@ -224,7 +200,7 @@ class PublicProfile extends Component<IProps, IState> {
                         )}
                         {this.state.tab === 1 && (
                             <Collections
-                                data={CollectionQuery}
+                                userId={userId}
                                 isLoggedIn={!!currentUser}
                                 routeChangeAction={routeChangeAction}
                             />

@@ -4,12 +4,13 @@ import withData from '../lib/with-data'
 import App from '../layouts'
 import Homepage from '../containers/Homepage'
 import { withRouter } from 'next/router'
+import { withTransaction } from '@elastic/apm-rum-react'
 
-const Index = () => (
+const Index = withTransaction('homepage', 'page')(() => (
     <App>
         <Homepage />
     </App>
-)
+))
 
 export default compose(
     // withData gives us server-side graphql queries before rendering

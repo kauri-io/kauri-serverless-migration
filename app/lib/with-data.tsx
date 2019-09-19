@@ -288,6 +288,7 @@ export default (ComposedComponent: any) =>
         }
 
         render() {
+            // apm.setInitialPageLoadName('Initial Load')
             return (
                 <MaterialThemeProvider theme={theme}>
                     <CssBaseline />
