@@ -1,6 +1,6 @@
 import View from './View'
 import { compose, graphql } from 'react-apollo'
-import { getCollectionsForUser } from '../../../queries/Collection'
+import { searchPersonalDrafts } from '../../../queries/Article'
 import { connect } from 'react-redux'
 import withLoading from '../../../lib/with-loading'
 import { withRouter } from 'next/router'
@@ -21,17 +21,13 @@ export default compose(
             routeChangeAction,
         }
     ),
-    graphql(getCollectionsForUser, {
-        name: 'CollectionQuery',
+    graphql(searchPersonalDrafts, {
+        name: 'DraftsQuery',
         options: ({ userId }: { userId: string }) => ({
             fetchPolicy: 'cache-and-network',
             variables: {
                 page: 0,
-                sort: 'dateUpdated',
-                dir: 'DESC',
-                filter: {
-                    ownerIdEquals: userId,
-                },
+                userId,
             },
         }),
     }),

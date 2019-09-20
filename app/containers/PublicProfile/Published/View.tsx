@@ -22,7 +22,6 @@ const Articles: React.FC<IArticlesProps> = ({
     isLoggedIn,
     isOwner,
 }) => {
-    console.log(ArticlesQuery)
     const articles =
         ArticlesQuery.searchArticles && ArticlesQuery.searchArticles.content
     const useStyles = makeStyles((theme: Theme) => ({

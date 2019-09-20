@@ -1,10 +1,10 @@
 import View from './View'
 import { compose, graphql } from 'react-apollo'
-import { getCollectionsForUser } from '../../../queries/Collection'
+import { getArticleTransfers } from '../../../../queries/Article'
 import { connect } from 'react-redux'
-import withLoading from '../../../lib/with-loading'
+import withLoading from '../../../../lib/with-loading'
 import { withRouter } from 'next/router'
-import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
+import { routeChangeAction } from '../../../../lib/Epics/RouteChangeEpic'
 
 const mapStateToProps = state => {
     return {
@@ -21,17 +21,14 @@ export default compose(
             routeChangeAction,
         }
     ),
-    graphql(getCollectionsForUser, {
-        name: 'CollectionQuery',
+    graphql(getArticleTransfers, {
+        name: 'PendingTransfersQuery',
         options: ({ userId }: { userId: string }) => ({
             fetchPolicy: 'cache-and-network',
             variables: {
                 page: 0,
-                sort: 'dateUpdated',
-                dir: 'DESC',
-                filter: {
-                    ownerIdEquals: userId,
-                },
+                size: 100,
+                recipient: userId,
             },
         }),
     }),

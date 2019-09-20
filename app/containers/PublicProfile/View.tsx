@@ -7,9 +7,6 @@ import Published from './Published'
 import Manage from './Manage'
 import { getUser } from '../../queries/__generated__/getUser'
 import { getMyProfile } from '../../queries/__generated__/getMyProfile'
-import { searchPersonalArticles } from '../../queries/__generated__/searchPersonalArticles'
-import { getCollectionsForUser } from '../../queries/__generated__/getCollectionsForUser'
-import { searchPendingArticles_searchArticles } from '../../queries/__generated__/searchPendingArticles'
 import { IDeleteDraftArticleAction } from '../ArticleDraft/DeleteDraftArticleModule'
 import {
     IRejectArticleTransferAction,
@@ -31,10 +28,7 @@ interface IProps {
     router: any
     userId: string
     UserQuery: getUser
-    CollectionQuery: getCollectionsForUser
-    DraftsQuery: searchPersonalArticles
     OwnProfileQuery: getMyProfile
-    PendingTransfersQuery: searchPendingArticles_searchArticles
     resendEmailVerificationAction: () => void
     showNotificationAction: (
         payload: IShowNotificationPayload
@@ -90,9 +84,7 @@ class PublicProfile extends Component<IProps, IState> {
     render() {
         const {
             UserQuery,
-            DraftsQuery,
             OwnProfileQuery,
-            PendingTransfersQuery,
             routeChangeAction,
             currentUser,
             deleteDraftArticleAction,
@@ -109,8 +101,6 @@ class PublicProfile extends Component<IProps, IState> {
         } = this.props
 
         const isHeaderLoaded = typeof UserQuery.getUser === 'object'
-
-        const areListsLoaded = typeof DraftsQuery.searchArticles === 'object'
 
         const isEditing = this.state.isEditing
         const isOwner =
@@ -176,7 +166,7 @@ class PublicProfile extends Component<IProps, IState> {
                         hostName={hostName}
                     />
                 )}
-                {isHeaderLoaded && areListsLoaded ? (
+                {isHeaderLoaded ? (
                     <>
                         <Tabs
                             TabIndicatorProps={{ style: { height: 3 } }}
@@ -209,8 +199,6 @@ class PublicProfile extends Component<IProps, IState> {
                             <Manage
                                 userId={this.props.userId}
                                 ownProfile={OwnProfileQuery}
-                                draftsQuery={DraftsQuery}
-                                transfersQuery={PendingTransfersQuery}
                                 type="manage"
                                 removeMemberAction={removeMemberAction}
                                 routeChangeAction={routeChangeAction}

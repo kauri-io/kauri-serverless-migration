@@ -12,7 +12,8 @@ const PublicProfilePage = withTransaction('public-profile', 'page')(props => (
             userId={
                 props.router &&
                 props.router.query &&
-                props.router.query['username']
+                //props.router.query['username']
+                props.router.query['user_id']
             }
             routeChangeAction={props.routeChangAction}
             router={props.router}
