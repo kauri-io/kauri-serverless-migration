@@ -4,9 +4,9 @@ import withData from '../lib/with-data'
 import App from '../layouts'
 import Community from '../containers/Community'
 import { withRouter } from 'next/router'
+import { withTransaction } from '@elastic/apm-rum-react'
 
-const CommunityPage = ({ router }) => {
-    // console.log(router.query)
+const CommunityPage = withTransaction('approve', 'page')(({ router }) => {
     return (
         <App>
             <Community
@@ -15,7 +15,7 @@ const CommunityPage = ({ router }) => {
             />
         </App>
     )
-}
+})
 
 export default compose(
     withData,

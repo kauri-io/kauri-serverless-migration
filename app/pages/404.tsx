@@ -4,16 +4,13 @@ import withData from '../lib/with-data'
 import App from '../layouts'
 import Error from '../containers/Error'
 import { withRouter } from 'next/router'
+import { withTransaction } from '@elastic/apm-rum-react'
 
-class ErrorPage extends React.Component {
-    render() {
-        return (
-            <App>
-                <Error code="404" />
-            </App>
-        )
-    }
-}
+const ErrorPage = withTransaction('404', 'page')(() => (
+    <App>
+        <Error code="404" />
+    </App>
+))
 
 export default compose(
     withData,

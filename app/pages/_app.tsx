@@ -2,6 +2,7 @@ import App, { Container } from 'next/app'
 import Head from 'next/head'
 import React from 'react'
 import analytics from '../lib/analytics'
+import apm from '../lib/apm'
 
 class MyApp extends App {
     constructor(props) {
@@ -19,6 +20,7 @@ class MyApp extends App {
 
     render() {
         analytics.page(this.props.router)
+        apm.setInitialPageLoadName('Initial Load')
         const { Component, pageProps } = this.props
         return (
             <Container>

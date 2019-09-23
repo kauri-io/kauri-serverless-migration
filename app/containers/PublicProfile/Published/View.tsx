@@ -9,7 +9,7 @@ import Empty from './Empty'
 import { Grid, makeStyles, Theme } from '@material-ui/core'
 
 export interface IArticlesProps {
-    data: searchPersonalArticles
+    ArticlesQuery: searchPersonalArticles
     type: string
     isLoggedIn: boolean
     isOwner: boolean
@@ -17,12 +17,14 @@ export interface IArticlesProps {
 }
 
 const Articles: React.FC<IArticlesProps> = ({
-    data,
+    ArticlesQuery,
     type,
     isLoggedIn,
     isOwner,
 }) => {
-    const articles = data.searchArticles && data.searchArticles.content
+    console.log(ArticlesQuery)
+    const articles =
+        ArticlesQuery.searchArticles && ArticlesQuery.searchArticles.content
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
             paddingTop: theme.spacing(4),

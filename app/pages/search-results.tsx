@@ -4,11 +4,14 @@ import withData from '../lib/with-data'
 import App from '../layouts'
 import SearchResults from '../containers/SearchResults'
 import { withRouter } from 'next/router'
+import { withTransaction } from '@elastic/apm-rum-react'
 
-const SearchResultsPage = ({ router }) => (
-    <App>
-        <SearchResults query={router && router.query} router={router} />
-    </App>
+const SearchResultsPage = withTransaction('search-results', 'page')(
+    ({ router }) => (
+        <App>
+            <SearchResults query={router && router.query} router={router} />
+        </App>
+    )
 )
 
 export default compose(
