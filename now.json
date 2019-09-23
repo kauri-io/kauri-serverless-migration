@@ -85,8 +85,8 @@
       "dest": "/app/update-collection?collection_id=$1"
     },
     {
-      "src": "/(.*)/(.*)/p",
-      "dest": "/app/public-profile?user_id=$2"
+      "src": "/(.*)/p",
+      "dest": "/app/public-profile?username=$1"
     },
     {
       "src": "/public-profile/(.*)",

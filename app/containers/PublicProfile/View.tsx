@@ -5,7 +5,7 @@ import EditableHeader from './EditableHeader'
 import Loading from '../../components/Loading'
 import Published from './Published'
 import Manage from './Manage'
-import { getUser } from '../../queries/__generated__/getUser'
+import { getUserByUsername } from '../../queries/__generated__/getUserByUsername'
 import { getMyProfile } from '../../queries/__generated__/getMyProfile'
 import { IDeleteDraftArticleAction } from '../ArticleDraft/DeleteDraftArticleModule'
 import {
@@ -27,7 +27,7 @@ import { Tabs, Tab } from '@material-ui/core'
 interface IProps {
     router: any
     userId: string
-    UserQuery: getUser
+    UserQuery: getUserByUsername
     OwnProfileQuery: getMyProfile
     resendEmailVerificationAction: () => void
     showNotificationAction: (
@@ -97,18 +97,17 @@ class PublicProfile extends Component<IProps, IState> {
             saveUserDetailsAction,
             showNotificationAction,
             resendEmailVerificationAction,
-            userId,
         } = this.props
 
-        const isHeaderLoaded = typeof UserQuery.getUser === 'object'
+        const isHeaderLoaded = typeof UserQuery.getUserByUsername === 'object'
 
         const isEditing = this.state.isEditing
         const isOwner =
-            UserQuery.getUser && UserQuery.getUser.id === currentUser
+            UserQuery.getUserByUsername && UserQuery.getUserByUsername.id === currentUser
 
         function getUserField<T>(field: string | string[], defaultValue: T): T {
             return pipe(
-                path<T>(['getUser'].concat(field)),
+                path<T>(['getUserByUsername'].concat(field)),
                 defaultTo(defaultValue)
             )(UserQuery)
         }
@@ -181,7 +180,7 @@ class PublicProfile extends Component<IProps, IState> {
                         </Tabs>
                         {this.state.tab === 0 && (
                             <Published
-                                userId={userId}
+                                userId={getUserField<string>('id', '')}
                                 type="published"
                                 isOwner={!!isOwner}
                                 isLoggedIn={!!currentUser}
@@ -190,14 +189,14 @@ class PublicProfile extends Component<IProps, IState> {
                         )}
                         {this.state.tab === 1 && (
                             <Collections
-                                userId={userId}
+                                userId={getUserField<string>('id', '')}
                                 isLoggedIn={!!currentUser}
                                 routeChangeAction={routeChangeAction}
                             />
                         )}
                         {this.state.tab === 2 && isOwner && (
                             <Manage
-                                userId={this.props.userId}
+                                userId={getUserField<string>('id', '')}
                                 ownProfile={OwnProfileQuery}
                                 type="manage"
                                 removeMemberAction={removeMemberAction}

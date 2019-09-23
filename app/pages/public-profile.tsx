@@ -9,11 +9,10 @@ import { withTransaction } from '@elastic/apm-rum-react'
 const PublicProfilePage = withTransaction('public-profile', 'page')(props => (
     <App>
         <PublicProfile
-            userId={
+            username={
                 props.router &&
                 props.router.query &&
-                //props.router.query['username']
-                props.router.query['user_id']
+                props.router.query['username']
             }
             routeChangeAction={props.routeChangAction}
             router={props.router}

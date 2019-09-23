@@ -14,6 +14,19 @@ export const getUserDetails = gql`
     }
 `
 
+export const getUserByUsername = gql`
+    query getUserByUsername($username: String!) {
+        getUserByUsername(username: $username) {
+            id
+            username
+            name
+            title
+            website
+            avatar
+            social
+        }
+    }
+`
 export const getOwnProfile = gql`
     query getMyProfile {
         getMyProfile {

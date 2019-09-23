@@ -1,6 +1,6 @@
 import PublicProfile from './View'
 import { compose, graphql } from 'react-apollo'
-import { getUserDetails, getOwnProfile } from '../../queries/User'
+import { getUserByUsername, getOwnProfile } from '../../queries/User'
 
 import { deleteDraftArticleAction } from '../ArticleDraft/DeleteDraftArticleModule'
 import {
@@ -44,22 +44,21 @@ export default compose(
             routeChangeAction,
         }
     ),
-    graphql(getUserDetails, {
+    graphql(getUserByUsername, {
         name: 'UserQuery',
-        options: ({ userId }: { userId: string }) => ({
+        options: ({ username }: { username: string }) => ({
             fetchPolicy: 'cache-and-network',
             variables: {
-                userId,
+                username,
                 page: 0,
             },
         }),
     }),
     graphql(getOwnProfile, {
         name: 'OwnProfileQuery',
-        options: ({ userId }: { userId: string }) => ({
+        options: () => ({
             fetchPolicy: 'cache-and-network',
             variables: {
-                userId,
                 page: 0,
             },
         }),

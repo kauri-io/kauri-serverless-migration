@@ -3,10 +3,10 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: getUser
+// GraphQL query operation: getUserByUsername
 // ====================================================
 
-export interface getUser_getUser {
+export interface getUserByUsername_getUserByUsername {
   __typename: "PublicUserDTO";
   /**
    * User ID (Ethereum account address)
@@ -38,14 +38,14 @@ export interface getUser_getUser {
   social: any | null;
 }
 
-export interface getUser {
+export interface getUserByUsername {
   /**
-   * Retrieve a user profile (public information only) by ID.
+   * Retrieve a user profile (public information only) by username.
    * This operation can be performed anonymously.
    */
-  getUser: getUser_getUser;
+  getUserByUsername: getUserByUsername_getUserByUsername;
 }
 
-export interface getUserVariables {
-  userId: string;
+export interface getUserByUsernameVariables {
+  username: string;
 }
