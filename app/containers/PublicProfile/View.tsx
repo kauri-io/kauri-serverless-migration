@@ -103,7 +103,8 @@ class PublicProfile extends Component<IProps, IState> {
 
         const isEditing = this.state.isEditing
         const isOwner =
-            UserQuery.getUserByUsername && UserQuery.getUserByUsername.id === currentUser
+            UserQuery.getUserByUsername &&
+            UserQuery.getUserByUsername.id === currentUser
 
         function getUserField<T>(field: string | string[], defaultValue: T): T {
             return pipe(

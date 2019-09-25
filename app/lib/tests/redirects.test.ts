@@ -108,29 +108,19 @@ describe('Redirects', () => {
 
     describe('Profile', () => {
         beforeAll(() => {
-            const mockApolloState = {
-                apollo: {
-                    data: {
-                        'PublicUserDTO:1234': {
-                            username: 'test username',
-                        },
-                    },
-                },
-            }
-
             const mockUrl = {
                 query: {
-                    user_id: '1234',
+                    username: 'test-username',
                 },
             }
-            redirectProfile(mockContext, mockApolloState, mockUrl)
+            redirectProfile(mockContext, null, mockUrl)
         })
         it('should end the request', () => {
             expect(end).toHaveBeenCalled()
         })
         it('should do the correct 301 redirect', () => {
             expect(writeHead).toHaveBeenCalledWith(301, {
-                Location: '/test-username/1234/p',
+                Location: '/test-username/p',
             })
         })
     })

@@ -30,8 +30,7 @@ const Transfers: React.FC<IProps> = props => {
     const transfers =
         props.PendingTransfersQuery.getArticleTransfers &&
         props.PendingTransfersQuery.getArticleTransfers.content
-    console.log('###########')
-    console.log(transfers)
+
     const useStyles = makeStyles((theme: Theme) => ({
         table: {
             margin: theme.spacing(2),

@@ -81,7 +81,7 @@ describe('deleteDraftArticleEpic', () => {
                 message: 'Draft article deleted',
                 notificationType: 'success',
             }),
-            routeChangeAction(`/username/${123}/p`),
+            routeChangeAction(`/username/p`),
         ]
 
         const resultingActions = await testEpic(
