@@ -7,9 +7,14 @@ import { searchPersonalArticles } from '../../../queries/__generated__/searchPer
 import { getArticleURL } from '../../../lib/getURLs'
 import Empty from './Empty'
 import { Grid, makeStyles, Theme } from '@material-ui/core'
+import Loading from '../../../components/Loading'
+
+interface IArticlesQuery extends searchPersonalArticles {
+    loading: boolean
+}
 
 export interface IArticlesProps {
-    ArticlesQuery: searchPersonalArticles
+    ArticlesQuery: IArticlesQuery
     type: string
     isLoggedIn: boolean
     isOwner: boolean
@@ -22,14 +27,19 @@ const Articles: React.FC<IArticlesProps> = ({
     isLoggedIn,
     isOwner,
 }) => {
-    const articles =
-        ArticlesQuery.searchArticles && ArticlesQuery.searchArticles.content
+
+    if (ArticlesQuery.loading) {
+        return <Loading />
+    }
+
+    const articles = ArticlesQuery.searchArticles && ArticlesQuery.searchArticles.content
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
             paddingTop: theme.spacing(4),
         },
     }))
     const classes = useStyles()
+    
     if (articles) {
         return articles.length > 0 ? (
             <Grid

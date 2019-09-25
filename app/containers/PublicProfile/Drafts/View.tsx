@@ -16,9 +16,14 @@ import {
 import { getArticleURL } from '../../../lib/getURLs'
 import Link from 'next/link'
 import { Grid } from '@material-ui/core'
+import Loading from '../../../components/Loading'
+
+interface IDraftQuery extends searchArticles {
+    loading: boolean
+}
 
 interface IArticlesProps {
-    DraftsQuery: searchArticles
+    DraftsQuery: IDraftQuery
     type: string
     isLoggedIn: boolean
     isOwner: boolean
@@ -31,9 +36,12 @@ interface IArticlesProps {
 }
 
 const Articles: React.FC<IArticlesProps> = props => {
-    const articles =
-        props.DraftsQuery.searchArticles &&
-        props.DraftsQuery.searchArticles.content
+
+    if (props.DraftsQuery.loading) {
+        return <Loading />
+    }
+
+    const articles = props.DraftsQuery.searchArticles && props.DraftsQuery.searchArticles.content
     if (articles) {
         return articles.length > 0 ? (
             <Fragment>

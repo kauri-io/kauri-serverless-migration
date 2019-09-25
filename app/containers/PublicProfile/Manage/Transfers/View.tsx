@@ -2,31 +2,25 @@ import Table from './Table'
 import { Grid, Typography, makeStyles, Theme } from '@material-ui/core'
 import { getArticleTransfers } from '../../../../queries/__generated__/getArticleTransfers'
 import withPagination from '../../../../lib/with-pagination'
+import Loading from '../../../../components/Loading'
+import PublicProfileEmptyState from '../../../../components/PublicProfileEmptyState'
+
+interface IPendingTransfersQuery extends getArticleTransfers {
+    loading: boolean
+}
 
 interface IProps {
-    PendingTransfersQuery: getArticleTransfers
+    PendingTransfersQuery: IPendingTransfersQuery
     rejectArticleTransferAction: ({ id }: { id: string }) => void
     acceptArticleTransferAction: ({ id }: { id: string }) => void
 }
 
-// export interface ITransfer {
-//     id: string
-//     transferrer: {
-//         username: string
-//         id: string
-//     }
-//     article: {
-//         id: string
-//         title: string
-//         owner: {
-//             name: string
-//             username: string
-//             id: string
-//         }
-//     }
-// }
-
 const Transfers: React.FC<IProps> = props => {
+
+    if (props.PendingTransfersQuery.loading) {
+        return <Loading />
+    }
+
     const transfers =
         props.PendingTransfersQuery.getArticleTransfers &&
         props.PendingTransfersQuery.getArticleTransfers.content
@@ -59,12 +53,19 @@ const Transfers: React.FC<IProps> = props => {
                 />
             </Grid>
         ) : (
-            <Grid className={classes.table}>
-                <Typography variant="h5">
-                    Ownership Transfers Requests
-                </Typography>
-                <Typography>No transfers</Typography>
-            </Grid>
+            <Grid>
+            <PublicProfileEmptyState
+                iconSrc={'/static/images/icons/no-articles-for-approval.svg'}
+                description={
+                    <Grid>
+                         <Typography>
+                            You don't have any pending ownership transfers at the moment.
+                        </Typography>
+                    </Grid>
+                }
+                title="Ownership Transfers Requests"
+            />
+        </Grid>
         )
     }
     return null
