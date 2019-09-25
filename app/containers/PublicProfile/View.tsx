@@ -96,7 +96,7 @@ class PublicProfile extends Component<IProps, IState> {
             removeMemberAction,
             saveUserDetailsAction,
             showNotificationAction,
-            resendEmailVerificationAction,
+            resendEmailVerificationAction
         } = this.props
 
         const isHeaderLoaded = typeof UserQuery.getUserByUsername === 'object'

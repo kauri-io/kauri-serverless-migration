@@ -1,7 +1,6 @@
 import PublicProfile from './View'
 import { compose, graphql } from 'react-apollo'
 import { getUserByUsername, getOwnProfile } from '../../queries/User'
-
 import { deleteDraftArticleAction } from '../ArticleDraft/DeleteDraftArticleModule'
 import {
     closeModalAction,

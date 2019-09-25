@@ -215,6 +215,10 @@ const ArticleEditor = props => {
             return createErrorNotificationAction(
                 'Please set at least 1 tag for your article'
             )
+        } else if (!content || content.length === 0) {
+            return createErrorNotificationAction(
+                'Please add some content'
+            )
         }
 
         // NEW DRAFT
