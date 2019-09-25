@@ -27,19 +27,19 @@ const Articles: React.FC<IArticlesProps> = ({
     isLoggedIn,
     isOwner,
 }) => {
-
     if (ArticlesQuery.loading) {
         return <Loading />
     }
 
-    const articles = ArticlesQuery.searchArticles && ArticlesQuery.searchArticles.content
+    const articles =
+        ArticlesQuery.searchArticles && ArticlesQuery.searchArticles.content
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
             paddingTop: theme.spacing(4),
         },
     }))
     const classes = useStyles()
-    
+
     if (articles) {
         return articles.length > 0 ? (
             <Grid

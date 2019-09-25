@@ -36,12 +36,13 @@ interface IArticlesProps {
 }
 
 const Articles: React.FC<IArticlesProps> = props => {
-
     if (props.DraftsQuery.loading) {
         return <Loading />
     }
 
-    const articles = props.DraftsQuery.searchArticles && props.DraftsQuery.searchArticles.content
+    const articles =
+        props.DraftsQuery.searchArticles &&
+        props.DraftsQuery.searchArticles.content
     if (articles) {
         return articles.length > 0 ? (
             <Fragment>

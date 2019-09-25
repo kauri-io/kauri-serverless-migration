@@ -16,7 +16,6 @@ interface IProps {
 }
 
 const Transfers: React.FC<IProps> = props => {
-
     if (props.PendingTransfersQuery.loading) {
         return <Loading />
     }
@@ -54,18 +53,21 @@ const Transfers: React.FC<IProps> = props => {
             </Grid>
         ) : (
             <Grid>
-            <PublicProfileEmptyState
-                iconSrc={'/static/images/icons/no-articles-for-approval.svg'}
-                description={
-                    <Grid>
-                         <Typography>
-                            You don't have any pending ownership transfers at the moment.
-                        </Typography>
-                    </Grid>
-                }
-                title="Ownership Transfers Requests"
-            />
-        </Grid>
+                <PublicProfileEmptyState
+                    iconSrc={
+                        '/static/images/icons/no-articles-for-approval.svg'
+                    }
+                    description={
+                        <Grid>
+                            <Typography>
+                                You don't have any pending ownership transfers
+                                at the moment.
+                            </Typography>
+                        </Grid>
+                    }
+                    title="Ownership Transfers Requests"
+                />
+            </Grid>
         )
     }
     return null
