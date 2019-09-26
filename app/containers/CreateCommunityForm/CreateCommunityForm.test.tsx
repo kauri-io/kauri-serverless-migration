@@ -18,7 +18,7 @@ describe('containers/CreateCommunityForm/View', () => {
         },
         userId: '456',
         userAvatar: 'testAvatar',
-        username: '345',
+        username: 'test-username',
         validateForm: jest.fn(),
         showNotificationAction: jest.fn(),
         isCommunityAdmin: false,
@@ -29,6 +29,7 @@ describe('containers/CreateCommunityForm/View', () => {
         errors: {},
         values: {
             id: '3456',
+            username: 'test-username',
             name: 'test name',
             description: 'test description',
             avatar: 'test avatar url',
@@ -59,6 +60,7 @@ describe('containers/CreateCommunityForm/View', () => {
         isValid: true,
         initialValues: {
             id: '3456',
+            username: 'test-username',
             name: 'test name',
             description: 'test description',
             avatar: 'test avatar url',

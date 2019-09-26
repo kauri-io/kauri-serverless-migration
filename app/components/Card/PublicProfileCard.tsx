@@ -101,7 +101,7 @@ const PublicProfileCard: React.FC<IProps> = ({
     className,
 }) => {
     const classes = PublicProfileCardStyles({})
-    const href = getProfileURL({ username: name || username, id, userId: id })
+    const href = getProfileURL({ username })
 
     return (
         <Card

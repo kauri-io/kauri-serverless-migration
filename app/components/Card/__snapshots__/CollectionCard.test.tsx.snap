@@ -412,7 +412,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
           "avatar": "https://dev.kauri.io/static/images/DefaultCollection.png",
           "id": "1234567890",
           "name": "test name",
-          "username": "test username",
+          "username": "test-username",
         }
       }
       sections={
@@ -1902,21 +1902,21 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                           className="makeStyles-user-11"
                         >
                           <AvatarComp
-                            aria-label="test username"
+                            aria-label="test-username"
                             avatar="https://dev.kauri.io/static/images/DefaultCollection.png"
                             data-testid="CollectionCard-1234567890-avatar"
                             id="1234567890"
                             name="test name"
-                            username="test username"
+                            username="test-username"
                             withName={true}
                           >
                             <Link
-                              as="/test username/p"
-                              href="/public-profile?username=test username"
+                              as="/test-username/p"
+                              href="/public-profile?username=test-username"
                               prefetch={true}
                             >
                               <a
-                                href="/test username/p"
+                                href="/test-username/p"
                                 onClick={[Function]}
                                 onMouseEnter={[Function]}
                               >

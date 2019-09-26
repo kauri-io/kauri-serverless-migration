@@ -25,7 +25,7 @@ export const generateArticle = (mod: number) => ({
         {
             __typename: 'PublicUserDTO' as Article_author['__typename'],
             id: `679${mod}`,
-            username: `test author username ${mod}`,
+            username: `test-author-username-${mod}`,
             name: `test author name ${mod}`,
             avatar: `test avatar ${mod}`,
         },
@@ -53,7 +53,7 @@ export const generateArticle = (mod: number) => ({
     author: {
         __typename: 'PublicUserDTO' as Article_author['__typename'],
         id: `679${mod}`,
-        username: `test author username ${mod}`,
+        username: `test-author-username-${mod}`,
         name: `test author name ${mod}`,
         avatar: `test avatar ${mod}`,
     },
@@ -62,8 +62,8 @@ export const generateArticle = (mod: number) => ({
         id: `678${mod}`,
         name: `test author name ${mod}`,
         avatar: `test avatar ${mod}`,
-        publicUserName: `test public username${mod}`,
-        username: `test author username${mod}`,
+        publicUserName: `test-public-username-${mod}`,
+        username: `test-author-username-${mod}`,
         resourceIdentifier: {
             id: `678${mod}`,
             type: 'ResourceIdentifier' as ResourceTypeInput,

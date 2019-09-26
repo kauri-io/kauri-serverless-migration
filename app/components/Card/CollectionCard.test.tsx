@@ -16,7 +16,7 @@ describe('components/Card/CollectionCard', () => {
                     'https://dev.kauri.io/static/images/DefaultCollection.png',
                 id: '1234567890',
                 name: 'test name',
-                username: 'test username',
+                username: 'test-username',
             },
             attributes: {
                 background:

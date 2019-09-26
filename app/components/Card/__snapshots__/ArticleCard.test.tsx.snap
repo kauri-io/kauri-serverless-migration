@@ -401,7 +401,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
           "avatar": "https://dev.kauri.io/static/images/DefaultArticle.png",
           "id": "0x12...",
           "name": "test name",
-          "username": "test username",
+          "username": "test-username",
         }
       }
       comments={
@@ -412,7 +412,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                 "avatar": "https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU",
                 "id": "0x12...",
                 "name": "test name",
-                "username": "test username",
+                "username": "test-username",
               },
               "body": "test comment",
               "posted": "1994-06-13T00:05:32.000Z",
@@ -683,21 +683,21 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                           className="makeStyles-user-12"
                         >
                           <AvatarComp
-                            aria-label="test username"
+                            aria-label="test-username"
                             avatar="https://dev.kauri.io/static/images/DefaultArticle.png"
                             data-testid="ArticleCard-0x12...-author"
                             id="0x12..."
                             name="test name"
-                            username="test username"
+                            username="test-username"
                             withName={true}
                           >
                             <Link
-                              as="/test username/p"
-                              href="/public-profile?username=test username"
+                              as="/test-username/p"
+                              href="/public-profile?username=test-username"
                               prefetch={true}
                             >
                               <a
-                                href="/test username/p"
+                                href="/test-username/p"
                                 onClick={[Function]}
                                 onMouseEnter={[Function]}
                               >

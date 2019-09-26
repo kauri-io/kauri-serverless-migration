@@ -920,13 +920,13 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                       </WithStyles(ForwardRef(Typography))>
                     </div>
                     <Link
-                      as="/PublicProfile/p"
-                      href="/public-profile?username=PublicProfile"
+                      as="/test username/p"
+                      href="/public-profile?username=test username"
                       prefetch={true}
                     >
                       <a
                         className="makeStyles-name-9"
-                        href="/PublicProfile/p"
+                        href="/test username/p"
                         onClick={[Function]}
                         onMouseEnter={[Function]}
                       >
@@ -1252,12 +1252,12 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                     </Link>
                   </div>
                   <Link
-                    as="/PublicProfile/p"
-                    href="/public-profile?username=PublicProfile"
+                    as="/test username/p"
+                    href="/public-profile?username=test username"
                     prefetch={true}
                   >
                     <a
-                      href="/PublicProfile/p"
+                      href="/test username/p"
                       onClick={[Function]}
                       onMouseEnter={[Function]}
                     >

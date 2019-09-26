@@ -509,7 +509,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                     "avatar": "test avatar 1",
                     "id": "6791",
                     "name": "test author name 1",
-                    "username": "test author username 1",
+                    "username": "test-author-username-1",
                   },
                   "authorId": "3451",
                   "checkpoint": null,
@@ -527,7 +527,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                       "avatar": "test avatar 1",
                       "id": "6791",
                       "name": "test author name 1",
-                      "username": "test author username 1",
+                      "username": "test-author-username-1",
                     },
                   ],
                   "dateCreated": "2019-01-01",
@@ -539,13 +539,13 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                     "avatar": "test avatar 1",
                     "id": "6781",
                     "name": "test author name 1",
-                    "publicUserName": "test public username1",
+                    "publicUserName": "test-public-username-1",
                     "resourceIdentifier": Object {
                       "__typename": "PublicUserDTO",
                       "id": "6781",
                       "type": "ResourceIdentifier",
                     },
-                    "username": "test author username1",
+                    "username": "test-author-username-1",
                   },
                   "resourceIdentifier": Object {
                     "__typename": "ResourceIdentifier",
@@ -591,7 +591,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                   "avatar": "test avatar 1",
                   "id": "6791",
                   "name": "test author name 1",
-                  "username": "test author username 1",
+                  "username": "test-author-username-1",
                 }
               }
               authorId="3451"
@@ -615,7 +615,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                     "avatar": "test avatar 1",
                     "id": "6791",
                     "name": "test author name 1",
-                    "username": "test author username 1",
+                    "username": "test-author-username-1",
                   },
                 ]
               }
@@ -630,13 +630,13 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                   "avatar": "test avatar 1",
                   "id": "6781",
                   "name": "test author name 1",
-                  "publicUserName": "test public username1",
+                  "publicUserName": "test-public-username-1",
                   "resourceIdentifier": Object {
                     "__typename": "PublicUserDTO",
                     "id": "6781",
                     "type": "ResourceIdentifier",
                   },
-                  "username": "test author username1",
+                  "username": "test-author-username-1",
                 }
               }
               publishArticleAction={[MockFunction]}
@@ -1265,7 +1265,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                   "avatar": "test avatar 1",
                   "id": "6791",
                   "name": "test author name 1",
-                  "username": "test author username 1",
+                  "username": "test-author-username-1",
                 }
               }
               authorId="3451"
@@ -1288,7 +1288,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                     "avatar": "test avatar 1",
                     "id": "6791",
                     "name": "test author name 1",
-                    "username": "test author username 1",
+                    "username": "test-author-username-1",
                   },
                 ]
               }
@@ -1304,13 +1304,13 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                   "avatar": "test avatar 1",
                   "id": "6781",
                   "name": "test author name 1",
-                  "publicUserName": "test public username1",
+                  "publicUserName": "test-public-username-1",
                   "resourceIdentifier": Object {
                     "__typename": "PublicUserDTO",
                     "id": "6781",
                     "type": "ResourceIdentifier",
                   },
-                  "username": "test author username1",
+                  "username": "test-author-username-1",
                 }
               }
               resourceIdentifier={
