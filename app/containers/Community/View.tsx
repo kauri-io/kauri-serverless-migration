@@ -97,6 +97,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         id: this.props.communityId,
                         type: 'COMMUNITY',
                     },
+                    referrer: window.document.referrer ? window.document.referrer : null
                 },
             })
 

@@ -1,4 +1,4 @@
-import { compose, graphql } from 'react-apollo'
+import { compose, graphql, withApollo } from 'react-apollo'
 import { connect } from 'react-redux'
 import { getArticleQuery, relatedArticles } from '../../queries/Article'
 import withLoading from '../../lib/with-loading'
@@ -20,6 +20,7 @@ const mapStateToProps = (state: IReduxState) => ({
 })
 
 export default compose(
+    withApollo,
     connect(
         mapStateToProps,
         {

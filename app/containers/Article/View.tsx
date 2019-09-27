@@ -1,6 +1,6 @@
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ArticleOutline from '../../components/Markdown/Outline'
 import Image from '../../components/Image'
 import Avatar from '../../components/Avatar'
@@ -16,6 +16,12 @@ import slugify from 'slugify'
 import { getArticleURL } from '../../lib/getURLs'
 import Comments from './components/ArticleComments'
 import Head from 'next/head'
+import ApolloClient from 'apollo-client'
+import { recordViewMutation } from '../../queries/Utils'
+import {
+    recordView,
+    recordViewVariables,
+} from '../../queries/__generated__/recordView'
 
 interface IProps {
     id: string
@@ -33,6 +39,7 @@ interface IProps {
     // closeModalAction: () => void;
     hostName: string
     addCommentAction: (e: string) => void
+    client?: ApolloClient<{}>
 }
 
 const ArticleComp = ({
@@ -45,6 +52,7 @@ const ArticleComp = ({
     userId,
     user,
     RelatedArticles: { searchMoreLikeThis },
+    client,
     data: {
         getArticle: {
             id,
@@ -62,6 +70,20 @@ const ArticleComp = ({
     const classes = ArticleStyles({})
     const author = contributors && contributors[0]
     const canonicalUrl = attributes.canonical
+
+    useEffect(() => {
+        client && client.mutate<recordView, recordViewVariables>({
+            fetchPolicy: 'no-cache',
+            mutation: recordViewMutation,
+            variables: {
+                resourceId: {
+                    id: id,
+                    type: 'ARTICLE' as any,
+                },
+                referrer: window.document.referrer ? window.document.referrer : null
+            },
+        })
+    }, [])
     return (
         <>
             {canonicalUrl && canonicalUrl.length > 0 && (

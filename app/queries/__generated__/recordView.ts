@@ -26,4 +26,5 @@ export interface recordView {
 
 export interface recordViewVariables {
   resourceId: ResourceIdentifierInput;
+  referrer?: string | null;
 }
