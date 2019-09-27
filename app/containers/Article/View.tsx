@@ -28,6 +28,7 @@ interface IProps {
     voteAction: any
     routeChangeAction: (route: string) => void
     userId: string
+    user: any
     openModalAction: (children: any) => void
     // closeModalAction: () => void;
     hostName: string
@@ -42,6 +43,7 @@ const ArticleComp = ({
     routeChangeAction,
     addCommentAction,
     userId,
+    user,
     RelatedArticles: { searchMoreLikeThis },
     data: {
         getArticle: {
@@ -151,7 +153,7 @@ const ArticleComp = ({
                     <Comments
                         article={resourceIdentifier}
                         addCommentAction={addCommentAction}
-                        userId={userId}
+                        user={user}
                         comments={comments}
                     />
                     <Grid

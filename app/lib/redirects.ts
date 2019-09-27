@@ -44,18 +44,13 @@ export const redirectCommunity = (context, stateApollo, url) => {
     context.res.end()
 }
 
-export const redirectProfile = (context, stateApollo, url) => {
-    const { username } = stateApollo.apollo.data[
-        `PublicUserDTO:${url.query.user_id}`
-    ]
+export const redirectProfile = (context, _stateApollo, url) => {
     const redirectUrl = getProfileURL({
-        id: url.query.user_id,
-        username,
+        username: url.query.username,
     })
     context.res.writeHead(301, {
         Location: redirectUrl.as,
     })
-    context.res.end()
     context.res.end()
 }
 
@@ -66,16 +61,7 @@ export const handleRedirects = (context, stateApollo, url) => {
     if (!process.browser && url.pathname === '/collection' && !url.query.slug) {
         redirectCollection(context, stateApollo, url)
     }
-
     if (!process.browser && url.pathname === '/community' && !url.query.slug) {
         redirectCommunity(context, stateApollo, url)
-    }
-
-    if (
-        !process.browser &&
-        url.pathname === '/public-profile' &&
-        !url.query.slug
-    ) {
-        redirectProfile(context, stateApollo, url)
     }
 }

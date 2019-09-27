@@ -14,6 +14,7 @@ const initialState = {
     app: {
         user: {
             id: 'testid',
+            username: 'test-username',
             communities: []
         }
     }

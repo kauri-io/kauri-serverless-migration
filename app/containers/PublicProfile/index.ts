@@ -1,11 +1,6 @@
 import PublicProfile from './View'
 import { compose, graphql } from 'react-apollo'
-import {
-    searchPersonalDrafts,
-    getArticleTransfers,
-} from '../../queries/Article'
-import { getUserDetails, getOwnProfile } from '../../queries/User'
-
+import { getUserByUsername, getOwnProfile } from '../../queries/User'
 import { deleteDraftArticleAction } from '../ArticleDraft/DeleteDraftArticleModule'
 import {
     closeModalAction,
@@ -48,45 +43,22 @@ export default compose(
             routeChangeAction,
         }
     ),
-    graphql(getUserDetails, {
+    graphql(getUserByUsername, {
         name: 'UserQuery',
-        options: ({ userId }: { userId: string }) => ({
+        options: ({ username }: { username: string }) => ({
             fetchPolicy: 'cache-and-network',
             variables: {
-                userId,
+                username,
                 page: 0,
             },
         }),
     }),
     graphql(getOwnProfile, {
         name: 'OwnProfileQuery',
-        options: ({ userId }: { userId: string }) => ({
-            fetchPolicy: 'cache-and-network',
-            variables: {
-                userId,
-                page: 0,
-            },
-        }),
-    }),
-
-    graphql(searchPersonalDrafts, {
-        name: 'DraftsQuery',
-        options: ({ userId }: { userId: string }) => ({
+        options: () => ({
             fetchPolicy: 'cache-and-network',
             variables: {
                 page: 0,
-                userId,
-            },
-        }),
-    }),
-    graphql(getArticleTransfers, {
-        name: 'PendingTransfersQuery',
-        options: ({ userId }: { userId: string }) => ({
-            fetchPolicy: 'cache-and-network',
-            variables: {
-                page: 0,
-                size: 100,
-                recipient: userId,
             },
         }),
     }),

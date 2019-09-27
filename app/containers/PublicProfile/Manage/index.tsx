@@ -1,7 +1,7 @@
 import React from 'react'
 import withPagination from '../../../lib/with-pagination'
 import ResourceCategory from '../../../components/ResourceCategory'
-import Drafts from '../Drafts/View'
+import Drafts from '../Drafts'
 import Awaiting from '../Awaiting/View'
 import Pending from '../Pending/View'
 import Transfers from './Transfers'
@@ -20,11 +20,7 @@ interface IState {
     currentCategory: string
 }
 
-const Manage: React.FunctionComponent<
-    any & {
-        isLoggedIn: boolean
-    }
-> = props => {
+const Manage: React.FunctionComponent<any> = props => {
     const [state, setState] = React.useState<IState>({
         currentCategory: 'drafts',
     })
@@ -33,15 +29,8 @@ const Manage: React.FunctionComponent<
         ['ownProfile', 'getMyProfile', 'communities'],
         props
     )
-    const transfers = path(
-        ['transfersQuery', 'getArticleTransfers', 'content'],
-        props
-    )
 
-    if (
-        (transfers as []).length > 0 &&
-        categories.indexOf('pending transfers') === -1
-    ) {
+    if (categories.indexOf('pending transfers') === -1) {
         categories.push('pending transfers')
     }
     if (
@@ -85,9 +74,7 @@ const Manage: React.FunctionComponent<
                 ))}
             </Grid>
             <Grid sm={9} item={true}>
-                {state.currentCategory === 'drafts' && (
-                    <Drafts {...props} data={props.draftsQuery} />
-                )}
+                {state.currentCategory === 'drafts' && <Drafts {...props} />}
                 {state.currentCategory === 'awaiting approval' && (
                     <Awaiting
                         {...props}
@@ -107,7 +94,7 @@ const Manage: React.FunctionComponent<
                     />
                 )}
                 {state.currentCategory === 'pending transfers' && (
-                    <Transfers {...props} data={transfers} />
+                    <Transfers {...props} />
                 )}
                 {state.currentCategory === 'communities' && (
                     <MyCommunities {...props} data={communities} />

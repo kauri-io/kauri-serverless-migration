@@ -3,7 +3,7 @@ import ArticleCard from '../../../components/Card/ArticleCard'
 import withPagination from '../../../lib/with-pagination'
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
 import Button from '../../../components/Button'
-import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
+import { searchArticles } from '../../../queries/__generated__/searchArticles'
 import {
     IOpenModalAction,
     IOpenModalPayload,
@@ -16,9 +16,14 @@ import {
 import { getArticleURL } from '../../../lib/getURLs'
 import Link from 'next/link'
 import { Grid } from '@material-ui/core'
+import Loading from '../../../components/Loading'
+
+interface IDraftQuery extends searchArticles {
+    loading: boolean
+}
 
 interface IArticlesProps {
-    data: searchPersonalArticles
+    DraftsQuery: IDraftQuery
     type: string
     isLoggedIn: boolean
     isOwner: boolean
@@ -30,10 +35,16 @@ interface IArticlesProps {
     ) => IDeleteDraftArticleAction
 }
 
-const Articles: React.FC<IArticlesProps> = ({ data }) => {
-    const articles = data.searchArticles && data.searchArticles.content
+const Articles: React.FC<IArticlesProps> = props => {
+    if (props.DraftsQuery.loading) {
+        return <Loading />
+    }
+
+    const articles =
+        props.DraftsQuery.searchArticles &&
+        props.DraftsQuery.searchArticles.content
     if (articles) {
-        return articles && articles.length > 0 ? (
+        return articles.length > 0 ? (
             <Fragment>
                 <Grid container={true} spacing={2} justify="center">
                     {articles.map(

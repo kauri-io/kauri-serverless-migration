@@ -60,7 +60,6 @@ const AvatarComp = ({
               })
             : getProfileURL({
                   username,
-                  id,
               })
 
     const AvatarContent = (

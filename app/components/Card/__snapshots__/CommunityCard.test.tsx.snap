@@ -1645,12 +1645,12 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                               withName={false}
                             >
                               <Link
-                                as="/alice/12345678/p"
-                                href="/public-profile?user_id=12345678"
+                                as="/Alice/p"
+                                href="/public-profile?username=Alice"
                                 prefetch={true}
                               >
                                 <a
-                                  href="/alice/12345678/p"
+                                  href="/Alice/p"
                                   onClick={[Function]}
                                   onMouseEnter={[Function]}
                                 >
@@ -1704,12 +1704,12 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                               withName={false}
                             >
                               <Link
-                                as="/bob/12345690/p"
-                                href="/public-profile?user_id=12345690"
+                                as="/Bob/p"
+                                href="/public-profile?username=Bob"
                                 prefetch={true}
                               >
                                 <a
-                                  href="/bob/12345690/p"
+                                  href="/Bob/p"
                                   onClick={[Function]}
                                   onMouseEnter={[Function]}
                                 >
@@ -1763,12 +1763,12 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                               withName={false}
                             >
                               <Link
-                                as="/charlie/1234590/p"
-                                href="/public-profile?user_id=1234590"
+                                as="/Charlie/p"
+                                href="/public-profile?username=Charlie"
                                 prefetch={true}
                               >
                                 <a
-                                  href="/charlie/1234590/p"
+                                  href="/Charlie/p"
                                   onClick={[Function]}
                                   onMouseEnter={[Function]}
                                 >

@@ -260,7 +260,7 @@ const getURL = (value: string, type: string) => {
 
 interface ICommunityMember {
     id: string | null
-    name: string | null
+    username: string | null
     role: string | null
     avatar: string | null
 }
@@ -487,7 +487,8 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                                             key={String(i.id)}
                                                             id={String(i.id)}
                                                             username={
-                                                                i.name || null
+                                                                i.username ||
+                                                                null
                                                             }
                                                             avatar={
                                                                 i.avatar || null

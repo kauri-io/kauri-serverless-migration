@@ -76,7 +76,7 @@ const Articles = ({ data, type, isOwner }: IArticlesProps) => {
                         </Grid>
                     }
                     title="No Submitted Updates"
-                />{' '}
+                />
             </Grid>
         )
     }

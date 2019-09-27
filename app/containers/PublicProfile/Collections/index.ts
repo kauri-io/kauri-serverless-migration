@@ -1,4 +1,4 @@
-import Articles from './View'
+import View from './View'
 import { compose, graphql } from 'react-apollo'
 import { getCollectionsForUser } from '../../../queries/Collection'
 import { connect } from 'react-redux'
@@ -36,4 +36,4 @@ export default compose(
         }),
     }),
     withLoading()
-)(withRouter(Articles))
+)(withRouter(View))

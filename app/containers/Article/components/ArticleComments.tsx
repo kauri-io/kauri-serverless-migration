@@ -27,12 +27,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-export default ({
-    article,
-    comments: { content },
-    userId,
-    addCommentAction,
-}) => {
+export default ({ article, comments: { content }, user, addCommentAction }) => {
     const [comment, setComment] = useState('')
     const classes = useStyles()
     return (
@@ -45,10 +40,16 @@ export default ({
                 {content.length} Comment{content.length !== 1 ? 's' : ''}
             </Typography>
             <div className={classes.container}>
-                {userId && (
+                {user && (
                     <Grid container={true}>
                         <Grid item={true} sm={1}>
-                            <Avatar size={40} withName={false} id={userId} />
+                            <Avatar
+                                size={40}
+                                withName={false}
+                                username={user.username}
+                                id={user.id}
+                                avatar={user.avatar}
+                            />
                         </Grid>
                         <Grid item={true} sm={11}>
                             <div className={classes.editorWrapper}>

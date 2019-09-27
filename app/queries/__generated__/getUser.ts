@@ -40,7 +40,7 @@ export interface getUser_getUser {
 
 export interface getUser {
   /**
-   * Retrieve a user profile (public information only).
+   * Retrieve a user profile (public information only) by ID.
    * This operation can be performed anonymously.
    */
   getUser: getUser_getUser;

@@ -409,6 +409,7 @@ exports[`components/Navbar should match snapshot 1`] = `
             Object {
               "communities": Array [],
               "id": "testid",
+              "username": "test-username",
             }
           }
         >
@@ -418,6 +419,7 @@ exports[`components/Navbar should match snapshot 1`] = `
               Object {
                 "communities": Array [],
                 "id": "testid",
+                "username": "test-username",
               }
             }
           >

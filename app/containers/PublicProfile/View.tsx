@@ -5,11 +5,8 @@ import EditableHeader from './EditableHeader'
 import Loading from '../../components/Loading'
 import Published from './Published'
 import Manage from './Manage'
-import { getUser } from '../../queries/__generated__/getUser'
+import { getUserByUsername } from '../../queries/__generated__/getUserByUsername'
 import { getMyProfile } from '../../queries/__generated__/getMyProfile'
-import { searchPersonalArticles } from '../../queries/__generated__/searchPersonalArticles'
-import { getCollectionsForUser } from '../../queries/__generated__/getCollectionsForUser'
-import { searchPendingArticles_searchArticles } from '../../queries/__generated__/searchPendingArticles'
 import { IDeleteDraftArticleAction } from '../ArticleDraft/DeleteDraftArticleModule'
 import {
     IRejectArticleTransferAction,
@@ -30,11 +27,8 @@ import { Tabs, Tab } from '@material-ui/core'
 interface IProps {
     router: any
     userId: string
-    UserQuery: getUser
-    CollectionQuery: getCollectionsForUser
-    DraftsQuery: searchPersonalArticles
+    UserQuery: getUserByUsername
     OwnProfileQuery: getMyProfile
-    PendingTransfersQuery: searchPendingArticles_searchArticles
     resendEmailVerificationAction: () => void
     showNotificationAction: (
         payload: IShowNotificationPayload
@@ -90,9 +84,7 @@ class PublicProfile extends Component<IProps, IState> {
     render() {
         const {
             UserQuery,
-            DraftsQuery,
             OwnProfileQuery,
-            PendingTransfersQuery,
             routeChangeAction,
             currentUser,
             deleteDraftArticleAction,
@@ -105,20 +97,18 @@ class PublicProfile extends Component<IProps, IState> {
             saveUserDetailsAction,
             showNotificationAction,
             resendEmailVerificationAction,
-            userId,
         } = this.props
 
-        const isHeaderLoaded = typeof UserQuery.getUser === 'object'
-
-        const areListsLoaded = typeof DraftsQuery.searchArticles === 'object'
+        const isHeaderLoaded = typeof UserQuery.getUserByUsername === 'object'
 
         const isEditing = this.state.isEditing
         const isOwner =
-            UserQuery.getUser && UserQuery.getUser.id === currentUser
+            UserQuery.getUserByUsername &&
+            UserQuery.getUserByUsername.id === currentUser
 
         function getUserField<T>(field: string | string[], defaultValue: T): T {
             return pipe(
-                path<T>(['getUser'].concat(field)),
+                path<T>(['getUserByUsername'].concat(field)),
                 defaultTo(defaultValue)
             )(UserQuery)
         }
@@ -176,7 +166,7 @@ class PublicProfile extends Component<IProps, IState> {
                         hostName={hostName}
                     />
                 )}
-                {isHeaderLoaded && areListsLoaded ? (
+                {isHeaderLoaded ? (
                     <>
                         <Tabs
                             TabIndicatorProps={{ style: { height: 3 } }}
@@ -191,7 +181,7 @@ class PublicProfile extends Component<IProps, IState> {
                         </Tabs>
                         {this.state.tab === 0 && (
                             <Published
-                                userId={userId}
+                                userId={getUserField<string>('id', '')}
                                 type="published"
                                 isOwner={!!isOwner}
                                 isLoggedIn={!!currentUser}
@@ -200,17 +190,15 @@ class PublicProfile extends Component<IProps, IState> {
                         )}
                         {this.state.tab === 1 && (
                             <Collections
-                                userId={userId}
+                                userId={getUserField<string>('id', '')}
                                 isLoggedIn={!!currentUser}
                                 routeChangeAction={routeChangeAction}
                             />
                         )}
                         {this.state.tab === 2 && isOwner && (
                             <Manage
-                                userId={this.props.userId}
+                                userId={getUserField<string>('id', '')}
                                 ownProfile={OwnProfileQuery}
-                                draftsQuery={DraftsQuery}
-                                transfersQuery={PendingTransfersQuery}
                                 type="manage"
                                 removeMemberAction={removeMemberAction}
                                 routeChangeAction={routeChangeAction}

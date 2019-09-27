@@ -14,9 +14,14 @@ describe('containers/Article', () => {
         const article1 = generateArticle(1)
         const article2 = generateArticle(2)
         const article3 = generateArticle(3)
+
         const props = {
             id: '123',
             userId: '234',
+            user: {
+                id: '234',
+                username: 'test-username',
+            },
             classes: {},
             data: {
                 getArticle: article1,
@@ -56,6 +61,7 @@ describe('containers/Article', () => {
             openModalAction: jest.fn(),
             hostName: 'test hostname',
         }
+
         const wrapper = mountWithRedux(
             <MockedProvider>
                 <Article {...props} />

@@ -67,7 +67,7 @@ describe('publishArticleEpic', () => {
                 message: 'Article Published',
                 notificationType: 'success',
             }),
-            routeChangeAction('/test-username/123/p'),
+            routeChangeAction('/test-username/p'),
         ]
 
         const resultingActions = await testEpic(
@@ -77,7 +77,7 @@ describe('publishArticleEpic', () => {
                 app: {
                     user: {
                         userId: '123',
-                        username: 'test username',
+                        username: 'test-username',
                         communities: [{ community: { id: '123' } }],
                     },
                 },
@@ -137,7 +137,7 @@ describe('publishArticleEpic', () => {
                 message: 'Article Published',
                 notificationType: 'success',
             }),
-            routeChangeAction(`/test-username/123/p`),
+            routeChangeAction(`/test-username/p`),
         ]
 
         const resultingActions = await testEpic(
@@ -146,7 +146,7 @@ describe('publishArticleEpic', () => {
             {
                 app: {
                     user: {
-                        username: 'test username',
+                        username: 'test-username',
                         userId: '123',
                     },
                 },
@@ -206,7 +206,7 @@ describe('publishArticleEpic', () => {
                 message: 'Article submitted',
                 notificationType: 'success',
             }),
-            routeChangeAction(`/test-username/123/p`),
+            routeChangeAction(`/test-username/p`),
         ]
 
         const resultingActions = await testEpic(
@@ -215,7 +215,7 @@ describe('publishArticleEpic', () => {
             {
                 app: {
                     user: {
-                        username: 'test username',
+                        username: 'test-username',
                         userId: '123',
                     },
                 },
