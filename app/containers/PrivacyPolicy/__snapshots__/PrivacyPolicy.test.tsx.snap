@@ -276,8 +276,10 @@ exports[`containers/PrivacyPolicy should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -418,7 +420,7 @@ exports[`containers/PrivacyPolicy should match snapshot 1`] = `
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
                         "componentId": "View__Content-sc-1jhb3py-0",
-                        "isStatic": true,
+                        "isStatic": false,
                         "lastClassName": "gGsUfO",
                         "rules": Array [
                           "display:flex;justify-content:center;align-items:center;min-height:85vh;width:100%;",
@@ -430,6 +432,7 @@ exports[`containers/PrivacyPolicy should match snapshot 1`] = `
                       "styledComponentId": "View__Content-sc-1jhb3py-0",
                       "target": "section",
                       "toString": [Function],
+                      "usesTheme": false,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }

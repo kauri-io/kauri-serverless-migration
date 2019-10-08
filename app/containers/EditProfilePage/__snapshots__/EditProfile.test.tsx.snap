@@ -276,8 +276,10 @@ exports[`containers/EditProfile should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -578,6 +580,7 @@ exports[`containers/EditProfile should match snapshot 1`] = `
                     "styledComponentId": "View__Page-sc-19kw1f9-0",
                     "target": "div",
                     "toString": [Function],
+                    "usesTheme": true,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }

@@ -276,8 +276,10 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -457,6 +459,7 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
                 "styledComponentId": "ActionsSection__ActionsSectionStack-sc-1me8cd-0",
                 "target": [Function],
                 "toString": [Function],
+                "usesTheme": true,
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
               }
@@ -608,6 +611,8 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
                         "my": [Function],
                         "order": [Function],
                         "overflow": [Function],
+                        "overflowX": [Function],
+                        "overflowY": [Function],
                         "p": [Function],
                         "padding": [Function],
                         "paddingBottom": [Function],
@@ -630,6 +635,7 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
                       "styledComponentId": "sc-bdVaJa",
                       "target": "div",
                       "toString": [Function],
+                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -652,7 +658,7 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
                   width="100%"
                 >
                   <div
-                    className="ActionsSection__ActionsSectionStack-sc-1me8cd-0 kejMke sc-bdVaJa gQKdCs"
+                    className="sc-bdVaJa gQKdCs ActionsSection__ActionsSectionStack-sc-1me8cd-0 kejMke"
                     width="100%"
                   />
                 </StyledComponent>
@@ -942,8 +948,10 @@ exports[`components/Section/CardContentSection should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -1092,6 +1100,7 @@ exports[`components/Section/CardContentSection should match snapshot 1`] = `
               "styledComponentId": "CardContentSection-ygx7u9-0",
               "target": "section",
               "toString": [Function],
+              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -1384,8 +1393,10 @@ exports[`components/Section/CardContentSection should match snapshot 2`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -1534,6 +1545,7 @@ exports[`components/Section/CardContentSection should match snapshot 2`] = `
               "styledComponentId": "CardContentSection-ygx7u9-0",
               "target": "section",
               "toString": [Function],
+              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -1826,8 +1838,10 @@ exports[`components/Section/CategorySection should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -1974,6 +1988,7 @@ exports[`components/Section/CategorySection should match snapshot 1`] = `
               "styledComponentId": "CategorySection-kutg7g-0",
               "target": "section",
               "toString": [Function],
+              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -2266,8 +2281,10 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -2447,6 +2464,7 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                 "styledComponentId": "ContentSection__ContentSectionStack-sc-1mwbgto-0",
                 "target": [Function],
                 "toString": [Function],
+                "usesTheme": true,
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
               }
@@ -2592,6 +2610,8 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                         "my": [Function],
                         "order": [Function],
                         "overflow": [Function],
+                        "overflowX": [Function],
+                        "overflowY": [Function],
                         "p": [Function],
                         "padding": [Function],
                         "paddingBottom": [Function],
@@ -2614,6 +2634,7 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                       "styledComponentId": "sc-bdVaJa",
                       "target": "div",
                       "toString": [Function],
+                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -2634,7 +2655,7 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                   }
                 >
                   <div
-                    className="ContentSection__ContentSectionStack-sc-1mwbgto-0 dqeWMW sc-bdVaJa fGetdg"
+                    className="sc-bdVaJa fGetdg ContentSection__ContentSectionStack-sc-1mwbgto-0 dqeWMW"
                   />
                 </StyledComponent>
               </Stack>
@@ -2923,8 +2944,10 @@ exports[`components/Section/PadContentSection should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -3072,6 +3095,7 @@ exports[`components/Section/PadContentSection should match snapshot 1`] = `
               "styledComponentId": "PadContentSection-sc-3ifiv7-0",
               "target": "section",
               "toString": [Function],
+              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -3364,8 +3388,10 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -3548,6 +3574,7 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
                 "styledComponentId": "PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0",
                 "target": [Function],
                 "toString": [Function],
+                "usesTheme": true,
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
               }
@@ -3696,6 +3723,8 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
                         "my": [Function],
                         "order": [Function],
                         "overflow": [Function],
+                        "overflowX": [Function],
+                        "overflowY": [Function],
                         "p": [Function],
                         "padding": [Function],
                         "paddingBottom": [Function],
@@ -3718,6 +3747,7 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
                       "styledComponentId": "sc-bdVaJa",
                       "target": "div",
                       "toString": [Function],
+                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -3739,7 +3769,7 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
                   }
                 >
                   <div
-                    className="PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0 iIIfDK sc-bdVaJa cEHnpq"
+                    className="sc-bdVaJa cEHnpq PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0 iIIfDK"
                   />
                 </StyledComponent>
               </Stack>
@@ -4028,8 +4058,10 @@ exports[`components/Section/TopResourcesSection should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -4178,6 +4210,7 @@ exports[`components/Section/TopResourcesSection should match snapshot 1`] = `
               "styledComponentId": "TopResourcesSection-mr7g3s-0",
               "target": "section",
               "toString": [Function],
+              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }

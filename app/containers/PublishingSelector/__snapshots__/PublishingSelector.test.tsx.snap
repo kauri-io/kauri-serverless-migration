@@ -276,8 +276,10 @@ exports[`containers/PublishingSelector should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -535,7 +537,7 @@ exports[`containers/PublishingSelector should match snapshot 1`] = `
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
                         "componentId": "AlertView__Container-sc-3bl8oo-0",
-                        "isStatic": true,
+                        "isStatic": false,
                         "lastClassName": "bxVYPz",
                         "rules": Array [
                           "display:flex;flex-direction:column;min-height:120px;justify-content:center;align-items:center;",
@@ -547,6 +549,7 @@ exports[`containers/PublishingSelector should match snapshot 1`] = `
                       "styledComponentId": "AlertView__Container-sc-3bl8oo-0",
                       "target": "div",
                       "toString": [Function],
+                      "usesTheme": false,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -564,7 +567,7 @@ exports[`containers/PublishingSelector should match snapshot 1`] = `
                             "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "AlertView__TitleContainer-sc-3bl8oo-1",
-                              "isStatic": true,
+                              "isStatic": false,
                               "lastClassName": "gnLUsN",
                               "rules": Array [
                                 "display:flex;text-align:center;justify-content:center;> *{text-align:center;}",
@@ -576,6 +579,7 @@ exports[`containers/PublishingSelector should match snapshot 1`] = `
                             "styledComponentId": "AlertView__TitleContainer-sc-3bl8oo-1",
                             "target": "div",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -620,6 +624,7 @@ exports[`containers/PublishingSelector should match snapshot 1`] = `
                                   "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
                                   "target": "span",
                                   "toString": [Function],
+                                  "usesTheme": true,
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -724,6 +729,7 @@ exports[`containers/PublishingSelector should match snapshot 1`] = `
                                     "styledComponentId": "Select-sc-8hcz1c-2",
                                     "target": "div",
                                     "toString": [Function],
+                                    "usesTheme": true,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -762,6 +768,7 @@ exports[`containers/PublishingSelector should match snapshot 1`] = `
                                           "styledComponentId": "Typography__component-sc-36xkf6-0",
                                           "target": "span",
                                           "toString": [Function],
+                                          "usesTheme": true,
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                         }
@@ -880,6 +887,7 @@ exports[`containers/PublishingSelector should match snapshot 1`] = `
                             "styledComponentId": "AlertView__Footer-sc-3bl8oo-2",
                             "target": "div",
                             "toString": [Function],
+                            "usesTheme": true,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -901,19 +909,30 @@ exports[`containers/PublishingSelector should match snapshot 1`] = `
                                   "contained": "MuiButton-contained",
                                   "containedPrimary": "MuiButton-containedPrimary",
                                   "containedSecondary": "MuiButton-containedSecondary",
+                                  "containedSizeLarge": "MuiButton-containedSizeLarge",
+                                  "containedSizeSmall": "MuiButton-containedSizeSmall",
                                   "disabled": "Mui-disabled",
+                                  "endIcon": "MuiButton-endIcon",
                                   "focusVisible": "Mui-focusVisible",
                                   "fullWidth": "MuiButton-fullWidth",
+                                  "iconSizeLarge": "MuiButton-iconSizeLarge",
+                                  "iconSizeMedium": "MuiButton-iconSizeMedium",
+                                  "iconSizeSmall": "MuiButton-iconSizeSmall",
                                   "label": "MuiButton-label",
                                   "outlined": "MuiButton-outlined",
                                   "outlinedPrimary": "MuiButton-outlinedPrimary",
                                   "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                  "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                                  "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
                                   "root": "MuiButton-root",
                                   "sizeLarge": "MuiButton-sizeLarge",
                                   "sizeSmall": "MuiButton-sizeSmall",
+                                  "startIcon": "MuiButton-startIcon",
                                   "text": "MuiButton-text",
                                   "textPrimary": "MuiButton-textPrimary",
                                   "textSecondary": "MuiButton-textSecondary",
+                                  "textSizeLarge": "MuiButton-textSizeLarge",
+                                  "textSizeSmall": "MuiButton-textSizeSmall",
                                 }
                               }
                               color="primary"
@@ -1015,19 +1034,30 @@ exports[`containers/PublishingSelector should match snapshot 1`] = `
                                   "contained": "MuiButton-contained",
                                   "containedPrimary": "MuiButton-containedPrimary",
                                   "containedSecondary": "MuiButton-containedSecondary",
+                                  "containedSizeLarge": "MuiButton-containedSizeLarge",
+                                  "containedSizeSmall": "MuiButton-containedSizeSmall",
                                   "disabled": "Mui-disabled",
+                                  "endIcon": "MuiButton-endIcon",
                                   "focusVisible": "Mui-focusVisible",
                                   "fullWidth": "MuiButton-fullWidth",
+                                  "iconSizeLarge": "MuiButton-iconSizeLarge",
+                                  "iconSizeMedium": "MuiButton-iconSizeMedium",
+                                  "iconSizeSmall": "MuiButton-iconSizeSmall",
                                   "label": "MuiButton-label",
                                   "outlined": "MuiButton-outlined",
                                   "outlinedPrimary": "MuiButton-outlinedPrimary",
                                   "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                  "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                                  "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
                                   "root": "MuiButton-root",
                                   "sizeLarge": "MuiButton-sizeLarge",
                                   "sizeSmall": "MuiButton-sizeSmall",
+                                  "startIcon": "MuiButton-startIcon",
                                   "text": "MuiButton-text",
                                   "textPrimary": "MuiButton-textPrimary",
                                   "textSecondary": "MuiButton-textSecondary",
+                                  "textSizeLarge": "MuiButton-textSizeLarge",
+                                  "textSizeSmall": "MuiButton-textSizeSmall",
                                 }
                               }
                               color="primary"

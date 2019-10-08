@@ -264,8 +264,10 @@ exports[`components/DiffViewer should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -419,6 +421,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
               "styledComponentId": "DiffViewer__Content-sc-1yaf9sg-0",
               "target": "div",
               "toString": [Function],
+              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -426,7 +429,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
           forwardedRef={null}
         >
           <div
-            className="DiffViewer DiffViewer__Content-sc-1yaf9sg-0 ecffEv"
+            className="DiffViewer__Content-sc-1yaf9sg-0 ecffEv DiffViewer"
           >
             <DiffViewer
               disableWordDiff={false}
@@ -578,7 +581,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
                                       "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
-                                      "isStatic": true,
+                                      "isStatic": false,
                                       "lastClassName": "kynGKV",
                                       "rules": Array [
                                         "font-family:'Roboto';",
@@ -590,6 +593,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
+                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -616,7 +620,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
                                       "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
-                                      "isStatic": true,
+                                      "isStatic": false,
                                       "lastClassName": "kynGKV",
                                       "rules": Array [
                                         "font-family:'Roboto';",
@@ -628,6 +632,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
+                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -654,7 +659,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
                                       "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
-                                      "isStatic": true,
+                                      "isStatic": false,
                                       "lastClassName": "kynGKV",
                                       "rules": Array [
                                         "font-family:'Roboto';",
@@ -666,6 +671,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
+                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -692,7 +698,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
                                       "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
-                                      "isStatic": true,
+                                      "isStatic": false,
                                       "lastClassName": "kynGKV",
                                       "rules": Array [
                                         "font-family:'Roboto';",
@@ -704,6 +710,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
+                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -833,7 +840,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
                                       "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
-                                      "isStatic": true,
+                                      "isStatic": false,
                                       "lastClassName": "kynGKV",
                                       "rules": Array [
                                         "font-family:'Roboto';",
@@ -845,6 +852,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
+                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -871,7 +879,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
                                       "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
-                                      "isStatic": true,
+                                      "isStatic": false,
                                       "lastClassName": "kynGKV",
                                       "rules": Array [
                                         "font-family:'Roboto';",
@@ -883,6 +891,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
+                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -909,7 +918,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
                                       "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
-                                      "isStatic": true,
+                                      "isStatic": false,
                                       "lastClassName": "kynGKV",
                                       "rules": Array [
                                         "font-family:'Roboto';",
@@ -921,6 +930,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
+                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -947,7 +957,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
                                       "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
-                                      "isStatic": true,
+                                      "isStatic": false,
                                       "lastClassName": "kynGKV",
                                       "rules": Array [
                                         "font-family:'Roboto';",
@@ -959,6 +969,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
+                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -985,7 +996,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
                                       "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
-                                      "isStatic": true,
+                                      "isStatic": false,
                                       "lastClassName": "kynGKV",
                                       "rules": Array [
                                         "font-family:'Roboto';",
@@ -997,6 +1008,7 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
+                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }

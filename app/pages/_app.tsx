@@ -1,4 +1,4 @@
-import App, { Container } from 'next/app'
+import App from 'next/app'
 import Head from 'next/head'
 import React from 'react'
 import analytics from '../lib/analytics'
@@ -23,7 +23,7 @@ class MyApp extends App {
         apm.setInitialPageLoadName('Initial Load')
         const { Component, pageProps } = this.props
         return (
-            <Container>
+            <>
                 <Head>
                     <script
                         type="text/javascript"
@@ -40,7 +40,7 @@ class MyApp extends App {
                 </Head>
 
                 <Component {...pageProps} />
-            </Container>
+            </>
         )
     }
 }
