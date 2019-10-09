@@ -2,7 +2,7 @@
     "version": 2,
     "name": "kauri-serverless",
     "alias": [
-        "kauri.io"
+        "qa.kauri.io"
     ],
     "build": {
         "env": {
