@@ -499,7 +499,15 @@ exports[`containers/EditProfile should match snapshot 1`] = `
               Object {
                 "getMyProfile": Object {
                   "__typename": "UserDTO",
+                  "articles": Object {
+                    "__typename": "ResponsePage_ArticleDTO",
+                    "totalElements": 5,
+                  },
                   "avatar": "avatar",
+                  "collections": Object {
+                    "__typename": "ResponsePage_CollectionDTO",
+                    "totalElements": 2,
+                  },
                   "communities": Array [],
                   "dateCreated": "2019-01-01",
                   "email": "test@test.com",

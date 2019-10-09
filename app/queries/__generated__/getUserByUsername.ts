@@ -6,6 +6,22 @@
 // GraphQL query operation: getUserByUsername
 // ====================================================
 
+export interface getUserByUsername_getUserByUsername_articles {
+  __typename: "ResponsePage_ArticleDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface getUserByUsername_getUserByUsername_collections {
+  __typename: "ResponsePage_CollectionDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface getUserByUsername_getUserByUsername {
   __typename: "PublicUserDTO";
   /**
@@ -36,6 +52,16 @@ export interface getUserByUsername_getUserByUsername {
    * User social links (twitter, github, etc.)
    */
   social: any | null;
+  /**
+   * Returns a page of ArticleDTO authored by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  articles: getUserByUsername_getUserByUsername_articles;
+  /**
+   * Returns a page of CollectionDTO owned by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  collections: getUserByUsername_getUserByUsername_collections;
 }
 
 export interface getUserByUsername {

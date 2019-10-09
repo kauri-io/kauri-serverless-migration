@@ -82,6 +82,12 @@ interface IState {
     subscriptions: {
         newsletter: boolean
     }
+    articles: {
+        totalElements: number
+    }
+    collections: {
+        totalElements: number,
+    }
 }
 
 class OnboardingEditProfile extends Component<IProps, IState> {

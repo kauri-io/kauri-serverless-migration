@@ -90,7 +90,9 @@ class CollectionPage extends Component<IProps> {
                         ) || '',
                     type: 'COLLECTION' as any,
                 },
-                referrer: window.document.referrer ? window.document.referrer : null
+                referrer: window.document.referrer
+                    ? window.document.referrer
+                    : null,
             },
         })
     }

@@ -45,6 +45,22 @@ export interface getMyProfile_getMyProfile_communities {
   community: getMyProfile_getMyProfile_communities_community;
 }
 
+export interface getMyProfile_getMyProfile_articles {
+  __typename: "ResponsePage_ArticleDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface getMyProfile_getMyProfile_collections {
+  __typename: "ResponsePage_CollectionDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface getMyProfile_getMyProfile {
   __typename: "UserDTO";
   /**
@@ -95,6 +111,16 @@ export interface getMyProfile_getMyProfile {
    * User creation date
    */
   dateCreated: any | null;
+  /**
+   * Returns a page of ArticleDTO authored by this UserDTO.
+   * This operation can only be performed by logged user
+   */
+  articles: getMyProfile_getMyProfile_articles;
+  /**
+   * Returns a page of CollectionDTO owned by this UserDTO.
+   * This operation can only be performed by logged user
+   */
+  collections: getMyProfile_getMyProfile_collections;
 }
 
 export interface getMyProfile {
