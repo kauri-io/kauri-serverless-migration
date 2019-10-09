@@ -131,8 +131,8 @@ class PublicProfile extends Component<IProps, IState> {
                     />
                 ) : (
                     <Header
-                        articles={2}
-                        collections={[]}
+                        articles={UserQuery.getUserByUsername.articles.totalElements}
+                        collections={UserQuery.getUserByUsername.collections.totalElements}
                         currentUser={currentUser}
                         id={getUserField<string>('id', '')}
                         avatar={

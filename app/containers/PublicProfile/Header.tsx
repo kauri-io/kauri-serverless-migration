@@ -4,7 +4,6 @@ import Button from '../../components/Button'
 import StatisticsContainer from '../../components/PublicProfile/StatisticsContainer'
 import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
 import Head from 'next/head'
-import { ICollection } from '../CreateCollectionForm/ChooseCollectionModal'
 import Avatar from '../../components/Avatar'
 import { Grid, Typography, makeStyles, Theme } from '@material-ui/core'
 
@@ -33,7 +32,7 @@ interface IProps {
     github: string
     twitter: string
     currentUser: string
-    collections: ICollection[]
+    collections: number
     articles: number
     toggleEditing: () => void
     hostName: string
@@ -180,9 +179,8 @@ const ProfileHeader = ({
                     </Grid>
                 </Grid>
                 <Grid item={true} className={classes.rightSide}>
-                    {(articles > 0 ||
-                        (collections && collections.length > 0)) && (
-                        <StatisticsContainer
+                    {(articles > 0 || collections > 0) && (
+                        <StatisticsContainer    
                             pageType="CollectionPage"
                             statistics={[
                                 {
@@ -191,7 +189,7 @@ const ProfileHeader = ({
                                 },
                                 {
                                     name: 'Collections',
-                                    count: collections.length,
+                                    count: collections,
                                 },
                             ]}
                         />
