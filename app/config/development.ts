@@ -21,4 +21,5 @@ export default {
     clientId: 'kauri-gateway',
     cloudImageId: 'asdgvdoyen',
     useCloudImage: false,
+    debug: true,
 }

@@ -1,0 +1,116 @@
+{
+    "version": 2,
+    "name": "kauri-serverless",
+    "alias": [
+        "qa.kauri.io"
+    ],
+    "build": {
+        "env": {
+            "config": "qa"
+        }
+    },
+    "builds": [
+        {
+            "src": "app/static/**",
+            "use": "@now/static"
+        },
+        {
+            "src": "app/package.json",
+            "use": "@now/next"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/robots.txt",
+            "dest": "/app/static/robots.txt"
+        },
+        {
+            "src": "/favicon.ico",
+            "dest": "/app/static/favicon/favicon.ico"
+        },
+        {
+            "src": "/article/(.*)/v(.*)/update-article",
+            "dest": "/app/update-article?id=$1&version=$2"
+        },
+        {
+            "src": "/(.*)/(.*)/a",
+            "dest": "/app/article?article_id=$2&slug=$1"
+        },
+        {
+            "src": "/article/(.*)/(.*)/(.*)",
+            "dest": "/app/article?article_id=$1"
+        },
+        {
+            "src": "/article/(.*)/(.*)",
+            "dest": "/app/article?article_id=$1"
+        },
+        {
+            "src": "/article/(.*)",
+            "dest": "/app/article?article_id=$1"
+        },
+        {
+            "src": "/(.*)/(.*)/cm",
+            "dest": "/app/community?community_id=$2&slug=$1"
+        },
+        {
+            "src": "/community/(.*)/approve",
+            "dest": "/app/approve?community_id=$1"
+        },
+        {
+            "src": "/community/(.*)/(.*)",
+            "dest": "/app/community?community_id=$1"
+        },
+        {
+            "src": "/community/(.*)",
+            "dest": "/app/community?community_id=$1"
+        },
+        {
+            "src": "/(.*)/(.*)/c",
+            "dest": "/app/collection?collection_id=$2&slug=$1"
+        },
+        {
+            "src": "/collection/(.*)/(.*)",
+            "dest": "/app/collection?collection_id=$1"
+        },
+        {
+            "src": "/collection/(.*)",
+            "dest": "/app/collection?collection_id=$1"
+        },
+        {
+            "src": "/community/(.*)/update-community",
+            "dest": "/app/update-community?community_id=$1"
+        },
+        {
+            "src": "/collection/(.*)/update-collection",
+            "dest": "/app/update-collection?collection_id=$1"
+        },
+        {
+            "src": "/(.*)/(.*)/p",
+            "dest": "/app/public-profile?user_id=$2&slug=$1"
+        },
+        {
+            "src": "/public-profile/(.*)",
+            "dest": "/app/public-profile?user_id=$1"
+        },
+        {
+            "src": "draft/(.*)/(.*)",
+            "dest": "/app/draft?id=$1&version=$2"
+        },
+        {
+            "src": "/activate/(.*)",
+            "dest": "/app/activate?uuid=$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/app/$1"
+        },
+        {
+            "handle": "filesystem"
+        },
+        {
+            "src": "/.*",
+            "status": 404,
+            "dest": "/app/404"
+        }
+    ]
+}

@@ -264,8 +264,10 @@ exports[`containers/Error should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -415,6 +417,7 @@ exports[`containers/Error should match snapshot 1`] = `
               "styledComponentId": "Error__ErrorContainer-sc-9zpcuf-0",
               "target": "div",
               "toString": [Function],
+              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -432,7 +435,7 @@ exports[`containers/Error should match snapshot 1`] = `
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
                       "componentId": "Error__Code-sc-9zpcuf-1",
-                      "isStatic": true,
+                      "isStatic": false,
                       "lastClassName": "gGjEEd",
                       "rules": Array [
                         "font-size:90px;",
@@ -444,6 +447,7 @@ exports[`containers/Error should match snapshot 1`] = `
                     "styledComponentId": "Error__Code-sc-9zpcuf-1",
                     "target": "div",
                     "toString": [Function],
+                    "usesTheme": false,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -481,6 +485,7 @@ exports[`containers/Error should match snapshot 1`] = `
                     "styledComponentId": "Error__Copy-sc-9zpcuf-2",
                     "target": "div",
                     "toString": [Function],
+                    "usesTheme": true,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -497,7 +502,6 @@ exports[`containers/Error should match snapshot 1`] = `
             <Link
               as="/"
               href="/"
-              prefetch={true}
             >
               <a
                 href="/"
@@ -521,26 +525,37 @@ exports[`containers/Error should match snapshot 1`] = `
                           "contained": "MuiButton-contained",
                           "containedPrimary": "MuiButton-containedPrimary",
                           "containedSecondary": "MuiButton-containedSecondary",
+                          "containedSizeLarge": "MuiButton-containedSizeLarge",
+                          "containedSizeSmall": "MuiButton-containedSizeSmall",
                           "disabled": "Mui-disabled",
+                          "endIcon": "MuiButton-endIcon",
                           "focusVisible": "Mui-focusVisible",
                           "fullWidth": "MuiButton-fullWidth",
+                          "iconSizeLarge": "MuiButton-iconSizeLarge",
+                          "iconSizeMedium": "MuiButton-iconSizeMedium",
+                          "iconSizeSmall": "MuiButton-iconSizeSmall",
                           "label": "MuiButton-label",
                           "outlined": "MuiButton-outlined",
                           "outlinedPrimary": "MuiButton-outlinedPrimary",
                           "outlinedSecondary": "MuiButton-outlinedSecondary",
+                          "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                          "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
                           "root": "MuiButton-root",
                           "sizeLarge": "MuiButton-sizeLarge",
                           "sizeSmall": "MuiButton-sizeSmall",
+                          "startIcon": "MuiButton-startIcon",
                           "text": "MuiButton-text",
                           "textPrimary": "MuiButton-textPrimary",
                           "textSecondary": "MuiButton-textSecondary",
+                          "textSizeLarge": "MuiButton-textSizeLarge",
+                          "textSizeSmall": "MuiButton-textSizeSmall",
                         }
                       }
                       color="primary"
                       variant="contained"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
-                        className="MuiButton-root makeStyles-main-1 MuiButton-contained MuiButton-containedPrimary"
+                        className="MuiButton-root MuiButton-contained MuiButton-containedPrimary makeStyles-main-1"
                         component="button"
                         disabled={false}
                         focusRipple={true}
@@ -548,7 +563,7 @@ exports[`containers/Error should match snapshot 1`] = `
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
-                          className="MuiButton-root makeStyles-main-1 MuiButton-contained MuiButton-containedPrimary"
+                          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary makeStyles-main-1"
                           classes={
                             Object {
                               "disabled": "Mui-disabled",
@@ -563,7 +578,7 @@ exports[`containers/Error should match snapshot 1`] = `
                           type="button"
                         >
                           <button
-                            className="MuiButtonBase-root MuiButton-root makeStyles-main-1 MuiButton-contained MuiButton-containedPrimary"
+                            className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary makeStyles-main-1"
                             disabled={false}
                             onBlur={[Function]}
                             onDragLeave={[Function]}

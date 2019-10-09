@@ -276,8 +276,10 @@ exports[`components/ScrollIndicator should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -411,7 +413,7 @@ exports[`components/ScrollIndicator should match snapshot 1`] = `
                 "attrs": Array [],
                 "componentStyle": ComponentStyle {
                   "componentId": "ScrollIndicator__BarContainer-sc-1k4p76-0",
-                  "isStatic": true,
+                  "isStatic": false,
                   "lastClassName": "chhIkH",
                   "rules": Array [
                     "position:fixed;top:0;left:0;right:0;height:4px;width:100%;background:transparent;z-index:999;",
@@ -423,6 +425,7 @@ exports[`components/ScrollIndicator should match snapshot 1`] = `
                 "styledComponentId": "ScrollIndicator__BarContainer-sc-1k4p76-0",
                 "target": "div",
                 "toString": [Function],
+                "usesTheme": false,
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
               }
@@ -458,6 +461,7 @@ exports[`components/ScrollIndicator should match snapshot 1`] = `
                       "styledComponentId": "ScrollIndicator__Fill-sc-1k4p76-1",
                       "target": "div",
                       "toString": [Function],
+                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }

@@ -276,8 +276,10 @@ exports[`containers/LoginForm should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -577,6 +579,7 @@ exports[`containers/LoginForm should match snapshot 1`] = `
                             "styledComponentId": "View__LoginContainer-v8ha34-1",
                             "target": "div",
                             "toString": [Function],
+                            "usesTheme": true,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -624,6 +627,7 @@ exports[`containers/LoginForm should match snapshot 1`] = `
                                   "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
                                   "target": "span",
                                   "toString": [Function],
+                                  "usesTheme": true,
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -649,7 +653,7 @@ exports[`containers/LoginForm should match snapshot 1`] = `
                                   "attrs": Array [],
                                   "componentStyle": ComponentStyle {
                                     "componentId": "Typography__component-sc-36xkf6-3",
-                                    "isStatic": true,
+                                    "isStatic": false,
                                     "lastClassName": "cGrhPv",
                                     "rules": Array [
                                       "font-size:17px;font-weight:normal;letter-spacing:-0.1px;line-height:24px;",
@@ -661,6 +665,7 @@ exports[`containers/LoginForm should match snapshot 1`] = `
                                   "styledComponentId": "Typography__component-sc-36xkf6-3",
                                   "target": "span",
                                   "toString": [Function],
+                                  "usesTheme": false,
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -699,6 +704,7 @@ exports[`containers/LoginForm should match snapshot 1`] = `
                                   "styledComponentId": "View__Image-v8ha34-2",
                                   "target": "img",
                                   "toString": [Function],
+                                  "usesTheme": true,
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }

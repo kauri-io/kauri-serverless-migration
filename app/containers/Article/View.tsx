@@ -72,17 +72,20 @@ const ArticleComp = ({
     const canonicalUrl = attributes.canonical
 
     useEffect(() => {
-        client && client.mutate<recordView, recordViewVariables>({
-            fetchPolicy: 'no-cache',
-            mutation: recordViewMutation,
-            variables: {
-                resourceId: {
-                    id: id,
-                    type: 'ARTICLE' as any,
+        client &&
+            client.mutate<recordView, recordViewVariables>({
+                fetchPolicy: 'no-cache',
+                mutation: recordViewMutation,
+                variables: {
+                    resourceId: {
+                        id: id,
+                        type: 'ARTICLE' as any,
+                    },
+                    referrer: window.document.referrer
+                        ? window.document.referrer
+                        : null,
                 },
-                referrer: window.document.referrer ? window.document.referrer : null
-            },
-        })
+            })
     }, [])
     return (
         <>

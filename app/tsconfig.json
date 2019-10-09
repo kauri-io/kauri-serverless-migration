@@ -32,7 +32,8 @@
         "containers",
         "lib",
         "types",
-        "../api"
+        "../api",
+        "config"
     ],
     "exclude": [
         "node_modules",

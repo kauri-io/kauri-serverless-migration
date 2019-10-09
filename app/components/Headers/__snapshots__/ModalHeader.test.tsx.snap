@@ -264,8 +264,10 @@ exports[`components/ModalHeader should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -410,7 +412,7 @@ exports[`components/ModalHeader should match snapshot 1`] = `
               "attrs": Array [],
               "componentStyle": ComponentStyle {
                 "componentId": "ModalHeader__Container-wvclu0-0",
-                "isStatic": true,
+                "isStatic": false,
                 "lastClassName": "hxrxEK",
                 "rules": Array [
                   "display:flex;align-items:center;width:100%;>:first-child{margin-right:auto;}",
@@ -422,6 +424,7 @@ exports[`components/ModalHeader should match snapshot 1`] = `
               "styledComponentId": "ModalHeader__Container-wvclu0-0",
               "target": "div",
               "toString": [Function],
+              "usesTheme": false,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }

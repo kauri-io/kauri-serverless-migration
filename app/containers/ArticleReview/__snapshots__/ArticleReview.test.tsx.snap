@@ -276,8 +276,10 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -663,7 +665,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
                       "componentId": "View__Container-bws0mc-0",
-                      "isStatic": true,
+                      "isStatic": false,
                       "lastClassName": "erjhfy",
                       "rules": Array [
                         "background:white;",
@@ -675,6 +677,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                     "styledComponentId": "View__Container-bws0mc-0",
                     "target": "div",
                     "toString": [Function],
+                    "usesTheme": false,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -693,7 +696,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                             "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "ScrollIndicator__BarContainer-sc-1k4p76-0",
-                              "isStatic": true,
+                              "isStatic": false,
                               "lastClassName": "chhIkH",
                               "rules": Array [
                                 "position:fixed;top:0;left:0;right:0;height:4px;width:100%;background:transparent;z-index:999;",
@@ -705,6 +708,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                             "styledComponentId": "ScrollIndicator__BarContainer-sc-1k4p76-0",
                             "target": "div",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -740,6 +744,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                   "styledComponentId": "ScrollIndicator__Fill-sc-1k4p76-1",
                                   "target": "div",
                                   "toString": [Function],
+                                  "usesTheme": true,
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -818,6 +823,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                             "styledComponentId": "Header__Container-sc-647imh-0",
                             "target": "div",
                             "toString": [Function],
+                            "usesTheme": true,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -853,6 +859,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                   "styledComponentId": "Header__Content-sc-647imh-1",
                                   "target": "div",
                                   "toString": [Function],
+                                  "usesTheme": true,
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -884,6 +891,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                         "styledComponentId": "Header__Actions-sc-647imh-4",
                                         "target": "div",
                                         "toString": [Function],
+                                        "usesTheme": true,
                                         "warnTooManyClasses": [Function],
                                         "withComponent": [Function],
                                       }
@@ -901,7 +909,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                               "attrs": Array [],
                                               "componentStyle": ComponentStyle {
                                                 "componentId": "Header__BGNotice-sc-647imh-6",
-                                                "isStatic": true,
+                                                "isStatic": false,
                                                 "lastClassName": "dixsoR",
                                                 "rules": Array [
                                                   "display:flex;flex-direction:row;",
@@ -913,6 +921,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                               "styledComponentId": "Header__BGNotice-sc-647imh-6",
                                               "target": "span",
                                               "toString": [Function],
+                                              "usesTheme": false,
                                               "warnTooManyClasses": [Function],
                                               "withComponent": [Function],
                                             }
@@ -935,7 +944,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                         "attrs": Array [],
                                         "componentStyle": ComponentStyle {
                                           "componentId": "Header__Left-sc-647imh-2",
-                                          "isStatic": true,
+                                          "isStatic": false,
                                           "lastClassName": "jMpqtw",
                                           "rules": Array [
                                             "flex-direction:column;align-items:flex-start;justify-content:center;width:50%;flex:1;z-index:10;",
@@ -947,6 +956,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                         "styledComponentId": "Header__Left-sc-647imh-2",
                                         "target": "div",
                                         "toString": [Function],
+                                        "usesTheme": false,
                                         "warnTooManyClasses": [Function],
                                         "withComponent": [Function],
                                       }
@@ -986,6 +996,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                               "styledComponentId": "Typography__component-sc-36xkf6-0",
                                               "target": "span",
                                               "toString": [Function],
+                                              "usesTheme": true,
                                               "warnTooManyClasses": [Function],
                                               "withComponent": [Function],
                                             }
@@ -1039,6 +1050,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                               "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
                                               "target": "span",
                                               "toString": [Function],
+                                              "usesTheme": true,
                                               "warnTooManyClasses": [Function],
                                               "withComponent": [Function],
                                             }
@@ -1075,7 +1087,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                 "attrs": Array [],
                                                 "componentStyle": ComponentStyle {
                                                   "componentId": "Header__TagContainer-sc-647imh-7",
-                                                  "isStatic": true,
+                                                  "isStatic": false,
                                                   "lastClassName": "bxgExJ",
                                                   "rules": Array [
                                                     "display:flex;flex-direction:row;",
@@ -1087,6 +1099,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                 "styledComponentId": "Header__TagContainer-sc-647imh-7",
                                                 "target": "div",
                                                 "toString": [Function],
+                                                "usesTheme": false,
                                                 "warnTooManyClasses": [Function],
                                                 "withComponent": [Function],
                                               }
@@ -1127,6 +1140,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                       "styledComponentId": "Header__TagWrap-sc-647imh-8",
                                                       "target": "span",
                                                       "toString": [Function],
+                                                      "usesTheme": false,
                                                       "warnTooManyClasses": [Function],
                                                       "withComponent": [Function],
                                                     }
@@ -1168,6 +1182,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                             "styledComponentId": "Typography__component-sc-36xkf6-0",
                                                             "target": "span",
                                                             "toString": [Function],
+                                                            "usesTheme": true,
                                                             "warnTooManyClasses": [Function],
                                                             "withComponent": [Function],
                                                           }
@@ -1216,6 +1231,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                       "styledComponentId": "Header__TagWrap-sc-647imh-8",
                                                       "target": "span",
                                                       "toString": [Function],
+                                                      "usesTheme": false,
                                                       "warnTooManyClasses": [Function],
                                                       "withComponent": [Function],
                                                     }
@@ -1257,6 +1273,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                             "styledComponentId": "Typography__component-sc-36xkf6-0",
                                                             "target": "span",
                                                             "toString": [Function],
+                                                            "usesTheme": true,
                                                             "warnTooManyClasses": [Function],
                                                             "withComponent": [Function],
                                                           }
@@ -1289,7 +1306,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                         "attrs": Array [],
                                         "componentStyle": ComponentStyle {
                                           "componentId": "Header__Right-sc-647imh-3",
-                                          "isStatic": true,
+                                          "isStatic": false,
                                           "lastClassName": "dUFCFE",
                                           "rules": Array [
                                             "width:50%;display:flex;align-items:center;justify-content:flex-end;z-index:10;",
@@ -1301,6 +1318,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                         "styledComponentId": "Header__Right-sc-647imh-3",
                                         "target": "div",
                                         "toString": [Function],
+                                        "usesTheme": false,
                                         "warnTooManyClasses": [Function],
                                         "withComponent": [Function],
                                       }
@@ -1340,6 +1358,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                               "styledComponentId": "Typography__component-sc-36xkf6-0",
                                               "target": "span",
                                               "toString": [Function],
+                                              "usesTheme": true,
                                               "warnTooManyClasses": [Function],
                                               "withComponent": [Function],
                                             }
@@ -1389,6 +1408,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                           "styledComponentId": "View__Content-bws0mc-1",
                           "target": "div",
                           "toString": [Function],
+                          "usesTheme": true,
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
                         }
@@ -1427,6 +1447,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                   "styledComponentId": "DiffViewer__Content-sc-1yaf9sg-0",
                                   "target": "div",
                                   "toString": [Function],
+                                  "usesTheme": true,
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -1434,7 +1455,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                               forwardedRef={null}
                             >
                               <div
-                                className="DiffViewer DiffViewer__Content-sc-1yaf9sg-0 ecffEv"
+                                className="DiffViewer__Content-sc-1yaf9sg-0 ecffEv DiffViewer"
                               >
                                 <DiffViewer
                                   disableWordDiff={false}
@@ -1571,7 +1592,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                         "attrs": Array [],
                                                         "componentStyle": ComponentStyle {
                                                           "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
-                                                          "isStatic": true,
+                                                          "isStatic": false,
                                                           "lastClassName": "kynGKV",
                                                           "rules": Array [
                                                             "font-family:'Roboto';",
@@ -1583,6 +1604,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                         "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                                         "target": "span",
                                                         "toString": [Function],
+                                                        "usesTheme": false,
                                                         "warnTooManyClasses": [Function],
                                                         "withComponent": [Function],
                                                       }
@@ -1609,7 +1631,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                         "attrs": Array [],
                                                         "componentStyle": ComponentStyle {
                                                           "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
-                                                          "isStatic": true,
+                                                          "isStatic": false,
                                                           "lastClassName": "kynGKV",
                                                           "rules": Array [
                                                             "font-family:'Roboto';",
@@ -1621,6 +1643,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                         "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                                         "target": "span",
                                                         "toString": [Function],
+                                                        "usesTheme": false,
                                                         "warnTooManyClasses": [Function],
                                                         "withComponent": [Function],
                                                       }
@@ -1729,7 +1752,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                         "attrs": Array [],
                                                         "componentStyle": ComponentStyle {
                                                           "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
-                                                          "isStatic": true,
+                                                          "isStatic": false,
                                                           "lastClassName": "kynGKV",
                                                           "rules": Array [
                                                             "font-family:'Roboto';",
@@ -1741,6 +1764,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                         "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                                         "target": "span",
                                                         "toString": [Function],
+                                                        "usesTheme": false,
                                                         "warnTooManyClasses": [Function],
                                                         "withComponent": [Function],
                                                       }
@@ -1767,7 +1791,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                         "attrs": Array [],
                                                         "componentStyle": ComponentStyle {
                                                           "componentId": "DiffViewer__Line-sc-1yaf9sg-1",
-                                                          "isStatic": true,
+                                                          "isStatic": false,
                                                           "lastClassName": "kynGKV",
                                                           "rules": Array [
                                                             "font-family:'Roboto';",
@@ -1779,6 +1803,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                         "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                                         "target": "span",
                                                         "toString": [Function],
+                                                        "usesTheme": false,
                                                         "warnTooManyClasses": [Function],
                                                         "withComponent": [Function],
                                                       }
@@ -1828,6 +1853,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                 "styledComponentId": "View__Details-bws0mc-2",
                                 "target": "div",
                                 "toString": [Function],
+                                "usesTheme": true,
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
                               }
@@ -1864,6 +1890,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                       "styledComponentId": "Typography__component-sc-36xkf6-0",
                                       "target": "span",
                                       "toString": [Function],
+                                      "usesTheme": true,
                                       "warnTooManyClasses": [Function],
                                       "withComponent": [Function],
                                     }

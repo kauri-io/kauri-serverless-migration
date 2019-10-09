@@ -264,8 +264,10 @@ exports[`components/Image should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -449,6 +451,7 @@ exports[`components/Image should match snapshot 1`] = `
                 "styledComponentId": "Image__Img-sc-1jpuda7-0",
                 "target": "div",
                 "toString": [Function],
+                "usesTheme": true,
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
               }

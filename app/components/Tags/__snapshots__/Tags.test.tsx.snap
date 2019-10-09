@@ -264,8 +264,10 @@ exports[`components/Tags/Close snapshot should match 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -694,8 +696,10 @@ exports[`components/Tags/Plus snapshot should match 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -1144,8 +1148,10 @@ exports[`components/Tags/Tag snapshot should match 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -1297,6 +1303,7 @@ exports[`components/Tags/Tag snapshot should match 1`] = `
               "styledComponentId": "Tag__Container-sc-174q8by-0",
               "target": "div",
               "toString": [Function],
+              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -1373,6 +1380,7 @@ exports[`components/Tags/Tag snapshot should match 1`] = `
                     "styledComponentId": "TagName-sc-1eewwr1-0",
                     "target": "div",
                     "toString": [Function],
+                    "usesTheme": false,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -1659,8 +1667,10 @@ exports[`components/Tags/TagInput snapshot should match 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -1806,7 +1816,7 @@ exports[`components/Tags/TagInput snapshot should match 1`] = `
                 "attrs": Array [],
                 "componentStyle": ComponentStyle {
                   "componentId": "TagInput__Wrapper-sc-1g13u3f-0",
-                  "isStatic": true,
+                  "isStatic": false,
                   "lastClassName": "fzNisK",
                   "rules": Array [
                     "background:transparent;display:flex;flex-direction:column;position:relative;",
@@ -1818,6 +1828,7 @@ exports[`components/Tags/TagInput snapshot should match 1`] = `
                 "styledComponentId": "TagInput__Wrapper-sc-1g13u3f-0",
                 "target": "div",
                 "toString": [Function],
+                "usesTheme": false,
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
               }
@@ -1850,6 +1861,7 @@ exports[`components/Tags/TagInput snapshot should match 1`] = `
                         "styledComponentId": "TagInput__TopRow-sc-1g13u3f-1",
                         "target": "div",
                         "toString": [Function],
+                        "usesTheme": true,
                         "warnTooManyClasses": [Function],
                         "withComponent": [Function],
                       }
@@ -2053,6 +2065,7 @@ exports[`components/Tags/TagInput snapshot should match 1`] = `
                                             aria-invalid={false}
                                             className="MuiInputBase-input MuiInput-input"
                                             disabled={false}
+                                            onAnimationStart={[Function]}
                                             onBlur={[Function]}
                                             onChange={[Function]}
                                             onFocus={[Function]}
@@ -2348,8 +2361,10 @@ exports[`components/Tags/TagList snapshot should match 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -2509,6 +2524,7 @@ exports[`components/Tags/TagList snapshot should match 1`] = `
               "styledComponentId": "TagList__Container-ipfhd9-0",
               "target": "div",
               "toString": [Function],
+              "usesTheme": false,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -2558,6 +2574,7 @@ exports[`components/Tags/TagList snapshot should match 1`] = `
                     "styledComponentId": "TagList__StyledTag-ipfhd9-1",
                     "target": "div",
                     "toString": [Function],
+                    "usesTheme": false,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -2847,8 +2864,10 @@ exports[`components/Tags/TagName snapshot should match 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -3004,6 +3023,7 @@ exports[`components/Tags/TagName snapshot should match 1`] = `
             "styledComponentId": "TagName-sc-1eewwr1-0",
             "target": "div",
             "toString": [Function],
+            "usesTheme": false,
             "warnTooManyClasses": [Function],
             "withComponent": [Function],
           }
@@ -3284,8 +3304,10 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -3448,7 +3470,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
               "attrs": Array [],
               "componentStyle": ComponentStyle {
                 "componentId": "TagSelector__Container-sc-1n1wtk6-0",
-                "isStatic": true,
+                "isStatic": false,
                 "lastClassName": "lkiKtv",
                 "rules": Array [
                   "display:flex;flex-direction:row;flex-wrap:wrap;",
@@ -3460,6 +3482,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
               "styledComponentId": "TagSelector__Container-sc-1n1wtk6-0",
               "target": "div",
               "toString": [Function],
+              "usesTheme": false,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -3493,6 +3516,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                     "styledComponentId": "TagSelector__Heading-sc-1n1wtk6-1",
                     "target": "div",
                     "toString": [Function],
+                    "usesTheme": true,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -3535,6 +3559,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                       "styledComponentId": "Tag__Container-sc-174q8by-0",
                       "target": "div",
                       "toString": [Function],
+                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -3611,6 +3636,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                             "styledComponentId": "TagName-sc-1eewwr1-0",
                             "target": "div",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -3657,6 +3683,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                       "styledComponentId": "Tag__Container-sc-174q8by-0",
                       "target": "div",
                       "toString": [Function],
+                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -3733,6 +3760,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                             "styledComponentId": "TagName-sc-1eewwr1-0",
                             "target": "div",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -3802,7 +3830,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                         "attrs": Array [],
                         "componentStyle": ComponentStyle {
                           "componentId": "TagInput__Wrapper-sc-1g13u3f-0",
-                          "isStatic": true,
+                          "isStatic": false,
                           "lastClassName": "fzNisK",
                           "rules": Array [
                             "background:transparent;display:flex;flex-direction:column;position:relative;",
@@ -3814,6 +3842,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                         "styledComponentId": "TagInput__Wrapper-sc-1g13u3f-0",
                         "target": "div",
                         "toString": [Function],
+                        "usesTheme": false,
                         "warnTooManyClasses": [Function],
                         "withComponent": [Function],
                       }
@@ -3846,6 +3875,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                                 "styledComponentId": "TagInput__TopRow-sc-1g13u3f-1",
                                 "target": "div",
                                 "toString": [Function],
+                                "usesTheme": true,
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
                               }
@@ -4049,6 +4079,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                                                     aria-invalid={false}
                                                     className="MuiInputBase-input MuiInput-input"
                                                     disabled={false}
+                                                    onAnimationStart={[Function]}
                                                     onBlur={[Function]}
                                                     onChange={[Function]}
                                                     onFocus={[Function]}

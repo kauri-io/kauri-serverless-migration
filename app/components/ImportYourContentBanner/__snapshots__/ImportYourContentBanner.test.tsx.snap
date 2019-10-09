@@ -264,8 +264,10 @@ exports[`components/ImportYourContentBanner should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -417,6 +419,7 @@ exports[`components/ImportYourContentBanner should match snapshot 1`] = `
               "styledComponentId": "ImportYourContentBanner__Container-sc-83m2xu-0",
               "target": "section",
               "toString": [Function],
+              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -448,6 +451,7 @@ exports[`components/ImportYourContentBanner should match snapshot 1`] = `
                     "styledComponentId": "ImportYourContentBanner__Content-sc-83m2xu-1",
                     "target": "section",
                     "toString": [Function],
+                    "usesTheme": true,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -495,6 +499,7 @@ exports[`components/ImportYourContentBanner should match snapshot 1`] = `
                           "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
                           "target": "span",
                           "toString": [Function],
+                          "usesTheme": true,
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
                         }
@@ -531,6 +536,7 @@ exports[`components/ImportYourContentBanner should match snapshot 1`] = `
                           "styledComponentId": "ImportYourContentBanner__ImportBannerCopy-sc-83m2xu-2",
                           "target": "div",
                           "toString": [Function],
+                          "usesTheme": true,
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
                         }
@@ -571,6 +577,7 @@ exports[`components/ImportYourContentBanner should match snapshot 1`] = `
                                 "styledComponentId": "Typography__component-sc-36xkf6-4",
                                 "target": "span",
                                 "toString": [Function],
+                                "usesTheme": true,
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
                               }
@@ -617,6 +624,7 @@ exports[`components/ImportYourContentBanner should match snapshot 1`] = `
                                 "styledComponentId": "Typography__component-sc-36xkf6-4",
                                 "target": "span",
                                 "toString": [Function],
+                                "usesTheme": true,
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
                               }
@@ -654,19 +662,30 @@ exports[`components/ImportYourContentBanner should match snapshot 1`] = `
                             "contained": "MuiButton-contained",
                             "containedPrimary": "MuiButton-containedPrimary",
                             "containedSecondary": "MuiButton-containedSecondary",
+                            "containedSizeLarge": "MuiButton-containedSizeLarge",
+                            "containedSizeSmall": "MuiButton-containedSizeSmall",
                             "disabled": "Mui-disabled",
+                            "endIcon": "MuiButton-endIcon",
                             "focusVisible": "Mui-focusVisible",
                             "fullWidth": "MuiButton-fullWidth",
+                            "iconSizeLarge": "MuiButton-iconSizeLarge",
+                            "iconSizeMedium": "MuiButton-iconSizeMedium",
+                            "iconSizeSmall": "MuiButton-iconSizeSmall",
                             "label": "MuiButton-label",
                             "outlined": "MuiButton-outlined",
                             "outlinedPrimary": "MuiButton-outlinedPrimary",
                             "outlinedSecondary": "MuiButton-outlinedSecondary",
+                            "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                            "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
                             "root": "MuiButton-root",
                             "sizeLarge": "MuiButton-sizeLarge",
                             "sizeSmall": "MuiButton-sizeSmall",
+                            "startIcon": "MuiButton-startIcon",
                             "text": "MuiButton-text",
                             "textPrimary": "MuiButton-textPrimary",
                             "textSecondary": "MuiButton-textSecondary",
+                            "textSizeLarge": "MuiButton-textSizeLarge",
+                            "textSizeSmall": "MuiButton-textSizeSmall",
                           }
                         }
                         color="secondary"

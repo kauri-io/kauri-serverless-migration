@@ -264,8 +264,10 @@ exports[`components/Divider should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -398,7 +400,7 @@ exports[`components/Divider should match snapshot 1`] = `
             "attrs": Array [],
             "componentStyle": ComponentStyle {
               "componentId": "Divider-sc-1pkt7hp-0",
-              "isStatic": true,
+              "isStatic": false,
               "lastClassName": "lkOcCN",
               "rules": Array [
                 "display:flex;height:2px;width:100%;background-color:",
@@ -416,6 +418,7 @@ exports[`components/Divider should match snapshot 1`] = `
             "styledComponentId": "Divider-sc-1pkt7hp-0",
             "target": "div",
             "toString": [Function],
+            "usesTheme": false,
             "warnTooManyClasses": [Function],
             "withComponent": [Function],
           }

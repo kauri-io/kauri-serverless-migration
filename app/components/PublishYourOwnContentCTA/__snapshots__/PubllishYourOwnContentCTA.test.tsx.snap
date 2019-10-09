@@ -276,8 +276,10 @@ exports[`components/PublishYourOwnContentCTA should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -562,6 +564,7 @@ exports[`components/PublishYourOwnContentCTA should match snapshot 1`] = `
                       "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
                       "target": "span",
                       "toString": [Function],
+                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -597,6 +600,7 @@ exports[`components/PublishYourOwnContentCTA should match snapshot 1`] = `
                       "styledComponentId": "PublishYourOwnContentCTA__Buttons-sc-1tajuth-0",
                       "target": "div",
                       "toString": [Function],
+                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
