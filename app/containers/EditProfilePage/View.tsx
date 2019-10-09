@@ -86,7 +86,7 @@ interface IState {
         totalElements: number
     }
     collections: {
-        totalElements: number,
+        totalElements: number
     }
 }
 

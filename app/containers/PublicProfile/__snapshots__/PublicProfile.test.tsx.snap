@@ -552,6 +552,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                           "value": "1",
                                         },
                                       },
+                                      Object {
+                                        "kind": "Argument",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "filter",
+                                        },
+                                        "value": Object {
+                                          "fields": Array [
+                                            Object {
+                                              "kind": "ObjectField",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "latestVersion",
+                                              },
+                                              "value": Object {
+                                                "kind": "BooleanValue",
+                                                "value": true,
+                                              },
+                                            },
+                                          ],
+                                          "kind": "ObjectValue",
+                                        },
+                                      },
                                     ],
                                     "directives": Array [],
                                     "kind": "Field",
@@ -658,7 +681,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 418,
+                      "end": 451,
                       "start": 0,
                     },
                   },
@@ -1204,6 +1227,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                           "value": "1",
                                         },
                                       },
+                                      Object {
+                                        "kind": "Argument",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "filter",
+                                        },
+                                        "value": Object {
+                                          "fields": Array [
+                                            Object {
+                                              "kind": "ObjectField",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "latestVersion",
+                                              },
+                                              "value": Object {
+                                                "kind": "BooleanValue",
+                                                "value": true,
+                                              },
+                                            },
+                                          ],
+                                          "kind": "ObjectValue",
+                                        },
+                                      },
                                     ],
                                     "directives": Array [],
                                     "kind": "Field",
@@ -1310,7 +1356,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 418,
+                      "end": 451,
                       "start": 0,
                     },
                   } => Object {
@@ -1455,6 +1501,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                           "value": "1",
                                         },
                                       },
+                                      Object {
+                                        "kind": "Argument",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "filter",
+                                        },
+                                        "value": Object {
+                                          "fields": Array [
+                                            Object {
+                                              "kind": "ObjectField",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "latestVersion",
+                                              },
+                                              "value": Object {
+                                                "kind": "BooleanValue",
+                                                "value": true,
+                                              },
+                                            },
+                                          ],
+                                          "kind": "ObjectValue",
+                                        },
+                                      },
                                     ],
                                     "directives": Array [],
                                     "kind": "Field",
@@ -1582,7 +1651,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 418,
+                      "end": 451,
                       "start": 0,
                     },
                   },
@@ -1728,6 +1797,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                           "value": "1",
                                         },
                                       },
+                                      Object {
+                                        "kind": "Argument",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "filter",
+                                        },
+                                        "value": Object {
+                                          "fields": Array [
+                                            Object {
+                                              "kind": "ObjectField",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "latestVersion",
+                                              },
+                                              "value": Object {
+                                                "kind": "BooleanValue",
+                                                "value": true,
+                                              },
+                                            },
+                                          ],
+                                          "kind": "ObjectValue",
+                                        },
+                                      },
                                     ],
                                     "directives": Array [],
                                     "kind": "Field",
@@ -1855,7 +1947,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 418,
+                      "end": 451,
                       "start": 0,
                     },
                   } => Object {
@@ -2000,6 +2092,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                           "value": "1",
                                         },
                                       },
+                                      Object {
+                                        "kind": "Argument",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "filter",
+                                        },
+                                        "value": Object {
+                                          "fields": Array [
+                                            Object {
+                                              "kind": "ObjectField",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "latestVersion",
+                                              },
+                                              "value": Object {
+                                                "kind": "BooleanValue",
+                                                "value": true,
+                                              },
+                                            },
+                                          ],
+                                          "kind": "ObjectValue",
+                                        },
+                                      },
                                     ],
                                     "directives": Array [],
                                     "kind": "Field",
@@ -2127,7 +2242,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 418,
+                      "end": 451,
                       "start": 0,
                     },
                   },
@@ -4243,6 +4358,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                             "value": "1",
                                           },
                                         },
+                                        Object {
+                                          "kind": "Argument",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "filter",
+                                          },
+                                          "value": Object {
+                                            "fields": Array [
+                                              Object {
+                                                "kind": "ObjectField",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "latestVersion",
+                                                },
+                                                "value": Object {
+                                                  "kind": "BooleanValue",
+                                                  "value": true,
+                                                },
+                                              },
+                                            ],
+                                            "kind": "ObjectValue",
+                                          },
+                                        },
                                       ],
                                       "directives": Array [],
                                       "kind": "Field",
@@ -4370,7 +4508,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 418,
+                        "end": 451,
                         "start": 0,
                       },
                     },
@@ -4567,6 +4705,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                               "value": "1",
                                             },
                                           },
+                                          Object {
+                                            "kind": "Argument",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "filter",
+                                            },
+                                            "value": Object {
+                                              "fields": Array [
+                                                Object {
+                                                  "kind": "ObjectField",
+                                                  "name": Object {
+                                                    "kind": "Name",
+                                                    "value": "latestVersion",
+                                                  },
+                                                  "value": Object {
+                                                    "kind": "BooleanValue",
+                                                    "value": true,
+                                                  },
+                                                },
+                                              ],
+                                              "kind": "ObjectValue",
+                                            },
+                                          },
                                         ],
                                         "directives": Array [],
                                         "kind": "Field",
@@ -4673,7 +4834,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 418,
+                          "end": 451,
                           "start": 0,
                         },
                       } => Object {
@@ -4818,6 +4979,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                               "value": "1",
                                             },
                                           },
+                                          Object {
+                                            "kind": "Argument",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "filter",
+                                            },
+                                            "value": Object {
+                                              "fields": Array [
+                                                Object {
+                                                  "kind": "ObjectField",
+                                                  "name": Object {
+                                                    "kind": "Name",
+                                                    "value": "latestVersion",
+                                                  },
+                                                  "value": Object {
+                                                    "kind": "BooleanValue",
+                                                    "value": true,
+                                                  },
+                                                },
+                                              ],
+                                              "kind": "ObjectValue",
+                                            },
+                                          },
                                         ],
                                         "directives": Array [],
                                         "kind": "Field",
@@ -4945,7 +5129,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 418,
+                          "end": 451,
                           "start": 0,
                         },
                       },
@@ -5091,6 +5275,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                               "value": "1",
                                             },
                                           },
+                                          Object {
+                                            "kind": "Argument",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "filter",
+                                            },
+                                            "value": Object {
+                                              "fields": Array [
+                                                Object {
+                                                  "kind": "ObjectField",
+                                                  "name": Object {
+                                                    "kind": "Name",
+                                                    "value": "latestVersion",
+                                                  },
+                                                  "value": Object {
+                                                    "kind": "BooleanValue",
+                                                    "value": true,
+                                                  },
+                                                },
+                                              ],
+                                              "kind": "ObjectValue",
+                                            },
+                                          },
                                         ],
                                         "directives": Array [],
                                         "kind": "Field",
@@ -5218,7 +5425,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 418,
+                          "end": 451,
                           "start": 0,
                         },
                       } => Object {
@@ -5363,6 +5570,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                               "value": "1",
                                             },
                                           },
+                                          Object {
+                                            "kind": "Argument",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "filter",
+                                            },
+                                            "value": Object {
+                                              "fields": Array [
+                                                Object {
+                                                  "kind": "ObjectField",
+                                                  "name": Object {
+                                                    "kind": "Name",
+                                                    "value": "latestVersion",
+                                                  },
+                                                  "value": Object {
+                                                    "kind": "BooleanValue",
+                                                    "value": true,
+                                                  },
+                                                },
+                                              ],
+                                              "kind": "ObjectValue",
+                                            },
+                                          },
                                         ],
                                         "directives": Array [],
                                         "kind": "Field",
@@ -5490,7 +5720,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 418,
+                          "end": 451,
                           "start": 0,
                         },
                       },
@@ -7606,6 +7836,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                 "value": "1",
                                               },
                                             },
+                                            Object {
+                                              "kind": "Argument",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "filter",
+                                              },
+                                              "value": Object {
+                                                "fields": Array [
+                                                  Object {
+                                                    "kind": "ObjectField",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "latestVersion",
+                                                    },
+                                                    "value": Object {
+                                                      "kind": "BooleanValue",
+                                                      "value": true,
+                                                    },
+                                                  },
+                                                ],
+                                                "kind": "ObjectValue",
+                                              },
+                                            },
                                           ],
                                           "directives": Array [],
                                           "kind": "Field",
@@ -7733,7 +7986,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                           ],
                           "kind": "Document",
                           "loc": Object {
-                            "end": 418,
+                            "end": 451,
                             "start": 0,
                           },
                         },
@@ -8745,6 +8998,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                             "value": "1",
                                           },
                                         },
+                                        Object {
+                                          "kind": "Argument",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "filter",
+                                          },
+                                          "value": Object {
+                                            "fields": Array [
+                                              Object {
+                                                "kind": "ObjectField",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "latestVersion",
+                                                },
+                                                "value": Object {
+                                                  "kind": "BooleanValue",
+                                                  "value": true,
+                                                },
+                                              },
+                                            ],
+                                            "kind": "ObjectValue",
+                                          },
+                                        },
                                       ],
                                       "directives": Array [],
                                       "kind": "Field",
@@ -8872,7 +9148,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 418,
+                        "end": 451,
                         "start": 0,
                       },
                     },
@@ -9074,6 +9350,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                                 "value": "1",
                                               },
                                             },
+                                            Object {
+                                              "kind": "Argument",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "filter",
+                                              },
+                                              "value": Object {
+                                                "fields": Array [
+                                                  Object {
+                                                    "kind": "ObjectField",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "latestVersion",
+                                                    },
+                                                    "value": Object {
+                                                      "kind": "BooleanValue",
+                                                      "value": true,
+                                                    },
+                                                  },
+                                                ],
+                                                "kind": "ObjectValue",
+                                              },
+                                            },
                                           ],
                                           "directives": Array [],
                                           "kind": "Field",
@@ -9180,7 +9479,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                           ],
                           "kind": "Document",
                           "loc": Object {
-                            "end": 418,
+                            "end": 451,
                             "start": 0,
                           },
                         },
@@ -9365,6 +9664,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                               "value": "1",
                                             },
                                           },
+                                          Object {
+                                            "kind": "Argument",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "filter",
+                                            },
+                                            "value": Object {
+                                              "fields": Array [
+                                                Object {
+                                                  "kind": "ObjectField",
+                                                  "name": Object {
+                                                    "kind": "Name",
+                                                    "value": "latestVersion",
+                                                  },
+                                                  "value": Object {
+                                                    "kind": "BooleanValue",
+                                                    "value": true,
+                                                  },
+                                                },
+                                              ],
+                                              "kind": "ObjectValue",
+                                            },
+                                          },
                                         ],
                                         "directives": Array [],
                                         "kind": "Field",
@@ -9492,7 +9814,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 418,
+                          "end": 451,
                           "start": 0,
                         },
                       },
@@ -10113,6 +10435,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                             "value": "1",
                                           },
                                         },
+                                        Object {
+                                          "kind": "Argument",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "filter",
+                                          },
+                                          "value": Object {
+                                            "fields": Array [
+                                              Object {
+                                                "kind": "ObjectField",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "latestVersion",
+                                                },
+                                                "value": Object {
+                                                  "kind": "BooleanValue",
+                                                  "value": true,
+                                                },
+                                              },
+                                            ],
+                                            "kind": "ObjectValue",
+                                          },
+                                        },
                                       ],
                                       "directives": Array [],
                                       "kind": "Field",
@@ -10219,7 +10564,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 418,
+                        "end": 451,
                         "start": 0,
                       },
                     } => Object {
@@ -10364,6 +10709,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                             "value": "1",
                                           },
                                         },
+                                        Object {
+                                          "kind": "Argument",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "filter",
+                                          },
+                                          "value": Object {
+                                            "fields": Array [
+                                              Object {
+                                                "kind": "ObjectField",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "latestVersion",
+                                                },
+                                                "value": Object {
+                                                  "kind": "BooleanValue",
+                                                  "value": true,
+                                                },
+                                              },
+                                            ],
+                                            "kind": "ObjectValue",
+                                          },
+                                        },
                                       ],
                                       "directives": Array [],
                                       "kind": "Field",
@@ -10491,7 +10859,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 418,
+                        "end": 451,
                         "start": 0,
                       },
                     },
@@ -10637,6 +11005,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                             "value": "1",
                                           },
                                         },
+                                        Object {
+                                          "kind": "Argument",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "filter",
+                                          },
+                                          "value": Object {
+                                            "fields": Array [
+                                              Object {
+                                                "kind": "ObjectField",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "latestVersion",
+                                                },
+                                                "value": Object {
+                                                  "kind": "BooleanValue",
+                                                  "value": true,
+                                                },
+                                              },
+                                            ],
+                                            "kind": "ObjectValue",
+                                          },
+                                        },
                                       ],
                                       "directives": Array [],
                                       "kind": "Field",
@@ -10764,7 +11155,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 418,
+                        "end": 451,
                         "start": 0,
                       },
                     } => Object {
@@ -10909,6 +11300,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                             "value": "1",
                                           },
                                         },
+                                        Object {
+                                          "kind": "Argument",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "filter",
+                                          },
+                                          "value": Object {
+                                            "fields": Array [
+                                              Object {
+                                                "kind": "ObjectField",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "latestVersion",
+                                                },
+                                                "value": Object {
+                                                  "kind": "BooleanValue",
+                                                  "value": true,
+                                                },
+                                              },
+                                            ],
+                                            "kind": "ObjectValue",
+                                          },
+                                        },
                                       ],
                                       "directives": Array [],
                                       "kind": "Field",
@@ -11036,7 +11450,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 418,
+                        "end": 451,
                         "start": 0,
                       },
                     },
@@ -13152,6 +13566,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                               "value": "1",
                                             },
                                           },
+                                          Object {
+                                            "kind": "Argument",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "filter",
+                                            },
+                                            "value": Object {
+                                              "fields": Array [
+                                                Object {
+                                                  "kind": "ObjectField",
+                                                  "name": Object {
+                                                    "kind": "Name",
+                                                    "value": "latestVersion",
+                                                  },
+                                                  "value": Object {
+                                                    "kind": "BooleanValue",
+                                                    "value": true,
+                                                  },
+                                                },
+                                              ],
+                                              "kind": "ObjectValue",
+                                            },
+                                          },
                                         ],
                                         "directives": Array [],
                                         "kind": "Field",
@@ -13279,7 +13716,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 418,
+                          "end": 451,
                           "start": 0,
                         },
                       },
@@ -13455,6 +13892,29 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                                           "value": "1",
                                         },
                                       },
+                                      Object {
+                                        "kind": "Argument",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "filter",
+                                        },
+                                        "value": Object {
+                                          "fields": Array [
+                                            Object {
+                                              "kind": "ObjectField",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "latestVersion",
+                                              },
+                                              "value": Object {
+                                                "kind": "BooleanValue",
+                                                "value": true,
+                                              },
+                                            },
+                                          ],
+                                          "kind": "ObjectValue",
+                                        },
+                                      },
                                     ],
                                     "directives": Array [],
                                     "kind": "Field",
@@ -13561,7 +14021,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 418,
+                      "end": 451,
                       "start": 0,
                     },
                   }

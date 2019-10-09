@@ -1,7 +1,11 @@
 import EditProfile from './View'
 import { mountWithRedux } from '../../setupTests'
 import { MockedProvider } from 'react-apollo/test-utils'
-import { getMyProfile_getMyProfile, getMyProfile_getMyProfile_articles, getMyProfile_getMyProfile_collections } from '../../queries/__generated__/getMyProfile'
+import {
+    getMyProfile_getMyProfile,
+    getMyProfile_getMyProfile_articles,
+    getMyProfile_getMyProfile_collections,
+} from '../../queries/__generated__/getMyProfile'
 import { UserStatusInput } from '../../__generated__/globalTypes'
 
 const saveUserDetailsAction = jest.fn()
