@@ -3,7 +3,7 @@ import { compose, graphql } from 'react-apollo'
 import { searchPersonalDrafts } from '../../../queries/Article'
 import { connect } from 'react-redux'
 import withLoading from '../../../lib/with-loading'
-import { withRouter } from 'next/router'
+import withPagination from '../../../lib/with-pagination'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 
 const mapStateToProps = state => {
@@ -14,6 +14,8 @@ const mapStateToProps = state => {
     }
 }
 
+const QUERY_NAME = 'DraftsQuery'
+
 export default compose(
     connect(
         mapStateToProps,
@@ -22,7 +24,7 @@ export default compose(
         }
     ),
     graphql(searchPersonalDrafts, {
-        name: 'DraftsQuery',
+        name: QUERY_NAME,
         options: ({ userId }: { userId: string }) => ({
             fetchPolicy: 'cache-and-network',
             variables: {
@@ -32,4 +34,4 @@ export default compose(
         }),
     }),
     withLoading()
-)(withRouter(View))
+)(withPagination(View, 'searchArticles', QUERY_NAME))

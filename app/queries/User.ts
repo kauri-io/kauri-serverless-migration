@@ -58,7 +58,7 @@ export const getOwnProfile = gql`
             }
             subscriptions
             dateCreated
-            articles(page: 0, size: 1) {
+            articles(page: 0, size: 1, filter: { latestVersion: true }) {
                 totalElements
             }
             collections(page: 0, size: 1) {
