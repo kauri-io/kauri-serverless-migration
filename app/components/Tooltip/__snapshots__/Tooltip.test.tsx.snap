@@ -264,8 +264,10 @@ exports[`components/Tooltip/ShareArticle should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -403,7 +405,7 @@ exports[`components/Tooltip/ShareArticle should match snapshot 1`] = `
               "attrs": Array [],
               "componentStyle": ComponentStyle {
                 "componentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
-                "isStatic": true,
+                "isStatic": false,
                 "lastClassName": "hNNjpZ",
                 "rules": Array [
                   "display:flex;width:",
@@ -417,6 +419,7 @@ exports[`components/Tooltip/ShareArticle should match snapshot 1`] = `
               "styledComponentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
               "target": "section",
               "toString": [Function],
+              "usesTheme": false,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -789,8 +792,10 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -941,6 +946,7 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
               "styledComponentId": "ShareButtons__Container-sc-1pgq0v7-0",
               "target": "div",
               "toString": [Function],
+              "usesTheme": false,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -950,7 +956,7 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
           <div
             className="ShareButtons__Container-sc-1pgq0v7-0 jTmMWV"
           >
-            <CreatedButton
+            <ForwardRef
               onShareWindowClose={[Function]}
               title="test"
               url="test"
@@ -1027,8 +1033,8 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
                   </Icon>
                 </div>
               </ShareButton>
-            </CreatedButton>
-            <CreatedButton
+            </ForwardRef>
+            <ForwardRef
               onShareWindowClose={[Function]}
               title="test"
               url="test"
@@ -1111,8 +1117,8 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
                   </Icon>
                 </div>
               </ShareButton>
-            </CreatedButton>
-            <CreatedButton
+            </ForwardRef>
+            <ForwardRef
               onShareWindowClose={[Function]}
               title="test"
               url="test"
@@ -1160,7 +1166,7 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
                             "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "ShareButtons__ShareSocialIcon-sc-1pgq0v7-2",
-                              "isStatic": true,
+                              "isStatic": false,
                               "lastClassName": "gEMyhK",
                               "rules": Array [
                                 "height:",
@@ -1176,6 +1182,7 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
                             "styledComponentId": "ShareButtons__ShareSocialIcon-sc-1pgq0v7-2",
                             "target": "div",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -1214,7 +1221,7 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
                   </RedditIcon>
                 </div>
               </ShareButton>
-            </CreatedButton>
+            </ForwardRef>
             <HackerNewsShareButton
               share={[Function]}
               title="test"
@@ -1230,7 +1237,7 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
                         "componentId": "ShareButtons__HNShareButton-sc-1pgq0v7-1",
-                        "isStatic": true,
+                        "isStatic": false,
                         "lastClassName": "dADeXm",
                         "rules": Array [
                           "height:",
@@ -1248,6 +1255,7 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
                       "styledComponentId": "ShareButtons__HNShareButton-sc-1pgq0v7-1",
                       "target": "div",
                       "toString": [Function],
+                      "usesTheme": false,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -1268,7 +1276,7 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
                               "attrs": Array [],
                               "componentStyle": ComponentStyle {
                                 "componentId": "ShareButtons__ShareSocialIcon-sc-1pgq0v7-2",
-                                "isStatic": true,
+                                "isStatic": false,
                                 "lastClassName": "gEMyhK",
                                 "rules": Array [
                                   "height:",
@@ -1284,6 +1292,7 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
                               "styledComponentId": "ShareButtons__ShareSocialIcon-sc-1pgq0v7-2",
                               "target": "div",
                               "toString": [Function],
+                              "usesTheme": false,
                               "warnTooManyClasses": [Function],
                               "withComponent": [Function],
                             }
@@ -1627,8 +1636,10 @@ exports[`components/Tooltip/Tooltip should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -1762,7 +1773,7 @@ exports[`components/Tooltip/Tooltip should match snapshot 1`] = `
               "attrs": Array [],
               "componentStyle": ComponentStyle {
                 "componentId": "Tooltip__Container-yd5128-0",
-                "isStatic": true,
+                "isStatic": false,
                 "lastClassName": "gGEFSv",
                 "rules": Array [
                   "flex-direction:column;display:flex;align-items:center;z-index:999;> .header{display:flex;height:100%;}> *:not(.header){opacity:0;}&:hover{> *{opacity:1;display:flex;}}",
@@ -1774,6 +1785,7 @@ exports[`components/Tooltip/Tooltip should match snapshot 1`] = `
               "styledComponentId": "Tooltip__Container-yd5128-0",
               "target": "div",
               "toString": [Function],
+              "usesTheme": false,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -1794,7 +1806,7 @@ exports[`components/Tooltip/Tooltip should match snapshot 1`] = `
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
                       "componentId": "Tooltip__UpArrow-yd5128-1",
-                      "isStatic": true,
+                      "isStatic": false,
                       "lastClassName": "eNbAAH",
                       "rules": Array [
                         "width:14px;height:14px;transform:rotate(45deg);position:absolute;top:74%;background:white;border-radius:2px;",
@@ -1806,6 +1818,7 @@ exports[`components/Tooltip/Tooltip should match snapshot 1`] = `
                     "styledComponentId": "Tooltip__UpArrow-yd5128-1",
                     "target": "div",
                     "toString": [Function],
+                    "usesTheme": false,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -1828,7 +1841,7 @@ exports[`components/Tooltip/Tooltip should match snapshot 1`] = `
                     "attrs": Array [],
                     "componentStyle": ComponentStyle {
                       "componentId": "Tooltip__TooltipBody-yd5128-2",
-                      "isStatic": true,
+                      "isStatic": false,
                       "lastClassName": "tLBOh",
                       "rules": Array [
                         "background:white;flex-direction:column;color:black;border-radius:4px;transition:all 0.2s;position:absolute;top:80%;display:none;box-shadow:0px 2px 4px rgba(0,0,0,0.1);",
@@ -1840,6 +1853,7 @@ exports[`components/Tooltip/Tooltip should match snapshot 1`] = `
                     "styledComponentId": "Tooltip__TooltipBody-yd5128-2",
                     "target": "div",
                     "toString": [Function],
+                    "usesTheme": false,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -1847,7 +1861,7 @@ exports[`components/Tooltip/Tooltip should match snapshot 1`] = `
                 forwardedRef={null}
               >
                 <div
-                  className="tooltip-body Tooltip__TooltipBody-yd5128-2 tLBOh"
+                  className="Tooltip__TooltipBody-yd5128-2 tLBOh tooltip-body"
                 >
                   <div>
                     Test

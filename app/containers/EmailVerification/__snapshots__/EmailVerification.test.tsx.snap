@@ -276,8 +276,10 @@ exports[`containers/EmailVerification should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -520,6 +522,7 @@ exports[`containers/EmailVerification should match snapshot 1`] = `
                       "styledComponentId": "View__VerifyEmailContainer-sc-1hdvbdj-0",
                       "target": "div",
                       "toString": [Function],
+                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }

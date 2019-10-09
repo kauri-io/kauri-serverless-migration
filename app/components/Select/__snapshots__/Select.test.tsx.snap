@@ -276,8 +276,10 @@ exports[`components/Select should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -480,6 +482,7 @@ exports[`components/Select should match snapshot 1`] = `
                     "styledComponentId": "Select-sc-8hcz1c-2",
                     "target": "div",
                     "toString": [Function],
+                    "usesTheme": true,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -518,6 +521,7 @@ exports[`components/Select should match snapshot 1`] = `
                           "styledComponentId": "Typography__component-sc-36xkf6-0",
                           "target": "span",
                           "toString": [Function],
+                          "usesTheme": true,
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
                         }

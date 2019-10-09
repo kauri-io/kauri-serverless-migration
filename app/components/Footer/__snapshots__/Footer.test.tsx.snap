@@ -264,8 +264,10 @@ exports[`components/Footer should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -415,6 +417,7 @@ exports[`components/Footer should match snapshot 1`] = `
               "styledComponentId": "Footer__NewFooter-wussxj-0",
               "target": "div",
               "toString": [Function],
+              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -433,7 +436,7 @@ exports[`components/Footer should match snapshot 1`] = `
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
                         "componentId": "Email__Container-nxd7qh-0",
-                        "isStatic": true,
+                        "isStatic": false,
                         "lastClassName": "bkJUoo",
                         "rules": Array [
                           "display:flex;flex-direction:row;align-items:center;",
@@ -445,6 +448,7 @@ exports[`components/Footer should match snapshot 1`] = `
                       "styledComponentId": "Email__Container-nxd7qh-0",
                       "target": "div",
                       "toString": [Function],
+                      "usesTheme": false,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -464,7 +468,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "Email__EmailAddress-nxd7qh-1",
-                              "isStatic": true,
+                              "isStatic": false,
                               "lastClassName": "jReXyi",
                               "rules": Array [
                                 "height:16px;width:82px;color:#0ba986;font-family:Roboto;font-size:12px;font-weight:bold;line-height:16px;",
@@ -476,6 +480,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "styledComponentId": "Email__EmailAddress-nxd7qh-1",
                             "target": "a",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -504,7 +509,7 @@ exports[`components/Footer should match snapshot 1`] = `
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
                         "componentId": "Logo__Container-yhmxu8-1",
-                        "isStatic": true,
+                        "isStatic": false,
                         "lastClassName": "kPuFaV",
                         "rules": Array [
                           "display:flex;align-self:center;flex-direction:column;align-items:center;margin:auto;padding:10px;",
@@ -516,6 +521,7 @@ exports[`components/Footer should match snapshot 1`] = `
                       "styledComponentId": "Logo__Container-yhmxu8-1",
                       "target": "div",
                       "toString": [Function],
+                      "usesTheme": false,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -535,7 +541,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "Logo__LogoIcon-yhmxu8-0",
-                              "isStatic": true,
+                              "isStatic": false,
                               "lastClassName": "kQopY",
                               "rules": Array [
                                 "width:26px;height:25px;",
@@ -547,6 +553,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "styledComponentId": "Logo__LogoIcon-yhmxu8-0",
                             "target": "img",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -568,7 +575,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "Logo__KauriCopy-yhmxu8-2",
-                              "isStatic": true,
+                              "isStatic": false,
                               "lastClassName": "kdcflv",
                               "rules": Array [
                                 "color:#fff;line-height:12px;font-size:12px;",
@@ -580,6 +587,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "styledComponentId": "Logo__KauriCopy-yhmxu8-2",
                             "target": "span",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -606,7 +614,7 @@ exports[`components/Footer should match snapshot 1`] = `
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
                         "componentId": "Consensys__Container-sc-3l6ajh-0",
-                        "isStatic": true,
+                        "isStatic": false,
                         "lastClassName": "hzIdEE",
                         "rules": Array [
                           "display:flex;flex-direction:row;align-items:center;>:nth-child(2){margin-left:15px;}>:last-child{margin-left:4px;}",
@@ -618,6 +626,7 @@ exports[`components/Footer should match snapshot 1`] = `
                       "styledComponentId": "Consensys__Container-sc-3l6ajh-0",
                       "target": "div",
                       "toString": [Function],
+                      "usesTheme": false,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -635,7 +644,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                              "isStatic": true,
+                              "isStatic": false,
                               "lastClassName": "iJDtiZ",
                               "rules": Array [
                                 "color:#fff;font-weight:500;font-size:13px;",
@@ -647,6 +656,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "styledComponentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
                             "target": "a",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -670,7 +680,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "Consensys__ConsenSysFormationIcon-sc-3l6ajh-1",
-                              "isStatic": true,
+                              "isStatic": false,
                               "lastClassName": "gRtYkn",
                               "rules": Array [
                                 "width:34px;",
@@ -682,6 +692,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "styledComponentId": "Consensys__ConsenSysFormationIcon-sc-3l6ajh-1",
                             "target": "img",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -703,7 +714,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                              "isStatic": true,
+                              "isStatic": false,
                               "lastClassName": "iJDtiZ",
                               "rules": Array [
                                 "color:#fff;font-weight:500;font-size:13px;",
@@ -715,6 +726,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "styledComponentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
                             "target": "a",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -738,7 +750,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "Consensys__PrivacyPolicy-sc-3l6ajh-3",
-                              "isStatic": true,
+                              "isStatic": false,
                               "lastClassName": "hDPWys",
                               "rules": Array [
                                 "color:#fff;font-weight:500;font-size:13px;",
@@ -753,6 +765,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "styledComponentId": "Consensys__PrivacyPolicy-sc-3l6ajh-3",
                             "target": "a",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -776,7 +789,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                              "isStatic": true,
+                              "isStatic": false,
                               "lastClassName": "iJDtiZ",
                               "rules": Array [
                                 "color:#fff;font-weight:500;font-size:13px;",
@@ -788,6 +801,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "styledComponentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
                             "target": "a",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -811,7 +825,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "attrs": Array [],
                             "componentStyle": ComponentStyle {
                               "componentId": "Consensys__TermsOfService-sc-3l6ajh-4",
-                              "isStatic": true,
+                              "isStatic": false,
                               "lastClassName": "hrfJKX",
                               "rules": Array [
                                 "color:#fff;font-weight:500;font-size:13px;",
@@ -828,6 +842,7 @@ exports[`components/Footer should match snapshot 1`] = `
                             "styledComponentId": "Consensys__TermsOfService-sc-3l6ajh-4",
                             "target": "a",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }

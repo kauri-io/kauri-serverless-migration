@@ -264,8 +264,10 @@ exports[`components/TopTags should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -424,6 +426,7 @@ exports[`components/TopTags should match snapshot 1`] = `
               "styledComponentId": "TopResourcesSection-mr7g3s-0",
               "target": "section",
               "toString": [Function],
+              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -468,6 +471,7 @@ exports[`components/TopTags should match snapshot 1`] = `
                     "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
                     "target": "span",
                     "toString": [Function],
+                    "usesTheme": true,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -522,6 +526,7 @@ exports[`components/TopTags should match snapshot 1`] = `
                       "styledComponentId": "TagList__Container-ipfhd9-0",
                       "target": "div",
                       "toString": [Function],
+                      "usesTheme": false,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -574,6 +579,7 @@ exports[`components/TopTags should match snapshot 1`] = `
                             "styledComponentId": "TagList__StyledTag-ipfhd9-1",
                             "target": "div",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -634,6 +640,7 @@ exports[`components/TopTags should match snapshot 1`] = `
                             "styledComponentId": "TagList__StyledTag-ipfhd9-1",
                             "target": "div",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -694,6 +701,7 @@ exports[`components/TopTags should match snapshot 1`] = `
                             "styledComponentId": "TagList__StyledTag-ipfhd9-1",
                             "target": "div",
                             "toString": [Function],
+                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }

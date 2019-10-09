@@ -93,6 +93,7 @@ const Renderer = ({ markdown, withComments, commentsCount }) => {
                 component: props => <Heading indent={5} {...props} />,
             },
             p: { component: () => null },
+            iframe: { component: () => null },
             a: { component: () => null },
             li: {
                 component: () => null,
@@ -124,8 +125,17 @@ const Renderer = ({ markdown, withComments, commentsCount }) => {
         },
     }
 
+    const useStyles = makeStyles(() => ({
+        outline: {
+            '& div div': {
+                display: 'none',
+            },
+        },
+    }))
+    const classes = useStyles()
+
     return (
-        <div>
+        <div className={classes.outline}>
             {loading ? (
                 <Loading />
             ) : (

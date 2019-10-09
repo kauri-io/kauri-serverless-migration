@@ -264,8 +264,10 @@ exports[`components/AddMemberButton should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -407,7 +409,7 @@ exports[`components/AddMemberButton should match snapshot 1`] = `
               "attrs": Array [],
               "componentStyle": ComponentStyle {
                 "componentId": "AddMemberButton-sc-1817umg-0",
-                "isStatic": true,
+                "isStatic": false,
                 "lastClassName": "izyAKK",
                 "rules": Array [
                   "height:30px;width:30px;cursor:pointer;",
@@ -419,6 +421,7 @@ exports[`components/AddMemberButton should match snapshot 1`] = `
               "styledComponentId": "AddMemberButton-sc-1817umg-0",
               "target": "img",
               "toString": [Function],
+              "usesTheme": false,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -702,8 +705,10 @@ exports[`components/AddTagButton should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -877,6 +882,7 @@ exports[`components/AddTagButton should match snapshot 1`] = `
               "styledComponentId": "AddTagButton-oghske-0",
               "target": "button",
               "toString": [Function],
+              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -1165,8 +1171,10 @@ exports[`components/Button should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -1308,26 +1316,37 @@ exports[`components/Button should match snapshot 1`] = `
               "contained": "MuiButton-contained",
               "containedPrimary": "MuiButton-containedPrimary",
               "containedSecondary": "MuiButton-containedSecondary",
+              "containedSizeLarge": "MuiButton-containedSizeLarge",
+              "containedSizeSmall": "MuiButton-containedSizeSmall",
               "disabled": "Mui-disabled",
+              "endIcon": "MuiButton-endIcon",
               "focusVisible": "Mui-focusVisible",
               "fullWidth": "MuiButton-fullWidth",
+              "iconSizeLarge": "MuiButton-iconSizeLarge",
+              "iconSizeMedium": "MuiButton-iconSizeMedium",
+              "iconSizeSmall": "MuiButton-iconSizeSmall",
               "label": "MuiButton-label",
               "outlined": "MuiButton-outlined",
               "outlinedPrimary": "MuiButton-outlinedPrimary",
               "outlinedSecondary": "MuiButton-outlinedSecondary",
+              "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+              "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
               "root": "MuiButton-root",
               "sizeLarge": "MuiButton-sizeLarge",
               "sizeSmall": "MuiButton-sizeSmall",
+              "startIcon": "MuiButton-startIcon",
               "text": "MuiButton-text",
               "textPrimary": "MuiButton-textPrimary",
               "textSecondary": "MuiButton-textSecondary",
+              "textSizeLarge": "MuiButton-textSizeLarge",
+              "textSizeSmall": "MuiButton-textSizeSmall",
             }
           }
           color="primary"
           variant="contained"
         >
           <WithStyles(ForwardRef(ButtonBase))
-            className="MuiButton-root makeStyles-main-1 MuiButton-contained MuiButton-containedPrimary"
+            className="MuiButton-root MuiButton-contained MuiButton-containedPrimary makeStyles-main-1"
             component="button"
             disabled={false}
             focusRipple={true}
@@ -1335,7 +1354,7 @@ exports[`components/Button should match snapshot 1`] = `
             type="button"
           >
             <ForwardRef(ButtonBase)
-              className="MuiButton-root makeStyles-main-1 MuiButton-contained MuiButton-containedPrimary"
+              className="MuiButton-root MuiButton-contained MuiButton-containedPrimary makeStyles-main-1"
               classes={
                 Object {
                   "disabled": "Mui-disabled",
@@ -1350,7 +1369,7 @@ exports[`components/Button should match snapshot 1`] = `
               type="button"
             >
               <button
-                className="MuiButtonBase-root MuiButton-root makeStyles-main-1 MuiButton-contained MuiButton-containedPrimary"
+                className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary makeStyles-main-1"
                 disabled={false}
                 onBlur={[Function]}
                 onDragLeave={[Function]}
@@ -1675,8 +1694,10 @@ exports[`components/MediumImportButton should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -1823,19 +1844,30 @@ exports[`components/MediumImportButton should match snapshot 1`] = `
                   "contained": "MuiButton-contained",
                   "containedPrimary": "MuiButton-containedPrimary",
                   "containedSecondary": "MuiButton-containedSecondary",
+                  "containedSizeLarge": "MuiButton-containedSizeLarge",
+                  "containedSizeSmall": "MuiButton-containedSizeSmall",
                   "disabled": "Mui-disabled",
+                  "endIcon": "MuiButton-endIcon",
                   "focusVisible": "Mui-focusVisible",
                   "fullWidth": "MuiButton-fullWidth",
+                  "iconSizeLarge": "MuiButton-iconSizeLarge",
+                  "iconSizeMedium": "MuiButton-iconSizeMedium",
+                  "iconSizeSmall": "MuiButton-iconSizeSmall",
                   "label": "MuiButton-label",
                   "outlined": "MuiButton-outlined",
                   "outlinedPrimary": "MuiButton-outlinedPrimary",
                   "outlinedSecondary": "MuiButton-outlinedSecondary",
+                  "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                  "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
                   "root": "MuiButton-root",
                   "sizeLarge": "MuiButton-sizeLarge",
                   "sizeSmall": "MuiButton-sizeSmall",
+                  "startIcon": "MuiButton-startIcon",
                   "text": "MuiButton-text",
                   "textPrimary": "MuiButton-textPrimary",
                   "textSecondary": "MuiButton-textSecondary",
+                  "textSizeLarge": "MuiButton-textSizeLarge",
+                  "textSizeSmall": "MuiButton-textSizeSmall",
                 }
               }
               color="primary"
@@ -1894,7 +1926,7 @@ exports[`components/MediumImportButton should match snapshot 1`] = `
                               "attrs": Array [],
                               "componentStyle": ComponentStyle {
                                 "componentId": "MediumImportButton__Icon-sc-1nnwman-0",
-                                "isStatic": true,
+                                "isStatic": false,
                                 "lastClassName": "kpgAfi",
                                 "rules": Array [
                                   "height:18px;width:18px;margin-right:8px;",
@@ -1906,6 +1938,7 @@ exports[`components/MediumImportButton should match snapshot 1`] = `
                               "styledComponentId": "MediumImportButton__Icon-sc-1nnwman-0",
                               "target": "svg",
                               "toString": [Function],
+                              "usesTheme": false,
                               "warnTooManyClasses": [Function],
                               "withComponent": [Function],
                             }
@@ -2231,8 +2264,10 @@ exports[`components/SecondaryButton should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -2374,19 +2409,30 @@ exports[`components/SecondaryButton should match snapshot 1`] = `
               "contained": "MuiButton-contained",
               "containedPrimary": "MuiButton-containedPrimary",
               "containedSecondary": "MuiButton-containedSecondary",
+              "containedSizeLarge": "MuiButton-containedSizeLarge",
+              "containedSizeSmall": "MuiButton-containedSizeSmall",
               "disabled": "Mui-disabled",
+              "endIcon": "MuiButton-endIcon",
               "focusVisible": "Mui-focusVisible",
               "fullWidth": "MuiButton-fullWidth",
+              "iconSizeLarge": "MuiButton-iconSizeLarge",
+              "iconSizeMedium": "MuiButton-iconSizeMedium",
+              "iconSizeSmall": "MuiButton-iconSizeSmall",
               "label": "MuiButton-label",
               "outlined": "MuiButton-outlined",
               "outlinedPrimary": "MuiButton-outlinedPrimary",
               "outlinedSecondary": "MuiButton-outlinedSecondary",
+              "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+              "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
               "root": "MuiButton-root",
               "sizeLarge": "MuiButton-sizeLarge",
               "sizeSmall": "MuiButton-sizeSmall",
+              "startIcon": "MuiButton-startIcon",
               "text": "MuiButton-text",
               "textPrimary": "MuiButton-textPrimary",
               "textSecondary": "MuiButton-textSecondary",
+              "textSizeLarge": "MuiButton-textSizeLarge",
+              "textSizeSmall": "MuiButton-textSizeSmall",
             }
           }
           color="primary"
@@ -2741,8 +2787,10 @@ exports[`components/TertiaryButton should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -2884,19 +2932,30 @@ exports[`components/TertiaryButton should match snapshot 1`] = `
               "contained": "MuiButton-contained",
               "containedPrimary": "MuiButton-containedPrimary",
               "containedSecondary": "MuiButton-containedSecondary",
+              "containedSizeLarge": "MuiButton-containedSizeLarge",
+              "containedSizeSmall": "MuiButton-containedSizeSmall",
               "disabled": "Mui-disabled",
+              "endIcon": "MuiButton-endIcon",
               "focusVisible": "Mui-focusVisible",
               "fullWidth": "MuiButton-fullWidth",
+              "iconSizeLarge": "MuiButton-iconSizeLarge",
+              "iconSizeMedium": "MuiButton-iconSizeMedium",
+              "iconSizeSmall": "MuiButton-iconSizeSmall",
               "label": "MuiButton-label",
               "outlined": "MuiButton-outlined",
               "outlinedPrimary": "MuiButton-outlinedPrimary",
               "outlinedSecondary": "MuiButton-outlinedSecondary",
+              "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+              "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
               "root": "MuiButton-root",
               "sizeLarge": "MuiButton-sizeLarge",
               "sizeSmall": "MuiButton-sizeSmall",
+              "startIcon": "MuiButton-startIcon",
               "text": "MuiButton-text",
               "textPrimary": "MuiButton-textPrimary",
               "textSecondary": "MuiButton-textSecondary",
+              "textSizeLarge": "MuiButton-textSizeLarge",
+              "textSizeSmall": "MuiButton-textSizeSmall",
             }
           }
           color="primary"
@@ -3251,8 +3310,10 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
         "mobileStepper": 1000,
         "modal": 1300,
         "snackbar": 1400,
+        "speedDial": 1050,
         "tooltip": 1500,
       },
+      Symbol(mui.nested): false,
     }
   }
 >
@@ -3431,6 +3492,7 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
               "styledComponentId": "UploadLogoButton-t7p33i-0",
               "target": "button",
               "toString": [Function],
+              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -3442,7 +3504,7 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
           width="100px"
         >
           <button
-            className="image-upload UploadLogoButton-t7p33i-0 jYCJmi"
+            className="UploadLogoButton-t7p33i-0 jYCJmi image-upload"
             color="textPrimary"
             fontSize={0}
             height="100px"
@@ -3472,6 +3534,7 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
                     "styledComponentId": "UploadLogoButton__Overlay-t7p33i-1",
                     "target": "div",
                     "toString": [Function],
+                    "usesTheme": true,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }

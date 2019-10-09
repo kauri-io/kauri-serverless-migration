@@ -276,8 +276,10 @@ exports[`containers/SearchResults should match snapshot 1`] = `
           "mobileStepper": 1000,
           "modal": 1300,
           "snackbar": 1400,
+          "speedDial": 1050,
           "tooltip": 1500,
         },
+        Symbol(mui.nested): false,
       }
     }
   >
@@ -531,6 +533,7 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                       "styledComponentId": "SearchResults__ArticlesHeader-sc-3rzbew-0",
                       "target": "div",
                       "toString": [Function],
+                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -578,6 +581,7 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                             "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
                             "target": "span",
                             "toString": [Function],
+                            "usesTheme": true,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -619,6 +623,7 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                             "styledComponentId": "Typography__component-sc-36xkf6-4",
                             "target": "span",
                             "toString": [Function],
+                            "usesTheme": true,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -849,7 +854,7 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
                                       "componentId": "ResourceSearch__SearchWrapper-sc-7ioqrv-1",
-                                      "isStatic": true,
+                                      "isStatic": false,
                                       "lastClassName": "hwZepJ",
                                       "rules": Array [
                                         "width:300px;margin-bottom:64px;margin-top:19px;display:grid;position:relative;border-radius:4px;&:hover{& > input{border:1px solid #209b86;}}& > .certain-category-icon{position:absolute;top:11px;right:9px;}",
@@ -861,6 +866,7 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                                     "styledComponentId": "ResourceSearch__SearchWrapper-sc-7ioqrv-1",
                                     "target": "div",
                                     "toString": [Function],
+                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -868,7 +874,7 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                                 forwardedRef={null}
                               >
                                 <div
-                                  className="global-search-wrapper ResourceSearch__SearchWrapper-sc-7ioqrv-1 hwZepJ"
+                                  className="ResourceSearch__SearchWrapper-sc-7ioqrv-1 hwZepJ global-search-wrapper"
                                 >
                                   <ResourceSearch__SearchInput
                                     onChange={[Function]}
@@ -895,6 +901,7 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                                           "styledComponentId": "ResourceSearch__SearchInput-sc-7ioqrv-0",
                                           "target": "input",
                                           "toString": [Function],
+                                          "usesTheme": true,
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                         }
