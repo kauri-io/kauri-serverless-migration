@@ -131,8 +131,8 @@ class PublicProfile extends Component<IProps, IState> {
                     />
                 ) : (
                     <Header
-                        articles={2}
-                        collections={[]}
+                        articles={UserQuery.getUserByUsername.articles.totalElements}
+                        collections={UserQuery.getUserByUsername.collections.totalElements}
                         currentUser={currentUser}
                         id={getUserField<string>('id', '')}
                         avatar={
@@ -175,8 +175,12 @@ class PublicProfile extends Component<IProps, IState> {
                             value={this.state.tab}
                             onChange={(_e, tab) => this.setState({ tab })}
                         >
-                            <Tab label={`Articles`} />
-                            <Tab label={`Collections`} />
+                            <Tab
+                                label={`Articles (${UserQuery.getUserByUsername.articles.totalElements})`}
+                            />
+                            <Tab
+                                label={`Collections (${UserQuery.getUserByUsername.collections.totalElements})`}
+                            />
                             {isOwner && <Tab label="Manage" />}
                         </Tabs>
                         {this.state.tab === 0 && (
