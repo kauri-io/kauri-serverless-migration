@@ -4,10 +4,10 @@ import { Theme, Tabs, Tab } from '@material-ui/core'
 import formatMarkdown from './format'
 import { useState } from 'react'
 import Renderer from './Renderer'
-import Button from '../Button'
 import Metadata from './Metadata'
 import { IOpenModalAction, ICloseModalAction } from '../Modal/Module'
 import { IAttributes } from '../../containers/WriteArticle/View'
+import Importer from '../../containers/Importer'
 
 interface IProps {
     withTabs: boolean
@@ -132,14 +132,11 @@ const Editor = ({
                     />
                 )}
                 {tab === 3 && (
-                    <>
-                        <Button variant="text" color="primary">
-                            Import from Wordpress
-                        </Button>
-                        <Button variant="text" color="primary">
-                            Import from Medium
-                        </Button>
-                    </>
+                    <Importer onFetch={e => {
+                        onChange(e)
+                        setTab(1)
+                    }}
+                    />
                 )}
             </div>
         </div>
