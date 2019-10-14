@@ -132,10 +132,13 @@ const Editor = ({
                     />
                 )}
                 {tab === 3 && (
-                    <Importer onFetch={e => {
-                        onChange(e)
-                        setTab(1)
-                    }}
+                    <Importer
+                        attributes={attributes}
+                        setAttributes={setAttributes}
+                        onFetch={e => {
+                            onChange(e)
+                            setTab(1)
+                        }}
                     />
                 )}
             </div>
