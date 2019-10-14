@@ -21,6 +21,7 @@ interface IProps {
     attributes?: IAttributes
     setAttributes?: (a: IAttributes) => void
     onValidationError?: (e: string) => void
+    setTitle?: (title: string) => void
 }
 
 const Editor = ({
@@ -34,6 +35,7 @@ const Editor = ({
     minHeight,
     attributes,
     setAttributes,
+    setTitle,
     onValidationError,
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
@@ -135,8 +137,11 @@ const Editor = ({
                     <Importer
                         attributes={attributes}
                         setAttributes={setAttributes}
-                        onFetch={e => {
-                            onChange(e)
+                        onFetch={data => {
+                            onChange(data.md)
+                            if (setTitle) {
+                                setTitle(data.title)
+                            }
                             setTab(1)
                         }}
                     />

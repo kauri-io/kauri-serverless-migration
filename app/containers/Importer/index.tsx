@@ -22,8 +22,8 @@ export default ({ onFetch, attributes, setAttributes }) => {
 
         helpLink: {
             cursor: 'pointer',
-            color: theme.palette.primary.main
-        }
+            color: theme.palette.primary.main,
+        },
     }))
     const classes = useStyles()
 
@@ -36,7 +36,12 @@ export default ({ onFetch, attributes, setAttributes }) => {
             <Grid>
                 <Typography>
                     Please enter the url of the article you would like to import
-                    here. This is a beta feature, if you have feedback or recommendation <a className={classes.helpLink} href='mailto:info@kauri.io'>let us know</a> :)
+                    here. This is a beta feature, if you have feedback or
+                    recommendation{' '}
+                    <a className={classes.helpLink} href="mailto:info@kauri.io">
+                        let us know
+                    </a>{' '}
+                    :)
                 </Typography>
             </Grid>
             <Grid container={true}>
@@ -51,7 +56,7 @@ export default ({ onFetch, attributes, setAttributes }) => {
                     onClick={async () => {
                         setLoading(true)
                         const data = await requestParsedUrl(url)
-                        onFetch(data.md)
+                        onFetch(data)
                         setAttributes({
                             background: attributes.background,
                             canonical: url,
