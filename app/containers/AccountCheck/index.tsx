@@ -5,6 +5,9 @@ import { makeStyles, Theme, Typography } from '@material-ui/core'
 import { connect } from 'react-redux'
 
 const AccountCheck = ({ router, page, userId }) => {
+    if (process.browser) {
+        global.window.ethereum.enable()
+    }
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
             flex: 1,

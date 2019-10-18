@@ -56,7 +56,7 @@ module.exports = async (req, res) => {
     const doc = new JSDOM(body, {
       url
     })
-    const document = parseMedium(doc.window.document)
+    const document = await parseMedium(doc.window.document)
     const reader = new Readability(document)
     const article = reader.parse()
     let $ = cheerio.load(article.content,
