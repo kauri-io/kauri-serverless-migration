@@ -4,10 +4,10 @@ import { Theme, Tabs, Tab } from '@material-ui/core'
 import formatMarkdown from './format'
 import { useState } from 'react'
 import Renderer from './Renderer'
-import Button from '../Button'
 import Metadata from './Metadata'
 import { IOpenModalAction, ICloseModalAction } from '../Modal/Module'
 import { IAttributes } from '../../containers/WriteArticle/View'
+import Importer from '../../containers/Importer'
 
 interface IProps {
     withTabs: boolean
@@ -21,6 +21,7 @@ interface IProps {
     attributes?: IAttributes
     setAttributes?: (a: IAttributes) => void
     onValidationError?: (e: string) => void
+    setTitle?: (title: string) => void
 }
 
 const Editor = ({
@@ -34,6 +35,7 @@ const Editor = ({
     minHeight,
     attributes,
     setAttributes,
+    setTitle,
     onValidationError,
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
@@ -132,14 +134,17 @@ const Editor = ({
                     />
                 )}
                 {tab === 3 && (
-                    <>
-                        <Button variant="text" color="primary">
-                            Import from Wordpress
-                        </Button>
-                        <Button variant="text" color="primary">
-                            Import from Medium
-                        </Button>
-                    </>
+                    <Importer
+                        attributes={attributes}
+                        setAttributes={setAttributes}
+                        onFetch={data => {
+                            onChange(data.md)
+                            if (setTitle) {
+                                setTitle(data.title)
+                            }
+                            setTab(1)
+                        }}
+                    />
                 )}
             </div>
         </div>

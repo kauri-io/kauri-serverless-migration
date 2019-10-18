@@ -462,6 +462,7 @@ const ArticleEditor = props => {
             </div>
 
             <Editor
+                setTitle={setSubject}
                 withTabs={true}
                 withToolbar={true}
                 compact={false}

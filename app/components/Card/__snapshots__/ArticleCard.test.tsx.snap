@@ -106,9 +106,9 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
       "props": Object {},
       "shadows": Array [
         "none",
-        "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
-        "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
-        "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+        "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
+        "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
+        "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
         "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
         "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
         "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
@@ -1367,9 +1367,9 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                             "props": Object {},
                                             "shadows": Array [
                                               "none",
-                                              "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)",
-                                              "0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12)",
-                                              "0px 1px 8px 0px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 3px 3px -2px rgba(0,0,0,0.12)",
+                                              "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
+                                              "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
+                                              "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
                                               "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
                                               "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
                                               "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
@@ -1630,6 +1630,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                   classes={
                                     Object {
                                       "paper": "MuiPopover-paper",
+                                      "root": "MuiPopover-root",
                                     }
                                   }
                                   data-testid="ArticleCard-0x12...-moreOptionsMenu"
@@ -1653,6 +1654,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                         "invisible": true,
                                       }
                                     }
+                                    className="MuiPopover-root"
                                     data-testid="ArticleCard-0x12...-moreOptionsMenu"
                                     id="simple-menu"
                                     keepMounted={true}
@@ -1667,6 +1669,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                           <body>
                                             <div
                                               aria-hidden="true"
+                                              class="MuiPopover-root"
                                               data-testid="ArticleCard-0x12...-moreOptionsMenu"
                                               id="simple-menu"
                                               role="presentation"
@@ -1678,7 +1681,6 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                               />
                                               <div
                                                 class="MuiPaper-root MuiMenu-paper MuiPaper-elevation8 MuiPopover-paper MuiPaper-rounded"
-                                                role="document"
                                                 style="opacity: 0; transform: scale(0.75, 0.5625); visibility: hidden;"
                                                 tabindex="-1"
                                               >
@@ -1749,6 +1751,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                         }
                                       >
                                         <div
+                                          className="MuiPopover-root"
                                           data-testid="ArticleCard-0x12...-moreOptionsMenu"
                                           id="simple-menu"
                                           onKeyDown={[Function]}
@@ -1788,7 +1791,6 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                               onEnter={[Function]}
                                               onEntering={[Function]}
                                               onExited={[Function]}
-                                              role="document"
                                               tabIndex="-1"
                                               timeout="auto"
                                             >
@@ -1805,7 +1807,6 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                 onExit={[Function]}
                                                 onExited={[Function]}
                                                 onExiting={[Function]}
-                                                role="document"
                                                 tabIndex="-1"
                                                 timeout={null}
                                                 unmountOnExit={false}
@@ -1818,7 +1819,6 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                     }
                                                   }
                                                   elevation={8}
-                                                  role="document"
                                                   style={
                                                     Object {
                                                       "opacity": 0,
@@ -1862,7 +1862,6 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                       }
                                                     }
                                                     elevation={8}
-                                                    role="document"
                                                     style={
                                                       Object {
                                                         "opacity": 0,
@@ -1874,7 +1873,6 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                   >
                                                     <div
                                                       className="MuiPaper-root MuiMenu-paper MuiPaper-elevation8 MuiPopover-paper MuiPaper-rounded"
-                                                      role="document"
                                                       style={
                                                         Object {
                                                           "opacity": 0,

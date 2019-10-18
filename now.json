@@ -17,9 +17,17 @@
     {
       "src": "app/package.json",
       "use": "@now/next"
+    },
+    {
+      "src": "api/*",
+      "use": "@now/node"
     }
   ],
   "routes": [
+    {
+      "src": "/api/import/(.*)",
+      "dest": "/api?url=$1"
+    },
     {
       "src": "/robots.txt",
       "dest": "/app/static/development/robots.txt"

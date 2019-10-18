@@ -16,7 +16,6 @@ import { ThemeProvider as MaterialThemeProvider } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { parseCookies } from './cookies'
-import cookie from 'cookie'
 
 export const theme = createMuiTheme({
     palette: {
@@ -241,49 +240,23 @@ export default (ComposedComponent: any) =>
         componentDidMount() {
             global.window.addEventListener('load', async () => {
                 if (global.window.ethereum) {
-                    // NOTICE - Moved to sign in only.
-                    // global.window.web3 = new Web3(window.ethereum);
                     try {
-                        const cookieToParse = global.window.document.cookie
-                        if (!cookieToParse) return {}
-                        const userId = cookie.parse(cookieToParse)['USER_ID']
-                        // Request account access if needed and logged in
-                        if (userId) {
-                            await global.window.ethereum.enable()
-                        }
-                        // Acccounts now exposed
                         analytics.setWeb3Status(true) // Track web3 status
-                    } catch (error) {
-                        // User denied account access...
-                    }
+                    } catch (error) {}
                     // Supports Metamask and Mist, and other wallets that provide 'web3'.
                 } else if (global.window && global.window.web3) {
                     // Use the Mist/wallet provider.
                     global.window.web3 = new ethers.providers.Web3Provider(
                         global.window.web3.currentProvider
                     )
-                    // track web3 status
                     analytics.setWeb3Status(true)
                 } else {
                     analytics.setWeb3Status(false)
-                    // No web3 detected. Show an error to the user or use Infura: https://infura.io/
-                    // global.window.web3 = new Web3(new Web3.providers.HttpProvider(`http://${process.env.gethBlockchain}`))
                 }
                 // Init mixpanel
-                mixpanel.init(
-                    config.mixpanelToken,
-                    {
-                        debug: process.env.config !== 'production',
-                    }
-                    /*
-            {
-                debug: true,
-                loaded: function() {
-                    mixpanel.track('loaded() callback works but is unnecessary');
-                }
-            }
-            */
-                )
+                mixpanel.init(config.mixpanelToken, {
+                    debug: process.env.config !== 'production',
+                })
             })
         }
 

@@ -135,6 +135,8 @@ class OnboardingEditProfile extends Component<IProps, IState> {
     }
 
     componentDidMount() {
+        if (!this.props.OwnProfile || !this.props.OwnProfile.getMyProfile)
+            return null
         const {
             name,
             username,

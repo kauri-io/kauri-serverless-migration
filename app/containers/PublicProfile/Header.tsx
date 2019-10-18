@@ -180,7 +180,7 @@ const ProfileHeader = ({
                 </Grid>
                 <Grid item={true} className={classes.rightSide}>
                     {(articles > 0 || collections > 0) && (
-                        <StatisticsContainer    
+                        <StatisticsContainer
                             pageType="CollectionPage"
                             statistics={[
                                 {

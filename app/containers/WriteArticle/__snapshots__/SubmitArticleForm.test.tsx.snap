@@ -38,6 +38,7 @@ exports[`containers/WriteArticle/View should match the snapshot 1`] = `
     onChange={[Function]}
     onValidationError={[Function]}
     setAttributes={[Function]}
+    setTitle={[Function]}
     text={null}
     withTabs={true}
     withToolbar={true}
