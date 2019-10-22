@@ -7,7 +7,6 @@ export const parseMedium = async (document: Document) => {
     for (let i = 0; i < images.length; i++) {
         const url = images[i].src
         const new_url = url.replace('?q=20','').replace('/60/','/1920/')
-        console.log(new_url)
         images[i].src = new_url
     }
     for (let i = 0; i < noscripts.length; i ++) {
@@ -25,6 +24,15 @@ export const parseMedium = async (document: Document) => {
             script.replace('.js','/raw')
             // Fetch the content and do something with it
         }
+    }
+
+    const brs = document.getElementsByTagName('br')
+    for (let i = 0; i < brs.length; i ++) {
+        brs[i].replaceWith('\n')
+    }
+    const spans = document.getElementsByTagName('span')
+    for (let i = 0; i < spans.length; i ++) {
+        spans[i].outerHTML = spans[i].outerHTML + '\n'
     }
     return document
 }

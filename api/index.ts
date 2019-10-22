@@ -37,7 +37,12 @@ const translateNode = ($, str?: string) => {
     }
     if (item.name === 'code') {
       string += '\n\n```\n'
-      string += `![${$(item).text()})`
+      string += `${$(item).text()}`
+      string += '\n```\n\n'
+    }
+    if (item.name === 'pre') {
+      string += '\n\n```\n'
+      string += `${$(item).text()}`
       string += '\n```\n\n'
     }
   })
