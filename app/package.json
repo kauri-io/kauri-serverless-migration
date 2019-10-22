@@ -66,6 +66,7 @@
         "react-dom": "^16.8.6",
         "react-fast-highlight": "^2.2.2",
         "react-ga": "^2.6.0",
+        "react-gist": "^1.2.1",
         "react-intersection-observer": "^8.23.0",
         "react-redux": "^7.1.0",
         "react-router-dom": "^5.0.1",

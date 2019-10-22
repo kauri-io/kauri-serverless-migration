@@ -17,6 +17,13 @@ const headers = {
 const translateNode = ($, str?: string) => {
   let string = str || ''
   $('*').each((_index, item) =>{
+    if (item.name === 'a') {
+      const href = $(item).attr('href')
+      if(href.indexOf('https://gist.github.com') !== -1) {
+        console.log('gist detected')
+        string += `[GIST ID: ${href.split('/')[4]}](${href})`
+      }
+    }
     if (item.name === 'h1') {
       string += `\n\n# ${$(item).text()} \n`
     }
