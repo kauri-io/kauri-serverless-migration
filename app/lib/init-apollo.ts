@@ -32,7 +32,6 @@ export function create(initialState, { getToken }) {
         },
     })
 
-    console.log('STARTING WS', global.window, token)
     if (global.window) {
         const xAuthToken = global.window.encodeURI(`Bearer ${token}`)
         const wsLink = new WebSocketLink({
