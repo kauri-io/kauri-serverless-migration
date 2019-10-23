@@ -107,7 +107,6 @@ const Component: React.SFC<
                         props.values.attributes.background
                     }
                 />
-                {console.log('PROPS: ', props)}
                 <Header
                     {...props.values}
                     userId={props.userId}
