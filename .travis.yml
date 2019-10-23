@@ -6,8 +6,7 @@ cache: yarn
 
 install:
   - yarn global add jest now
-  - yarn
+  - cd app && yarn
 
 script:
-  - cd app && yarn test
-  - cd .. && yarn deploy-prod
+  - yarn test
