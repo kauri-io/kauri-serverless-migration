@@ -16,7 +16,7 @@
         "test": "jest",
         "test:coverage": "jest --coverage && open ./coverage/lcov-report/index.html",
         "gqt": "npx apollo client:codegen --target=typescript --config=apollo.config.js && npm run introspect-fragments",
-        "analyze": "BUNDLE_ANALYZE=browser NODE_ENV=production next build"
+        "analyze": "BUNDLE_ANALYZE=true NODE_ENV=production next build"
     },
     "husky": {
         "hooks": {
@@ -91,6 +91,7 @@
     },
     "devDependencies": {
         "@babel/plugin-transform-modules-commonjs": "^7.5.0",
+        "@next/bundle-analyzer": "^9.1.1",
         "@types/bs58": "^4.0.0",
         "@types/cookie": "^0.3.3",
         "@types/enzyme": "^3.10.3",
@@ -115,7 +116,6 @@
         "@types/yup": "^0.26.21",
         "@typescript-eslint/eslint-plugin": "^1.11.0",
         "@typescript-eslint/parser": "^1.11.0",
-        "@zeit/next-bundle-analyzer": "^0.1.2",
         "@zeit/next-css": "^1.0.1",
         "@zeit/next-source-maps": "^0.0.3",
         "babel-plugin-dynamic-import-node": "^2.3.0",
