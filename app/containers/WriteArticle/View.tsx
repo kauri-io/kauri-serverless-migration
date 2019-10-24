@@ -55,7 +55,8 @@ const ArticleEditor = props => {
         } = props
 
         if (!userId) {
-            routeChangeAction(`/login?r=${router.asPath}&redirected=true`)
+            // routeChangeAction(`/login?r=${router.asPath}&redirected=true`)
+            console.log(router)
         } else {
             analytics.track('Write Article Start', {
                 category: 'generic',
