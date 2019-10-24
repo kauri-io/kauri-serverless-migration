@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "10.17.0"
+
+cache: yarn
+
+install:
+  - yarn global add jest now
+  - cd app && yarn
+
+script:
+  - yarn test
