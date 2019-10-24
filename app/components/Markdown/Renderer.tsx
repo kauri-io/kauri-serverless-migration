@@ -6,6 +6,7 @@ import config from '../../config'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import Prism from 'prismjs'
 import katex from 'katex'
+import Gist from 'react-gist'
 
 const Renderer = ({ markdown }) => {
     const useStyles = makeStyles((theme: Theme) => ({
@@ -96,6 +97,14 @@ const Renderer = ({ markdown }) => {
         }
     }
 
+    const LinkOrGist = props => {
+        if (props.href.indexOf('https://gist.github.com') !== -1) {
+            return <Gist id={props.href.split('/')[4]} />
+        } else {
+            return <Link {...props} />
+        }
+    }
+
     const options = {
         forceBlock: true,
         overrides: {
@@ -157,7 +166,7 @@ const Renderer = ({ markdown }) => {
                 },
             },
             p: { component: Typography, props: { paragraph: true } },
-            a: { component: Link },
+            a: { component: LinkOrGist },
             li: {
                 component: ({ ...props }) => (
                     <li>

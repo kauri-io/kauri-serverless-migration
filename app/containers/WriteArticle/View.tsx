@@ -55,7 +55,8 @@ const ArticleEditor = props => {
         } = props
 
         if (!userId) {
-            routeChangeAction(`/login?r=${router.asPath}&redirected=true`)
+            // routeChangeAction(`/login?r=${router.asPath}&redirected=true`)
+            console.log(router)
         } else {
             analytics.track('Write Article Start', {
                 category: 'generic',
@@ -72,7 +73,8 @@ const ArticleEditor = props => {
                             content={
                                 <div>
                                     You can publish articles to your personal
-                                    and also communities when selecting Publish
+                                    profile or communities you are a member of
+                                    you click <i>Publish Article</i>
                                 </div>
                             }
                             confirmButtonAction={() => {
