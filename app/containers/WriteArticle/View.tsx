@@ -72,7 +72,8 @@ const ArticleEditor = props => {
                             content={
                                 <div>
                                     You can publish articles to your personal
-                                    and also communities when selecting Publish
+                                    profile or communities you are a member of
+                                    you click <i>Publish Article</i>
                                 </div>
                             }
                             confirmButtonAction={() => {
