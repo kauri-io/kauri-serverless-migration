@@ -1,6 +1,6 @@
 const withCss = require("@zeit/next-css");
 const withPlugins = require("next-compose-plugins");
-const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
+const withBundleAnalyzer = require('@next/bundle-analyzer')
 
 const plugins = [withCss]
 if (process.env.BUNDLE_ANALYZE) {
