@@ -10,7 +10,7 @@ const debouncedFetch = debounce(async (url, client, setData, setLoading) => {
         setData({
             title: null,
             description: null,
-            image: null
+            image: null,
         })
         const data = await client.query({
             query: extractLinkMetadata,
