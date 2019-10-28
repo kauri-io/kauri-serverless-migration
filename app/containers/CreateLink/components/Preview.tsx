@@ -6,7 +6,7 @@ const Preview = ({
     classes,
     title,
     description,
-    attributes: { background_image },
+    image,
 }) => (
     <Grid className={classes.preview}>
         <Grid>
@@ -14,11 +14,11 @@ const Preview = ({
             <Typography variant="body2">{description}</Typography>
         </Grid>
         <Grid>
-            {background_image ? (
+            {image ? (
                 <Image
                     width={152}
                     height={152}
-                    image={background_image}
+                    image={image}
                     borderRadius="4px"
                 />
             ) : (
