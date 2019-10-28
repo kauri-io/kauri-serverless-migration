@@ -59,7 +59,7 @@ const CreateLink = ({ client }) => {
                         )}
                     </Paper>
 
-                    {hasData && (
+                    {!loading && hasData && (
                         <>
                             <Paper className={classes.details}>
                                 <Details />

@@ -6,6 +6,12 @@ import { extractLinkMetadata } from '../../../queries/Link'
 const debouncedFetch = debounce(async (url, client, setData, setLoading) => {
     if (url) {
         setLoading(true)
+        // reset  data
+        setData({
+            title: null,
+            description: null,
+            image: null
+        })
         const data = await client.query({
             query: extractLinkMetadata,
             variables: {
