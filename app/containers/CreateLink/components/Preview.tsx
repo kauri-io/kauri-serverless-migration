@@ -6,13 +6,12 @@ const Preview = ({
     classes,
     title,
     description,
-    attributes: {
-        background_image
-    }
-}) => <Grid className={classes.preview}>
+    attributes: { background_image },
+}) => (
+    <Grid className={classes.preview}>
         <Grid>
-            <Typography variant='h5'>{title}</Typography>
-            <Typography variant='body2'>{description}</Typography>
+            <Typography variant="h5">{title}</Typography>
+            <Typography variant="body2">{description}</Typography>
         </Grid>
         <Grid>
             {background_image ? (
@@ -23,11 +22,10 @@ const Preview = ({
                     borderRadius="4px"
                 />
             ) : (
-                    <img
-                        src="/static/images/DefaultArticle.svg"
-                    />
-                )}
+                <img src="/static/images/DefaultArticle.svg" />
+            )}
         </Grid>
     </Grid>
+)
 
 export default Preview

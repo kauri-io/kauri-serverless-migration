@@ -5,13 +5,11 @@ import App from '../layouts'
 import CreateLink from '../containers/CreateLink'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const WriteArticlePage = withTransaction('write-article', 'page')(
-    () => (
-        <App maxWidthConstrained={true} hideNav={true}>
-            <CreateLink />
-        </App>
-    )
-)
+const WriteArticlePage = withTransaction('write-article', 'page')(() => (
+    <App maxWidthConstrained={true} hideNav={true}>
+        <CreateLink />
+    </App>
+))
 
 export default compose(
     withData,

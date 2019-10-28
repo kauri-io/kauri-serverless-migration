@@ -37,7 +37,12 @@ interface IProps {
     hideNav: boolean
 }
 
-const Layout = ({ isModalOpen, children, maxWidthConstrained, hideNav }: IProps) => {
+const Layout = ({
+    isModalOpen,
+    children,
+    maxWidthConstrained,
+    hideNav,
+}: IProps) => {
     const classes = useStyles({})
     return (
         <Grid container={true}>
@@ -46,9 +51,11 @@ const Layout = ({ isModalOpen, children, maxWidthConstrained, hideNav }: IProps)
             </Head>
             <Modal />
             <Notification />
-            { !hideNav && <Grid sm={12} item={true} className={classes.item}>
-                <Navbar />
-            </Grid>}
+            {!hideNav && (
+                <Grid sm={12} item={true} className={classes.item}>
+                    <Navbar />
+                </Grid>
+            )}
             <Grid sm={12} item={true} className={classes.item}>
                 <div
                     className={`${classes.root} ${

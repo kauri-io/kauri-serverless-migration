@@ -6,7 +6,7 @@ export const useStyles = makeStyles((theme: Theme) => {
             margin: 'auto',
             maxWidth: 1242,
             width: '100%',
-            justifyContent: 'space-between'
+            justifyContent: 'space-between',
         },
         logo: {
             height: 30,
@@ -15,33 +15,31 @@ export const useStyles = makeStyles((theme: Theme) => {
         },
         logoContainer: {
             display: 'flex',
-            alignItems: 'center'
+            alignItems: 'center',
         },
-        details:{
+        details: {
             maxWidth: 800,
             margin: 'auto',
             marginTop: theme.spacing(2),
             marginBottom: theme.spacing(2),
-            padding: theme.spacing(2)
+            padding: theme.spacing(2),
         },
         editor: {
             maxWidth: 800,
             margin: 'auto',
             marginTop: theme.spacing(2),
-            padding: theme.spacing(2)
+            padding: theme.spacing(2),
         },
         linkInputContainer: {
             padding: theme.spacing(2),
             maxWidth: 800,
-            margin: 'auto'
+            margin: 'auto',
         },
-        linkInput: {
-            
-        },
+        linkInput: {},
         preview: {
             display: 'flex',
             flexDirection: 'row',
-            marginTop: theme.spacing(2)
-        }
+            marginTop: theme.spacing(2),
+        },
     }
 })
