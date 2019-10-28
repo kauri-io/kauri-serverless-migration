@@ -38,7 +38,7 @@ const Editor = ({
     setAttributes,
     setTitle,
     onValidationError,
-    placeholder
+    placeholder,
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
         editorContainer: {
@@ -124,7 +124,7 @@ const Editor = ({
                         value={text}
                         id="editor-text-area"
                         className={classes.editor}
-                        placeholder={placeholder || "Start writing..."}
+                        placeholder={placeholder || 'Start writing...'}
                     />
                 )}
                 {tab === 1 && <Renderer markdown={text || ''} />}

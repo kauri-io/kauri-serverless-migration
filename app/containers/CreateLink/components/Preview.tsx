@@ -2,12 +2,7 @@ import Image from '../../../components/Image'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 
-const Preview = ({
-    classes,
-    title,
-    description,
-    image,
-}) => (
+const Preview = ({ classes, title, description, image }) => (
     <Grid className={classes.preview}>
         <Grid>
             <Typography variant="h5">{title}</Typography>

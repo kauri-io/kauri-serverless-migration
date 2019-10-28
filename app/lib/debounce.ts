@@ -1,40 +1,40 @@
-export type Procedure = (...args: any[]) => void;
+export type Procedure = (...args: any[]) => void
 
 export type Options = {
-  isImmediate: boolean,
+    isImmediate: boolean
 }
 
 export function debounce<F extends Procedure>(
-  func: F,
-  waitMilliseconds = 50,
-  options: Options = {
-    isImmediate: false
-  },
+    func: F,
+    waitMilliseconds = 50,
+    options: Options = {
+        isImmediate: false,
+    }
 ): F {
-  let timeoutId: ReturnType<typeof setTimeout> | undefined;
+    let timeoutId: ReturnType<typeof setTimeout> | undefined
 
-  console.log(func, waitMilliseconds)
+    console.log(func, waitMilliseconds)
 
-  return function(this: any, ...args: any[]) {
-    const context = this;
+    return function(this: any, ...args: any[]) {
+        const context = this
 
-    const doLater = function() {
-      timeoutId = undefined;
-      if (!options.isImmediate) {
-        func.apply(context, args);
-      }
-    }
+        const doLater = function() {
+            timeoutId = undefined
+            if (!options.isImmediate) {
+                func.apply(context, args)
+            }
+        }
 
-    const shouldCallNow = options.isImmediate && timeoutId === undefined;
+        const shouldCallNow = options.isImmediate && timeoutId === undefined
 
-    if (timeoutId !== undefined) {
-      clearTimeout(timeoutId);
-    }
+        if (timeoutId !== undefined) {
+            clearTimeout(timeoutId)
+        }
 
-    timeoutId = setTimeout(doLater, waitMilliseconds);
+        timeoutId = setTimeout(doLater, waitMilliseconds)
 
-    if (shouldCallNow) {
-      func.apply(context, args);
-    }
-  } as any
+        if (shouldCallNow) {
+            func.apply(context, args)
+        }
+    } as any
 }
