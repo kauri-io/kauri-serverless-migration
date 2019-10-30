@@ -5,11 +5,10 @@ import LinkInput from './components/LinkInput'
 import Editor from '../../components/Markdown/Editor'
 import { useStyles } from './styles'
 import Details from './components/Details'
-import { withApollo } from 'react-apollo'
 import Preview from './components/Preview'
 import Loading from '../../components/Loading'
 
-const CreateLink = ({ client }) => {
+const CreateLink = ({ client, submitExtenalLinkAction, userId }) => {
     const [tab, setTab] = useState(0)
     const [description, setDescription] = useState<null | string>(null)
     const [title, setTitle] = useState<null | string>(null)
@@ -18,18 +17,34 @@ const CreateLink = ({ client }) => {
     )
     const [summary, setSummary] = useState<null | string>(null)
     const [loading, setLoading] = useState(false)
+    const [url, setURL ] = useState<null | string>(null)
+
+    console.log(url)
     const classes = useStyles({})
 
     const setData = data => {
         setDescription(data.description)
         setTitle(data.title)
         setImage(data.image)
+        setURL(data.url)
     }
 
-    const hasData = title || description || image
+    const hasSomeData = title || description || image
+    const hasAllData = title && description && image && summary
+
     return (
         <Grid>
-            <Nav disabled={false} />
+            <Nav disabled={!hasAllData} submitExtenalLinkAction={() => submitExtenalLinkAction({
+                title,
+                description,
+                image,
+                summary,
+                url,
+                owner: {
+                    type: 'USER',
+                    id: userId.toLowerCase()
+                }
+            })} />
             <Tabs
                 centered={true}
                 TabIndicatorProps={{ style: { height: 3 } }}
@@ -49,7 +64,7 @@ const CreateLink = ({ client }) => {
                             setLoading={setLoading}
                         />
                         {loading && <Loading />}
-                        {!loading && hasData && (
+                        {!loading && hasSomeData && (
                             <Preview
                                 classes={classes}
                                 title={title}
@@ -59,7 +74,7 @@ const CreateLink = ({ client }) => {
                         )}
                     </Paper>
 
-                    {!loading && hasData && (
+                    {!loading && hasSomeData && (
                         <>
                             <Paper className={classes.details}>
                                 <Details />
@@ -84,4 +99,4 @@ const CreateLink = ({ client }) => {
     )
 }
 
-export default withApollo(CreateLink)
+export default CreateLink

@@ -57,6 +57,7 @@ import {
     addArticleToCollectionEpic,
     openAddArticleToCollectionConfirmationModalEpic,
 } from '../containers/AddToCollection/Module'
+import { submitExternalLinkEpic } from '../containers/CreateLink/Module'
 
 export const rootReducer = {
     app,
@@ -105,6 +106,7 @@ const epics = [
     addCommentEpic,
     addArticleToCollectionEpic,
     openAddArticleToCollectionConfirmationModalEpic,
+    submitExternalLinkEpic
 ]
 
 export const rootEpic = combineEpics(...epics)

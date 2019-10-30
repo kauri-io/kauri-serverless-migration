@@ -3,7 +3,7 @@ import { useStyles } from '../styles'
 import Link from 'next/link'
 import Button from '../../../components/Button'
 
-const Nav = ({ disabled }) => {
+const Nav = ({ disabled, submitExtenalLinkAction }) => {
     const classes = useStyles({})
     return (
         <AppBar elevation={1} position="fixed" color="inherit">
@@ -19,7 +19,7 @@ const Nav = ({ disabled }) => {
                         </Typography>
                     </a>
                 </Link>
-                <Button disabled={disabled} color="primary" variant="contained">
+                <Button onClick={submitExtenalLinkAction} disabled={disabled} color="primary" variant="contained">
                     Publish Link
                 </Button>
             </Toolbar>
