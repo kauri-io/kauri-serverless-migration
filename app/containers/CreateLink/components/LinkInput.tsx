@@ -18,7 +18,7 @@ const debouncedFetch = debounce(async (url, client, setData, setLoading) => {
                 url,
             },
         })
-        setData({...data.data.extractLinkMetadata, url})
+        setData({ ...data.data.extractLinkMetadata, url })
         setLoading(false)
     }
 }, 200)

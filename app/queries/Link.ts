@@ -15,7 +15,31 @@ export const extractLinkMetadata = gql`
 `
 
 export const submitExternalLink = gql`
-    mutation submitExternalLink($url: String!, $title: String!, $description: String, $summary: String, $attributes: Map_String_StringScalar, $authorName: String, $authorSocial: Map_String_StringScalar, $owner: ResourceIdentifierInput, $tags: [String]) { submitExternalLink (url: $url, title: $title, description: $description, summary: $summary, attributes: $attributes, authorName: $authorName, authorSocial: $authorSocial, owner: $owner, tags: $tags) {hash}}
+    mutation submitExternalLink(
+        $url: String!
+        $title: String!
+        $description: String
+        $summary: String
+        $attributes: Map_String_StringScalar
+        $authorName: String
+        $authorSocial: Map_String_StringScalar
+        $owner: ResourceIdentifierInput
+        $tags: [String]
+    ) {
+        submitExternalLink(
+            url: $url
+            title: $title
+            description: $description
+            summary: $summary
+            attributes: $attributes
+            authorName: $authorName
+            authorSocial: $authorSocial
+            owner: $owner
+            tags: $tags
+        ) {
+            hash
+        }
+    }
 `
 
 export const searchExternalLinks = gql`
@@ -26,10 +50,11 @@ export const searchExternalLinks = gql`
         $dir: DirectionInput
         $filter: ExternalLinkFilterInput
     ) {
-        searchExternalLinks (
+        searchExternalLinks(
             page: $page
             size: $size
-            sort: $sort dir: $dir
+            sort: $sort
+            dir: $dir
             filter: $filter
         ) {
             content {
@@ -38,39 +63,41 @@ export const searchExternalLinks = gql`
                     type
                     id
                 }
-            dateCreated
-            dateUpdated
-            submitterId
-            owner {
-                user {...UserOwner}
+                dateCreated
+                dateUpdated
+                submitterId
+                owner {
+                    user {
+                        ...UserOwner
+                    }
+                }
+                url {
+                    value
+                    isEditable
+                }
+                title {
+                    value
+                    isEditable
+                }
+                description {
+                    value
+                    isEditable
+                }
+                summary {
+                    value
+                    isEditable
+                }
+                attributes
+                authorName {
+                    value
+                    isEditable
+                }
+                authorSocial
+                tags
             }
-            url {
-                value
-                isEditable
-            }
-            title {
-                value
-                isEditable
-            }
-            description {
-                value
-                isEditable
-            }
-            summary {
-                value
-                isEditable
-            }
-            attributes
-            authorName {
-                value
-                isEditable
-            }
-            authorSocial
-            tags
+            totalPages
+            totalElements
         }
-        totalPages
-        totalElements
     }
-}
-${UserOwner}
-`;
+    ${UserOwner}
+`

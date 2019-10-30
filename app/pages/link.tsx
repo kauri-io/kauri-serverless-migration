@@ -8,9 +8,7 @@ import { withTransaction } from '@elastic/apm-rum-react'
 
 const LinkPage = withTransaction('article', 'page')(({ router }) => (
     <App maxWidthConstrained={true} hideNav={false}>
-        <Link
-            id={router.query.id}
-        />
+        <Link id={router.query.id} />
     </App>
 ))
 

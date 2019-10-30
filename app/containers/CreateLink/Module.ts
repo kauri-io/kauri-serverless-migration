@@ -3,7 +3,10 @@ import { Epic, ofType } from 'redux-observable'
 import { IReduxState, IDependencies } from '../../lib/Module'
 import { switchMap, mergeMap } from 'rxjs/operators'
 import { path } from 'ramda'
-import { submitExternalLink, submitExternalLinkVariables } from '../../queries/__generated__/submitExternalLink'
+import {
+    submitExternalLink,
+    submitExternalLinkVariables,
+} from '../../queries/__generated__/submitExternalLink'
 import { ResourceIdentifierInput } from '../../__generated__/globalTypes'
 import { of } from 'rxjs/internal/observable/of'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
@@ -19,15 +22,15 @@ interface ISubmitExternalLinkAction {
 }
 
 interface ISubmitExternalLinkActionPayload {
-    url: string;
-    title: string;
-    description?: string | null;
-    summary?: string | null;
-    image: string;
-    authorName?: string | null;
-    authorSocial?: any | null;
-    owner?: ResourceIdentifierInput | null;
-    tags?: (string | null)[] | null;
+    url: string
+    title: string
+    description?: string | null
+    summary?: string | null
+    image: string
+    authorName?: string | null
+    authorSocial?: any | null
+    owner?: ResourceIdentifierInput | null
+    tags?: (string | null)[] | null
 }
 
 export const submitExtenalLinkAction = (
@@ -43,25 +46,31 @@ export const submitExternalLinkEpic: Epic<
     IReduxState,
     IDependencies
 > = (action$, state$, { apolloClient, apolloSubscriber }) =>
-        action$.pipe(
-            ofType(SAVE_LINK),
-            switchMap(({ payload: {
-                title,
-                description,
-                image,
-                summary,
-                url,
-                owner
-            } }) =>
+    action$.pipe(
+        ofType(SAVE_LINK),
+        switchMap(
+            ({ payload: { title, description, image, summary, url, owner } }) =>
                 from(
-                    apolloClient.mutate<submitExternalLink, submitExternalLinkVariables>({
+                    apolloClient.mutate<
+                        submitExternalLink,
+                        submitExternalLinkVariables
+                    >({
                         mutation,
-                        variables: { title, description, summary, attributes: { background_image: image }, url, owner },
+                        variables: {
+                            title,
+                            description,
+                            summary,
+                            attributes: { background_image: image },
+                            url,
+                            owner,
+                        },
                     })
                 ).pipe(
                     mergeMap(({ data }) =>
                         apolloSubscriber<{ hash: string }>(
-                            path<string>(['submitExternalLink', 'hash'])(data) || ''
+                            path<string>(['submitExternalLink', 'hash'])(
+                                data
+                            ) || ''
                         )
                     ),
                     mergeMap(() =>
@@ -76,13 +85,13 @@ export const submitExternalLinkEpic: Epic<
                             of(
                                 routeChangeAction(
                                     state$.value.app.user
-                                        ? getProfileURL(state$.value.app.user).as
+                                        ? getProfileURL(state$.value.app.user)
+                                              .as
                                         : '/'
                                 )
                             )
                         )
-
                     )
                 )
-            )
         )
+    )

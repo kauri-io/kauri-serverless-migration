@@ -127,8 +127,8 @@ export const LinkCardStyles = makeStyles((theme: Theme) => ({
         padding: theme.spacing(0, 2),
     },
     openInBrowserIcon: {
-        height: 10
-    }
+        height: 10,
+    },
 }))
 
 interface IProps {
@@ -136,7 +136,7 @@ interface IProps {
     id: string
     version: number
     title: {
-        value: string,
+        value: string
         isEditable: boolean
     } | null
     author: {
@@ -147,13 +147,13 @@ interface IProps {
     } | null
     attributes: {
         background_image?: {
-            value: string,
+            value: string
             isEditable: boolean
         }
     } | null
     dateCreated: string | null
     description: {
-        value: string,
+        value: string
         isEditable: boolean
     } | null
     url: {
@@ -176,9 +176,7 @@ interface IProps {
 }
 
 const LinkCard: React.FC<IProps> = ({
-    owner: {
-        user
-    },
+    owner: { user },
     title,
     attributes,
     dateCreated,
@@ -202,9 +200,11 @@ const LinkCard: React.FC<IProps> = ({
                             data-testid={`LinkCard-${id}-title`}
                             className={classes.title}
                         >
-                            {title &&
-                                <Typography variant={'h5'}>{title.value}</Typography>
-                            }
+                            {title && (
+                                <Typography variant={'h5'}>
+                                    {title.value}
+                                </Typography>
+                            )}
                         </a>
                     </Link>
                     <Link href={href.href} as={href.as}>
@@ -218,12 +218,12 @@ const LinkCard: React.FC<IProps> = ({
                                 borderRadius="4px"
                             />
                         ) : (
-                                <img
-                                    className={classes.mobileMedia}
-                                    data-testid={`LinkCard-${id}-image`}
-                                    src="/static/images/DefaultArticle.svg"
-                                />
-                            )}
+                            <img
+                                className={classes.mobileMedia}
+                                data-testid={`LinkCard-${id}-image`}
+                                src="/static/images/DefaultArticle.svg"
+                            />
+                        )}
                     </Link>
                 </div>
                 <Link href={href.href} as={href.as}>
@@ -232,7 +232,7 @@ const LinkCard: React.FC<IProps> = ({
                             data-testid={`LinkCard-${id}-description`}
                             className={classes.content}
                         >
-                            {description &&
+                            {description && (
                                 <Typography
                                     data-testid={`LinkCard-${id}-description`}
                                     variant="body2"
@@ -240,8 +240,14 @@ const LinkCard: React.FC<IProps> = ({
                                     component="p"
                                 >
                                     {description.value}
-                                </Typography>}
-                            <Typography variant='caption'>{url.value} <OpenNewIcon className={classes.openInBrowserIcon} /> </Typography>
+                                </Typography>
+                            )}
+                            <Typography variant="caption">
+                                {url.value}{' '}
+                                <OpenNewIcon
+                                    className={classes.openInBrowserIcon}
+                                />{' '}
+                            </Typography>
                         </CardContent>
                     </a>
                 </Link>
@@ -282,12 +288,12 @@ const LinkCard: React.FC<IProps> = ({
                             borderRadius="4px"
                         />
                     ) : (
-                            <img
-                                className={classes.desktopMedia}
-                                data-testid={`LinkCard-${id}-image`}
-                                src="/static/images/DefaultArticle.svg"
-                            />
-                        )}
+                        <img
+                            className={classes.desktopMedia}
+                            data-testid={`LinkCard-${id}-image`}
+                            src="/static/images/DefaultArticle.svg"
+                        />
+                    )}
                 </a>
             </Link>
         </Card>

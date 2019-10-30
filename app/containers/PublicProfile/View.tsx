@@ -187,9 +187,7 @@ class PublicProfile extends Component<IProps, IState> {
                             <Tab
                                 label={`Collections (${UserQuery.getUserByUsername.collections.totalElements})`}
                             />
-                            <Tab
-                                label={`Links`}
-                            />
+                            <Tab label={`Links`} />
                             {isOwner && <Tab label="Manage" />}
                         </Tabs>
                         {this.state.tab === 0 && (
@@ -208,11 +206,13 @@ class PublicProfile extends Component<IProps, IState> {
                                 routeChangeAction={routeChangeAction}
                             />
                         )}
-                        {this.state.tab === 2 && <Links
-                            userId={getUserField<string>('id', '')}
-                            isLoggedIn={!!currentUser}
-                            routeChangeAction={routeChangeAction}
-                        />}
+                        {this.state.tab === 2 && (
+                            <Links
+                                userId={getUserField<string>('id', '')}
+                                isLoggedIn={!!currentUser}
+                                routeChangeAction={routeChangeAction}
+                            />
+                        )}
                         {this.state.tab === 3 && isOwner && (
                             <Manage
                                 userId={getUserField<string>('id', '')}

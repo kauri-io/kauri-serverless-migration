@@ -8,7 +8,6 @@ import { Grid, makeStyles, Theme } from '@material-ui/core'
 import Loading from '../../../components/Loading'
 import { getLinkUrl } from '../../../lib/getURLs'
 
-
 export interface IArticlesProps {
     LinksQuery: any
     type: string
@@ -44,8 +43,7 @@ const Articles: React.FC<IArticlesProps> = ({
                 spacing={2}
                 justify="center"
             >
-
-                {LinksQuery.searchExternalLinks.content.map((link, key) =>
+                {LinksQuery.searchExternalLinks.content.map((link, key) => (
                     <Grid
                         key={link.id}
                         item
@@ -55,11 +53,11 @@ const Articles: React.FC<IArticlesProps> = ({
                     >
                         <LinkCard key={key} href={getLinkUrl(link)} {...link} />
                     </Grid>
-                )}
+                ))}
             </Grid>
         ) : (
-                <Empty isLoggedIn={isLoggedIn} isOwner={isOwner} />
-            )
+            <Empty isLoggedIn={isLoggedIn} isOwner={isOwner} />
+        )
     }
     return null
 }

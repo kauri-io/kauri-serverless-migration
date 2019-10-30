@@ -19,7 +19,12 @@ const Nav = ({ disabled, submitExtenalLinkAction }) => {
                         </Typography>
                     </a>
                 </Link>
-                <Button onClick={submitExtenalLinkAction} disabled={disabled} color="primary" variant="contained">
+                <Button
+                    onClick={submitExtenalLinkAction}
+                    disabled={disabled}
+                    color="primary"
+                    variant="contained"
+                >
                     Publish Link
                 </Button>
             </Toolbar>

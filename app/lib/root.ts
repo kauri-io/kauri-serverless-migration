@@ -106,7 +106,7 @@ const epics = [
     addCommentEpic,
     addArticleToCollectionEpic,
     openAddArticleToCollectionConfirmationModalEpic,
-    submitExternalLinkEpic
+    submitExternalLinkEpic,
 ]
 
 export const rootEpic = combineEpics(...epics)

@@ -17,7 +17,7 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId }) => {
     )
     const [summary, setSummary] = useState<null | string>(null)
     const [loading, setLoading] = useState(false)
-    const [url, setURL ] = useState<null | string>(null)
+    const [url, setURL] = useState<null | string>(null)
 
     console.log(url)
     const classes = useStyles({})
@@ -34,17 +34,22 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId }) => {
 
     return (
         <Grid>
-            <Nav disabled={!hasAllData} submitExtenalLinkAction={() => submitExtenalLinkAction({
-                title,
-                description,
-                image,
-                summary,
-                url,
-                owner: {
-                    type: 'USER',
-                    id: userId.toLowerCase()
+            <Nav
+                disabled={!hasAllData}
+                submitExtenalLinkAction={() =>
+                    submitExtenalLinkAction({
+                        title,
+                        description,
+                        image,
+                        summary,
+                        url,
+                        owner: {
+                            type: 'USER',
+                            id: userId.toLowerCase(),
+                        },
+                    })
                 }
-            })} />
+            />
             <Tabs
                 centered={true}
                 TabIndicatorProps={{ style: { height: 3 } }}
