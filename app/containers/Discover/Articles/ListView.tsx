@@ -2,9 +2,7 @@ import React, { Component, Fragment } from 'react'
 import Head from 'next/head'
 import ArticleCard from '../../../components/Card/ArticleCard'
 import Loading from '../../../components/Loading'
-import {
-    searchAutocompleteArticles_searchAutocomplete,
-} from '../../../queries/__generated__/searchAutocompleteArticles'
+import { searchAutocompleteArticles_searchAutocomplete } from '../../../queries/__generated__/searchAutocompleteArticles'
 import { getArticleURL, getLinkUrl } from '../../../lib/getURLs'
 import { Grid, Container, withStyles } from '@material-ui/core'
 import {
@@ -63,22 +61,32 @@ class Articles extends Component<IProps> {
                             spacing={3}
                         >
                             {searchAutocomplete.content.map(result => {
-                                const type = result && result.resourceIdentifier && result.resourceIdentifier.type
+                                const type =
+                                    result &&
+                                    result.resourceIdentifier &&
+                                    result.resourceIdentifier.type
 
-                                if (type === 'ARTICLE' && result && result.resource) {
+                                if (
+                                    type === 'ARTICLE' &&
+                                    result &&
+                                    result.resource
+                                ) {
                                     const article = result.resource as searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO
                                     return (
                                         <Grid key={article.id} item xs={12}>
                                             <ArticleCard
                                                 {...article}
                                                 href={getArticleURL(article)}
-                                                isLoggedIn={this.props.isLoggedIn}
+                                                isLoggedIn={
+                                                    this.props.isLoggedIn
+                                                }
                                                 addArticleToCollectionAction={() =>
                                                     this.props.openModalAction({
                                                         children: (
                                                             <AddToCollection
                                                                 articleId={
-                                                                    article.id || ''
+                                                                    article.id ||
+                                                                    ''
                                                                 }
                                                                 version={
                                                                     article.version ||
@@ -91,7 +99,11 @@ class Articles extends Component<IProps> {
                                             />
                                         </Grid>
                                     )
-                                } else if (type === 'LINK' && result && result.resource) {
+                                } else if (
+                                    type === 'LINK' &&
+                                    result &&
+                                    result.resource
+                                ) {
                                     const link = result.resource as any
                                     return (
                                         <Grid
