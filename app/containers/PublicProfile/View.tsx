@@ -23,7 +23,6 @@ import {
 } from '../../lib/Epics/ShowNotificationEpic'
 import { ISaveUserDetailActionType } from '../../components/EditProfileForm/Module'
 import { Tabs, Tab } from '@material-ui/core'
-import Links from './Links'
 
 interface IProps {
     router: any
@@ -187,7 +186,6 @@ class PublicProfile extends Component<IProps, IState> {
                             <Tab
                                 label={`Collections (${UserQuery.getUserByUsername.collections.totalElements})`}
                             />
-                            <Tab label={`Links`} />
                             {isOwner && <Tab label="Manage" />}
                         </Tabs>
                         {this.state.tab === 0 && (
@@ -206,14 +204,7 @@ class PublicProfile extends Component<IProps, IState> {
                                 routeChangeAction={routeChangeAction}
                             />
                         )}
-                        {this.state.tab === 2 && (
-                            <Links
-                                userId={getUserField<string>('id', '')}
-                                isLoggedIn={!!currentUser}
-                                routeChangeAction={routeChangeAction}
-                            />
-                        )}
-                        {this.state.tab === 3 && isOwner && (
+                        {this.state.tab === 2 && isOwner && (
                             <Manage
                                 userId={getUserField<string>('id', '')}
                                 ownProfile={OwnProfileQuery}

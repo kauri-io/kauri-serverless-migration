@@ -1,5 +1,5 @@
 import gql from 'graphql-tag'
-import { UserOwner } from './Fragments'
+import { Link } from './Fragments'
 
 export const extractLinkMetadata = gql`
     query extractLinkMetadata($url: String!) {
@@ -23,7 +23,7 @@ export const submitExternalLink = gql`
         $attributes: Map_String_StringScalar
         $authorName: String
         $authorSocial: Map_String_StringScalar
-        $owner: ResourceIdentifierInput
+        $ownerId: ResourceIdentifierInput
         $tags: [String]
     ) {
         submitExternalLink(
@@ -34,7 +34,7 @@ export const submitExternalLink = gql`
             attributes: $attributes
             authorName: $authorName
             authorSocial: $authorSocial
-            owner: $owner
+            ownerId: $ownerId
             tags: $tags
         ) {
             hash
@@ -58,46 +58,11 @@ export const searchExternalLinks = gql`
             filter: $filter
         ) {
             content {
-                id
-                resourceIdentifier {
-                    type
-                    id
-                }
-                dateCreated
-                dateUpdated
-                submitterId
-                owner {
-                    user {
-                        ...UserOwner
-                    }
-                }
-                url {
-                    value
-                    isEditable
-                }
-                title {
-                    value
-                    isEditable
-                }
-                description {
-                    value
-                    isEditable
-                }
-                summary {
-                    value
-                    isEditable
-                }
-                attributes
-                authorName {
-                    value
-                    isEditable
-                }
-                authorSocial
-                tags
+                ...Link
             }
             totalPages
             totalElements
         }
     }
-    ${UserOwner}
+    ${Link}
 `

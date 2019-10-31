@@ -274,3 +274,44 @@ export const Community = gql`
     ${Article}
     ${Collection}
 `
+export const Link = gql`
+    fragment Link on ExternalLinkDTO {
+        id
+        resourceIdentifier {
+            type
+            id
+        }
+        dateCreated
+        dateUpdated
+        submitterId
+        owner {
+            ...UserOwner
+            ...CommunityOwner
+        }
+        url {
+            value
+            isEditable
+        }
+        linkTitle: title {
+            value
+            isEditable
+        }
+        linkDescription: description {
+            value
+            isEditable
+        }
+        summary {
+            value
+            isEditable
+        }
+        linkAttributes: attributes
+        authorName {
+            value
+            isEditable
+        }
+        authorSocial
+        tags
+    }
+    ${UserOwner}
+    ${CommunityOwner}
+`

@@ -32,6 +32,6 @@ export interface submitExternalLinkVariables {
   attributes?: any | null;
   authorName?: string | null;
   authorSocial?: any | null;
-  owner?: ResourceIdentifierInput | null;
+  ownerId?: ResourceIdentifierInput | null;
   tags?: (string | null)[] | null;
 }

@@ -135,7 +135,7 @@ interface IProps {
     owner: any
     id: string
     version: number
-    title: {
+    linkTitle: {
         value: string
         isEditable: boolean
     } | null
@@ -145,14 +145,14 @@ interface IProps {
         id: string
         avatar: string | null
     } | null
-    attributes: {
+    linkAttributes: {
         background_image?: {
             value: string
             isEditable: boolean
         }
     } | null
     dateCreated: string | null
-    description: {
+    linkDescription: {
         value: string
         isEditable: boolean
     } | null
@@ -176,11 +176,11 @@ interface IProps {
 }
 
 const LinkCard: React.FC<IProps> = ({
-    owner: { user },
-    title,
-    attributes,
+    owner,
+    linkTitle,
+    linkAttributes,
     dateCreated,
-    description,
+    linkDescription,
     className,
     href,
     id,
@@ -200,21 +200,21 @@ const LinkCard: React.FC<IProps> = ({
                             data-testid={`LinkCard-${id}-title`}
                             className={classes.title}
                         >
-                            {title && (
+                            {linkTitle && (
                                 <Typography variant={'h5'}>
-                                    {title.value}
+                                    {linkTitle.value}
                                 </Typography>
                             )}
                         </a>
                     </Link>
                     <Link href={href.href} as={href.as}>
-                        {attributes && attributes.background_image ? (
+                        {linkAttributes && linkAttributes.background_image ? (
                             <Image
                                 className={classes.mobileMedia}
                                 data-testid={`LinkCard-${id}-image`}
                                 width={76}
                                 height={76}
-                                image={attributes.background_image.value}
+                                image={linkAttributes.background_image.value}
                                 borderRadius="4px"
                             />
                         ) : (
@@ -232,14 +232,14 @@ const LinkCard: React.FC<IProps> = ({
                             data-testid={`LinkCard-${id}-description`}
                             className={classes.content}
                         >
-                            {description && (
+                            {linkDescription && (
                                 <Typography
-                                    data-testid={`LinkCard-${id}-description`}
+                                    data-testid={`LinkCard-${id}-linkDescription`}
                                     variant="body2"
                                     color="textSecondary"
                                     component="p"
                                 >
-                                    {description.value}
+                                    {linkDescription.value}
                                 </Typography>
                             )}
                             <Typography variant="caption">
@@ -254,12 +254,12 @@ const LinkCard: React.FC<IProps> = ({
                 <CardActions className={classes.cardActions}>
                     <div className={classes.user}>
                         <Avatar
-                            aria-label={String(user && user.username)}
+                            aria-label={String(owner && owner.username)}
                             data-testid={`ArticleCard-${id}-user`}
-                            id={String(user && user.id)}
-                            name={user && user.name}
-                            username={user && user.username}
-                            avatar={user && user.avatar}
+                            id={String(owner && owner.id)}
+                            name={owner && owner.name}
+                            username={owner && owner.username}
+                            avatar={owner && owner.avatar}
                             withName={true}
                         />
                         {dateCreated && (
@@ -278,13 +278,13 @@ const LinkCard: React.FC<IProps> = ({
 
             <Link href={href.href} as={href.as}>
                 <a>
-                    {attributes && attributes.background_image ? (
+                    {linkAttributes && linkAttributes.background_image ? (
                         <Image
                             className={classes.desktopMedia}
                             data-testid={`LinkCard-${id}-image`}
                             width={152}
                             height={152}
-                            image={attributes.background_image.value}
+                            image={linkAttributes.background_image.value}
                             borderRadius="4px"
                         />
                     ) : (

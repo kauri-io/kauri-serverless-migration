@@ -43,7 +43,7 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId }) => {
                         image,
                         summary,
                         url,
-                        owner: {
+                        ownerId: {
                             type: 'USER',
                             id: userId.toLowerCase(),
                         },

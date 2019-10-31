@@ -1,6 +1,6 @@
 import Articles from './View'
 import { compose, graphql } from 'react-apollo'
-import { searchPersonalArticles } from '../../../queries/Article'
+import { searchResultsAutocomplete } from '../../../queries/Search'
 import { connect } from 'react-redux'
 import withLoading from '../../../lib/with-loading'
 import withPagination from '../../../lib/with-pagination'
@@ -14,7 +14,7 @@ const mapStateToProps = state => {
     }
 }
 
-const QUERY_NAME = 'ArticlesQuery'
+const QUERY_NAME = 'PublishedQuery'
 
 export default compose(
     connect(
@@ -23,15 +23,19 @@ export default compose(
             routeChangeAction,
         }
     ),
-    graphql(searchPersonalArticles, {
+    graphql(searchResultsAutocomplete, {
         name: QUERY_NAME,
         options: ({ userId }: { userId: string }) => ({
             fetchPolicy: 'cache-and-network',
             variables: {
-                userId,
+                filter: {
+                    types: ['ARTICLE', 'LINK'],
+                    mustIncludeUserId: userId,
+                },
                 page: 0,
+                size: 10,
             },
         }),
     }),
     withLoading()
-)(withPagination(Articles, 'searchArticles', QUERY_NAME))
+)(withPagination(Articles, 'searchAutocomplete', QUERY_NAME))

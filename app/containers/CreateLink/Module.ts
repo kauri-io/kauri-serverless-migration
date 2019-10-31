@@ -29,7 +29,7 @@ interface ISubmitExternalLinkActionPayload {
     image: string
     authorName?: string | null
     authorSocial?: any | null
-    owner?: ResourceIdentifierInput | null
+    ownerId?: ResourceIdentifierInput | null
     tags?: (string | null)[] | null
 }
 
@@ -49,7 +49,9 @@ export const submitExternalLinkEpic: Epic<
     action$.pipe(
         ofType(SAVE_LINK),
         switchMap(
-            ({ payload: { title, description, image, summary, url, owner } }) =>
+            ({
+                payload: { title, description, image, summary, url, ownerId },
+            }) =>
                 from(
                     apolloClient.mutate<
                         submitExternalLink,
@@ -62,7 +64,7 @@ export const submitExternalLinkEpic: Epic<
                             summary,
                             attributes: { background_image: image },
                             url,
-                            owner,
+                            ownerId,
                         },
                     })
                 ).pipe(
