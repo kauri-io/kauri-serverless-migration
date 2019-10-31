@@ -6,9 +6,7 @@ import Image from '../../components/Image'
 import Button from '../../components/Button'
 import moment from 'moment-mini'
 
-const ViewLink = (
-    { data: { getExternalLink } }
-    ) => {
+const ViewLink = ({ data: { getExternalLink } }) => {
     const classes = useStyles({})
 
     return (
