@@ -12,7 +12,6 @@ import {
 import { getLink } from '../../queries/Link'
 
 const mapStateToProps = (state: IReduxState) => ({
-    hostName: state.app && state.app.hostName,
     personalUsername: state.app && state.app.user && state.app.user.username,
     userId: state.app && state.app.user && state.app.user.id,
     user: state.app && state.app.user,
@@ -29,7 +28,7 @@ export default compose(
         }
     ),
     graphql(getLink, {
-        name: 'getLink',
+        name: 'data',
         options: ({ id }: { id: string }) => ({
             variables: {
                 id,

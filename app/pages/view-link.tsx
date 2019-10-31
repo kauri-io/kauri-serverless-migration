@@ -2,15 +2,14 @@ import React from 'react'
 import { withApollo, compose } from 'react-apollo'
 import withData from '../lib/with-data'
 import App from '../layouts'
-import Link from '../containers/Link'
+import ViewLink from '../containers/ViewLink'
 import { withRouter } from 'next/router'
-import { withTransaction } from '@elastic/apm-rum-react'
 
-const LinkPage = withTransaction('link', 'page')(({ router }) => (
+const LinkPage = ({ router }) => (
     <App maxWidthConstrained={true} hideNav={false}>
-        <Link id={router.query.id} />
+        <ViewLink id={router.query.id} />
     </App>
-))
+)
 
 export default compose(
     withData,

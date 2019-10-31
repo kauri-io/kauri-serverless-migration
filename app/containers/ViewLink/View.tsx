@@ -6,10 +6,10 @@ import Image from '../../components/Image'
 import Button from '../../components/Button'
 import moment from 'moment-mini'
 
-export default ({ getLink: { getExternalLink } }) => {
+const ViewLink = (
+    { data: { getExternalLink } }
+    ) => {
     const classes = useStyles({})
-
-    console.log(getExternalLink)
 
     return (
         <Grid
@@ -86,3 +86,5 @@ export default ({ getLink: { getExternalLink } }) => {
         </Grid>
     )
 }
+
+export default ViewLink

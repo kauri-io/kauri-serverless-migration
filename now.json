@@ -38,7 +38,7 @@
     },
     {
       "src": "/(.*)/(.*)/l",
-      "dest": "/app/link?id=$2"
+      "dest": "/app/view-link?id=$2"
     },
     {
       "src": "/article/(.*)/v(.*)/update-article",
