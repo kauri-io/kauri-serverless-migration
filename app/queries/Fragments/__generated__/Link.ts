@@ -100,7 +100,7 @@ export interface Link_url {
   isEditable: boolean | null;
 }
 
-export interface Link_title {
+export interface Link_linkTitle {
   __typename: "ExternalLinkField_String";
   /**
    * The field value
@@ -112,7 +112,7 @@ export interface Link_title {
   isEditable: boolean | null;
 }
 
-export interface Link_description {
+export interface Link_linkDescription {
   __typename: "ExternalLinkField_String";
   /**
    * The field value
@@ -178,11 +178,11 @@ export interface Link {
   /**
    * The link title
    */
-  title: Link_title;
+  linkTitle: Link_linkTitle;
   /**
    * The description of the link, obtained via metadata
    */
-  description: Link_description | null;
+  linkDescription: Link_linkDescription | null;
   /**
    * The user input summary of the link
    */
@@ -190,7 +190,7 @@ export interface Link {
   /**
    * Link attributes
    */
-  attributes: any | null;
+  linkAttributes: any | null;
   /**
    * The link content author
    */

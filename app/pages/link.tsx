@@ -6,7 +6,7 @@ import Link from '../containers/Link'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const LinkPage = withTransaction('article', 'page')(({ router }) => (
+const LinkPage = withTransaction('link', 'page')(({ router }) => (
     <App maxWidthConstrained={true} hideNav={false}>
         <Link id={router.query.id} />
     </App>

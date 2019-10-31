@@ -37,6 +37,10 @@
       "dest": "/app/static/favicon/favicon.ico"
     },
     {
+      "src": "/(.*)/(.*)/l",
+      "dest": "/app/link?id=$2"
+    },
+    {
       "src": "/article/(.*)/v(.*)/update-article",
       "dest": "/app/update-article?id=$1&version=$2"
     },

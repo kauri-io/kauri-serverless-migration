@@ -66,3 +66,12 @@ export const searchExternalLinks = gql`
     }
     ${Link}
 `
+
+export const getLink = gql`
+    query getExternalLink($id: String!) {
+        getExternalLink(id: $id) {
+            ...Link
+        }
+    }
+    ${Link}
+`

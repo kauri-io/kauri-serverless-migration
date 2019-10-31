@@ -2,13 +2,13 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { DirectionInput, ExternalLinkFilterInput, ResourceTypeInput } from "./../../__generated__/globalTypes";
+import { ResourceTypeInput } from "./../../__generated__/globalTypes";
 
 // ====================================================
-// GraphQL query operation: searchExternalLinks
+// GraphQL query operation: getExternalLink
 // ====================================================
 
-export interface searchExternalLinks_searchExternalLinks_content_resourceIdentifier {
+export interface getExternalLink_getExternalLink_resourceIdentifier {
   __typename: "ResourceIdentifier";
   /**
    * Resource type
@@ -20,11 +20,11 @@ export interface searchExternalLinks_searchExternalLinks_content_resourceIdentif
   id: string;
 }
 
-export interface searchExternalLinks_searchExternalLinks_content_owner_ArticleDTO {
+export interface getExternalLink_getExternalLink_owner_ArticleDTO {
   __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "ExternalLinkDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
-export interface searchExternalLinks_searchExternalLinks_content_owner_PublicUserDTO_resourceIdentifier {
+export interface getExternalLink_getExternalLink_owner_PublicUserDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
   /**
    * Resource ID
@@ -36,7 +36,7 @@ export interface searchExternalLinks_searchExternalLinks_content_owner_PublicUse
   type: ResourceTypeInput;
 }
 
-export interface searchExternalLinks_searchExternalLinks_content_owner_PublicUserDTO {
+export interface getExternalLink_getExternalLink_owner_PublicUserDTO {
   __typename: "PublicUserDTO";
   /**
    * User ID (Ethereum account address)
@@ -54,10 +54,10 @@ export interface searchExternalLinks_searchExternalLinks_content_owner_PublicUse
    * User avatar URI
    */
   avatar: string | null;
-  resourceIdentifier: searchExternalLinks_searchExternalLinks_content_owner_PublicUserDTO_resourceIdentifier | null;
+  resourceIdentifier: getExternalLink_getExternalLink_owner_PublicUserDTO_resourceIdentifier | null;
 }
 
-export interface searchExternalLinks_searchExternalLinks_content_owner_CommunityDTO_resourceIdentifier {
+export interface getExternalLink_getExternalLink_owner_CommunityDTO_resourceIdentifier {
   __typename: "ResourceIdentifier";
   /**
    * Resource ID
@@ -69,7 +69,7 @@ export interface searchExternalLinks_searchExternalLinks_content_owner_Community
   type: ResourceTypeInput;
 }
 
-export interface searchExternalLinks_searchExternalLinks_content_owner_CommunityDTO {
+export interface getExternalLink_getExternalLink_owner_CommunityDTO {
   __typename: "CommunityDTO";
   /**
    * Community ID
@@ -83,12 +83,12 @@ export interface searchExternalLinks_searchExternalLinks_content_owner_Community
    * Community avatar image URI
    */
   avatar: string | null;
-  resourceIdentifier: searchExternalLinks_searchExternalLinks_content_owner_CommunityDTO_resourceIdentifier | null;
+  resourceIdentifier: getExternalLink_getExternalLink_owner_CommunityDTO_resourceIdentifier | null;
 }
 
-export type searchExternalLinks_searchExternalLinks_content_owner = searchExternalLinks_searchExternalLinks_content_owner_ArticleDTO | searchExternalLinks_searchExternalLinks_content_owner_PublicUserDTO | searchExternalLinks_searchExternalLinks_content_owner_CommunityDTO;
+export type getExternalLink_getExternalLink_owner = getExternalLink_getExternalLink_owner_ArticleDTO | getExternalLink_getExternalLink_owner_PublicUserDTO | getExternalLink_getExternalLink_owner_CommunityDTO;
 
-export interface searchExternalLinks_searchExternalLinks_content_url {
+export interface getExternalLink_getExternalLink_url {
   __typename: "ExternalLinkField_String";
   /**
    * The field value
@@ -100,7 +100,7 @@ export interface searchExternalLinks_searchExternalLinks_content_url {
   isEditable: boolean | null;
 }
 
-export interface searchExternalLinks_searchExternalLinks_content_linkTitle {
+export interface getExternalLink_getExternalLink_linkTitle {
   __typename: "ExternalLinkField_String";
   /**
    * The field value
@@ -112,7 +112,7 @@ export interface searchExternalLinks_searchExternalLinks_content_linkTitle {
   isEditable: boolean | null;
 }
 
-export interface searchExternalLinks_searchExternalLinks_content_linkDescription {
+export interface getExternalLink_getExternalLink_linkDescription {
   __typename: "ExternalLinkField_String";
   /**
    * The field value
@@ -124,7 +124,7 @@ export interface searchExternalLinks_searchExternalLinks_content_linkDescription
   isEditable: boolean | null;
 }
 
-export interface searchExternalLinks_searchExternalLinks_content_summary {
+export interface getExternalLink_getExternalLink_summary {
   __typename: "ExternalLinkField_String";
   /**
    * The field value
@@ -136,7 +136,7 @@ export interface searchExternalLinks_searchExternalLinks_content_summary {
   isEditable: boolean | null;
 }
 
-export interface searchExternalLinks_searchExternalLinks_content_authorName {
+export interface getExternalLink_getExternalLink_authorName {
   __typename: "ExternalLinkField_String";
   /**
    * The field value
@@ -148,13 +148,13 @@ export interface searchExternalLinks_searchExternalLinks_content_authorName {
   isEditable: boolean | null;
 }
 
-export interface searchExternalLinks_searchExternalLinks_content {
+export interface getExternalLink_getExternalLink {
   __typename: "ExternalLinkDTO";
   /**
    * External link ID
    */
   id: string;
-  resourceIdentifier: searchExternalLinks_searchExternalLinks_content_resourceIdentifier | null;
+  resourceIdentifier: getExternalLink_getExternalLink_resourceIdentifier | null;
   /**
    * The date that this external link was created
    */
@@ -170,23 +170,23 @@ export interface searchExternalLinks_searchExternalLinks_content {
   /**
    * load the external link owner (user or community resource type)
    */
-  owner: searchExternalLinks_searchExternalLinks_content_owner | null;
+  owner: getExternalLink_getExternalLink_owner | null;
   /**
    * The link url
    */
-  url: searchExternalLinks_searchExternalLinks_content_url;
+  url: getExternalLink_getExternalLink_url;
   /**
    * The link title
    */
-  linkTitle: searchExternalLinks_searchExternalLinks_content_linkTitle;
+  linkTitle: getExternalLink_getExternalLink_linkTitle;
   /**
    * The description of the link, obtained via metadata
    */
-  linkDescription: searchExternalLinks_searchExternalLinks_content_linkDescription | null;
+  linkDescription: getExternalLink_getExternalLink_linkDescription | null;
   /**
    * The user input summary of the link
    */
-  summary: searchExternalLinks_searchExternalLinks_content_summary | null;
+  summary: getExternalLink_getExternalLink_summary | null;
   /**
    * Link attributes
    */
@@ -194,7 +194,7 @@ export interface searchExternalLinks_searchExternalLinks_content {
   /**
    * The link content author
    */
-  authorName: searchExternalLinks_searchExternalLinks_content_authorName;
+  authorName: getExternalLink_getExternalLink_authorName;
   /**
    * The link content author
    */
@@ -205,34 +205,14 @@ export interface searchExternalLinks_searchExternalLinks_content {
   tags: (string | null)[] | null;
 }
 
-export interface searchExternalLinks_searchExternalLinks {
-  __typename: "ResponsePage_ExternalLinkDTO";
+export interface getExternalLink {
   /**
-   * Returns the page content.
-   */
-  content: (searchExternalLinks_searchExternalLinks_content | null)[];
-  /**
-   * Number of total pages.
-   */
-  totalPages: number;
-  /**
-   * Total amount of elements.
-   */
-  totalElements: any;
-}
-
-export interface searchExternalLinks {
-  /**
-   * Search external links with pagination, sorting and filters.
+   * Get an external link by ID
    * This operation can be performed anonymously
    */
-  searchExternalLinks: searchExternalLinks_searchExternalLinks;
+  getExternalLink: getExternalLink_getExternalLink;
 }
 
-export interface searchExternalLinksVariables {
-  page?: number | null;
-  size?: number | null;
-  sort?: string | null;
-  dir?: DirectionInput | null;
-  filter?: ExternalLinkFilterInput | null;
+export interface getExternalLinkVariables {
+  id: string;
 }
