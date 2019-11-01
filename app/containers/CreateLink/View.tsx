@@ -18,7 +18,7 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId }) => {
     const [summary, setSummary] = useState<null | string>(null)
     const [loading, setLoading] = useState(false)
     const [url, setURL] = useState<null | string>(null)
-    const [ authorName, setAuthorName] = useState<null|string>(null)
+    const [authorName, setAuthorName] = useState<null | string>(null)
     const classes = useStyles({})
 
     const setData = data => {

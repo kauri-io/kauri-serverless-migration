@@ -50,7 +50,15 @@ export const submitExternalLinkEpic: Epic<
         ofType(SAVE_LINK),
         switchMap(
             ({
-                payload: { title, description, image, summary, authorName, url, ownerId },
+                payload: {
+                    title,
+                    description,
+                    image,
+                    summary,
+                    authorName,
+                    url,
+                    ownerId,
+                },
             }) =>
                 from(
                     apolloClient.mutate<
@@ -76,25 +84,36 @@ export const submitExternalLinkEpic: Epic<
                             ) || ''
                         )
                     ),
-                    mergeMap(() =>
-                        merge(
-                            of(
-                                showNotificationAction({
-                                    description: `Your link has been succesfully submitted!`,
-                                    message: 'Link Created',
-                                    notificationType: 'success',
-                                })
-                            ),
-                            of(
-                                routeChangeAction(
-                                    state$.value.app.user
-                                        ? getProfileURL(state$.value.app.user)
-                                              .as
-                                        : '/'
+                    mergeMap((res) => {
+                        const status = res.data.getEvent.status
+                        if (status === 'SUCCESS') {
+                            return merge(
+                                of(
+                                    showNotificationAction({
+                                        description: `Your link has been succesfully submitted!`,
+                                        message: 'Link Created',
+                                        notificationType: 'success',
+                                    })
+                                ),
+                                of(
+                                    routeChangeAction(
+                                        state$.value.app.user
+                                            ? getProfileURL(state$.value.app.user)
+                                                  .as
+                                            : '/'
+                                    )
                                 )
                             )
-                        )
-                    )
+                        } else {
+                            return of(
+                                showNotificationAction({
+                                    description: 'Submission error',
+                                    message: (res.data.getEvent.output as any).error,
+                                    notificationType: 'error'
+                                })
+                            )
+                        }
+                    })
                 )
         )
     )
