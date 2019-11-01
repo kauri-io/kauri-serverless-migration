@@ -18,8 +18,7 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId }) => {
     const [summary, setSummary] = useState<null | string>(null)
     const [loading, setLoading] = useState(false)
     const [url, setURL] = useState<null | string>(null)
-
-    console.log(url)
+    const [ authorName, setAuthorName] = useState<null|string>(null)
     const classes = useStyles({})
 
     const setData = data => {
@@ -27,6 +26,7 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId }) => {
         setTitle(data.title)
         setImage(data.image)
         setURL(data.url)
+        setAuthorName(data.author)
     }
 
     const hasSomeData = title || description || image
@@ -42,6 +42,7 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId }) => {
                         description,
                         image,
                         summary,
+                        authorName,
                         url,
                         ownerId: {
                             type: 'USER',
@@ -82,7 +83,7 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId }) => {
                     {!loading && hasSomeData && (
                         <>
                             <Paper className={classes.details}>
-                                <Details />
+                                <Details authorName={authorName} />
                             </Paper>
 
                             <Paper className={classes.editor}>

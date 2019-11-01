@@ -50,7 +50,7 @@ export const submitExternalLinkEpic: Epic<
         ofType(SAVE_LINK),
         switchMap(
             ({
-                payload: { title, description, image, summary, url, ownerId },
+                payload: { title, description, image, summary, authorName, url, ownerId },
             }) =>
                 from(
                     apolloClient.mutate<
@@ -62,6 +62,7 @@ export const submitExternalLinkEpic: Epic<
                             title,
                             description,
                             summary,
+                            authorName,
                             attributes: { background_image: image },
                             url,
                             ownerId,
