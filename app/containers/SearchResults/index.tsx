@@ -21,7 +21,7 @@ export const searchResultCategories = [
     'COLLECTION',
     'COMMUNITY',
     'USER',
-    'LINK'
+    'LINK',
 ]
 
 interface IState {

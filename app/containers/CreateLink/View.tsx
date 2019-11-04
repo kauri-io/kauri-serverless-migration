@@ -5,10 +5,11 @@ import LinkInput from './components/LinkInput'
 import Editor from '../../components/Markdown/Editor'
 import { useStyles } from './styles'
 import Details from './components/Details'
-import Preview from './components/Preview'
+import CardPreview from './components/Preview'
+import FullPreview from '../../containers/ViewLink/components/Content'
 import Loading from '../../components/Loading'
 
-const CreateLink = ({ client, submitExtenalLinkAction, userId }) => {
+const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
     const [tab, setTab] = useState(0)
     const [description, setDescription] = useState<null | string>(null)
     const [title, setTitle] = useState<null | string>(null)
@@ -61,7 +62,7 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId }) => {
                 onChange={(_e, tab) => setTab(tab)}
             >
                 <Tab label="Editor" />
-                <Tab label="Preview" />
+                <Tab label="Preview" disabled={!hasSomeData} />
             </Tabs>
             {tab === 0 && (
                 <>
@@ -73,7 +74,7 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId }) => {
                         />
                         {loading && <Loading />}
                         {!loading && hasSomeData && (
-                            <Preview
+                            <CardPreview
                                 classes={classes}
                                 title={title}
                                 description={description}
@@ -108,6 +109,21 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId }) => {
                     )}
                 </>
             )}
+            {tab === 1 && <Grid className={classes.fullPreview}>
+                <FullPreview
+                owner={user}
+                dateCreated={Date.now()}
+                linkTitle={{ value: title }}
+                linkAttributes={{
+                    background_image: { value: image}
+                }}
+                linkDescription={{ value: description }}
+                summary={{ value: summary }}
+                tags={tags.map(i => i.label)}
+                authorName={{ value: authorName }}
+                url={{ value: url }}
+            />
+            </Grid>}
         </Grid>
     )
 }

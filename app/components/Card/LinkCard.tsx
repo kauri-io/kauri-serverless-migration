@@ -210,12 +210,12 @@ const LinkCard: React.FC<IProps> = ({
                                 borderRadius="4px"
                             />
                         ) : (
-                                <img
-                                    className={classes.mobileMedia}
-                                    data-testid={`LinkCard-${id}-image`}
-                                    src="/static/images/DefaultArticle.svg"
-                                />
-                            )}
+                            <img
+                                className={classes.mobileMedia}
+                                data-testid={`LinkCard-${id}-image`}
+                                src="/static/images/DefaultArticle.svg"
+                            />
+                        )}
                     </Link>
                 </div>
                 <Link href={href.href} as={href.as}>
@@ -293,12 +293,12 @@ const LinkCard: React.FC<IProps> = ({
                             borderRadius="4px"
                         />
                     ) : (
-                            <img
-                                className={classes.desktopMedia}
-                                data-testid={`LinkCard-${id}-image`}
-                                src="/static/images/DefaultArticle.svg"
-                            />
-                        )}
+                        <img
+                            className={classes.desktopMedia}
+                            data-testid={`LinkCard-${id}-image`}
+                            src="/static/images/DefaultArticle.svg"
+                        />
+                    )}
                 </a>
             </Link>
         </Card>

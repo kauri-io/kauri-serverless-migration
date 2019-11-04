@@ -41,5 +41,11 @@ export const useStyles = makeStyles((theme: Theme) => {
             flexDirection: 'row',
             marginTop: theme.spacing(2),
         },
+        fullPreview: {
+            background: theme.palette.common.white,
+            margin: 'auto',
+            maxWidth: 800,
+            padding: theme.spacing(3)
+        }
     }
 })

@@ -55,9 +55,9 @@ const isProfileResource = (
     resource !== 'undefined'
 
 const isLinkResource = (
-        resource: any
-    ): resource is searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO =>
-        resource !== 'undefined'
+    resource: any
+): resource is searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO =>
+    resource !== 'undefined'
 
 interface IProps {
     totalElementsBreakdown: IElementsBreakdown
@@ -172,7 +172,14 @@ class ResourceRows extends React.Component<
                                         }
                                     case 'LINK':
                                         if (isLinkResource(resource.resource)) {
-                                            return <LinkCard href={getLinkUrl(resource.resource)} {...resource.resource} />
+                                            return (
+                                                <LinkCard
+                                                    href={getLinkUrl(
+                                                        resource.resource
+                                                    )}
+                                                    {...resource.resource}
+                                                />
+                                            )
                                         }
                                     default:
                                         return null
