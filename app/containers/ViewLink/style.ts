@@ -86,8 +86,8 @@ export const useStyles = makeStyles((theme: Theme) => {
             margin: theme.spacing(1),
             '&:hover': {
                 background: theme.palette.primary.main,
-                color: theme.palette.common.white
-            }
+                color: theme.palette.common.white,
+            },
         },
         ctaContainer: {
             padding: theme.spacing(2),

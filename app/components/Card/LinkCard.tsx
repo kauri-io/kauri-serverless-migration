@@ -5,7 +5,7 @@ import Avatar from '../Avatar'
 // import Menu from '@material-ui/core/Menu'
 // import MenuItem from '@material-ui/core/MenuItem'
 import {
-    Typography,
+    Typography, Grid,
     // ListItemIcon
 } from '@material-ui/core'
 import { Theme, makeStyles } from '@material-ui/core/styles'
@@ -17,6 +17,7 @@ import Link from 'next/link'
 // import ShareDialog from './ShareDialog'
 import Image from '../Image'
 import OpenNewIcon from '@material-ui/icons/OpenInNew'
+import TruncateMarkup from 'react-truncate-markup'
 
 export const LinkCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -129,6 +130,9 @@ export const LinkCardStyles = makeStyles((theme: Theme) => ({
     openInBrowserIcon: {
         height: 10,
     },
+    url: {
+        maxWidth: '90%'
+    }
 }))
 
 interface IProps {
@@ -218,12 +222,12 @@ const LinkCard: React.FC<IProps> = ({
                                 borderRadius="4px"
                             />
                         ) : (
-                            <img
-                                className={classes.mobileMedia}
-                                data-testid={`LinkCard-${id}-image`}
-                                src="/static/images/DefaultArticle.svg"
-                            />
-                        )}
+                                <img
+                                    className={classes.mobileMedia}
+                                    data-testid={`LinkCard-${id}-image`}
+                                    src="/static/images/DefaultArticle.svg"
+                                />
+                            )}
                     </Link>
                 </div>
                 <Link href={href.href} as={href.as}>
@@ -233,21 +237,27 @@ const LinkCard: React.FC<IProps> = ({
                             className={classes.content}
                         >
                             {linkDescription && (
-                                <Typography
-                                    data-testid={`LinkCard-${id}-linkDescription`}
-                                    variant="body2"
-                                    color="textSecondary"
-                                    component="p"
-                                >
-                                    {linkDescription.value}
-                                </Typography>
+                                <TruncateMarkup lines={2}>
+                                    <Typography
+                                        data-testid={`LinkCard-${id}-linkDescription`}
+                                        variant="body2"
+                                        color="textSecondary"
+                                        component="p"
+                                    >
+                                        {linkDescription.value}
+                                    </Typography>
+                                </TruncateMarkup>
                             )}
-                            <Typography variant="caption">
-                                {url.value}{' '}
+                            <Grid container={true} justify='flex-start' alignItems='center'>
+                                <TruncateMarkup lines={1}>
+                                    <Typography className={classes.url} variant="caption">
+                                        {url.value}
+                                    </Typography>
+                                </TruncateMarkup>
                                 <OpenNewIcon
                                     className={classes.openInBrowserIcon}
-                                />{' '}
-                            </Typography>
+                                />
+                            </Grid>
                         </CardContent>
                     </a>
                 </Link>
@@ -288,12 +298,12 @@ const LinkCard: React.FC<IProps> = ({
                             borderRadius="4px"
                         />
                     ) : (
-                        <img
-                            className={classes.desktopMedia}
-                            data-testid={`LinkCard-${id}-image`}
-                            src="/static/images/DefaultArticle.svg"
-                        />
-                    )}
+                            <img
+                                className={classes.desktopMedia}
+                                data-testid={`LinkCard-${id}-image`}
+                                src="/static/images/DefaultArticle.svg"
+                            />
+                        )}
                 </a>
             </Link>
         </Card>
