@@ -84,7 +84,7 @@ export const submitExternalLinkEpic: Epic<
                             ) || ''
                         )
                     ),
-                    mergeMap((res) => {
+                    mergeMap(res => {
                         const status = res.data.getEvent.status
                         if (status === 'SUCCESS') {
                             return merge(
@@ -98,8 +98,9 @@ export const submitExternalLinkEpic: Epic<
                                 of(
                                     routeChangeAction(
                                         state$.value.app.user
-                                            ? getProfileURL(state$.value.app.user)
-                                                  .as
+                                            ? getProfileURL(
+                                                  state$.value.app.user
+                                              ).as
                                             : '/'
                                     )
                                 )
@@ -108,8 +109,9 @@ export const submitExternalLinkEpic: Epic<
                             return of(
                                 showNotificationAction({
                                     description: 'Submission error',
-                                    message: (res.data.getEvent.output as any).error,
-                                    notificationType: 'error'
+                                    message: (res.data.getEvent.output as any)
+                                        .error,
+                                    notificationType: 'error',
                                 })
                             )
                         }
