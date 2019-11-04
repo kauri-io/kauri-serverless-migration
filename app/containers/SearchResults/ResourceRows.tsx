@@ -8,16 +8,19 @@ import {
     searchResultsAutocomplete_searchAutocomplete_content_resource_PublicUserDTO,
     searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO,
     searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_CommunityDTO,
+    searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO,
 } from '../../queries/__generated__/searchResultsAutocomplete'
 import ArticleCard from '../../components/Card/ArticleCard'
 import {
     getArticleURL,
     getCollectionURL,
     getCommunityURL,
+    getLinkUrl,
 } from '../../lib/getURLs'
 import CollectionCard from '../../components/Card/CollectionCard'
 import CommunityCard from '../../components/Card/CommunityCard'
 import PublicProfileCard from '../../components/Card/PublicProfileCard'
+import LinkCard from '../../components/Card/LinkCard'
 
 const ResourceSection = styled.section`
     display: flex;
@@ -50,6 +53,11 @@ const isProfileResource = (
     resource: any
 ): resource is searchResultsAutocomplete_searchAutocomplete_content_resource_PublicUserDTO =>
     resource !== 'undefined'
+
+const isLinkResource = (
+        resource: any
+    ): resource is searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO =>
+        resource !== 'undefined'
 
 interface IProps {
     totalElementsBreakdown: IElementsBreakdown
@@ -162,7 +170,10 @@ class ResourceRows extends React.Component<
                                                 />
                                             )
                                         }
-
+                                    case 'LINK':
+                                        if (isLinkResource(resource.resource)) {
+                                            return <LinkCard href={getLinkUrl(resource.resource)} {...resource.resource} />
+                                        }
                                     default:
                                         return null
                                 }

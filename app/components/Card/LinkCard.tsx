@@ -139,16 +139,9 @@ export const LinkCardStyles = makeStyles((theme: Theme) => ({
 interface IProps {
     owner: any
     id: string
-    version: number
     linkTitle: {
-        value: string
-        isEditable: boolean
-    } | null
-    author: {
-        name: string | null
-        username: string | null
-        id: string
-        avatar: string | null
+        value: string | null
+        isEditable: boolean | null
     } | null
     linkAttributes: {
         background_image?: {
@@ -158,12 +151,12 @@ interface IProps {
     } | null
     dateCreated: string | null
     linkDescription: {
-        value: string
-        isEditable: boolean
+        value: string | null
+        isEditable: boolean | null
     } | null
     url: {
-        value: string
-        isEditable: boolean
+        value: string | null
+        isEditable: boolean | null
     }
     className?: string
     href: {
@@ -171,12 +164,6 @@ interface IProps {
         href: string
     }
     isLoggedIn?: boolean
-    comments: {
-        totalElements: any
-    } | null
-    voteResult: {
-        sum: number
-    } | null
     addArticleToCollectionAction?: () => void
 }
 
@@ -223,12 +210,12 @@ const LinkCard: React.FC<IProps> = ({
                                 borderRadius="4px"
                             />
                         ) : (
-                            <img
-                                className={classes.mobileMedia}
-                                data-testid={`LinkCard-${id}-image`}
-                                src="/static/images/DefaultArticle.svg"
-                            />
-                        )}
+                                <img
+                                    className={classes.mobileMedia}
+                                    data-testid={`LinkCard-${id}-image`}
+                                    src="/static/images/DefaultArticle.svg"
+                                />
+                            )}
                     </Link>
                 </div>
                 <Link href={href.href} as={href.as}>
@@ -306,12 +293,12 @@ const LinkCard: React.FC<IProps> = ({
                             borderRadius="4px"
                         />
                     ) : (
-                        <img
-                            className={classes.desktopMedia}
-                            data-testid={`LinkCard-${id}-image`}
-                            src="/static/images/DefaultArticle.svg"
-                        />
-                    )}
+                            <img
+                                className={classes.desktopMedia}
+                                data-testid={`LinkCard-${id}-image`}
+                                src="/static/images/DefaultArticle.svg"
+                            />
+                        )}
                 </a>
             </Link>
         </Card>

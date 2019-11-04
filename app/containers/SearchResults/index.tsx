@@ -21,6 +21,7 @@ export const searchResultCategories = [
     'COLLECTION',
     'COMMUNITY',
     'USER',
+    'LINK'
 ]
 
 interface IState {
@@ -32,7 +33,7 @@ interface IState {
 export interface IProps {
     query: {
         q: string
-        type?: 'COMMUNITY' | 'ARTICLE' | 'COLLECTION'
+        type?: 'COMMUNITY' | 'ARTICLE' | 'COLLECTION' | 'LINK'
         default_category?: string | null
     }
     router: any
