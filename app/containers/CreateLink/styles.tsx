@@ -45,7 +45,10 @@ export const useStyles = makeStyles((theme: Theme) => {
             background: theme.palette.common.white,
             margin: 'auto',
             maxWidth: 800,
-            padding: theme.spacing(3)
-        }
+            padding: theme.spacing(3),
+        },
+        previewText: {
+            width: '100%',
+        },
     }
 })

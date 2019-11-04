@@ -21,6 +21,9 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
     const [loading, setLoading] = useState(false)
     const [url, setURL] = useState<null | string>(null)
     const [authorName, setAuthorName] = useState<null | string>(null)
+    const [authorSocial, setAuthorSocial] = useState<null | {
+        twitter: string
+    }>(null)
     const classes = useStyles({})
 
     const setData = data => {
@@ -29,6 +32,7 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
         setImage(data.image)
         setURL(data.url)
         setAuthorName(data.author)
+        setAuthorSocial(data.authorSocial)
     }
 
     const hasSomeData = title || description || image
@@ -45,6 +49,7 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
                         image,
                         summary,
                         authorName,
+                        authorSocial,
                         url,
                         tags: tags.map(i => i.label),
                         ownerId: {
@@ -91,6 +96,7 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
                                     setTags={setTags}
                                     client={client}
                                     authorName={authorName}
+                                    authorSocial={authorSocial}
                                 />
                             </Paper>
 
@@ -109,21 +115,24 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
                     )}
                 </>
             )}
-            {tab === 1 && <Grid className={classes.fullPreview}>
-                <FullPreview
-                owner={user}
-                dateCreated={Date.now()}
-                linkTitle={{ value: title }}
-                linkAttributes={{
-                    background_image: { value: image}
-                }}
-                linkDescription={{ value: description }}
-                summary={{ value: summary }}
-                tags={tags.map(i => i.label)}
-                authorName={{ value: authorName }}
-                url={{ value: url }}
-            />
-            </Grid>}
+            {tab === 1 && (
+                <Grid className={classes.fullPreview}>
+                    <FullPreview
+                        owner={user}
+                        dateCreated={Date.now()}
+                        linkTitle={{ value: title }}
+                        linkAttributes={{
+                            background_image: { value: image },
+                        }}
+                        linkDescription={{ value: description }}
+                        summary={{ value: summary }}
+                        tags={tags.map(i => i.label)}
+                        authorName={{ value: authorName }}
+                        authorSocial={authorSocial}
+                        url={{ value: url }}
+                    />
+                </Grid>
+            )}
         </Grid>
     )
 }

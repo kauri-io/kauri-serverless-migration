@@ -14,6 +14,7 @@ export interface extractLinkMetadata_extractLinkMetadata {
   description: string | null;
   image: string | null;
   author: string | null;
+  authorSocial: any | null;
 }
 
 export interface extractLinkMetadata {

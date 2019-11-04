@@ -10,6 +10,7 @@ export const extractLinkMetadata = gql`
             description
             image
             author
+            authorSocial
         }
     }
 `

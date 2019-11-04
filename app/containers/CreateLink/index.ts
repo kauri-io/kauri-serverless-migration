@@ -12,7 +12,7 @@ const mapStateToProps = (
     communities: state.app && state.app.user && state.app.user.communities,
     id: props.id,
     userId: state.app && state.app.user && state.app.user.id,
-    user: state.app && state.app.user
+    user: state.app && state.app.user,
 })
 
 export default compose(
