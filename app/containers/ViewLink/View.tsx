@@ -9,6 +9,7 @@ import Toolbar from './components/Toolbar'
 import OpenIcon from '@material-ui/icons/OpenInNew'
 import Chip from '@material-ui/core/Chip'
 import LinkComments from './components/LinkComments'
+import Link from 'next/link'
 
 const ViewLink = ({ addCommentAction, user, data: { getExternalLink } }) => {
     const classes = useStyles({})
@@ -109,12 +110,16 @@ const ViewLink = ({ addCommentAction, user, data: { getExternalLink } }) => {
                         {getExternalLink.linkDescription.value}
                     </Typography>
                     <Grid container={true} justify="center">
-                        {['External Link', 'Useful Tag'].map(text => (
-                            <Chip
-                                className={classes.tag}
-                                variant="outlined"
-                                label={text}
-                            />
+                        {['external-link', 'useful-tag'].map(text => (
+                            <Link href={`/search-results?q=${text}`}>
+                                <a>
+                                    <Chip
+                                        className={classes.tag}
+                                        variant="outlined"
+                                        label={text}
+                                    />
+                                </a>
+                            </Link>
                         ))}
                     </Grid>
                     <Grid
