@@ -75,6 +75,12 @@ class Articles extends Component<IProps> {
                                             {...article}
                                             href={getArticleURL(article)}
                                             isLoggedIn={this.props.isLoggedIn}
+                                            routeChangeAction={
+                                                this.props.routeChangeAction
+                                            }
+                                            openModalAction={
+                                                this.props.openModalAction
+                                            }
                                             addArticleToCollectionAction={() =>
                                                 this.props.openModalAction({
                                                     children: (

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { emailSubscribeAction } from '../EmailVerification/Module'
+import { openModalAction } from '../../components/Modal/Module'
 
 const mapStateToProps = state => {
     return {
@@ -17,5 +18,6 @@ export default connect(
         routeChangeAction,
         emailSubscribeAction,
         showNotificationAction,
+        openModalAction,
     }
 )(Homepage)

@@ -57,6 +57,13 @@ import {
     addArticleToCollectionEpic,
     openAddArticleToCollectionConfirmationModalEpic,
 } from '../containers/AddToCollection/Module'
+import {
+    bookmarkEpic,
+    unbookmarkEpic,
+    createBookmarkFolderEpic,
+    deleteBookmarkFolderEpic,
+    editBookmarkFolderEpic,
+} from '../containers/Bookmark/Module'
 
 export const rootReducer = {
     app,
@@ -105,6 +112,11 @@ const epics = [
     addCommentEpic,
     addArticleToCollectionEpic,
     openAddArticleToCollectionConfirmationModalEpic,
+    bookmarkEpic,
+    unbookmarkEpic,
+    createBookmarkFolderEpic,
+    deleteBookmarkFolderEpic,
+    editBookmarkFolderEpic,
 ]
 
 export const rootEpic = combineEpics(...epics)

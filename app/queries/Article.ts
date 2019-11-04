@@ -273,6 +273,7 @@ export const searchPersonalDrafts = gql`
                     id
                     version
                 }
+                isBookmarked
             }
         }
     }
@@ -362,6 +363,7 @@ export const searchAwaitingApproval = gql`
                     id
                     version
                 }
+                isBookmarked
             }
         }
     }
@@ -423,6 +425,7 @@ export const searchPending = gql`
                     id
                     version
                 }
+                isBookmarked
             }
         }
     }
@@ -535,6 +538,7 @@ export const relatedArticles = gql`
                         voteResult {
                             sum
                         }
+                        isBookmarked
                     }
 
                     ... on CollectionDTO {
@@ -548,6 +552,7 @@ export const relatedArticles = gql`
                             type
                             id
                         }
+                        isBookmarked
                     }
                     ... on CommunityDTO {
                         id

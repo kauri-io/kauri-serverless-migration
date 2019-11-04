@@ -8,6 +8,8 @@ import {
     getCommunity_getCommunity_members,
 } from '../../queries/__generated__/getCommunity'
 import { IInvitation } from '../CreateCommunityForm/ManageMembers/FormInviteMembersPanel'
+import { openModalAction } from '../../components/Modal/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 const Container = styled.div`
     display: flex;
@@ -37,8 +39,11 @@ interface IProps {
     pending: Array<getCommunity_getCommunity_pending | null> | null
     members: Array<getCommunity_getCommunity_members | null> | null
     openAddMemberModal: () => void
+    openModalAction: typeof openModalAction
+    routeChangeAction: typeof routeChangeAction
     pageType?: string // CreateCommunityForm
     formInvitations?: IInvitation[] | null | undefined
+    isLoggedIn: boolean
 }
 
 const Manage: React.FunctionComponent<IProps> = ({
@@ -47,10 +52,12 @@ const Manage: React.FunctionComponent<IProps> = ({
     isCommunityAdmin,
     communityId,
     pendingUpdates,
-    openAddMemberModal,
+    openModalAction,
+    routeChangeAction,
     pageType,
     cancelInvitation,
     formInvitations,
+    isLoggedIn,
 }) => {
     const [tabIndex, setTabIndex] = useState(isCommunityAdmin ? 0 : 1)
     const pendingArticles =
@@ -100,7 +107,6 @@ const Manage: React.FunctionComponent<IProps> = ({
                 {tabIndex === 0 && (
                     <ManageMembers
                         id={communityId}
-                        openAddMemberModal={openAddMemberModal}
                         members={members}
                         cancelInvitation={cancelInvitation}
                         formInvitations={formInvitations}
@@ -111,6 +117,9 @@ const Manage: React.FunctionComponent<IProps> = ({
                         isMember={false}
                         communityId={communityId}
                         resources={pendingArticles}
+                        openModalAction={openModalAction}
+                        routeChangeAction={routeChangeAction}
+                        isLoggedIn={isLoggedIn}
                     />
                 )}
                 {tabIndex === 2 && pageType !== 'CreateCommunityForm' && (
@@ -118,6 +127,9 @@ const Manage: React.FunctionComponent<IProps> = ({
                         isMember={false}
                         communityId={communityId}
                         resources={pendingCollections}
+                        openModalAction={openModalAction}
+                        routeChangeAction={routeChangeAction}
+                        isLoggedIn={isLoggedIn}
                     />
                 )}
                 {tabIndex === 3 && pageType !== 'CreateCommunityForm' && (
@@ -126,6 +138,9 @@ const Manage: React.FunctionComponent<IProps> = ({
                         communityId={communityId}
                         review={true}
                         resources={pendingUpdates}
+                        openModalAction={openModalAction}
+                        routeChangeAction={routeChangeAction}
+                        isLoggedIn={isLoggedIn}
                     />
                 )}
             </Column>

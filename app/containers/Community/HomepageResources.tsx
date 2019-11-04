@@ -3,7 +3,7 @@ import { getCommunity_getCommunity_homepage } from '../../queries/__generated__/
 import CommunityHomepageEmptyState from './EmptyStates/Homepage'
 import { routeChangeAction as routeChange } from '../../lib/Epics/RouteChangeEpic'
 import CollectionSection from '../Collection/CollectionSection'
-import { openModalAction as openModal } from '../../components/Modal/Module'
+import { openModalAction } from '../../components/Modal/Module'
 
 const ContentContainer = styled.div`
     display: flex;
@@ -20,8 +20,16 @@ const CommunityHomepageContent: React.FunctionComponent<
         | 'isLoggedIn'
         | 'userId'
         | 'openModalAction'
+        | 'routeChangeAction'
     >
-> = ({ homepage, isCommunityAdmin, isLoggedIn, userId, openModalAction }) => (
+> = ({
+    homepage,
+    isCommunityAdmin,
+    isLoggedIn,
+    userId,
+    openModalAction,
+    routeChangeAction,
+}) => (
     <ContentContainer>
         {homepage &&
             homepage.map(
@@ -35,6 +43,7 @@ const CommunityHomepageContent: React.FunctionComponent<
                             description={section.description || ''}
                             resources={section.resources as any}
                             openModalAction={openModalAction}
+                            routeChangeAction={routeChangeAction}
                             isOwnedByCurrentUser={isCommunityAdmin}
                         />
                     )
@@ -49,7 +58,7 @@ interface IProps {
     userId: string
     routeChangeAction: typeof routeChange
     isLoggedIn: boolean
-    openModalAction: typeof openModal
+    openModalAction: typeof openModalAction
 }
 
 const HomepageResources: React.FunctionComponent<IProps> = ({
@@ -69,6 +78,7 @@ const HomepageResources: React.FunctionComponent<IProps> = ({
                 userId={userId}
                 isLoggedIn={isLoggedIn}
                 homepage={homepage}
+                routeChangeAction={routeChangeAction}
             />
         )
     } else if (

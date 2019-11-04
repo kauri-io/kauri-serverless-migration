@@ -13,12 +13,22 @@ import {
 } from '../../lib/getURLs'
 import CommunityCard from '../Card/CommunityCard'
 import { makeStyles } from '@material-ui/styles'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { openModalAction } from '../Modal/Module'
 
 interface IProps {
     content: any[]
+    isLoggedIn: boolean
+    routeChangeAction: typeof routeChangeAction
+    openModalAction: typeof openModalAction
 }
 
-const FeaturedContent: React.FunctionComponent<IProps> = ({ content }) => {
+const FeaturedContent: React.FunctionComponent<IProps> = ({
+    content,
+    isLoggedIn,
+    routeChangeAction,
+    openModalAction,
+}) => {
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
             maxWidth: (1242 / 12) * 9,
@@ -41,6 +51,9 @@ const FeaturedContent: React.FunctionComponent<IProps> = ({ content }) => {
                                 key={key}
                                 {...resource}
                                 href={getArticleURL(resource)}
+                                isLoggedIn={isLoggedIn}
+                                routeChangeAction={routeChangeAction}
+                                openModalAction={openModalAction}
                             />
                         )
                     }

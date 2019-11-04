@@ -21,7 +21,7 @@ export interface relatedArticles_searchMoreLikeThis_content_resourceIdentifier {
 }
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_author {
@@ -118,6 +118,10 @@ export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO 
    * Get vote result for the article
    */
   voteResult: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_voteResult;
+  /**
+   * Check if the article is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_resourceIdentifier {
@@ -159,6 +163,10 @@ export interface relatedArticles_searchMoreLikeThis_content_resource_CollectionD
    */
   dateUpdated: any;
   resourceIdentifier: relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_resourceIdentifier | null;
+  /**
+   * Check if the collection is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_CommunityDTO {

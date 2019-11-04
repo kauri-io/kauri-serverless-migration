@@ -29,7 +29,7 @@ export interface searchArticles_searchArticles_content_author {
 }
 
 export interface searchArticles_searchArticles_content_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchArticles_searchArticles_content_owner_PublicUserDTO_resourceIdentifier {
@@ -227,6 +227,10 @@ export interface searchArticles_searchArticles_content {
    */
   comments: searchArticles_searchArticles_content_comments;
   resourceIdentifier: searchArticles_searchArticles_content_resourceIdentifier | null;
+  /**
+   * Check if the article is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export interface searchArticles_searchArticles {

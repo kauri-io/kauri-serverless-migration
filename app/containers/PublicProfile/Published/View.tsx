@@ -8,6 +8,8 @@ import { getArticleURL } from '../../../lib/getURLs'
 import Empty from './Empty'
 import { Grid, makeStyles, Theme } from '@material-ui/core'
 import Loading from '../../../components/Loading'
+import { openModalAction } from '../../../components/Modal/Module'
+import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 
 interface IArticlesQuery extends searchPersonalArticles {
     loading: boolean
@@ -19,6 +21,8 @@ export interface IArticlesProps {
     isLoggedIn: boolean
     isOwner: boolean
     classes: { grid: any }
+    routeChangeAction: typeof routeChangeAction
+    openModalAction: typeof openModalAction
 }
 
 const Articles: React.FC<IArticlesProps> = ({
@@ -26,6 +30,8 @@ const Articles: React.FC<IArticlesProps> = ({
     type,
     isLoggedIn,
     isOwner,
+    routeChangeAction,
+    openModalAction,
 }) => {
     if (ArticlesQuery.loading) {
         return <Loading />
@@ -70,6 +76,9 @@ const Articles: React.FC<IArticlesProps> = ({
                                 <ArticleCard
                                     href={getArticleURL(article)}
                                     {...article}
+                                    isLoggedIn={isLoggedIn}
+                                    routeChangeAction={routeChangeAction}
+                                    openModalAction={openModalAction}
                                 />
                             </Grid>
                         )

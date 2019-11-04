@@ -7,25 +7,30 @@ import withLoading from '../../../lib/with-loading'
 import withApolloError from '../../../lib/with-apollo-error'
 import { searchAwaitingApproval } from '../../../queries/Article'
 import { graphql, compose } from 'react-apollo'
-import {
-    IOpenModalPayload,
-    IOpenModalAction,
-} from '../../../components/Modal/Module'
+import { openModalAction } from '../../../components/Modal/Module'
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
 import { ICommunity } from '../../../lib/Module'
 import { getArticleURL } from '../../../lib/getURLs'
 import { Grid, Typography } from '@material-ui/core'
+import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 
 interface IArticlesProps {
     data: searchPersonalArticles
     type: string
-    routeChangeAction: (route: string) => void
+    routeChangeAction: typeof routeChangeAction
     isLoggedIn: boolean
     isOwner: boolean
-    openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
+    openModalAction: typeof openModalAction
 }
 
-const Articles = ({ data, type, isOwner }: IArticlesProps) => {
+const Articles = ({
+    data,
+    type,
+    isOwner,
+    isLoggedIn,
+    routeChangeAction,
+    openModalAction,
+}: IArticlesProps) => {
     const articles = data.searchArticles && data.searchArticles.content
     return articles && articles.length > 0 ? (
         <Fragment>
@@ -50,6 +55,9 @@ const Articles = ({ data, type, isOwner }: IArticlesProps) => {
                                     <ArticleCard
                                         href={getArticleURL(article, 'review')}
                                         {...article}
+                                        openModalAction={openModalAction}
+                                        routeChangeAction={routeChangeAction}
+                                        isLoggedIn={isLoggedIn}
                                     />
                                 </Grid>
                             )

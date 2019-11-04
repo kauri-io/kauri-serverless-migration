@@ -6,6 +6,8 @@ import { Article } from '../../queries/Fragments/__generated__/Article'
 import { Collection } from '../../queries/Fragments/__generated__/Collection'
 import CollectionCard from '../../components/Card/CollectionCard'
 import { getArticleURL, getCollectionURL } from '../../lib/getURLs'
+import { openModalAction } from '../../components/Modal/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 const Container = styled.section`
     display: flex;
@@ -41,7 +43,8 @@ interface IProps {
     isLoggedIn: boolean
     isOwnedByCurrentUser: boolean
     name: string
-    openModalAction: any
+    openModalAction: typeof openModalAction
+    routeChangeAction: typeof routeChangeAction
 }
 
 const CollectionSection: React.SFC<IProps> = props => {
@@ -58,6 +61,9 @@ const CollectionSection: React.SFC<IProps> = props => {
                                 <ArticleCard
                                     key={key}
                                     href={getArticleURL(resource)}
+                                    isLoggedIn={props.isLoggedIn}
+                                    routeChangeAction={props.routeChangeAction}
+                                    openModalAction={props.openModalAction}
                                     {...resource}
                                 />
                             )

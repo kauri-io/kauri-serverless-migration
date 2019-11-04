@@ -1,6 +1,5 @@
 import Grid from '@material-ui/core/Grid'
 import AddToCollectionConnection from '../../AddToCollection'
-// import Bookmark from "@material-ui/icons/Bookmark";
 import Add from '@material-ui/icons/Add'
 import Share from '@material-ui/icons/Share'
 // import MoreVert from "@material-ui/icons/MoreVert";
@@ -12,7 +11,11 @@ import { ShareButtons } from '../../../components/Tooltip/ShareButtons'
 import Edit from '@material-ui/icons/Edit'
 import { getArticleURL } from '../../../lib/getURLs'
 import Link from 'next/link'
-import { Tooltip } from '@material-ui/core'
+import { Tooltip, Icon } from '@material-ui/core'
+import BookmarkResource from '../../Bookmark/BookmarkResourceWidget'
+import { ResourceTypeInput } from '../../../__generated__/globalTypes'
+import { openModalAction } from '../../../components/Modal/Module'
+import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 
 export const ArticleActionStyles = makeStyles((theme: Theme) => ({
     buttons: {
@@ -33,16 +36,17 @@ export const ArticleActionStyles = makeStyles((theme: Theme) => ({
 
 interface IProps {
     userId: string
-    openModalAction: (children: any) => void
+    openModalAction: typeof openModalAction
+    routeChangeAction: typeof routeChangeAction
     id: string
     version: number
     title: string
     hostName: string
-    routeChangeAction: (route: string) => void
     article: {
         id: string
         title: string
         version: number
+        isBookmarked: boolean
     }
 }
 
@@ -68,9 +72,36 @@ export default ({
 
     const open = Boolean(anchorEl)
     const href = getArticleURL(article, 'update')
+
     return (
         <Grid item={true} className={classes.buttons}>
-            {/* <Bookmark color="primary" /> */}
+            <Tooltip title={article.isBookmarked ? 'Unbookmark' : 'Bookmark'}>
+                <Icon
+                    className={classes.hover}
+                    color="primary"
+                    onClick={() =>
+                        userId
+                            ? openModalAction({
+                                  children: (
+                                      <BookmarkResource
+                                          resourceId={id}
+                                          resourceType={
+                                              ResourceTypeInput.ARTICLE
+                                          }
+                                      />
+                                  ),
+                              })
+                            : routeChangeAction(
+                                  `/login?r=/${slugify(title, {
+                                      lower: true,
+                                  })}/${id}/a`
+                              )
+                    }
+                    data-testid={`Article-${id}-bookmark`}
+                >
+                    {article.isBookmarked ? 'bookmark' : 'bookmark_border_icon'}
+                </Icon>
+            </Tooltip>
             <Tooltip title="Update article">
                 <div>
                     <Link href={href.href} as={href.as}>

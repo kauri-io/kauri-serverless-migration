@@ -9,11 +9,11 @@ import { ResourceTypeInput, CommunityPermissionInput, UserStatusInput } from "./
 // ====================================================
 
 export interface ResourceFragment_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface ResourceFragment_CollectionDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface ResourceFragment_CollectionDTO_owner_PublicUserDTO_resourceIdentifier {
@@ -93,7 +93,7 @@ export interface ResourceFragment_CollectionDTO_sections_resourcesId {
 }
 
 export interface ResourceFragment_CollectionDTO_sections_resources_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CollectionDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CollectionDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO {
@@ -181,6 +181,10 @@ export interface ResourceFragment_CollectionDTO {
    */
   sections: (ResourceFragment_CollectionDTO_sections | null)[] | null;
   resourceIdentifier: ResourceFragment_CollectionDTO_resourceIdentifier | null;
+  /**
+   * Check if the collection is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export interface ResourceFragment_ArticleDTO_resourceIdentifier {
@@ -248,7 +252,7 @@ export interface ResourceFragment_ArticleDTO_author {
 }
 
 export interface ResourceFragment_ArticleDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface ResourceFragment_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
@@ -386,6 +390,10 @@ export interface ResourceFragment_ArticleDTO {
    * The comment describing this version update of the article
    */
   updateComment: string | null;
+  /**
+   * Check if the article is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export interface ResourceFragment_CommunityDTO_creator {
@@ -454,7 +462,7 @@ export interface ResourceFragment_CommunityDTO_pendingId {
 }
 
 export interface ResourceFragment_CommunityDTO_approved_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface ResourceFragment_CommunityDTO_approved_ArticleDTO {

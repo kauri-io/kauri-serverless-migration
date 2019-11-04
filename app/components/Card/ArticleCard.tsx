@@ -15,6 +15,11 @@ import Icon from '@material-ui/core/Icon'
 import { useState } from 'react'
 import ShareDialog from './ShareDialog'
 import Image from '../Image'
+import BookmarkResource from '../../containers/Bookmark/BookmarkResourceWidget'
+import { ResourceTypeInput } from '../../__generated__/globalTypes'
+import { Tooltip } from '@material-ui/core'
+import { openModalAction } from '../Modal/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 export const ArticleCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -153,7 +158,10 @@ interface IProps {
     voteResult: {
         sum: number
     } | null
+    isBookmarked: boolean
     addArticleToCollectionAction?: () => void
+    openModalAction: typeof openModalAction
+    routeChangeAction: typeof routeChangeAction
 }
 
 const ArticleCard: React.FC<IProps> = ({
@@ -168,8 +176,11 @@ const ArticleCard: React.FC<IProps> = ({
     version,
     comments,
     voteResult,
+    isBookmarked,
     isLoggedIn = false,
     addArticleToCollectionAction,
+    openModalAction,
+    routeChangeAction,
 }) => {
     const classes = ArticleCardStyles({})
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
@@ -272,6 +283,32 @@ const ArticleCard: React.FC<IProps> = ({
                     </div>
 
                     <div className={classes.statistics}>
+                        <Tooltip
+                            title={isBookmarked ? 'Unbookmark' : 'Bookmark'}
+                        >
+                            <Icon
+                                onClick={() =>
+                                    isLoggedIn
+                                        ? openModalAction({
+                                              children: (
+                                                  <BookmarkResource
+                                                      resourceId={id}
+                                                      resourceType={
+                                                          ResourceTypeInput.ARTICLE
+                                                      }
+                                                  />
+                                              ),
+                                          })
+                                        : routeChangeAction(`/login`)
+                                }
+                                data-testid={`ArticleCard-${id}-bookmark`}
+                            >
+                                {isBookmarked
+                                    ? 'bookmark'
+                                    : 'bookmark_border_icon'}
+                            </Icon>
+                        </Tooltip>
+
                         <Icon data-testid={`ArticleCard-${id}-commentIcon`}>
                             comment
                         </Icon>

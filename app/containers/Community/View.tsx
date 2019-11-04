@@ -25,7 +25,10 @@ import HomepageResources from './HomepageResources'
 
 import { routeChangeAction as routeChange } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction as showNotification } from '../../lib/Epics/ShowNotificationEpic'
-import { openModalAction as openModal } from '../../components/Modal/Module'
+import {
+    openModalAction as openModal,
+    closeModalAction,
+} from '../../components/Modal/Module'
 import { sendInvitationVariables } from '../../queries/__generated__/sendInvitation'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
@@ -34,6 +37,7 @@ interface IProps {
     client?: ApolloClient<{}>
     acceptCommunityInvitationAction: typeof acceptCommunityInvitation
     currentUser: string
+    isLoggedIn: boolean
     isCommunityAdmin: boolean
     secret: null | string
     communityId: string
@@ -41,7 +45,7 @@ interface IProps {
         getCommunity: getCommunity_getCommunity
         searchArticles?: getCommunityAndPendingArticles_searchArticles
     }
-    closeModalAction: () => void
+    closeModalAction: typeof closeModalAction
     openModalAction: typeof openModal
     routeChangeAction: typeof routeChange
     removeResourceAction: (payload: removeResourceVariables) => void
@@ -64,12 +68,16 @@ const CollectionsPanel = ({
     isMember,
     closeModalAction,
     getCommunity,
+    routeChangeAction,
+    isLoggedIn,
 }) =>
     collections && collections.length > 0 ? (
         <DisplayResources
             removeResourceAction={removeResourceAction}
             openModalAction={openModalAction}
             closeModalAction={closeModalAction}
+            routeChangeAction={routeChangeAction}
+            isLoggedIn={isLoggedIn}
             isMember={isMember}
             type="collections"
             key="collections"
@@ -152,6 +160,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
             removeResourceAction,
             transferArticleToCommunityAction,
             isCommunityAdmin,
+            isLoggedIn,
         } = this.props
         const articles =
             getCommunity.approved &&
@@ -281,10 +290,23 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     />
                 )}
                 {this.state.tab === getActualTabId(1) && (
+                    // classes?: any
+                    // type?: string
+                    // resources?: any
+                    // communityId: string | null
+                    // isMember: boolean
+                    // isLoggedIn: boolean
+                    // closeModalAction?: () => void
+                    // openModalAction: (children: any) => void
+                    // routeChangeAction: (route: string) => void
+                    // removeResourceAction?: (payload: removeResourceVariables) => void
+
                     <DisplayResources
                         removeResourceAction={removeResourceAction}
                         openModalAction={openModalAction}
                         closeModalAction={closeModalAction}
+                        routeChangeAction={routeChangeAction}
+                        isLoggedIn={isLoggedIn}
                         isMember={isMember}
                         key="articles"
                         type="articles"
@@ -300,6 +322,8 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         openModalAction={openModalAction}
                         closeModalAction={closeModalAction}
                         getCommunity={getCommunity}
+                        routeChangeAction={routeChangeAction}
+                        isLoggedIn={isLoggedIn}
                     />
                 )}
                 {this.state.tab === getActualTabId(3) && (
@@ -315,6 +339,9 @@ class CommunityConnection extends React.Component<IProps, IState> {
                             this.props.data.searchArticles &&
                             this.props.data.searchArticles.content
                         }
+                        openModalAction={openModalAction}
+                        routeChangeAction={routeChangeAction}
+                        isLoggedIn={isLoggedIn}
                     />
                 )}
             </>

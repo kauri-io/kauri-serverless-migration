@@ -10,6 +10,8 @@ import {
 import ArticleCard from '../Card/ArticleCard'
 import CollectionCard from '../Card/CollectionCard'
 import CommunityCard from '../Card/CommunityCard'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { openModalAction } from '../Modal/Module'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -30,9 +32,17 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 interface IProps {
     content: any
+    isLoggedIn: boolean
+    routeChangeAction: typeof routeChangeAction
+    openModalAction: typeof openModalAction
 }
 
-const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
+const LatestContent: React.FunctionComponent<IProps> = ({
+    content,
+    isLoggedIn,
+    routeChangeAction,
+    openModalAction,
+}) => {
     const classes = useStyles()
     return (
         <Grid direction="column" container={true} className={classes.container}>
@@ -46,6 +56,9 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                                     <ArticleCard
                                         {...resource}
                                         href={getArticleURL(resource)}
+                                        isLoggedIn={isLoggedIn}
+                                        routeChangeAction={routeChangeAction}
+                                        openModalAction={openModalAction}
                                     />
                                 </Grid>
                             )

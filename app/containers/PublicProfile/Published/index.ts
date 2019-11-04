@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import withLoading from '../../../lib/with-loading'
 import withPagination from '../../../lib/with-pagination'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
+import { openModalAction } from '../../../components/Modal/Module'
 
 const mapStateToProps = state => {
     return {
@@ -21,6 +22,7 @@ export default compose(
         mapStateToProps,
         {
             routeChangeAction,
+            openModalAction,
         }
     ),
     graphql(searchPersonalArticles, {

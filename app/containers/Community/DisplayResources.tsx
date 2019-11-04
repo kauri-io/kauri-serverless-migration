@@ -9,6 +9,11 @@ import { removeResourceVariables } from '../../queries/__generated__/removeResou
 import ArticlesEmptyState from './EmptyStates/Articles'
 import CollectionsEmptyState from './EmptyStates/Collections'
 import { getArticleURL, getCollectionURL } from '../../lib/getURLs'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import {
+    openModalAction,
+    closeModalAction,
+} from '../../components/Modal/Module'
 
 interface IProps {
     classes?: any
@@ -16,8 +21,10 @@ interface IProps {
     resources?: any
     communityId: string | null
     isMember: boolean
-    closeModalAction?: () => void
-    openModalAction?: (payload: { children: any }) => void
+    isLoggedIn: boolean
+    closeModalAction?: typeof closeModalAction
+    openModalAction: typeof openModalAction
+    routeChangeAction: typeof routeChangeAction
     removeResourceAction?: (payload: removeResourceVariables) => void
 }
 
@@ -33,7 +40,7 @@ const RenderEmptyState: React.FunctionComponent<{ type: string }> = ({
     return null
 }
 
-const RenderResources = () =>
+const RenderResources = (isLoggedIn: boolean) =>
     // isMember: boolean,
     // communityId: string | null,
     // openModalAction?: (payload: { children: any }) => void,
@@ -70,7 +77,15 @@ const RenderResources = () =>
         let Card: React.ReactNode = null
 
         if (article.__typename === 'ArticleDTO') {
-            Card = <ArticleCard href={getArticleURL(article)} {...article} />
+            Card = (
+                <ArticleCard
+                    href={getArticleURL(article)}
+                    {...article}
+                    routeChangeAction={routeChangeAction}
+                    openModalAction={openModalAction}
+                    isLoggedIn={isLoggedIn}
+                />
+            )
         } else if (article.__typename === 'CollectionDTO') {
             Card = (
                 <CollectionCard
@@ -149,6 +164,7 @@ const DisplayResources = ({
     // removeResourceAction,
     type,
     classes,
+    isLoggedIn,
 }: IProps) => {
     if (
         Array.isArray(resources) &&
@@ -162,7 +178,7 @@ const DisplayResources = ({
             <Grid className={classes.grid} container spacing={3}>
                 {Array.isArray(resources) && resources.length
                     ? resources.map(
-                          RenderResources()
+                          RenderResources(isLoggedIn)
                           // isMember,
                           // communityId,
                           // openModalAction,
@@ -178,6 +194,7 @@ const DisplayResources = ({
 const DisplayManagedResourcesComponent = ({
     resources,
     classes,
+    isLoggedIn,
 }: // communityId,
 // isMember,
 // openModalAction,
@@ -189,7 +206,7 @@ IProps & { review?: boolean }) => {
             <Grid className={classes.grid} container spacing={3}>
                 {Array.isArray(resources) && resources.length
                     ? resources.map(
-                          RenderResources()
+                          RenderResources(isLoggedIn)
                           // isMember,
                           // communityId,
                           // openModalAction,

@@ -9,7 +9,7 @@ import { CollectionFilterInput, ResourceTypeInput } from "./../../__generated__/
 // ====================================================
 
 export interface searchCollections_searchCollections_content_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchCollections_searchCollections_content_owner_PublicUserDTO_resourceIdentifier {
@@ -89,7 +89,7 @@ export interface searchCollections_searchCollections_content_sections_resourcesI
 }
 
 export interface searchCollections_searchCollections_content_sections_resources_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CollectionDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CollectionDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchCollections_searchCollections_content_sections_resources_ArticleDTO {
@@ -177,6 +177,10 @@ export interface searchCollections_searchCollections_content {
    */
   sections: (searchCollections_searchCollections_content_sections | null)[] | null;
   resourceIdentifier: searchCollections_searchCollections_content_resourceIdentifier | null;
+  /**
+   * Check if the collection is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export interface searchCollections_searchCollections {

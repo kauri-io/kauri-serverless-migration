@@ -101,6 +101,7 @@ export const Article = gql`
             version
         }
         updateComment
+        isBookmarked
     }
 
     ${UserOwner}
@@ -138,6 +139,7 @@ export const Collection = gql`
             type
             id
         }
+        isBookmarked
     }
     ${UserOwner}
     ${CommunityOwner}

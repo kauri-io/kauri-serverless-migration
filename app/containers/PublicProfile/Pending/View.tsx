@@ -11,16 +11,26 @@ import { searchPersonalArticles } from '../../../queries/__generated__/searchPer
 import { ICommunity } from '../../../lib/Module'
 import { getArticleURL } from '../../../lib/getURLs'
 import { Grid, Typography } from '@material-ui/core'
+import { openModalAction } from '../../../components/Modal/Module'
+import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 
 interface IArticlesProps {
     data: searchPersonalArticles
     type: string
-    routeChangeAction: (route: string) => void
+    routeChangeAction: typeof routeChangeAction
+    openModalAction: typeof openModalAction
     isLoggedIn: boolean
     isOwner: boolean
 }
 
-const Articles = ({ data, type, isOwner }: IArticlesProps) => {
+const Articles = ({
+    data,
+    type,
+    isOwner,
+    isLoggedIn,
+    routeChangeAction,
+    openModalAction,
+}: IArticlesProps) => {
     const articles = data.searchArticles && data.searchArticles.content
 
     if (articles) {
@@ -48,6 +58,9 @@ const Articles = ({ data, type, isOwner }: IArticlesProps) => {
                                     <ArticleCard
                                         href={getArticleURL(article)}
                                         {...article}
+                                        isLoggedIn={isLoggedIn}
+                                        routeChangeAction={routeChangeAction}
+                                        openModalAction={openModalAction}
                                     />
                                 </Grid>
                             )
