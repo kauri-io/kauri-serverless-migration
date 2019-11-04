@@ -21,7 +21,7 @@ export interface getExternalLink_getExternalLink_resourceIdentifier {
 }
 
 export interface getExternalLink_getExternalLink_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "ExternalLinkDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface getExternalLink_getExternalLink_owner_PublicUserDTO_resourceIdentifier {
@@ -148,6 +148,58 @@ export interface getExternalLink_getExternalLink_authorName {
   isEditable: boolean | null;
 }
 
+export interface getExternalLink_getExternalLink_comments_content_author {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
+export interface getExternalLink_getExternalLink_comments_content {
+  __typename: "CommentDTO";
+  /**
+   * Comment author (full profile)
+   */
+  author: getExternalLink_getExternalLink_comments_content_author;
+  /**
+   * Date the comment was published
+   */
+  posted: any;
+  /**
+   * Comment
+   */
+  body: string;
+}
+
+export interface getExternalLink_getExternalLink_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Returns the page content.
+   */
+  content: (getExternalLink_getExternalLink_comments_content | null)[];
+  /**
+   * Number of total pages.
+   */
+  totalPages: number;
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface getExternalLink_getExternalLink {
   __typename: "ExternalLinkDTO";
   /**
@@ -195,6 +247,10 @@ export interface getExternalLink_getExternalLink {
    * The link content author
    */
   authorName: getExternalLink_getExternalLink_authorName;
+  /**
+   * Get a paginated list of comments for this external link
+   */
+  comments: getExternalLink_getExternalLink_comments;
   /**
    * The link content author
    */

@@ -21,7 +21,7 @@ export interface searchExternalLinks_searchExternalLinks_content_resourceIdentif
 }
 
 export interface searchExternalLinks_searchExternalLinks_content_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "ExternalLinkDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchExternalLinks_searchExternalLinks_content_owner_PublicUserDTO_resourceIdentifier {
@@ -148,6 +148,58 @@ export interface searchExternalLinks_searchExternalLinks_content_authorName {
   isEditable: boolean | null;
 }
 
+export interface searchExternalLinks_searchExternalLinks_content_comments_content_author {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
+export interface searchExternalLinks_searchExternalLinks_content_comments_content {
+  __typename: "CommentDTO";
+  /**
+   * Comment author (full profile)
+   */
+  author: searchExternalLinks_searchExternalLinks_content_comments_content_author;
+  /**
+   * Date the comment was published
+   */
+  posted: any;
+  /**
+   * Comment
+   */
+  body: string;
+}
+
+export interface searchExternalLinks_searchExternalLinks_content_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Returns the page content.
+   */
+  content: (searchExternalLinks_searchExternalLinks_content_comments_content | null)[];
+  /**
+   * Number of total pages.
+   */
+  totalPages: number;
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
 export interface searchExternalLinks_searchExternalLinks_content {
   __typename: "ExternalLinkDTO";
   /**
@@ -195,6 +247,10 @@ export interface searchExternalLinks_searchExternalLinks_content {
    * The link content author
    */
   authorName: searchExternalLinks_searchExternalLinks_content_authorName;
+  /**
+   * Get a paginated list of comments for this external link
+   */
+  comments: searchExternalLinks_searchExternalLinks_content_comments;
   /**
    * The link content author
    */

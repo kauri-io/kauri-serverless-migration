@@ -56,5 +56,42 @@ export const useStyles = makeStyles((theme: Theme) => {
         root: {
             minHeight: '100%',
         },
+        tool: {
+            display: 'flex',
+            '& > *': {
+                marginRight: theme.spacing(1),
+                fontWeight: 600,
+            },
+        },
+        toolbar: {
+            marginBottom: theme.spacing(2),
+            paddingBottom: theme.spacing(2),
+            justifyContent: 'space-around',
+            borderBottom: '1px solid #cbcbcb',
+            display: 'flex',
+            flexDirection: 'row',
+        },
+        title: {
+            margin: theme.spacing(1, 0),
+        },
+        url: {
+            margin: theme.spacing(1, 0),
+        },
+        description: {
+            margin: theme.spacing(2, 0),
+        },
+        tag: {
+            margin: theme.spacing(1),
+        },
+        ctaContainer: {
+            padding: theme.spacing(2),
+            borderBottom: '1px solid #cbcbcb',
+        },
+        buttonIcon: {
+            marginRight: theme.spacing(1),
+        },
+        summary: {
+            margin: theme.spacing(2, 0, 0, 0),
+        },
     }
 })

@@ -309,6 +309,20 @@ export const Link = gql`
             value
             isEditable
         }
+        comments {
+            content {
+                author {
+                    id
+                    name
+                    username
+                    avatar
+                }
+                posted
+                body
+            }
+            totalPages
+            totalElements
+        }
         authorSocial
         tags
     }
