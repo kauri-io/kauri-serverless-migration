@@ -15,6 +15,7 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId }) => {
     const [image, setImage] = useState<null | { background_image: string }>(
         null
     )
+    const [tags, setTags] = useState<any>([])
     const [summary, setSummary] = useState<null | string>(null)
     const [loading, setLoading] = useState(false)
     const [url, setURL] = useState<null | string>(null)
@@ -44,6 +45,7 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId }) => {
                         summary,
                         authorName,
                         url,
+                        tags: tags.map(i => i.label),
                         ownerId: {
                             type: 'USER',
                             id: userId.toLowerCase(),
@@ -83,7 +85,12 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId }) => {
                     {!loading && hasSomeData && (
                         <>
                             <Paper className={classes.details}>
-                                <Details authorName={authorName} />
+                                <Details
+                                    tags={tags}
+                                    setTags={setTags}
+                                    client={client}
+                                    authorName={authorName}
+                                />
                             </Paper>
 
                             <Paper className={classes.editor}>

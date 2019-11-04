@@ -5,7 +5,8 @@ import Avatar from '../Avatar'
 // import Menu from '@material-ui/core/Menu'
 // import MenuItem from '@material-ui/core/MenuItem'
 import {
-    Typography, Grid,
+    Typography,
+    Grid,
     // ListItemIcon
 } from '@material-ui/core'
 import { Theme, makeStyles } from '@material-ui/core/styles'
@@ -131,8 +132,8 @@ export const LinkCardStyles = makeStyles((theme: Theme) => ({
         height: 10,
     },
     url: {
-        maxWidth: '90%'
-    }
+        maxWidth: '90%',
+    },
 }))
 
 interface IProps {
@@ -222,12 +223,12 @@ const LinkCard: React.FC<IProps> = ({
                                 borderRadius="4px"
                             />
                         ) : (
-                                <img
-                                    className={classes.mobileMedia}
-                                    data-testid={`LinkCard-${id}-image`}
-                                    src="/static/images/DefaultArticle.svg"
-                                />
-                            )}
+                            <img
+                                className={classes.mobileMedia}
+                                data-testid={`LinkCard-${id}-image`}
+                                src="/static/images/DefaultArticle.svg"
+                            />
+                        )}
                     </Link>
                 </div>
                 <Link href={href.href} as={href.as}>
@@ -248,9 +249,16 @@ const LinkCard: React.FC<IProps> = ({
                                     </Typography>
                                 </TruncateMarkup>
                             )}
-                            <Grid container={true} justify='flex-start' alignItems='center'>
+                            <Grid
+                                container={true}
+                                justify="flex-start"
+                                alignItems="center"
+                            >
                                 <TruncateMarkup lines={1}>
-                                    <Typography className={classes.url} variant="caption">
+                                    <Typography
+                                        className={classes.url}
+                                        variant="caption"
+                                    >
                                         {url.value}
                                     </Typography>
                                 </TruncateMarkup>
@@ -298,12 +306,12 @@ const LinkCard: React.FC<IProps> = ({
                             borderRadius="4px"
                         />
                     ) : (
-                            <img
-                                className={classes.desktopMedia}
-                                data-testid={`LinkCard-${id}-image`}
-                                src="/static/images/DefaultArticle.svg"
-                            />
-                        )}
+                        <img
+                            className={classes.desktopMedia}
+                            data-testid={`LinkCard-${id}-image`}
+                            src="/static/images/DefaultArticle.svg"
+                        />
+                    )}
                 </a>
             </Link>
         </Card>

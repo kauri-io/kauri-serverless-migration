@@ -110,17 +110,18 @@ const ViewLink = ({ addCommentAction, user, data: { getExternalLink } }) => {
                         {getExternalLink.linkDescription.value}
                     </Typography>
                     <Grid container={true} justify="center">
-                        {['external-link', 'useful-tag'].map(text => (
-                            <Link href={`/search-results?q=${text}`}>
-                                <a>
-                                    <Chip
-                                        className={classes.tag}
-                                        variant="outlined"
-                                        label={text}
-                                    />
-                                </a>
-                            </Link>
-                        ))}
+                        {getExternalLink.tags &&
+                            getExternalLink.tags.map(text => (
+                                <Link href={`/search-results?q=${text}`}>
+                                    <a>
+                                        <Chip
+                                            className={classes.tag}
+                                            variant="outlined"
+                                            label={text}
+                                        />
+                                    </a>
+                                </Link>
+                            ))}
                     </Grid>
                     <Grid
                         className={classes.ctaContainer}

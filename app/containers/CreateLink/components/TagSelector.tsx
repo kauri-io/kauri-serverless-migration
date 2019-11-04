@@ -1,6 +1,6 @@
 import React, { CSSProperties, HTMLAttributes } from 'react'
 import clsx from 'clsx'
-import Select from 'react-select'
+import AsyncSelect from 'react-select/async'
 import Typography from '@material-ui/core/Typography'
 import NoSsr from '@material-ui/core/NoSsr'
 import TextField, { BaseTextFieldProps } from '@material-ui/core/TextField'
@@ -13,7 +13,6 @@ import { NoticeProps } from 'react-select/src/components/Menu'
 import { MultiValueProps } from 'react-select/src/components/MultiValue'
 import { OptionProps } from 'react-select/src/components/Option'
 import { PlaceholderProps } from 'react-select/src/components/Placeholder'
-import { ValueType } from 'react-select/src/types'
 import { Omit } from '@material-ui/types'
 
 import {
@@ -22,6 +21,7 @@ import {
     makeStyles,
     Theme,
 } from '@material-ui/core/styles'
+import { searchTags } from '../../../queries/Tag'
 
 export const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -70,18 +70,6 @@ interface OptionType {
     label: string
     value: string
 }
-
-const suggestions: OptionType[] = [
-    { label: 'Ethereum' },
-    { label: 'IPFS' },
-    { label: 'Sharding' },
-    { label: 'State Channels' },
-    { label: 'Infura' },
-    { label: 'Testing' },
-].map(suggestion => ({
-    value: suggestion.label,
-    label: suggestion.label,
-}))
 
 function NoOptionsMessage(props: NoticeProps<OptionType>) {
     return (
@@ -189,13 +177,8 @@ const components = {
     ValueContainer,
 }
 
-export default function IntegrationReactSelect() {
-    const [multi, setMulti] = React.useState<ValueType<OptionType>>(null)
+export default function IntegrationReactSelect({ tags, client, setTags }) {
     const classes = useStyles({})
-
-    const handleChangeMulti = (value: ValueType<OptionType>) => {
-        setMulti(value)
-    }
 
     const selectStyles = {
         input: (base: CSSProperties) => ({
@@ -209,7 +192,7 @@ export default function IntegrationReactSelect() {
     return (
         <div className={classes.root}>
             <NoSsr>
-                <Select
+                <AsyncSelect
                     classes={classes}
                     styles={selectStyles}
                     inputId="react-select-multiple"
@@ -222,10 +205,33 @@ export default function IntegrationReactSelect() {
                         },
                     }}
                     placeholder="Select up to 7 tags"
-                    options={suggestions}
                     components={components}
-                    value={multi}
-                    onChange={handleChangeMulti}
+                    getOptionLabel={option => option.label}
+                    getOptionValue={option => option.label}
+                    value={tags}
+                    onChange={val => setTags(val)}
+                    loadOptions={inputValue =>
+                        new Promise(resolve => {
+                            client
+                                .query({
+                                    fetchPolicy: 'no-cache',
+                                    query: searchTags,
+                                    variables: {
+                                        query: inputValue,
+                                        page: 0,
+                                        size: 10,
+                                    },
+                                })
+                                .then(res => {
+                                    resolve([
+                                        ...res.data.searchTags.content.map(
+                                            i => ({ label: i.tag })
+                                        ),
+                                        ...[{ label: inputValue }],
+                                    ])
+                                })
+                        })
+                    }
                     isMulti
                 />
             </NoSsr>
