@@ -7,7 +7,7 @@ import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
 const MaterialArticle = withTransaction('article', 'page')(({ router }) => (
-    <App maxWidthConstrained={true}>
+    <App maxWidthConstrained={true} hideNav={false}>
         <Article
             id={router.query.article_id}
             version={router.query.article_version}

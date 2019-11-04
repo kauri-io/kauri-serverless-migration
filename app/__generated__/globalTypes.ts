@@ -58,6 +58,7 @@ export enum ResourceTypeInput {
   COMMUNITY = "COMMUNITY",
   CURATED_LIST = "CURATED_LIST",
   INVITATION = "INVITATION",
+  LINK = "LINK",
   REQUEST = "REQUEST",
   TEMPLATE = "TEMPLATE",
   USER = "USER",
@@ -129,6 +130,20 @@ export interface CommunityInvitationFilterInput {
 export interface CommunityResourceFilterInput {
   resourceTypeEquals?: ResourceTypeInput | null;
   statusEquals?: CommunityResourceStatusInput | null;
+}
+
+export interface ExternalLinkFilterInput {
+  containsTag?: string | null;
+  dateCreatedGreaterThan?: any | null;
+  dateCreatedLessThan?: any | null;
+  dateUpdatedGreaterThan?: any | null;
+  dateUpdatedLessThan?: any | null;
+  descriptionContains?: string | null;
+  idEquals?: string | null;
+  ownerIdEquals?: string | null;
+  submitterIdEquals?: string | null;
+  summaryContains?: string | null;
+  titleContains?: string | null;
 }
 
 export interface InvitationInput {

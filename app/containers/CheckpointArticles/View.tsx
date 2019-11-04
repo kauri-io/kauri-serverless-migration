@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import CTA, { CheckpointArticlesIcon } from './CTA'
-import { searchPersonalArticles_searchArticles_content } from '../../queries/__generated__/searchPersonalArticles'
+import { searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO } from '../../queries/__generated__/searchResultsAutocomplete'
 
 export const AllArticlesOnMainnet = ({
     text = 'All Articles On-chain',
@@ -26,7 +26,7 @@ const CheckpointedArticlesContainer = styled.div`
 `
 
 export interface IProps {
-    articles?: (searchPersonalArticles_searchArticles_content | null)[]
+    articles?: (searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO | null)[]
     articleCheckpointed?: boolean
     checkpointArticlesAction: () => void
     pageType: 'public-profile'

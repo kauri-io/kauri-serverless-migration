@@ -15,6 +15,7 @@ const mapStateToProps = (state: IReduxState) => ({
 const useStyles = makeStyles((theme: Theme) => ({
     constrained: {
         maxWidth: 1242,
+        width: '100%',
     },
     item: {
         width: '100%',
@@ -34,9 +35,15 @@ interface IProps {
     isModalOpen: boolean
     maxWidthConstrained?: boolean
     children: any
+    hideNav: boolean
 }
 
-const Layout = ({ isModalOpen, children, maxWidthConstrained }: IProps) => {
+const Layout = ({
+    isModalOpen,
+    children,
+    maxWidthConstrained,
+    hideNav,
+}: IProps) => {
     const classes = useStyles({})
     return (
         <Grid container={true}>
@@ -45,9 +52,11 @@ const Layout = ({ isModalOpen, children, maxWidthConstrained }: IProps) => {
             </Head>
             <Modal />
             <Notification />
-            <Grid sm={12} item={true} className={classes.item}>
-                <Navbar />
-            </Grid>
+            {!hideNav && (
+                <Grid sm={12} item={true} className={classes.item}>
+                    <Navbar />
+                </Grid>
+            )}
             <Grid sm={12} item={true} className={classes.item}>
                 <div
                     className={`${classes.root} ${

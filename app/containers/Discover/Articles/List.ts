@@ -47,7 +47,7 @@ export default compose(
                 filter: {
                     mustNotContainTag: ['ethdenver-2019-submission'],
                     mustNotIncludeUserId: config.testingAccounts,
-                    type: 'ARTICLE',
+                    types: ['ARTICLE', 'LINK'],
                 },
                 parameter: {
                     scoringMode,

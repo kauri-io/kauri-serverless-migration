@@ -1,5 +1,5 @@
 import gql from 'graphql-tag'
-import { UserOwner, CommunityOwner } from './Fragments'
+import { UserOwner, CommunityOwner, Link } from './Fragments'
 
 export const searchAutocomplete = gql`
     query searchAutocomplete(
@@ -73,6 +73,9 @@ export const searchResultsAutocomplete = gql`
                     type
                 }
                 resource {
+                    ... on ExternalLinkDTO {
+                        ...Link
+                    }
                     ... on PublicUserDTO {
                         id
                         username
@@ -184,4 +187,5 @@ export const searchResultsAutocomplete = gql`
 
     ${UserOwner}
     ${CommunityOwner}
+    ${Link}
 `

@@ -110,7 +110,7 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
@@ -315,7 +315,260 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
   updateComment: string | null;
 }
 
-export type searchAutocompleteArticles_searchAutocomplete_content_resource = searchAutocompleteArticles_searchAutocomplete_content_resource_PublicUserDTO | searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO;
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
+}
+
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_owner_ArticleDTO {
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+}
+
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_owner_PublicUserDTO {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  resourceIdentifier: searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier | null;
+}
+
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_owner_CommunityDTO {
+  __typename: "CommunityDTO";
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
+  avatar: string | null;
+  resourceIdentifier: searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier | null;
+}
+
+export type searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_owner = searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_owner_ArticleDTO | searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_owner_PublicUserDTO | searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_owner_CommunityDTO;
+
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_url {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_linkTitle {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_linkDescription {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_summary {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_authorName {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_comments_content_author {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_comments_content {
+  __typename: "CommentDTO";
+  /**
+   * Comment author (full profile)
+   */
+  author: searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_comments_content_author;
+  /**
+   * Date the comment was published
+   */
+  posted: any;
+  /**
+   * Comment
+   */
+  body: string;
+}
+
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Returns the page content.
+   */
+  content: (searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_comments_content | null)[];
+  /**
+   * Number of total pages.
+   */
+  totalPages: number;
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO {
+  __typename: "ExternalLinkDTO";
+  /**
+   * External link ID
+   */
+  id: string;
+  resourceIdentifier: searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_resourceIdentifier | null;
+  /**
+   * The date that this external link was created
+   */
+  dateCreated: any;
+  /**
+   * The date that this external link was updated
+   */
+  dateUpdated: any;
+  /**
+   * The external link submitter user id
+   */
+  submitterId: string;
+  /**
+   * load the external link owner (user or community resource type)
+   */
+  owner: searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_owner | null;
+  /**
+   * The link url
+   */
+  url: searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_url;
+  /**
+   * The link title
+   */
+  linkTitle: searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_linkTitle;
+  /**
+   * The description of the link, obtained via metadata
+   */
+  linkDescription: searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_linkDescription | null;
+  /**
+   * The user input summary of the link
+   */
+  summary: searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_summary | null;
+  /**
+   * Link attributes
+   */
+  linkAttributes: any | null;
+  /**
+   * The link content author
+   */
+  authorName: searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_authorName;
+  /**
+   * Get a paginated list of comments for this external link
+   */
+  comments: searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_comments;
+  /**
+   * The link content author
+   */
+  authorSocial: any | null;
+  /**
+   * Tags associated with the link
+   */
+  tags: (string | null)[] | null;
+}
+
+export type searchAutocompleteArticles_searchAutocomplete_content_resource = searchAutocompleteArticles_searchAutocomplete_content_resource_PublicUserDTO | searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO | searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO;
 
 export interface searchAutocompleteArticles_searchAutocomplete_content {
   __typename: "SearchResultDTO";

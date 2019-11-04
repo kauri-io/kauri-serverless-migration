@@ -3,18 +3,22 @@ import ArticleCard from '../../../components/Card/ArticleCard'
 import CheckpointArticles from '../../CheckpointArticles'
 import withPagination from '../../../lib/with-pagination'
 
-import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
-import { getArticleURL } from '../../../lib/getURLs'
+import {
+    searchResultsAutocomplete,
+    searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO,
+} from '../../../queries/__generated__/searchResultsAutocomplete'
+import { getArticleURL, getLinkUrl } from '../../../lib/getURLs'
 import Empty from './Empty'
 import { Grid, makeStyles, Theme } from '@material-ui/core'
 import Loading from '../../../components/Loading'
+import LinkCard from '../../../components/Card/LinkCard'
 
-interface IArticlesQuery extends searchPersonalArticles {
+interface IArticlesQuery extends searchResultsAutocomplete {
     loading: boolean
 }
 
 export interface IArticlesProps {
-    ArticlesQuery: IArticlesQuery
+    PublishedQuery: IArticlesQuery
     type: string
     isLoggedIn: boolean
     isOwner: boolean
@@ -22,26 +26,33 @@ export interface IArticlesProps {
 }
 
 const Articles: React.FC<IArticlesProps> = ({
-    ArticlesQuery,
+    PublishedQuery,
     type,
     isLoggedIn,
     isOwner,
 }) => {
-    if (ArticlesQuery.loading) {
+    if (PublishedQuery.loading) {
         return <Loading />
     }
 
-    const articles =
-        ArticlesQuery.searchArticles && ArticlesQuery.searchArticles.content
+    const results =
+        PublishedQuery.searchAutocomplete &&
+        PublishedQuery.searchAutocomplete.content
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
             paddingTop: theme.spacing(4),
+            paddingBottom: theme.spacing(4),
         },
     }))
     const classes = useStyles()
 
-    if (articles) {
-        return articles.length > 0 ? (
+    const articles = results.filter(
+        i =>
+            i && i.resourceIdentifier && i.resourceIdentifier.type === 'ARTICLE'
+    ) as (searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO | null)[]
+
+    if (results) {
+        return results.length > 0 ? (
             <Grid
                 className={classes.container}
                 container
@@ -57,9 +68,15 @@ const Articles: React.FC<IArticlesProps> = ({
                             articles={articles}
                         />
                     )}
-                {articles.map(
-                    article =>
-                        article && (
+                {results.map(result => {
+                    const type =
+                        result &&
+                        result.resourceIdentifier &&
+                        result.resourceIdentifier.type
+
+                    if (type === 'ARTICLE' && result && result.resource) {
+                        const article = result.resource as searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO
+                        return (
                             <Grid
                                 key={article.id}
                                 item
@@ -73,7 +90,25 @@ const Articles: React.FC<IArticlesProps> = ({
                                 />
                             </Grid>
                         )
-                )}
+                    } else if (type === 'LINK' && result && result.resource) {
+                        const link = result.resource as any
+                        return (
+                            <Grid
+                                key={link.id}
+                                item
+                                xs={12}
+                                container={true}
+                                justify="center"
+                            >
+                                <LinkCard
+                                    key={link.id}
+                                    href={getLinkUrl(link)}
+                                    {...link}
+                                />
+                            </Grid>
+                        )
+                    }
+                })}
             </Grid>
         ) : (
             <Empty isLoggedIn={isLoggedIn} isOwner={isOwner} />
@@ -82,4 +117,4 @@ const Articles: React.FC<IArticlesProps> = ({
     return null
 }
 
-export default withPagination(Articles, 'searchArticles')
+export default withPagination(Articles, 'searchAutocomplete')
