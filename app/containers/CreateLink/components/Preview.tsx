@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid'
 
 const Preview = ({ classes, title, description, image }) => (
     <Grid className={classes.preview}>
-        <Grid>
+        <Grid className={classes.previewText}>
             <Typography variant="h5">{title}</Typography>
             <Typography variant="body2">{description}</Typography>
         </Grid>

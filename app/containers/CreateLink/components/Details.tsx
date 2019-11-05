@@ -1,7 +1,7 @@
 import { Grid, TextField } from '@material-ui/core'
 import TagSelector from './TagSelector'
 
-const Details = ({ authorName }) => (
+const Details = ({ authorName, authorSocial, client, setTags, tags }) => (
     <Grid>
         <Grid justify="space-between" container={true}>
             <TextField
@@ -9,10 +9,18 @@ const Details = ({ authorName }) => (
                 disabled={authorName ? true : false}
                 label="Author Name"
             />
-            <TextField label="Author Twitter" />
-            <TextField label="Author Linkedin" />
+            <TextField
+                disabled={authorSocial && authorSocial.twitter ? true : false}
+                value={authorSocial && authorSocial.twitter}
+                label="Author Twitter"
+            />
+            <TextField
+                disabled={authorSocial && authorSocial.linkedin ? true : false}
+                value={authorSocial && authorSocial.linkedin}
+                label="Author Linkedin"
+            />
         </Grid>
-        <TagSelector />
+        <TagSelector tags={tags} setTags={setTags} client={client} />
     </Grid>
 )
 

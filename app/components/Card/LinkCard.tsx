@@ -6,6 +6,7 @@ import Avatar from '../Avatar'
 // import MenuItem from '@material-ui/core/MenuItem'
 import {
     Typography,
+    Grid,
     // ListItemIcon
 } from '@material-ui/core'
 import { Theme, makeStyles } from '@material-ui/core/styles'
@@ -17,6 +18,7 @@ import Link from 'next/link'
 // import ShareDialog from './ShareDialog'
 import Image from '../Image'
 import OpenNewIcon from '@material-ui/icons/OpenInNew'
+import TruncateMarkup from 'react-truncate-markup'
 
 export const LinkCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -129,21 +131,17 @@ export const LinkCardStyles = makeStyles((theme: Theme) => ({
     openInBrowserIcon: {
         height: 10,
     },
+    url: {
+        maxWidth: '90%',
+    },
 }))
 
 interface IProps {
     owner: any
     id: string
-    version: number
     linkTitle: {
-        value: string
-        isEditable: boolean
-    } | null
-    author: {
-        name: string | null
-        username: string | null
-        id: string
-        avatar: string | null
+        value: string | null
+        isEditable: boolean | null
     } | null
     linkAttributes: {
         background_image?: {
@@ -153,12 +151,12 @@ interface IProps {
     } | null
     dateCreated: string | null
     linkDescription: {
-        value: string
-        isEditable: boolean
+        value: string | null
+        isEditable: boolean | null
     } | null
     url: {
-        value: string
-        isEditable: boolean
+        value: string | null
+        isEditable: boolean | null
     }
     className?: string
     href: {
@@ -166,12 +164,6 @@ interface IProps {
         href: string
     }
     isLoggedIn?: boolean
-    comments: {
-        totalElements: any
-    } | null
-    voteResult: {
-        sum: number
-    } | null
     addArticleToCollectionAction?: () => void
 }
 
@@ -233,21 +225,34 @@ const LinkCard: React.FC<IProps> = ({
                             className={classes.content}
                         >
                             {linkDescription && (
-                                <Typography
-                                    data-testid={`LinkCard-${id}-linkDescription`}
-                                    variant="body2"
-                                    color="textSecondary"
-                                    component="p"
-                                >
-                                    {linkDescription.value}
-                                </Typography>
+                                <TruncateMarkup lines={2}>
+                                    <Typography
+                                        data-testid={`LinkCard-${id}-linkDescription`}
+                                        variant="body2"
+                                        color="textSecondary"
+                                        component="p"
+                                    >
+                                        {linkDescription.value}
+                                    </Typography>
+                                </TruncateMarkup>
                             )}
-                            <Typography variant="caption">
-                                {url.value}{' '}
+                            <Grid
+                                container={true}
+                                justify="flex-start"
+                                alignItems="center"
+                            >
+                                <TruncateMarkup lines={1}>
+                                    <Typography
+                                        className={classes.url}
+                                        variant="caption"
+                                    >
+                                        {url.value}
+                                    </Typography>
+                                </TruncateMarkup>
                                 <OpenNewIcon
                                     className={classes.openInBrowserIcon}
-                                />{' '}
-                            </Typography>
+                                />
+                            </Grid>
                         </CardContent>
                     </a>
                 </Link>

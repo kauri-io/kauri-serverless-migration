@@ -56,7 +56,9 @@ export const submitExternalLinkEpic: Epic<
                     image,
                     summary,
                     authorName,
+                    authorSocial,
                     url,
+                    tags,
                     ownerId,
                 },
             }) =>
@@ -71,8 +73,10 @@ export const submitExternalLinkEpic: Epic<
                             description,
                             summary,
                             authorName,
+                            authorSocial,
                             attributes: { background_image: image },
                             url,
+                            tags,
                             ownerId,
                         },
                     })
