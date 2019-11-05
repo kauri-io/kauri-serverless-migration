@@ -40,7 +40,7 @@ const RenderEmptyState: React.FunctionComponent<{ type: string }> = ({
     return null
 }
 
-const RenderResources = (isLoggedIn: boolean) =>
+const RenderResources = (isLoggedIn, routeChangeAction, openModalAction) =>
     // isMember: boolean,
     // communityId: string | null,
     // openModalAction?: (payload: { children: any }) => void,
@@ -157,14 +157,11 @@ const RenderResources = (isLoggedIn: boolean) =>
 
 const DisplayResources = ({
     resources,
-    // communityId,
-    // isMember,
-    // openModalAction,
-    // closeModalAction,
-    // removeResourceAction,
     type,
     classes,
     isLoggedIn,
+    openModalAction,
+    routeChangeAction
 }: IProps) => {
     if (
         Array.isArray(resources) &&
@@ -178,7 +175,7 @@ const DisplayResources = ({
             <Grid className={classes.grid} container spacing={3}>
                 {Array.isArray(resources) && resources.length
                     ? resources.map(
-                          RenderResources(isLoggedIn)
+                          RenderResources(isLoggedIn, routeChangeAction, openModalAction)
                           // isMember,
                           // communityId,
                           // openModalAction,
@@ -195,18 +192,16 @@ const DisplayManagedResourcesComponent = ({
     resources,
     classes,
     isLoggedIn,
-}: // communityId,
-// isMember,
-// openModalAction,
-// closeModalAction,
-// removeResourceAction,
+    openModalAction,
+    routeChangeAction
+}: 
 IProps & { review?: boolean }) => {
     return (
         <Container>
             <Grid className={classes.grid} container spacing={3}>
                 {Array.isArray(resources) && resources.length
                     ? resources.map(
-                          RenderResources(isLoggedIn)
+                          RenderResources(isLoggedIn, routeChangeAction, openModalAction)
                           // isMember,
                           // communityId,
                           // openModalAction,

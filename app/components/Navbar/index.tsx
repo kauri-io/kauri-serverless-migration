@@ -15,7 +15,7 @@ import MoreIcon from '@material-ui/icons/MoreVert'
 import Link from 'next/link'
 import { logout } from './Module'
 import { withRouter, Router } from 'next/router'
-import { getProfileURL } from '../../lib/getURLs'
+import { getProfileURL, getBookmarksURL } from '../../lib/getURLs'
 import Avatar from '../../components/Avatar'
 
 const useStyles = makeStyles((theme: Theme) => {
@@ -221,14 +221,22 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                 className={classes.menu}
             >
                 {user && (
-                    <Link
+                    [<Link
                         href={getProfileURL(user).href}
                         as={getProfileURL(user).as}
                     >
                         <a>
                             <MenuItem>My Profile</MenuItem>
                         </a>
-                    </Link>
+                    </Link>,
+                    <Link
+                        href={getBookmarksURL().href}
+                        as={getBookmarksURL().as}
+                    >
+                        <a>
+                            <MenuItem>My Bookmarks</MenuItem>
+                        </a>
+                    </Link>]
                 )}
 
                 <MenuItem className={classes.padded} onClick={logout}>

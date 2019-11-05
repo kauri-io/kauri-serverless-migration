@@ -204,6 +204,7 @@ export const Community = gql`
                     voteResult {
                         sum
                     }
+                    isBookmarked
                 }
                 ... on CollectionDTO {
                     id

@@ -1,86 +1,77 @@
-import { FormGroup, TextField } from '@material-ui/core'
+import { FormGroup, TextField, Link } from '@material-ui/core'
 import React from 'react'
-import Button from '../../../components/Button'
 import { createBookmarkFolderAction } from '../Module'
 
 interface IProps {
     createBookmarkFolderAction: typeof createBookmarkFolderAction
-    updateFolderList: (newFolder: string) => void
 }
 
-interface IState {
-    showCreateFolderForm: boolean
-    newFolder: string
-}
+export const CreateBookmarkFolderComponent = ({
+    createBookmarkFolderAction
+}: IProps) => {
 
-class CreateBookmarkFolderComponent extends React.Component<IProps, IState> {
-    constructor(props) {
-        super(props)
-        this.state = {
-            showCreateFolderForm: false,
-            newFolder: '',
+    const [showForm, setShowForm] = React.useState(false);
+    const [hasError, setHasError] = React.useState(false);
+    const [folder, setFolder] = React.useState('');
+
+    const toggleShowForm = () => {
+        setShowForm(true)
+    }
+
+    const validate = (folder: string) => {
+        let hasError= false;;
+        if(!folder || folder.length === 0 || folder.length > 20) {
+            hasError = true;
         }
-
-        this.toggleEditingCreateFolder = this.toggleEditingCreateFolder.bind(
-            this
-        )
-        this.updateNewFolder = this.updateNewFolder.bind(this)
-        this.createFolder = this.createFolder.bind(this)
+        setHasError(hasError)
+        return hasError;
     }
 
-    toggleEditingCreateFolder() {
-        this.setState({
-            showCreateFolderForm: !this.state.showCreateFolderForm,
-        })
+    const updateFolder = (folder: string) => {
+        validate(folder)
+        setFolder(folder)
     }
 
-    updateNewFolder(value: string) {
-        this.setState({ newFolder: value })
+    const createFolder = () => {
+        if(validate(folder)) {
+            return;
+        }
+        createBookmarkFolderAction({folder})
+
+        setFolder('')
+        setShowForm(false)
     }
 
-    createFolder() {
-        this.props.createBookmarkFolderAction({
-            folder: this.state.newFolder,
-        })
-
-        this.props.updateFolderList(this.state.newFolder)
-        this.setState({
-            showCreateFolderForm: false,
-            newFolder: '',
-        })
-    }
-
-    render() {
-        return (
-            <FormGroup>
-                {!this.state.showCreateFolderForm ? (
-                    <Button
-                        color="primary"
-                        variant="contained"
-                        onClick={() => this.toggleEditingCreateFolder()}
-                    >
-                        New Folder
-                    </Button>
-                ) : (
-                    [
-                        <TextField
-                            margin="dense"
-                            onChange={e => this.updateNewFolder(e.target.value)}
-                            value={this.state.newFolder}
-                            placeholder="Folder name"
-                        />,
-                        <Button
-                            color="primary"
-                            variant="contained"
-                            onClick={() => this.createFolder()}
-                        >
-                            Create
-                        </Button>,
-                    ]
-                )}
-            </FormGroup>
-        )
-    }
+    return (
+        <FormGroup>
+            {!showForm? (
+                <Link
+                    color="primary"
+                    variant="subtitle2"
+                    href="#"
+                    onClick={toggleShowForm}
+                > NEW FOLDER
+                </Link>
+            ) : (
+                [
+                <TextField
+                    error={hasError ? true : false}
+                    margin="dense"
+                    onChange={e => updateFolder(e.target.value)}
+                    value={folder}
+                    placeholder="Folder name"   
+                />,
+                <Link
+                    color="primary"
+                    variant="subtitle2"
+                    href="#"
+                    onClick={createFolder}
+                > CREATE
+                </Link>
+                ]
+            )}
+        </FormGroup>
+    )
 }
 
 export default CreateBookmarkFolderComponent

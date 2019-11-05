@@ -211,6 +211,10 @@ export interface getCommunityAndPendingArticles_getCommunity_homepage_resources_
    * Get vote result for the article
    */
   voteResult: getCommunityAndPendingArticles_getCommunity_homepage_resources_ArticleDTO_voteResult;
+  /**
+   * Check if the article is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export interface getCommunityAndPendingArticles_getCommunity_homepage_resources_CollectionDTO_resourceIdentifier {
@@ -1702,6 +1706,10 @@ export interface getCommunityAndPendingArticles_searchArticles_content {
    */
   comments: getCommunityAndPendingArticles_searchArticles_content_comments;
   resourceIdentifier: getCommunityAndPendingArticles_searchArticles_content_resourceIdentifier | null;
+  /**
+   * Check if the article is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export interface getCommunityAndPendingArticles_searchArticles {

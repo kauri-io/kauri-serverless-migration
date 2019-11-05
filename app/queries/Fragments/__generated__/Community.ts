@@ -211,6 +211,10 @@ export interface Community_homepage_resources_ArticleDTO {
    * Get vote result for the article
    */
   voteResult: Community_homepage_resources_ArticleDTO_voteResult;
+  /**
+   * Check if the article is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export interface Community_homepage_resources_CollectionDTO_resourceIdentifier {

@@ -75,7 +75,8 @@ export const getCommunityAndPendingArticles = gql`
                     type
                     id
                     version
-                }
+                },
+                isBookmarked
             }
         }
     }

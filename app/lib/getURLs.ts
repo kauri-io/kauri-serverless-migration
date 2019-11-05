@@ -62,6 +62,11 @@ export const getProfileURL = ({ username }: IProfileLinkProps) => ({
     href: `/public-profile?username=${username}`,
 })
 
+export const getBookmarksURL = () => ({
+    as: `/bookmarks`,
+    href: `/bookmarks`,
+})
+
 interface ICommunityProps {
     id: string
     name: string | null

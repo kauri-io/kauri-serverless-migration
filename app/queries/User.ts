@@ -135,29 +135,22 @@ export const getBookmarkFolders = gql`
 export const getBookmarks = gql`
     query getBookmarks($page: Int = 0, $size: Int = 12, $folder: String) {
         getBookmarks(page: $page, size: $size, folder: $folder) {
-            currentFolder
-            folders {
-                name
-                total
-            }
-            bookmarks {
-                totalElements
-                totalPages
-                isLast
-                content {
-                    id
-                    type
-                    resource {
-                        ... on ArticleDTO {
-                            ...Article
-                        }
-                        ... on CollectionDTO {
-                            ...Collection
-                        }
-                        ... on ExternalLinkDTO {
-                            url {
-                                value
-                            }
+            totalElements
+            totalPages
+            isLast
+            content {
+                id
+                type
+                resource {
+                    ... on ArticleDTO {
+                        ...Article
+                    }
+                    ... on CollectionDTO {
+                        ...Collection
+                    }
+                    ... on ExternalLinkDTO {
+                        url {
+                            value
                         }
                     }
                 }

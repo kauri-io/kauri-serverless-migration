@@ -33,6 +33,19 @@ import analytics from '../../lib/analytics'
 import { switchMap, mergeMap, tap, catchError } from 'rxjs/operators'
 import { path } from 'ramda'
 
+
+////////////////////////////////////////////////////////////////////////////
+
+export const ROOT_FOLDER = "_root_";
+
+export const labelRootFolder = (folder: string) => {
+    if (folder === ROOT_FOLDER) {
+        // default name for root folder
+        return 'Bookmarks'
+    }
+    return folder
+}
+
 ////////////////////////////////////////////////////////////////////////////
 
 const BOOKMARK_ACTION = 'BOOKMARK'
@@ -140,7 +153,6 @@ export const unbookmarkEpic: Epic<
                         category: 'article_actions',
                     })
                 ),
-                tap(() => apolloClient.resetStore()),
                 mergeMap(() =>
                     of(
                         showNotificationAction({
@@ -150,6 +162,7 @@ export const unbookmarkEpic: Epic<
                         })
                     )
                 ),
+                tap(() => apolloClient.resetStore()),
                 catchError(err => {
                     console.error(err)
                     return of(

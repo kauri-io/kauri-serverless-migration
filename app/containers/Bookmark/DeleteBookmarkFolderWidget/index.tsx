@@ -1,6 +1,7 @@
 import View from './View'
 import { connect } from 'react-redux'
-import { createBookmarkFolderAction } from '../Module'
+import { closeModalAction } from '../../../components/Modal/Module'
+import { deleteBookmarkFolderAction } from '../Module'
 import { withApollo, compose } from 'react-apollo'
 
 export default compose(
@@ -8,7 +9,8 @@ export default compose(
     connect(
         null,
         {
-            createBookmarkFolderAction
+            closeModalAction,
+            deleteBookmarkFolderAction
         }
     )
 )(View)

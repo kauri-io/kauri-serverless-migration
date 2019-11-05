@@ -1,16 +1,17 @@
 import AlertView from '../../../components/Modal/AlertView'
 import { getBookmarkFolders_getBookmarkFolders } from '../../../queries/__generated__/getBookmarkFolders'
-import { Checkbox, FormControlLabel, FormGroup } from '@material-ui/core'
+import { Checkbox, FormControlLabel, FormGroup, makeStyles, Theme, Divider } from '@material-ui/core'
 import React from 'react'
 import { ResourceTypeInput } from '../../../__generated__/globalTypes'
 import CreateBookmarkFolder from '../CreateBookmarkFolderWidget'
 import { closeModalAction } from '../../../components/Modal/Module'
-import { bookmarkAction, unbookmarkAction } from '../Module'
+import { bookmarkAction, unbookmarkAction, labelRootFolder } from '../Module'
 
 interface IProps {
     closeModalAction: typeof closeModalAction
     bookmarkAction: typeof bookmarkAction
     unbookmarkAction: typeof unbookmarkAction
+    labelRootFolder: typeof labelRootFolder
     resourceId: string
     resourceType: ResourceTypeInput
     data: {
@@ -18,117 +19,84 @@ interface IProps {
     }
 }
 
-interface IState {
-    folders: getBookmarkFolders_getBookmarkFolders[]
-}
+const useStyles = makeStyles((theme: Theme) => ({
+    divider: {
+        margin: theme.spacing(2, 0),
+      }
+}));
 
-class BookmarkResourceComponent extends React.Component<IProps, IState> {
-    constructor(props) {
-        super(props)
+export const BookmarkResourceComponent = ({
+    closeModalAction,
+    bookmarkAction,
+    unbookmarkAction,
+    resourceId,
+    resourceType,
+    data
+}: IProps) => {
 
-        this.state = {
-            folders: props.data.getBookmarkFolders
-                .map(item => {
-                    if (item != null) return item
-                })
-                .reduce((obj, item) => {
-                    obj[item.name] = item
-                    return obj
-                }, {}),
-        }
+    const classes = useStyles();
 
-        this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
-        this.updateFolderList = this.updateFolderList.bind(this)
-    }
-
-    handleCheckboxChange(event: any) {
+    const handleCheckboxChange = (event: any) => {
         if (event.target.checked) {
             // bookmark
-            this.props.bookmarkAction({
+            bookmarkAction({
                 resourceId: {
-                    id: this.props.resourceId,
-                    type: this.props.resourceType,
+                    id: resourceId,
+                    type: resourceType,
                 },
                 folder: event.target.value,
             })
-            this.state.folders[event.target.value].total++
         } else {
             // unbookmark
-            this.props.unbookmarkAction({
+            unbookmarkAction({
                 resourceId: {
-                    id: this.props.resourceId,
-                    type: this.props.resourceType,
+                    id: resourceId,
+                    type: resourceType,
                 },
                 folder: event.target.value,
             })
-            this.state.folders[event.target.value].total--
         }
-
-        this.state.folders[event.target.value].isBookmarked =
-            event.target.checked
-        this.setState(this.state)
     }
 
-    updateFolderList(newFolder: string) {
-        this.state.folders[newFolder] = {
-            name: newFolder,
-            total: 0,
-            isBookmarked: false,
-        }
-        this.setState(this.state)
-    }
+    return (
+        <AlertView
+            closeModalAction={closeModalAction}
+            closeButtonText={'CLOSE'}
+            hideCloseButton={true}
+            hideConfirmButton={true}
+            confirmButtonAction={() => {}}
+            content={
+                <FormGroup>
+                    {data.getBookmarkFolders.map(folder => {
+                        if(!folder) return ('');
 
-    labelRootFolder(folder: String) {
-        if (folder == '_root_') {
-            // default name for root folder
-            return 'Bookmark'
-        }
-        return folder
-    }
-
-    render() {
-        return (
-            <AlertView
-                closeModalAction={this.props.closeModalAction}
-                closeButtonText={'CLOSE'}
-                hideConfirmButton={true}
-                confirmButtonAction={() => {}}
-                content={
-                    <FormGroup>
-                        {Object.values(this.state.folders).map(folder => {
-                            return (
-                                <FormControlLabel
-                                    control={
-                                        <Checkbox
-                                            checked={
-                                                folder.isBookmarked
-                                                    ? folder.isBookmarked
-                                                    : false
-                                            }
-                                            onChange={this.handleCheckboxChange}
-                                            value={folder.name}
-                                            color="primary"
-                                        />
-                                    }
-                                    label={
-                                        this.labelRootFolder(folder.name) +
-                                        ' (' +
-                                        folder.total +
-                                        ')'
-                                    }
-                                />
-                            )
-                        })}
-
-                        <CreateBookmarkFolder
-                            updateFolderList={this.updateFolderList}
-                        />
-                    </FormGroup>
-                }
-                title={'Bookmarks'}
-            />
-        )
-    }
+                        return (
+                            <FormControlLabel
+                                control={
+                                    <Checkbox
+                                        checked={
+                                            folder.isBookmarked
+                                                ? folder.isBookmarked
+                                                : false
+                                        }
+                                        onChange={handleCheckboxChange}
+                                        value={folder.name}
+                                        color="primary"
+                                    />
+                                }
+                                label={
+                                    labelRootFolder(folder.name) + ' (' + folder.total + ')'
+                                }
+                            />
+                        )
+                    })}
+                    <Divider className={classes.divider} />
+                    <CreateBookmarkFolder />
+                </FormGroup>
+            }
+            title={'Save'}
+        />
+    )
 }
 
 export default BookmarkResourceComponent

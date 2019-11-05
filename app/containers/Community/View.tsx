@@ -22,13 +22,9 @@ import { removeResourceVariables } from '../../queries/__generated__/removeResou
 import { recordViewMutation } from '../../queries/Utils'
 import ApolloClient from 'apollo-client'
 import HomepageResources from './HomepageResources'
-
-import { routeChangeAction as routeChange } from '../../lib/Epics/RouteChangeEpic'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction as showNotification } from '../../lib/Epics/ShowNotificationEpic'
-import {
-    openModalAction as openModal,
-    closeModalAction,
-} from '../../components/Modal/Module'
+import { openModalAction, closeModalAction } from '../../components/Modal/Module'
 import { sendInvitationVariables } from '../../queries/__generated__/sendInvitation'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
@@ -46,8 +42,8 @@ interface IProps {
         searchArticles?: getCommunityAndPendingArticles_searchArticles
     }
     closeModalAction: typeof closeModalAction
-    openModalAction: typeof openModal
-    routeChangeAction: typeof routeChange
+    openModalAction: typeof openModalAction
+    routeChangeAction: typeof routeChangeAction
     removeResourceAction: (payload: removeResourceVariables) => void
     curateCommunityResourcesAction: typeof curateCommunityResources
     sendCommunityInvitationAction: (
@@ -162,6 +158,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
             isCommunityAdmin,
             isLoggedIn,
         } = this.props
+
         const articles =
             getCommunity.approved &&
             getCommunity.approved.filter(
