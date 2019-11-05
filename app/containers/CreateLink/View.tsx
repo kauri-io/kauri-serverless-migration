@@ -1,4 +1,4 @@
-import { Grid, Tabs, Tab, Paper } from '@material-ui/core'
+import { Grid, Tabs, Tab, Paper, Typography } from '@material-ui/core'
 import { useState } from 'react'
 import Nav from './components/Navbar'
 import LinkInput from './components/LinkInput'
@@ -8,6 +8,7 @@ import Details from './components/Details'
 import CardPreview from './components/Preview'
 import FullPreview from '../../containers/ViewLink/components/Content'
 import Loading from '../../components/Loading'
+import Existing from './components/Existing'
 
 const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
     const [tab, setTab] = useState(0)
@@ -25,8 +26,10 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
         twitter: string
     }>(null)
     const classes = useStyles({})
+    const [existing, setExisting] = useState<any>(null)
 
     const setData = data => {
+        setExisting(data.kauriMetadata)
         setDescription(data.description)
         setTitle(data.title)
         setImage(data.image)
@@ -78,7 +81,7 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
                             setLoading={setLoading}
                         />
                         {loading && <Loading />}
-                        {!loading && hasSomeData && (
+                        {!existing && !loading && hasSomeData && (
                             <CardPreview
                                 classes={classes}
                                 title={title}
@@ -86,9 +89,12 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
                                 image={image}
                             />
                         )}
+                        {existing && <Typography variant='subtitle1' className={classes.error}>This link already exists on Kauri! Check the below card*</Typography>}
                     </Paper>
 
-                    {!loading && hasSomeData && (
+                    {existing && existing.existingLinkId && <Grid className={classes.existing} container={true} justify='center'><Existing id={existing.existingLinkId} /></Grid>}
+
+                    {!existing && !loading && hasSomeData && (
                         <>
                             <Paper className={classes.details}>
                                 <Details

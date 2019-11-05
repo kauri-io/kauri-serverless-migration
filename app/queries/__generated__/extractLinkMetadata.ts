@@ -15,6 +15,7 @@ export interface extractLinkMetadata_extractLinkMetadata {
   image: string | null;
   author: string | null;
   authorSocial: any | null;
+  kauriMetadata: any | null;
 }
 
 export interface extractLinkMetadata {

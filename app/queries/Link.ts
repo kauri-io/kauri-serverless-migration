@@ -11,6 +11,7 @@ export const extractLinkMetadata = gql`
             image
             author
             authorSocial
+            kauriMetadata
         }
     }
 `
