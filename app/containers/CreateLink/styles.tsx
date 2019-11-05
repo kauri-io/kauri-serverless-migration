@@ -18,21 +18,21 @@ export const useStyles = makeStyles((theme: Theme) => {
             alignItems: 'center',
         },
         details: {
-            maxWidth: 800,
+            maxWidth: 870,
             margin: 'auto',
             marginTop: theme.spacing(2),
             marginBottom: theme.spacing(2),
             padding: theme.spacing(2),
         },
         editor: {
-            maxWidth: 800,
+            maxWidth: 870,
             margin: 'auto',
             marginTop: theme.spacing(2),
             padding: theme.spacing(2),
         },
         linkInputContainer: {
             padding: theme.spacing(2),
-            maxWidth: 800,
+            maxWidth: 870,
             margin: 'auto',
         },
         linkInput: {},
@@ -44,11 +44,18 @@ export const useStyles = makeStyles((theme: Theme) => {
         fullPreview: {
             background: theme.palette.common.white,
             margin: 'auto',
-            maxWidth: 800,
+            maxWidth: 870,
             padding: theme.spacing(3),
         },
         previewText: {
             width: '100%',
+        },
+        error: {
+            color: theme.palette.error.main,
+            marginTop: theme.spacing(1),
+        },
+        existing: {
+            marginTop: theme.spacing(2),
         },
     }
 })
