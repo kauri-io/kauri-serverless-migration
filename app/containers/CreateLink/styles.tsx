@@ -52,10 +52,10 @@ export const useStyles = makeStyles((theme: Theme) => {
         },
         error: {
             color: theme.palette.error.main,
-            marginTop: theme.spacing(1)
+            marginTop: theme.spacing(1),
         },
         existing: {
             marginTop: theme.spacing(2),
-        }
+        },
     }
 })

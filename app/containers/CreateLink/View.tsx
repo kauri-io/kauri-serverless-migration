@@ -89,10 +89,26 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
                                 image={image}
                             />
                         )}
-                        {existing && <Typography variant='subtitle1' className={classes.error}>This link already exists on Kauri! Check the below card*</Typography>}
+                        {existing && (
+                            <Typography
+                                variant="subtitle1"
+                                className={classes.error}
+                            >
+                                This link already exists on Kauri! Check the
+                                below card*
+                            </Typography>
+                        )}
                     </Paper>
 
-                    {existing && existing.existingLinkId && <Grid className={classes.existing} container={true} justify='center'><Existing id={existing.existingLinkId} /></Grid>}
+                    {existing && existing.existingLinkId && (
+                        <Grid
+                            className={classes.existing}
+                            container={true}
+                            justify="center"
+                        >
+                            <Existing id={existing.existingLinkId} />
+                        </Grid>
+                    )}
 
                     {!existing && !loading && hasSomeData && (
                         <>

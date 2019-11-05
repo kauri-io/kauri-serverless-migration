@@ -4,7 +4,12 @@ import LinkCard from '../../../components/Card/LinkCard'
 import Loading from '../../../components/Loading'
 import { getLinkUrl } from '../../../lib/getURLs'
 
-const Existing = ({data: { loading, getExternalLink }}) => loading ? <Loading /> : <LinkCard href={getLinkUrl(getExternalLink)} {...getExternalLink} />
+const Existing = ({ data: { loading, getExternalLink } }) =>
+    loading ? (
+        <Loading />
+    ) : (
+        <LinkCard href={getLinkUrl(getExternalLink)} {...getExternalLink} />
+    )
 
 export default compose(
     graphql(getLink, {
@@ -14,5 +19,5 @@ export default compose(
                 id,
             },
         }),
-    }),
+    })
 )(Existing)
