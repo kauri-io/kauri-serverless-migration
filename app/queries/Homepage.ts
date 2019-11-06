@@ -1,10 +1,13 @@
 import gql from 'graphql-tag'
-import { Collection, CommunityOwner, UserOwner } from './Fragments'
+import { Collection, CommunityOwner, UserOwner, Link } from './Fragments'
 
 export const homePageContentQuery = gql`
     fragment ResourceFragment on AbstractResourceDTO {
         ... on CollectionDTO {
             ...Collection
+        }
+        ... on ExternalLinkDTO {
+            ...Link
         }
         ... on ArticleDTO {
             resourceIdentifier {
@@ -189,4 +192,5 @@ export const homePageContentQuery = gql`
     ${Collection}
     ${CommunityOwner}
     ${UserOwner}
+    ${Link}
 `

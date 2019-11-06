@@ -7,7 +7,7 @@ interface IProps {
     closeModalAction: typeof closeModalAction
     deleteBookmarkFolderAction: typeof deleteBookmarkFolderAction
     folder: string
-    updateFolder: (folder: string, index?: number) => void
+    updateFolder: (folder: string) => void
 }
 
 export const DeleteBookmarkFolderWidgetComponent = ({
@@ -16,9 +16,10 @@ export const DeleteBookmarkFolderWidgetComponent = ({
     folder,
     updateFolder,
 }: IProps) => {
+
     const confirm = () => {
         deleteBookmarkFolderAction({ folder })
-        updateFolder(ROOT_FOLDER, 0)
+        updateFolder(ROOT_FOLDER)
         closeModalAction()
     }
 

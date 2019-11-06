@@ -51,6 +51,9 @@ export const ArticleCardStyles = makeStyles((theme: Theme) => ({
             display: 'none !important',
         },
     },
+    bookmark: {
+        cursor: 'pointer',
+    },
     content: {
         textAlign: 'left',
         cursor: 'pointer',
@@ -302,6 +305,7 @@ const ArticleCard: React.FC<IProps> = ({
                                         : routeChangeAction(`/login`)
                                 }
                                 data-testid={`ArticleCard-${id}-bookmark`}
+                                className={classes.bookmark}
                             >
                                 {isBookmarked
                                     ? 'bookmark'

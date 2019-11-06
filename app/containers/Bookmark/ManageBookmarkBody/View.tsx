@@ -17,7 +17,7 @@ interface IProps {
     BookmarkQuery: {
         getBookmarks: getBookmarks_getBookmarks
     }
-    updateFolder: (folder: string, index?: number) => void
+    updateFolder: (folder: string) => void
 }
 
 export const ManageBookmarkBody = ({
@@ -33,7 +33,7 @@ export const ManageBookmarkBody = ({
     }
 
     return (
-        <Box p={2} borderLeft={2} borderColor="grey.500">
+        <Box p={2}>
             <EditBookmarkFolderWidget
                 folder={folder}
                 updateFolder={updateFolder}
@@ -68,6 +68,9 @@ export const ManageBookmarkBody = ({
                                             href={getCollectionURL(
                                                 res.resource
                                             )}
+                                            isLoggedIn={isLoggedIn}
+                                            routeChangeAction={routeChangeAction}
+                                            openModalAction={openModalAction}
                                         />
                                     </Grid>
                                 )

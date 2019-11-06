@@ -22,6 +22,7 @@ interface IProps {
     setAttributes?: (a: IAttributes) => void
     onValidationError?: (e: string) => void
     setTitle?: (title: string) => void
+    placeholder?: string
 }
 
 const Editor = ({
@@ -37,6 +38,7 @@ const Editor = ({
     setAttributes,
     setTitle,
     onValidationError,
+    placeholder,
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
         editorContainer: {
@@ -122,7 +124,7 @@ const Editor = ({
                         value={text}
                         id="editor-text-area"
                         className={classes.editor}
-                        placeholder="Start writing..."
+                        placeholder={placeholder || 'Start writing...'}
                     />
                 )}
                 {tab === 1 && <Renderer markdown={text || ''} />}

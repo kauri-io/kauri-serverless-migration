@@ -17,6 +17,7 @@ type PaginationDataQuery =
     | 'searchCollections'
     | 'getArticleTransfers'
     | 'getBookmarks'
+    | 'searchExternalLinks'
 
 interface IProps {
     [queryName: string]: { [key in PaginationDataQuery]: { isLast: boolean } } &

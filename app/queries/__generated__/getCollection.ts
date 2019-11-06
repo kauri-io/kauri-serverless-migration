@@ -619,6 +619,10 @@ export interface getCollection_getCollection {
    */
   sections: (getCollection_getCollection_sections | null)[] | null;
   resourceIdentifier: getCollection_getCollection_resourceIdentifier | null;
+  /**
+   * Check if the collection is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export interface getCollection {

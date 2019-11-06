@@ -64,6 +64,9 @@ const FeaturedContent: React.FunctionComponent<IProps> = ({
                                 key={key}
                                 {...resource}
                                 href={getCollectionURL(resource)}
+                                isLoggedIn={isLoggedIn}
+                                routeChangeAction={routeChangeAction}
+                                openModalAction={openModalAction}
                             />
                         )
                     }

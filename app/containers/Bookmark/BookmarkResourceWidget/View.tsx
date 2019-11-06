@@ -40,6 +40,7 @@ export const BookmarkResourceComponent = ({
     resourceType,
     data,
 }: IProps) => {
+    
     const classes = useStyles()
 
     const handleCheckboxChange = (event: any) => {

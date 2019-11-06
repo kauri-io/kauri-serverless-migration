@@ -93,6 +93,9 @@ const RenderResources = (isLoggedIn, routeChangeAction, openModalAction) =>
                     href={getCollectionURL(article)}
                     key={String(article.id)}
                     owner={owner}
+                    isLoggedIn={isLoggedIn}
+                    routeChangeAction={routeChangeAction}
+                    openModalAction={openModalAction}
                     // hoverChildren={() => (
                     //     <PrimaryButton
                     //         onClick={() =>

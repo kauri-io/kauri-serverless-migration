@@ -175,6 +175,10 @@ export interface searchAutocompleteCollections_searchAutocomplete_content_resour
    */
   sections: (searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO_sections | null)[] | null;
   resourceIdentifier: searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO_resourceIdentifier | null;
+  /**
+   * Check if the collection is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export type searchAutocompleteCollections_searchAutocomplete_content_resource = searchAutocompleteCollections_searchAutocomplete_content_resource_ArticleDTO | searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO;

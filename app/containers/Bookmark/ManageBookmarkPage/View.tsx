@@ -16,8 +16,11 @@ interface IProps {
 }
 
 const useStyles = makeStyles((_theme: Theme) => ({
+    root: {
+        //backgroundColor: theme.palette.background.paper,
+    },
     tabs: {
-        borderRight: `3px solid green`,
+        textAlign: 'left'
     },
 }))
 
@@ -33,31 +36,28 @@ export const ManageBookmarkPageComponent = ({
         return <Loading />
     }
     const [currentFolder, setCurrentFolder] = React.useState(ROOT_FOLDER)
-    const [currentIndex, setCurrentIndex] = React.useState(0)
 
     const classes = useStyles()
-
-    const handleChange = (folder: string, index: number) => {
+    
+    const handleChange = (folder: string) => {
         setCurrentFolder(folder)
-        setCurrentIndex(index)
     }
 
-    const move = (folder: string, index?: number) => {
+    const move = (folder: string) => {
         setCurrentFolder(folder)
-        if (index) setCurrentIndex(index)
     }
 
     return (
-        <Grid container>
+        <Grid container className={classes.root}>
             <Grid item xs={3}>
                 <Box py={2}>
                     <Tabs
                         orientation="vertical"
-                        value={currentIndex}
+                        value={currentFolder}
                         className={classes.tabs}
                     >
                         {data.getBookmarkFolders &&
-                            data.getBookmarkFolders.map((folder, i) => {
+                            data.getBookmarkFolders.map(folder => {
                                 if (!folder) return ''
                                 return (
                                     <Tab
@@ -67,10 +67,11 @@ export const ManageBookmarkPageComponent = ({
                                             folder.total +
                                             ')'
                                         }
-                                        id={'vertical-tab-' + i}
-                                        aria-controls={'vertical-tabpanel-' + i}
+                                        id={'vertical-tab-' + folder.name}
+                                        aria-controls={'vertical-tabpanel-' + folder.name}
+                                        style={ folder.name == currentFolder ? { borderRight:'3px solid green'} : {}}
                                         onClick={() =>
-                                            handleChange(folder.name, i)
+                                            handleChange(folder.name)
                                         }
                                     />
                                 )
@@ -80,11 +81,13 @@ export const ManageBookmarkPageComponent = ({
                 </Box>
             </Grid>
             <Grid item xs={9}>
-                <ManageBookmarkBody
-                    folder={currentFolder}
-                    isLoggedIn={isLoggedIn}
-                    updateFolder={move}
-                />
+                <Box borderLeft={1} borderColor="grey.500">
+                    <ManageBookmarkBody
+                        folder={currentFolder}
+                        isLoggedIn={isLoggedIn}
+                        updateFolder={move}
+                    />
+                </Box>
             </Grid>
         </Grid>
     )

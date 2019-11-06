@@ -71,6 +71,9 @@ const LatestContent: React.FunctionComponent<IProps> = ({
                                     <CollectionCard
                                         {...resource}
                                         href={getCollectionURL(resource)}
+                                        isLoggedIn={isLoggedIn}
+                                        routeChangeAction={routeChangeAction}
+                                        openModalAction={openModalAction}
                                     />
                                 </Grid>
                             )

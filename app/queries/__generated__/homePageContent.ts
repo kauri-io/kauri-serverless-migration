@@ -28,7 +28,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Categorie
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_owner_ArticleDTO {
@@ -204,6 +204,259 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
    * Check if the collection is already bookmarked by the current user
    */
   isBookmarked: boolean;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_owner_ArticleDTO {
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_owner_PublicUserDTO {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_owner_CommunityDTO {
+  __typename: "CommunityDTO";
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
+  avatar: string | null;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier | null;
+}
+
+export type homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_owner = homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_owner_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_owner_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_owner_CommunityDTO;
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_url {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_linkTitle {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_linkDescription {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_summary {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_authorName {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_comments_content_author {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_comments_content {
+  __typename: "CommentDTO";
+  /**
+   * Comment author (full profile)
+   */
+  author: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_comments_content_author;
+  /**
+   * Date the comment was published
+   */
+  posted: any;
+  /**
+   * Comment
+   */
+  body: string;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Returns the page content.
+   */
+  content: (homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_comments_content | null)[];
+  /**
+   * Number of total pages.
+   */
+  totalPages: number;
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO {
+  __typename: "ExternalLinkDTO";
+  /**
+   * External link ID
+   */
+  id: string;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_resourceIdentifier | null;
+  /**
+   * The date that this external link was created
+   */
+  dateCreated: any;
+  /**
+   * The date that this external link was updated
+   */
+  dateUpdated: any;
+  /**
+   * The external link submitter user id
+   */
+  submitterId: string;
+  /**
+   * load the external link owner (user or community resource type)
+   */
+  owner: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_owner | null;
+  /**
+   * The link url
+   */
+  url: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_url;
+  /**
+   * The link title
+   */
+  linkTitle: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_linkTitle;
+  /**
+   * The description of the link, obtained via metadata
+   */
+  linkDescription: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_linkDescription | null;
+  /**
+   * The user input summary of the link
+   */
+  summary: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_summary | null;
+  /**
+   * Link attributes
+   */
+  linkAttributes: any | null;
+  /**
+   * The link content author
+   */
+  authorName: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_authorName;
+  /**
+   * Get a paginated list of comments for this external link
+   */
+  comments: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_comments;
+  /**
+   * The link content author
+   */
+  authorSocial: any | null;
+  /**
+   * Tags associated with the link
+   */
+  tags: (string | null)[] | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_resourceIdentifier {
@@ -574,7 +827,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
   approved: (homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO_approved | null)[];
 }
 
-export type homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource = homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO;
+export type homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource = homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CommunityDTO;
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content {
   __typename: "ResourceIdentifier";
@@ -645,7 +898,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_TopContri
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_owner_ArticleDTO {
@@ -821,6 +1074,259 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
    * Check if the collection is already bookmarked by the current user
    */
   isBookmarked: boolean;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_owner_ArticleDTO {
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_owner_PublicUserDTO {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_owner_CommunityDTO {
+  __typename: "CommunityDTO";
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
+  avatar: string | null;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier | null;
+}
+
+export type homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_owner = homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_owner_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_owner_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_owner_CommunityDTO;
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_url {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_linkTitle {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_linkDescription {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_summary {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_authorName {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_comments_content_author {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_comments_content {
+  __typename: "CommentDTO";
+  /**
+   * Comment author (full profile)
+   */
+  author: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_comments_content_author;
+  /**
+   * Date the comment was published
+   */
+  posted: any;
+  /**
+   * Comment
+   */
+  body: string;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Returns the page content.
+   */
+  content: (homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_comments_content | null)[];
+  /**
+   * Number of total pages.
+   */
+  totalPages: number;
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO {
+  __typename: "ExternalLinkDTO";
+  /**
+   * External link ID
+   */
+  id: string;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_resourceIdentifier | null;
+  /**
+   * The date that this external link was created
+   */
+  dateCreated: any;
+  /**
+   * The date that this external link was updated
+   */
+  dateUpdated: any;
+  /**
+   * The external link submitter user id
+   */
+  submitterId: string;
+  /**
+   * load the external link owner (user or community resource type)
+   */
+  owner: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_owner | null;
+  /**
+   * The link url
+   */
+  url: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_url;
+  /**
+   * The link title
+   */
+  linkTitle: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_linkTitle;
+  /**
+   * The description of the link, obtained via metadata
+   */
+  linkDescription: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_linkDescription | null;
+  /**
+   * The user input summary of the link
+   */
+  summary: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_summary | null;
+  /**
+   * Link attributes
+   */
+  linkAttributes: any | null;
+  /**
+   * The link content author
+   */
+  authorName: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_authorName;
+  /**
+   * Get a paginated list of comments for this external link
+   */
+  comments: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_comments;
+  /**
+   * The link content author
+   */
+  authorSocial: any | null;
+  /**
+   * Tags associated with the link
+   */
+  tags: (string | null)[] | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_resourceIdentifier {
@@ -1191,7 +1697,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
   approved: (homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO_approved | null)[];
 }
 
-export type homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource = homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO;
+export type homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource = homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CommunityDTO;
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content {
   __typename: "ResourceIdentifier";
@@ -1209,7 +1715,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo {
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_owner_ArticleDTO {
@@ -1385,6 +1891,259 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
    * Check if the collection is already bookmarked by the current user
    */
   isBookmarked: boolean;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_owner_ArticleDTO {
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_owner_PublicUserDTO {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_owner_CommunityDTO {
+  __typename: "CommunityDTO";
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
+  avatar: string | null;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier | null;
+}
+
+export type homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_owner = homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_owner_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_owner_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_owner_CommunityDTO;
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_url {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_linkTitle {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_linkDescription {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_summary {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_authorName {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_comments_content_author {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_comments_content {
+  __typename: "CommentDTO";
+  /**
+   * Comment author (full profile)
+   */
+  author: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_comments_content_author;
+  /**
+   * Date the comment was published
+   */
+  posted: any;
+  /**
+   * Comment
+   */
+  body: string;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Returns the page content.
+   */
+  content: (homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_comments_content | null)[];
+  /**
+   * Number of total pages.
+   */
+  totalPages: number;
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO {
+  __typename: "ExternalLinkDTO";
+  /**
+   * External link ID
+   */
+  id: string;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_resourceIdentifier | null;
+  /**
+   * The date that this external link was created
+   */
+  dateCreated: any;
+  /**
+   * The date that this external link was updated
+   */
+  dateUpdated: any;
+  /**
+   * The external link submitter user id
+   */
+  submitterId: string;
+  /**
+   * load the external link owner (user or community resource type)
+   */
+  owner: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_owner | null;
+  /**
+   * The link url
+   */
+  url: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_url;
+  /**
+   * The link title
+   */
+  linkTitle: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_linkTitle;
+  /**
+   * The description of the link, obtained via metadata
+   */
+  linkDescription: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_linkDescription | null;
+  /**
+   * The user input summary of the link
+   */
+  summary: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_summary | null;
+  /**
+   * Link attributes
+   */
+  linkAttributes: any | null;
+  /**
+   * The link content author
+   */
+  authorName: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_authorName;
+  /**
+   * Get a paginated list of comments for this external link
+   */
+  comments: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_comments;
+  /**
+   * The link content author
+   */
+  authorSocial: any | null;
+  /**
+   * Tags associated with the link
+   */
+  tags: (string | null)[] | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_resourceIdentifier {
@@ -1755,7 +2514,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
   approved: (homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO_approved | null)[];
 }
 
-export type homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content = homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO;
+export type homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content = homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO | homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CommunityDTO;
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent {
   __typename: "LatestContent";
@@ -1798,7 +2557,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Catego
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_owner_ArticleDTO {
@@ -1974,6 +2733,259 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
    * Check if the collection is already bookmarked by the current user
    */
   isBookmarked: boolean;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_owner_ArticleDTO {
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_owner_PublicUserDTO {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_owner_CommunityDTO {
+  __typename: "CommunityDTO";
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
+  avatar: string | null;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier | null;
+}
+
+export type homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_owner = homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_owner_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_owner_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_owner_CommunityDTO;
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_url {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_linkTitle {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_linkDescription {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_summary {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_authorName {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_comments_content_author {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_comments_content {
+  __typename: "CommentDTO";
+  /**
+   * Comment author (full profile)
+   */
+  author: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_comments_content_author;
+  /**
+   * Date the comment was published
+   */
+  posted: any;
+  /**
+   * Comment
+   */
+  body: string;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Returns the page content.
+   */
+  content: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_comments_content | null)[];
+  /**
+   * Number of total pages.
+   */
+  totalPages: number;
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO {
+  __typename: "ExternalLinkDTO";
+  /**
+   * External link ID
+   */
+  id: string;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_resourceIdentifier | null;
+  /**
+   * The date that this external link was created
+   */
+  dateCreated: any;
+  /**
+   * The date that this external link was updated
+   */
+  dateUpdated: any;
+  /**
+   * The external link submitter user id
+   */
+  submitterId: string;
+  /**
+   * load the external link owner (user or community resource type)
+   */
+  owner: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_owner | null;
+  /**
+   * The link url
+   */
+  url: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_url;
+  /**
+   * The link title
+   */
+  linkTitle: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_linkTitle;
+  /**
+   * The description of the link, obtained via metadata
+   */
+  linkDescription: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_linkDescription | null;
+  /**
+   * The user input summary of the link
+   */
+  summary: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_summary | null;
+  /**
+   * Link attributes
+   */
+  linkAttributes: any | null;
+  /**
+   * The link content author
+   */
+  authorName: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_authorName;
+  /**
+   * Get a paginated list of comments for this external link
+   */
+  comments: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_comments;
+  /**
+   * The link content author
+   */
+  authorSocial: any | null;
+  /**
+   * Tags associated with the link
+   */
+  tags: (string | null)[] | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_resourceIdentifier {
@@ -2344,7 +3356,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
   approved: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO_approved | null)[];
 }
 
-export type homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource = homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO;
+export type homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource = homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CommunityDTO;
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content {
   __typename: "ResourceIdentifier";
@@ -2415,7 +3427,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_TopCon
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_owner_ArticleDTO {
@@ -2591,6 +3603,259 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
    * Check if the collection is already bookmarked by the current user
    */
   isBookmarked: boolean;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_owner_ArticleDTO {
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_owner_PublicUserDTO {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_owner_CommunityDTO {
+  __typename: "CommunityDTO";
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
+  avatar: string | null;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier | null;
+}
+
+export type homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_owner = homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_owner_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_owner_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_owner_CommunityDTO;
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_url {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_linkTitle {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_linkDescription {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_summary {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_authorName {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_comments_content_author {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_comments_content {
+  __typename: "CommentDTO";
+  /**
+   * Comment author (full profile)
+   */
+  author: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_comments_content_author;
+  /**
+   * Date the comment was published
+   */
+  posted: any;
+  /**
+   * Comment
+   */
+  body: string;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Returns the page content.
+   */
+  content: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_comments_content | null)[];
+  /**
+   * Number of total pages.
+   */
+  totalPages: number;
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO {
+  __typename: "ExternalLinkDTO";
+  /**
+   * External link ID
+   */
+  id: string;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_resourceIdentifier | null;
+  /**
+   * The date that this external link was created
+   */
+  dateCreated: any;
+  /**
+   * The date that this external link was updated
+   */
+  dateUpdated: any;
+  /**
+   * The external link submitter user id
+   */
+  submitterId: string;
+  /**
+   * load the external link owner (user or community resource type)
+   */
+  owner: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_owner | null;
+  /**
+   * The link url
+   */
+  url: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_url;
+  /**
+   * The link title
+   */
+  linkTitle: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_linkTitle;
+  /**
+   * The description of the link, obtained via metadata
+   */
+  linkDescription: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_linkDescription | null;
+  /**
+   * The user input summary of the link
+   */
+  summary: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_summary | null;
+  /**
+   * Link attributes
+   */
+  linkAttributes: any | null;
+  /**
+   * The link content author
+   */
+  authorName: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_authorName;
+  /**
+   * Get a paginated list of comments for this external link
+   */
+  comments: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_comments;
+  /**
+   * The link content author
+   */
+  authorSocial: any | null;
+  /**
+   * Tags associated with the link
+   */
+  tags: (string | null)[] | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_resourceIdentifier {
@@ -2961,7 +4226,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
   approved: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO_approved | null)[];
 }
 
-export type homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource = homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO;
+export type homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource = homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CommunityDTO;
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content {
   __typename: "ResourceIdentifier";
@@ -2979,7 +4244,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo 
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_owner_ArticleDTO {
@@ -3155,6 +4420,259 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
    * Check if the collection is already bookmarked by the current user
    */
   isBookmarked: boolean;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_owner_ArticleDTO {
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_owner_PublicUserDTO {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_owner_CommunityDTO {
+  __typename: "CommunityDTO";
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
+  avatar: string | null;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier | null;
+}
+
+export type homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_owner = homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_owner_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_owner_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_owner_CommunityDTO;
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_url {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_linkTitle {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_linkDescription {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_summary {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_authorName {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_comments_content_author {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_comments_content {
+  __typename: "CommentDTO";
+  /**
+   * Comment author (full profile)
+   */
+  author: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_comments_content_author;
+  /**
+   * Date the comment was published
+   */
+  posted: any;
+  /**
+   * Comment
+   */
+  body: string;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Returns the page content.
+   */
+  content: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_comments_content | null)[];
+  /**
+   * Number of total pages.
+   */
+  totalPages: number;
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO {
+  __typename: "ExternalLinkDTO";
+  /**
+   * External link ID
+   */
+  id: string;
+  resourceIdentifier: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_resourceIdentifier | null;
+  /**
+   * The date that this external link was created
+   */
+  dateCreated: any;
+  /**
+   * The date that this external link was updated
+   */
+  dateUpdated: any;
+  /**
+   * The external link submitter user id
+   */
+  submitterId: string;
+  /**
+   * load the external link owner (user or community resource type)
+   */
+  owner: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_owner | null;
+  /**
+   * The link url
+   */
+  url: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_url;
+  /**
+   * The link title
+   */
+  linkTitle: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_linkTitle;
+  /**
+   * The description of the link, obtained via metadata
+   */
+  linkDescription: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_linkDescription | null;
+  /**
+   * The user input summary of the link
+   */
+  summary: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_summary | null;
+  /**
+   * Link attributes
+   */
+  linkAttributes: any | null;
+  /**
+   * The link content author
+   */
+  authorName: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_authorName;
+  /**
+   * Get a paginated list of comments for this external link
+   */
+  comments: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_comments;
+  /**
+   * The link content author
+   */
+  authorSocial: any | null;
+  /**
+   * Tags associated with the link
+   */
+  tags: (string | null)[] | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_resourceIdentifier {
@@ -3525,7 +5043,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
   approved: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO_approved | null)[];
 }
 
-export type homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content = homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO;
+export type homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content = homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CommunityDTO;
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent {
   __typename: "LatestContent";

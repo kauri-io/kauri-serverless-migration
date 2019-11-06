@@ -4,7 +4,7 @@ import {
     ROOT_FOLDER,
     labelRootFolder,
 } from '../Module'
-import { Grid, Link, Typography, TextField, Box } from '@material-ui/core'
+import { Grid, Link, Typography, TextField, Box, makeStyles, Theme } from '@material-ui/core'
 import Edit from '@material-ui/icons/Edit'
 import DeleteBookmarkFolderWidget from '../DeleteBookmarkFolderWidget'
 import React from 'react'
@@ -13,8 +13,15 @@ interface IProps {
     openModalAction: typeof openModalAction
     editBookmarkFolderAction: typeof editBookmarkFolderAction
     folder: string
-    updateFolder: (folder: string, index?: number) => void
+    updateFolder: (folder: string) => void
 }
+
+
+const useStyles = makeStyles((_theme: Theme) => ({
+    text: {
+        marginRight: "15px",
+    },
+}))
 
 export const EditBookmarkFolderWidgetComponent = ({
     openModalAction,
@@ -22,6 +29,9 @@ export const EditBookmarkFolderWidgetComponent = ({
     folder,
     updateFolder,
 }: IProps) => {
+    
+    const classes = useStyles()
+    
     const [showForm, setShowForm] = React.useState(false)
     const [hasError, setHasError] = React.useState(false)
     const [newFolder, setNewFolder] = React.useState('')
@@ -87,7 +97,7 @@ export const EditBookmarkFolderWidgetComponent = ({
                         />
                     )}
                 </Grid>
-                <Grid item xs={3} alignItems="baseline">
+                <Grid item xs={3} alignItems="flex-end">
                     {folder !== ROOT_FOLDER && !showForm ? (
                         <Link
                             href="#"
@@ -103,7 +113,7 @@ export const EditBookmarkFolderWidgetComponent = ({
                                 })
                             }
                         >
-                            <Typography variant="subtitle2" align="right">
+                            <Typography variant="subtitle2" align="right" className={classes.text}>
                                 DELETE FOLDER
                             </Typography>
                         </Link>
@@ -113,7 +123,7 @@ export const EditBookmarkFolderWidgetComponent = ({
 
                     {folder !== ROOT_FOLDER && showForm ? (
                         <Link href="#" color="primary" onClick={update}>
-                            <Typography variant="subtitle2" align="right">
+                            <Typography variant="subtitle2" align="right" className={classes.text}>
                                 SAVE
                             </Typography>
                         </Link>

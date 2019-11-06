@@ -10,11 +10,16 @@ import {
     CardActions,
     Icon,
     IconButton,
+    Tooltip,
 } from '@material-ui/core'
 import TruncateMarkup from 'react-truncate-markup'
 import ShareDialog from './ShareDialog'
 import Avatar from '../Avatar'
 import Image from '../Image'
+import BookmarkResource from '../../containers/Bookmark/BookmarkResourceWidget'
+import { ResourceTypeInput } from '../../__generated__/globalTypes'
+import { openModalAction } from '../Modal/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 export const CollectionCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -75,6 +80,9 @@ export const CollectionCardStyles = makeStyles((theme: Theme) => ({
         textAlign: 'left',
         [theme.breakpoints.only('xs')]: { maxWidth: `calc(100% - 100px)` },
     },
+    bookmark: {
+        cursor: 'pointer',
+    },
     cardActions: {
         display: 'flex',
         marginTop: 'auto',
@@ -119,6 +127,10 @@ interface IProps {
         href: string
     }
     sections: (any | null)[] | null
+    isLoggedIn?: boolean
+    isBookmarked: boolean
+    openModalAction: typeof openModalAction
+    routeChangeAction: typeof routeChangeAction
 }
 
 const CollectionCard: React.FC<IProps> = ({
@@ -131,6 +143,10 @@ const CollectionCard: React.FC<IProps> = ({
     href,
     id,
     sections,
+    isBookmarked,
+    isLoggedIn = false,
+    openModalAction,
+    routeChangeAction,
 }) => {
     const classes = CollectionCardStyles({})
 
@@ -261,6 +277,32 @@ const CollectionCard: React.FC<IProps> = ({
                     </div>
 
                     <div className={classes.statistics}>
+                        <Tooltip
+                            title={isBookmarked ? 'Unbookmark' : 'Bookmark'}
+                        >
+                            <Icon
+                                onClick={() =>
+                                    isLoggedIn
+                                        ? openModalAction({
+                                              children: (
+                                                  <BookmarkResource
+                                                      resourceId={id}
+                                                      resourceType={
+                                                          ResourceTypeInput.COLLECTION
+                                                      }
+                                                  />
+                                              ),
+                                          })
+                                        : routeChangeAction(`/login`)
+                                }
+                                data-testid={`ArticleCard-${id}-bookmark`}
+                                className={classes.bookmark}
+                            >
+                                {isBookmarked
+                                    ? 'bookmark'
+                                    : 'bookmark_border_icon'}
+                            </Icon>
+                        </Tooltip>
                         <Icon data-testid={`CollectionCard-${id}-articleIcon`}>
                             insert_drive_file
                         </Icon>

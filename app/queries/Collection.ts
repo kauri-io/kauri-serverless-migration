@@ -31,6 +31,7 @@ export const globalCollectionDetails = gql`
                 type
                 id
             }
+            isBookmarked
         }
     }
 
@@ -140,6 +141,7 @@ export const getLatestCollections = gql`
                             type
                             id
                         }
+                        isBookmarked
                     }
                 }
             }

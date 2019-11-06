@@ -64,6 +64,7 @@ import {
     deleteBookmarkFolderEpic,
     editBookmarkFolderEpic,
 } from '../containers/Bookmark/Module'
+import { submitExternalLinkEpic } from '../containers/CreateLink/Module'
 
 export const rootReducer = {
     app,
@@ -117,6 +118,7 @@ const epics = [
     createBookmarkFolderEpic,
     deleteBookmarkFolderEpic,
     editBookmarkFolderEpic,
+    submitExternalLinkEpic,
 ]
 
 export const rootEpic = combineEpics(...epics)

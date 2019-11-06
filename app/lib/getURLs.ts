@@ -81,3 +81,8 @@ export const getUpdateCommunityURL = ({ id }: Pick<ICommunityProps, 'id'>) => ({
     as: `/community/${String(id)}/update-community`,
     href: `/update-community?community_id=${String(id)}`,
 })
+
+export const getLinkUrl = ({ id, linkTitle }) => ({
+    as: `/${slugify(linkTitle.value, { lower: true })}/${id}/l`,
+    href: `/view-link?id=${id}`,
+})

@@ -132,6 +132,20 @@ export interface CommunityResourceFilterInput {
   statusEquals?: CommunityResourceStatusInput | null;
 }
 
+export interface ExternalLinkFilterInput {
+  containsTag?: string | null;
+  dateCreatedGreaterThan?: any | null;
+  dateCreatedLessThan?: any | null;
+  dateUpdatedGreaterThan?: any | null;
+  dateUpdatedLessThan?: any | null;
+  descriptionContains?: string | null;
+  idEquals?: string | null;
+  ownerIdEquals?: string | null;
+  submitterIdEquals?: string | null;
+  summaryContains?: string | null;
+  titleContains?: string | null;
+}
+
 export interface InvitationInput {
   email: string;
   role: CommunityPermissionInput;
