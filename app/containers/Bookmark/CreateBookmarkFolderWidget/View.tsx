@@ -7,24 +7,23 @@ interface IProps {
 }
 
 export const CreateBookmarkFolderComponent = ({
-    createBookmarkFolderAction
+    createBookmarkFolderAction,
 }: IProps) => {
-
-    const [showForm, setShowForm] = React.useState(false);
-    const [hasError, setHasError] = React.useState(false);
-    const [folder, setFolder] = React.useState('');
+    const [showForm, setShowForm] = React.useState(false)
+    const [hasError, setHasError] = React.useState(false)
+    const [folder, setFolder] = React.useState('')
 
     const toggleShowForm = () => {
         setShowForm(true)
     }
 
     const validate = (folder: string) => {
-        let hasError= false;;
-        if(!folder || folder.length === 0 || folder.length > 20) {
-            hasError = true;
+        let hasError = false
+        if (!folder || folder.length === 0 || folder.length > 20) {
+            hasError = true
         }
         setHasError(hasError)
-        return hasError;
+        return hasError
     }
 
     const updateFolder = (folder: string) => {
@@ -33,10 +32,10 @@ export const CreateBookmarkFolderComponent = ({
     }
 
     const createFolder = () => {
-        if(validate(folder)) {
-            return;
+        if (validate(folder)) {
+            return
         }
-        createBookmarkFolderAction({folder})
+        createBookmarkFolderAction({ folder })
 
         setFolder('')
         setShowForm(false)
@@ -44,30 +43,34 @@ export const CreateBookmarkFolderComponent = ({
 
     return (
         <FormGroup>
-            {!showForm? (
+            {!showForm ? (
                 <Link
                     color="primary"
                     variant="subtitle2"
                     href="#"
                     onClick={toggleShowForm}
-                > NEW FOLDER
+                >
+                    {' '}
+                    NEW FOLDER
                 </Link>
             ) : (
                 [
-                <TextField
-                    error={hasError ? true : false}
-                    margin="dense"
-                    onChange={e => updateFolder(e.target.value)}
-                    value={folder}
-                    placeholder="Folder name"   
-                />,
-                <Link
-                    color="primary"
-                    variant="subtitle2"
-                    href="#"
-                    onClick={createFolder}
-                > CREATE
-                </Link>
+                    <TextField
+                        error={hasError ? true : false}
+                        margin="dense"
+                        onChange={e => updateFolder(e.target.value)}
+                        value={folder}
+                        placeholder="Folder name"
+                    />,
+                    <Link
+                        color="primary"
+                        variant="subtitle2"
+                        href="#"
+                        onClick={createFolder}
+                    >
+                        {' '}
+                        CREATE
+                    </Link>,
                 ]
             )}
         </FormGroup>

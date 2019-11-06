@@ -16,7 +16,7 @@ export default compose(
             closeModalAction,
             bookmarkAction,
             unbookmarkAction,
-            labelRootFolder
+            labelRootFolder,
         }
     ),
     graphql(getBookmarkFolders, {

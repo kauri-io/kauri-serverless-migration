@@ -8,9 +8,7 @@ import { withTransaction } from '@elastic/apm-rum-react'
 
 const BookmarksPage = withTransaction('bookmarks', 'page')(props => (
     <App maxWidthConstrained={true}>
-        <ManageBookmarkPage
-            router={props.router}
-        />
+        <ManageBookmarkPage router={props.router} />
     </App>
 ))
 

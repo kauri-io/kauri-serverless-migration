@@ -11,7 +11,7 @@ export default compose(
         {
             openModalAction,
             editBookmarkFolderAction,
-            labelRootFolder
+            labelRootFolder,
         }
     )
 )(View)

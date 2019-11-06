@@ -1,7 +1,7 @@
 import React from 'react'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import { openModalAction } from '../../../components/Modal/Module'
-import {  Grid, Box } from '@material-ui/core'
+import { Grid, Box } from '@material-ui/core'
 import { getBookmarks_getBookmarks } from '../../../queries/__generated__/getBookmarks'
 import CollectionCard from '../../../components/Card/CollectionCard'
 import { getCollectionURL, getArticleURL } from '../../../lib/getURLs'
@@ -26,9 +26,8 @@ export const ManageBookmarkBody = ({
     openModalAction,
     BookmarkQuery,
     folder,
-    updateFolder
+    updateFolder,
 }: IProps) => {
-
     if (!BookmarkQuery.getBookmarks || !BookmarkQuery.getBookmarks.content) {
         return <Loading />
     }
@@ -41,42 +40,48 @@ export const ManageBookmarkBody = ({
             />
 
             <Grid container={true} spacing={2}>
-                {BookmarkQuery.getBookmarks.content && BookmarkQuery.getBookmarks.totalElements > 0 ? BookmarkQuery.getBookmarks.content.map((res: any, key) => {
-                    switch (res.resource.__typename) {
-                        case 'ArticleDTO': {
-                            return (
-                                <Grid key={key} item={true} xs={12}>
-                                    <ArticleCard
-                                        {...res.resource}
-                                        href={getArticleURL(res.resource)}
-                                        isLoggedIn={isLoggedIn}
-                                        routeChangeAction={routeChangeAction}
-                                        openModalAction={openModalAction}
-                                    />
-                                </Grid>
-                            )
-                        }
-                        case 'CollectionDTO': {
-                            return (
-                                <Grid key={key} item={true} sm={12}>
-                                    {' '}
-                                    <CollectionCard
-                                        {...res.resource}
-                                        href={getCollectionURL(res.resource)}
-                                    />
-                                </Grid>
-                            )
-                        }
+                {BookmarkQuery.getBookmarks.content &&
+                BookmarkQuery.getBookmarks.totalElements > 0 ? (
+                    BookmarkQuery.getBookmarks.content.map((res: any, key) => {
+                        switch (res.resource.__typename) {
+                            case 'ArticleDTO': {
+                                return (
+                                    <Grid key={key} item={true} xs={12}>
+                                        <ArticleCard
+                                            {...res.resource}
+                                            href={getArticleURL(res.resource)}
+                                            isLoggedIn={isLoggedIn}
+                                            routeChangeAction={
+                                                routeChangeAction
+                                            }
+                                            openModalAction={openModalAction}
+                                        />
+                                    </Grid>
+                                )
+                            }
+                            case 'CollectionDTO': {
+                                return (
+                                    <Grid key={key} item={true} sm={12}>
+                                        {' '}
+                                        <CollectionCard
+                                            {...res.resource}
+                                            href={getCollectionURL(
+                                                res.resource
+                                            )}
+                                        />
+                                    </Grid>
+                                )
+                            }
 
-                        default: {
-                            return null
+                            default: {
+                                return null
+                            }
                         }
-                    }
-                }) 
-                : 
-                (<div></div>)
-                }
-            </Grid>  
+                    })
+                ) : (
+                    <div></div>
+                )}
+            </Grid>
         </Box>
     )
 }

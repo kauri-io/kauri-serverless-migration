@@ -14,13 +14,12 @@ export const DeleteBookmarkFolderWidgetComponent = ({
     closeModalAction,
     deleteBookmarkFolderAction,
     folder,
-    updateFolder
+    updateFolder,
 }: IProps) => {
-
     const confirm = () => {
-        deleteBookmarkFolderAction({ folder });
+        deleteBookmarkFolderAction({ folder })
         updateFolder(ROOT_FOLDER, 0)
-        closeModalAction();
+        closeModalAction()
     }
 
     return (

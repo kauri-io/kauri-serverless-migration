@@ -8,7 +8,7 @@ export default compose(
     connect(
         null,
         {
-            createBookmarkFolderAction
+            createBookmarkFolderAction,
         }
     )
 )(View)

@@ -161,7 +161,7 @@ const DisplayResources = ({
     classes,
     isLoggedIn,
     openModalAction,
-    routeChangeAction
+    routeChangeAction,
 }: IProps) => {
     if (
         Array.isArray(resources) &&
@@ -175,7 +175,11 @@ const DisplayResources = ({
             <Grid className={classes.grid} container spacing={3}>
                 {Array.isArray(resources) && resources.length
                     ? resources.map(
-                          RenderResources(isLoggedIn, routeChangeAction, openModalAction)
+                          RenderResources(
+                              isLoggedIn,
+                              routeChangeAction,
+                              openModalAction
+                          )
                           // isMember,
                           // communityId,
                           // openModalAction,
@@ -193,15 +197,18 @@ const DisplayManagedResourcesComponent = ({
     classes,
     isLoggedIn,
     openModalAction,
-    routeChangeAction
-}: 
-IProps & { review?: boolean }) => {
+    routeChangeAction,
+}: IProps & { review?: boolean }) => {
     return (
         <Container>
             <Grid className={classes.grid} container spacing={3}>
                 {Array.isArray(resources) && resources.length
                     ? resources.map(
-                          RenderResources(isLoggedIn, routeChangeAction, openModalAction)
+                          RenderResources(
+                              isLoggedIn,
+                              routeChangeAction,
+                              openModalAction
+                          )
                           // isMember,
                           // communityId,
                           // openModalAction,

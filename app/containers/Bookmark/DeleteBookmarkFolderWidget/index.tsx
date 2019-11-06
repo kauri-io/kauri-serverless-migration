@@ -10,7 +10,7 @@ export default compose(
         null,
         {
             closeModalAction,
-            deleteBookmarkFolderAction
+            deleteBookmarkFolderAction,
         }
     )
 )(View)

@@ -1,6 +1,13 @@
 import AlertView from '../../../components/Modal/AlertView'
 import { getBookmarkFolders_getBookmarkFolders } from '../../../queries/__generated__/getBookmarkFolders'
-import { Checkbox, FormControlLabel, FormGroup, makeStyles, Theme, Divider } from '@material-ui/core'
+import {
+    Checkbox,
+    FormControlLabel,
+    FormGroup,
+    makeStyles,
+    Theme,
+    Divider,
+} from '@material-ui/core'
 import React from 'react'
 import { ResourceTypeInput } from '../../../__generated__/globalTypes'
 import CreateBookmarkFolder from '../CreateBookmarkFolderWidget'
@@ -22,8 +29,8 @@ interface IProps {
 const useStyles = makeStyles((theme: Theme) => ({
     divider: {
         margin: theme.spacing(2, 0),
-      }
-}));
+    },
+}))
 
 export const BookmarkResourceComponent = ({
     closeModalAction,
@@ -31,10 +38,9 @@ export const BookmarkResourceComponent = ({
     unbookmarkAction,
     resourceId,
     resourceType,
-    data
+    data,
 }: IProps) => {
-
-    const classes = useStyles();
+    const classes = useStyles()
 
     const handleCheckboxChange = (event: any) => {
         if (event.target.checked) {
@@ -68,7 +74,7 @@ export const BookmarkResourceComponent = ({
             content={
                 <FormGroup>
                     {data.getBookmarkFolders.map(folder => {
-                        if(!folder) return ('');
+                        if (!folder) return ''
 
                         return (
                             <FormControlLabel
@@ -85,7 +91,10 @@ export const BookmarkResourceComponent = ({
                                     />
                                 }
                                 label={
-                                    labelRootFolder(folder.name) + ' (' + folder.total + ')'
+                                    labelRootFolder(folder.name) +
+                                    ' (' +
+                                    folder.total +
+                                    ')'
                                 }
                             />
                         )

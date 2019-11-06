@@ -24,7 +24,10 @@ import ApolloClient from 'apollo-client'
 import HomepageResources from './HomepageResources'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction as showNotification } from '../../lib/Epics/ShowNotificationEpic'
-import { openModalAction, closeModalAction } from '../../components/Modal/Module'
+import {
+    openModalAction,
+    closeModalAction,
+} from '../../components/Modal/Module'
 import { sendInvitationVariables } from '../../queries/__generated__/sendInvitation'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'

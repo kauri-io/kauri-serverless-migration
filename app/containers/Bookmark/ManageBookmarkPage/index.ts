@@ -8,11 +8,12 @@ import { openModalAction } from '../../../components/Modal/Module'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import { labelRootFolder, ROOT_FOLDER } from '../Module'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
         hostName: state.app && state.app.hostName,
-        currentUser: state.app && state.app.userId && state.app.userId.substring(2),
-        isLoggedIn: !!(state.app && state.app.user && state.app.user.id)
+        currentUser:
+            state.app && state.app.userId && state.app.userId.substring(2),
+        isLoggedIn: !!(state.app && state.app.user && state.app.user.id),
     }
 }
 
@@ -23,18 +24,17 @@ export default compose(
         {
             openModalAction,
             routeChangeAction,
-            labelRootFolder
+            labelRootFolder,
         }
     ),
     graphql(getBookmarkFolders, {
         name: 'data',
         options: () => ({
-            variables: { 
-                folder: ROOT_FOLDER
+            variables: {
+                folder: ROOT_FOLDER,
             },
         }),
     }),
     withLoading(),
     withApolloError()
 )(View)
-

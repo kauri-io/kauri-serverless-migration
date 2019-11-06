@@ -18,23 +18,18 @@ export default compose(
         {
             openModalAction,
             routeChangeAction,
-            labelRootFolder
+            labelRootFolder,
         }
     ),
     graphql(getBookmarks, {
         name: QUERY_NAME,
-        options: ({
-            folder,
-        }: {
-            folder: string
-        }) => ({
+        options: ({ folder }: { folder: string }) => ({
             variables: {
                 folder,
-                size: 5
+                size: 5,
             },
         }),
     }),
     withLoading(),
     withApolloError()
 )(withPagination(View, 'getBookmarks', QUERY_NAME))
-

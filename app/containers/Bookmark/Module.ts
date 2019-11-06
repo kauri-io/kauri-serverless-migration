@@ -33,10 +33,9 @@ import analytics from '../../lib/analytics'
 import { switchMap, mergeMap, tap, catchError } from 'rxjs/operators'
 import { path } from 'ramda'
 
-
 ////////////////////////////////////////////////////////////////////////////
 
-export const ROOT_FOLDER = "_root_";
+export const ROOT_FOLDER = '_root_'
 
 export const labelRootFolder = (folder: string) => {
     if (folder === ROOT_FOLDER) {
