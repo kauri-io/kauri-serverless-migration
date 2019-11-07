@@ -18,13 +18,36 @@ interface IProps {
 const useStyles = makeStyles((_theme: Theme) => ({
     root: {
         //backgroundColor: theme.palette.background.paper,
+        height: '100%',
+        flex: 1
+        
     },
-    tabs: {},
+    tabContainer: {
+        flex: 1,
+        alignItems: "flex-start",
+        borderRight: '1px solid #cbcbcb'
+    },
+    tabs: {
+        '& div': {
+            alignItems: 'flex-end'
+        }
+    },
     tab: {
-        label: {
-            textAlign: 'left',
-        },
+        width: 250,
+        '& > span': {
+            alignItems: 'flex-start',
+            textTransform: 'capitalize',
+            fontWeight: 600
+        }
     },
+    createContainer: {
+        width: 250,
+        alignItems: "flex-start",
+        padding: '6px 12px',
+        '& > div': {
+            alignItems: 'flex-start'
+        }
+    }
 }))
 
 export const ManageBookmarkPageComponent = ({
@@ -52,7 +75,7 @@ export const ManageBookmarkPageComponent = ({
 
     return (
         <Grid container className={classes.root}>
-            <Grid item xs={3} alignItems="flex-start">
+            <Grid item xs={3} className={classes.tabContainer}>
                 <Box py={2}>
                     <Tabs
                         orientation="vertical"
@@ -89,12 +112,14 @@ export const ManageBookmarkPageComponent = ({
                                     />
                                 )
                             })}
-                        <CreateBookmarkFolder />
+                            <Box className={classes.createContainer}>
+                                <CreateBookmarkFolder/>
+                            </Box>
                     </Tabs>
                 </Box>
             </Grid>
             <Grid item xs={9}>
-                <Box borderLeft={1} borderColor="grey.500">
+                <Box>
                     <ManageBookmarkBody
                         folder={currentFolder}
                         isLoggedIn={isLoggedIn}
