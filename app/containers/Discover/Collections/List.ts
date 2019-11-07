@@ -18,10 +18,10 @@ interface IState {
 }
 
 const mapStateToProps = (state: IState) => {
-    return { 
+    return {
         hostName: state.app && state.app.hostName,
-        isLoggedIn: !!(state.app && state.app.user && state.app.user.id)
-     }
+        isLoggedIn: !!(state.app && state.app.user && state.app.user.id),
+    }
 }
 
 const QUERY_NAME = 'CollectionQuery'

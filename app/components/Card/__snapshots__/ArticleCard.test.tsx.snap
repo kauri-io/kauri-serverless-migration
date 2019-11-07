@@ -499,14 +499,14 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                   className="makeStyles-cardActualContent-3"
                 >
                   <div
-                    className="makeStyles-header-6"
+                    className="makeStyles-header-7"
                   >
                     <Link
                       as="h6"
                       href="https://kauri.io"
                     >
                       <a
-                        className="makeStyles-title-10"
+                        className="makeStyles-title-11"
                         data-testid="ArticleCard-0x12...-title"
                         href="h6"
                         onClick={[Function]}
@@ -527,7 +527,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                     >
                       <ForwardRef
                         borderRadius="4px"
-                        className="makeStyles-mobileMedia-7"
+                        className="makeStyles-mobileMedia-8"
                         data-testid="ArticleCard-0x12...-image"
                         height={76}
                         image="https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg"
@@ -542,7 +542,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                         >
                           <Image__Img
                             borderRadius="4px"
-                            className="makeStyles-mobileMedia-7"
+                            className="makeStyles-mobileMedia-8"
                             data-testid="ArticleCard-0x12...-image"
                             height={76}
                             image="https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg"
@@ -553,7 +553,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                           >
                             <StyledComponent
                               borderRadius="4px"
-                              className="makeStyles-mobileMedia-7"
+                              className="makeStyles-mobileMedia-8"
                               data-testid="ArticleCard-0x12...-image"
                               forwardedComponent={
                                 Object {
@@ -613,7 +613,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                               width={76}
                             >
                               <div
-                                className="Image__Img-sc-1jpuda7-0 ifAOXd makeStyles-mobileMedia-7"
+                                className="Image__Img-sc-1jpuda7-0 ifAOXd makeStyles-mobileMedia-8"
                                 data-testid="ArticleCard-0x12...-image"
                                 height={76}
                                 onClick={[Function]}
@@ -636,11 +636,11 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                       onMouseEnter={[Function]}
                     >
                       <WithStyles(ForwardRef(CardContent))
-                        className="makeStyles-content-5"
+                        className="makeStyles-content-6"
                         data-testid="ArticleCard-0x12...-description"
                       >
                         <ForwardRef(CardContent)
-                          className="makeStyles-content-5"
+                          className="makeStyles-content-6"
                           classes={
                             Object {
                               "root": "MuiCardContent-root",
@@ -649,7 +649,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                           data-testid="ArticleCard-0x12...-description"
                         >
                           <div
-                            className="MuiCardContent-root makeStyles-content-5"
+                            className="MuiCardContent-root makeStyles-content-6"
                             data-testid="ArticleCard-0x12...-description"
                           >
                             <TruncateMarkup
@@ -665,10 +665,10 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                     </a>
                   </Link>
                   <WithStyles(ForwardRef(CardActions))
-                    className="makeStyles-cardActions-11"
+                    className="makeStyles-cardActions-12"
                   >
                     <ForwardRef(CardActions)
-                      className="makeStyles-cardActions-11"
+                      className="makeStyles-cardActions-12"
                       classes={
                         Object {
                           "root": "MuiCardActions-root",
@@ -677,10 +677,10 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                       }
                     >
                       <div
-                        className="MuiCardActions-root makeStyles-cardActions-11 MuiCardActions-spacing"
+                        className="MuiCardActions-root makeStyles-cardActions-12 MuiCardActions-spacing"
                       >
                         <div
-                          className="makeStyles-user-12"
+                          className="makeStyles-user-13"
                         >
                           <AvatarComp
                             aria-label="test-username"
@@ -701,11 +701,11 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                 onMouseEnter={[Function]}
                               >
                                 <div
-                                  className="makeStyles-container-76"
+                                  className="makeStyles-container-77"
                                 >
                                   <ForwardRef
                                     borderRadius="2px"
-                                    className="makeStyles-avatar-77"
+                                    className="makeStyles-avatar-78"
                                     height={24}
                                     image="https://dev.kauri.io/static/images/DefaultArticle.png"
                                     width={24}
@@ -717,7 +717,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                     >
                                       <Image__Img
                                         borderRadius="2px"
-                                        className="makeStyles-avatar-77"
+                                        className="makeStyles-avatar-78"
                                         height={24}
                                         image="https://dev.kauri.io/static/images/DefaultArticle.png"
                                         inView={false}
@@ -725,7 +725,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                       >
                                         <StyledComponent
                                           borderRadius="2px"
-                                          className="makeStyles-avatar-77"
+                                          className="makeStyles-avatar-78"
                                           forwardedComponent={
                                             Object {
                                               "$$typeof": Symbol(react.forward_ref),
@@ -782,7 +782,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                           width={24}
                                         >
                                           <div
-                                            className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-77"
+                                            className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-78"
                                             height={24}
                                             width={24}
                                           />
@@ -791,11 +791,11 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                     </InView>
                                   </ForwardRef>
                                   <WithStyles(ForwardRef(Typography))
-                                    className="makeStyles-username-78"
+                                    className="makeStyles-username-79"
                                     variant="subtitle2"
                                   >
                                     <ForwardRef(Typography)
-                                      className="makeStyles-username-78"
+                                      className="makeStyles-username-79"
                                       classes={
                                         Object {
                                           "alignCenter": "MuiTypography-alignCenter",
@@ -833,7 +833,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                       variant="subtitle2"
                                     >
                                       <h6
-                                        className="MuiTypography-root makeStyles-username-78 MuiTypography-subtitle2"
+                                        className="MuiTypography-root makeStyles-username-79 MuiTypography-subtitle2"
                                       >
                                         test name
                                       </h6>
@@ -895,8 +895,102 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                           </WithStyles(ForwardRef(Typography))>
                         </div>
                         <div
-                          className="makeStyles-statistics-13"
+                          className="makeStyles-statistics-14"
                         >
+                          <WithStyles(ForwardRef(Tooltip))
+                            title="Bookmark"
+                          >
+                            <ForwardRef(Tooltip)
+                              classes={
+                                Object {
+                                  "popper": "MuiTooltip-popper",
+                                  "popperInteractive": "MuiTooltip-popperInteractive",
+                                  "tooltip": "MuiTooltip-tooltip",
+                                  "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                  "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                  "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                  "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                  "touch": "MuiTooltip-touch",
+                                }
+                              }
+                              title="Bookmark"
+                            >
+                              <WithStyles(ForwardRef(Icon))
+                                aria-describedby={null}
+                                className="makeStyles-bookmark-5"
+                                data-testid="ArticleCard-0x12...-bookmark"
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseLeave={[Function]}
+                                onMouseOver={[Function]}
+                                onTouchEnd={[Function]}
+                                onTouchStart={[Function]}
+                                title="Bookmark"
+                              >
+                                <ForwardRef(Icon)
+                                  aria-describedby={null}
+                                  className="makeStyles-bookmark-5"
+                                  classes={
+                                    Object {
+                                      "colorAction": "MuiIcon-colorAction",
+                                      "colorDisabled": "MuiIcon-colorDisabled",
+                                      "colorError": "MuiIcon-colorError",
+                                      "colorPrimary": "MuiIcon-colorPrimary",
+                                      "colorSecondary": "MuiIcon-colorSecondary",
+                                      "fontSizeInherit": "MuiIcon-fontSizeInherit",
+                                      "fontSizeLarge": "MuiIcon-fontSizeLarge",
+                                      "fontSizeSmall": "MuiIcon-fontSizeSmall",
+                                      "root": "MuiIcon-root",
+                                    }
+                                  }
+                                  data-testid="ArticleCard-0x12...-bookmark"
+                                  onBlur={[Function]}
+                                  onClick={[Function]}
+                                  onFocus={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseOver={[Function]}
+                                  onTouchEnd={[Function]}
+                                  onTouchStart={[Function]}
+                                  title="Bookmark"
+                                >
+                                  <span
+                                    aria-describedby={null}
+                                    aria-hidden={true}
+                                    className="material-icons MuiIcon-root makeStyles-bookmark-5"
+                                    data-testid="ArticleCard-0x12...-bookmark"
+                                    onBlur={[Function]}
+                                    onClick={[Function]}
+                                    onFocus={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseOver={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchStart={[Function]}
+                                    title="Bookmark"
+                                  >
+                                    bookmark_border_icon
+                                  </span>
+                                </ForwardRef(Icon)>
+                              </WithStyles(ForwardRef(Icon))>
+                              <ForwardRef(Popper)
+                                anchorEl={
+                                  <span
+                                    aria-hidden="true"
+                                    class="material-icons MuiIcon-root makeStyles-bookmark-5"
+                                    data-testid="ArticleCard-0x12...-bookmark"
+                                    title="Bookmark"
+                                  >
+                                    bookmark_border_icon
+                                  </span>
+                                }
+                                className="MuiTooltip-popper"
+                                id={null}
+                                open={false}
+                                placement="bottom"
+                                transition={true}
+                              />
+                            </ForwardRef(Tooltip)>
+                          </WithStyles(ForwardRef(Tooltip))>
                           <WithStyles(ForwardRef(Icon))
                             data-testid="ArticleCard-0x12...-commentIcon"
                           >
@@ -1056,14 +1150,14 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                           <WithStyles(ForwardRef(IconButton))
                             aria-haspopup="true"
                             aria-label="simple-menu"
-                            className="makeStyles-menuButton-9"
+                            className="makeStyles-menuButton-10"
                             data-testid="ArticleCard-0x12...-moreOptionsButton"
                             onClick={[Function]}
                           >
                             <ForwardRef(IconButton)
                               aria-haspopup="true"
                               aria-label="simple-menu"
-                              className="makeStyles-menuButton-9"
+                              className="makeStyles-menuButton-10"
                               classes={
                                 Object {
                                   "colorInherit": "MuiIconButton-colorInherit",
@@ -1084,7 +1178,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                 aria-haspopup="true"
                                 aria-label="simple-menu"
                                 centerRipple={true}
-                                className="MuiIconButton-root makeStyles-menuButton-9"
+                                className="MuiIconButton-root makeStyles-menuButton-10"
                                 data-testid="ArticleCard-0x12...-moreOptionsButton"
                                 disabled={false}
                                 focusRipple={true}
@@ -1094,7 +1188,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                   aria-haspopup="true"
                                   aria-label="simple-menu"
                                   centerRipple={true}
-                                  className="MuiIconButton-root makeStyles-menuButton-9"
+                                  className="MuiIconButton-root makeStyles-menuButton-10"
                                   classes={
                                     Object {
                                       "disabled": "Mui-disabled",
@@ -1110,7 +1204,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                   <button
                                     aria-haspopup="true"
                                     aria-label="simple-menu"
-                                    className="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-9"
+                                    className="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-10"
                                     data-testid="ArticleCard-0x12...-moreOptionsButton"
                                     disabled={false}
                                     onBlur={[Function]}
@@ -1201,12 +1295,12 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                             <ShareDialogComponent
                               classes={
                                 Object {
-                                  "HNShareButton": "ShareDialogComponent-HNShareButton-104",
-                                  "closeButton": "ShareDialogComponent-closeButton-101",
-                                  "container": "ShareDialogComponent-container-102",
-                                  "icon": "ShareDialogComponent-icon-103",
-                                  "iconContainer": "ShareDialogComponent-iconContainer-105",
-                                  "root": "ShareDialogComponent-root-100",
+                                  "HNShareButton": "ShareDialogComponent-HNShareButton-113",
+                                  "closeButton": "ShareDialogComponent-closeButton-110",
+                                  "container": "ShareDialogComponent-container-111",
+                                  "icon": "ShareDialogComponent-icon-112",
+                                  "iconContainer": "ShareDialogComponent-iconContainer-114",
+                                  "root": "ShareDialogComponent-root-109",
                                 }
                               }
                               handleClose={[Function]}
@@ -2413,7 +2507,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                   >
                     <ForwardRef
                       borderRadius="4px"
-                      className="makeStyles-desktopMedia-8"
+                      className="makeStyles-desktopMedia-9"
                       data-testid="ArticleCard-0x12...-image"
                       height={152}
                       image="https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg"
@@ -2426,7 +2520,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                       >
                         <Image__Img
                           borderRadius="4px"
-                          className="makeStyles-desktopMedia-8"
+                          className="makeStyles-desktopMedia-9"
                           data-testid="ArticleCard-0x12...-image"
                           height={152}
                           image="https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg"
@@ -2435,7 +2529,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                         >
                           <StyledComponent
                             borderRadius="4px"
-                            className="makeStyles-desktopMedia-8"
+                            className="makeStyles-desktopMedia-9"
                             data-testid="ArticleCard-0x12...-image"
                             forwardedComponent={
                               Object {
@@ -2493,7 +2587,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                             width={152}
                           >
                             <div
-                              className="Image__Img-sc-1jpuda7-0 ewhrzK makeStyles-desktopMedia-8"
+                              className="Image__Img-sc-1jpuda7-0 ewhrzK makeStyles-desktopMedia-9"
                               data-testid="ArticleCard-0x12...-image"
                               height={152}
                               width={152}

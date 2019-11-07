@@ -427,6 +427,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5b8fe388e727370001c942e4',
@@ -498,6 +499,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5bb60f034f34080001731dbe',
@@ -630,6 +632,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5bd3262b26f0a50001f2a276',
@@ -721,6 +724,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5be1a3f93917ab0001ea9baa',
@@ -803,6 +807,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5be9ec1c5758b50001d8e1f2',
@@ -842,6 +847,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5c000eb8a24677000166f5d6',
@@ -883,6 +889,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5c014faaa24677000166f5d8',
@@ -922,6 +929,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5c01a4664f34080001c81bc7',
@@ -983,6 +991,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5c04f1d4a24677000166f5e5',
@@ -1019,6 +1028,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5bef33b16b97660001fe6392',
@@ -1131,6 +1141,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5c06df52a24677000166f603',
@@ -1201,6 +1212,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
             ],
             isLast: false,

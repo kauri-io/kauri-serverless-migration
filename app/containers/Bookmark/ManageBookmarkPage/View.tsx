@@ -19,8 +19,11 @@ const useStyles = makeStyles((_theme: Theme) => ({
     root: {
         //backgroundColor: theme.palette.background.paper,
     },
-    tabs: {
-        textAlign: 'left'
+    tabs: {},
+    tab: {
+        label: {
+            textAlign: 'left',
+        },
     },
 }))
 
@@ -38,7 +41,7 @@ export const ManageBookmarkPageComponent = ({
     const [currentFolder, setCurrentFolder] = React.useState(ROOT_FOLDER)
 
     const classes = useStyles()
-    
+
     const handleChange = (folder: string) => {
         setCurrentFolder(folder)
     }
@@ -49,7 +52,7 @@ export const ManageBookmarkPageComponent = ({
 
     return (
         <Grid container className={classes.root}>
-            <Grid item xs={3}>
+            <Grid item xs={3} alignItems="flex-start">
                 <Box py={2}>
                     <Tabs
                         orientation="vertical"
@@ -61,6 +64,7 @@ export const ManageBookmarkPageComponent = ({
                                 if (!folder) return ''
                                 return (
                                     <Tab
+                                        className={classes.tab}
                                         label={
                                             labelRootFolder(folder.name) +
                                             ' (' +
@@ -68,8 +72,17 @@ export const ManageBookmarkPageComponent = ({
                                             ')'
                                         }
                                         id={'vertical-tab-' + folder.name}
-                                        aria-controls={'vertical-tabpanel-' + folder.name}
-                                        style={ folder.name == currentFolder ? { borderRight:'3px solid green'} : {}}
+                                        aria-controls={
+                                            'vertical-tabpanel-' + folder.name
+                                        }
+                                        style={
+                                            folder.name == currentFolder
+                                                ? {
+                                                      borderRight:
+                                                          '3px solid green',
+                                                  }
+                                                : {}
+                                        }
                                         onClick={() =>
                                             handleChange(folder.name)
                                         }

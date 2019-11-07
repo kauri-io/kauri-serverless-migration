@@ -405,7 +405,10 @@ exports[`components/LatestContent should match snapshot 1`] = `
           },
         ]
       }
+      isLoggedIn={true}
       linkComponent={[MockFunction]}
+      openModalAction={[MockFunction]}
+      routeChangeAction={[MockFunction]}
     >
       <WithStyles(ForwardRef(Grid))
         className="makeStyles-container-1"

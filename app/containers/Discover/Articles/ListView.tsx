@@ -73,34 +73,37 @@ class Articles extends Component<IProps> {
                                 ) {
                                     const article = result.resource as searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO
                                     return (
-                                    <Grid key={article.id} item xs={12}>
-                                        <ArticleCard
-                                            {...article}
-                                            href={getArticleURL(article)}
-                                            isLoggedIn={this.props.isLoggedIn}
-                                            routeChangeAction={
-                                                this.props.routeChangeAction
-                                            }
-                                            openModalAction={
-                                                this.props.openModalAction
-                                            }
-                                            addArticleToCollectionAction={() =>
-                                                this.props.openModalAction({
-                                                    children: (
-                                                        <AddToCollection
-                                                            articleId={
-                                                                article.id || ''
-                                                            }
-                                                            version={
-                                                                article.version ||
-                                                                1
-                                                            }
-                                                        />
-                                                    ),
-                                                })
-                                            }
-                                        />
-                                    </Grid>
+                                        <Grid key={article.id} item xs={12}>
+                                            <ArticleCard
+                                                {...article}
+                                                href={getArticleURL(article)}
+                                                isLoggedIn={
+                                                    this.props.isLoggedIn
+                                                }
+                                                routeChangeAction={
+                                                    this.props.routeChangeAction
+                                                }
+                                                openModalAction={
+                                                    this.props.openModalAction
+                                                }
+                                                addArticleToCollectionAction={() =>
+                                                    this.props.openModalAction({
+                                                        children: (
+                                                            <AddToCollection
+                                                                articleId={
+                                                                    article.id ||
+                                                                    ''
+                                                                }
+                                                                version={
+                                                                    article.version ||
+                                                                    1
+                                                                }
+                                                            />
+                                                        ),
+                                                    })
+                                                }
+                                            />
+                                        </Grid>
                                     )
                                 } else if (
                                     type === 'LINK' &&

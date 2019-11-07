@@ -33,6 +33,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
             "dateUpdated": "2018-09-03T13:29:35.442Z",
             "description": "September 7 – 9, 2018  //  Berlin. Part of the ETHGlobal community",
             "id": "5b8d373fe727370001c942de",
+            "isBookmarked": true,
             "name": "ETHBerlin",
             "owner": Object {
               "__typename": "PublicUserDTO",
@@ -452,6 +453,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
             "dateUpdated": "2018-09-05T14:09:12.728Z",
             "description": "This tutorial series includes walkthroughs of the various non-fungible token standards (721, 998, 1155, etc.) and tutorials for building applications using them.",
             "id": "5b8fe388e727370001c942e4",
+            "isBookmarked": true,
             "name": "Non-Fungible Token Tutorial Series",
             "owner": Object {
               "__typename": "PublicUserDTO",
@@ -521,6 +523,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
             "dateUpdated": "2018-10-04T13:00:50.668Z",
             "description": "Conference for game developers in the blockchain space in Lyon, France on September 25 & 26",
             "id": "5bb60f034f34080001731dbe",
+            "isBookmarked": true,
             "name": "Blockchain Game Summit 2018",
             "owner": Object {
               "__typename": "PublicUserDTO",
@@ -650,6 +653,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
             "dateUpdated": "2018-10-26T14:36:09.911Z",
             "description": "Grow Open Source",
             "id": "5bd3262b26f0a50001f2a276",
+            "isBookmarked": true,
             "name": "Gitcoin",
             "owner": Object {
               "__typename": "PublicUserDTO",
@@ -739,6 +743,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
             "dateUpdated": "2018-11-06T14:23:53.506Z",
             "description": "State of the art advances across layer one and two solutions",
             "id": "5be1a3f93917ab0001ea9baa",
+            "isBookmarked": true,
             "name": "Scaling Today",
             "owner": Object {
               "__typename": "PublicUserDTO",
@@ -818,6 +823,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
             "dateUpdated": "2018-11-12T21:09:48.307Z",
             "description": "WELCOME TO CRYPTO CAPTAIN KIRK! ",
             "id": "5be9ec1c5758b50001d8e1f2",
+            "isBookmarked": true,
             "name": "Beam Crypto Up, Scotty! ",
             "owner": Object {
               "__typename": "PublicUserDTO",
@@ -855,6 +861,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
             "dateUpdated": "2018-11-29T16:12:22.016Z",
             "description": "Annotated bibliographies of current research, by theory category",
             "id": "5c000eb8a24677000166f5d6",
+            "isBookmarked": true,
             "name": "Research Snapshot",
             "owner": Object {
               "__typename": "PublicUserDTO",
@@ -892,6 +899,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
             "dateUpdated": "2018-11-30T14:57:33.492Z",
             "description": "The toolkit for self organised and autonomous organisation ",
             "id": "5c014faaa24677000166f5d8",
+            "isBookmarked": true,
             "name": "Creotex",
             "owner": Object {
               "__typename": "PublicUserDTO",
@@ -929,6 +937,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
             "dateUpdated": "2018-11-30T21:01:43.483Z",
             "description": "Articles surrounding our tech presence and initiatives",
             "id": "5c01a4664f34080001c81bc7",
+            "isBookmarked": true,
             "name": "Bounties Network Tech Blog",
             "owner": Object {
               "__typename": "PublicUserDTO",
@@ -988,6 +997,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
             "dateUpdated": "2018-12-03T09:05:24.241Z",
             "description": "Digest about ethereum",
             "id": "5c04f1d4a24677000166f5e5",
+            "isBookmarked": true,
             "name": "ETH Digest",
             "owner": Object {
               "__typename": "PublicUserDTO",
@@ -1024,6 +1034,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
             "dateUpdated": "2018-12-04T20:08:46.129Z",
             "description": "30 minute getting started guides for web3.0 projects",
             "id": "5bef33b16b97660001fe6392",
+            "isBookmarked": true,
             "name": "Quick start web3.0 series",
             "owner": Object {
               "__typename": "PublicUserDTO",
@@ -1133,6 +1144,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
             "dateUpdated": "2018-12-04T20:10:58.376Z",
             "description": "Welcome to Web3 Trekkies!!",
             "id": "5c06df52a24677000166f603",
+            "isBookmarked": true,
             "name": "Ethereum StarTrek",
             "owner": Object {
               "__typename": "PublicUserDTO",
@@ -1214,6 +1226,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-09-03T13:29:35.442Z",
               "description": "September 7 – 9, 2018  //  Berlin. Part of the ETHGlobal community",
               "id": "5b8d373fe727370001c942de",
+              "isBookmarked": true,
               "name": "ETHBerlin",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -1633,6 +1646,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-09-05T14:09:12.728Z",
               "description": "This tutorial series includes walkthroughs of the various non-fungible token standards (721, 998, 1155, etc.) and tutorials for building applications using them.",
               "id": "5b8fe388e727370001c942e4",
+              "isBookmarked": true,
               "name": "Non-Fungible Token Tutorial Series",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -1702,6 +1716,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-10-04T13:00:50.668Z",
               "description": "Conference for game developers in the blockchain space in Lyon, France on September 25 & 26",
               "id": "5bb60f034f34080001731dbe",
+              "isBookmarked": true,
               "name": "Blockchain Game Summit 2018",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -1831,6 +1846,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-10-26T14:36:09.911Z",
               "description": "Grow Open Source",
               "id": "5bd3262b26f0a50001f2a276",
+              "isBookmarked": true,
               "name": "Gitcoin",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -1920,6 +1936,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-11-06T14:23:53.506Z",
               "description": "State of the art advances across layer one and two solutions",
               "id": "5be1a3f93917ab0001ea9baa",
+              "isBookmarked": true,
               "name": "Scaling Today",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -1999,6 +2016,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-11-12T21:09:48.307Z",
               "description": "WELCOME TO CRYPTO CAPTAIN KIRK! ",
               "id": "5be9ec1c5758b50001d8e1f2",
+              "isBookmarked": true,
               "name": "Beam Crypto Up, Scotty! ",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -2036,6 +2054,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-11-29T16:12:22.016Z",
               "description": "Annotated bibliographies of current research, by theory category",
               "id": "5c000eb8a24677000166f5d6",
+              "isBookmarked": true,
               "name": "Research Snapshot",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -2073,6 +2092,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-11-30T14:57:33.492Z",
               "description": "The toolkit for self organised and autonomous organisation ",
               "id": "5c014faaa24677000166f5d8",
+              "isBookmarked": true,
               "name": "Creotex",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -2110,6 +2130,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-11-30T21:01:43.483Z",
               "description": "Articles surrounding our tech presence and initiatives",
               "id": "5c01a4664f34080001c81bc7",
+              "isBookmarked": true,
               "name": "Bounties Network Tech Blog",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -2169,6 +2190,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-12-03T09:05:24.241Z",
               "description": "Digest about ethereum",
               "id": "5c04f1d4a24677000166f5e5",
+              "isBookmarked": true,
               "name": "ETH Digest",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -2205,6 +2227,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-12-04T20:08:46.129Z",
               "description": "30 minute getting started guides for web3.0 projects",
               "id": "5bef33b16b97660001fe6392",
+              "isBookmarked": true,
               "name": "Quick start web3.0 series",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -2314,6 +2337,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-12-04T20:10:58.376Z",
               "description": "Welcome to Web3 Trekkies!!",
               "id": "5c06df52a24677000166f603",
+              "isBookmarked": true,
               "name": "Ethereum StarTrek",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -2395,6 +2419,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-09-03T13:29:35.442Z",
               "description": "September 7 – 9, 2018  //  Berlin. Part of the ETHGlobal community",
               "id": "5b8d373fe727370001c942de",
+              "isBookmarked": true,
               "name": "ETHBerlin",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -2814,6 +2839,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-09-05T14:09:12.728Z",
               "description": "This tutorial series includes walkthroughs of the various non-fungible token standards (721, 998, 1155, etc.) and tutorials for building applications using them.",
               "id": "5b8fe388e727370001c942e4",
+              "isBookmarked": true,
               "name": "Non-Fungible Token Tutorial Series",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -2883,6 +2909,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-10-04T13:00:50.668Z",
               "description": "Conference for game developers in the blockchain space in Lyon, France on September 25 & 26",
               "id": "5bb60f034f34080001731dbe",
+              "isBookmarked": true,
               "name": "Blockchain Game Summit 2018",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -3012,6 +3039,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-10-26T14:36:09.911Z",
               "description": "Grow Open Source",
               "id": "5bd3262b26f0a50001f2a276",
+              "isBookmarked": true,
               "name": "Gitcoin",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -3101,6 +3129,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-11-06T14:23:53.506Z",
               "description": "State of the art advances across layer one and two solutions",
               "id": "5be1a3f93917ab0001ea9baa",
+              "isBookmarked": true,
               "name": "Scaling Today",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -3180,6 +3209,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-11-12T21:09:48.307Z",
               "description": "WELCOME TO CRYPTO CAPTAIN KIRK! ",
               "id": "5be9ec1c5758b50001d8e1f2",
+              "isBookmarked": true,
               "name": "Beam Crypto Up, Scotty! ",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -3217,6 +3247,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-11-29T16:12:22.016Z",
               "description": "Annotated bibliographies of current research, by theory category",
               "id": "5c000eb8a24677000166f5d6",
+              "isBookmarked": true,
               "name": "Research Snapshot",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -3254,6 +3285,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-11-30T14:57:33.492Z",
               "description": "The toolkit for self organised and autonomous organisation ",
               "id": "5c014faaa24677000166f5d8",
+              "isBookmarked": true,
               "name": "Creotex",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -3291,6 +3323,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-11-30T21:01:43.483Z",
               "description": "Articles surrounding our tech presence and initiatives",
               "id": "5c01a4664f34080001c81bc7",
+              "isBookmarked": true,
               "name": "Bounties Network Tech Blog",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -3350,6 +3383,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-12-03T09:05:24.241Z",
               "description": "Digest about ethereum",
               "id": "5c04f1d4a24677000166f5e5",
+              "isBookmarked": true,
               "name": "ETH Digest",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -3386,6 +3420,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-12-04T20:08:46.129Z",
               "description": "30 minute getting started guides for web3.0 projects",
               "id": "5bef33b16b97660001fe6392",
+              "isBookmarked": true,
               "name": "Quick start web3.0 series",
               "owner": Object {
                 "__typename": "PublicUserDTO",
@@ -3495,6 +3530,7 @@ exports[`containers/ChooseCollectionCard should match the snapshot 1`] = `
               "dateUpdated": "2018-12-04T20:10:58.376Z",
               "description": "Welcome to Web3 Trekkies!!",
               "id": "5c06df52a24677000166f603",
+              "isBookmarked": true,
               "name": "Ethereum StarTrek",
               "owner": Object {
                 "__typename": "PublicUserDTO",

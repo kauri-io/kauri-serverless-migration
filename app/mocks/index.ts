@@ -77,6 +77,7 @@ export const generateArticle = (mod: number) => ({
         __typename: 'ResponsePage_CommentDTO' as Article_comments['__typename'],
     },
     updateComment: `test update comment${mod}`,
+    isBookmarked: true,
 })
 
 export const Community = {

@@ -16,7 +16,6 @@ export const DeleteBookmarkFolderWidgetComponent = ({
     folder,
     updateFolder,
 }: IProps) => {
-
     const confirm = () => {
         deleteBookmarkFolderAction({ folder })
         updateFolder(ROOT_FOLDER)

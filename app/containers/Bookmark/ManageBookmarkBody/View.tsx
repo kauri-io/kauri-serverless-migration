@@ -69,7 +69,9 @@ export const ManageBookmarkBody = ({
                                                 res.resource
                                             )}
                                             isLoggedIn={isLoggedIn}
-                                            routeChangeAction={routeChangeAction}
+                                            routeChangeAction={
+                                                routeChangeAction
+                                            }
                                             openModalAction={openModalAction}
                                         />
                                     </Grid>

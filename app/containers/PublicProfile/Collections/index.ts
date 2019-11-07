@@ -22,7 +22,7 @@ export default compose(
         mapStateToProps,
         {
             routeChangeAction,
-            openModalAction
+            openModalAction,
         }
     ),
     graphql(getCollectionsForUser, {

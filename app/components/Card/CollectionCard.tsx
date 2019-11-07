@@ -129,8 +129,8 @@ interface IProps {
     sections: (any | null)[] | null
     isLoggedIn?: boolean
     isBookmarked: boolean
-    openModalAction: typeof openModalAction
-    routeChangeAction: typeof routeChangeAction
+    openModalAction?: typeof openModalAction
+    routeChangeAction?: typeof routeChangeAction
 }
 
 const CollectionCard: React.FC<IProps> = ({
@@ -282,7 +282,7 @@ const CollectionCard: React.FC<IProps> = ({
                         >
                             <Icon
                                 onClick={() =>
-                                    isLoggedIn
+                                    isLoggedIn && openModalAction
                                         ? openModalAction({
                                               children: (
                                                   <BookmarkResource
@@ -293,7 +293,8 @@ const CollectionCard: React.FC<IProps> = ({
                                                   />
                                               ),
                                           })
-                                        : routeChangeAction(`/login`)
+                                        : routeChangeAction &&
+                                          routeChangeAction(`/login`)
                                 }
                                 data-testid={`ArticleCard-${id}-bookmark`}
                                 className={classes.bookmark}

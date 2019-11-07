@@ -395,6 +395,9 @@ exports[`components/FeaturedContent should match snapshot 1`] = `
     <FeaturedContent
       Link={[MockFunction]}
       content={Array []}
+      isLoggedIn={true}
+      openModalAction={[MockFunction]}
+      routeChangeAction={[MockFunction]}
     />
   </ThemeProvider>
 </ContextProvider>

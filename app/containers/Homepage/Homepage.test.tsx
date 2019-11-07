@@ -16,6 +16,7 @@ describe('containers/Homepage/View', () => {
                     .getLatestHomepageDescriptor as homePageContent_getLatestHomepageDescriptor,
             },
             routeChangeAction: jest.fn(),
+            openModalAction: jest.fn(),
             emailSubscribeAction: jest.fn(),
             showNotificationAction: jest.fn(),
         }

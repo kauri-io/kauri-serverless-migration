@@ -14,6 +14,9 @@ let props = {
     ],
     linkComponent: jest.fn(),
     Link: jest.fn(),
+    isLoggedIn: true,
+    openModalAction: jest.fn(),
+    routeChangeAction: jest.fn(),
 }
 
 describe('components/LatestContent', () => {

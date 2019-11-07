@@ -818,10 +818,10 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                     </WithStyles(ForwardRef(CardContent))>
                   </div>
                   <WithStyles(ForwardRef(CardActions))
-                    className="makeStyles-cardActions-10"
+                    className="makeStyles-cardActions-11"
                   >
                     <ForwardRef(CardActions)
-                      className="makeStyles-cardActions-10"
+                      className="makeStyles-cardActions-11"
                       classes={
                         Object {
                           "root": "MuiCardActions-root",
@@ -830,10 +830,10 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                       }
                     >
                       <div
-                        className="MuiCardActions-root makeStyles-cardActions-10 MuiCardActions-spacing"
+                        className="MuiCardActions-root makeStyles-cardActions-11 MuiCardActions-spacing"
                       >
                         <div
-                          className="makeStyles-user-11"
+                          className="makeStyles-user-12"
                         >
                           <AvatarComp
                             aria-label="test-username"
@@ -854,11 +854,11 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                 onMouseEnter={[Function]}
                               >
                                 <div
-                                  className="makeStyles-container-83"
+                                  className="makeStyles-container-84"
                                 >
                                   <ForwardRef
                                     borderRadius="2px"
-                                    className="makeStyles-avatar-84"
+                                    className="makeStyles-avatar-85"
                                     height={24}
                                     image="https://dev.kauri.io/static/images/DefaultCollection.png"
                                     width={24}
@@ -870,7 +870,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                     >
                                       <Image__Img
                                         borderRadius="2px"
-                                        className="makeStyles-avatar-84"
+                                        className="makeStyles-avatar-85"
                                         height={24}
                                         image="https://dev.kauri.io/static/images/DefaultCollection.png"
                                         inView={false}
@@ -878,7 +878,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                       >
                                         <StyledComponent
                                           borderRadius="2px"
-                                          className="makeStyles-avatar-84"
+                                          className="makeStyles-avatar-85"
                                           forwardedComponent={
                                             Object {
                                               "$$typeof": Symbol(react.forward_ref),
@@ -935,7 +935,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                           width={24}
                                         >
                                           <div
-                                            className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-84"
+                                            className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-85"
                                             height={24}
                                             width={24}
                                           />
@@ -944,11 +944,11 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                     </InView>
                                   </ForwardRef>
                                   <WithStyles(ForwardRef(Typography))
-                                    className="makeStyles-username-85"
+                                    className="makeStyles-username-86"
                                     variant="subtitle2"
                                   >
                                     <ForwardRef(Typography)
-                                      className="makeStyles-username-85"
+                                      className="makeStyles-username-86"
                                       classes={
                                         Object {
                                           "alignCenter": "MuiTypography-alignCenter",
@@ -986,7 +986,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                       variant="subtitle2"
                                     >
                                       <h6
-                                        className="MuiTypography-root makeStyles-username-85 MuiTypography-subtitle2"
+                                        className="MuiTypography-root makeStyles-username-86 MuiTypography-subtitle2"
                                       >
                                         test name
                                       </h6>
@@ -998,8 +998,102 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                           </AvatarComp>
                         </div>
                         <div
-                          className="makeStyles-statistics-12"
+                          className="makeStyles-statistics-13"
                         >
+                          <WithStyles(ForwardRef(Tooltip))
+                            title="Bookmark"
+                          >
+                            <ForwardRef(Tooltip)
+                              classes={
+                                Object {
+                                  "popper": "MuiTooltip-popper",
+                                  "popperInteractive": "MuiTooltip-popperInteractive",
+                                  "tooltip": "MuiTooltip-tooltip",
+                                  "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                  "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                  "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                  "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                  "touch": "MuiTooltip-touch",
+                                }
+                              }
+                              title="Bookmark"
+                            >
+                              <WithStyles(ForwardRef(Icon))
+                                aria-describedby={null}
+                                className="makeStyles-bookmark-10"
+                                data-testid="ArticleCard-1234567890-bookmark"
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseLeave={[Function]}
+                                onMouseOver={[Function]}
+                                onTouchEnd={[Function]}
+                                onTouchStart={[Function]}
+                                title="Bookmark"
+                              >
+                                <ForwardRef(Icon)
+                                  aria-describedby={null}
+                                  className="makeStyles-bookmark-10"
+                                  classes={
+                                    Object {
+                                      "colorAction": "MuiIcon-colorAction",
+                                      "colorDisabled": "MuiIcon-colorDisabled",
+                                      "colorError": "MuiIcon-colorError",
+                                      "colorPrimary": "MuiIcon-colorPrimary",
+                                      "colorSecondary": "MuiIcon-colorSecondary",
+                                      "fontSizeInherit": "MuiIcon-fontSizeInherit",
+                                      "fontSizeLarge": "MuiIcon-fontSizeLarge",
+                                      "fontSizeSmall": "MuiIcon-fontSizeSmall",
+                                      "root": "MuiIcon-root",
+                                    }
+                                  }
+                                  data-testid="ArticleCard-1234567890-bookmark"
+                                  onBlur={[Function]}
+                                  onClick={[Function]}
+                                  onFocus={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseOver={[Function]}
+                                  onTouchEnd={[Function]}
+                                  onTouchStart={[Function]}
+                                  title="Bookmark"
+                                >
+                                  <span
+                                    aria-describedby={null}
+                                    aria-hidden={true}
+                                    className="material-icons MuiIcon-root makeStyles-bookmark-10"
+                                    data-testid="ArticleCard-1234567890-bookmark"
+                                    onBlur={[Function]}
+                                    onClick={[Function]}
+                                    onFocus={[Function]}
+                                    onMouseLeave={[Function]}
+                                    onMouseOver={[Function]}
+                                    onTouchEnd={[Function]}
+                                    onTouchStart={[Function]}
+                                    title="Bookmark"
+                                  >
+                                    bookmark_border_icon
+                                  </span>
+                                </ForwardRef(Icon)>
+                              </WithStyles(ForwardRef(Icon))>
+                              <ForwardRef(Popper)
+                                anchorEl={
+                                  <span
+                                    aria-hidden="true"
+                                    class="material-icons MuiIcon-root makeStyles-bookmark-10"
+                                    data-testid="ArticleCard-1234567890-bookmark"
+                                    title="Bookmark"
+                                  >
+                                    bookmark_border_icon
+                                  </span>
+                                }
+                                className="MuiTooltip-popper"
+                                id={null}
+                                open={false}
+                                placement="bottom"
+                                transition={true}
+                              />
+                            </ForwardRef(Tooltip)>
+                          </WithStyles(ForwardRef(Tooltip))>
                           <WithStyles(ForwardRef(Icon))
                             data-testid="CollectionCard-1234567890-articleIcon"
                           >
@@ -1297,12 +1391,12 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                             <ShareDialogComponent
                               classes={
                                 Object {
-                                  "HNShareButton": "ShareDialogComponent-HNShareButton-102",
-                                  "closeButton": "ShareDialogComponent-closeButton-99",
-                                  "container": "ShareDialogComponent-container-100",
-                                  "icon": "ShareDialogComponent-icon-101",
-                                  "iconContainer": "ShareDialogComponent-iconContainer-103",
-                                  "root": "ShareDialogComponent-root-98",
+                                  "HNShareButton": "ShareDialogComponent-HNShareButton-111",
+                                  "closeButton": "ShareDialogComponent-closeButton-108",
+                                  "container": "ShareDialogComponent-container-109",
+                                  "icon": "ShareDialogComponent-icon-110",
+                                  "iconContainer": "ShareDialogComponent-iconContainer-112",
+                                  "root": "ShareDialogComponent-root-107",
                                 }
                               }
                               handleClose={[Function]}

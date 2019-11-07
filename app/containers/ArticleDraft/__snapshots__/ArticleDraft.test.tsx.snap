@@ -536,6 +536,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                   "datePublished": "2019-01-02",
                   "description": "test description 1",
                   "id": "1231",
+                  "isBookmarked": true,
                   "owner": Object {
                     "__typename": "PublicUserDTO",
                     "avatar": "test avatar 1",
@@ -625,6 +626,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
               datePublished="2019-01-02"
               description="test description 1"
               id="1231"
+              isBookmarked={true}
               openModalAction={[MockFunction]}
               owner={
                 Object {
@@ -1328,6 +1330,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
               deleteDraftArticleAction={[MockFunction]}
               description="test description 1"
               id="1231"
+              isBookmarked={true}
               openModalAction={[MockFunction]}
               owner={
                 Object {
