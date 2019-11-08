@@ -54,7 +54,7 @@ import {
 import { saveUserDetailsEpic } from '../components/EditProfileForm/Module'
 import { addCommentEpic } from '../containers/Article/Module'
 import {
-    addArticleToCollectionEpic,
+    addResourceToCollectionEpic,
     openAddArticleToCollectionConfirmationModalEpic,
 } from '../containers/AddToCollection/Module'
 import {
@@ -111,7 +111,7 @@ const epics = [
     createCommunityEpic,
     saveUserDetailsEpic,
     addCommentEpic,
-    addArticleToCollectionEpic,
+    addResourceToCollectionEpic,
     openAddArticleToCollectionConfirmationModalEpic,
     bookmarkEpic,
     unbookmarkEpic,

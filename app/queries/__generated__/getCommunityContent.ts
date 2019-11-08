@@ -388,11 +388,230 @@ export interface getCommunityContent_getCommunityContent_content_resource_Collec
 }
 
 export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CollectionDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CollectionDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_associatedNfts {
+  __typename: "NftTokenDTO";
+  tokenType: string | null;
+  contractAddress: string | null;
+  name: string | null;
+  image: string | null;
+  externalUrl: string | null;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource version (article)
+   */
+  version: number | null;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_author {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_owner_ArticleDTO {
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_owner_PublicUserDTO {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  resourceIdentifier: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_owner_PublicUserDTO_resourceIdentifier | null;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_owner_CommunityDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_owner_CommunityDTO {
+  __typename: "CommunityDTO";
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
+  avatar: string | null;
+  resourceIdentifier: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_owner_CommunityDTO_resourceIdentifier | null;
+}
+
+export type getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_owner = getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_owner_ArticleDTO | getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_owner_PublicUserDTO | getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_owner_CommunityDTO;
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_comments_content_author {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_comments_content {
+  __typename: "CommentDTO";
+  /**
+   * Comment author (full profile)
+   */
+  author: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_comments_content_author;
+  /**
+   * Date the comment was published
+   */
+  posted: any;
+  /**
+   * Comment
+   */
+  body: string;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Returns the page content.
+   */
+  content: (getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_comments_content | null)[];
+  /**
+   * Number of total pages.
+   */
+  totalPages: number;
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
 }
 
 export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO {
   __typename: "ArticleDTO";
+  /**
+   * NFTs associated with this article
+   */
+  associatedNfts: (getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_associatedNfts | null)[] | null;
+  resourceIdentifier: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_resourceIdentifier | null;
+  /**
+   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
+   * This operation can only be performed by logged user
+   */
+  contributors: (getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors | null)[];
+  /**
+   * Description of the article - First 500 characters of the plaintext content)
+   */
+  description: string | null;
   /**
    * Article ID
    */
@@ -401,9 +620,326 @@ export interface getCommunityContent_getCommunityContent_content_resource_Collec
    * Article Version
    */
   version: number;
+  /**
+   * Title of article
+   */
+  title: string;
+  /**
+   * Content of the article (most likely to be plain markdown text)
+   */
+  content: string;
+  /**
+   * Author of the article (USER only)
+   */
+  authorId: string;
+  /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
+   * Date publication
+   */
+  datePublished: any | null;
+  /**
+   * Status of the article
+   */
+  status: ArticleStatusInput;
+  /**
+   * Set of optional attributes fields
+   */
+  attributes: any | null;
+  /**
+   * IPFS Content hash
+   */
+  contentHash: string;
+  /**
+   * Checkpoint file (null if the article is not escalated on-chain)
+   */
+  checkpoint: string | null;
+  /**
+   * Tags list
+   */
+  tags: (string | null)[] | null;
+  /**
+   * Get vote result for the article
+   */
+  voteResult: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_voteResult;
+  /**
+   * Article author (full profile)
+   */
+  author: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_author;
+  /**
+   * load the article owner (user or community resource type)
+   */
+  owner: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_owner | null;
+  /**
+   * Get a paginated list of comments for this article
+   */
+  comments: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO_comments;
+  /**
+   * The comment describing this version update of the article
+   */
+  updateComment: string | null;
+  /**
+   * Check if the article is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
-export type getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources = getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_PublicUserDTO | getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO;
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_ArticleDTO {
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_PublicUserDTO {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  resourceIdentifier: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier | null;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_CommunityDTO {
+  __typename: "CommunityDTO";
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
+  avatar: string | null;
+  resourceIdentifier: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier | null;
+}
+
+export type getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner = getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_ArticleDTO | getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_PublicUserDTO | getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_CommunityDTO;
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_url {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_linkTitle {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_linkDescription {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_summary {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_authorName {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_comments_content_author {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_comments_content {
+  __typename: "CommentDTO";
+  /**
+   * Comment author (full profile)
+   */
+  author: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_comments_content_author;
+  /**
+   * Date the comment was published
+   */
+  posted: any;
+  /**
+   * Comment
+   */
+  body: string;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Returns the page content.
+   */
+  content: (getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_comments_content | null)[];
+  /**
+   * Number of total pages.
+   */
+  totalPages: number;
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO {
+  __typename: "ExternalLinkDTO";
+  /**
+   * External link ID
+   */
+  id: string;
+  resourceIdentifier: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_resourceIdentifier | null;
+  /**
+   * The date that this external link was created
+   */
+  dateCreated: any;
+  /**
+   * The date that this external link was updated
+   */
+  dateUpdated: any;
+  /**
+   * The external link submitter user id
+   */
+  submitterId: string;
+  /**
+   * load the external link owner (user or community resource type)
+   */
+  owner: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
+  /**
+   * The link url
+   */
+  url: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_url;
+  /**
+   * The link title
+   */
+  linkTitle: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_linkTitle;
+  /**
+   * The description of the link, obtained via metadata
+   */
+  linkDescription: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_linkDescription | null;
+  /**
+   * The user input summary of the link
+   */
+  summary: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_summary | null;
+  /**
+   * Link attributes
+   */
+  linkAttributes: any | null;
+  /**
+   * The link content author
+   */
+  authorName: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_authorName;
+  /**
+   * Get a paginated list of comments for this external link
+   */
+  comments: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_comments;
+  /**
+   * The link content author
+   */
+  authorSocial: any | null;
+  /**
+   * Tags associated with the link
+   */
+  tags: (string | null)[] | null;
+}
+
+export type getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources = getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_PublicUserDTO | getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO | getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO;
 
 export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections {
   __typename: "SectionDTO";

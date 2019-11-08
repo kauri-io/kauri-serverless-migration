@@ -5,9 +5,11 @@ import ArticleCard from '../../components/Card/ArticleCard'
 import { Article } from '../../queries/Fragments/__generated__/Article'
 import { Collection } from '../../queries/Fragments/__generated__/Collection'
 import CollectionCard from '../../components/Card/CollectionCard'
-import { getArticleURL, getCollectionURL } from '../../lib/getURLs'
 import { openModalAction } from '../../components/Modal/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import LinkCard from '../../components/Card/LinkCard'
+import { Link } from '../../queries/Fragments/__generated__/Link'
+import { getArticleURL, getCollectionURL, getLinkUrl } from '../../lib/getURLs'
 
 const Container = styled.section`
     display: flex;
@@ -37,7 +39,7 @@ const StyledDescription = styled(PageDescription)`
 `
 
 interface IProps {
-    resources: [Article | Collection]
+    resources: [Article | Collection | Link]
     currentUser: string | undefined
     description: string | null
     isLoggedIn: boolean
@@ -56,6 +58,7 @@ const CollectionSection: React.SFC<IProps> = props => {
                 <StyledDescription>{description}</StyledDescription>
                 <ResourcesSection>
                     {resources.map((resource, key) => {
+                        console.log(resource)
                         if (resource.__typename === 'ArticleDTO') {
                             return (
                                 <ArticleCard
@@ -65,6 +68,39 @@ const CollectionSection: React.SFC<IProps> = props => {
                                     routeChangeAction={props.routeChangeAction}
                                     openModalAction={props.openModalAction}
                                     {...resource}
+                                />
+                            )
+                        } else if (resource.__typename === 'ExternalLinkDTO') {
+                            const link = resource
+                            const ownerResource =
+                                link.owner &&
+                                link.owner.__typename === 'PublicUserDTO'
+                                    ? {
+                                          avatar: link.owner.avatar,
+                                          id: link.owner.id || 'not_found',
+                                          type: 'USER',
+                                          username: link.owner.username,
+                                      }
+                                    : link.owner &&
+                                      link.owner.__typename === 'CommunityDTO'
+                                    ? {
+                                          avatar: link.owner.avatar,
+                                          id: link.owner.id || 'not_found',
+                                          type: 'COMMUNITY',
+                                          username: link.owner.communityName,
+                                      }
+                                    : {
+                                          avatar: '',
+                                          id: '',
+
+                                          username: '',
+                                      }
+                            return (
+                                <LinkCard
+                                    {...link}
+                                    owner={ownerResource}
+                                    href={getLinkUrl(link)}
+                                    key={String(link.id)}
                                 />
                             )
                         } else if (resource.__typename === 'CollectionDTO') {

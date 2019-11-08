@@ -9,7 +9,7 @@ import {
     openModalAction,
     closeModalAction,
 } from '../../../components/Modal/Module'
-import { addArticleToCollectionAction } from '../../AddToCollection/Module'
+import { addResourceToCollectionAction } from '../../AddToCollection/Module'
 import config from '../../../config'
 
 interface IState {
@@ -35,7 +35,7 @@ export default compose(
         {
             routeChangeAction,
             openModalAction,
-            addArticleToCollectionAction,
+            addResourceToCollectionAction,
             closeModalAction,
         }
     ),

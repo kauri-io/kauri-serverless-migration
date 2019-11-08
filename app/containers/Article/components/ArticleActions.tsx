@@ -11,11 +11,11 @@ import { ShareButtons } from '../../../components/Tooltip/ShareButtons'
 import Edit from '@material-ui/icons/Edit'
 import { getArticleURL } from '../../../lib/getURLs'
 import Link from 'next/link'
-import { Tooltip, Icon } from '@material-ui/core'
 import BookmarkResource from '../../Bookmark/BookmarkResourceWidget'
-import { ResourceTypeInput } from '../../../__generated__/globalTypes'
 import { openModalAction } from '../../../components/Modal/Module'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
+import { Tooltip, Icon } from '@material-ui/core'
+import { ResourceTypeInput } from '../../../__generated__/globalTypes'
 
 export const ArticleActionStyles = makeStyles((theme: Theme) => ({
     buttons: {
@@ -54,7 +54,6 @@ export default ({
     userId,
     openModalAction,
     id,
-    version,
     routeChangeAction,
     title,
     hostName,
@@ -120,8 +119,10 @@ export default ({
                             ? openModalAction({
                                   children: (
                                       <AddToCollectionConnection
-                                          articleId={String(id)}
-                                          version={Number(version)}
+                                          resourceId={String(id)}
+                                          type={
+                                              'ARTICLE' as ResourceTypeInput.ARTICLE
+                                          }
                                       />
                                   ),
                               })

@@ -58,6 +58,7 @@ export const useStyles = makeStyles((theme: Theme) => {
         },
         tool: {
             display: 'flex',
+            cursor: 'pointer',
             '& > *': {
                 marginRight: theme.spacing(1),
                 fontWeight: 600,

@@ -1,44 +1,14 @@
 import gql from 'graphql-tag'
-import { CommunityOwner, UserOwner, Article, Collection } from './Fragments'
+import { CommunityOwner, UserOwner, Collection } from './Fragments'
 
 export const globalCollectionDetails = gql`
     query getCollection($id: String!) {
         getCollection(id: $id) {
-            id
-            name
-            description
-            tags
-            background
-            dateCreated
-            dateUpdated
-            owner {
-                ...UserOwner
-                ...CommunityOwner
-            }
-            sections {
-                name
-                description
-                resources {
-                    ... on ArticleDTO {
-                        ...Article
-                    }
-                    ... on CollectionDTO {
-                        ...Collection
-                    }
-                }
-            }
-            resourceIdentifier {
-                type
-                id
-            }
-            isBookmarked
+            ...Collection
         }
     }
 
-    ${Article}
     ${Collection}
-    ${UserOwner}
-    ${CommunityOwner}
 `
 
 export const getCollectionQuery = globalCollectionDetails
@@ -161,6 +131,24 @@ export const searchCollections = gql`
         }
     }
     ${Collection}
+`
+
+export const addResourceToCollectionMutation = gql`
+    mutation addResourceToCollection(
+        $id: String!
+        $sectionId: String!
+        $resourceId: ResourceIdentifierInput!
+        $position: Int
+    ) {
+        addCollectionResource(
+            id: $id
+            sectionId: $sectionId
+            resourceId: $resourceId
+            position: $position
+        ) {
+            hash
+        }
+    }
 `
 
 export const getCollectionsForUser = gql`

@@ -13,6 +13,7 @@ import AddToCollection from '../../AddToCollection'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import { searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO } from '../../../queries/__generated__/searchResultsAutocomplete'
 import LinkCard from '../../../components/Card/LinkCard'
+import { ResourceTypeInput } from '../../../__generated__/globalTypes'
 
 interface IProps {
     ArticlesQuery: {
@@ -90,13 +91,12 @@ class Articles extends Component<IProps> {
                                                     this.props.openModalAction({
                                                         children: (
                                                             <AddToCollection
-                                                                articleId={
+                                                                resourceId={
                                                                     article.id ||
                                                                     ''
                                                                 }
-                                                                version={
-                                                                    article.version ||
-                                                                    1
+                                                                type={
+                                                                    'ARTICLE' as ResourceTypeInput.ARTICLE
                                                                 }
                                                             />
                                                         ),
