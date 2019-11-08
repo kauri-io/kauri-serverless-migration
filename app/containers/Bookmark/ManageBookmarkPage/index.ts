@@ -1,12 +1,12 @@
 import View from './View'
 import { compose, graphql, withApollo } from 'react-apollo'
-import { getBookmarkFolders } from '../../../queries/User'
+import { getBookmarkFolders } from '../../../queries/Bookmark'
 import { connect } from 'react-redux'
 import withLoading from '../../../lib/with-loading'
 import withApolloError from '../../../lib/with-apollo-error'
 import { openModalAction } from '../../../components/Modal/Module'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
-import { labelRootFolder, ROOT_FOLDER } from '../Module'
+import { createBookmarkFolderAction, labelRootFolder, ROOT_FOLDER } from '../Module'
 
 const mapStateToProps = state => {
     return {
@@ -25,6 +25,7 @@ export default compose(
             openModalAction,
             routeChangeAction,
             labelRootFolder,
+            createBookmarkFolderAction
         }
     ),
     graphql(getBookmarkFolders, {

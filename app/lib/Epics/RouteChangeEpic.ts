@@ -5,7 +5,7 @@ import { filter, ignoreElements, map } from 'rxjs/operators'
 export const ROUTE_CHANGE: string = 'ROUTE_CHANGE'
 type IRouteChangePayload = string
 
-interface IRouteChangeAction {
+export interface IRouteChangeAction {
     type: string
     payload: IRouteChangePayload
 }

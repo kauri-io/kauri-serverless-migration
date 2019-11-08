@@ -4,14 +4,15 @@ import CardContent from '@material-ui/core/CardContent'
 import Avatar from '../Avatar'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-import { Typography, ListItemIcon } from '@material-ui/core'
+import { Typography, ListItemIcon, Icon } from '@material-ui/core'
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
+import BookmarkIcon from '@material-ui/icons/Bookmark'
 import { Theme, makeStyles } from '@material-ui/core/styles'
 import TruncateMarkup from 'react-truncate-markup'
 import moment from 'moment-mini'
 import Link from 'next/link'
 import { getArticleURL } from '../../lib/getURLs'
 import IconButton from '@material-ui/core/IconButton'
-import Icon from '@material-ui/core/Icon'
 import { useState } from 'react'
 import ShareDialog from './ShareDialog'
 import Image from '../Image'
@@ -20,6 +21,7 @@ import { ResourceTypeInput } from '../../__generated__/globalTypes'
 import { Tooltip } from '@material-ui/core'
 import { openModalAction } from '../Modal/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { connect } from 'react-redux'
 
 export const ArticleCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -286,34 +288,6 @@ const ArticleCard: React.FC<IProps> = ({
                     </div>
 
                     <div className={classes.statistics}>
-                        <Tooltip
-                            title={isBookmarked ? 'Unbookmark' : 'Bookmark'}
-                        >
-                            <Icon
-                                onClick={() =>
-                                    isLoggedIn && openModalAction
-                                        ? openModalAction({
-                                              children: (
-                                                  <BookmarkResource
-                                                      resourceId={id}
-                                                      resourceType={
-                                                          ResourceTypeInput.ARTICLE
-                                                      }
-                                                  />
-                                              ),
-                                          })
-                                        : routeChangeAction &&
-                                          routeChangeAction(`/login`)
-                                }
-                                data-testid={`ArticleCard-${id}-bookmark`}
-                                className={classes.bookmark}
-                            >
-                                {isBookmarked
-                                    ? 'bookmark'
-                                    : 'bookmark_border_icon'}
-                            </Icon>
-                        </Tooltip>
-
                         <Icon data-testid={`ArticleCard-${id}-commentIcon`}>
                             comment
                         </Icon>
@@ -334,6 +308,32 @@ const ArticleCard: React.FC<IProps> = ({
                             {voteResult && voteResult.sum}
                         </Typography>
 
+                        <Tooltip
+                            title={isBookmarked ? 'Unbookmark' : 'Bookmark'}
+                        >
+                            <IconButton
+                                onClick={() =>
+                                    isLoggedIn && openModalAction
+                                        ? openModalAction({
+                                              children: (
+                                                  <BookmarkResource
+                                                      resourceId={id}
+                                                      resourceType={
+                                                          ResourceTypeInput.ARTICLE
+                                                      }
+                                                  />
+                                              ),
+                                          })
+                                        : routeChangeAction &&
+                                          routeChangeAction(`/login`)
+                                }
+                            >
+                                {isBookmarked
+                                    ? (<BookmarkIcon data-testid={`ArticleCard-${id}-bookmarkIcon`} />)
+                                    : (<BookmarkBorderIcon data-testid={`ArticleCard-${id}-bookmarkBorderIcon`} />)
+                                }
+                            </IconButton>
+                        </Tooltip>
                         <IconButton
                             onClick={handleClick}
                             data-testid={`ArticleCard-${id}-moreOptionsButton`}
@@ -415,4 +415,15 @@ const ArticleCard: React.FC<IProps> = ({
     )
 }
 
-export default ArticleCard
+const mapStateToProps = state => {
+    return {
+        isLoggedIn: !!(state.app && state.app.user && state.app.user.id),
+    }
+}
+export default connect(
+    mapStateToProps,
+    {
+        openModalAction,
+        routeChangeAction, 
+    }
+)(ArticleCard)

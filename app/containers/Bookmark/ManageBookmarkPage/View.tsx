@@ -1,15 +1,17 @@
 import { getBookmarkFolders_getBookmarkFolders } from '../../../queries/__generated__/getBookmarkFolders'
 import React from 'react'
-import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
-import { labelRootFolder, ROOT_FOLDER } from '../Module'
+import { labelRootFolder, ROOT_FOLDER, ICreateBookmakFolderAction} from '../Module'
 import { Tabs, Tab, makeStyles, Theme, Grid, Box } from '@material-ui/core'
 import ManageBookmarkBody from '../ManageBookmarkBody'
-import CreateBookmarkFolder from '../CreateBookmarkFolderWidget'
+import CreateBookmarkFolder from '../CreateBookmarkFolderWidget/View'
 import Loading from '../../../components/Loading'
+import { createBookmarkFolderVariables } from '../../../queries/__generated__/createBookmarkFolder'
+import { IRouteChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 
 interface IProps {
     isLoggedIn: boolean
-    routeChangeAction: typeof routeChangeAction
+    routeChangeAction: (payload: string) => IRouteChangeAction
+    createBookmarkFolderAction: (payload: createBookmarkFolderVariables) => ICreateBookmakFolderAction
     data: {
         getBookmarkFolders: (getBookmarkFolders_getBookmarkFolders | null)[]
     }
@@ -52,6 +54,7 @@ const useStyles = makeStyles((_theme: Theme) => ({
 export const ManageBookmarkPageComponent = ({
     isLoggedIn,
     routeChangeAction,
+    createBookmarkFolderAction,
     data,
 }: IProps) => {
     if (!isLoggedIn) {
@@ -88,7 +91,7 @@ export const ManageBookmarkPageComponent = ({
                                     <Tab
                                         className={classes.tab}
                                         label={
-                                            labelRootFolder(folder.name) +
+                                            labelRootFolder({folder: folder.name}) +
                                             ' (' +
                                             folder.total +
                                             ')'
@@ -112,7 +115,7 @@ export const ManageBookmarkPageComponent = ({
                                 )
                             })}
                         <Box className={classes.createContainer}>
-                            <CreateBookmarkFolder />
+                            <CreateBookmarkFolder createBookmarkFolderAction={createBookmarkFolderAction}/>
                         </Box>
                     </Tabs>
                 </Box>

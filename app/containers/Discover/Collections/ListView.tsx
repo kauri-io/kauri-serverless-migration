@@ -137,17 +137,6 @@ class Collections extends Component<IProps> {
                                                         collectionResource &&
                                                             collectionResource.id
                                                     )}
-                                                    isLoggedIn={
-                                                        this.props.isLoggedIn
-                                                    }
-                                                    routeChangeAction={
-                                                        this.props
-                                                            .routeChangeAction
-                                                    }
-                                                    openModalAction={
-                                                        this.props
-                                                            .openModalAction
-                                                    }
                                                 />
                                             </Grid>
                                         )

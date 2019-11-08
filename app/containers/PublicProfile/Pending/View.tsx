@@ -27,9 +27,6 @@ const Articles = ({
     data,
     type,
     isOwner,
-    isLoggedIn,
-    routeChangeAction,
-    openModalAction,
 }: IArticlesProps) => {
     const articles = data.searchArticles && data.searchArticles.content
 
@@ -58,9 +55,6 @@ const Articles = ({
                                     <ArticleCard
                                         href={getArticleURL(article)}
                                         {...article}
-                                        isLoggedIn={isLoggedIn}
-                                        routeChangeAction={routeChangeAction}
-                                        openModalAction={openModalAction}
                                     />
                                 </Grid>
                             )

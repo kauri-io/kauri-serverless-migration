@@ -205,13 +205,6 @@ const ArticleComp = ({
                                                     recommendedArticle.resource
                                                 )}
                                                 {...recommendedArticle.resource}
-                                                routeChangeAction={
-                                                    routeChangeAction
-                                                }
-                                                openModalAction={
-                                                    openModalAction
-                                                }
-                                                isLoggedIn={userId != null}
                                             />
                                         </Grid>
                                     ) : null

@@ -1438,6 +1438,10 @@ export interface getCommunityAndPendingArticles_getCommunity_approved_Collection
    */
   description: string | null;
   /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
    * Tags
    */
   tags: (string | null)[] | null;
@@ -2449,6 +2453,10 @@ export interface getCommunityAndPendingArticles_getCommunity_pending_CollectionD
    * Collection description
    */
   description: string | null;
+  /**
+   * Date created
+   */
+  dateCreated: any;
   /**
    * Tags
    */

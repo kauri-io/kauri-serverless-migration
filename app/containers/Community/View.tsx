@@ -36,7 +36,6 @@ interface IProps {
     client?: ApolloClient<{}>
     acceptCommunityInvitationAction: typeof acceptCommunityInvitation
     currentUser: string
-    isLoggedIn: boolean
     isCommunityAdmin: boolean
     secret: null | string
     communityId: string
@@ -63,20 +62,12 @@ interface IState {
 const CollectionsPanel = ({
     collections,
     removeResourceAction,
-    openModalAction,
     isMember,
-    closeModalAction,
     getCommunity,
-    routeChangeAction,
-    isLoggedIn,
 }) =>
     collections && collections.length > 0 ? (
         <DisplayResources
             removeResourceAction={removeResourceAction}
-            openModalAction={openModalAction}
-            closeModalAction={closeModalAction}
-            routeChangeAction={routeChangeAction}
-            isLoggedIn={isLoggedIn}
             isMember={isMember}
             type="collections"
             key="collections"
@@ -159,7 +150,6 @@ class CommunityConnection extends React.Component<IProps, IState> {
             removeResourceAction,
             transferArticleToCommunityAction,
             isCommunityAdmin,
-            isLoggedIn,
         } = this.props
 
         const articles =
@@ -303,10 +293,6 @@ class CommunityConnection extends React.Component<IProps, IState> {
 
                     <DisplayResources
                         removeResourceAction={removeResourceAction}
-                        openModalAction={openModalAction}
-                        closeModalAction={closeModalAction}
-                        routeChangeAction={routeChangeAction}
-                        isLoggedIn={isLoggedIn}
                         isMember={isMember}
                         key="articles"
                         type="articles"
@@ -319,11 +305,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         isMember={isMember}
                         collections={collections}
                         removeResourceAction={removeResourceAction}
-                        openModalAction={openModalAction}
-                        closeModalAction={closeModalAction}
                         getCommunity={getCommunity}
-                        routeChangeAction={routeChangeAction}
-                        isLoggedIn={isLoggedIn}
                     />
                 )}
                 {this.state.tab === getActualTabId(3) && (
@@ -339,9 +321,6 @@ class CommunityConnection extends React.Component<IProps, IState> {
                             this.props.data.searchArticles &&
                             this.props.data.searchArticles.content
                         }
-                        openModalAction={openModalAction}
-                        routeChangeAction={routeChangeAction}
-                        isLoggedIn={isLoggedIn}
                     />
                 )}
             </>

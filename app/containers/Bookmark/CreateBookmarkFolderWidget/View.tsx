@@ -1,17 +1,18 @@
 import { FormGroup, TextField, Link } from '@material-ui/core'
-import React from 'react'
-import { createBookmarkFolderAction } from '../Module'
+import { useState} from 'react'
+import { ICreateBookmakFolderAction } from '../Module'
+import { createBookmarkFolderVariables } from '../../../queries/__generated__/createBookmarkFolder'
 
 interface IProps {
-    createBookmarkFolderAction: typeof createBookmarkFolderAction
+    createBookmarkFolderAction: (payload: createBookmarkFolderVariables) => ICreateBookmakFolderAction
 }
 
 export const CreateBookmarkFolderComponent = ({
     createBookmarkFolderAction,
 }: IProps) => {
-    const [showForm, setShowForm] = React.useState(false)
-    const [hasError, setHasError] = React.useState(false)
-    const [folder, setFolder] = React.useState('')
+    const [showForm, setShowForm] = useState(false)
+    const [hasError, setHasError] = useState(false)
+    const [folder, setFolder] = useState('')
 
     const toggleShowForm = () => {
         setShowForm(true)

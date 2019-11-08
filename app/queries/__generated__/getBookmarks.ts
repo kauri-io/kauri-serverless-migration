@@ -992,6 +992,10 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO {
    */
   description: string | null;
   /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
    * Tags
    */
   tags: (string | null)[] | null;
@@ -1018,20 +1022,257 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO {
   isBookmarked: boolean;
 }
 
+export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner_ArticleDTO {
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner_PublicUserDTO {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  resourceIdentifier: getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier | null;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner_CommunityDTO {
+  __typename: "CommunityDTO";
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
+  avatar: string | null;
+  resourceIdentifier: getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner_CommunityDTO_resourceIdentifier | null;
+}
+
+export type getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner = getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner_ArticleDTO | getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner_PublicUserDTO | getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner_CommunityDTO;
+
 export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_url {
   __typename: "ExternalLinkField_String";
   /**
    * The field value
    */
   value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_linkTitle {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_linkDescription {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_summary {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_authorName {
+  __typename: "ExternalLinkField_String";
+  /**
+   * The field value
+   */
+  value: string | null;
+  /**
+   * If the field is editable
+   */
+  isEditable: boolean | null;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_comments_content_author {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_comments_content {
+  __typename: "CommentDTO";
+  /**
+   * Comment author (full profile)
+   */
+  author: getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_comments_content_author;
+  /**
+   * Date the comment was published
+   */
+  posted: any;
+  /**
+   * Comment
+   */
+  body: string;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_comments {
+  __typename: "ResponsePage_CommentDTO";
+  /**
+   * Returns the page content.
+   */
+  content: (getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_comments_content | null)[];
+  /**
+   * Number of total pages.
+   */
+  totalPages: number;
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
 }
 
 export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
+   * External link ID
+   */
+  id: string;
+  resourceIdentifier: getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_resourceIdentifier | null;
+  /**
+   * The date that this external link was created
+   */
+  dateCreated: any;
+  /**
+   * The date that this external link was updated
+   */
+  dateUpdated: any;
+  /**
+   * The external link submitter user id
+   */
+  submitterId: string;
+  /**
+   * load the external link owner (user or community resource type)
+   */
+  owner: getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner | null;
+  /**
    * The link url
    */
   url: getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_url;
+  /**
+   * The link title
+   */
+  linkTitle: getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_linkTitle;
+  /**
+   * The description of the link, obtained via metadata
+   */
+  linkDescription: getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_linkDescription | null;
+  /**
+   * The user input summary of the link
+   */
+  summary: getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_summary | null;
+  /**
+   * Link attributes
+   */
+  linkAttributes: any | null;
+  /**
+   * The link content author
+   */
+  authorName: getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_authorName;
+  /**
+   * Get a paginated list of comments for this external link
+   */
+  comments: getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_comments;
+  /**
+   * The link content author
+   */
+  authorSocial: any | null;
+  /**
+   * Tags associated with the link
+   */
+  tags: (string | null)[] | null;
 }
 
 export type getBookmarks_getBookmarks_content_resource = getBookmarks_getBookmarks_content_resource_PublicUserDTO | getBookmarks_getBookmarks_content_resource_ArticleDTO | getBookmarks_getBookmarks_content_resource_CollectionDTO | getBookmarks_getBookmarks_content_resource_ExternalLinkDTO;

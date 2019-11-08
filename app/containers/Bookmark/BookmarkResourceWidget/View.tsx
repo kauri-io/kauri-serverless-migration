@@ -10,15 +10,19 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 import { ResourceTypeInput } from '../../../__generated__/globalTypes'
-import CreateBookmarkFolder from '../CreateBookmarkFolderWidget'
-import { closeModalAction } from '../../../components/Modal/Module'
-import { bookmarkAction, unbookmarkAction, labelRootFolder } from '../Module'
+import CreateBookmarkFolder from '../CreateBookmarkFolderWidget/View'
+import { ICloseModalAction } from '../../../components/Modal/Module'
+import { IBookmarkAction, IUnbookmarkAction, ICreateBookmakFolderAction, labelRootFolder, ILabelRootFolder } from '../Module'
+import { createBookmarkFolderVariables } from '../../../queries/__generated__/createBookmarkFolder'
+import { bookmarkVariables } from '../../../queries/__generated__/bookmark'
+import { unbookmarkVariables } from '../../../queries/__generated__/unbookmark'
 
 interface IProps {
-    closeModalAction: typeof closeModalAction
-    bookmarkAction: typeof bookmarkAction
-    unbookmarkAction: typeof unbookmarkAction
-    labelRootFolder: typeof labelRootFolder
+    closeModalAction: () => ICloseModalAction
+    bookmarkAction: (payload: bookmarkVariables) => IBookmarkAction
+    unbookmarkAction: (payload: unbookmarkVariables) => IUnbookmarkAction
+    createBookmarkFolderAction: (payload: createBookmarkFolderVariables) => ICreateBookmakFolderAction
+    labelRootFolder: (payload: ILabelRootFolder) => string
     resourceId: string
     resourceType: ResourceTypeInput
     data: {
@@ -34,6 +38,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 export const BookmarkResourceComponent = ({
     closeModalAction,
+    createBookmarkFolderAction,
     bookmarkAction,
     unbookmarkAction,
     resourceId,
@@ -91,7 +96,7 @@ export const BookmarkResourceComponent = ({
                                     />
                                 }
                                 label={
-                                    labelRootFolder(folder.name) +
+                                    labelRootFolder({folder: folder.name}) +
                                     ' (' +
                                     folder.total +
                                     ')'
@@ -100,7 +105,7 @@ export const BookmarkResourceComponent = ({
                         )
                     })}
                     <Divider className={classes.divider} />
-                    <CreateBookmarkFolder />
+                    <CreateBookmarkFolder createBookmarkFolderAction={createBookmarkFolderAction}/>
                 </FormGroup>
             }
             title={'Save'}

@@ -7,7 +7,6 @@ import withLoading from '../../../lib/with-loading'
 import withApolloError from '../../../lib/with-apollo-error'
 import { searchAwaitingApproval } from '../../../queries/Article'
 import { graphql, compose } from 'react-apollo'
-import { openModalAction } from '../../../components/Modal/Module'
 import { searchPersonalArticles } from '../../../queries/__generated__/searchPersonalArticles'
 import { ICommunity } from '../../../lib/Module'
 import { getArticleURL } from '../../../lib/getURLs'
@@ -20,16 +19,12 @@ interface IArticlesProps {
     routeChangeAction: typeof routeChangeAction
     isLoggedIn: boolean
     isOwner: boolean
-    openModalAction: typeof openModalAction
 }
 
 const Articles = ({
     data,
     type,
     isOwner,
-    isLoggedIn,
-    routeChangeAction,
-    openModalAction,
 }: IArticlesProps) => {
     const articles = data.searchArticles && data.searchArticles.content
     return articles && articles.length > 0 ? (
@@ -55,9 +50,6 @@ const Articles = ({
                                     <ArticleCard
                                         href={getArticleURL(article, 'review')}
                                         {...article}
-                                        openModalAction={openModalAction}
-                                        routeChangeAction={routeChangeAction}
-                                        isLoggedIn={isLoggedIn}
                                     />
                                 </Grid>
                             )

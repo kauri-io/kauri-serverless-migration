@@ -1,12 +1,12 @@
 import View from './View'
 import { compose, graphql, withApollo } from 'react-apollo'
-import { getBookmarks } from '../../../queries/User'
+import { getBookmarks } from '../../../queries/Bookmark'
 import { connect } from 'react-redux'
 import withLoading from '../../../lib/with-loading'
 import withApolloError from '../../../lib/with-apollo-error'
-import { openModalAction } from '../../../components/Modal/Module'
+import { openModalAction, closeModalAction } from '../../../components/Modal/Module'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
-import { labelRootFolder } from '../Module'
+import { labelRootFolder, editBookmarkFolderAction, deleteBookmarkFolderAction } from '../Module'
 import withPagination from '../../../lib/with-pagination'
 
 const QUERY_NAME = 'BookmarkQuery'
@@ -17,8 +17,11 @@ export default compose(
         null,
         {
             openModalAction,
+            closeModalAction,
             routeChangeAction,
             labelRootFolder,
+            editBookmarkFolderAction,
+            deleteBookmarkFolderAction
         }
     ),
     graphql(getBookmarks, {

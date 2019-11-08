@@ -1,18 +1,24 @@
 import React from 'react'
-import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
-import { openModalAction } from '../../../components/Modal/Module'
+import { IOpenModalPayload, ICloseModalAction, IOpenModalAction } from '../../../components/Modal/Module'
+import { IRouteChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import { Grid, Box } from '@material-ui/core'
 import { getBookmarks_getBookmarks } from '../../../queries/__generated__/getBookmarks'
 import CollectionCard from '../../../components/Card/CollectionCard'
 import { getCollectionURL, getArticleURL } from '../../../lib/getURLs'
-import EditBookmarkFolderWidget from '../EditBookmarkFolderWidget'
+import EditBookmarkFolderWidget from '../EditBookmarkFolderWidget/View'
 import ArticleCard from '../../../components/Card/ArticleCard'
 import Loading from '../../../components/Loading'
+import { IEditBookmakFolderAction, IDeleteBookmakFolderAction } from '../Module'
+import { editBookmarkFolderVariables } from '../../../queries/__generated__/editBookmarkFolder'
+import { deleteBookmarkFolderVariables } from '../../../queries/__generated__/deleteBookmarkFolder'
 
 interface IProps {
     isLoggedIn: boolean
-    routeChangeAction: typeof routeChangeAction
-    openModalAction: typeof openModalAction
+    routeChangeAction: (payload: string) => IRouteChangeAction
+    openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
+    closeModalAction: () => ICloseModalAction
+    editBookmarkFolderAction: (payload: editBookmarkFolderVariables) => IEditBookmakFolderAction
+    deleteBookmarkFolderAction: (payload: deleteBookmarkFolderVariables) => IDeleteBookmakFolderAction
     folder: string
     BookmarkQuery: {
         getBookmarks: getBookmarks_getBookmarks
@@ -24,6 +30,9 @@ export const ManageBookmarkBody = ({
     isLoggedIn,
     routeChangeAction,
     openModalAction,
+    closeModalAction,
+    editBookmarkFolderAction, 
+    deleteBookmarkFolderAction,
     BookmarkQuery,
     folder,
     updateFolder,
@@ -37,6 +46,10 @@ export const ManageBookmarkBody = ({
             <EditBookmarkFolderWidget
                 folder={folder}
                 updateFolder={updateFolder}
+                openModalAction={openModalAction}
+                closeModalAction={closeModalAction}
+                editBookmarkFolderAction={editBookmarkFolderAction}
+                deleteBookmarkFolderAction={deleteBookmarkFolderAction}
             />
 
             <Grid container={true} spacing={2}>

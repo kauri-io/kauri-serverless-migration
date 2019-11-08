@@ -13,21 +13,13 @@ import {
 } from '../../lib/getURLs'
 import CommunityCard from '../Card/CommunityCard'
 import { makeStyles } from '@material-ui/styles'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
-import { openModalAction } from '../Modal/Module'
 
 interface IProps {
     content: any[]
-    isLoggedIn: boolean
-    routeChangeAction: typeof routeChangeAction
-    openModalAction: typeof openModalAction
 }
 
 const FeaturedContent: React.FunctionComponent<IProps> = ({
-    content,
-    isLoggedIn,
-    routeChangeAction,
-    openModalAction,
+    content
 }) => {
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
@@ -51,9 +43,6 @@ const FeaturedContent: React.FunctionComponent<IProps> = ({
                                 key={key}
                                 {...resource}
                                 href={getArticleURL(resource)}
-                                isLoggedIn={isLoggedIn}
-                                routeChangeAction={routeChangeAction}
-                                openModalAction={openModalAction}
                             />
                         )
                     }
@@ -64,9 +53,6 @@ const FeaturedContent: React.FunctionComponent<IProps> = ({
                                 key={key}
                                 {...resource}
                                 href={getCollectionURL(resource)}
-                                isLoggedIn={isLoggedIn}
-                                routeChangeAction={routeChangeAction}
-                                openModalAction={openModalAction}
                             />
                         )
                     }

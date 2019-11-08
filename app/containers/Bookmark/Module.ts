@@ -8,7 +8,7 @@ import {
     createBookmarkFolder as createBookmarkFolderMutation,
     deleteBookmarkFolder as deleteBookmarkFolderMutation,
     editBookmarkFolder as editBookmarkFolderMutation,
-} from '../../queries/User'
+} from '../../queries/Bookmark'
 import {
     bookmarkVariables,
     bookmark,
@@ -37,12 +37,15 @@ import { path } from 'ramda'
 
 export const ROOT_FOLDER = '_root_'
 
-export const labelRootFolder = (folder: string) => {
-    if (folder === ROOT_FOLDER) {
+export interface ILabelRootFolder {
+    folder: string
+}
+export const labelRootFolder = (payload: ILabelRootFolder) => {
+    if (payload.folder === ROOT_FOLDER) {
         // default name for root folder
         return 'Bookmarks'
     }
-    return folder
+    return payload.folder
 }
 
 ////////////////////////////////////////////////////////////////////////////

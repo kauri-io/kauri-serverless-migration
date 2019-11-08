@@ -716,6 +716,10 @@ export interface HomepageComponentFragment_Featured_content_resource_CollectionD
    */
   description: string | null;
   /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
    * Tags
    */
   tags: (string | null)[] | null;
@@ -2122,6 +2126,10 @@ export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO 
    */
   description: string | null;
   /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
    * Tags
    */
   tags: (string | null)[] | null;
@@ -3474,6 +3482,10 @@ export interface HomepageComponentFragment_LatestContent_content_CollectionDTO {
    * Collection description
    */
   description: string | null;
+  /**
+   * Date created
+   */
+  dateCreated: any;
   /**
    * Tags
    */

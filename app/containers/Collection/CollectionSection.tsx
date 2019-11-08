@@ -64,9 +64,6 @@ const CollectionSection: React.SFC<IProps> = props => {
                                 <ArticleCard
                                     key={key}
                                     href={getArticleURL(resource)}
-                                    isLoggedIn={props.isLoggedIn}
-                                    routeChangeAction={props.routeChangeAction}
-                                    openModalAction={props.openModalAction}
                                     {...resource}
                                 />
                             )
@@ -141,9 +138,6 @@ const CollectionSection: React.SFC<IProps> = props => {
                                     owner={ownerResource}
                                     href={getCollectionURL(collection)}
                                     key={String(collection.id)}
-                                    isLoggedIn={props.isLoggedIn}
-                                    routeChangeAction={props.routeChangeAction}
-                                    openModalAction={props.openModalAction}
                                 />
                             )
                         }

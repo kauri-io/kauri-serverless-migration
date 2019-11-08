@@ -1438,6 +1438,10 @@ export interface getCommunity_getCommunity_approved_CollectionDTO {
    */
   description: string | null;
   /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
    * Tags
    */
   tags: (string | null)[] | null;
@@ -2449,6 +2453,10 @@ export interface getCommunity_getCommunity_pending_CollectionDTO {
    * Collection description
    */
   description: string | null;
+  /**
+   * Date created
+   */
+  dateCreated: any;
   /**
    * Tags
    */

@@ -1,4 +1,4 @@
-import { mountWithTheme } from '../../setupTests'
+import { mountWithRedux } from '../../setupTests'
 import ArticleCard from './ArticleCard'
 
 let ArticleCardProps
@@ -54,12 +54,12 @@ describe('components/Card/ArticleCard', () => {
     })
 
     it('should match snapshot', () => {
-        const wrapper = mountWithTheme(<ArticleCard {...ArticleCardProps} />)
+        const wrapper = mountWithRedux(<ArticleCard {...ArticleCardProps} />)
         expect(wrapper).toMatchSnapshot()
     })
 
     it('should have a title', () => {
-        const wrapper = mountWithTheme(<ArticleCard {...ArticleCardProps} />)
+        const wrapper = mountWithRedux(<ArticleCard {...ArticleCardProps} />)
 
         const dataTestId = `ArticleCard-${ArticleCardProps.id}-title`
         const title = wrapper.exists(`[data-testid="${dataTestId}"]`)
@@ -67,7 +67,7 @@ describe('components/Card/ArticleCard', () => {
     })
 
     it('should have a description', () => {
-        const wrapper = mountWithTheme(<ArticleCard {...ArticleCardProps} />)
+        const wrapper = mountWithRedux(<ArticleCard {...ArticleCardProps} />)
 
         const dataTestId = `ArticleCard-${ArticleCardProps.id}-description`
         const description = wrapper.exists(`[data-testid="${dataTestId}"]`)
@@ -75,7 +75,7 @@ describe('components/Card/ArticleCard', () => {
     })
 
     it('should have an image based on the background attribute', () => {
-        const wrapper = mountWithTheme(<ArticleCard {...ArticleCardProps} />)
+        const wrapper = mountWithRedux(<ArticleCard {...ArticleCardProps} />)
 
         const dataTestId = `ArticleCard-${ArticleCardProps.id}-image`
         const image = wrapper.exists(`[data-testid="${dataTestId}"]`)
@@ -88,7 +88,7 @@ describe('components/Card/ArticleCard', () => {
             ...ArticleCardProps,
             attributes: {},
         }
-        const wrapper = mountWithTheme(
+        const wrapper = mountWithRedux(
             <ArticleCard {...ArticleCardPropsWithoutBackgroundAttribute} />
         )
         const dataTestId = `ArticleCard-${ArticleCardProps.id}-image`
@@ -100,7 +100,7 @@ describe('components/Card/ArticleCard', () => {
     })
 
     it('should show the author name by default', () => {
-        const wrapper = mountWithTheme(<ArticleCard {...ArticleCardProps} />)
+        const wrapper = mountWithRedux(<ArticleCard {...ArticleCardProps} />)
 
         const dataTestId = `ArticleCard-${ArticleCardProps.id}-author`
         const author = wrapper.find(`[data-testid="${dataTestId}"]`).first()
@@ -108,7 +108,7 @@ describe('components/Card/ArticleCard', () => {
     })
 
     it('should show the author username if they have no name', () => {
-        const wrapper = mountWithTheme(
+        const wrapper = mountWithRedux(
             <ArticleCard
                 {...ArticleCardProps}
                 author={{ ...ArticleCardProps.author, name: null }}
@@ -121,7 +121,7 @@ describe('components/Card/ArticleCard', () => {
     })
 
     it('should fallback to show the author id', () => {
-        const wrapper = mountWithTheme(
+        const wrapper = mountWithRedux(
             <ArticleCard
                 {...ArticleCardProps}
                 author={{
@@ -138,14 +138,14 @@ describe('components/Card/ArticleCard', () => {
     })
 
     it('should show the date published', () => {
-        const wrapper = mountWithTheme(<ArticleCard {...ArticleCardProps} />)
+        const wrapper = mountWithRedux(<ArticleCard {...ArticleCardProps} />)
         const dataTestId = `ArticleCard-${ArticleCardProps.id}-date`
         const date = wrapper.find(`[data-testid="${dataTestId}"]`).first()
         expect(date.text()).toBe('13 Jun 94')
     })
 
     it('should show the comment count and icon', () => {
-        const wrapper = mountWithTheme(<ArticleCard {...ArticleCardProps} />)
+        const wrapper = mountWithRedux(<ArticleCard {...ArticleCardProps} />)
         const commentIconDataTestId = `ArticleCard-${ArticleCardProps.id}-commentIcon`
         const commentIcon = wrapper.exists(
             `[data-testid="${commentIconDataTestId}"]`
@@ -160,7 +160,7 @@ describe('components/Card/ArticleCard', () => {
     })
 
     it('should show the upvote count and icon', () => {
-        const wrapper = mountWithTheme(<ArticleCard {...ArticleCardProps} />)
+        const wrapper = mountWithRedux(<ArticleCard {...ArticleCardProps} />)
         const upvoteIconDataTestId = `ArticleCard-${ArticleCardProps.id}-upvoteIcon`
         const upvoteIcon = wrapper.exists(
             `[data-testid="${upvoteIconDataTestId}"]`
@@ -175,7 +175,7 @@ describe('components/Card/ArticleCard', () => {
     })
 
     it('should show the more options menu', () => {
-        const wrapper = mountWithTheme(<ArticleCard {...ArticleCardProps} />)
+        const wrapper = mountWithRedux(<ArticleCard {...ArticleCardProps} />)
         const dataTestId = `ArticleCard-${ArticleCardProps.id}-moreOptionsButton`
         const moreOptionsButton = wrapper.exists(
             `[data-testid="${dataTestId}"]`
@@ -184,7 +184,7 @@ describe('components/Card/ArticleCard', () => {
     })
 
     it('should open more options when the menu is clicked', () => {
-        const wrapper = mountWithTheme(<ArticleCard {...ArticleCardProps} />)
+        const wrapper = mountWithRedux(<ArticleCard {...ArticleCardProps} />)
         const moreOptionsButtonDataTestId = `ArticleCard-${ArticleCardProps.id}-moreOptionsButton`
         const moreOptionsMenuDataTestId = `ArticleCard-${ArticleCardProps.id}-moreOptionsMenu`
         wrapper
@@ -200,7 +200,7 @@ describe('components/Card/ArticleCard', () => {
     })
 
     it('should show even more options when the menu is clicked AND the user is logged in', () => {
-        const wrapper = mountWithTheme(
+        const wrapper = mountWithRedux(
             <ArticleCard {...ArticleCardProps} isLoggedIn={true} />
         )
         const moreOptionsButtonDataTestId = `ArticleCard-${ArticleCardProps.id}-moreOptionsButton`

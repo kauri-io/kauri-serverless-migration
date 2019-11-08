@@ -992,6 +992,10 @@ export interface getCommunityContent_getCommunityContent_content_resource_Collec
    */
   description: string | null;
   /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
    * Tags
    */
   tags: (string | null)[] | null;

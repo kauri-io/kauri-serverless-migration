@@ -9,9 +9,7 @@ import { removeResourceVariables } from '../../queries/__generated__/removeResou
 import ArticlesEmptyState from './EmptyStates/Articles'
 import CollectionsEmptyState from './EmptyStates/Collections'
 import { getArticleURL, getCollectionURL } from '../../lib/getURLs'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import {
-    openModalAction,
     closeModalAction,
 } from '../../components/Modal/Module'
 
@@ -21,10 +19,7 @@ interface IProps {
     resources?: any
     communityId: string | null
     isMember: boolean
-    isLoggedIn: boolean
     closeModalAction?: typeof closeModalAction
-    openModalAction: typeof openModalAction
-    routeChangeAction: typeof routeChangeAction
     removeResourceAction?: (payload: removeResourceVariables) => void
 }
 
@@ -40,7 +35,7 @@ const RenderEmptyState: React.FunctionComponent<{ type: string }> = ({
     return null
 }
 
-const RenderResources = (isLoggedIn, routeChangeAction, openModalAction) =>
+const RenderResources = () =>
     // isMember: boolean,
     // communityId: string | null,
     // openModalAction?: (payload: { children: any }) => void,
@@ -81,9 +76,6 @@ const RenderResources = (isLoggedIn, routeChangeAction, openModalAction) =>
                 <ArticleCard
                     href={getArticleURL(article)}
                     {...article}
-                    routeChangeAction={routeChangeAction}
-                    openModalAction={openModalAction}
-                    isLoggedIn={isLoggedIn}
                 />
             )
         } else if (article.__typename === 'CollectionDTO') {
@@ -93,9 +85,6 @@ const RenderResources = (isLoggedIn, routeChangeAction, openModalAction) =>
                     href={getCollectionURL(article)}
                     key={String(article.id)}
                     owner={owner}
-                    isLoggedIn={isLoggedIn}
-                    routeChangeAction={routeChangeAction}
-                    openModalAction={openModalAction}
                     // hoverChildren={() => (
                     //     <PrimaryButton
                     //         onClick={() =>
@@ -162,9 +151,6 @@ const DisplayResources = ({
     resources,
     type,
     classes,
-    isLoggedIn,
-    openModalAction,
-    routeChangeAction,
 }: IProps) => {
     if (
         Array.isArray(resources) &&
@@ -178,11 +164,7 @@ const DisplayResources = ({
             <Grid className={classes.grid} container spacing={3}>
                 {Array.isArray(resources) && resources.length
                     ? resources.map(
-                          RenderResources(
-                              isLoggedIn,
-                              routeChangeAction,
-                              openModalAction
-                          )
+                          RenderResources()
                           // isMember,
                           // communityId,
                           // openModalAction,
@@ -198,20 +180,13 @@ const DisplayResources = ({
 const DisplayManagedResourcesComponent = ({
     resources,
     classes,
-    isLoggedIn,
-    openModalAction,
-    routeChangeAction,
 }: IProps & { review?: boolean }) => {
     return (
         <Container>
             <Grid className={classes.grid} container spacing={3}>
                 {Array.isArray(resources) && resources.length
                     ? resources.map(
-                          RenderResources(
-                              isLoggedIn,
-                              routeChangeAction,
-                              openModalAction
-                          )
+                          RenderResources()
                           // isMember,
                           // communityId,
                           // openModalAction,

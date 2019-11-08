@@ -697,6 +697,10 @@ export interface ResourceFragment_CollectionDTO {
    */
   description: string | null;
   /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
    * Tags
    */
   tags: (string | null)[] | null;

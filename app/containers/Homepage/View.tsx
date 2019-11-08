@@ -125,15 +125,6 @@ export const HomePageComponent = (props: {
                                                 <FeaturedContent
                                                     key="featured-content"
                                                     content={main.content}
-                                                    isLoggedIn={
-                                                        props.isLoggedIn
-                                                    }
-                                                    routeChangeAction={
-                                                        props.routeChangeAction
-                                                    }
-                                                    openModalAction={
-                                                        props.openModalAction
-                                                    }
                                                 />
                                             )
 
@@ -143,15 +134,6 @@ export const HomePageComponent = (props: {
                                                 <LatestContent
                                                     key="latest-content"
                                                     content={content}
-                                                    isLoggedIn={
-                                                        props.isLoggedIn
-                                                    }
-                                                    routeChangeAction={
-                                                        props.routeChangeAction
-                                                    }
-                                                    openModalAction={
-                                                        props.openModalAction
-                                                    }
                                                 />
                                             )
 

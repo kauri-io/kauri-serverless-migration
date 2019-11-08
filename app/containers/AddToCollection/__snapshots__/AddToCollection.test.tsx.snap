@@ -704,6 +704,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
+                              "value": "dateCreated",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
                               "value": "tags",
                             },
                             "selectionSet": undefined,
@@ -2351,7 +2362,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 4681,
+                    "end": 4701,
                     "start": 0,
                   },
                 },
@@ -2697,6 +2708,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
+                              "value": "dateCreated",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
                               "value": "tags",
                             },
                             "selectionSet": undefined,
@@ -4344,7 +4366,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 4681,
+                    "end": 4701,
                     "start": 0,
                   },
                 } => Object {
@@ -4665,6 +4687,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
+                              "value": "dateCreated",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
                               "value": "tags",
                             },
                             "selectionSet": undefined,
@@ -6550,7 +6583,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 4681,
+                    "end": 4701,
                     "start": 0,
                   },
                 },
@@ -6872,6 +6905,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
+                              "value": "dateCreated",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
                               "value": "tags",
                             },
                             "selectionSet": undefined,
@@ -8757,7 +8801,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 4681,
+                    "end": 4701,
                     "start": 0,
                   },
                 } => Object {
@@ -9078,6 +9122,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
+                              "value": "dateCreated",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
                               "value": "tags",
                             },
                             "selectionSet": undefined,
@@ -10963,7 +11018,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 4681,
+                    "end": 4701,
                     "start": 0,
                   },
                 },
@@ -11281,6 +11336,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "name": Object {
                                 "kind": "Name",
                                 "value": "description",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "dateCreated",
                               },
                               "selectionSet": undefined,
                             },
@@ -13176,7 +13242,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 4681,
+                      "end": 4701,
                       "start": 0,
                     },
                   },
@@ -13539,6 +13605,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "dateCreated",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "tags",
                                 },
                                 "selectionSet": undefined,
@@ -15186,7 +15263,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 4681,
+                        "end": 4701,
                         "start": 0,
                       },
                     } => Object {
@@ -15507,6 +15584,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "dateCreated",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "tags",
                                 },
                                 "selectionSet": undefined,
@@ -17392,7 +17480,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 4681,
+                        "end": 4701,
                         "start": 0,
                       },
                     },
@@ -17714,6 +17802,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "dateCreated",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "tags",
                                 },
                                 "selectionSet": undefined,
@@ -19599,7 +19698,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 4681,
+                        "end": 4701,
                         "start": 0,
                       },
                     } => Object {
@@ -19920,6 +20019,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "dateCreated",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "tags",
                                 },
                                 "selectionSet": undefined,
@@ -21805,7 +21915,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 4681,
+                        "end": 4701,
                         "start": 0,
                       },
                     },
@@ -22123,6 +22233,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                   "name": Object {
                                     "kind": "Name",
                                     "value": "description",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "dateCreated",
                                   },
                                   "selectionSet": undefined,
                                 },
@@ -24018,7 +24139,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 4681,
+                          "end": 4701,
                           "start": 0,
                         },
                       },
@@ -24359,6 +24480,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "name": Object {
                                 "kind": "Name",
                                 "value": "description",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "dateCreated",
                               },
                               "selectionSet": undefined,
                             },
@@ -26254,7 +26386,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 4681,
+                      "end": 4701,
                       "start": 0,
                     },
                   },
@@ -26585,6 +26717,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                   "name": Object {
                                     "kind": "Name",
                                     "value": "description",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "dateCreated",
                                   },
                                   "selectionSet": undefined,
                                 },
@@ -28242,7 +28385,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 4681,
+                          "end": 4701,
                           "start": 0,
                         },
                       },
@@ -28606,6 +28749,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "dateCreated",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "tags",
                                 },
                                 "selectionSet": undefined,
@@ -30491,7 +30645,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 4681,
+                        "end": 4701,
                         "start": 0,
                       },
                     },
@@ -30864,6 +31018,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
+                                "value": "dateCreated",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
                                 "value": "tags",
                               },
                               "selectionSet": undefined,
@@ -32511,7 +32676,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 4681,
+                      "end": 4701,
                       "start": 0,
                     },
                   } => Object {
@@ -32832,6 +32997,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
+                                "value": "dateCreated",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
                                 "value": "tags",
                               },
                               "selectionSet": undefined,
@@ -34717,7 +34893,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 4681,
+                      "end": 4701,
                       "start": 0,
                     },
                   },
@@ -35039,6 +35215,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
+                                "value": "dateCreated",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
                                 "value": "tags",
                               },
                               "selectionSet": undefined,
@@ -36924,7 +37111,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 4681,
+                      "end": 4701,
                       "start": 0,
                     },
                   } => Object {
@@ -37245,6 +37432,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
+                                "value": "dateCreated",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
                                 "value": "tags",
                               },
                               "selectionSet": undefined,
@@ -39130,7 +39328,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 4681,
+                      "end": 4701,
                       "start": 0,
                     },
                   },
@@ -39448,6 +39646,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "name": Object {
                                   "kind": "Name",
                                   "value": "description",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "dateCreated",
                                 },
                                 "selectionSet": undefined,
                               },
@@ -41343,7 +41552,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 4681,
+                        "end": 4701,
                         "start": 0,
                       },
                     },
@@ -41668,6 +41877,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                           "name": Object {
                             "kind": "Name",
                             "value": "description",
+                          },
+                          "selectionSet": undefined,
+                        },
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "dateCreated",
                           },
                           "selectionSet": undefined,
                         },
@@ -43325,7 +43545,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 4681,
+                  "end": 4701,
                   "start": 0,
                 },
               }

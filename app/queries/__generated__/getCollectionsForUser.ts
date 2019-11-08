@@ -693,6 +693,10 @@ export interface getCollectionsForUser_searchCollections_content {
    */
   description: string | null;
   /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
    * Tags
    */
   tags: (string | null)[] | null;

@@ -12,7 +12,6 @@ import { getCollectionURL } from '../../../lib/getURLs'
 import { Grid, Typography, makeStyles, Theme } from '@material-ui/core'
 import Loading from '../../../components/Loading'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
-import { openModalAction } from '../../../components/Modal/Module'
 
 interface ICollectionQuery extends getCollectionsForUser {
     loading: boolean
@@ -21,7 +20,6 @@ interface ICollectionQuery extends getCollectionsForUser {
 interface IProps {
     CollectionQuery: ICollectionQuery
     routeChangeAction: typeof routeChangeAction
-    openModalAction: typeof openModalAction
     isLoggedIn: boolean
     loading: boolean
 }
@@ -29,7 +27,6 @@ interface IProps {
 const Collections = ({
     CollectionQuery,
     routeChangeAction,
-    openModalAction,
     isLoggedIn,
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
@@ -64,9 +61,6 @@ const Collections = ({
                                 href={getCollectionURL(collection)}
                                 key={collection.id}
                                 owner={owner}
-                                isLoggedIn={isLoggedIn}
-                                routeChangeAction={routeChangeAction}
-                                openModalAction={openModalAction}
                             />
                         </Grid>
                     )

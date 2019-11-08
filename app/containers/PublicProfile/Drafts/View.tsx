@@ -5,7 +5,6 @@ import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState
 import Button from '../../../components/Button'
 import { searchArticles } from '../../../queries/__generated__/searchArticles'
 import {
-    openModalAction,
     ICloseModalAction,
 } from '../../../components/Modal/Module'
 import {
@@ -16,7 +15,6 @@ import { getArticleURL } from '../../../lib/getURLs'
 import Link from 'next/link'
 import { Grid } from '@material-ui/core'
 import Loading from '../../../components/Loading'
-import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 
 interface IDraftQuery extends searchArticles {
     loading: boolean
@@ -25,15 +23,12 @@ interface IDraftQuery extends searchArticles {
 interface IArticlesProps {
     DraftsQuery: IDraftQuery
     type: string
-    isLoggedIn: boolean
     isOwner: boolean
-    openModalAction: typeof openModalAction
     closeModalAction: () => ICloseModalAction
     deleteDraftArticleAction: (
         payload: IDeleteDraftArticlePayload,
         callback: () => void
     ) => IDeleteDraftArticleAction
-    routeChangeAction: typeof routeChangeAction
 }
 
 const Articles: React.FC<IArticlesProps> = props => {
@@ -60,11 +55,6 @@ const Articles: React.FC<IArticlesProps> = props => {
                                     <ArticleCard
                                         href={getArticleURL(article, 'draft')}
                                         {...article}
-                                        isLoggedIn={props.isLoggedIn}
-                                        openModalAction={props.openModalAction}
-                                        routeChangeAction={
-                                            props.routeChangeAction
-                                        }
                                     />
                                 </Grid>
                             )

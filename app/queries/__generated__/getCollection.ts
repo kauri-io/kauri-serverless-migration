@@ -693,6 +693,10 @@ export interface getCollection_getCollection {
    */
   description: string | null;
   /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
    * Tags
    */
   tags: (string | null)[] | null;

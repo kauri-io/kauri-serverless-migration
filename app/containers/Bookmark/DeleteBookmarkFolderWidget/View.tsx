@@ -1,11 +1,12 @@
 import AlertView from '../../../components/Modal/AlertView'
 import React from 'react'
-import { closeModalAction } from '../../../components/Modal/Module'
-import { deleteBookmarkFolderAction, ROOT_FOLDER } from '../Module'
+import { ICloseModalAction } from '../../../components/Modal/Module'
+import { ROOT_FOLDER, IDeleteBookmakFolderAction } from '../Module'
+import { deleteBookmarkFolderVariables } from '../../../queries/__generated__/deleteBookmarkFolder'
 
 interface IProps {
-    closeModalAction: typeof closeModalAction
-    deleteBookmarkFolderAction: typeof deleteBookmarkFolderAction
+    closeModalAction: () => ICloseModalAction
+    deleteBookmarkFolderAction: (payload: deleteBookmarkFolderVariables) => IDeleteBookmakFolderAction
     folder: string
     updateFolder: (folder: string) => void
 }

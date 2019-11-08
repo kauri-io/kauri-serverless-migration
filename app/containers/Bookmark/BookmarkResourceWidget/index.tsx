@@ -2,11 +2,11 @@ import View from './View'
 import { connect } from 'react-redux'
 import { closeModalAction } from '../../../components/Modal/Module'
 import { compose, graphql, withApollo } from 'react-apollo'
-import { getBookmarkFolders } from '../../../queries/User'
+import { getBookmarkFolders } from '../../../queries/Bookmark'
 import withApolloError from '../../../lib/with-apollo-error'
 import withLoading from '../../../lib/with-loading'
 import { ResourceTypeInput } from '../../../__generated__/globalTypes'
-import { bookmarkAction, unbookmarkAction, labelRootFolder } from '../Module'
+import { bookmarkAction, unbookmarkAction, labelRootFolder, createBookmarkFolderAction } from '../Module'
 
 export default compose(
     withApollo,
@@ -17,6 +17,7 @@ export default compose(
             bookmarkAction,
             unbookmarkAction,
             labelRootFolder,
+            createBookmarkFolderAction
         }
     ),
     graphql(getBookmarkFolders, {

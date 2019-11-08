@@ -716,6 +716,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
    */
   description: string | null;
   /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
    * Tags
    */
   tags: (string | null)[] | null;
@@ -2122,6 +2126,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
    */
   description: string | null;
   /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
    * Tags
    */
   tags: (string | null)[] | null;
@@ -3474,6 +3482,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
    * Collection description
    */
   description: string | null;
+  /**
+   * Date created
+   */
+  dateCreated: any;
   /**
    * Tags
    */
@@ -4852,6 +4864,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
    * Collection description
    */
   description: string | null;
+  /**
+   * Date created
+   */
+  dateCreated: any;
   /**
    * Tags
    */
@@ -6259,6 +6275,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
    */
   description: string | null;
   /**
+   * Date created
+   */
+  dateCreated: any;
+  /**
    * Tags
    */
   tags: (string | null)[] | null;
@@ -7611,6 +7631,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
    * Collection description
    */
   description: string | null;
+  /**
+   * Date created
+   */
+  dateCreated: any;
   /**
    * Tags
    */

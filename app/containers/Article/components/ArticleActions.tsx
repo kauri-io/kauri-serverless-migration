@@ -14,8 +14,10 @@ import Link from 'next/link'
 import BookmarkResource from '../../Bookmark/BookmarkResourceWidget'
 import { openModalAction } from '../../../components/Modal/Module'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
-import { Tooltip, Icon } from '@material-ui/core'
+import { Tooltip, Link as LinkM } from '@material-ui/core'
 import { ResourceTypeInput } from '../../../__generated__/globalTypes'
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
+import BookmarkIcon from '@material-ui/icons/Bookmark'
 
 export const ArticleActionStyles = makeStyles((theme: Theme) => ({
     buttons: {
@@ -75,9 +77,8 @@ export default ({
     return (
         <Grid item={true} className={classes.buttons}>
             <Tooltip title={article.isBookmarked ? 'Unbookmark' : 'Bookmark'}>
-                <Icon
+                <LinkM
                     className={classes.hover}
-                    color="primary"
                     onClick={() =>
                         userId
                             ? openModalAction({
@@ -98,8 +99,11 @@ export default ({
                     }
                     data-testid={`Article-${id}-bookmark`}
                 >
-                    {article.isBookmarked ? 'bookmark' : 'bookmark_border_icon'}
-                </Icon>
+                    {article.isBookmarked
+                        ? (<BookmarkIcon color="primary" data-testid={`Article-${id}-bookmarkIcon`} />)
+                        : (<BookmarkBorderIcon color="primary" data-testid={`Article-${id}-bookmarkBorderIcon`} />)
+                    }
+                </LinkM>
             </Tooltip>
             <Tooltip title="Update article">
                 <div>

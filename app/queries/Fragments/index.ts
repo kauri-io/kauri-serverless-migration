@@ -168,6 +168,7 @@ export const Collection = gql`
         id
         name
         description
+        dateCreated
         tags
         background
         dateUpdated

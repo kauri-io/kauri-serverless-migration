@@ -1,8 +1,9 @@
-import { openModalAction } from '../../../components/Modal/Module'
+import { ICloseModalAction, IOpenModalPayload, IOpenModalAction } from '../../../components/Modal/Module'
 import {
-    editBookmarkFolderAction,
     ROOT_FOLDER,
     labelRootFolder,
+    IEditBookmakFolderAction,
+    IDeleteBookmakFolderAction
 } from '../Module'
 import {
     Grid,
@@ -14,12 +15,16 @@ import {
     Theme,
 } from '@material-ui/core'
 import Edit from '@material-ui/icons/Edit'
-import DeleteBookmarkFolderWidget from '../DeleteBookmarkFolderWidget'
-import React from 'react'
+import DeleteBookmarkFolderWidget from '../DeleteBookmarkFolderWidget/View'
+import { useState} from 'react'
+import { editBookmarkFolderVariables } from '../../../queries/__generated__/editBookmarkFolder'
+import { deleteBookmarkFolderVariables } from '../../../queries/__generated__/deleteBookmarkFolder'
 
 interface IProps {
-    openModalAction: typeof openModalAction
-    editBookmarkFolderAction: typeof editBookmarkFolderAction
+    openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
+    closeModalAction: () => ICloseModalAction
+    editBookmarkFolderAction: (payload: editBookmarkFolderVariables) => IEditBookmakFolderAction
+    deleteBookmarkFolderAction: (payload: deleteBookmarkFolderVariables) => IDeleteBookmakFolderAction
     folder: string
     updateFolder: (folder: string) => void
 }
@@ -32,15 +37,17 @@ const useStyles = makeStyles((_theme: Theme) => ({
 
 export const EditBookmarkFolderWidgetComponent = ({
     openModalAction,
+    closeModalAction,
     editBookmarkFolderAction,
+    deleteBookmarkFolderAction,
     folder,
     updateFolder,
 }: IProps) => {
     const classes = useStyles()
 
-    const [showForm, setShowForm] = React.useState(false)
-    const [hasError, setHasError] = React.useState(false)
-    const [newFolder, setNewFolder] = React.useState('')
+    const [showForm, setShowForm] = useState(false)
+    const [hasError, setHasError] = useState(false)
+    const [newFolder, setNewFolder] = useState('')
 
     const toggleShowForm = () => {
         setNewFolder(folder)
@@ -77,7 +84,7 @@ export const EditBookmarkFolderWidgetComponent = ({
                 <Grid item xs={9}>
                     {!showForm ? (
                         <Typography variant="h6">
-                            {labelRootFolder(folder)} &nbsp;
+                            {labelRootFolder({folder})} &nbsp;
                             {folder !== ROOT_FOLDER ? (
                                 <Link
                                     href="#"
@@ -114,6 +121,8 @@ export const EditBookmarkFolderWidgetComponent = ({
                                         <DeleteBookmarkFolderWidget
                                             folder={folder}
                                             updateFolder={updateFolder}
+                                            closeModalAction={closeModalAction}
+                                            deleteBookmarkFolderAction={deleteBookmarkFolderAction}
                                         />
                                     ),
                                 })
