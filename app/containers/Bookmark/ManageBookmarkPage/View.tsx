@@ -19,35 +19,34 @@ const useStyles = makeStyles((_theme: Theme) => ({
     root: {
         //backgroundColor: theme.palette.background.paper,
         height: '100%',
-        flex: 1
-        
+        flex: 1,
     },
     tabContainer: {
         flex: 1,
-        alignItems: "flex-start",
-        borderRight: '1px solid #cbcbcb'
+        alignItems: 'flex-start',
+        borderRight: '1px solid #cbcbcb',
     },
     tabs: {
         '& div': {
-            alignItems: 'flex-end'
-        }
+            alignItems: 'flex-end',
+        },
     },
     tab: {
         width: 250,
         '& > span': {
             alignItems: 'flex-start',
             textTransform: 'capitalize',
-            fontWeight: 600
-        }
+            fontWeight: 600,
+        },
     },
     createContainer: {
         width: 250,
-        alignItems: "flex-start",
+        alignItems: 'flex-start',
         padding: '6px 12px',
         '& > div': {
-            alignItems: 'flex-start'
-        }
-    }
+            alignItems: 'flex-start',
+        },
+    },
 }))
 
 export const ManageBookmarkPageComponent = ({
@@ -112,9 +111,9 @@ export const ManageBookmarkPageComponent = ({
                                     />
                                 )
                             })}
-                            <Box className={classes.createContainer}>
-                                <CreateBookmarkFolder/>
-                            </Box>
+                        <Box className={classes.createContainer}>
+                            <CreateBookmarkFolder />
+                        </Box>
                     </Tabs>
                 </Box>
             </Grid>
