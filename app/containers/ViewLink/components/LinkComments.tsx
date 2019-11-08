@@ -31,7 +31,7 @@ export default ({ link, user, addCommentAction }) => {
     const [comment, setComment] = useState('')
     const classes = useStyles()
     return (
-        <div>
+        <div id="comments">
             <Typography
                 aria-label="title"
                 className={classes.title}

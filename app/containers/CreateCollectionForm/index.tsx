@@ -71,16 +71,16 @@ export default compose<
         mapPropsToValues: ({ data, query }) => {
             const sections =
                 // Prefill article in section 1 and create first collection
-                typeof query === 'object' && typeof query.articleId === 'string'
+                typeof query === 'object' &&
+                typeof query.resourceId === 'string'
                     ? [
                           {
                               name: '',
                               description: undefined,
                               resourcesId: [
                                   {
-                                      type: 'ARTICLE',
-                                      id: query.articleId,
-                                      version: query.version,
+                                      type: query.type,
+                                      id: query.resourceId,
                                   },
                               ],
                           },

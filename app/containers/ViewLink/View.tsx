@@ -5,7 +5,12 @@ import Toolbar from './components/Toolbar'
 import { useStyles } from './style'
 import Hidden from '@material-ui/core/Hidden'
 
-const ViewLink = ({ addCommentAction, user, data: { getExternalLink } }) => {
+const ViewLink = ({
+    openModalAction,
+    addCommentAction,
+    user,
+    data: { getExternalLink },
+}) => {
     const classes = useStyles({})
 
     return (
@@ -29,6 +34,8 @@ const ViewLink = ({ addCommentAction, user, data: { getExternalLink } }) => {
             >
                 <div className={classes.header}>
                     <Toolbar
+                        linkId={getExternalLink.id}
+                        openModalAction={openModalAction}
                         comments={getExternalLink.comments.totalElements}
                         classes={classes}
                     />

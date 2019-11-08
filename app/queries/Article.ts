@@ -643,24 +643,6 @@ export const finaliseArticleTransferMutation = gql`
     }
 `
 
-export const addArticleToCollectionMutation = gql`
-    mutation addArticleToCollection(
-        $id: String!
-        $sectionId: String!
-        $resourceId: ResourceIdentifierInput!
-        $position: Int
-    ) {
-        addCollectionResource(
-            id: $id
-            sectionId: $sectionId
-            resourceId: $resourceId
-            position: $position
-        ) {
-            hash
-        }
-    }
-`
-
 export const getCollectionTitleQuery = gql`
     query getCollectionTitle($id: String!) {
         getCollection(id: $id) {

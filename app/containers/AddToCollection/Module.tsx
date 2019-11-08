@@ -5,16 +5,16 @@ import analytics from '../../lib/analytics'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import {
     getArticleTitleQuery,
-    addArticleToCollectionMutation,
     getCollectionTitleQuery,
 } from '../../queries/Article'
+import { addResourceToCollectionMutation } from '../../queries/Collection'
 import { openModalAction } from '../../components/Modal/Module'
 import AlertViewComponent from '../../components/Modal/AlertView'
 import { BodyCard, H4 } from '../../components/Typography'
 import {
-    addArticleToCollectionVariables,
-    addArticleToCollection,
-} from '../../queries/__generated__/addArticleToCollection'
+    addResourceToCollectionVariables,
+    addResourceToCollection,
+} from '../../queries/__generated__/addResourceToCollection'
 import { switchMap, mergeMap, map, tap, catchError } from 'rxjs/operators'
 import { from, of, merge } from 'rxjs'
 import { path } from 'ramda'
@@ -43,12 +43,12 @@ const ADD_ARTICLE_TO_COLLECTION = 'ADD_ARTICLE_TO_COLLECTION'
 const OPEN_ADD_ARTICLE_TO_COLLECTION_CONFIRMATION_MODAL =
     'OPEN_ADD_ARTICLE_TO_COLLECTION_CONFIRMATION_MODAL'
 
-export type IAddArticleToCollectionPayload = addArticleToCollectionVariables & {
+export type IAddArticleToCollectionPayload = addResourceToCollectionVariables & {
     routeChangeAction: any
     closeModalAction: any
 }
 
-export const addArticleToCollectionAction = (
+export const addResourceToCollectionAction = (
     payload: IAddArticleToCollectionPayload,
     callback: () => void
 ): IAddArticleToCollectionAction => ({
@@ -121,7 +121,7 @@ export const openAddArticleToCollectionConfirmationModalEpic: Epic<
         )
     )
 
-export const addArticleToCollectionEpic: Epic<
+export const addResourceToCollectionEpic: Epic<
     IAddArticleToCollectionAction,
     any,
     IReduxState,
@@ -132,10 +132,10 @@ export const addArticleToCollectionEpic: Epic<
         mergeMap(({ payload, callback }) =>
             from(
                 apolloClient.mutate<
-                    addArticleToCollection,
-                    addArticleToCollectionVariables
+                    addResourceToCollection,
+                    addResourceToCollectionVariables
                 >({
-                    mutation: addArticleToCollectionMutation,
+                    mutation: addResourceToCollectionMutation,
                     variables: payload,
                 })
             ).pipe(
