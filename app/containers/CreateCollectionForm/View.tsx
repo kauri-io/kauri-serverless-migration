@@ -41,6 +41,8 @@ import {
 } from '../../components/Modal/Module'
 
 import { Theme, makeStyles } from '@material-ui/core/styles'
+import { ResourceTypeInput } from '../../__generated__/globalTypes'
+import LinkCardFormView from '../LinkCardFormView'
 
 const useStyles = makeStyles((theme: Theme) => ({
     input: {
@@ -188,53 +190,27 @@ const renderResourceSection = (
     section,
     values,
     mappingKey
-) => (resource, resourceIndex) => (
-    <ResourceSection key={resourceIndex}>
-        {path(
-            ['sections', index, mappingKey, resourceIndex, 'version'],
-            values
-        ) ? (
-            <Draggable
-                index={resourceIndex}
-                draggableId={`${path(
-                    ['sections', index, mappingKey, resourceIndex, 'id'],
-                    values
-                )}-${path(
-                    ['sections', index, mappingKey, resourceIndex, 'version'],
-                    values
-                )}`}
-            >
-                {provided => (
-                    <DraggableResourceContainer
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                        ref={provided.innerRef}
-                        id="article-card"
-                    >
-                        <ArticleCardFormView
-                            id={String(
-                                path(
-                                    [
-                                        'sections',
-                                        index,
-                                        mappingKey,
-                                        resourceIndex,
-                                        'id',
-                                    ],
-                                    values
-                                )
-                            )}
-                        />
-                        {provided.placeholder}
-                    </DraggableResourceContainer>
-                )}
-            </Draggable>
-        ) : (
-            path(['sections', index, mappingKey, resourceIndex], values) && (
+) => (resource, resourceIndex) => {
+    const type = path(
+        ['sections', index, mappingKey, resourceIndex, 'type'],
+        values
+    )
+    return (
+        <ResourceSection key={resourceIndex}>
+            {type === 'ARTICLE' && (
                 <Draggable
                     index={resourceIndex}
                     draggableId={`${path(
                         ['sections', index, mappingKey, resourceIndex, 'id'],
+                        values
+                    )}-${path(
+                        [
+                            'sections',
+                            index,
+                            mappingKey,
+                            resourceIndex,
+                            'version',
+                        ],
                         values
                     )}`}
                 >
@@ -243,9 +219,9 @@ const renderResourceSection = (
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                             ref={provided.innerRef}
-                            id="collection-card"
+                            id="article-card"
                         >
-                            <CollectionCardFormView
+                            <ArticleCardFormView
                                 id={String(
                                     path(
                                         [
@@ -263,32 +239,121 @@ const renderResourceSection = (
                         </DraggableResourceContainer>
                     )}
                 </Draggable>
-            )
-        )}
-        <Button
-            color="primary"
-            variant="text"
-            onClick={() =>
-                arrayHelpers.form.setFieldValue(
-                    `sections[${index}][${mappingKey}]`,
-                    Array.isArray(section[mappingKey]) &&
-                        (!resourceIndex
-                            ? section[mappingKey].length > 1
-                                ? section[mappingKey].splice(1)
-                                : []
-                            : remove(
-                                  resourceIndex,
-                                  resourceIndex,
-                                  section[mappingKey]
-                              ))
-                )
-            } // Remove current resource index
-        >
-            <RemoveIcon />
-            {`Remove ${resource.type}`}
-        </Button>
-    </ResourceSection>
-)
+            )}
+            {type === 'COLLECTION' &&
+                (path(
+                    ['sections', index, mappingKey, resourceIndex],
+                    values
+                ) && (
+                    <Draggable
+                        index={resourceIndex}
+                        draggableId={`${path(
+                            [
+                                'sections',
+                                index,
+                                mappingKey,
+                                resourceIndex,
+                                'id',
+                            ],
+                            values
+                        )}`}
+                    >
+                        {provided => (
+                            <DraggableResourceContainer
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}
+                                ref={provided.innerRef}
+                                id="collection-card"
+                            >
+                                <CollectionCardFormView
+                                    id={String(
+                                        path(
+                                            [
+                                                'sections',
+                                                index,
+                                                mappingKey,
+                                                resourceIndex,
+                                                'id',
+                                            ],
+                                            values
+                                        )
+                                    )}
+                                />
+                                {provided.placeholder}
+                            </DraggableResourceContainer>
+                        )}
+                    </Draggable>
+                ))}
+
+            {type === 'LINK' &&
+                (path(
+                    ['sections', index, mappingKey, resourceIndex],
+                    values
+                ) && (
+                    <Draggable
+                        index={resourceIndex}
+                        draggableId={`${path(
+                            [
+                                'sections',
+                                index,
+                                mappingKey,
+                                resourceIndex,
+                                'id',
+                            ],
+                            values
+                        )}`}
+                    >
+                        {provided => (
+                            <DraggableResourceContainer
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}
+                                ref={provided.innerRef}
+                                id="collection-card"
+                            >
+                                <LinkCardFormView
+                                    id={String(
+                                        path(
+                                            [
+                                                'sections',
+                                                index,
+                                                mappingKey,
+                                                resourceIndex,
+                                                'id',
+                                            ],
+                                            values
+                                        )
+                                    )}
+                                />
+                                {provided.placeholder}
+                            </DraggableResourceContainer>
+                        )}
+                    </Draggable>
+                ))}
+            <Button
+                color="primary"
+                variant="text"
+                onClick={() =>
+                    arrayHelpers.form.setFieldValue(
+                        `sections[${index}][${mappingKey}]`,
+                        Array.isArray(section[mappingKey]) &&
+                            (!resourceIndex
+                                ? section[mappingKey].length > 1
+                                    ? section[mappingKey].splice(1)
+                                    : []
+                                : remove(
+                                      resourceIndex,
+                                      resourceIndex,
+                                      section[mappingKey]
+                                  ))
+                    )
+                } // Remove current resource index
+            >
+                <RemoveIcon />
+                {`Remove ${resource.type}`}
+            </Button>
+        </ResourceSection>
+    )
+}
 
 export interface IProps {
     communities?: ICommunity[]
@@ -319,8 +384,8 @@ export interface IProps {
     userAvatar: string
     isLoggedIn: boolean
     query: {
-        articleId: string
-        version: string
+        resourceId: string
+        type: ResourceTypeInput
     }
 }
 

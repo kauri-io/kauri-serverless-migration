@@ -1,6 +1,7 @@
 import AddToCollection from './View'
 import { mountWithTheme } from '../../setupTests'
 import { MockedProvider } from 'react-apollo/test-utils'
+import { ResourceTypeInput } from '../../__generated__/globalTypes'
 
 describe('containers/AddToCollection', () => {
     it('should match snapshot', () => {
@@ -8,9 +9,9 @@ describe('containers/AddToCollection', () => {
             closeModalAction: jest.fn(),
             userId: 'test user id',
             routeChangeAction: jest.fn(),
-            articleId: '123',
-            addArticleToCollectionAction: jest.fn(),
-            version: 1,
+            resourceId: '123',
+            addResourceToCollectionAction: jest.fn(),
+            type: 'ARTICLE' as ResourceTypeInput.ARTICLE,
         }
         const wrapper = mountWithTheme(
             <MockedProvider>

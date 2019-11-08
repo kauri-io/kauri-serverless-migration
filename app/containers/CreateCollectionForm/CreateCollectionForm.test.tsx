@@ -3,6 +3,7 @@ import { mountWithRedux } from '../../setupTests'
 import { MockedProvider } from 'react-apollo/test-utils'
 import Button from '../../components/Button'
 import { Formik } from 'formik'
+import { ResourceTypeInput } from '../../__generated__/globalTypes'
 
 let wrapper
 let props
@@ -61,8 +62,8 @@ describe('containers/CreateCollectionForm/View', () => {
             userAvatar: 'avatar url',
             isLoggedIn: true,
             query: {
-                articleId: '789',
-                version: '2',
+                resourceId: '789',
+                type: 'ARTICLE' as ResourceTypeInput.ARTICLE,
             },
             setSubmitting: jest.fn(),
             isValidating: false,

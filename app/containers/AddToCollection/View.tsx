@@ -13,7 +13,8 @@ import {
     getCollectionsForUserVariables,
 } from '../../queries/__generated__/getCollectionsForUser'
 import { useState } from 'react'
-import { addArticleToCollectionAction } from './Module'
+import { addResourceToCollectionAction } from './Module'
+import { ResourceTypeInput } from '../../__generated__/globalTypes'
 
 interface IChosen {
     chosenCollection: ICollection | null
@@ -24,18 +25,18 @@ interface IProps {
     closeModalAction: () => void
     userId: string | null
     routeChangeAction: (route: string) => void
-    articleId: string
-    addArticleToCollectionAction: typeof addArticleToCollectionAction
-    version: number
+    resourceId: string
+    type: ResourceTypeInput
+    addResourceToCollectionAction: typeof addResourceToCollectionAction
 }
 
 const AddToCollectionComponent: React.FunctionComponent<IProps> = ({
     closeModalAction,
     userId,
     routeChangeAction,
-    articleId,
-    version,
-    addArticleToCollectionAction,
+    resourceId,
+    type,
+    addResourceToCollectionAction,
 }) => {
     const [state, setState] = useState<IChosen>({
         chosenCollection: null,
@@ -73,13 +74,13 @@ const AddToCollectionComponent: React.FunctionComponent<IProps> = ({
                         (collections &&
                             Array.isArray(collections) &&
                             collections.filter(collection => {
-                                // Filter out collections that have the articleId already
+                                // Filter out collections that have the resourceId already
                                 if (
                                     collection.sections.find(
                                         section =>
                                             !!section.resources.find(
-                                                article =>
-                                                    article.id === articleId
+                                                resource =>
+                                                    resource.id === resourceId
                                             )
                                     )
                                 ) {
@@ -107,7 +108,7 @@ const AddToCollectionComponent: React.FunctionComponent<IProps> = ({
                                 if (articleAlreadyInAllCollections) {
                                     closeModalAction()
                                     routeChangeAction(
-                                        `/create-collection?articleId=${articleId}&version=${version}`
+                                        `/create-collection?resourceId=${resourceId}&type=${type}`
                                     )
                                 }
 
@@ -132,14 +133,13 @@ const AddToCollectionComponent: React.FunctionComponent<IProps> = ({
                                             : 0
                                         : 0
 
-                                    addArticleToCollectionAction(
+                                    addResourceToCollectionAction(
                                         {
                                             id: state.chosenCollection.id,
                                             position,
                                             resourceId: {
-                                                id: articleId,
-                                                type: 'ARTICLE' as any,
-                                                version,
+                                                id: resourceId,
+                                                type,
                                             },
                                             sectionId: state.chosenSection
                                                 ? state.chosenSection.id
@@ -156,7 +156,7 @@ const AddToCollectionComponent: React.FunctionComponent<IProps> = ({
                                     changeToPrefilledArticleCreateCollectionRoute={() => {
                                         closeModalAction()
                                         routeChangeAction(
-                                            `/create-collection?articleId=${articleId}&version=${version}`
+                                            `/create-collection?resourceId=${resourceId}&type=${type}`
                                         )
                                     }}
                                     articleAlreadyInAllCollections={
@@ -186,7 +186,7 @@ const AddToCollectionComponent: React.FunctionComponent<IProps> = ({
                             confirmButtonAction={() => {
                                 closeModalAction()
                                 routeChangeAction(
-                                    `/create-collection?articleId=${articleId}&version=${version}`
+                                    `/create-collection?resourceId=${resourceId}&type=${type}`
                                 )
                             }}
                             confirmButtonText={'Create new collection'}

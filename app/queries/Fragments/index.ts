@@ -106,6 +106,61 @@ export const Article = gql`
     ${UserOwner}
     ${CommunityOwner}
 `
+export const Link = gql`
+    fragment Link on ExternalLinkDTO {
+        id
+        resourceIdentifier {
+            type
+            id
+        }
+        dateCreated
+        dateUpdated
+        submitterId
+        owner {
+            ...UserOwner
+            ...CommunityOwner
+        }
+        url {
+            value
+            isEditable
+        }
+        linkTitle: title {
+            value
+            isEditable
+        }
+        linkDescription: description {
+            value
+            isEditable
+        }
+        summary {
+            value
+            isEditable
+        }
+        linkAttributes: attributes
+        authorName {
+            value
+            isEditable
+        }
+        comments {
+            content {
+                author {
+                    id
+                    name
+                    username
+                    avatar
+                }
+                posted
+                body
+            }
+            totalPages
+            totalElements
+        }
+        authorSocial
+        tags
+    }
+    ${UserOwner}
+    ${CommunityOwner}
+`
 
 export const Collection = gql`
     fragment Collection on CollectionDTO {
@@ -129,8 +184,10 @@ export const Collection = gql`
             }
             resources {
                 ... on ArticleDTO {
-                    id
-                    version
+                    ...Article
+                }
+                ... on ExternalLinkDTO {
+                    ...Link
                 }
             }
         }
@@ -141,6 +198,8 @@ export const Collection = gql`
     }
     ${UserOwner}
     ${CommunityOwner}
+    ${Link}
+    ${Article}
 `
 
 export const Community = gql`
@@ -273,59 +332,4 @@ export const Community = gql`
     }
     ${Article}
     ${Collection}
-`
-export const Link = gql`
-    fragment Link on ExternalLinkDTO {
-        id
-        resourceIdentifier {
-            type
-            id
-        }
-        dateCreated
-        dateUpdated
-        submitterId
-        owner {
-            ...UserOwner
-            ...CommunityOwner
-        }
-        url {
-            value
-            isEditable
-        }
-        linkTitle: title {
-            value
-            isEditable
-        }
-        linkDescription: description {
-            value
-            isEditable
-        }
-        summary {
-            value
-            isEditable
-        }
-        linkAttributes: attributes
-        authorName {
-            value
-            isEditable
-        }
-        comments {
-            content {
-                author {
-                    id
-                    name
-                    username
-                    avatar
-                }
-                posted
-                body
-            }
-            totalPages
-            totalElements
-        }
-        authorSocial
-        tags
-    }
-    ${UserOwner}
-    ${CommunityOwner}
 `

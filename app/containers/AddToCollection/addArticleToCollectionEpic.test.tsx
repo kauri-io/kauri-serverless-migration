@@ -1,7 +1,7 @@
 import testEpic from '../../lib/test-epic'
 import {
-    addArticleToCollectionEpic,
-    addArticleToCollectionAction,
+    addResourceToCollectionEpic,
+    addResourceToCollectionAction,
     openAddArticleToCollectionConfirmationModalAction,
 } from './Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
@@ -12,7 +12,7 @@ jest.mock('../../lib/analytics', () => ({
     track: jest.fn(),
 }))
 
-describe('addArticleToCollectionEpic', () => {
+describe('addResourceToCollectionEpic', () => {
     beforeAll(() => {
         // global.window = {}
         global.window.web3 = {
@@ -58,7 +58,7 @@ describe('addArticleToCollectionEpic', () => {
             resetStore: () => {},
         }
 
-        const sourceAction = addArticleToCollectionAction(
+        const sourceAction = addResourceToCollectionAction(
             {
                 id,
                 position: 0,
@@ -87,7 +87,7 @@ describe('addArticleToCollectionEpic', () => {
         ]
 
         const resultingActions = await testEpic(
-            addArticleToCollectionEpic,
+            addResourceToCollectionEpic,
             sourceAction,
             {},
             {
