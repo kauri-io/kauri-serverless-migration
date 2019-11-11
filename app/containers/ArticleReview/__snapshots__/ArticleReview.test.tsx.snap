@@ -533,6 +533,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                   "datePublished": "2019-01-02",
                   "description": "test description 1",
                   "id": "1231",
+                  "isBookmarked": true,
                   "owner": Object {
                     "__typename": "PublicUserDTO",
                     "avatar": "test avatar 1",
@@ -606,6 +607,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                   "datePublished": "2019-01-02",
                   "description": "test description 2",
                   "id": "1232",
+                  "isBookmarked": true,
                   "owner": Object {
                     "__typename": "PublicUserDTO",
                     "avatar": "test avatar 2",

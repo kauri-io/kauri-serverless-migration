@@ -57,6 +57,13 @@ import {
     addResourceToCollectionEpic,
     openAddArticleToCollectionConfirmationModalEpic,
 } from '../containers/AddToCollection/Module'
+import {
+    bookmarkEpic,
+    unbookmarkEpic,
+    createBookmarkFolderEpic,
+    deleteBookmarkFolderEpic,
+    editBookmarkFolderEpic,
+} from '../containers/Bookmark/Module'
 import { submitExternalLinkEpic } from '../containers/CreateLink/Module'
 
 export const rootReducer = {
@@ -106,6 +113,11 @@ const epics = [
     addCommentEpic,
     addResourceToCollectionEpic,
     openAddArticleToCollectionConfirmationModalEpic,
+    bookmarkEpic,
+    unbookmarkEpic,
+    createBookmarkFolderEpic,
+    deleteBookmarkFolderEpic,
+    editBookmarkFolderEpic,
     submitExternalLinkEpic,
 ]
 

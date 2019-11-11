@@ -16,6 +16,7 @@ type PaginationDataQuery =
     | 'searchAutocomplete'
     | 'searchCollections'
     | 'getArticleTransfers'
+    | 'getBookmarks'
     | 'searchExternalLinks'
 
 interface IProps {

@@ -11,6 +11,7 @@ import {
 import { getCollectionURL } from '../../../lib/getURLs'
 import { Grid, Typography, makeStyles, Theme } from '@material-ui/core'
 import Loading from '../../../components/Loading'
+import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 
 interface ICollectionQuery extends getCollectionsForUser {
     loading: boolean
@@ -18,7 +19,7 @@ interface ICollectionQuery extends getCollectionsForUser {
 
 interface IProps {
     CollectionQuery: ICollectionQuery
-    routeChangeAction: (route: string) => void
+    routeChangeAction: typeof routeChangeAction
     isLoggedIn: boolean
     loading: boolean
 }

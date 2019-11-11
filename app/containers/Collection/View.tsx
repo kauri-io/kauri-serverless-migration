@@ -16,6 +16,8 @@ import { approveResourceAction } from '../Community/Module'
 import { Article_owner_PublicUserDTO } from '../../queries/Fragments/__generated__/Article'
 import { getCollectionURL, getProfileURL } from '../../lib/getURLs'
 import Link from 'next/link'
+import { openModalAction } from '../../components/Modal/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 export const Overlay = styled.div`
     position: absolute;
@@ -69,8 +71,8 @@ type IProps = {
     id: string
     data: getCollection
     proposedCommunityId?: string
-    openModalAction: any
-    routeChangeAction: (route: string) => void
+    openModalAction: typeof openModalAction
+    routeChangeAction: typeof routeChangeAction
     userId?: string
     communities?: ICommunity[]
     client: ApolloClient<{}>
@@ -290,6 +292,9 @@ class CollectionPage extends Component<IProps> {
                                             }
                                             resources={section.resources as any}
                                             openModalAction={openModalAction}
+                                            routeChangeAction={
+                                                routeChangeAction
+                                            }
                                             isOwnedByCurrentUser={
                                                 this.props.userId ===
                                                 (owner as any).id

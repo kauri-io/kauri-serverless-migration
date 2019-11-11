@@ -108,6 +108,7 @@ const LinkContent = ({
                     </Grid>
                 )}
             </Grid>
+
             {url.value.indexOf('youtube.com') === -1 &&
                 linkAttributes.background_image && (
                     <Image
@@ -126,6 +127,7 @@ const LinkContent = ({
                     allowFullScreen={true}
                 ></iframe>
             )}
+
             <Typography
                 className={classes.description}
                 color="inherit"

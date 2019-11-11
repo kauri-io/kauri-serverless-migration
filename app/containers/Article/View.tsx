@@ -22,6 +22,8 @@ import {
     recordView,
     recordViewVariables,
 } from '../../queries/__generated__/recordView'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { openModalAction } from '../../components/Modal/Module'
 
 interface IProps {
     id: string
@@ -32,10 +34,10 @@ interface IProps {
     RelatedArticles: relatedArticles
     router: any
     voteAction: any
-    routeChangeAction: (route: string) => void
+    routeChangeAction: typeof routeChangeAction
+    openModalAction: typeof openModalAction
     userId: string
     user: any
-    openModalAction: (children: any) => void
     // closeModalAction: () => void;
     hostName: string
     addCommentAction: (e: string) => void
@@ -64,6 +66,7 @@ const ArticleComp = ({
             version,
             comments,
             resourceIdentifier,
+            isBookmarked,
         },
     },
 }: IProps) => {
@@ -154,6 +157,7 @@ const ArticleComp = ({
                                     id,
                                     title,
                                     version,
+                                    isBookmarked,
                                 }}
                                 userId={userId}
                                 id={String(id)}

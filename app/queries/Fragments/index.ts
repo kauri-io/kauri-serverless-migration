@@ -101,6 +101,7 @@ export const Article = gql`
             version
         }
         updateComment
+        isBookmarked
     }
 
     ${UserOwner}
@@ -167,6 +168,7 @@ export const Collection = gql`
         id
         name
         description
+        dateCreated
         tags
         background
         dateUpdated
@@ -195,6 +197,7 @@ export const Collection = gql`
             type
             id
         }
+        isBookmarked
     }
     ${UserOwner}
     ${CommunityOwner}
@@ -261,6 +264,7 @@ export const Community = gql`
                     voteResult {
                         sum
                     }
+                    isBookmarked
                 }
                 ... on CollectionDTO {
                     id

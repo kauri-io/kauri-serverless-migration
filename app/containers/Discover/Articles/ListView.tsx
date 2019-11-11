@@ -10,7 +10,6 @@ import {
     closeModalAction,
 } from '../../../components/Modal/Module'
 import AddToCollection from '../../AddToCollection'
-import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import { searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO } from '../../../queries/__generated__/searchResultsAutocomplete'
 import LinkCard from '../../../components/Card/LinkCard'
 import { ResourceTypeInput } from '../../../__generated__/globalTypes'
@@ -21,11 +20,9 @@ interface IProps {
         searchAutocomplete?: searchAutocompleteArticles_searchAutocomplete
     }
     hostName: string
-    isLoggedIn: boolean
     classes: { grid: any }
     openModalAction: typeof openModalAction
     closeModalAction: typeof closeModalAction
-    routeChangeAction: typeof routeChangeAction
     userId: string | null
 }
 
@@ -78,9 +75,6 @@ class Articles extends Component<IProps> {
                                             <ArticleCard
                                                 {...article}
                                                 href={getArticleURL(article)}
-                                                isLoggedIn={
-                                                    this.props.isLoggedIn
-                                                }
                                                 addArticleToCollectionAction={() =>
                                                     this.props.openModalAction({
                                                         children: (

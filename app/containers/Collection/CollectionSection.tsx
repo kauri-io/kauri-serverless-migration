@@ -5,6 +5,8 @@ import ArticleCard from '../../components/Card/ArticleCard'
 import { Article } from '../../queries/Fragments/__generated__/Article'
 import { Collection } from '../../queries/Fragments/__generated__/Collection'
 import CollectionCard from '../../components/Card/CollectionCard'
+import { openModalAction } from '../../components/Modal/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import LinkCard from '../../components/Card/LinkCard'
 import { Link } from '../../queries/Fragments/__generated__/Link'
 import { getArticleURL, getCollectionURL, getLinkUrl } from '../../lib/getURLs'
@@ -43,7 +45,8 @@ interface IProps {
     isLoggedIn: boolean
     isOwnedByCurrentUser: boolean
     name: string
-    openModalAction: any
+    openModalAction: typeof openModalAction
+    routeChangeAction: typeof routeChangeAction
 }
 
 const CollectionSection: React.SFC<IProps> = props => {

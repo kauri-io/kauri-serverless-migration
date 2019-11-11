@@ -297,6 +297,10 @@ export interface searchPendingArticles_searchArticles_content {
    * The comment describing this version update of the article
    */
   updateComment: string | null;
+  /**
+   * Check if the article is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export interface searchPendingArticles_searchArticles {

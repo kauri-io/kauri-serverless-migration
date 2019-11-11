@@ -111,6 +111,7 @@ export const getLatestCollections = gql`
                             type
                             id
                         }
+                        isBookmarked
                     }
                 }
             }

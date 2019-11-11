@@ -515,6 +515,10 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_A
    * Get a paginated list of comments for this article
    */
   comments: searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_comments;
+  /**
+   * Check if the article is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_ArticleDTO {
@@ -686,6 +690,10 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_C
    * Sections of the collections
    */
   sections: (searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_sections | null)[] | null;
+  /**
+   * Check if the collection is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO_members {

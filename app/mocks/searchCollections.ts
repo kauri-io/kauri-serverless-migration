@@ -11,6 +11,7 @@ export const searchCollections = {
                     description:
                         'September 7 – 9, 2018  //  Berlin. Part of the ETHGlobal community',
                     tags: null,
+                    dateCreated: '2018-09-03T13:29:35.442Z',
                     background:
                         'https://api.beta.kauri.io:443/ipfs/QmSxBio64sUdL7gfAPoUNEPVgHxYXMecgppjXaEDCX82dw',
                     dateUpdated: '2018-09-03T13:29:35.442Z',
@@ -427,6 +428,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5b8fe388e727370001c942e4',
@@ -435,6 +437,7 @@ export const searchCollections = {
                         'This tutorial series includes walkthroughs of the various non-fungible token standards (721, 998, 1155, etc.) and tutorials for building applications using them.',
                     tags: null,
                     background: null,
+                    dateCreated: '2018-09-03T13:29:35.442Z',
                     dateUpdated: '2018-09-05T14:09:12.728Z',
                     owner: {
                         id: '37648fc15a8365735289e002d65d44d80c505e8b',
@@ -498,6 +501,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5bb60f034f34080001731dbe',
@@ -508,6 +512,7 @@ export const searchCollections = {
                     background:
                         'https://api.beta.kauri.io:443/ipfs/QmRF7Z5XCU3vn1AToUUTdVDZVNEJWjqgoqdA7NWXxrPGMn',
                     dateUpdated: '2018-10-04T13:00:50.668Z',
+                    dateCreated: '2018-09-03T13:29:35.442Z',
                     owner: {
                         id: '37648fc15a8365735289e002d65d44d80c505e8b',
                         name: 'Kauri Team',
@@ -630,6 +635,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5bd3262b26f0a50001f2a276',
@@ -639,6 +645,7 @@ export const searchCollections = {
                     background:
                         'https://api.beta.kauri.io:443/ipfs/QmTBJ23sFQ27GC5vuCAC1NTKB3H73gr6mp41WRYH7Gjfdm',
                     dateUpdated: '2018-10-26T14:36:09.911Z',
+                    dateCreated: '2018-09-03T13:29:35.442Z',
                     owner: {
                         id: '58611161415d53d5dae63935f3c4c5fbf56572d1',
                         name: 'Gitcoin',
@@ -721,6 +728,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5be1a3f93917ab0001ea9baa',
@@ -731,6 +739,7 @@ export const searchCollections = {
                     background:
                         'https://api.beta.kauri.io:443/ipfs/QmTMFjjyfULFncRnoLnKoU8nW1kmzNppMo1zER9qKkLqNM',
                     dateUpdated: '2018-11-06T14:23:53.506Z',
+                    dateCreated: '2018-09-03T13:29:35.442Z',
                     owner: {
                         id: '49dd10357731604d42cfb7d1fa15f2caf2d1c7d4',
                         name: 'Chris Spannos',
@@ -803,6 +812,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5be9ec1c5758b50001d8e1f2',
@@ -812,6 +822,7 @@ export const searchCollections = {
                     background:
                         'https://api.beta.kauri.io:443/ipfs/QmQoSuVkvArCKeQVCpS7AtDQSqu7nPRxHwvKttA4nYkSmY',
                     dateUpdated: '2018-11-12T21:09:48.307Z',
+                    dateCreated: '2018-09-03T13:29:35.442Z',
                     owner: {
                         id: '1f20b6035c8ee3a5e0cee6a3bfbd615dfe811dbc',
                         name: 'ShatnerHODL',
@@ -842,6 +853,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5c000eb8a24677000166f5d6',
@@ -852,6 +864,7 @@ export const searchCollections = {
                     background:
                         'https://api.beta.kauri.io:443/ipfs/QmSWDX3BzLHbteddsEk95jCAyDsffbpKNRntLACfBZGjxz',
                     dateUpdated: '2018-11-29T16:12:22.016Z',
+                    dateCreated: '2018-09-03T13:29:35.442Z',
                     owner: {
                         id: 'edf0623e0b7f44f76bc55612d72bea0b2df9b42c',
                         name: 'Kelly Cooper',
@@ -883,6 +896,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5c014faaa24677000166f5d8',
@@ -892,6 +906,7 @@ export const searchCollections = {
                     tags: null,
                     background: null,
                     dateUpdated: '2018-11-30T14:57:33.492Z',
+                    dateCreated: '2018-09-03T13:29:35.442Z',
                     owner: {
                         id: '2e34cdb393c08086e759e3d186b3b4fb2ca5b1b2',
                         name: 'Michael A',
@@ -922,6 +937,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5c01a4664f34080001c81bc7',
@@ -931,6 +947,7 @@ export const searchCollections = {
                     tags: null,
                     background: null,
                     dateUpdated: '2018-11-30T21:01:43.483Z',
+                    dateCreated: '2018-09-03T13:29:35.442Z',
                     owner: {
                         id: 'e66f8c6ab127ecdfd5cbf031f74a584ad2fc494b',
                         name: 'Will Villanueva',
@@ -983,6 +1000,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5c04f1d4a24677000166f5e5',
@@ -991,6 +1009,7 @@ export const searchCollections = {
                     tags: null,
                     background: null,
                     dateUpdated: '2018-12-03T09:05:24.241Z',
+                    dateCreated: '2018-09-03T13:29:35.442Z',
                     owner: {
                         id: '15ad082c5778af59d70c1ec9e5eed4ff10cce322',
                         publicUserName: null,
@@ -1019,6 +1038,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5bef33b16b97660001fe6392',
@@ -1029,6 +1049,7 @@ export const searchCollections = {
                     background:
                         'https://api.beta.kauri.io:443/ipfs/QmXUCxF8gRhcSPuvr85ELNhdeNGzPYfkqzcBJnvCgkxx68',
                     dateUpdated: '2018-12-04T20:08:46.129Z',
+                    dateCreated: '2018-09-03T13:29:35.442Z',
                     owner: {
                         id: 'f8ae578d5d4e570de6c31f26d42ef369c320ae0b',
                         name: 'Andreas Wallendahl',
@@ -1131,6 +1152,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
                 {
                     id: '5c06df52a24677000166f603',
@@ -1139,6 +1161,7 @@ export const searchCollections = {
                     tags: null,
                     background: null,
                     dateUpdated: '2018-12-04T20:10:58.376Z',
+                    dateCreated: '2018-09-03T13:29:35.442Z',
                     owner: {
                         id: 'f8ae578d5d4e570de6c31f26d42ef369c320ae0b',
                         name: 'Andreas Wallendahl',
@@ -1201,6 +1224,7 @@ export const searchCollections = {
                         __typename: 'ResourceIdentifier',
                     },
                     __typename: 'CollectionDTO',
+                    isBookmarked: true,
                 },
             ],
             isLast: false,

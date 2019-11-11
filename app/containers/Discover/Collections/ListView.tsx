@@ -11,6 +11,8 @@ import {
     // searchAutocompleteCollections_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO,
 } from '../../../queries/__generated__/searchAutocompleteCollections'
 import { getCollectionURL } from '../../../lib/getURLs'
+import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
+import { openModalAction } from '../../../components/Modal/Module'
 
 interface IProps {
     CollectionQuery: {
@@ -18,8 +20,10 @@ interface IProps {
         searchAutocomplete?: searchAutocompleteCollections_searchAutocomplete
     }
     hostName: string
-    routeChangeAction(route: string): void
+    routeChangeAction: typeof routeChangeAction
+    openModalAction: typeof openModalAction
     classes: { grid: any }
+    isLoggedIn: boolean
 }
 
 export const CollectionsContainer = styled.div`

@@ -105,6 +105,10 @@
       "dest": "/app/public-profile?user_id=$1"
     },
     {
+      "src": "/bookmarks",
+      "dest": "/app/bookmarks"
+    },
+    {
       "src": "draft/(.*)/(.*)",
       "dest": "/app/draft?id=$1&version=$2"
     },

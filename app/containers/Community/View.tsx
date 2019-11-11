@@ -22,10 +22,12 @@ import { removeResourceVariables } from '../../queries/__generated__/removeResou
 import { recordViewMutation } from '../../queries/Utils'
 import ApolloClient from 'apollo-client'
 import HomepageResources from './HomepageResources'
-
-import { routeChangeAction as routeChange } from '../../lib/Epics/RouteChangeEpic'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { showNotificationAction as showNotification } from '../../lib/Epics/ShowNotificationEpic'
-import { openModalAction as openModal } from '../../components/Modal/Module'
+import {
+    openModalAction,
+    closeModalAction,
+} from '../../components/Modal/Module'
 import { sendInvitationVariables } from '../../queries/__generated__/sendInvitation'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
@@ -41,9 +43,9 @@ interface IProps {
         getCommunity: getCommunity_getCommunity
         searchArticles?: getCommunityAndPendingArticles_searchArticles
     }
-    closeModalAction: () => void
-    openModalAction: typeof openModal
-    routeChangeAction: typeof routeChange
+    closeModalAction: typeof closeModalAction
+    openModalAction: typeof openModalAction
+    routeChangeAction: typeof routeChangeAction
     removeResourceAction: (payload: removeResourceVariables) => void
     curateCommunityResourcesAction: typeof curateCommunityResources
     sendCommunityInvitationAction: (
@@ -60,16 +62,12 @@ interface IState {
 const CollectionsPanel = ({
     collections,
     removeResourceAction,
-    openModalAction,
     isMember,
-    closeModalAction,
     getCommunity,
 }) =>
     collections && collections.length > 0 ? (
         <DisplayResources
             removeResourceAction={removeResourceAction}
-            openModalAction={openModalAction}
-            closeModalAction={closeModalAction}
             isMember={isMember}
             type="collections"
             key="collections"
@@ -153,6 +151,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
             transferArticleToCommunityAction,
             isCommunityAdmin,
         } = this.props
+
         const articles =
             getCommunity.approved &&
             getCommunity.approved.filter(
@@ -281,10 +280,19 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     />
                 )}
                 {this.state.tab === getActualTabId(1) && (
+                    // classes?: any
+                    // type?: string
+                    // resources?: any
+                    // communityId: string | null
+                    // isMember: boolean
+                    // isLoggedIn: boolean
+                    // closeModalAction?: () => void
+                    // openModalAction: (children: any) => void
+                    // routeChangeAction: (route: string) => void
+                    // removeResourceAction?: (payload: removeResourceVariables) => void
+
                     <DisplayResources
                         removeResourceAction={removeResourceAction}
-                        openModalAction={openModalAction}
-                        closeModalAction={closeModalAction}
                         isMember={isMember}
                         key="articles"
                         type="articles"
@@ -297,8 +305,6 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         isMember={isMember}
                         collections={collections}
                         removeResourceAction={removeResourceAction}
-                        openModalAction={openModalAction}
-                        closeModalAction={closeModalAction}
                         getCommunity={getCommunity}
                     />
                 )}

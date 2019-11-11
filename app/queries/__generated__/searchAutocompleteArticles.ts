@@ -313,6 +313,10 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
    * The comment describing this version update of the article
    */
   updateComment: string | null;
+  /**
+   * Check if the article is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_resourceIdentifier {

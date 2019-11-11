@@ -47,7 +47,6 @@ const Manage: React.FunctionComponent<IProps> = ({
     isCommunityAdmin,
     communityId,
     pendingUpdates,
-    openAddMemberModal,
     pageType,
     cancelInvitation,
     formInvitations,
@@ -100,7 +99,6 @@ const Manage: React.FunctionComponent<IProps> = ({
                 {tabIndex === 0 && (
                     <ManageMembers
                         id={communityId}
-                        openAddMemberModal={openAddMemberModal}
                         members={members}
                         cancelInvitation={cancelInvitation}
                         formInvitations={formInvitations}

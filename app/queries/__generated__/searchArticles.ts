@@ -227,6 +227,10 @@ export interface searchArticles_searchArticles_content {
    */
   comments: searchArticles_searchArticles_content_comments;
   resourceIdentifier: searchArticles_searchArticles_content_resourceIdentifier | null;
+  /**
+   * Check if the article is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export interface searchArticles_searchArticles {

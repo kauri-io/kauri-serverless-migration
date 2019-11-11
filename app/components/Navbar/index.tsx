@@ -225,7 +225,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                 onClose={handleMenuClose}
                 className={classes.menu}
             >
-                {user && (
+                {user && [
                     <Link
                         href={getProfileURL(user).href}
                         as={getProfileURL(user).as}
@@ -233,8 +233,13 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                         <a>
                             <MenuItem>My Profile</MenuItem>
                         </a>
-                    </Link>
-                )}
+                    </Link>,
+                    <Link href={'/bookmarks'}>
+                        <a>
+                            <MenuItem>My Bookmarks</MenuItem>
+                        </a>
+                    </Link>,
+                ]}
 
                 <MenuItem className={classes.padded} onClick={logout}>
                     Logout

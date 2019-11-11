@@ -24,6 +24,7 @@ describe('containers/Community/View', () => {
             sendCommunityInvitationAction: jest.fn(),
             transferArticleToCommunityAction: jest.fn(),
             showNotificationAction: jest.fn(),
+            isLoggedIn: true,
         }
         const wrapper = mountWithRedux(
             <MockedProvider>

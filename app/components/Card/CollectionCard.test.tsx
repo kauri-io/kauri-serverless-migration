@@ -1,4 +1,4 @@
-import { mountWithTheme } from '../../setupTests'
+import { mountWithRedux } from '../../setupTests'
 import CollectionCard from './CollectionCard'
 
 let CollectionCardProps
@@ -55,14 +55,14 @@ describe('components/Card/CollectionCard', () => {
     })
 
     it('should match snapshot', () => {
-        const wrapper = mountWithTheme(
+        const wrapper = mountWithRedux(
             <CollectionCard {...CollectionCardProps} />
         )
         expect(wrapper).toMatchSnapshot()
     })
 
     it('should have a name', () => {
-        const wrapper = mountWithTheme(
+        const wrapper = mountWithRedux(
             <CollectionCard {...CollectionCardProps} />
         )
 
@@ -72,7 +72,7 @@ describe('components/Card/CollectionCard', () => {
     })
 
     it('should have a description', () => {
-        const wrapper = mountWithTheme(
+        const wrapper = mountWithRedux(
             <CollectionCard {...CollectionCardProps} />
         )
 
@@ -82,7 +82,7 @@ describe('components/Card/CollectionCard', () => {
     })
 
     it('should have an image based on the background attribute', () => {
-        const wrapper = mountWithTheme(
+        const wrapper = mountWithRedux(
             <CollectionCard {...CollectionCardProps} />
         )
 
@@ -97,7 +97,7 @@ describe('components/Card/CollectionCard', () => {
             ...CollectionCardProps,
             attributes: {},
         }
-        const wrapper = mountWithTheme(
+        const wrapper = mountWithRedux(
             <CollectionCard
                 {...CollectionCardPropsWithoutBackgroundAttribute}
             />
@@ -111,7 +111,7 @@ describe('components/Card/CollectionCard', () => {
     })
 
     it('should show the owner name by default', () => {
-        const wrapper = mountWithTheme(
+        const wrapper = mountWithRedux(
             <CollectionCard {...CollectionCardProps} />
         )
 
@@ -121,7 +121,7 @@ describe('components/Card/CollectionCard', () => {
     })
 
     it('should show the owner username if they have no name', () => {
-        const wrapper = mountWithTheme(
+        const wrapper = mountWithRedux(
             <CollectionCard
                 {...CollectionCardProps}
                 owner={{ ...CollectionCardProps.owner, name: null }}
@@ -134,7 +134,7 @@ describe('components/Card/CollectionCard', () => {
     })
 
     it('should fallback to show the owner id', () => {
-        const wrapper = mountWithTheme(
+        const wrapper = mountWithRedux(
             <CollectionCard
                 {...CollectionCardProps}
                 owner={{
@@ -153,7 +153,7 @@ describe('components/Card/CollectionCard', () => {
     })
 
     it('should show the date published', () => {
-        const wrapper = mountWithTheme(
+        const wrapper = mountWithRedux(
             <CollectionCard {...CollectionCardProps} />
         )
         const dataTestId = `CollectionCard-${CollectionCardProps.id}-date`
@@ -162,7 +162,7 @@ describe('components/Card/CollectionCard', () => {
     })
 
     it('should show the article count and icon', () => {
-        const wrapper = mountWithTheme(
+        const wrapper = mountWithRedux(
             <CollectionCard {...CollectionCardProps} />
         )
         const articleIconDataTestId = `CollectionCard-${CollectionCardProps.id}-articleIcon`
@@ -179,7 +179,7 @@ describe('components/Card/CollectionCard', () => {
     })
 
     it('should show the share icon', () => {
-        const wrapper = mountWithTheme(
+        const wrapper = mountWithRedux(
             <CollectionCard {...CollectionCardProps} />
         )
         const dataTestId = `CollectionCard-${CollectionCardProps.id}-shareIcon`
@@ -188,7 +188,7 @@ describe('components/Card/CollectionCard', () => {
     })
 
     it('should trigger the share dialog when the icon is clicked', () => {
-        const wrapper = mountWithTheme(
+        const wrapper = mountWithRedux(
             <CollectionCard {...CollectionCardProps} />
         )
         const shareIconDataTestId = `CollectionCard-${CollectionCardProps.id}-shareIcon`

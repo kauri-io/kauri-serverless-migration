@@ -10,11 +10,19 @@ import {
     CardActions,
     Icon,
     IconButton,
+    Tooltip,
 } from '@material-ui/core'
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
+import BookmarkIcon from '@material-ui/icons/Bookmark'
 import TruncateMarkup from 'react-truncate-markup'
 import ShareDialog from './ShareDialog'
 import Avatar from '../Avatar'
 import Image from '../Image'
+import BookmarkResource from '../../containers/Bookmark/BookmarkResourceWidget'
+import { ResourceTypeInput } from '../../__generated__/globalTypes'
+import { openModalAction } from '../Modal/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { connect } from 'react-redux'
 
 export const CollectionCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
@@ -75,6 +83,9 @@ export const CollectionCardStyles = makeStyles((theme: Theme) => ({
         textAlign: 'left',
         [theme.breakpoints.only('xs')]: { maxWidth: `calc(100% - 100px)` },
     },
+    bookmark: {
+        cursor: 'pointer',
+    },
     cardActions: {
         display: 'flex',
         marginTop: 'auto',
@@ -119,6 +130,10 @@ interface IProps {
         href: string
     }
     sections: (any | null)[] | null
+    isLoggedIn?: boolean
+    isBookmarked: boolean
+    openModalAction?: typeof openModalAction
+    routeChangeAction?: typeof routeChangeAction
 }
 
 const CollectionCard: React.FC<IProps> = ({
@@ -131,6 +146,10 @@ const CollectionCard: React.FC<IProps> = ({
     href,
     id,
     sections,
+    isBookmarked,
+    isLoggedIn = false,
+    openModalAction,
+    routeChangeAction,
 }) => {
     const classes = CollectionCardStyles({})
 
@@ -282,6 +301,37 @@ const CollectionCard: React.FC<IProps> = ({
                             {collectionCount}
                         </Typography>
 
+                        <Tooltip
+                            title={isBookmarked ? 'Unbookmark' : 'Bookmark'}
+                        >
+                            <IconButton
+                                onClick={() =>
+                                    isLoggedIn && openModalAction
+                                        ? openModalAction({
+                                              children: (
+                                                  <BookmarkResource
+                                                      resourceId={id}
+                                                      resourceType={
+                                                          ResourceTypeInput.COLLECTION
+                                                      }
+                                                  />
+                                              ),
+                                          })
+                                        : routeChangeAction &&
+                                          routeChangeAction(`/login`)
+                                }
+                            >
+                                {isBookmarked ? (
+                                    <BookmarkIcon
+                                        data-testid={`CollectionCard-${id}-bookmarkIcon`}
+                                    />
+                                ) : (
+                                    <BookmarkBorderIcon
+                                        data-testid={`CollectionCard-${id}-bookmarkBorderIcon`}
+                                    />
+                                )}
+                            </IconButton>
+                        </Tooltip>
                         <IconButton
                             onClick={handleClickOpen}
                             data-testid={`CollectionCard-${id}-shareIcon`}
@@ -303,4 +353,15 @@ const CollectionCard: React.FC<IProps> = ({
     )
 }
 
-export default CollectionCard
+const mapStateToProps = state => {
+    return {
+        isLoggedIn: !!(state.app && state.app.user && state.app.user.id),
+    }
+}
+export default connect(
+    mapStateToProps,
+    {
+        openModalAction,
+        routeChangeAction,
+    }
+)(CollectionCard)

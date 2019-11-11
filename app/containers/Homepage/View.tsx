@@ -21,6 +21,8 @@ import { IShowNotificationPayload } from '../../lib/Epics/ShowNotificationEpic'
 import Head from 'next/head'
 import { Grid, Theme, Hidden } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { openModalAction } from '../../components/Modal/Module'
 
 interface IProps {
     isLoggedIn: boolean
@@ -28,7 +30,8 @@ interface IProps {
         getLatestHomepageDescriptor: homePageContent_getLatestHomepageDescriptor
     }
     hostName: string
-    routeChangeAction: (route: string) => void
+    routeChangeAction: typeof routeChangeAction
+    openModalAction: typeof openModalAction
     emailSubscribeAction: (emailAddress: string, callback?: any) => void
     showNotificationAction: (payload: IShowNotificationPayload) => void
 }
@@ -38,7 +41,8 @@ export const HomePageComponent = (props: {
     isLoggedIn: boolean
     emailSubscribeAction: (emailAddress: string, callback?: any) => void
     showNotificationAction: (payload: IShowNotificationPayload) => void
-    routeChangeAction: any
+    routeChangeAction: typeof routeChangeAction
+    openModalAction: typeof openModalAction
 }) => {
     const useStyles = makeStyles((theme: Theme) => ({
         root: {

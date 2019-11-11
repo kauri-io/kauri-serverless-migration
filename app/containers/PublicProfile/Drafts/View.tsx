@@ -4,11 +4,7 @@ import withPagination from '../../../lib/with-pagination'
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
 import Button from '../../../components/Button'
 import { searchArticles } from '../../../queries/__generated__/searchArticles'
-import {
-    IOpenModalAction,
-    IOpenModalPayload,
-    ICloseModalAction,
-} from '../../../components/Modal/Module'
+import { ICloseModalAction } from '../../../components/Modal/Module'
 import {
     IDeleteDraftArticleAction,
     IDeleteDraftArticlePayload,
@@ -25,9 +21,7 @@ interface IDraftQuery extends searchArticles {
 interface IArticlesProps {
     DraftsQuery: IDraftQuery
     type: string
-    isLoggedIn: boolean
     isOwner: boolean
-    openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
     closeModalAction: () => ICloseModalAction
     deleteDraftArticleAction: (
         payload: IDeleteDraftArticlePayload,

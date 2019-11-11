@@ -14,6 +14,7 @@ import { Tabs, Tab } from '@material-ui/core'
 import { useState } from 'react'
 
 import { makeStyles, Theme } from '@material-ui/core/styles'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 const useStyles = makeStyles((theme: Theme) => ({
     tabs: {
@@ -38,6 +39,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 // );
 interface IProps {
     openAddMemberModal: () => void
+    routeChangeAction: typeof routeChangeAction
     id: string | null
     cancelInvitation: (payload: { index: number }) => void
     formInvitations: IInvitation[] | null | undefined

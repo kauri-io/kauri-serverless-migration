@@ -9,6 +9,7 @@ import { removeResourceVariables } from '../../queries/__generated__/removeResou
 import ArticlesEmptyState from './EmptyStates/Articles'
 import CollectionsEmptyState from './EmptyStates/Collections'
 import { getArticleURL, getCollectionURL } from '../../lib/getURLs'
+import { closeModalAction } from '../../components/Modal/Module'
 
 interface IProps {
     classes?: any
@@ -16,8 +17,7 @@ interface IProps {
     resources?: any
     communityId: string | null
     isMember: boolean
-    closeModalAction?: () => void
-    openModalAction?: (payload: { children: any }) => void
+    closeModalAction?: typeof closeModalAction
     removeResourceAction?: (payload: removeResourceVariables) => void
 }
 
@@ -140,16 +140,7 @@ const RenderResources = () =>
         )
     }
 
-const DisplayResources = ({
-    resources,
-    // communityId,
-    // isMember,
-    // openModalAction,
-    // closeModalAction,
-    // removeResourceAction,
-    type,
-    classes,
-}: IProps) => {
+const DisplayResources = ({ resources, type, classes }: IProps) => {
     if (
         Array.isArray(resources) &&
         resources.length === 0 &&
@@ -178,12 +169,7 @@ const DisplayResources = ({
 const DisplayManagedResourcesComponent = ({
     resources,
     classes,
-}: // communityId,
-// isMember,
-// openModalAction,
-// closeModalAction,
-// removeResourceAction,
-IProps & { review?: boolean }) => {
+}: IProps & { review?: boolean }) => {
     return (
         <Container>
             <Grid className={classes.grid} container spacing={3}>

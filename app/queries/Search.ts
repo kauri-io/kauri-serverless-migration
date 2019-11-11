@@ -123,6 +123,7 @@ export const searchResultsAutocomplete = gql`
                             totalPages
                             totalElements
                         }
+                        isBookmarked
                     }
 
                     ... on CollectionDTO {
@@ -155,6 +156,7 @@ export const searchResultsAutocomplete = gql`
                                 }
                             }
                         }
+                        isBookmarked
                     }
                     ... on CommunityDTO {
                         id

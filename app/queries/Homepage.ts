@@ -52,6 +52,7 @@ export const homePageContentQuery = gql`
                 version
             }
             updateComment
+            isBookmarked
         }
         ... on CommunityDTO {
             id
