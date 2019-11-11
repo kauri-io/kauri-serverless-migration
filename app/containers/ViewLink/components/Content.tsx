@@ -126,16 +126,6 @@ const LinkContent = ({
                     allowFullScreen={true}
                 ></iframe>
             )}
-            {url.value.indexOf('youtube.com') !== -1 && <iframe
-                width="725"
-                height="350"
-                src={url.value.replace('watch?v=','embed/')}
-                frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen={true}
-            ></iframe>
-            }
-
             <Typography
                 className={classes.description}
                 color="inherit"
