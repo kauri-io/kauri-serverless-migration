@@ -9,9 +9,7 @@ import { removeResourceVariables } from '../../queries/__generated__/removeResou
 import ArticlesEmptyState from './EmptyStates/Articles'
 import CollectionsEmptyState from './EmptyStates/Collections'
 import { getArticleURL, getCollectionURL } from '../../lib/getURLs'
-import {
-    closeModalAction,
-} from '../../components/Modal/Module'
+import { closeModalAction } from '../../components/Modal/Module'
 
 interface IProps {
     classes?: any
@@ -72,12 +70,7 @@ const RenderResources = () =>
         let Card: React.ReactNode = null
 
         if (article.__typename === 'ArticleDTO') {
-            Card = (
-                <ArticleCard
-                    href={getArticleURL(article)}
-                    {...article}
-                />
-            )
+            Card = <ArticleCard href={getArticleURL(article)} {...article} />
         } else if (article.__typename === 'CollectionDTO') {
             Card = (
                 <CollectionCard
@@ -147,11 +140,7 @@ const RenderResources = () =>
         )
     }
 
-const DisplayResources = ({
-    resources,
-    type,
-    classes,
-}: IProps) => {
+const DisplayResources = ({ resources, type, classes }: IProps) => {
     if (
         Array.isArray(resources) &&
         resources.length === 0 &&

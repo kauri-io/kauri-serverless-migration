@@ -234,9 +234,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                             <MenuItem>My Profile</MenuItem>
                         </a>
                     </Link>,
-                    <Link
-                        href={'/bookmarks'}
-                    >
+                    <Link href={'/bookmarks'}>
                         <a>
                             <MenuItem>My Bookmarks</MenuItem>
                         </a>

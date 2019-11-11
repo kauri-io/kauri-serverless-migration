@@ -99,10 +99,17 @@ export default ({
                     }
                     data-testid={`Article-${id}-bookmark`}
                 >
-                    {article.isBookmarked
-                        ? (<BookmarkIcon color="primary" data-testid={`Article-${id}-bookmarkIcon`} />)
-                        : (<BookmarkBorderIcon color="primary" data-testid={`Article-${id}-bookmarkBorderIcon`} />)
-                    }
+                    {article.isBookmarked ? (
+                        <BookmarkIcon
+                            color="primary"
+                            data-testid={`Article-${id}-bookmarkIcon`}
+                        />
+                    ) : (
+                        <BookmarkBorderIcon
+                            color="primary"
+                            data-testid={`Article-${id}-bookmarkBorderIcon`}
+                        />
+                    )}
                 </LinkM>
             </Tooltip>
             <Tooltip title="Update article">

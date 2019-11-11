@@ -4,9 +4,16 @@ import { getBookmarks } from '../../../queries/Bookmark'
 import { connect } from 'react-redux'
 import withLoading from '../../../lib/with-loading'
 import withApolloError from '../../../lib/with-apollo-error'
-import { openModalAction, closeModalAction } from '../../../components/Modal/Module'
+import {
+    openModalAction,
+    closeModalAction,
+} from '../../../components/Modal/Module'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
-import { labelRootFolder, editBookmarkFolderAction, deleteBookmarkFolderAction } from '../Module'
+import {
+    labelRootFolder,
+    editBookmarkFolderAction,
+    deleteBookmarkFolderAction,
+} from '../Module'
 import withPagination from '../../../lib/with-pagination'
 
 const QUERY_NAME = 'BookmarkQuery'
@@ -21,7 +28,7 @@ export default compose(
             routeChangeAction,
             labelRootFolder,
             editBookmarkFolderAction,
-            deleteBookmarkFolderAction
+            deleteBookmarkFolderAction,
         }
     ),
     graphql(getBookmarks, {

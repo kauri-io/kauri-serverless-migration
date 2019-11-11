@@ -23,11 +23,7 @@ interface IArticlesProps {
     isOwner: boolean
 }
 
-const Articles = ({
-    data,
-    type,
-    isOwner,
-}: IArticlesProps) => {
+const Articles = ({ data, type, isOwner }: IArticlesProps) => {
     const articles = data.searchArticles && data.searchArticles.content
 
     if (articles) {

@@ -4,9 +4,7 @@ import withPagination from '../../../lib/with-pagination'
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
 import Button from '../../../components/Button'
 import { searchArticles } from '../../../queries/__generated__/searchArticles'
-import {
-    ICloseModalAction,
-} from '../../../components/Modal/Module'
+import { ICloseModalAction } from '../../../components/Modal/Module'
 import {
     IDeleteDraftArticleAction,
     IDeleteDraftArticlePayload,

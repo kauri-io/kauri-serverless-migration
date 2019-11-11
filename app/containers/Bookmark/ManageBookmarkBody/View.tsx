@@ -1,5 +1,9 @@
 import React from 'react'
-import { IOpenModalPayload, ICloseModalAction, IOpenModalAction } from '../../../components/Modal/Module'
+import {
+    IOpenModalPayload,
+    ICloseModalAction,
+    IOpenModalAction,
+} from '../../../components/Modal/Module'
 import { IRouteChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import { Grid, Box } from '@material-ui/core'
 import { getBookmarks_getBookmarks } from '../../../queries/__generated__/getBookmarks'
@@ -17,8 +21,12 @@ interface IProps {
     routeChangeAction: (payload: string) => IRouteChangeAction
     openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
     closeModalAction: () => ICloseModalAction
-    editBookmarkFolderAction: (payload: editBookmarkFolderVariables) => IEditBookmakFolderAction
-    deleteBookmarkFolderAction: (payload: deleteBookmarkFolderVariables) => IDeleteBookmakFolderAction
+    editBookmarkFolderAction: (
+        payload: editBookmarkFolderVariables
+    ) => IEditBookmakFolderAction
+    deleteBookmarkFolderAction: (
+        payload: deleteBookmarkFolderVariables
+    ) => IDeleteBookmakFolderAction
     folder: string
     BookmarkQuery: {
         getBookmarks: getBookmarks_getBookmarks
@@ -31,7 +39,7 @@ export const ManageBookmarkBody = ({
     routeChangeAction,
     openModalAction,
     closeModalAction,
-    editBookmarkFolderAction, 
+    editBookmarkFolderAction,
     deleteBookmarkFolderAction,
     BookmarkQuery,
     folder,

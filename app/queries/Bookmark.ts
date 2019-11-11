@@ -1,7 +1,6 @@
 import gql from 'graphql-tag'
 import { Article, Collection, Link } from './Fragments'
 
-
 export const getBookmarkFolders = gql`
     query getBookmarkFolders($resourceId: ResourceIdentifierInput) {
         getBookmarkFolders(resourceId: $resourceId) {

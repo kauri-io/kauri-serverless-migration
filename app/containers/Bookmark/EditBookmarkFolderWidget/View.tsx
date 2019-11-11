@@ -1,9 +1,13 @@
-import { ICloseModalAction, IOpenModalPayload, IOpenModalAction } from '../../../components/Modal/Module'
+import {
+    ICloseModalAction,
+    IOpenModalPayload,
+    IOpenModalAction,
+} from '../../../components/Modal/Module'
 import {
     ROOT_FOLDER,
     labelRootFolder,
     IEditBookmakFolderAction,
-    IDeleteBookmakFolderAction
+    IDeleteBookmakFolderAction,
 } from '../Module'
 import {
     Grid,
@@ -16,15 +20,19 @@ import {
 } from '@material-ui/core'
 import Edit from '@material-ui/icons/Edit'
 import DeleteBookmarkFolderWidget from '../DeleteBookmarkFolderWidget/View'
-import { useState} from 'react'
+import { useState } from 'react'
 import { editBookmarkFolderVariables } from '../../../queries/__generated__/editBookmarkFolder'
 import { deleteBookmarkFolderVariables } from '../../../queries/__generated__/deleteBookmarkFolder'
 
 interface IProps {
     openModalAction: (payload: IOpenModalPayload) => IOpenModalAction
     closeModalAction: () => ICloseModalAction
-    editBookmarkFolderAction: (payload: editBookmarkFolderVariables) => IEditBookmakFolderAction
-    deleteBookmarkFolderAction: (payload: deleteBookmarkFolderVariables) => IDeleteBookmakFolderAction
+    editBookmarkFolderAction: (
+        payload: editBookmarkFolderVariables
+    ) => IEditBookmakFolderAction
+    deleteBookmarkFolderAction: (
+        payload: deleteBookmarkFolderVariables
+    ) => IDeleteBookmakFolderAction
     folder: string
     updateFolder: (folder: string) => void
 }
@@ -84,7 +92,7 @@ export const EditBookmarkFolderWidgetComponent = ({
                 <Grid item xs={9}>
                     {!showForm ? (
                         <Typography variant="h6">
-                            {labelRootFolder({folder})} &nbsp;
+                            {labelRootFolder({ folder })} &nbsp;
                             {folder !== ROOT_FOLDER ? (
                                 <Link
                                     href="#"
@@ -122,7 +130,9 @@ export const EditBookmarkFolderWidgetComponent = ({
                                             folder={folder}
                                             updateFolder={updateFolder}
                                             closeModalAction={closeModalAction}
-                                            deleteBookmarkFolderAction={deleteBookmarkFolderAction}
+                                            deleteBookmarkFolderAction={
+                                                deleteBookmarkFolderAction
+                                            }
                                         />
                                     ),
                                 })

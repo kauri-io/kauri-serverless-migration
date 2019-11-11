@@ -1,10 +1,12 @@
 import { FormGroup, TextField, Link } from '@material-ui/core'
-import { useState} from 'react'
+import { useState } from 'react'
 import { ICreateBookmakFolderAction } from '../Module'
 import { createBookmarkFolderVariables } from '../../../queries/__generated__/createBookmarkFolder'
 
 interface IProps {
-    createBookmarkFolderAction: (payload: createBookmarkFolderVariables) => ICreateBookmakFolderAction
+    createBookmarkFolderAction: (
+        payload: createBookmarkFolderVariables
+    ) => ICreateBookmakFolderAction
 }
 
 export const CreateBookmarkFolderComponent = ({

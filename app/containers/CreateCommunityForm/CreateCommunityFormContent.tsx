@@ -80,9 +80,6 @@ const ManagePanel = props => (
         key="manage"
         formInvitations={props.formInvitations}
         cancelInvitation={props.cancelInvitation}
-        openModalAction={props.openModalAction}
-        routeChangeAction={props.routeChangeAction}
-        isLoggedIn={true}
     />
 )
 

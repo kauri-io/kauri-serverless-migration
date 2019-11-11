@@ -10,7 +10,7 @@ import {
     CardActions,
     Icon,
     IconButton,
-    Tooltip
+    Tooltip,
 } from '@material-ui/core'
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
 import BookmarkIcon from '@material-ui/icons/Bookmark'
@@ -321,10 +321,15 @@ const CollectionCard: React.FC<IProps> = ({
                                           routeChangeAction(`/login`)
                                 }
                             >
-                                {isBookmarked
-                                    ? (<BookmarkIcon data-testid={`CollectionCard-${id}-bookmarkIcon`} />)
-                                    : (<BookmarkBorderIcon data-testid={`CollectionCard-${id}-bookmarkBorderIcon`} />)
-                                }
+                                {isBookmarked ? (
+                                    <BookmarkIcon
+                                        data-testid={`CollectionCard-${id}-bookmarkIcon`}
+                                    />
+                                ) : (
+                                    <BookmarkBorderIcon
+                                        data-testid={`CollectionCard-${id}-bookmarkBorderIcon`}
+                                    />
+                                )}
                             </IconButton>
                         </Tooltip>
                         <IconButton
@@ -348,7 +353,6 @@ const CollectionCard: React.FC<IProps> = ({
     )
 }
 
-
 const mapStateToProps = state => {
     return {
         isLoggedIn: !!(state.app && state.app.user && state.app.user.id),
@@ -358,6 +362,6 @@ export default connect(
     mapStateToProps,
     {
         openModalAction,
-        routeChangeAction, 
+        routeChangeAction,
     }
 )(CollectionCard)

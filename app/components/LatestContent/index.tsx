@@ -32,9 +32,7 @@ interface IProps {
     content: any
 }
 
-const LatestContent: React.FunctionComponent<IProps> = ({
-    content
-}) => {
+const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
     const classes = useStyles()
     return (
         <Grid direction="column" container={true} className={classes.container}>

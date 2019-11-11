@@ -12,7 +12,13 @@ import React from 'react'
 import { ResourceTypeInput } from '../../../__generated__/globalTypes'
 import CreateBookmarkFolder from '../CreateBookmarkFolderWidget/View'
 import { ICloseModalAction } from '../../../components/Modal/Module'
-import { IBookmarkAction, IUnbookmarkAction, ICreateBookmakFolderAction, labelRootFolder, ILabelRootFolder } from '../Module'
+import {
+    IBookmarkAction,
+    IUnbookmarkAction,
+    ICreateBookmakFolderAction,
+    labelRootFolder,
+    ILabelRootFolder,
+} from '../Module'
 import { createBookmarkFolderVariables } from '../../../queries/__generated__/createBookmarkFolder'
 import { bookmarkVariables } from '../../../queries/__generated__/bookmark'
 import { unbookmarkVariables } from '../../../queries/__generated__/unbookmark'
@@ -21,7 +27,9 @@ interface IProps {
     closeModalAction: () => ICloseModalAction
     bookmarkAction: (payload: bookmarkVariables) => IBookmarkAction
     unbookmarkAction: (payload: unbookmarkVariables) => IUnbookmarkAction
-    createBookmarkFolderAction: (payload: createBookmarkFolderVariables) => ICreateBookmakFolderAction
+    createBookmarkFolderAction: (
+        payload: createBookmarkFolderVariables
+    ) => ICreateBookmakFolderAction
     labelRootFolder: (payload: ILabelRootFolder) => string
     resourceId: string
     resourceType: ResourceTypeInput
@@ -96,7 +104,7 @@ export const BookmarkResourceComponent = ({
                                     />
                                 }
                                 label={
-                                    labelRootFolder({folder: folder.name}) +
+                                    labelRootFolder({ folder: folder.name }) +
                                     ' (' +
                                     folder.total +
                                     ')'
@@ -105,7 +113,9 @@ export const BookmarkResourceComponent = ({
                         )
                     })}
                     <Divider className={classes.divider} />
-                    <CreateBookmarkFolder createBookmarkFolderAction={createBookmarkFolderAction}/>
+                    <CreateBookmarkFolder
+                        createBookmarkFolderAction={createBookmarkFolderAction}
+                    />
                 </FormGroup>
             }
             title={'Save'}

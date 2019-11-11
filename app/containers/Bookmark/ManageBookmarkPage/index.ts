@@ -6,7 +6,11 @@ import withLoading from '../../../lib/with-loading'
 import withApolloError from '../../../lib/with-apollo-error'
 import { openModalAction } from '../../../components/Modal/Module'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
-import { createBookmarkFolderAction, labelRootFolder, ROOT_FOLDER } from '../Module'
+import {
+    createBookmarkFolderAction,
+    labelRootFolder,
+    ROOT_FOLDER,
+} from '../Module'
 
 const mapStateToProps = state => {
     return {
@@ -25,7 +29,7 @@ export default compose(
             openModalAction,
             routeChangeAction,
             labelRootFolder,
-            createBookmarkFolderAction
+            createBookmarkFolderAction,
         }
     ),
     graphql(getBookmarkFolders, {

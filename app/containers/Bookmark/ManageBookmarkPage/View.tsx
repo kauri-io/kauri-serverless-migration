@@ -1,6 +1,10 @@
 import { getBookmarkFolders_getBookmarkFolders } from '../../../queries/__generated__/getBookmarkFolders'
 import React from 'react'
-import { labelRootFolder, ROOT_FOLDER, ICreateBookmakFolderAction} from '../Module'
+import {
+    labelRootFolder,
+    ROOT_FOLDER,
+    ICreateBookmakFolderAction,
+} from '../Module'
 import { Tabs, Tab, makeStyles, Theme, Grid, Box } from '@material-ui/core'
 import ManageBookmarkBody from '../ManageBookmarkBody'
 import CreateBookmarkFolder from '../CreateBookmarkFolderWidget/View'
@@ -11,7 +15,9 @@ import { IRouteChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 interface IProps {
     isLoggedIn: boolean
     routeChangeAction: (payload: string) => IRouteChangeAction
-    createBookmarkFolderAction: (payload: createBookmarkFolderVariables) => ICreateBookmakFolderAction
+    createBookmarkFolderAction: (
+        payload: createBookmarkFolderVariables
+    ) => ICreateBookmakFolderAction
     data: {
         getBookmarkFolders: (getBookmarkFolders_getBookmarkFolders | null)[]
     }
@@ -91,7 +97,9 @@ export const ManageBookmarkPageComponent = ({
                                     <Tab
                                         className={classes.tab}
                                         label={
-                                            labelRootFolder({folder: folder.name}) +
+                                            labelRootFolder({
+                                                folder: folder.name,
+                                            }) +
                                             ' (' +
                                             folder.total +
                                             ')'
@@ -115,7 +123,11 @@ export const ManageBookmarkPageComponent = ({
                                 )
                             })}
                         <Box className={classes.createContainer}>
-                            <CreateBookmarkFolder createBookmarkFolderAction={createBookmarkFolderAction}/>
+                            <CreateBookmarkFolder
+                                createBookmarkFolderAction={
+                                    createBookmarkFolderAction
+                                }
+                            />
                         </Box>
                     </Tabs>
                 </Box>

@@ -328,10 +328,15 @@ const ArticleCard: React.FC<IProps> = ({
                                           routeChangeAction(`/login`)
                                 }
                             >
-                                {isBookmarked
-                                    ? (<BookmarkIcon data-testid={`ArticleCard-${id}-bookmarkIcon`} />)
-                                    : (<BookmarkBorderIcon data-testid={`ArticleCard-${id}-bookmarkBorderIcon`} />)
-                                }
+                                {isBookmarked ? (
+                                    <BookmarkIcon
+                                        data-testid={`ArticleCard-${id}-bookmarkIcon`}
+                                    />
+                                ) : (
+                                    <BookmarkBorderIcon
+                                        data-testid={`ArticleCard-${id}-bookmarkBorderIcon`}
+                                    />
+                                )}
                             </IconButton>
                         </Tooltip>
                         <IconButton
@@ -424,6 +429,6 @@ export default connect(
     mapStateToProps,
     {
         openModalAction,
-        routeChangeAction, 
+        routeChangeAction,
     }
 )(ArticleCard)

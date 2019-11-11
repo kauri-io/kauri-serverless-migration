@@ -6,7 +6,9 @@ import { deleteBookmarkFolderVariables } from '../../../queries/__generated__/de
 
 interface IProps {
     closeModalAction: () => ICloseModalAction
-    deleteBookmarkFolderAction: (payload: deleteBookmarkFolderVariables) => IDeleteBookmakFolderAction
+    deleteBookmarkFolderAction: (
+        payload: deleteBookmarkFolderVariables
+    ) => IDeleteBookmakFolderAction
     folder: string
     updateFolder: (folder: string) => void
 }

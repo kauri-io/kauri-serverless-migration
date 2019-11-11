@@ -6,7 +6,12 @@ import { getBookmarkFolders } from '../../../queries/Bookmark'
 import withApolloError from '../../../lib/with-apollo-error'
 import withLoading from '../../../lib/with-loading'
 import { ResourceTypeInput } from '../../../__generated__/globalTypes'
-import { bookmarkAction, unbookmarkAction, labelRootFolder, createBookmarkFolderAction } from '../Module'
+import {
+    bookmarkAction,
+    unbookmarkAction,
+    labelRootFolder,
+    createBookmarkFolderAction,
+} from '../Module'
 
 export default compose(
     withApollo,
@@ -17,7 +22,7 @@ export default compose(
             bookmarkAction,
             unbookmarkAction,
             labelRootFolder,
-            createBookmarkFolderAction
+            createBookmarkFolderAction,
         }
     ),
     graphql(getBookmarkFolders, {
