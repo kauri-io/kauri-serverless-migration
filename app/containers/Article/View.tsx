@@ -17,7 +17,8 @@ import { getArticleURL } from '../../lib/getURLs'
 import Comments from './components/ArticleComments'
 import Head from 'next/head'
 import ApolloClient from 'apollo-client'
-import { recordViewMutation } from '../../queries/Utils'
+import ScrollIndicator from '../../components/ScrollIndicator'
+import { recordViewMutation, markAsreadMutation } from '../../queries/Utils'
 import {
     recordView,
     recordViewVariables,
@@ -73,6 +74,20 @@ const ArticleComp = ({
     const classes = ArticleStyles({})
     const author = contributors && contributors[0]
     const canonicalUrl = attributes.canonical
+
+    const markAsRead = () => {
+        client &&
+            client.mutate({
+                fetchPolicy: 'no-cache',
+                mutation: markAsreadMutation,
+                variables: {
+                    resourceId: {
+                        id: id,
+                        type: 'ARTICLE' as any,
+                    },
+                },
+            })
+    }
 
     useEffect(() => {
         client &&
@@ -228,6 +243,7 @@ const ArticleComp = ({
                     </Grid>
                 </Hidden>
             </Grid>
+            <ScrollIndicator markAsRead={() => markAsRead()} />
         </>
     )
 }
