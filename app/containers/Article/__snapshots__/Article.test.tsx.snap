@@ -11366,6 +11366,82 @@ exports[`containers/Article should match snapshot 1`] = `
                 </div>
               </ForwardRef(Grid)>
             </WithStyles(ForwardRef(Grid))>
+            <Indicator
+              markAsRead={[Function]}
+            >
+              <ScrollIndicator__BarContainer>
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "ScrollIndicator__BarContainer-sc-1k4p76-0",
+                        "isStatic": false,
+                        "lastClassName": "kJFElp",
+                        "rules": Array [
+                          "position:fixed;top:64px;left:0;right:0;height:4px;width:100%;background:transparent;z-index:999;",
+                        ],
+                      },
+                      "displayName": "ScrollIndicator__BarContainer",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "ScrollIndicator__BarContainer-sc-1k4p76-0",
+                      "target": "div",
+                      "toString": [Function],
+                      "usesTheme": false,
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                >
+                  <div
+                    className="ScrollIndicator__BarContainer-sc-1k4p76-0 kJFElp"
+                  >
+                    <ScrollIndicator__Fill
+                      scrolled={0}
+                    >
+                      <StyledComponent
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "ScrollIndicator__Fill-sc-1k4p76-1",
+                              "isStatic": false,
+                              "lastClassName": "jxBAEE",
+                              "rules": Array [
+                                "width:",
+                                [Function],
+                                "%;left:0;background:",
+                                [Function],
+                                ";height:100%;",
+                              ],
+                            },
+                            "displayName": "ScrollIndicator__Fill",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "ScrollIndicator__Fill-sc-1k4p76-1",
+                            "target": "div",
+                            "toString": [Function],
+                            "usesTheme": true,
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        scrolled={0}
+                      >
+                        <div
+                          className="ScrollIndicator__Fill-sc-1k4p76-1 jxBAEE"
+                        />
+                      </StyledComponent>
+                    </ScrollIndicator__Fill>
+                  </div>
+                </StyledComponent>
+              </ScrollIndicator__BarContainer>
+            </Indicator>
           </ArticleComp>
         </ApolloProvider>
       </MockedProvider>

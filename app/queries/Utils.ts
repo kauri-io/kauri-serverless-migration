@@ -10,3 +10,11 @@ export const recordViewMutation = gql`
         }
     }
 `
+
+export const markAsreadMutation = gql`
+    mutation markAsRead($resourceId: ResourceIdentifierInput!) {
+        markAsRead(resourceId: $resourceId) {
+            hash
+        }
+    }
+`

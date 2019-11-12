@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const BarContainer = styled.div`
     position: fixed;
-    top: 0;
+    top: 64px;
     left: 0;
     right: 0;
     height: 4px;
@@ -12,7 +12,7 @@ const BarContainer = styled.div`
     z-index: 999;
 `
 
-const Fill = styled.div<IState>`
+const Fill = styled.div<{ scrolled: number }>`
     width: ${props => props.scrolled}%;
     left: 0;
     background: ${props => props.theme.colors.primary};
@@ -21,13 +21,15 @@ const Fill = styled.div<IState>`
 
 interface IState {
     scrolled: number
+    triggered: boolean
 }
 
-class Indicator extends React.Component<{}, IState> {
+class Indicator extends React.Component<{ markAsRead?: () => void }, IState> {
     constructor(props: {}) {
         super(props)
         this.state = {
             scrolled: 0,
+            triggered: false,
         }
         this.updateScroll = this.updateScroll.bind(this)
     }
@@ -47,7 +49,12 @@ class Indicator extends React.Component<{}, IState> {
                 document.documentElement.scrollHeight -
                 document.documentElement.clientHeight
             const scrolled = (winScroll / height) * 100
-            this.setState({ scrolled })
+            let triggered = this.state.triggered
+            if (scrolled > 90 && triggered === false) {
+                this.props.markAsRead && this.props.markAsRead()
+                triggered = true
+            }
+            this.setState({ scrolled, triggered })
         }
     }
     public render() {
