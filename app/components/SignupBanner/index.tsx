@@ -58,10 +58,9 @@ const SignupBanner: React.FunctionComponent = () => (
             </Link>
             <Link href="/help">
                 <a>
-                    <Button
-                        color="primary"
-                        variant="outlined"
-                    >{`Learn more`}</Button>
+                    <Button color="primary" variant="outlined">
+                        Learn about kauri
+                    </Button>
                 </a>
             </Link>
         </ViewContainer>

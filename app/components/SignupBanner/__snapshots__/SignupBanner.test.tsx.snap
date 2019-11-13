@@ -949,7 +949,7 @@ exports[`components/SignupBanner should match snapshot 1`] = `
                                   <span
                                     className="MuiButton-label"
                                   >
-                                    Learn more
+                                    Learn about kauri
                                   </span>
                                   <NoSsr>
                                     <WithStyles(undefined)

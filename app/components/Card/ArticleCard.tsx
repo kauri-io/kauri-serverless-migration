@@ -238,6 +238,7 @@ const ArticleCard: React.FC<IProps> = ({
                             />
                         ) : (
                             <img
+                                alt={String(title)}
                                 className={classes.mobileMedia}
                                 data-testid={`ArticleCard-${id}-image`}
                                 src="/static/images/DefaultArticle.svg"
@@ -409,6 +410,7 @@ const ArticleCard: React.FC<IProps> = ({
                         />
                     ) : (
                         <img
+                            alt={String(title)}
                             className={classes.desktopMedia}
                             data-testid={`ArticleCard-${id}-image`}
                             src="/static/images/DefaultArticle.svg"

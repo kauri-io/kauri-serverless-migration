@@ -211,6 +211,7 @@ const LinkCard: React.FC<IProps> = ({
                             />
                         ) : (
                             <img
+                                alt={String(linkTitle)}
                                 className={classes.mobileMedia}
                                 data-testid={`LinkCard-${id}-image`}
                                 src="/static/images/DefaultArticle.svg"
@@ -294,6 +295,7 @@ const LinkCard: React.FC<IProps> = ({
                         />
                     ) : (
                         <img
+                            alt={String(linkTitle)}
                             className={classes.desktopMedia}
                             data-testid={`LinkCard-${id}-image`}
                             src="/static/images/DefaultArticle.svg"

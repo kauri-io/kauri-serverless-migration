@@ -570,6 +570,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                         onMouseEnter={[Function]}
                       >
                         <img
+                          alt="Collection"
                           className="makeStyles-desktopMedia-8"
                           data-testid="CollectionCard-1234567890-image"
                           src="/static/images/DefaultCollection.svg"

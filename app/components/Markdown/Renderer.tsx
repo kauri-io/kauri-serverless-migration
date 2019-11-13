@@ -50,6 +50,7 @@ const Renderer = ({ markdown }) => {
     const CustomIMG = props => {
         return (
             <img
+                alt={props.alt ? props.alt : 'article image'}
                 className={classes.image}
                 src={
                     config.useCloudImage

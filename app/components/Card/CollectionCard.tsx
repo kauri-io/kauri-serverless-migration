@@ -211,6 +211,7 @@ const CollectionCard: React.FC<IProps> = ({
                         />
                     ) : (
                         <img
+                            alt={String(name)}
                             className={classes.desktopMedia}
                             data-testid={`CollectionCard-${id}-image`}
                             src="/static/images/DefaultCollection.svg"

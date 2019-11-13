@@ -287,6 +287,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                     <Link href="/">
                         <a>
                             <img
+                                alt="Kauri logo"
                                 className={classes.logo}
                                 src="/static/images/logo.svg"
                             />
