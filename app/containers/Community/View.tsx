@@ -209,6 +209,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     <title
                         dangerouslySetInnerHTML={{ __html: getCommunity.name }}
                     />
+                    <meta name='description' content={String(getCommunity.description)} />
                 </Head>
                 <CommunityHeader
                     transferArticleToCommunityAction={
