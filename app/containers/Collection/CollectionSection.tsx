@@ -58,7 +58,6 @@ const CollectionSection: React.SFC<IProps> = props => {
                 <StyledDescription>{description}</StyledDescription>
                 <ResourcesSection>
                     {resources.map((resource, key) => {
-                        console.log(resource)
                         if (resource.__typename === 'ArticleDTO') {
                             return (
                                 <ArticleCard

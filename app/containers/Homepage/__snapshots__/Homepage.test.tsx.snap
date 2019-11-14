@@ -1649,104 +1649,104 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                           <section
                             className="SignupBanner__ResourceDetailsContainer-sc-1hxzf8p-0 jkhksa"
                           >
-                            <Typography__styledComponent
-                              color="white"
+                            <WithStyles(ForwardRef(Typography))
+                              color="secondary"
+                              component="h1"
+                              variant="h4"
                             >
-                              <StyledComponent
-                                color="white"
-                                forwardedComponent={
+                              <ForwardRef(Typography)
+                                classes={
                                   Object {
-                                    "$$typeof": Symbol(react.forward_ref),
-                                    "attrs": Array [],
-                                    "componentStyle": ComponentStyle {
-                                      "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                                      "isStatic": false,
-                                      "lastClassName": "iLJkHN",
-                                      "rules": Array [
-                                        "color:",
-                                        [Function],
-                                        ";margin:0px;font-weight:",
-                                        "500",
-                                        ";",
-                                        ";font-size:",
-                                        "28",
-                                        "px;text-transform:",
-                                        [Function],
-                                        ";text-align:",
-                                        [Function],
-                                        ";:hover{color:",
-                                        [Function],
-                                        ";cursor:",
-                                        [Function],
-                                        ";}",
-                                      ],
-                                    },
-                                    "displayName": "Typography__styledComponent",
-                                    "foldedComponentIds": Array [],
-                                    "render": [Function],
-                                    "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                                    "target": "span",
-                                    "toString": [Function],
-                                    "usesTheme": true,
-                                    "warnTooManyClasses": [Function],
-                                    "withComponent": [Function],
+                                    "alignCenter": "MuiTypography-alignCenter",
+                                    "alignJustify": "MuiTypography-alignJustify",
+                                    "alignLeft": "MuiTypography-alignLeft",
+                                    "alignRight": "MuiTypography-alignRight",
+                                    "body1": "MuiTypography-body1",
+                                    "body2": "MuiTypography-body2",
+                                    "button": "MuiTypography-button",
+                                    "caption": "MuiTypography-caption",
+                                    "colorError": "MuiTypography-colorError",
+                                    "colorInherit": "MuiTypography-colorInherit",
+                                    "colorPrimary": "MuiTypography-colorPrimary",
+                                    "colorSecondary": "MuiTypography-colorSecondary",
+                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                    "displayBlock": "MuiTypography-displayBlock",
+                                    "displayInline": "MuiTypography-displayInline",
+                                    "gutterBottom": "MuiTypography-gutterBottom",
+                                    "h1": "MuiTypography-h1",
+                                    "h2": "MuiTypography-h2",
+                                    "h3": "MuiTypography-h3",
+                                    "h4": "MuiTypography-h4",
+                                    "h5": "MuiTypography-h5",
+                                    "h6": "MuiTypography-h6",
+                                    "noWrap": "MuiTypography-noWrap",
+                                    "overline": "MuiTypography-overline",
+                                    "paragraph": "MuiTypography-paragraph",
+                                    "root": "MuiTypography-root",
+                                    "srOnly": "MuiTypography-srOnly",
+                                    "subtitle1": "MuiTypography-subtitle1",
+                                    "subtitle2": "MuiTypography-subtitle2",
                                   }
                                 }
-                                forwardedRef={null}
+                                color="secondary"
+                                component="h1"
+                                variant="h4"
                               >
-                                <span
-                                  className="Typography__styledComponent-sc-36xkf6-5 iLJkHN"
-                                  color="white"
+                                <h1
+                                  className="MuiTypography-root MuiTypography-h4 MuiTypography-colorSecondary"
                                 >
                                   Learn to Build on Ethereum with Kauri
-                                </span>
-                              </StyledComponent>
-                            </Typography__styledComponent>
-                            <Typography__component
-                              color="white"
+                                </h1>
+                              </ForwardRef(Typography)>
+                            </WithStyles(ForwardRef(Typography))>
+                            <WithStyles(ForwardRef(Typography))
+                              color="secondary"
                             >
-                              <StyledComponent
-                                color="white"
-                                forwardedComponent={
+                              <ForwardRef(Typography)
+                                classes={
                                   Object {
-                                    "$$typeof": Symbol(react.forward_ref),
-                                    "attrs": Array [],
-                                    "componentStyle": ComponentStyle {
-                                      "componentId": "Typography__component-sc-36xkf6-4",
-                                      "isStatic": false,
-                                      "lastClassName": "chprKh",
-                                      "rules": Array [
-                                        "font-size:14px;font-weight:normal;letter-spacing:-0.1px;margin-bottom:",
-                                        [Function],
-                                        "px;line-height:18px;color:",
-                                        [Function],
-                                        ";",
-                                        ";",
-                                        [Function],
-                                        ";",
-                                      ],
-                                    },
-                                    "displayName": "Typography__component",
-                                    "foldedComponentIds": Array [],
-                                    "render": [Function],
-                                    "styledComponentId": "Typography__component-sc-36xkf6-4",
-                                    "target": "span",
-                                    "toString": [Function],
-                                    "usesTheme": true,
-                                    "warnTooManyClasses": [Function],
-                                    "withComponent": [Function],
+                                    "alignCenter": "MuiTypography-alignCenter",
+                                    "alignJustify": "MuiTypography-alignJustify",
+                                    "alignLeft": "MuiTypography-alignLeft",
+                                    "alignRight": "MuiTypography-alignRight",
+                                    "body1": "MuiTypography-body1",
+                                    "body2": "MuiTypography-body2",
+                                    "button": "MuiTypography-button",
+                                    "caption": "MuiTypography-caption",
+                                    "colorError": "MuiTypography-colorError",
+                                    "colorInherit": "MuiTypography-colorInherit",
+                                    "colorPrimary": "MuiTypography-colorPrimary",
+                                    "colorSecondary": "MuiTypography-colorSecondary",
+                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                    "displayBlock": "MuiTypography-displayBlock",
+                                    "displayInline": "MuiTypography-displayInline",
+                                    "gutterBottom": "MuiTypography-gutterBottom",
+                                    "h1": "MuiTypography-h1",
+                                    "h2": "MuiTypography-h2",
+                                    "h3": "MuiTypography-h3",
+                                    "h4": "MuiTypography-h4",
+                                    "h5": "MuiTypography-h5",
+                                    "h6": "MuiTypography-h6",
+                                    "noWrap": "MuiTypography-noWrap",
+                                    "overline": "MuiTypography-overline",
+                                    "paragraph": "MuiTypography-paragraph",
+                                    "root": "MuiTypography-root",
+                                    "srOnly": "MuiTypography-srOnly",
+                                    "subtitle1": "MuiTypography-subtitle1",
+                                    "subtitle2": "MuiTypography-subtitle2",
                                   }
                                 }
-                                forwardedRef={null}
+                                color="secondary"
                               >
-                                <span
-                                  className="Typography__component-sc-36xkf6-4 dvuWvG"
-                                  color="white"
+                                <p
+                                  className="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
                                 >
                                   Articles, Tutorials, Documentation and Best Practices
-                                </span>
-                              </StyledComponent>
-                            </Typography__component>
+                                </p>
+                              </ForwardRef(Typography)>
+                            </WithStyles(ForwardRef(Typography))>
                           </section>
                         </StyledComponent>
                       </SignupBanner__ResourceDetailsContainer>
@@ -1797,12 +1797,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                   variant="contained"
                                 >
                                   <WithStyles(ForwardRef(Button))
-                                    className="makeStyles-main-4"
+                                    className="makeStyles-main-34"
                                     color="primary"
                                     variant="contained"
                                   >
                                     <ForwardRef(Button)
-                                      className="makeStyles-main-4"
+                                      className="makeStyles-main-34"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiButton-colorInherit",
@@ -1839,7 +1839,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       variant="contained"
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
-                                        className="MuiButton-root MuiButton-contained makeStyles-main-4 MuiButton-containedPrimary"
+                                        className="MuiButton-root MuiButton-contained makeStyles-main-34 MuiButton-containedPrimary"
                                         component="button"
                                         disabled={false}
                                         focusRipple={true}
@@ -1847,7 +1847,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                         type="button"
                                       >
                                         <ForwardRef(ButtonBase)
-                                          className="MuiButton-root MuiButton-contained makeStyles-main-4 MuiButton-containedPrimary"
+                                          className="MuiButton-root MuiButton-contained makeStyles-main-34 MuiButton-containedPrimary"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -1862,7 +1862,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           type="button"
                                         >
                                           <button
-                                            className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-main-4 MuiButton-containedPrimary"
+                                            className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-main-34 MuiButton-containedPrimary"
                                             disabled={false}
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
@@ -2458,12 +2458,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                   key="CATEGORIES"
                                 >
                                   <WithStyles(ForwardRef(Grid))
-                                    className="makeStyles-container-139"
+                                    className="makeStyles-container-169"
                                     container={true}
                                     spacing={2}
                                   >
                                     <ForwardRef(Grid)
-                                      className="makeStyles-container-139"
+                                      className="makeStyles-container-169"
                                       classes={
                                         Object {
                                           "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -2575,7 +2575,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       spacing={2}
                                     >
                                       <div
-                                        className="MuiGrid-root makeStyles-container-139 MuiGrid-container MuiGrid-spacing-xs-2"
+                                        className="MuiGrid-root makeStyles-container-169 MuiGrid-container MuiGrid-spacing-xs-2"
                                       >
                                         <WithStyles(ForwardRef(Grid))
                                           item={true}
@@ -2704,7 +2704,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 href="/collection/5cb55c871325f2000141df73/getting-started"
                                               >
                                                 <a
-                                                  className="makeStyles-link-140"
+                                                  className="makeStyles-link-170"
                                                   href="/collection/5cb55c871325f2000141df73/getting-started"
                                                   onClick={[Function]}
                                                   onMouseEnter={[Function]}
@@ -2816,13 +2816,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                   </ForwardRef>
                                                   <WithStyles(ForwardRef(Typography))
                                                     align="center"
-                                                    className="makeStyles-text-141"
+                                                    className="makeStyles-text-171"
                                                     color="secondary"
                                                     variant="body1"
                                                   >
                                                     <ForwardRef(Typography)
                                                       align="center"
-                                                      className="makeStyles-text-141"
+                                                      className="makeStyles-text-171"
                                                       classes={
                                                         Object {
                                                           "alignCenter": "MuiTypography-alignCenter",
@@ -2861,19 +2861,19 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       variant="body1"
                                                     >
                                                       <p
-                                                        className="MuiTypography-root makeStyles-text-141 MuiTypography-body1 MuiTypography-colorSecondary MuiTypography-alignCenter"
+                                                        className="MuiTypography-root makeStyles-text-171 MuiTypography-body1 MuiTypography-colorSecondary MuiTypography-alignCenter"
                                                       />
                                                     </ForwardRef(Typography)>
                                                   </WithStyles(ForwardRef(Typography))>
                                                   <WithStyles(ForwardRef(Typography))
                                                     align="center"
-                                                    className="makeStyles-text-141"
+                                                    className="makeStyles-text-171"
                                                     color="secondary"
                                                     variant="caption"
                                                   >
                                                     <ForwardRef(Typography)
                                                       align="center"
-                                                      className="makeStyles-text-141"
+                                                      className="makeStyles-text-171"
                                                       classes={
                                                         Object {
                                                           "alignCenter": "MuiTypography-alignCenter",
@@ -2912,7 +2912,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       variant="caption"
                                                     >
                                                       <span
-                                                        className="MuiTypography-root makeStyles-text-141 MuiTypography-caption MuiTypography-colorSecondary MuiTypography-alignCenter"
+                                                        className="MuiTypography-root makeStyles-text-171 MuiTypography-caption MuiTypography-colorSecondary MuiTypography-alignCenter"
                                                       >
                                                         Build your first (d)app on Ethereum
                                                       </span>
@@ -3050,7 +3050,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 href="/collection/5cab3a8c4e04590001eccfa2/open-finance-(defi)"
                                               >
                                                 <a
-                                                  className="makeStyles-link-140"
+                                                  className="makeStyles-link-170"
                                                   href="/collection/5cab3a8c4e04590001eccfa2/open-finance-(defi)"
                                                   onClick={[Function]}
                                                   onMouseEnter={[Function]}
@@ -3162,13 +3162,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                   </ForwardRef>
                                                   <WithStyles(ForwardRef(Typography))
                                                     align="center"
-                                                    className="makeStyles-text-141"
+                                                    className="makeStyles-text-171"
                                                     color="secondary"
                                                     variant="body1"
                                                   >
                                                     <ForwardRef(Typography)
                                                       align="center"
-                                                      className="makeStyles-text-141"
+                                                      className="makeStyles-text-171"
                                                       classes={
                                                         Object {
                                                           "alignCenter": "MuiTypography-alignCenter",
@@ -3207,19 +3207,19 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       variant="body1"
                                                     >
                                                       <p
-                                                        className="MuiTypography-root makeStyles-text-141 MuiTypography-body1 MuiTypography-colorSecondary MuiTypography-alignCenter"
+                                                        className="MuiTypography-root makeStyles-text-171 MuiTypography-body1 MuiTypography-colorSecondary MuiTypography-alignCenter"
                                                       />
                                                     </ForwardRef(Typography)>
                                                   </WithStyles(ForwardRef(Typography))>
                                                   <WithStyles(ForwardRef(Typography))
                                                     align="center"
-                                                    className="makeStyles-text-141"
+                                                    className="makeStyles-text-171"
                                                     color="secondary"
                                                     variant="caption"
                                                   >
                                                     <ForwardRef(Typography)
                                                       align="center"
-                                                      className="makeStyles-text-141"
+                                                      className="makeStyles-text-171"
                                                       classes={
                                                         Object {
                                                           "alignCenter": "MuiTypography-alignCenter",
@@ -3258,7 +3258,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       variant="caption"
                                                     >
                                                       <span
-                                                        className="MuiTypography-root makeStyles-text-141 MuiTypography-caption MuiTypography-colorSecondary MuiTypography-alignCenter"
+                                                        className="MuiTypography-root makeStyles-text-171 MuiTypography-caption MuiTypography-colorSecondary MuiTypography-alignCenter"
                                                       >
                                                         Permissionless, open access financial protocols
                                                       </span>
@@ -3396,7 +3396,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 href="/collection/5cb71c026b976600014a78ac/scaling"
                                               >
                                                 <a
-                                                  className="makeStyles-link-140"
+                                                  className="makeStyles-link-170"
                                                   href="/collection/5cb71c026b976600014a78ac/scaling"
                                                   onClick={[Function]}
                                                   onMouseEnter={[Function]}
@@ -3508,13 +3508,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                   </ForwardRef>
                                                   <WithStyles(ForwardRef(Typography))
                                                     align="center"
-                                                    className="makeStyles-text-141"
+                                                    className="makeStyles-text-171"
                                                     color="secondary"
                                                     variant="body1"
                                                   >
                                                     <ForwardRef(Typography)
                                                       align="center"
-                                                      className="makeStyles-text-141"
+                                                      className="makeStyles-text-171"
                                                       classes={
                                                         Object {
                                                           "alignCenter": "MuiTypography-alignCenter",
@@ -3553,19 +3553,19 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       variant="body1"
                                                     >
                                                       <p
-                                                        className="MuiTypography-root makeStyles-text-141 MuiTypography-body1 MuiTypography-colorSecondary MuiTypography-alignCenter"
+                                                        className="MuiTypography-root makeStyles-text-171 MuiTypography-body1 MuiTypography-colorSecondary MuiTypography-alignCenter"
                                                       />
                                                     </ForwardRef(Typography)>
                                                   </WithStyles(ForwardRef(Typography))>
                                                   <WithStyles(ForwardRef(Typography))
                                                     align="center"
-                                                    className="makeStyles-text-141"
+                                                    className="makeStyles-text-171"
                                                     color="secondary"
                                                     variant="caption"
                                                   >
                                                     <ForwardRef(Typography)
                                                       align="center"
-                                                      className="makeStyles-text-141"
+                                                      className="makeStyles-text-171"
                                                       classes={
                                                         Object {
                                                           "alignCenter": "MuiTypography-alignCenter",
@@ -3604,7 +3604,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       variant="caption"
                                                     >
                                                       <span
-                                                        className="MuiTypography-root makeStyles-text-141 MuiTypography-caption MuiTypography-colorSecondary MuiTypography-alignCenter"
+                                                        className="MuiTypography-root makeStyles-text-171 MuiTypography-caption MuiTypography-colorSecondary MuiTypography-alignCenter"
                                                       >
                                                         Increase your dApp's throughput and decrease costs
                                                       </span>
@@ -3742,7 +3742,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 href="/collection/5cb71d136b976600014a78ad/privacy"
                                               >
                                                 <a
-                                                  className="makeStyles-link-140"
+                                                  className="makeStyles-link-170"
                                                   href="/collection/5cb71d136b976600014a78ad/privacy"
                                                   onClick={[Function]}
                                                   onMouseEnter={[Function]}
@@ -3854,13 +3854,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                   </ForwardRef>
                                                   <WithStyles(ForwardRef(Typography))
                                                     align="center"
-                                                    className="makeStyles-text-141"
+                                                    className="makeStyles-text-171"
                                                     color="secondary"
                                                     variant="body1"
                                                   >
                                                     <ForwardRef(Typography)
                                                       align="center"
-                                                      className="makeStyles-text-141"
+                                                      className="makeStyles-text-171"
                                                       classes={
                                                         Object {
                                                           "alignCenter": "MuiTypography-alignCenter",
@@ -3899,19 +3899,19 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       variant="body1"
                                                     >
                                                       <p
-                                                        className="MuiTypography-root makeStyles-text-141 MuiTypography-body1 MuiTypography-colorSecondary MuiTypography-alignCenter"
+                                                        className="MuiTypography-root makeStyles-text-171 MuiTypography-body1 MuiTypography-colorSecondary MuiTypography-alignCenter"
                                                       />
                                                     </ForwardRef(Typography)>
                                                   </WithStyles(ForwardRef(Typography))>
                                                   <WithStyles(ForwardRef(Typography))
                                                     align="center"
-                                                    className="makeStyles-text-141"
+                                                    className="makeStyles-text-171"
                                                     color="secondary"
                                                     variant="caption"
                                                   >
                                                     <ForwardRef(Typography)
                                                       align="center"
-                                                      className="makeStyles-text-141"
+                                                      className="makeStyles-text-171"
                                                       classes={
                                                         Object {
                                                           "alignCenter": "MuiTypography-alignCenter",
@@ -3950,7 +3950,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       variant="caption"
                                                     >
                                                       <span
-                                                        className="MuiTypography-root makeStyles-text-141 MuiTypography-caption MuiTypography-colorSecondary MuiTypography-alignCenter"
+                                                        className="MuiTypography-root makeStyles-text-171 MuiTypography-caption MuiTypography-colorSecondary MuiTypography-alignCenter"
                                                       >
                                                         Keep your user's data private
                                                       </span>
@@ -36938,13 +36938,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                     variant="contained"
                                   >
                                     <WithStyles(ForwardRef(Button))
-                                      className="makeStyles-main-4"
+                                      className="makeStyles-main-34"
                                       color="primary"
                                       onClick={[Function]}
                                       variant="contained"
                                     >
                                       <ForwardRef(Button)
-                                        className="makeStyles-main-4"
+                                        className="makeStyles-main-34"
                                         classes={
                                           Object {
                                             "colorInherit": "MuiButton-colorInherit",
@@ -36982,7 +36982,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                         variant="contained"
                                       >
                                         <WithStyles(ForwardRef(ButtonBase))
-                                          className="MuiButton-root MuiButton-contained makeStyles-main-4 MuiButton-containedPrimary"
+                                          className="MuiButton-root MuiButton-contained makeStyles-main-34 MuiButton-containedPrimary"
                                           component="button"
                                           disabled={false}
                                           focusRipple={true}
@@ -36991,7 +36991,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                           type="button"
                                         >
                                           <ForwardRef(ButtonBase)
-                                            className="MuiButton-root MuiButton-contained makeStyles-main-4 MuiButton-containedPrimary"
+                                            className="MuiButton-root MuiButton-contained makeStyles-main-34 MuiButton-containedPrimary"
                                             classes={
                                               Object {
                                                 "disabled": "Mui-disabled",
@@ -37007,7 +37007,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             type="button"
                                           >
                                             <button
-                                              className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-main-4 MuiButton-containedPrimary"
+                                              className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-main-34 MuiButton-containedPrimary"
                                               disabled={false}
                                               onBlur={[Function]}
                                               onClick={[Function]}

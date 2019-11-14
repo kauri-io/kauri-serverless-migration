@@ -127,6 +127,7 @@ const ProfileHeader = ({
                         <Fragment>
                             {username && (
                                 <Typography
+                                    component={!name ? 'h1' : 'h6'}
                                     variant="subtitle1"
                                     color="secondary"
                                 >
@@ -134,7 +135,11 @@ const ProfileHeader = ({
                                 </Typography>
                             )}
                             {name && (
-                                <Typography variant="h6" color="secondary">
+                                <Typography
+                                    component={name ? 'h1' : 'h6'}
+                                    variant="h6"
+                                    color="secondary"
+                                >
                                     {name}
                                 </Typography>
                             )}

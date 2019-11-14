@@ -114,7 +114,6 @@ class CollectionPage extends Component<IProps> {
                 sections,
             } = this.props.data.getCollection
 
-            console.log(sections)
             const { userId, routeChangeAction, openModalAction } = this.props
             const bg = background
             const url = getCollectionURL({ name, id }).as
