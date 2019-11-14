@@ -47,9 +47,9 @@ const Layout = ({
     const classes = useStyles({})
     return (
         <Grid container={true}>
-            <Head>
+            {/* <Head>
                 <body className={isModalOpen ? 'overflow-hidden' : null} />
-            </Head>
+            </Head> */}
             <Modal />
             <Notification />
             {!hideNav && (
