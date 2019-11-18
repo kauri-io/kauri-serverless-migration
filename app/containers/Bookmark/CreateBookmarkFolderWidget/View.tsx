@@ -39,7 +39,10 @@ export const CreateBookmarkFolderComponent = ({
             return
         }
         createBookmarkFolderAction({ folder })
+        reset()
+    }
 
+    const reset = () => {
         setFolder('')
         setShowForm(false)
     }
@@ -65,15 +68,27 @@ export const CreateBookmarkFolderComponent = ({
                         value={folder}
                         placeholder="Folder name"
                     />,
-                    <Link
-                        color="primary"
-                        variant="subtitle2"
-                        href="#"
-                        onClick={createFolder}
-                    >
-                        {' '}
-                        CREATE
-                    </Link>,
+                    <div>
+                        <Link
+                            color="primary"
+                            variant="subtitle2"
+                            href="#"
+                            onClick={createFolder}
+                        >
+                            {' '}
+                            CREATE
+                        </Link>
+                        <Link
+                            color="primary"
+                            variant="subtitle2"
+                            href="#"
+                            onClick={reset}
+                        >
+                            {'    '}
+                            CANCEL
+                        </Link>
+                    </div>
+
                 ]
             )}
         </FormGroup>

@@ -51,6 +51,7 @@ export const Article = gql`
             username
             avatar
         }
+        isRead
         description
         id
         version
