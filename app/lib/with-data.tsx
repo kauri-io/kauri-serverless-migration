@@ -14,27 +14,8 @@ import { handleRedirects } from './redirects'
 import 'prismjs/themes/prism-okaidia.css'
 import { ThemeProvider as MaterialThemeProvider } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import { createMuiTheme } from '@material-ui/core/styles'
+import theme from './mui-theme'
 import { parseCookies } from './cookies'
-
-export const theme = createMuiTheme({
-    palette: {
-        common: {
-            black: '#1E2428',
-        },
-        background: {
-            default: '#f5f5f5',
-        },
-        primary: {
-            main: '#0BA986',
-        },
-        secondary: {
-            main: '#ffffff',
-        },
-        contrastThreshold: 3,
-        tonalOffset: 0.2,
-    },
-})
 
 import { setHostNameAction } from './Module'
 import userDetailsEpic, {

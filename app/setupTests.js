@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components'
 import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import { ThemeProvider as MaterialTheme } from '@material-ui/styles'
-import { theme as materialTheme } from './lib/with-data'
+import materialTheme from './lib/mui-theme'
 
 const middlewares = []
 const mockStore = configureStore(middlewares)
