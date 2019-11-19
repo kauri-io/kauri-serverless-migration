@@ -50,7 +50,7 @@ const useStyles = makeStyles((_theme: Theme) => ({
     createContainer: {
         width: 250,
         alignItems: 'flex-start',
-        padding: '6px 12px',
+        padding: '6px 2px',
         '& > div': {
             alignItems: 'flex-start',
         },
