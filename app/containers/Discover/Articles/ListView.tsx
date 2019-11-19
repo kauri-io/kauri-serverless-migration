@@ -4,7 +4,7 @@ import ArticleCard from '../../../components/Card/ArticleCard'
 import Loading from '../../../components/Loading'
 import { searchAutocompleteArticles_searchAutocomplete } from '../../../queries/__generated__/searchAutocompleteArticles'
 import { getArticleURL, getLinkUrl } from '../../../lib/getURLs'
-import { Grid, Container, withStyles } from '@material-ui/core'
+import { Grid, withStyles } from '@material-ui/core'
 import {
     openModalAction,
     closeModalAction,
@@ -20,7 +20,7 @@ interface IProps {
         searchAutocomplete?: searchAutocompleteArticles_searchAutocomplete
     }
     hostName: string
-    classes: { grid: any }
+    classes: { grid: any; root: any }
     openModalAction: typeof openModalAction
     closeModalAction: typeof closeModalAction
     userId: string | null
@@ -49,7 +49,7 @@ class Articles extends Component<IProps> {
                         href={`https://${this.props.hostName}/articles`}
                     />
                 </Head>
-                <Container>
+                <div className={this.props.classes.root}>
                     {searchAutocomplete &&
                     searchAutocomplete.content &&
                     searchAutocomplete.content.length > 0 ? (
@@ -120,7 +120,7 @@ class Articles extends Component<IProps> {
                     ) : (
                         <Loading />
                     )}
-                </Container>
+                </div>
             </Fragment>
         )
     }
@@ -130,5 +130,9 @@ export default withStyles({
     grid: {
         paddingTop: 16,
         maxWidth: 870,
+        margin: 'auto',
+    },
+    root: {
+        display: 'flex',
     },
 })(Articles)

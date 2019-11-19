@@ -7,7 +7,7 @@ import {
     searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO,
 } from '../../../queries/__generated__/searchResultsAutocomplete'
 import { getCommunityURL } from '../../../lib/getURLs'
-import { Grid, Container, withStyles } from '@material-ui/core'
+import { Grid, withStyles } from '@material-ui/core'
 
 interface IProps {
     CommunityQuery: {
@@ -18,7 +18,7 @@ interface IProps {
     }
     hostName: string
     routeChangeAction(route: string): void
-    classes: { grid: any }
+    classes: { grid: any; root: any }
 }
 
 class Communities extends Component<IProps> {
@@ -45,7 +45,7 @@ class Communities extends Component<IProps> {
                         href={`https://${this.props.hostName}/collections`}
                     />
                 </Head>
-                <Container>
+                <div className={this.props.classes.root}>
                     {searchAutocomplete ? (
                         <Grid
                             className={this.props.classes.grid}
@@ -72,7 +72,7 @@ class Communities extends Component<IProps> {
                     ) : (
                         <Loading />
                     )}
-                </Container>
+                </div>
             </Fragment>
         )
     }
@@ -82,5 +82,9 @@ export default withStyles({
     grid: {
         paddingTop: 16,
         maxWidth: 870,
+        margin: 'auto',
+    },
+    root: {
+        display: 'flex',
     },
 })(Communities)
