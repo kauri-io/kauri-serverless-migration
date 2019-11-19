@@ -4,3 +4,4 @@ app/.next
 .DS_Store
 app/output
 app/coverage
+storybook/node_modules

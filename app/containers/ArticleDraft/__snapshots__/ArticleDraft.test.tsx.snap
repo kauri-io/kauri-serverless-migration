@@ -2340,7 +2340,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                   "props": Object {
                                     "aria-label": "title",
                                     "gutterBottom": true,
-                                    "variant": "h5",
+                                    "variant": "h4",
                                   },
                                 },
                                 "h3": Object {
@@ -2643,7 +2643,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                   "props": Object {
                                     "aria-label": "title",
                                     "gutterBottom": true,
-                                    "variant": "h6",
+                                    "variant": "h5",
                                   },
                                 },
                                 "h4": Object {
