@@ -275,7 +275,7 @@ exports[`components/AddMemberButton should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -307,7 +307,7 @@ exports[`components/AddMemberButton should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -358,17 +358,17 @@ exports[`components/AddMemberButton should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -716,7 +716,7 @@ exports[`components/AddTagButton should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -748,7 +748,7 @@ exports[`components/AddTagButton should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -799,17 +799,17 @@ exports[`components/AddTagButton should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -1182,7 +1182,7 @@ exports[`components/Button should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -1214,7 +1214,7 @@ exports[`components/Button should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -1265,17 +1265,17 @@ exports[`components/Button should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -1705,7 +1705,7 @@ exports[`components/MediumImportButton should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -1737,7 +1737,7 @@ exports[`components/MediumImportButton should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -1788,17 +1788,17 @@ exports[`components/MediumImportButton should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -2275,7 +2275,7 @@ exports[`components/SecondaryButton should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -2307,7 +2307,7 @@ exports[`components/SecondaryButton should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -2358,17 +2358,17 @@ exports[`components/SecondaryButton should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -2798,7 +2798,7 @@ exports[`components/TertiaryButton should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -2830,7 +2830,7 @@ exports[`components/TertiaryButton should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -2881,17 +2881,17 @@ exports[`components/TertiaryButton should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -3321,7 +3321,7 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -3353,7 +3353,7 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -3404,17 +3404,17 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",

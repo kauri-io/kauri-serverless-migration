@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
 import CollectionCard from '../../../components/Card/CollectionCard'
-import { Grid, Container, withStyles } from '@material-ui/core'
+import { Grid, withStyles } from '@material-ui/core'
 import Loading from '../../../components/Loading'
 import {
     searchAutocompleteCollections_searchAutocomplete,
@@ -22,7 +22,7 @@ interface IProps {
     hostName: string
     routeChangeAction: typeof routeChangeAction
     openModalAction: typeof openModalAction
-    classes: { grid: any }
+    classes: { grid: any; root: any }
     isLoggedIn: boolean
 }
 
@@ -63,12 +63,12 @@ class Collections extends Component<IProps> {
                         href={`https://${this.props.hostName}/collections`}
                     />
                 </Head>
-                <Container>
+                <div className={this.props.classes.root}>
                     {searchAutocomplete ? (
                         <Grid
                             className={this.props.classes.grid}
                             container
-                            spacing={3}
+                            spacing={2}
                         >
                             {searchAutocomplete &&
                                 searchAutocomplete.content &&
@@ -146,7 +146,7 @@ class Collections extends Component<IProps> {
                     ) : (
                         <Loading />
                     )}
-                </Container>
+                </div>
             </Fragment>
         )
     }
@@ -154,8 +154,11 @@ class Collections extends Component<IProps> {
 
 export default withStyles({
     grid: {
-        padding: '24px 0',
-        margin: 'auto',
+        paddingTop: 16,
         maxWidth: 870,
+        margin: 'auto',
+    },
+    root: {
+        display: 'flex',
     },
 })(Collections)

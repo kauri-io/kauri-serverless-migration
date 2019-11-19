@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         background: theme.palette.common.black,
     },
     container: {
-        maxWidth: 1242,
+        maxWidth: 1272,
         margin: 'auto',
     },
     uploadIcon: {

@@ -40,11 +40,11 @@ interface IProps {
 
 const useStyles = makeStyles((_theme: Theme) => ({
     rightWrapper: {
-        alignItems: "flex-end"
+        alignItems: 'flex-end',
     },
     button: {
         float: 'right',
-        marginRight: '15px'
+        marginRight: '15px',
     },
 }))
 
@@ -130,25 +130,25 @@ export const EditBookmarkFolderWidgetComponent = ({
                 <Grid item xs={3} className={classes.rightWrapper}>
                     {folder !== ROOT_FOLDER && !showForm ? (
                         <Button
-                        color="primary"
-                        variant="text"
-                        className={classes.button}
-                        onClick={() =>
-                            openModalAction({
-                                children: (
-                                    <DeleteBookmarkFolderWidget
-                                        folder={folder}
-                                        updateFolder={updateFolder}
-                                        closeModalAction={closeModalAction}
-                                        deleteBookmarkFolderAction={
-                                            deleteBookmarkFolderAction
-                                        }
-                                    />
-                                ),
-                            })
-                        }
+                            color="primary"
+                            variant="text"
+                            className={classes.button}
+                            onClick={() =>
+                                openModalAction({
+                                    children: (
+                                        <DeleteBookmarkFolderWidget
+                                            folder={folder}
+                                            updateFolder={updateFolder}
+                                            closeModalAction={closeModalAction}
+                                            deleteBookmarkFolderAction={
+                                                deleteBookmarkFolderAction
+                                            }
+                                        />
+                                    ),
+                                })
+                            }
                         >
-                        Delete Folder
+                            Delete Folder
                         </Button>
                     ) : (
                         ''
@@ -157,20 +157,20 @@ export const EditBookmarkFolderWidgetComponent = ({
                     {folder !== ROOT_FOLDER && showForm ? (
                         <div>
                             <Button
-                            color="primary"
-                            variant="outlined"
-                            className={classes.button}
-                            onClick={update}
+                                color="primary"
+                                variant="outlined"
+                                className={classes.button}
+                                onClick={update}
                             >
-                            Save
+                                Save
                             </Button>
                             <Button
-                            color="primary"
-                            variant="text"
-                            className={classes.button}
-                            onClick={reset}
+                                color="primary"
+                                variant="text"
+                                className={classes.button}
+                                onClick={reset}
                             >
-                            Cancel
+                                Cancel
                             </Button>
                         </div>
                     ) : (

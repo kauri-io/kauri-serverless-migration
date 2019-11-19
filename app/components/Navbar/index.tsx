@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme: Theme) => {
         },
         navbar: {
             margin: 'auto',
-            maxWidth: 1242,
+            maxWidth: 1272,
             width: '100%',
         },
         navlink: {

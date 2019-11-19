@@ -275,7 +275,7 @@ exports[`components/typography BodyArticle should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -307,7 +307,7 @@ exports[`components/typography BodyArticle should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -358,17 +358,17 @@ exports[`components/typography BodyArticle should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -705,7 +705,7 @@ exports[`components/typography BodyCard should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -737,7 +737,7 @@ exports[`components/typography BodyCard should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -788,17 +788,17 @@ exports[`components/typography BodyCard should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -1142,7 +1142,7 @@ exports[`components/typography CTA should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -1174,7 +1174,7 @@ exports[`components/typography CTA should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -1225,17 +1225,17 @@ exports[`components/typography CTA should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -1587,7 +1587,7 @@ exports[`components/typography H1 should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -1619,7 +1619,7 @@ exports[`components/typography H1 should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -1670,17 +1670,17 @@ exports[`components/typography H1 should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -2033,7 +2033,7 @@ exports[`components/typography H2 should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -2065,7 +2065,7 @@ exports[`components/typography H2 should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -2116,17 +2116,17 @@ exports[`components/typography H2 should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -2478,7 +2478,7 @@ exports[`components/typography H3 should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -2510,7 +2510,7 @@ exports[`components/typography H3 should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -2561,17 +2561,17 @@ exports[`components/typography H3 should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -2923,7 +2923,7 @@ exports[`components/typography H4 should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -2955,7 +2955,7 @@ exports[`components/typography H4 should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -3006,17 +3006,17 @@ exports[`components/typography H4 should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -3368,7 +3368,7 @@ exports[`components/typography H5 should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -3400,7 +3400,7 @@ exports[`components/typography H5 should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -3451,17 +3451,17 @@ exports[`components/typography H5 should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -3813,7 +3813,7 @@ exports[`components/typography H6 should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -3845,7 +3845,7 @@ exports[`components/typography H6 should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -3896,17 +3896,17 @@ exports[`components/typography H6 should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -4258,7 +4258,7 @@ exports[`components/typography Label should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -4290,7 +4290,7 @@ exports[`components/typography Label should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -4341,17 +4341,17 @@ exports[`components/typography Label should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -4695,7 +4695,7 @@ exports[`components/typography ListBulletPoint should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -4727,7 +4727,7 @@ exports[`components/typography ListBulletPoint should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -4778,17 +4778,17 @@ exports[`components/typography ListBulletPoint should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -5127,7 +5127,7 @@ exports[`components/typography ListDashPoint should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -5159,7 +5159,7 @@ exports[`components/typography ListDashPoint should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -5210,17 +5210,17 @@ exports[`components/typography ListDashPoint should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -5557,7 +5557,7 @@ exports[`components/typography NavigationText should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -5589,7 +5589,7 @@ exports[`components/typography NavigationText should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -5640,17 +5640,17 @@ exports[`components/typography NavigationText should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -6002,7 +6002,7 @@ exports[`components/typography PageDescription should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -6034,7 +6034,7 @@ exports[`components/typography PageDescription should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -6085,17 +6085,17 @@ exports[`components/typography PageDescription should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -6447,7 +6447,7 @@ exports[`components/typography Title1 should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -6479,7 +6479,7 @@ exports[`components/typography Title1 should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -6530,17 +6530,17 @@ exports[`components/typography Title1 should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -6892,7 +6892,7 @@ exports[`components/typography Title2 should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -6924,7 +6924,7 @@ exports[`components/typography Title2 should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -6975,17 +6975,17 @@ exports[`components/typography Title2 should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",

@@ -8,7 +8,7 @@ export default ({ title, setTitle, tags, setTags }) => {
             width: '100%',
         },
         container: {
-            maxWidth: 1242,
+            maxWidth: 1272,
             width: '100%',
             padding: theme.spacing(2, 0),
             margin: 'auto',

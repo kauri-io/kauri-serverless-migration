@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
-        maxWidth: 1242,
+        maxWidth: 1272,
         margin: 'auto',
         width: '100%',
         marginTop: theme.spacing(1),
