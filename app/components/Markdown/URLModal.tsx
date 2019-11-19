@@ -7,18 +7,24 @@ export default ({ classes, closeModalAction, format, type }) => {
     const [text, setText] = useState('')
     return (
         <div className={classes.urlContainer}>
-            {type === 'url' && <Typography variant="h6">Add Hyperlink</Typography>}
-            {type === 'youtube' && <Typography variant="h6">Add Youtube URL</Typography>}
+            {type === 'url' && (
+                <Typography variant="h6">Add Hyperlink</Typography>
+            )}
+            {type === 'youtube' && (
+                <Typography variant="h6">Add Youtube URL</Typography>
+            )}
             <TextField
                 onChange={e => setURL(e.target.value)}
                 margin="normal"
                 label="URL"
             />
-            {type !== 'youtube' && <TextField
-                onChange={e => setText(e.target.value)}
-                margin="normal"
-                label="Text"
-            />}
+            {type !== 'youtube' && (
+                <TextField
+                    onChange={e => setText(e.target.value)}
+                    margin="normal"
+                    label="Text"
+                />
+            )}
             <Grid spacing={3} container={true}>
                 <Grid item={true} sm={6}>
                     <Button
@@ -37,7 +43,7 @@ export default ({ classes, closeModalAction, format, type }) => {
                             if (type === 'url') {
                                 format('link', url, text)
                             } else if (type === 'youtube') {
-                                format('youtube', url )
+                                format('youtube', url)
                             }
                             closeModalAction()
                         }}

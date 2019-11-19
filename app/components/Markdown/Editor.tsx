@@ -73,7 +73,14 @@ const Editor = ({
             const start = input.selectionStart
             const end = input.selectionEnd
             const value = input.value
-            const output = formatMarkdown({start, end, value, type, url, text})
+            const output = formatMarkdown({
+                start,
+                end,
+                value,
+                type,
+                url,
+                text,
+            })
             input.value = output
             onChange(output)
         }

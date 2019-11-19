@@ -11,22 +11,15 @@ const wrapInToken = (start, end, value, token) => {
 }
 
 interface IProps {
-    start: number,
-    end: number,
-    value: string;
-    type: string,
+    start: number
+    end: number
+    value: string
+    type: string
     url?: string
     text?: string
 }
 
-export default ({
-    start,
-    end,
-    value,
-    type,
-    url,
-    text
-}: IProps) => {
+export default ({ start, end, value, type, url, text }: IProps) => {
     // console.log(`Start: ${start}, End: ${end}, Value: ${value}, Type: ${type}, URL: ${url}, Text: ${text}`)
     switch (type) {
         case 'bold':
@@ -55,9 +48,13 @@ export default ({
         case 'link':
             return append(end, `[${text}](${url})`, value)
         case 'youtube':
-                const youtubeURL = url && url.replace('watch?v=','embed/').replace('youtu.be/','youtube.com/embed/')
-                const str = `<iframe width="560" height="315" src="${youtubeURL}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-                return append(end, str, value)
+            const youtubeURL =
+                url &&
+                url
+                    .replace('watch?v=', 'embed/')
+                    .replace('youtu.be/', 'youtube.com/embed/')
+            const str = `<iframe width="560" height="315" src="${youtubeURL}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+            return append(end, str, value)
         default:
             return value
     }

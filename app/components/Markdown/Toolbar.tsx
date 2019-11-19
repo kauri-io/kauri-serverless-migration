@@ -137,17 +137,21 @@ const Toolbar = ({ format, compact, openModalAction, closeModalAction }) => {
                             <ImageIcon />
                         </div>
                     </Tooltip>
-                    <Tooltip title='Embed Youtube'>
-                        <div onClick={() => openModalAction({
-                            children: (
-                                <URLModal
-                                    type='youtube'
-                                    format={format}
-                                    classes={classes}
-                                    closeModalAction={closeModalAction}
-                                />
-                            ),
-                        })}>
+                    <Tooltip title="Embed Youtube">
+                        <div
+                            onClick={() =>
+                                openModalAction({
+                                    children: (
+                                        <URLModal
+                                            type="youtube"
+                                            format={format}
+                                            classes={classes}
+                                            closeModalAction={closeModalAction}
+                                        />
+                                    ),
+                                })
+                            }
+                        >
                             <YouTubeIcon />
                         </div>
                     </Tooltip>
@@ -162,7 +166,7 @@ const Toolbar = ({ format, compact, openModalAction, closeModalAction }) => {
                         openModalAction({
                             children: (
                                 <URLModal
-                                    type='url'
+                                    type="url"
                                     format={format}
                                     classes={classes}
                                     closeModalAction={closeModalAction}
