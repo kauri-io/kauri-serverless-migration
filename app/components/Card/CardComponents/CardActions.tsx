@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme: Theme) => ({
         '& > *': {
             marginLeft: theme.spacing(1),
         },
+        '& > button': {
+            color: theme.palette.common.black,
+        },
     },
 }))
 

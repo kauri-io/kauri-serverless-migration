@@ -7574,7 +7574,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             </Link>
                                           </ArticleCard>
                                         </Connect(ArticleCard)>
-                                        <_default
+                                        <Connect(CollectionCard)
                                           __typename="CollectionDTO"
                                           background="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
                                           dateUpdated="2019-06-25T10:41:54.259Z"
@@ -7653,63 +7653,132 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             ]
                                           }
                                         >
-                                          <WithStyles(ForwardRef(Card))>
-                                            <ForwardRef(Card)
-                                              classes={
-                                                Object {
-                                                  "root": "MuiCard-root",
-                                                }
+                                          <CollectionCard
+                                            __typename="CollectionDTO"
+                                            background="https://api.kauri.io:443/ipfs/QmYYdtdzDKiTSbRuHHBdttfofBYF4bcRA9nun5nKyEbLMF"
+                                            dateUpdated="2019-06-25T10:41:54.259Z"
+                                            description="This two part tutorial walks you through from start to finish the process of making NFTs and making them available on OpenSea, Rarebits and the World Wide Web. It uses Netlify and Lambda functions to make sure your metadata is highly available."
+                                            href={
+                                              Object {
+                                                "as": "/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c",
+                                                "href": "/collection?collection_id=5d11f9f8a6afcc0001f621de",
                                               }
-                                            >
-                                              <WithStyles(ForwardRef(Paper))
-                                                className="MuiCard-root"
-                                                elevation={1}
-                                              >
-                                                <ForwardRef(Paper)
-                                                  className="MuiCard-root"
-                                                  classes={
+                                            }
+                                            id="5d11f9f8a6afcc0001f621de"
+                                            isLoggedIn={true}
+                                            name="Flexible, Upgradeable & Highly Available NFTs"
+                                            openModalAction={[Function]}
+                                            owner={
+                                              Object {
+                                                "__typename": "PublicUserDTO",
+                                                "avatar": "https://api.beta.kauri.io:443/ipfs/QmQar5iK3jKuKuw7tes9DGayTPLHfpxa2kQAQg3Ht7TNbQ",
+                                                "id": "d0c838486120cda746ca514f76c70938bf708b90",
+                                                "name": "Billy Rennekamp",
+                                                "resourceIdentifier": Object {
+                                                  "__typename": "ResourceIdentifier",
+                                                  "id": "d0c838486120cda746ca514f76c70938bf708b90",
+                                                  "type": "USER",
+                                                },
+                                                "username": "okwme",
+                                              }
+                                            }
+                                            resourceIdentifier={
+                                              Object {
+                                                "__typename": "ResourceIdentifier",
+                                                "id": "5d11f9f8a6afcc0001f621de",
+                                                "type": "COLLECTION",
+                                              }
+                                            }
+                                            routeChangeAction={[Function]}
+                                            sections={
+                                              Array [
+                                                Object {
+                                                  "__typename": "SectionDTO",
+                                                  "description": "",
+                                                  "id": "507abfdb-427d-403f-8f82-1ee5e9a4ff56",
+                                                  "name": "Flexible, Upgradeable & Highly Available NFTs",
+                                                  "resources": Array [
                                                     Object {
-                                                      "elevation0": "MuiPaper-elevation0",
-                                                      "elevation1": "MuiPaper-elevation1",
-                                                      "elevation10": "MuiPaper-elevation10",
-                                                      "elevation11": "MuiPaper-elevation11",
-                                                      "elevation12": "MuiPaper-elevation12",
-                                                      "elevation13": "MuiPaper-elevation13",
-                                                      "elevation14": "MuiPaper-elevation14",
-                                                      "elevation15": "MuiPaper-elevation15",
-                                                      "elevation16": "MuiPaper-elevation16",
-                                                      "elevation17": "MuiPaper-elevation17",
-                                                      "elevation18": "MuiPaper-elevation18",
-                                                      "elevation19": "MuiPaper-elevation19",
-                                                      "elevation2": "MuiPaper-elevation2",
-                                                      "elevation20": "MuiPaper-elevation20",
-                                                      "elevation21": "MuiPaper-elevation21",
-                                                      "elevation22": "MuiPaper-elevation22",
-                                                      "elevation23": "MuiPaper-elevation23",
-                                                      "elevation24": "MuiPaper-elevation24",
-                                                      "elevation3": "MuiPaper-elevation3",
-                                                      "elevation4": "MuiPaper-elevation4",
-                                                      "elevation5": "MuiPaper-elevation5",
-                                                      "elevation6": "MuiPaper-elevation6",
-                                                      "elevation7": "MuiPaper-elevation7",
-                                                      "elevation8": "MuiPaper-elevation8",
-                                                      "elevation9": "MuiPaper-elevation9",
-                                                      "root": "MuiPaper-root",
-                                                      "rounded": "MuiPaper-rounded",
-                                                    }
-                                                  }
-                                                  elevation={1}
+                                                      "__typename": "ArticleDTO",
+                                                      "id": "27640de6baba4aa99d57fd158af5c019",
+                                                      "version": 2,
+                                                    },
+                                                    Object {
+                                                      "__typename": "ArticleDTO",
+                                                      "id": "85f570393e1448a7a94e2eab1bae6e48",
+                                                      "version": 2,
+                                                    },
+                                                  ],
+                                                  "resourcesId": Array [
+                                                    Object {
+                                                      "__typename": "ResourceIdentifier",
+                                                      "id": "27640de6baba4aa99d57fd158af5c019",
+                                                      "type": "ARTICLE",
+                                                    },
+                                                    Object {
+                                                      "__typename": "ResourceIdentifier",
+                                                      "id": "85f570393e1448a7a94e2eab1bae6e48",
+                                                      "type": "ARTICLE",
+                                                    },
+                                                  ],
+                                                },
+                                              ]
+                                            }
+                                            tags={
+                                              Array [
+                                                "netlify",
+                                                "lambda",
+                                                "metadata",
+                                                "upgradeable",
+                                                "nft",
+                                              ]
+                                            }
+                                          >
+                                            <Link
+                                              as="/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
+                                              href="/collection?collection_id=5d11f9f8a6afcc0001f621de"
+                                            >
+                                              <a
+                                                href="/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
+                                                onClick={[Function]}
+                                                onMouseEnter={[Function]}
+                                              >
+                                                <Hidden
+                                                  smUp={true}
                                                 >
-                                                  <div
-                                                    className="MuiPaper-root MuiPaper-elevation1 MuiCard-root MuiPaper-rounded"
-                                                  >
-                                                    collection
-                                                  </div>
-                                                </ForwardRef(Paper)>
-                                              </WithStyles(ForwardRef(Paper))>
-                                            </ForwardRef(Card)>
-                                          </WithStyles(ForwardRef(Card))>
-                                        </_default>
+                                                  <WithWidth(HiddenJs)
+                                                    lgDown={false}
+                                                    lgUp={false}
+                                                    mdDown={false}
+                                                    mdUp={false}
+                                                    smDown={false}
+                                                    smUp={true}
+                                                    xlDown={false}
+                                                    xlUp={false}
+                                                    xsDown={false}
+                                                    xsUp={false}
+                                                  />
+                                                </Hidden>
+                                                <Hidden
+                                                  xsDown={true}
+                                                >
+                                                  <WithWidth(HiddenJs)
+                                                    lgDown={false}
+                                                    lgUp={false}
+                                                    mdDown={false}
+                                                    mdUp={false}
+                                                    smDown={false}
+                                                    smUp={false}
+                                                    xlDown={false}
+                                                    xlUp={false}
+                                                    xsDown={true}
+                                                    xsUp={false}
+                                                  />
+                                                </Hidden>
+                                              </a>
+                                            </Link>
+                                          </CollectionCard>
+                                        </Connect(CollectionCard)>
                                       </div>
                                     </ForwardRef(Grid)>
                                   </WithStyles(ForwardRef(Grid))>
@@ -8536,12 +8605,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                   key="latest-content"
                                 >
                                   <WithStyles(ForwardRef(Grid))
-                                    className="makeStyles-container-268"
+                                    className="makeStyles-container-276"
                                     container={true}
                                     direction="column"
                                   >
                                     <ForwardRef(Grid)
-                                      className="makeStyles-container-268"
+                                      className="makeStyles-container-276"
                                       classes={
                                         Object {
                                           "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -8653,7 +8722,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       direction="column"
                                     >
                                       <div
-                                        className="MuiGrid-root makeStyles-container-268 MuiGrid-container MuiGrid-direction-xs-column"
+                                        className="MuiGrid-root makeStyles-container-276 MuiGrid-container MuiGrid-direction-xs-column"
                                       >
                                         <WithStyles(ForwardRef(Typography))
                                           variant="h5"
@@ -9888,7 +9957,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12"
                                                   >
                                                      
-                                                    <_default
+                                                    <Connect(CollectionCard)
                                                       __typename="CollectionDTO"
                                                       background={null}
                                                       dateUpdated="2019-07-24T17:04:41.148Z"
@@ -9952,63 +10021,118 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                         ]
                                                       }
                                                     >
-                                                      <WithStyles(ForwardRef(Card))>
-                                                        <ForwardRef(Card)
-                                                          classes={
-                                                            Object {
-                                                              "root": "MuiCard-root",
-                                                            }
+                                                      <CollectionCard
+                                                        __typename="CollectionDTO"
+                                                        background={null}
+                                                        dateUpdated="2019-07-24T17:04:41.148Z"
+                                                        description="Defi collection"
+                                                        href={
+                                                          Object {
+                                                            "as": "/defi-collection/5d388fa9dba75a00016a4a75/c",
+                                                            "href": "/collection?collection_id=5d388fa9dba75a00016a4a75",
                                                           }
-                                                        >
-                                                          <WithStyles(ForwardRef(Paper))
-                                                            className="MuiCard-root"
-                                                            elevation={1}
-                                                          >
-                                                            <ForwardRef(Paper)
-                                                              className="MuiCard-root"
-                                                              classes={
+                                                        }
+                                                        id="5d388fa9dba75a00016a4a75"
+                                                        isLoggedIn={true}
+                                                        name="Defi collection"
+                                                        openModalAction={[Function]}
+                                                        owner={
+                                                          Object {
+                                                            "__typename": "PublicUserDTO",
+                                                            "avatar": null,
+                                                            "id": "970991bdd61aed3c2cf91e9bf6944960561dbcf5",
+                                                            "name": "Fred Blauer",
+                                                            "resourceIdentifier": Object {
+                                                              "__typename": "ResourceIdentifier",
+                                                              "id": "970991bdd61aed3c2cf91e9bf6944960561dbcf5",
+                                                              "type": "USER",
+                                                            },
+                                                            "username": "fblauer",
+                                                          }
+                                                        }
+                                                        resourceIdentifier={
+                                                          Object {
+                                                            "__typename": "ResourceIdentifier",
+                                                            "id": "5d388fa9dba75a00016a4a75",
+                                                            "type": "COLLECTION",
+                                                          }
+                                                        }
+                                                        routeChangeAction={[Function]}
+                                                        sections={
+                                                          Array [
+                                                            Object {
+                                                              "__typename": "SectionDTO",
+                                                              "description": "Defi",
+                                                              "id": "3df0eb26-783e-4102-be1c-f3c594a184d2",
+                                                              "name": "",
+                                                              "resources": Array [
                                                                 Object {
-                                                                  "elevation0": "MuiPaper-elevation0",
-                                                                  "elevation1": "MuiPaper-elevation1",
-                                                                  "elevation10": "MuiPaper-elevation10",
-                                                                  "elevation11": "MuiPaper-elevation11",
-                                                                  "elevation12": "MuiPaper-elevation12",
-                                                                  "elevation13": "MuiPaper-elevation13",
-                                                                  "elevation14": "MuiPaper-elevation14",
-                                                                  "elevation15": "MuiPaper-elevation15",
-                                                                  "elevation16": "MuiPaper-elevation16",
-                                                                  "elevation17": "MuiPaper-elevation17",
-                                                                  "elevation18": "MuiPaper-elevation18",
-                                                                  "elevation19": "MuiPaper-elevation19",
-                                                                  "elevation2": "MuiPaper-elevation2",
-                                                                  "elevation20": "MuiPaper-elevation20",
-                                                                  "elevation21": "MuiPaper-elevation21",
-                                                                  "elevation22": "MuiPaper-elevation22",
-                                                                  "elevation23": "MuiPaper-elevation23",
-                                                                  "elevation24": "MuiPaper-elevation24",
-                                                                  "elevation3": "MuiPaper-elevation3",
-                                                                  "elevation4": "MuiPaper-elevation4",
-                                                                  "elevation5": "MuiPaper-elevation5",
-                                                                  "elevation6": "MuiPaper-elevation6",
-                                                                  "elevation7": "MuiPaper-elevation7",
-                                                                  "elevation8": "MuiPaper-elevation8",
-                                                                  "elevation9": "MuiPaper-elevation9",
-                                                                  "root": "MuiPaper-root",
-                                                                  "rounded": "MuiPaper-rounded",
-                                                                }
-                                                              }
-                                                              elevation={1}
+                                                                  "__typename": "ArticleDTO",
+                                                                  "id": "056f5d1d53cb4d4990f43b99e8544de4",
+                                                                  "version": 1,
+                                                                },
+                                                              ],
+                                                              "resourcesId": Array [
+                                                                Object {
+                                                                  "__typename": "ResourceIdentifier",
+                                                                  "id": "056f5d1d53cb4d4990f43b99e8544de4",
+                                                                  "type": "ARTICLE",
+                                                                },
+                                                              ],
+                                                            },
+                                                          ]
+                                                        }
+                                                        tags={
+                                                          Array [
+                                                            "defi",
+                                                          ]
+                                                        }
+                                                      >
+                                                        <Link
+                                                          as="/defi-collection/5d388fa9dba75a00016a4a75/c"
+                                                          href="/collection?collection_id=5d388fa9dba75a00016a4a75"
+                                                        >
+                                                          <a
+                                                            href="/defi-collection/5d388fa9dba75a00016a4a75/c"
+                                                            onClick={[Function]}
+                                                            onMouseEnter={[Function]}
+                                                          >
+                                                            <Hidden
+                                                              smUp={true}
                                                             >
-                                                              <div
-                                                                className="MuiPaper-root MuiPaper-elevation1 MuiCard-root MuiPaper-rounded"
-                                                              >
-                                                                collection
-                                                              </div>
-                                                            </ForwardRef(Paper)>
-                                                          </WithStyles(ForwardRef(Paper))>
-                                                        </ForwardRef(Card)>
-                                                      </WithStyles(ForwardRef(Card))>
-                                                    </_default>
+                                                              <WithWidth(HiddenJs)
+                                                                lgDown={false}
+                                                                lgUp={false}
+                                                                mdDown={false}
+                                                                mdUp={false}
+                                                                smDown={false}
+                                                                smUp={true}
+                                                                xlDown={false}
+                                                                xlUp={false}
+                                                                xsDown={false}
+                                                                xsUp={false}
+                                                              />
+                                                            </Hidden>
+                                                            <Hidden
+                                                              xsDown={true}
+                                                            >
+                                                              <WithWidth(HiddenJs)
+                                                                lgDown={false}
+                                                                lgUp={false}
+                                                                mdDown={false}
+                                                                mdUp={false}
+                                                                smDown={false}
+                                                                smUp={false}
+                                                                xlDown={false}
+                                                                xlUp={false}
+                                                                xsDown={true}
+                                                                xsUp={false}
+                                                              />
+                                                            </Hidden>
+                                                          </a>
+                                                        </Link>
+                                                      </CollectionCard>
+                                                    </Connect(CollectionCard)>
                                                   </div>
                                                 </ForwardRef(Grid)>
                                               </WithStyles(ForwardRef(Grid))>
@@ -10450,7 +10574,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12"
                                                   >
                                                      
-                                                    <_default
+                                                    <Connect(CollectionCard)
                                                       __typename="CollectionDTO"
                                                       background={null}
                                                       dateUpdated="2019-07-23T08:27:51.854Z"
@@ -10510,63 +10634,114 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       }
                                                       tags={null}
                                                     >
-                                                      <WithStyles(ForwardRef(Card))>
-                                                        <ForwardRef(Card)
-                                                          classes={
-                                                            Object {
-                                                              "root": "MuiCard-root",
-                                                            }
+                                                      <CollectionCard
+                                                        __typename="CollectionDTO"
+                                                        background={null}
+                                                        dateUpdated="2019-07-23T08:27:51.854Z"
+                                                        description="kauri communities"
+                                                        href={
+                                                          Object {
+                                                            "as": "/read-items/5d36c507e95943000108e6a0/c",
+                                                            "href": "/collection?collection_id=5d36c507e95943000108e6a0",
                                                           }
-                                                        >
-                                                          <WithStyles(ForwardRef(Paper))
-                                                            className="MuiCard-root"
-                                                            elevation={1}
-                                                          >
-                                                            <ForwardRef(Paper)
-                                                              className="MuiCard-root"
-                                                              classes={
+                                                        }
+                                                        id="5d36c507e95943000108e6a0"
+                                                        isLoggedIn={true}
+                                                        name="Read items"
+                                                        openModalAction={[Function]}
+                                                        owner={
+                                                          Object {
+                                                            "__typename": "PublicUserDTO",
+                                                            "avatar": null,
+                                                            "id": "f1e2979fe88c01d1097e8ce2d17ba9c623737ea3",
+                                                            "name": null,
+                                                            "resourceIdentifier": Object {
+                                                              "__typename": "ResourceIdentifier",
+                                                              "id": "f1e2979fe88c01d1097e8ce2d17ba9c623737ea3",
+                                                              "type": "USER",
+                                                            },
+                                                            "username": null,
+                                                          }
+                                                        }
+                                                        resourceIdentifier={
+                                                          Object {
+                                                            "__typename": "ResourceIdentifier",
+                                                            "id": "5d36c507e95943000108e6a0",
+                                                            "type": "COLLECTION",
+                                                          }
+                                                        }
+                                                        routeChangeAction={[Function]}
+                                                        sections={
+                                                          Array [
+                                                            Object {
+                                                              "__typename": "SectionDTO",
+                                                              "description": null,
+                                                              "id": "86914799-0232-4377-b5cc-885785995848",
+                                                              "name": "",
+                                                              "resources": Array [
                                                                 Object {
-                                                                  "elevation0": "MuiPaper-elevation0",
-                                                                  "elevation1": "MuiPaper-elevation1",
-                                                                  "elevation10": "MuiPaper-elevation10",
-                                                                  "elevation11": "MuiPaper-elevation11",
-                                                                  "elevation12": "MuiPaper-elevation12",
-                                                                  "elevation13": "MuiPaper-elevation13",
-                                                                  "elevation14": "MuiPaper-elevation14",
-                                                                  "elevation15": "MuiPaper-elevation15",
-                                                                  "elevation16": "MuiPaper-elevation16",
-                                                                  "elevation17": "MuiPaper-elevation17",
-                                                                  "elevation18": "MuiPaper-elevation18",
-                                                                  "elevation19": "MuiPaper-elevation19",
-                                                                  "elevation2": "MuiPaper-elevation2",
-                                                                  "elevation20": "MuiPaper-elevation20",
-                                                                  "elevation21": "MuiPaper-elevation21",
-                                                                  "elevation22": "MuiPaper-elevation22",
-                                                                  "elevation23": "MuiPaper-elevation23",
-                                                                  "elevation24": "MuiPaper-elevation24",
-                                                                  "elevation3": "MuiPaper-elevation3",
-                                                                  "elevation4": "MuiPaper-elevation4",
-                                                                  "elevation5": "MuiPaper-elevation5",
-                                                                  "elevation6": "MuiPaper-elevation6",
-                                                                  "elevation7": "MuiPaper-elevation7",
-                                                                  "elevation8": "MuiPaper-elevation8",
-                                                                  "elevation9": "MuiPaper-elevation9",
-                                                                  "root": "MuiPaper-root",
-                                                                  "rounded": "MuiPaper-rounded",
-                                                                }
-                                                              }
-                                                              elevation={1}
+                                                                  "__typename": "ArticleDTO",
+                                                                  "id": "2c51067790da43a2be61650d7c03bd68",
+                                                                  "version": 5,
+                                                                },
+                                                              ],
+                                                              "resourcesId": Array [
+                                                                Object {
+                                                                  "__typename": "ResourceIdentifier",
+                                                                  "id": "2c51067790da43a2be61650d7c03bd68",
+                                                                  "type": "ARTICLE",
+                                                                },
+                                                              ],
+                                                            },
+                                                          ]
+                                                        }
+                                                        tags={null}
+                                                      >
+                                                        <Link
+                                                          as="/read-items/5d36c507e95943000108e6a0/c"
+                                                          href="/collection?collection_id=5d36c507e95943000108e6a0"
+                                                        >
+                                                          <a
+                                                            href="/read-items/5d36c507e95943000108e6a0/c"
+                                                            onClick={[Function]}
+                                                            onMouseEnter={[Function]}
+                                                          >
+                                                            <Hidden
+                                                              smUp={true}
                                                             >
-                                                              <div
-                                                                className="MuiPaper-root MuiPaper-elevation1 MuiCard-root MuiPaper-rounded"
-                                                              >
-                                                                collection
-                                                              </div>
-                                                            </ForwardRef(Paper)>
-                                                          </WithStyles(ForwardRef(Paper))>
-                                                        </ForwardRef(Card)>
-                                                      </WithStyles(ForwardRef(Card))>
-                                                    </_default>
+                                                              <WithWidth(HiddenJs)
+                                                                lgDown={false}
+                                                                lgUp={false}
+                                                                mdDown={false}
+                                                                mdUp={false}
+                                                                smDown={false}
+                                                                smUp={true}
+                                                                xlDown={false}
+                                                                xlUp={false}
+                                                                xsDown={false}
+                                                                xsUp={false}
+                                                              />
+                                                            </Hidden>
+                                                            <Hidden
+                                                              xsDown={true}
+                                                            >
+                                                              <WithWidth(HiddenJs)
+                                                                lgDown={false}
+                                                                lgUp={false}
+                                                                mdDown={false}
+                                                                mdUp={false}
+                                                                smDown={false}
+                                                                smUp={false}
+                                                                xlDown={false}
+                                                                xlUp={false}
+                                                                xsDown={true}
+                                                                xsUp={false}
+                                                              />
+                                                            </Hidden>
+                                                          </a>
+                                                        </Link>
+                                                      </CollectionCard>
+                                                    </Connect(CollectionCard)>
                                                   </div>
                                                 </ForwardRef(Grid)>
                                               </WithStyles(ForwardRef(Grid))>
@@ -11205,13 +11380,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 </ForwardRef(Grid)>
                                               </WithStyles(ForwardRef(Grid))>
                                               <WithStyles(ForwardRef(Grid))
-                                                className="makeStyles-buttons-269"
+                                                className="makeStyles-buttons-277"
                                                 container={true}
                                                 justify="center"
                                                 spacing={2}
                                               >
                                                 <ForwardRef(Grid)
-                                                  className="makeStyles-buttons-269"
+                                                  className="makeStyles-buttons-277"
                                                   classes={
                                                     Object {
                                                       "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -11324,15 +11499,15 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                   spacing={2}
                                                 >
                                                   <div
-                                                    className="MuiGrid-root makeStyles-buttons-269 MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
+                                                    className="MuiGrid-root makeStyles-buttons-277 MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
                                                   >
                                                     <WithStyles(ForwardRef(Grid))
-                                                      className="makeStyles-button-270"
+                                                      className="makeStyles-button-278"
                                                       item={true}
                                                       sm={6}
                                                     >
                                                       <ForwardRef(Grid)
-                                                        className="makeStyles-button-270"
+                                                        className="makeStyles-button-278"
                                                         classes={
                                                           Object {
                                                             "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -11444,7 +11619,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                         sm={6}
                                                       >
                                                         <div
-                                                          className="MuiGrid-root makeStyles-button-270 MuiGrid-item MuiGrid-grid-sm-6"
+                                                          className="MuiGrid-root makeStyles-button-278 MuiGrid-item MuiGrid-grid-sm-6"
                                                         >
                                                           <Link
                                                             as="/articles"
@@ -11588,12 +11763,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       </ForwardRef(Grid)>
                                                     </WithStyles(ForwardRef(Grid))>
                                                     <WithStyles(ForwardRef(Grid))
-                                                      className="makeStyles-button-270"
+                                                      className="makeStyles-button-278"
                                                       item={true}
                                                       sm={6}
                                                     >
                                                       <ForwardRef(Grid)
-                                                        className="makeStyles-button-270"
+                                                        className="makeStyles-button-278"
                                                         classes={
                                                           Object {
                                                             "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -11705,7 +11880,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                         sm={6}
                                                       >
                                                         <div
-                                                          className="MuiGrid-root makeStyles-button-270 MuiGrid-item MuiGrid-grid-sm-6"
+                                                          className="MuiGrid-root makeStyles-button-278 MuiGrid-item MuiGrid-grid-sm-6"
                                                         >
                                                           <Link
                                                             as="/collections"
@@ -13809,14 +13984,14 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                           >
                             <WithStyles(ForwardRef(Grid))
                               alignItems="center"
-                              className="makeStyles-container-271"
+                              className="makeStyles-container-279"
                               container={true}
                               direction="column"
                               justify="center"
                             >
                               <ForwardRef(Grid)
                                 alignItems="center"
-                                className="makeStyles-container-271"
+                                className="makeStyles-container-279"
                                 classes={
                                   Object {
                                     "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -13929,16 +14104,16 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                 justify="center"
                               >
                                 <div
-                                  className="MuiGrid-root makeStyles-container-271 MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+                                  className="MuiGrid-root makeStyles-container-279 MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
                                 >
                                   <ForwardRef
-                                    className="makeStyles-icon-274"
+                                    className="makeStyles-icon-282"
                                   >
                                     <WithStyles(ForwardRef(SvgIcon))
-                                      className="makeStyles-icon-274"
+                                      className="makeStyles-icon-282"
                                     >
                                       <ForwardRef(SvgIcon)
-                                        className="makeStyles-icon-274"
+                                        className="makeStyles-icon-282"
                                         classes={
                                           Object {
                                             "colorAction": "MuiSvgIcon-colorAction",
@@ -13955,7 +14130,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       >
                                         <svg
                                           aria-hidden="true"
-                                          className="MuiSvgIcon-root makeStyles-icon-274"
+                                          className="MuiSvgIcon-root makeStyles-icon-282"
                                           focusable="false"
                                           role="presentation"
                                           viewBox="0 0 24 24"
@@ -14069,7 +14244,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                   <WithStyles(ForwardRef(TextField))
                                     InputProps={
                                       Object {
-                                        "className": "makeStyles-input-273",
+                                        "className": "makeStyles-input-281",
                                       }
                                     }
                                     margin="normal"
@@ -14081,7 +14256,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                     <ForwardRef(TextField)
                                       InputProps={
                                         Object {
-                                          "className": "makeStyles-input-273",
+                                          "className": "makeStyles-input-281",
                                         }
                                       }
                                       classes={
@@ -14122,13 +14297,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             onKeyPress={[Function]}
                                           >
                                             <WithStyles(ForwardRef(Input))
-                                              className="makeStyles-input-273"
+                                              className="makeStyles-input-281"
                                               onChange={[Function]}
                                               placeholder="Enter your email address"
                                               value=""
                                             >
                                               <ForwardRef(Input)
-                                                className="makeStyles-input-273"
+                                                className="makeStyles-input-281"
                                                 classes={
                                                   Object {
                                                     "disabled": "Mui-disabled",
@@ -14150,7 +14325,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 value=""
                                               >
                                                 <WithStyles(ForwardRef(InputBase))
-                                                  className="makeStyles-input-273"
+                                                  className="makeStyles-input-281"
                                                   classes={
                                                     Object {
                                                       "disabled": "Mui-disabled",
@@ -14176,7 +14351,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                   value=""
                                                 >
                                                   <ForwardRef(InputBase)
-                                                    className="makeStyles-input-273"
+                                                    className="makeStyles-input-281"
                                                     classes={
                                                       Object {
                                                         "adornedEnd": "MuiInputBase-adornedEnd",
@@ -14208,7 +14383,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     value=""
                                                   >
                                                     <div
-                                                      className="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-input-273 MuiInputBase-formControl MuiInput-formControl"
+                                                      className="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-input-281 MuiInputBase-formControl MuiInput-formControl"
                                                       onClick={[Function]}
                                                     >
                                                       <input
@@ -14235,7 +14410,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                     </ForwardRef(TextField)>
                                   </WithStyles(ForwardRef(TextField))>
                                   <ButtonComp
-                                    className="makeStyles-button-272"
+                                    className="makeStyles-button-280"
                                     color="primary"
                                     onClick={[Function]}
                                     variant="contained"

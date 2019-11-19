@@ -404,7 +404,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
         }
       }
     >
-      <_default
+      <Connect(CollectionCard)
         attributes={
           Object {
             "background": "https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg",
@@ -454,63 +454,103 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
           }
         }
       >
-        <WithStyles(ForwardRef(Card))>
-          <ForwardRef(Card)
-            classes={
-              Object {
-                "root": "MuiCard-root",
-              }
+        <CollectionCard
+          attributes={
+            Object {
+              "background": "https://img.volcanodiscovery.com/uploads/pics/krakatau_k18278.jpg",
             }
-          >
-            <WithStyles(ForwardRef(Paper))
-              className="MuiCard-root"
-              elevation={1}
-            >
-              <ForwardRef(Paper)
-                className="MuiCard-root"
-                classes={
+          }
+          dateUpdated="1994-06-13T00:05:32.000Z"
+          description="test description"
+          href={
+            Object {
+              "as": "h6",
+              "href": "https://kauri.io",
+            }
+          }
+          id="1234567890"
+          isLoggedIn={true}
+          name="Collection"
+          openModalAction={[Function]}
+          owner={
+            Object {
+              "avatar": "https://dev.kauri.io/static/images/DefaultCollection.png",
+              "id": "1234567890",
+              "name": "test name",
+              "username": "test-username",
+            }
+          }
+          routeChangeAction={[Function]}
+          sections={
+            Array [
+              Object {
+                "resourcesId": Array [
                   Object {
-                    "elevation0": "MuiPaper-elevation0",
-                    "elevation1": "MuiPaper-elevation1",
-                    "elevation10": "MuiPaper-elevation10",
-                    "elevation11": "MuiPaper-elevation11",
-                    "elevation12": "MuiPaper-elevation12",
-                    "elevation13": "MuiPaper-elevation13",
-                    "elevation14": "MuiPaper-elevation14",
-                    "elevation15": "MuiPaper-elevation15",
-                    "elevation16": "MuiPaper-elevation16",
-                    "elevation17": "MuiPaper-elevation17",
-                    "elevation18": "MuiPaper-elevation18",
-                    "elevation19": "MuiPaper-elevation19",
-                    "elevation2": "MuiPaper-elevation2",
-                    "elevation20": "MuiPaper-elevation20",
-                    "elevation21": "MuiPaper-elevation21",
-                    "elevation22": "MuiPaper-elevation22",
-                    "elevation23": "MuiPaper-elevation23",
-                    "elevation24": "MuiPaper-elevation24",
-                    "elevation3": "MuiPaper-elevation3",
-                    "elevation4": "MuiPaper-elevation4",
-                    "elevation5": "MuiPaper-elevation5",
-                    "elevation6": "MuiPaper-elevation6",
-                    "elevation7": "MuiPaper-elevation7",
-                    "elevation8": "MuiPaper-elevation8",
-                    "elevation9": "MuiPaper-elevation9",
-                    "root": "MuiPaper-root",
-                    "rounded": "MuiPaper-rounded",
-                  }
-                }
-                elevation={1}
+                    "type": "ARTICLE",
+                  },
+                ],
+              },
+              Object {
+                "resourcesId": Array [
+                  Object {
+                    "type": "ARTICLE",
+                  },
+                ],
+              },
+            ]
+          }
+          version={123}
+          voteResult={
+            Object {
+              "sum": 2,
+            }
+          }
+        >
+          <Link
+            as="/collection/1234567890/c"
+            href="/collection?collection_id=1234567890"
+          >
+            <a
+              href="/collection/1234567890/c"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              <Hidden
+                smUp={true}
               >
-                <div
-                  className="MuiPaper-root MuiPaper-elevation1 MuiCard-root MuiPaper-rounded"
-                >
-                  collection
-                </div>
-              </ForwardRef(Paper)>
-            </WithStyles(ForwardRef(Paper))>
-          </ForwardRef(Card)>
-        </WithStyles(ForwardRef(Card))>
-      </_default>
+                <WithWidth(HiddenJs)
+                  lgDown={false}
+                  lgUp={false}
+                  mdDown={false}
+                  mdUp={false}
+                  smDown={false}
+                  smUp={true}
+                  xlDown={false}
+                  xlUp={false}
+                  xsDown={false}
+                  xsUp={false}
+                />
+              </Hidden>
+              <Hidden
+                xsDown={true}
+              >
+                <WithWidth(HiddenJs)
+                  lgDown={false}
+                  lgUp={false}
+                  mdDown={false}
+                  mdUp={false}
+                  smDown={false}
+                  smUp={false}
+                  xlDown={false}
+                  xlUp={false}
+                  xsDown={true}
+                  xsUp={false}
+                />
+              </Hidden>
+            </a>
+          </Link>
+        </CollectionCard>
+      </Connect(CollectionCard)>
     </ThemeProvider>
   </ThemeProvider>
 </Provider>

@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     title: {
         textTransform: 'capitalize',
         marginRight: theme.spacing(1),
+        wordWrap: 'break-word',
         [theme.breakpoints.down('xs')]: {
             fontSize: 16,
         },
@@ -40,8 +41,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     column: {
         display: 'flex',
         flexDirection: 'column',
-        height: '100%',
-        width: '100%',
+        alignItems: 'center',
     },
     bottom: {
         marginTop: 'auto',
