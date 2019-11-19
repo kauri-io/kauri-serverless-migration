@@ -12,6 +12,7 @@ import NumberedListIcon from '@material-ui/icons/FormatListNumberedOutlined'
 // import TableIcon from '@material-ui/icons/TableChartOutlined'
 import { makeStyles } from '@material-ui/styles'
 import { Theme, Tooltip } from '@material-ui/core'
+import YouTubeIcon from '@material-ui/icons/YouTube'
 
 import URLModal from './URLModal'
 import { useEffect } from 'react'
@@ -127,14 +128,30 @@ const Toolbar = ({ format, compact, openModalAction, closeModalAction }) => {
                 </div>
             </Tooltip>
             {!compact && (
-                <Tooltip title="upload image">
-                    <div
-                        id="article-image-upload"
-                        className={classes.iconButton}
-                    >
-                        <ImageIcon />
-                    </div>
-                </Tooltip>
+                <>
+                    <Tooltip title="upload image">
+                        <div
+                            id="article-image-upload"
+                            className={classes.iconButton}
+                        >
+                            <ImageIcon />
+                        </div>
+                    </Tooltip>
+                    <Tooltip title='Embed Youtube'>
+                        <div onClick={() => openModalAction({
+                            children: (
+                                <URLModal
+                                    type='youtube'
+                                    format={format}
+                                    classes={classes}
+                                    closeModalAction={closeModalAction}
+                                />
+                            ),
+                        })}>
+                            <YouTubeIcon />
+                        </div>
+                    </Tooltip>
+                </>
             )}
             {/* {!compact && <Tooltip title='embed video'><div className={classes.iconButton}>
                 <VideoIcon />
@@ -145,6 +162,7 @@ const Toolbar = ({ format, compact, openModalAction, closeModalAction }) => {
                         openModalAction({
                             children: (
                                 <URLModal
+                                    type='url'
                                     format={format}
                                     classes={classes}
                                     closeModalAction={closeModalAction}
