@@ -185,23 +185,4 @@ describe('components/Card/CommunityCard', () => {
         const shareIcon = wrapper.exists(`[data-testid="${dataTestId}"]`)
         expect(shareIcon).toBeTruthy()
     })
-
-    it('should trigger the share dialog when the icon is clicked', () => {
-        const wrapper = mountWithTheme(
-            <CommunityCard {...CommunityCardProps} />
-        )
-        const shareIconDataTestId = `CommunityCard-${CommunityCardProps.id}-shareIcon`
-        const shareDialogDataTestId = `Card-${CommunityCardProps.id}-shareDialog`
-
-        wrapper
-            .find(`[data-testid="${shareIconDataTestId}"]`)
-            .first()
-            .simulate('click')
-        const { open } = wrapper
-            .find(`[data-testid="${shareDialogDataTestId}"]`)
-            .first()
-            .props()
-
-        expect(open).toBeTruthy()
-    })
 })

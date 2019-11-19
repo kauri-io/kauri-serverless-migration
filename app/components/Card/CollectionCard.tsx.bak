@@ -1,6 +1,7 @@
 import React from 'react'
+import moment from 'moment-mini'
 import Link from 'next/link'
-import { getCommunityURL } from '../../lib/getURLs'
+import { getCollectionURL } from '../../lib/getURLs'
 import { Theme, makeStyles } from '@material-ui/core/styles'
 import {
     Card,
@@ -9,13 +10,21 @@ import {
     CardActions,
     Icon,
     IconButton,
+    Tooltip,
 } from '@material-ui/core'
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
+import BookmarkIcon from '@material-ui/icons/Bookmark'
 import TruncateMarkup from 'react-truncate-markup'
 import ShareDialog from './ShareDialog'
 import Avatar from '../Avatar'
 import Image from '../Image'
+import BookmarkResource from '../../containers/Bookmark/BookmarkResourceWidget'
+import { ResourceTypeInput } from '../../__generated__/globalTypes'
+import { openModalAction } from '../Modal/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { connect } from 'react-redux'
 
-export const CommunityCardStyles = makeStyles((theme: Theme) => ({
+export const CollectionCardStyles = makeStyles((theme: Theme) => ({
     avatar: {
         backgroundColor: theme.palette.primary.main,
         textTransform: 'uppercase',
@@ -34,6 +43,7 @@ export const CommunityCardStyles = makeStyles((theme: Theme) => ({
         padding: theme.spacing(2),
         height: 184,
         maxWidth: 870,
+        width: '100%',
     },
     cardActualContent: {
         display: 'flex',
@@ -43,23 +53,10 @@ export const CommunityCardStyles = makeStyles((theme: Theme) => ({
             width: 'calc(100% - 152px)',
         },
     },
-    members: {
-        display: 'flex',
-        '& > *:not(:last-child)': {
-            marginRight: theme.spacing(1),
+    owner: {
+        [theme.breakpoints.only('xs')]: {
+            display: 'none !important',
         },
-    },
-    moreMembersCount: {
-        color: 'white',
-    },
-    moreMembers: {
-        backgroundColor: theme.palette.primary.main,
-        width: 24,
-        height: 24,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 2,
     },
     content: {
         textAlign: 'left',
@@ -85,6 +82,9 @@ export const CommunityCardStyles = makeStyles((theme: Theme) => ({
     name: {
         textAlign: 'left',
         [theme.breakpoints.only('xs')]: { maxWidth: `calc(100% - 100px)` },
+    },
+    bookmark: {
+        cursor: 'pointer',
     },
     cardActions: {
         display: 'flex',
@@ -112,59 +112,46 @@ export const CommunityCardStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-interface IMember {
-    id: string
-    username: string | null
-    name: string | null
-    avatar: string | null
-}
-
-interface IMemberProps {
-    member: IMember
-    id: string
-    classes: any
-}
-
-const Member: React.FC<IMemberProps> = ({ member, id }) =>
-    member && (
-        <Avatar
-            aria-label={String(member && member.username)}
-            data-testid={`CommunityCard-${id}-avatar`}
-            id={String(member && member.id)}
-            name={member && member.name}
-            username={member && member.username}
-            avatar={member && member.avatar}
-            withName={false}
-        />
-    )
-
 interface IProps {
     id: string
     name: string | null
-    communityName?: string | null
+    owner: {
+        name?: string | null
+        username?: string | null
+        id: string
+        avatar?: string | null
+    } | null
+    dateUpdated: string | null
     description: string | null
-    avatar: string | null
+    background: string | null
     className?: string
     href: {
         as: string
         href: string
     }
-    approvedId: (any | null)[] | null
-    members: (IMember | null)[] | null
+    sections: (any | null)[] | null
+    isLoggedIn?: boolean
+    isBookmarked: boolean
+    openModalAction?: typeof openModalAction
+    routeChangeAction?: typeof routeChangeAction
 }
 
-const CommunityCard: React.FC<IProps> = ({
+const CollectionCard: React.FC<IProps> = ({
+    owner,
     name,
-    communityName,
+    background,
+    dateUpdated,
     description,
     className,
     href,
     id,
-    approvedId,
-    members,
-    avatar,
+    sections,
+    isBookmarked,
+    isLoggedIn = false,
+    openModalAction,
+    routeChangeAction,
 }) => {
-    const classes = CommunityCardStyles({})
+    const classes = CollectionCardStyles({})
 
     const [open, setOpen] = React.useState(false)
 
@@ -177,15 +164,33 @@ const CommunityCard: React.FC<IProps> = ({
     }
 
     const articleCount =
-        (approvedId &&
-            approvedId.filter(resource => resource.type === 'ARTICLE')
-                .length) ||
+        (sections &&
+            sections.reduce((current, next) => {
+                if (next && next.resourcesId) {
+                    const articlesInSection = next.resourcesId.filter(
+                        resource => resource && resource.type === 'ARTICLE'
+                    ).length
+                    if (articlesInSection > 0) {
+                        current += articlesInSection
+                    }
+                }
+                return current
+            }, 0)) ||
         0
 
     const collectionCount =
-        (approvedId &&
-            approvedId.filter(resource => resource.type === 'COLLECTION')
-                .length) ||
+        (sections &&
+            sections.reduce((current, next) => {
+                if (next && next.resourcesId) {
+                    const collectionsInSection = next.resourcesId.filter(
+                        resource => resource && resource.type === 'COLLECTION'
+                    ).length
+                    if (collectionsInSection > 0) {
+                        current += collectionsInSection
+                    }
+                }
+                return current
+            }, 0)) ||
         0
 
     return (
@@ -195,20 +200,20 @@ const CommunityCard: React.FC<IProps> = ({
         >
             <Link href={href.href} as={href.as}>
                 <a>
-                    {avatar ? (
+                    {background ? (
                         <Image
                             className={classes.desktopMedia}
-                            data-testid={`CommunityCard-${id}-image`}
+                            data-testid={`CollectionCard-${id}-image`}
                             width={152}
                             height={152}
-                            image={avatar}
+                            image={background}
                             borderRadius="4px"
                         />
                     ) : (
                         <img
                             className={classes.desktopMedia}
-                            data-testid={`CommunityCard-${id}-image`}
-                            src="/static/images/DefaultCommunity.svg"
+                            data-testid={`CollectionCard-${id}-image`}
+                            src="/static/images/DefaultCollection.svg"
                         />
                     )}
                 </a>
@@ -218,34 +223,38 @@ const CommunityCard: React.FC<IProps> = ({
                     <div className={classes.stripHeader}>
                         <Link href={href.href} as={href.as}>
                             <a className={classes.stripHeader}>
-                                <Icon>people</Icon>
+                                <Icon>folder</Icon>
                                 <Typography variant="subtitle2">
-                                    Community
+                                    Collection
                                 </Typography>
                             </a>
                         </Link>
+                        <Typography
+                            data-testid={`CollectionCard-${id}-date`}
+                            variant="body2"
+                        >
+                            {moment(String(dateUpdated)).format('MMM DD')}
+                        </Typography>
                     </div>
                     <Link href={href.href} as={href.as}>
                         <a
-                            data-testid={`CommunityCard-${id}-name`}
+                            data-testid={`CollectionCard-${id}-name`}
                             className={classes.name}
                         >
                             <TruncateMarkup lines={1}>
-                                <Typography variant={'h5'}>
-                                    {name || communityName}
-                                </Typography>
+                                <Typography variant={'h5'}>{name}</Typography>
                             </TruncateMarkup>
                         </a>
                     </Link>
                     <CardContent
-                        data-testid={`CommunityCard-${id}-description`}
+                        data-testid={`CollectionCard-${id}-description`}
                         className={classes.content}
                     >
                         <Link href={href.href} as={href.as}>
                             <a>
                                 <TruncateMarkup lines={2}>
                                     <Typography
-                                        data-testid={`CommunityCard-${id}-description`}
+                                        data-testid={`CollectionCard-${id}-description`}
                                         variant="body2"
                                         color="textSecondary"
                                         component="p"
@@ -258,42 +267,24 @@ const CommunityCard: React.FC<IProps> = ({
                     </CardContent>
                 </div>
                 <CardActions className={classes.cardActions}>
-                    <div className={classes.members}>
-                        {members &&
-                            members.slice(0, 3).map(
-                                member =>
-                                    member && (
-                                        <Member
-                                            key={member.id}
-                                            classes={classes}
-                                            // TODO update as contributors[0]
-                                            member={member}
-                                            id={id}
-                                        ></Member>
-                                    )
-                            )}
-                        {members && members.length > 3 ? (
-                            <div
-                                data-testid={`CommunityCard-${id}-moreMembers`}
-                                className={classes.moreMembers}
-                                aria-label={'more-members'}
-                            >
-                                <Typography
-                                    className={classes.moreMembersCount}
-                                    variant="caption"
-                                >
-                                    {`+${members.length - 3}`}
-                                </Typography>
-                            </div>
-                        ) : null}
+                    <div className={classes.user}>
+                        <Avatar
+                            aria-label={String(owner && owner.username)}
+                            data-testid={`CollectionCard-${id}-avatar`}
+                            id={String(owner && owner.id)}
+                            name={owner && owner.name}
+                            username={owner && owner.username}
+                            avatar={owner && owner.avatar}
+                            withName={true}
+                        />
                     </div>
 
                     <div className={classes.statistics}>
-                        <Icon data-testid={`CommunityCard-${id}-articleIcon`}>
+                        <Icon data-testid={`CollectionCard-${id}-articleIcon`}>
                             insert_drive_file
                         </Icon>
                         <Typography
-                            data-testid={`CommunityCard-${id}-articleCount`}
+                            data-testid={`CollectionCard-${id}-articleCount`}
                             variant="subtitle1"
                         >
                             {articleCount}
@@ -310,16 +301,48 @@ const CommunityCard: React.FC<IProps> = ({
                             {collectionCount}
                         </Typography>
 
+                        <Tooltip
+                            title={isBookmarked ? 'Unbookmark' : 'Bookmark'}
+                        >
+                            <IconButton
+                                onClick={() =>
+                                    isLoggedIn && openModalAction
+                                        ? openModalAction({
+                                              children: (
+                                                  <BookmarkResource
+                                                      resourceId={id}
+                                                      resourceType={
+                                                          ResourceTypeInput.COLLECTION
+                                                      }
+                                                  />
+                                              ),
+                                          })
+                                        : routeChangeAction &&
+                                          routeChangeAction(`/login`)
+                                }
+                            >
+                                {isBookmarked ? (
+                                    <BookmarkIcon
+                                        data-testid={`CollectionCard-${id}-bookmarkIcon`}
+                                    />
+                                ) : (
+                                    <BookmarkBorderIcon
+                                        data-testid={`CollectionCard-${id}-bookmarkBorderIcon`}
+                                    />
+                                )}
+                            </IconButton>
+                        </Tooltip>
                         <IconButton
                             onClick={handleClickOpen}
-                            data-testid={`CommunityCard-${id}-shareIcon`}
+                            data-testid={`CollectionCard-${id}-shareIcon`}
                             aria-label="share button"
                         >
                             <Icon>share</Icon>
                         </IconButton>
                         <ShareDialog
-                            href={getCommunityURL({ name, id }).href}
+                            href={getCollectionURL({ name, id }).href}
                             name={name}
+                            id={id}
                             open={open}
                             handleClose={handleClose}
                         ></ShareDialog>
@@ -330,4 +353,15 @@ const CommunityCard: React.FC<IProps> = ({
     )
 }
 
-export default CommunityCard
+const mapStateToProps = state => {
+    return {
+        isLoggedIn: !!(state.app && state.app.user && state.app.user.id),
+    }
+}
+export default connect(
+    mapStateToProps,
+    {
+        openModalAction,
+        routeChangeAction,
+    }
+)(CollectionCard)
