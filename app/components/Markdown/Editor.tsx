@@ -45,7 +45,7 @@ const Editor = ({
             background: theme.palette.common.white,
             display: 'flex',
             flexDirection: 'column',
-            maxWidth: 1242,
+            maxWidth: 1272,
             width: '100%',
             margin: 'auto',
             minHeight: minHeight ? minHeight : 400,

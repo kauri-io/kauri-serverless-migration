@@ -19,7 +19,7 @@ const styles = (theme: Theme) => ({
         width: '100%',
     },
     grid: {
-        maxWidth: 1242,
+        maxWidth: 1272,
         margin: 'auto',
     },
     saveButton: {

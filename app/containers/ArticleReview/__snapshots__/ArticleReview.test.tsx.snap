@@ -287,7 +287,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
       theme={
         Object {
           "DEFAULT_CARD_WIDTH": 288,
-          "MAIN_BODY_WIDTH": 1242,
+          "MAIN_BODY_WIDTH": 1272,
           "bg": Object {
             "bgPrimary": "#1E2428",
             "bgSecondary": "#1E3D3B",
@@ -319,7 +319,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
           "breakpoints": Array [
             "500px",
             "52em",
-            "1242px",
+            "1272px",
           ],
           "colors": Object {
             "bgPrimary": "#1E2428",
@@ -370,17 +370,17 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
           ],
           "hoverTextColor": "#108E72",
           "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-          "padding": "calc((100vw - 1242px) / 2)",
+          "padding": "calc((100vw - 1272px) / 2)",
           "paddingTop": "2.5em",
           "primary": "#0BA986",
           "primaryColor": "#0BA986",
@@ -844,7 +844,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                   "componentStyle": ComponentStyle {
                                     "componentId": "Header__Content-sc-647imh-1",
                                     "isStatic": false,
-                                    "lastClassName": "jxhDvf",
+                                    "lastClassName": "hAiCom",
                                     "rules": Array [
                                       "display:flex;background:",
                                       [Function],
@@ -869,7 +869,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                               forwardedRef={null}
                             >
                               <div
-                                className="Header__Content-sc-647imh-1 jxhDvf"
+                                className="Header__Content-sc-647imh-1 hAiCom"
                               >
                                 <Header__Actions>
                                   <StyledComponent
@@ -1395,7 +1395,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                           "componentStyle": ComponentStyle {
                             "componentId": "View__Content-bws0mc-1",
                             "isStatic": false,
-                            "lastClassName": "dxmSsS",
+                            "lastClassName": "eURWpK",
                             "rules": Array [
                               "display:flex;flex-direction:row;padding:",
                               [Function],
@@ -1418,7 +1418,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                       forwardedRef={null}
                     >
                       <div
-                        className="View__Content-bws0mc-1 dxmSsS"
+                        className="View__Content-bws0mc-1 eURWpK"
                       >
                         <Diffs
                           current="test contet 1"

@@ -56,7 +56,7 @@ class Articles extends Component<IProps> {
                         <Grid
                             className={this.props.classes.grid}
                             container
-                            spacing={3}
+                            spacing={2}
                         >
                             {searchAutocomplete.content.map(result => {
                                 const type =
@@ -128,8 +128,7 @@ class Articles extends Component<IProps> {
 
 export default withStyles({
     grid: {
-        paddingTop: '24px',
+        paddingTop: 16,
         maxWidth: 870,
-        margin: 'auto',
     },
 })(Articles)

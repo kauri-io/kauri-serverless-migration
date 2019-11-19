@@ -68,7 +68,7 @@ class Collections extends Component<IProps> {
                         <Grid
                             className={this.props.classes.grid}
                             container
-                            spacing={3}
+                            spacing={2}
                         >
                             {searchAutocomplete &&
                                 searchAutocomplete.content &&
@@ -154,8 +154,7 @@ class Collections extends Component<IProps> {
 
 export default withStyles({
     grid: {
-        padding: '24px 0',
-        margin: 'auto',
+        paddingTop: 16,
         maxWidth: 870,
     },
 })(Collections)
