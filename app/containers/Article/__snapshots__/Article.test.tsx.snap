@@ -8987,7 +8987,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                           Object {
                                             "as": "/test-title-3/1233/a",
                                             "href": "/article?article_id=1233",
-<<<<<<< HEAD
                                           }
                                         }
                                         id="1233"
@@ -9037,57 +9036,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                             "sum": 3,
                                           }
                                         }
-=======
-                                          }
-                                        }
-                                        id="1233"
-                                        isBookmarked={true}
-                                        isLoggedIn={true}
-                                        openModalAction={[Function]}
-                                        owner={
-                                          Object {
-                                            "__typename": "PublicUserDTO",
-                                            "avatar": "test avatar 3",
-                                            "id": "6783",
-                                            "name": "test author name 3",
-                                            "publicUserName": "test-public-username-3",
-                                            "resourceIdentifier": Object {
-                                              "__typename": "PublicUserDTO",
-                                              "id": "6783",
-                                              "type": "ResourceIdentifier",
-                                            },
-                                            "username": "test-author-username-3",
-                                          }
-                                        }
-                                        resourceIdentifier={
-                                          Object {
-                                            "__typename": "ResourceIdentifier",
-                                            "id": "1233",
-                                            "type": "ResourceIdentifier",
-                                            "version": 1,
-                                          }
-                                        }
-                                        routeChangeAction={[Function]}
-                                        status="PUBLISHED"
-                                        tags={
-                                          Array [
-                                            "Test",
-                                            "test2",
-                                          ]
-                                        }
-                                        title="test title 3"
-                                        updateComment="test update comment3"
-                                        version={1}
-                                        voteResult={
-                                          Object {
-                                            "__typename": "VoteResultDTO",
-                                            "count": 3,
-                                            "hasVoted": false,
-                                            "quantity": 1,
-                                            "sum": 3,
-                                          }
-                                        }
->>>>>>> 7dbcbeb55887627c8a301afed101bf49482a0b0e
                                       >
                                         <WithStyles(ForwardRef(Card))
                                           className="makeStyles-card-229 makeStyles-card-3"
