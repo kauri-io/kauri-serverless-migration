@@ -1,4 +1,10 @@
-import { FormGroup, TextField, makeStyles, Theme, Button } from '@material-ui/core'
+import {
+    FormGroup,
+    TextField,
+    makeStyles,
+    Theme,
+    Button,
+} from '@material-ui/core'
 import { useState } from 'react'
 import { ICreateBookmakFolderAction } from '../Module'
 import { createBookmarkFolderVariables } from '../../../queries/__generated__/createBookmarkFolder'
@@ -9,24 +15,23 @@ interface IProps {
     ) => ICreateBookmakFolderAction
 }
 
-
 const useStyles = makeStyles((_theme: Theme) => ({
     form: {
-        padding: '0 12px'
+        padding: '0 12px',
     },
     wrapper: {
-        display: 'flex'
+        display: 'flex',
     },
     link: {
-        width: 100
-    }
+        width: 100,
+    },
 }))
 
 export const CreateBookmarkFolderComponent = ({
     createBookmarkFolderAction,
 }: IProps) => {
     const classes = useStyles()
-    
+
     const [showForm, setShowForm] = useState(false)
     const [hasError, setHasError] = useState(false)
     const [folder, setFolder] = useState('')
@@ -66,12 +71,8 @@ export const CreateBookmarkFolderComponent = ({
     return (
         <FormGroup>
             {!showForm ? (
-                <Button
-                color="primary"
-                variant="text"
-                onClick={toggleShowForm}
-                >
-                New folder
+                <Button color="primary" variant="text" onClick={toggleShowForm}>
+                    New folder
                 </Button>
             ) : (
                 [
@@ -79,6 +80,7 @@ export const CreateBookmarkFolderComponent = ({
                         <TextField
                             error={hasError ? true : false}
                             margin="dense"
+                            helperText={hasError ? 'Incorrect folder' : ''}
                             onChange={e => updateFolder(e.target.value)}
                             value={folder}
                             placeholder="Folder name"
@@ -89,7 +91,7 @@ export const CreateBookmarkFolderComponent = ({
                                 variant="text"
                                 onClick={reset}
                                 className={classes.link}
-                            >
+                            >   
                                 Cancel
                             </Button>
                             <Button
@@ -101,7 +103,7 @@ export const CreateBookmarkFolderComponent = ({
                                 Create
                             </Button>
                         </div>
-                    </div>
+                    </div>,
                 ]
             )}
         </FormGroup>

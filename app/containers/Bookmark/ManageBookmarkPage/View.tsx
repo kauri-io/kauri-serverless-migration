@@ -44,13 +44,13 @@ const useStyles = makeStyles((_theme: Theme) => ({
         '& > span': {
             alignItems: 'flex-start',
             textTransform: 'capitalize',
-            fontWeight: 600,
+            fontWeight: 500,
         },
     },
     createContainer: {
         width: 250,
         alignItems: 'flex-start',
-        padding: '6px 2px',
+        padding: '6px 0',
         '& > div': {
             alignItems: 'flex-start',
         },
@@ -112,7 +112,8 @@ export const ManageBookmarkPageComponent = ({
                                             folder.name == currentFolder
                                                 ? {
                                                       borderRight:
-                                                          '3px solid green',
+                                                          '3px solid #0BA986',
+                                                        opacity: 1
                                                   }
                                                 : {}
                                         }
