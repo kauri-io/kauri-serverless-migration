@@ -43,14 +43,14 @@ const useStyles = makeStyles((theme: Theme) => ({
         flexDirection: 'column',
         height: '100%',
         width: '100%',
-        textAlign: 'left'
+        textAlign: 'left',
     },
     bottom: {
         marginTop: 'auto',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        width: '100%'
+        width: '100%',
     },
 }))
 
