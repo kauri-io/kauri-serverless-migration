@@ -7,14 +7,18 @@ import Button from '../../components/Button'
 import StatisticsContainer from '../PublicProfile/StatisticsContainer'
 import { TagList } from '../Tags'
 import { getUpdateCollectionURL } from '../../lib/getURLs'
+import { Tooltip } from '@material-ui/core'
+import BookmarkIcon from '@material-ui/icons/Bookmark'
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
+import BookmarkResource from '../../containers/Bookmark/BookmarkResourceWidget'
+import { ResourceTypeInput } from '../../__generated__/globalTypes'
 
 const CollectionHeaderSection = styled.section`
     display: flex;
     width: 100%;
     flex-direction: row;
     z-index: 1;
-    padding: ${props => props.theme.space[4] + 40}px
-        ${props => props.theme.padding} ${props => props.theme.space[3]}px;
+    padding: 100px ${props => props.theme.padding} 24px;
     @media (max-width: 500px) {
         flex-direction: column;
     }
@@ -26,7 +30,7 @@ const LeftSide = styled.div<{ tags: any | undefined }>`
     flex-direction: column;
     color: white;
     > :nth-child(2) {
-        margin-top: ${props => props.theme.space[1]}px;
+        margin: 8px 0;
     }
     > :nth-last-child(2) {
         margin-bottom: ${props => props.tags && props.theme.space[1]}px;
@@ -90,6 +94,9 @@ interface IProps {
     username: string | null
     approveResourceAction?: any
     isMemberOfCommunityOwner: boolean
+    isBookmarked: boolean
+    isLoggedIn: boolean
+    openModalAction: any
 }
 
 const Container: React.SFC<IProps> = props => {
@@ -111,6 +118,9 @@ const Container: React.SFC<IProps> = props => {
         proposedCommunityId,
         approveResourceAction,
         isMemberOfCommunityOwner,
+        isBookmarked,
+        isLoggedIn,
+        openModalAction,
     } = props
     return (
         <CollectionHeaderSection>
@@ -128,6 +138,31 @@ const Container: React.SFC<IProps> = props => {
                 )}
                 <ShareContainer>
                     <ShareArticle color={'white'} url={url} title={name} />
+                    <Tooltip title={isBookmarked ? 'Unbookmark' : 'Bookmark'}>
+                        <div
+                            onClick={() =>
+                                isLoggedIn && openModalAction
+                                    ? openModalAction({
+                                          children: (
+                                              <BookmarkResource
+                                                  resourceId={id}
+                                                  resourceType={
+                                                      ResourceTypeInput.COLLECTION
+                                                  }
+                                              />
+                                          ),
+                                      })
+                                    : routeChangeAction &&
+                                      routeChangeAction(`/login`)
+                            }
+                        >
+                            {isBookmarked ? (
+                                <BookmarkIcon color="primary" />
+                            ) : (
+                                <BookmarkBorderIcon color="primary" />
+                            )}
+                        </div>
+                    </Tooltip>
                 </ShareContainer>
             </LeftSide>
             <RightSide>

@@ -32,7 +32,17 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
     },
     root: {
-        paddingTop: theme.spacing(2),
+        paddingTop: theme.spacing(4),
+    },
+    title: {
+        marginBottom: 0,
+        textAlign: 'center',
+        fontWeight: 600,
+    },
+    description: {
+        fontWeight: 400,
+        marginBottom: theme.spacing(2),
+        textAlign: 'center',
     },
 }))
 
@@ -42,10 +52,14 @@ const CollectionSection: React.SFC<IProps> = props => {
     if (resources) {
         return (
             <div className={classes.root}>
-                <Typography align="center" variant="h5">
+                <Typography
+                    className={classes.title}
+                    gutterBottom={false}
+                    variant="h6"
+                >
                     {name}
                 </Typography>
-                <Typography align="center" variant="h6">
+                <Typography className={classes.description} variant="body1">
                     {description}
                 </Typography>
                 <div className={classes.grid}>

@@ -79,7 +79,10 @@ const AvatarComp = ({
                     borderRadius={'2px'}
                 />
             ) : (
-                <img className={classes.avatar} src={makeBlockie(id || 'anonymous')} />
+                <img
+                    className={classes.avatar}
+                    src={makeBlockie(id || 'anonymous')}
+                />
             )}
             {withName && (
                 <Typography

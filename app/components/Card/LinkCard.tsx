@@ -218,6 +218,7 @@ const LinkCard = ({
                                             //     addArticleToCollectionAction
                                             // }
                                             url={linkURL}
+                                            type="LINK"
                                         />
                                     </Grid>
                                 </Grid>

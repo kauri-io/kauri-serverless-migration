@@ -77,6 +77,7 @@ type IProps = {
     communities?: ICommunity[]
     client: ApolloClient<{}>
     approveResourceAction: typeof approveResourceAction
+    isLoggedIn: boolean
 }
 
 class CollectionPage extends Component<IProps> {
@@ -112,8 +113,14 @@ class CollectionPage extends Component<IProps> {
                 owner,
                 tags,
                 sections,
+                isBookmarked,
             } = this.props.data.getCollection
-            const { userId, routeChangeAction, openModalAction } = this.props
+            const {
+                userId,
+                routeChangeAction,
+                openModalAction,
+                isLoggedIn,
+            } = this.props
             const bg = background
             const url = getCollectionURL({ name, id }).as
 
@@ -180,12 +187,15 @@ class CollectionPage extends Component<IProps> {
                             <Image
                                 height="100%"
                                 width="100%"
-                                overlay={{ opacity: 0.5 }}
+                                overlay={{ opacity: 0.8 }}
                                 asBackground
                                 image={bg}
                             />
                         )}
                         <CollectionHeader
+                            isBookmarked={isBookmarked}
+                            isLoggedIn={isLoggedIn}
+                            openModalAction={openModalAction}
                             isMemberOfCommunityOwner={isMemberOfCommunityOwner}
                             imageURL={typeof bg === 'string' ? bg : null}
                             id={id}

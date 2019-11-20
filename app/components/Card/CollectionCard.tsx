@@ -199,6 +199,7 @@ const CollectionCard = ({
                                             //     addArticleToCollectionAction
                                             // }
                                             url={collectionURL}
+                                            type="COLLECTION"
                                         />
                                     </Grid>
                                 </Grid>

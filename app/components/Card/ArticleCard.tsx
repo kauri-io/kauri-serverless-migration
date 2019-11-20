@@ -185,6 +185,7 @@ const ArticleCard = ({
                                                 addArticleToCollectionAction
                                             }
                                             url={articleURL}
+                                            type="ARTICLE"
                                         />
                                     </Grid>
                                 </Grid>

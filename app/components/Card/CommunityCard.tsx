@@ -192,6 +192,7 @@ const CommunityCard = ({
                                             // addArticleToCollectionAction={
                                             //     addArticleToCollectionAction
                                             // }
+                                            type="COMMUNITY"
                                             url={collectionURL}
                                         />
                                     </Grid>

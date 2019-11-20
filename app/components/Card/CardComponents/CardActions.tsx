@@ -45,6 +45,7 @@ interface IProps {
         href: string
     }
     addArticleToCollectionAction?: any
+    type: string
 }
 
 export default ({
@@ -56,6 +57,7 @@ export default ({
     routeChangeAction,
     url,
     addArticleToCollectionAction,
+    type,
 }: IProps) => {
     const classes = useStyles({})
 
@@ -98,9 +100,7 @@ export default ({
                                   children: (
                                       <BookmarkResource
                                           resourceId={id}
-                                          resourceType={
-                                              ResourceTypeInput.ARTICLE
-                                          }
+                                          resourceType={ResourceTypeInput[type]}
                                       />
                                   ),
                               })

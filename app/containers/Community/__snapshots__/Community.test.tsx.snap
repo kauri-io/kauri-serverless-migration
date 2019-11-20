@@ -51517,60 +51517,12 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                           className="makeStyles-root-75"
                         >
                           <WithStyles(ForwardRef(Typography))
-                            align="center"
-                            variant="h5"
-                          >
-                            <ForwardRef(Typography)
-                              align="center"
-                              classes={
-                                Object {
-                                  "alignCenter": "MuiTypography-alignCenter",
-                                  "alignJustify": "MuiTypography-alignJustify",
-                                  "alignLeft": "MuiTypography-alignLeft",
-                                  "alignRight": "MuiTypography-alignRight",
-                                  "body1": "MuiTypography-body1",
-                                  "body2": "MuiTypography-body2",
-                                  "button": "MuiTypography-button",
-                                  "caption": "MuiTypography-caption",
-                                  "colorError": "MuiTypography-colorError",
-                                  "colorInherit": "MuiTypography-colorInherit",
-                                  "colorPrimary": "MuiTypography-colorPrimary",
-                                  "colorSecondary": "MuiTypography-colorSecondary",
-                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                  "displayBlock": "MuiTypography-displayBlock",
-                                  "displayInline": "MuiTypography-displayInline",
-                                  "gutterBottom": "MuiTypography-gutterBottom",
-                                  "h1": "MuiTypography-h1",
-                                  "h2": "MuiTypography-h2",
-                                  "h3": "MuiTypography-h3",
-                                  "h4": "MuiTypography-h4",
-                                  "h5": "MuiTypography-h5",
-                                  "h6": "MuiTypography-h6",
-                                  "noWrap": "MuiTypography-noWrap",
-                                  "overline": "MuiTypography-overline",
-                                  "paragraph": "MuiTypography-paragraph",
-                                  "root": "MuiTypography-root",
-                                  "srOnly": "MuiTypography-srOnly",
-                                  "subtitle1": "MuiTypography-subtitle1",
-                                  "subtitle2": "MuiTypography-subtitle2",
-                                }
-                              }
-                              variant="h5"
-                            >
-                              <h5
-                                className="MuiTypography-root MuiTypography-h5 MuiTypography-alignCenter"
-                              >
-                                Getting Started
-                              </h5>
-                            </ForwardRef(Typography)>
-                          </WithStyles(ForwardRef(Typography))>
-                          <WithStyles(ForwardRef(Typography))
-                            align="center"
+                            className="makeStyles-title-76"
+                            gutterBottom={false}
                             variant="h6"
                           >
                             <ForwardRef(Typography)
-                              align="center"
+                              className="makeStyles-title-76"
                               classes={
                                 Object {
                                   "alignCenter": "MuiTypography-alignCenter",
@@ -51605,13 +51557,63 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                   "subtitle2": "MuiTypography-subtitle2",
                                 }
                               }
+                              gutterBottom={false}
                               variant="h6"
                             >
                               <h6
-                                className="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter"
+                                className="MuiTypography-root makeStyles-title-76 MuiTypography-h6"
+                              >
+                                Getting Started
+                              </h6>
+                            </ForwardRef(Typography)>
+                          </WithStyles(ForwardRef(Typography))>
+                          <WithStyles(ForwardRef(Typography))
+                            className="makeStyles-description-77"
+                            variant="body1"
+                          >
+                            <ForwardRef(Typography)
+                              className="makeStyles-description-77"
+                              classes={
+                                Object {
+                                  "alignCenter": "MuiTypography-alignCenter",
+                                  "alignJustify": "MuiTypography-alignJustify",
+                                  "alignLeft": "MuiTypography-alignLeft",
+                                  "alignRight": "MuiTypography-alignRight",
+                                  "body1": "MuiTypography-body1",
+                                  "body2": "MuiTypography-body2",
+                                  "button": "MuiTypography-button",
+                                  "caption": "MuiTypography-caption",
+                                  "colorError": "MuiTypography-colorError",
+                                  "colorInherit": "MuiTypography-colorInherit",
+                                  "colorPrimary": "MuiTypography-colorPrimary",
+                                  "colorSecondary": "MuiTypography-colorSecondary",
+                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                  "displayBlock": "MuiTypography-displayBlock",
+                                  "displayInline": "MuiTypography-displayInline",
+                                  "gutterBottom": "MuiTypography-gutterBottom",
+                                  "h1": "MuiTypography-h1",
+                                  "h2": "MuiTypography-h2",
+                                  "h3": "MuiTypography-h3",
+                                  "h4": "MuiTypography-h4",
+                                  "h5": "MuiTypography-h5",
+                                  "h6": "MuiTypography-h6",
+                                  "noWrap": "MuiTypography-noWrap",
+                                  "overline": "MuiTypography-overline",
+                                  "paragraph": "MuiTypography-paragraph",
+                                  "root": "MuiTypography-root",
+                                  "srOnly": "MuiTypography-srOnly",
+                                  "subtitle1": "MuiTypography-subtitle1",
+                                  "subtitle2": "MuiTypography-subtitle2",
+                                }
+                              }
+                              variant="body1"
+                            >
+                              <p
+                                className="MuiTypography-root makeStyles-description-77 MuiTypography-body1"
                               >
                                 Take your first steps integrating Java with Ethereum
-                              </h6>
+                              </p>
                             </ForwardRef(Typography)>
                           </WithStyles(ForwardRef(Typography))>
                           <div
@@ -51761,7 +51763,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                   href="/article?article_id=b9eb647c47a546bc95693acc0be72546"
                                 >
                                   <a
-                                    className="makeStyles-link-107"
+                                    className="makeStyles-link-109"
                                     href="/connecting-to-an-ethereum-client-with-java-eclipse-and-web3j/b9eb647c47a546bc95693acc0be72546/a"
                                     onClick={[Function]}
                                     onMouseEnter={[Function]}
@@ -51946,7 +51948,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                   href="/article?article_id=925d923e12c543da9a0a3e617be963b4"
                                 >
                                   <a
-                                    className="makeStyles-link-107"
+                                    className="makeStyles-link-109"
                                     href="/manage-an-ethereum-account-with-java-and-web3j/925d923e12c543da9a0a3e617be963b4/a"
                                     onClick={[Function]}
                                     onMouseEnter={[Function]}
@@ -52131,7 +52133,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                   href="/article?article_id=84475132317d4d6a84a2c42eb9348e4b"
                                 >
                                   <a
-                                    className="makeStyles-link-107"
+                                    className="makeStyles-link-109"
                                     href="/generate-a-java-wrapper-from-your-smart-contract/84475132317d4d6a84a2c42eb9348e4b/a"
                                     onClick={[Function]}
                                     onMouseEnter={[Function]}
@@ -52330,7 +52332,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                   href="/article?article_id=14dc434d11ef4ee18bf7d57f079e246e"
                                 >
                                   <a
-                                    className="makeStyles-link-107"
+                                    className="makeStyles-link-109"
                                     href="/interacting-with-an-ethereum-smart-contract-in-java/14dc434d11ef4ee18bf7d57f079e246e/a"
                                     onClick={[Function]}
                                     onMouseEnter={[Function]}
@@ -52529,7 +52531,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                   href="/article?article_id=760f495423db42f988d17b8c145b0874"
                                 >
                                   <a
-                                    className="makeStyles-link-107"
+                                    className="makeStyles-link-109"
                                     href="/listening-for-ethereum-smart-contract-events-in-java/760f495423db42f988d17b8c145b0874/a"
                                     onClick={[Function]}
                                     onMouseEnter={[Function]}
@@ -52714,7 +52716,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                   href="/article?article_id=276dd27f1458443295eea58403fd6965"
                                 >
                                   <a
-                                    className="makeStyles-link-107"
+                                    className="makeStyles-link-109"
                                     href="/using-pantheon-the-java-ethereum-client-with-linux/276dd27f1458443295eea58403fd6965/a"
                                     onClick={[Function]}
                                     onMouseEnter={[Function]}
@@ -52773,60 +52775,12 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                           className="makeStyles-root-75"
                         >
                           <WithStyles(ForwardRef(Typography))
-                            align="center"
-                            variant="h5"
-                          >
-                            <ForwardRef(Typography)
-                              align="center"
-                              classes={
-                                Object {
-                                  "alignCenter": "MuiTypography-alignCenter",
-                                  "alignJustify": "MuiTypography-alignJustify",
-                                  "alignLeft": "MuiTypography-alignLeft",
-                                  "alignRight": "MuiTypography-alignRight",
-                                  "body1": "MuiTypography-body1",
-                                  "body2": "MuiTypography-body2",
-                                  "button": "MuiTypography-button",
-                                  "caption": "MuiTypography-caption",
-                                  "colorError": "MuiTypography-colorError",
-                                  "colorInherit": "MuiTypography-colorInherit",
-                                  "colorPrimary": "MuiTypography-colorPrimary",
-                                  "colorSecondary": "MuiTypography-colorSecondary",
-                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                  "displayBlock": "MuiTypography-displayBlock",
-                                  "displayInline": "MuiTypography-displayInline",
-                                  "gutterBottom": "MuiTypography-gutterBottom",
-                                  "h1": "MuiTypography-h1",
-                                  "h2": "MuiTypography-h2",
-                                  "h3": "MuiTypography-h3",
-                                  "h4": "MuiTypography-h4",
-                                  "h5": "MuiTypography-h5",
-                                  "h6": "MuiTypography-h6",
-                                  "noWrap": "MuiTypography-noWrap",
-                                  "overline": "MuiTypography-overline",
-                                  "paragraph": "MuiTypography-paragraph",
-                                  "root": "MuiTypography-root",
-                                  "srOnly": "MuiTypography-srOnly",
-                                  "subtitle1": "MuiTypography-subtitle1",
-                                  "subtitle2": "MuiTypography-subtitle2",
-                                }
-                              }
-                              variant="h5"
-                            >
-                              <h5
-                                className="MuiTypography-root MuiTypography-h5 MuiTypography-alignCenter"
-                              >
-                                Intermediate
-                              </h5>
-                            </ForwardRef(Typography)>
-                          </WithStyles(ForwardRef(Typography))>
-                          <WithStyles(ForwardRef(Typography))
-                            align="center"
+                            className="makeStyles-title-76"
+                            gutterBottom={false}
                             variant="h6"
                           >
                             <ForwardRef(Typography)
-                              align="center"
+                              className="makeStyles-title-76"
                               classes={
                                 Object {
                                   "alignCenter": "MuiTypography-alignCenter",
@@ -52861,13 +52815,63 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                   "subtitle2": "MuiTypography-subtitle2",
                                 }
                               }
+                              gutterBottom={false}
                               variant="h6"
                             >
                               <h6
-                                className="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter"
+                                className="MuiTypography-root makeStyles-title-76 MuiTypography-h6"
+                              >
+                                Intermediate
+                              </h6>
+                            </ForwardRef(Typography)>
+                          </WithStyles(ForwardRef(Typography))>
+                          <WithStyles(ForwardRef(Typography))
+                            className="makeStyles-description-77"
+                            variant="body1"
+                          >
+                            <ForwardRef(Typography)
+                              className="makeStyles-description-77"
+                              classes={
+                                Object {
+                                  "alignCenter": "MuiTypography-alignCenter",
+                                  "alignJustify": "MuiTypography-alignJustify",
+                                  "alignLeft": "MuiTypography-alignLeft",
+                                  "alignRight": "MuiTypography-alignRight",
+                                  "body1": "MuiTypography-body1",
+                                  "body2": "MuiTypography-body2",
+                                  "button": "MuiTypography-button",
+                                  "caption": "MuiTypography-caption",
+                                  "colorError": "MuiTypography-colorError",
+                                  "colorInherit": "MuiTypography-colorInherit",
+                                  "colorPrimary": "MuiTypography-colorPrimary",
+                                  "colorSecondary": "MuiTypography-colorSecondary",
+                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                  "displayBlock": "MuiTypography-displayBlock",
+                                  "displayInline": "MuiTypography-displayInline",
+                                  "gutterBottom": "MuiTypography-gutterBottom",
+                                  "h1": "MuiTypography-h1",
+                                  "h2": "MuiTypography-h2",
+                                  "h3": "MuiTypography-h3",
+                                  "h4": "MuiTypography-h4",
+                                  "h5": "MuiTypography-h5",
+                                  "h6": "MuiTypography-h6",
+                                  "noWrap": "MuiTypography-noWrap",
+                                  "overline": "MuiTypography-overline",
+                                  "paragraph": "MuiTypography-paragraph",
+                                  "root": "MuiTypography-root",
+                                  "srOnly": "MuiTypography-srOnly",
+                                  "subtitle1": "MuiTypography-subtitle1",
+                                  "subtitle2": "MuiTypography-subtitle2",
+                                }
+                              }
+                              variant="body1"
+                            >
+                              <p
+                                className="MuiTypography-root makeStyles-description-77 MuiTypography-body1"
                               >
                                 Section coming soon...
-                              </h6>
+                              </p>
                             </ForwardRef(Typography)>
                           </WithStyles(ForwardRef(Typography))>
                           <div
@@ -52890,60 +52894,12 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                           className="makeStyles-root-75"
                         >
                           <WithStyles(ForwardRef(Typography))
-                            align="center"
-                            variant="h5"
-                          >
-                            <ForwardRef(Typography)
-                              align="center"
-                              classes={
-                                Object {
-                                  "alignCenter": "MuiTypography-alignCenter",
-                                  "alignJustify": "MuiTypography-alignJustify",
-                                  "alignLeft": "MuiTypography-alignLeft",
-                                  "alignRight": "MuiTypography-alignRight",
-                                  "body1": "MuiTypography-body1",
-                                  "body2": "MuiTypography-body2",
-                                  "button": "MuiTypography-button",
-                                  "caption": "MuiTypography-caption",
-                                  "colorError": "MuiTypography-colorError",
-                                  "colorInherit": "MuiTypography-colorInherit",
-                                  "colorPrimary": "MuiTypography-colorPrimary",
-                                  "colorSecondary": "MuiTypography-colorSecondary",
-                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                  "displayBlock": "MuiTypography-displayBlock",
-                                  "displayInline": "MuiTypography-displayInline",
-                                  "gutterBottom": "MuiTypography-gutterBottom",
-                                  "h1": "MuiTypography-h1",
-                                  "h2": "MuiTypography-h2",
-                                  "h3": "MuiTypography-h3",
-                                  "h4": "MuiTypography-h4",
-                                  "h5": "MuiTypography-h5",
-                                  "h6": "MuiTypography-h6",
-                                  "noWrap": "MuiTypography-noWrap",
-                                  "overline": "MuiTypography-overline",
-                                  "paragraph": "MuiTypography-paragraph",
-                                  "root": "MuiTypography-root",
-                                  "srOnly": "MuiTypography-srOnly",
-                                  "subtitle1": "MuiTypography-subtitle1",
-                                  "subtitle2": "MuiTypography-subtitle2",
-                                }
-                              }
-                              variant="h5"
-                            >
-                              <h5
-                                className="MuiTypography-root MuiTypography-h5 MuiTypography-alignCenter"
-                              >
-                                Advanced
-                              </h5>
-                            </ForwardRef(Typography)>
-                          </WithStyles(ForwardRef(Typography))>
-                          <WithStyles(ForwardRef(Typography))
-                            align="center"
+                            className="makeStyles-title-76"
+                            gutterBottom={false}
                             variant="h6"
                           >
                             <ForwardRef(Typography)
-                              align="center"
+                              className="makeStyles-title-76"
                               classes={
                                 Object {
                                   "alignCenter": "MuiTypography-alignCenter",
@@ -52978,13 +52934,63 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                   "subtitle2": "MuiTypography-subtitle2",
                                 }
                               }
+                              gutterBottom={false}
                               variant="h6"
                             >
                               <h6
-                                className="MuiTypography-root MuiTypography-h6 MuiTypography-alignCenter"
+                                className="MuiTypography-root makeStyles-title-76 MuiTypography-h6"
+                              >
+                                Advanced
+                              </h6>
+                            </ForwardRef(Typography)>
+                          </WithStyles(ForwardRef(Typography))>
+                          <WithStyles(ForwardRef(Typography))
+                            className="makeStyles-description-77"
+                            variant="body1"
+                          >
+                            <ForwardRef(Typography)
+                              className="makeStyles-description-77"
+                              classes={
+                                Object {
+                                  "alignCenter": "MuiTypography-alignCenter",
+                                  "alignJustify": "MuiTypography-alignJustify",
+                                  "alignLeft": "MuiTypography-alignLeft",
+                                  "alignRight": "MuiTypography-alignRight",
+                                  "body1": "MuiTypography-body1",
+                                  "body2": "MuiTypography-body2",
+                                  "button": "MuiTypography-button",
+                                  "caption": "MuiTypography-caption",
+                                  "colorError": "MuiTypography-colorError",
+                                  "colorInherit": "MuiTypography-colorInherit",
+                                  "colorPrimary": "MuiTypography-colorPrimary",
+                                  "colorSecondary": "MuiTypography-colorSecondary",
+                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                  "displayBlock": "MuiTypography-displayBlock",
+                                  "displayInline": "MuiTypography-displayInline",
+                                  "gutterBottom": "MuiTypography-gutterBottom",
+                                  "h1": "MuiTypography-h1",
+                                  "h2": "MuiTypography-h2",
+                                  "h3": "MuiTypography-h3",
+                                  "h4": "MuiTypography-h4",
+                                  "h5": "MuiTypography-h5",
+                                  "h6": "MuiTypography-h6",
+                                  "noWrap": "MuiTypography-noWrap",
+                                  "overline": "MuiTypography-overline",
+                                  "paragraph": "MuiTypography-paragraph",
+                                  "root": "MuiTypography-root",
+                                  "srOnly": "MuiTypography-srOnly",
+                                  "subtitle1": "MuiTypography-subtitle1",
+                                  "subtitle2": "MuiTypography-subtitle2",
+                                }
+                              }
+                              variant="body1"
+                            >
+                              <p
+                                className="MuiTypography-root makeStyles-description-77 MuiTypography-body1"
                               >
                                 Section coming soon...
-                              </h6>
+                              </p>
                             </ForwardRef(Typography)>
                           </WithStyles(ForwardRef(Typography))>
                           <div
