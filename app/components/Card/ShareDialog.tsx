@@ -216,7 +216,6 @@ const DialogContent = withStyles((theme: Theme) => ({
 }))(MuiDialogContent)
 
 interface IProps {
-    id: string
     href: string
     name: string | null
     open: boolean
@@ -224,7 +223,6 @@ interface IProps {
 }
 
 const ShareDialogComponent: React.FC<WithStyles<typeof styles> & IProps> = ({
-    id,
     open,
     handleClose,
     classes,
@@ -235,7 +233,6 @@ const ShareDialogComponent: React.FC<WithStyles<typeof styles> & IProps> = ({
 
     return (
         <Dialog
-            data-testid={`Card-${id}-shareDialog`}
             onClose={handleClose}
             aria-labelledby="share-dialog"
             open={open}

@@ -9,7 +9,7 @@ import { ResourceTypeInput, ArticleStatusInput } from "./../../__generated__/glo
 // ====================================================
 
 export interface getBookmarks_getBookmarks_content_resource_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_associatedNfts {
@@ -37,6 +37,50 @@ export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_resourceI
   version: number | null;
 }
 
+export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_contributors_articles {
+  __typename: "ResponsePage_ArticleDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_contributors_collections {
+  __typename: "ResponsePage_CollectionDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_contributors_links {
+  __typename: "ResponsePage_ExternalLinkDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_contributors_communities_community {
+  __typename: "CommunityDTO";
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  name: string;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_contributors_communities {
+  __typename: "MemberRoleCommunityDTO";
+  /**
+   * Community
+   */
+  community: getBookmarks_getBookmarks_content_resource_ArticleDTO_contributors_communities_community;
+}
+
 export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_contributors {
   __typename: "PublicUserDTO";
   /**
@@ -55,6 +99,33 @@ export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_contribut
    * User avatar URI
    */
   avatar: string | null;
+  /**
+   * User title
+   */
+  title: string | null;
+  /**
+   * User social links (twitter, github, etc.)
+   */
+  social: any | null;
+  /**
+   * Returns a page of ArticleDTO authored by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  articles: getBookmarks_getBookmarks_content_resource_ArticleDTO_contributors_articles;
+  /**
+   * Returns a page of CollectionDTO owned by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  collections: getBookmarks_getBookmarks_content_resource_ArticleDTO_contributors_collections;
+  /**
+   * Returns a page of ExternalLinkDTO owned by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  links: getBookmarks_getBookmarks_content_resource_ArticleDTO_contributors_links;
+  /**
+   * Get communities the user is member of mapped by role
+   */
+  communities: (getBookmarks_getBookmarks_content_resource_ArticleDTO_contributors_communities | null)[];
 }
 
 export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_voteResult {
@@ -98,7 +169,7 @@ export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_author {
 }
 
 export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface getBookmarks_getBookmarks_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
@@ -230,6 +301,10 @@ export interface getBookmarks_getBookmarks_content_resource_ArticleDTO {
    */
   contributors: (getBookmarks_getBookmarks_content_resource_ArticleDTO_contributors | null)[];
   /**
+   * Check if the article was already read by the current user
+   */
+  isRead: boolean;
+  /**
    * Description of the article - First 500 characters of the plaintext content)
    */
   description: string | null;
@@ -308,7 +383,7 @@ export interface getBookmarks_getBookmarks_content_resource_ArticleDTO {
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier {
@@ -388,7 +463,7 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CollectionDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CollectionDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_associatedNfts {
@@ -416,6 +491,50 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
   version: number | null;
 }
 
+export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors_articles {
+  __typename: "ResponsePage_ArticleDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors_collections {
+  __typename: "ResponsePage_CollectionDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors_links {
+  __typename: "ResponsePage_ExternalLinkDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors_communities_community {
+  __typename: "CommunityDTO";
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  name: string;
+}
+
+export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors_communities {
+  __typename: "MemberRoleCommunityDTO";
+  /**
+   * Community
+   */
+  community: getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors_communities_community;
+}
+
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors {
   __typename: "PublicUserDTO";
   /**
@@ -434,6 +553,33 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
    * User avatar URI
    */
   avatar: string | null;
+  /**
+   * User title
+   */
+  title: string | null;
+  /**
+   * User social links (twitter, github, etc.)
+   */
+  social: any | null;
+  /**
+   * Returns a page of ArticleDTO authored by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  articles: getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors_articles;
+  /**
+   * Returns a page of CollectionDTO owned by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  collections: getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors_collections;
+  /**
+   * Returns a page of ExternalLinkDTO owned by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  links: getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors_links;
+  /**
+   * Get communities the user is member of mapped by role
+   */
+  communities: (getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors_communities | null)[];
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_voteResult {
@@ -477,7 +623,7 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
@@ -609,6 +755,10 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
    */
   contributors: (getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO_contributors | null)[];
   /**
+   * Check if the article was already read by the current user
+   */
+  isRead: boolean;
+  /**
    * Description of the article - First 500 characters of the plaintext content)
    */
   description: string | null;
@@ -699,7 +849,7 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier {
@@ -765,6 +915,22 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
 }
 
 export type getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner = getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_ArticleDTO | getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_PublicUserDTO | getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner_CommunityDTO;
+
+export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_submitter {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User full name
+   */
+  name: string | null;
+}
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_url {
   __typename: "ExternalLinkField_String";
@@ -902,6 +1068,10 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
    */
   owner: getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
   /**
+   * External link submitter (full profile)
+   */
+  submitter: getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_submitter;
+  /**
    * The link url
    */
   url: getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_url;
@@ -1035,7 +1205,7 @@ export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_reso
 }
 
 export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier {
@@ -1101,6 +1271,22 @@ export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owne
 }
 
 export type getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner = getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner_ArticleDTO | getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner_PublicUserDTO | getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner_CommunityDTO;
+
+export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_submitter {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User full name
+   */
+  name: string | null;
+}
 
 export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_url {
   __typename: "ExternalLinkField_String";
@@ -1237,6 +1423,10 @@ export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO {
    * load the external link owner (user or community resource type)
    */
   owner: getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_owner | null;
+  /**
+   * External link submitter (full profile)
+   */
+  submitter: getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_submitter;
   /**
    * The link url
    */

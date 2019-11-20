@@ -33,6 +33,50 @@ export interface Article_resourceIdentifier {
   version: number | null;
 }
 
+export interface Article_contributors_articles {
+  __typename: "ResponsePage_ArticleDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface Article_contributors_collections {
+  __typename: "ResponsePage_CollectionDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface Article_contributors_links {
+  __typename: "ResponsePage_ExternalLinkDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface Article_contributors_communities_community {
+  __typename: "CommunityDTO";
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  name: string;
+}
+
+export interface Article_contributors_communities {
+  __typename: "MemberRoleCommunityDTO";
+  /**
+   * Community
+   */
+  community: Article_contributors_communities_community;
+}
+
 export interface Article_contributors {
   __typename: "PublicUserDTO";
   /**
@@ -51,6 +95,33 @@ export interface Article_contributors {
    * User avatar URI
    */
   avatar: string | null;
+  /**
+   * User title
+   */
+  title: string | null;
+  /**
+   * User social links (twitter, github, etc.)
+   */
+  social: any | null;
+  /**
+   * Returns a page of ArticleDTO authored by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  articles: Article_contributors_articles;
+  /**
+   * Returns a page of CollectionDTO owned by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  collections: Article_contributors_collections;
+  /**
+   * Returns a page of ExternalLinkDTO owned by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  links: Article_contributors_links;
+  /**
+   * Get communities the user is member of mapped by role
+   */
+  communities: (Article_contributors_communities | null)[];
 }
 
 export interface Article_voteResult {
@@ -94,7 +165,7 @@ export interface Article_author {
 }
 
 export interface Article_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface Article_owner_PublicUserDTO_resourceIdentifier {
@@ -225,6 +296,10 @@ export interface Article {
    * This operation can only be performed by logged user
    */
   contributors: (Article_contributors | null)[];
+  /**
+   * Check if the article was already read by the current user
+   */
+  isRead: boolean;
   /**
    * Description of the article - First 500 characters of the plaintext content)
    */

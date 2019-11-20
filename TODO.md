@@ -29,6 +29,13 @@
 
 
 # Done
+## CARDS
+- profile
+- community
+- collection
+- article
+- link
+
 ## Write Article
 - Disabled H1
 - Icon for video links

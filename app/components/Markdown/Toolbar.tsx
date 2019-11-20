@@ -5,14 +5,12 @@ import CodeIcon from '@material-ui/icons/Code'
 import QuoteIcon from '@material-ui/icons/FormatQuote'
 import TitleIcon from '@material-ui/icons/Title'
 import ImageIcon from '@material-ui/icons/ImageOutlined'
-// import VideoIcon from '@material-ui/icons/VideocamOutlined'
 import LinkIcon from '@material-ui/icons/LinkOutlined'
 import ListIcon from '@material-ui/icons/FormatListBulletedOutlined'
 import NumberedListIcon from '@material-ui/icons/FormatListNumberedOutlined'
-// import TableIcon from '@material-ui/icons/TableChartOutlined'
 import { makeStyles } from '@material-ui/styles'
 import { Theme, Tooltip } from '@material-ui/core'
-import YouTubeIcon from '@material-ui/icons/YouTube'
+import VideoIcon from '@material-ui/icons/Videocam'
 
 import URLModal from './URLModal'
 import { useEffect } from 'react'
@@ -152,7 +150,7 @@ const Toolbar = ({ format, compact, openModalAction, closeModalAction }) => {
                                 })
                             }
                         >
-                            <YouTubeIcon />
+                            <VideoIcon />
                         </div>
                     </Tooltip>
                 </>
