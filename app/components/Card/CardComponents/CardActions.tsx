@@ -27,6 +27,10 @@ const useStyles = makeStyles((theme: Theme) => ({
             color: theme.palette.common.black,
         },
     },
+    bookmarkIcon: {
+        display: 'flex',
+        alignItems: 'center'
+    }
 }))
 
 interface IProps {
@@ -86,7 +90,7 @@ export default ({
             }}
         >
             <Tooltip title={isBookmarked ? 'Unbookmark' : 'Bookmark'}>
-                <div
+                <div className={classes.bookmarkIcon}
                     onClick={() =>
                         isLoggedIn && openModalAction
                             ? openModalAction({
@@ -110,6 +114,7 @@ export default ({
                 data-testid={`ArticleCard-${id}-moreOptionsButton`}
                 aria-label="simple-menu"
                 aria-haspopup="true"
+                className={classes.bookmarkIcon}
             >
                 <Icon>more_vert</Icon>
             </div>

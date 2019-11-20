@@ -25,14 +25,14 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     name: {
         textTransform: 'capitalize',
-        marginLeft: theme.spacing(1),
+        marginLeft: theme.spacing(2),
         wordWrap: 'break-word',
         [theme.breakpoints.down('xs')]: {
             fontSize: 16,
         },
     },
     description: {
-        marginLeft: theme.spacing(1),
+        marginLeft: theme.spacing(2),
     },
     actions: {
         [theme.breakpoints.down('xs')]: {
@@ -57,12 +57,13 @@ const useStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
+        marginLeft: theme.spacing(2),
     },
     header: {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        marginLeft: theme.spacing(1),
+        marginLeft: theme.spacing(2),
         '& > h6': {
             fontWeight: 600,
         },
