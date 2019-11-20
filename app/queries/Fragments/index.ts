@@ -122,6 +122,11 @@ export const Link = gql`
             ...UserOwner
             ...CommunityOwner
         }
+        submitter {
+            id
+            username
+            name
+        }
         url {
             value
             isEditable

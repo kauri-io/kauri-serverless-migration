@@ -8605,12 +8605,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                   key="latest-content"
                                 >
                                   <WithStyles(ForwardRef(Grid))
-                                    className="makeStyles-container-276"
+                                    className="makeStyles-container-277"
                                     container={true}
                                     direction="column"
                                   >
                                     <ForwardRef(Grid)
-                                      className="makeStyles-container-276"
+                                      className="makeStyles-container-277"
                                       classes={
                                         Object {
                                           "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -8722,7 +8722,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       direction="column"
                                     >
                                       <div
-                                        className="MuiGrid-root makeStyles-container-276 MuiGrid-container MuiGrid-direction-xs-column"
+                                        className="MuiGrid-root makeStyles-container-277 MuiGrid-container MuiGrid-direction-xs-column"
                                       >
                                         <WithStyles(ForwardRef(Typography))
                                           variant="h5"
@@ -11380,13 +11380,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 </ForwardRef(Grid)>
                                               </WithStyles(ForwardRef(Grid))>
                                               <WithStyles(ForwardRef(Grid))
-                                                className="makeStyles-buttons-277"
+                                                className="makeStyles-buttons-278"
                                                 container={true}
                                                 justify="center"
                                                 spacing={2}
                                               >
                                                 <ForwardRef(Grid)
-                                                  className="makeStyles-buttons-277"
+                                                  className="makeStyles-buttons-278"
                                                   classes={
                                                     Object {
                                                       "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -11499,15 +11499,15 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                   spacing={2}
                                                 >
                                                   <div
-                                                    className="MuiGrid-root makeStyles-buttons-277 MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
+                                                    className="MuiGrid-root makeStyles-buttons-278 MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
                                                   >
                                                     <WithStyles(ForwardRef(Grid))
-                                                      className="makeStyles-button-278"
+                                                      className="makeStyles-button-279"
                                                       item={true}
                                                       sm={6}
                                                     >
                                                       <ForwardRef(Grid)
-                                                        className="makeStyles-button-278"
+                                                        className="makeStyles-button-279"
                                                         classes={
                                                           Object {
                                                             "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -11619,7 +11619,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                         sm={6}
                                                       >
                                                         <div
-                                                          className="MuiGrid-root makeStyles-button-278 MuiGrid-item MuiGrid-grid-sm-6"
+                                                          className="MuiGrid-root makeStyles-button-279 MuiGrid-item MuiGrid-grid-sm-6"
                                                         >
                                                           <Link
                                                             as="/articles"
@@ -11763,12 +11763,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       </ForwardRef(Grid)>
                                                     </WithStyles(ForwardRef(Grid))>
                                                     <WithStyles(ForwardRef(Grid))
-                                                      className="makeStyles-button-278"
+                                                      className="makeStyles-button-279"
                                                       item={true}
                                                       sm={6}
                                                     >
                                                       <ForwardRef(Grid)
-                                                        className="makeStyles-button-278"
+                                                        className="makeStyles-button-279"
                                                         classes={
                                                           Object {
                                                             "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -11880,7 +11880,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                         sm={6}
                                                       >
                                                         <div
-                                                          className="MuiGrid-root makeStyles-button-278 MuiGrid-item MuiGrid-grid-sm-6"
+                                                          className="MuiGrid-root makeStyles-button-279 MuiGrid-item MuiGrid-grid-sm-6"
                                                         >
                                                           <Link
                                                             as="/collections"
@@ -13984,14 +13984,14 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                           >
                             <WithStyles(ForwardRef(Grid))
                               alignItems="center"
-                              className="makeStyles-container-279"
+                              className="makeStyles-container-280"
                               container={true}
                               direction="column"
                               justify="center"
                             >
                               <ForwardRef(Grid)
                                 alignItems="center"
-                                className="makeStyles-container-279"
+                                className="makeStyles-container-280"
                                 classes={
                                   Object {
                                     "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -14104,16 +14104,16 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                 justify="center"
                               >
                                 <div
-                                  className="MuiGrid-root makeStyles-container-279 MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+                                  className="MuiGrid-root makeStyles-container-280 MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
                                 >
                                   <ForwardRef
-                                    className="makeStyles-icon-282"
+                                    className="makeStyles-icon-283"
                                   >
                                     <WithStyles(ForwardRef(SvgIcon))
-                                      className="makeStyles-icon-282"
+                                      className="makeStyles-icon-283"
                                     >
                                       <ForwardRef(SvgIcon)
-                                        className="makeStyles-icon-282"
+                                        className="makeStyles-icon-283"
                                         classes={
                                           Object {
                                             "colorAction": "MuiSvgIcon-colorAction",
@@ -14130,7 +14130,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       >
                                         <svg
                                           aria-hidden="true"
-                                          className="MuiSvgIcon-root makeStyles-icon-282"
+                                          className="MuiSvgIcon-root makeStyles-icon-283"
                                           focusable="false"
                                           role="presentation"
                                           viewBox="0 0 24 24"
@@ -14244,7 +14244,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                   <WithStyles(ForwardRef(TextField))
                                     InputProps={
                                       Object {
-                                        "className": "makeStyles-input-281",
+                                        "className": "makeStyles-input-282",
                                       }
                                     }
                                     margin="normal"
@@ -14256,7 +14256,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                     <ForwardRef(TextField)
                                       InputProps={
                                         Object {
-                                          "className": "makeStyles-input-281",
+                                          "className": "makeStyles-input-282",
                                         }
                                       }
                                       classes={
@@ -14297,13 +14297,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             onKeyPress={[Function]}
                                           >
                                             <WithStyles(ForwardRef(Input))
-                                              className="makeStyles-input-281"
+                                              className="makeStyles-input-282"
                                               onChange={[Function]}
                                               placeholder="Enter your email address"
                                               value=""
                                             >
                                               <ForwardRef(Input)
-                                                className="makeStyles-input-281"
+                                                className="makeStyles-input-282"
                                                 classes={
                                                   Object {
                                                     "disabled": "Mui-disabled",
@@ -14325,7 +14325,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 value=""
                                               >
                                                 <WithStyles(ForwardRef(InputBase))
-                                                  className="makeStyles-input-281"
+                                                  className="makeStyles-input-282"
                                                   classes={
                                                     Object {
                                                       "disabled": "Mui-disabled",
@@ -14351,7 +14351,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                   value=""
                                                 >
                                                   <ForwardRef(InputBase)
-                                                    className="makeStyles-input-281"
+                                                    className="makeStyles-input-282"
                                                     classes={
                                                       Object {
                                                         "adornedEnd": "MuiInputBase-adornedEnd",
@@ -14383,7 +14383,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     value=""
                                                   >
                                                     <div
-                                                      className="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-input-281 MuiInputBase-formControl MuiInput-formControl"
+                                                      className="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-input-282 MuiInputBase-formControl MuiInput-formControl"
                                                       onClick={[Function]}
                                                     >
                                                       <input
@@ -14410,7 +14410,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                     </ForwardRef(TextField)>
                                   </WithStyles(ForwardRef(TextField))>
                                   <ButtonComp
-                                    className="makeStyles-button-280"
+                                    className="makeStyles-button-281"
                                     color="primary"
                                     onClick={[Function]}
                                     variant="contained"

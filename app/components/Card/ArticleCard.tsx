@@ -3,19 +3,22 @@ import { makeStyles } from '@material-ui/styles'
 import CardImage from './CardComponents/CardImage'
 import TruncateMarkup from 'react-truncate-markup'
 import { openModalAction } from '../Modal/Module'
-
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
-
 import { connect } from 'react-redux'
-
 import { getArticleURL } from '../../lib/getURLs'
 import Link from 'next/link'
 import Details from './CardComponents/CardDetails'
+import GroupIcon from '@material-ui/icons/GroupWork'
 import Actions from './CardComponents/CardActions'
 
 const useStyles = makeStyles((theme: Theme) => ({
     card: {
-        padding: theme.spacing(2),
+        [theme.breakpoints.up('xs')]: {
+            padding: theme.spacing(2),
+        },
+        [theme.breakpoints.down('xs')]: {
+            padding: theme.spacing(1),
+        },
         display: 'flex',
         flexDirection: 'column',
     },
@@ -52,6 +55,19 @@ const useStyles = makeStyles((theme: Theme) => ({
         justifyContent: 'space-between',
         width: '100%',
     },
+    community: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        textTransform: 'capitalize',
+        '& > *': {
+            marginRight: theme.spacing(1),
+        },
+        '& svg': {
+            height: 12,
+            width: 12,
+        },
+    },
 }))
 
 const calculateMinutes = content => {
@@ -73,6 +89,7 @@ const ArticleCard = ({
     description,
     isLoggedIn,
     datePublished,
+    owner,
 }: any) => {
     const minutes = content && calculateMinutes(content)
     const classes = useStyles({})
@@ -85,14 +102,25 @@ const ArticleCard = ({
                     <Hidden smUp={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
-                                <TruncateMarkup lines={2}>
-                                    <Typography
-                                        className={classes.title}
-                                        variant="h5"
-                                    >
-                                        {title}
-                                    </Typography>
-                                </TruncateMarkup>
+                                <Grid className={classes.column}>
+                                    <TruncateMarkup lines={2}>
+                                        <Typography
+                                            className={classes.title}
+                                            variant="h5"
+                                        >
+                                            {title}
+                                        </Typography>
+                                    </TruncateMarkup>
+                                    {owner && owner.communityName && (
+                                        <Grid className={classes.community}>
+                                            <GroupIcon />
+                                            <Typography variant="caption">
+                                                {owner.communityName}
+                                            </Typography>
+                                        </Grid>
+                                    )}
+                                </Grid>
+
                                 <CardImage
                                     image={attributes && attributes.background}
                                 />
@@ -123,6 +151,14 @@ const ArticleCard = ({
                                             {description}
                                         </Typography>
                                     </TruncateMarkup>
+                                    {owner && owner.communityName && (
+                                        <Grid className={classes.community}>
+                                            <GroupIcon />
+                                            <Typography variant="caption">
+                                                {owner.communityName}
+                                            </Typography>
+                                        </Grid>
+                                    )}
                                     <Grid className={classes.bottom}>
                                         <Details
                                             user={author}
@@ -141,7 +177,7 @@ const ArticleCard = ({
                                             addArticleToCollectionAction={
                                                 addArticleToCollectionAction
                                             }
-                                            url={getArticleURL({ id, title })}
+                                            url={articleURL}
                                         />
                                     </Grid>
                                 </Grid>

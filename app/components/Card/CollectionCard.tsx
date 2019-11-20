@@ -14,10 +14,14 @@ import moment from 'moment-mini'
 
 const useStyles = makeStyles((theme: Theme) => ({
     card: {
-        padding: theme.spacing(2),
+        [theme.breakpoints.up('xs')]: {
+            padding: theme.spacing(2),
+        },
+        [theme.breakpoints.down('xs')]: {
+            padding: theme.spacing(1),
+        },
         display: 'flex',
         flexDirection: 'column',
-        color: theme.palette.common.black,
     },
     name: {
         textTransform: 'capitalize',
@@ -77,13 +81,13 @@ const CollectionCard = ({
     sections,
     openModalAction,
     routeChangeAction,
-    addArticleToCollectionAction,
+    // addArticleToCollectionAction,
     description,
     isLoggedIn,
     dateUpdated,
 }: any) => {
     const classes = useStyles({})
-    const articleURL = getCollectionURL({ id, name })
+    const collectionURL = getCollectionURL({ id, name })
 
     const articleCount =
         (sections &&
@@ -101,7 +105,7 @@ const CollectionCard = ({
         0
 
     return (
-        <Link href={articleURL.href} as={articleURL.as}>
+        <Link href={collectionURL.href} as={collectionURL.as}>
             <a>
                 <>
                     {/*  Mobile Version */}
@@ -185,10 +189,10 @@ const CollectionCard = ({
                                             routeChangeAction={
                                                 routeChangeAction
                                             }
-                                            addArticleToCollectionAction={
-                                                addArticleToCollectionAction
-                                            }
-                                            url={getCollectionURL({ id, name })}
+                                            // addArticleToCollectionAction={
+                                            //     addArticleToCollectionAction
+                                            // }
+                                            url={collectionURL}
                                         />
                                     </Grid>
                                 </Grid>
