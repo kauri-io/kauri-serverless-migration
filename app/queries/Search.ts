@@ -81,7 +81,27 @@ export const searchResultsAutocomplete = gql`
                         username
                         publicUserName: name
                         avatar
+                        social
                         userTitle: title
+                        articles(
+                            page: 0
+                            size: 1
+                            filter: { latestVersion: true }
+                        ) {
+                            totalElements
+                        }
+                        collections(page: 0, size: 1) {
+                            totalElements
+                        }
+                        links(page: 0, size: 1) {
+                            totalElements
+                        }
+                        communities {
+                            community {
+                                id
+                                name
+                            }
+                        }
                     }
                     ... on ArticleDTO {
                         id

@@ -29,8 +29,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     bookmarkIcon: {
         display: 'flex',
-        alignItems: 'center'
-    }
+        alignItems: 'center',
+    },
 }))
 
 interface IProps {
@@ -90,7 +90,8 @@ export default ({
             }}
         >
             <Tooltip title={isBookmarked ? 'Unbookmark' : 'Bookmark'}>
-                <div className={classes.bookmarkIcon}
+                <div
+                    className={classes.bookmarkIcon}
                     onClick={() =>
                         isLoggedIn && openModalAction
                             ? openModalAction({

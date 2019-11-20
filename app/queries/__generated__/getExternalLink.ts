@@ -21,7 +21,7 @@ export interface getExternalLink_getExternalLink_resourceIdentifier {
 }
 
 export interface getExternalLink_getExternalLink_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface getExternalLink_getExternalLink_owner_PublicUserDTO_resourceIdentifier {
@@ -87,6 +87,22 @@ export interface getExternalLink_getExternalLink_owner_CommunityDTO {
 }
 
 export type getExternalLink_getExternalLink_owner = getExternalLink_getExternalLink_owner_ArticleDTO | getExternalLink_getExternalLink_owner_PublicUserDTO | getExternalLink_getExternalLink_owner_CommunityDTO;
+
+export interface getExternalLink_getExternalLink_submitter {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User full name
+   */
+  name: string | null;
+}
 
 export interface getExternalLink_getExternalLink_url {
   __typename: "ExternalLinkField_String";
@@ -223,6 +239,10 @@ export interface getExternalLink_getExternalLink {
    * load the external link owner (user or community resource type)
    */
   owner: getExternalLink_getExternalLink_owner | null;
+  /**
+   * External link submitter (full profile)
+   */
+  submitter: getExternalLink_getExternalLink_submitter;
   /**
    * The link url
    */

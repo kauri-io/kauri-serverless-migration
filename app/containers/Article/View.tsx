@@ -25,6 +25,7 @@ import {
 } from '../../queries/__generated__/recordView'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { openModalAction } from '../../components/Modal/Module'
+import ProfileCard from '../../components/Card/PublicProfileCard'
 
 interface IProps {
     id: string
@@ -194,6 +195,7 @@ const ArticleComp = ({
                     <div id="content" className={classes.content}>
                         <MDRenderer markdown={JSON.parse(content).markdown} />
                     </div>
+                    {author && <ProfileCard {...author} />}
                     <Comments
                         article={resourceIdentifier}
                         addCommentAction={addCommentAction}

@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     url: {
         fontSize: 12,
-        width: '90%'
+        width: '90%',
     },
     linkIndicator: {
         background: theme.palette.common.white,
@@ -82,7 +82,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     link: {
         width: '100%',
-        
     },
     community: {
         display: 'flex',

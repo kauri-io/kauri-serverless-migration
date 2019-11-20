@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         '& > span': {
             fontWeight: 600,
             marginLeft: theme.spacing(2),
-        }
+        },
     },
     header: {
         display: 'flex',
@@ -124,9 +124,14 @@ const CommunityCard = ({
                                     </TruncateMarkup>
                                 </div>
                             </Grid>
-                            {members && <Grid className={classes.bottom}>
-                                <Typography variant='caption'>{members.length} member{members.length !== 1 && 's'}</Typography>
-                            </Grid>}
+                            {members && (
+                                <Grid className={classes.bottom}>
+                                    <Typography variant="caption">
+                                        {members.length} member
+                                        {members.length !== 1 && 's'}
+                                    </Typography>
+                                </Grid>
+                            )}
                         </Card>
                     </Hidden>
                     {/* Desktop Version */}
@@ -164,7 +169,12 @@ const CommunityCard = ({
                                         </Typography>
                                     </TruncateMarkup>
                                     <Grid className={classes.bottom}>
-                                        { members && <Typography variant='caption'>{members.length} member{members.length !== 1 && 's'}</Typography>}
+                                        {members && (
+                                            <Typography variant="caption">
+                                                {members.length} member
+                                                {members.length !== 1 && 's'}
+                                            </Typography>
+                                        )}
                                         <Actions
                                             id={id}
                                             name={name}
