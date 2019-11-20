@@ -91,11 +91,13 @@ export default ({
                 e.nativeEvent.stopImmediatePropagation()
             }}
         >
+            {console.log(openModalAction, routeChangeAction)}
             <Tooltip title={isBookmarked ? 'Unbookmark' : 'Bookmark'}>
                 <div
                     className={classes.bookmarkIcon}
-                    onClick={() =>
-                        isLoggedIn && openModalAction
+                    onClick={() => {
+                        console.log('Bookmarking..', openModalAction)
+                        return isLoggedIn && openModalAction
                             ? openModalAction({
                                   children: (
                                       <BookmarkResource
@@ -105,7 +107,7 @@ export default ({
                                   ),
                               })
                             : routeChangeAction && routeChangeAction(`/login`)
-                    }
+                    }}
                 >
                     {isBookmarked ? <BookmarkIcon /> : <BookmarkBorderIcon />}
                 </div>

@@ -111,6 +111,8 @@ const LinkCard = ({
     owner,
     url,
     submitter,
+    openModalAction,
+    routeChangeAction,
 }: any) => {
     const classes = useStyles({})
     const linkURL = getLinkUrl({ id, linkTitle })

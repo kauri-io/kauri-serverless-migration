@@ -690,6 +690,10 @@ export interface searchCollections_searchCollections_content_sections_resources_
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: searchCollections_searchCollections_content_sections_resources_ExternalLinkDTO_owner | null;

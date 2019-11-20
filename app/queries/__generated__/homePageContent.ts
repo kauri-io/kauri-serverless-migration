@@ -713,6 +713,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
@@ -1068,6 +1072,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
    * The external link submitter user id
    */
   submitterId: string;
+  /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -2238,6 +2246,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
@@ -2593,6 +2605,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
    * The external link submitter user id
    */
   submitterId: string;
+  /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -3710,6 +3726,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
@@ -4065,6 +4085,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
    * The external link submitter user id
    */
   submitterId: string;
+  /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -5207,6 +5231,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
@@ -5562,6 +5590,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
    * The external link submitter user id
    */
   submitterId: string;
+  /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -6732,6 +6764,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
@@ -7087,6 +7123,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
    * The external link submitter user id
    */
   submitterId: string;
+  /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -8204,6 +8244,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
@@ -8559,6 +8603,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
    * The external link submitter user id
    */
   submitterId: string;
+  /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
   /**
    * load the external link owner (user or community resource type)
    */
