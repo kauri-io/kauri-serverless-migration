@@ -275,7 +275,7 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
     theme={
       Object {
         "DEFAULT_CARD_WIDTH": 288,
-        "MAIN_BODY_WIDTH": 1242,
+        "MAIN_BODY_WIDTH": 1272,
         "bg": Object {
           "bgPrimary": "#1E2428",
           "bgSecondary": "#1E3D3B",
@@ -307,7 +307,7 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
         "breakpoints": Array [
           "500px",
           "52em",
-          "1242px",
+          "1272px",
         ],
         "colors": Object {
           "bgPrimary": "#1E2428",
@@ -358,17 +358,17 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
         ],
         "hoverTextColor": "#108E72",
         "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-        "padding": "calc((100vw - 1242px) / 2)",
+        "padding": "calc((100vw - 1272px) / 2)",
         "paddingTop": "2.5em",
         "primary": "#0BA986",
         "primaryColor": "#0BA986",
@@ -392,7 +392,7 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
       }
     }
   >
-    <PublicProfileCard
+    <_default
       articleCount={123}
       avatar="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
       collectionCount={123}
@@ -401,277 +401,167 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
       username="test username"
       version={123}
     >
-      <WithStyles(ForwardRef(Card))
-        className="makeStyles-card-4 "
-        key="1234567890"
+      <Link
+        as="/test username/p"
+        href="/public-profile?username=test username"
       >
-        <ForwardRef(Card)
-          className="makeStyles-card-4 "
-          classes={
-            Object {
-              "root": "MuiCard-root",
-            }
-          }
+        <a
+          href="/test username/p"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
         >
-          <WithStyles(ForwardRef(Paper))
-            className="MuiCard-root makeStyles-card-4 "
-            elevation={1}
+          <WithStyles(ForwardRef(Card))
+            className="makeStyles-card-1"
           >
-            <ForwardRef(Paper)
-              className="MuiCard-root makeStyles-card-4 "
+            <ForwardRef(Card)
+              className="makeStyles-card-1"
               classes={
                 Object {
-                  "elevation0": "MuiPaper-elevation0",
-                  "elevation1": "MuiPaper-elevation1",
-                  "elevation10": "MuiPaper-elevation10",
-                  "elevation11": "MuiPaper-elevation11",
-                  "elevation12": "MuiPaper-elevation12",
-                  "elevation13": "MuiPaper-elevation13",
-                  "elevation14": "MuiPaper-elevation14",
-                  "elevation15": "MuiPaper-elevation15",
-                  "elevation16": "MuiPaper-elevation16",
-                  "elevation17": "MuiPaper-elevation17",
-                  "elevation18": "MuiPaper-elevation18",
-                  "elevation19": "MuiPaper-elevation19",
-                  "elevation2": "MuiPaper-elevation2",
-                  "elevation20": "MuiPaper-elevation20",
-                  "elevation21": "MuiPaper-elevation21",
-                  "elevation22": "MuiPaper-elevation22",
-                  "elevation23": "MuiPaper-elevation23",
-                  "elevation24": "MuiPaper-elevation24",
-                  "elevation3": "MuiPaper-elevation3",
-                  "elevation4": "MuiPaper-elevation4",
-                  "elevation5": "MuiPaper-elevation5",
-                  "elevation6": "MuiPaper-elevation6",
-                  "elevation7": "MuiPaper-elevation7",
-                  "elevation8": "MuiPaper-elevation8",
-                  "elevation9": "MuiPaper-elevation9",
-                  "root": "MuiPaper-root",
-                  "rounded": "MuiPaper-rounded",
+                  "root": "MuiCard-root",
                 }
               }
-              elevation={1}
             >
-              <div
-                className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-4  MuiPaper-rounded"
+              <WithStyles(ForwardRef(Paper))
+                className="MuiCard-root makeStyles-card-1"
+                elevation={1}
               >
-                <div
-                  className="makeStyles-avatarContainer-3"
-                >
-                  <AvatarComp
-                    aria-label="test username"
-                    avatar="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                    data-testid="PublicProfileCard-1234567890-avatar"
-                    id="1234567890"
-                    name="PublicProfile"
-                    username="test username"
-                    withName={false}
-                  >
-                    <Link
-                      as="/test username/p"
-                      href="/public-profile?username=test username"
-                    >
-                      <a
-                        href="/test username/p"
-                        onClick={[Function]}
-                        onMouseEnter={[Function]}
-                      >
-                        <div
-                          className="makeStyles-container-40"
-                        >
-                          <ForwardRef
-                            borderRadius="2px"
-                            className="makeStyles-avatar-41"
-                            height={24}
-                            image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                            width={24}
-                          >
-                            <InView
-                              rootMargin="200px 0px"
-                              threshold={0}
-                              triggerOnce={true}
-                            >
-                              <Image__Img
-                                borderRadius="2px"
-                                className="makeStyles-avatar-41"
-                                height={24}
-                                image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                                inView={false}
-                                width={24}
-                              >
-                                <StyledComponent
-                                  borderRadius="2px"
-                                  className="makeStyles-avatar-41"
-                                  forwardedComponent={
-                                    Object {
-                                      "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": Array [],
-                                      "componentStyle": ComponentStyle {
-                                        "componentId": "Image__Img-sc-1jpuda7-0",
-                                        "isStatic": false,
-                                        "lastClassName": "fFzdZc",
-                                        "rules": Array [
-                                          "height:",
-                                          [Function],
-                                          ";width:",
-                                          [Function],
-                                          ";",
-                                          [Function],
-                                          ";background:",
-                                          [Function],
-                                          ";background-size:cover;opacity:",
-                                          [Function],
-                                          ";transition:opacity ",
-                                          [Function],
-                                          "s;",
-                                          [Function],
-                                          ";",
-                                          [Function],
-                                          ";position:",
-                                          [Function],
-                                          ";",
-                                          [Function],
-                                          ";",
-                                          [Function],
-                                          ";",
-                                          [Function],
-                                          " ",
-                                          [Function],
-                                          ";",
-                                        ],
-                                      },
-                                      "displayName": "Image__Img",
-                                      "foldedComponentIds": Array [],
-                                      "render": [Function],
-                                      "styledComponentId": "Image__Img-sc-1jpuda7-0",
-                                      "target": "div",
-                                      "toString": [Function],
-                                      "usesTheme": true,
-                                      "warnTooManyClasses": [Function],
-                                      "withComponent": [Function],
-                                    }
-                                  }
-                                  forwardedRef={[Function]}
-                                  height={24}
-                                  image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
-                                  inView={false}
-                                  width={24}
-                                >
-                                  <div
-                                    className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-41"
-                                    height={24}
-                                    width={24}
-                                  />
-                                </StyledComponent>
-                              </Image__Img>
-                            </InView>
-                          </ForwardRef>
-                        </div>
-                      </a>
-                    </Link>
-                  </AvatarComp>
-                </div>
-                <div
-                  className="makeStyles-cardActualContent-5"
+                <ForwardRef(Paper)
+                  className="MuiCard-root makeStyles-card-1"
+                  classes={
+                    Object {
+                      "elevation0": "MuiPaper-elevation0",
+                      "elevation1": "MuiPaper-elevation1",
+                      "elevation10": "MuiPaper-elevation10",
+                      "elevation11": "MuiPaper-elevation11",
+                      "elevation12": "MuiPaper-elevation12",
+                      "elevation13": "MuiPaper-elevation13",
+                      "elevation14": "MuiPaper-elevation14",
+                      "elevation15": "MuiPaper-elevation15",
+                      "elevation16": "MuiPaper-elevation16",
+                      "elevation17": "MuiPaper-elevation17",
+                      "elevation18": "MuiPaper-elevation18",
+                      "elevation19": "MuiPaper-elevation19",
+                      "elevation2": "MuiPaper-elevation2",
+                      "elevation20": "MuiPaper-elevation20",
+                      "elevation21": "MuiPaper-elevation21",
+                      "elevation22": "MuiPaper-elevation22",
+                      "elevation23": "MuiPaper-elevation23",
+                      "elevation24": "MuiPaper-elevation24",
+                      "elevation3": "MuiPaper-elevation3",
+                      "elevation4": "MuiPaper-elevation4",
+                      "elevation5": "MuiPaper-elevation5",
+                      "elevation6": "MuiPaper-elevation6",
+                      "elevation7": "MuiPaper-elevation7",
+                      "elevation8": "MuiPaper-elevation8",
+                      "elevation9": "MuiPaper-elevation9",
+                      "root": "MuiPaper-root",
+                      "rounded": "MuiPaper-rounded",
+                    }
+                  }
+                  elevation={1}
                 >
                   <div
-                    className="makeStyles-header-8"
+                    className="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-card-1 MuiPaper-rounded"
                   >
                     <div
-                      className="makeStyles-profileLabel-1"
+                      className="makeStyles-row-2"
                     >
-                      <WithStyles(ForwardRef(Icon))>
-                        <ForwardRef(Icon)
-                          classes={
-                            Object {
-                              "colorAction": "MuiIcon-colorAction",
-                              "colorDisabled": "MuiIcon-colorDisabled",
-                              "colorError": "MuiIcon-colorError",
-                              "colorPrimary": "MuiIcon-colorPrimary",
-                              "colorSecondary": "MuiIcon-colorSecondary",
-                              "fontSizeInherit": "MuiIcon-fontSizeInherit",
-                              "fontSizeLarge": "MuiIcon-fontSizeLarge",
-                              "fontSizeSmall": "MuiIcon-fontSizeSmall",
-                              "root": "MuiIcon-root",
-                            }
-                          }
-                        >
-                          <span
-                            aria-hidden={true}
-                            className="material-icons MuiIcon-root"
-                          >
-                            people
-                          </span>
-                        </ForwardRef(Icon)>
-                      </WithStyles(ForwardRef(Icon))>
-                      <WithStyles(ForwardRef(Typography))
-                        data-testid="PublicProfileCard-1234567890-profileLabel"
-                        variant="body1"
+                      <ForwardRef
+                        borderRadius="4px"
+                        className="makeStyles-avatar-5"
+                        height={90}
+                        image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                        width={90}
                       >
-                        <ForwardRef(Typography)
-                          classes={
-                            Object {
-                              "alignCenter": "MuiTypography-alignCenter",
-                              "alignJustify": "MuiTypography-alignJustify",
-                              "alignLeft": "MuiTypography-alignLeft",
-                              "alignRight": "MuiTypography-alignRight",
-                              "body1": "MuiTypography-body1",
-                              "body2": "MuiTypography-body2",
-                              "button": "MuiTypography-button",
-                              "caption": "MuiTypography-caption",
-                              "colorError": "MuiTypography-colorError",
-                              "colorInherit": "MuiTypography-colorInherit",
-                              "colorPrimary": "MuiTypography-colorPrimary",
-                              "colorSecondary": "MuiTypography-colorSecondary",
-                              "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                              "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                              "displayBlock": "MuiTypography-displayBlock",
-                              "displayInline": "MuiTypography-displayInline",
-                              "gutterBottom": "MuiTypography-gutterBottom",
-                              "h1": "MuiTypography-h1",
-                              "h2": "MuiTypography-h2",
-                              "h3": "MuiTypography-h3",
-                              "h4": "MuiTypography-h4",
-                              "h5": "MuiTypography-h5",
-                              "h6": "MuiTypography-h6",
-                              "noWrap": "MuiTypography-noWrap",
-                              "overline": "MuiTypography-overline",
-                              "paragraph": "MuiTypography-paragraph",
-                              "root": "MuiTypography-root",
-                              "srOnly": "MuiTypography-srOnly",
-                              "subtitle1": "MuiTypography-subtitle1",
-                              "subtitle2": "MuiTypography-subtitle2",
-                            }
-                          }
-                          data-testid="PublicProfileCard-1234567890-profileLabel"
-                          variant="body1"
+                        <InView
+                          rootMargin="200px 0px"
+                          threshold={0}
+                          triggerOnce={true}
                         >
-                          <p
-                            className="MuiTypography-root MuiTypography-body1"
-                            data-testid="PublicProfileCard-1234567890-profileLabel"
+                          <Image__Img
+                            borderRadius="4px"
+                            className="makeStyles-avatar-5"
+                            height={90}
+                            image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                            inView={false}
+                            width={90}
                           >
-                            Profile
-                          </p>
-                        </ForwardRef(Typography)>
-                      </WithStyles(ForwardRef(Typography))>
-                    </div>
-                    <Link
-                      as="/test username/p"
-                      href="/public-profile?username=test username"
-                    >
-                      <a
-                        className="makeStyles-name-9"
-                        href="/test username/p"
-                        onClick={[Function]}
-                        onMouseEnter={[Function]}
+                            <StyledComponent
+                              borderRadius="4px"
+                              className="makeStyles-avatar-5"
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "Image__Img-sc-1jpuda7-0",
+                                    "isStatic": false,
+                                    "lastClassName": "hCIuTQ",
+                                    "rules": Array [
+                                      "height:",
+                                      [Function],
+                                      ";width:",
+                                      [Function],
+                                      ";",
+                                      [Function],
+                                      ";background:",
+                                      [Function],
+                                      ";background-size:cover;opacity:",
+                                      [Function],
+                                      ";transition:opacity ",
+                                      [Function],
+                                      "s;",
+                                      [Function],
+                                      ";",
+                                      [Function],
+                                      ";position:",
+                                      [Function],
+                                      ";",
+                                      [Function],
+                                      ";",
+                                      [Function],
+                                      ";",
+                                      [Function],
+                                      " ",
+                                      [Function],
+                                      ";",
+                                    ],
+                                  },
+                                  "displayName": "Image__Img",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                                  "target": "div",
+                                  "toString": [Function],
+                                  "usesTheme": true,
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={[Function]}
+                              height={90}
+                              image="https://messari.s3.amazonaws.com/images/agora-images/0%3Fe%3D1554940800%26v%3Dbeta%26t%3DSc-2dZDU1bQdc0I7ZnPKr-SaPEe0yEPICWMznVDT9zU"
+                              inView={false}
+                              width={90}
+                            >
+                              <div
+                                className="Image__Img-sc-1jpuda7-0 hCIuTQ makeStyles-avatar-5"
+                                height={90}
+                                width={90}
+                              />
+                            </StyledComponent>
+                          </Image__Img>
+                        </InView>
+                      </ForwardRef>
+                      <div
+                        className="makeStyles-column-3"
                       >
                         <WithStyles(ForwardRef(Typography))
-                          className="makeStyles-name-9"
-                          data-testid="PublicProfileCard-1234567890-name"
-                          variant="h5"
+                          className="makeStyles-name-4"
+                          variant="body2"
                         >
                           <ForwardRef(Typography)
-                            className="makeStyles-name-9"
+                            className="makeStyles-name-4"
                             classes={
                               Object {
                                 "alignCenter": "MuiTypography-alignCenter",
@@ -706,154 +596,17 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                                 "subtitle2": "MuiTypography-subtitle2",
                               }
                             }
-                            data-testid="PublicProfileCard-1234567890-name"
-                            variant="h5"
+                            variant="body2"
                           >
-                            <h5
-                              className="MuiTypography-root makeStyles-name-9 MuiTypography-h5"
-                              data-testid="PublicProfileCard-1234567890-name"
+                            <p
+                              className="MuiTypography-root makeStyles-name-4 MuiTypography-body2"
                             >
                               PublicProfile
-                            </h5>
+                            </p>
                           </ForwardRef(Typography)>
                         </WithStyles(ForwardRef(Typography))>
-                      </a>
-                    </Link>
-                  </div>
-                  <Link
-                    as="/test username/p"
-                    href="/public-profile?username=test username"
-                  >
-                    <a
-                      href="/test username/p"
-                      onClick={[Function]}
-                      onMouseEnter={[Function]}
-                    >
-                      <WithStyles(ForwardRef(CardContent))
-                        className="makeStyles-content-7"
-                      >
-                        <ForwardRef(CardContent)
-                          className="makeStyles-content-7"
-                          classes={
-                            Object {
-                              "root": "MuiCardContent-root",
-                            }
-                          }
-                        >
-                          <div
-                            className="MuiCardContent-root makeStyles-content-7"
-                          >
-                            <TruncateMarkup
-                              ellipsis="..."
-                              lineHeight=""
-                              lines={2}
-                              onTruncate={[Function]}
-                              tokenize="characters"
-                            >
-                              <WithStyles(ForwardRef(Typography))
-                                color="textSecondary"
-                                component="p"
-                                data-testid="PublicProfileCard-1234567890-title"
-                                variant="body2"
-                              >
-                                <ForwardRef(Typography)
-                                  classes={
-                                    Object {
-                                      "alignCenter": "MuiTypography-alignCenter",
-                                      "alignJustify": "MuiTypography-alignJustify",
-                                      "alignLeft": "MuiTypography-alignLeft",
-                                      "alignRight": "MuiTypography-alignRight",
-                                      "body1": "MuiTypography-body1",
-                                      "body2": "MuiTypography-body2",
-                                      "button": "MuiTypography-button",
-                                      "caption": "MuiTypography-caption",
-                                      "colorError": "MuiTypography-colorError",
-                                      "colorInherit": "MuiTypography-colorInherit",
-                                      "colorPrimary": "MuiTypography-colorPrimary",
-                                      "colorSecondary": "MuiTypography-colorSecondary",
-                                      "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                      "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                      "displayBlock": "MuiTypography-displayBlock",
-                                      "displayInline": "MuiTypography-displayInline",
-                                      "gutterBottom": "MuiTypography-gutterBottom",
-                                      "h1": "MuiTypography-h1",
-                                      "h2": "MuiTypography-h2",
-                                      "h3": "MuiTypography-h3",
-                                      "h4": "MuiTypography-h4",
-                                      "h5": "MuiTypography-h5",
-                                      "h6": "MuiTypography-h6",
-                                      "noWrap": "MuiTypography-noWrap",
-                                      "overline": "MuiTypography-overline",
-                                      "paragraph": "MuiTypography-paragraph",
-                                      "root": "MuiTypography-root",
-                                      "srOnly": "MuiTypography-srOnly",
-                                      "subtitle1": "MuiTypography-subtitle1",
-                                      "subtitle2": "MuiTypography-subtitle2",
-                                    }
-                                  }
-                                  color="textSecondary"
-                                  component="p"
-                                  data-testid="PublicProfileCard-1234567890-title"
-                                  variant="body2"
-                                >
-                                  <p
-                                    className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
-                                    data-testid="PublicProfileCard-1234567890-title"
-                                  />
-                                </ForwardRef(Typography)>
-                              </WithStyles(ForwardRef(Typography))>
-                            </TruncateMarkup>
-                          </div>
-                        </ForwardRef(CardContent)>
-                      </WithStyles(ForwardRef(CardContent))>
-                    </a>
-                  </Link>
-                  <WithStyles(ForwardRef(CardActions))
-                    className="makeStyles-statistics-11"
-                  >
-                    <ForwardRef(CardActions)
-                      className="makeStyles-statistics-11"
-                      classes={
-                        Object {
-                          "root": "MuiCardActions-root",
-                          "spacing": "MuiCardActions-spacing",
-                        }
-                      }
-                    >
-                      <div
-                        className="MuiCardActions-root makeStyles-statistics-11 MuiCardActions-spacing"
-                      >
-                        <WithStyles(ForwardRef(Icon))
-                          data-testid="PublicProfileCard-1234567890-articleIcon"
-                        >
-                          <ForwardRef(Icon)
-                            classes={
-                              Object {
-                                "colorAction": "MuiIcon-colorAction",
-                                "colorDisabled": "MuiIcon-colorDisabled",
-                                "colorError": "MuiIcon-colorError",
-                                "colorPrimary": "MuiIcon-colorPrimary",
-                                "colorSecondary": "MuiIcon-colorSecondary",
-                                "fontSizeInherit": "MuiIcon-fontSizeInherit",
-                                "fontSizeLarge": "MuiIcon-fontSizeLarge",
-                                "fontSizeSmall": "MuiIcon-fontSizeSmall",
-                                "root": "MuiIcon-root",
-                              }
-                            }
-                            data-testid="PublicProfileCard-1234567890-articleIcon"
-                          >
-                            <span
-                              aria-hidden={true}
-                              className="material-icons MuiIcon-root"
-                              data-testid="PublicProfileCard-1234567890-articleIcon"
-                            >
-                              insert_drive_file
-                            </span>
-                          </ForwardRef(Icon)>
-                        </WithStyles(ForwardRef(Icon))>
                         <WithStyles(ForwardRef(Typography))
-                          data-testid="PublicProfileCard-1234567890-articleCount"
-                          variant="subtitle1"
+                          variant="body2"
                         >
                           <ForwardRef(Typography)
                             classes={
@@ -890,105 +643,43 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                                 "subtitle2": "MuiTypography-subtitle2",
                               }
                             }
-                            data-testid="PublicProfileCard-1234567890-articleCount"
-                            variant="subtitle1"
+                            variant="body2"
                           >
-                            <h6
-                              className="MuiTypography-root MuiTypography-subtitle1"
-                              data-testid="PublicProfileCard-1234567890-articleCount"
-                            >
-                              123
-                            </h6>
+                            <p
+                              className="MuiTypography-root MuiTypography-body2"
+                            />
                           </ForwardRef(Typography)>
                         </WithStyles(ForwardRef(Typography))>
-                        <WithStyles(ForwardRef(Icon))
-                          data-testid="PublicProfileCard-1234567890-collectionIcon"
+                        <div
+                          className="makeStyles-bottom-6"
                         >
-                          <ForwardRef(Icon)
-                            classes={
-                              Object {
-                                "colorAction": "MuiIcon-colorAction",
-                                "colorDisabled": "MuiIcon-colorDisabled",
-                                "colorError": "MuiIcon-colorError",
-                                "colorPrimary": "MuiIcon-colorPrimary",
-                                "colorSecondary": "MuiIcon-colorSecondary",
-                                "fontSizeInherit": "MuiIcon-fontSizeInherit",
-                                "fontSizeLarge": "MuiIcon-fontSizeLarge",
-                                "fontSizeSmall": "MuiIcon-fontSizeSmall",
-                                "root": "MuiIcon-root",
-                              }
-                            }
-                            data-testid="PublicProfileCard-1234567890-collectionIcon"
+                          <Hidden
+                            smDown={true}
                           >
-                            <span
-                              aria-hidden={true}
-                              className="material-icons MuiIcon-root"
-                              data-testid="PublicProfileCard-1234567890-collectionIcon"
-                            >
-                              folder
-                            </span>
-                          </ForwardRef(Icon)>
-                        </WithStyles(ForwardRef(Icon))>
-                        <WithStyles(ForwardRef(Typography))
-                          data-testid="PublicProfileCard-1234567890-collectionCount"
-                          variant="subtitle1"
-                        >
-                          <ForwardRef(Typography)
-                            classes={
-                              Object {
-                                "alignCenter": "MuiTypography-alignCenter",
-                                "alignJustify": "MuiTypography-alignJustify",
-                                "alignLeft": "MuiTypography-alignLeft",
-                                "alignRight": "MuiTypography-alignRight",
-                                "body1": "MuiTypography-body1",
-                                "body2": "MuiTypography-body2",
-                                "button": "MuiTypography-button",
-                                "caption": "MuiTypography-caption",
-                                "colorError": "MuiTypography-colorError",
-                                "colorInherit": "MuiTypography-colorInherit",
-                                "colorPrimary": "MuiTypography-colorPrimary",
-                                "colorSecondary": "MuiTypography-colorSecondary",
-                                "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                "displayBlock": "MuiTypography-displayBlock",
-                                "displayInline": "MuiTypography-displayInline",
-                                "gutterBottom": "MuiTypography-gutterBottom",
-                                "h1": "MuiTypography-h1",
-                                "h2": "MuiTypography-h2",
-                                "h3": "MuiTypography-h3",
-                                "h4": "MuiTypography-h4",
-                                "h5": "MuiTypography-h5",
-                                "h6": "MuiTypography-h6",
-                                "noWrap": "MuiTypography-noWrap",
-                                "overline": "MuiTypography-overline",
-                                "paragraph": "MuiTypography-paragraph",
-                                "root": "MuiTypography-root",
-                                "srOnly": "MuiTypography-srOnly",
-                                "subtitle1": "MuiTypography-subtitle1",
-                                "subtitle2": "MuiTypography-subtitle2",
-                              }
-                            }
-                            data-testid="PublicProfileCard-1234567890-collectionCount"
-                            variant="subtitle1"
-                          >
-                            <h6
-                              className="MuiTypography-root MuiTypography-subtitle1"
-                              data-testid="PublicProfileCard-1234567890-collectionCount"
-                            >
-                              123
-                            </h6>
-                          </ForwardRef(Typography)>
-                        </WithStyles(ForwardRef(Typography))>
+                            <WithWidth(HiddenJs)
+                              lgDown={false}
+                              lgUp={false}
+                              mdDown={false}
+                              mdUp={false}
+                              smDown={true}
+                              smUp={false}
+                              xlDown={false}
+                              xlUp={false}
+                              xsDown={false}
+                              xsUp={false}
+                            />
+                          </Hidden>
+                        </div>
                       </div>
-                    </ForwardRef(CardActions)>
-                  </WithStyles(ForwardRef(CardActions))>
-                </div>
-              </div>
-            </ForwardRef(Paper)>
-          </WithStyles(ForwardRef(Paper))>
-        </ForwardRef(Card)>
-      </WithStyles(ForwardRef(Card))>
-    </PublicProfileCard>
+                    </div>
+                  </div>
+                </ForwardRef(Paper)>
+              </WithStyles(ForwardRef(Paper))>
+            </ForwardRef(Card)>
+          </WithStyles(ForwardRef(Card))>
+        </a>
+      </Link>
+    </_default>
   </ThemeProvider>
 </ThemeProvider>
 `;

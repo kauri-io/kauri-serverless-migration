@@ -21,7 +21,7 @@ export interface searchExternalLinks_searchExternalLinks_content_resourceIdentif
 }
 
 export interface searchExternalLinks_searchExternalLinks_content_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchExternalLinks_searchExternalLinks_content_owner_PublicUserDTO_resourceIdentifier {
@@ -87,6 +87,22 @@ export interface searchExternalLinks_searchExternalLinks_content_owner_Community
 }
 
 export type searchExternalLinks_searchExternalLinks_content_owner = searchExternalLinks_searchExternalLinks_content_owner_ArticleDTO | searchExternalLinks_searchExternalLinks_content_owner_PublicUserDTO | searchExternalLinks_searchExternalLinks_content_owner_CommunityDTO;
+
+export interface searchExternalLinks_searchExternalLinks_content_submitter {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User full name
+   */
+  name: string | null;
+}
 
 export interface searchExternalLinks_searchExternalLinks_content_url {
   __typename: "ExternalLinkField_String";
@@ -223,6 +239,10 @@ export interface searchExternalLinks_searchExternalLinks_content {
    * load the external link owner (user or community resource type)
    */
   owner: searchExternalLinks_searchExternalLinks_content_owner | null;
+  /**
+   * External link submitter (full profile)
+   */
+  submitter: searchExternalLinks_searchExternalLinks_content_submitter;
   /**
    * The link url
    */

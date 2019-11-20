@@ -50,7 +50,7 @@ export const HomePageComponent = (props: {
             background: theme.palette.common.white,
         },
         section: {
-            maxWidth: 1242,
+            maxWidth: 1272,
             width: '100%',
             margin: 'auto',
         },

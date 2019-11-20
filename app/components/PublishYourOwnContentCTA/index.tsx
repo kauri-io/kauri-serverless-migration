@@ -20,7 +20,7 @@ interface IProps {
 const PublishYourOwnContentCTA: React.FunctionComponent<IProps> = props => {
     const useStyles = makeStyles(() => ({
         container: {
-            maxWidth: (1242 / 12) * 3,
+            maxWidth: (1272 / 12) * 3,
             width: '100%',
             marginRight: 'auto',
         },

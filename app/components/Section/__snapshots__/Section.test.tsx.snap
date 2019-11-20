@@ -287,7 +287,7 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
       theme={
         Object {
           "DEFAULT_CARD_WIDTH": 288,
-          "MAIN_BODY_WIDTH": 1242,
+          "MAIN_BODY_WIDTH": 1272,
           "bg": Object {
             "bgPrimary": "#1E2428",
             "bgSecondary": "#1E3D3B",
@@ -319,7 +319,7 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
           "breakpoints": Array [
             "500px",
             "52em",
-            "1242px",
+            "1272px",
           ],
           "colors": Object {
             "bgPrimary": "#1E2428",
@@ -370,17 +370,17 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
           ],
           "hoverTextColor": "#108E72",
           "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-          "padding": "calc((100vw - 1242px) / 2)",
+          "padding": "calc((100vw - 1272px) / 2)",
           "paddingTop": "2.5em",
           "primary": "#0BA986",
           "primaryColor": "#0BA986",
@@ -444,7 +444,7 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "ActionsSection__ActionsSectionStack-sc-1me8cd-0",
                   "isStatic": false,
-                  "lastClassName": "kejMke",
+                  "lastClassName": "dopBzl",
                   "rules": Array [
                     "background:",
                     [Function],
@@ -489,7 +489,7 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
                 ]
               }
               background="bgPrimary"
-              className="ActionsSection__ActionsSectionStack-sc-1me8cd-0 kejMke"
+              className="ActionsSection__ActionsSectionStack-sc-1me8cd-0 dopBzl"
               gap={30}
               gridAutoFlow={
                 Array [
@@ -514,7 +514,7 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
                   ]
                 }
                 background="bgPrimary"
-                className="ActionsSection__ActionsSectionStack-sc-1me8cd-0 kejMke"
+                className="ActionsSection__ActionsSectionStack-sc-1me8cd-0 dopBzl"
                 gap={30}
                 gridAutoFlow={
                   Array [
@@ -539,7 +539,7 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
                     ]
                   }
                   background="bgPrimary"
-                  className="ActionsSection__ActionsSectionStack-sc-1me8cd-0 kejMke"
+                  className="ActionsSection__ActionsSectionStack-sc-1me8cd-0 dopBzl"
                   forwardedComponent={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -658,7 +658,7 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
                   width="100%"
                 >
                   <div
-                    className="sc-bdVaJa gQKdCs ActionsSection__ActionsSectionStack-sc-1me8cd-0 kejMke"
+                    className="sc-bdVaJa gQKdCs ActionsSection__ActionsSectionStack-sc-1me8cd-0 dopBzl"
                     width="100%"
                   />
                 </StyledComponent>
@@ -959,7 +959,7 @@ exports[`components/Section/CardContentSection should match snapshot 1`] = `
       theme={
         Object {
           "DEFAULT_CARD_WIDTH": 288,
-          "MAIN_BODY_WIDTH": 1242,
+          "MAIN_BODY_WIDTH": 1272,
           "bg": Object {
             "bgPrimary": "#1E2428",
             "bgSecondary": "#1E3D3B",
@@ -991,7 +991,7 @@ exports[`components/Section/CardContentSection should match snapshot 1`] = `
           "breakpoints": Array [
             "500px",
             "52em",
-            "1242px",
+            "1272px",
           ],
           "colors": Object {
             "bgPrimary": "#1E2428",
@@ -1042,17 +1042,17 @@ exports[`components/Section/CardContentSection should match snapshot 1`] = `
           ],
           "hoverTextColor": "#108E72",
           "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-          "padding": "calc((100vw - 1242px) / 2)",
+          "padding": "calc((100vw - 1272px) / 2)",
           "paddingTop": "2.5em",
           "primary": "#0BA986",
           "primaryColor": "#0BA986",
@@ -1085,7 +1085,7 @@ exports[`components/Section/CardContentSection should match snapshot 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "CardContentSection-ygx7u9-0",
                 "isStatic": false,
-                "lastClassName": "cALcbY",
+                "lastClassName": "gFQJbA",
                 "rules": Array [
                   "display:flex;flex-direction:row;justify-content:center;flex:1;flex-wrap:wrap;padding-bottom:0;max-width:",
                   [Function],
@@ -1108,7 +1108,7 @@ exports[`components/Section/CardContentSection should match snapshot 1`] = `
           forwardedRef={null}
         >
           <section
-            className="CardContentSection-ygx7u9-0 cALcbY"
+            className="CardContentSection-ygx7u9-0 gFQJbA"
           />
         </StyledComponent>
       </CardContentSection>
@@ -1404,7 +1404,7 @@ exports[`components/Section/CardContentSection should match snapshot 2`] = `
       theme={
         Object {
           "DEFAULT_CARD_WIDTH": 288,
-          "MAIN_BODY_WIDTH": 1242,
+          "MAIN_BODY_WIDTH": 1272,
           "bg": Object {
             "bgPrimary": "#1E2428",
             "bgSecondary": "#1E3D3B",
@@ -1436,7 +1436,7 @@ exports[`components/Section/CardContentSection should match snapshot 2`] = `
           "breakpoints": Array [
             "500px",
             "52em",
-            "1242px",
+            "1272px",
           ],
           "colors": Object {
             "bgPrimary": "#1E2428",
@@ -1487,17 +1487,17 @@ exports[`components/Section/CardContentSection should match snapshot 2`] = `
           ],
           "hoverTextColor": "#108E72",
           "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-          "padding": "calc((100vw - 1242px) / 2)",
+          "padding": "calc((100vw - 1272px) / 2)",
           "paddingTop": "2.5em",
           "primary": "#0BA986",
           "primaryColor": "#0BA986",
@@ -1530,7 +1530,7 @@ exports[`components/Section/CardContentSection should match snapshot 2`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "CardContentSection-ygx7u9-0",
                 "isStatic": false,
-                "lastClassName": "cALcbY",
+                "lastClassName": "gFQJbA",
                 "rules": Array [
                   "display:flex;flex-direction:row;justify-content:center;flex:1;flex-wrap:wrap;padding-bottom:0;max-width:",
                   [Function],
@@ -1553,7 +1553,7 @@ exports[`components/Section/CardContentSection should match snapshot 2`] = `
           forwardedRef={null}
         >
           <section
-            className="CardContentSection-ygx7u9-0 cALcbY"
+            className="CardContentSection-ygx7u9-0 gFQJbA"
           />
         </StyledComponent>
       </CardContentSection>
@@ -1849,7 +1849,7 @@ exports[`components/Section/CategorySection should match snapshot 1`] = `
       theme={
         Object {
           "DEFAULT_CARD_WIDTH": 288,
-          "MAIN_BODY_WIDTH": 1242,
+          "MAIN_BODY_WIDTH": 1272,
           "bg": Object {
             "bgPrimary": "#1E2428",
             "bgSecondary": "#1E3D3B",
@@ -1881,7 +1881,7 @@ exports[`components/Section/CategorySection should match snapshot 1`] = `
           "breakpoints": Array [
             "500px",
             "52em",
-            "1242px",
+            "1272px",
           ],
           "colors": Object {
             "bgPrimary": "#1E2428",
@@ -1932,17 +1932,17 @@ exports[`components/Section/CategorySection should match snapshot 1`] = `
           ],
           "hoverTextColor": "#108E72",
           "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-          "padding": "calc((100vw - 1242px) / 2)",
+          "padding": "calc((100vw - 1272px) / 2)",
           "paddingTop": "2.5em",
           "primary": "#0BA986",
           "primaryColor": "#0BA986",
@@ -2292,7 +2292,7 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
       theme={
         Object {
           "DEFAULT_CARD_WIDTH": 288,
-          "MAIN_BODY_WIDTH": 1242,
+          "MAIN_BODY_WIDTH": 1272,
           "bg": Object {
             "bgPrimary": "#1E2428",
             "bgSecondary": "#1E3D3B",
@@ -2324,7 +2324,7 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
           "breakpoints": Array [
             "500px",
             "52em",
-            "1242px",
+            "1272px",
           ],
           "colors": Object {
             "bgPrimary": "#1E2428",
@@ -2375,17 +2375,17 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
           ],
           "hoverTextColor": "#108E72",
           "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-          "padding": "calc((100vw - 1242px) / 2)",
+          "padding": "calc((100vw - 1272px) / 2)",
           "paddingTop": "2.5em",
           "primary": "#0BA986",
           "primaryColor": "#0BA986",
@@ -2447,7 +2447,7 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "ContentSection__ContentSectionStack-sc-1mwbgto-0",
                   "isStatic": false,
-                  "lastClassName": "dqeWMW",
+                  "lastClassName": "leKNlM",
                   "rules": Array [
                     "background:",
                     [Function],
@@ -2492,7 +2492,7 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                 ]
               }
               background="tertiaryBackgroundColor"
-              className="ContentSection__ContentSectionStack-sc-1mwbgto-0 dqeWMW"
+              className="ContentSection__ContentSectionStack-sc-1mwbgto-0 leKNlM"
               gap={30}
               gridAutoFlow={
                 Array [
@@ -2515,7 +2515,7 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                   ]
                 }
                 background="tertiaryBackgroundColor"
-                className="ContentSection__ContentSectionStack-sc-1mwbgto-0 dqeWMW"
+                className="ContentSection__ContentSectionStack-sc-1mwbgto-0 leKNlM"
                 gap={30}
                 gridAutoFlow={
                   Array [
@@ -2538,7 +2538,7 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                     ]
                   }
                   background="tertiaryBackgroundColor"
-                  className="ContentSection__ContentSectionStack-sc-1mwbgto-0 dqeWMW"
+                  className="ContentSection__ContentSectionStack-sc-1mwbgto-0 leKNlM"
                   forwardedComponent={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -2655,7 +2655,7 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                   }
                 >
                   <div
-                    className="sc-bdVaJa fGetdg ContentSection__ContentSectionStack-sc-1mwbgto-0 dqeWMW"
+                    className="sc-bdVaJa fGetdg ContentSection__ContentSectionStack-sc-1mwbgto-0 leKNlM"
                   />
                 </StyledComponent>
               </Stack>
@@ -2955,7 +2955,7 @@ exports[`components/Section/PadContentSection should match snapshot 1`] = `
       theme={
         Object {
           "DEFAULT_CARD_WIDTH": 288,
-          "MAIN_BODY_WIDTH": 1242,
+          "MAIN_BODY_WIDTH": 1272,
           "bg": Object {
             "bgPrimary": "#1E2428",
             "bgSecondary": "#1E3D3B",
@@ -2987,7 +2987,7 @@ exports[`components/Section/PadContentSection should match snapshot 1`] = `
           "breakpoints": Array [
             "500px",
             "52em",
-            "1242px",
+            "1272px",
           ],
           "colors": Object {
             "bgPrimary": "#1E2428",
@@ -3038,17 +3038,17 @@ exports[`components/Section/PadContentSection should match snapshot 1`] = `
           ],
           "hoverTextColor": "#108E72",
           "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-          "padding": "calc((100vw - 1242px) / 2)",
+          "padding": "calc((100vw - 1272px) / 2)",
           "paddingTop": "2.5em",
           "primary": "#0BA986",
           "primaryColor": "#0BA986",
@@ -3081,7 +3081,7 @@ exports[`components/Section/PadContentSection should match snapshot 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "PadContentSection-sc-3ifiv7-0",
                 "isStatic": false,
-                "lastClassName": "ixxsHv",
+                "lastClassName": "leBzFl",
                 "rules": Array [
                   [Function],
                   ";background:",
@@ -3103,7 +3103,7 @@ exports[`components/Section/PadContentSection should match snapshot 1`] = `
           forwardedRef={null}
         >
           <section
-            className="PadContentSection-sc-3ifiv7-0 ixxsHv"
+            className="PadContentSection-sc-3ifiv7-0 leBzFl"
           />
         </StyledComponent>
       </PadContentSection>
@@ -3399,7 +3399,7 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
       theme={
         Object {
           "DEFAULT_CARD_WIDTH": 288,
-          "MAIN_BODY_WIDTH": 1242,
+          "MAIN_BODY_WIDTH": 1272,
           "bg": Object {
             "bgPrimary": "#1E2428",
             "bgSecondary": "#1E3D3B",
@@ -3431,7 +3431,7 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
           "breakpoints": Array [
             "500px",
             "52em",
-            "1242px",
+            "1272px",
           ],
           "colors": Object {
             "bgPrimary": "#1E2428",
@@ -3482,17 +3482,17 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
           ],
           "hoverTextColor": "#108E72",
           "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-          "padding": "calc((100vw - 1242px) / 2)",
+          "padding": "calc((100vw - 1272px) / 2)",
           "paddingTop": "2.5em",
           "primary": "#0BA986",
           "primaryColor": "#0BA986",
@@ -3555,7 +3555,7 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0",
                   "isStatic": false,
-                  "lastClassName": "iIIfDK",
+                  "lastClassName": "cvArmR",
                   "rules": Array [
                     "background:",
                     [Function],
@@ -3603,7 +3603,7 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
                 ]
               }
               background="bgPrimary"
-              className="PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0 iIIfDK"
+              className="PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0 cvArmR"
               gap={30}
               gridAutoFlow={
                 Array [
@@ -3627,7 +3627,7 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
                   ]
                 }
                 background="bgPrimary"
-                className="PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0 iIIfDK"
+                className="PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0 cvArmR"
                 gap={30}
                 gridAutoFlow={
                   Array [
@@ -3651,7 +3651,7 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
                     ]
                   }
                   background="bgPrimary"
-                  className="PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0 iIIfDK"
+                  className="PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0 cvArmR"
                   forwardedComponent={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -3769,7 +3769,7 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
                   }
                 >
                   <div
-                    className="sc-bdVaJa cEHnpq PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0 iIIfDK"
+                    className="sc-bdVaJa cEHnpq PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0 cvArmR"
                   />
                 </StyledComponent>
               </Stack>
@@ -4069,7 +4069,7 @@ exports[`components/Section/TopResourcesSection should match snapshot 1`] = `
       theme={
         Object {
           "DEFAULT_CARD_WIDTH": 288,
-          "MAIN_BODY_WIDTH": 1242,
+          "MAIN_BODY_WIDTH": 1272,
           "bg": Object {
             "bgPrimary": "#1E2428",
             "bgSecondary": "#1E3D3B",
@@ -4101,7 +4101,7 @@ exports[`components/Section/TopResourcesSection should match snapshot 1`] = `
           "breakpoints": Array [
             "500px",
             "52em",
-            "1242px",
+            "1272px",
           ],
           "colors": Object {
             "bgPrimary": "#1E2428",
@@ -4152,17 +4152,17 @@ exports[`components/Section/TopResourcesSection should match snapshot 1`] = `
           ],
           "hoverTextColor": "#108E72",
           "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-          "padding": "calc((100vw - 1242px) / 2)",
+          "padding": "calc((100vw - 1272px) / 2)",
           "paddingTop": "2.5em",
           "primary": "#0BA986",
           "primaryColor": "#0BA986",

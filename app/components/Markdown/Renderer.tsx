@@ -126,7 +126,7 @@ const Renderer = ({ markdown }) => {
                 component: Typography,
                 props: {
                     gutterBottom: true,
-                    variant: 'h5',
+                    variant: 'h4',
                     'aria-label': 'title',
                 },
             },
@@ -134,7 +134,7 @@ const Renderer = ({ markdown }) => {
                 component: Typography,
                 props: {
                     gutterBottom: true,
-                    variant: 'h6',
+                    variant: 'h5',
                     'aria-label': 'title',
                 },
             },

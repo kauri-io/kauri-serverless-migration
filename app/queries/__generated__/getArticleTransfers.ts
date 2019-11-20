@@ -33,6 +33,50 @@ export interface getArticleTransfers_getArticleTransfers_content_article_resourc
   version: number | null;
 }
 
+export interface getArticleTransfers_getArticleTransfers_content_article_contributors_articles {
+  __typename: "ResponsePage_ArticleDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface getArticleTransfers_getArticleTransfers_content_article_contributors_collections {
+  __typename: "ResponsePage_CollectionDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface getArticleTransfers_getArticleTransfers_content_article_contributors_links {
+  __typename: "ResponsePage_ExternalLinkDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface getArticleTransfers_getArticleTransfers_content_article_contributors_communities_community {
+  __typename: "CommunityDTO";
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  name: string;
+}
+
+export interface getArticleTransfers_getArticleTransfers_content_article_contributors_communities {
+  __typename: "MemberRoleCommunityDTO";
+  /**
+   * Community
+   */
+  community: getArticleTransfers_getArticleTransfers_content_article_contributors_communities_community;
+}
+
 export interface getArticleTransfers_getArticleTransfers_content_article_contributors {
   __typename: "PublicUserDTO";
   /**
@@ -51,6 +95,33 @@ export interface getArticleTransfers_getArticleTransfers_content_article_contrib
    * User avatar URI
    */
   avatar: string | null;
+  /**
+   * User title
+   */
+  title: string | null;
+  /**
+   * User social links (twitter, github, etc.)
+   */
+  social: any | null;
+  /**
+   * Returns a page of ArticleDTO authored by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  articles: getArticleTransfers_getArticleTransfers_content_article_contributors_articles;
+  /**
+   * Returns a page of CollectionDTO owned by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  collections: getArticleTransfers_getArticleTransfers_content_article_contributors_collections;
+  /**
+   * Returns a page of ExternalLinkDTO owned by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  links: getArticleTransfers_getArticleTransfers_content_article_contributors_links;
+  /**
+   * Get communities the user is member of mapped by role
+   */
+  communities: (getArticleTransfers_getArticleTransfers_content_article_contributors_communities | null)[];
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_voteResult {
@@ -94,7 +165,7 @@ export interface getArticleTransfers_getArticleTransfers_content_article_author 
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_owner_PublicUserDTO_resourceIdentifier {
@@ -225,6 +296,10 @@ export interface getArticleTransfers_getArticleTransfers_content_article {
    * This operation can only be performed by logged user
    */
   contributors: (getArticleTransfers_getArticleTransfers_content_article_contributors | null)[];
+  /**
+   * Check if the article was already read by the current user
+   */
+  isRead: boolean;
   /**
    * Description of the article - First 500 characters of the plaintext content)
    */

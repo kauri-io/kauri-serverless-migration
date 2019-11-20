@@ -287,7 +287,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
       theme={
         Object {
           "DEFAULT_CARD_WIDTH": 288,
-          "MAIN_BODY_WIDTH": 1242,
+          "MAIN_BODY_WIDTH": 1272,
           "bg": Object {
             "bgPrimary": "#1E2428",
             "bgSecondary": "#1E3D3B",
@@ -319,7 +319,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
           "breakpoints": Array [
             "500px",
             "52em",
-            "1242px",
+            "1272px",
           ],
           "colors": Object {
             "bgPrimary": "#1E2428",
@@ -370,17 +370,17 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
           ],
           "hoverTextColor": "#108E72",
           "padContent": "
-    max-width: 1242px;
+    max-width: 1272px;
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 1242px) {
-      min-width: 1242px;
+    @media (min-width: 1272px) {
+      min-width: 1272px;
     }
-    @media (max-width: 1242px) {
+    @media (max-width: 1272px) {
       min-width: 90%;
     }
   ",
-          "padding": "calc((100vw - 1242px) / 2)",
+          "padding": "calc((100vw - 1272px) / 2)",
           "paddingTop": "2.5em",
           "primary": "#0BA986",
           "primaryColor": "#0BA986",
@@ -523,9 +523,27 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                   "contributors": Array [
                     Object {
                       "__typename": "PublicUserDTO",
+                      "articles": Object {
+                        "__typename": "ResponsePage_ArticleDTO",
+                        "totalElements": 3,
+                      },
                       "avatar": "test avatar 1",
+                      "collections": Object {
+                        "__typename": "ResponsePage_CollectionDTO",
+                        "totalElements": 3,
+                      },
+                      "communities": Array [],
                       "id": "6791",
+                      "links": Object {
+                        "__typename": "ResponsePage_ExternalLinkDTO",
+                        "totalElements": 3,
+                      },
                       "name": "test author name 1",
+                      "social": Object {
+                        "github": "test github",
+                        "twitter": "twst twitter",
+                      },
+                      "title": "test title",
                       "username": "test-author-username-1",
                     },
                   ],
@@ -534,6 +552,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                   "description": "test description 1",
                   "id": "1231",
                   "isBookmarked": true,
+                  "isRead": true,
                   "owner": Object {
                     "__typename": "PublicUserDTO",
                     "avatar": "test avatar 1",
@@ -597,9 +616,27 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                   "contributors": Array [
                     Object {
                       "__typename": "PublicUserDTO",
+                      "articles": Object {
+                        "__typename": "ResponsePage_ArticleDTO",
+                        "totalElements": 3,
+                      },
                       "avatar": "test avatar 2",
+                      "collections": Object {
+                        "__typename": "ResponsePage_CollectionDTO",
+                        "totalElements": 3,
+                      },
+                      "communities": Array [],
                       "id": "6792",
+                      "links": Object {
+                        "__typename": "ResponsePage_ExternalLinkDTO",
+                        "totalElements": 3,
+                      },
                       "name": "test author name 2",
+                      "social": Object {
+                        "github": "test github",
+                        "twitter": "twst twitter",
+                      },
+                      "title": "test title",
                       "username": "test-author-username-2",
                     },
                   ],
@@ -608,6 +645,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                   "description": "test description 2",
                   "id": "1232",
                   "isBookmarked": true,
+                  "isRead": true,
                   "owner": Object {
                     "__typename": "PublicUserDTO",
                     "avatar": "test avatar 2",
@@ -844,7 +882,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                   "componentStyle": ComponentStyle {
                                     "componentId": "Header__Content-sc-647imh-1",
                                     "isStatic": false,
-                                    "lastClassName": "jxhDvf",
+                                    "lastClassName": "hAiCom",
                                     "rules": Array [
                                       "display:flex;background:",
                                       [Function],
@@ -869,7 +907,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                               forwardedRef={null}
                             >
                               <div
-                                className="Header__Content-sc-647imh-1 jxhDvf"
+                                className="Header__Content-sc-647imh-1 hAiCom"
                               >
                                 <Header__Actions>
                                   <StyledComponent
@@ -1395,7 +1433,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                           "componentStyle": ComponentStyle {
                             "componentId": "View__Content-bws0mc-1",
                             "isStatic": false,
-                            "lastClassName": "dxmSsS",
+                            "lastClassName": "eURWpK",
                             "rules": Array [
                               "display:flex;flex-direction:row;padding:",
                               [Function],
@@ -1418,7 +1456,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                       forwardedRef={null}
                     >
                       <div
-                        className="View__Content-bws0mc-1 dxmSsS"
+                        className="View__Content-bws0mc-1 eURWpK"
                       >
                         <Diffs
                           current="test contet 1"
