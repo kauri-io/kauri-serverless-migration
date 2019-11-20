@@ -91,7 +91,6 @@ export default ({
                 e.nativeEvent.stopImmediatePropagation()
             }}
         >
-            {console.log(openModalAction, routeChangeAction)}
             <Tooltip title={isBookmarked ? 'Unbookmark' : 'Bookmark'}>
                 <div
                     className={classes.bookmarkIcon}
