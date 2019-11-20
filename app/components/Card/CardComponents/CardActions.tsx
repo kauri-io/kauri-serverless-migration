@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     actions: {
         display: 'flex',
         flexDirection: 'row',
+        justifyContent: 'flex-end',
         '& > *': {
             marginLeft: theme.spacing(1),
         },
