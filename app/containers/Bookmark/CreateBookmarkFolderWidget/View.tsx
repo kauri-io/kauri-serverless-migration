@@ -91,7 +91,7 @@ export const CreateBookmarkFolderComponent = ({
                                 variant="text"
                                 onClick={reset}
                                 className={classes.link}
-                            >   
+                            >
                                 Cancel
                             </Button>
                             <Button

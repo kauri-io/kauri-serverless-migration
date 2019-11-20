@@ -113,7 +113,7 @@ export const ManageBookmarkPageComponent = ({
                                                 ? {
                                                       borderRight:
                                                           '3px solid #0BA986',
-                                                        opacity: 1
+                                                      opacity: 1,
                                                   }
                                                 : {}
                                         }
