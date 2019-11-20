@@ -23,6 +23,11 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
         display: 'flex',
         flexDirection: 'column',
+        width: '100%',
+        maxWidth: 808,
+    },
+    link: {
+        width: '100%',
     },
     title: {
         textTransform: 'capitalize',
@@ -99,7 +104,7 @@ const ArticleCard = ({
 
     return (
         <Link href={articleURL.href} as={articleURL.as}>
-            <a>
+            <a className={classes.link}>
                 <>
                     <Hidden smUp={true}>
                         <Card className={classes.card}>

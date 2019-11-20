@@ -555,6 +555,7 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
             href="/community?community_id=1234567890"
           >
             <a
+              className="makeStyles-link-2"
               href="/community/1234567890/cm"
               onClick={[Function]}
               onMouseEnter={[Function]}

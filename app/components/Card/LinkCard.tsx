@@ -23,6 +23,8 @@ const useStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
         flexDirection: 'column',
         position: 'relative',
+        width: '100%',
+        maxWidth: 808,
     },
     title: {
         textTransform: 'capitalize',

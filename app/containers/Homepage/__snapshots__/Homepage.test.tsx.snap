@@ -6500,6 +6500,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                               href="/community?community_id=5d2f30daaba2920001c82409"
                                             >
                                               <a
+                                                className="makeStyles-link-179"
                                                 href="/java-ethereum/5d2f30daaba2920001c82409/cm"
                                                 onClick={[Function]}
                                                 onMouseEnter={[Function]}
@@ -6699,6 +6700,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                               href="/article?article_id=cc41c516e62a4ca593f5ecdd86bdf299"
                                             >
                                               <a
+                                                className="makeStyles-link-188"
                                                 href="/building-and-working-with-facebook's-cryptocurrency-libra/cc41c516e62a4ca593f5ecdd86bdf299/a"
                                                 onClick={[Function]}
                                                 onMouseEnter={[Function]}
@@ -6904,6 +6906,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                               href="/collection?collection_id=5d11f9f8a6afcc0001f621de"
                                             >
                                               <a
+                                                className="makeStyles-link-196"
                                                 href="/flexible-upgradeable-and-highly-available-nfts/5d11f9f8a6afcc0001f621de/c"
                                                 onClick={[Function]}
                                                 onMouseEnter={[Function]}
@@ -7770,12 +7773,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                   key="latest-content"
                                 >
                                   <WithStyles(ForwardRef(Grid))
-                                    className="makeStyles-container-201"
+                                    className="makeStyles-container-204"
                                     container={true}
                                     direction="column"
                                   >
                                     <ForwardRef(Grid)
-                                      className="makeStyles-container-201"
+                                      className="makeStyles-container-204"
                                       classes={
                                         Object {
                                           "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -7887,7 +7890,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       direction="column"
                                     >
                                       <div
-                                        className="MuiGrid-root makeStyles-container-201 MuiGrid-container MuiGrid-direction-xs-column"
+                                        className="MuiGrid-root makeStyles-container-204 MuiGrid-container MuiGrid-direction-xs-column"
                                       >
                                         <WithStyles(ForwardRef(Typography))
                                           variant="h5"
@@ -8327,6 +8330,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           href="/article?article_id=980d76e9595d401c8fac6af3045033d4"
                                                         >
                                                           <a
+                                                            className="makeStyles-link-188"
                                                             href="/how-to-build-a-decentralized-oracle-on-ethereum-a-step-by-step-guide/980d76e9595d401c8fac6af3045033d4/a"
                                                             onClick={[Function]}
                                                             onMouseEnter={[Function]}
@@ -8643,6 +8647,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           href="/article?article_id=6012ca70153c4bb2af8b7849bcb6909f"
                                                         >
                                                           <a
+                                                            className="makeStyles-link-188"
                                                             href="/defi-and-opfi-lending-and-borrowing-platforms-(users-perspective)/6012ca70153c4bb2af8b7849bcb6909f/a"
                                                             onClick={[Function]}
                                                             onMouseEnter={[Function]}
@@ -8959,6 +8964,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           href="/article?article_id=1ab97af325d645128b6bf46760cbb873"
                                                         >
                                                           <a
+                                                            className="makeStyles-link-188"
                                                             href="/cobo-crypto-wallet-for-investing-and-staking/1ab97af325d645128b6bf46760cbb873/a"
                                                             onClick={[Function]}
                                                             onMouseEnter={[Function]}
@@ -9258,6 +9264,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           href="/collection?collection_id=5d388fa9dba75a00016a4a75"
                                                         >
                                                           <a
+                                                            className="makeStyles-link-196"
                                                             href="/defi-collection/5d388fa9dba75a00016a4a75/c"
                                                             onClick={[Function]}
                                                             onMouseEnter={[Function]}
@@ -9576,6 +9583,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           href="/article?article_id=056f5d1d53cb4d4990f43b99e8544de4"
                                                         >
                                                           <a
+                                                            className="makeStyles-link-188"
                                                             href="/my-first-post-to-the-new-defi_opfi-blog/056f5d1d53cb4d4990f43b99e8544de4/a"
                                                             onClick={[Function]}
                                                             onMouseEnter={[Function]}
@@ -9867,6 +9875,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           href="/collection?collection_id=5d36c507e95943000108e6a0"
                                                         >
                                                           <a
+                                                            className="makeStyles-link-196"
                                                             href="/read-items/5d36c507e95943000108e6a0/c"
                                                             onClick={[Function]}
                                                             onMouseEnter={[Function]}
@@ -10185,6 +10194,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           href="/article?article_id=276dd27f1458443295eea58403fd6965"
                                                         >
                                                           <a
+                                                            className="makeStyles-link-188"
                                                             href="/using-pantheon-the-java-ethereum-client-with-linux/276dd27f1458443295eea58403fd6965/a"
                                                             onClick={[Function]}
                                                             onMouseEnter={[Function]}
@@ -10501,6 +10511,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                           href="/article?article_id=760f495423db42f988d17b8c145b0874"
                                                         >
                                                           <a
+                                                            className="makeStyles-link-188"
                                                             href="/listening-for-ethereum-smart-contract-events-in-java/760f495423db42f988d17b8c145b0874/a"
                                                             onClick={[Function]}
                                                             onMouseEnter={[Function]}
@@ -10545,13 +10556,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 </ForwardRef(Grid)>
                                               </WithStyles(ForwardRef(Grid))>
                                               <WithStyles(ForwardRef(Grid))
-                                                className="makeStyles-buttons-202"
+                                                className="makeStyles-buttons-205"
                                                 container={true}
                                                 justify="center"
                                                 spacing={2}
                                               >
                                                 <ForwardRef(Grid)
-                                                  className="makeStyles-buttons-202"
+                                                  className="makeStyles-buttons-205"
                                                   classes={
                                                     Object {
                                                       "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -10664,15 +10675,15 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                   spacing={2}
                                                 >
                                                   <div
-                                                    className="MuiGrid-root makeStyles-buttons-202 MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
+                                                    className="MuiGrid-root makeStyles-buttons-205 MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
                                                   >
                                                     <WithStyles(ForwardRef(Grid))
-                                                      className="makeStyles-button-203"
+                                                      className="makeStyles-button-206"
                                                       item={true}
                                                       sm={6}
                                                     >
                                                       <ForwardRef(Grid)
-                                                        className="makeStyles-button-203"
+                                                        className="makeStyles-button-206"
                                                         classes={
                                                           Object {
                                                             "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -10784,7 +10795,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                         sm={6}
                                                       >
                                                         <div
-                                                          className="MuiGrid-root makeStyles-button-203 MuiGrid-item MuiGrid-grid-sm-6"
+                                                          className="MuiGrid-root makeStyles-button-206 MuiGrid-item MuiGrid-grid-sm-6"
                                                         >
                                                           <Link
                                                             as="/articles"
@@ -10928,12 +10939,12 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                       </ForwardRef(Grid)>
                                                     </WithStyles(ForwardRef(Grid))>
                                                     <WithStyles(ForwardRef(Grid))
-                                                      className="makeStyles-button-203"
+                                                      className="makeStyles-button-206"
                                                       item={true}
                                                       sm={6}
                                                     >
                                                       <ForwardRef(Grid)
-                                                        className="makeStyles-button-203"
+                                                        className="makeStyles-button-206"
                                                         classes={
                                                           Object {
                                                             "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -11045,7 +11056,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                         sm={6}
                                                       >
                                                         <div
-                                                          className="MuiGrid-root makeStyles-button-203 MuiGrid-item MuiGrid-grid-sm-6"
+                                                          className="MuiGrid-root makeStyles-button-206 MuiGrid-item MuiGrid-grid-sm-6"
                                                         >
                                                           <Link
                                                             as="/collections"
@@ -13149,14 +13160,14 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                           >
                             <WithStyles(ForwardRef(Grid))
                               alignItems="center"
-                              className="makeStyles-container-204"
+                              className="makeStyles-container-207"
                               container={true}
                               direction="column"
                               justify="center"
                             >
                               <ForwardRef(Grid)
                                 alignItems="center"
-                                className="makeStyles-container-204"
+                                className="makeStyles-container-207"
                                 classes={
                                   Object {
                                     "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -13269,16 +13280,16 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                 justify="center"
                               >
                                 <div
-                                  className="MuiGrid-root makeStyles-container-204 MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+                                  className="MuiGrid-root makeStyles-container-207 MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
                                 >
                                   <ForwardRef
-                                    className="makeStyles-icon-207"
+                                    className="makeStyles-icon-210"
                                   >
                                     <WithStyles(ForwardRef(SvgIcon))
-                                      className="makeStyles-icon-207"
+                                      className="makeStyles-icon-210"
                                     >
                                       <ForwardRef(SvgIcon)
-                                        className="makeStyles-icon-207"
+                                        className="makeStyles-icon-210"
                                         classes={
                                           Object {
                                             "colorAction": "MuiSvgIcon-colorAction",
@@ -13295,7 +13306,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                       >
                                         <svg
                                           aria-hidden="true"
-                                          className="MuiSvgIcon-root makeStyles-icon-207"
+                                          className="MuiSvgIcon-root makeStyles-icon-210"
                                           focusable="false"
                                           role="presentation"
                                           viewBox="0 0 24 24"
@@ -13409,7 +13420,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                   <WithStyles(ForwardRef(TextField))
                                     InputProps={
                                       Object {
-                                        "className": "makeStyles-input-206",
+                                        "className": "makeStyles-input-209",
                                       }
                                     }
                                     margin="normal"
@@ -13421,7 +13432,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                     <ForwardRef(TextField)
                                       InputProps={
                                         Object {
-                                          "className": "makeStyles-input-206",
+                                          "className": "makeStyles-input-209",
                                         }
                                       }
                                       classes={
@@ -13462,13 +13473,13 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                             onKeyPress={[Function]}
                                           >
                                             <WithStyles(ForwardRef(Input))
-                                              className="makeStyles-input-206"
+                                              className="makeStyles-input-209"
                                               onChange={[Function]}
                                               placeholder="Enter your email address"
                                               value=""
                                             >
                                               <ForwardRef(Input)
-                                                className="makeStyles-input-206"
+                                                className="makeStyles-input-209"
                                                 classes={
                                                   Object {
                                                     "disabled": "Mui-disabled",
@@ -13490,7 +13501,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                 value=""
                                               >
                                                 <WithStyles(ForwardRef(InputBase))
-                                                  className="makeStyles-input-206"
+                                                  className="makeStyles-input-209"
                                                   classes={
                                                     Object {
                                                       "disabled": "Mui-disabled",
@@ -13516,7 +13527,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                   value=""
                                                 >
                                                   <ForwardRef(InputBase)
-                                                    className="makeStyles-input-206"
+                                                    className="makeStyles-input-209"
                                                     classes={
                                                       Object {
                                                         "adornedEnd": "MuiInputBase-adornedEnd",
@@ -13548,7 +13559,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                                     value=""
                                                   >
                                                     <div
-                                                      className="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-input-206 MuiInputBase-formControl MuiInput-formControl"
+                                                      className="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-input-209 MuiInputBase-formControl MuiInput-formControl"
                                                       onClick={[Function]}
                                                     >
                                                       <input
@@ -13575,7 +13586,7 @@ exports[`containers/Homepage/View should match the snapshot 1`] = `
                                     </ForwardRef(TextField)>
                                   </WithStyles(ForwardRef(TextField))>
                                   <ButtonComp
-                                    className="makeStyles-button-205"
+                                    className="makeStyles-button-208"
                                     color="primary"
                                     onClick={[Function]}
                                     variant="contained"

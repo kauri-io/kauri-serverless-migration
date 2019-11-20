@@ -13,6 +13,8 @@ import { Article_contributors } from '../../queries/Fragments/__generated__/Arti
 const useStyles = makeStyles((theme: Theme) => ({
     card: {
         padding: theme.spacing(2),
+        width: '100%',
+        maxWidth: 808,
     },
     row: {
         display: 'flex',

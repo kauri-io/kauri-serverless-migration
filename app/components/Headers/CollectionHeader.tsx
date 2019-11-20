@@ -35,7 +35,10 @@ const LeftSide = styled.div<{ tags: any | undefined }>`
         margin-top: ${props => props.theme.space[2]}px;
     }
     @media (max-width: 500px) {
-        padding: ${props => props.theme.space[1]}px;
+        padding: ${props => props.theme.space[2]}px;
+    }
+    @media (min-width: 500px) {
+        padding: ${props => props.theme.space[2]}px;
     }
 `
 
@@ -54,6 +57,18 @@ const RightSide = styled.div`
     > button:last-child {
         margin-top: ${props => props.theme.space[3]}px;
     }
+    @media (min-width: 500px) {
+        padding: ${props => props.theme.space[2]}px;
+    }
+`
+
+const ShareContainer = styled.div`
+    width: 100%;
+    display: flex;
+    @media (max-width: 500px) {
+        justify-content: center;
+    }
+    justify-content: flex-start;
 `
 
 interface IProps {
@@ -111,7 +126,9 @@ const Container: React.SFC<IProps> = props => {
                         tags={tags}
                     />
                 )}
-                <ShareArticle color={'white'} url={url} title={name} />
+                <ShareContainer>
+                    <ShareArticle color={'white'} url={url} title={name} />
+                </ShareContainer>
             </LeftSide>
             <RightSide>
                 <StatisticsContainer

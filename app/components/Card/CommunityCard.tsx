@@ -21,6 +21,11 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
         display: 'flex',
         flexDirection: 'column',
+        width: '100%',
+        maxWidth: 808,
+    },
+    link: {
+        width: '100%',
     },
     name: {
         textTransform: 'capitalize',
@@ -95,7 +100,7 @@ const CommunityCard = ({
 
     return (
         <Link href={collectionURL.href} as={collectionURL.as}>
-            <a>
+            <a className={classes.link}>
                 <>
                     {/*  Mobile Version */}
                     <Hidden smUp={true}>

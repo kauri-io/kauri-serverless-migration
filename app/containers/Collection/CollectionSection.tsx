@@ -1,6 +1,4 @@
-import styled from 'styled-components'
 import Empty from '../PublicProfile/Empty'
-import { Title2, PageDescription } from '../../components/Typography'
 import ArticleCard from '../../components/Card/ArticleCard'
 import { Article } from '../../queries/Fragments/__generated__/Article'
 import { Collection } from '../../queries/Fragments/__generated__/Collection'
@@ -10,33 +8,7 @@ import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import LinkCard from '../../components/Card/LinkCard'
 import { Link } from '../../queries/Fragments/__generated__/Link'
 import { getArticleURL, getCollectionURL, getLinkUrl } from '../../lib/getURLs'
-
-const Container = styled.section`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-`
-
-const ResourcesSection = styled.section`
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    > div {
-        margin: ${props => props.theme.space[2]}px;
-    }
-`
-
-const StyledTitle = styled(Title2)`
-    margin-top: ${props => props.theme.space[3]}px;
-`
-
-const StyledDescription = styled(PageDescription)`
-    margin-bottom: ${props => props.theme.space[3]}px;
-`
+import { Theme, makeStyles, Typography } from '@material-ui/core'
 
 interface IProps {
     resources: [Article | Collection | Link]
@@ -49,20 +21,38 @@ interface IProps {
     routeChangeAction: typeof routeChangeAction
 }
 
+const useStyles = makeStyles((theme: Theme) => ({
+    grid: {
+        padding: theme.spacing(1),
+        maxWidth: 870,
+        margin: 'auto',
+        '& > *': {
+            marginBottom: theme.spacing(1),
+            display: 'block',
+        },
+    },
+    root: {
+        paddingTop: theme.spacing(2),
+    },
+}))
+
 const CollectionSection: React.SFC<IProps> = props => {
     const { name, description, resources } = props
+    const classes = useStyles({})
     if (resources) {
         return (
-            <Container>
-                <StyledTitle>{name}</StyledTitle>
-                <StyledDescription>{description}</StyledDescription>
-                <ResourcesSection>
-                    {resources.map((resource, key) => {
-                        console.log(resource)
+            <div className={classes.root}>
+                <Typography align="center" variant="h5">
+                    {name}
+                </Typography>
+                <Typography align="center" variant="h6">
+                    {description}
+                </Typography>
+                <div className={classes.grid}>
+                    {resources.map(resource => {
                         if (resource.__typename === 'ArticleDTO') {
                             return (
                                 <ArticleCard
-                                    key={key}
                                     href={getArticleURL(resource)}
                                     {...resource}
                                 />
@@ -143,8 +133,8 @@ const CollectionSection: React.SFC<IProps> = props => {
                         }
                         return null
                     })}
-                </ResourcesSection>
-            </Container>
+                </div>
+            </div>
         )
     }
     return <Empty />

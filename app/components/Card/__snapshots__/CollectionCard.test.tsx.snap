@@ -511,6 +511,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
             href="/collection?collection_id=1234567890"
           >
             <a
+              className="makeStyles-link-2"
               href="/collection/1234567890/c"
               onClick={[Function]}
               onMouseEnter={[Function]}

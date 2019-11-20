@@ -6877,6 +6877,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                           href="/article?article_id=1232"
                                         >
                                           <a
+                                            className="makeStyles-link-263"
                                             href="/test-title-2/1232/a"
                                             onClick={[Function]}
                                             onMouseEnter={[Function]}
@@ -7267,6 +7268,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                           href="/article?article_id=1233"
                                         >
                                           <a
+                                            className="makeStyles-link-263"
                                             href="/test-title-3/1233/a"
                                             onClick={[Function]}
                                             onMouseEnter={[Function]}

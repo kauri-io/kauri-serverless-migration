@@ -509,6 +509,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
             href="/article?article_id=0x12..."
           >
             <a
+              className="makeStyles-link-2"
               href="/article/0x12.../a"
               onClick={[Function]}
               onMouseEnter={[Function]}
