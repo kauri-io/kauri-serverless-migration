@@ -11,7 +11,6 @@ import {
 import ShareDialog from '../ShareDialog'
 import BookmarkResource from '../../../containers/Bookmark/BookmarkResourceWidget'
 import { ResourceTypeInput } from '../../../__generated__/globalTypes'
-import IconButton from '@material-ui/core/IconButton'
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
 import BookmarkIcon from '@material-ui/icons/Bookmark'
 import { useState } from 'react'
@@ -20,11 +19,33 @@ const useStyles = makeStyles((theme: Theme) => ({
     actions: {
         display: 'flex',
         flexDirection: 'row',
+        justifyContent: 'flex-end',
         '& > *': {
             marginLeft: theme.spacing(1),
         },
+        '& > button': {
+            color: theme.palette.common.black,
+        },
+    },
+    bookmarkIcon: {
+        display: 'flex',
+        alignItems: 'center',
     },
 }))
+
+interface IProps {
+    id: string
+    name: string
+    isBookmarked: boolean
+    isLoggedIn: boolean
+    openModalAction: any
+    routeChangeAction: any
+    url: {
+        as: string
+        href: string
+    }
+    addArticleToCollectionAction?: any
+}
 
 export default ({
     id,
@@ -35,12 +56,12 @@ export default ({
     routeChangeAction,
     url,
     addArticleToCollectionAction,
-}) => {
+}: IProps) => {
     const classes = useStyles({})
 
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
-    function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
+    function handleClick(event: React.MouseEvent<HTMLDivElement>) {
         setAnchorEl(event.currentTarget)
     }
 
@@ -69,7 +90,8 @@ export default ({
             }}
         >
             <Tooltip title={isBookmarked ? 'Unbookmark' : 'Bookmark'}>
-                <IconButton
+                <div
+                    className={classes.bookmarkIcon}
                     onClick={() =>
                         isLoggedIn && openModalAction
                             ? openModalAction({
@@ -86,18 +108,19 @@ export default ({
                     }
                 >
                     {isBookmarked ? <BookmarkIcon /> : <BookmarkBorderIcon />}
-                </IconButton>
+                </div>
             </Tooltip>
-            <IconButton
+            <div
                 onClick={handleClick}
                 data-testid={`ArticleCard-${id}-moreOptionsButton`}
                 aria-label="simple-menu"
                 aria-haspopup="true"
+                className={classes.bookmarkIcon}
             >
                 <Icon>more_vert</Icon>
-            </IconButton>
+            </div>
             <ShareDialog
-                href={url}
+                href={url.as}
                 name={name}
                 open={shareDialogOpen}
                 handleClose={handleClickShareDialogClose}

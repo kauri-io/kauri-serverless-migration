@@ -160,8 +160,6 @@ class ResourceRows extends React.Component<
                                                         resource.resource
                                                             .publicUserName
                                                     }
-                                                    articleCount={0}
-                                                    collectionCount={0}
                                                     title={
                                                         resource.resource
                                                             .userTitle

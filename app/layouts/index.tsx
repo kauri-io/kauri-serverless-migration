@@ -27,7 +27,12 @@ const useStyles = makeStyles((theme: Theme) => ({
         marginRight: 'auto',
         minHeight: `calc(100vh - ${footerHeight}px)`,
         overflow: 'hidden',
-        paddingTop: 64,
+        [theme.breakpoints.up('xs')]: {
+            paddingTop: 64,
+        },
+        [theme.breakpoints.down('xs')]: {
+            paddingTop: 56,
+        },
     },
 }))
 

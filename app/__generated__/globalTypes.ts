@@ -60,6 +60,7 @@ export enum ResourceTypeInput {
   INVITATION = "INVITATION",
   LINK = "LINK",
   REQUEST = "REQUEST",
+  SERIES = "SERIES",
   TEMPLATE = "TEMPLATE",
   USER = "USER",
 }

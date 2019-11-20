@@ -1,333 +1,214 @@
-import React from 'react'
-import Link from 'next/link'
-import { getCommunityURL } from '../../lib/getURLs'
-import { Theme, makeStyles } from '@material-ui/core/styles'
-import {
-    Card,
-    Typography,
-    CardContent,
-    CardActions,
-    Icon,
-    IconButton,
-} from '@material-ui/core'
+import { Card, Typography, Theme, Grid, Hidden } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
+import CardImage from './CardComponents/CardImage'
 import TruncateMarkup from 'react-truncate-markup'
-import ShareDialog from './ShareDialog'
-import Avatar from '../Avatar'
-import Image from '../Image'
+import { openModalAction } from '../Modal/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { connect } from 'react-redux'
+import { getCommunityURL } from '../../lib/getURLs'
+import Link from 'next/link'
+import Actions from './CardComponents/CardActions'
+import moment from 'moment-mini'
+import GroupIcon from '@material-ui/icons/GroupWork'
 
-export const CommunityCardStyles = makeStyles((theme: Theme) => ({
-    avatar: {
-        backgroundColor: theme.palette.primary.main,
-        textTransform: 'uppercase',
-        width: 24,
-        height: 24,
-    },
-    stripHeader: {
-        display: 'flex',
-        alignItems: 'center',
-        '& > *:not(:last-child)': {
-            marginRight: theme.spacing(1),
-        },
-    },
+const useStyles = makeStyles((theme: Theme) => ({
     card: {
-        display: 'flex',
-        padding: theme.spacing(2),
-        height: 184,
-        maxWidth: 870,
-    },
-    cardActualContent: {
+        [theme.breakpoints.up('xs')]: {
+            padding: theme.spacing(2),
+        },
+        [theme.breakpoints.down('xs')]: {
+            padding: theme.spacing(1),
+        },
         display: 'flex',
         flexDirection: 'column',
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            width: 'calc(100% - 152px)',
+    },
+    name: {
+        textTransform: 'capitalize',
+        marginLeft: theme.spacing(2),
+        marginTop: theme.spacing(1),
+        wordWrap: 'break-word',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 16,
         },
     },
-    members: {
-        display: 'flex',
-        '& > *:not(:last-child)': {
-            marginRight: theme.spacing(1),
+    description: {
+        marginLeft: theme.spacing(2),
+    },
+    actions: {
+        [theme.breakpoints.down('xs')]: {
+            display: 'none',
         },
     },
-    moreMembersCount: {
-        color: 'white',
-    },
-    moreMembers: {
-        backgroundColor: theme.palette.primary.main,
-        width: 24,
-        height: 24,
+    row: {
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 2,
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        justifyContent: 'space-between',
     },
-    content: {
-        textAlign: 'left',
-        cursor: 'pointer',
+    column: {
+        display: 'flex',
+        flexDirection: 'column',
         height: '100%',
-        padding: '0px !important',
+        width: '100%',
+        overflow: 'hidden',
+    },
+    bottom: {
+        marginTop: 'auto',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: theme.spacing(1, 0),
+        '& > span': {
+            fontWeight: 600,
+            marginLeft: theme.spacing(2),
+        },
     },
     header: {
         display: 'flex',
-        flexDirection: 'column',
-        cursor: 'pointer',
-    },
-    desktopMedia: {
-        cursor: 'pointer',
-        borderRadius: '4px',
-        height: 152,
-        width: 152,
-        marginRight: theme.spacing(1.5),
-        [theme.breakpoints.only('xs')]: {
-            display: 'none !important',
-        },
-    },
-    name: {
-        textAlign: 'left',
-        [theme.breakpoints.only('xs')]: { maxWidth: `calc(100% - 100px)` },
-    },
-    cardActions: {
-        display: 'flex',
-        marginTop: 'auto',
+        flexDirection: 'row',
         alignItems: 'center',
-        padding: `0px !important`,
-    },
-    user: {
-        display: 'flex',
-        alignItems: 'center',
-        '& > *:not(:last-child)': {
-            marginRight: theme.spacing(1),
+        marginLeft: theme.spacing(2),
+        '& > h6': {
+            fontWeight: '600',
         },
         '& > *': {
-            lineHeight: '1.57 !important',
-        },
-    },
-    statistics: {
-        display: 'flex',
-        marginLeft: 'auto !important',
-        alignItems: 'center',
-        '& > *:not(:last-child)': {
             marginRight: theme.spacing(1),
         },
     },
 }))
 
-interface IMember {
-    id: string
-    username: string | null
-    name: string | null
-    avatar: string | null
-}
-
-interface IMemberProps {
-    member: IMember
-    id: string
-    classes: any
-}
-
-const Member: React.FC<IMemberProps> = ({ member, id }) =>
-    member && (
-        <Avatar
-            aria-label={String(member && member.username)}
-            data-testid={`CommunityCard-${id}-avatar`}
-            id={String(member && member.id)}
-            name={member && member.name}
-            username={member && member.username}
-            avatar={member && member.avatar}
-            withName={false}
-        />
-    )
-
-interface IProps {
-    id: string
-    name: string | null
-    communityName?: string | null
-    description: string | null
-    avatar: string | null
-    className?: string
-    href: {
-        as: string
-        href: string
-    }
-    approvedId: (any | null)[] | null
-    members: (IMember | null)[] | null
-}
-
-const CommunityCard: React.FC<IProps> = ({
-    name,
-    communityName,
-    description,
-    className,
-    href,
+const CommunityCard = ({
     id,
-    approvedId,
+    name,
+    isBookmarked,
+    openModalAction,
+    routeChangeAction,
+    description,
+    isLoggedIn,
+    dateUpdated,
     members,
     avatar,
-}) => {
-    const classes = CommunityCardStyles({})
-
-    const [open, setOpen] = React.useState(false)
-
-    function handleClickOpen() {
-        setOpen(true)
-    }
-
-    const handleClose = () => {
-        setOpen(false)
-    }
-
-    const articleCount =
-        (approvedId &&
-            approvedId.filter(resource => resource.type === 'ARTICLE')
-                .length) ||
-        0
-
-    const collectionCount =
-        (approvedId &&
-            approvedId.filter(resource => resource.type === 'COLLECTION')
-                .length) ||
-        0
+}: any) => {
+    const classes = useStyles({})
+    const collectionURL = getCommunityURL({ id, name: name })
 
     return (
-        <Card
-            key={id}
-            className={`${classes.card} ${className ? className : ''}`}
-        >
-            <Link href={href.href} as={href.as}>
-                <a>
-                    {avatar ? (
-                        <Image
-                            className={classes.desktopMedia}
-                            data-testid={`CommunityCard-${id}-image`}
-                            width={152}
-                            height={152}
-                            image={avatar}
-                            borderRadius="4px"
-                        />
-                    ) : (
-                        <img
-                            className={classes.desktopMedia}
-                            data-testid={`CommunityCard-${id}-image`}
-                            src="/static/images/DefaultCommunity.svg"
-                        />
-                    )}
-                </a>
-            </Link>
-            <div className={classes.cardActualContent}>
-                <div className={classes.header}>
-                    <div className={classes.stripHeader}>
-                        <Link href={href.href} as={href.as}>
-                            <a className={classes.stripHeader}>
-                                <Icon>people</Icon>
-                                <Typography variant="subtitle2">
-                                    Community
-                                </Typography>
-                            </a>
-                        </Link>
-                    </div>
-                    <Link href={href.href} as={href.as}>
-                        <a
-                            data-testid={`CommunityCard-${id}-name`}
-                            className={classes.name}
-                        >
-                            <TruncateMarkup lines={1}>
-                                <Typography variant={'h5'}>
-                                    {name || communityName}
-                                </Typography>
-                            </TruncateMarkup>
-                        </a>
-                    </Link>
-                    <CardContent
-                        data-testid={`CommunityCard-${id}-description`}
-                        className={classes.content}
-                    >
-                        <Link href={href.href} as={href.as}>
-                            <a>
-                                <TruncateMarkup lines={2}>
-                                    <Typography
-                                        data-testid={`CommunityCard-${id}-description`}
-                                        variant="body2"
-                                        color="textSecondary"
-                                        component="p"
-                                    >
-                                        {description}
+        <Link href={collectionURL.href} as={collectionURL.as}>
+            <a>
+                <>
+                    {/*  Mobile Version */}
+                    <Hidden smUp={true}>
+                        <Card className={classes.card}>
+                            <Grid className={classes.row}>
+                                <CardImage image={avatar} />
+                                <div className={classes.column}>
+                                    <div className={classes.header}>
+                                        <GroupIcon />
+                                        <Typography variant="subtitle2">
+                                            Community
+                                        </Typography>
+                                        <Typography variant="body2">
+                                            {moment(String(dateUpdated)).format(
+                                                'MMM DD'
+                                            )}
+                                        </Typography>
+                                    </div>
+                                    <TruncateMarkup lines={2}>
+                                        <Typography
+                                            className={classes.name}
+                                            variant="h5"
+                                        >
+                                            {name}
+                                        </Typography>
+                                    </TruncateMarkup>
+                                </div>
+                            </Grid>
+                            {members && (
+                                <Grid className={classes.bottom}>
+                                    <Typography variant="caption">
+                                        {members.length} member
+                                        {members.length !== 1 && 's'}
                                     </Typography>
-                                </TruncateMarkup>
-                            </a>
-                        </Link>
-                    </CardContent>
-                </div>
-                <CardActions className={classes.cardActions}>
-                    <div className={classes.members}>
-                        {members &&
-                            members.slice(0, 3).map(
-                                member =>
-                                    member && (
-                                        <Member
-                                            key={member.id}
-                                            classes={classes}
-                                            // TODO update as contributors[0]
-                                            member={member}
-                                            id={id}
-                                        ></Member>
-                                    )
+                                </Grid>
                             )}
-                        {members && members.length > 3 ? (
-                            <div
-                                data-testid={`CommunityCard-${id}-moreMembers`}
-                                className={classes.moreMembers}
-                                aria-label={'more-members'}
-                            >
-                                <Typography
-                                    className={classes.moreMembersCount}
-                                    variant="caption"
-                                >
-                                    {`+${members.length - 3}`}
-                                </Typography>
-                            </div>
-                        ) : null}
-                    </div>
+                        </Card>
+                    </Hidden>
+                    {/* Desktop Version */}
+                    <Hidden xsDown={true}>
+                        <Card className={classes.card}>
+                            <Grid className={classes.row}>
+                                <CardImage image={avatar} />
+                                <Grid className={classes.column}>
+                                    <div className={classes.header}>
+                                        <GroupIcon />
+                                        <Typography variant="subtitle2">
+                                            Collection
+                                        </Typography>
+                                        <Typography variant="body2">
+                                            {moment(String(dateUpdated)).format(
+                                                'MMM DD'
+                                            )}
+                                        </Typography>
+                                    </div>
 
-                    <div className={classes.statistics}>
-                        <Icon data-testid={`CommunityCard-${id}-articleIcon`}>
-                            insert_drive_file
-                        </Icon>
-                        <Typography
-                            data-testid={`CommunityCard-${id}-articleCount`}
-                            variant="subtitle1"
-                        >
-                            {articleCount}
-                        </Typography>
-                        <Icon
-                            data-testid={`CommunityCard-${id}-collectionIcon`}
-                        >
-                            folder
-                        </Icon>
-                        <Typography
-                            data-testid={`CommunityCard-${id}-collectionCount`}
-                            variant="subtitle1"
-                        >
-                            {collectionCount}
-                        </Typography>
-
-                        <IconButton
-                            onClick={handleClickOpen}
-                            data-testid={`CommunityCard-${id}-shareIcon`}
-                            aria-label="share button"
-                        >
-                            <Icon>share</Icon>
-                        </IconButton>
-                        <ShareDialog
-                            href={getCommunityURL({ name, id }).href}
-                            name={name}
-                            open={open}
-                            handleClose={handleClose}
-                        ></ShareDialog>
-                    </div>
-                </CardActions>
-            </div>
-        </Card>
+                                    <TruncateMarkup lines={2}>
+                                        <Typography
+                                            className={classes.name}
+                                            variant="h5"
+                                        >
+                                            {name}
+                                        </Typography>
+                                    </TruncateMarkup>
+                                    <TruncateMarkup lines={2}>
+                                        <Typography
+                                            className={classes.description}
+                                            variant="body2"
+                                        >
+                                            {description}
+                                        </Typography>
+                                    </TruncateMarkup>
+                                    <Grid className={classes.bottom}>
+                                        {members && (
+                                            <Typography variant="caption">
+                                                {members.length} member
+                                                {members.length !== 1 && 's'}
+                                            </Typography>
+                                        )}
+                                        <Actions
+                                            id={id}
+                                            name={name}
+                                            isBookmarked={isBookmarked}
+                                            isLoggedIn={isLoggedIn}
+                                            openModalAction={openModalAction}
+                                            routeChangeAction={
+                                                routeChangeAction
+                                            }
+                                            // addArticleToCollectionAction={
+                                            //     addArticleToCollectionAction
+                                            // }
+                                            url={collectionURL}
+                                        />
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Card>
+                    </Hidden>
+                </>
+            </a>
+        </Link>
     )
 }
 
-export default CommunityCard
+const mapStateToProps = state => {
+    return {
+        isLoggedIn: !!(state.app && state.app.user && state.app.user.id),
+    }
+}
+export default connect(
+    mapStateToProps,
+    {
+        openModalAction,
+        routeChangeAction,
+    }
+)(CommunityCard)

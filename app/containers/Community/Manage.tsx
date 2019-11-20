@@ -50,6 +50,7 @@ const Manage: React.FunctionComponent<IProps> = ({
     pageType,
     cancelInvitation,
     formInvitations,
+    openAddMemberModal,
 }) => {
     const [tabIndex, setTabIndex] = useState(isCommunityAdmin ? 0 : 1)
     const pendingArticles =
@@ -102,6 +103,7 @@ const Manage: React.FunctionComponent<IProps> = ({
                         members={members}
                         cancelInvitation={cancelInvitation}
                         formInvitations={formInvitations}
+                        openAddMemberModal={openAddMemberModal}
                     />
                 )}
                 {tabIndex === 1 && pageType !== 'CreateCommunityForm' && (

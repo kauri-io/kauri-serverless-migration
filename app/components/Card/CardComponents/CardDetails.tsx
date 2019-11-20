@@ -21,7 +21,18 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-export default ({ user, minutes, date }) => {
+interface IProps {
+    user: {
+        id: string
+        name?: string
+        username?: string
+        avatar?: string
+    }
+    minutes?: number
+    date?: string
+}
+
+export default ({ user, minutes, date }: IProps) => {
     const classes = useStyles({})
     return (
         <Grid className={classes.details}>

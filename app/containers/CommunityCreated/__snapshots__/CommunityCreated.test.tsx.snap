@@ -13,7 +13,7 @@ exports[`containers/CommunityCreated/View should match the snapshot 1`] = `
   <Typography__component>
     Your community is now updated
   </Typography__component>
-  <CommunityCard
+  <Connect(CommunityCard)
     __typename="CommunityDTO"
     approved={
       Array [
