@@ -1064,6 +1064,10 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
@@ -1419,6 +1423,10 @@ export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO {
    * The external link submitter user id
    */
   submitterId: string;
+  /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
   /**
    * load the external link owner (user or community resource type)
    */

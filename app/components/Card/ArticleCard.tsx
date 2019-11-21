@@ -12,6 +12,7 @@ import Link from 'next/link'
 import Details from './CardComponents/CardDetails'
 import GroupIcon from '@material-ui/icons/GroupWork'
 import Actions from './CardComponents/CardActions'
+import estimateTime from '../../lib/estimateTime'
 
 const useStyles = makeStyles((theme: Theme) => ({
     card: {
@@ -20,9 +21,15 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
         [theme.breakpoints.down('xs')]: {
             padding: theme.spacing(1),
+            height: 130,
         },
         display: 'flex',
         flexDirection: 'column',
+        width: '100%',
+        maxWidth: 808,
+    },
+    link: {
+        width: '100%',
     },
     title: {
         textTransform: 'capitalize',
@@ -42,6 +49,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         flexDirection: 'row',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
+        marginTop: 'auto',
     },
     column: {
         display: 'flex',
@@ -72,11 +80,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-const calculateMinutes = content => {
-    const words = content.split(' ').length
-    return Math.ceil(words / 200)
-}
-
 const ArticleCard = ({
     id,
     title,
@@ -93,15 +96,15 @@ const ArticleCard = ({
     datePublished,
     owner,
 }: any) => {
-    const minutes = content && calculateMinutes(content)
+    const minutes = content && estimateTime(content)
     const classes = useStyles({})
     const articleURL = getArticleURL({ id, title })
 
     return (
         <Link href={articleURL.href} as={articleURL.as}>
-            <a>
+            <a className={classes.link}>
                 <>
-                    <Hidden smUp={true}>
+                    <Hidden implementation="css" smUp={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
                                 <Grid className={classes.column}>
@@ -125,6 +128,7 @@ const ArticleCard = ({
 
                                 <CardImage
                                     image={attributes && attributes.background}
+                                    type={'Article'}
                                 />
                             </Grid>
                             <Grid className={classes.row}>
@@ -136,7 +140,7 @@ const ArticleCard = ({
                             </Grid>
                         </Card>
                     </Hidden>
-                    <Hidden xsDown={true}>
+                    <Hidden implementation="css" xsDown={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
                                 <Grid className={classes.column}>
@@ -180,11 +184,13 @@ const ArticleCard = ({
                                                 addArticleToCollectionAction
                                             }
                                             url={articleURL}
+                                            type="ARTICLE"
                                         />
                                     </Grid>
                                 </Grid>
                                 <CardImage
                                     image={attributes && attributes.background}
+                                    type={'Article'}
                                 />
                             </Grid>
                         </Card>

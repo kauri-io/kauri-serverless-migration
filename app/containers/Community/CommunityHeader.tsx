@@ -220,6 +220,9 @@ const Column = styled.div`
     flex-direction: column;
     flex: 3;
     justify-content: center;
+    @media (min-width: 500px) {
+        padding: 10px;
+    }
 `
 
 const Moderators = styled.div`
@@ -240,6 +243,9 @@ const RightSide = styled.div`
     align-items: center;
     > *:not(:last-child) {
         margin-bottom: ${props => props.theme.space[3]}px;
+    }
+    @media (min-width: 500px) {
+        padding: 10px;
     }
 `
 

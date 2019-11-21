@@ -694,6 +694,10 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkD
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
@@ -1049,6 +1053,10 @@ export interface ResourceFragment_ExternalLinkDTO {
    * The external link submitter user id
    */
   submitterId: string;
+  /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
   /**
    * load the external link owner (user or community resource type)
    */

@@ -1064,6 +1064,10 @@ export interface getCommunityContent_getCommunityContent_content_resource_Collec
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;

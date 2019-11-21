@@ -135,6 +135,7 @@ export const Link = gql`
         dateCreated
         dateUpdated
         submitterId
+        isBookmarked
         owner {
             ...UserOwner
             ...CommunityOwner

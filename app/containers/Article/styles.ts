@@ -5,6 +5,17 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
         authorAvatar: {
             marginRight: theme.spacing(2),
         },
+        section: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: theme.spacing(2),
+            '& > *': {
+                fontWeight: 600,
+                marginBottom: theme.spacing(2),
+            },
+        },
         buttons: {
             alignItems: 'center',
             display: 'flex',
@@ -13,19 +24,16 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
         centralColumn: {},
         content: {
             background: theme.palette.common.white,
-            padding: theme.spacing(3),
+            padding: theme.spacing(2),
         },
-        related: {
-            marginTop: theme.spacing(3),
-            marginBottom: theme.spacing(3),
-        },
-        controls: {
+        controlsMobile: {
             '& svg': {
                 marginLeft: theme.spacing(2),
             },
             alignItems: 'center',
             display: 'flex',
-            marginTop: theme.spacing(2),
+            marginBottom: theme.spacing(2),
+            justifyContent: 'space-between',
         },
         floaterContainer: {
             display: 'flex',
@@ -46,11 +54,15 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             justifyContent: 'flex-start',
             overflowY: 'scroll',
             padding: theme.spacing(2, 2, 20, 2),
-            position: 'fixed',
+            position: 'relative',
         },
         header: {
             background: theme.palette.common.white,
-            padding: theme.spacing(3),
+            padding: theme.spacing(2),
+        },
+        headerImage: {
+            padding: theme.spacing(0, 2),
+            background: theme.palette.common.white,
         },
         recommended: {},
         root: {

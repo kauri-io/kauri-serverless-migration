@@ -11,6 +11,7 @@ import { approveResourceAction } from '../Community/Module'
 const mapStateToProps = state => {
     return {
         userId: state.app && state.app.user && state.app.user.id,
+        isLoggedIn: !!state.app && state.app.user && state.app.user.id,
         communities: state.app && state.app.user && state.app.user.communities,
     }
 }

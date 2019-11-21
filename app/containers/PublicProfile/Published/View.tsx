@@ -42,6 +42,11 @@ const Articles: React.FC<IArticlesProps> = ({
         container: {
             paddingTop: theme.spacing(4),
             paddingBottom: theme.spacing(4),
+            maxWidth: 870,
+            margin: ' 0 auto',
+            '& > *': {
+                margin: theme.spacing(1),
+            },
         },
     }))
     const classes = useStyles()
@@ -77,35 +82,19 @@ const Articles: React.FC<IArticlesProps> = ({
                     if (type === 'ARTICLE' && result && result.resource) {
                         const article = result.resource as searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO
                         return (
-                            <Grid
-                                key={article.id}
-                                item
-                                xs={12}
-                                container={true}
-                                justify="center"
-                            >
-                                <ArticleCard
-                                    href={getArticleURL(article)}
-                                    {...article}
-                                />
-                            </Grid>
+                            <ArticleCard
+                                href={getArticleURL(article)}
+                                {...article}
+                            />
                         )
                     } else if (type === 'LINK' && result && result.resource) {
                         const link = result.resource as any
                         return (
-                            <Grid
+                            <LinkCard
                                 key={link.id}
-                                item
-                                xs={12}
-                                container={true}
-                                justify="center"
-                            >
-                                <LinkCard
-                                    key={link.id}
-                                    href={getLinkUrl(link)}
-                                    {...link}
-                                />
-                            </Grid>
+                                href={getLinkUrl(link)}
+                                {...link}
+                            />
                         )
                     }
                 })}

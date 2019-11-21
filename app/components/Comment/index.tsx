@@ -6,12 +6,8 @@ import Renderer from '../Markdown/Renderer'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
-        borderTop: '1px solid #ccc',
         paddingTop: theme.spacing(2),
         margin: theme.spacing(2, 0),
-        '&:first-child': {
-            border: 'none',
-        },
     },
     text: {
         margin: theme.spacing(1, 0),

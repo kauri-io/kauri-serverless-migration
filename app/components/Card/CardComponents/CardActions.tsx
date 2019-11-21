@@ -45,6 +45,8 @@ interface IProps {
         href: string
     }
     addArticleToCollectionAction?: any
+    type: string
+    hideAddtoCollection?: boolean
 }
 
 export default ({
@@ -56,6 +58,8 @@ export default ({
     routeChangeAction,
     url,
     addArticleToCollectionAction,
+    hideAddtoCollection,
+    type,
 }: IProps) => {
     const classes = useStyles({})
 
@@ -92,20 +96,19 @@ export default ({
             <Tooltip title={isBookmarked ? 'Unbookmark' : 'Bookmark'}>
                 <div
                     className={classes.bookmarkIcon}
-                    onClick={() =>
-                        isLoggedIn && openModalAction
+                    onClick={() => {
+                        console.log('Bookmarking..', openModalAction)
+                        return isLoggedIn && openModalAction
                             ? openModalAction({
                                   children: (
                                       <BookmarkResource
                                           resourceId={id}
-                                          resourceType={
-                                              ResourceTypeInput.ARTICLE
-                                          }
+                                          resourceType={ResourceTypeInput[type]}
                                       />
                                   ),
                               })
                             : routeChangeAction && routeChangeAction(`/login`)
-                    }
+                    }}
                 >
                     {isBookmarked ? <BookmarkIcon /> : <BookmarkBorderIcon />}
                 </div>
@@ -139,7 +142,7 @@ export default ({
                     </ListItemIcon>
                     <Typography variant="inherit">Share</Typography>
                 </MenuItem>
-                {isLoggedIn && (
+                {isLoggedIn && !hideAddtoCollection && (
                     <MenuItem
                         data-testid={`ArticleCard-${id}-addToCollectionButton`}
                         onClick={() => {

@@ -10,6 +10,9 @@ const BarContainer = styled.div`
     width: 100%;
     background: transparent;
     z-index: 999;
+    @media (max-width: 600px) {
+        top: 56px;
+    }
 `
 
 const Fill = styled.div<{ scrolled: number }>`

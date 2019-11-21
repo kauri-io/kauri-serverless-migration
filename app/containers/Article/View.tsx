@@ -4,7 +4,6 @@ import React, { useEffect } from 'react'
 import ArticleOutline from '../../components/Markdown/Outline'
 import Image from '../../components/Image'
 import Avatar from '../../components/Avatar'
-import ArticleActions from './components/ArticleActions'
 import ArticleCard from '../../components/Card/ArticleCard'
 import { relatedArticles } from '../../queries/__generated__/relatedArticles'
 import MDRenderer from '../../components/Markdown/Renderer'
@@ -26,6 +25,9 @@ import {
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { openModalAction } from '../../components/Modal/Module'
 import ProfileCard from '../../components/Card/PublicProfileCard'
+import CardActions from '../../components/Card/CardComponents/CardActions'
+import estimateTime from '../../lib/estimateTime'
+import moment from 'moment-mini'
 
 interface IProps {
     id: string
@@ -40,7 +42,6 @@ interface IProps {
     openModalAction: typeof openModalAction
     userId: string
     user: any
-    // closeModalAction: () => void;
     hostName: string
     addCommentAction: (e: string) => void
     client?: ApolloClient<{}>
@@ -48,8 +49,6 @@ interface IProps {
 
 const ArticleComp = ({
     openModalAction,
-    // closeModalAction,
-    hostName,
     voteAction,
     routeChangeAction,
     addCommentAction,
@@ -65,10 +64,10 @@ const ArticleComp = ({
             attributes,
             title,
             voteResult,
-            version,
             comments,
             resourceIdentifier,
             isBookmarked,
+            datePublished,
         },
     },
 }: IProps) => {
@@ -150,15 +149,12 @@ const ArticleComp = ({
                     md={8}
                 >
                     <div className={classes.header}>
-                        <Typography color="inherit" variant="h4" component="h1">
-                            {title}
-                        </Typography>
-                        <Grid
-                            className={classes.controls}
-                            container={true}
-                            justify="space-between"
-                        >
-                            <Grid item={true} sm={6}>
+                        <Grid direction="column" container={true}>
+                            <Grid
+                                item={true}
+                                sm={12}
+                                className={classes.controlsMobile}
+                            >
                                 {author && (
                                     <Avatar
                                         avatar={author.avatar}
@@ -167,46 +163,58 @@ const ArticleComp = ({
                                         withName={true}
                                     />
                                 )}
+                                <CardActions
+                                    type="ARTICLE"
+                                    id={id}
+                                    isBookmarked={isBookmarked}
+                                    isLoggedIn={!!userId}
+                                    name={title}
+                                    url={getArticleURL({ id, title })}
+                                    openModalAction={openModalAction}
+                                    hideAddtoCollection={true}
+                                    routeChangeAction={routeChangeAction}
+                                />
                             </Grid>
-                            <ArticleActions
-                                article={{
-                                    id,
-                                    title,
-                                    version,
-                                    isBookmarked,
-                                }}
-                                userId={userId}
-                                id={String(id)}
-                                version={Number(version)}
-                                openModalAction={openModalAction}
-                                routeChangeAction={routeChangeAction}
-                                title={String(title)}
-                                hostName={hostName}
-                            />
+                            <div>
+                                <Typography gutterBottom={true}>
+                                    {content && estimateTime(content)} min read
+                                    - Posted{' '}
+                                    {moment(datePublished).format('DD MMM YY')}
+                                </Typography>
+                            </div>
                         </Grid>
+                        <Typography color="inherit" variant="h4" component="h1">
+                            {title}
+                        </Typography>
                     </div>
-                    {attributes.background && (
-                        <Image
-                            height={160}
-                            width="100%"
-                            image={attributes.background}
-                        />
-                    )}
+                    <div className={classes.headerImage}>
+                        {attributes.background && (
+                            <Image
+                                height={160}
+                                width="100%"
+                                image={attributes.background}
+                            />
+                        )}
+                    </div>
                     <div id="content" className={classes.content}>
                         <MDRenderer markdown={JSON.parse(content).markdown} />
                     </div>
-                    {author && <ProfileCard {...author} />}
-                    <Comments
-                        article={resourceIdentifier}
-                        addCommentAction={addCommentAction}
-                        user={user}
-                        comments={comments}
-                    />
-                    <Grid
-                        className={classes.related}
-                        spacing={3}
-                        container={true}
-                    >
+                    {author && (
+                        <div className={classes.section}>
+                            <Typography variant="h6">Article Author</Typography>
+                            <ProfileCard {...author} />
+                        </div>
+                    )}
+                    <div className={classes.section}>
+                        <Comments
+                            article={resourceIdentifier}
+                            addCommentAction={addCommentAction}
+                            user={user}
+                            comments={comments}
+                        />
+                    </div>
+                    <div className={classes.section}>
+                        <Typography variant="h6">Related Articles</Typography>
                         {searchMoreLikeThis &&
                             searchMoreLikeThis.content &&
                             searchMoreLikeThis.content.map(
@@ -215,18 +223,17 @@ const ArticleComp = ({
                                     recommendedArticle.resource &&
                                     recommendedArticle.resource.__typename ===
                                         'ArticleDTO' ? (
-                                        <Grid item={true} sm={12} key={key}>
-                                            <ArticleCard
-                                                className={classes.card}
-                                                href={getArticleURL(
-                                                    recommendedArticle.resource
-                                                )}
-                                                {...recommendedArticle.resource}
-                                            />
-                                        </Grid>
+                                        <ArticleCard
+                                            key={key}
+                                            className={classes.card}
+                                            href={getArticleURL(
+                                                recommendedArticle.resource
+                                            )}
+                                            {...recommendedArticle.resource}
+                                        />
                                     ) : null
                             )}
-                    </Grid>
+                    </div>
                 </Grid>
                 <Hidden smDown={true}>
                     <Grid item={true} xs={false} sm={2}>

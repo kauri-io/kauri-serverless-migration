@@ -1510,6 +1510,10 @@ export interface Community_approved_CollectionDTO_sections_resources_ExternalLin
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: Community_approved_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
@@ -2695,6 +2699,10 @@ export interface Community_pending_CollectionDTO_sections_resources_ExternalLink
    * The external link submitter user id
    */
   submitterId: string;
+  /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
   /**
    * load the external link owner (user or community resource type)
    */

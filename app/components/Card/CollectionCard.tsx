@@ -19,9 +19,15 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
         [theme.breakpoints.down('xs')]: {
             padding: theme.spacing(1),
+            height: 130,
         },
         display: 'flex',
         flexDirection: 'column',
+        width: '100%',
+        maxWidth: 808,
+    },
+    link: {
+        width: '100%',
     },
     name: {
         textTransform: 'capitalize',
@@ -44,6 +50,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         flexDirection: 'row',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
+        marginTop: 'auto',
     },
     column: {
         display: 'flex',
@@ -107,13 +114,16 @@ const CollectionCard = ({
 
     return (
         <Link href={collectionURL.href} as={collectionURL.as}>
-            <a>
+            <a className={classes.link}>
                 <>
                     {/*  Mobile Version */}
-                    <Hidden smUp={true}>
+                    <Hidden implementation="css" smUp={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
-                                <CardImage image={background} />
+                                <CardImage
+                                    image={background}
+                                    type="Collection"
+                                />
                                 <div className={classes.column}>
                                     <div className={classes.header}>
                                         <Icon>folder</Icon>
@@ -143,10 +153,13 @@ const CollectionCard = ({
                         </Card>
                     </Hidden>
                     {/* Desktop Version */}
-                    <Hidden xsDown={true}>
+                    <Hidden implementation="css" xsDown={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
-                                <CardImage image={background} />
+                                <CardImage
+                                    image={background}
+                                    type="Collection"
+                                />
                                 <Grid className={classes.column}>
                                     <div className={classes.header}>
                                         <Icon>folder</Icon>
@@ -194,6 +207,7 @@ const CollectionCard = ({
                                             //     addArticleToCollectionAction
                                             // }
                                             url={collectionURL}
+                                            type="COLLECTION"
                                         />
                                     </Grid>
                                 </Grid>

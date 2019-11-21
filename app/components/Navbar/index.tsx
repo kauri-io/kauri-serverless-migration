@@ -11,12 +11,14 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Menu from '@material-ui/core/Menu'
 import SearchIcon from '@material-ui/icons/Search'
 import AccountCircle from '@material-ui/icons/AccountCircle'
-import MoreIcon from '@material-ui/icons/MoreVert'
 import Link from 'next/link'
 import { logout } from './Module'
 import { withRouter, Router } from 'next/router'
 import { getProfileURL } from '../../lib/getURLs'
 import Avatar from '../../components/Avatar'
+import MenuIcon from '@material-ui/icons/Menu'
+import { Hidden } from '@material-ui/core'
+import Drawer from '@material-ui/core/Drawer'
 
 const useStyles = makeStyles((theme: Theme) => {
     return {
@@ -37,11 +39,21 @@ const useStyles = makeStyles((theme: Theme) => {
         },
         inputRoot: {
             color: 'inherit',
+            width: '100%',
+            paddingRight: theme.spacing(2),
         },
         logo: {
             height: 30,
-            marginRight: theme.spacing(0),
             width: 30,
+            [theme.breakpoints.down('sm')]: {
+                height: 24,
+                width: 24,
+                marginLeft: theme.spacing(2),
+            },
+        },
+        logoLink: {
+            display: 'flex',
+            alignItems: 'center',
         },
         menu: {
             '& ul': {
@@ -73,8 +85,8 @@ const useStyles = makeStyles((theme: Theme) => {
             backgroundColor: theme.palette.background.default,
             borderRadius: theme.shape.borderRadius,
             display: 'flex',
-            marginLeft: 0,
-            marginRight: theme.spacing(2),
+            marginLeft: theme.spacing(2),
+            marginRight: theme.spacing(1),
             width: '100%',
             [theme.breakpoints.up('sm')]: {
                 marginLeft: theme.spacing(3),
@@ -87,6 +99,7 @@ const useStyles = makeStyles((theme: Theme) => {
             height: '100%',
             justifyContent: 'center',
             cursor: 'pointer',
+            marginRight: theme.spacing(2),
         },
         sectionDesktop: {
             display: 'none',
@@ -104,6 +117,18 @@ const useStyles = makeStyles((theme: Theme) => {
             display: 'none',
             [theme.breakpoints.up('sm')]: {
                 display: 'block',
+            },
+        },
+        drawer: {
+            width: 266,
+            padding: theme.spacing(4),
+            display: 'flex',
+            flexDirection: 'column',
+            '& > *': {
+                marginBottom: theme.spacing(2),
+                '& > *': {
+                    fontWeight: 600,
+                },
             },
         },
     }
@@ -134,23 +159,13 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
         HTMLLIElement | HTMLButtonElement | null
     >(null)
 
-    const [
-        mobileMoreAnchorEl,
-        setMobileMoreAnchorEl,
-    ] = React.useState<HTMLButtonElement | null>(null)
-
     const isMenuOpen = Boolean(accountAnchorEl)
     const isCreateMenuOpen = Boolean(createAnchorEl)
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
 
     const handleProfileMenuOpen = (
         event: React.MouseEvent<HTMLLIElement | HTMLButtonElement>
     ) => {
         setAccountAnchorEl(event.currentTarget)
-    }
-
-    function handleMobileMenuClose() {
-        setMobileMoreAnchorEl(null)
     }
 
     function handleCreateMenuClose() {
@@ -165,13 +180,6 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
 
     function handleMenuClose() {
         setAccountAnchorEl(null)
-        handleMobileMenuClose()
-    }
-
-    const handleMobileMenuOpen = (
-        event: React.MouseEvent<HTMLButtonElement>
-    ) => {
-        setMobileMoreAnchorEl(event.currentTarget)
     }
 
     const renderMenu = (
@@ -248,100 +256,71 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
         </>
     )
 
-    const renderMobileMenu = (
-        <Menu
-            anchorEl={mobileMoreAnchorEl}
-            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-            open={isMobileMenuOpen}
-            onClose={handleMobileMenuClose}
-            className={classes.menu}
-        >
-            <MenuItem
-                onClick={
-                    user ? handleProfileMenuOpen : () => router.push('/login')
-                }
-            >
-                <IconButton color="inherit">
-                    {!user || !user.id ? (
-                        <AccountCircle className={classes.avatar} />
-                    ) : (
-                        <Avatar
-                            className={classes.avatar}
-                            avatar={user.avatar}
-                            id={user.id}
-                            withName={false}
-                            ignoreLink={true}
-                        />
-                    )}
-                </IconButton>
-                <p>Profile</p>
-            </MenuItem>
-        </Menu>
+    const [drawerOpen, setDrawerOpen] = useState(false)
+
+    const menu = (
+        <>
+            <Link href="/">
+                <a>
+                    <Typography className={classes.navlink} variant="button">
+                        Home
+                    </Typography>
+                </a>
+            </Link>
+            <Link href="/articles">
+                <a>
+                    <Typography className={classes.navlink} variant="button">
+                        Articles
+                    </Typography>
+                </a>
+            </Link>
+            <Link href="/collections">
+                <a>
+                    <Typography className={classes.navlink} variant="button">
+                        Collections
+                    </Typography>
+                </a>
+            </Link>
+            <Link href="/communities">
+                <a>
+                    <Typography className={classes.navlink} variant="button">
+                        Communities
+                    </Typography>
+                </a>
+            </Link>
+            <Link href="/help">
+                <a>
+                    <Typography className={classes.navlink} variant="button">
+                        Help
+                    </Typography>
+                </a>
+            </Link>
+        </>
     )
 
     return (
         <div className={classes.grow}>
+            <Drawer
+                anchor="left"
+                open={drawerOpen}
+                onClose={() => setDrawerOpen(false)}
+            >
+                <div className={classes.drawer}>{menu}</div>
+            </Drawer>
             <AppBar elevation={1} position="fixed" color="inherit">
                 <Toolbar className={classes.navbar}>
+                    <Hidden mdUp={true}>
+                        <MenuIcon onClick={() => setDrawerOpen(true)} />
+                    </Hidden>
                     <Link href="/">
-                        <a>
+                        <a className={classes.logoLink}>
                             <img
                                 className={classes.logo}
                                 src="/static/images/logo.svg"
                             />
                         </a>
                     </Link>
-                    <Link href="/">
-                        <a>
-                            <Typography
-                                className={classes.navlink}
-                                variant="button"
-                            >
-                                Home
-                            </Typography>
-                        </a>
-                    </Link>
-                    <Link href="/articles">
-                        <a>
-                            <Typography
-                                className={classes.navlink}
-                                variant="button"
-                            >
-                                Articles
-                            </Typography>
-                        </a>
-                    </Link>
-                    <Link href="/collections">
-                        <a>
-                            <Typography
-                                className={classes.navlink}
-                                variant="button"
-                            >
-                                Collections
-                            </Typography>
-                        </a>
-                    </Link>
-                    <Link href="/communities">
-                        <a>
-                            <Typography
-                                className={classes.navlink}
-                                variant="button"
-                            >
-                                Communities
-                            </Typography>
-                        </a>
-                    </Link>
-                    <Link href="/help">
-                        <a>
-                            <Typography
-                                className={classes.navlink}
-                                variant="button"
-                            >
-                                Help
-                            </Typography>
-                        </a>
-                    </Link>
+                    <Hidden smDown={true}>{menu}</Hidden>
                     <div className={classes.grow} />
                     <div className={classes.searchClass}>
                         <InputBase
@@ -369,13 +348,15 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                             <SearchIcon />
                         </div>
                     </div>
-                    <Typography
-                        variant="button"
-                        className={classes.navlink}
-                        onClick={handleCreateMenuOpen}
-                    >
-                        Create
-                    </Typography>
+                    <Hidden smDown={true}>
+                        <Typography
+                            variant="button"
+                            className={classes.navlink}
+                            onClick={handleCreateMenuOpen}
+                        >
+                            Create
+                        </Typography>
+                    </Hidden>
                     <div className={classes.sectionDesktop}>
                         <IconButton
                             edge="end"
@@ -403,19 +384,9 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                             )}
                         </IconButton>
                     </div>
-                    <div className={classes.sectionMobile}>
-                        <IconButton
-                            aria-haspopup="true"
-                            onClick={handleMobileMenuOpen}
-                            color="inherit"
-                        >
-                            <MoreIcon />
-                        </IconButton>
-                    </div>
                 </Toolbar>
             </AppBar>
             {renderMenu}
-            {renderMobileMenu}
         </div>
     )
 }
