@@ -52,9 +52,15 @@ const useStyles = makeStyles((theme: Theme) => ({
     column: {
         display: 'flex',
         flexDirection: 'column',
-        height: '100%',
         width: '100%',
         textAlign: 'left',
+        paddingRight: theme.spacing(2),
+        [theme.breakpoints.up('sm')]: {
+            height: 150
+        },
+        [theme.breakpoints.down('sm')]: {
+            height: 90
+        }
     },
     bottom: {
         marginTop: 'auto',
