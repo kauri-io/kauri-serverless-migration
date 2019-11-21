@@ -108,7 +108,7 @@ const ArticleCard = ({
         <Link href={articleURL.href} as={articleURL.as}>
             <a className={classes.link}>
                 <>
-                    <Hidden implementation='css' smUp={true}>
+                    <Hidden implementation="css" smUp={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
                                 <Grid className={classes.column}>
@@ -144,7 +144,7 @@ const ArticleCard = ({
                             </Grid>
                         </Card>
                     </Hidden>
-                    <Hidden implementation='css' xsDown={true}>
+                    <Hidden implementation="css" xsDown={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
                                 <Grid className={classes.column}>

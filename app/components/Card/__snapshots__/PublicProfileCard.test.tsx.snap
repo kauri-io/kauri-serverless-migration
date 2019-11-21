@@ -654,9 +654,10 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                           className="makeStyles-bottom-6"
                         >
                           <Hidden
+                            implementation="css"
                             smDown={true}
                           >
-                            <WithWidth(HiddenJs)
+                            <WithStyles(HiddenCss)
                               lgDown={false}
                               lgUp={false}
                               mdDown={false}
@@ -667,7 +668,267 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                               xlUp={false}
                               xsDown={false}
                               xsUp={false}
-                            />
+                            >
+                              <HiddenCss
+                                classes={
+                                  Object {
+                                    "lgDown": "PrivateHiddenCss-lgDown-76",
+                                    "lgUp": "PrivateHiddenCss-lgUp-75",
+                                    "mdDown": "PrivateHiddenCss-mdDown-73",
+                                    "mdUp": "PrivateHiddenCss-mdUp-72",
+                                    "onlyLg": "PrivateHiddenCss-onlyLg-74",
+                                    "onlyMd": "PrivateHiddenCss-onlyMd-71",
+                                    "onlySm": "PrivateHiddenCss-onlySm-68",
+                                    "onlyXl": "PrivateHiddenCss-onlyXl-77",
+                                    "onlyXs": "PrivateHiddenCss-onlyXs-65",
+                                    "smDown": "PrivateHiddenCss-smDown-70",
+                                    "smUp": "PrivateHiddenCss-smUp-69",
+                                    "xlDown": "PrivateHiddenCss-xlDown-79",
+                                    "xlUp": "PrivateHiddenCss-xlUp-78",
+                                    "xsDown": "PrivateHiddenCss-xsDown-67",
+                                    "xsUp": "PrivateHiddenCss-xsUp-66",
+                                  }
+                                }
+                                lgDown={false}
+                                lgUp={false}
+                                mdDown={false}
+                                mdUp={false}
+                                smDown={true}
+                                smUp={false}
+                                xlDown={false}
+                                xlUp={false}
+                                xsDown={false}
+                                xsUp={false}
+                              >
+                                <div
+                                  className="PrivateHiddenCss-smDown-70"
+                                >
+                                  <div
+                                    className="makeStyles-row-2"
+                                  >
+                                    <ForwardRef>
+                                      <WithStyles(ForwardRef(SvgIcon))>
+                                        <ForwardRef(SvgIcon)
+                                          classes={
+                                            Object {
+                                              "colorAction": "MuiSvgIcon-colorAction",
+                                              "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                              "colorError": "MuiSvgIcon-colorError",
+                                              "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                              "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                              "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                              "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                              "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                              "root": "MuiSvgIcon-root",
+                                            }
+                                          }
+                                        >
+                                          <svg
+                                            aria-hidden="true"
+                                            className="MuiSvgIcon-root"
+                                            focusable="false"
+                                            role="presentation"
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <path
+                                              d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"
+                                            />
+                                          </svg>
+                                        </ForwardRef(SvgIcon)>
+                                      </WithStyles(ForwardRef(SvgIcon))>
+                                    </ForwardRef>
+                                    <WithStyles(ForwardRef(Typography))>
+                                      <ForwardRef(Typography)
+                                        classes={
+                                          Object {
+                                            "alignCenter": "MuiTypography-alignCenter",
+                                            "alignJustify": "MuiTypography-alignJustify",
+                                            "alignLeft": "MuiTypography-alignLeft",
+                                            "alignRight": "MuiTypography-alignRight",
+                                            "body1": "MuiTypography-body1",
+                                            "body2": "MuiTypography-body2",
+                                            "button": "MuiTypography-button",
+                                            "caption": "MuiTypography-caption",
+                                            "colorError": "MuiTypography-colorError",
+                                            "colorInherit": "MuiTypography-colorInherit",
+                                            "colorPrimary": "MuiTypography-colorPrimary",
+                                            "colorSecondary": "MuiTypography-colorSecondary",
+                                            "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                            "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                            "displayBlock": "MuiTypography-displayBlock",
+                                            "displayInline": "MuiTypography-displayInline",
+                                            "gutterBottom": "MuiTypography-gutterBottom",
+                                            "h1": "MuiTypography-h1",
+                                            "h2": "MuiTypography-h2",
+                                            "h3": "MuiTypography-h3",
+                                            "h4": "MuiTypography-h4",
+                                            "h5": "MuiTypography-h5",
+                                            "h6": "MuiTypography-h6",
+                                            "noWrap": "MuiTypography-noWrap",
+                                            "overline": "MuiTypography-overline",
+                                            "paragraph": "MuiTypography-paragraph",
+                                            "root": "MuiTypography-root",
+                                            "srOnly": "MuiTypography-srOnly",
+                                            "subtitle1": "MuiTypography-subtitle1",
+                                            "subtitle2": "MuiTypography-subtitle2",
+                                          }
+                                        }
+                                      >
+                                        <p
+                                          className="MuiTypography-root MuiTypography-body1"
+                                        />
+                                      </ForwardRef(Typography)>
+                                    </WithStyles(ForwardRef(Typography))>
+                                    <ForwardRef>
+                                      <WithStyles(ForwardRef(SvgIcon))>
+                                        <ForwardRef(SvgIcon)
+                                          classes={
+                                            Object {
+                                              "colorAction": "MuiSvgIcon-colorAction",
+                                              "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                              "colorError": "MuiSvgIcon-colorError",
+                                              "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                              "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                              "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                              "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                              "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                              "root": "MuiSvgIcon-root",
+                                            }
+                                          }
+                                        >
+                                          <svg
+                                            aria-hidden="true"
+                                            className="MuiSvgIcon-root"
+                                            focusable="false"
+                                            role="presentation"
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <path
+                                              d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"
+                                            />
+                                          </svg>
+                                        </ForwardRef(SvgIcon)>
+                                      </WithStyles(ForwardRef(SvgIcon))>
+                                    </ForwardRef>
+                                    <WithStyles(ForwardRef(Typography))>
+                                      <ForwardRef(Typography)
+                                        classes={
+                                          Object {
+                                            "alignCenter": "MuiTypography-alignCenter",
+                                            "alignJustify": "MuiTypography-alignJustify",
+                                            "alignLeft": "MuiTypography-alignLeft",
+                                            "alignRight": "MuiTypography-alignRight",
+                                            "body1": "MuiTypography-body1",
+                                            "body2": "MuiTypography-body2",
+                                            "button": "MuiTypography-button",
+                                            "caption": "MuiTypography-caption",
+                                            "colorError": "MuiTypography-colorError",
+                                            "colorInherit": "MuiTypography-colorInherit",
+                                            "colorPrimary": "MuiTypography-colorPrimary",
+                                            "colorSecondary": "MuiTypography-colorSecondary",
+                                            "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                            "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                            "displayBlock": "MuiTypography-displayBlock",
+                                            "displayInline": "MuiTypography-displayInline",
+                                            "gutterBottom": "MuiTypography-gutterBottom",
+                                            "h1": "MuiTypography-h1",
+                                            "h2": "MuiTypography-h2",
+                                            "h3": "MuiTypography-h3",
+                                            "h4": "MuiTypography-h4",
+                                            "h5": "MuiTypography-h5",
+                                            "h6": "MuiTypography-h6",
+                                            "noWrap": "MuiTypography-noWrap",
+                                            "overline": "MuiTypography-overline",
+                                            "paragraph": "MuiTypography-paragraph",
+                                            "root": "MuiTypography-root",
+                                            "srOnly": "MuiTypography-srOnly",
+                                            "subtitle1": "MuiTypography-subtitle1",
+                                            "subtitle2": "MuiTypography-subtitle2",
+                                          }
+                                        }
+                                      >
+                                        <p
+                                          className="MuiTypography-root MuiTypography-body1"
+                                        />
+                                      </ForwardRef(Typography)>
+                                    </WithStyles(ForwardRef(Typography))>
+                                    <ForwardRef>
+                                      <WithStyles(ForwardRef(SvgIcon))>
+                                        <ForwardRef(SvgIcon)
+                                          classes={
+                                            Object {
+                                              "colorAction": "MuiSvgIcon-colorAction",
+                                              "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                              "colorError": "MuiSvgIcon-colorError",
+                                              "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                              "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                              "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                              "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                              "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                              "root": "MuiSvgIcon-root",
+                                            }
+                                          }
+                                        >
+                                          <svg
+                                            aria-hidden="true"
+                                            className="MuiSvgIcon-root"
+                                            focusable="false"
+                                            role="presentation"
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <path
+                                              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8zm6.5 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                                            />
+                                          </svg>
+                                        </ForwardRef(SvgIcon)>
+                                      </WithStyles(ForwardRef(SvgIcon))>
+                                    </ForwardRef>
+                                    <WithStyles(ForwardRef(Typography))>
+                                      <ForwardRef(Typography)
+                                        classes={
+                                          Object {
+                                            "alignCenter": "MuiTypography-alignCenter",
+                                            "alignJustify": "MuiTypography-alignJustify",
+                                            "alignLeft": "MuiTypography-alignLeft",
+                                            "alignRight": "MuiTypography-alignRight",
+                                            "body1": "MuiTypography-body1",
+                                            "body2": "MuiTypography-body2",
+                                            "button": "MuiTypography-button",
+                                            "caption": "MuiTypography-caption",
+                                            "colorError": "MuiTypography-colorError",
+                                            "colorInherit": "MuiTypography-colorInherit",
+                                            "colorPrimary": "MuiTypography-colorPrimary",
+                                            "colorSecondary": "MuiTypography-colorSecondary",
+                                            "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                            "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                            "displayBlock": "MuiTypography-displayBlock",
+                                            "displayInline": "MuiTypography-displayInline",
+                                            "gutterBottom": "MuiTypography-gutterBottom",
+                                            "h1": "MuiTypography-h1",
+                                            "h2": "MuiTypography-h2",
+                                            "h3": "MuiTypography-h3",
+                                            "h4": "MuiTypography-h4",
+                                            "h5": "MuiTypography-h5",
+                                            "h6": "MuiTypography-h6",
+                                            "noWrap": "MuiTypography-noWrap",
+                                            "overline": "MuiTypography-overline",
+                                            "paragraph": "MuiTypography-paragraph",
+                                            "root": "MuiTypography-root",
+                                            "srOnly": "MuiTypography-srOnly",
+                                            "subtitle1": "MuiTypography-subtitle1",
+                                            "subtitle2": "MuiTypography-subtitle2",
+                                          }
+                                        }
+                                      >
+                                        <p
+                                          className="MuiTypography-root MuiTypography-body1"
+                                        />
+                                      </ForwardRef(Typography)>
+                                    </WithStyles(ForwardRef(Typography))>
+                                  </div>
+                                </div>
+                              </HiddenCss>
+                            </WithStyles(HiddenCss)>
                           </Hidden>
                         </div>
                       </div>

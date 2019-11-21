@@ -15,10 +15,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     card: {
         [theme.breakpoints.up('xs')]: {
             padding: theme.spacing(2),
-            height: 130,
         },
         [theme.breakpoints.down('xs')]: {
             padding: theme.spacing(1),
+            height: 130
         },
         display: 'flex',
         flexDirection: 'column',
