@@ -38,7 +38,15 @@ exports[`components/Tags/Close snapshot should match 1`] = `
           "minHeight": 56,
         },
       },
-      "overrides": Object {},
+      "overrides": Object {
+        "MuiButton": Object {
+          "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+        },
+      },
       "palette": Object {
         "action": Object {
           "active": "rgba(0, 0, 0, 0.54)",
@@ -470,7 +478,15 @@ exports[`components/Tags/Plus snapshot should match 1`] = `
           "minHeight": 56,
         },
       },
-      "overrides": Object {},
+      "overrides": Object {
+        "MuiButton": Object {
+          "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+        },
+      },
       "palette": Object {
         "action": Object {
           "active": "rgba(0, 0, 0, 0.54)",
@@ -922,7 +938,15 @@ exports[`components/Tags/Tag snapshot should match 1`] = `
           "minHeight": 56,
         },
       },
-      "overrides": Object {},
+      "overrides": Object {
+        "MuiButton": Object {
+          "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+        },
+      },
       "palette": Object {
         "action": Object {
           "active": "rgba(0, 0, 0, 0.54)",
@@ -1441,7 +1465,15 @@ exports[`components/Tags/TagInput snapshot should match 1`] = `
           "minHeight": 56,
         },
       },
-      "overrides": Object {},
+      "overrides": Object {
+        "MuiButton": Object {
+          "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+        },
+      },
       "palette": Object {
         "action": Object {
           "active": "rgba(0, 0, 0, 0.54)",
@@ -2135,7 +2167,15 @@ exports[`components/Tags/TagList snapshot should match 1`] = `
           "minHeight": 56,
         },
       },
-      "overrides": Object {},
+      "overrides": Object {
+        "MuiButton": Object {
+          "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+        },
+      },
       "palette": Object {
         "action": Object {
           "active": "rgba(0, 0, 0, 0.54)",
@@ -2638,7 +2678,15 @@ exports[`components/Tags/TagName snapshot should match 1`] = `
           "minHeight": 56,
         },
       },
-      "overrides": Object {},
+      "overrides": Object {
+        "MuiButton": Object {
+          "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+        },
+      },
       "palette": Object {
         "action": Object {
           "active": "rgba(0, 0, 0, 0.54)",
@@ -3078,7 +3126,15 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
           "minHeight": 56,
         },
       },
-      "overrides": Object {},
+      "overrides": Object {
+        "MuiButton": Object {
+          "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+        },
+      },
       "palette": Object {
         "action": Object {
           "active": "rgba(0, 0, 0, 0.54)",

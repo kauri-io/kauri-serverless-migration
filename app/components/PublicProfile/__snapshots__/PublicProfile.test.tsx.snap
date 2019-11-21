@@ -50,7 +50,15 @@ exports[`components/PublicProfile/SocialWebsiteIcon should match snapshot 1`] = 
             "minHeight": 56,
           },
         },
-        "overrides": Object {},
+        "overrides": Object {
+          "MuiButton": Object {
+            "contained": Object {
+              "&&:disabled": Object {
+                "backgroundColor": "#e0e0e0",
+              },
+            },
+          },
+        },
         "palette": Object {
           "action": Object {
             "active": "rgba(0, 0, 0, 0.54)",
@@ -509,7 +517,15 @@ exports[`components/PublicProfile/StatisticCount should match snapshot 1`] = `
             "minHeight": 56,
           },
         },
-        "overrides": Object {},
+        "overrides": Object {
+          "MuiButton": Object {
+            "contained": Object {
+              "&&:disabled": Object {
+                "backgroundColor": "#e0e0e0",
+              },
+            },
+          },
+        },
         "palette": Object {
           "action": Object {
             "active": "rgba(0, 0, 0, 0.54)",
@@ -1047,7 +1063,15 @@ exports[`components/PublicProfile/StatisticsContainer should match snapshot 1`] 
             "minHeight": 56,
           },
         },
-        "overrides": Object {},
+        "overrides": Object {
+          "MuiButton": Object {
+            "contained": Object {
+              "&&:disabled": Object {
+                "backgroundColor": "#e0e0e0",
+              },
+            },
+          },
+        },
         "palette": Object {
           "action": Object {
             "active": "rgba(0, 0, 0, 0.54)",
