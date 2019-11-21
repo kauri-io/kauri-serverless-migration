@@ -812,6 +812,62 @@ exports[`containers/Article should match snapshot 1`] = `
             userId="234"
             voteAction={[MockFunction]}
           >
+            <withSchema
+              attributes={Object {}}
+              author={
+                Object {
+                  "__typename": "PublicUserDTO",
+                  "articles": Object {
+                    "__typename": "ResponsePage_ArticleDTO",
+                    "totalElements": 3,
+                  },
+                  "avatar": "test avatar 1",
+                  "collections": Object {
+                    "__typename": "ResponsePage_CollectionDTO",
+                    "totalElements": 3,
+                  },
+                  "communities": Array [],
+                  "id": "6791",
+                  "links": Object {
+                    "__typename": "ResponsePage_ExternalLinkDTO",
+                    "totalElements": 3,
+                  },
+                  "name": "test author name 1",
+                  "social": Object {
+                    "github": "test github",
+                    "twitter": "twst twitter",
+                  },
+                  "title": "test title",
+                  "username": "test-author-username-1",
+                }
+              }
+              dateCreated="2019-01-01"
+              datePublished="2019-01-02"
+              description="test description 1"
+              hostName="test hostname"
+              id="1231"
+              tags={
+                Array [
+                  "Test",
+                  "test2",
+                ]
+              }
+              title="test title 1"
+              url={
+                Object {
+                  "as": "/test-title-1/1231/a",
+                  "href": "/article?article_id=1231",
+                }
+              }
+            >
+              <Head>
+                <Component
+                  handleStateChange={null}
+                  inAmpMode={false}
+                  reduceComponentsToState={[Function]}
+                />
+              </Head>
+            </withSchema>
             <WithStyles(ForwardRef(Grid))
               className="makeStyles-root-14"
               container={true}

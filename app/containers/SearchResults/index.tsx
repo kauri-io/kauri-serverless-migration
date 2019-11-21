@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import ResourceSearch, { IDataSource, emptyData } from './ResourceSearch'
 import { Title1, BodyCard } from '../../components/Typography'
 import ResourceResults from './ResourceResults'
+import Head from 'next/head'
 
 const ArticlesHeader = styled.div`
     background-color: ${props => props.theme.colors.primaryTextColor};
@@ -81,6 +82,13 @@ class SearchResults extends React.Component<IProps, IState> {
 
         return (
             <section>
+                <Head>
+                    <title
+                        dangerouslySetInnerHTML={{
+                            __html: `Kauri Search - ${this.props.query}`,
+                        }}
+                    />
+                </Head>
                 <ArticlesHeader>
                     <Title1 color="white">Search</Title1>
                     <BodyCard>

@@ -1,13 +1,12 @@
 import moment from 'moment-mini'
 import styled from 'styled-components'
-import { Title1, Label, PageDescription } from '../Typography'
 import ShareArticle from '../Tooltip/ShareArticle'
 import Avatar from '../Avatar'
 import Button from '../../components/Button'
 import StatisticsContainer from '../PublicProfile/StatisticsContainer'
 import { TagList } from '../Tags'
 import { getUpdateCollectionURL } from '../../lib/getURLs'
-import { Tooltip } from '@material-ui/core'
+import { Tooltip, Typography } from '@material-ui/core'
 import BookmarkIcon from '@material-ui/icons/Bookmark'
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
 import BookmarkResource from '../../containers/Bookmark/BookmarkResourceWidget'
@@ -125,9 +124,13 @@ const Container: React.SFC<IProps> = props => {
     return (
         <CollectionHeaderSection>
             <LeftSide tags={tags}>
-                <Label>Collection Updated {moment(updated).fromNow()}</Label>
-                <Title1 color="white">{name}</Title1>
-                <PageDescription color="white">{description}</PageDescription>
+                <Typography variant="button" color="secondary">
+                    Collection Updated {moment(updated).fromNow()}
+                </Typography>
+                <Typography variant="h4" component="h1" color="secondary">
+                    {name}
+                </Typography>
+                <Typography color="secondary">{description}</Typography>
                 {tags && (
                     <TagList
                         routeChangeAction={routeChangeAction}
@@ -180,7 +183,9 @@ const Container: React.SFC<IProps> = props => {
                     ]}
                 />
 
-                <Label color="white">Curator</Label>
+                <Typography color="secondary" variant="button">
+                    Curator
+                </Typography>
                 <Avatar
                     color="secondary"
                     username={username}

@@ -38,6 +38,7 @@ export default () => (
     <Container>
         <ConsenSysLogoIcon>© Copyright 2019</ConsenSysLogoIcon>
         <ConsenSysFormationIcon
+            alt="Consensys logo"
             src={'/static/images/icons/footer-consensys.png'}
         />
         <ConsenSysLogoIcon>ConsenSys Formation</ConsenSysLogoIcon>

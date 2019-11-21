@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { Title1, BodyCard } from '../Typography'
 import Button from '../../components/Button'
 import Stack from 'stack-styled'
 import Link from 'next/link'
+import { Typography } from '@material-ui/core'
 
 const ResourceDetailsContainer = styled.section`
     display: flex;
@@ -42,10 +42,12 @@ const SignupBanner: React.FunctionComponent = () => (
         gap={30}
     >
         <ResourceDetailsContainer>
-            <Title1 color="white">Learn to Build on Ethereum with Kauri</Title1>
-            <BodyCard color="white">
+            <Typography color="secondary" variant="h4" component="h1">
+                Learn to Build on Ethereum with Kauri
+            </Typography>
+            <Typography color="secondary">
                 Articles, Tutorials, Documentation and Best Practices
-            </BodyCard>
+            </Typography>
         </ResourceDetailsContainer>
         <ViewContainer>
             <Link href="/login">
@@ -58,10 +60,9 @@ const SignupBanner: React.FunctionComponent = () => (
             </Link>
             <Link href="/help">
                 <a>
-                    <Button
-                        color="primary"
-                        variant="outlined"
-                    >{`Learn more`}</Button>
+                    <Button color="primary" variant="outlined">
+                        Learn about kauri
+                    </Button>
                 </a>
             </Link>
         </ViewContainer>

@@ -69,6 +69,7 @@ const LinkContent = ({
             </Typography>
             <Grid container={true} justify="space-between">
                 <Grid item={true} sm={authorName ? 6 : 12}>
+                    <a href={url.value} target='__blank'>
                     <TruncateMarkup lines={1}>
                         <Typography
                             className={classes.url}
@@ -80,6 +81,7 @@ const LinkContent = ({
                                 .replace('http://', '')}
                         </Typography>
                     </TruncateMarkup>
+                    </a>
                 </Grid>
 
                 {authorName.value && (
