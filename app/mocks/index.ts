@@ -8,7 +8,7 @@ import {
     Article_owner_PublicUserDTO_resourceIdentifier,
     Article_contributors_articles,
     Article_contributors_links,
-    Article_contributors_collections
+    Article_contributors_collections,
 } from '../queries/Fragments/__generated__/Article'
 import {
     ResourceTypeInput,
@@ -35,21 +35,21 @@ export const generateArticle = (mod: number) => ({
             title: 'test title',
             social: {
                 github: 'test github',
-                twitter: 'twst twitter'
+                twitter: 'twst twitter',
             },
             links: {
-                __typename: 'ResponsePage_ExternalLinkDTO' as  Article_contributors_links['__typename'],
-                totalElements: 3
+                __typename: 'ResponsePage_ExternalLinkDTO' as Article_contributors_links['__typename'],
+                totalElements: 3,
             },
             collections: {
-                __typename: 'ResponsePage_CollectionDTO' as  Article_contributors_collections['__typename'],
-                totalElements: 3
+                __typename: 'ResponsePage_CollectionDTO' as Article_contributors_collections['__typename'],
+                totalElements: 3,
             },
             articles: {
-                __typename: 'ResponsePage_ArticleDTO' as  Article_contributors_articles['__typename'],
-                totalElements: 3
+                __typename: 'ResponsePage_ArticleDTO' as Article_contributors_articles['__typename'],
+                totalElements: 3,
             },
-            communities: []
+            communities: [],
         },
     ],
     description: `test description ${mod}`,

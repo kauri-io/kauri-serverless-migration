@@ -15,12 +15,15 @@ interface IProps {
     ) => ICreateBookmakFolderAction
 }
 
-const useStyles = makeStyles((_theme: Theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
     form: {
         padding: '0 12px',
     },
     wrapper: {
         display: 'flex',
+    },
+    button: {
+        padding: theme.spacing(1, 1),
     },
     link: {
         width: 100,
@@ -71,7 +74,7 @@ export const CreateBookmarkFolderComponent = ({
     return (
         <FormGroup>
             {!showForm ? (
-                <Button color="primary" variant="text" onClick={toggleShowForm}>
+                <Button color="primary" variant="text" onClick={toggleShowForm} className={classes.button}>
                     New folder
                 </Button>
             ) : (
@@ -80,6 +83,7 @@ export const CreateBookmarkFolderComponent = ({
                         <TextField
                             error={hasError ? true : false}
                             margin="dense"
+                            helperText={hasError ? 'Incorrect folder' : ''}
                             onChange={e => updateFolder(e.target.value)}
                             value={folder}
                             placeholder="Folder name"
