@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         maxWidth: 870,
         margin: 'auto',
         '& > *': {
-            marginBottom: theme.spacing(1),
+            marginBottom: theme.spacing(2),
             display: 'block',
         },
     },

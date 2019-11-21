@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
         [theme.breakpoints.down('xs')]: {
             padding: theme.spacing(1),
+            height: 130
         },
         display: 'flex',
         flexDirection: 'column',
@@ -44,6 +45,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         flexDirection: 'row',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
+        marginTop: 'auto'
     },
     column: {
         display: 'flex',
@@ -154,6 +156,7 @@ const LinkCard = ({
                                     )}
                                 </Grid>
                                 <CardImage
+                                    type={'Article'}
                                     image={
                                         linkAttributes &&
                                         linkAttributes.background_image &&
@@ -225,6 +228,7 @@ const LinkCard = ({
                                     </Grid>
                                 </Grid>
                                 <CardImage
+                                    type={'Article'}
                                     image={
                                         linkAttributes &&
                                         linkAttributes.background_image &&
