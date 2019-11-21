@@ -23,7 +23,7 @@ interface IProps {
     }
 }
 
-const useStyles = makeStyles((_theme: Theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
     root: {
         //backgroundColor: theme.palette.background.paper,
         height: '100%',
@@ -41,6 +41,16 @@ const useStyles = makeStyles((_theme: Theme) => ({
     },
     tab: {
         width: 250,
+        '& > span': {
+            alignItems: 'flex-start',
+            textTransform: 'capitalize',
+            fontWeight: 500,
+        },
+    },
+    tabSelected: {
+        width: 250,
+        borderRight: '3px solid ' + theme.palette.primary.main,
+        opacity: 1,
         '& > span': {
             alignItems: 'flex-start',
             textTransform: 'capitalize',
@@ -95,7 +105,7 @@ export const ManageBookmarkPageComponent = ({
                                 if (!folder) return ''
                                 return (
                                     <Tab
-                                        className={classes.tab}
+                                        className={folder.name == currentFolder ? classes.tabSelected: classes.tab}
                                         label={
                                             labelRootFolder({
                                                 folder: folder.name,
@@ -107,15 +117,6 @@ export const ManageBookmarkPageComponent = ({
                                         id={'vertical-tab-' + folder.name}
                                         aria-controls={
                                             'vertical-tabpanel-' + folder.name
-                                        }
-                                        style={
-                                            folder.name == currentFolder
-                                                ? {
-                                                      borderRight:
-                                                          '3px solid #0BA986',
-                                                      opacity: 1,
-                                                  }
-                                                : {}
                                         }
                                         onClick={() =>
                                             handleChange(folder.name)

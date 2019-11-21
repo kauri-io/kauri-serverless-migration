@@ -50,7 +50,7 @@ const Manage: React.FunctionComponent<IProps> = ({
     pageType,
     cancelInvitation,
     formInvitations,
-    openAddMemberModal
+    openAddMemberModal,
 }) => {
     const [tabIndex, setTabIndex] = useState(isCommunityAdmin ? 0 : 1)
     const pendingArticles =
