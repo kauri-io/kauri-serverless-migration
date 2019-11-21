@@ -25,7 +25,6 @@ interface IProps {
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
-        //backgroundColor: theme.palette.background.paper,
         height: '100%',
         flex: 1,
     },
@@ -60,7 +59,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     createContainer: {
         width: 250,
         alignItems: 'flex-start',
-        padding: '6px 0',
+        padding: theme.spacing(1, 0),
         '& > div': {
             alignItems: 'flex-start',
         },
@@ -105,7 +104,11 @@ export const ManageBookmarkPageComponent = ({
                                 if (!folder) return ''
                                 return (
                                     <Tab
-                                        className={folder.name == currentFolder ? classes.tabSelected: classes.tab}
+                                        className={
+                                            folder.name == currentFolder
+                                                ? classes.tabSelected
+                                                : classes.tab
+                                        }
                                         label={
                                             labelRootFolder({
                                                 folder: folder.name,
