@@ -34,10 +34,10 @@ const Collections = ({
             paddingTop: theme.spacing(4),
             paddingBottom: theme.spacing(4),
             maxWidth: 870,
-            margin: 'auto',
+            margin: '0 auto',
             '& > *': {
-                margin: theme.spacing(1)
-            }
+                margin: theme.spacing(1),
+            },
         },
     }))
     const classes = useStyles()

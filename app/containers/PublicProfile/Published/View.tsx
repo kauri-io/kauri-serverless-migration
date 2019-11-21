@@ -45,8 +45,8 @@ const Articles: React.FC<IArticlesProps> = ({
             maxWidth: 870,
             margin: ' 0 auto',
             '& > *': {
-                margin: theme.spacing(1)
-            }
+                margin: theme.spacing(1),
+            },
         },
     }))
     const classes = useStyles()
@@ -82,7 +82,6 @@ const Articles: React.FC<IArticlesProps> = ({
                     if (type === 'ARTICLE' && result && result.resource) {
                         const article = result.resource as searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO
                         return (
-
                             <ArticleCard
                                 href={getArticleURL(article)}
                                 {...article}
@@ -91,7 +90,6 @@ const Articles: React.FC<IArticlesProps> = ({
                     } else if (type === 'LINK' && result && result.resource) {
                         const link = result.resource as any
                         return (
-
                             <LinkCard
                                 key={link.id}
                                 href={getLinkUrl(link)}
@@ -102,8 +100,8 @@ const Articles: React.FC<IArticlesProps> = ({
                 })}
             </Grid>
         ) : (
-                <Empty isLoggedIn={isLoggedIn} isOwner={isOwner} />
-            )
+            <Empty isLoggedIn={isLoggedIn} isOwner={isOwner} />
+        )
     }
     return null
 }
