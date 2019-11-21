@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-export default ({ image }) => {
+export default ({ image, type }) => {
     const classes = useStyles({})
     return image ? (
         <Image
@@ -29,7 +29,7 @@ export default ({ image }) => {
     ) : (
         <img
             className={classes.media}
-            src="/static/images/DefaultArticle.svg"
+            src={`/static/images/Default${type}.svg`}
         />
     )
 }

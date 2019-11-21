@@ -46,7 +46,9 @@ const Renderer = ({ markdown, withComments, commentsCount }) => {
             heading: {
                 marginLeft: theme.spacing(indent),
                 paddingLeft: theme.spacing(2),
-                fontWeight: 'bold',
+                fontWeight: 400,
+                fontSize: 14,
+                marginBottom: theme.spacing(2),
                 cursor: 'pointer',
                 borderLeft: inView
                     ? `3px solid ${theme.palette.primary.main}`
@@ -81,16 +83,16 @@ const Renderer = ({ markdown, withComments, commentsCount }) => {
                 component: props => <Heading indent={1} {...props} />,
             },
             h3: {
-                component: props => <Heading indent={2} {...props} />,
+                component: () => null,
             },
             h4: {
-                component: props => <Heading indent={3} {...props} />,
+                component: () => null,
             },
             h5: {
-                component: props => <Heading indent={4} {...props} />,
+                component: () => null,
             },
             h6: {
-                component: props => <Heading indent={5} {...props} />,
+                component: () => null,
             },
             p: { component: () => null },
             iframe: { component: () => null },
@@ -125,11 +127,17 @@ const Renderer = ({ markdown, withComments, commentsCount }) => {
         },
     }
 
-    const useStyles = makeStyles(() => ({
+    const useStyles = makeStyles((theme: Theme) => ({
         outline: {
+            position: 'fixed',
             '& div div': {
                 display: 'none',
             },
+        },
+        heading: {
+            fontWeight: 400,
+            fontSize: 16,
+            marginBottom: theme.spacing(2),
         },
     }))
     const classes = useStyles()
@@ -140,7 +148,11 @@ const Renderer = ({ markdown, withComments, commentsCount }) => {
                 <Loading />
             ) : (
                 <>
-                    <Typography align="left" variant="h6">
+                    <Typography
+                        className={classes.heading}
+                        align="left"
+                        variant="h6"
+                    >
                         Contents
                     </Typography>
                     <ReactMarkdown options={options}>{markdown}</ReactMarkdown>

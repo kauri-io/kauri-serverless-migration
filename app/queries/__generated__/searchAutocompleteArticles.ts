@@ -622,6 +622,10 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_owner | null;

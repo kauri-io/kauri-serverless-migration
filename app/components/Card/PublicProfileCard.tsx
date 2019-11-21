@@ -13,6 +13,11 @@ import { Article_contributors } from '../../queries/Fragments/__generated__/Arti
 const useStyles = makeStyles((theme: Theme) => ({
     card: {
         padding: theme.spacing(2),
+        width: '100%',
+        maxWidth: 808,
+    },
+    link: {
+        width: '100%',
     },
     row: {
         display: 'flex',
@@ -79,7 +84,7 @@ export default ({
     console.log(id, username, name)
     return (
         <Link href={url.href} as={url.as}>
-            <a>
+            <a className={classes.link}>
                 <Card className={classes.card}>
                     <div className={classes.row}>
                         {avatar && (
@@ -142,7 +147,7 @@ export default ({
                                         )}
                                     </div>
                                 )}
-                                <Hidden smDown={true}>
+                                <Hidden implementation="css" smDown={true}>
                                     <div className={classes.row}>
                                         <ArticleIcon />
                                         <Typography>

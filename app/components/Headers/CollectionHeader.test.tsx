@@ -18,6 +18,9 @@ let props = {
     isMemberOfCommunityOwner: false,
     updated: '2019-01-01',
     linkComponent: jest.fn(),
+    isBookmarked: true,
+    isLoggedIn: false,
+    openModalAction: jest.fn(),
 }
 
 describe('components/CollectionHeader', () => {
