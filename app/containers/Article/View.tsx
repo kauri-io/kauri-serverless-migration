@@ -14,7 +14,6 @@ import VoteWidget from './components/VoteWidget'
 import slugify from 'slugify'
 import { getArticleURL } from '../../lib/getURLs'
 import Comments from './components/ArticleComments'
-import Head from 'next/head'
 import ApolloClient from 'apollo-client'
 import ScrollIndicator from '../../components/ScrollIndicator'
 import { recordViewMutation, markAsreadMutation } from '../../queries/Utils'
@@ -24,6 +23,7 @@ import {
 } from '../../queries/__generated__/recordView'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { openModalAction } from '../../components/Modal/Module'
+import Schema from '../../lib/with-schema'
 import ProfileCard from '../../components/Card/PublicProfileCard'
 import CardActions from '../../components/Card/CardComponents/CardActions'
 import estimateTime from '../../lib/estimateTime'
@@ -48,6 +48,7 @@ interface IProps {
 }
 
 const ArticleComp = ({
+    hostName,
     openModalAction,
     voteAction,
     routeChangeAction,
@@ -58,15 +59,18 @@ const ArticleComp = ({
     client,
     data: {
         getArticle: {
+            dateCreated,
             id,
             contributors,
             content,
+            description,
             attributes,
             title,
             voteResult,
             comments,
             resourceIdentifier,
             isBookmarked,
+            tags,
             datePublished,
         },
     },
@@ -107,11 +111,19 @@ const ArticleComp = ({
     }, [])
     return (
         <>
-            {canonicalUrl && canonicalUrl.length > 0 && (
-                <Head>
-                    <link rel="canonical" href={canonicalUrl} />
-                </Head>
-            )}
+            <Schema
+                url={getArticleURL({ id, title })}
+                canonicalURL={canonicalUrl}
+                id={id}
+                title={title}
+                description={description}
+                dateCreated={dateCreated}
+                datePublished={datePublished}
+                tags={tags}
+                attributes={attributes}
+                author={author}
+                hostName={hostName}
+            />
             <Grid
                 className={classes.root}
                 container={true}

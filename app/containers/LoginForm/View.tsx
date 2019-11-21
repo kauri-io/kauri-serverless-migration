@@ -2,10 +2,10 @@ import React, { SyntheticEvent } from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
 import Button from '../../components/Button'
-import { Title2, BodyArticle } from '../../components/Typography'
 
 import { IRegisterAction } from './Module'
 import { IShowNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
+import { Typography } from '@material-ui/core'
 
 const Container = styled.div`
     background: ${props => props.theme.bgPrimary};
@@ -42,11 +42,18 @@ const Image = styled.img`
 
 const Web3Unavailable = () => (
     <LoginContainer>
-        <Title2 color="white">Web3 Sign in</Title2>
-        <BodyArticle color="white">
+        <Typography
+            gutterBottom={true}
+            variant="h4"
+            component="h1"
+            color="secondary"
+        >
+            Web3 Sign in
+        </Typography>
+        <Typography gutterBottom={true} color="secondary">
             You need the MetaMask extension to use Kauri. (MetaMask supports
             Chrome, Firefox, Opera)
-        </BodyArticle>
+        </Typography>
         <Image src="/static/images/metamask/avatar.png" />
         <a href="https://metamask.io" target="_blank">
             https://metamask.io
@@ -155,11 +162,18 @@ class LoginForm extends React.Component<{
     render() {
         return (
             <LoginContainer>
-                <Title2 color="white">Web3 Sign in</Title2>
-                <BodyArticle color="white">
+                <Typography
+                    gutterBottom={true}
+                    variant="h4"
+                    component="h1"
+                    color="secondary"
+                >
+                    Web3 Sign in
+                </Typography>
+                <Typography gutterBottom={true} color="secondary">
                     Sign in using Web3 enabled provider. (MetaMask, Status,
                     Coinbase Wallet)
-                </BodyArticle>
+                </Typography>
                 <Button
                     color="primary"
                     variant="contained"

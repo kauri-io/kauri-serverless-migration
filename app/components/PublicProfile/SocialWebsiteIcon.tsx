@@ -17,6 +17,7 @@ const SocialWebsiteIcon: React.SFC<ISocialWebsiteIconProps> = ({
 }) => (
     <a target="_blank" href={socialURL}>
         <InvertSocialIcon
+            alt={brand}
             height={height}
             width={height}
             src={`https://unpkg.com/simple-icons@latest/icons/${brand}.svg`}

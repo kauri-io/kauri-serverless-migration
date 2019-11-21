@@ -110,10 +110,6 @@ export default class MyDocument extends Document<IProps> {
                         content="#8e00d2"
                     />
                     <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver" />
-                    <script
-                        defer
-                        src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
-                    />
                     <link
                         rel="stylesheet"
                         href="https://fonts.googleapis.com/icon?family=Material+Icons"

@@ -300,26 +300,46 @@ export const HomePageComponent = (props: {
 
 const HomePageComponentWrapper: React.FunctionComponent<IProps> = props => {
     return (
-        <Query<homePageContent> query={query}>
-            {({ loading, error, data }) => {
-                // console.log(error)
-                if (loading) {
-                    return <Loading />
-                }
-                if (error) {
-                    return (
-                        <ErrorMessage
-                            data={{ error: { message: error.message } }}
-                        />
-                    )
-                }
-                if (data) {
-                    return <HomePageComponent {...props} data={data} />
-                } else {
-                    return null
-                }
-            }}
-        </Query>
+        <>
+            <Head>
+                <title
+                    dangerouslySetInnerHTML={{
+                        __html:
+                            'Beginner to Advanced Blockchain & Ethereum Tutorials - Kauri',
+                    }}
+                />
+                <meta property="og:url" content="https://kauri.io" />
+                <meta
+                    property="og:image"
+                    content="https://api.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY"
+                />
+                <meta
+                    name="description"
+                    content="Learn Blockchain and Ethereum with Kauri, Articles, Tutorials, Guides, Documentation and Best Practices. Focused on Getting Started, Scaling, Privacy, Storage, Defi, Gaming, UX and much more."
+                />
+                <link rel="canonical" href="https://kauri.io" />
+            </Head>
+            <Query<homePageContent> query={query}>
+                {({ loading, error, data }) => {
+                    // console.log(error)
+                    if (loading) {
+                        return <Loading />
+                    }
+                    if (error) {
+                        return (
+                            <ErrorMessage
+                                data={{ error: { message: error.message } }}
+                            />
+                        )
+                    }
+                    if (data) {
+                        return <HomePageComponent {...props} data={data} />
+                    } else {
+                        return null
+                    }
+                }}
+            </Query>
+        </>
     )
 }
 

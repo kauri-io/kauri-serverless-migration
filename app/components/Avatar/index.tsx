@@ -80,8 +80,9 @@ const AvatarComp = ({
                 />
             ) : (
                 <img
+                    alt={String(username)}
                     className={classes.avatar}
-                    src={makeBlockie(id || 'anonymous')}
+                    src={makeBlockie(id || ' Anonymous')}
                 />
             )}
             {withName && (

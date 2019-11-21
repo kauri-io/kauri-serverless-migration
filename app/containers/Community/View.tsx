@@ -31,6 +31,7 @@ import {
 import { sendInvitationVariables } from '../../queries/__generated__/sendInvitation'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
+import Head from 'next/head'
 
 interface IProps {
     client?: ApolloClient<{}>
@@ -204,6 +205,15 @@ class CommunityConnection extends React.Component<IProps, IState> {
 
         return (
             <>
+                <Head>
+                    <title
+                        dangerouslySetInnerHTML={{ __html: getCommunity.name }}
+                    />
+                    <meta
+                        name="description"
+                        content={String(getCommunity.description)}
+                    />
+                </Head>
                 <CommunityHeader
                     transferArticleToCommunityAction={
                         transferArticleToCommunityAction
