@@ -513,6 +513,13 @@ exports[`containers/SearchResults should match snapshot 1`] = `
             router={Object {}}
           >
             <section>
+              <Head>
+                <Component
+                  handleStateChange={null}
+                  inAmpMode={false}
+                  reduceComponentsToState={[Function]}
+                />
+              </Head>
               <SearchResults__ArticlesHeader>
                 <StyledComponent
                   forwardedComponent={

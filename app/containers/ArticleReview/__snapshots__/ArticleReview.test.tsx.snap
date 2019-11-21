@@ -531,9 +531,27 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                   "contributors": Array [
                     Object {
                       "__typename": "PublicUserDTO",
+                      "articles": Object {
+                        "__typename": "ResponsePage_ArticleDTO",
+                        "totalElements": 3,
+                      },
                       "avatar": "test avatar 1",
+                      "collections": Object {
+                        "__typename": "ResponsePage_CollectionDTO",
+                        "totalElements": 3,
+                      },
+                      "communities": Array [],
                       "id": "6791",
+                      "links": Object {
+                        "__typename": "ResponsePage_ExternalLinkDTO",
+                        "totalElements": 3,
+                      },
                       "name": "test author name 1",
+                      "social": Object {
+                        "github": "test github",
+                        "twitter": "twst twitter",
+                      },
+                      "title": "test title",
                       "username": "test-author-username-1",
                     },
                   ],
@@ -542,6 +560,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                   "description": "test description 1",
                   "id": "1231",
                   "isBookmarked": true,
+                  "isRead": true,
                   "owner": Object {
                     "__typename": "PublicUserDTO",
                     "avatar": "test avatar 1",
@@ -605,9 +624,27 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                   "contributors": Array [
                     Object {
                       "__typename": "PublicUserDTO",
+                      "articles": Object {
+                        "__typename": "ResponsePage_ArticleDTO",
+                        "totalElements": 3,
+                      },
                       "avatar": "test avatar 2",
+                      "collections": Object {
+                        "__typename": "ResponsePage_CollectionDTO",
+                        "totalElements": 3,
+                      },
+                      "communities": Array [],
                       "id": "6792",
+                      "links": Object {
+                        "__typename": "ResponsePage_ExternalLinkDTO",
+                        "totalElements": 3,
+                      },
                       "name": "test author name 2",
+                      "social": Object {
+                        "github": "test github",
+                        "twitter": "twst twitter",
+                      },
+                      "title": "test title",
                       "username": "test-author-username-2",
                     },
                   ],
@@ -616,6 +653,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                   "description": "test description 2",
                   "id": "1232",
                   "isBookmarked": true,
+                  "isRead": true,
                   "owner": Object {
                     "__typename": "PublicUserDTO",
                     "avatar": "test avatar 2",
@@ -707,9 +745,9 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "ScrollIndicator__BarContainer-sc-1k4p76-0",
                               "isStatic": false,
-                              "lastClassName": "kJFElp",
+                              "lastClassName": "kNIXCl",
                               "rules": Array [
-                                "position:fixed;top:64px;left:0;right:0;height:4px;width:100%;background:transparent;z-index:999;",
+                                "position:fixed;top:64px;left:0;right:0;height:4px;width:100%;background:transparent;z-index:999;@media (max-width:600px){top:56px;}",
                               ],
                             },
                             "displayName": "ScrollIndicator__BarContainer",
@@ -726,7 +764,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                         forwardedRef={null}
                       >
                         <div
-                          className="ScrollIndicator__BarContainer-sc-1k4p76-0 kJFElp"
+                          className="ScrollIndicator__BarContainer-sc-1k4p76-0 kNIXCl"
                         >
                           <ScrollIndicator__Fill
                             scrolled={0}

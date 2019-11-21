@@ -414,10 +414,10 @@ exports[`components/Tooltip/ShareArticle should match snapshot 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
                 "isStatic": false,
-                "lastClassName": "hNNjpZ",
+                "lastClassName": "fjxrVu",
                 "rules": Array [
                   "display:flex;width:",
-                  "70",
+                  "40",
                   "px;",
                 ],
               },
@@ -435,7 +435,7 @@ exports[`components/Tooltip/ShareArticle should match snapshot 1`] = `
           forwardedRef={null}
         >
           <section
-            className="ShareArticle__ReferenceContainer-sc-1qj1dsq-0 hNNjpZ"
+            className="ShareArticle__ReferenceContainer-sc-1qj1dsq-0 fjxrVu"
           >
             <Tooltip
               animateFill={true}

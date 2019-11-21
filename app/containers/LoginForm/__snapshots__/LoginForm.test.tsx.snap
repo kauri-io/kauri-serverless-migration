@@ -597,97 +597,108 @@ exports[`containers/LoginForm should match snapshot 1`] = `
                         <div
                           className="View__LoginContainer-v8ha34-1 ikCtyG"
                         >
-                          <Typography__styledComponent
-                            color="white"
+                          <WithStyles(ForwardRef(Typography))
+                            color="secondary"
+                            component="h1"
+                            gutterBottom={true}
+                            variant="h4"
                           >
-                            <StyledComponent
-                              color="white"
-                              forwardedComponent={
+                            <ForwardRef(Typography)
+                              classes={
                                 Object {
-                                  "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": Array [],
-                                  "componentStyle": ComponentStyle {
-                                    "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                                    "isStatic": false,
-                                    "lastClassName": "jNVtUZ",
-                                    "rules": Array [
-                                      "color:",
-                                      [Function],
-                                      ";margin:0px;font-weight:",
-                                      "500",
-                                      ";",
-                                      ";font-size:",
-                                      "20",
-                                      "px;text-transform:",
-                                      [Function],
-                                      ";text-align:",
-                                      [Function],
-                                      ";:hover{color:",
-                                      [Function],
-                                      ";cursor:",
-                                      [Function],
-                                      ";}",
-                                    ],
-                                  },
-                                  "displayName": "Typography__styledComponent",
-                                  "foldedComponentIds": Array [],
-                                  "render": [Function],
-                                  "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                                  "target": "span",
-                                  "toString": [Function],
-                                  "usesTheme": true,
-                                  "warnTooManyClasses": [Function],
-                                  "withComponent": [Function],
+                                  "alignCenter": "MuiTypography-alignCenter",
+                                  "alignJustify": "MuiTypography-alignJustify",
+                                  "alignLeft": "MuiTypography-alignLeft",
+                                  "alignRight": "MuiTypography-alignRight",
+                                  "body1": "MuiTypography-body1",
+                                  "body2": "MuiTypography-body2",
+                                  "button": "MuiTypography-button",
+                                  "caption": "MuiTypography-caption",
+                                  "colorError": "MuiTypography-colorError",
+                                  "colorInherit": "MuiTypography-colorInherit",
+                                  "colorPrimary": "MuiTypography-colorPrimary",
+                                  "colorSecondary": "MuiTypography-colorSecondary",
+                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                  "displayBlock": "MuiTypography-displayBlock",
+                                  "displayInline": "MuiTypography-displayInline",
+                                  "gutterBottom": "MuiTypography-gutterBottom",
+                                  "h1": "MuiTypography-h1",
+                                  "h2": "MuiTypography-h2",
+                                  "h3": "MuiTypography-h3",
+                                  "h4": "MuiTypography-h4",
+                                  "h5": "MuiTypography-h5",
+                                  "h6": "MuiTypography-h6",
+                                  "noWrap": "MuiTypography-noWrap",
+                                  "overline": "MuiTypography-overline",
+                                  "paragraph": "MuiTypography-paragraph",
+                                  "root": "MuiTypography-root",
+                                  "srOnly": "MuiTypography-srOnly",
+                                  "subtitle1": "MuiTypography-subtitle1",
+                                  "subtitle2": "MuiTypography-subtitle2",
                                 }
                               }
-                              forwardedRef={null}
+                              color="secondary"
+                              component="h1"
+                              gutterBottom={true}
+                              variant="h4"
                             >
-                              <span
-                                className="Typography__styledComponent-sc-36xkf6-5 jNVtUZ"
-                                color="white"
+                              <h1
+                                className="MuiTypography-root MuiTypography-h4 MuiTypography-colorSecondary MuiTypography-gutterBottom"
                               >
                                 Web3 Sign in
-                              </span>
-                            </StyledComponent>
-                          </Typography__styledComponent>
-                          <Typography__component
-                            color="white"
+                              </h1>
+                            </ForwardRef(Typography)>
+                          </WithStyles(ForwardRef(Typography))>
+                          <WithStyles(ForwardRef(Typography))
+                            color="secondary"
+                            gutterBottom={true}
                           >
-                            <StyledComponent
-                              color="white"
-                              forwardedComponent={
+                            <ForwardRef(Typography)
+                              classes={
                                 Object {
-                                  "$$typeof": Symbol(react.forward_ref),
-                                  "attrs": Array [],
-                                  "componentStyle": ComponentStyle {
-                                    "componentId": "Typography__component-sc-36xkf6-3",
-                                    "isStatic": false,
-                                    "lastClassName": "cGrhPv",
-                                    "rules": Array [
-                                      "font-size:17px;font-weight:normal;letter-spacing:-0.1px;line-height:24px;",
-                                    ],
-                                  },
-                                  "displayName": "Typography__component",
-                                  "foldedComponentIds": Array [],
-                                  "render": [Function],
-                                  "styledComponentId": "Typography__component-sc-36xkf6-3",
-                                  "target": "span",
-                                  "toString": [Function],
-                                  "usesTheme": false,
-                                  "warnTooManyClasses": [Function],
-                                  "withComponent": [Function],
+                                  "alignCenter": "MuiTypography-alignCenter",
+                                  "alignJustify": "MuiTypography-alignJustify",
+                                  "alignLeft": "MuiTypography-alignLeft",
+                                  "alignRight": "MuiTypography-alignRight",
+                                  "body1": "MuiTypography-body1",
+                                  "body2": "MuiTypography-body2",
+                                  "button": "MuiTypography-button",
+                                  "caption": "MuiTypography-caption",
+                                  "colorError": "MuiTypography-colorError",
+                                  "colorInherit": "MuiTypography-colorInherit",
+                                  "colorPrimary": "MuiTypography-colorPrimary",
+                                  "colorSecondary": "MuiTypography-colorSecondary",
+                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                  "displayBlock": "MuiTypography-displayBlock",
+                                  "displayInline": "MuiTypography-displayInline",
+                                  "gutterBottom": "MuiTypography-gutterBottom",
+                                  "h1": "MuiTypography-h1",
+                                  "h2": "MuiTypography-h2",
+                                  "h3": "MuiTypography-h3",
+                                  "h4": "MuiTypography-h4",
+                                  "h5": "MuiTypography-h5",
+                                  "h6": "MuiTypography-h6",
+                                  "noWrap": "MuiTypography-noWrap",
+                                  "overline": "MuiTypography-overline",
+                                  "paragraph": "MuiTypography-paragraph",
+                                  "root": "MuiTypography-root",
+                                  "srOnly": "MuiTypography-srOnly",
+                                  "subtitle1": "MuiTypography-subtitle1",
+                                  "subtitle2": "MuiTypography-subtitle2",
                                 }
                               }
-                              forwardedRef={null}
+                              color="secondary"
+                              gutterBottom={true}
                             >
-                              <span
-                                className="Typography__component-sc-36xkf6-3 cGrhPv"
-                                color="white"
+                              <p
+                                className="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary MuiTypography-gutterBottom"
                               >
                                 You need the MetaMask extension to use Kauri. (MetaMask supports Chrome, Firefox, Opera)
-                              </span>
-                            </StyledComponent>
-                          </Typography__component>
+                              </p>
+                            </ForwardRef(Typography)>
+                          </WithStyles(ForwardRef(Typography))>
                           <View__Image
                             src="/static/images/metamask/avatar.png"
                           >

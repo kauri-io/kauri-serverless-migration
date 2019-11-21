@@ -534,9 +534,27 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                   "contributors": Array [
                     Object {
                       "__typename": "PublicUserDTO",
+                      "articles": Object {
+                        "__typename": "ResponsePage_ArticleDTO",
+                        "totalElements": 3,
+                      },
                       "avatar": "test avatar 1",
+                      "collections": Object {
+                        "__typename": "ResponsePage_CollectionDTO",
+                        "totalElements": 3,
+                      },
+                      "communities": Array [],
                       "id": "6791",
+                      "links": Object {
+                        "__typename": "ResponsePage_ExternalLinkDTO",
+                        "totalElements": 3,
+                      },
                       "name": "test author name 1",
+                      "social": Object {
+                        "github": "test github",
+                        "twitter": "twst twitter",
+                      },
+                      "title": "test title",
                       "username": "test-author-username-1",
                     },
                   ],
@@ -545,6 +563,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                   "description": "test description 1",
                   "id": "1231",
                   "isBookmarked": true,
+                  "isRead": true,
                   "owner": Object {
                     "__typename": "PublicUserDTO",
                     "avatar": "test avatar 1",
@@ -623,9 +642,27 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                 Array [
                   Object {
                     "__typename": "PublicUserDTO",
+                    "articles": Object {
+                      "__typename": "ResponsePage_ArticleDTO",
+                      "totalElements": 3,
+                    },
                     "avatar": "test avatar 1",
+                    "collections": Object {
+                      "__typename": "ResponsePage_CollectionDTO",
+                      "totalElements": 3,
+                    },
+                    "communities": Array [],
                     "id": "6791",
+                    "links": Object {
+                      "__typename": "ResponsePage_ExternalLinkDTO",
+                      "totalElements": 3,
+                    },
                     "name": "test author name 1",
+                    "social": Object {
+                      "github": "test github",
+                      "twitter": "twst twitter",
+                    },
+                    "title": "test title",
                     "username": "test-author-username-1",
                   },
                 ]
@@ -635,6 +672,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
               description="test description 1"
               id="1231"
               isBookmarked={true}
+              isRead={true}
               openModalAction={[MockFunction]}
               owner={
                 Object {
@@ -1326,9 +1364,27 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                 Array [
                   Object {
                     "__typename": "PublicUserDTO",
+                    "articles": Object {
+                      "__typename": "ResponsePage_ArticleDTO",
+                      "totalElements": 3,
+                    },
                     "avatar": "test avatar 1",
+                    "collections": Object {
+                      "__typename": "ResponsePage_CollectionDTO",
+                      "totalElements": 3,
+                    },
+                    "communities": Array [],
                     "id": "6791",
+                    "links": Object {
+                      "__typename": "ResponsePage_ExternalLinkDTO",
+                      "totalElements": 3,
+                    },
                     "name": "test author name 1",
+                    "social": Object {
+                      "github": "test github",
+                      "twitter": "twst twitter",
+                    },
+                    "title": "test title",
                     "username": "test-author-username-1",
                   },
                 ]
@@ -1339,6 +1395,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
               description="test description 1"
               id="1231"
               isBookmarked={true}
+              isRead={true}
               openModalAction={[MockFunction]}
               owner={
                 Object {

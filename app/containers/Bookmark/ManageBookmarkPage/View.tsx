@@ -23,9 +23,8 @@ interface IProps {
     }
 }
 
-const useStyles = makeStyles((_theme: Theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
     root: {
-        //backgroundColor: theme.palette.background.paper,
         height: '100%',
         flex: 1,
     },
@@ -44,13 +43,23 @@ const useStyles = makeStyles((_theme: Theme) => ({
         '& > span': {
             alignItems: 'flex-start',
             textTransform: 'capitalize',
-            fontWeight: 600,
+            fontWeight: 500,
+        },
+    },
+    tabSelected: {
+        width: 250,
+        borderRight: '3px solid ' + theme.palette.primary.main,
+        opacity: 1,
+        '& > span': {
+            alignItems: 'flex-start',
+            textTransform: 'capitalize',
+            fontWeight: 500,
         },
     },
     createContainer: {
         width: 250,
         alignItems: 'flex-start',
-        padding: '6px 2px',
+        padding: theme.spacing(1, 0),
         '& > div': {
             alignItems: 'flex-start',
         },
@@ -95,7 +104,11 @@ export const ManageBookmarkPageComponent = ({
                                 if (!folder) return ''
                                 return (
                                     <Tab
-                                        className={classes.tab}
+                                        className={
+                                            folder.name == currentFolder
+                                                ? classes.tabSelected
+                                                : classes.tab
+                                        }
                                         label={
                                             labelRootFolder({
                                                 folder: folder.name,
@@ -107,14 +120,6 @@ export const ManageBookmarkPageComponent = ({
                                         id={'vertical-tab-' + folder.name}
                                         aria-controls={
                                             'vertical-tabpanel-' + folder.name
-                                        }
-                                        style={
-                                            folder.name == currentFolder
-                                                ? {
-                                                      borderRight:
-                                                          '3px solid green',
-                                                  }
-                                                : {}
                                         }
                                         onClick={() =>
                                             handleChange(folder.name)

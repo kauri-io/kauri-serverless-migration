@@ -48,6 +48,12 @@ const AvatarComp = ({
         username: {
             textTransform: 'capitalize',
             fontWeight: 'bold',
+            [theme.breakpoints.up('xs')]: {
+                fontSize: 14,
+            },
+            [theme.breakpoints.down('xs')]: {
+                fontSize: 12,
+            },
         },
     }))
 
@@ -73,7 +79,11 @@ const AvatarComp = ({
                     borderRadius={'2px'}
                 />
             ) : (
-                <img className={classes.avatar} src={makeBlockie(id)} />
+                <img
+                    alt={String(username)}
+                    className={classes.avatar}
+                    src={makeBlockie(id || ' Anonymous')}
+                />
             )}
             {withName && (
                 <Typography

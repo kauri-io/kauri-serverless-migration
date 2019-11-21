@@ -540,9 +540,11 @@ exports[`components/Footer should match snapshot 1`] = `
                     className="Logo__Container-yhmxu8-1 kPuFaV"
                   >
                     <Logo__LogoIcon
+                      alt="Kauri logo"
                       src="/static/images/icons/footer-logo.png"
                     >
                       <StyledComponent
+                        alt="Kauri logo"
                         forwardedComponent={
                           Object {
                             "$$typeof": Symbol(react.forward_ref),
@@ -570,6 +572,7 @@ exports[`components/Footer should match snapshot 1`] = `
                         src="/static/images/icons/footer-logo.png"
                       >
                         <img
+                          alt="Kauri logo"
                           className="Logo__LogoIcon-yhmxu8-0 kQopY"
                           src="/static/images/icons/footer-logo.png"
                         />
@@ -679,9 +682,11 @@ exports[`components/Footer should match snapshot 1`] = `
                       </StyledComponent>
                     </Consensys__ConsenSysLogoIcon>
                     <Consensys__ConsenSysFormationIcon
+                      alt="Consensys logo"
                       src="/static/images/icons/footer-consensys.png"
                     >
                       <StyledComponent
+                        alt="Consensys logo"
                         forwardedComponent={
                           Object {
                             "$$typeof": Symbol(react.forward_ref),
@@ -709,6 +714,7 @@ exports[`components/Footer should match snapshot 1`] = `
                         src="/static/images/icons/footer-consensys.png"
                       >
                         <img
+                          alt="Consensys logo"
                           className="Consensys__ConsenSysFormationIcon-sc-3l6ajh-1 gRtYkn"
                           src="/static/images/icons/footer-consensys.png"
                         />

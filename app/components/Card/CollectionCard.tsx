@@ -1,167 +1,101 @@
-import React from 'react'
-import moment from 'moment-mini'
-import Link from 'next/link'
-import { getCollectionURL } from '../../lib/getURLs'
-import { Theme, makeStyles } from '@material-ui/core/styles'
-import {
-    Card,
-    Typography,
-    CardContent,
-    CardActions,
-    Icon,
-    IconButton,
-    Tooltip,
-} from '@material-ui/core'
-import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
-import BookmarkIcon from '@material-ui/icons/Bookmark'
+import { Card, Typography, Theme, Grid, Hidden, Icon } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
+import CardImage from './CardComponents/CardImage'
 import TruncateMarkup from 'react-truncate-markup'
-import ShareDialog from './ShareDialog'
-import Avatar from '../Avatar'
-import Image from '../Image'
-import BookmarkResource from '../../containers/Bookmark/BookmarkResourceWidget'
-import { ResourceTypeInput } from '../../__generated__/globalTypes'
 import { openModalAction } from '../Modal/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { connect } from 'react-redux'
+import { getCollectionURL } from '../../lib/getURLs'
+import Link from 'next/link'
+import Details from './CardComponents/CardDetails'
+import Actions from './CardComponents/CardActions'
+import CardStatistics from './CardComponents/CardStatistics'
+import moment from 'moment-mini'
 
-export const CollectionCardStyles = makeStyles((theme: Theme) => ({
-    avatar: {
-        backgroundColor: theme.palette.primary.main,
-        textTransform: 'uppercase',
-        width: 24,
-        height: 24,
-    },
-    stripHeader: {
-        display: 'flex',
-        alignItems: 'center',
-        '& > *:not(:last-child)': {
-            marginRight: theme.spacing(1),
-        },
-    },
+const useStyles = makeStyles((theme: Theme) => ({
     card: {
-        display: 'flex',
-        padding: theme.spacing(2),
-        height: 184,
-        maxWidth: 870,
-        width: '100%',
-    },
-    cardActualContent: {
+        [theme.breakpoints.up('xs')]: {
+            padding: theme.spacing(2),
+        },
+        [theme.breakpoints.down('xs')]: {
+            padding: theme.spacing(1),
+            height: 130,
+        },
         display: 'flex',
         flexDirection: 'column',
         width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            width: 'calc(100% - 152px)',
+        maxWidth: 808,
+    },
+    link: {
+        width: '100%',
+    },
+    name: {
+        textTransform: 'capitalize',
+        marginLeft: theme.spacing(2),
+        wordWrap: 'break-word',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 16,
         },
     },
-    owner: {
-        [theme.breakpoints.only('xs')]: {
-            display: 'none !important',
+    description: {
+        marginLeft: theme.spacing(2),
+    },
+    actions: {
+        [theme.breakpoints.down('xs')]: {
+            display: 'none',
         },
     },
-    content: {
-        textAlign: 'left',
-        cursor: 'pointer',
+    row: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        justifyContent: 'space-between',
+        marginTop: 'auto',
+    },
+    column: {
+        display: 'flex',
+        flexDirection: 'column',
         height: '100%',
-        padding: '0px !important',
+        width: '100%',
+        overflow: 'hidden',
+    },
+    bottom: {
+        marginTop: 'auto',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginLeft: theme.spacing(2),
     },
     header: {
         display: 'flex',
-        flexDirection: 'column',
-        cursor: 'pointer',
-    },
-    desktopMedia: {
-        cursor: 'pointer',
-        borderRadius: '4px',
-        height: 152,
-        width: 152,
-        marginRight: theme.spacing(1.5),
-        [theme.breakpoints.only('xs')]: {
-            display: 'none !important',
-        },
-    },
-    name: {
-        textAlign: 'left',
-        [theme.breakpoints.only('xs')]: { maxWidth: `calc(100% - 100px)` },
-    },
-    bookmark: {
-        cursor: 'pointer',
-    },
-    cardActions: {
-        display: 'flex',
-        marginTop: 'auto',
+        flexDirection: 'row',
         alignItems: 'center',
-        padding: `0px !important`,
-    },
-    user: {
-        display: 'flex',
-        alignItems: 'center',
-        '& > *:not(:last-child)': {
-            marginRight: theme.spacing(1),
+        marginLeft: theme.spacing(2),
+        '& > h6': {
+            fontWeight: 600,
         },
         '& > *': {
-            lineHeight: '1.57 !important',
-        },
-    },
-    statistics: {
-        display: 'flex',
-        marginLeft: 'auto !important',
-        alignItems: 'center',
-        '& > *:not(:last-child)': {
             marginRight: theme.spacing(1),
         },
     },
 }))
 
-interface IProps {
-    id: string
-    name: string | null
-    owner: {
-        name?: string | null
-        username?: string | null
-        id: string
-        avatar?: string | null
-    } | null
-    dateUpdated: string | null
-    description: string | null
-    background: string | null
-    className?: string
-    href: {
-        as: string
-        href: string
-    }
-    sections: (any | null)[] | null
-    isLoggedIn?: boolean
-    isBookmarked: boolean
-    openModalAction?: typeof openModalAction
-    routeChangeAction?: typeof routeChangeAction
-}
-
-const CollectionCard: React.FC<IProps> = ({
-    owner,
-    name,
-    background,
-    dateUpdated,
-    description,
-    className,
-    href,
+const CollectionCard = ({
     id,
-    sections,
+    name,
+    owner,
+    background,
     isBookmarked,
-    isLoggedIn = false,
+    sections,
     openModalAction,
     routeChangeAction,
-}) => {
-    const classes = CollectionCardStyles({})
-
-    const [open, setOpen] = React.useState(false)
-
-    function handleClickOpen() {
-        setOpen(true)
-    }
-
-    const handleClose = () => {
-        setOpen(false)
-    }
+    // addArticleToCollectionAction,
+    description,
+    isLoggedIn,
+    dateUpdated,
+}: any) => {
+    const classes = useStyles({})
+    const collectionURL = getCollectionURL({ id, name })
 
     const articleCount =
         (sections &&
@@ -178,178 +112,111 @@ const CollectionCard: React.FC<IProps> = ({
             }, 0)) ||
         0
 
-    const collectionCount =
-        (sections &&
-            sections.reduce((current, next) => {
-                if (next && next.resourcesId) {
-                    const collectionsInSection = next.resourcesId.filter(
-                        resource => resource && resource.type === 'COLLECTION'
-                    ).length
-                    if (collectionsInSection > 0) {
-                        current += collectionsInSection
-                    }
-                }
-                return current
-            }, 0)) ||
-        0
-
     return (
-        <Card
-            key={id}
-            className={`${classes.card} ${className ? className : ''}`}
-        >
-            <Link href={href.href} as={href.as}>
-                <a>
-                    {background ? (
-                        <Image
-                            className={classes.desktopMedia}
-                            data-testid={`CollectionCard-${id}-image`}
-                            width={152}
-                            height={152}
-                            image={background}
-                            borderRadius="4px"
-                        />
-                    ) : (
-                        <img
-                            className={classes.desktopMedia}
-                            data-testid={`CollectionCard-${id}-image`}
-                            src="/static/images/DefaultCollection.svg"
-                        />
-                    )}
-                </a>
-            </Link>
-            <div className={classes.cardActualContent}>
-                <div className={classes.header}>
-                    <div className={classes.stripHeader}>
-                        <Link href={href.href} as={href.as}>
-                            <a className={classes.stripHeader}>
-                                <Icon>folder</Icon>
-                                <Typography variant="subtitle2">
-                                    Collection
-                                </Typography>
-                            </a>
-                        </Link>
-                        <Typography
-                            data-testid={`CollectionCard-${id}-date`}
-                            variant="body2"
-                        >
-                            {moment(String(dateUpdated)).format('MMM DD')}
-                        </Typography>
-                    </div>
-                    <Link href={href.href} as={href.as}>
-                        <a
-                            data-testid={`CollectionCard-${id}-name`}
-                            className={classes.name}
-                        >
-                            <TruncateMarkup lines={1}>
-                                <Typography variant={'h5'}>{name}</Typography>
-                            </TruncateMarkup>
-                        </a>
-                    </Link>
-                    <CardContent
-                        data-testid={`CollectionCard-${id}-description`}
-                        className={classes.content}
-                    >
-                        <Link href={href.href} as={href.as}>
-                            <a>
-                                <TruncateMarkup lines={2}>
-                                    <Typography
-                                        data-testid={`CollectionCard-${id}-description`}
-                                        variant="body2"
-                                        color="textSecondary"
-                                        component="p"
-                                    >
-                                        {description}
-                                    </Typography>
-                                </TruncateMarkup>
-                            </a>
-                        </Link>
-                    </CardContent>
-                </div>
-                <CardActions className={classes.cardActions}>
-                    <div className={classes.user}>
-                        <Avatar
-                            aria-label={String(owner && owner.username)}
-                            data-testid={`CollectionCard-${id}-avatar`}
-                            id={String(owner && owner.id)}
-                            name={owner && owner.name}
-                            username={owner && owner.username}
-                            avatar={owner && owner.avatar}
-                            withName={true}
-                        />
-                    </div>
+        <Link href={collectionURL.href} as={collectionURL.as}>
+            <a className={classes.link}>
+                <>
+                    {/*  Mobile Version */}
+                    <Hidden implementation="css" smUp={true}>
+                        <Card className={classes.card}>
+                            <Grid className={classes.row}>
+                                <CardImage
+                                    image={background}
+                                    type="Collection"
+                                />
+                                <div className={classes.column}>
+                                    <div className={classes.header}>
+                                        <Icon>folder</Icon>
+                                        <Typography variant="subtitle2">
+                                            Collection
+                                        </Typography>
+                                        <Typography variant="body2">
+                                            {moment(String(dateUpdated)).format(
+                                                'MMM DD'
+                                            )}
+                                        </Typography>
+                                    </div>
+                                    <TruncateMarkup lines={2}>
+                                        <Typography
+                                            className={classes.name}
+                                            variant="h5"
+                                        >
+                                            {name}
+                                        </Typography>
+                                    </TruncateMarkup>
+                                </div>
+                            </Grid>
+                            <Grid className={classes.row}>
+                                <Details user={owner} />
+                                <CardStatistics articleCount={articleCount} />
+                            </Grid>
+                        </Card>
+                    </Hidden>
+                    {/* Desktop Version */}
+                    <Hidden implementation="css" xsDown={true}>
+                        <Card className={classes.card}>
+                            <Grid className={classes.row}>
+                                <CardImage
+                                    image={background}
+                                    type="Collection"
+                                />
+                                <Grid className={classes.column}>
+                                    <div className={classes.header}>
+                                        <Icon>folder</Icon>
+                                        <Typography variant="subtitle2">
+                                            Collection
+                                        </Typography>
+                                        <Typography variant="body2">
+                                            {moment(String(dateUpdated)).format(
+                                                'MMM DD'
+                                            )}
+                                        </Typography>
+                                    </div>
 
-                    <div className={classes.statistics}>
-                        <Icon data-testid={`CollectionCard-${id}-articleIcon`}>
-                            insert_drive_file
-                        </Icon>
-                        <Typography
-                            data-testid={`CollectionCard-${id}-articleCount`}
-                            variant="subtitle1"
-                        >
-                            {articleCount}
-                        </Typography>
-                        <Icon
-                            data-testid={`CommunityCard-${id}-collectionIcon`}
-                        >
-                            folder
-                        </Icon>
-                        <Typography
-                            data-testid={`CommunityCard-${id}-collectionCount`}
-                            variant="subtitle1"
-                        >
-                            {collectionCount}
-                        </Typography>
-
-                        <Tooltip
-                            title={isBookmarked ? 'Unbookmark' : 'Bookmark'}
-                        >
-                            <IconButton
-                                onClick={() =>
-                                    isLoggedIn && openModalAction
-                                        ? openModalAction({
-                                              children: (
-                                                  <BookmarkResource
-                                                      resourceId={id}
-                                                      resourceType={
-                                                          ResourceTypeInput.COLLECTION
-                                                      }
-                                                  />
-                                              ),
-                                          })
-                                        : routeChangeAction &&
-                                          routeChangeAction(`/login`)
-                                }
-                            >
-                                {isBookmarked ? (
-                                    <BookmarkIcon
-                                        data-testid={`CollectionCard-${id}-bookmarkIcon`}
-                                    />
-                                ) : (
-                                    <BookmarkBorderIcon
-                                        data-testid={`CollectionCard-${id}-bookmarkBorderIcon`}
-                                    />
-                                )}
-                            </IconButton>
-                        </Tooltip>
-                        <IconButton
-                            onClick={handleClickOpen}
-                            data-testid={`CollectionCard-${id}-shareIcon`}
-                            aria-label="share button"
-                        >
-                            <Icon>share</Icon>
-                        </IconButton>
-                        <ShareDialog
-                            href={getCollectionURL({ name, id }).href}
-                            name={name}
-                            id={id}
-                            open={open}
-                            handleClose={handleClose}
-                        ></ShareDialog>
-                    </div>
-                </CardActions>
-            </div>
-        </Card>
+                                    <TruncateMarkup lines={2}>
+                                        <Typography
+                                            className={classes.name}
+                                            variant="h5"
+                                        >
+                                            {name}
+                                        </Typography>
+                                    </TruncateMarkup>
+                                    <TruncateMarkup lines={2}>
+                                        <Typography
+                                            className={classes.description}
+                                            variant="body2"
+                                        >
+                                            {description}
+                                        </Typography>
+                                    </TruncateMarkup>
+                                    <Grid className={classes.bottom}>
+                                        <Details user={owner} />
+                                        <CardStatistics
+                                            articleCount={articleCount}
+                                        />
+                                        <Actions
+                                            id={id}
+                                            name={name}
+                                            isBookmarked={isBookmarked}
+                                            isLoggedIn={isLoggedIn}
+                                            openModalAction={openModalAction}
+                                            routeChangeAction={
+                                                routeChangeAction
+                                            }
+                                            // addArticleToCollectionAction={
+                                            //     addArticleToCollectionAction
+                                            // }
+                                            url={collectionURL}
+                                            type="COLLECTION"
+                                        />
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Card>
+                    </Hidden>
+                </>
+            </a>
+        </Link>
     )
 }
 

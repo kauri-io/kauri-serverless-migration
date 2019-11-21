@@ -30,11 +30,15 @@
     },
     {
       "src": "/robots.txt",
-      "dest": "/app/static/robots.txt"
+      "dest": "/app/static/development/robots.txt"
     },
     {
       "src": "/favicon.ico",
       "dest": "/app/static/favicon/favicon.ico"
+    },
+    {
+      "src": "/(.*)/(.*)/l",
+      "dest": "/app/view-link?id=$2"
     },
     {
       "src": "/article/(.*)/v(.*)/update-article",
@@ -101,6 +105,10 @@
       "dest": "/app/public-profile?user_id=$1"
     },
     {
+      "src": "/bookmarks",
+      "dest": "/app/bookmarks"
+    },
+    {
       "src": "draft/(.*)/(.*)",
       "dest": "/app/draft?id=$1&version=$2"
     },
@@ -119,6 +127,11 @@
       "src": "/.*",
       "status": 404,
       "dest": "/app/404"
+    },
+    {
+      "src": "/.*",
+      "status": 500,
+      "dest": "/app/500"
     }
   ]
 }

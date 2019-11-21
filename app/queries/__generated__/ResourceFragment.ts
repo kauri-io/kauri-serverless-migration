@@ -9,11 +9,11 @@ import { ResourceTypeInput, ArticleStatusInput, CommunityPermissionInput, UserSt
 // ====================================================
 
 export interface ResourceFragment_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface ResourceFragment_CollectionDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface ResourceFragment_CollectionDTO_owner_PublicUserDTO_resourceIdentifier {
@@ -93,7 +93,7 @@ export interface ResourceFragment_CollectionDTO_sections_resourcesId {
 }
 
 export interface ResourceFragment_CollectionDTO_sections_resources_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CollectionDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CollectionDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_associatedNfts {
@@ -121,6 +121,50 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_re
   version: number | null;
 }
 
+export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_contributors_articles {
+  __typename: "ResponsePage_ArticleDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_contributors_collections {
+  __typename: "ResponsePage_CollectionDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_contributors_links {
+  __typename: "ResponsePage_ExternalLinkDTO";
+  /**
+   * Total amount of elements.
+   */
+  totalElements: any;
+}
+
+export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_contributors_communities_community {
+  __typename: "CommunityDTO";
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  name: string;
+}
+
+export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_contributors_communities {
+  __typename: "MemberRoleCommunityDTO";
+  /**
+   * Community
+   */
+  community: ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_contributors_communities_community;
+}
+
 export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_contributors {
   __typename: "PublicUserDTO";
   /**
@@ -139,6 +183,33 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_co
    * User avatar URI
    */
   avatar: string | null;
+  /**
+   * User title
+   */
+  title: string | null;
+  /**
+   * User social links (twitter, github, etc.)
+   */
+  social: any | null;
+  /**
+   * Returns a page of ArticleDTO authored by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  articles: ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_contributors_articles;
+  /**
+   * Returns a page of CollectionDTO owned by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  collections: ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_contributors_collections;
+  /**
+   * Returns a page of ExternalLinkDTO owned by this PublicUserDTO.
+   * This operation can only be performed by logged user
+   */
+  links: ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_contributors_links;
+  /**
+   * Get communities the user is member of mapped by role
+   */
+  communities: (ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_contributors_communities | null)[];
 }
 
 export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_voteResult {
@@ -182,7 +253,7 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_au
 }
 
 export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
@@ -314,6 +385,10 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ArticleDTO {
    */
   contributors: (ResourceFragment_CollectionDTO_sections_resources_ArticleDTO_contributors | null)[];
   /**
+   * Check if the article was already read by the current user
+   */
+  isRead: boolean;
+  /**
    * Description of the article - First 500 characters of the plaintext content)
    */
   description: string | null;
@@ -404,7 +479,7 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkD
 }
 
 export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier {
@@ -470,6 +545,22 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkD
 }
 
 export type ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_owner = ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_owner_ArticleDTO | ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_owner_PublicUserDTO | ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_owner_CommunityDTO;
+
+export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_submitter {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User full name
+   */
+  name: string | null;
+}
 
 export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_url {
   __typename: "ExternalLinkField_String";
@@ -603,9 +694,17 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkD
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
+  /**
+   * External link submitter (full profile)
+   */
+  submitter: ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_submitter;
   /**
    * The link url
    */
@@ -740,7 +839,7 @@ export interface ResourceFragment_ExternalLinkDTO_resourceIdentifier {
 }
 
 export interface ResourceFragment_ExternalLinkDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface ResourceFragment_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier {
@@ -806,6 +905,22 @@ export interface ResourceFragment_ExternalLinkDTO_owner_CommunityDTO {
 }
 
 export type ResourceFragment_ExternalLinkDTO_owner = ResourceFragment_ExternalLinkDTO_owner_ArticleDTO | ResourceFragment_ExternalLinkDTO_owner_PublicUserDTO | ResourceFragment_ExternalLinkDTO_owner_CommunityDTO;
+
+export interface ResourceFragment_ExternalLinkDTO_submitter {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User full name
+   */
+  name: string | null;
+}
 
 export interface ResourceFragment_ExternalLinkDTO_url {
   __typename: "ExternalLinkField_String";
@@ -939,9 +1054,17 @@ export interface ResourceFragment_ExternalLinkDTO {
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: ResourceFragment_ExternalLinkDTO_owner | null;
+  /**
+   * External link submitter (full profile)
+   */
+  submitter: ResourceFragment_ExternalLinkDTO_submitter;
   /**
    * The link url
    */
@@ -1045,7 +1168,7 @@ export interface ResourceFragment_ArticleDTO_author {
 }
 
 export interface ResourceFragment_ArticleDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface ResourceFragment_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
@@ -1255,7 +1378,7 @@ export interface ResourceFragment_CommunityDTO_pendingId {
 }
 
 export interface ResourceFragment_CommunityDTO_approved_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface ResourceFragment_CommunityDTO_approved_ArticleDTO {
