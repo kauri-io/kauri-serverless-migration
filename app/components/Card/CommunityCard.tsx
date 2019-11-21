@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     card: {
         [theme.breakpoints.up('xs')]: {
             padding: theme.spacing(2),
-            height: 130
+            height: 130,
         },
         [theme.breakpoints.down('xs')]: {
             padding: theme.spacing(1),
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         flexDirection: 'row',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
-        marginTop: 'auto'
+        marginTop: 'auto',
     },
     column: {
         display: 'flex',
@@ -108,7 +108,7 @@ const CommunityCard = ({
                     <Hidden smUp={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
-                                <CardImage image={avatar} type='Community' />
+                                <CardImage image={avatar} type="Community" />
                                 <div className={classes.column}>
                                     <div className={classes.header}>
                                         <GroupIcon />
@@ -145,7 +145,7 @@ const CommunityCard = ({
                     <Hidden xsDown={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
-                                <CardImage image={avatar} type='Community' />
+                                <CardImage image={avatar} type="Community" />
                                 <Grid className={classes.column}>
                                     <div className={classes.header}>
                                         <GroupIcon />

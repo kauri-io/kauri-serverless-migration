@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
         [theme.breakpoints.down('xs')]: {
             padding: theme.spacing(1),
-            height: 130
+            height: 130,
         },
         display: 'flex',
         flexDirection: 'column',
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         flexDirection: 'row',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
-        marginTop: 'auto'
+        marginTop: 'auto',
     },
     column: {
         display: 'flex',
@@ -120,7 +120,10 @@ const CollectionCard = ({
                     <Hidden smUp={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
-                                <CardImage image={background} type='Collection' />
+                                <CardImage
+                                    image={background}
+                                    type="Collection"
+                                />
                                 <div className={classes.column}>
                                     <div className={classes.header}>
                                         <Icon>folder</Icon>
@@ -153,7 +156,10 @@ const CollectionCard = ({
                     <Hidden xsDown={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
-                                <CardImage image={background} type='Collection' />
+                                <CardImage
+                                    image={background}
+                                    type="Collection"
+                                />
                                 <Grid className={classes.column}>
                                     <div className={classes.header}>
                                         <Icon>folder</Icon>
