@@ -144,7 +144,7 @@ export default ({
                                         )}
                                     </div>
                                 )}
-                                <Hidden smDown={true}>
+                                <Hidden implementation='css' smDown={true}>
                                     <div className={classes.row}>
                                         <ArticleIcon />
                                         <Typography>

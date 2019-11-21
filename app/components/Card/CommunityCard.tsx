@@ -105,7 +105,7 @@ const CommunityCard = ({
             <a className={classes.link}>
                 <>
                     {/*  Mobile Version */}
-                    <Hidden smUp={true}>
+                    <Hidden implementation='css' smUp={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
                                 <CardImage image={avatar} type="Community" />
@@ -142,7 +142,7 @@ const CommunityCard = ({
                         </Card>
                     </Hidden>
                     {/* Desktop Version */}
-                    <Hidden xsDown={true}>
+                    <Hidden implementation='css' xsDown={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
                                 <CardImage image={avatar} type="Community" />

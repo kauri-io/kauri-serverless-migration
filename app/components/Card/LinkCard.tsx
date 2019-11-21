@@ -123,7 +123,7 @@ const LinkCard = ({
         <Link href={linkURL.href} as={linkURL.as}>
             <a className={classes.link}>
                 <>
-                    <Hidden smUp={true}>
+                    <Hidden implementation='css' smUp={true}>
                         <Card className={classes.card}>
                             <div className={classes.linkIndicator}>
                                 <LinkIcon color="primary" />
@@ -169,7 +169,7 @@ const LinkCard = ({
                             </Grid>
                         </Card>
                     </Hidden>
-                    <Hidden xsDown={true}>
+                    <Hidden implementation='css' xsDown={true}>
                         <Card className={classes.card}>
                             <div className={classes.linkIndicator}>
                                 <LinkIcon color="primary" />

@@ -117,7 +117,7 @@ const CollectionCard = ({
             <a className={classes.link}>
                 <>
                     {/*  Mobile Version */}
-                    <Hidden smUp={true}>
+                    <Hidden implementation='css' smUp={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
                                 <CardImage
@@ -153,7 +153,7 @@ const CollectionCard = ({
                         </Card>
                     </Hidden>
                     {/* Desktop Version */}
-                    <Hidden xsDown={true}>
+                    <Hidden implementation='css' xsDown={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
                                 <CardImage
