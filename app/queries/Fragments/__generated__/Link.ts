@@ -21,7 +21,7 @@ export interface Link_resourceIdentifier {
 }
 
 export interface Link_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface Link_owner_PublicUserDTO_resourceIdentifier {
@@ -87,6 +87,22 @@ export interface Link_owner_CommunityDTO {
 }
 
 export type Link_owner = Link_owner_ArticleDTO | Link_owner_PublicUserDTO | Link_owner_CommunityDTO;
+
+export interface Link_submitter {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User full name
+   */
+  name: string | null;
+}
 
 export interface Link_url {
   __typename: "ExternalLinkField_String";
@@ -220,9 +236,17 @@ export interface Link {
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: Link_owner | null;
+  /**
+   * External link submitter (full profile)
+   */
+  submitter: Link_submitter;
   /**
    * The link url
    */

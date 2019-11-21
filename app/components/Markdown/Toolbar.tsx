@@ -5,13 +5,12 @@ import CodeIcon from '@material-ui/icons/Code'
 import QuoteIcon from '@material-ui/icons/FormatQuote'
 import TitleIcon from '@material-ui/icons/Title'
 import ImageIcon from '@material-ui/icons/ImageOutlined'
-// import VideoIcon from '@material-ui/icons/VideocamOutlined'
 import LinkIcon from '@material-ui/icons/LinkOutlined'
 import ListIcon from '@material-ui/icons/FormatListBulletedOutlined'
 import NumberedListIcon from '@material-ui/icons/FormatListNumberedOutlined'
-// import TableIcon from '@material-ui/icons/TableChartOutlined'
 import { makeStyles } from '@material-ui/styles'
 import { Theme, Tooltip } from '@material-ui/core'
+import VideoIcon from '@material-ui/icons/Videocam'
 
 import URLModal from './URLModal'
 import { useEffect } from 'react'
@@ -127,14 +126,34 @@ const Toolbar = ({ format, compact, openModalAction, closeModalAction }) => {
                 </div>
             </Tooltip>
             {!compact && (
-                <Tooltip title="upload image">
-                    <div
-                        id="article-image-upload"
-                        className={classes.iconButton}
-                    >
-                        <ImageIcon />
-                    </div>
-                </Tooltip>
+                <>
+                    <Tooltip title="upload image">
+                        <div
+                            id="article-image-upload"
+                            className={classes.iconButton}
+                        >
+                            <ImageIcon />
+                        </div>
+                    </Tooltip>
+                    <Tooltip title="Embed Youtube">
+                        <div
+                            onClick={() =>
+                                openModalAction({
+                                    children: (
+                                        <URLModal
+                                            type="youtube"
+                                            format={format}
+                                            classes={classes}
+                                            closeModalAction={closeModalAction}
+                                        />
+                                    ),
+                                })
+                            }
+                        >
+                            <VideoIcon />
+                        </div>
+                    </Tooltip>
+                </>
             )}
             {/* {!compact && <Tooltip title='embed video'><div className={classes.iconButton}>
                 <VideoIcon />
@@ -145,6 +164,7 @@ const Toolbar = ({ format, compact, openModalAction, closeModalAction }) => {
                         openModalAction({
                             children: (
                                 <URLModal
+                                    type="url"
                                     format={format}
                                     classes={classes}
                                     closeModalAction={closeModalAction}

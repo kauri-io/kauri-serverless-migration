@@ -4,7 +4,7 @@ export const useStyles = makeStyles((theme: Theme) => {
     return {
         navbar: {
             margin: 'auto',
-            maxWidth: 1242,
+            maxWidth: 1272,
             width: '100%',
             justifyContent: 'space-between',
         },

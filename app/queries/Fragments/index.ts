@@ -50,6 +50,23 @@ export const Article = gql`
             name
             username
             avatar
+            title
+            social
+            articles(page: 0, size: 1, filter: { latestVersion: true }) {
+                totalElements
+            }
+            collections(page: 0, size: 1) {
+                totalElements
+            }
+            links(page: 0, size: 1) {
+                totalElements
+            }
+            communities {
+                community {
+                    id
+                    name
+                }
+            }
         }
         isRead
         description
@@ -118,9 +135,15 @@ export const Link = gql`
         dateCreated
         dateUpdated
         submitterId
+        isBookmarked
         owner {
             ...UserOwner
             ...CommunityOwner
+        }
+        submitter {
+            id
+            username
+            name
         }
         url {
             value

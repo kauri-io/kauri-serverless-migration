@@ -42,7 +42,7 @@ const Manage: React.FunctionComponent<any> = props => {
 
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
-            maxWidth: 1242,
+            maxWidth: 1272,
             marginLeft: `auto`,
             marginRight: 'auto',
             marginTop: theme.spacing(2),

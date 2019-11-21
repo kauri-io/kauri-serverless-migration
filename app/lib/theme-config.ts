@@ -59,7 +59,7 @@ const colors: IColors = {
     white: '#FFFFFF',
 }
 
-const MAIN_BODY_WIDTH = 1242
+const MAIN_BODY_WIDTH = 1272
 
 export const DEFAULT_CARD_WIDTH = 288
 

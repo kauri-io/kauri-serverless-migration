@@ -59,7 +59,7 @@ const ProfileHeader = ({
             width: '100%',
         },
         container: {
-            maxWidth: 1242,
+            maxWidth: 1272,
             margin: 'auto',
             padding: theme.spacing(6, 3),
         },

@@ -17,6 +17,7 @@ import {
     Box,
     makeStyles,
     Theme,
+    Button,
 } from '@material-ui/core'
 import Edit from '@material-ui/icons/Edit'
 import DeleteBookmarkFolderWidget from '../DeleteBookmarkFolderWidget/View'
@@ -38,7 +39,11 @@ interface IProps {
 }
 
 const useStyles = makeStyles((_theme: Theme) => ({
-    text: {
+    rightWrapper: {
+        alignItems: 'flex-end',
+    },
+    button: {
+        float: 'right',
         marginRight: '15px',
     },
 }))
@@ -75,15 +80,19 @@ export const EditBookmarkFolderWidgetComponent = ({
         setNewFolder(folder)
     }
 
+    const reset = () => {
+        setNewFolder('')
+        setHasError(false)
+        setShowForm(false)
+    }
+
     const update = () => {
         if (validate(folder)) {
             return
         }
         editBookmarkFolderAction({ folder, newFolder })
-
-        setNewFolder('')
-        setShowForm(false)
         updateFolder(newFolder)
+        reset()
     }
 
     return (
@@ -118,11 +127,12 @@ export const EditBookmarkFolderWidgetComponent = ({
                         />
                     )}
                 </Grid>
-                <Grid item xs={3} alignItems="flex-end">
+                <Grid item xs={3} className={classes.rightWrapper}>
                     {folder !== ROOT_FOLDER && !showForm ? (
-                        <Link
-                            href="#"
+                        <Button
                             color="primary"
+                            variant="text"
+                            className={classes.button}
                             onClick={() =>
                                 openModalAction({
                                     children: (
@@ -138,28 +148,31 @@ export const EditBookmarkFolderWidgetComponent = ({
                                 })
                             }
                         >
-                            <Typography
-                                variant="subtitle2"
-                                align="right"
-                                className={classes.text}
-                            >
-                                DELETE FOLDER
-                            </Typography>
-                        </Link>
+                            Delete Folder
+                        </Button>
                     ) : (
                         ''
                     )}
 
                     {folder !== ROOT_FOLDER && showForm ? (
-                        <Link href="#" color="primary" onClick={update}>
-                            <Typography
-                                variant="subtitle2"
-                                align="right"
-                                className={classes.text}
+                        <div>
+                            <Button
+                                color="primary"
+                                variant="outlined"
+                                className={classes.button}
+                                onClick={update}
                             >
-                                SAVE
-                            </Typography>
-                        </Link>
+                                Save
+                            </Button>
+                            <Button
+                                color="primary"
+                                variant="text"
+                                className={classes.button}
+                                onClick={reset}
+                            >
+                                Cancel
+                            </Button>
+                        </div>
                     ) : (
                         ''
                     )}

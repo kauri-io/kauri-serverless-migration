@@ -26,17 +26,13 @@ const ArticleDiscover = () => {
                 value={tab}
                 onChange={(_e, tab) => setTab(tab)}
             >
-                <Tab label="Trending" />
+                <Tab label="Hot This Week" />
                 <Tab label="Most Popular" />
-                <Tab label="Last Posted" />
-                <Tab label="Last Updated" />
-                <Tab label="Random" />
+                <Tab label="Recent" />
             </Tabs>
             {tab === 0 && <List key="hot" scoringMode="TRENDING" />}
             {tab === 1 && <List key="popular" scoringMode="MOST_POPULAR" />}
             {tab === 2 && <List key="posted" scoringMode="LAST_POSTED" />}
-            {tab === 3 && <List key="updated" scoringMode="LAST_UPDATED" />}
-            {tab === 4 && <List key="random" scoringMode="RANDOM" />}
         </div>
     )
 }

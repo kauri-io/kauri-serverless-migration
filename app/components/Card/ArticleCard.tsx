@@ -1,424 +1,201 @@
-import Card from '@material-ui/core/Card'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
-import Avatar from '../Avatar'
-import Menu from '@material-ui/core/Menu'
-import MenuItem from '@material-ui/core/MenuItem'
-import { Typography, ListItemIcon, Icon } from '@material-ui/core'
-import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
-import BookmarkIcon from '@material-ui/icons/Bookmark'
-import { Theme, makeStyles } from '@material-ui/core/styles'
+import { Card, Typography, Theme, Grid, Hidden } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
+import CardImage from './CardComponents/CardImage'
 import TruncateMarkup from 'react-truncate-markup'
-import moment from 'moment-mini'
-import Link from 'next/link'
-import { getArticleURL } from '../../lib/getURLs'
-import IconButton from '@material-ui/core/IconButton'
-import { useState } from 'react'
-import ShareDialog from './ShareDialog'
-import Image from '../Image'
-import BookmarkResource from '../../containers/Bookmark/BookmarkResourceWidget'
-import { ResourceTypeInput } from '../../__generated__/globalTypes'
-import { Tooltip } from '@material-ui/core'
 import { openModalAction } from '../Modal/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { connect } from 'react-redux'
+import { getArticleURL } from '../../lib/getURLs'
+import Link from 'next/link'
+import Details from './CardComponents/CardDetails'
+import GroupIcon from '@material-ui/icons/GroupWork'
+import Actions from './CardComponents/CardActions'
+import estimateTime from '../../lib/estimateTime'
 
-export const ArticleCardStyles = makeStyles((theme: Theme) => ({
-    avatar: {
-        backgroundColor: theme.palette.primary.main,
-        textTransform: 'uppercase',
-        width: 24,
-        height: 24,
-    },
+const useStyles = makeStyles((theme: Theme) => ({
     card: {
-        display: 'flex',
-        '& > *:last-child': {
-            alignSelf: 'center',
+        [theme.breakpoints.up('xs')]: {
+            padding: theme.spacing(2),
         },
-        height: 184,
-        width: '100%',
-        maxWidth: 870,
-    },
-    cardActualContent: {
+        [theme.breakpoints.down('xs')]: {
+            padding: theme.spacing(1),
+            height: 130,
+        },
         display: 'flex',
         flexDirection: 'column',
         width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            width: 'calc(100% - 152px)',
-        },
+        maxWidth: 808,
     },
-    author: {
-        cursor: 'pointer',
-        [theme.breakpoints.only('xs')]: {
-            display: 'none !important',
-        },
-    },
-    bookmark: {
-        cursor: 'pointer',
-    },
-    content: {
-        textAlign: 'left',
-        cursor: 'pointer',
-        height: '100%',
-        padding: '0px !important',
-        paddingLeft: `${theme.spacing(2)}px !important`,
-        [theme.breakpoints.only('xs')]: {
-            display: 'none !important',
-        },
-    },
-    header: {
-        display: 'flex',
-        paddingTop: theme.spacing(2),
-        paddingLeft: theme.spacing(2),
-        paddingRight: theme.spacing(2),
-        cursor: 'pointer',
-    },
-    mobileMedia: {
-        marginLeft: 'auto',
-        cursor: 'pointer',
-        borderRadius: '4px',
-        height: 152,
-        width: 152,
-        [theme.breakpoints.only('xs')]: {
-            alignSelf: 'center',
-            width: 76,
-            height: 76,
-        },
-        [theme.breakpoints.up('sm')]: {
-            display: 'none !important',
-        },
-    },
-    desktopMedia: {
-        marginLeft: 'auto',
-        cursor: 'pointer',
-        borderRadius: '4px',
-        height: 152,
-        width: 152,
-        marginRight: theme.spacing(2),
-        [theme.breakpoints.only('xs')]: {
-            display: 'none !important',
-        },
-    },
-    menuButton: {
-        padding: 0,
+    link: {
+        width: '100%',
     },
     title: {
-        [theme.breakpoints.only('xs')]: { maxWidth: `calc(100% - 100px)` },
+        textTransform: 'capitalize',
+        marginRight: theme.spacing(1),
+        wordWrap: 'break-word',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 16,
+        },
     },
-    cardActions: {
+    actions: {
+        [theme.breakpoints.down('xs')]: {
+            display: 'none',
+        },
+    },
+    row: {
         display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        justifyContent: 'space-between',
         marginTop: 'auto',
-        alignItems: 'center',
-        paddingBottom: theme.spacing(2),
-        paddingLeft: theme.spacing(2),
-        maxHeight: 83,
     },
-    user: {
+    column: {
         display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
+        width: '100%',
+        textAlign: 'left',
+    },
+    bottom: {
+        marginTop: 'auto',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '100%',
+    },
+    community: {
+        display: 'flex',
+        flexDirection: 'row',
         alignItems: 'center',
-        '& > *:not(:last-child)': {
-            marginRight: theme.spacing(1),
-        },
+        textTransform: 'capitalize',
         '& > *': {
-            lineHeight: '27px !important',
-        },
-    },
-    statistics: {
-        display: 'flex',
-        marginLeft: 'auto !important',
-        alignItems: 'center',
-        '& > *:not(:last-child)': {
             marginRight: theme.spacing(1),
         },
-    },
-    menuItem: {
-        padding: theme.spacing(0, 2),
+        '& svg': {
+            height: 12,
+            width: 12,
+        },
     },
 }))
 
-interface IProps {
-    id: string
-    version: number
-    title: string | null
-    author: {
-        name: string | null
-        username: string | null
-        id: string
-        avatar: string | null
-    } | null
-    attributes: {
-        background?: string
-    } | null
-    datePublished: string | null
-    description: string | null
-    className?: string
-    href: {
-        as: string
-        href: string
-    }
-    isLoggedIn?: boolean
-    comments: {
-        totalElements: any
-    } | null
-    voteResult: {
-        sum: number
-    } | null
-    isBookmarked: boolean
-    addArticleToCollectionAction?: () => void
-    openModalAction?: typeof openModalAction
-    routeChangeAction?: typeof routeChangeAction
-}
-
-const ArticleCard: React.FC<IProps> = ({
-    author,
-    title,
-    attributes,
-    datePublished,
-    description,
-    className,
-    href,
+const ArticleCard = ({
     id,
-    version,
-    comments,
-    voteResult,
+    title,
+    author,
+    attributes,
+    content,
     isBookmarked,
-    isLoggedIn = false,
-    addArticleToCollectionAction,
     openModalAction,
     routeChangeAction,
-}) => {
-    const classes = ArticleCardStyles({})
-    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-
-    function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
-        setAnchorEl(event.currentTarget)
-    }
-
-    function handleClose() {
-        setAnchorEl(null)
-    }
-
-    const [shareDialogOpen, setShareDialogOpen] = useState<boolean>(false)
-
-    function handleClickShareDialogOpen() {
-        setShareDialogOpen(true)
-    }
-
-    function handleClickShareDialogClose() {
-        setShareDialogOpen(false)
-        handleClose()
-    }
+    addArticleToCollectionAction,
+    // version,
+    description,
+    isLoggedIn,
+    datePublished,
+    owner,
+}: any) => {
+    const minutes = content && estimateTime(content)
+    const classes = useStyles({})
+    const articleURL = getArticleURL({ id, title })
 
     return (
-        <Card
-            key={id}
-            className={`${classes.card} ${className ? className : ''}`}
-        >
-            <div className={classes.cardActualContent}>
-                <div className={classes.header}>
-                    <Link href={href.href} as={href.as}>
-                        <a
-                            data-testid={`ArticleCard-${id}-title`}
-                            className={classes.title}
-                        >
-                            <TruncateMarkup lines={2}>
-                                <Typography variant={'h5'}>{title}</Typography>
-                            </TruncateMarkup>
-                        </a>
-                    </Link>
-                    <Link href={href.href} as={href.as}>
-                        {attributes && attributes.background ? (
-                            <Image
-                                className={classes.mobileMedia}
-                                data-testid={`ArticleCard-${id}-image`}
-                                width={76}
-                                height={76}
-                                image={attributes.background}
-                                borderRadius="4px"
-                            />
-                        ) : (
-                            <img
-                                alt={String(title)}
-                                className={classes.mobileMedia}
-                                data-testid={`ArticleCard-${id}-image`}
-                                src="/static/images/DefaultArticle.svg"
-                            />
-                        )}
-                    </Link>
-                </div>
-                <Link href={href.href} as={href.as}>
-                    <a>
-                        <CardContent
-                            data-testid={`ArticleCard-${id}-description`}
-                            className={classes.content}
-                        >
-                            <TruncateMarkup lines={2}>
-                                <Typography
-                                    data-testid={`ArticleCard-${id}-description`}
-                                    variant="body2"
-                                    color="textSecondary"
-                                    component="p"
-                                >
-                                    {description}
-                                </Typography>
-                            </TruncateMarkup>
-                        </CardContent>
-                    </a>
-                </Link>
-                <CardActions className={classes.cardActions}>
-                    <div className={classes.user}>
-                        <Avatar
-                            aria-label={String(author && author.username)}
-                            data-testid={`ArticleCard-${id}-author`}
-                            id={String(author && author.id)}
-                            name={author && author.name}
-                            username={author && author.username}
-                            avatar={author && author.avatar}
-                            withName={true}
-                        />
-                        {datePublished && (
-                            <Typography
-                                data-testid={`ArticleCard-${id}-date`}
-                                variant="body2"
-                            >
-                                {moment(String(datePublished)).format(
-                                    'DD MMM YY'
-                                )}
-                            </Typography>
-                        )}
-                    </div>
+        <Link href={articleURL.href} as={articleURL.as}>
+            <a className={classes.link}>
+                <>
+                    <Hidden implementation="css" smUp={true}>
+                        <Card className={classes.card}>
+                            <Grid className={classes.row}>
+                                <Grid className={classes.column}>
+                                    <TruncateMarkup lines={2}>
+                                        <Typography
+                                            className={classes.title}
+                                            variant="h5"
+                                        >
+                                            {title}
+                                        </Typography>
+                                    </TruncateMarkup>
+                                    {owner && owner.communityName && (
+                                        <Grid className={classes.community}>
+                                            <GroupIcon />
+                                            <Typography variant="caption">
+                                                {owner.communityName}
+                                            </Typography>
+                                        </Grid>
+                                    )}
+                                </Grid>
 
-                    <div className={classes.statistics}>
-                        <Icon data-testid={`ArticleCard-${id}-commentIcon`}>
-                            comment
-                        </Icon>
-                        <Typography
-                            data-testid={`ArticleCard-${id}-commentCount`}
-                            variant="subtitle1"
-                        >
-                            {comments && comments.totalElements}
-                        </Typography>
-
-                        <Icon data-testid={`ArticleCard-${id}-upvoteIcon`}>
-                            arrow_drop_up
-                        </Icon>
-                        <Typography
-                            data-testid={`ArticleCard-${id}-upvoteCount`}
-                            variant="subtitle1"
-                        >
-                            {voteResult && voteResult.sum}
-                        </Typography>
-
-                        <Tooltip
-                            title={isBookmarked ? 'Unbookmark' : 'Bookmark'}
-                        >
-                            <IconButton
-                                onClick={() =>
-                                    isLoggedIn && openModalAction
-                                        ? openModalAction({
-                                              children: (
-                                                  <BookmarkResource
-                                                      resourceId={id}
-                                                      resourceType={
-                                                          ResourceTypeInput.ARTICLE
-                                                      }
-                                                  />
-                                              ),
-                                          })
-                                        : routeChangeAction &&
-                                          routeChangeAction(`/login`)
-                                }
-                            >
-                                {isBookmarked ? (
-                                    <BookmarkIcon
-                                        data-testid={`ArticleCard-${id}-bookmarkIcon`}
-                                    />
-                                ) : (
-                                    <BookmarkBorderIcon
-                                        data-testid={`ArticleCard-${id}-bookmarkBorderIcon`}
-                                    />
-                                )}
-                            </IconButton>
-                        </Tooltip>
-                        <IconButton
-                            onClick={handleClick}
-                            data-testid={`ArticleCard-${id}-moreOptionsButton`}
-                            aria-label="simple-menu"
-                            aria-haspopup="true"
-                            className={classes.menuButton}
-                        >
-                            <Icon>more_vert</Icon>
-                        </IconButton>
-                        <ShareDialog
-                            href={
-                                getArticleURL({
-                                    title: String(title),
-                                    id,
-                                    version: Number(version),
-                                }).href
-                            }
-                            name={title}
-                            id={id}
-                            open={shareDialogOpen}
-                            handleClose={handleClickShareDialogClose}
-                        ></ShareDialog>
-
-                        <Menu
-                            id="simple-menu"
-                            data-testid={`ArticleCard-${id}-moreOptionsMenu`}
-                            anchorEl={anchorEl}
-                            keepMounted
-                            open={Boolean(anchorEl)}
-                            onClose={handleClose}
-                        >
-                            <MenuItem onClick={handleClickShareDialogOpen}>
-                                <ListItemIcon>
-                                    <Icon>share</Icon>
-                                </ListItemIcon>
-                                <Typography variant="inherit">Share</Typography>
-                            </MenuItem>
-                            {isLoggedIn && (
-                                <MenuItem
-                                    data-testid={`ArticleCard-${id}-addToCollectionButton`}
-                                    onClick={() => {
-                                        addArticleToCollectionAction &&
-                                            addArticleToCollectionAction()
-                                    }}
-                                >
-                                    <ListItemIcon>
-                                        <Icon>folder</Icon>
-                                    </ListItemIcon>
-                                    <Typography variant="inherit">
-                                        Add To Collection
-                                    </Typography>
-                                </MenuItem>
-                            )}
-                        </Menu>
-                    </div>
-                </CardActions>
-            </div>
-            <Link href={href.href} as={href.as}>
-                <a>
-                    {attributes && attributes.background ? (
-                        <Image
-                            className={classes.desktopMedia}
-                            data-testid={`ArticleCard-${id}-image`}
-                            width={152}
-                            height={152}
-                            image={attributes.background}
-                            borderRadius="4px"
-                        />
-                    ) : (
-                        <img
-                            alt={String(title)}
-                            className={classes.desktopMedia}
-                            data-testid={`ArticleCard-${id}-image`}
-                            src="/static/images/DefaultArticle.svg"
-                        />
-                    )}
-                </a>
-            </Link>
-        </Card>
+                                <CardImage
+                                    image={attributes && attributes.background}
+                                    type={'Article'}
+                                />
+                            </Grid>
+                            <Grid className={classes.row}>
+                                <Details
+                                    user={author}
+                                    minutes={minutes}
+                                    date={datePublished}
+                                />
+                            </Grid>
+                        </Card>
+                    </Hidden>
+                    <Hidden implementation="css" xsDown={true}>
+                        <Card className={classes.card}>
+                            <Grid className={classes.row}>
+                                <Grid className={classes.column}>
+                                    <TruncateMarkup lines={2}>
+                                        <Typography
+                                            className={classes.title}
+                                            variant="h5"
+                                        >
+                                            {title}
+                                        </Typography>
+                                    </TruncateMarkup>
+                                    <TruncateMarkup lines={2}>
+                                        <Typography variant="body2">
+                                            {description}
+                                        </Typography>
+                                    </TruncateMarkup>
+                                    {owner && owner.communityName && (
+                                        <Grid className={classes.community}>
+                                            <GroupIcon />
+                                            <Typography variant="caption">
+                                                {owner.communityName}
+                                            </Typography>
+                                        </Grid>
+                                    )}
+                                    <Grid className={classes.bottom}>
+                                        <Details
+                                            user={author}
+                                            minutes={minutes}
+                                            date={datePublished}
+                                        />
+                                        <Actions
+                                            id={id}
+                                            name={title}
+                                            isBookmarked={isBookmarked}
+                                            isLoggedIn={isLoggedIn}
+                                            openModalAction={openModalAction}
+                                            routeChangeAction={
+                                                routeChangeAction
+                                            }
+                                            addArticleToCollectionAction={
+                                                addArticleToCollectionAction
+                                            }
+                                            url={articleURL}
+                                            type="ARTICLE"
+                                        />
+                                    </Grid>
+                                </Grid>
+                                <CardImage
+                                    image={attributes && attributes.background}
+                                    type={'Article'}
+                                />
+                            </Grid>
+                        </Card>
+                    </Hidden>
+                </>
+            </a>
+        </Link>
     )
 }
 

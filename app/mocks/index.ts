@@ -6,6 +6,9 @@ import {
     Article_author,
     Article_owner_PublicUserDTO,
     Article_owner_PublicUserDTO_resourceIdentifier,
+    Article_contributors_articles,
+    Article_contributors_links,
+    Article_contributors_collections,
 } from '../queries/Fragments/__generated__/Article'
 import {
     ResourceTypeInput,
@@ -14,6 +17,7 @@ import {
 
 export const generateArticle = (mod: number) => ({
     associatedNfts: null,
+    isRead: true,
     __typename: 'ArticleDTO' as Article['__typename'],
     resourceIdentifier: {
         __typename: 'ResourceIdentifier' as Article_resourceIdentifier['__typename'],
@@ -28,6 +32,24 @@ export const generateArticle = (mod: number) => ({
             username: `test-author-username-${mod}`,
             name: `test author name ${mod}`,
             avatar: `test avatar ${mod}`,
+            title: 'test title',
+            social: {
+                github: 'test github',
+                twitter: 'twst twitter',
+            },
+            links: {
+                __typename: 'ResponsePage_ExternalLinkDTO' as Article_contributors_links['__typename'],
+                totalElements: 3,
+            },
+            collections: {
+                __typename: 'ResponsePage_CollectionDTO' as Article_contributors_collections['__typename'],
+                totalElements: 3,
+            },
+            articles: {
+                __typename: 'ResponsePage_ArticleDTO' as Article_contributors_articles['__typename'],
+                totalElements: 3,
+            },
+            communities: [],
         },
     ],
     description: `test description ${mod}`,

@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         padding: theme.spacing(2, 0),
     },
     container: {
-        maxWidth: 1242,
+        maxWidth: 1272,
         margin: 'auto',
         width: '100%',
     },

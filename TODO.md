@@ -1,13 +1,49 @@
-- Review all links 
-- Review all cards - need material rework anyway
-- Review Epics are working
-- Ensure it builds
-- Rework all epics
-- Fix route change epic and links
-- Fix notifications (or replace with material ui)
-- reinstate Hotjar
-- set "noImplicitAny": to true
-- Add capitalization to cards
-- improve capping of text
-- Prepare NOW routes
-- fix createcollectionform index
+# TODO
+
+## Homepage
+- Branding
+- Update cards
+- CREATE -> CONTRIBUTE
+- Remove "Import Content"
+
+## Create Collection
+- Make input boxes multilined
+- Add to collection flow (Articles & External links)
+
+## View Article
+- Don't implement new upvoting/liking otherwise new design ok
+
+## Create Community
+- Make input boxes multilined
+- Add to collection flow (Articles & External links)
+- Edit community buttons
+- Input design tweaks
+
+
+
+# Done
+## CARDS
+- profile
+- community
+- collection
+- article
+- link
+
+## View Community
+- Update cards
+
+## View Collection
+- Update cards
+- Bookmark option (on collection page)
+
+## Write Article
+- Disabled H1
+- Icon for video links
+
+## Discover
+- Hot this week
+- Most Popular
+- Recent
+
+## Profile page 
+- Leave as is

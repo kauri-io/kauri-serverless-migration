@@ -1,4 +1,10 @@
-import { FormGroup, TextField, Link } from '@material-ui/core'
+import {
+    FormGroup,
+    TextField,
+    makeStyles,
+    Theme,
+    Button,
+} from '@material-ui/core'
 import { useState } from 'react'
 import { ICreateBookmakFolderAction } from '../Module'
 import { createBookmarkFolderVariables } from '../../../queries/__generated__/createBookmarkFolder'
@@ -9,9 +15,26 @@ interface IProps {
     ) => ICreateBookmakFolderAction
 }
 
+const useStyles = makeStyles((theme: Theme) => ({
+    form: {
+        padding: '0 12px',
+    },
+    wrapper: {
+        display: 'flex',
+    },
+    button: {
+        padding: theme.spacing(1, 1),
+    },
+    link: {
+        width: 100,
+    },
+}))
+
 export const CreateBookmarkFolderComponent = ({
     createBookmarkFolderAction,
 }: IProps) => {
+    const classes = useStyles()
+
     const [showForm, setShowForm] = useState(false)
     const [hasError, setHasError] = useState(false)
     const [folder, setFolder] = useState('')
@@ -39,41 +62,51 @@ export const CreateBookmarkFolderComponent = ({
             return
         }
         createBookmarkFolderAction({ folder })
+        reset()
+    }
 
+    const reset = () => {
         setFolder('')
+        setHasError(false)
         setShowForm(false)
     }
 
     return (
         <FormGroup>
             {!showForm ? (
-                <Link
-                    color="primary"
-                    variant="subtitle2"
-                    href="#"
-                    onClick={toggleShowForm}
-                >
-                    {' '}
-                    NEW FOLDER
-                </Link>
+                <Button color="primary" variant="text" onClick={toggleShowForm} className={classes.button}>
+                    New folder
+                </Button>
             ) : (
                 [
-                    <TextField
-                        error={hasError ? true : false}
-                        margin="dense"
-                        onChange={e => updateFolder(e.target.value)}
-                        value={folder}
-                        placeholder="Folder name"
-                    />,
-                    <Link
-                        color="primary"
-                        variant="subtitle2"
-                        href="#"
-                        onClick={createFolder}
-                    >
-                        {' '}
-                        CREATE
-                    </Link>,
+                    <div className={classes.form}>
+                        <TextField
+                            error={hasError ? true : false}
+                            margin="dense"
+                            helperText={hasError ? 'Incorrect folder' : ''}
+                            onChange={e => updateFolder(e.target.value)}
+                            value={folder}
+                            placeholder="Folder name"
+                        />
+                        <div className={classes.wrapper}>
+                            <Button
+                                color="primary"
+                                variant="text"
+                                onClick={reset}
+                                className={classes.link}
+                            >
+                                Cancel
+                            </Button>
+                            <Button
+                                color="primary"
+                                variant="outlined"
+                                onClick={createFolder}
+                                className={classes.link}
+                            >
+                                Create
+                            </Button>
+                        </div>
+                    </div>,
                 ]
             )}
         </FormGroup>

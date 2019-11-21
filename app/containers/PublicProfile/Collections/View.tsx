@@ -32,6 +32,12 @@ const Collections = ({
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
             paddingTop: theme.spacing(4),
+            paddingBottom: theme.spacing(4),
+            maxWidth: 870,
+            margin: '0 auto',
+            '& > *': {
+                margin: theme.spacing(1),
+            },
         },
     }))
     const classes = useStyles()

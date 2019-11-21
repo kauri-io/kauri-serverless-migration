@@ -13,7 +13,7 @@ import CommunityCard from '../Card/CommunityCard'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
-        maxWidth: 1242,
+        maxWidth: 1272,
         margin: 'auto',
         '& > *': {
             marginBottom: theme.spacing(1),

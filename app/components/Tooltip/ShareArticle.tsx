@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import theme from '../../lib/theme-config'
 import ShareIcon from '@material-ui/icons/Share'
 
-const containerWidth = 70
+const containerWidth = 40
 
 const ReferenceContainer = styled.section`
     display: flex;
