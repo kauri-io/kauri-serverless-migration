@@ -127,11 +127,17 @@ const Renderer = ({ markdown, withComments, commentsCount }) => {
         },
     }
 
-    const useStyles = makeStyles(() => ({
+    const useStyles = makeStyles((theme: Theme) => ({
         outline: {
+            position: 'fixed',
             '& div div': {
                 display: 'none',
             },
+        },
+        heading: {
+            fontWeight: 400,
+            fontSize: 16,
+            marginBottom: theme.spacing(2),
         },
     }))
     const classes = useStyles()
@@ -142,7 +148,11 @@ const Renderer = ({ markdown, withComments, commentsCount }) => {
                 <Loading />
             ) : (
                 <>
-                    <Typography align="left" variant="h6">
+                    <Typography
+                        className={classes.heading}
+                        align="left"
+                        variant="h6"
+                    >
                         Contents
                     </Typography>
                     <ReactMarkdown options={options}>{markdown}</ReactMarkdown>

@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme: Theme) => ({
         width: '100%',
         maxWidth: 808,
     },
+    link: {
+        width: '100%',
+    },
     row: {
         display: 'flex',
         flexDirection: 'row',
@@ -81,7 +84,7 @@ export default ({
     console.log(id, username, name)
     return (
         <Link href={url.href} as={url.as}>
-            <a>
+            <a className={classes.link}>
                 <Card className={classes.card}>
                     <div className={classes.row}>
                         {avatar && (

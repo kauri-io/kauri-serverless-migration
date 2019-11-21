@@ -46,6 +46,7 @@ interface IProps {
     }
     addArticleToCollectionAction?: any
     type: string
+    hideAddtoCollection?: boolean
 }
 
 export default ({
@@ -57,6 +58,7 @@ export default ({
     routeChangeAction,
     url,
     addArticleToCollectionAction,
+    hideAddtoCollection,
     type,
 }: IProps) => {
     const classes = useStyles({})
@@ -140,7 +142,7 @@ export default ({
                     </ListItemIcon>
                     <Typography variant="inherit">Share</Typography>
                 </MenuItem>
-                {isLoggedIn && (
+                {isLoggedIn && !hideAddtoCollection && (
                     <MenuItem
                         data-testid={`ArticleCard-${id}-addToCollectionButton`}
                         onClick={() => {

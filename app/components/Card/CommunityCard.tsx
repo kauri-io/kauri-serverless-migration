@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
         [theme.breakpoints.down('xs')]: {
             padding: theme.spacing(1),
-            height: 130
+            height: 130,
         },
         display: 'flex',
         flexDirection: 'column',
@@ -105,7 +105,7 @@ const CommunityCard = ({
             <a className={classes.link}>
                 <>
                     {/*  Mobile Version */}
-                    <Hidden implementation='css' smUp={true}>
+                    <Hidden implementation="css" smUp={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
                                 <CardImage image={avatar} type="Community" />
@@ -142,7 +142,7 @@ const CommunityCard = ({
                         </Card>
                     </Hidden>
                     {/* Desktop Version */}
-                    <Hidden implementation='css' xsDown={true}>
+                    <Hidden implementation="css" xsDown={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
                                 <CardImage image={avatar} type="Community" />

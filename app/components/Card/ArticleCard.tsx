@@ -3,15 +3,14 @@ import { makeStyles } from '@material-ui/styles'
 import CardImage from './CardComponents/CardImage'
 import TruncateMarkup from 'react-truncate-markup'
 import { openModalAction } from '../Modal/Module'
-
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
-
 import { connect } from 'react-redux'
 import { getArticleURL } from '../../lib/getURLs'
 import Link from 'next/link'
 import Details from './CardComponents/CardDetails'
 import GroupIcon from '@material-ui/icons/GroupWork'
 import Actions from './CardComponents/CardActions'
+import estimateTime from '../../lib/estimateTime'
 
 const useStyles = makeStyles((theme: Theme) => ({
     card: {
@@ -79,11 +78,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-const calculateMinutes = content => {
-    const words = content.split(' ').length
-    return Math.ceil(words / 200)
-}
-
 const ArticleCard = ({
     id,
     title,
@@ -100,7 +94,7 @@ const ArticleCard = ({
     datePublished,
     owner,
 }: any) => {
-    const minutes = content && calculateMinutes(content)
+    const minutes = content && estimateTime(content)
     const classes = useStyles({})
     const articleURL = getArticleURL({ id, title })
 
