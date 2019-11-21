@@ -47848,9 +47848,9 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                         "componentStyle": ComponentStyle {
                                           "componentId": "CommunityHeader__Column-yoiqj8-9",
                                           "isStatic": false,
-                                          "lastClassName": "khvTqN",
+                                          "lastClassName": "kyfzFg",
                                           "rules": Array [
-                                            "display:flex;flex-direction:column;flex:3;justify-content:center;",
+                                            "display:flex;flex-direction:column;flex:3;justify-content:center;@media (min-width:500px){padding:10px;}",
                                           ],
                                         },
                                         "displayName": "CommunityHeader__Column",
@@ -47867,7 +47867,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                     forwardedRef={null}
                                   >
                                     <div
-                                      className="CommunityHeader__Column-yoiqj8-9 khvTqN"
+                                      className="CommunityHeader__Column-yoiqj8-9 kyfzFg"
                                     >
                                       <CommunityHeader__Row
                                         className="image-name"
@@ -47995,9 +47995,9 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                     "componentStyle": ComponentStyle {
                                                       "componentId": "CommunityHeader__Column-yoiqj8-9",
                                                       "isStatic": false,
-                                                      "lastClassName": "khvTqN",
+                                                      "lastClassName": "kyfzFg",
                                                       "rules": Array [
-                                                        "display:flex;flex-direction:column;flex:3;justify-content:center;",
+                                                        "display:flex;flex-direction:column;flex:3;justify-content:center;@media (min-width:500px){padding:10px;}",
                                                       ],
                                                     },
                                                     "displayName": "CommunityHeader__Column",
@@ -48014,7 +48014,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                 forwardedRef={null}
                                               >
                                                 <div
-                                                  className="CommunityHeader__Column-yoiqj8-9 khvTqN"
+                                                  className="CommunityHeader__Column-yoiqj8-9 kyfzFg"
                                                 >
                                                   <Typography__styledComponent
                                                     color="white"
@@ -48596,11 +48596,11 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                         "componentStyle": ComponentStyle {
                                           "componentId": "CommunityHeader__RightSide-yoiqj8-11",
                                           "isStatic": false,
-                                          "lastClassName": "liVMUy",
+                                          "lastClassName": "ezRprI",
                                           "rules": Array [
                                             "display:flex;flex-direction:column;flex:1;justify-content:center;align-items:center;> *:not(:last-child){margin-bottom:",
                                             [Function],
-                                            "px;}",
+                                            "px;}@media (min-width:500px){padding:10px;}",
                                           ],
                                         },
                                         "displayName": "CommunityHeader__RightSide",
@@ -48617,7 +48617,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                     forwardedRef={null}
                                   >
                                     <div
-                                      className="CommunityHeader__RightSide-yoiqj8-11 liVMUy"
+                                      className="CommunityHeader__RightSide-yoiqj8-11 ezRprI"
                                     >
                                       <Container
                                         pageType="CollectionPage"
@@ -48969,11 +48969,11 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                     "componentStyle": ComponentStyle {
                                                       "componentId": "CommunityHeader__RightSide-yoiqj8-11",
                                                       "isStatic": false,
-                                                      "lastClassName": "liVMUy",
+                                                      "lastClassName": "ezRprI",
                                                       "rules": Array [
                                                         "display:flex;flex-direction:column;flex:1;justify-content:center;align-items:center;> *:not(:last-child){margin-bottom:",
                                                         [Function],
-                                                        "px;}",
+                                                        "px;}@media (min-width:500px){padding:10px;}",
                                                       ],
                                                     },
                                                     "displayName": "CommunityHeader__RightSide",
@@ -48990,7 +48990,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                                                 forwardedRef={null}
                                               >
                                                 <div
-                                                  className="CommunityHeader__RightSide-yoiqj8-11 liVMUy"
+                                                  className="CommunityHeader__RightSide-yoiqj8-11 ezRprI"
                                                 >
                                                   <CommunityHeader__Moderators>
                                                     <StyledComponent
