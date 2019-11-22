@@ -50,14 +50,16 @@ const ViewLink = ({
                     <div className={classes.header}>
                         <Hidden mdDown={true}>
                             <Toolbar
-                               id={getExternalLink.id}
-                               openModalAction={openModalAction}
-                               comments={getExternalLink.comments.totalElements}
-                               classes={classes}
-                               routeChangeAction={routeChangeAction}
-                               isBookmarked={getExternalLink.isBookmarked}
-                               isLoggedIn={!!userId}
-                               type='ARTICLE'
+                                id={getExternalLink.id}
+                                openModalAction={openModalAction}
+                                comments={
+                                    getExternalLink.comments.totalElements
+                                }
+                                classes={classes}
+                                routeChangeAction={routeChangeAction}
+                                isBookmarked={getExternalLink.isBookmarked}
+                                isLoggedIn={!!userId}
+                                type="ARTICLE"
                             />
                         </Hidden>
                         <LinkContent

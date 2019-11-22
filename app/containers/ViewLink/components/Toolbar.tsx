@@ -9,7 +9,16 @@ import BookmarkResource from '../../../containers/Bookmark/BookmarkResourceWidge
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
 import BookmarkIcon from '@material-ui/icons/Bookmark'
 
-const Toolbar = ({ classes, comments, openModalAction, isBookmarked, routeChangeAction, isLoggedIn, type, id }) => (
+const Toolbar = ({
+    classes,
+    comments,
+    openModalAction,
+    isBookmarked,
+    routeChangeAction,
+    isLoggedIn,
+    type,
+    id,
+}) => (
     <Grid className={classes.toolbar}>
         <a href="#comments">
             <Grid className={classes.tool} item={true}>
@@ -20,19 +29,22 @@ const Toolbar = ({ classes, comments, openModalAction, isBookmarked, routeChange
             </Grid>
         </a>
 
-        <Grid className={classes.tool} item={true} onClick={() => {
-            return isLoggedIn && openModalAction
-                ? openModalAction({
-                    children: (
-                        <BookmarkResource
-                            resourceId={id}
-                            resourceType={ResourceTypeInput[type]}
-                        />
-                    ),
-                })
-                : routeChangeAction && routeChangeAction(`/login`)
-        }}>
-
+        <Grid
+            className={classes.tool}
+            item={true}
+            onClick={() => {
+                return isLoggedIn && openModalAction
+                    ? openModalAction({
+                          children: (
+                              <BookmarkResource
+                                  resourceId={id}
+                                  resourceType={ResourceTypeInput[type]}
+                              />
+                          ),
+                      })
+                    : routeChangeAction && routeChangeAction(`/login`)
+            }}
+        >
             {isBookmarked ? <BookmarkIcon /> : <BookmarkBorderIcon />}
             <Typography variant="subtitle2">Bookmark</Typography>
         </Grid>
@@ -42,12 +54,7 @@ const Toolbar = ({ classes, comments, openModalAction, isBookmarked, routeChange
             item={true}
             onClick={() =>
                 openModalAction({
-                    children: (
-                        <AddToCollection
-                            resourceId={id}
-                            type={type}
-                        />
-                    ),
+                    children: <AddToCollection resourceId={id} type={type} />,
                 })
             }
         >

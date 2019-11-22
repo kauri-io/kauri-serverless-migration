@@ -66,14 +66,14 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 width: '100%',
-                marginBottom: theme.spacing(2)
+                marginBottom: theme.spacing(2),
             },
             [theme.breakpoints.down('md')]: {
                 flexDirection: 'column',
                 '& > *': {
-                    marginBottom: theme.spacing(1)
-                }
-            }
+                    marginBottom: theme.spacing(1),
+                },
+            },
         },
         tool: {
             display: 'flex',

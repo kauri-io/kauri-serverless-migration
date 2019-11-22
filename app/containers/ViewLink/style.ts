@@ -106,14 +106,14 @@ export const useStyles = makeStyles((theme: Theme) => {
                 flexDirection: 'row',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                width: '100%'
+                width: '100%',
             },
             [theme.breakpoints.down('md')]: {
                 flexDirection: 'column',
                 '& > *': {
-                    marginBottom: theme.spacing(1)
-                }
-            }
-        }
+                    marginBottom: theme.spacing(1),
+                },
+            },
+        },
     }
 })
