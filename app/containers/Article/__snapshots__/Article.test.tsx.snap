@@ -5735,7 +5735,9 @@ exports[`containers/Article should match snapshot 1`] = `
                                               <div
                                                 className="makeStyles-bottom-215"
                                               >
-                                                <div>
+                                                <div
+                                                  onClick={[Function]}
+                                                >
                                                   <a
                                                     href="https://www.github.com/test github"
                                                     target="_blank"
