@@ -1,4 +1,5 @@
 import TextField from '@material-ui/core/TextField'
+import ValidatedTextField from '../../components/ValidatedTextField'
 import UploadLogoButton from '../../components/Button/UploadLogoButton'
 import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
 import EmailField from './EmailField'
@@ -8,6 +9,7 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import { CheckboxProps } from '@material-ui/core/Checkbox'
 import { useState } from 'react'
+import isUrl from 'is-url'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -59,6 +61,7 @@ interface IProps {
     twitter: string | null
     email: string
     status: string
+    usernameReadOnly: boolean
     subscriptions: {
         newsletter: boolean
     }
@@ -70,6 +73,7 @@ interface IProps {
             | { twitter: string | null; github: string | null },
         field: string
     ) => void
+    updateValidationMessages?: (m: object) => void
 }
 
 const EditProfileForm = ({
@@ -83,11 +87,55 @@ const EditProfileForm = ({
     email,
     resendEmailVerificationAction,
     status,
+    usernameReadOnly,
     subscriptions,
     updateState,
+    updateValidationMessages,
 }: IProps) => {
     const classes = useStyles()
     const [oldEmail] = useState(email)
+    const [validationMessages, setValidationMessages] = useState({})
+
+    const validateUrl = url => {
+        console.log('ON VALIDATION: ' + onValidation)
+        if (url) {
+            if (!url.startsWith('http')) {
+                url = 'http://' + url
+            }
+
+            if (!isUrl(url)) {
+                return 'Please enter a valid url'
+            }
+        }
+
+        return ''
+    }
+
+    const validateUsername = username => {
+        if (username && username.length > 40) {
+            return 'Username longer than 40 characters'
+        }
+
+        return ''
+    }
+
+    const onValidation = (id, message) => {
+        console.log('Message: ' + message)
+        console.log('Id: ' + id)
+        if (!message || message == '') {
+            console.log('Delete: ' + id)
+            delete validationMessages[id]
+            return
+        }
+
+        validationMessages[id] = message
+        setValidationMessages(validationMessages)
+        updateValidationMessages && updateValidationMessages(validationMessages)
+        console.log(
+            'Validation messages: ' + JSON.stringify(validationMessages)
+        )
+    }
+
     return (
         <Grid className={classes.container} container={true} sm={12}>
             <Grid item={true} sm={3}>
@@ -113,19 +161,43 @@ const EditProfileForm = ({
                     placeholder="Add job title"
                     className={classes.input}
                 />
-                <TextField
+                {usernameReadOnly && username && (
+                    <TextField
+                        margin="dense"
+                        onChange={e => updateState(e.target.value, 'username')}
+                        value={username}
+                        placeholder="Add username"
+                        className={classes.input}
+                        InputProps={{
+                            readOnly: usernameReadOnly && username != '',
+                        }}
+                    />
+                )}
+                {(!usernameReadOnly || (!username || username == '')) && (
+                    <ValidatedTextField
+                        id="username"
+                        margin="dense"
+                        handleChange={e =>
+                            updateState(e.target.value, 'username')
+                        }
+                        value={username}
+                        placeholder="Add username"
+                        className={classes.input}
+                        validate={validateUsername}
+                        required={true}
+                        onValidation={onValidation}
+                    />
+                )}
+
+                <ValidatedTextField
+                    id="website"
                     margin="dense"
-                    onChange={e => updateState(e.target.value, 'username')}
-                    value={username}
-                    placeholder="Add username"
-                    className={classes.input}
-                />
-                <TextField
-                    margin="dense"
-                    onChange={e => updateState(e.target.value, 'website')}
+                    handleChange={e => updateState(e.target.value, 'website')}
                     value={website}
                     placeholder="Add Website"
                     className={classes.input}
+                    validate={validateUrl}
+                    onValidation={onValidation}
                 />
                 <TextField
                     margin="dense"
@@ -173,6 +245,7 @@ const EditProfileForm = ({
                     handleChange={e => updateState(e.target.value, 'email')}
                     status={status}
                     oldEmail={oldEmail}
+                    onValidation={onValidation}
                 />
                 <Tooltip title="Keep this checked to receive our newsletter with the latest tutorials and content series">
                     <FormControlLabel

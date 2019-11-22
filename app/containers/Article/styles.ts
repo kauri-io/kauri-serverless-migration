@@ -26,15 +26,6 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             background: theme.palette.common.white,
             padding: theme.spacing(2),
         },
-        controlsMobile: {
-            '& svg': {
-                marginLeft: theme.spacing(2),
-            },
-            alignItems: 'center',
-            display: 'flex',
-            marginBottom: theme.spacing(2),
-            justifyContent: 'space-between',
-        },
         floaterContainer: {
             display: 'flex',
             justifyContent: 'center',
@@ -67,6 +58,38 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
         recommended: {},
         root: {
             minHeight: '100%',
+        },
+        nameAndDate: {
+            display: 'flex',
+            [theme.breakpoints.up('lg')]: {
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                width: '100%',
+                marginBottom: theme.spacing(2),
+            },
+            [theme.breakpoints.down('md')]: {
+                flexDirection: 'column',
+                '& > *': {
+                    marginBottom: theme.spacing(1),
+                },
+            },
+        },
+        tool: {
+            display: 'flex',
+            cursor: 'pointer',
+            '& > *': {
+                marginRight: theme.spacing(1),
+                fontWeight: 600,
+            },
+        },
+        toolbar: {
+            marginBottom: theme.spacing(2),
+            paddingBottom: theme.spacing(2),
+            justifyContent: 'space-around',
+            borderBottom: '1px solid #cbcbcb',
+            display: 'flex',
+            flexDirection: 'row',
         },
     }
 })

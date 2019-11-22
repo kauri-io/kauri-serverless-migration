@@ -22,7 +22,7 @@ const KauriCopy = styled.span`
 `
 
 export default () => (
-    <Container>
+    <Container className="kauri-logo">
         <LogoIcon
             alt="Kauri logo"
             src={'/static/images/icons/footer-logo.png'}

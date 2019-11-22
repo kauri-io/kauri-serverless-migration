@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react'
-import TextField from '@material-ui/core/TextField'
+import ValidatedTextField from '../../components/ValidatedTextField'
 import { compose, withApollo } from 'react-apollo'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
@@ -61,6 +61,7 @@ interface IProps {
     resendEmailVerification: () => void
     classes: any
     oldEmail: string | null
+    onValidation?: (k: string, e: string) => void
 }
 
 const styles = {
@@ -126,13 +127,17 @@ const EmailField = ({
     resendEmailVerification,
     status,
     oldEmail,
+    onValidation,
 }: IProps) => (
-    <TextField
+    <ValidatedTextField
+        id="email"
         margin="dense"
         className={classes.input}
-        onChange={handleChange}
+        handleChange={handleChange}
         value={email}
         placeholder="Add Email"
+        validate={validateEmailAddress}
+        required={true}
         InputProps={{
             startAdornment: oldEmail && (
                 <InputAdornment position="start">
@@ -143,8 +148,20 @@ const EmailField = ({
                 </InputAdornment>
             ),
         }}
+        onValidation={onValidation}
     />
 )
+
+const validateEmailAddress = address => {
+    if (address) {
+        let emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        if (!emailPattern.test(address)) {
+            return 'Please enter a valid email address'
+        }
+    }
+
+    return ''
+}
 
 const mapStateToProps = () => {
     return {}

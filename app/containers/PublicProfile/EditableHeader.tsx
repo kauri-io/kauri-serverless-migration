@@ -66,6 +66,7 @@ interface IState {
     subscriptions: {
         newsletter: boolean
     }
+    validationMessages: object
 }
 
 class EditableHeader extends Component<IProps, IState> {
@@ -75,6 +76,7 @@ class EditableHeader extends Component<IProps, IState> {
         this.state = {
             pendingSubmit: false,
             subscriptions: { newsletter: false },
+            validationMessages: {},
             ...profile,
         }
     }
@@ -117,6 +119,7 @@ class EditableHeader extends Component<IProps, IState> {
     updateState(
         payload:
             | string
+            | object
             | { github: string | null; twitter: string | null }
             | { newsletter: boolean },
         field: string
@@ -137,6 +140,7 @@ class EditableHeader extends Component<IProps, IState> {
             website,
             subscriptions,
             status,
+            validationMessages,
         } = this.state
         return (
             <div className={this.props.classes.container}>
@@ -152,11 +156,15 @@ class EditableHeader extends Component<IProps, IState> {
                             title={title}
                             email={email}
                             status={status}
+                            usernameReadOnly={true}
                             subscriptions={subscriptions}
                             resendEmailVerificationAction={
                                 this.props.resendEmailVerificationAction
                             }
                             updateState={this.updateState.bind(this)}
+                            updateValidationMessages={messages =>
+                                this.updateState(messages, 'validationMessages')
+                            }
                         />
                     </Grid>
                     <Grid
@@ -178,6 +186,9 @@ class EditableHeader extends Component<IProps, IState> {
                             color="primary"
                             variant="contained"
                             onClick={() => this.handleSubmit()}
+                            disabled={
+                                Object.keys(validationMessages).length > 0
+                            }
                         >
                             Save Changes
                         </Button>
