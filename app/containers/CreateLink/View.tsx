@@ -152,6 +152,11 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
                         authorName={{ value: authorName }}
                         authorSocial={authorSocial}
                         url={{ value: url }}
+                        // isBookmarked={false}
+                        // id={'test-id'}
+                        // openModalAction={() => {}}
+                        // routeChangeAction={() => {}}
+                        // userId={userId}
                     />
                 </Grid>
             )}

@@ -8,9 +8,11 @@ import Head from 'next/head'
 
 const ViewLink = ({
     openModalAction,
+    routeChangeAction,
     addCommentAction,
     user,
     data: { getExternalLink },
+    userId,
 }) => {
     const classes = useStyles({})
 
@@ -46,18 +48,32 @@ const ViewLink = ({
                     md={8}
                 >
                     <div className={classes.header}>
-                        <Toolbar
-                            linkId={getExternalLink.id}
+                        <Hidden mdDown={true}>
+                            <Toolbar
+                                id={getExternalLink.id}
+                                openModalAction={openModalAction}
+                                comments={
+                                    getExternalLink.comments.totalElements
+                                }
+                                classes={classes}
+                                routeChangeAction={routeChangeAction}
+                                isBookmarked={getExternalLink.isBookmarked}
+                                isLoggedIn={!!userId}
+                                type="ARTICLE"
+                            />
+                        </Hidden>
+                        <LinkContent
                             openModalAction={openModalAction}
-                            comments={getExternalLink.comments.totalElements}
-                            classes={classes}
+                            routeChangeAction={routeChangeAction}
+                            userId={userId}
+                            {...getExternalLink}
                         />
-                        <LinkContent {...getExternalLink} />
                     </div>
                     <LinkComments
-                        link={getExternalLink}
-                        user={user}
+                        link={getExternalLink.resourceIdentifier}
                         addCommentAction={addCommentAction}
+                        user={user}
+                        comments={getExternalLink.comments}
                     />
                 </Grid>
                 <Hidden smDown={true}>

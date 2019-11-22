@@ -402,13 +402,13 @@ exports[`components/Footer should match snapshot 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Footer__NewFooter-wussxj-0",
                 "isStatic": false,
-                "lastClassName": "dvkcdZ",
+                "lastClassName": "lgwJar",
                 "rules": Array [
-                  "display:grid;grid-template-columns:1fr 2fr 1fr;grid-auto-columns:auto;width:100%;background-color:",
+                  "display:flex;flex-direction:row;justify-content:center;width:100%;background-color:",
                   [Function],
                   ";padding:0px ",
                   [Function],
-                  ";@media (max-width:500px){display:none;}",
+                  ";@media (max-width:500px){height:100% & div{display:none;}}",
                 ],
               },
               "displayName": "Footer__NewFooter",
@@ -425,84 +425,30 @@ exports[`components/Footer should match snapshot 1`] = `
           forwardedRef={null}
         >
           <div
-            className="Footer__NewFooter-wussxj-0 dvkcdZ"
+            className="Footer__NewFooter-wussxj-0 lgwJar"
           >
+            <Hidden
+              smDown={true}
+            >
+              <WithWidth(HiddenJs)
+                lgDown={false}
+                lgUp={false}
+                mdDown={false}
+                mdUp={false}
+                smDown={true}
+                smUp={false}
+                xlDown={false}
+                xlUp={false}
+                xsDown={false}
+                xsUp={false}
+              />
+            </Hidden>
             <_default>
-              <Email__Container>
+              <Logo__Container
+                className="kauri-logo"
+              >
                 <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "Email__Container-nxd7qh-0",
-                        "isStatic": false,
-                        "lastClassName": "bkJUoo",
-                        "rules": Array [
-                          "display:flex;flex-direction:row;align-items:center;",
-                        ],
-                      },
-                      "displayName": "Email__Container",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "Email__Container-nxd7qh-0",
-                      "target": "div",
-                      "toString": [Function],
-                      "usesTheme": false,
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
-                    }
-                  }
-                  forwardedRef={null}
-                >
-                  <div
-                    className="Email__Container-nxd7qh-0 bkJUoo"
-                  >
-                    <Email__EmailAddress
-                      href="mailto:info@kauri.io"
-                    >
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Email__EmailAddress-nxd7qh-1",
-                              "isStatic": false,
-                              "lastClassName": "jReXyi",
-                              "rules": Array [
-                                "height:16px;width:82px;color:#0ba986;font-family:Roboto;font-size:12px;font-weight:bold;line-height:16px;",
-                              ],
-                            },
-                            "displayName": "Email__EmailAddress",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "Email__EmailAddress-nxd7qh-1",
-                            "target": "a",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
-                        href="mailto:info@kauri.io"
-                      >
-                        <a
-                          className="Email__EmailAddress-nxd7qh-1 jReXyi"
-                          href="mailto:info@kauri.io"
-                        >
-                          info@kauri.io
-                        </a>
-                      </StyledComponent>
-                    </Email__EmailAddress>
-                  </div>
-                </StyledComponent>
-              </Email__Container>
-            </_default>
-            <_default>
-              <Logo__Container>
-                <StyledComponent
+                  className="kauri-logo"
                   forwardedComponent={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
@@ -529,7 +475,7 @@ exports[`components/Footer should match snapshot 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="Logo__Container-yhmxu8-1 kPuFaV"
+                    className="Logo__Container-yhmxu8-1 kPuFaV kauri-logo"
                   >
                     <Logo__LogoIcon
                       alt="Kauri logo"
@@ -608,266 +554,22 @@ exports[`components/Footer should match snapshot 1`] = `
                 </StyledComponent>
               </Logo__Container>
             </_default>
-            <_default>
-              <Consensys__Container>
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "Consensys__Container-sc-3l6ajh-0",
-                        "isStatic": false,
-                        "lastClassName": "hzIdEE",
-                        "rules": Array [
-                          "display:flex;flex-direction:row;align-items:center;>:nth-child(2){margin-left:15px;}>:last-child{margin-left:4px;}",
-                        ],
-                      },
-                      "displayName": "Consensys__Container",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "Consensys__Container-sc-3l6ajh-0",
-                      "target": "div",
-                      "toString": [Function],
-                      "usesTheme": false,
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
-                    }
-                  }
-                  forwardedRef={null}
-                >
-                  <div
-                    className="Consensys__Container-sc-3l6ajh-0 hzIdEE"
-                  >
-                    <Consensys__ConsenSysLogoIcon>
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                              "isStatic": false,
-                              "lastClassName": "iJDtiZ",
-                              "rules": Array [
-                                "color:#fff;font-weight:500;font-size:13px;",
-                              ],
-                            },
-                            "displayName": "Consensys__ConsenSysLogoIcon",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                            "target": "a",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
-                      >
-                        <a
-                          className="Consensys__ConsenSysLogoIcon-sc-3l6ajh-2 iJDtiZ"
-                        >
-                          © Copyright 2019
-                        </a>
-                      </StyledComponent>
-                    </Consensys__ConsenSysLogoIcon>
-                    <Consensys__ConsenSysFormationIcon
-                      alt="Consensys logo"
-                      src="/static/images/icons/footer-consensys.png"
-                    >
-                      <StyledComponent
-                        alt="Consensys logo"
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Consensys__ConsenSysFormationIcon-sc-3l6ajh-1",
-                              "isStatic": false,
-                              "lastClassName": "gRtYkn",
-                              "rules": Array [
-                                "width:34px;",
-                              ],
-                            },
-                            "displayName": "Consensys__ConsenSysFormationIcon",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "Consensys__ConsenSysFormationIcon-sc-3l6ajh-1",
-                            "target": "img",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
-                        src="/static/images/icons/footer-consensys.png"
-                      >
-                        <img
-                          alt="Consensys logo"
-                          className="Consensys__ConsenSysFormationIcon-sc-3l6ajh-1 gRtYkn"
-                          src="/static/images/icons/footer-consensys.png"
-                        />
-                      </StyledComponent>
-                    </Consensys__ConsenSysFormationIcon>
-                    <Consensys__ConsenSysLogoIcon>
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                              "isStatic": false,
-                              "lastClassName": "iJDtiZ",
-                              "rules": Array [
-                                "color:#fff;font-weight:500;font-size:13px;",
-                              ],
-                            },
-                            "displayName": "Consensys__ConsenSysLogoIcon",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                            "target": "a",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
-                      >
-                        <a
-                          className="Consensys__ConsenSysLogoIcon-sc-3l6ajh-2 iJDtiZ"
-                        >
-                          ConsenSys Formation
-                        </a>
-                      </StyledComponent>
-                    </Consensys__ConsenSysLogoIcon>
-                    <Consensys__PrivacyPolicy
-                      href="/privacy-policy"
-                    >
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Consensys__PrivacyPolicy-sc-3l6ajh-3",
-                              "isStatic": false,
-                              "lastClassName": "hDPWys",
-                              "rules": Array [
-                                "color:#fff;font-weight:500;font-size:13px;",
-                                "margin-left:10px;margin-right:3px;font-weight:normal;font-size:10px;",
-                              ],
-                            },
-                            "displayName": "Consensys__PrivacyPolicy",
-                            "foldedComponentIds": Array [
-                              "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                            ],
-                            "render": [Function],
-                            "styledComponentId": "Consensys__PrivacyPolicy-sc-3l6ajh-3",
-                            "target": "a",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
-                        href="/privacy-policy"
-                      >
-                        <a
-                          className="Consensys__ConsenSysLogoIcon-sc-3l6ajh-2 Consensys__PrivacyPolicy-sc-3l6ajh-3 hDPWys"
-                          href="/privacy-policy"
-                        >
-                          Privacy Policy 
-                        </a>
-                      </StyledComponent>
-                    </Consensys__PrivacyPolicy>
-                    <Consensys__ConsenSysLogoIcon>
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                              "isStatic": false,
-                              "lastClassName": "iJDtiZ",
-                              "rules": Array [
-                                "color:#fff;font-weight:500;font-size:13px;",
-                              ],
-                            },
-                            "displayName": "Consensys__ConsenSysLogoIcon",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                            "target": "a",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
-                      >
-                        <a
-                          className="Consensys__ConsenSysLogoIcon-sc-3l6ajh-2 iJDtiZ"
-                        >
-                          |
-                        </a>
-                      </StyledComponent>
-                    </Consensys__ConsenSysLogoIcon>
-                    <Consensys__TermsOfService
-                      href="/terms-of-use"
-                    >
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Consensys__TermsOfService-sc-3l6ajh-4",
-                              "isStatic": false,
-                              "lastClassName": "hrfJKX",
-                              "rules": Array [
-                                "color:#fff;font-weight:500;font-size:13px;",
-                                "margin-left:10px;margin-right:3px;font-weight:normal;font-size:10px;",
-                                "margin-left:0px;",
-                              ],
-                            },
-                            "displayName": "Consensys__TermsOfService",
-                            "foldedComponentIds": Array [
-                              "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                              "Consensys__PrivacyPolicy-sc-3l6ajh-3",
-                            ],
-                            "render": [Function],
-                            "styledComponentId": "Consensys__TermsOfService-sc-3l6ajh-4",
-                            "target": "a",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
-                        href="/terms-of-use"
-                      >
-                        <a
-                          className="Consensys__ConsenSysLogoIcon-sc-3l6ajh-2 Consensys__PrivacyPolicy-sc-3l6ajh-3 Consensys__TermsOfService-sc-3l6ajh-4 hrfJKX"
-                          href="/terms-of-use"
-                        >
-                          Terms of Use
-                        </a>
-                      </StyledComponent>
-                    </Consensys__TermsOfService>
-                  </div>
-                </StyledComponent>
-              </Consensys__Container>
-            </_default>
+            <Hidden
+              smDown={true}
+            >
+              <WithWidth(HiddenJs)
+                lgDown={false}
+                lgUp={false}
+                mdDown={false}
+                mdUp={false}
+                smDown={true}
+                smUp={false}
+                xlDown={false}
+                xlUp={false}
+                xsDown={false}
+                xsUp={false}
+              />
+            </Hidden>
           </div>
         </StyledComponent>
       </Footer__NewFooter>

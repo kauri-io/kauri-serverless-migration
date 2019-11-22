@@ -3,7 +3,9 @@ import { makeStyles } from '@material-ui/styles'
 import CardImage from './CardComponents/CardImage'
 import TruncateMarkup from 'react-truncate-markup'
 import { openModalAction } from '../Modal/Module'
+
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+
 import { connect } from 'react-redux'
 import { getArticleURL } from '../../lib/getURLs'
 import Link from 'next/link'
@@ -56,11 +58,11 @@ const useStyles = makeStyles((theme: Theme) => ({
         textAlign: 'left',
         paddingRight: theme.spacing(2),
         [theme.breakpoints.up('sm')]: {
-            height: 150
+            height: 150,
         },
         [theme.breakpoints.down('sm')]: {
-            height: 90
-        }
+            height: 90,
+        },
     },
     bottom: {
         marginTop: 'auto',

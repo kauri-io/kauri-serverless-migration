@@ -1,34 +1,39 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Email from './Email'
 import Logo from './Logo'
 import ConsenSys from './Consensys'
+import { Hidden } from '@material-ui/core'
 
 export const footerHeight = 57
 
 const NewFooter = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-auto-columns: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     width: 100%;
     background-color: ${props => props.theme.primaryTextColor};
     padding: 0px ${props => props.theme.padding};
 
     @media (max-width: 500px) {
-        display: none;
+        height: 100% & div {
+            display: none;
+        }
     }
 `
 
 class StyledFooter extends React.Component<{}> {
     render() {
         return (
-            <Fragment>
-                <NewFooter>
+            <NewFooter>
+                <Hidden smDown={true}>
                     <Email />
-                    <Logo />
+                </Hidden>
+                <Logo />
+                <Hidden smDown={true}>
                     <ConsenSys />
-                </NewFooter>
-            </Fragment>
+                </Hidden>
+            </NewFooter>
         )
     }
 }
