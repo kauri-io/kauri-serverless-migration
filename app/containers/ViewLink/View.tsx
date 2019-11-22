@@ -1,7 +1,7 @@
 import Grid from '@material-ui/core/Grid'
 import LinkContent from './components/Content'
 import LinkComments from './components/LinkComments'
-// import Toolbar from './components/Toolbar'
+import Toolbar from './components/Toolbar'
 import { useStyles } from './style'
 import Hidden from '@material-ui/core/Hidden'
 import Head from 'next/head'
@@ -48,12 +48,18 @@ const ViewLink = ({
                     md={8}
                 >
                     <div className={classes.header}>
-                        {/* <Toolbar
-                            linkId={getExternalLink.id}
-                            openModalAction={openModalAction}
-                            comments={getExternalLink.comments.totalElements}
-                            classes={classes}
-                        /> */}
+                        <Hidden mdDown={true}>
+                            <Toolbar
+                               id={getExternalLink.id}
+                               openModalAction={openModalAction}
+                               comments={getExternalLink.comments.totalElements}
+                               classes={classes}
+                               routeChangeAction={routeChangeAction}
+                               isBookmarked={getExternalLink.isBookmarked}
+                               isLoggedIn={!!userId}
+                               type='ARTICLE'
+                            />
+                        </Hidden>
                         <LinkContent
                             openModalAction={openModalAction}
                             routeChangeAction={routeChangeAction}

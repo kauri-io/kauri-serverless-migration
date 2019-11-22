@@ -12,6 +12,7 @@ import { useStyles } from '../style'
 import TruncateMarkup from 'react-truncate-markup'
 import CardActions from '../../../components/Card/CardComponents/CardActions'
 import { getLinkUrl } from '../../../lib/getURLs'
+import { Hidden } from '@material-ui/core'
 
 // Replace when Twitter Icon builds correctly in Now
 const Twitter = () => (
@@ -53,7 +54,7 @@ const LinkContent = ({
                 alignItems="center"
                 justify="space-between"
             >
-                <div>
+                <div className={classes.nameAndDate}>
                     {owner && (
                         <Avatar
                             size={40}
@@ -63,22 +64,24 @@ const LinkContent = ({
                             withName={true}
                         />
                     )}
-                    <Typography className={classes.postedAt} variant="body2">
+                    <Typography variant="body2">
                         Posted {moment(dateCreated).format('DD MMM YY')}
                     </Typography>
                 </div>
-                <CardActions
-                    type="LINK"
-                    id={id}
-                    isBookmarked={isBookmarked}
-                    isLoggedIn={!!userId}
-                    name={linkTitle.value}
-                    url={getLinkUrl({ id, linkTitle })}
-                    openModalAction={openModalAction}
-                    routeChangeAction={routeChangeAction}
-                    hideAddtoCollection={true}
-                    hideShare={true}
-                />
+                <Hidden lgUp={true}>
+                    <CardActions
+                        type="LINK"
+                        id={id}
+                        isBookmarked={isBookmarked}
+                        isLoggedIn={!!userId}
+                        name={linkTitle.value}
+                        url={getLinkUrl({ id, linkTitle })}
+                        openModalAction={openModalAction}
+                        routeChangeAction={routeChangeAction}
+                        hideAddtoCollection={true}
+                        hideShare={true}
+                    />
+                </Hidden>
             </Grid>
             <Typography
                 className={classes.title}

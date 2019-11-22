@@ -28,6 +28,7 @@ import ProfileCard from '../../components/Card/PublicProfileCard'
 import CardActions from '../../components/Card/CardComponents/CardActions'
 import estimateTime from '../../lib/estimateTime'
 import moment from 'moment-mini'
+import Toolbar from '../ViewLink/components/Toolbar'
 
 interface IProps {
     id: string
@@ -161,11 +162,22 @@ const ArticleComp = ({
                     md={8}
                 >
                     <div className={classes.header}>
-                        <Grid direction="column" container={true}>
+                        <Hidden mdDown={true}>
+                            <Toolbar
+                                id={id}
+                                openModalAction={openModalAction}
+                                comments={comments.totalElements}
+                                classes={classes}
+                                routeChangeAction={routeChangeAction}
+                                isBookmarked={isBookmarked}
+                                isLoggedIn={!!userId}
+                                type='ARTICLE'
+
+                            />
+                        </Hidden>
+                        <Grid direction="row" container={true} justify='space-between'>
                             <Grid
-                                item={true}
-                                sm={12}
-                                className={classes.controlsMobile}
+                                className={classes.nameAndDate}
                             >
                                 {author && (
                                     <Avatar
@@ -175,6 +187,13 @@ const ArticleComp = ({
                                         withName={true}
                                     />
                                 )}
+                                <Typography gutterBottom={true}>
+                                    {content && estimateTime(content)} min read
+                                    - Posted{' '}
+                                    {moment(datePublished).format('DD MMM YY')}
+                                </Typography>
+                            </Grid>
+                            <Hidden lgUp={true}>
                                 <CardActions
                                     type="ARTICLE"
                                     id={id}
@@ -186,14 +205,7 @@ const ArticleComp = ({
                                     hideAddtoCollection={true}
                                     routeChangeAction={routeChangeAction}
                                 />
-                            </Grid>
-                            <div>
-                                <Typography gutterBottom={true}>
-                                    {content && estimateTime(content)} min read
-                                    - Posted{' '}
-                                    {moment(datePublished).format('DD MMM YY')}
-                                </Typography>
-                            </div>
+                            </Hidden>
                         </Grid>
                         <Typography color="inherit" variant="h4" component="h1">
                             {title}
@@ -232,18 +244,18 @@ const ArticleComp = ({
                             searchMoreLikeThis.content.map(
                                 (recommendedArticle, key: number) =>
                                     recommendedArticle &&
-                                    recommendedArticle.resource &&
-                                    recommendedArticle.resource.__typename ===
+                                        recommendedArticle.resource &&
+                                        recommendedArticle.resource.__typename ===
                                         'ArticleDTO' ? (
-                                        <ArticleCard
-                                            key={key}
-                                            className={classes.card}
-                                            href={getArticleURL(
-                                                recommendedArticle.resource
-                                            )}
-                                            {...recommendedArticle.resource}
-                                        />
-                                    ) : null
+                                            <ArticleCard
+                                                key={key}
+                                                className={classes.card}
+                                                href={getArticleURL(
+                                                    recommendedArticle.resource
+                                                )}
+                                                {...recommendedArticle.resource}
+                                            />
+                                        ) : null
                             )}
                     </div>
                 </Grid>

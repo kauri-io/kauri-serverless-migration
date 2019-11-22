@@ -138,12 +138,14 @@ export default ({
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                {!hideShare && <MenuItem onClick={handleClickShareDialogOpen}>
-                    <ListItemIcon>
-                        <Icon>share</Icon>
-                    </ListItemIcon>
-                    <Typography variant="inherit">Share</Typography>
-                </MenuItem>}
+                {!hideShare && (
+                    <MenuItem onClick={handleClickShareDialogOpen}>
+                        <ListItemIcon>
+                            <Icon>share</Icon>
+                        </ListItemIcon>
+                        <Typography variant="inherit">Share</Typography>
+                    </MenuItem>
+                )}
                 {isLoggedIn && !hideAddtoCollection && (
                     <MenuItem
                         data-testid={`ArticleCard-${id}-addToCollectionButton`}
