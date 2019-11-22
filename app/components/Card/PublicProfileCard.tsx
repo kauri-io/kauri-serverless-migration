@@ -106,7 +106,11 @@ export default ({
                             <Typography variant="body2">{title}</Typography>
                             <div className={classes.bottom}>
                                 {social && (social.twitter || social.github) && (
-                                    <div>
+                                    <div
+                                        onClick={e => {
+                                            e.stopPropagation()
+                                        }}
+                                    >
                                         {social.github && (
                                             <a
                                                 href={getURL(

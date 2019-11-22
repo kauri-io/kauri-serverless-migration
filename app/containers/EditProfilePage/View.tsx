@@ -22,6 +22,11 @@ const Page = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    @media (max-width: 600px) {
+        margin-top: -56px;
+        padding: 16px;
+    }
+    margin-top: -64px;
 `
 
 const Wrapper = styled.div`
