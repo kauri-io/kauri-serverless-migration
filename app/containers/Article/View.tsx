@@ -1,6 +1,6 @@
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import ArticleOutline from '../../components/Markdown/Outline'
 import Image from '../../components/Image'
 import Avatar from '../../components/Avatar'
@@ -25,10 +25,12 @@ import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { openModalAction } from '../../components/Modal/Module'
 import Schema from '../../lib/with-schema'
 import ProfileCard from '../../components/Card/PublicProfileCard'
-import CardActions from '../../components/Card/CardComponents/CardActions'
+// import CardActions from '../../components/Card/CardComponents/CardActions'
 import estimateTime from '../../lib/estimateTime'
 import moment from 'moment-mini'
 import Toolbar from '../ViewLink/components/Toolbar'
+import ShareIcon from '@material-ui/icons/Share'
+import ShareDialog from '../../components/Card/ShareDialog'
 
 interface IProps {
     id: string
@@ -80,6 +82,8 @@ const ArticleComp = ({
     const author = contributors && contributors[0]
     const canonicalUrl = attributes.canonical
 
+    const [shareDialogOpen, setShareDialogOpen] = useState(false)
+
     const markAsRead = () => {
         client &&
             client.mutate({
@@ -110,10 +114,13 @@ const ArticleComp = ({
                 },
             })
     }, [])
+
+    const url = getArticleURL({ id, title })
+
     return (
         <>
             <Schema
-                url={getArticleURL({ id, title })}
+                url={url}
                 canonicalURL={canonicalUrl}
                 id={id}
                 title={title}
@@ -195,17 +202,28 @@ const ArticleComp = ({
                                 </Typography>
                             </Grid>
                             <Hidden lgUp={true}>
-                                <CardActions
+                                <ShareIcon
+                                    onClick={() => setShareDialogOpen(true)}
+                                />
+                                <ShareDialog
+                                    href={url.as}
+                                    name={title}
+                                    open={shareDialogOpen}
+                                    handleClose={() =>
+                                        setShareDialogOpen(false)
+                                    }
+                                />
+                                {/* <CardActions
                                     type="ARTICLE"
                                     id={id}
                                     isBookmarked={isBookmarked}
                                     isLoggedIn={!!userId}
                                     name={title}
-                                    url={getArticleURL({ id, title })}
+                                    url={url}
                                     openModalAction={openModalAction}
                                     hideAddtoCollection={true}
                                     routeChangeAction={routeChangeAction}
-                                />
+                                /> */}
                             </Hidden>
                         </Grid>
                         <Typography color="inherit" variant="h4" component="h1">
