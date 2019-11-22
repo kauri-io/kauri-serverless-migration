@@ -19,6 +19,9 @@ export const useStyles = makeStyles((theme: Theme) => {
             marginTop: theme.spacing(3),
             marginBottom: theme.spacing(3),
         },
+        postedAt: {
+            marginTop: theme.spacing(2),
+        },
         controls: {
             '& svg': {
                 marginLeft: theme.spacing(2),

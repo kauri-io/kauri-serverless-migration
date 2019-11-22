@@ -47,6 +47,7 @@ interface IProps {
     addArticleToCollectionAction?: any
     type: string
     hideAddtoCollection?: boolean
+    hideShare?: boolean
 }
 
 export default ({
@@ -59,6 +60,7 @@ export default ({
     url,
     addArticleToCollectionAction,
     hideAddtoCollection,
+    hideShare,
     type,
 }: IProps) => {
     const classes = useStyles({})
@@ -136,12 +138,12 @@ export default ({
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <MenuItem onClick={handleClickShareDialogOpen}>
+                {!hideShare && <MenuItem onClick={handleClickShareDialogOpen}>
                     <ListItemIcon>
                         <Icon>share</Icon>
                     </ListItemIcon>
                     <Typography variant="inherit">Share</Typography>
-                </MenuItem>
+                </MenuItem>}
                 {isLoggedIn && !hideAddtoCollection && (
                     <MenuItem
                         data-testid={`ArticleCard-${id}-addToCollectionButton`}

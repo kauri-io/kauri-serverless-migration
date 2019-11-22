@@ -10,6 +10,8 @@ import Grid from '@material-ui/core/Grid'
 import Link from 'next/link'
 import { useStyles } from '../style'
 import TruncateMarkup from 'react-truncate-markup'
+import CardActions from '../../../components/Card/CardComponents/CardActions'
+import { getLinkUrl } from '../../../lib/getURLs'
 
 // Replace when Twitter Icon builds correctly in Now
 const Twitter = () => (
@@ -25,6 +27,7 @@ const Twitter = () => (
 )
 
 const LinkContent = ({
+    id,
     owner,
     dateCreated,
     linkTitle,
@@ -35,6 +38,10 @@ const LinkContent = ({
     url,
     linkDescription,
     summary,
+    isBookmarked,
+    openModalAction,
+    routeChangeAction,
+    userId,
 }) => {
     const classes = useStyles({})
     return (
@@ -46,18 +53,32 @@ const LinkContent = ({
                 alignItems="center"
                 justify="space-between"
             >
-                {owner && (
-                    <Avatar
-                        size={40}
-                        avatar={owner.avatar}
-                        username={owner.username}
-                        id={owner.id}
-                        withName={true}
-                    />
-                )}
-                <Typography variant="body2">
-                    Posted {moment(dateCreated).format('DD MMM YY')}
-                </Typography>
+                <div>
+                    {owner && (
+                        <Avatar
+                            size={40}
+                            avatar={owner.avatar}
+                            username={owner.username}
+                            id={owner.id}
+                            withName={true}
+                        />
+                    )}
+                    <Typography className={classes.postedAt} variant="body2">
+                        Posted {moment(dateCreated).format('DD MMM YY')}
+                    </Typography>
+                </div>
+                <CardActions
+                    type="LINK"
+                    id={id}
+                    isBookmarked={isBookmarked}
+                    isLoggedIn={!!userId}
+                    name={linkTitle.value}
+                    url={getLinkUrl({ id, linkTitle })}
+                    openModalAction={openModalAction}
+                    routeChangeAction={routeChangeAction}
+                    hideAddtoCollection={true}
+                    hideShare={true}
+                />
             </Grid>
             <Typography
                 className={classes.title}

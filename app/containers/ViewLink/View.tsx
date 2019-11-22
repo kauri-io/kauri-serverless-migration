@@ -1,16 +1,18 @@
 import Grid from '@material-ui/core/Grid'
 import LinkContent from './components/Content'
 import LinkComments from './components/LinkComments'
-import Toolbar from './components/Toolbar'
+// import Toolbar from './components/Toolbar'
 import { useStyles } from './style'
 import Hidden from '@material-ui/core/Hidden'
 import Head from 'next/head'
 
 const ViewLink = ({
     openModalAction,
+    routeChangeAction,
     addCommentAction,
     user,
     data: { getExternalLink },
+    userId,
 }) => {
     const classes = useStyles({})
 
@@ -46,18 +48,24 @@ const ViewLink = ({
                     md={8}
                 >
                     <div className={classes.header}>
-                        <Toolbar
+                        {/* <Toolbar
                             linkId={getExternalLink.id}
                             openModalAction={openModalAction}
                             comments={getExternalLink.comments.totalElements}
                             classes={classes}
+                        /> */}
+                        <LinkContent
+                            openModalAction={openModalAction}
+                            routeChangeAction={routeChangeAction}
+                            userId={userId}
+                            {...getExternalLink}
                         />
-                        <LinkContent {...getExternalLink} />
                     </div>
                     <LinkComments
-                        link={getExternalLink}
-                        user={user}
+                        link={getExternalLink.resourceIdentifier}
                         addCommentAction={addCommentAction}
+                        user={user}
+                        comments={getExternalLink.comments}
                     />
                 </Grid>
                 <Hidden smDown={true}>
