@@ -64,9 +64,7 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             justifyContent: 'center',
             alignItems: 'center',
             margin: theme.spacing(2),
-            '& svg': {
-                margin: theme.spacing(1),
-            },
+            flexWrap: 'wrap',
         },
         tag: {
             transition: 'all 0.2s',
@@ -140,6 +138,7 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
         contentLink: {
             color: theme.palette.primary.main,
             fontWeight: 600,
+            margin: theme.spacing(1),
         },
     }
 })

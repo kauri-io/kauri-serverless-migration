@@ -328,7 +328,6 @@ const ArticleComp = ({
                         </div>
                         <div className={classes.checkpointAndIPFS}>
                             <div className={classes.tags}>
-                                {/* (Content)[a href='ipfs content hash'] is (CC-BY-SA 4.0)[a href='actual detail of the license link'] Licensed */}
                                 <IPFSIcon />
                                 <a
                                     className={classes.contentLink}
