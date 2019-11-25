@@ -44,6 +44,7 @@ import { Theme, makeStyles } from '@material-ui/core/styles'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
 import LinkCardFormView from '../LinkCardFormView'
 import DeleteIcon from '@material-ui/icons/Delete'
+import ValidatedTextField from '../../components/ValidatedTextField'
 
 const useStyles = makeStyles((theme: Theme) => ({
     input: {
@@ -434,6 +435,26 @@ const CreateCollectionForm: React.FC<
     ] = React.useState<boolean>(false)
     const classes = useStyles()
 
+
+    const [validationMessages, setValidationMessages] = React.useState({})
+
+    const validate = (name: string, value: string, maxLength: number) => {
+        if (value && value.length > maxLength) {
+            return name + ' longer than ' + maxLength + ' characters'
+        }
+        return ''
+    }
+
+    const onValidation = (id, message) => {
+        if (!message || message == '') {
+            delete validationMessages[id]
+            return
+        }
+        validationMessages[id] = message
+        setValidationMessages(validationMessages)
+        //updateValidationMessages && updateValidationMessages(validationMessages)
+    }
+
     return (
         <Section>
             <Form>
@@ -501,14 +522,19 @@ const CreateCollectionForm: React.FC<
                             type="text"
                             name="name"
                             render={({ field }) => (
-                                <TextField
-                                    {...field}
-                                    type="text"
+                                <ValidatedTextField
+                                    id="name"
+                                    field={field}
+                                    multiline={true}
+                                    rowsMax="3"
                                     placeholder="Add collection title"
                                     InputProps={{
                                         className: classes.input,
                                     }}
                                     margin="normal"
+                                    validate={value => validate("name", value, 100)}
+                                    required={true}
+                                    onValidation={onValidation}
                                 />
                             )}
                         />
@@ -517,14 +543,19 @@ const CreateCollectionForm: React.FC<
                             type="text"
                             name="description"
                             render={({ field }) => (
-                                <TextField
-                                    {...field}
-                                    type="text"
+                                <ValidatedTextField
+                                    id="description"
+                                    field={field}
+                                    multiline
+                                    rowsMax="3"
                                     placeholder="Add description"
                                     InputProps={{
                                         className: classes.input,
                                     }}
                                     margin="normal"
+                                    validate={value => validate("description", value, 150)}
+                                    required={true}
+                                    onValidation={onValidation}
                                 />
                             )}
                         />

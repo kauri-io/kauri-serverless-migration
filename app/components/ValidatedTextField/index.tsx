@@ -6,16 +6,19 @@ import { OutlinedInputProps } from '@material-ui/core/OutlinedInput'
 interface IProps {
     id: string
     margin: 'none' | 'normal' | 'dense' | undefined
-    handleChange: (
+    handleChange?: (
         e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => void
-    value: string
+    value?: string
     placeholder: string
-    className: string
+    className?: string
     InputProps?: Partial<OutlinedInputProps>
     validate: (v: string) => string
     required?: boolean
     onValidation?: (k: string, e: string) => void
+    field?: any
+    multiline?: boolean
+    rowsMax?: string
 }
 
 const ValidatedTextField = ({
@@ -29,13 +32,19 @@ const ValidatedTextField = ({
     InputProps,
     required,
     onValidation,
+    field,
+    multiline,
+    rowsMax
+
 }: IProps) => {
     const [error, setError] = useState('')
 
     const doValidation = value => {
         let err = ''
-
+        console.log("required: ", required)
+        console.log("value: ", value)
         if (required && (!value || value == '')) {
+            console.log("here")
             onValidation && onValidation(id, 'Field required: ' + id)
         } else {
             err = validate(value)
@@ -51,10 +60,12 @@ const ValidatedTextField = ({
 
     return (
         <TextField
+            name={field && field.name}
             margin={margin}
             onChange={e => {
                 doValidation(e.target.value)
-                handleChange(e)
+                handleChange && handleChange(e)
+                field && field.onChange(e)
             }}
             value={value}
             placeholder={placeholder + (required ? ' (Required)' : '')}
@@ -62,6 +73,8 @@ const ValidatedTextField = ({
             label={error}
             error={error.length === 0 ? false : true}
             InputProps={InputProps}
+            multiline={multiline}
+            rowsMax={rowsMax}
         />
     )
 }
