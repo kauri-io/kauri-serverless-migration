@@ -206,7 +206,7 @@ class OnboardingEditProfile extends Component<IProps, IState> {
             status,
             validationMessages,
         } = this.state
-        const hasData = name && username && email && title
+        const hasData = name && username && email
         if (hasData) {
             return (
                 <Page>
