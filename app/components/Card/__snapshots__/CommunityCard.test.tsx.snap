@@ -1585,7 +1585,7 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                                                   <h6
                                                     className="MuiTypography-root MuiTypography-subtitle2"
                                                   >
-                                                    Collection
+                                                    Community
                                                   </h6>
                                                 </ForwardRef(Typography)>
                                               </WithStyles(ForwardRef(Typography))>
