@@ -48,50 +48,50 @@ export default ({ article, comments: { content }, user, addCommentAction }) => {
                 {content.length} Comment{content.length !== 1 ? 's' : ''}
             </Typography>
             <div className={classes.container}>
-                {user && (<Hidden mdDown={true}>
-
-                    <Grid container={true} className={classes.addComment}>
-                        <Grid item={true} sm={1}>
-                            <Avatar
-                                size={40}
-                                withName={false}
-                                username={user.username}
-                                id={user.id}
-                                avatar={user.avatar}
-                            />
-                        </Grid>
-                        <Grid item={true} sm={11}>
-                            <div className={classes.editorWrapper}>
-                                <Editor
-                                    minHeight={80}
-                                    text={comment}
-                                    withTabs={false}
-                                    withToolbar={true}
-                                    compact={true}
-                                    onChange={e => setComment(e)}
+                {user && (
+                    <Hidden mdDown={true}>
+                        <Grid container={true} className={classes.addComment}>
+                            <Grid item={true} sm={1}>
+                                <Avatar
+                                    size={40}
+                                    withName={false}
+                                    username={user.username}
+                                    id={user.id}
+                                    avatar={user.avatar}
                                 />
-                            </div>
-                            <div className={classes.button}>
-                                <Button
-                                    color="primary"
-                                    variant="text"
-                                    onClick={() =>
-                                        addCommentAction({
-                                            parent: {
-                                                id: article.id,
-                                                type: article.type,
-                                                version: article.version,
-                                            },
-                                            body: comment,
-                                        })
-                                    }
-                                >
-                                    Leave Comment
+                            </Grid>
+                            <Grid item={true} sm={11}>
+                                <div className={classes.editorWrapper}>
+                                    <Editor
+                                        minHeight={80}
+                                        text={comment}
+                                        withTabs={false}
+                                        withToolbar={true}
+                                        compact={true}
+                                        onChange={e => setComment(e)}
+                                    />
+                                </div>
+                                <div className={classes.button}>
+                                    <Button
+                                        color="primary"
+                                        variant="text"
+                                        onClick={() =>
+                                            addCommentAction({
+                                                parent: {
+                                                    id: article.id,
+                                                    type: article.type,
+                                                    version: article.version,
+                                                },
+                                                body: comment,
+                                            })
+                                        }
+                                    >
+                                        Leave Comment
                                     </Button>
-                            </div>
+                                </div>
+                            </Grid>
                         </Grid>
-                    </Grid>
-                </Hidden>
+                    </Hidden>
                 )}
                 {content.map(comment => (
                     <Comment {...comment} />
