@@ -1,6 +1,6 @@
 import { TextField } from '@material-ui/core'
 import { useState } from 'react'
-import isUrl from 'is-url'
+import { isUrl } from '../../lib/is-url'
 
 export default ({ attributes, setAttributes, onValidationError }) => {
     const [error, setError] = useState('')
