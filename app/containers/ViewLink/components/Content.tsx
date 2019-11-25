@@ -75,9 +75,7 @@ const LinkContent = ({
                     </Typography>
                 </div>
                 <Hidden lgUp={true}>
-                    <ShareIcon
-                        onClick={() => setShareDialogOpen(true)}
-                    />
+                    <ShareIcon onClick={() => setShareDialogOpen(true)} />
                     <ShareDialog
                         href={url.as}
                         name={linkTitle}

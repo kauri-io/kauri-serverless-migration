@@ -7,7 +7,7 @@ interface IProps {
     id: string
     margin: 'none' | 'normal' | 'dense' | undefined
     handleChange: (
-        e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
     ) => void
     value: string
     placeholder: string

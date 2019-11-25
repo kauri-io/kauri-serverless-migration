@@ -59,7 +59,9 @@ const ViewLink = ({
                                 routeChangeAction={routeChangeAction}
                                 isBookmarked={getExternalLink.isBookmarked}
                                 isLoggedIn={!!userId}
-                                type="ARTICLE"
+                                type="LINK"
+                                isAuthor={false}
+                                version={0}
                             />
                         </Hidden>
                         <LinkContent

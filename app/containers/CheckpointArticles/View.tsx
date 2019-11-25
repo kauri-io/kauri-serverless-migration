@@ -23,13 +23,14 @@ const CheckpointedArticlesContainer = styled.div`
     font-size: ${props => props.theme.fontSizes[0]}px;
     font-weight: ${props => props.theme.fontWeight[3]};
     text-transform: uppercase;
+    align-items: center;
 `
 
 export interface IProps {
     articles?: (searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO | null)[]
     articleCheckpointed?: boolean
     checkpointArticlesAction: () => void
-    pageType: 'public-profile'
+    pageType: 'public-profile' | 'approved-article'
     isOwner: boolean
 }
 
@@ -69,7 +70,7 @@ const CheckpointArticles: React.FC<IProps> = ({
             return <AllArticlesOnMainnet text={'Article On-chain'} />
         }
     }
-    return null
+    return <AllArticlesOnMainnet text={'Article On-chain'} />
 }
 
 export default CheckpointArticles
