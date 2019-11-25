@@ -191,11 +191,13 @@ const DisplayManagedResourcesComponent = ({
 export const DisplayManagedResources = withStyles({
     grid: {
         paddingTop: '24px',
+        paddingBottom: '24px',
     },
 })(DisplayManagedResourcesComponent)
 
 export default withStyles({
     grid: {
         paddingTop: '24px',
+        paddingBottom: '24px',
     },
 })(DisplayResources)

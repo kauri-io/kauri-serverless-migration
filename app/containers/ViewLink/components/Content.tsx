@@ -10,6 +10,12 @@ import Grid from '@material-ui/core/Grid'
 import Link from 'next/link'
 import { useStyles } from '../style'
 import TruncateMarkup from 'react-truncate-markup'
+// import CardActions from '../../../components/Card/CardComponents/CardActions'
+// import { getLinkUrl } from '../../../lib/getURLs'
+import { Hidden } from '@material-ui/core'
+import ShareIcon from '@material-ui/icons/Share'
+import { useState } from 'react'
+import ShareDialog from '../../../components/Card/ShareDialog'
 
 // Replace when Twitter Icon builds correctly in Now
 const Twitter = () => (
@@ -25,6 +31,7 @@ const Twitter = () => (
 )
 
 const LinkContent = ({
+    // id,
     owner,
     dateCreated,
     linkTitle,
@@ -35,8 +42,15 @@ const LinkContent = ({
     url,
     linkDescription,
     summary,
+    // isBookmarked,
+    // openModalAction,
+    // routeChangeAction,
+    // userId,
 }) => {
     const classes = useStyles({})
+
+    const [shareDialogOpen, setShareDialogOpen] = useState(false)
+
     return (
         <>
             <Grid
@@ -46,18 +60,43 @@ const LinkContent = ({
                 alignItems="center"
                 justify="space-between"
             >
-                {owner && (
-                    <Avatar
-                        size={40}
-                        avatar={owner.avatar}
-                        username={owner.username}
-                        id={owner.id}
-                        withName={true}
+                <div className={classes.nameAndDate}>
+                    {owner && (
+                        <Avatar
+                            size={40}
+                            avatar={owner.avatar}
+                            username={owner.username}
+                            id={owner.id}
+                            withName={true}
+                        />
+                    )}
+                    <Typography variant="body2">
+                        Posted {moment(dateCreated).format('DD MMM YY')}
+                    </Typography>
+                </div>
+                <Hidden lgUp={true}>
+                    <ShareIcon
+                        onClick={() => setShareDialogOpen(true)}
                     />
-                )}
-                <Typography variant="body2">
-                    Posted {moment(dateCreated).format('DD MMM YY')}
-                </Typography>
+                    <ShareDialog
+                        href={url.as}
+                        name={linkTitle}
+                        open={shareDialogOpen}
+                        handleClose={() => setShareDialogOpen(false)}
+                    />
+                    {/* <CardActions
+                        type="LINK"
+                        id={id}
+                        isBookmarked={isBookmarked}
+                        isLoggedIn={!!userId}
+                        name={linkTitle.value}
+                        url={getLinkUrl({ id, linkTitle })}
+                        openModalAction={openModalAction}
+                        routeChangeAction={routeChangeAction}
+                        hideAddtoCollection={true}
+                        hideShare={true}
+                    /> */}
+                </Hidden>
             </Grid>
             <Typography
                 className={classes.title}

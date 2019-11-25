@@ -3,7 +3,9 @@ import { makeStyles } from '@material-ui/styles'
 import CardImage from './CardComponents/CardImage'
 import TruncateMarkup from 'react-truncate-markup'
 import { openModalAction } from '../Modal/Module'
+
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+
 import { connect } from 'react-redux'
 import { getArticleURL } from '../../lib/getURLs'
 import Link from 'next/link'
