@@ -34,17 +34,16 @@ const ValidatedTextField = ({
     onValidation,
     field,
     multiline,
-    rowsMax
-
+    rowsMax,
 }: IProps) => {
     const [error, setError] = useState('')
 
     const doValidation = value => {
         let err = ''
-        console.log("required: ", required)
-        console.log("value: ", value)
+        console.log('required: ', required)
+        console.log('value: ', value)
         if (required && (!value || value == '')) {
-            console.log("here")
+            console.log('here')
             onValidation && onValidation(id, 'Field required: ' + id)
         } else {
             err = validate(value)

@@ -435,7 +435,6 @@ const CreateCollectionForm: React.FC<
     ] = React.useState<boolean>(false)
     const classes = useStyles()
 
-
     const [validationMessages, setValidationMessages] = React.useState({})
 
     const validate = (name: string, value: string, maxLength: number) => {
@@ -532,7 +531,9 @@ const CreateCollectionForm: React.FC<
                                         className: classes.input,
                                     }}
                                     margin="normal"
-                                    validate={value => validate("name", value, 100)}
+                                    validate={value =>
+                                        validate('name', value, 100)
+                                    }
                                     required={true}
                                     onValidation={onValidation}
                                 />
@@ -553,7 +554,9 @@ const CreateCollectionForm: React.FC<
                                         className: classes.input,
                                     }}
                                     margin="normal"
-                                    validate={value => validate("description", value, 150)}
+                                    validate={value =>
+                                        validate('description', value, 150)
+                                    }
                                     required={true}
                                     onValidation={onValidation}
                                 />
