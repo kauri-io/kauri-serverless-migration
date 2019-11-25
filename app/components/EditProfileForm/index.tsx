@@ -9,7 +9,7 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import { CheckboxProps } from '@material-ui/core/Checkbox'
 import { useState } from 'react'
-import isUrl from 'is-url'
+import { isUrl } from '../../lib/is-url'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -97,7 +97,6 @@ const EditProfileForm = ({
     const [validationMessages, setValidationMessages] = useState({})
 
     const validateUrl = url => {
-        console.log('ON VALIDATION: ' + onValidation)
         if (url) {
             if (!url.startsWith('http')) {
                 url = 'http://' + url
@@ -120,10 +119,7 @@ const EditProfileForm = ({
     }
 
     const onValidation = (id, message) => {
-        console.log('Message: ' + message)
-        console.log('Id: ' + id)
         if (!message || message == '') {
-            console.log('Delete: ' + id)
             delete validationMessages[id]
             return
         }
@@ -131,9 +127,6 @@ const EditProfileForm = ({
         validationMessages[id] = message
         setValidationMessages(validationMessages)
         updateValidationMessages && updateValidationMessages(validationMessages)
-        console.log(
-            'Validation messages: ' + JSON.stringify(validationMessages)
-        )
     }
 
     return (
