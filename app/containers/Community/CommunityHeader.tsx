@@ -193,6 +193,10 @@ const Links = styled.div`
     & > a {
         margin-right: ${props => props.theme.space[1]}px;
     }
+    @media (max-width: 600px) {
+        justify-content: center;
+        padding-top: 20px;
+    }
 `
 
 const Row = styled.div`
