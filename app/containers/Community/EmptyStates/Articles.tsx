@@ -11,6 +11,9 @@ const Container = styled.div`
     & > svg {
         margin-bottom: ${props => props.theme.space[2]}px;
     }
+    @media (max-width: 600px) {
+        text-align: center;
+    }
 `
 
 const SVG = () => (

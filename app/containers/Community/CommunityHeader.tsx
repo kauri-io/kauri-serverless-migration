@@ -193,6 +193,10 @@ const Links = styled.div`
     & > a {
         margin-right: ${props => props.theme.space[1]}px;
     }
+    @media (max-width: 600px) {
+        justify-content: center;
+        padding-top: 20px;
+    }
 `
 
 const Row = styled.div`
@@ -215,13 +219,16 @@ const ContentRow = styled(Row)`
     }
 `
 
-const Column = styled.div`
+const LeftSide = styled.div`
     display: flex;
     flex-direction: column;
     flex: 3;
     justify-content: center;
+    @media (max-width: 500px) {
+        padding: ${props => props.theme.space[2]}px;
+    }
     @media (min-width: 500px) {
-        padding: 10px;
+        padding: ${props => props.theme.space[2]}px;
     }
 `
 
@@ -244,8 +251,11 @@ const RightSide = styled.div`
     > *:not(:last-child) {
         margin-bottom: ${props => props.theme.space[3]}px;
     }
+    @media (max-width: 500px) {
+        padding: ${props => props.theme.space[2]}px;
+    }
     @media (min-width: 500px) {
-        padding: 10px;
+        padding: ${props => props.theme.space[2]}px;
     }
 `
 
@@ -414,7 +424,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
             />
             <Container>
                 <ContentRow>
-                    <Column>
+                    <LeftSide>
                         <Row className="image-name">
                             {avatar && (
                                 <Image
@@ -424,7 +434,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                     image={avatar}
                                 />
                             )}
-                            <Column>
+                            <LeftSide>
                                 <Title1 color="white">{name}</Title1>
                                 {website && (
                                     <a
@@ -436,7 +446,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                         </BodyCard>
                                     </a>
                                 )}
-                            </Column>
+                            </LeftSide>
                         </Row>
                         <PageDescription className="description" color="white">
                             {description}
@@ -466,7 +476,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                 title={`${name} on Kauri`}
                             />
                         </Links>
-                    </Column>
+                    </LeftSide>
                     <RightSide>
                         <Statistics
                             pageType="CollectionPage"
