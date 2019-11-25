@@ -6,7 +6,7 @@ import Button from '../../components/Button'
 import StatisticsContainer from '../PublicProfile/StatisticsContainer'
 import { TagList } from '../Tags'
 import { getUpdateCollectionURL } from '../../lib/getURLs'
-import { Tooltip, Typography } from '@material-ui/core'
+import { Tooltip, Typography, Hidden } from '@material-ui/core'
 import BookmarkIcon from '@material-ui/icons/Bookmark'
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
 import BookmarkResource from '../../containers/Bookmark/BookmarkResourceWidget'
@@ -141,31 +141,35 @@ const Container: React.SFC<IProps> = props => {
                 )}
                 <ShareContainer>
                     <ShareArticle color={'white'} url={url} title={name} />
-                    <Tooltip title={isBookmarked ? 'Unbookmark' : 'Bookmark'}>
-                        <div
-                            onClick={() =>
-                                isLoggedIn && openModalAction
-                                    ? openModalAction({
-                                          children: (
-                                              <BookmarkResource
-                                                  resourceId={id}
-                                                  resourceType={
-                                                      ResourceTypeInput.COLLECTION
-                                                  }
-                                              />
-                                          ),
-                                      })
-                                    : routeChangeAction &&
-                                      routeChangeAction(`/login`)
-                            }
+                    <Hidden mdDown={true}>
+                        <Tooltip
+                            title={isBookmarked ? 'Unbookmark' : 'Bookmark'}
                         >
-                            {isBookmarked ? (
-                                <BookmarkIcon color="primary" />
-                            ) : (
-                                <BookmarkBorderIcon color="primary" />
-                            )}
-                        </div>
-                    </Tooltip>
+                            <div
+                                onClick={() =>
+                                    isLoggedIn && openModalAction
+                                        ? openModalAction({
+                                              children: (
+                                                  <BookmarkResource
+                                                      resourceId={id}
+                                                      resourceType={
+                                                          ResourceTypeInput.COLLECTION
+                                                      }
+                                                  />
+                                              ),
+                                          })
+                                        : routeChangeAction &&
+                                          routeChangeAction(`/login`)
+                                }
+                            >
+                                {isBookmarked ? (
+                                    <BookmarkIcon color="primary" />
+                                ) : (
+                                    <BookmarkBorderIcon color="primary" />
+                                )}
+                            </div>
+                        </Tooltip>
+                    </Hidden>
                 </ShareContainer>
             </LeftSide>
             <RightSide>
