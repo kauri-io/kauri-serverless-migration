@@ -43,9 +43,11 @@ import {
 import { Theme, makeStyles } from '@material-ui/core/styles'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
 import LinkCardFormView from '../LinkCardFormView'
+import DeleteIcon from '@material-ui/icons/Delete'
 
 const useStyles = makeStyles((theme: Theme) => ({
     input: {
+        padding: theme.spacing(1, 0, 1, 0),
         color: theme.palette.common.white,
         '&:hover': {
             '&:before': {
@@ -54,6 +56,14 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
         '&:before': {
             borderBottomColor: 'rgba(255,255,255,0.3)',
+        },
+    },
+    inputSection: {
+        width: '808px',
+        '& > div': {
+            '& > input': {
+                textAlign: 'center',
+            },
         },
     },
     uploadIcon: {
@@ -69,9 +79,6 @@ const emptySection: Collection_sections = {
     resourcesId: [],
     resources: [],
 }
-const RemoveIcon = () => (
-    <img src="https://png.icons8.com/windows/50/000000/delete-sign.png" />
-)
 
 const Section = styled.section`
     display: flex;
@@ -330,7 +337,7 @@ const renderResourceSection = (
                     </Draggable>
                 ))}
             <Button
-                color="primary"
+                color="default"
                 variant="text"
                 onClick={() =>
                     arrayHelpers.form.setFieldValue(
@@ -348,7 +355,7 @@ const renderResourceSection = (
                     )
                 } // Remove current resource index
             >
-                <RemoveIcon />
+                <DeleteIcon />
                 {`Remove ${resource.type}`}
             </Button>
         </ResourceSection>
@@ -437,7 +444,10 @@ const CreateCollectionForm: React.FC<
                         'bgPrimary'
                     }
                 >
-                    <Stack alignItems={['', 'center']}>
+                    <Stack
+                        alignItems={['', 'left']}
+                        justifyContent={['', 'start']}
+                    >
                         <Button
                             color="secondary"
                             variant="text"
@@ -487,7 +497,6 @@ const CreateCollectionForm: React.FC<
 
                 <PrimaryHeaderSection backgroundURL={values.background}>
                     <CreateCollectionDetails>
-                        <Label color="white">Collection</Label>
                         <Field
                             type="text"
                             name="name"
@@ -643,6 +652,9 @@ const CreateCollectionForm: React.FC<
                                                             type="text"
                                                             placeholder="Add Section Name"
                                                             fontWeight={500}
+                                                            className={
+                                                                classes.inputSection
+                                                            }
                                                             color={
                                                                 'primaryTextColor'
                                                             }
@@ -658,6 +670,9 @@ const CreateCollectionForm: React.FC<
                                                             type="text"
                                                             placeholder="Add Section Description"
                                                             fontWeight={300}
+                                                            className={
+                                                                classes.inputSection
+                                                            }
                                                             color={
                                                                 'primaryTextColor'
                                                             }
