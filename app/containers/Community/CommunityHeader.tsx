@@ -8,7 +8,7 @@ import {
 } from '../../components/Typography'
 import Image from '../../components/Image'
 import { TagList } from '../../components/Tags'
-import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
+import SocialWebsiteIcon from '../../components/Social/SocialWebsiteIcon'
 import Statistics from '../../components/PublicProfile/StatisticsContainer'
 import anchorme from 'anchorme'
 import ShareCommunity from '../../components/Tooltip/ShareArticle'

@@ -431,9 +431,9 @@ exports[`components/PublicProfile/SocialWebsiteIcon should match snapshot 1`] = 
                   "$$typeof": Symbol(react.forward_ref),
                   "attrs": Array [],
                   "componentStyle": ComponentStyle {
-                    "componentId": "SocialWebsiteIcon__InvertSocialIcon-sc-1n3fjnh-0",
+                    "componentId": "SocialWebsiteIcon__InvertSocialIcon-uzfa04-0",
                     "isStatic": false,
-                    "lastClassName": "dyAGBL",
+                    "lastClassName": "cwysVt",
                     "rules": Array [
                       "filter:invert(100%);",
                     ],
@@ -441,7 +441,7 @@ exports[`components/PublicProfile/SocialWebsiteIcon should match snapshot 1`] = 
                   "displayName": "SocialWebsiteIcon__InvertSocialIcon",
                   "foldedComponentIds": Array [],
                   "render": [Function],
-                  "styledComponentId": "SocialWebsiteIcon__InvertSocialIcon-sc-1n3fjnh-0",
+                  "styledComponentId": "SocialWebsiteIcon__InvertSocialIcon-uzfa04-0",
                   "target": "img",
                   "toString": [Function],
                   "usesTheme": false,
@@ -456,7 +456,7 @@ exports[`components/PublicProfile/SocialWebsiteIcon should match snapshot 1`] = 
             >
               <img
                 alt="twitter"
-                className="SocialWebsiteIcon__InvertSocialIcon-sc-1n3fjnh-0 dyAGBL"
+                className="SocialWebsiteIcon__InvertSocialIcon-uzfa04-0 cwysVt"
                 height={20}
                 src="https://unpkg.com/simple-icons@latest/icons/twitter.svg"
                 width={20}

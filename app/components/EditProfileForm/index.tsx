@@ -1,7 +1,7 @@
 import TextField from '@material-ui/core/TextField'
 import ValidatedTextField from '../../components/ValidatedTextField'
 import UploadLogoButton from '../../components/Button/UploadLogoButton'
-import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
+import SocialWebsiteIcon from '../Social/SocialWebsiteIcon'
 import EmailField from './EmailField'
 import { withStyles, makeStyles } from '@material-ui/styles'
 import { Grid, Theme, Tooltip, Checkbox } from '@material-ui/core'
