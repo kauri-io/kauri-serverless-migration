@@ -126,5 +126,10 @@ export const useStyles = makeStyles((theme: Theme) => {
                 },
             },
         },
+        social: {
+            '& > *': {
+                marginLeft: theme.spacing(2),
+            },
+        },
     }
 })

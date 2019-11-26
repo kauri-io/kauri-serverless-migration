@@ -12,7 +12,7 @@ import { useStyles } from '../style'
 import TruncateMarkup from 'react-truncate-markup'
 // import CardActions from '../../../components/Card/CardComponents/CardActions'
 // import { getLinkUrl } from '../../../lib/getURLs'
-import { Hidden, makeStyles, Theme } from '@material-ui/core'
+import { Hidden } from '@material-ui/core'
 import ShareIcon from '@material-ui/icons/Share'
 import { useState } from 'react'
 import ShareDialog from '../../../components/Card/ShareDialog'
@@ -35,15 +35,6 @@ const LinkContent = ({
     // routeChangeAction,
     // userId,
 }) => {
-    const useSocialStyles = makeStyles((theme: Theme) => ({
-        social: {
-            '& > *': {
-                marginLeft: theme.spacing(2),
-            },
-        },
-    }))
-
-    const socialClasses = useSocialStyles()
     const classes = useStyles({})
 
     const [shareDialogOpen, setShareDialogOpen] = useState(false)
@@ -124,7 +115,7 @@ const LinkContent = ({
                         container={true}
                         alignItems="center"
                         justify="flex-end"
-                        className={socialClasses.social}
+                        className={classes.social}
                     >
                         <Typography
                             className={classes.url}
