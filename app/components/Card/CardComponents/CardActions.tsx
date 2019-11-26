@@ -47,6 +47,7 @@ interface IProps {
     addArticleToCollectionAction?: any
     type: string
     hideAddtoCollection?: boolean
+    hideBookmark?: boolean
     hideShare?: boolean
 }
 
@@ -62,6 +63,7 @@ export default ({
     hideAddtoCollection,
     hideShare,
     type,
+    hideBookmark,
 }: IProps) => {
     const classes = useStyles({})
 
@@ -95,26 +97,34 @@ export default ({
                 e.nativeEvent.stopImmediatePropagation()
             }}
         >
-            <Tooltip title={isBookmarked ? 'Unbookmark' : 'Bookmark'}>
-                <div
-                    className={classes.bookmarkIcon}
-                    onClick={() => {
-                        console.log('Bookmarking..', openModalAction)
-                        return isLoggedIn && openModalAction
-                            ? openModalAction({
-                                  children: (
-                                      <BookmarkResource
-                                          resourceId={id}
-                                          resourceType={ResourceTypeInput[type]}
-                                      />
-                                  ),
-                              })
-                            : routeChangeAction && routeChangeAction(`/login`)
-                    }}
-                >
-                    {isBookmarked ? <BookmarkIcon /> : <BookmarkBorderIcon />}
-                </div>
-            </Tooltip>
+            {!hideBookmark && (
+                <Tooltip title={isBookmarked ? 'Unbookmark' : 'Bookmark'}>
+                    <div
+                        className={classes.bookmarkIcon}
+                        onClick={() => {
+                            return isLoggedIn && openModalAction
+                                ? openModalAction({
+                                      children: (
+                                          <BookmarkResource
+                                              resourceId={id}
+                                              resourceType={
+                                                  ResourceTypeInput[type]
+                                              }
+                                          />
+                                      ),
+                                  })
+                                : routeChangeAction &&
+                                      routeChangeAction(`/login`)
+                        }}
+                    >
+                        {isBookmarked ? (
+                            <BookmarkIcon />
+                        ) : (
+                            <BookmarkBorderIcon />
+                        )}
+                    </div>
+                </Tooltip>
+            )}
             <div
                 onClick={handleClick}
                 data-testid={`ArticleCard-${id}-moreOptionsButton`}

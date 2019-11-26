@@ -97,7 +97,10 @@ export const saveUserDetailsEpic: Epic<
                                     : redirectURL
                         } else {
                             newRedirectURL = state$.value.app.user
-                                ? getProfileURL({id: state$.value.app.user.id, username }).as
+                                ? getProfileURL({
+                                      id: state$.value.app.user.id,
+                                      username,
+                                  }).as
                                 : '/'
                         }
                         return merge(
