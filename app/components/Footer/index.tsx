@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         background: theme.palette.common.white,
         padding: theme.spacing(2),
         width: '100%',
-        marginTop: theme.spacing(3)
+        marginTop: theme.spacing(3),
     },
     wrapper: {
         width: '100%',
@@ -18,15 +18,15 @@ const useStyles = makeStyles((theme: Theme) => ({
         flexDirection: 'row',
         margin: 'auto',
         [theme.breakpoints.down('md')]: {
-            flexDirection: 'column'
-        }
+            flexDirection: 'column',
+        },
     },
     column: {
         display: 'flex',
         alignItems: 'center',
         [theme.breakpoints.down('md')]: {
-            justifyContent: 'center'
-        }
+            justifyContent: 'center',
+        },
     },
     svg: {
         height: 24,
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     strip: {
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     text: {
         fontSize: 13,
@@ -45,13 +45,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     link: {
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     rss: {
         height: 24,
         width: 24,
         fill: '#ffae29',
-        marginLeft: theme.spacing(1)
+        marginLeft: theme.spacing(1),
     },
     logoAccent: {
         color: theme.palette.primary.main,
@@ -60,13 +60,13 @@ const useStyles = makeStyles((theme: Theme) => ({
         fontFamily: `"Arial MT", "Arial"`,
         fontSize: 13,
         fontWeight: 600,
-        marginLeft: theme.spacing(2)
+        marginLeft: theme.spacing(2),
     },
     consensys: {
-        height :24,
+        height: 24,
         width: 24,
-        fill: '#2b49c7'
-    }
+        fill: '#2b49c7',
+    },
 }))
 
 export default () => {
@@ -74,7 +74,11 @@ export default () => {
     return (
         <Grid className={classes.container}>
             <Grid className={classes.wrapper}>
-                <Grid className={classes.column} container={true} justify='flex-start'>
+                <Grid
+                    className={classes.column}
+                    container={true}
+                    justify="flex-start"
+                >
                     <Link href="/">
                         <a className={classes.link}>
                             <img
@@ -87,15 +91,19 @@ export default () => {
                                 <span className={classes.logoAccent}>.io</span>
                             </Typography>
                             <Typography
-                            variant="subtitle2"
-                            className={classes.text}
-                        >
-                            © Copyright 2019
-                        </Typography>
+                                variant="subtitle2"
+                                className={classes.text}
+                            >
+                                © Copyright 2019
+                            </Typography>
                         </a>
                     </Link>
                 </Grid>
-                <Grid className={classes.column} container={true} justify='center'>
+                <Grid
+                    className={classes.column}
+                    container={true}
+                    justify="center"
+                >
                     <a className={classes.link} href="mailto:info@kauri.io">
                         <MailIcon color="primary" />
                         <Typography
@@ -115,7 +123,11 @@ export default () => {
                         </Typography>
                     </a>
                 </Grid>
-                <Grid className={classes.column} container={true} justify='flex-end'>
+                <Grid
+                    className={classes.column}
+                    container={true}
+                    justify="flex-end"
+                >
                     <Grid className={classes.strip}>
                         <Consensys className={classes.consensys} />
                         <Typography
