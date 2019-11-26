@@ -194,6 +194,7 @@ const CommunityCard = ({
                                             // addArticleToCollectionAction={
                                             //     addArticleToCollectionAction
                                             // }
+                                            hideBookmark={true}
                                             type="COMMUNITY"
                                             url={collectionURL}
                                         />
