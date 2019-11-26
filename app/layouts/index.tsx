@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     constrained: {
         maxWidth: 1272,
         width: '100%',
+        margin: 'auto',
     },
     item: {
         width: '100%',

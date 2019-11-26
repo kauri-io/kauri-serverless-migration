@@ -39,14 +39,11 @@ const Articles: React.FC<IArticlesProps> = ({
         PublishedQuery.searchAutocomplete &&
         PublishedQuery.searchAutocomplete.content
     const useStyles = makeStyles((theme: Theme) => ({
-        container: {
-            paddingTop: theme.spacing(4),
-            paddingBottom: theme.spacing(4),
+        grid: {
+            paddingTop: theme.spacing(2),
             maxWidth: 870,
-            margin: ' 0 auto',
-            '& > *': {
-                margin: theme.spacing(1),
-            },
+            margin: 'auto',
+            width: '100%',
         },
     }))
     const classes = useStyles()
@@ -58,12 +55,7 @@ const Articles: React.FC<IArticlesProps> = ({
 
     if (results) {
         return results.length > 0 ? (
-            <Grid
-                className={classes.container}
-                container
-                spacing={2}
-                justify="center"
-            >
+            <Grid className={classes.grid} container spacing={2}>
                 {typeof type === 'string' &&
                     type === 'published' &&
                     isOwner && (
@@ -82,19 +74,23 @@ const Articles: React.FC<IArticlesProps> = ({
                     if (type === 'ARTICLE' && result && result.resource) {
                         const article = result.resource as searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO
                         return (
-                            <ArticleCard
-                                href={getArticleURL(article)}
-                                {...article}
-                            />
+                            <Grid key={article.id} item xs={12}>
+                                <ArticleCard
+                                    href={getArticleURL(article)}
+                                    {...article}
+                                />
+                            </Grid>
                         )
                     } else if (type === 'LINK' && result && result.resource) {
                         const link = result.resource as any
                         return (
-                            <LinkCard
-                                key={link.id}
-                                href={getLinkUrl(link)}
-                                {...link}
-                            />
+                            <Grid key={link.id} item xs={12}>
+                                <LinkCard
+                                    key={link.id}
+                                    href={getLinkUrl(link)}
+                                    {...link}
+                                />
+                            </Grid>
                         )
                     }
                 })}

@@ -50,7 +50,8 @@ export const useStyles = makeStyles((theme: Theme) => {
         },
         header: {
             background: theme.palette.common.white,
-            padding: theme.spacing(3),
+            padding: theme.spacing(0, 2),
+            position: 'relative',
         },
         recommended: {},
         root: {
@@ -65,12 +66,16 @@ export const useStyles = makeStyles((theme: Theme) => {
             },
         },
         toolbar: {
-            marginBottom: theme.spacing(2),
-            paddingBottom: theme.spacing(2),
+            padding: theme.spacing(2, 0),
             justifyContent: 'space-around',
             borderBottom: '1px solid #cbcbcb',
             display: 'flex',
             flexDirection: 'row',
+            position: 'fixed',
+            background: theme.palette.common.white,
+            zIndex: 1,
+            width: '100%',
+            maxWidth: 808,
         },
         title: {
             margin: theme.spacing(1, 0),
@@ -118,8 +123,10 @@ export const useStyles = makeStyles((theme: Theme) => {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 width: '100%',
+                paddingTop: theme.spacing(8),
             },
             [theme.breakpoints.down('md')]: {
+                paddingTop: theme.spacing(2),
                 flexDirection: 'column',
                 '& > *': {
                     marginBottom: theme.spacing(1),
