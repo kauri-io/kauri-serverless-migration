@@ -1,7 +1,8 @@
-import { Grid, TextField, makeStyles, Theme } from '@material-ui/core'
+import { Grid, makeStyles, Theme } from '@material-ui/core'
 import TagSelector from '../../../components/TagSelector'
+import ValidatedTextField from '../../../components/ValidatedTextField'
 
-export default ({ title, setTitle, tags, setTags }) => {
+export default ({ title, setTitle, tags, setTags, onValidation }) => {
     const useStyles = makeStyles((theme: Theme) => ({
         root: {
             background: theme.palette.common.black,
@@ -26,19 +27,37 @@ export default ({ title, setTitle, tags, setTags }) => {
                 borderBottomColor: 'rgba(255,255,255,0.3)',
             },
         },
+        titleContainer: {
+            width: '50%',
+        },
     }))
     const classes = useStyles()
+
+    const validateTitle = title => {
+        if (title && title.length > 100) {
+            return 'Title longer than 100 characters'
+        }
+
+        return ''
+    }
+
     return (
         <div className={classes.root}>
             <Grid className={classes.container}>
-                <TextField
+                <ValidatedTextField
+                    className={classes.titleContainer}
+                    id="title"
                     InputProps={{
                         className: classes.titleInput,
                     }}
                     placeholder="Add Article Title"
+                    required={true}
                     value={title}
-                    onChange={e => setTitle(e.target.value)}
+                    handleChange={e => setTitle(e.target.value)}
+                    onValidation={onValidation}
+                    validate={validateTitle}
                 />
+
                 <TagSelector updateTags={setTags} tags={tags} />
             </Grid>
         </div>

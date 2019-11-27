@@ -45,6 +45,11 @@ exports[`components/AddOptions should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "outlined": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
         },
       },
       "palette": Object {
