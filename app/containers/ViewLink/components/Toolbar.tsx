@@ -34,7 +34,6 @@ const Toolbar = ({
                     </Typography>
                 </Grid>
             </a>
-            {console.log(getArticleURL({ id, title: '' }, 'update'))}
             <Grid
                 className={classes.tool}
                 item={true}

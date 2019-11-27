@@ -145,13 +145,12 @@ class OnboardingEditProfile extends Component<IProps, IState> {
         if (!this.props.OwnProfile || !this.props.OwnProfile.getMyProfile)
             return null
         const {
-            name,
             username,
             email,
             dateCreated,
         } = this.props.OwnProfile.getMyProfile
 
-        const hasData = name && username && email
+        const hasData = username && email
         const loginTrackingPending = window.localStorage.getItem(
             'login-tracking-pending'
         )

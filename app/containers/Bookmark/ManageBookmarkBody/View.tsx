@@ -65,7 +65,6 @@ export const ManageBookmarkBody = ({
                 {BookmarkQuery.getBookmarks.content &&
                 BookmarkQuery.getBookmarks.totalElements > 0 ? (
                     BookmarkQuery.getBookmarks.content.map((res: any, key) => {
-
                         switch (res.resource.__typename) {
                             case 'ArticleDTO': {
                                 return (
