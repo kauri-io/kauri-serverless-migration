@@ -39,16 +39,25 @@ const Divider = styled.div`
 `
 
 interface IProps {
+    userId: string
     currentSectionIndex: number
     previousSectionHasArticles: boolean
     addNewSection: () => void
     removeSection: () => void
-    chooseArticle: () => void
+    chooseArticle: (filter: any) => void
 }
 
 const Content: React.FunctionComponent<IProps> = props => (
     <TooltipContainer>
-        <Label onClick={props.chooseArticle}>Add Article To Section</Label>
+        <Label onClick={() => props.chooseArticle(
+            { filter: {types: ["ARTICLE", "LINK"], mustIncludeUserId: [props.userId] }, title: 'My Content'})}>
+            My published content
+        </Label>
+        <Divider />
+        <Label onClick={() => props.chooseArticle(
+            { filter: {types: ["ARTICLE", "LINK"]}, title: 'Content'})}>
+            Search for content
+        </Label>
         {props.previousSectionHasArticles && (
             <Fragment>
                 <Divider />

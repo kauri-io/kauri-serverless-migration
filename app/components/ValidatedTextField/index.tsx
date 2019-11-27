@@ -40,10 +40,7 @@ const ValidatedTextField = ({
 
     const doValidation = value => {
         let err = ''
-        console.log('required: ', required)
-        console.log('value: ', value)
         if (required && (!value || value == '')) {
-            console.log('here')
             onValidation && onValidation(id, 'Field required: ' + id)
         } else {
             err = validate(value)

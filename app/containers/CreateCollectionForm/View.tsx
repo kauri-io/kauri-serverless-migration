@@ -27,7 +27,6 @@ import {
 } from '../../lib/Epics/ShowNotificationEpic'
 import { ICommunity } from '../../lib/Module'
 import ArticleCardFormView from '../ArticleCardFormView'
-import CollectionCardFormView from '../CollectionCardFormView'
 import { useEffect } from 'react'
 import initUppy from '../../lib/init-uppy'
 import config from '../../config'
@@ -39,7 +38,7 @@ import {
 } from '../../components/Modal/Module'
 
 import { Theme, makeStyles } from '@material-ui/core/styles'
-import { ResourceTypeInput } from '../../__generated__/globalTypes'
+import { ResourceTypeInput, SectionDTOInput } from '../../__generated__/globalTypes'
 import LinkCardFormView from '../LinkCardFormView'
 import DeleteIcon from '@material-ui/icons/Delete'
 import ValidatedTextField from '../../components/ValidatedTextField'
@@ -72,13 +71,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-const emptySection: Collection_sections = {
+const emptySection: SectionDTOInput = {
     id: null,
-    __typename: 'SectionDTO',
     name: '',
     description: null,
-    resourcesId: [],
-    resources: [],
+    resourcesId: []
 }
 
 const Section = styled.section`
@@ -203,6 +200,7 @@ const renderResourceSection = (
         ['sections', index, mappingKey, resourceIndex, 'type'],
         values
     )
+
     return (
         <ResourceSection key={resourceIndex}>
             {type === 'ARTICLE' && (
@@ -248,52 +246,8 @@ const renderResourceSection = (
                     )}
                 </Draggable>
             )}
-            {type === 'COLLECTION' &&
-                (path(
-                    ['sections', index, mappingKey, resourceIndex],
-                    values
-                ) && (
-                    <Draggable
-                        index={resourceIndex}
-                        draggableId={`${path(
-                            [
-                                'sections',
-                                index,
-                                mappingKey,
-                                resourceIndex,
-                                'id',
-                            ],
-                            values
-                        )}`}
-                    >
-                        {provided => (
-                            <DraggableResourceContainer
-                                {...provided.draggableProps}
-                                {...provided.dragHandleProps}
-                                ref={provided.innerRef}
-                                id="collection-card"
-                            >
-                                <CollectionCardFormView
-                                    id={String(
-                                        path(
-                                            [
-                                                'sections',
-                                                index,
-                                                mappingKey,
-                                                resourceIndex,
-                                                'id',
-                                            ],
-                                            values
-                                        )
-                                    )}
-                                />
-                                {provided.placeholder}
-                            </DraggableResourceContainer>
-                        )}
-                    </Draggable>
-                ))}
 
-            {type === 'LINK' &&
+            { type === 'LINK' && 
                 (path(
                     ['sections', index, mappingKey, resourceIndex],
                     values
@@ -340,7 +294,7 @@ const renderResourceSection = (
             <Button
                 color="default"
                 variant="text"
-                onClick={() =>
+                onClick={() => {
                     arrayHelpers.form.setFieldValue(
                         `sections[${index}][${mappingKey}]`,
                         Array.isArray(section[mappingKey]) &&
@@ -350,11 +304,11 @@ const renderResourceSection = (
                                     : []
                                 : remove(
                                       resourceIndex,
-                                      resourceIndex,
+                                      1,
                                       section[mappingKey]
                                   ))
                     )
-                } // Remove current resource index
+                }} // Remove current resource index
             >
                 <DeleteIcon />
                 {`Remove ${resource.type}`}
@@ -428,9 +382,13 @@ const CreateCollectionForm: React.FC<
 
     const classes = useStyles()
 
-    const [resourceModalOpened, setResourceModalOpened] = React.useState(false)
+    const [resourceModalOpened, setResourceModalOpened] = React.useState({})
     const [validationMessages, setValidationMessages] = React.useState({})
-    const [query, setQuery] = React.useState("")
+    const [modalOptions, setModalOptions] = React.useState({
+        query: '',
+        filter: {},
+        title: ''
+    })
 
     const validate = (name: string, value: string, maxLength: number) => {
         if (value && value.length > maxLength) {
@@ -530,6 +488,7 @@ const CreateCollectionForm: React.FC<
                                     }
                                     required={true}
                                     onValidation={onValidation}
+                                    value={values.name}
                                 />
                             )}
                         />
@@ -553,6 +512,7 @@ const CreateCollectionForm: React.FC<
                                     }
                                     required={true}
                                     onValidation={onValidation}
+                                    value={values.description}
                                 />
                             )}
                         />
@@ -747,23 +707,25 @@ const CreateCollectionForm: React.FC<
                                                     </Droppable>
                                                 </DragDropContext>
                                                 <ChooseResourceModal
-                                                    open={resourceModalOpened}
-                                                    handleClose={() => setResourceModalOpened(false)}
-                                                    handleConfirm={(selected) => { 
-                                                        console.log(selected); 
-                                                        setResourceModalOpened(false);
+                                                    key={`choose-resource-modal-${index}`}
+                                                    open={resourceModalOpened[index]}
+                                                    handleClose={() => setResourceModalOpened({...resourceModalOpened, [index]: false})}
+                                                    handleConfirm={(selected: ResourceTypeInput[]) => { 
+                                                        arrayHelpers.form.setFieldValue(
+                                                            `sections[${index}].resourcesId`,
+                                                            selected.map(res => (res))
+                                                        )
+                                                        setModalOptions({...modalOptions, query: ''})
+                                                        setResourceModalOpened({...resourceModalOpened, [index]: false})
                                                     }}
-                                                    title={`My Content`}
-                                                    preSelected={[]}
-                                                    filter={{
-                                                        types: ["ARTICLE", "LINK"],
-                                                        mustIncludeUserId: [userId]
-                                                    }}
-                                                    query={query}
-                                                    setQuery={setQuery}
+                                                    preSelected={arrayHelpers.form.values.sections[index].resourcesId}
+                                                    title={modalOptions.title}
+                                                    filter={modalOptions.filter}
+                                                    query={modalOptions.query}
+                                                    setQuery={(query:string) => setModalOptions({...modalOptions, query})}
                                                 />
-
                                                 <SectionOptions
+                                                    userId={userId}
                                                     currentSectionIndex={index}
                                                     previousSectionHasArticles={pipe(
                                                         path<any>([
@@ -788,11 +750,10 @@ const CreateCollectionForm: React.FC<
                                                             index
                                                         )
                                                     }
-                                                    chooseArticle={() =>
-                                                        setResourceModalOpened(
-                                                            true
-                                                        )
-                                                    }
+                                                    chooseArticle={(options) => {
+                                                        setModalOptions({...options})
+                                                        setResourceModalOpened({...resourceModalOpened, [index]: true})
+                                                    }}
                                                 />
                                             </SectionSection>
                                         )

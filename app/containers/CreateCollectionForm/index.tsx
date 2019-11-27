@@ -19,7 +19,6 @@ import { IReduxState } from '../../lib/Module'
 import { dissocPath, map, pipe, path } from 'ramda'
 import {
     Collection_sections,
-    Collection_sections_resources_ArticleDTO,
 } from '../../queries/Fragments/__generated__/Collection'
 import { ITag } from '../../components/Tags/types'
 import { defaultTo } from 'ramda'
@@ -99,24 +98,7 @@ export default compose<
                               (section: Collection_sections) =>
                                   section && {
                                       ...section,
-                                      resourcesId:
-                                          section.resources &&
-                                          section.resources.map(resource => {
-                                              if (resource) {
-                                                  const {
-                                                      id,
-                                                      version,
-                                                      __typename,
-                                                  } = resource as Collection_sections_resources_ArticleDTO
-                                                  return {
-                                                      type: __typename
-                                                          .split('DTO')[0]
-                                                          .toUpperCase(),
-                                                      id,
-                                                      version,
-                                                  }
-                                              }
-                                          }),
+                                      resourcesId: section.resourcesId,
                                   }
                           ),
                           map(section => dissocPath(['resources'])(section)),

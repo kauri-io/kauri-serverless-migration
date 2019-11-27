@@ -11,8 +11,9 @@ import {
   searchAutocompleteArticles_searchAutocomplete, 
   searchAutocompleteArticles_searchAutocomplete_content,
   searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO,
-  searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO 
+  searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO
 } from '../../queries/__generated__/searchAutocompleteArticles';
+import { getArticleURL, getLinkUrl } from '../../lib/getURLs';
 
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -114,28 +115,31 @@ export const ChooseResourceModal = ({
   query,
   setQuery
 }: IProps) => {
-
     const classes = useStyles()
     const [selected, setSelected] = React.useState(preSelected)
-    console.log(setSelected)
-    
-    const isSelected = (resource: ResourceIdentifierInput): number => {
-      // Finding if the resource was already selected
+
+    // Update if the section resource list is updated from the form (via remove-article button)
+    React.useEffect(() => {
+      setSelected(preSelected)
+    }, [preSelected])
+
+    const indexOf = (resourceId: ResourceIdentifierInput): number => {
       var index = -1;
       for (var i = 0; i < selected.length; i++) {
-        if (selected[i].type === resource.type && selected[i].id === resource.id ) {
+        if (selected[i].type === resourceId.type 
+          && selected[i].id === resourceId.id ) {
           index = i;
         }
       }
       return index;
     }
 
-    const selectResource = (resource: ResourceIdentifierInput) => {
-      var index = isSelected(resource)
+    const selectResource = (resourceId: ResourceIdentifierInput) => {
+      var index = indexOf(resourceId)
       if(index > -1) { // resource found: unselect
         setSelected(selected.filter((_, i) => i !== index)) 
-      } else {
-        setSelected([...selected, resource])
+      } else { // resource not found: select
+        setSelected([...selected, resourceId])
       }
     }
 
@@ -150,7 +154,11 @@ export const ChooseResourceModal = ({
         fullWidth>
         
         <DialogTitle disableTypography className={classes.container}>
-          <Typography variant="h6" className={classes.title}>{`${title} (${GlobalSearchQuery.searchAutocomplete.totalElements})`}</Typography>
+          { !GlobalSearchQuery.searchAutocomplete ? (
+                <Typography variant="h6" className={classes.title}>{`${title}`}</Typography>
+              ) : (
+                <Typography variant="h6" className={classes.title}>{`${title} (${GlobalSearchQuery.searchAutocomplete.totalElements})`}</Typography>
+          ) }
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -179,26 +187,26 @@ export const ChooseResourceModal = ({
             ) : null }
 
             { /**** EMPTY STATE ****/}
-            { GlobalSearchQuery.searchAutocomplete.totalElements === 0 ? ( 
+            { GlobalSearchQuery.searchAutocomplete && GlobalSearchQuery.searchAutocomplete.totalElements === 0 ? ( 
               <div className={classes.empty}>
                 <Typography variant="h6" className={classes.emptyText}>No Content Found</Typography>
               </div>
             ) : null }
 
             { /**** CONTENT ****/}
-            { GlobalSearchQuery.searchAutocomplete.totalElements > 0 ? (
+            { GlobalSearchQuery.searchAutocomplete && GlobalSearchQuery.searchAutocomplete.totalElements > 0 ? (
 
               GlobalSearchQuery.searchAutocomplete.content.map((result: searchAutocompleteArticles_searchAutocomplete_content | null, _index: number) => {
-                if(result === null) return null;
+                if(result === null || result.resourceIdentifier === null) return null;
 
-                const resourceId = result.resourceIdentifier as ResourceIdentifierInput;
+                const resourceId: ResourceIdentifierInput = {...result.resourceIdentifier};
 
-                switch (result.resource.__typename) {
-                  case 'ArticleDTO': {
+                switch (resourceId.type) {
+                  case 'ARTICLE': {
                     var article = result.resource as searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO
 
                     return (
-                      <div className={isSelected(resourceId) > -1 ? classes.cardSelected : classes.card}>
+                      <div className={indexOf(resourceId) > -1 ? classes.cardSelected : classes.card}>
                         <div className={classes.left}>
                           <Typography variant="subtitle1" className={classes.cardTitle}>{article.title}</Typography>
                           <CardDetails 
@@ -213,7 +221,7 @@ export const ChooseResourceModal = ({
                         <Button
                                 color="primary"
                                 variant="text"
-                                onClick={() => {}}
+                                onClick={() => getArticleURL({...article})}
                                 className={classes.cardButton}
                             > View article
                         </Button>
@@ -222,19 +230,19 @@ export const ChooseResourceModal = ({
                             variant="text"
                             onClick={() => selectResource(resourceId)}
                             className={classes.cardButton}
-                        > Select
+                        > {indexOf(resourceId) > -1 ? 'Unselect' : 'Select'}
                         </Button>
                       </div> 
                     )
                   }
 
-                  case 'ExternalLinkDTO': {
+                  case 'LINK': {
                     var link = result.resource as searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO
-                    
+
                     return (
-                      <div className={isSelected(resourceId) > -1 ? classes.cardSelected : classes.card}>
+                      <div className={indexOf(resourceId) > -1 ? classes.cardSelected : classes.card}>
                         <div className={classes.left}>
-                          <Typography variant="subtitle1" className={classes.cardTitle}>{link.linkTitle}</Typography>
+                          <Typography variant="subtitle1" className={classes.cardTitle}>{link.linkTitle.value}</Typography>
                           <CardDetails 
                             user={{
                               id: link.submitter.id, 
@@ -247,7 +255,7 @@ export const ChooseResourceModal = ({
                         <Button
                                 color="primary"
                                 variant="text"
-                                onClick={() => {}}
+                                onClick={() => getLinkUrl({...link})}
                                 className={classes.cardButton}
                             > View Link
                         </Button>
