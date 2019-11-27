@@ -520,16 +520,16 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                   reduceComponentsToState={[Function]}
                 />
               </Head>
-              <SearchResults__ArticlesHeader>
+              <SearchResults__SearchHeader>
                 <StyledComponent
                   forwardedComponent={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
-                        "componentId": "SearchResults__ArticlesHeader-sc-3rzbew-0",
+                        "componentId": "SearchResults__SearchHeader-sc-3rzbew-0",
                         "isStatic": false,
-                        "lastClassName": "gMlgbs",
+                        "lastClassName": "huByHS",
                         "rules": Array [
                           "background-color:",
                           [Function],
@@ -542,10 +542,10 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                           "px;",
                         ],
                       },
-                      "displayName": "SearchResults__ArticlesHeader",
+                      "displayName": "SearchResults__SearchHeader",
                       "foldedComponentIds": Array [],
                       "render": [Function],
-                      "styledComponentId": "SearchResults__ArticlesHeader-sc-3rzbew-0",
+                      "styledComponentId": "SearchResults__SearchHeader-sc-3rzbew-0",
                       "target": "div",
                       "toString": [Function],
                       "usesTheme": true,
@@ -556,7 +556,7 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="SearchResults__ArticlesHeader-sc-3rzbew-0 gMlgbs"
+                    className="SearchResults__SearchHeader-sc-3rzbew-0 huByHS"
                   >
                     <Typography__styledComponent
                       color="white"
@@ -966,7 +966,7 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                     </withApollo(Connect(Complete))>
                   </div>
                 </StyledComponent>
-              </SearchResults__ArticlesHeader>
+              </SearchResults__SearchHeader>
               <ResourceResults
                 loading={true}
                 query="eth"
@@ -983,11 +983,266 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                   }
                 }
               >
-                <LoadingComponent>
-                  <style
-                    type="text/css"
+                <ContentSection
+                  gridAutoFlow={
+                    Array [
+                      "",
+                      "column",
+                    ]
+                  }
+                >
+                  <ContentSection__ContentSectionStack
+                    alignItems={
+                      Array [
+                        "",
+                        "start",
+                      ]
+                    }
+                    background="tertiaryBackgroundColor"
+                    gap={30}
+                    gridAutoFlow={
+                      Array [
+                        "",
+                        "column",
+                      ]
+                    }
+                    justifyContent={
+                      Array [
+                        "",
+                        "start",
+                      ]
+                    }
                   >
-                    
+                    <StyledComponent
+                      alignItems={
+                        Array [
+                          "",
+                          "start",
+                        ]
+                      }
+                      background="tertiaryBackgroundColor"
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "ContentSection__ContentSectionStack-sc-1mwbgto-0",
+                            "isStatic": false,
+                            "lastClassName": "leKNlM",
+                            "rules": Array [
+                              "background:",
+                              [Function],
+                              ";min-height:calc(100vh - 220px);padding:",
+                              [Function],
+                              " ",
+                              [Function],
+                              ";display:flex;",
+                            ],
+                          },
+                          "displayName": "ContentSection__ContentSectionStack",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "ContentSection__ContentSectionStack-sc-1mwbgto-0",
+                          "target": [Function],
+                          "toString": [Function],
+                          "usesTheme": true,
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
+                        }
+                      }
+                      forwardedRef={null}
+                      gap={30}
+                      gridAutoFlow={
+                        Array [
+                          "",
+                          "column",
+                        ]
+                      }
+                      justifyContent={
+                        Array [
+                          "",
+                          "start",
+                        ]
+                      }
+                    >
+                      <Component
+                        alignItems={
+                          Array [
+                            "",
+                            "start",
+                          ]
+                        }
+                        background="tertiaryBackgroundColor"
+                        className="ContentSection__ContentSectionStack-sc-1mwbgto-0 leKNlM"
+                        gap={30}
+                        gridAutoFlow={
+                          Array [
+                            "",
+                            "column",
+                          ]
+                        }
+                        justifyContent={
+                          Array [
+                            "",
+                            "start",
+                          ]
+                        }
+                      >
+                        <Stack
+                          alignItems={
+                            Array [
+                              "",
+                              "start",
+                            ]
+                          }
+                          background="tertiaryBackgroundColor"
+                          className="ContentSection__ContentSectionStack-sc-1mwbgto-0 leKNlM"
+                          gap={30}
+                          gridAutoFlow={
+                            Array [
+                              "",
+                              "column",
+                            ]
+                          }
+                          justifyContent={
+                            Array [
+                              "",
+                              "start",
+                            ]
+                          }
+                        >
+                          <StyledComponent
+                            alignItems={
+                              Array [
+                                "",
+                                "start",
+                              ]
+                            }
+                            background="tertiaryBackgroundColor"
+                            className="ContentSection__ContentSectionStack-sc-1mwbgto-0 leKNlM"
+                            forwardedComponent={
+                              Object {
+                                "$$typeof": Symbol(react.forward_ref),
+                                "_foldedDefaultProps": Object {
+                                  "gap": 2,
+                                },
+                                "attrs": Array [],
+                                "componentStyle": ComponentStyle {
+                                  "componentId": "sc-bdVaJa",
+                                  "isStatic": false,
+                                  "lastClassName": "kJcvnJ",
+                                  "rules": Array [
+                                    "box-sizing: border-box;",
+                                    "display: grid;",
+                                    [Function],
+                                    [Function],
+                                    [Function],
+                                    [Function],
+                                    [Function],
+                                  ],
+                                },
+                                "displayName": "Stack",
+                                "foldedComponentIds": Array [],
+                                "propTypes": Object {
+                                  "alignContent": [Function],
+                                  "alignItems": [Function],
+                                  "alignSelf": [Function],
+                                  "display": [Function],
+                                  "flex": [Function],
+                                  "flexBasis": [Function],
+                                  "flexDirection": [Function],
+                                  "flexGrow": [Function],
+                                  "flexShrink": [Function],
+                                  "flexWrap": [Function],
+                                  "gap": [Function],
+                                  "gridArea": [Function],
+                                  "gridAutoColumns": [Function],
+                                  "gridAutoFlow": [Function],
+                                  "gridAutoRows": [Function],
+                                  "gridColumn": [Function],
+                                  "gridColumnGap": [Function],
+                                  "gridGap": [Function],
+                                  "gridRow": [Function],
+                                  "gridRowGap": [Function],
+                                  "gridTemplateAreas": [Function],
+                                  "gridTemplateColumns": [Function],
+                                  "gridTemplateRows": [Function],
+                                  "height": [Function],
+                                  "justifyContent": [Function],
+                                  "justifyItems": [Function],
+                                  "justifySelf": [Function],
+                                  "m": [Function],
+                                  "margin": [Function],
+                                  "marginBottom": [Function],
+                                  "marginLeft": [Function],
+                                  "marginRight": [Function],
+                                  "marginTop": [Function],
+                                  "marginX": [Function],
+                                  "marginY": [Function],
+                                  "maxHeight": [Function],
+                                  "maxWidth": [Function],
+                                  "mb": [Function],
+                                  "minHeight": [Function],
+                                  "minWidth": [Function],
+                                  "ml": [Function],
+                                  "mr": [Function],
+                                  "mt": [Function],
+                                  "mx": [Function],
+                                  "my": [Function],
+                                  "order": [Function],
+                                  "overflow": [Function],
+                                  "overflowX": [Function],
+                                  "overflowY": [Function],
+                                  "p": [Function],
+                                  "padding": [Function],
+                                  "paddingBottom": [Function],
+                                  "paddingLeft": [Function],
+                                  "paddingRight": [Function],
+                                  "paddingTop": [Function],
+                                  "paddingX": [Function],
+                                  "paddingY": [Function],
+                                  "pb": [Function],
+                                  "pl": [Function],
+                                  "pr": [Function],
+                                  "pt": [Function],
+                                  "px": [Function],
+                                  "py": [Function],
+                                  "size": [Function],
+                                  "verticalAlign": [Function],
+                                  "width": [Function],
+                                },
+                                "render": [Function],
+                                "styledComponentId": "sc-bdVaJa",
+                                "target": "div",
+                                "toString": [Function],
+                                "usesTheme": true,
+                                "warnTooManyClasses": [Function],
+                                "withComponent": [Function],
+                              }
+                            }
+                            forwardedRef={null}
+                            gap={30}
+                            gridAutoFlow={
+                              Array [
+                                "",
+                                "column",
+                              ]
+                            }
+                            justifyContent={
+                              Array [
+                                "",
+                                "start",
+                              ]
+                            }
+                          >
+                            <div
+                              className="sc-bdVaJa kJcvnJ ContentSection__ContentSectionStack-sc-1mwbgto-0 leKNlM"
+                            >
+                              <LoadingComponent>
+                                <style
+                                  type="text/css"
+                                >
+                                  
         .centered-wrapper{
           display: flex;
           flex: 1;
@@ -1050,20 +1305,27 @@ exports[`containers/SearchResults should match snapshot 1`] = `
           }
         }
         
-                  </style>
-                  <div
-                    className="centered-wrapper"
-                  >
-                    <div
-                      className="lds-ellipsis"
-                    >
-                      <div />
-                      <div />
-                      <div />
-                      <div />
-                    </div>
-                  </div>
-                </LoadingComponent>
+                                </style>
+                                <div
+                                  className="centered-wrapper"
+                                >
+                                  <div
+                                    className="lds-ellipsis"
+                                  >
+                                    <div />
+                                    <div />
+                                    <div />
+                                    <div />
+                                  </div>
+                                </div>
+                              </LoadingComponent>
+                            </div>
+                          </StyledComponent>
+                        </Stack>
+                      </Component>
+                    </StyledComponent>
+                  </ContentSection__ContentSectionStack>
+                </ContentSection>
               </ResourceResults>
             </section>
           </SearchResults>

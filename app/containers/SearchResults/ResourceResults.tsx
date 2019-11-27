@@ -7,6 +7,7 @@ import Empty from '../PublicProfile/Empty'
 import Loading from '../../components/Loading'
 import ResourceRows from './PaginatedResourceResults'
 import { searchResultCategories } from './index'
+import { Hidden, Grid } from '@material-ui/core'
 
 interface IElementsBreakdown {
     [key: string]: number
@@ -34,62 +35,72 @@ interface IProps {
     query: string
 }
 
-const PaginatedResourceResults: React.FunctionComponent<IProps> = props => (
-    <ResourceRows {...props} />
-)
-
 class ResourceResults extends React.Component<IProps> {
     render() {
-        if (this.props.loading) {
-            return <Loading />
-        }
-
         return (
             <ContentSection gridAutoFlow={['', 'column']}>
-                <CategorySection>
-                    {Object.keys(this.props.totalElementsBreakdown).filter(
-                        category =>
-                            this.props.totalElementsBreakdown[category] > 0 &&
-                            searchResultCategories &&
-                            searchResultCategories.includes(category)
-                    ).length ? (
-                        Object.keys(this.props.totalElementsBreakdown)
-                            .filter(
+                {this.props.loading && <Loading />}
+                {!this.props.loading && (
+                    <Hidden lgDown={true}>
+                        <CategorySection>
+                            {Object.keys(
+                                this.props.totalElementsBreakdown
+                            ).filter(
                                 category =>
-                                    searchResultCategories &&
-                                    searchResultCategories.includes(category) &&
                                     this.props.totalElementsBreakdown[
                                         category
-                                    ] > 0
-                            )
-                            .sort()
-                            .map(category => (
-                                <ResourceCategory
-                                    key={category}
-                                    onClick={() =>
-                                        this.props.setSearchCategory(category)
-                                    }
-                                    active={
-                                        category ===
-                                        this.props.viewedSearchCategory
-                                    }
-                                    category={category}
-                                    amount={
-                                        this.props.totalElementsBreakdown[
-                                            category
-                                        ]
-                                    }
-                                />
-                            ))
-                    ) : (
-                        <CenterContent>
-                            <Empty>
-                                <Title2>No Results found! :(</Title2>
-                            </Empty>
-                        </CenterContent>
-                    )}
-                </CategorySection>
-                <PaginatedResourceResults {...this.props} />
+                                    ] > 0 &&
+                                    searchResultCategories &&
+                                    searchResultCategories.includes(category)
+                            ).length ? (
+                                Object.keys(this.props.totalElementsBreakdown)
+                                    .filter(
+                                        category =>
+                                            searchResultCategories &&
+                                            searchResultCategories.includes(
+                                                category
+                                            ) &&
+                                            this.props.totalElementsBreakdown[
+                                                category
+                                            ] > 0
+                                    )
+                                    .sort()
+                                    .map(category => (
+                                        <ResourceCategory
+                                            key={category}
+                                            onClick={() =>
+                                                this.props.setSearchCategory(
+                                                    category
+                                                )
+                                            }
+                                            active={
+                                                category ===
+                                                this.props.viewedSearchCategory
+                                            }
+                                            category={category}
+                                            amount={
+                                                this.props
+                                                    .totalElementsBreakdown[
+                                                    category
+                                                ]
+                                            }
+                                        />
+                                    ))
+                            ) : (
+                                <CenterContent>
+                                    <Empty>
+                                        <Title2>No Results found! :(</Title2>
+                                    </Empty>
+                                </CenterContent>
+                            )}
+                        </CategorySection>
+                    </Hidden>
+                )}
+                {!this.props.loading && (
+                    <Grid container={true} justify="center">
+                        <ResourceRows {...this.props} />
+                    </Grid>
+                )}
             </ContentSection>
         )
     }

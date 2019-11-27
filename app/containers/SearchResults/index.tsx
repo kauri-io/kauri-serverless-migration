@@ -5,7 +5,7 @@ import { Title1, BodyCard } from '../../components/Typography'
 import ResourceResults from './ResourceResults'
 import Head from 'next/head'
 
-const ArticlesHeader = styled.div`
+const SearchHeader = styled.div`
     background-color: ${props => props.theme.colors.primaryTextColor};
     width: 100%;
     display: flex;
@@ -89,7 +89,7 @@ class SearchResults extends React.Component<IProps, IState> {
                         }}
                     />
                 </Head>
-                <ArticlesHeader>
+                <SearchHeader>
                     <Title1 color="white">Search</Title1>
                     <BodyCard>
                         {this.state.loading
@@ -103,7 +103,7 @@ class SearchResults extends React.Component<IProps, IState> {
                         setSearchResults={this.setSearchResults}
                         router={this.props.router}
                     />
-                </ArticlesHeader>
+                </SearchHeader>
                 <ResourceResults
                     query={this.props.query.q}
                     setSearchCategory={this.setSearchCategory}

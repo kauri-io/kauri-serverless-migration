@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import {
     searchResultsAutocomplete_searchAutocomplete_content,
     searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO,
@@ -21,15 +20,8 @@ import CollectionCard from '../../components/Card/CollectionCard'
 import CommunityCard from '../../components/Card/CommunityCard'
 import PublicProfileCard from '../../components/Card/PublicProfileCard'
 import LinkCard from '../../components/Card/LinkCard'
+import { Grid, withStyles } from '@material-ui/core'
 
-const ResourceSection = styled.section`
-    display: flex;
-    flex-direction: column;
-    > div:not(:last-child) {
-        margin-bottom: ${props => props.theme.space[2]}px;
-    }
-    flex: 1;
-`
 interface IElementsBreakdown {
     [key: string]: number
 }
@@ -64,6 +56,7 @@ interface IProps {
     loading: boolean
     viewedSearchCategory: string | null | undefined
     setSearchCategory: (viewedSearchCategory: string) => void
+    classes: any
 }
 
 interface ISearchResultsAutocompleteData {
@@ -82,7 +75,7 @@ class ResourceRows extends React.Component<
             key => this.props.totalElementsBreakdown[key]
         )
         return values.filter(amount => amount > 0).length ? (
-            <ResourceSection>
+            <Grid className={this.props.classes.grid} container spacing={2}>
                 {this.props.data &&
                     this.props.data.searchAutocomplete &&
                     Array.isArray(
@@ -107,12 +100,20 @@ class ResourceRows extends React.Component<
                                             isArticleResource(resource.resource)
                                         ) {
                                             return (
-                                                <ArticleCard
-                                                    href={getArticleURL(
-                                                        resource.resource
-                                                    )}
-                                                    {...resource.resource}
-                                                />
+                                                <Grid
+                                                    key={resource.resource.id}
+                                                    item
+                                                    xs={12}
+                                                    container={true}
+                                                    justify="center"
+                                                >
+                                                    <ArticleCard
+                                                        href={getArticleURL(
+                                                            resource.resource
+                                                        )}
+                                                        {...resource.resource}
+                                                    />
+                                                </Grid>
                                             )
                                         }
                                     case 'COLLECTION':
@@ -126,13 +127,21 @@ class ResourceRows extends React.Component<
                                                 | searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO
                                                 | searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_CommunityDTO
                                             return (
-                                                <CollectionCard
-                                                    href={getCollectionURL(
-                                                        resource.resource
-                                                    )}
-                                                    {...resource.resource}
-                                                    owner={typedOwner}
-                                                />
+                                                <Grid
+                                                    key={resource.resource.id}
+                                                    item
+                                                    xs={12}
+                                                    container={true}
+                                                    justify="center"
+                                                >
+                                                    <CollectionCard
+                                                        href={getCollectionURL(
+                                                            resource.resource
+                                                        )}
+                                                        {...resource.resource}
+                                                        owner={typedOwner}
+                                                    />
+                                                </Grid>
                                             )
                                         }
                                     case 'COMMUNITY':
@@ -142,12 +151,20 @@ class ResourceRows extends React.Component<
                                             )
                                         ) {
                                             return (
-                                                <CommunityCard
-                                                    href={getCommunityURL(
-                                                        resource.resource
-                                                    )}
-                                                    {...resource.resource}
-                                                />
+                                                <Grid
+                                                    key={resource.resource.id}
+                                                    item
+                                                    xs={12}
+                                                    container={true}
+                                                    justify="center"
+                                                >
+                                                    <CommunityCard
+                                                        href={getCommunityURL(
+                                                            resource.resource
+                                                        )}
+                                                        {...resource.resource}
+                                                    />
+                                                </Grid>
                                             )
                                         }
                                     case 'USER':
@@ -155,28 +172,44 @@ class ResourceRows extends React.Component<
                                             isProfileResource(resource.resource)
                                         ) {
                                             return (
-                                                <PublicProfileCard
-                                                    name={
-                                                        resource.resource
-                                                            .publicUserName
-                                                    }
-                                                    title={
-                                                        resource.resource
-                                                            .userTitle
-                                                    }
-                                                    {...resource.resource}
-                                                />
+                                                <Grid
+                                                    key={resource.resource.id}
+                                                    item
+                                                    xs={12}
+                                                    container={true}
+                                                    justify="center"
+                                                >
+                                                    <PublicProfileCard
+                                                        name={
+                                                            resource.resource
+                                                                .publicUserName
+                                                        }
+                                                        title={
+                                                            resource.resource
+                                                                .userTitle
+                                                        }
+                                                        {...resource.resource}
+                                                    />
+                                                </Grid>
                                             )
                                         }
                                     case 'LINK':
                                         if (isLinkResource(resource.resource)) {
                                             return (
-                                                <LinkCard
-                                                    href={getLinkUrl(
-                                                        resource.resource
-                                                    )}
-                                                    {...resource.resource}
-                                                />
+                                                <Grid
+                                                    key={resource.resource.id}
+                                                    item
+                                                    xs={12}
+                                                    container={true}
+                                                    justify="center"
+                                                >
+                                                    <LinkCard
+                                                        href={getLinkUrl(
+                                                            resource.resource
+                                                        )}
+                                                        {...resource.resource}
+                                                    />
+                                                </Grid>
                                             )
                                         }
                                     default:
@@ -185,9 +218,18 @@ class ResourceRows extends React.Component<
                             }
                             return null
                         })}
-            </ResourceSection>
+            </Grid>
         ) : null
     }
 }
 
-export default ResourceRows
+export default withStyles({
+    grid: {
+        maxWidth: 870,
+        margin: 'auto',
+        width: '100%',
+    },
+    root: {
+        display: 'flex',
+    },
+})(ResourceRows)
