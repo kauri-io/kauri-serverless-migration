@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         minHeight: `calc(100vh)`,
         overflow: 'hidden',
         [theme.breakpoints.up('xs')]: {
-            paddingTop: (props: any) => props.hideNav ? 0 : 64,
+            paddingTop: (props: any) => (props.hideNav ? 0 : 64),
         },
         [theme.breakpoints.down('xs')]: {
             paddingTop: 56,
@@ -48,7 +48,7 @@ interface IProps {
 }
 
 const Layout = ({ children, maxWidthConstrained, hideNav }: IProps) => {
-    const classes = useStyles({ hideNav})
+    const classes = useStyles({ hideNav })
     return (
         <Grid container={true} className={classes.root}>
             <Modal />
