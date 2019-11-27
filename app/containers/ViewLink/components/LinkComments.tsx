@@ -48,8 +48,8 @@ export default ({ link, comments: { content }, user, addCommentAction }) => {
                 {content.length} Comment{content.length !== 1 ? 's' : ''}
             </Typography>
             <div className={classes.container}>
-                <Hidden mdDown={true}>
-                    {user && (
+                {user && (
+                    <Hidden mdDown={true}>
                         <Grid container={true} className={classes.addComment}>
                             <Grid item={true} sm={1}>
                                 <Avatar
@@ -91,8 +91,8 @@ export default ({ link, comments: { content }, user, addCommentAction }) => {
                                 </div>
                             </Grid>
                         </Grid>
-                    )}
-                </Hidden>
+                    </Hidden>
+                )}
                 {content.map(comment => (
                     <Comment {...comment} />
                 ))}
