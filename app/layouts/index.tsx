@@ -17,12 +17,12 @@ const useStyles = makeStyles((theme: Theme) => ({
         width: '100%',
         margin: 'auto',
         flex: 1,
-        height: '100%'
+        height: '100%',
     },
     notConstrained: {
         width: '100%',
         flex: 1,
-        height: '100%'
+        height: '100%',
     },
     root: {
         display: 'flex',
@@ -58,8 +58,16 @@ const Layout = ({ children, maxWidthConstrained, hideNav }: IProps) => {
                     <Navbar />
                 </Grid>
             )}
-            <Grid sm={12} item={true} className={maxWidthConstrained ? classes.constrained : classes.notConstrained}>
-                    {children}
+            <Grid
+                sm={12}
+                item={true}
+                className={
+                    maxWidthConstrained
+                        ? classes.constrained
+                        : classes.notConstrained
+                }
+            >
+                {children}
             </Grid>
             <StyledFooter />
         </Grid>

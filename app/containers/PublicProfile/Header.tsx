@@ -73,8 +73,8 @@ const ProfileHeader = ({
             [theme.breakpoints.down('md')]: {
                 margin: 0,
                 '& > *': {
-                    marginLeft: theme.spacing(1)
-                }
+                    marginLeft: theme.spacing(1),
+                },
             },
         },
         social: {
