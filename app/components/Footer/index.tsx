@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme: Theme) => ({
         background: theme.palette.common.white,
         padding: theme.spacing(2),
         width: '100%',
-        marginTop: theme.spacing(3),
     },
     wrapper: {
         width: '100%',

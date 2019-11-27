@@ -70,6 +70,12 @@ const ProfileHeader = ({
         },
         avatar: {
             marginRight: theme.spacing(3),
+            [theme.breakpoints.down('md')]: {
+                margin: 0,
+                '& > *': {
+                    marginLeft: theme.spacing(1)
+                }
+            },
         },
         social: {
             marginTop: theme.spacing(2),
@@ -134,6 +140,7 @@ const ProfileHeader = ({
                     avatar={avatar}
                     size={120}
                     withName={false}
+                    username={username}
                 />
                 <Grid item={true} className={classes.data}>
                     {username || name ? (
