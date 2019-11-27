@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import anchorme from 'anchorme'
 import Button from '../../components/Button'
 import StatisticsContainer from '../../components/PublicProfile/StatisticsContainer'
@@ -62,14 +62,33 @@ const ProfileHeader = ({
             maxWidth: 1272,
             margin: 'auto',
             padding: theme.spacing(6, 3),
+            [theme.breakpoints.down('md')]: {
+                flexDirection: 'column',
+                alignItems: 'center',
+                textAlign: 'center',
+            },
         },
         avatar: {
             marginRight: theme.spacing(3),
+            [theme.breakpoints.down('md')]: {
+                margin: 0,
+                '& > *': {
+                    marginLeft: theme.spacing(1),
+                },
+            },
         },
         social: {
             marginTop: theme.spacing(2),
             '& > *': {
-                marginRight: theme.spacing(2),
+                margin: theme.spacing(1),
+            },
+            [theme.breakpoints.down('md')]: {
+                maxWidth: 200,
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexWrap: 'wrap',
             },
         },
         data: {
@@ -121,10 +140,11 @@ const ProfileHeader = ({
                     avatar={avatar}
                     size={120}
                     withName={false}
+                    username={username}
                 />
                 <Grid item={true} className={classes.data}>
                     {username || name ? (
-                        <Fragment>
+                        <>
                             {username && (
                                 <Typography
                                     component={!name ? 'h1' : 'h6'}
@@ -143,7 +163,7 @@ const ProfileHeader = ({
                                     {name}
                                 </Typography>
                             )}
-                        </Fragment>
+                        </>
                     ) : (
                         id && (
                             <Typography variant="subtitle1" color="secondary">

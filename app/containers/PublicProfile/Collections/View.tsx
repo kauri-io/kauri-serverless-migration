@@ -30,14 +30,11 @@ const Collections = ({
     isLoggedIn,
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
-        container: {
-            paddingTop: theme.spacing(4),
-            paddingBottom: theme.spacing(4),
+        grid: {
+            paddingTop: theme.spacing(2),
             maxWidth: 870,
-            margin: '0 auto',
-            '& > *': {
-                margin: theme.spacing(1),
-            },
+            margin: 'auto',
+            width: '100%',
         },
     }))
     const classes = useStyles()
@@ -48,7 +45,7 @@ const Collections = ({
 
     return CollectionQuery.searchCollections &&
         CollectionQuery.searchCollections.content.length > 0 ? (
-        <Grid className={classes.container} container={true} spacing={2}>
+        <Grid className={classes.grid} container spacing={2}>
             {CollectionQuery.searchCollections.content.map(collection => {
                 if (collection) {
                     const owner = collection.owner as
@@ -56,12 +53,7 @@ const Collections = ({
                         | Collection_owner_PublicUserDTO
 
                     return (
-                        <Grid
-                            item={true}
-                            sm={12}
-                            container={true}
-                            justify="center"
-                        >
+                        <Grid key={collection.id} item xs={12}>
                             <CollectionCard
                                 {...collection}
                                 href={getCollectionURL(collection)}

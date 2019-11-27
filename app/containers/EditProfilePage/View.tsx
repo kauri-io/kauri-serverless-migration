@@ -21,12 +21,12 @@ const Page = styled.div`
     flex: 1;
     align-items: center;
     justify-content: center;
+    height: 100%;
     flex-direction: column;
     @media (max-width: 600px) {
         margin-top: -56px;
         padding: 16px;
     }
-    margin-top: -64px;
 `
 
 const Wrapper = styled.div`

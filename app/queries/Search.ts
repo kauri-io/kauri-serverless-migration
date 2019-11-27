@@ -67,6 +67,7 @@ export const searchResultsAutocomplete = gql`
             totalElements
             totalPages
             totalElementsBreakdown
+            isLast
             content {
                 resourceIdentifier {
                     id
