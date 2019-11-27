@@ -119,7 +119,6 @@ export default () => {
                             className={classes.text}
                         >
                             RSS Feed
-
                         </Typography>
                     </a>
                 </Grid>

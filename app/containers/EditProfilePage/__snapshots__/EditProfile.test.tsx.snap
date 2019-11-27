@@ -583,11 +583,11 @@ exports[`containers/EditProfile should match snapshot 1`] = `
                     "componentStyle": ComponentStyle {
                       "componentId": "View__Page-sc-19kw1f9-0",
                       "isStatic": false,
-                      "lastClassName": "gCJQdQ",
+                      "lastClassName": "ikXKmw",
                       "rules": Array [
                         "display:flex;background:",
                         [Function],
-                        ";flex:1;align-items:center;justify-content:center;flex-direction:column;@media (max-width:600px){margin-top:-56px;padding:16px;}margin-top:-64px;",
+                        ";flex:1;align-items:center;justify-content:center;height:100%;flex-direction:column;@media (max-width:600px){margin-top:-56px;padding:16px;}",
                       ],
                     },
                     "displayName": "View__Page",
@@ -604,7 +604,7 @@ exports[`containers/EditProfile should match snapshot 1`] = `
                 forwardedRef={null}
               >
                 <div
-                  className="View__Page-sc-19kw1f9-0 gCJQdQ"
+                  className="View__Page-sc-19kw1f9-0 ikXKmw"
                 >
                   <LoadingComponent>
                     <style
