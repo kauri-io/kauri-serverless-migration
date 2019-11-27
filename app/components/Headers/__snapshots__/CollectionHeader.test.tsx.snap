@@ -986,100 +986,22 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                             </StyledComponent>
                           </ShareArticle__ReferenceContainer>
                         </Container>
-                        <WithStyles(ForwardRef(Tooltip))
-                          title="Unbookmark"
+                        <Hidden
+                          mdDown={true}
                         >
-                          <ForwardRef(Tooltip)
-                            classes={
-                              Object {
-                                "popper": "MuiTooltip-popper",
-                                "popperInteractive": "MuiTooltip-popperInteractive",
-                                "tooltip": "MuiTooltip-tooltip",
-                                "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
-                                "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
-                                "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
-                                "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
-                                "touch": "MuiTooltip-touch",
-                              }
-                            }
-                            title="Unbookmark"
-                          >
-                            <div
-                              aria-describedby={null}
-                              className=""
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onMouseLeave={[Function]}
-                              onMouseOver={[Function]}
-                              onTouchEnd={[Function]}
-                              onTouchStart={[Function]}
-                              title="Unbookmark"
-                            >
-                              <ForwardRef
-                                color="primary"
-                              >
-                                <WithStyles(ForwardRef(SvgIcon))
-                                  color="primary"
-                                >
-                                  <ForwardRef(SvgIcon)
-                                    classes={
-                                      Object {
-                                        "colorAction": "MuiSvgIcon-colorAction",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled",
-                                        "colorError": "MuiSvgIcon-colorError",
-                                        "colorPrimary": "MuiSvgIcon-colorPrimary",
-                                        "colorSecondary": "MuiSvgIcon-colorSecondary",
-                                        "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
-                                        "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
-                                        "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
-                                        "root": "MuiSvgIcon-root",
-                                      }
-                                    }
-                                    color="primary"
-                                  >
-                                    <svg
-                                      aria-hidden="true"
-                                      className="MuiSvgIcon-root MuiSvgIcon-colorPrimary"
-                                      focusable="false"
-                                      role="presentation"
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <path
-                                        d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"
-                                      />
-                                    </svg>
-                                  </ForwardRef(SvgIcon)>
-                                </WithStyles(ForwardRef(SvgIcon))>
-                              </ForwardRef>
-                            </div>
-                            <ForwardRef(Popper)
-                              anchorEl={
-                                <div
-                                  class=""
-                                  title="Unbookmark"
-                                >
-                                  <svg
-                                    aria-hidden="true"
-                                    class="MuiSvgIcon-root MuiSvgIcon-colorPrimary"
-                                    focusable="false"
-                                    role="presentation"
-                                    viewBox="0 0 24 24"
-                                  >
-                                    <path
-                                      d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"
-                                    />
-                                  </svg>
-                                </div>
-                              }
-                              className="MuiTooltip-popper"
-                              id={null}
-                              open={false}
-                              placement="bottom"
-                              transition={true}
-                            />
-                          </ForwardRef(Tooltip)>
-                        </WithStyles(ForwardRef(Tooltip))>
+                          <WithWidth(HiddenJs)
+                            lgDown={false}
+                            lgUp={false}
+                            mdDown={true}
+                            mdUp={false}
+                            smDown={false}
+                            smUp={false}
+                            xlDown={false}
+                            xlUp={false}
+                            xsDown={false}
+                            xsUp={false}
+                          />
+                        </Hidden>
                       </div>
                     </StyledComponent>
                   </CollectionHeader__ShareContainer>
@@ -1501,11 +1423,11 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                         onMouseEnter={[Function]}
                       >
                         <div
-                          className="makeStyles-container-48"
+                          className="makeStyles-container-40"
                         >
                           <ForwardRef
                             borderRadius="2px"
-                            className="makeStyles-avatar-49"
+                            className="makeStyles-avatar-41"
                             height={24}
                             image="avatar url"
                             width={24}
@@ -1517,7 +1439,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                             >
                               <Image__Img
                                 borderRadius="2px"
-                                className="makeStyles-avatar-49"
+                                className="makeStyles-avatar-41"
                                 height={24}
                                 image="avatar url"
                                 inView={false}
@@ -1525,7 +1447,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                               >
                                 <StyledComponent
                                   borderRadius="2px"
-                                  className="makeStyles-avatar-49"
+                                  className="makeStyles-avatar-41"
                                   forwardedComponent={
                                     Object {
                                       "$$typeof": Symbol(react.forward_ref),
@@ -1582,7 +1504,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                                   width={24}
                                 >
                                   <div
-                                    className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-49"
+                                    className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-41"
                                     height={24}
                                     width={24}
                                   />
@@ -1591,12 +1513,12 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                             </InView>
                           </ForwardRef>
                           <WithStyles(ForwardRef(Typography))
-                            className="makeStyles-username-50"
+                            className="makeStyles-username-42"
                             color="secondary"
                             variant="subtitle2"
                           >
                             <ForwardRef(Typography)
-                              className="makeStyles-username-50"
+                              className="makeStyles-username-42"
                               classes={
                                 Object {
                                   "alignCenter": "MuiTypography-alignCenter",
@@ -1635,7 +1557,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                               variant="subtitle2"
                             >
                               <h6
-                                className="MuiTypography-root makeStyles-username-50 MuiTypography-subtitle2 MuiTypography-colorSecondary"
+                                className="MuiTypography-root makeStyles-username-42 MuiTypography-subtitle2 MuiTypography-colorSecondary"
                               >
                                 test username
                               </h6>

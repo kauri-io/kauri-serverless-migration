@@ -90,6 +90,17 @@ export const useStyles = makeStyles((theme: Theme) => {
                 color: theme.palette.common.white,
             },
         },
+        tags: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            margin: theme.spacing(2),
+            flexWrap: 'wrap',
+            '& svg': {
+                margin: theme.spacing(1),
+            },
+        },
         ctaContainer: {
             padding: theme.spacing(2),
             borderBottom: '1px solid #cbcbcb',
@@ -113,6 +124,11 @@ export const useStyles = makeStyles((theme: Theme) => {
                 '& > *': {
                     marginBottom: theme.spacing(1),
                 },
+            },
+        },
+        social: {
+            '& > *': {
+                marginLeft: theme.spacing(2),
             },
         },
     }

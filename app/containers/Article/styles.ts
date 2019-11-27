@@ -47,6 +47,38 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             padding: theme.spacing(2, 2, 20, 2),
             position: 'relative',
         },
+        checkpointAndIPFS: {
+            [theme.breakpoints.down('lg')]: {
+                display: 'flex',
+                flexDirection: 'column',
+            },
+            [theme.breakpoints.up('lg')]: {
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+            },
+        },
+        tags: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            margin: theme.spacing(2),
+            flexWrap: 'wrap',
+        },
+        tag: {
+            transition: 'all 0.2s',
+            cursor: 'pointer',
+            margin: theme.spacing(1),
+            textTransform: 'capitalize',
+            '&.MuiChip-outlined': {
+                borderColor: 'rgba(102, 102, 102, 1)',
+            },
+            '&:hover': {
+                background: theme.palette.primary.main,
+                color: theme.palette.common.white,
+            },
+        },
         header: {
             background: theme.palette.common.white,
             padding: theme.spacing(2),
@@ -54,10 +86,6 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
         headerImage: {
             padding: theme.spacing(0, 2),
             background: theme.palette.common.white,
-        },
-        recommended: {},
-        root: {
-            minHeight: '100%',
         },
         nameAndDate: {
             display: 'flex',
@@ -90,6 +118,27 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             borderBottom: '1px solid #cbcbcb',
             display: 'flex',
             flexDirection: 'row',
+        },
+        iconContainer: {
+            '& span': {
+                display: 'none',
+            },
+            height: 24,
+            width: 24,
+            margin: theme.spacing(1),
+        },
+        root: {
+            border: 'none',
+        },
+        container: {
+            height: 200,
+            display: 'flex',
+            flexDirection: 'column',
+        },
+        contentLink: {
+            color: theme.palette.primary.main,
+            fontWeight: 600,
+            margin: theme.spacing(1),
         },
     }
 })

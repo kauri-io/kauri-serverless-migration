@@ -150,7 +150,7 @@ const CommunityCard = ({
                                     <div className={classes.header}>
                                         <GroupIcon />
                                         <Typography variant="subtitle2">
-                                            Collection
+                                            Community
                                         </Typography>
                                         <Typography variant="body2">
                                             {moment(String(dateUpdated)).format(
@@ -194,6 +194,7 @@ const CommunityCard = ({
                                             // addArticleToCollectionAction={
                                             //     addArticleToCollectionAction
                                             // }
+                                            hideBookmark={true}
                                             type="COMMUNITY"
                                             url={collectionURL}
                                         />

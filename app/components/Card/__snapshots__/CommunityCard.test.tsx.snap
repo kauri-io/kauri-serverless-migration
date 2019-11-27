@@ -1585,7 +1585,7 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                                                   <h6
                                                     className="MuiTypography-root MuiTypography-subtitle2"
                                                   >
-                                                    Collection
+                                                    Community
                                                   </h6>
                                                 </ForwardRef(Typography)>
                                               </WithStyles(ForwardRef(Typography))>
@@ -1917,6 +1917,7 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                                                     </ForwardRef(Typography)>
                                                   </WithStyles(ForwardRef(Typography))>
                                                   <_default
+                                                    hideBookmark={true}
                                                     id="1234567890"
                                                     isLoggedIn={true}
                                                     name="Community"
@@ -1934,95 +1935,6 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                                                       className="makeStyles-actions-196"
                                                       onClick={[Function]}
                                                     >
-                                                      <WithStyles(ForwardRef(Tooltip))
-                                                        title="Bookmark"
-                                                      >
-                                                        <ForwardRef(Tooltip)
-                                                          classes={
-                                                            Object {
-                                                              "popper": "MuiTooltip-popper",
-                                                              "popperInteractive": "MuiTooltip-popperInteractive",
-                                                              "tooltip": "MuiTooltip-tooltip",
-                                                              "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
-                                                              "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
-                                                              "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
-                                                              "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
-                                                              "touch": "MuiTooltip-touch",
-                                                            }
-                                                          }
-                                                          title="Bookmark"
-                                                        >
-                                                          <div
-                                                            aria-describedby={null}
-                                                            className="makeStyles-bookmarkIcon-197"
-                                                            onBlur={[Function]}
-                                                            onClick={[Function]}
-                                                            onFocus={[Function]}
-                                                            onMouseLeave={[Function]}
-                                                            onMouseOver={[Function]}
-                                                            onTouchEnd={[Function]}
-                                                            onTouchStart={[Function]}
-                                                            title="Bookmark"
-                                                          >
-                                                            <ForwardRef>
-                                                              <WithStyles(ForwardRef(SvgIcon))>
-                                                                <ForwardRef(SvgIcon)
-                                                                  classes={
-                                                                    Object {
-                                                                      "colorAction": "MuiSvgIcon-colorAction",
-                                                                      "colorDisabled": "MuiSvgIcon-colorDisabled",
-                                                                      "colorError": "MuiSvgIcon-colorError",
-                                                                      "colorPrimary": "MuiSvgIcon-colorPrimary",
-                                                                      "colorSecondary": "MuiSvgIcon-colorSecondary",
-                                                                      "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
-                                                                      "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
-                                                                      "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
-                                                                      "root": "MuiSvgIcon-root",
-                                                                    }
-                                                                  }
-                                                                >
-                                                                  <svg
-                                                                    aria-hidden="true"
-                                                                    className="MuiSvgIcon-root"
-                                                                    focusable="false"
-                                                                    role="presentation"
-                                                                    viewBox="0 0 24 24"
-                                                                  >
-                                                                    <path
-                                                                      d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"
-                                                                    />
-                                                                  </svg>
-                                                                </ForwardRef(SvgIcon)>
-                                                              </WithStyles(ForwardRef(SvgIcon))>
-                                                            </ForwardRef>
-                                                          </div>
-                                                          <ForwardRef(Popper)
-                                                            anchorEl={
-                                                              <div
-                                                                class="makeStyles-bookmarkIcon-197"
-                                                                title="Bookmark"
-                                                              >
-                                                                <svg
-                                                                  aria-hidden="true"
-                                                                  class="MuiSvgIcon-root"
-                                                                  focusable="false"
-                                                                  role="presentation"
-                                                                  viewBox="0 0 24 24"
-                                                                >
-                                                                  <path
-                                                                    d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"
-                                                                  />
-                                                                </svg>
-                                                              </div>
-                                                            }
-                                                            className="MuiTooltip-popper"
-                                                            id={null}
-                                                            open={false}
-                                                            placement="bottom"
-                                                            transition={true}
-                                                          />
-                                                        </ForwardRef(Tooltip)>
-                                                      </WithStyles(ForwardRef(Tooltip))>
                                                       <div
                                                         aria-haspopup="true"
                                                         aria-label="simple-menu"
@@ -2064,12 +1976,12 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                                                         <ShareDialogComponent
                                                           classes={
                                                             Object {
-                                                              "HNShareButton": "ShareDialogComponent-HNShareButton-219",
-                                                              "closeButton": "ShareDialogComponent-closeButton-216",
-                                                              "container": "ShareDialogComponent-container-217",
-                                                              "icon": "ShareDialogComponent-icon-218",
-                                                              "iconContainer": "ShareDialogComponent-iconContainer-220",
-                                                              "root": "ShareDialogComponent-root-215",
+                                                              "HNShareButton": "ShareDialogComponent-HNShareButton-211",
+                                                              "closeButton": "ShareDialogComponent-closeButton-208",
+                                                              "container": "ShareDialogComponent-container-209",
+                                                              "icon": "ShareDialogComponent-icon-210",
+                                                              "iconContainer": "ShareDialogComponent-iconContainer-212",
+                                                              "root": "ShareDialogComponent-root-207",
                                                             }
                                                           }
                                                           handleClose={[Function]}

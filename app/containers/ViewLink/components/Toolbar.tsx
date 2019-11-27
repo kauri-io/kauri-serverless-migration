@@ -8,6 +8,8 @@ import { ResourceTypeInput } from '../../../__generated__/globalTypes'
 import BookmarkResource from '../../../containers/Bookmark/BookmarkResourceWidget'
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
 import BookmarkIcon from '@material-ui/icons/Bookmark'
+import PencilIcon from '@material-ui/icons/Edit'
+import { getArticleURL } from '../../../lib/getURLs'
 
 const Toolbar = ({
     classes,
@@ -18,6 +20,8 @@ const Toolbar = ({
     isLoggedIn,
     type,
     id,
+    isAuthor,
+    version,
 }) => (
     <Grid className={classes.toolbar}>
         <a href="#comments">
@@ -28,7 +32,7 @@ const Toolbar = ({
                 </Typography>
             </Grid>
         </a>
-
+        {console.log(getArticleURL({ id, title: '' }, 'update'))}
         <Grid
             className={classes.tool}
             item={true}
@@ -61,6 +65,21 @@ const Toolbar = ({
             <FolderIcon />
             <Typography variant="subtitle2">Add to collection</Typography>
         </Grid>
+        {type === 'ARTICLE' && (
+            <Grid
+                className={classes.tool}
+                onClick={() =>
+                    routeChangeAction(
+                        getArticleURL({ id, title: '', version }, 'update').as
+                    )
+                }
+            >
+                <PencilIcon />
+                <Typography variant="subtitle2">
+                    {isAuthor ? 'Edit Article' : 'Suggest Edit'}
+                </Typography>
+            </Grid>
+        )}
 
         {/* <Grid className={classes.tool} item={true}>
             <GroupIcon />

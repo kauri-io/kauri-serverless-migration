@@ -1,4 +1,4 @@
-import SocialWebsiteIcon from './SocialWebsiteIcon'
+import SocialWebsiteIcon from '../Social/SocialWebsiteIcon'
 import StatisticCount from './StatisticCount'
 import StatisticsContainer from './StatisticsContainer'
 import { mountWithRedux } from '../../setupTests'
