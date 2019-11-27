@@ -144,6 +144,7 @@ export const Link = gql`
             id
             username
             name
+            avatar
         }
         url {
             value

@@ -44,16 +44,11 @@ interface IProps {
     addNewSection: () => void
     removeSection: () => void
     chooseArticle: () => void
-    chooseCollection: () => void
 }
 
 const Content: React.FunctionComponent<IProps> = props => (
     <TooltipContainer>
         <Label onClick={props.chooseArticle}>Add Article To Section</Label>
-        <Divider />
-        <Label onClick={props.chooseCollection}>
-            Add Collection To Section
-        </Label>
         {props.previousSectionHasArticles && (
             <Fragment>
                 <Divider />
