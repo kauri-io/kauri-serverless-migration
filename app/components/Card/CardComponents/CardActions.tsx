@@ -45,6 +45,10 @@ interface IProps {
         href: string
     }
     addArticleToCollectionAction?: any
+    type: string
+    hideAddtoCollection?: boolean
+    hideBookmark?: boolean
+    hideShare?: boolean
 }
 
 export default ({
@@ -56,6 +60,10 @@ export default ({
     routeChangeAction,
     url,
     addArticleToCollectionAction,
+    hideAddtoCollection,
+    hideShare,
+    type,
+    hideBookmark,
 }: IProps) => {
     const classes = useStyles({})
 
@@ -89,27 +97,34 @@ export default ({
                 e.nativeEvent.stopImmediatePropagation()
             }}
         >
-            <Tooltip title={isBookmarked ? 'Unbookmark' : 'Bookmark'}>
-                <div
-                    className={classes.bookmarkIcon}
-                    onClick={() =>
-                        isLoggedIn && openModalAction
-                            ? openModalAction({
-                                  children: (
-                                      <BookmarkResource
-                                          resourceId={id}
-                                          resourceType={
-                                              ResourceTypeInput.ARTICLE
-                                          }
-                                      />
-                                  ),
-                              })
-                            : routeChangeAction && routeChangeAction(`/login`)
-                    }
-                >
-                    {isBookmarked ? <BookmarkIcon /> : <BookmarkBorderIcon />}
-                </div>
-            </Tooltip>
+            {!hideBookmark && (
+                <Tooltip title={isBookmarked ? 'Unbookmark' : 'Bookmark'}>
+                    <div
+                        className={classes.bookmarkIcon}
+                        onClick={() => {
+                            return isLoggedIn && openModalAction
+                                ? openModalAction({
+                                      children: (
+                                          <BookmarkResource
+                                              resourceId={id}
+                                              resourceType={
+                                                  ResourceTypeInput[type]
+                                              }
+                                          />
+                                      ),
+                                  })
+                                : routeChangeAction &&
+                                      routeChangeAction(`/login`)
+                        }}
+                    >
+                        {isBookmarked ? (
+                            <BookmarkIcon />
+                        ) : (
+                            <BookmarkBorderIcon />
+                        )}
+                    </div>
+                </Tooltip>
+            )}
             <div
                 onClick={handleClick}
                 data-testid={`ArticleCard-${id}-moreOptionsButton`}
@@ -133,13 +148,15 @@ export default ({
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <MenuItem onClick={handleClickShareDialogOpen}>
-                    <ListItemIcon>
-                        <Icon>share</Icon>
-                    </ListItemIcon>
-                    <Typography variant="inherit">Share</Typography>
-                </MenuItem>
-                {isLoggedIn && (
+                {!hideShare && (
+                    <MenuItem onClick={handleClickShareDialogOpen}>
+                        <ListItemIcon>
+                            <Icon>share</Icon>
+                        </ListItemIcon>
+                        <Typography variant="inherit">Share</Typography>
+                    </MenuItem>
+                )}
+                {isLoggedIn && !hideAddtoCollection && (
                     <MenuItem
                         data-testid={`ArticleCard-${id}-addToCollectionButton`}
                         onClick={() => {

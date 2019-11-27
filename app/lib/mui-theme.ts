@@ -17,4 +17,13 @@ export default createMuiTheme({
         contrastThreshold: 3,
         tonalOffset: 0.2,
     },
+    overrides: {
+        MuiButton: {
+            contained: {
+                '&&:disabled': {
+                    backgroundColor: '#e0e0e0',
+                },
+            },
+        },
+    },
 })

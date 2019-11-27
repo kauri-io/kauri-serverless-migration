@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import anchorme from 'anchorme'
 import Button from '../../components/Button'
 import StatisticsContainer from '../../components/PublicProfile/StatisticsContainer'
-import SocialWebsiteIcon from '../../components/PublicProfile/SocialWebsiteIcon'
+import SocialWebsiteIcon from '../../components/Social/SocialWebsiteIcon'
 import Head from 'next/head'
 import Avatar from '../../components/Avatar'
 import { Grid, Typography, makeStyles, Theme } from '@material-ui/core'
@@ -127,6 +127,7 @@ const ProfileHeader = ({
                         <Fragment>
                             {username && (
                                 <Typography
+                                    component={!name ? 'h1' : 'h6'}
                                     variant="subtitle1"
                                     color="secondary"
                                 >
@@ -134,7 +135,11 @@ const ProfileHeader = ({
                                 </Typography>
                             )}
                             {name && (
-                                <Typography variant="h6" color="secondary">
+                                <Typography
+                                    component={name ? 'h1' : 'h6'}
+                                    variant="h6"
+                                    color="secondary"
+                                >
                                     {name}
                                 </Typography>
                             )}

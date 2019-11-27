@@ -90,6 +90,17 @@ export const useStyles = makeStyles((theme: Theme) => {
                 color: theme.palette.common.white,
             },
         },
+        tags: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            margin: theme.spacing(2),
+            flexWrap: 'wrap',
+            '& svg': {
+                margin: theme.spacing(1),
+            },
+        },
         ctaContainer: {
             padding: theme.spacing(2),
             borderBottom: '1px solid #cbcbcb',
@@ -99,6 +110,26 @@ export const useStyles = makeStyles((theme: Theme) => {
         },
         summary: {
             margin: theme.spacing(2, 0, 0, 0),
+        },
+        nameAndDate: {
+            display: 'flex',
+            [theme.breakpoints.up('lg')]: {
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                width: '100%',
+            },
+            [theme.breakpoints.down('md')]: {
+                flexDirection: 'column',
+                '& > *': {
+                    marginBottom: theme.spacing(1),
+                },
+            },
+        },
+        social: {
+            '& > *': {
+                marginLeft: theme.spacing(2),
+            },
         },
     }
 })

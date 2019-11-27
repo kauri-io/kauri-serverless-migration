@@ -18,9 +18,15 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
         [theme.breakpoints.down('xs')]: {
             padding: theme.spacing(1),
+            height: 130,
         },
         display: 'flex',
         flexDirection: 'column',
+        width: '100%',
+        maxWidth: 808,
+    },
+    link: {
+        width: '100%',
     },
     name: {
         textTransform: 'capitalize',
@@ -44,6 +50,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         flexDirection: 'row',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
+        marginTop: 'auto',
     },
     column: {
         display: 'flex',
@@ -95,13 +102,13 @@ const CommunityCard = ({
 
     return (
         <Link href={collectionURL.href} as={collectionURL.as}>
-            <a>
+            <a className={classes.link}>
                 <>
                     {/*  Mobile Version */}
-                    <Hidden smUp={true}>
+                    <Hidden implementation="css" smUp={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
-                                <CardImage image={avatar} />
+                                <CardImage image={avatar} type="Community" />
                                 <div className={classes.column}>
                                     <div className={classes.header}>
                                         <GroupIcon />
@@ -135,15 +142,15 @@ const CommunityCard = ({
                         </Card>
                     </Hidden>
                     {/* Desktop Version */}
-                    <Hidden xsDown={true}>
+                    <Hidden implementation="css" xsDown={true}>
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
-                                <CardImage image={avatar} />
+                                <CardImage image={avatar} type="Community" />
                                 <Grid className={classes.column}>
                                     <div className={classes.header}>
                                         <GroupIcon />
                                         <Typography variant="subtitle2">
-                                            Collection
+                                            Community
                                         </Typography>
                                         <Typography variant="body2">
                                             {moment(String(dateUpdated)).format(
@@ -187,6 +194,8 @@ const CommunityCard = ({
                                             // addArticleToCollectionAction={
                                             //     addArticleToCollectionAction
                                             // }
+                                            hideBookmark={true}
+                                            type="COMMUNITY"
                                             url={collectionURL}
                                         />
                                     </Grid>

@@ -38,7 +38,15 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
           "minHeight": 56,
         },
       },
-      "overrides": Object {},
+      "overrides": Object {
+        "MuiButton": Object {
+          "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+        },
+      },
       "palette": Object {
         "action": Object {
           "active": "rgba(0, 0, 0, 0.54)",
@@ -1273,6 +1281,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
+                              "value": "isBookmarked",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
                               "value": "owner",
                             },
                             "selectionSet": Object {
@@ -2665,7 +2684,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 5258,
+                    "end": 5279,
                     "start": 0,
                   },
                 },
@@ -3580,6 +3599,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
+                              "value": "isBookmarked",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
                               "value": "owner",
                             },
                             "selectionSet": Object {
@@ -4972,7 +5002,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 5258,
+                    "end": 5279,
                     "start": 0,
                   },
                 } => Object {
@@ -5953,6 +5983,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
+                              "value": "isBookmarked",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
                               "value": "owner",
                             },
                             "selectionSet": Object {
@@ -7534,7 +7575,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 5258,
+                    "end": 5279,
                     "start": 0,
                   },
                 },
@@ -8516,6 +8557,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
+                              "value": "isBookmarked",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
                               "value": "owner",
                             },
                             "selectionSet": Object {
@@ -10097,7 +10149,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 5258,
+                    "end": 5279,
                     "start": 0,
                   },
                 } => Object {
@@ -11078,6 +11130,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
+                              "value": "isBookmarked",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
                               "value": "owner",
                             },
                             "selectionSet": Object {
@@ -12659,7 +12722,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 5258,
+                    "end": 5279,
                     "start": 0,
                   },
                 },
@@ -13637,6 +13700,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "name": Object {
                                 "kind": "Name",
                                 "value": "submitterId",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "isBookmarked",
                               },
                               "selectionSet": undefined,
                             },
@@ -15228,7 +15302,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5258,
+                      "end": 5279,
                       "start": 0,
                     },
                   },
@@ -16160,6 +16234,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "isBookmarked",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "owner",
                                 },
                                 "selectionSet": Object {
@@ -17552,7 +17637,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5258,
+                        "end": 5279,
                         "start": 0,
                       },
                     } => Object {
@@ -18533,6 +18618,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "isBookmarked",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "owner",
                                 },
                                 "selectionSet": Object {
@@ -20114,7 +20210,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5258,
+                        "end": 5279,
                         "start": 0,
                       },
                     },
@@ -21096,6 +21192,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "isBookmarked",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "owner",
                                 },
                                 "selectionSet": Object {
@@ -22677,7 +22784,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5258,
+                        "end": 5279,
                         "start": 0,
                       },
                     } => Object {
@@ -23658,6 +23765,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "isBookmarked",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "owner",
                                 },
                                 "selectionSet": Object {
@@ -25239,7 +25357,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5258,
+                        "end": 5279,
                         "start": 0,
                       },
                     },
@@ -26217,6 +26335,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                   "name": Object {
                                     "kind": "Name",
                                     "value": "submitterId",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "isBookmarked",
                                   },
                                   "selectionSet": undefined,
                                 },
@@ -27808,7 +27937,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 5258,
+                          "end": 5279,
                           "start": 0,
                         },
                       },
@@ -28819,6 +28948,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
+                                "value": "isBookmarked",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
                                 "value": "owner",
                               },
                               "selectionSet": Object {
@@ -30400,7 +30540,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5258,
+                      "end": 5279,
                       "start": 0,
                     },
                   },
@@ -31300,6 +31440,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                   "name": Object {
                                     "kind": "Name",
                                     "value": "submitterId",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "isBookmarked",
                                   },
                                   "selectionSet": undefined,
                                 },
@@ -32702,7 +32853,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 5258,
+                          "end": 5279,
                           "start": 0,
                         },
                       },
@@ -33726,6 +33877,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "isBookmarked",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "owner",
                                 },
                                 "selectionSet": Object {
@@ -35307,7 +35469,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5258,
+                        "end": 5279,
                         "start": 0,
                       },
                     },
@@ -36249,6 +36411,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
+                                "value": "isBookmarked",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
                                 "value": "owner",
                               },
                               "selectionSet": Object {
@@ -37641,7 +37814,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5258,
+                      "end": 5279,
                       "start": 0,
                     },
                   } => Object {
@@ -38622,6 +38795,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
+                                "value": "isBookmarked",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
                                 "value": "owner",
                               },
                               "selectionSet": Object {
@@ -40203,7 +40387,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5258,
+                      "end": 5279,
                       "start": 0,
                     },
                   },
@@ -41185,6 +41369,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
+                                "value": "isBookmarked",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
                                 "value": "owner",
                               },
                               "selectionSet": Object {
@@ -42766,7 +42961,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5258,
+                      "end": 5279,
                       "start": 0,
                     },
                   } => Object {
@@ -43747,6 +43942,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
+                                "value": "isBookmarked",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
                                 "value": "owner",
                               },
                               "selectionSet": Object {
@@ -45328,7 +45534,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5258,
+                      "end": 5279,
                       "start": 0,
                     },
                   },
@@ -46316,6 +46522,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "isBookmarked",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "owner",
                                 },
                                 "selectionSet": Object {
@@ -47897,7 +48114,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5258,
+                        "end": 5279,
                         "start": 0,
                       },
                     },
@@ -48791,6 +49008,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                           "name": Object {
                             "kind": "Name",
                             "value": "submitterId",
+                          },
+                          "selectionSet": undefined,
+                        },
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "isBookmarked",
                           },
                           "selectionSet": undefined,
                         },
@@ -50193,7 +50421,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 5258,
+                  "end": 5279,
                   "start": 0,
                 },
               }

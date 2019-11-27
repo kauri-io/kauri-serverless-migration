@@ -19,10 +19,13 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
         [theme.breakpoints.down('xs')]: {
             padding: theme.spacing(1),
+            height: 130,
         },
         display: 'flex',
         flexDirection: 'column',
         position: 'relative',
+        width: '100%',
+        maxWidth: 808,
     },
     title: {
         textTransform: 'capitalize',
@@ -42,6 +45,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         flexDirection: 'row',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
+        marginTop: 'auto',
     },
     column: {
         display: 'flex',
@@ -49,6 +53,13 @@ const useStyles = makeStyles((theme: Theme) => ({
         height: '100%',
         width: '100%',
         textAlign: 'left',
+        paddingRight: theme.spacing(2),
+        [theme.breakpoints.up('sm')]: {
+            height: 150,
+        },
+        [theme.breakpoints.down('xs')]: {
+            height: 90,
+        },
     },
     bottom: {
         marginTop: 'auto',
@@ -109,6 +120,8 @@ const LinkCard = ({
     owner,
     url,
     submitter,
+    openModalAction,
+    routeChangeAction,
 }: any) => {
     const classes = useStyles({})
     const linkURL = getLinkUrl({ id, linkTitle })
@@ -117,7 +130,7 @@ const LinkCard = ({
         <Link href={linkURL.href} as={linkURL.as}>
             <a className={classes.link}>
                 <>
-                    <Hidden smUp={true}>
+                    <Hidden implementation="css" smUp={true}>
                         <Card className={classes.card}>
                             <div className={classes.linkIndicator}>
                                 <LinkIcon color="primary" />
@@ -150,6 +163,7 @@ const LinkCard = ({
                                     )}
                                 </Grid>
                                 <CardImage
+                                    type={'Article'}
                                     image={
                                         linkAttributes &&
                                         linkAttributes.background_image &&
@@ -162,7 +176,7 @@ const LinkCard = ({
                             </Grid>
                         </Card>
                     </Hidden>
-                    <Hidden xsDown={true}>
+                    <Hidden implementation="css" xsDown={true}>
                         <Card className={classes.card}>
                             <div className={classes.linkIndicator}>
                                 <LinkIcon color="primary" />
@@ -216,10 +230,12 @@ const LinkCard = ({
                                             //     addArticleToCollectionAction
                                             // }
                                             url={linkURL}
+                                            type="LINK"
                                         />
                                     </Grid>
                                 </Grid>
                                 <CardImage
+                                    type={'Article'}
                                     image={
                                         linkAttributes &&
                                         linkAttributes.background_image &&

@@ -50,7 +50,15 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
             "minHeight": 56,
           },
         },
-        "overrides": Object {},
+        "overrides": Object {
+          "MuiButton": Object {
+            "contained": Object {
+              "&&:disabled": Object {
+                "backgroundColor": "#e0e0e0",
+              },
+            },
+          },
+        },
         "palette": Object {
           "action": Object {
             "active": "rgba(0, 0, 0, 0.54)",
@@ -737,9 +745,9 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "ScrollIndicator__BarContainer-sc-1k4p76-0",
                               "isStatic": false,
-                              "lastClassName": "kJFElp",
+                              "lastClassName": "kNIXCl",
                               "rules": Array [
-                                "position:fixed;top:64px;left:0;right:0;height:4px;width:100%;background:transparent;z-index:999;",
+                                "position:fixed;top:64px;left:0;right:0;height:4px;width:100%;background:transparent;z-index:999;@media (max-width:600px){top:56px;}",
                               ],
                             },
                             "displayName": "ScrollIndicator__BarContainer",
@@ -756,7 +764,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                         forwardedRef={null}
                       >
                         <div
-                          className="ScrollIndicator__BarContainer-sc-1k4p76-0 kJFElp"
+                          className="ScrollIndicator__BarContainer-sc-1k4p76-0 kNIXCl"
                         >
                           <ScrollIndicator__Fill
                             scrolled={0}

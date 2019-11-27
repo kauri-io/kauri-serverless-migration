@@ -38,7 +38,15 @@ exports[`components/Footer should match snapshot 1`] = `
           "minHeight": 56,
         },
       },
-      "overrides": Object {},
+      "overrides": Object {
+        "MuiButton": Object {
+          "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+        },
+      },
       "palette": Object {
         "action": Object {
           "active": "rgba(0, 0, 0, 0.54)",
@@ -392,480 +400,1812 @@ exports[`components/Footer should match snapshot 1`] = `
       }
     }
   >
-    <StyledFooter>
-      <Footer__NewFooter>
-        <StyledComponent
-          forwardedComponent={
+    <_default>
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-container-1"
+      >
+        <ForwardRef(Grid)
+          className="makeStyles-container-1"
+          classes={
             Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "attrs": Array [],
-              "componentStyle": ComponentStyle {
-                "componentId": "Footer__NewFooter-wussxj-0",
-                "isStatic": false,
-                "lastClassName": "dvkcdZ",
-                "rules": Array [
-                  "display:grid;grid-template-columns:1fr 2fr 1fr;grid-auto-columns:auto;width:100%;background-color:",
-                  [Function],
-                  ";padding:0px ",
-                  [Function],
-                  ";@media (max-width:500px){display:none;}",
-                ],
-              },
-              "displayName": "Footer__NewFooter",
-              "foldedComponentIds": Array [],
-              "render": [Function],
-              "styledComponentId": "Footer__NewFooter-wussxj-0",
-              "target": "div",
-              "toString": [Function],
-              "usesTheme": true,
-              "warnTooManyClasses": [Function],
-              "withComponent": [Function],
+              "align-content-xs-center": "MuiGrid-align-content-xs-center",
+              "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end",
+              "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start",
+              "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around",
+              "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between",
+              "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline",
+              "align-items-xs-center": "MuiGrid-align-items-xs-center",
+              "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end",
+              "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start",
+              "container": "MuiGrid-container",
+              "direction-xs-column": "MuiGrid-direction-xs-column",
+              "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse",
+              "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse",
+              "grid-lg-1": "MuiGrid-grid-lg-1",
+              "grid-lg-10": "MuiGrid-grid-lg-10",
+              "grid-lg-11": "MuiGrid-grid-lg-11",
+              "grid-lg-12": "MuiGrid-grid-lg-12",
+              "grid-lg-2": "MuiGrid-grid-lg-2",
+              "grid-lg-3": "MuiGrid-grid-lg-3",
+              "grid-lg-4": "MuiGrid-grid-lg-4",
+              "grid-lg-5": "MuiGrid-grid-lg-5",
+              "grid-lg-6": "MuiGrid-grid-lg-6",
+              "grid-lg-7": "MuiGrid-grid-lg-7",
+              "grid-lg-8": "MuiGrid-grid-lg-8",
+              "grid-lg-9": "MuiGrid-grid-lg-9",
+              "grid-lg-auto": "MuiGrid-grid-lg-auto",
+              "grid-lg-true": "MuiGrid-grid-lg-true",
+              "grid-md-1": "MuiGrid-grid-md-1",
+              "grid-md-10": "MuiGrid-grid-md-10",
+              "grid-md-11": "MuiGrid-grid-md-11",
+              "grid-md-12": "MuiGrid-grid-md-12",
+              "grid-md-2": "MuiGrid-grid-md-2",
+              "grid-md-3": "MuiGrid-grid-md-3",
+              "grid-md-4": "MuiGrid-grid-md-4",
+              "grid-md-5": "MuiGrid-grid-md-5",
+              "grid-md-6": "MuiGrid-grid-md-6",
+              "grid-md-7": "MuiGrid-grid-md-7",
+              "grid-md-8": "MuiGrid-grid-md-8",
+              "grid-md-9": "MuiGrid-grid-md-9",
+              "grid-md-auto": "MuiGrid-grid-md-auto",
+              "grid-md-true": "MuiGrid-grid-md-true",
+              "grid-sm-1": "MuiGrid-grid-sm-1",
+              "grid-sm-10": "MuiGrid-grid-sm-10",
+              "grid-sm-11": "MuiGrid-grid-sm-11",
+              "grid-sm-12": "MuiGrid-grid-sm-12",
+              "grid-sm-2": "MuiGrid-grid-sm-2",
+              "grid-sm-3": "MuiGrid-grid-sm-3",
+              "grid-sm-4": "MuiGrid-grid-sm-4",
+              "grid-sm-5": "MuiGrid-grid-sm-5",
+              "grid-sm-6": "MuiGrid-grid-sm-6",
+              "grid-sm-7": "MuiGrid-grid-sm-7",
+              "grid-sm-8": "MuiGrid-grid-sm-8",
+              "grid-sm-9": "MuiGrid-grid-sm-9",
+              "grid-sm-auto": "MuiGrid-grid-sm-auto",
+              "grid-sm-true": "MuiGrid-grid-sm-true",
+              "grid-xl-1": "MuiGrid-grid-xl-1",
+              "grid-xl-10": "MuiGrid-grid-xl-10",
+              "grid-xl-11": "MuiGrid-grid-xl-11",
+              "grid-xl-12": "MuiGrid-grid-xl-12",
+              "grid-xl-2": "MuiGrid-grid-xl-2",
+              "grid-xl-3": "MuiGrid-grid-xl-3",
+              "grid-xl-4": "MuiGrid-grid-xl-4",
+              "grid-xl-5": "MuiGrid-grid-xl-5",
+              "grid-xl-6": "MuiGrid-grid-xl-6",
+              "grid-xl-7": "MuiGrid-grid-xl-7",
+              "grid-xl-8": "MuiGrid-grid-xl-8",
+              "grid-xl-9": "MuiGrid-grid-xl-9",
+              "grid-xl-auto": "MuiGrid-grid-xl-auto",
+              "grid-xl-true": "MuiGrid-grid-xl-true",
+              "grid-xs-1": "MuiGrid-grid-xs-1",
+              "grid-xs-10": "MuiGrid-grid-xs-10",
+              "grid-xs-11": "MuiGrid-grid-xs-11",
+              "grid-xs-12": "MuiGrid-grid-xs-12",
+              "grid-xs-2": "MuiGrid-grid-xs-2",
+              "grid-xs-3": "MuiGrid-grid-xs-3",
+              "grid-xs-4": "MuiGrid-grid-xs-4",
+              "grid-xs-5": "MuiGrid-grid-xs-5",
+              "grid-xs-6": "MuiGrid-grid-xs-6",
+              "grid-xs-7": "MuiGrid-grid-xs-7",
+              "grid-xs-8": "MuiGrid-grid-xs-8",
+              "grid-xs-9": "MuiGrid-grid-xs-9",
+              "grid-xs-auto": "MuiGrid-grid-xs-auto",
+              "grid-xs-true": "MuiGrid-grid-xs-true",
+              "item": "MuiGrid-item",
+              "justify-xs-center": "MuiGrid-justify-xs-center",
+              "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end",
+              "justify-xs-space-around": "MuiGrid-justify-xs-space-around",
+              "justify-xs-space-between": "MuiGrid-justify-xs-space-between",
+              "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly",
+              "root": "MuiGrid-root",
+              "spacing-xs-1": "MuiGrid-spacing-xs-1",
+              "spacing-xs-10": "MuiGrid-spacing-xs-10",
+              "spacing-xs-2": "MuiGrid-spacing-xs-2",
+              "spacing-xs-3": "MuiGrid-spacing-xs-3",
+              "spacing-xs-4": "MuiGrid-spacing-xs-4",
+              "spacing-xs-5": "MuiGrid-spacing-xs-5",
+              "spacing-xs-6": "MuiGrid-spacing-xs-6",
+              "spacing-xs-7": "MuiGrid-spacing-xs-7",
+              "spacing-xs-8": "MuiGrid-spacing-xs-8",
+              "spacing-xs-9": "MuiGrid-spacing-xs-9",
+              "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap",
+              "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse",
+              "zeroMinWidth": "MuiGrid-zeroMinWidth",
             }
           }
-          forwardedRef={null}
         >
           <div
-            className="Footer__NewFooter-wussxj-0 dvkcdZ"
+            className="MuiGrid-root makeStyles-container-1"
           >
-            <_default>
-              <Email__Container>
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "Email__Container-nxd7qh-0",
-                        "isStatic": false,
-                        "lastClassName": "bkJUoo",
-                        "rules": Array [
-                          "display:flex;flex-direction:row;align-items:center;",
-                        ],
-                      },
-                      "displayName": "Email__Container",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "Email__Container-nxd7qh-0",
-                      "target": "div",
-                      "toString": [Function],
-                      "usesTheme": false,
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
-                    }
+            <WithStyles(ForwardRef(Grid))
+              className="makeStyles-wrapper-2"
+            >
+              <ForwardRef(Grid)
+                className="makeStyles-wrapper-2"
+                classes={
+                  Object {
+                    "align-content-xs-center": "MuiGrid-align-content-xs-center",
+                    "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end",
+                    "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start",
+                    "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around",
+                    "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between",
+                    "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline",
+                    "align-items-xs-center": "MuiGrid-align-items-xs-center",
+                    "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end",
+                    "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start",
+                    "container": "MuiGrid-container",
+                    "direction-xs-column": "MuiGrid-direction-xs-column",
+                    "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse",
+                    "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse",
+                    "grid-lg-1": "MuiGrid-grid-lg-1",
+                    "grid-lg-10": "MuiGrid-grid-lg-10",
+                    "grid-lg-11": "MuiGrid-grid-lg-11",
+                    "grid-lg-12": "MuiGrid-grid-lg-12",
+                    "grid-lg-2": "MuiGrid-grid-lg-2",
+                    "grid-lg-3": "MuiGrid-grid-lg-3",
+                    "grid-lg-4": "MuiGrid-grid-lg-4",
+                    "grid-lg-5": "MuiGrid-grid-lg-5",
+                    "grid-lg-6": "MuiGrid-grid-lg-6",
+                    "grid-lg-7": "MuiGrid-grid-lg-7",
+                    "grid-lg-8": "MuiGrid-grid-lg-8",
+                    "grid-lg-9": "MuiGrid-grid-lg-9",
+                    "grid-lg-auto": "MuiGrid-grid-lg-auto",
+                    "grid-lg-true": "MuiGrid-grid-lg-true",
+                    "grid-md-1": "MuiGrid-grid-md-1",
+                    "grid-md-10": "MuiGrid-grid-md-10",
+                    "grid-md-11": "MuiGrid-grid-md-11",
+                    "grid-md-12": "MuiGrid-grid-md-12",
+                    "grid-md-2": "MuiGrid-grid-md-2",
+                    "grid-md-3": "MuiGrid-grid-md-3",
+                    "grid-md-4": "MuiGrid-grid-md-4",
+                    "grid-md-5": "MuiGrid-grid-md-5",
+                    "grid-md-6": "MuiGrid-grid-md-6",
+                    "grid-md-7": "MuiGrid-grid-md-7",
+                    "grid-md-8": "MuiGrid-grid-md-8",
+                    "grid-md-9": "MuiGrid-grid-md-9",
+                    "grid-md-auto": "MuiGrid-grid-md-auto",
+                    "grid-md-true": "MuiGrid-grid-md-true",
+                    "grid-sm-1": "MuiGrid-grid-sm-1",
+                    "grid-sm-10": "MuiGrid-grid-sm-10",
+                    "grid-sm-11": "MuiGrid-grid-sm-11",
+                    "grid-sm-12": "MuiGrid-grid-sm-12",
+                    "grid-sm-2": "MuiGrid-grid-sm-2",
+                    "grid-sm-3": "MuiGrid-grid-sm-3",
+                    "grid-sm-4": "MuiGrid-grid-sm-4",
+                    "grid-sm-5": "MuiGrid-grid-sm-5",
+                    "grid-sm-6": "MuiGrid-grid-sm-6",
+                    "grid-sm-7": "MuiGrid-grid-sm-7",
+                    "grid-sm-8": "MuiGrid-grid-sm-8",
+                    "grid-sm-9": "MuiGrid-grid-sm-9",
+                    "grid-sm-auto": "MuiGrid-grid-sm-auto",
+                    "grid-sm-true": "MuiGrid-grid-sm-true",
+                    "grid-xl-1": "MuiGrid-grid-xl-1",
+                    "grid-xl-10": "MuiGrid-grid-xl-10",
+                    "grid-xl-11": "MuiGrid-grid-xl-11",
+                    "grid-xl-12": "MuiGrid-grid-xl-12",
+                    "grid-xl-2": "MuiGrid-grid-xl-2",
+                    "grid-xl-3": "MuiGrid-grid-xl-3",
+                    "grid-xl-4": "MuiGrid-grid-xl-4",
+                    "grid-xl-5": "MuiGrid-grid-xl-5",
+                    "grid-xl-6": "MuiGrid-grid-xl-6",
+                    "grid-xl-7": "MuiGrid-grid-xl-7",
+                    "grid-xl-8": "MuiGrid-grid-xl-8",
+                    "grid-xl-9": "MuiGrid-grid-xl-9",
+                    "grid-xl-auto": "MuiGrid-grid-xl-auto",
+                    "grid-xl-true": "MuiGrid-grid-xl-true",
+                    "grid-xs-1": "MuiGrid-grid-xs-1",
+                    "grid-xs-10": "MuiGrid-grid-xs-10",
+                    "grid-xs-11": "MuiGrid-grid-xs-11",
+                    "grid-xs-12": "MuiGrid-grid-xs-12",
+                    "grid-xs-2": "MuiGrid-grid-xs-2",
+                    "grid-xs-3": "MuiGrid-grid-xs-3",
+                    "grid-xs-4": "MuiGrid-grid-xs-4",
+                    "grid-xs-5": "MuiGrid-grid-xs-5",
+                    "grid-xs-6": "MuiGrid-grid-xs-6",
+                    "grid-xs-7": "MuiGrid-grid-xs-7",
+                    "grid-xs-8": "MuiGrid-grid-xs-8",
+                    "grid-xs-9": "MuiGrid-grid-xs-9",
+                    "grid-xs-auto": "MuiGrid-grid-xs-auto",
+                    "grid-xs-true": "MuiGrid-grid-xs-true",
+                    "item": "MuiGrid-item",
+                    "justify-xs-center": "MuiGrid-justify-xs-center",
+                    "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end",
+                    "justify-xs-space-around": "MuiGrid-justify-xs-space-around",
+                    "justify-xs-space-between": "MuiGrid-justify-xs-space-between",
+                    "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly",
+                    "root": "MuiGrid-root",
+                    "spacing-xs-1": "MuiGrid-spacing-xs-1",
+                    "spacing-xs-10": "MuiGrid-spacing-xs-10",
+                    "spacing-xs-2": "MuiGrid-spacing-xs-2",
+                    "spacing-xs-3": "MuiGrid-spacing-xs-3",
+                    "spacing-xs-4": "MuiGrid-spacing-xs-4",
+                    "spacing-xs-5": "MuiGrid-spacing-xs-5",
+                    "spacing-xs-6": "MuiGrid-spacing-xs-6",
+                    "spacing-xs-7": "MuiGrid-spacing-xs-7",
+                    "spacing-xs-8": "MuiGrid-spacing-xs-8",
+                    "spacing-xs-9": "MuiGrid-spacing-xs-9",
+                    "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap",
+                    "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse",
+                    "zeroMinWidth": "MuiGrid-zeroMinWidth",
                   }
-                  forwardedRef={null}
+                }
+              >
+                <div
+                  className="MuiGrid-root makeStyles-wrapper-2"
                 >
-                  <div
-                    className="Email__Container-nxd7qh-0 bkJUoo"
+                  <WithStyles(ForwardRef(Grid))
+                    className="makeStyles-column-3"
+                    container={true}
+                    justify="flex-start"
                   >
-                    <Email__EmailAddress
-                      href="mailto:info@kauri.io"
-                    >
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Email__EmailAddress-nxd7qh-1",
-                              "isStatic": false,
-                              "lastClassName": "jReXyi",
-                              "rules": Array [
-                                "height:16px;width:82px;color:#0ba986;font-family:Roboto;font-size:12px;font-weight:bold;line-height:16px;",
-                              ],
-                            },
-                            "displayName": "Email__EmailAddress",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "Email__EmailAddress-nxd7qh-1",
-                            "target": "a",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
+                    <ForwardRef(Grid)
+                      className="makeStyles-column-3"
+                      classes={
+                        Object {
+                          "align-content-xs-center": "MuiGrid-align-content-xs-center",
+                          "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end",
+                          "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start",
+                          "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around",
+                          "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between",
+                          "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline",
+                          "align-items-xs-center": "MuiGrid-align-items-xs-center",
+                          "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end",
+                          "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start",
+                          "container": "MuiGrid-container",
+                          "direction-xs-column": "MuiGrid-direction-xs-column",
+                          "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse",
+                          "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse",
+                          "grid-lg-1": "MuiGrid-grid-lg-1",
+                          "grid-lg-10": "MuiGrid-grid-lg-10",
+                          "grid-lg-11": "MuiGrid-grid-lg-11",
+                          "grid-lg-12": "MuiGrid-grid-lg-12",
+                          "grid-lg-2": "MuiGrid-grid-lg-2",
+                          "grid-lg-3": "MuiGrid-grid-lg-3",
+                          "grid-lg-4": "MuiGrid-grid-lg-4",
+                          "grid-lg-5": "MuiGrid-grid-lg-5",
+                          "grid-lg-6": "MuiGrid-grid-lg-6",
+                          "grid-lg-7": "MuiGrid-grid-lg-7",
+                          "grid-lg-8": "MuiGrid-grid-lg-8",
+                          "grid-lg-9": "MuiGrid-grid-lg-9",
+                          "grid-lg-auto": "MuiGrid-grid-lg-auto",
+                          "grid-lg-true": "MuiGrid-grid-lg-true",
+                          "grid-md-1": "MuiGrid-grid-md-1",
+                          "grid-md-10": "MuiGrid-grid-md-10",
+                          "grid-md-11": "MuiGrid-grid-md-11",
+                          "grid-md-12": "MuiGrid-grid-md-12",
+                          "grid-md-2": "MuiGrid-grid-md-2",
+                          "grid-md-3": "MuiGrid-grid-md-3",
+                          "grid-md-4": "MuiGrid-grid-md-4",
+                          "grid-md-5": "MuiGrid-grid-md-5",
+                          "grid-md-6": "MuiGrid-grid-md-6",
+                          "grid-md-7": "MuiGrid-grid-md-7",
+                          "grid-md-8": "MuiGrid-grid-md-8",
+                          "grid-md-9": "MuiGrid-grid-md-9",
+                          "grid-md-auto": "MuiGrid-grid-md-auto",
+                          "grid-md-true": "MuiGrid-grid-md-true",
+                          "grid-sm-1": "MuiGrid-grid-sm-1",
+                          "grid-sm-10": "MuiGrid-grid-sm-10",
+                          "grid-sm-11": "MuiGrid-grid-sm-11",
+                          "grid-sm-12": "MuiGrid-grid-sm-12",
+                          "grid-sm-2": "MuiGrid-grid-sm-2",
+                          "grid-sm-3": "MuiGrid-grid-sm-3",
+                          "grid-sm-4": "MuiGrid-grid-sm-4",
+                          "grid-sm-5": "MuiGrid-grid-sm-5",
+                          "grid-sm-6": "MuiGrid-grid-sm-6",
+                          "grid-sm-7": "MuiGrid-grid-sm-7",
+                          "grid-sm-8": "MuiGrid-grid-sm-8",
+                          "grid-sm-9": "MuiGrid-grid-sm-9",
+                          "grid-sm-auto": "MuiGrid-grid-sm-auto",
+                          "grid-sm-true": "MuiGrid-grid-sm-true",
+                          "grid-xl-1": "MuiGrid-grid-xl-1",
+                          "grid-xl-10": "MuiGrid-grid-xl-10",
+                          "grid-xl-11": "MuiGrid-grid-xl-11",
+                          "grid-xl-12": "MuiGrid-grid-xl-12",
+                          "grid-xl-2": "MuiGrid-grid-xl-2",
+                          "grid-xl-3": "MuiGrid-grid-xl-3",
+                          "grid-xl-4": "MuiGrid-grid-xl-4",
+                          "grid-xl-5": "MuiGrid-grid-xl-5",
+                          "grid-xl-6": "MuiGrid-grid-xl-6",
+                          "grid-xl-7": "MuiGrid-grid-xl-7",
+                          "grid-xl-8": "MuiGrid-grid-xl-8",
+                          "grid-xl-9": "MuiGrid-grid-xl-9",
+                          "grid-xl-auto": "MuiGrid-grid-xl-auto",
+                          "grid-xl-true": "MuiGrid-grid-xl-true",
+                          "grid-xs-1": "MuiGrid-grid-xs-1",
+                          "grid-xs-10": "MuiGrid-grid-xs-10",
+                          "grid-xs-11": "MuiGrid-grid-xs-11",
+                          "grid-xs-12": "MuiGrid-grid-xs-12",
+                          "grid-xs-2": "MuiGrid-grid-xs-2",
+                          "grid-xs-3": "MuiGrid-grid-xs-3",
+                          "grid-xs-4": "MuiGrid-grid-xs-4",
+                          "grid-xs-5": "MuiGrid-grid-xs-5",
+                          "grid-xs-6": "MuiGrid-grid-xs-6",
+                          "grid-xs-7": "MuiGrid-grid-xs-7",
+                          "grid-xs-8": "MuiGrid-grid-xs-8",
+                          "grid-xs-9": "MuiGrid-grid-xs-9",
+                          "grid-xs-auto": "MuiGrid-grid-xs-auto",
+                          "grid-xs-true": "MuiGrid-grid-xs-true",
+                          "item": "MuiGrid-item",
+                          "justify-xs-center": "MuiGrid-justify-xs-center",
+                          "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end",
+                          "justify-xs-space-around": "MuiGrid-justify-xs-space-around",
+                          "justify-xs-space-between": "MuiGrid-justify-xs-space-between",
+                          "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly",
+                          "root": "MuiGrid-root",
+                          "spacing-xs-1": "MuiGrid-spacing-xs-1",
+                          "spacing-xs-10": "MuiGrid-spacing-xs-10",
+                          "spacing-xs-2": "MuiGrid-spacing-xs-2",
+                          "spacing-xs-3": "MuiGrid-spacing-xs-3",
+                          "spacing-xs-4": "MuiGrid-spacing-xs-4",
+                          "spacing-xs-5": "MuiGrid-spacing-xs-5",
+                          "spacing-xs-6": "MuiGrid-spacing-xs-6",
+                          "spacing-xs-7": "MuiGrid-spacing-xs-7",
+                          "spacing-xs-8": "MuiGrid-spacing-xs-8",
+                          "spacing-xs-9": "MuiGrid-spacing-xs-9",
+                          "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap",
+                          "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse",
+                          "zeroMinWidth": "MuiGrid-zeroMinWidth",
                         }
-                        forwardedRef={null}
-                        href="mailto:info@kauri.io"
+                      }
+                      container={true}
+                      justify="flex-start"
+                    >
+                      <div
+                        className="MuiGrid-root makeStyles-column-3 MuiGrid-container"
+                      >
+                        <Link
+                          href="/"
+                        >
+                          <a
+                            className="makeStyles-link-7"
+                            href="/"
+                            onClick={[Function]}
+                            onMouseEnter={[Function]}
+                          >
+                            <img
+                              alt="Kauri logo"
+                              className="makeStyles-svg-4"
+                              src="/static/images/logo.svg"
+                            />
+                            <WithStyles(ForwardRef(Typography))
+                              className="makeStyles-logoText-10"
+                            >
+                              <ForwardRef(Typography)
+                                className="makeStyles-logoText-10"
+                                classes={
+                                  Object {
+                                    "alignCenter": "MuiTypography-alignCenter",
+                                    "alignJustify": "MuiTypography-alignJustify",
+                                    "alignLeft": "MuiTypography-alignLeft",
+                                    "alignRight": "MuiTypography-alignRight",
+                                    "body1": "MuiTypography-body1",
+                                    "body2": "MuiTypography-body2",
+                                    "button": "MuiTypography-button",
+                                    "caption": "MuiTypography-caption",
+                                    "colorError": "MuiTypography-colorError",
+                                    "colorInherit": "MuiTypography-colorInherit",
+                                    "colorPrimary": "MuiTypography-colorPrimary",
+                                    "colorSecondary": "MuiTypography-colorSecondary",
+                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                    "displayBlock": "MuiTypography-displayBlock",
+                                    "displayInline": "MuiTypography-displayInline",
+                                    "gutterBottom": "MuiTypography-gutterBottom",
+                                    "h1": "MuiTypography-h1",
+                                    "h2": "MuiTypography-h2",
+                                    "h3": "MuiTypography-h3",
+                                    "h4": "MuiTypography-h4",
+                                    "h5": "MuiTypography-h5",
+                                    "h6": "MuiTypography-h6",
+                                    "noWrap": "MuiTypography-noWrap",
+                                    "overline": "MuiTypography-overline",
+                                    "paragraph": "MuiTypography-paragraph",
+                                    "root": "MuiTypography-root",
+                                    "srOnly": "MuiTypography-srOnly",
+                                    "subtitle1": "MuiTypography-subtitle1",
+                                    "subtitle2": "MuiTypography-subtitle2",
+                                  }
+                                }
+                              >
+                                <p
+                                  className="MuiTypography-root makeStyles-logoText-10 MuiTypography-body1"
+                                >
+                                  kauri
+                                  <span
+                                    className="makeStyles-logoAccent-9"
+                                  >
+                                    .io
+                                  </span>
+                                </p>
+                              </ForwardRef(Typography)>
+                            </WithStyles(ForwardRef(Typography))>
+                            <WithStyles(ForwardRef(Typography))
+                              className="makeStyles-text-6"
+                              variant="subtitle2"
+                            >
+                              <ForwardRef(Typography)
+                                className="makeStyles-text-6"
+                                classes={
+                                  Object {
+                                    "alignCenter": "MuiTypography-alignCenter",
+                                    "alignJustify": "MuiTypography-alignJustify",
+                                    "alignLeft": "MuiTypography-alignLeft",
+                                    "alignRight": "MuiTypography-alignRight",
+                                    "body1": "MuiTypography-body1",
+                                    "body2": "MuiTypography-body2",
+                                    "button": "MuiTypography-button",
+                                    "caption": "MuiTypography-caption",
+                                    "colorError": "MuiTypography-colorError",
+                                    "colorInherit": "MuiTypography-colorInherit",
+                                    "colorPrimary": "MuiTypography-colorPrimary",
+                                    "colorSecondary": "MuiTypography-colorSecondary",
+                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                    "displayBlock": "MuiTypography-displayBlock",
+                                    "displayInline": "MuiTypography-displayInline",
+                                    "gutterBottom": "MuiTypography-gutterBottom",
+                                    "h1": "MuiTypography-h1",
+                                    "h2": "MuiTypography-h2",
+                                    "h3": "MuiTypography-h3",
+                                    "h4": "MuiTypography-h4",
+                                    "h5": "MuiTypography-h5",
+                                    "h6": "MuiTypography-h6",
+                                    "noWrap": "MuiTypography-noWrap",
+                                    "overline": "MuiTypography-overline",
+                                    "paragraph": "MuiTypography-paragraph",
+                                    "root": "MuiTypography-root",
+                                    "srOnly": "MuiTypography-srOnly",
+                                    "subtitle1": "MuiTypography-subtitle1",
+                                    "subtitle2": "MuiTypography-subtitle2",
+                                  }
+                                }
+                                variant="subtitle2"
+                              >
+                                <h6
+                                  className="MuiTypography-root makeStyles-text-6 MuiTypography-subtitle2"
+                                >
+                                  © Copyright 2019
+                                </h6>
+                              </ForwardRef(Typography)>
+                            </WithStyles(ForwardRef(Typography))>
+                          </a>
+                        </Link>
+                      </div>
+                    </ForwardRef(Grid)>
+                  </WithStyles(ForwardRef(Grid))>
+                  <WithStyles(ForwardRef(Grid))
+                    className="makeStyles-column-3"
+                    container={true}
+                    justify="center"
+                  >
+                    <ForwardRef(Grid)
+                      className="makeStyles-column-3"
+                      classes={
+                        Object {
+                          "align-content-xs-center": "MuiGrid-align-content-xs-center",
+                          "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end",
+                          "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start",
+                          "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around",
+                          "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between",
+                          "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline",
+                          "align-items-xs-center": "MuiGrid-align-items-xs-center",
+                          "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end",
+                          "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start",
+                          "container": "MuiGrid-container",
+                          "direction-xs-column": "MuiGrid-direction-xs-column",
+                          "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse",
+                          "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse",
+                          "grid-lg-1": "MuiGrid-grid-lg-1",
+                          "grid-lg-10": "MuiGrid-grid-lg-10",
+                          "grid-lg-11": "MuiGrid-grid-lg-11",
+                          "grid-lg-12": "MuiGrid-grid-lg-12",
+                          "grid-lg-2": "MuiGrid-grid-lg-2",
+                          "grid-lg-3": "MuiGrid-grid-lg-3",
+                          "grid-lg-4": "MuiGrid-grid-lg-4",
+                          "grid-lg-5": "MuiGrid-grid-lg-5",
+                          "grid-lg-6": "MuiGrid-grid-lg-6",
+                          "grid-lg-7": "MuiGrid-grid-lg-7",
+                          "grid-lg-8": "MuiGrid-grid-lg-8",
+                          "grid-lg-9": "MuiGrid-grid-lg-9",
+                          "grid-lg-auto": "MuiGrid-grid-lg-auto",
+                          "grid-lg-true": "MuiGrid-grid-lg-true",
+                          "grid-md-1": "MuiGrid-grid-md-1",
+                          "grid-md-10": "MuiGrid-grid-md-10",
+                          "grid-md-11": "MuiGrid-grid-md-11",
+                          "grid-md-12": "MuiGrid-grid-md-12",
+                          "grid-md-2": "MuiGrid-grid-md-2",
+                          "grid-md-3": "MuiGrid-grid-md-3",
+                          "grid-md-4": "MuiGrid-grid-md-4",
+                          "grid-md-5": "MuiGrid-grid-md-5",
+                          "grid-md-6": "MuiGrid-grid-md-6",
+                          "grid-md-7": "MuiGrid-grid-md-7",
+                          "grid-md-8": "MuiGrid-grid-md-8",
+                          "grid-md-9": "MuiGrid-grid-md-9",
+                          "grid-md-auto": "MuiGrid-grid-md-auto",
+                          "grid-md-true": "MuiGrid-grid-md-true",
+                          "grid-sm-1": "MuiGrid-grid-sm-1",
+                          "grid-sm-10": "MuiGrid-grid-sm-10",
+                          "grid-sm-11": "MuiGrid-grid-sm-11",
+                          "grid-sm-12": "MuiGrid-grid-sm-12",
+                          "grid-sm-2": "MuiGrid-grid-sm-2",
+                          "grid-sm-3": "MuiGrid-grid-sm-3",
+                          "grid-sm-4": "MuiGrid-grid-sm-4",
+                          "grid-sm-5": "MuiGrid-grid-sm-5",
+                          "grid-sm-6": "MuiGrid-grid-sm-6",
+                          "grid-sm-7": "MuiGrid-grid-sm-7",
+                          "grid-sm-8": "MuiGrid-grid-sm-8",
+                          "grid-sm-9": "MuiGrid-grid-sm-9",
+                          "grid-sm-auto": "MuiGrid-grid-sm-auto",
+                          "grid-sm-true": "MuiGrid-grid-sm-true",
+                          "grid-xl-1": "MuiGrid-grid-xl-1",
+                          "grid-xl-10": "MuiGrid-grid-xl-10",
+                          "grid-xl-11": "MuiGrid-grid-xl-11",
+                          "grid-xl-12": "MuiGrid-grid-xl-12",
+                          "grid-xl-2": "MuiGrid-grid-xl-2",
+                          "grid-xl-3": "MuiGrid-grid-xl-3",
+                          "grid-xl-4": "MuiGrid-grid-xl-4",
+                          "grid-xl-5": "MuiGrid-grid-xl-5",
+                          "grid-xl-6": "MuiGrid-grid-xl-6",
+                          "grid-xl-7": "MuiGrid-grid-xl-7",
+                          "grid-xl-8": "MuiGrid-grid-xl-8",
+                          "grid-xl-9": "MuiGrid-grid-xl-9",
+                          "grid-xl-auto": "MuiGrid-grid-xl-auto",
+                          "grid-xl-true": "MuiGrid-grid-xl-true",
+                          "grid-xs-1": "MuiGrid-grid-xs-1",
+                          "grid-xs-10": "MuiGrid-grid-xs-10",
+                          "grid-xs-11": "MuiGrid-grid-xs-11",
+                          "grid-xs-12": "MuiGrid-grid-xs-12",
+                          "grid-xs-2": "MuiGrid-grid-xs-2",
+                          "grid-xs-3": "MuiGrid-grid-xs-3",
+                          "grid-xs-4": "MuiGrid-grid-xs-4",
+                          "grid-xs-5": "MuiGrid-grid-xs-5",
+                          "grid-xs-6": "MuiGrid-grid-xs-6",
+                          "grid-xs-7": "MuiGrid-grid-xs-7",
+                          "grid-xs-8": "MuiGrid-grid-xs-8",
+                          "grid-xs-9": "MuiGrid-grid-xs-9",
+                          "grid-xs-auto": "MuiGrid-grid-xs-auto",
+                          "grid-xs-true": "MuiGrid-grid-xs-true",
+                          "item": "MuiGrid-item",
+                          "justify-xs-center": "MuiGrid-justify-xs-center",
+                          "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end",
+                          "justify-xs-space-around": "MuiGrid-justify-xs-space-around",
+                          "justify-xs-space-between": "MuiGrid-justify-xs-space-between",
+                          "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly",
+                          "root": "MuiGrid-root",
+                          "spacing-xs-1": "MuiGrid-spacing-xs-1",
+                          "spacing-xs-10": "MuiGrid-spacing-xs-10",
+                          "spacing-xs-2": "MuiGrid-spacing-xs-2",
+                          "spacing-xs-3": "MuiGrid-spacing-xs-3",
+                          "spacing-xs-4": "MuiGrid-spacing-xs-4",
+                          "spacing-xs-5": "MuiGrid-spacing-xs-5",
+                          "spacing-xs-6": "MuiGrid-spacing-xs-6",
+                          "spacing-xs-7": "MuiGrid-spacing-xs-7",
+                          "spacing-xs-8": "MuiGrid-spacing-xs-8",
+                          "spacing-xs-9": "MuiGrid-spacing-xs-9",
+                          "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap",
+                          "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse",
+                          "zeroMinWidth": "MuiGrid-zeroMinWidth",
+                        }
+                      }
+                      container={true}
+                      justify="center"
+                    >
+                      <div
+                        className="MuiGrid-root makeStyles-column-3 MuiGrid-container MuiGrid-justify-xs-center"
                       >
                         <a
-                          className="Email__EmailAddress-nxd7qh-1 jReXyi"
+                          className="makeStyles-link-7"
                           href="mailto:info@kauri.io"
                         >
-                          info@kauri.io
+                          <ForwardRef
+                            color="primary"
+                          >
+                            <WithStyles(ForwardRef(SvgIcon))
+                              color="primary"
+                            >
+                              <ForwardRef(SvgIcon)
+                                classes={
+                                  Object {
+                                    "colorAction": "MuiSvgIcon-colorAction",
+                                    "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                    "colorError": "MuiSvgIcon-colorError",
+                                    "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                    "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                    "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                    "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                    "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                    "root": "MuiSvgIcon-root",
+                                  }
+                                }
+                                color="primary"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  className="MuiSvgIcon-root MuiSvgIcon-colorPrimary"
+                                  focusable="false"
+                                  role="presentation"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                                  />
+                                </svg>
+                              </ForwardRef(SvgIcon)>
+                            </WithStyles(ForwardRef(SvgIcon))>
+                          </ForwardRef>
+                          <WithStyles(ForwardRef(Typography))
+                            className="makeStyles-text-6"
+                            variant="subtitle2"
+                          >
+                            <ForwardRef(Typography)
+                              className="makeStyles-text-6"
+                              classes={
+                                Object {
+                                  "alignCenter": "MuiTypography-alignCenter",
+                                  "alignJustify": "MuiTypography-alignJustify",
+                                  "alignLeft": "MuiTypography-alignLeft",
+                                  "alignRight": "MuiTypography-alignRight",
+                                  "body1": "MuiTypography-body1",
+                                  "body2": "MuiTypography-body2",
+                                  "button": "MuiTypography-button",
+                                  "caption": "MuiTypography-caption",
+                                  "colorError": "MuiTypography-colorError",
+                                  "colorInherit": "MuiTypography-colorInherit",
+                                  "colorPrimary": "MuiTypography-colorPrimary",
+                                  "colorSecondary": "MuiTypography-colorSecondary",
+                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                  "displayBlock": "MuiTypography-displayBlock",
+                                  "displayInline": "MuiTypography-displayInline",
+                                  "gutterBottom": "MuiTypography-gutterBottom",
+                                  "h1": "MuiTypography-h1",
+                                  "h2": "MuiTypography-h2",
+                                  "h3": "MuiTypography-h3",
+                                  "h4": "MuiTypography-h4",
+                                  "h5": "MuiTypography-h5",
+                                  "h6": "MuiTypography-h6",
+                                  "noWrap": "MuiTypography-noWrap",
+                                  "overline": "MuiTypography-overline",
+                                  "paragraph": "MuiTypography-paragraph",
+                                  "root": "MuiTypography-root",
+                                  "srOnly": "MuiTypography-srOnly",
+                                  "subtitle1": "MuiTypography-subtitle1",
+                                  "subtitle2": "MuiTypography-subtitle2",
+                                }
+                              }
+                              variant="subtitle2"
+                            >
+                              <h6
+                                className="MuiTypography-root makeStyles-text-6 MuiTypography-subtitle2"
+                              >
+                                info@kauri.io
+                              </h6>
+                            </ForwardRef(Typography)>
+                          </WithStyles(ForwardRef(Typography))>
                         </a>
-                      </StyledComponent>
-                    </Email__EmailAddress>
-                  </div>
-                </StyledComponent>
-              </Email__Container>
-            </_default>
-            <_default>
-              <Logo__Container>
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "Logo__Container-yhmxu8-1",
-                        "isStatic": false,
-                        "lastClassName": "kPuFaV",
-                        "rules": Array [
-                          "display:flex;align-self:center;flex-direction:column;align-items:center;margin:auto;padding:10px;",
-                        ],
-                      },
-                      "displayName": "Logo__Container",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "Logo__Container-yhmxu8-1",
-                      "target": "div",
-                      "toString": [Function],
-                      "usesTheme": false,
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
-                    }
-                  }
-                  forwardedRef={null}
-                >
-                  <div
-                    className="Logo__Container-yhmxu8-1 kPuFaV"
+                        <a
+                          className="makeStyles-link-7"
+                          href="https://kauri.io/feed"
+                        >
+                          <ForwardRef
+                            className="makeStyles-rss-8"
+                          >
+                            <WithStyles(ForwardRef(SvgIcon))
+                              className="makeStyles-rss-8"
+                            >
+                              <ForwardRef(SvgIcon)
+                                className="makeStyles-rss-8"
+                                classes={
+                                  Object {
+                                    "colorAction": "MuiSvgIcon-colorAction",
+                                    "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                    "colorError": "MuiSvgIcon-colorError",
+                                    "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                    "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                    "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                    "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                    "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                    "root": "MuiSvgIcon-root",
+                                  }
+                                }
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  className="MuiSvgIcon-root makeStyles-rss-8"
+                                  focusable="false"
+                                  role="presentation"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <circle
+                                    cx="6.18"
+                                    cy="17.82"
+                                    r="2.18"
+                                  />
+                                  <path
+                                    d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"
+                                  />
+                                </svg>
+                              </ForwardRef(SvgIcon)>
+                            </WithStyles(ForwardRef(SvgIcon))>
+                          </ForwardRef>
+                          <WithStyles(ForwardRef(Typography))
+                            className="makeStyles-text-6"
+                            variant="subtitle2"
+                          >
+                            <ForwardRef(Typography)
+                              className="makeStyles-text-6"
+                              classes={
+                                Object {
+                                  "alignCenter": "MuiTypography-alignCenter",
+                                  "alignJustify": "MuiTypography-alignJustify",
+                                  "alignLeft": "MuiTypography-alignLeft",
+                                  "alignRight": "MuiTypography-alignRight",
+                                  "body1": "MuiTypography-body1",
+                                  "body2": "MuiTypography-body2",
+                                  "button": "MuiTypography-button",
+                                  "caption": "MuiTypography-caption",
+                                  "colorError": "MuiTypography-colorError",
+                                  "colorInherit": "MuiTypography-colorInherit",
+                                  "colorPrimary": "MuiTypography-colorPrimary",
+                                  "colorSecondary": "MuiTypography-colorSecondary",
+                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                  "displayBlock": "MuiTypography-displayBlock",
+                                  "displayInline": "MuiTypography-displayInline",
+                                  "gutterBottom": "MuiTypography-gutterBottom",
+                                  "h1": "MuiTypography-h1",
+                                  "h2": "MuiTypography-h2",
+                                  "h3": "MuiTypography-h3",
+                                  "h4": "MuiTypography-h4",
+                                  "h5": "MuiTypography-h5",
+                                  "h6": "MuiTypography-h6",
+                                  "noWrap": "MuiTypography-noWrap",
+                                  "overline": "MuiTypography-overline",
+                                  "paragraph": "MuiTypography-paragraph",
+                                  "root": "MuiTypography-root",
+                                  "srOnly": "MuiTypography-srOnly",
+                                  "subtitle1": "MuiTypography-subtitle1",
+                                  "subtitle2": "MuiTypography-subtitle2",
+                                }
+                              }
+                              variant="subtitle2"
+                            >
+                              <h6
+                                className="MuiTypography-root makeStyles-text-6 MuiTypography-subtitle2"
+                              >
+                                info@kayru.io
+                              </h6>
+                            </ForwardRef(Typography)>
+                          </WithStyles(ForwardRef(Typography))>
+                        </a>
+                      </div>
+                    </ForwardRef(Grid)>
+                  </WithStyles(ForwardRef(Grid))>
+                  <WithStyles(ForwardRef(Grid))
+                    className="makeStyles-column-3"
+                    container={true}
+                    justify="flex-end"
                   >
-                    <Logo__LogoIcon
-                      src="/static/images/icons/footer-logo.png"
+                    <ForwardRef(Grid)
+                      className="makeStyles-column-3"
+                      classes={
+                        Object {
+                          "align-content-xs-center": "MuiGrid-align-content-xs-center",
+                          "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end",
+                          "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start",
+                          "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around",
+                          "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between",
+                          "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline",
+                          "align-items-xs-center": "MuiGrid-align-items-xs-center",
+                          "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end",
+                          "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start",
+                          "container": "MuiGrid-container",
+                          "direction-xs-column": "MuiGrid-direction-xs-column",
+                          "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse",
+                          "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse",
+                          "grid-lg-1": "MuiGrid-grid-lg-1",
+                          "grid-lg-10": "MuiGrid-grid-lg-10",
+                          "grid-lg-11": "MuiGrid-grid-lg-11",
+                          "grid-lg-12": "MuiGrid-grid-lg-12",
+                          "grid-lg-2": "MuiGrid-grid-lg-2",
+                          "grid-lg-3": "MuiGrid-grid-lg-3",
+                          "grid-lg-4": "MuiGrid-grid-lg-4",
+                          "grid-lg-5": "MuiGrid-grid-lg-5",
+                          "grid-lg-6": "MuiGrid-grid-lg-6",
+                          "grid-lg-7": "MuiGrid-grid-lg-7",
+                          "grid-lg-8": "MuiGrid-grid-lg-8",
+                          "grid-lg-9": "MuiGrid-grid-lg-9",
+                          "grid-lg-auto": "MuiGrid-grid-lg-auto",
+                          "grid-lg-true": "MuiGrid-grid-lg-true",
+                          "grid-md-1": "MuiGrid-grid-md-1",
+                          "grid-md-10": "MuiGrid-grid-md-10",
+                          "grid-md-11": "MuiGrid-grid-md-11",
+                          "grid-md-12": "MuiGrid-grid-md-12",
+                          "grid-md-2": "MuiGrid-grid-md-2",
+                          "grid-md-3": "MuiGrid-grid-md-3",
+                          "grid-md-4": "MuiGrid-grid-md-4",
+                          "grid-md-5": "MuiGrid-grid-md-5",
+                          "grid-md-6": "MuiGrid-grid-md-6",
+                          "grid-md-7": "MuiGrid-grid-md-7",
+                          "grid-md-8": "MuiGrid-grid-md-8",
+                          "grid-md-9": "MuiGrid-grid-md-9",
+                          "grid-md-auto": "MuiGrid-grid-md-auto",
+                          "grid-md-true": "MuiGrid-grid-md-true",
+                          "grid-sm-1": "MuiGrid-grid-sm-1",
+                          "grid-sm-10": "MuiGrid-grid-sm-10",
+                          "grid-sm-11": "MuiGrid-grid-sm-11",
+                          "grid-sm-12": "MuiGrid-grid-sm-12",
+                          "grid-sm-2": "MuiGrid-grid-sm-2",
+                          "grid-sm-3": "MuiGrid-grid-sm-3",
+                          "grid-sm-4": "MuiGrid-grid-sm-4",
+                          "grid-sm-5": "MuiGrid-grid-sm-5",
+                          "grid-sm-6": "MuiGrid-grid-sm-6",
+                          "grid-sm-7": "MuiGrid-grid-sm-7",
+                          "grid-sm-8": "MuiGrid-grid-sm-8",
+                          "grid-sm-9": "MuiGrid-grid-sm-9",
+                          "grid-sm-auto": "MuiGrid-grid-sm-auto",
+                          "grid-sm-true": "MuiGrid-grid-sm-true",
+                          "grid-xl-1": "MuiGrid-grid-xl-1",
+                          "grid-xl-10": "MuiGrid-grid-xl-10",
+                          "grid-xl-11": "MuiGrid-grid-xl-11",
+                          "grid-xl-12": "MuiGrid-grid-xl-12",
+                          "grid-xl-2": "MuiGrid-grid-xl-2",
+                          "grid-xl-3": "MuiGrid-grid-xl-3",
+                          "grid-xl-4": "MuiGrid-grid-xl-4",
+                          "grid-xl-5": "MuiGrid-grid-xl-5",
+                          "grid-xl-6": "MuiGrid-grid-xl-6",
+                          "grid-xl-7": "MuiGrid-grid-xl-7",
+                          "grid-xl-8": "MuiGrid-grid-xl-8",
+                          "grid-xl-9": "MuiGrid-grid-xl-9",
+                          "grid-xl-auto": "MuiGrid-grid-xl-auto",
+                          "grid-xl-true": "MuiGrid-grid-xl-true",
+                          "grid-xs-1": "MuiGrid-grid-xs-1",
+                          "grid-xs-10": "MuiGrid-grid-xs-10",
+                          "grid-xs-11": "MuiGrid-grid-xs-11",
+                          "grid-xs-12": "MuiGrid-grid-xs-12",
+                          "grid-xs-2": "MuiGrid-grid-xs-2",
+                          "grid-xs-3": "MuiGrid-grid-xs-3",
+                          "grid-xs-4": "MuiGrid-grid-xs-4",
+                          "grid-xs-5": "MuiGrid-grid-xs-5",
+                          "grid-xs-6": "MuiGrid-grid-xs-6",
+                          "grid-xs-7": "MuiGrid-grid-xs-7",
+                          "grid-xs-8": "MuiGrid-grid-xs-8",
+                          "grid-xs-9": "MuiGrid-grid-xs-9",
+                          "grid-xs-auto": "MuiGrid-grid-xs-auto",
+                          "grid-xs-true": "MuiGrid-grid-xs-true",
+                          "item": "MuiGrid-item",
+                          "justify-xs-center": "MuiGrid-justify-xs-center",
+                          "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end",
+                          "justify-xs-space-around": "MuiGrid-justify-xs-space-around",
+                          "justify-xs-space-between": "MuiGrid-justify-xs-space-between",
+                          "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly",
+                          "root": "MuiGrid-root",
+                          "spacing-xs-1": "MuiGrid-spacing-xs-1",
+                          "spacing-xs-10": "MuiGrid-spacing-xs-10",
+                          "spacing-xs-2": "MuiGrid-spacing-xs-2",
+                          "spacing-xs-3": "MuiGrid-spacing-xs-3",
+                          "spacing-xs-4": "MuiGrid-spacing-xs-4",
+                          "spacing-xs-5": "MuiGrid-spacing-xs-5",
+                          "spacing-xs-6": "MuiGrid-spacing-xs-6",
+                          "spacing-xs-7": "MuiGrid-spacing-xs-7",
+                          "spacing-xs-8": "MuiGrid-spacing-xs-8",
+                          "spacing-xs-9": "MuiGrid-spacing-xs-9",
+                          "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap",
+                          "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse",
+                          "zeroMinWidth": "MuiGrid-zeroMinWidth",
+                        }
+                      }
+                      container={true}
+                      justify="flex-end"
                     >
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Logo__LogoIcon-yhmxu8-0",
-                              "isStatic": false,
-                              "lastClassName": "kQopY",
-                              "rules": Array [
-                                "width:26px;height:25px;",
-                              ],
-                            },
-                            "displayName": "Logo__LogoIcon",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "Logo__LogoIcon-yhmxu8-0",
-                            "target": "img",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
-                        src="/static/images/icons/footer-logo.png"
+                      <div
+                        className="MuiGrid-root makeStyles-column-3 MuiGrid-container MuiGrid-justify-xs-flex-end"
                       >
-                        <img
-                          className="Logo__LogoIcon-yhmxu8-0 kQopY"
-                          src="/static/images/icons/footer-logo.png"
-                        />
-                      </StyledComponent>
-                    </Logo__LogoIcon>
-                    <Logo__KauriCopy>
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Logo__KauriCopy-yhmxu8-2",
-                              "isStatic": false,
-                              "lastClassName": "kdcflv",
-                              "rules": Array [
-                                "color:#fff;line-height:12px;font-size:12px;",
-                              ],
-                            },
-                            "displayName": "Logo__KauriCopy",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "Logo__KauriCopy-yhmxu8-2",
-                            "target": "span",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
-                      >
-                        <span
-                          className="Logo__KauriCopy-yhmxu8-2 kdcflv"
+                        <WithStyles(ForwardRef(Grid))
+                          className="makeStyles-strip-5"
                         >
-                          kauri
-                        </span>
-                      </StyledComponent>
-                    </Logo__KauriCopy>
-                  </div>
-                </StyledComponent>
-              </Logo__Container>
-            </_default>
-            <_default>
-              <Consensys__Container>
-                <StyledComponent
-                  forwardedComponent={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "attrs": Array [],
-                      "componentStyle": ComponentStyle {
-                        "componentId": "Consensys__Container-sc-3l6ajh-0",
-                        "isStatic": false,
-                        "lastClassName": "hzIdEE",
-                        "rules": Array [
-                          "display:flex;flex-direction:row;align-items:center;>:nth-child(2){margin-left:15px;}>:last-child{margin-left:4px;}",
-                        ],
-                      },
-                      "displayName": "Consensys__Container",
-                      "foldedComponentIds": Array [],
-                      "render": [Function],
-                      "styledComponentId": "Consensys__Container-sc-3l6ajh-0",
-                      "target": "div",
-                      "toString": [Function],
-                      "usesTheme": false,
-                      "warnTooManyClasses": [Function],
-                      "withComponent": [Function],
-                    }
-                  }
-                  forwardedRef={null}
-                >
-                  <div
-                    className="Consensys__Container-sc-3l6ajh-0 hzIdEE"
-                  >
-                    <Consensys__ConsenSysLogoIcon>
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                              "isStatic": false,
-                              "lastClassName": "iJDtiZ",
-                              "rules": Array [
-                                "color:#fff;font-weight:500;font-size:13px;",
-                              ],
-                            },
-                            "displayName": "Consensys__ConsenSysLogoIcon",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                            "target": "a",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
-                      >
-                        <a
-                          className="Consensys__ConsenSysLogoIcon-sc-3l6ajh-2 iJDtiZ"
+                          <ForwardRef(Grid)
+                            className="makeStyles-strip-5"
+                            classes={
+                              Object {
+                                "align-content-xs-center": "MuiGrid-align-content-xs-center",
+                                "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end",
+                                "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start",
+                                "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around",
+                                "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between",
+                                "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline",
+                                "align-items-xs-center": "MuiGrid-align-items-xs-center",
+                                "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end",
+                                "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start",
+                                "container": "MuiGrid-container",
+                                "direction-xs-column": "MuiGrid-direction-xs-column",
+                                "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse",
+                                "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse",
+                                "grid-lg-1": "MuiGrid-grid-lg-1",
+                                "grid-lg-10": "MuiGrid-grid-lg-10",
+                                "grid-lg-11": "MuiGrid-grid-lg-11",
+                                "grid-lg-12": "MuiGrid-grid-lg-12",
+                                "grid-lg-2": "MuiGrid-grid-lg-2",
+                                "grid-lg-3": "MuiGrid-grid-lg-3",
+                                "grid-lg-4": "MuiGrid-grid-lg-4",
+                                "grid-lg-5": "MuiGrid-grid-lg-5",
+                                "grid-lg-6": "MuiGrid-grid-lg-6",
+                                "grid-lg-7": "MuiGrid-grid-lg-7",
+                                "grid-lg-8": "MuiGrid-grid-lg-8",
+                                "grid-lg-9": "MuiGrid-grid-lg-9",
+                                "grid-lg-auto": "MuiGrid-grid-lg-auto",
+                                "grid-lg-true": "MuiGrid-grid-lg-true",
+                                "grid-md-1": "MuiGrid-grid-md-1",
+                                "grid-md-10": "MuiGrid-grid-md-10",
+                                "grid-md-11": "MuiGrid-grid-md-11",
+                                "grid-md-12": "MuiGrid-grid-md-12",
+                                "grid-md-2": "MuiGrid-grid-md-2",
+                                "grid-md-3": "MuiGrid-grid-md-3",
+                                "grid-md-4": "MuiGrid-grid-md-4",
+                                "grid-md-5": "MuiGrid-grid-md-5",
+                                "grid-md-6": "MuiGrid-grid-md-6",
+                                "grid-md-7": "MuiGrid-grid-md-7",
+                                "grid-md-8": "MuiGrid-grid-md-8",
+                                "grid-md-9": "MuiGrid-grid-md-9",
+                                "grid-md-auto": "MuiGrid-grid-md-auto",
+                                "grid-md-true": "MuiGrid-grid-md-true",
+                                "grid-sm-1": "MuiGrid-grid-sm-1",
+                                "grid-sm-10": "MuiGrid-grid-sm-10",
+                                "grid-sm-11": "MuiGrid-grid-sm-11",
+                                "grid-sm-12": "MuiGrid-grid-sm-12",
+                                "grid-sm-2": "MuiGrid-grid-sm-2",
+                                "grid-sm-3": "MuiGrid-grid-sm-3",
+                                "grid-sm-4": "MuiGrid-grid-sm-4",
+                                "grid-sm-5": "MuiGrid-grid-sm-5",
+                                "grid-sm-6": "MuiGrid-grid-sm-6",
+                                "grid-sm-7": "MuiGrid-grid-sm-7",
+                                "grid-sm-8": "MuiGrid-grid-sm-8",
+                                "grid-sm-9": "MuiGrid-grid-sm-9",
+                                "grid-sm-auto": "MuiGrid-grid-sm-auto",
+                                "grid-sm-true": "MuiGrid-grid-sm-true",
+                                "grid-xl-1": "MuiGrid-grid-xl-1",
+                                "grid-xl-10": "MuiGrid-grid-xl-10",
+                                "grid-xl-11": "MuiGrid-grid-xl-11",
+                                "grid-xl-12": "MuiGrid-grid-xl-12",
+                                "grid-xl-2": "MuiGrid-grid-xl-2",
+                                "grid-xl-3": "MuiGrid-grid-xl-3",
+                                "grid-xl-4": "MuiGrid-grid-xl-4",
+                                "grid-xl-5": "MuiGrid-grid-xl-5",
+                                "grid-xl-6": "MuiGrid-grid-xl-6",
+                                "grid-xl-7": "MuiGrid-grid-xl-7",
+                                "grid-xl-8": "MuiGrid-grid-xl-8",
+                                "grid-xl-9": "MuiGrid-grid-xl-9",
+                                "grid-xl-auto": "MuiGrid-grid-xl-auto",
+                                "grid-xl-true": "MuiGrid-grid-xl-true",
+                                "grid-xs-1": "MuiGrid-grid-xs-1",
+                                "grid-xs-10": "MuiGrid-grid-xs-10",
+                                "grid-xs-11": "MuiGrid-grid-xs-11",
+                                "grid-xs-12": "MuiGrid-grid-xs-12",
+                                "grid-xs-2": "MuiGrid-grid-xs-2",
+                                "grid-xs-3": "MuiGrid-grid-xs-3",
+                                "grid-xs-4": "MuiGrid-grid-xs-4",
+                                "grid-xs-5": "MuiGrid-grid-xs-5",
+                                "grid-xs-6": "MuiGrid-grid-xs-6",
+                                "grid-xs-7": "MuiGrid-grid-xs-7",
+                                "grid-xs-8": "MuiGrid-grid-xs-8",
+                                "grid-xs-9": "MuiGrid-grid-xs-9",
+                                "grid-xs-auto": "MuiGrid-grid-xs-auto",
+                                "grid-xs-true": "MuiGrid-grid-xs-true",
+                                "item": "MuiGrid-item",
+                                "justify-xs-center": "MuiGrid-justify-xs-center",
+                                "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end",
+                                "justify-xs-space-around": "MuiGrid-justify-xs-space-around",
+                                "justify-xs-space-between": "MuiGrid-justify-xs-space-between",
+                                "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly",
+                                "root": "MuiGrid-root",
+                                "spacing-xs-1": "MuiGrid-spacing-xs-1",
+                                "spacing-xs-10": "MuiGrid-spacing-xs-10",
+                                "spacing-xs-2": "MuiGrid-spacing-xs-2",
+                                "spacing-xs-3": "MuiGrid-spacing-xs-3",
+                                "spacing-xs-4": "MuiGrid-spacing-xs-4",
+                                "spacing-xs-5": "MuiGrid-spacing-xs-5",
+                                "spacing-xs-6": "MuiGrid-spacing-xs-6",
+                                "spacing-xs-7": "MuiGrid-spacing-xs-7",
+                                "spacing-xs-8": "MuiGrid-spacing-xs-8",
+                                "spacing-xs-9": "MuiGrid-spacing-xs-9",
+                                "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap",
+                                "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse",
+                                "zeroMinWidth": "MuiGrid-zeroMinWidth",
+                              }
+                            }
+                          >
+                            <div
+                              className="MuiGrid-root makeStyles-strip-5"
+                            >
+                              <_default
+                                className="makeStyles-consensys-11"
+                              >
+                                <svg
+                                  className="makeStyles-consensys-11"
+                                  height="2498"
+                                  id="Layer_1"
+                                  viewBox="100 100.1 300 299.7"
+                                  width="2500"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <circle
+                                    className="st0"
+                                    cx="236.8"
+                                    cy="399.4"
+                                    r=".5"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="222.6"
+                                    cy="394.9"
+                                    r="1"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="208.9"
+                                    cy="389.1"
+                                    r="1.5"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="196"
+                                    cy="381.8"
+                                    r="2"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="183.9"
+                                    cy="373.2"
+                                    r="2.6"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="172.7"
+                                    cy="363.3"
+                                    r="3.1"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="162.7"
+                                    cy="352.4"
+                                    r="3.6"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="153.9"
+                                    cy="340.4"
+                                    r="4.1"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="146.6"
+                                    cy="327.4"
+                                    r="4.6"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="141.2"
+                                    cy="313.6"
+                                    r="5.1"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="137.6"
+                                    cy="299.2"
+                                    r="5.6"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="135.9"
+                                    cy="284.4"
+                                    r="6.1"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="136.2"
+                                    cy="269.5"
+                                    r="6.7"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="138.4"
+                                    cy="254.8"
+                                    r="7.2"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="346.4"
+                                    cy="365.1"
+                                    r=".5"
+                                  />
+                                  <path
+                                    className="st0"
+                                    d="M333.2 371.1c-.5 0-.9.4-.9.9s.4.9.9.9.9-.4.9-.9-.4-.9-.9-.9zM319.4 376.1c-.7 0-1.4.6-1.4 1.4s.6 1.4 1.4 1.4c.8 0 1.4-.6 1.4-1.4-.1-.8-.7-1.4-1.4-1.4z"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="305.1"
+                                    cy="381.5"
+                                    r="1.8"
+                                  />
+                                  <path
+                                    className="st0"
+                                    d="M290.4 381.7c-1.3 0-2.3 1-2.3 2.3 0 1.2 1 2.3 2.3 2.3 1.2 0 2.3-1 2.3-2.3 0-1.3-1-2.3-2.3-2.3z"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="275.6"
+                                    cy="384.9"
+                                    r="2.7"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="260.7"
+                                    cy="384.2"
+                                    r="3.2"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="246"
+                                    cy="382"
+                                    r="3.6"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="231.7"
+                                    cy="377.9"
+                                    r="4.1"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="218.1"
+                                    cy="372"
+                                    r="4.5"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="205.3"
+                                    cy="364.4"
+                                    r="5"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="193.7"
+                                    cy="355.1"
+                                    r="5.4"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="183.4"
+                                    cy="344.4"
+                                    r="5.9"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="174.6"
+                                    cy="332.5"
+                                    r="6.3"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="167.4"
+                                    cy="319.5"
+                                    r="6.8"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="399.6"
+                                    cy="263.3"
+                                    r=".4"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="395.2"
+                                    cy="277.5"
+                                    r=".8"
+                                  />
+                                  <path
+                                    className="st0"
+                                    d="M389.3 290c-.7 0-1.2.5-1.2 1.2s.5 1.2 1.2 1.2 1.2-.5 1.2-1.2-.5-1.2-1.2-1.2zM382 302.5c-.9 0-1.6.7-1.6 1.6s.7 1.6 1.6 1.6c.9 0 1.6-.7 1.6-1.6 0-.9-.7-1.6-1.6-1.6z"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="373.4"
+                                    cy="316.3"
+                                    r="2"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="363.6"
+                                    cy="327.4"
+                                    r="2.4"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="352.6"
+                                    cy="337.5"
+                                    r="2.8"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="340.6"
+                                    cy="346.3"
+                                    r="3.2"
+                                  />
+                                  <path
+                                    className="st0"
+                                    d="M327.6 349.9c-2 0-3.6 1.6-3.6 3.6s1.6 3.6 3.6 3.6 3.6-1.6 3.6-3.6c.1-2-1.6-3.6-3.6-3.6zM313.8 354.9c-2.2 0-4.1 1.8-4.1 4.1s1.8 4.1 4.1 4.1c2.2 0 4.1-1.8 4.1-4.1s-1.9-4.1-4.1-4.1z"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="299.4"
+                                    cy="362.6"
+                                    r="4.5"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="284.6"
+                                    cy="364.2"
+                                    r="4.9"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="269.8"
+                                    cy="364"
+                                    r="5.3"
+                                  />
+                                  <path
+                                    className="st0"
+                                    d="M260.7 361.8c0-3.1-2.5-5.7-5.7-5.7-3.1 0-5.7 2.5-5.7 5.7 0 3.1 2.5 5.7 5.7 5.7 3.2-.1 5.7-2.6 5.7-5.7z"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="240.8"
+                                    cy="357.7"
+                                    r="6.1"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="227.1"
+                                    cy="351.7"
+                                    r="6.5"
+                                  />
+                                  <path
+                                    className="st0"
+                                    d="M365.3 154.2c.2 0 .4-.2.4-.4s-.2-.4-.4-.4-.4.2-.4.4.2.4.4.4zM372.2 167.7c.4 0 .8-.4.8-.8s-.4-.8-.8-.8-.8.4-.8.8c0 .5.4.8.8.8zM377.7 182c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2-1.2.5-1.2 1.2c0 .6.5 1.2 1.2 1.2zM381.7 196.7c.9 0 1.6-.7 1.6-1.6 0-.9-.7-1.6-1.6-1.6-.9 0-1.6.7-1.6 1.6 0 .9.7 1.6 1.6 1.6z"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="384.2"
+                                    cy="209.7"
+                                    r="2"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="385.1"
+                                    cy="224.5"
+                                    r="2.4"
+                                  />
+                                  <path
+                                    className="st0"
+                                    d="M384.5 236.6c-1.6 0-2.8 1.3-2.8 2.8 0 1.6 1.3 2.8 2.8 2.8 1.6 0 2.8-1.3 2.8-2.8 0-1.6-1.3-2.8-2.8-2.8zM382.2 250.9c-1.8 0-3.2 1.5-3.2 3.2 0 1.8 1.4 3.2 3.2 3.2 1.8 0 3.2-1.4 3.2-3.2.1-1.8-1.4-3.2-3.2-3.2z"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="378.2"
+                                    cy="268.4"
+                                    r="3.6"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="372.3"
+                                    cy="282"
+                                    r="4.1"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="364.6"
+                                    cy="294.8"
+                                    r="4.5"
+                                  />
+                                  <path
+                                    className="st0"
+                                    d="M355.3 301.5c-2.7 0-4.9 2.2-4.9 4.9s2.2 4.9 4.9 4.9 4.9-2.2 4.9-4.9-2.2-4.9-4.9-4.9z"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="344.6"
+                                    cy="316.7"
+                                    r="5.3"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="332.7"
+                                    cy="325.6"
+                                    r="5.7"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="319.7"
+                                    cy="332.8"
+                                    r="6.1"
+                                  />
+                                  <path
+                                    className="st0"
+                                    d="M305.9 331.7c-3.6 0-6.5 2.9-6.5 6.5s2.9 6.5 6.5 6.5 6.5-2.9 6.5-6.5c-.1-3.6-3-6.5-6.5-6.5zM263.6 100.9c.2 0 .4-.2.4-.4s-.2-.4-.4-.4-.4.2-.4.4c0 .3.1.4.4.4z"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="277.8"
+                                    cy="105"
+                                    r=".8"
+                                  />
+                                  <path
+                                    className="st0"
+                                    d="M291.4 112.1c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2-1.2.5-1.2 1.2c0 .6.5 1.2 1.2 1.2zM304.4 119.7c.9 0 1.6-.7 1.6-1.6 0-.9-.7-1.6-1.6-1.6-.9 0-1.6.7-1.6 1.6 0 .9.7 1.6 1.6 1.6zM316.5 128.8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="327.6"
+                                    cy="136.6"
+                                    r="2.4"
+                                  />
+                                  <path
+                                    className="st0"
+                                    d="M337.7 150.4c1.6 0 2.8-1.3 2.8-2.8 0-1.6-1.3-2.8-2.8-2.8-1.6 0-2.8 1.3-2.8 2.8-.1 1.5 1.2 2.8 2.8 2.8zM346.5 162.7c1.8 0 3.2-1.5 3.2-3.2 0-1.8-1.4-3.2-3.2-3.2-1.8 0-3.2 1.4-3.2 3.2 0 1.8 1.4 3.2 3.2 3.2z"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="353.7"
+                                    cy="172.5"
+                                    r="3.6"
+                                  />
+                                  <path
+                                    className="st0"
+                                    d="M355.2 186.3c0 2.2 1.8 4.1 4.1 4.1 2.2 0 4.1-1.8 4.1-4.1 0-2.2-1.8-4.1-4.1-4.1-2.3.1-4.1 1.9-4.1 4.1zM358.3 200.7c0 2.5 2 4.5 4.5 4.5s4.5-2 4.5-4.5-2-4.5-4.5-4.5c-2.5.1-4.5 2.1-4.5 4.5zM359.6 215.5c0 2.7 2.2 4.9 4.9 4.9s4.9-2.2 4.9-4.9-2.2-4.9-4.9-4.9-4.9 2.2-4.9 4.9z"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="364.2"
+                                    cy="230.4"
+                                    r="5.3"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="362"
+                                    cy="245.1"
+                                    r="5.7"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="357.9"
+                                    cy="259.4"
+                                    r="6.1"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="352"
+                                    cy="273"
+                                    r="6.5"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="154"
+                                    cy="134.8"
+                                    r=".4"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="167.2"
+                                    cy="127.9"
+                                    r=".8"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="181"
+                                    cy="122.4"
+                                    r="1.2"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="195.3"
+                                    cy="118.4"
+                                    r="1.6"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="209.9"
+                                    cy="115.9"
+                                    r="2"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="224.8"
+                                    cy="115"
+                                    r="2.4"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="239.6"
+                                    cy="115.7"
+                                    r="2.8"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="254.3"
+                                    cy="117.9"
+                                    r="3.2"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="268.6"
+                                    cy="121.9"
+                                    r="3.6"
+                                  />
+                                  <path
+                                    className="st0"
+                                    d="M282.3 131.9c2.2 0 4-1.8 4-4.1 0-2.2-1.8-4.1-4-4.1s-4.1 1.8-4.1 4.1 1.8 4.1 4.1 4.1zM290.6 135.5c0 2.5 2 4.5 4.5 4.5s4.5-2 4.5-4.5-2-4.5-4.5-4.5c-2.5.1-4.5 2.1-4.5 4.5zM306.6 149.6c2.7 0 4.9-2.2 4.9-4.9s-2.2-4.9-4.9-4.9-4.9 2.2-4.9 4.9 2.3 4.9 4.9 4.9zM317 160.8c2.9 0 5.3-2.4 5.3-5.3s-2.4-5.3-5.3-5.3-5.3 2.4-5.3 5.3 2.3 5.3 5.3 5.3z"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="325.8"
+                                    cy="167.4"
+                                    r="5.7"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="333"
+                                    cy="180.4"
+                                    r="6.1"
+                                  />
+                                  <path
+                                    className="st0"
+                                    d="M331.9 194.3c0 3.6 2.9 6.5 6.5 6.5s6.5-2.9 6.5-6.5-2.9-6.5-6.5-6.5c-3.5 0-6.5 2.9-6.5 6.5z"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="342"
+                                    cy="208.7"
+                                    r="6.9"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="100.8"
+                                    cy="236.6"
+                                    r=".8"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="105.2"
+                                    cy="222.4"
+                                    r="1.5"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="111.1"
+                                    cy="208.7"
+                                    r="2.3"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="118.4"
+                                    cy="195.8"
+                                    r="3.1"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="127"
+                                    cy="183.6"
+                                    r="3.8"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="136.8"
+                                    cy="172.5"
+                                    r="4.6"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="147.8"
+                                    cy="162.4"
+                                    r="5.4"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="159.7"
+                                    cy="153.6"
+                                    r="6.1"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="172.6"
+                                    cy="146.3"
+                                    r="6.9"
+                                  />
+                                  <path
+                                    className="st0"
+                                    d="M186.4 148.3c3.8 0 7-2.8 7.5-6.5 1.5 2.2 4 3.6 6.9 3.6 3.2 0 6.1-1.8 7.5-4.5 1.7 2.2 4.3 3.7 7.3 3.7 2.7 0 5.1-1.2 6.8-3 1.8 2.5 4.7 4.2 8.1 4.2 2.1 0 4.1-.7 5.7-1.8.4.6.8 1.1 1.3 1.6-2.5.3-4.8 1.4-6.5 3-1.9-1.7-4.4-2.8-7.2-2.8-3.5 0-6.7 1.7-8.6 4.4-1.7-1.3-3.8-2.1-6.2-2.1-4 0-7.5 2.4-9.1 5.8-1.5-1-3.3-1.6-5.3-1.6-4.5 0-8.3 3.1-9.2 7.3-1.3-.8-2.9-1.3-4.6-1.3-4.9 0-8.9 4-8.9 8.9-1.2-.7-2.6-1.1-4.1-1.1-4.6 0-8.3 3.7-8.3 8.3 0 .8.1 1.6.3 2.3-1.2-.7-2.5-1.1-4-1.1-4.2 0-7.7 3.4-7.7 7.7 0 4.2 3.4 7.7 7.7 7.7s7.7-3.4 7.7-7.7c0-.7-.1-1.3-.3-1.9 1.3.9 2.9 1.4 4.5 1.4 4.5 0 8.1-3.6 8.3-8 1.4.9 3 1.4 4.7 1.4h.5c-1.9 1.7-3.1 4.1-3.3 6.7-.6-.1-1.2-.2-1.8-.2-5.4 0-9.7 4.4-9.7 9.7 0 .4 0 .8.1 1.1-.4 0-.7-.1-1.1-.1-5.1 0-9.2 4.1-9.2 9.2 0 1 .2 2 .5 2.9h-.5c-4.8 0-8.7 3.9-8.7 8.7 0 1.7.5 3.2 1.3 4.5h-.3c-4.5 0-8.2 3.7-8.2 8.2 0 2.4 1 4.5 2.6 6h-.3c-4.2 0-7.7 3.4-7.7 7.7s3.4 7.7 7.7 7.7c4.2 0 7.7-3.4 7.7-7.7 0-2.1-.9-4.1-2.3-5.5h.5c2.4 0 4.5-1 6-2.6v.3c0 2.1.7 4 1.9 5.6-3.5 1.3-6 4.6-6 8.5 0 2.8 1.2 5.2 3.2 6.9-3 1.4-5 4.3-5 7.8 0 3.3 1.9 6.2 4.6 7.6-2.6 1.3-4.5 4.1-4.5 7.3 0 3.9 2.7 7.1 6.3 7.9-2.5 1.3-4.2 3.8-4.2 6.8 0 4.2 3.4 7.7 7.7 7.7.5 0 .9-.1 1.4-.1-2.9.9-5.1 3.6-5.1 6.9 0 4 3.2 7.2 7.2 7.2s7.2-3.2 7.2-7.2-3.2-7.2-7.2-7.2c-.4 0-.9.1-1.3.1 3.1-1 5.4-3.9 5.4-7.3 0-.2 0-.4-.1-.5 1.2 1.3 2.8 2.2 4.5 2.7-1.3 1.5-2 3.4-2 5.5 0 4.7 3.8 8.5 8.5 8.5h.2c-1 1.3-1.5 3-1.5 4.7 0 4.5 3.6 8.1 8.1 8.1.8 0 1.6-.1 2.4-.3-.8 1.2-1.3 2.7-1.3 4.3 0 4.3 3.4 7.7 7.7 7.7 1.8 0 3.5-.7 4.8-1.7-1.1 1.3-1.8 2.9-1.8 4.7 0 4 3.3 7.3 7.3 7.3s7.3-3.3 7.3-7.3c0-2-.8-3.7-2-5 1 0 1.9-.2 2.8-.5v.1c0 3.5 2 6.5 4.9 7.9-.4-.1-.9-.1-1.3-.1-3.8 0-6.9 3.1-6.9 6.9 0 3.8 3.1 6.9 6.9 6.9 3.8 0 6.9-3.1 6.9-6.9 0-2.6-1.5-4.9-3.6-6 .7.2 1.4.3 2.1.3 1.7 0 3.3-.5 4.7-1.4.4 4.4 4 7.8 8.5 7.8 2.4 0 4.6-1 6.1-2.6.6 3.9 4 6.8 8 6.8 3.1 0 5.8-1.7 7.1-4.3.7 3.5 3.8 6.2 7.5 6.2 4 0 7.2-3 7.6-6.9.3 3.8 3.4 6.8 7.2 6.8 4 0 7.3-3.3 7.3-7.3s-3.2-7.2-7.1-7.3c.7-.7 1.2-1.5 1.7-2.3 1.6 1.7 3.9 2.7 6.4 2.7.9 0 1.9-.1 2.7-.4-1.8 1.2-3 3.3-3 5.7 0 3.8 3.1 6.9 6.9 6.9 3.8 0 6.9-3.1 6.9-6.9 0-3.8-3.1-6.9-6.9-6.9-.7 0-1.4.1-2 .3 2-1.2 3.5-3.2 4.1-5.6 1.5 1.3 3.4 2 5.5 2 4.7 0 8.5-3.8 8.5-8.5v-.2c1.3 1 3 1.5 4.7 1.5 4.5 0 8.1-3.6 8.1-8.1 0-.8-.1-1.6-.3-2.4 1.2.8 2.7 1.3 4.3 1.3 4.3 0 7.7-3.4 7.7-7.7 0-1.8-.7-3.5-1.7-4.8 1.3 1.1 2.9 1.8 4.7 1.8 4 0 7.3-3.3 7.3-7.3s-3.3-7.3-7.3-7.3c-2 0-3.7.8-5 2 0-1-.2-1.9-.5-2.8h.1c3.5 0 6.5-2 7.9-4.9-.1.4-.1.9-.1 1.3 0 3.8 3.1 6.9 6.9 6.9 3.8 0 6.9-3.1 6.9-6.9 0-3.8-3.1-6.9-6.9-6.9-2.6 0-4.9 1.5-6 3.6.2-.7.3-1.4.3-2.1 0-1.7-.5-3.3-1.4-4.7 4.4-.4 7.8-4 7.8-8.5 0-2.4-1-4.6-2.6-6.1 3.9-.6 6.8-4 6.8-8 0-3.1-1.7-5.8-4.3-7.1 3.5-.7 6.2-3.8 6.2-7.5 0-4-3-7.2-6.9-7.6 3.8-.3 6.8-3.4 6.8-7.2 0-4-3.3-7.3-7.3-7.3s-7.3 3.3-7.3 7.3c0 3.8 2.8 6.8 6.5 7.2-4 .3-7.2 3.6-7.2 7.6 0 2.9 1.6 5.4 4 6.7-3.8.7-6.7 4-6.7 8 0 2.2.9 4.2 2.4 5.7-4.2.6-7.4 4.1-7.4 8.4 0 1.6.4 3 1.2 4.3-4.7.3-8.4 4.1-8.4 8.9 0 .9.1 1.8.4 2.6h-.4c-5.1 0-9.3 4.2-9.3 9.3v.7c-.5-.1-1-.1-1.5-.1-4.9 0-8.9 3.6-9.6 8.3-.8-.2-1.7-.4-2.7-.4-4.1 0-7.6 2.4-9.2 5.8-2-1.6-4.6-2.3-7.3-1.8-3 .6-5.3 2.5-6.5 5.1-1.9-2.1-4.8-3.2-7.8-2.8-2.9.4-5.3 2.2-6.6 4.6-1.6-2-4.1-3.3-6.9-3.3-2.6 0-4.9 1.1-6.6 2.8-1-2.3-3-4.1-5.6-4.9-2.7-.8-5.5-.3-7.7 1.3-.6-2.6-2.3-4.9-4.8-6.1-2.5-1.2-5.2-1.1-7.5-.1-.1-2.5-1.2-5-3.4-6.7-2.1-1.6-4.6-2.2-7-1.8.6-2.5.1-5.2-1.5-7.4-1.7-2.3-4.4-3.5-7-3.6 1-2.4 1-5.2-.3-7.7-1.2-2.3-3.2-3.8-5.5-4.4 1.4-1.9 2.1-4.3 1.7-6.9-.4-2.8-2.1-5-4.4-6.3 2.2-1.7 3.5-4.3 3.5-7.2 0-2.6-1.2-5-3.1-6.6 2.2-1.1 4-3.2 4.7-5.8.7-2.6.1-5.2-1.4-7.3 2.3-.5 4.4-2 5.7-4.2 1.4-2.4 1.5-5.1.7-7.5 2.6.1 5.2-.9 7.1-3 1.9-2.1 2.6-4.7 2.2-7.3 2.4.6 5 .2 7.2-1.3 2.3-1.6 3.6-4 3.8-6.5 2.3 1.2 5.1 1.4 7.6.3 2.4-1 4.1-2.9 4.9-5.2 1.8 1.6 4.3 2.5 6.9 2.3 2.9-.3 5.3-1.9 6.7-4.1 1.5 2.1 3.9 3.6 6.6 3.8 2.7.2 5.1-.8 6.9-2.5.9 2.3 2.9 4.3 5.5 5.2 2.7.9 5.5.4 7.7-1 .5 2.5 2 4.9 4.5 6.2 2 1.1 4.3 1.3 6.4.8.2.3.5.7.8 1 .1 1.9.9 3.8 2.2 5.3l.2.2c4.5 4.8 15.1 16.3 13.1 31.8-.5 3.9 1.7 5.8 4.4 2.8 16.8-18.1 14.2-40.3 13.8-42.9-.1-1.7-.5-3.3-1.1-4.8.2-.9.3-1.9.3-2.9 0-4.7-2.2-8.8-5.7-11.4.2-.8.3-1.7.3-2.6 0-5.8-3.6-10.7-8.6-12.8-.1-6.5-4.9-11.8-11.1-12.7-1.1-5.8-6.2-10.3-12.3-10.3h-.7c-1.5-4.8-6-8.2-11.3-8.2-1 0-2 .1-3 .4-1.8-3.9-5.7-6.6-10.2-6.6-1.8 0-3.4.4-4.9 1.1-1.8-3.1-5.2-5.2-9.2-5.2-2.5 0-4.8.9-6.6 2.3-1.8-2.5-4.7-4.1-8-4.1-3.1 0-5.9 1.5-7.7 3.7-1.7-2.1-4.2-3.4-7.1-3.4-3.7 0-6.9 2.2-8.3 5.4-1.5-1.8-3.8-3-6.4-3-4.3 0-7.9 3.3-8.3 7.5-1.4-1.8-3.6-3-6.1-3-4.2 0-7.6 3.4-7.6 7.6-.2 3.9 3.2 7.3 7.4 7.3z"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="135.1"
+                                    cy="346.1"
+                                    r=".6"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="128.2"
+                                    cy="333"
+                                    r="1.2"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="122.7"
+                                    cy="319.2"
+                                    r="1.8"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="118.6"
+                                    cy="304.8"
+                                    r="2.4"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="116.2"
+                                    cy="290.2"
+                                    r="3"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="115.2"
+                                    cy="275.3"
+                                    r="3.5"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="115.9"
+                                    cy="260.5"
+                                    r="4.1"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="118.1"
+                                    cy="245.8"
+                                    r="4.7"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="122.2"
+                                    cy="231.5"
+                                    r="5.3"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="128.1"
+                                    cy="217.9"
+                                    r="5.9"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="135.8"
+                                    cy="205.1"
+                                    r="6.5"
+                                  />
+                                  <circle
+                                    className="st0"
+                                    cx="145"
+                                    cy="193.5"
+                                    r="7.1"
+                                  />
+                                </svg>
+                              </_default>
+                              <WithStyles(ForwardRef(Typography))
+                                className="makeStyles-text-6"
+                                variant="subtitle2"
+                              >
+                                <ForwardRef(Typography)
+                                  className="makeStyles-text-6"
+                                  classes={
+                                    Object {
+                                      "alignCenter": "MuiTypography-alignCenter",
+                                      "alignJustify": "MuiTypography-alignJustify",
+                                      "alignLeft": "MuiTypography-alignLeft",
+                                      "alignRight": "MuiTypography-alignRight",
+                                      "body1": "MuiTypography-body1",
+                                      "body2": "MuiTypography-body2",
+                                      "button": "MuiTypography-button",
+                                      "caption": "MuiTypography-caption",
+                                      "colorError": "MuiTypography-colorError",
+                                      "colorInherit": "MuiTypography-colorInherit",
+                                      "colorPrimary": "MuiTypography-colorPrimary",
+                                      "colorSecondary": "MuiTypography-colorSecondary",
+                                      "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                      "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                      "displayBlock": "MuiTypography-displayBlock",
+                                      "displayInline": "MuiTypography-displayInline",
+                                      "gutterBottom": "MuiTypography-gutterBottom",
+                                      "h1": "MuiTypography-h1",
+                                      "h2": "MuiTypography-h2",
+                                      "h3": "MuiTypography-h3",
+                                      "h4": "MuiTypography-h4",
+                                      "h5": "MuiTypography-h5",
+                                      "h6": "MuiTypography-h6",
+                                      "noWrap": "MuiTypography-noWrap",
+                                      "overline": "MuiTypography-overline",
+                                      "paragraph": "MuiTypography-paragraph",
+                                      "root": "MuiTypography-root",
+                                      "srOnly": "MuiTypography-srOnly",
+                                      "subtitle1": "MuiTypography-subtitle1",
+                                      "subtitle2": "MuiTypography-subtitle2",
+                                    }
+                                  }
+                                  variant="subtitle2"
+                                >
+                                  <h6
+                                    className="MuiTypography-root makeStyles-text-6 MuiTypography-subtitle2"
+                                  >
+                                    Consensys Formation
+                                  </h6>
+                                </ForwardRef(Typography)>
+                              </WithStyles(ForwardRef(Typography))>
+                            </div>
+                          </ForwardRef(Grid)>
+                        </WithStyles(ForwardRef(Grid))>
+                        <WithStyles(ForwardRef(Grid))
+                          className="makeStyles-strip-5"
                         >
-                          © Copyright 2019
-                        </a>
-                      </StyledComponent>
-                    </Consensys__ConsenSysLogoIcon>
-                    <Consensys__ConsenSysFormationIcon
-                      src="/static/images/icons/footer-consensys.png"
-                    >
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Consensys__ConsenSysFormationIcon-sc-3l6ajh-1",
-                              "isStatic": false,
-                              "lastClassName": "gRtYkn",
-                              "rules": Array [
-                                "width:34px;",
-                              ],
-                            },
-                            "displayName": "Consensys__ConsenSysFormationIcon",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "Consensys__ConsenSysFormationIcon-sc-3l6ajh-1",
-                            "target": "img",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
-                        src="/static/images/icons/footer-consensys.png"
-                      >
-                        <img
-                          className="Consensys__ConsenSysFormationIcon-sc-3l6ajh-1 gRtYkn"
-                          src="/static/images/icons/footer-consensys.png"
-                        />
-                      </StyledComponent>
-                    </Consensys__ConsenSysFormationIcon>
-                    <Consensys__ConsenSysLogoIcon>
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                              "isStatic": false,
-                              "lastClassName": "iJDtiZ",
-                              "rules": Array [
-                                "color:#fff;font-weight:500;font-size:13px;",
-                              ],
-                            },
-                            "displayName": "Consensys__ConsenSysLogoIcon",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                            "target": "a",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
-                      >
-                        <a
-                          className="Consensys__ConsenSysLogoIcon-sc-3l6ajh-2 iJDtiZ"
-                        >
-                          ConsenSys Formation
-                        </a>
-                      </StyledComponent>
-                    </Consensys__ConsenSysLogoIcon>
-                    <Consensys__PrivacyPolicy
-                      href="/privacy-policy"
-                    >
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Consensys__PrivacyPolicy-sc-3l6ajh-3",
-                              "isStatic": false,
-                              "lastClassName": "hDPWys",
-                              "rules": Array [
-                                "color:#fff;font-weight:500;font-size:13px;",
-                                "margin-left:10px;margin-right:3px;font-weight:normal;font-size:10px;",
-                              ],
-                            },
-                            "displayName": "Consensys__PrivacyPolicy",
-                            "foldedComponentIds": Array [
-                              "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                            ],
-                            "render": [Function],
-                            "styledComponentId": "Consensys__PrivacyPolicy-sc-3l6ajh-3",
-                            "target": "a",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
-                        href="/privacy-policy"
-                      >
-                        <a
-                          className="Consensys__ConsenSysLogoIcon-sc-3l6ajh-2 Consensys__PrivacyPolicy-sc-3l6ajh-3 hDPWys"
-                          href="/privacy-policy"
-                        >
-                          Privacy Policy 
-                        </a>
-                      </StyledComponent>
-                    </Consensys__PrivacyPolicy>
-                    <Consensys__ConsenSysLogoIcon>
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                              "isStatic": false,
-                              "lastClassName": "iJDtiZ",
-                              "rules": Array [
-                                "color:#fff;font-weight:500;font-size:13px;",
-                              ],
-                            },
-                            "displayName": "Consensys__ConsenSysLogoIcon",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                            "target": "a",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
-                      >
-                        <a
-                          className="Consensys__ConsenSysLogoIcon-sc-3l6ajh-2 iJDtiZ"
-                        >
-                          |
-                        </a>
-                      </StyledComponent>
-                    </Consensys__ConsenSysLogoIcon>
-                    <Consensys__TermsOfService
-                      href="/terms-of-use"
-                    >
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "Consensys__TermsOfService-sc-3l6ajh-4",
-                              "isStatic": false,
-                              "lastClassName": "hrfJKX",
-                              "rules": Array [
-                                "color:#fff;font-weight:500;font-size:13px;",
-                                "margin-left:10px;margin-right:3px;font-weight:normal;font-size:10px;",
-                                "margin-left:0px;",
-                              ],
-                            },
-                            "displayName": "Consensys__TermsOfService",
-                            "foldedComponentIds": Array [
-                              "Consensys__ConsenSysLogoIcon-sc-3l6ajh-2",
-                              "Consensys__PrivacyPolicy-sc-3l6ajh-3",
-                            ],
-                            "render": [Function],
-                            "styledComponentId": "Consensys__TermsOfService-sc-3l6ajh-4",
-                            "target": "a",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
-                        }
-                        forwardedRef={null}
-                        href="/terms-of-use"
-                      >
-                        <a
-                          className="Consensys__ConsenSysLogoIcon-sc-3l6ajh-2 Consensys__PrivacyPolicy-sc-3l6ajh-3 Consensys__TermsOfService-sc-3l6ajh-4 hrfJKX"
-                          href="/terms-of-use"
-                        >
-                          Terms of Use
-                        </a>
-                      </StyledComponent>
-                    </Consensys__TermsOfService>
-                  </div>
-                </StyledComponent>
-              </Consensys__Container>
-            </_default>
+                          <ForwardRef(Grid)
+                            className="makeStyles-strip-5"
+                            classes={
+                              Object {
+                                "align-content-xs-center": "MuiGrid-align-content-xs-center",
+                                "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end",
+                                "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start",
+                                "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around",
+                                "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between",
+                                "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline",
+                                "align-items-xs-center": "MuiGrid-align-items-xs-center",
+                                "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end",
+                                "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start",
+                                "container": "MuiGrid-container",
+                                "direction-xs-column": "MuiGrid-direction-xs-column",
+                                "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse",
+                                "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse",
+                                "grid-lg-1": "MuiGrid-grid-lg-1",
+                                "grid-lg-10": "MuiGrid-grid-lg-10",
+                                "grid-lg-11": "MuiGrid-grid-lg-11",
+                                "grid-lg-12": "MuiGrid-grid-lg-12",
+                                "grid-lg-2": "MuiGrid-grid-lg-2",
+                                "grid-lg-3": "MuiGrid-grid-lg-3",
+                                "grid-lg-4": "MuiGrid-grid-lg-4",
+                                "grid-lg-5": "MuiGrid-grid-lg-5",
+                                "grid-lg-6": "MuiGrid-grid-lg-6",
+                                "grid-lg-7": "MuiGrid-grid-lg-7",
+                                "grid-lg-8": "MuiGrid-grid-lg-8",
+                                "grid-lg-9": "MuiGrid-grid-lg-9",
+                                "grid-lg-auto": "MuiGrid-grid-lg-auto",
+                                "grid-lg-true": "MuiGrid-grid-lg-true",
+                                "grid-md-1": "MuiGrid-grid-md-1",
+                                "grid-md-10": "MuiGrid-grid-md-10",
+                                "grid-md-11": "MuiGrid-grid-md-11",
+                                "grid-md-12": "MuiGrid-grid-md-12",
+                                "grid-md-2": "MuiGrid-grid-md-2",
+                                "grid-md-3": "MuiGrid-grid-md-3",
+                                "grid-md-4": "MuiGrid-grid-md-4",
+                                "grid-md-5": "MuiGrid-grid-md-5",
+                                "grid-md-6": "MuiGrid-grid-md-6",
+                                "grid-md-7": "MuiGrid-grid-md-7",
+                                "grid-md-8": "MuiGrid-grid-md-8",
+                                "grid-md-9": "MuiGrid-grid-md-9",
+                                "grid-md-auto": "MuiGrid-grid-md-auto",
+                                "grid-md-true": "MuiGrid-grid-md-true",
+                                "grid-sm-1": "MuiGrid-grid-sm-1",
+                                "grid-sm-10": "MuiGrid-grid-sm-10",
+                                "grid-sm-11": "MuiGrid-grid-sm-11",
+                                "grid-sm-12": "MuiGrid-grid-sm-12",
+                                "grid-sm-2": "MuiGrid-grid-sm-2",
+                                "grid-sm-3": "MuiGrid-grid-sm-3",
+                                "grid-sm-4": "MuiGrid-grid-sm-4",
+                                "grid-sm-5": "MuiGrid-grid-sm-5",
+                                "grid-sm-6": "MuiGrid-grid-sm-6",
+                                "grid-sm-7": "MuiGrid-grid-sm-7",
+                                "grid-sm-8": "MuiGrid-grid-sm-8",
+                                "grid-sm-9": "MuiGrid-grid-sm-9",
+                                "grid-sm-auto": "MuiGrid-grid-sm-auto",
+                                "grid-sm-true": "MuiGrid-grid-sm-true",
+                                "grid-xl-1": "MuiGrid-grid-xl-1",
+                                "grid-xl-10": "MuiGrid-grid-xl-10",
+                                "grid-xl-11": "MuiGrid-grid-xl-11",
+                                "grid-xl-12": "MuiGrid-grid-xl-12",
+                                "grid-xl-2": "MuiGrid-grid-xl-2",
+                                "grid-xl-3": "MuiGrid-grid-xl-3",
+                                "grid-xl-4": "MuiGrid-grid-xl-4",
+                                "grid-xl-5": "MuiGrid-grid-xl-5",
+                                "grid-xl-6": "MuiGrid-grid-xl-6",
+                                "grid-xl-7": "MuiGrid-grid-xl-7",
+                                "grid-xl-8": "MuiGrid-grid-xl-8",
+                                "grid-xl-9": "MuiGrid-grid-xl-9",
+                                "grid-xl-auto": "MuiGrid-grid-xl-auto",
+                                "grid-xl-true": "MuiGrid-grid-xl-true",
+                                "grid-xs-1": "MuiGrid-grid-xs-1",
+                                "grid-xs-10": "MuiGrid-grid-xs-10",
+                                "grid-xs-11": "MuiGrid-grid-xs-11",
+                                "grid-xs-12": "MuiGrid-grid-xs-12",
+                                "grid-xs-2": "MuiGrid-grid-xs-2",
+                                "grid-xs-3": "MuiGrid-grid-xs-3",
+                                "grid-xs-4": "MuiGrid-grid-xs-4",
+                                "grid-xs-5": "MuiGrid-grid-xs-5",
+                                "grid-xs-6": "MuiGrid-grid-xs-6",
+                                "grid-xs-7": "MuiGrid-grid-xs-7",
+                                "grid-xs-8": "MuiGrid-grid-xs-8",
+                                "grid-xs-9": "MuiGrid-grid-xs-9",
+                                "grid-xs-auto": "MuiGrid-grid-xs-auto",
+                                "grid-xs-true": "MuiGrid-grid-xs-true",
+                                "item": "MuiGrid-item",
+                                "justify-xs-center": "MuiGrid-justify-xs-center",
+                                "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end",
+                                "justify-xs-space-around": "MuiGrid-justify-xs-space-around",
+                                "justify-xs-space-between": "MuiGrid-justify-xs-space-between",
+                                "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly",
+                                "root": "MuiGrid-root",
+                                "spacing-xs-1": "MuiGrid-spacing-xs-1",
+                                "spacing-xs-10": "MuiGrid-spacing-xs-10",
+                                "spacing-xs-2": "MuiGrid-spacing-xs-2",
+                                "spacing-xs-3": "MuiGrid-spacing-xs-3",
+                                "spacing-xs-4": "MuiGrid-spacing-xs-4",
+                                "spacing-xs-5": "MuiGrid-spacing-xs-5",
+                                "spacing-xs-6": "MuiGrid-spacing-xs-6",
+                                "spacing-xs-7": "MuiGrid-spacing-xs-7",
+                                "spacing-xs-8": "MuiGrid-spacing-xs-8",
+                                "spacing-xs-9": "MuiGrid-spacing-xs-9",
+                                "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap",
+                                "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse",
+                                "zeroMinWidth": "MuiGrid-zeroMinWidth",
+                              }
+                            }
+                          >
+                            <div
+                              className="MuiGrid-root makeStyles-strip-5"
+                            >
+                              <Link
+                                href="/privacy-policy"
+                              >
+                                <a
+                                  className="makeStyles-text-6"
+                                  href="/privacy-policy"
+                                  onClick={[Function]}
+                                  onMouseEnter={[Function]}
+                                >
+                                  Privacy Policy
+                                </a>
+                              </Link>
+                              |
+                              <Link
+                                href="/terms-of-use"
+                              >
+                                <a
+                                  className="makeStyles-text-6"
+                                  href="/terms-of-use"
+                                  onClick={[Function]}
+                                  onMouseEnter={[Function]}
+                                >
+                                  Terms of Use
+                                </a>
+                              </Link>
+                            </div>
+                          </ForwardRef(Grid)>
+                        </WithStyles(ForwardRef(Grid))>
+                      </div>
+                    </ForwardRef(Grid)>
+                  </WithStyles(ForwardRef(Grid))>
+                </div>
+              </ForwardRef(Grid)>
+            </WithStyles(ForwardRef(Grid))>
           </div>
-        </StyledComponent>
-      </Footer__NewFooter>
-    </StyledFooter>
+        </ForwardRef(Grid)>
+      </WithStyles(ForwardRef(Grid))>
+    </_default>
   </ThemeProvider>
 </ThemeProvider>
 `;

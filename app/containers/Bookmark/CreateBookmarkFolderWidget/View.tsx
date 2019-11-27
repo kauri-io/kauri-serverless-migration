@@ -74,7 +74,12 @@ export const CreateBookmarkFolderComponent = ({
     return (
         <FormGroup>
             {!showForm ? (
-                <Button color="primary" variant="text" onClick={toggleShowForm} className={classes.button}>
+                <Button
+                    color="primary"
+                    variant="text"
+                    onClick={toggleShowForm}
+                    className={classes.button}
+                >
                     New folder
                 </Button>
             ) : (

@@ -7,7 +7,7 @@ import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
 const EditProfile = withTransaction('edit-profile', 'page')(({ router }) => (
-    <App>
+    <App hideNav={true}>
         <EditProfilePage router={router} />
     </App>
 ))

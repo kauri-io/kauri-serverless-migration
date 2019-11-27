@@ -50,7 +50,15 @@ exports[`containers/SearchResults should match snapshot 1`] = `
             "minHeight": 56,
           },
         },
-        "overrides": Object {},
+        "overrides": Object {
+          "MuiButton": Object {
+            "contained": Object {
+              "&&:disabled": Object {
+                "backgroundColor": "#e0e0e0",
+              },
+            },
+          },
+        },
         "palette": Object {
           "action": Object {
             "active": "rgba(0, 0, 0, 0.54)",
@@ -505,6 +513,13 @@ exports[`containers/SearchResults should match snapshot 1`] = `
             router={Object {}}
           >
             <section>
+              <Head>
+                <Component
+                  handleStateChange={null}
+                  inAmpMode={false}
+                  reduceComponentsToState={[Function]}
+                />
+              </Head>
               <SearchResults__ArticlesHeader>
                 <StyledComponent
                   forwardedComponent={

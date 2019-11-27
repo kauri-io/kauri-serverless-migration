@@ -1,8 +1,7 @@
 import Grid from '@material-ui/core/Grid'
-import Head from 'next/head'
 import { connect } from 'react-redux'
 import Navbar from '../components/Navbar'
-import StyledFooter, { footerHeight } from '../components/Footer'
+import StyledFooter from '../components/Footer'
 import Modal from '../components/Modal'
 import Notification from '../components/Notification'
 import { makeStyles, Theme } from '@material-ui/core/styles'
@@ -19,13 +18,15 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     item: {
         width: '100%',
+        flex: 1,
     },
     root: {
         display: 'flex',
         flexDirection: 'column',
+        alignItems: 'flex-start',
         marginLeft: 'auto',
         marginRight: 'auto',
-        minHeight: `calc(100vh - ${footerHeight}px)`,
+        minHeight: `calc(100vh)`,
         overflow: 'hidden',
         [theme.breakpoints.up('xs')]: {
             paddingTop: 64,
@@ -37,37 +38,24 @@ const useStyles = makeStyles((theme: Theme) => ({
 }))
 
 interface IProps {
-    isModalOpen: boolean
     maxWidthConstrained?: boolean
     children: any
     hideNav: boolean
 }
 
-const Layout = ({
-    isModalOpen,
-    children,
-    maxWidthConstrained,
-    hideNav,
-}: IProps) => {
+const Layout = ({ children, maxWidthConstrained, hideNav }: IProps) => {
     const classes = useStyles({})
     return (
-        <Grid container={true}>
-            <Head>
-                <body className={isModalOpen ? 'overflow-hidden' : null} />
-            </Head>
+        <Grid container={true} className={classes.root}>
             <Modal />
             <Notification />
             {!hideNav && (
-                <Grid sm={12} item={true} className={classes.item}>
+                <Grid sm={12} item={true}>
                     <Navbar />
                 </Grid>
             )}
             <Grid sm={12} item={true} className={classes.item}>
-                <div
-                    className={`${classes.root} ${
-                        maxWidthConstrained ? classes.constrained : ''
-                    }`}
-                >
+                <div className={maxWidthConstrained ? classes.constrained : ''}>
                     {children}
                 </div>
             </Grid>

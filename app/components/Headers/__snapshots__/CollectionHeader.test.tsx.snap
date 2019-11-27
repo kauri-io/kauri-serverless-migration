@@ -38,7 +38,15 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
           "minHeight": 56,
         },
       },
-      "overrides": Object {},
+      "overrides": Object {
+        "MuiButton": Object {
+          "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+        },
+      },
       "palette": Object {
         "action": Object {
           "active": "rgba(0, 0, 0, 0.54)",
@@ -398,9 +406,12 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
       description="test description"
       id="123"
       imageURL="Image URL"
+      isBookmarked={true}
+      isLoggedIn={false}
       isMemberOfCommunityOwner={false}
       linkComponent={[MockFunction]}
       name="test collection"
+      openModalAction={[MockFunction]}
       ownerId="345"
       routeChangeAction={[MockFunction]}
       tags={
@@ -424,15 +435,11 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "CollectionHeader__CollectionHeaderSection-sc-5lmo96-0",
                 "isStatic": false,
-                "lastClassName": "gOoRqE",
+                "lastClassName": "jjWwVr",
                 "rules": Array [
-                  "display:flex;width:100%;flex-direction:row;z-index:1;padding:",
+                  "display:flex;width:100%;flex-direction:row;z-index:1;padding:100px ",
                   [Function],
-                  "px ",
-                  [Function],
-                  " ",
-                  [Function],
-                  "px;@media (max-width:500px){flex-direction:column;}",
+                  " 24px;@media (max-width:500px){flex-direction:column;}",
                 ],
               },
               "displayName": "CollectionHeader__CollectionHeaderSection",
@@ -449,7 +456,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
           forwardedRef={null}
         >
           <section
-            className="CollectionHeader__CollectionHeaderSection-sc-5lmo96-0 gOoRqE"
+            className="CollectionHeader__CollectionHeaderSection-sc-5lmo96-0 jjWwVr"
           >
             <CollectionHeader__LeftSide
               tags={
@@ -467,15 +474,15 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                     "componentStyle": ComponentStyle {
                       "componentId": "CollectionHeader__LeftSide-sc-5lmo96-1",
                       "isStatic": false,
-                      "lastClassName": "JomUO",
+                      "lastClassName": "kgppdN",
                       "rules": Array [
-                        "display:flex;flex:3;flex-direction:column;color:white;>:nth-child(2){margin-top:",
-                        [Function],
-                        "px;}>:nth-last-child(2){margin-bottom:",
+                        "display:flex;flex:3;flex-direction:column;color:white;>:nth-child(2){margin:8px 0;}>:nth-last-child(2){margin-bottom:",
                         [Function],
                         "px;}>:last-child{margin-top:",
                         [Function],
                         "px;}@media (max-width:500px){padding:",
+                        [Function],
+                        "px;}@media (min-width:500px){padding:",
                         [Function],
                         "px;}",
                       ],
@@ -500,156 +507,156 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                 }
               >
                 <div
-                  className="CollectionHeader__LeftSide-sc-5lmo96-1 JomUO"
+                  className="CollectionHeader__LeftSide-sc-5lmo96-1 kgppdN"
                 >
-                  <Typography__component>
-                    <StyledComponent
-                      forwardedComponent={
+                  <WithStyles(ForwardRef(Typography))
+                    color="secondary"
+                    variant="button"
+                  >
+                    <ForwardRef(Typography)
+                      classes={
                         Object {
-                          "$$typeof": Symbol(react.forward_ref),
-                          "attrs": Array [],
-                          "componentStyle": ComponentStyle {
-                            "componentId": "Typography__component-sc-36xkf6-0",
-                            "isStatic": false,
-                            "lastClassName": "jMarAF",
-                            "rules": Array [
-                              "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
-                              [Function],
-                              ";text-align:",
-                              [Function],
-                              ";",
-                              [Function],
-                              " ",
-                              [Function],
-                            ],
-                          },
-                          "displayName": "Typography__component",
-                          "foldedComponentIds": Array [],
-                          "render": [Function],
-                          "styledComponentId": "Typography__component-sc-36xkf6-0",
-                          "target": "span",
-                          "toString": [Function],
-                          "usesTheme": true,
-                          "warnTooManyClasses": [Function],
-                          "withComponent": [Function],
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
                         }
                       }
-                      forwardedRef={null}
+                      color="secondary"
+                      variant="button"
                     >
                       <span
-                        className="Typography__component-sc-36xkf6-0 kALGmD"
+                        className="MuiTypography-root MuiTypography-button MuiTypography-colorSecondary"
                       >
                         Collection Updated 
                         a year ago
                       </span>
-                    </StyledComponent>
-                  </Typography__component>
-                  <Typography__styledComponent
-                    color="white"
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                  <WithStyles(ForwardRef(Typography))
+                    color="secondary"
+                    component="h1"
+                    variant="h4"
                   >
-                    <StyledComponent
-                      color="white"
-                      forwardedComponent={
+                    <ForwardRef(Typography)
+                      classes={
                         Object {
-                          "$$typeof": Symbol(react.forward_ref),
-                          "attrs": Array [],
-                          "componentStyle": ComponentStyle {
-                            "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                            "isStatic": false,
-                            "lastClassName": "iLJkHN",
-                            "rules": Array [
-                              "color:",
-                              [Function],
-                              ";margin:0px;font-weight:",
-                              "500",
-                              ";",
-                              ";font-size:",
-                              "28",
-                              "px;text-transform:",
-                              [Function],
-                              ";text-align:",
-                              [Function],
-                              ";:hover{color:",
-                              [Function],
-                              ";cursor:",
-                              [Function],
-                              ";}",
-                            ],
-                          },
-                          "displayName": "Typography__styledComponent",
-                          "foldedComponentIds": Array [],
-                          "render": [Function],
-                          "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                          "target": "span",
-                          "toString": [Function],
-                          "usesTheme": true,
-                          "warnTooManyClasses": [Function],
-                          "withComponent": [Function],
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
                         }
                       }
-                      forwardedRef={null}
+                      color="secondary"
+                      component="h1"
+                      variant="h4"
                     >
-                      <span
-                        className="Typography__styledComponent-sc-36xkf6-5 iLJkHN"
-                        color="white"
+                      <h1
+                        className="MuiTypography-root MuiTypography-h4 MuiTypography-colorSecondary"
                       >
                         test collection
-                      </span>
-                    </StyledComponent>
-                  </Typography__styledComponent>
-                  <Typography__styledComponent
-                    color="white"
+                      </h1>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
+                  <WithStyles(ForwardRef(Typography))
+                    color="secondary"
                   >
-                    <StyledComponent
-                      color="white"
-                      forwardedComponent={
+                    <ForwardRef(Typography)
+                      classes={
                         Object {
-                          "$$typeof": Symbol(react.forward_ref),
-                          "attrs": Array [],
-                          "componentStyle": ComponentStyle {
-                            "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                            "isStatic": false,
-                            "lastClassName": "cjrhSn",
-                            "rules": Array [
-                              "color:",
-                              [Function],
-                              ";margin:0px;font-weight:",
-                              "bold",
-                              ";",
-                              ";font-size:",
-                              "16",
-                              "px;text-transform:",
-                              [Function],
-                              ";text-align:",
-                              [Function],
-                              ";:hover{color:",
-                              [Function],
-                              ";cursor:",
-                              [Function],
-                              ";}",
-                            ],
-                          },
-                          "displayName": "Typography__styledComponent",
-                          "foldedComponentIds": Array [],
-                          "render": [Function],
-                          "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                          "target": "span",
-                          "toString": [Function],
-                          "usesTheme": true,
-                          "warnTooManyClasses": [Function],
-                          "withComponent": [Function],
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
                         }
                       }
-                      forwardedRef={null}
+                      color="secondary"
                     >
-                      <span
-                        className="Typography__styledComponent-sc-36xkf6-5 cjrhSn"
-                        color="white"
+                      <p
+                        className="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
                       >
                         test description
-                      </span>
-                    </StyledComponent>
-                  </Typography__styledComponent>
+                      </p>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
                   <TagList
                     color="white"
                     maxTags={5}
@@ -817,138 +824,187 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                       </StyledComponent>
                     </TagList__Container>
                   </TagList>
-                  <Container
-                    color="white"
-                    title="test collection"
-                    url="test url"
-                  >
-                    <ShareArticle__ReferenceContainer>
-                      <StyledComponent
-                        forwardedComponent={
-                          Object {
-                            "$$typeof": Symbol(react.forward_ref),
-                            "attrs": Array [],
-                            "componentStyle": ComponentStyle {
-                              "componentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
-                              "isStatic": false,
-                              "lastClassName": "hNNjpZ",
-                              "rules": Array [
-                                "display:flex;width:",
-                                "70",
-                                "px;",
-                              ],
-                            },
-                            "displayName": "ShareArticle__ReferenceContainer",
-                            "foldedComponentIds": Array [],
-                            "render": [Function],
-                            "styledComponentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
-                            "target": "section",
-                            "toString": [Function],
-                            "usesTheme": false,
-                            "warnTooManyClasses": [Function],
-                            "withComponent": [Function],
-                          }
+                  <CollectionHeader__ShareContainer>
+                    <StyledComponent
+                      forwardedComponent={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "attrs": Array [],
+                          "componentStyle": ComponentStyle {
+                            "componentId": "CollectionHeader__ShareContainer-sc-5lmo96-3",
+                            "isStatic": false,
+                            "lastClassName": "cdOoTX",
+                            "rules": Array [
+                              "width:100%;display:flex;@media (max-width:500px){justify-content:center;}justify-content:flex-start;",
+                            ],
+                          },
+                          "displayName": "CollectionHeader__ShareContainer",
+                          "foldedComponentIds": Array [],
+                          "render": [Function],
+                          "styledComponentId": "CollectionHeader__ShareContainer-sc-5lmo96-3",
+                          "target": "div",
+                          "toString": [Function],
+                          "usesTheme": false,
+                          "warnTooManyClasses": [Function],
+                          "withComponent": [Function],
                         }
-                        forwardedRef={null}
+                      }
+                      forwardedRef={null}
+                    >
+                      <div
+                        className="CollectionHeader__ShareContainer-sc-5lmo96-3 cdOoTX"
                       >
-                        <section
-                          className="ShareArticle__ReferenceContainer-sc-1qj1dsq-0 hNNjpZ"
+                        <Container
+                          color="white"
+                          title="test collection"
+                          url="test url"
                         >
-                          <Tooltip
-                            animateFill={true}
-                            animation="shift"
-                            arrow={false}
-                            arrowSize="regular"
-                            className=""
-                            delay={0}
-                            disabled={false}
-                            distance={10}
-                            duration={375}
-                            followCursor={false}
-                            hideDelay={0}
-                            hideDuration={375}
-                            hideOnClick={true}
-                            html={
-                              <Content
-                                title="test collection"
-                                url="test url"
-                              />
-                            }
-                            inertia={false}
-                            interactive={false}
-                            interactiveBorder={2}
-                            multiple={false}
-                            offset={0}
-                            onHidden={[Function]}
-                            onHide={[Function]}
-                            onRequestClose={[Function]}
-                            onShow={[Function]}
-                            onShown={[Function]}
-                            popperOptions={Object {}}
-                            position="bottom"
-                            size="regular"
-                            sticky={false}
-                            stickyDuration={200}
-                            style={Object {}}
-                            theme="dark"
-                            touchHold={false}
-                            trigger="click"
-                            unmountHTMLWhenHide={true}
-                          >
-                            <div
-                              className=""
-                              style={
+                          <ShareArticle__ReferenceContainer>
+                            <StyledComponent
+                              forwardedComponent={
                                 Object {
-                                  "display": "inline",
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
+                                    "isStatic": false,
+                                    "lastClassName": "fjxrVu",
+                                    "rules": Array [
+                                      "display:flex;width:",
+                                      "40",
+                                      "px;",
+                                    ],
+                                  },
+                                  "displayName": "ShareArticle__ReferenceContainer",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
+                                  "target": "section",
+                                  "toString": [Function],
+                                  "usesTheme": false,
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
                                 }
                               }
+                              forwardedRef={null}
                             >
-                              <ForwardRef
-                                color="primary"
-                                cursor="pointer"
+                              <section
+                                className="ShareArticle__ReferenceContainer-sc-1qj1dsq-0 fjxrVu"
                               >
-                                <WithStyles(ForwardRef(SvgIcon))
-                                  color="primary"
-                                  cursor="pointer"
+                                <Tooltip
+                                  animateFill={true}
+                                  animation="shift"
+                                  arrow={false}
+                                  arrowSize="regular"
+                                  className=""
+                                  delay={0}
+                                  disabled={false}
+                                  distance={10}
+                                  duration={375}
+                                  followCursor={false}
+                                  hideDelay={0}
+                                  hideDuration={375}
+                                  hideOnClick={true}
+                                  html={
+                                    <Content
+                                      title="test collection"
+                                      url="test url"
+                                    />
+                                  }
+                                  inertia={false}
+                                  interactive={false}
+                                  interactiveBorder={2}
+                                  multiple={false}
+                                  offset={0}
+                                  onHidden={[Function]}
+                                  onHide={[Function]}
+                                  onRequestClose={[Function]}
+                                  onShow={[Function]}
+                                  onShown={[Function]}
+                                  popperOptions={Object {}}
+                                  position="bottom"
+                                  size="regular"
+                                  sticky={false}
+                                  stickyDuration={200}
+                                  style={Object {}}
+                                  theme="dark"
+                                  touchHold={false}
+                                  trigger="click"
+                                  unmountHTMLWhenHide={true}
                                 >
-                                  <ForwardRef(SvgIcon)
-                                    classes={
+                                  <div
+                                    className=""
+                                    style={
                                       Object {
-                                        "colorAction": "MuiSvgIcon-colorAction",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled",
-                                        "colorError": "MuiSvgIcon-colorError",
-                                        "colorPrimary": "MuiSvgIcon-colorPrimary",
-                                        "colorSecondary": "MuiSvgIcon-colorSecondary",
-                                        "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
-                                        "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
-                                        "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
-                                        "root": "MuiSvgIcon-root",
+                                        "display": "inline",
                                       }
                                     }
-                                    color="primary"
-                                    cursor="pointer"
                                   >
-                                    <svg
-                                      aria-hidden="true"
-                                      className="MuiSvgIcon-root MuiSvgIcon-colorPrimary"
+                                    <ForwardRef
+                                      color="primary"
                                       cursor="pointer"
-                                      focusable="false"
-                                      role="presentation"
-                                      viewBox="0 0 24 24"
                                     >
-                                      <path
-                                        d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"
-                                      />
-                                    </svg>
-                                  </ForwardRef(SvgIcon)>
-                                </WithStyles(ForwardRef(SvgIcon))>
-                              </ForwardRef>
-                            </div>
-                          </Tooltip>
-                        </section>
-                      </StyledComponent>
-                    </ShareArticle__ReferenceContainer>
-                  </Container>
+                                      <WithStyles(ForwardRef(SvgIcon))
+                                        color="primary"
+                                        cursor="pointer"
+                                      >
+                                        <ForwardRef(SvgIcon)
+                                          classes={
+                                            Object {
+                                              "colorAction": "MuiSvgIcon-colorAction",
+                                              "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                              "colorError": "MuiSvgIcon-colorError",
+                                              "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                              "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                              "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                              "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                              "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                              "root": "MuiSvgIcon-root",
+                                            }
+                                          }
+                                          color="primary"
+                                          cursor="pointer"
+                                        >
+                                          <svg
+                                            aria-hidden="true"
+                                            className="MuiSvgIcon-root MuiSvgIcon-colorPrimary"
+                                            cursor="pointer"
+                                            focusable="false"
+                                            role="presentation"
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <path
+                                              d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"
+                                            />
+                                          </svg>
+                                        </ForwardRef(SvgIcon)>
+                                      </WithStyles(ForwardRef(SvgIcon))>
+                                    </ForwardRef>
+                                  </div>
+                                </Tooltip>
+                              </section>
+                            </StyledComponent>
+                          </ShareArticle__ReferenceContainer>
+                        </Container>
+                        <Hidden
+                          mdDown={true}
+                        >
+                          <WithWidth(HiddenJs)
+                            lgDown={false}
+                            lgUp={false}
+                            mdDown={true}
+                            mdUp={false}
+                            smDown={false}
+                            smUp={false}
+                            xlDown={false}
+                            xlUp={false}
+                            xsDown={false}
+                            xsUp={false}
+                          />
+                        </Hidden>
+                      </div>
+                    </StyledComponent>
+                  </CollectionHeader__ShareContainer>
                 </div>
               </StyledComponent>
             </CollectionHeader__LeftSide>
@@ -961,13 +1017,15 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                     "componentStyle": ComponentStyle {
                       "componentId": "CollectionHeader__RightSide-sc-5lmo96-2",
                       "isStatic": false,
-                      "lastClassName": "gynFVV",
+                      "lastClassName": "hOSBqU",
                       "rules": Array [
                         "display:flex;flex:1;align-items:center;justify-content:center;flex-direction:column;>:first-child{margin-bottom:",
                         [Function],
                         "px;}>:nth-child(2){margin-bottom:",
                         [Function],
                         "px;}> button:last-child{margin-top:",
+                        [Function],
+                        "px;}@media (min-width:500px){padding:",
                         [Function],
                         "px;}",
                       ],
@@ -986,7 +1044,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                 forwardedRef={null}
               >
                 <div
-                  className="CollectionHeader__RightSide-sc-5lmo96-2 gynFVV"
+                  className="CollectionHeader__RightSide-sc-5lmo96-2 hOSBqU"
                 >
                   <Container
                     pageType="CollectionPage"
@@ -1299,51 +1357,55 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                       </StyledComponent>
                     </StatisticsContainer>
                   </Container>
-                  <Typography__component
-                    color="white"
+                  <WithStyles(ForwardRef(Typography))
+                    color="secondary"
+                    variant="button"
                   >
-                    <StyledComponent
-                      color="white"
-                      forwardedComponent={
+                    <ForwardRef(Typography)
+                      classes={
                         Object {
-                          "$$typeof": Symbol(react.forward_ref),
-                          "attrs": Array [],
-                          "componentStyle": ComponentStyle {
-                            "componentId": "Typography__component-sc-36xkf6-0",
-                            "isStatic": false,
-                            "lastClassName": "jMarAF",
-                            "rules": Array [
-                              "font-size:11px;font-weight:bold;text-transform:uppercase;color:",
-                              [Function],
-                              ";text-align:",
-                              [Function],
-                              ";",
-                              [Function],
-                              " ",
-                              [Function],
-                            ],
-                          },
-                          "displayName": "Typography__component",
-                          "foldedComponentIds": Array [],
-                          "render": [Function],
-                          "styledComponentId": "Typography__component-sc-36xkf6-0",
-                          "target": "span",
-                          "toString": [Function],
-                          "usesTheme": true,
-                          "warnTooManyClasses": [Function],
-                          "withComponent": [Function],
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
                         }
                       }
-                      forwardedRef={null}
+                      color="secondary"
+                      variant="button"
                     >
                       <span
-                        className="Typography__component-sc-36xkf6-0 jMarAF"
-                        color="white"
+                        className="MuiTypography-root MuiTypography-button MuiTypography-colorSecondary"
                       >
                         Curator
                       </span>
-                    </StyledComponent>
-                  </Typography__component>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
                   <AvatarComp
                     avatar="avatar url"
                     color="secondary"
@@ -1361,11 +1423,11 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                         onMouseEnter={[Function]}
                       >
                         <div
-                          className="makeStyles-container-10"
+                          className="makeStyles-container-40"
                         >
                           <ForwardRef
                             borderRadius="2px"
-                            className="makeStyles-avatar-11"
+                            className="makeStyles-avatar-41"
                             height={24}
                             image="avatar url"
                             width={24}
@@ -1377,7 +1439,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                             >
                               <Image__Img
                                 borderRadius="2px"
-                                className="makeStyles-avatar-11"
+                                className="makeStyles-avatar-41"
                                 height={24}
                                 image="avatar url"
                                 inView={false}
@@ -1385,7 +1447,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                               >
                                 <StyledComponent
                                   borderRadius="2px"
-                                  className="makeStyles-avatar-11"
+                                  className="makeStyles-avatar-41"
                                   forwardedComponent={
                                     Object {
                                       "$$typeof": Symbol(react.forward_ref),
@@ -1442,7 +1504,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                                   width={24}
                                 >
                                   <div
-                                    className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-11"
+                                    className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-41"
                                     height={24}
                                     width={24}
                                   />
@@ -1451,12 +1513,12 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                             </InView>
                           </ForwardRef>
                           <WithStyles(ForwardRef(Typography))
-                            className="makeStyles-username-12"
+                            className="makeStyles-username-42"
                             color="secondary"
                             variant="subtitle2"
                           >
                             <ForwardRef(Typography)
-                              className="makeStyles-username-12"
+                              className="makeStyles-username-42"
                               classes={
                                 Object {
                                   "alignCenter": "MuiTypography-alignCenter",
@@ -1495,7 +1557,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                               variant="subtitle2"
                             >
                               <h6
-                                className="MuiTypography-root makeStyles-username-12 MuiTypography-subtitle2 MuiTypography-colorSecondary"
+                                className="MuiTypography-root makeStyles-username-42 MuiTypography-subtitle2 MuiTypography-colorSecondary"
                               >
                                 test username
                               </h6>

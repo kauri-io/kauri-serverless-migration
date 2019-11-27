@@ -22,6 +22,11 @@ const Page = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    @media (max-width: 600px) {
+        margin-top: -56px;
+        padding: 16px;
+    }
+    margin-top: -64px;
 `
 
 const Wrapper = styled.div`
@@ -88,6 +93,7 @@ interface IState {
     collections: {
         totalElements: number
     }
+    validationMessages: object
 }
 
 class OnboardingEditProfile extends Component<IProps, IState> {
@@ -97,6 +103,7 @@ class OnboardingEditProfile extends Component<IProps, IState> {
         this.state = {
             pendingSubmit: false,
             subscriptions: { newsletter: false },
+            validationMessages: {},
             ...profile,
         }
     }
@@ -141,11 +148,10 @@ class OnboardingEditProfile extends Component<IProps, IState> {
             name,
             username,
             email,
-            title,
             dateCreated,
         } = this.props.OwnProfile.getMyProfile
 
-        const hasData = name && username && email && title
+        const hasData = name && username && email
         const loginTrackingPending = window.localStorage.getItem(
             'login-tracking-pending'
         )
@@ -177,6 +183,7 @@ class OnboardingEditProfile extends Component<IProps, IState> {
     updateState(
         payload:
             | string
+            | object
             | { newsletter: boolean }
             | { github: string | null; twitter: string | null },
         field: string
@@ -197,8 +204,9 @@ class OnboardingEditProfile extends Component<IProps, IState> {
             website,
             subscriptions,
             status,
+            validationMessages,
         } = this.state
-        const hasData = name && username && email && title
+        const hasData = name && username && email
         if (hasData) {
             return (
                 <Page>
@@ -220,17 +228,24 @@ class OnboardingEditProfile extends Component<IProps, IState> {
                         title={title}
                         email={email}
                         status={status}
+                        usernameReadOnly={false}
                         subscriptions={subscriptions}
                         resendEmailVerificationAction={
                             resendEmailVerificationAction
                         }
                         updateState={this.updateState.bind(this)}
+                        updateValidationMessages={messages =>
+                            this.updateState(messages, 'validationMessages')
+                        }
                     />
                     <ButtonWrapper>
                         <Button
                             color="primary"
                             variant="contained"
                             onClick={() => this.handleSubmit()}
+                            disabled={
+                                Object.keys(validationMessages).length > 0
+                            }
                         >
                             Next
                         </Button>

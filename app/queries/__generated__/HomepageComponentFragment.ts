@@ -713,6 +713,10 @@ export interface HomepageComponentFragment_Featured_content_resource_CollectionD
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
@@ -1068,6 +1072,10 @@ export interface HomepageComponentFragment_Featured_content_resource_ExternalLin
    * The external link submitter user id
    */
   submitterId: string;
+  /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -2238,6 +2246,10 @@ export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
@@ -2593,6 +2605,10 @@ export interface HomepageComponentFragment_Promo_content_resource_ExternalLinkDT
    * The external link submitter user id
    */
   submitterId: string;
+  /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -3710,6 +3726,10 @@ export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_s
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_owner | null;
@@ -4065,6 +4085,10 @@ export interface HomepageComponentFragment_LatestContent_content_ExternalLinkDTO
    * The external link submitter user id
    */
   submitterId: string;
+  /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
   /**
    * load the external link owner (user or community resource type)
    */

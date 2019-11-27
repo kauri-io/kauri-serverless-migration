@@ -236,6 +236,10 @@ export interface searchExternalLinks_searchExternalLinks_content {
    */
   submitterId: string;
   /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
+  /**
    * load the external link owner (user or community resource type)
    */
   owner: searchExternalLinks_searchExternalLinks_content_owner | null;

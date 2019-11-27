@@ -22,9 +22,14 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
     const [loading, setLoading] = useState(false)
     const [url, setURL] = useState<null | string>(null)
     const [authorName, setAuthorName] = useState<null | string>(null)
-    const [authorSocial, setAuthorSocial] = useState<null | {
-        twitter: string
-    }>(null)
+    const [authorSocial, setAuthorSocial] = useState<
+        | null
+        | {}
+        | {
+              twitter: string | null
+              linkedin: string | null
+          }
+    >({})
     const classes = useStyles({})
     const [existing, setExisting] = useState<any>(null)
 
@@ -39,7 +44,13 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
     }
 
     const hasSomeData = title || description || image
-    const hasAllData = title && description && image && summary
+    const hasAllData =
+        title &&
+        description &&
+        image &&
+        summary &&
+        authorName &&
+        (tags && tags.length > 0)
 
     return (
         <Grid>
@@ -118,7 +129,9 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
                                     setTags={setTags}
                                     client={client}
                                     authorName={authorName}
+                                    setAuthorName={setAuthorName}
                                     authorSocial={authorSocial}
+                                    setAuthorSocial={setAuthorSocial}
                                 />
                             </Paper>
 
@@ -152,6 +165,11 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
                         authorName={{ value: authorName }}
                         authorSocial={authorSocial}
                         url={{ value: url }}
+                        // isBookmarked={false}
+                        // id={'test-id'}
+                        // openModalAction={() => {}}
+                        // routeChangeAction={() => {}}
+                        // userId={userId}
                     />
                 </Grid>
             )}

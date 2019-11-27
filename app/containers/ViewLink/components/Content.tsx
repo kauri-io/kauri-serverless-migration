@@ -10,21 +10,16 @@ import Grid from '@material-ui/core/Grid'
 import Link from 'next/link'
 import { useStyles } from '../style'
 import TruncateMarkup from 'react-truncate-markup'
-
-// Replace when Twitter Icon builds correctly in Now
-const Twitter = () => (
-    <svg
-        className="MuiSvgIcon-root"
-        focusable="false"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        role="presentation"
-    >
-        <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"></path>
-    </svg>
-)
+// import CardActions from '../../../components/Card/CardComponents/CardActions'
+// import { getLinkUrl } from '../../../lib/getURLs'
+import { Hidden } from '@material-ui/core'
+import ShareIcon from '@material-ui/icons/Share'
+import { useState } from 'react'
+import ShareDialog from '../../../components/Card/ShareDialog'
+import SocialWebsiteIcon from '../../../components/Social/SocialWebsiteIcon'
 
 const LinkContent = ({
+    // id,
     owner,
     dateCreated,
     linkTitle,
@@ -35,8 +30,15 @@ const LinkContent = ({
     url,
     linkDescription,
     summary,
+    // isBookmarked,
+    // openModalAction,
+    // routeChangeAction,
+    // userId,
 }) => {
     const classes = useStyles({})
+
+    const [shareDialogOpen, setShareDialogOpen] = useState(false)
+
     return (
         <>
             <Grid
@@ -46,18 +48,41 @@ const LinkContent = ({
                 alignItems="center"
                 justify="space-between"
             >
-                {owner && (
-                    <Avatar
-                        size={40}
-                        avatar={owner.avatar}
-                        username={owner.username}
-                        id={owner.id}
-                        withName={true}
+                <div className={classes.nameAndDate}>
+                    {owner && (
+                        <Avatar
+                            size={40}
+                            avatar={owner.avatar}
+                            username={owner.username}
+                            id={owner.id}
+                            withName={true}
+                        />
+                    )}
+                    <Typography variant="body2">
+                        Posted {moment(dateCreated).format('DD MMM YY')}
+                    </Typography>
+                </div>
+                <Hidden lgUp={true}>
+                    <ShareIcon onClick={() => setShareDialogOpen(true)} />
+                    <ShareDialog
+                        href={url.as}
+                        name={linkTitle}
+                        open={shareDialogOpen}
+                        handleClose={() => setShareDialogOpen(false)}
                     />
-                )}
-                <Typography variant="body2">
-                    Posted {moment(dateCreated).format('DD MMM YY')}
-                </Typography>
+                    {/* <CardActions
+                        type="LINK"
+                        id={id}
+                        isBookmarked={isBookmarked}
+                        isLoggedIn={!!userId}
+                        name={linkTitle.value}
+                        url={getLinkUrl({ id, linkTitle })}
+                        openModalAction={openModalAction}
+                        routeChangeAction={routeChangeAction}
+                        hideAddtoCollection={true}
+                        hideShare={true}
+                    /> */}
+                </Hidden>
             </Grid>
             <Typography
                 className={classes.title}
@@ -69,19 +94,20 @@ const LinkContent = ({
             </Typography>
             <Grid container={true} justify="space-between">
                 <Grid item={true} sm={authorName ? 6 : 12}>
-                    <TruncateMarkup lines={1}>
-                        <Typography
-                            className={classes.url}
-                            color="inherit"
-                            variant="subtitle2"
-                        >
-                            {url.value
-                                .replace('https://', '')
-                                .replace('http://', '')}
-                        </Typography>
-                    </TruncateMarkup>
+                    <a href={url.value} target="__blank">
+                        <TruncateMarkup lines={1}>
+                            <Typography
+                                className={classes.url}
+                                color="inherit"
+                                variant="subtitle2"
+                            >
+                                {url.value
+                                    .replace('https://', '')
+                                    .replace('http://', '')}
+                            </Typography>
+                        </TruncateMarkup>
+                    </a>
                 </Grid>
-
                 {authorName.value && (
                     <Grid
                         item={true}
@@ -89,6 +115,7 @@ const LinkContent = ({
                         container={true}
                         alignItems="center"
                         justify="flex-end"
+                        className={classes.social}
                     >
                         <Typography
                             className={classes.url}
@@ -98,12 +125,20 @@ const LinkContent = ({
                             <b>Author:</b> {authorName.value}
                         </Typography>
                         {authorSocial && authorSocial.twitter && (
-                            <a
-                                target="_blank"
-                                href={`https://www.twitter.com/${authorSocial.twitter.value}`}
-                            >
-                                <Twitter />
-                            </a>
+                            <SocialWebsiteIcon
+                                brand="twitter"
+                                height={20}
+                                invert={false}
+                                socialURL={`https://www.twitter.com/${authorSocial.twitter.value}`}
+                            />
+                        )}
+                        {authorSocial && authorSocial.linkedin && (
+                            <SocialWebsiteIcon
+                                brand="linkedin"
+                                height={20}
+                                invert={false}
+                                socialURL={`https://www.linkedin.com/in/${authorSocial.linkedin.value}`}
+                            />
                         )}
                     </Grid>
                 )}
@@ -136,6 +171,8 @@ const LinkContent = ({
                 {linkDescription.value}
             </Typography>
             <Grid container={true} justify="center">
+                {' '}
+                className={classes.tags}>
                 {tags &&
                     tags.map((text, key) => (
                         <Link key={key} href={`/search-results?q=${text}`}>
