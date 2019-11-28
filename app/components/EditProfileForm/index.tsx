@@ -161,6 +161,7 @@ const EditProfileForm = ({
                         value={username}
                         placeholder="Add username"
                         className={classes.input}
+                        required={true}
                         InputProps={{
                             readOnly: usernameReadOnly && username != '',
                         }}

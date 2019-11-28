@@ -21,12 +21,12 @@ const Page = styled.div`
     flex: 1;
     align-items: center;
     justify-content: center;
+    height: 100%;
     flex-direction: column;
     @media (max-width: 600px) {
         margin-top: -56px;
         padding: 16px;
     }
-    margin-top: -64px;
 `
 
 const Wrapper = styled.div`
@@ -145,13 +145,12 @@ class OnboardingEditProfile extends Component<IProps, IState> {
         if (!this.props.OwnProfile || !this.props.OwnProfile.getMyProfile)
             return null
         const {
-            name,
             username,
             email,
             dateCreated,
         } = this.props.OwnProfile.getMyProfile
 
-        const hasData = name && username && email
+        const hasData = username && email
         const loginTrackingPending = window.localStorage.getItem(
             'login-tracking-pending'
         )

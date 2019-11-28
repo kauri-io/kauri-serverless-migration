@@ -81,7 +81,8 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
         },
         header: {
             background: theme.palette.common.white,
-            padding: theme.spacing(2),
+            padding: theme.spacing(0, 2),
+            position: 'relative',
         },
         headerImage: {
             padding: theme.spacing(0, 2),
@@ -95,8 +96,10 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
                 alignItems: 'center',
                 width: '100%',
                 marginBottom: theme.spacing(2),
+                paddingTop: theme.spacing(8),
             },
             [theme.breakpoints.down('md')]: {
+                paddingTop: theme.spacing(2),
                 flexDirection: 'column',
                 '& > *': {
                     marginBottom: theme.spacing(1),
@@ -112,12 +115,16 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             },
         },
         toolbar: {
-            marginBottom: theme.spacing(2),
-            paddingBottom: theme.spacing(2),
+            padding: theme.spacing(2, 0),
             justifyContent: 'space-around',
             borderBottom: '1px solid #cbcbcb',
             display: 'flex',
             flexDirection: 'row',
+            position: 'fixed',
+            background: theme.palette.common.white,
+            zIndex: 1,
+            width: '100%',
+            maxWidth: 808,
         },
         iconContainer: {
             '& span': {
