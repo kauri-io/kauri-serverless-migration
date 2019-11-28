@@ -270,7 +270,7 @@ const Search = ({ routeChangeAction, query, data: { searchAutocomplete } }) => {
                                 searchAutocomplete &&
                                 !searchAutocomplete.totalElementsBreakdown.USER
                             }
-                            label={getDropdownString(2)}
+                            label={getDropdownString(3)}
                         />
                     </Tabs>
                 </Hidden>
