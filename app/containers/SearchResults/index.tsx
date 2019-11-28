@@ -1,122 +1,220 @@
-import React from 'react'
-import styled from 'styled-components'
-import ResourceSearch, { IDataSource, emptyData } from './ResourceSearch'
-import { Title1, BodyCard } from '../../components/Typography'
-import ResourceResults from './ResourceResults'
+import {
+    Grid,
+    Typography,
+    Theme,
+    InputBase,
+    Tabs,
+    Tab,
+} from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
+import SearchIcon from '@material-ui/icons/Search'
+import { useState } from 'react'
 import Head from 'next/head'
+import { compose, graphql } from 'react-apollo'
+import { searchResultsAutocomplete } from '../../queries/Search'
+import DisplayResources from './DisplayResources'
+import { connect } from 'react-redux'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { debounce } from '../../lib/debounce'
 
-const SearchHeader = styled.div`
-    background-color: ${props => props.theme.colors.primaryTextColor};
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: ${props => props.theme.colors.white};
-    padding: ${props => props.theme.space[3]}px;
-    padding-bottom: ${props => props.theme.space[3]}px;
-`
-
-export const searchResultCategories = [
-    'ARTICLE',
-    'COLLECTION',
-    'COMMUNITY',
-    'USER',
-    'LINK',
-]
-
-interface IState {
-    dataSource: IDataSource
-    loading: boolean
-    viewedSearchCategory?: string | null
-}
-
-export interface IProps {
-    query: {
-        q: string
-        type?: 'COMMUNITY' | 'ARTICLE' | 'COLLECTION' | 'LINK'
-        default_category?: string | null
+const debouncedRoute = debounce((query, routeChangeAction) => {
+    if (query) {
+        routeChangeAction(`/search-results?q=${query}`)
     }
-    router: any
-}
+}, 500)
 
-class SearchResults extends React.Component<IProps, IState> {
-    state = {
-        dataSource: emptyData,
-        loading: true,
-        viewedSearchCategory: this.props.query.default_category,
-    }
+const useStyles = makeStyles((theme: Theme) => ({
+    container: {},
+    header: {
+        height: 200,
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        backgroundColor: 'white',
+        background:
+            'url(https://d1icd6shlvmxi6.cloudfront.net/gsc/DYTUBP/a3/f0/64/a3f0645719204d588fb5d4b0e6e49801/images/search/u21048.svg?token=327e6132512d18393b97569bd806c0c3ee20498290fd10d7f79b5b9868677d6a) center center no-repeat',
+    },
+    heading: {
+        margin: theme.spacing(1),
+    },
+    inputInput: {
+        padding: theme.spacing(1, 2),
+    },
+    inputRoot: {
+        color: 'inherit',
+        width: '100%',
+        paddingRight: theme.spacing(2),
+    },
+    searchClass: {
+        alignItems: 'center',
+        backgroundColor: theme.palette.background.default,
+        borderRadius: theme.shape.borderRadius,
+        display: 'flex',
+        margin: theme.spacing(1),
+        width: '90%',
+        [theme.breakpoints.up('sm')]: {
+            marginLeft: theme.spacing(3),
+            width: 'auto',
+        },
+    },
+    searchIconClass: {
+        alignItems: 'center',
+        display: 'flex',
+        height: '100%',
+        justifyContent: 'center',
+        cursor: 'pointer',
+        marginRight: theme.spacing(2),
+    },
+}))
 
-    setSearchResults = (
-        dataSource: IDataSource,
-        loading: boolean,
-        viewedSearchCategory: string
-    ) => {
-        this.setState({
-            ...this.state,
-            dataSource,
-            loading,
-            viewedSearchCategory,
-        })
-    }
+const Search = ({
+    routeChangeAction,
+    query,
+    router,
+    data: { searchAutocomplete },
+}) => {
+    const classes = useStyles({})
+    const [tab, setTab] = useState(0)
 
-    setSearchCategory = (viewedSearchCategory: string) =>
-        this.setState({ ...this.state, viewedSearchCategory })
-
-    render() {
-        // console.log(this.state);
-        const totalResults = Object.keys(
-            this.state.dataSource &&
-                this.state.dataSource.totalElementsBreakdown
-        )
-            .filter(
-                category =>
-                    searchResultCategories &&
-                    searchResultCategories.includes(category)
-            )
-            .map(
-                category =>
-                    this.state.dataSource.totalElementsBreakdown[category]
-            )
-            .reduce((current, next) => current + next, 0)
-
-        return (
-            <section>
-                <Head>
-                    <title
-                        dangerouslySetInnerHTML={{
-                            __html: `Kauri Search - ${this.props.query}`,
+    return (
+        <Grid className={classes.container}>
+            <Head>
+                <title>{query.q} Kauri Search</title>
+            </Head>
+            <Grid className={classes.header}>
+                <Typography className={classes.heading} variant="h5">
+                    Search Results
+                </Typography>
+                <Typography variant="subtitle2">
+                    {searchAutocomplete && searchAutocomplete.totalElements}{' '}
+                    results
+                </Typography>
+                <div className={classes.searchClass}>
+                    <InputBase
+                        placeholder="Search…"
+                        onChange={e =>
+                            debouncedRoute(e.target.value, routeChangeAction)
+                        }
+                        classes={{
+                            input: classes.inputInput,
+                            root: classes.inputRoot,
                         }}
+                        defaultValue={query.q}
                     />
-                </Head>
-                <SearchHeader>
-                    <Title1 color="white">Search</Title1>
-                    <BodyCard>
-                        {this.state.loading
-                            ? 'Loading results'
-                            : `${totalResults} Results`}
-                    </BodyCard>
-                    <ResourceSearch
-                        query={this.props.query}
-                        viewedSearchCategory={this.state.viewedSearchCategory}
-                        setSearchCategory={this.setSearchCategory}
-                        setSearchResults={this.setSearchResults}
-                        router={this.props.router}
+                    <div
+                        className={classes.searchIconClass}
+                        onClick={() =>
+                            query.q &&
+                            query.q.length > 0 &&
+                            router.push(`/search-results?q=${query.q}`)
+                        }
+                    >
+                        <SearchIcon />
+                    </div>
+                </div>
+            </Grid>
+
+            <Grid>
+                <Tabs
+                    TabIndicatorProps={{ style: { height: 3 } }}
+                    indicatorColor="primary"
+                    centered={true}
+                    value={tab}
+                    onChange={(_e, tab) => setTab(tab)}
+                >
+                    <Tab
+                        disabled={
+                            searchAutocomplete &&
+                            !searchAutocomplete.totalElementsBreakdown.ARTICLE
+                        }
+                        label={`Articles (${(searchAutocomplete &&
+                            searchAutocomplete.totalElementsBreakdown
+                                .ARTICLE) ||
+                            0})`}
                     />
-                </SearchHeader>
-                <ResourceResults
-                    query={this.props.query.q}
-                    setSearchCategory={this.setSearchCategory}
-                    viewedSearchCategory={this.state.viewedSearchCategory}
-                    loading={this.state.loading}
-                    totalElementsBreakdown={
-                        this.state.dataSource &&
-                        this.state.dataSource.totalElementsBreakdown
-                    }
-                />
-            </section>
-        )
-    }
+                    <Tab
+                        disabled={
+                            searchAutocomplete &&
+                            !searchAutocomplete.totalElementsBreakdown
+                                .COLLECTION
+                        }
+                        label={`Collections (${(searchAutocomplete &&
+                            searchAutocomplete.totalElementsBreakdown
+                                .COLLECTION) ||
+                            0})`}
+                    />
+                    <Tab
+                        disabled={
+                            searchAutocomplete &&
+                            !searchAutocomplete.totalElementsBreakdown.COMMUNITY
+                        }
+                        label={`Communities (${(searchAutocomplete &&
+                            searchAutocomplete.totalElementsBreakdown
+                                .COMMUNITY) ||
+                            0})`}
+                    />
+                    <Tab
+                        disabled={
+                            searchAutocomplete &&
+                            !searchAutocomplete.totalElementsBreakdown.USER
+                        }
+                        label={`Profiles (${(searchAutocomplete &&
+                            searchAutocomplete.totalElementsBreakdown.USER) ||
+                            0})`}
+                    />
+                </Tabs>
+                {tab === 0 && (
+                    <Grid>
+                        <DisplayResources type="ARTICLE" query={query.q} />
+                    </Grid>
+                )}
+                {tab === 1 && (
+                    <Grid>
+                        <DisplayResources type="COLLECTION" query={query.q} />
+                    </Grid>
+                )}
+                {tab === 2 && (
+                    <Grid>
+                        <DisplayResources type="COMMUNITY" query={query.q} />
+                    </Grid>
+                )}
+                {tab === 3 && (
+                    <Grid>
+                        <DisplayResources type="USER" query={query.q} />
+                    </Grid>
+                )}
+            </Grid>
+        </Grid>
+    )
 }
 
-export default SearchResults
+export default compose(
+    connect(
+        () => {},
+        {
+            routeChangeAction,
+        }
+    ),
+    graphql(searchResultsAutocomplete, {
+        options: ({
+            query,
+        }: {
+            viewedSearchCategory: string | null
+            query: {
+                q: string
+            }
+        }) => {
+            const variables = {
+                page: 0,
+                query: query.q,
+                size: 1,
+            }
+            return {
+                fetchPolicy: 'no-cache',
+                variables,
+            }
+        },
+    })
+)(Search)

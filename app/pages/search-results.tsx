@@ -8,7 +8,7 @@ import { withTransaction } from '@elastic/apm-rum-react'
 
 const SearchResultsPage = withTransaction('search-results', 'page')(
     ({ router }) => (
-        <App>
+        <App hideNav={false}>
             <SearchResults query={router && router.query} router={router} />
         </App>
     )

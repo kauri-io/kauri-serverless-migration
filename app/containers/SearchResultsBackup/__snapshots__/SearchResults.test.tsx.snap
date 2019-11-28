@@ -520,16 +520,16 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                   reduceComponentsToState={[Function]}
                 />
               </Head>
-              <SearchResults__SearchHeader>
+              <SearchResultsBackup__SearchHeader>
                 <StyledComponent
                   forwardedComponent={
                     Object {
                       "$$typeof": Symbol(react.forward_ref),
                       "attrs": Array [],
                       "componentStyle": ComponentStyle {
-                        "componentId": "SearchResults__SearchHeader-sc-3rzbew-0",
+                        "componentId": "SearchResultsBackup__SearchHeader-sc-3yoamz-0",
                         "isStatic": false,
-                        "lastClassName": "huByHS",
+                        "lastClassName": "jiXnkd",
                         "rules": Array [
                           "background-color:",
                           [Function],
@@ -542,10 +542,10 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                           "px;",
                         ],
                       },
-                      "displayName": "SearchResults__SearchHeader",
+                      "displayName": "SearchResultsBackup__SearchHeader",
                       "foldedComponentIds": Array [],
                       "render": [Function],
-                      "styledComponentId": "SearchResults__SearchHeader-sc-3rzbew-0",
+                      "styledComponentId": "SearchResultsBackup__SearchHeader-sc-3yoamz-0",
                       "target": "div",
                       "toString": [Function],
                       "usesTheme": true,
@@ -556,7 +556,7 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="SearchResults__SearchHeader-sc-3rzbew-0 huByHS"
+                    className="SearchResultsBackup__SearchHeader-sc-3yoamz-0 jiXnkd"
                   >
                     <Typography__styledComponent
                       color="white"
@@ -868,9 +868,9 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "attrs": Array [],
                                     "componentStyle": ComponentStyle {
-                                      "componentId": "ResourceSearch__SearchWrapper-sc-7ioqrv-1",
+                                      "componentId": "ResourceSearch__SearchWrapper-sc-1fbnvkh-1",
                                       "isStatic": false,
-                                      "lastClassName": "hwZepJ",
+                                      "lastClassName": "hvowaH",
                                       "rules": Array [
                                         "width:300px;margin-bottom:64px;margin-top:19px;display:grid;position:relative;border-radius:4px;&:hover{& > input{border:1px solid #209b86;}}& > .certain-category-icon{position:absolute;top:11px;right:9px;}",
                                       ],
@@ -878,7 +878,7 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                                     "displayName": "ResourceSearch__SearchWrapper",
                                     "foldedComponentIds": Array [],
                                     "render": [Function],
-                                    "styledComponentId": "ResourceSearch__SearchWrapper-sc-7ioqrv-1",
+                                    "styledComponentId": "ResourceSearch__SearchWrapper-sc-1fbnvkh-1",
                                     "target": "div",
                                     "toString": [Function],
                                     "usesTheme": false,
@@ -889,7 +889,7 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                                 forwardedRef={null}
                               >
                                 <div
-                                  className="ResourceSearch__SearchWrapper-sc-7ioqrv-1 hwZepJ global-search-wrapper"
+                                  className="ResourceSearch__SearchWrapper-sc-1fbnvkh-1 hvowaH global-search-wrapper"
                                 >
                                   <ResourceSearch__SearchInput
                                     onChange={[Function]}
@@ -901,9 +901,9 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                                           "$$typeof": Symbol(react.forward_ref),
                                           "attrs": Array [],
                                           "componentStyle": ComponentStyle {
-                                            "componentId": "ResourceSearch__SearchInput-sc-7ioqrv-0",
+                                            "componentId": "ResourceSearch__SearchInput-sc-1fbnvkh-0",
                                             "isStatic": false,
-                                            "lastClassName": "sDUOI",
+                                            "lastClassName": "gNHkOR",
                                             "rules": Array [
                                               "border:1px solid white;border-radius:4px;background:transparent;height:40px;color:white;outline:none;padding:0 ",
                                               [Function],
@@ -913,7 +913,7 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                                           "displayName": "ResourceSearch__SearchInput",
                                           "foldedComponentIds": Array [],
                                           "render": [Function],
-                                          "styledComponentId": "ResourceSearch__SearchInput-sc-7ioqrv-0",
+                                          "styledComponentId": "ResourceSearch__SearchInput-sc-1fbnvkh-0",
                                           "target": "input",
                                           "toString": [Function],
                                           "usesTheme": true,
@@ -926,7 +926,7 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                                       value="eth"
                                     >
                                       <input
-                                        className="ResourceSearch__SearchInput-sc-7ioqrv-0 sDUOI"
+                                        className="ResourceSearch__SearchInput-sc-1fbnvkh-0 gNHkOR"
                                         onChange={[Function]}
                                         value="eth"
                                       />
@@ -966,7 +966,7 @@ exports[`containers/SearchResults should match snapshot 1`] = `
                     </withApollo(Connect(Complete))>
                   </div>
                 </StyledComponent>
-              </SearchResults__SearchHeader>
+              </SearchResultsBackup__SearchHeader>
               <ResourceResults
                 loading={true}
                 query="eth"
