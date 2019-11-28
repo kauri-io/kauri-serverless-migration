@@ -32,10 +32,10 @@ const useStyles = makeStyles((theme: Theme) => ({
         marginRight: 'auto',
         minHeight: `calc(100vh)`,
         overflow: 'hidden',
-        [theme.breakpoints.up('xs')]: {
+        [theme.breakpoints.up('lg')]: {
             paddingTop: (props: any) => (props.hideNav ? 0 : 64),
         },
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('lg')]: {
             paddingTop: 56,
         },
     },
