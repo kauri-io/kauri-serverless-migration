@@ -15,6 +15,7 @@ import Loading from '../../../components/Loading'
 import { IEditBookmakFolderAction, IDeleteBookmakFolderAction } from '../Module'
 import { editBookmarkFolderVariables } from '../../../queries/__generated__/editBookmarkFolder'
 import { deleteBookmarkFolderVariables } from '../../../queries/__generated__/deleteBookmarkFolder'
+import LinkCard from '../../../components/Card/LinkCard'
 
 interface IProps {
     isLoggedIn: boolean
@@ -85,6 +86,24 @@ export const ManageBookmarkBody = ({
                                     <Grid key={key} item={true} sm={12}>
                                         {' '}
                                         <CollectionCard
+                                            {...res.resource}
+                                            href={getCollectionURL(
+                                                res.resource
+                                            )}
+                                            isLoggedIn={isLoggedIn}
+                                            routeChangeAction={
+                                                routeChangeAction
+                                            }
+                                            openModalAction={openModalAction}
+                                        />
+                                    </Grid>
+                                )
+                            }
+                            case 'ExternalLinkDTO': {
+                                return (
+                                    <Grid key={key} item={true} sm={12}>
+                                        {' '}
+                                        <LinkCard
                                             {...res.resource}
                                             href={getCollectionURL(
                                                 res.resource

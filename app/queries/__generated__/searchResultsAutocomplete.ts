@@ -906,6 +906,10 @@ export interface searchResultsAutocomplete_searchAutocomplete {
    */
   totalElementsBreakdown: any | null;
   /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
+  /**
    * Returns the page content.
    */
   content: (searchResultsAutocomplete_searchAutocomplete_content | null)[];
