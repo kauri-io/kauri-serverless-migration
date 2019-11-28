@@ -55,9 +55,7 @@ const ValidatedTextField = ({
     //Not always validating here and removing the onChange hook because that would
     //cause a double render every time the text field is changed.
     useEffect(() => {
-        console.log('useEffect() for ' + id)
         if (value !== lastValueChange) {
-            console.log('Validating...')
             doValidation(value)
         }
     }, [value])
