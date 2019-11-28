@@ -35,6 +35,7 @@ const ValidatedTextField = ({
     label,
 }: IProps) => {
     const [error, setError] = useState('')
+    const [lastValueChange, setLastValueChange] = useState('')
 
     const doValidation = value => {
         let err = ''
@@ -49,15 +50,24 @@ const ValidatedTextField = ({
         }
     }
 
+    //There are cases where the value is changed externally to the text field,
+    //so by listening for changes to the value, we can still trigger validation.
+    //Not always validating here and removing the onChange hook because that would
+    //cause a double render every time the text field is changed.
     useEffect(() => {
-        doValidation(value)
-    }, [])
+        console.log('useEffect() for ' + id)
+        if (value !== lastValueChange) {
+            console.log('Validating...')
+            doValidation(value)
+        }
+    }, [value])
 
     return (
         <TextField
             margin={margin}
             onChange={e => {
                 doValidation(e.target.value)
+                setLastValueChange(e.target.value)
                 handleChange(e)
             }}
             value={value}
