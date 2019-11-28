@@ -130,6 +130,7 @@ const Renderer = ({ markdown, withComments, commentsCount }) => {
     const useStyles = makeStyles((theme: Theme) => ({
         outline: {
             position: 'fixed',
+            maxWidth: 200,
             '& div div': {
                 display: 'none',
             },

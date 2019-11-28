@@ -36,12 +36,14 @@ interface IProps {
     voteAction: any
     voteResult: any
     id: string
+    resourceType: 'ARTICLE' | 'LINK'
     loginFirstToVote: () => void
     isLoggedIn: boolean
 }
 
 const VoteWidget = ({
     id,
+    resourceType,
     voteResult,
     voteAction,
     loginFirstToVote,
@@ -62,7 +64,7 @@ const VoteWidget = ({
                                 ? voteAction({
                                       resourceId: {
                                           id,
-                                          type: 'ARTICLE',
+                                          type: resourceType,
                                       },
                                       value: 1,
                                   })
@@ -89,7 +91,7 @@ const VoteWidget = ({
                                 ? voteAction({
                                       resourceId: {
                                           id,
-                                          type: 'ARTICLE',
+                                          type: resourceType,
                                       },
                                       value: -1,
                                   })

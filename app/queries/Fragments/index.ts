@@ -182,6 +182,12 @@ export const Link = gql`
         }
         authorSocial
         tags
+        voteResult {
+            sum
+            count
+            hasVoted
+            quantity
+        }
     }
     ${UserOwner}
     ${CommunityOwner}

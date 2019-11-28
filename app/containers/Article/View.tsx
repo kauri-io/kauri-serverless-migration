@@ -213,6 +213,7 @@ const ArticleComp = ({
                             <VoteWidget
                                 isLoggedIn={!!userId}
                                 id={String(id)}
+                                resourceType="ARTICLE"
                                 voteAction={voteAction}
                                 voteResult={voteResult}
                                 loginFirstToVote={() =>
