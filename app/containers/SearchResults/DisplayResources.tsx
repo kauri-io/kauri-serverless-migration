@@ -12,7 +12,7 @@ import ArticleCard from '../../components/Card/ArticleCard'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
-        padding: theme.spacing(2),
+        padding: theme.spacing(0, 2, 2, 2),
         maxWidth: 808,
         margin: 'auto',
         '& > *': {
