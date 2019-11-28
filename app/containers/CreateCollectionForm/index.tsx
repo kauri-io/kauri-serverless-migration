@@ -17,9 +17,7 @@ import {
 import PublishingSelector from '../PublishingSelector'
 import { IReduxState } from '../../lib/Module'
 import { dissocPath, map, pipe, path } from 'ramda'
-import {
-    Collection_sections,
-} from '../../queries/Fragments/__generated__/Collection'
+import { Collection_sections } from '../../queries/Fragments/__generated__/Collection'
 import { ITag } from '../../components/Tags/types'
 import { defaultTo } from 'ramda'
 

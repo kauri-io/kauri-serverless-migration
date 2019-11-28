@@ -33,16 +33,14 @@ describe('containers/CreateCollectionForm/View', () => {
                 sections: [
                     {
                         resourcesId: [
-                            // {
-                            //     id: '4e9186353fd848c68c3887effa298d9a',
-                            //     type: 'COLLECTION',
-                            //     __typename: 'ResourceIdentifier',
-                            // },
-                            // {
-                            //     id: 'c5f31cd6bd464d15aa7c8e10fa35c55f',
-                            //     type: 'ARTICLE',
-                            //     __typename: 'ResourceIdentifier',
-                            // },
+                            {
+                                id: '4e9186353fd848c68c3887effa298d9a',
+                                type: 'COLLECTION',
+                            },
+                            {
+                                id: 'c5f31cd6bd464d15aa7c8e10fa35c55f',
+                                type: 'ARTICLE',
+                            },
                         ],
                     },
                 ],

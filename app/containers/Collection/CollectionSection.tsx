@@ -32,6 +32,8 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
     },
     root: {
+        maxWidth: '808px',
+        width: '100%',
         paddingTop: theme.spacing(4),
     },
     title: {

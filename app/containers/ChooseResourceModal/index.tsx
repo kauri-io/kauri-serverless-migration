@@ -1,10 +1,9 @@
 import View from './View'
-import { compose, graphql } from 'react-apollo'
+import { compose, graphql, withApollo } from 'react-apollo'
 import { globalSearchApprovedArticles } from '../../queries/Article'
 import { connect } from 'react-redux'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
-import withLoading from '../../lib/with-loading'
-import withPagination from '../../lib/with-pagination'
+import withApolloError from '../../lib/with-apollo-error'
 
 interface IState {
     app: {
@@ -24,25 +23,26 @@ const mapStateToProps = (state: IState) => {
 const QUERY_NAME = 'GlobalSearchQuery'
 
 export default compose(
+    withApollo,
     connect(
         mapStateToProps,
         {
-            routeChangeAction
+            routeChangeAction,
         }
     ),
     graphql(globalSearchApprovedArticles, {
         name: QUERY_NAME,
-        options: ({ query, filter }: { query: String, filter: any }) => ({
+        options: ({ query, filter }: { query: String; filter: any }) => ({
             fetchPolicy: 'network-only',
             variables: {
                 size: 10,
                 query,
-                filter,
+                filter: { ...filter, types: ['ARTICLE', 'LINK'] },
                 parameter: {
-                    scoringMode: "LAST_UPDATED",
+                    scoringMode: 'LAST_UPDATED',
                 },
             },
         }),
     }),
-    withLoading()
-)(withPagination(View, 'searchAutocomplete', QUERY_NAME))
+    withApolloError()
+)(View)
