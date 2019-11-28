@@ -162,7 +162,7 @@ const Search = ({ routeChangeAction, query, data: { searchAutocomplete } }) => {
             </Grid>
 
             <Grid>
-                <Hidden lgUp={true}>
+                <Hidden mdUp={true}>
                     <Typography
                         className={classes.dropdown}
                         onClick={openDropdown}
@@ -233,7 +233,7 @@ const Search = ({ routeChangeAction, query, data: { searchAutocomplete } }) => {
                         </MenuItem>
                     </Menu>
                 </Hidden>
-                <Hidden lgDown={true}>
+                <Hidden smDown={true}>
                     <Tabs
                         TabIndicatorProps={{ style: { height: 3 } }}
                         indicatorColor="primary"
