@@ -28,7 +28,7 @@ export default ({ title, setTitle, tags, setTags, onValidation }) => {
             },
         },
         titleContainer: {
-            width: '50%',
+            width: '60%',
         },
     }))
     const classes = useStyles()
@@ -56,6 +56,7 @@ export default ({ title, setTitle, tags, setTags, onValidation }) => {
                     handleChange={e => setTitle(e.target.value)}
                     onValidation={onValidation}
                     validate={validateTitle}
+                    rowsMax={2}
                 />
 
                 <TagSelector updateTags={setTags} tags={tags} />
