@@ -10,7 +10,7 @@ import {
     openModalAction,
 } from '../../components/Modal/Module'
 import { getLink } from '../../queries/Link'
-import { addCommentAction } from '../Article/Module'
+import { addCommentAction, voteAction } from '../Article/Module'
 
 const mapStateToProps = (state: IReduxState) => ({
     personalUsername: state.app && state.app.user && state.app.user.username,
@@ -27,6 +27,7 @@ export default compose(
             openModalAction,
             routeChangeAction,
             addCommentAction,
+            voteAction,
         }
     ),
     graphql(getLink, {
