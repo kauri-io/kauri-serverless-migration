@@ -23,71 +23,69 @@ export interface IRole {
     label: string
 }
 
-export const roles: IRole[] = [
-    { value: 'ADMIN', label: 'ADMIN' },
-    { value: 'CURATOR', label: 'MODERATOR' },
-]
-
-interface IState {
-    currentStep: number
-    email: string
-    role: string
+export interface IField {
+    value: string
+    hasError: boolean
+    handleChange: (value: string) => void
+    validate: (value: string) => boolean
 }
 
+export const roles: IRole[] = [
+    { value: 'ADMIN', label: 'Admin' },
+    { value: 'CURATOR', label: 'Moderator' },
+]
+
 const AddMemberModal: React.FunctionComponent<IProps> = props => {
-    const [state, setState] = React.useState<IState>({
-        currentStep: 1,
-        email: '',
-        role: '',
+    const [currentStep] = React.useState(1)
+    const [email, setEmail] = React.useState<IField>({
+        value: '',
+        hasError: false,
+        handleChange: (value: string) => {
+            setEmail({ ...email, value, hasError: !email.validate(value) })
+        },
+        validate: (value: string) => {
+            const emailCheck = Yup.string().email()
+            return emailCheck.isValidSync(value)
+        },
+    })
+    const [role, setRole] = React.useState<IField>({
+        value: '',
+        hasError: false,
+        handleChange: (value: string) => {
+            setRole({ ...role, value, hasError: !role.validate(value) })
+        },
+        validate: (value: string) => {
+            return (
+                value.length > 0 &&
+                roles.filter(r => r.value === value).length > 0
+            )
+        },
     })
 
-    const { currentStep, email, role } = state
-
-    const chosenRole = roles.filter(
-        hardcodedRoles => hardcodedRoles.value === state.role
-    ).length
-        ? roles.filter(hardcodedRoles => hardcodedRoles.value === state.role)[0]
-              .label
-        : role
     return (
         <AlertViewComponent
             closeModalAction={() => props.closeModalAction()}
             confirmButtonAction={() => {
-                const emailCheck = Yup.string().email()
-                const validEmail = emailCheck.isValidSync(email)
-                if (typeof email === 'string' && !validEmail) {
-                    return props.showNotificationAction({
-                        description:
-                            'Please enter a valid email address to send the member invitation to!',
-                        message: 'Email required',
-                        notificationType: 'error',
-                    })
+                if (email.validate(email.value)) {
+                    setEmail({ ...email, hasError: true })
+                    return
                 }
-                if (typeof chosenRole === 'string' && !chosenRole.length) {
-                    return props.showNotificationAction({
-                        description:
-                            'Please choose a role for the new proposed member!',
-                        message: 'Role required',
-                        notificationType: 'error',
-                    })
+                if (role.validate(role.value)) {
+                    setRole({ ...role, hasError: true })
+                    return
                 }
+
                 return props.confirmButtonAction(
-                    { email, role },
+                    { email: email.value, role: role.value },
                     props.closeModalAction
                 )
             }}
             content={
                 <AddMemberModalContent
-                    handleRoleChange={(selectedRole: string) =>
-                        setState({ ...state, role: selectedRole })
-                    }
-                    roles={roles}
                     currentStep={currentStep}
+                    roles={roles}
                     email={email}
-                    role={chosenRole}
-                    handleEmailChange={({ target: { value } }) =>
-                        setState({ currentStep, email: value, role })
-                    }
+                    role={role}
                 />
             }
             title={'Invite New Moderator'}

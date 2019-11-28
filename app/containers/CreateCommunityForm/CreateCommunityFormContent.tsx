@@ -49,6 +49,7 @@ interface IProps {
     values: IFormValues
     openModalAction: typeof openModalAction
     closeModalAction: typeof closeModalAction
+    disabled?: boolean
 }
 
 const HomePanel = props =>
@@ -96,10 +97,10 @@ const Component: React.SFC<IProps> = props => {
                 value={tab}
                 onChange={(_e, tab) => setTab(tab)}
             >
-                <Tab label="Home" />
-                <Tab label="Articles" />
-                <Tab label="Collections" />
-                <Tab label="Manage" />
+                <Tab label="Home" disabled={props.disabled} />
+                <Tab label="Articles" disabled={props.disabled} />
+                <Tab label="Collections" disabled={props.disabled} />
+                <Tab label="Manage" disabled={props.disabled} />
             </Tabs>
             {tab === 0 && <HomePanel {...props} />}
             {tab === 1 && <ArticlesContentSectionEmptyState key="articles" />}

@@ -13,6 +13,8 @@ import SocialWebsiteIcon from '../../components/Social/SocialWebsiteIcon'
 import { IFormValues } from './index'
 import TagSelector from '../../components/TagSelector'
 import { Theme, makeStyles } from '@material-ui/core/styles'
+import React from 'react'
+import ValidatedTextField from '../../components/ValidatedTextField'
 
 const useStyles = makeStyles((theme: Theme) => ({
     input: {
@@ -25,6 +27,21 @@ const useStyles = makeStyles((theme: Theme) => ({
         '&:before': {
             borderBottomColor: 'rgba(255,255,255,0.3)',
         },
+    },
+    inputLong: {
+        width: '680px',
+        color: theme.palette.common.white,
+        '&:hover': {
+            '&:before': {
+                borderBottomColor: 'rgba(255,255,255,0.6) !important',
+            },
+        },
+        '&:before': {
+            borderBottomColor: 'rgba(255,255,255,0.3)',
+        },
+    },
+    socialIcon: {
+        marginTop: theme.spacing(1),
     },
 }))
 
@@ -101,10 +118,38 @@ interface IProps {
     userAvatar: string | null
     openAddMemberModal: () => void
     username: string | null
+    errors: any
 }
 
 const Component: React.SFC<IProps> = props => {
     const classes = useStyles()
+
+    const [validationMessages, setValidationMessages] = React.useState({})
+
+    const validate = (
+        name: string,
+        value: string,
+        maxLength: number,
+        regex: RegExp
+    ) => {
+        if (value && !regex.test(value)) {
+            return name + ' is incorect'
+        }
+        if (value && value.length > maxLength) {
+            return name + ' longer than ' + maxLength + ' characters'
+        }
+        return ''
+    }
+
+    const onValidation = (id, message) => {
+        if (!message || message == '') {
+            delete validationMessages[id]
+            return
+        }
+        validationMessages[id] = message
+        setValidationMessages(validationMessages)
+    }
+
     return (
         <PrimaryHeaderSection backgroundURL={props.background}>
             <LeftSide>
@@ -114,6 +159,7 @@ const Component: React.SFC<IProps> = props => {
                         bg={String(props.avatar)}
                         text="Logo"
                         color="white"
+                        hasError={props.errors.avatar}
                     />
 
                     <MainFields>
@@ -121,12 +167,22 @@ const Component: React.SFC<IProps> = props => {
                             type="text"
                             name="name"
                             render={({ field }: FieldProps<IFormValues>) => (
-                                <TextField
-                                    {...field}
-                                    placeholder={'Community Name'}
+                                <ValidatedTextField
+                                    id="name"
+                                    field={field}
+                                    multiline={true}
+                                    rowsMax="3"
+                                    placeholder="Community Name"
                                     InputProps={{
-                                        className: classes.input,
+                                        className: classes.inputLong,
                                     }}
+                                    margin="normal"
+                                    validate={value =>
+                                        validate('name', value, 100, /.*/)
+                                    }
+                                    required={true}
+                                    onValidation={onValidation}
+                                    value={field.value}
                                 />
                             )}
                         />
@@ -135,12 +191,25 @@ const Component: React.SFC<IProps> = props => {
                             type="text"
                             name="website"
                             render={({ field }: FieldProps<IFormValues>) => (
-                                <TextField
-                                    {...field}
-                                    placeholder={'Website'}
+                                <ValidatedTextField
+                                    id="website"
+                                    field={field}
+                                    placeholder="Website"
                                     InputProps={{
-                                        className: classes.input,
+                                        className: classes.inputLong,
                                     }}
+                                    margin="normal"
+                                    validate={value =>
+                                        validate(
+                                            'website',
+                                            value,
+                                            100,
+                                            /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
+                                        )
+                                    }
+                                    required={false}
+                                    onValidation={onValidation}
+                                    value={field.value}
                                 />
                             )}
                         />
@@ -150,12 +219,22 @@ const Component: React.SFC<IProps> = props => {
                     type="text"
                     name="description"
                     render={({ field }: FieldProps<IFormValues>) => (
-                        <TextField
-                            {...field}
-                            placeholder={'Add description'}
+                        <ValidatedTextField
+                            id="description"
+                            field={field}
+                            multiline={true}
+                            rowsMax="3"
+                            placeholder="Add description"
                             InputProps={{
                                 className: classes.input,
                             }}
+                            margin="normal"
+                            validate={value =>
+                                validate('description', value, 250, /.*/)
+                            }
+                            required={true}
+                            onValidation={onValidation}
+                            value={field.value}
                         />
                     )}
                 />
@@ -169,7 +248,10 @@ const Component: React.SFC<IProps> = props => {
                 />
 
                 <SocialFieldContainer>
-                    <SocialWebsiteIcon brand={'twitter'} />
+                    <SocialWebsiteIcon
+                        brand={'twitter'}
+                        className={classes.socialIcon}
+                    />
                     <Field
                         type="text"
                         name="social.twitter"
@@ -186,7 +268,10 @@ const Component: React.SFC<IProps> = props => {
                 </SocialFieldContainer>
 
                 <SocialFieldContainer>
-                    <SocialWebsiteIcon brand={'github'} />
+                    <SocialWebsiteIcon
+                        brand={'github'}
+                        className={classes.socialIcon}
+                    />
                     <Field
                         type="text"
                         name="social.github"

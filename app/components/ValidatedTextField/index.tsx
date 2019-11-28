@@ -6,19 +6,19 @@ import { OutlinedInputProps } from '@material-ui/core/OutlinedInput'
 interface IProps {
     id: string
     margin?: 'none' | 'normal' | 'dense' | undefined
-    handleChange: (
-        e: ChangeEvent<
-            HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-        >
+    handleChange?: (
+        e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => void
-    value: string
-    placeholder?: string
+    value?: string
+    placeholder: string
     className?: string
     InputProps?: Partial<OutlinedInputProps>
-    validate?: (v: string) => string
+    validate: (v: string) => string
     required?: boolean
     onValidation?: (k: string, e: string) => void
-    label?: string
+    field?: any
+    multiline?: boolean
+    rowsMax?: string
 }
 
 const ValidatedTextField = ({
@@ -32,17 +32,18 @@ const ValidatedTextField = ({
     InputProps,
     required,
     onValidation,
-    label,
+    field,
+    multiline,
+    rowsMax,
 }: IProps) => {
     const [error, setError] = useState('')
 
     const doValidation = value => {
         let err = ''
-
         if (required && (!value || value == '')) {
             onValidation && onValidation(id, 'Field required: ' + id)
         } else {
-            err = validate ? validate(value) : ''
+            err = validate(value)
 
             setError(err)
             onValidation && onValidation(id, err)
@@ -55,19 +56,21 @@ const ValidatedTextField = ({
 
     return (
         <TextField
+            name={field && field.name}
             margin={margin}
             onChange={e => {
                 doValidation(e.target.value)
-                handleChange(e)
+                handleChange && handleChange(e)
+                field && field.onChange(e)
             }}
             value={value}
-            placeholder={
-                placeholder ? placeholder + (required ? ' (Required)' : '') : ''
-            }
+            placeholder={placeholder + (required ? ' (Required)' : '')}
             className={className}
-            label={error ? error : label}
+            label={error}
             error={error.length === 0 ? false : true}
             InputProps={InputProps}
+            multiline={multiline}
+            rowsMax={rowsMax}
         />
     )
 }
