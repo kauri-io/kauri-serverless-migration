@@ -1,25 +1,28 @@
-import { TextField } from '@material-ui/core'
-import { useState } from 'react'
 import { isUrl } from '../../lib/is-url'
+import ValidatedTextField from '../ValidatedTextField'
+import { makeStyles } from '@material-ui/styles'
 
-export default ({ attributes, setAttributes, onValidationError }) => {
-    const [error, setError] = useState('')
+export default ({ attributes, setAttributes, onValidation }) => {
+    const useStyles = makeStyles(() => ({
+        canonical: {
+            width: '50%',
+        },
+    }))
+    const classes = useStyles()
 
-    const validate = canonicalValue => {
-        let err = ''
+    const validate = (canonicalValue: string) => {
         if (canonicalValue && !isUrl(canonicalValue)) {
-            err = 'Not a valid canonical url'
+            return 'Not a valid canonical url'
         }
 
-        setError(err)
-        if (onValidationError) {
-            onValidationError(err)
-        }
+        return ''
     }
 
     return (
-        <TextField
-            onChange={e => {
+        <ValidatedTextField
+            id="canonical"
+            className={classes.canonical}
+            handleChange={e => {
                 validate(e.target.value)
                 setAttributes({
                     background: attributes.background,
@@ -27,8 +30,9 @@ export default ({ attributes, setAttributes, onValidationError }) => {
                 })
             }}
             value={attributes.canonical}
-            error={error.length === 0 ? false : true}
             label="canonical url"
+            validate={validate}
+            onValidation={onValidation}
         />
     )
 }

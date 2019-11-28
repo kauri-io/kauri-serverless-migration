@@ -57,6 +57,11 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
                 "backgroundColor": "#e0e0e0",
               },
             },
+            "outlined": Object {
+              "&&:disabled": Object {
+                "backgroundColor": "#e0e0e0",
+              },
+            },
           },
         },
         "palette": Object {
@@ -737,6 +742,11 @@ exports[`components/Section/CardContentSection should match snapshot 1`] = `
                 "backgroundColor": "#e0e0e0",
               },
             },
+            "outlined": Object {
+              "&&:disabled": Object {
+                "backgroundColor": "#e0e0e0",
+              },
+            },
           },
         },
         "palette": Object {
@@ -1186,6 +1196,11 @@ exports[`components/Section/CardContentSection should match snapshot 2`] = `
         "overrides": Object {
           "MuiButton": Object {
             "contained": Object {
+              "&&:disabled": Object {
+                "backgroundColor": "#e0e0e0",
+              },
+            },
+            "outlined": Object {
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
               },
@@ -1643,6 +1658,11 @@ exports[`components/Section/CategorySection should match snapshot 1`] = `
                 "backgroundColor": "#e0e0e0",
               },
             },
+            "outlined": Object {
+              "&&:disabled": Object {
+                "backgroundColor": "#e0e0e0",
+              },
+            },
           },
         },
         "palette": Object {
@@ -2090,6 +2110,11 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
         "overrides": Object {
           "MuiButton": Object {
             "contained": Object {
+              "&&:disabled": Object {
+                "backgroundColor": "#e0e0e0",
+              },
+            },
+            "outlined": Object {
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
               },
@@ -2765,6 +2790,11 @@ exports[`components/Section/PadContentSection should match snapshot 1`] = `
                 "backgroundColor": "#e0e0e0",
               },
             },
+            "outlined": Object {
+              "&&:disabled": Object {
+                "backgroundColor": "#e0e0e0",
+              },
+            },
           },
         },
         "palette": Object {
@@ -3213,6 +3243,11 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
         "overrides": Object {
           "MuiButton": Object {
             "contained": Object {
+              "&&:disabled": Object {
+                "backgroundColor": "#e0e0e0",
+              },
+            },
+            "outlined": Object {
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
               },
@@ -3891,6 +3926,11 @@ exports[`components/Section/TopResourcesSection should match snapshot 1`] = `
         "overrides": Object {
           "MuiButton": Object {
             "contained": Object {
+              "&&:disabled": Object {
+                "backgroundColor": "#e0e0e0",
+              },
+            },
+            "outlined": Object {
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
               },

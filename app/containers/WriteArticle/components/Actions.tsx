@@ -44,6 +44,7 @@ interface IProps {
     communities: string[]
     setAttributes: (IAttributes) => void
     attributes: IAttributes
+    disableActions?: boolean
 }
 
 const isOwner = (
@@ -72,6 +73,7 @@ export default ({
     communities,
     setAttributes,
     attributes,
+    disableActions,
 }: IProps) => {
     useEffect(() => {
         uppy = initUppy({
@@ -116,6 +118,7 @@ export default ({
                         <Button
                             color="secondary"
                             variant="outlined"
+                            disabled={disableActions}
                             onClick={handleSubmit('draft') as any}
                         >
                             Save draft
@@ -124,6 +127,7 @@ export default ({
                             <Button
                                 color="primary"
                                 variant="contained"
+                                disabled={disableActions}
                                 onClick={selectDestination}
                             >
                                 Publish Article
@@ -132,6 +136,7 @@ export default ({
                             <Button
                                 color="primary"
                                 variant="contained"
+                                disabled={disableActions}
                                 onClick={() =>
                                     openModalAction({
                                         children: (

@@ -45,6 +45,11 @@ exports[`components/Tags/Close snapshot should match 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "outlined": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
         },
       },
       "palette": Object {
@@ -481,6 +486,11 @@ exports[`components/Tags/Plus snapshot should match 1`] = `
       "overrides": Object {
         "MuiButton": Object {
           "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+          "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
@@ -941,6 +951,11 @@ exports[`components/Tags/Tag snapshot should match 1`] = `
       "overrides": Object {
         "MuiButton": Object {
           "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+          "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
@@ -1468,6 +1483,11 @@ exports[`components/Tags/TagInput snapshot should match 1`] = `
       "overrides": Object {
         "MuiButton": Object {
           "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+          "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
@@ -2174,6 +2194,11 @@ exports[`components/Tags/TagList snapshot should match 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "outlined": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
         },
       },
       "palette": Object {
@@ -2685,6 +2710,11 @@ exports[`components/Tags/TagName snapshot should match 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "outlined": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
         },
       },
       "palette": Object {
@@ -3129,6 +3159,11 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
       "overrides": Object {
         "MuiButton": Object {
           "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+          "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },

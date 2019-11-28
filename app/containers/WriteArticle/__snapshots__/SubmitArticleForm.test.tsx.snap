@@ -16,11 +16,13 @@ exports[`containers/WriteArticle/View should match the snapshot 1`] = `
           "canonical": null,
         }
       }
+      disableActions={false}
       handleSubmit={[Function]}
       selectDestination={[Function]}
       setAttributes={[Function]}
     />
     <_default
+      onValidation={[Function]}
       setTags={[Function]}
       setTitle={[Function]}
       tags={Array []}
@@ -36,7 +38,7 @@ exports[`containers/WriteArticle/View should match the snapshot 1`] = `
     }
     compact={false}
     onChange={[Function]}
-    onValidationError={[Function]}
+    onValidation={[Function]}
     setAttributes={[Function]}
     setTitle={[Function]}
     text={null}
