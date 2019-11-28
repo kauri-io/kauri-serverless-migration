@@ -45,6 +45,11 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "outlined": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
         },
       },
       "palette": Object {
@@ -863,6 +868,11 @@ exports[`components/Modal/ChooseArticleContent should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "outlined": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
         },
       },
       "palette": Object {
@@ -1487,6 +1497,11 @@ exports[`components/Modal/ChooseCollectionContent should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "outlined": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
         },
       },
       "palette": Object {
@@ -2091,6 +2106,11 @@ exports[`components/Modal/ModalView should match snapshot 1`] = `
       "overrides": Object {
         "MuiButton": Object {
           "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+          "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },

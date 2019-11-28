@@ -20,7 +20,7 @@ interface IProps {
     minHeight?: number
     attributes?: IAttributes
     setAttributes?: (a: IAttributes) => void
-    onValidationError?: (e: string) => void
+    onValidation?: (k: string, e: string) => void
     setTitle?: (title: string) => void
     placeholder?: string
 }
@@ -37,7 +37,7 @@ const Editor = ({
     attributes,
     setAttributes,
     setTitle,
-    onValidationError,
+    onValidation,
     placeholder,
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
@@ -139,7 +139,7 @@ const Editor = ({
                     <Metadata
                         attributes={attributes}
                         setAttributes={setAttributes}
-                        onValidationError={onValidationError}
+                        onValidation={onValidation}
                     />
                 )}
                 {tab === 3 && (

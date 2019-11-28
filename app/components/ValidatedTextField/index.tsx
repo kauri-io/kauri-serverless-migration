@@ -5,19 +5,20 @@ import { OutlinedInputProps } from '@material-ui/core/OutlinedInput'
 
 interface IProps {
     id: string
-    margin: 'none' | 'normal' | 'dense' | undefined
+    margin?: 'none' | 'normal' | 'dense' | undefined
     handleChange: (
         e: ChangeEvent<
             HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
         >
     ) => void
     value: string
-    placeholder: string
-    className: string
+    placeholder?: string
+    className?: string
     InputProps?: Partial<OutlinedInputProps>
-    validate: (v: string) => string
+    validate?: (v: string) => string
     required?: boolean
     onValidation?: (k: string, e: string) => void
+    label?: string
 }
 
 const ValidatedTextField = ({
@@ -31,6 +32,7 @@ const ValidatedTextField = ({
     InputProps,
     required,
     onValidation,
+    label,
 }: IProps) => {
     const [error, setError] = useState('')
 
@@ -40,7 +42,7 @@ const ValidatedTextField = ({
         if (required && (!value || value == '')) {
             onValidation && onValidation(id, 'Field required: ' + id)
         } else {
-            err = validate(value)
+            err = validate ? validate(value) : ''
 
             setError(err)
             onValidation && onValidation(id, err)
@@ -59,9 +61,11 @@ const ValidatedTextField = ({
                 handleChange(e)
             }}
             value={value}
-            placeholder={placeholder + (required ? ' (Required)' : '')}
+            placeholder={
+                placeholder ? placeholder + (required ? ' (Required)' : '') : ''
+            }
             className={className}
-            label={error}
+            label={error ? error : label}
             error={error.length === 0 ? false : true}
             InputProps={InputProps}
         />

@@ -29,7 +29,7 @@ const ArticleEditor = props => {
 
     const [subject, setSubject] = useState(article ? article.title : null)
     const [tags, setTags] = useState(article ? article.tags : [])
-    const [content, setTextValue] = useState(
+    const [content, setContent] = useState(
         article ? JSON.parse(article.content).markdown : null
     )
     const [attributes, setAttributes] = useState(
@@ -41,7 +41,8 @@ const ArticleEditor = props => {
               }
     )
 
-    const [validationError, setValidationError] = useState('')
+    const [validationMessages, setValidationMessages] = useState({})
+    const [disableActions, setDisableActions] = useState(false)
 
     // Component did mount
     useEffect(() => {
@@ -112,10 +113,51 @@ const ArticleEditor = props => {
         })
         // Show prompt if article version is found
         showPromptIfUnsavedChanges()
+
+        setContentAndValidate(content)
+        setTagsAndValidate(tags)
     }, [])
 
+    const setContentAndValidate = content => {
+        if (!content) {
+            onValidation('content', 'Content not set')
+        } else {
+            onValidation('content', '')
+        }
+        setContent(content)
+    }
+
+    const setTagsAndValidate = tags => {
+        if (!tags || tags.length == 0) {
+            onValidation('tags', 'At least one tag must be set')
+        } else {
+            onValidation('tags', '')
+        }
+        setTags(tags)
+    }
+
+    const onValidation = (id, message) => {
+        if (!message || message == '') {
+            delete validationMessages[id]
+        } else {
+            validationMessages[id] = message
+        }
+
+        setValidationMessages(validationMessages)
+
+        updateDisableActions(validationMessages)
+    }
+
+    const updateDisableActions = validationMessages => {
+        if (Object.keys(validationMessages).length > 0) {
+            setDisableActions(true)
+        } else {
+            setDisableActions(false)
+        }
+    }
+
     const updateState = newState => {
-        setTextValue(newState.content)
+        setContent(newState.content)
         setSubject(newState.subject)
     }
 
@@ -204,21 +246,10 @@ const ArticleEditor = props => {
             })
         }
 
-        // VALIDATION
-        if (validationError && validationError.length > 0) {
-            return createErrorNotificationAction(validationError)
-        }
-
-        if (!subject || subject === null) {
-            return createErrorNotificationAction(
-                'Please give your article a title'
-            )
-        } else if (!tags || tags === null || tags.length === 0) {
+        if (!tags || tags === null || tags.length === 0) {
             return createErrorNotificationAction(
                 'Please set at least 1 tag for your article'
             )
-        } else if (!content || content.length === 0) {
-            return createErrorNotificationAction('Please add some content')
         }
 
         // NEW DRAFT
@@ -454,12 +485,14 @@ const ArticleEditor = props => {
                     routeChangeAction={props.routeChangeAction}
                     setAttributes={setAttributes}
                     attributes={attributes}
+                    disableActions={disableActions}
                 />
                 <Header
                     title={subject}
                     setTitle={setSubject}
                     tags={tags}
-                    setTags={setTags}
+                    setTags={setTagsAndValidate}
+                    onValidation={onValidation}
                 />
             </div>
 
@@ -471,10 +504,10 @@ const ArticleEditor = props => {
                 text={content}
                 openModalAction={props.openModalAction}
                 closeModalAction={props.closeModalAction}
-                onChange={content => setTextValue(content)}
+                onChange={content => setContentAndValidate(content)}
                 attributes={attributes}
                 setAttributes={setAttributes}
-                onValidationError={setValidationError}
+                onValidation={onValidation}
             />
             {process.env.config === 'development' && (
                 <div
