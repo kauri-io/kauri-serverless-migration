@@ -172,7 +172,7 @@ const Component: React.SFC<IProps> = props => {
                                     id="name"
                                     field={field}
                                     multiline={true}
-                                    rowsMax="3"
+                                    rowsMax={3}
                                     placeholder="Community Name"
                                     InputProps={{
                                         className: classes.inputLong,
@@ -184,6 +184,7 @@ const Component: React.SFC<IProps> = props => {
                                     required={true}
                                     onValidation={onValidation}
                                     value={field.value}
+                                    handleChange={e => field.onChange(e)}
                                 />
                             )}
                         />
@@ -211,6 +212,7 @@ const Component: React.SFC<IProps> = props => {
                                     required={false}
                                     onValidation={onValidation}
                                     value={field.value}
+                                    handleChange={e => field.onChange(e)}
                                 />
                             )}
                         />
@@ -224,7 +226,7 @@ const Component: React.SFC<IProps> = props => {
                             id="description"
                             field={field}
                             multiline={true}
-                            rowsMax="3"
+                            rowsMax={3}
                             placeholder="Add description"
                             InputProps={{
                                 className: classes.input,
@@ -236,6 +238,7 @@ const Component: React.SFC<IProps> = props => {
                             required={true}
                             onValidation={onValidation}
                             value={field.value}
+                            handleChange={e => field.onChange(e)}
                         />
                     )}
                 />

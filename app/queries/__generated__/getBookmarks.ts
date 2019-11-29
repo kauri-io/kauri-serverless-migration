@@ -930,6 +930,10 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_url {
@@ -1290,6 +1294,10 @@ export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_subm
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_url {

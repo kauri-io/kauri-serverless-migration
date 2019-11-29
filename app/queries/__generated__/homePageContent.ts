@@ -579,6 +579,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_url {
@@ -939,6 +943,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_url {
@@ -2112,6 +2120,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_url {
@@ -2472,6 +2484,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_url {
@@ -3592,6 +3608,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_url {
@@ -3952,6 +3972,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_url {
@@ -5097,6 +5121,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_url {
@@ -5457,6 +5485,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_url {
@@ -6630,6 +6662,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_url {
@@ -6990,6 +7026,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_url {
@@ -8110,6 +8150,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_url {
@@ -8470,6 +8514,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_url {

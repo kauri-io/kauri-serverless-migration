@@ -1376,6 +1376,10 @@ export interface getCommunityAndPendingArticles_getCommunity_approved_Collection
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface getCommunityAndPendingArticles_getCommunity_approved_CollectionDTO_sections_resources_ExternalLinkDTO_url {
@@ -2566,6 +2570,10 @@ export interface getCommunityAndPendingArticles_getCommunity_pending_CollectionD
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface getCommunityAndPendingArticles_getCommunity_pending_CollectionDTO_sections_resources_ExternalLinkDTO_url {

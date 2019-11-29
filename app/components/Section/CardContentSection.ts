@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const CardContentSection = styled.section`
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;

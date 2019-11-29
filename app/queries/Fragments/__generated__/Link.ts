@@ -102,6 +102,10 @@ export interface Link_submitter {
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface Link_url {
