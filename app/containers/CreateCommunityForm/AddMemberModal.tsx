@@ -45,7 +45,7 @@ const AddMemberModal: React.FunctionComponent<IProps> = props => {
         },
         validate: (value: string) => {
             const emailCheck = Yup.string().email()
-            return emailCheck.isValidSync(value)
+            return value.length > 0 && emailCheck.isValidSync(value)
         },
     })
     const [role, setRole] = React.useState<IField>({
@@ -66,14 +66,17 @@ const AddMemberModal: React.FunctionComponent<IProps> = props => {
         <AlertViewComponent
             closeModalAction={() => props.closeModalAction()}
             confirmButtonAction={() => {
-                if (email.validate(email.value)) {
+                let hasError = false
+                if (!email.validate(email.value)) {
                     setEmail({ ...email, hasError: true })
-                    return
+                    hasError = true
                 }
-                if (role.validate(role.value)) {
+                if (!role.validate(role.value)) {
                     setRole({ ...role, hasError: true })
-                    return
+                    hasError = true
                 }
+
+                if (hasError) return
 
                 return props.confirmButtonAction(
                     { email: email.value, role: role.value },

@@ -18,6 +18,7 @@ import ValidatedTextField from '../../components/ValidatedTextField'
 
 const useStyles = makeStyles((theme: Theme) => ({
     input: {
+        marginBottom: theme.spacing(2),
         color: theme.palette.common.white,
         '&:hover': {
             '&:before': {
@@ -230,7 +231,7 @@ const Component: React.SFC<IProps> = props => {
                             }}
                             margin="normal"
                             validate={value =>
-                                validate('description', value, 250, /.*/)
+                                validate('description', value, 150, /.*/)
                             }
                             required={true}
                             onValidation={onValidation}
@@ -311,6 +312,7 @@ const Component: React.SFC<IProps> = props => {
                             id={props.userId}
                             avatar={props.userAvatar}
                             withName={true}
+                            newTab={true}
                         />
                         <AddMemberButtonComponent
                             onClick={() => props.openAddMemberModal()}

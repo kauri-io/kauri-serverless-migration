@@ -33,6 +33,7 @@ const useStyles = makeStyles((_theme: Theme) => ({
     },
     dropdown: {
         width: '296px',
+        textAlignLast: 'center',
     },
 }))
 
@@ -122,9 +123,6 @@ const AddMemberModalContent: React.FunctionComponent<IProps> = ({
                             name="role"
                             value={role.value}
                             onChange={e => role.handleChange(e.target.value)}
-                            inputProps={{
-                                id: 'name-native-error',
-                            }}
                             className={classes.dropdown}
                         >
                             <option value="" disabled>

@@ -1426,6 +1426,7 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                         href="/test username/p"
                         onClick={[Function]}
                         onMouseEnter={[Function]}
+                        target="_self"
                       >
                         <div
                           className="makeStyles-container-40"

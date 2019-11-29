@@ -100,7 +100,7 @@ const Component: React.SFC<IProps> = props => {
                 <Tab label="Home" disabled={props.disabled} />
                 <Tab label="Articles" disabled={props.disabled} />
                 <Tab label="Collections" disabled={props.disabled} />
-                <Tab label="Manage" disabled={props.disabled} />
+                <Tab label="Manage Community" disabled={props.disabled} />
             </Tabs>
             {tab === 0 && <HomePanel {...props} />}
             {tab === 1 && <ArticlesContentSectionEmptyState key="articles" />}

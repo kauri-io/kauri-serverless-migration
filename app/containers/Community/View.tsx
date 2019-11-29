@@ -32,8 +32,17 @@ import { sendInvitationVariables } from '../../queries/__generated__/sendInvitat
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Head from 'next/head'
+import { Theme, withStyles } from '@material-ui/core/styles'
+
+const styles = (theme: Theme) => ({
+    tabs: {
+        background: theme.palette.common.black,
+        color: theme.palette.common.white,
+    },
+})
 
 interface IProps {
+    classes: any
     client?: ApolloClient<{}>
     acceptCommunityInvitationAction: typeof acceptCommunityInvitation
     currentUser: string
@@ -139,6 +148,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
         if (!this.props.data || !this.props.data.getCommunity) {
             return null
         }
+
         const {
             secret,
             data: { getCommunity },
@@ -203,6 +213,8 @@ class CommunityConnection extends React.Component<IProps, IState> {
         const getActualTabId = (id: number) =>
             id === 0 ? 0 : canDisplayHomepage ? id : id - 1
 
+        const { classes } = this.props
+
         return (
             <>
                 <Head>
@@ -214,6 +226,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         content={String(getCommunity.description)}
                     />
                 </Head>
+                sdsdfdsf
                 <CommunityHeader
                     transferArticleToCommunityAction={
                         transferArticleToCommunityAction
@@ -265,6 +278,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     indicatorColor="primary"
                     centered={true}
                     value={this.state.tab}
+                    className={classes.tabs}
                     onChange={(_e, tab) => this.setState({ tab })}
                 >
                     {canDisplayHomepage && <Tab label="Home" />}
@@ -338,4 +352,4 @@ class CommunityConnection extends React.Component<IProps, IState> {
     }
 }
 
-export default CommunityConnection
+export default withStyles(styles)(CommunityConnection)
