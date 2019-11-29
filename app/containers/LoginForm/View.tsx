@@ -2,10 +2,10 @@ import React, { SyntheticEvent } from 'react'
 import styled from 'styled-components'
 import Head from 'next/head'
 import Button from '../../components/Button'
-
 import { IRegisterAction } from './Module'
 import { IShowNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
-import { Typography } from '@material-ui/core'
+import { Typography, Grid } from '@material-ui/core'
+import Image from '../../components/Image'
 
 const Container = styled.div`
     background: ${props => props.theme.bgPrimary};
@@ -35,31 +35,30 @@ const LoginContainer = styled.div`
     }
 `
 
-const Image = styled.img`
-    width: 100px;
-    height: 91px;
-    margin: ${props => props.theme.space[2]}px;
-`
-
 const Web3Unavailable = () => (
-    <LoginContainer>
-        <Typography
-            gutterBottom={true}
-            variant="h4"
-            component="h1"
-            color="secondary"
-        >
+    <Grid
+        style={{ height: '100%' }}
+        container={true}
+        direction="column"
+        justify="center"
+        alignItems="center"
+    >
+        <Typography gutterBottom={true} variant="h4" component="h1">
             Web3 Sign in
         </Typography>
-        <Typography gutterBottom={true} color="secondary">
+        <Typography gutterBottom={true}>
             You need the MetaMask extension to use Kauri. (MetaMask supports
             Chrome, Firefox, Opera)
         </Typography>
-        <Image src="/static/images/metamask/avatar.png" />
-        <a href="https://metamask.io" target="_blank">
+        <Image
+            width={100}
+            height={100}
+            image="/static/images/metamask/avatar.png"
+        />
+        <a style={{ marginTop: 24 }} href="https://metamask.io" target="_blank">
             https://metamask.io
         </a>
-        <div>
+        <div style={{ marginTop: 40 }}>
             Here for the content? Sign up for a newsletter below and receive the
             latest Web3 tutorials, project announcements, and articles every 2
             weeks!
@@ -72,7 +71,7 @@ const Web3Unavailable = () => (
         <style
             type="text/css"
             dangerouslySetInnerHTML={{
-                __html: `	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }`,
+                __html: `	#mc_embed_signup{margin-top: 40px; width: 500px; background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }`,
             }}
         />
         <div id="mc_embed_signup">
@@ -127,6 +126,7 @@ const Web3Unavailable = () => (
                         <input
                             type="submit"
                             defaultValue="Subscribe"
+                            value="Subscribe"
                             name="subscribe"
                             id="mc-embedded-subscribe"
                             className="button"
@@ -145,7 +145,7 @@ const Web3Unavailable = () => (
                 __html: `(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);`,
             }}
         />
-    </LoginContainer>
+    </Grid>
 )
 
 class LoginForm extends React.Component<{
