@@ -80,8 +80,8 @@ const useStyles = makeStyles((theme: Theme) => ({
             marginRight: theme.spacing(1),
         },
         '& svg': {
-            height: 12,
-            width: 12,
+            height: 16,
+            width: 16,
         },
     },
 }))

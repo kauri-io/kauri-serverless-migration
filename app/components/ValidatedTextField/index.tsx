@@ -5,20 +5,23 @@ import { OutlinedInputProps } from '@material-ui/core/OutlinedInput'
 
 interface IProps {
     id: string
-    margin: 'none' | 'normal' | 'dense' | undefined
-    handleChange?: (
-        e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    margin?: 'none' | 'normal' | 'dense' | undefined
+    handleChange: (
+        e: ChangeEvent<
+            HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+        >
     ) => void
-    value?: string
-    placeholder: string
+    value: string
+    placeholder?: string
     className?: string
     InputProps?: Partial<OutlinedInputProps>
-    validate: (v: string) => string
+    validate?: (v: string) => string
     required?: boolean
     onValidation?: (k: string, e: string) => void
     field?: any
     multiline?: boolean
-    rowsMax?: string
+    label?: string
+    rowsMax?: number
 }
 
 const ValidatedTextField = ({
@@ -33,8 +36,8 @@ const ValidatedTextField = ({
     required,
     onValidation,
     field,
-    multiline,
-    rowsMax,
+    rowsMax = 1,
+    label,
 }: IProps) => {
     const [error, setError] = useState('')
 
@@ -43,7 +46,7 @@ const ValidatedTextField = ({
         if (required && (!value || value == '')) {
             onValidation && onValidation(id, 'Field required: ' + id)
         } else {
-            err = validate(value)
+            err = validate ? validate(value) : ''
 
             setError(err)
             onValidation && onValidation(id, err)
@@ -64,12 +67,14 @@ const ValidatedTextField = ({
                 field && field.onChange(e)
             }}
             value={value}
-            placeholder={placeholder + (required ? ' (Required)' : '')}
+            placeholder={
+                placeholder ? placeholder + (required ? ' (Required)' : '') : ''
+            }
             className={className}
-            label={error}
+            label={error ? error : label}
             error={error.length === 0 ? false : true}
             InputProps={InputProps}
-            multiline={multiline}
+            multiline={rowsMax && rowsMax > 1 ? true : false}
             rowsMax={rowsMax}
         />
     )

@@ -43,11 +43,11 @@ const HeaderContainer = styled(ContentContainer)`
     height: inherit;
     padding: 0;
     margin-top: -76px;
-    @media (max-width: 700px) {
+    @media (max-width: 600px) {
         max-height: 90vh;
     }
-    @media (min-width: 700px) {
-        min-height: 300px;
+    @media (min-width: 600px) {
+        height: 360px;
     }
 `
 

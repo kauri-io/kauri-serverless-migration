@@ -5,16 +5,26 @@ import Toolbar from './components/Toolbar'
 import { useStyles } from './style'
 import Hidden from '@material-ui/core/Hidden'
 import Head from 'next/head'
+import VoteWidget from '../Article/components/VoteWidget'
+import ShareWidget from '../Article/components/ShareWidget'
+import { getLinkUrl } from '../../lib/getURLs'
+import slugify from 'slugify'
 
 const ViewLink = ({
     openModalAction,
     routeChangeAction,
     addCommentAction,
+    voteAction,
     user,
     data: { getExternalLink },
     userId,
 }) => {
     const classes = useStyles({})
+
+    const url = getLinkUrl({
+        id: String(getExternalLink.id),
+        linkTitle: getExternalLink.linkTitle,
+    })
 
     return (
         <>
@@ -37,7 +47,31 @@ const ViewLink = ({
                         sm={2}
                         className={classes.floaterContainer}
                     >
-                        <div className={classes.floaterLeft}></div>
+                        <div className={classes.floaterLeft}>
+                            <VoteWidget
+                                isLoggedIn={!!userId}
+                                id={String(getExternalLink.id)}
+                                resourceType="LINK"
+                                voteAction={voteAction}
+                                voteResult={getExternalLink.voteResult}
+                                loginFirstToVote={() =>
+                                    routeChangeAction(
+                                        `/login?r=/${slugify(
+                                            String(
+                                                getExternalLink.linkTitle.value
+                                            ),
+                                            {
+                                                lower: true,
+                                            }
+                                        )}/${getExternalLink.id}/l`
+                                    )
+                                }
+                            />
+                            <ShareWidget
+                                url={url}
+                                name={getExternalLink.linkTitle.value}
+                            />
+                        </div>
                     </Grid>
                 </Hidden>
                 <Grid

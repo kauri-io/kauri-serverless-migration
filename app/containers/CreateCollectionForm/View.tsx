@@ -479,7 +479,7 @@ const CreateCollectionForm: React.FC<
                                     id="name"
                                     field={field}
                                     multiline={true}
-                                    rowsMax="3"
+                                    rowsMax={3}
                                     placeholder="Add collection title"
                                     InputProps={{
                                         className: classes.input,
@@ -491,6 +491,7 @@ const CreateCollectionForm: React.FC<
                                     required={true}
                                     onValidation={onValidation}
                                     value={values.name}
+                                    handleChange={e => field.onChange(e)}
                                 />
                             )}
                         />
@@ -503,7 +504,7 @@ const CreateCollectionForm: React.FC<
                                     id="description"
                                     field={field}
                                     multiline
-                                    rowsMax="3"
+                                    rowsMax={3}
                                     placeholder="Add description"
                                     InputProps={{
                                         className: classes.input,
@@ -514,7 +515,8 @@ const CreateCollectionForm: React.FC<
                                     }
                                     required={true}
                                     onValidation={onValidation}
-                                    value={values.description}
+                                    value={values.description || ''}
+                                    handleChange={e => field.onChange(e)}
                                 />
                             )}
                         />

@@ -45,6 +45,11 @@ exports[`components/AddMemberButton should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "outlined": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
         },
       },
       "palette": Object {
@@ -490,6 +495,11 @@ exports[`components/AddTagButton should match snapshot 1`] = `
       "overrides": Object {
         "MuiButton": Object {
           "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+          "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
@@ -964,6 +974,11 @@ exports[`components/Button should match snapshot 1`] = `
       "overrides": Object {
         "MuiButton": Object {
           "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+          "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
@@ -1495,6 +1510,11 @@ exports[`components/MediumImportButton should match snapshot 1`] = `
       "overrides": Object {
         "MuiButton": Object {
           "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+          "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
@@ -2077,6 +2097,11 @@ exports[`components/SecondaryButton should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "outlined": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
         },
       },
       "palette": Object {
@@ -2608,6 +2633,11 @@ exports[`components/TertiaryButton should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "outlined": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
         },
       },
       "palette": Object {
@@ -3135,6 +3165,11 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
       "overrides": Object {
         "MuiButton": Object {
           "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+          "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
