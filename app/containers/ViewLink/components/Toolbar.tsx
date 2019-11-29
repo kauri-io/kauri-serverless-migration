@@ -24,9 +24,9 @@ const Toolbar = ({
     isAuthor,
     version,
 }) => {
-    const actionOrLoginRedirect = action => {
+    const executeOrLoginRedirect = action => {
         return isLoggedIn && action
-            ? action
+            ? action()
             : routeChangeAction && routeChangeAction(`/login`)
     }
 
@@ -44,7 +44,7 @@ const Toolbar = ({
                 className={classes.tool}
                 item={true}
                 onClick={() =>
-                    actionOrLoginRedirect(
+                    executeOrLoginRedirect(() =>
                         openModalAction({
                             children: (
                                 <BookmarkResource
@@ -64,7 +64,7 @@ const Toolbar = ({
                 className={classes.tool}
                 item={true}
                 onClick={() =>
-                    actionOrLoginRedirect(
+                    executeOrLoginRedirect(() =>
                         openModalAction({
                             children: (
                                 <AddToCollection resourceId={id} type={type} />
@@ -80,7 +80,7 @@ const Toolbar = ({
                 <Grid
                     className={classes.tool}
                     onClick={() =>
-                        actionOrLoginRedirect(
+                        executeOrLoginRedirect(() =>
                             routeChangeAction(
                                 getArticleURL(
                                     { id, title: '', version },
