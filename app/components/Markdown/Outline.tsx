@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography'
 import { makeStyles, Theme } from '@material-ui/core'
 import Loading from '../Loading'
 
-const OFFSET = 80
+const OFFSET = 140
 
 const Renderer = ({ markdown, withComments, commentsCount }) => {
     const elList = document.querySelectorAll('[aria-label="title"]')
