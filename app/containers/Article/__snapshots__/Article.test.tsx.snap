@@ -1412,7 +1412,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                             href="/test-author-username-1/p"
                                             onClick={[Function]}
                                             onMouseEnter={[Function]}
-                                            target="_self"
                                           >
                                             <div
                                               className="makeStyles-container-125"
@@ -6223,7 +6222,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                         href="/test-author-username-2/p"
                                                                         onClick={[Function]}
                                                                         onMouseEnter={[Function]}
-                                                                        target="_self"
                                                                       >
                                                                         <div
                                                                           className="makeStyles-container-267"
@@ -7088,7 +7086,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                     href="/test-author-username-2/p"
                                                                                     onClick={[Function]}
                                                                                     onMouseEnter={[Function]}
-                                                                                    target="_self"
                                                                                   >
                                                                                     <div
                                                                                       className="makeStyles-container-270"
@@ -9627,7 +9624,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                         href="/test-author-username-3/p"
                                                                         onClick={[Function]}
                                                                         onMouseEnter={[Function]}
-                                                                        target="_self"
                                                                       >
                                                                         <div
                                                                           className="makeStyles-container-317"
@@ -10492,7 +10488,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                     href="/test-author-username-3/p"
                                                                                     onClick={[Function]}
                                                                                     onMouseEnter={[Function]}
-                                                                                    target="_self"
                                                                                   >
                                                                                     <div
                                                                                       className="makeStyles-container-320"
