@@ -556,6 +556,10 @@ export interface Collection_sections_resources_ExternalLinkDTO_submitter {
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface Collection_sections_resources_ExternalLinkDTO_url {

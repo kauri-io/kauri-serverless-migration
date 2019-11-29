@@ -1376,6 +1376,10 @@ export interface getCommunity_getCommunity_approved_CollectionDTO_sections_resou
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface getCommunity_getCommunity_approved_CollectionDTO_sections_resources_ExternalLinkDTO_url {
@@ -2566,6 +2570,10 @@ export interface getCommunity_getCommunity_pending_CollectionDTO_sections_resour
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface getCommunity_getCommunity_pending_CollectionDTO_sections_resources_ExternalLinkDTO_url {

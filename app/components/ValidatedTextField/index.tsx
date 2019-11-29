@@ -18,7 +18,10 @@ interface IProps {
     validate?: (v: string) => string
     required?: boolean
     onValidation?: (k: string, e: string) => void
+    field?: any
+    multiline?: boolean
     label?: string
+    rowsMax?: number
 }
 
 const ValidatedTextField = ({
@@ -32,6 +35,8 @@ const ValidatedTextField = ({
     InputProps,
     required,
     onValidation,
+    field,
+    rowsMax = 1,
     label,
 }: IProps) => {
     const [error, setError] = useState('')
@@ -39,7 +44,6 @@ const ValidatedTextField = ({
 
     const doValidation = value => {
         let err = ''
-
         if (required && (!value || value == '')) {
             onValidation && onValidation(id, 'Field required: ' + id)
         } else {
@@ -62,11 +66,13 @@ const ValidatedTextField = ({
 
     return (
         <TextField
+            name={field && field.name}
             margin={margin}
             onChange={e => {
                 doValidation(e.target.value)
                 setLastValueChange(e.target.value)
-                handleChange(e)
+                handleChange && handleChange(e)
+                field && field.onChange(e)
             }}
             value={value}
             placeholder={
@@ -76,6 +82,8 @@ const ValidatedTextField = ({
             label={error ? error : label}
             error={error.length === 0 ? false : true}
             InputProps={InputProps}
+            multiline={rowsMax && rowsMax > 1 ? true : false}
+            rowsMax={rowsMax}
         />
     )
 }

@@ -556,6 +556,10 @@ export interface getCollectionsForUser_searchCollections_content_sections_resour
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface getCollectionsForUser_searchCollections_content_sections_resources_ExternalLinkDTO_url {

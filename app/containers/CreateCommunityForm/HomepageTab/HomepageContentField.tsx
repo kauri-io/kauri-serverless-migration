@@ -524,9 +524,6 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                         chooseArticle={() =>
                                             setOpenChooseArticleModal(true)
                                         }
-                                        chooseCollection={() =>
-                                            setOpenChooseCollectionModal(true)
-                                        }
                                     />
                                 </Section>
                             ))}
