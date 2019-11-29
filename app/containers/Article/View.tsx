@@ -301,8 +301,8 @@ const ArticleComp = ({
                     <div className={classes.headerImage}>
                         {attributes.background && (
                             <Image
-                                height={160}
-                                width="100%"
+                                height={360}
+                                width={808}
                                 image={attributes.background}
                             />
                         )}
