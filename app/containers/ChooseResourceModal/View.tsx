@@ -154,7 +154,8 @@ const ChooseResourceModalContentView = props => {
                                   return null
 
                               const resourceId: ResourceIdentifierInput = {
-                                  ...result.resourceIdentifier,
+                                  id: result.resourceIdentifier.id,
+                                  type: result.resourceIdentifier.type
                               }
 
                               switch (resourceId.type) {
