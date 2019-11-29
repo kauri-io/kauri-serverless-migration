@@ -488,6 +488,10 @@ export interface searchAutocompleteArticles_searchAutocomplete_content_resource_
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO_url {
