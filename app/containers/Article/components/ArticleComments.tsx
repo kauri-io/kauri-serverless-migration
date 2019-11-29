@@ -47,7 +47,7 @@ export default ({ article, comments: { content }, user, addCommentAction }) => {
             >
                 {content.length} Comment{content.length !== 1 ? 's' : ''}
             </Typography>
-            <div className={classes.container}>
+            <div id="comments" className={classes.container}>
                 {user && (
                     <Hidden mdDown={true}>
                         <Grid container={true} className={classes.addComment}>

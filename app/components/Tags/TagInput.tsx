@@ -3,11 +3,10 @@ import styled from 'styled-components'
 import Plus from './Plus'
 import { ITag } from './types'
 import { Component } from 'react'
-import { Theme, withStyles } from '@material-ui/core/styles'
+import { withStyles } from '@material-ui/styles'
 
-const styles = (theme: Theme) => ({
+const styles = () => ({
     input: {
-        marginLeft: theme.spacing(2),
         width: '100%',
         '&:hover': {
             '& .MuiInput-underline::before': {
@@ -204,7 +203,7 @@ class TagInput extends Component<IProps, IState> {
                                 this.props.onChange && this.props.onChange(e)
                                 this.updateState(e)
                             }}
-                            placeholder="Add Tag"
+                            placeholder="ADD TAG"
                             value={this.state.value}
                         />
                     </TopRow>
