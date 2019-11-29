@@ -3,6 +3,7 @@ import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import { BodyCard } from '../../../components/Typography'
 import TextField from '@material-ui/core/TextField'
 import AddOptions from '../../../components/AddOptions'
+import { getUpdateCommunityURL } from '../../../lib/getURLs'
 
 const Container = styled.div`
     display: flex;
@@ -13,6 +14,10 @@ const Container = styled.div`
     height: 100%;
     & > svg {
         margin-bottom: ${props => props.theme.space[2]}px;
+    }
+    cursor: pointer;
+    > :last-child {
+        margin-top: ${props => props.theme.space[1]}px;
     }
 `
 
@@ -35,9 +40,15 @@ interface IProps {
     routeChangeAction: typeof routeChangeAction
 }
 
-const CommunityHomepageEmptyState: React.FunctionComponent<IProps> = () => (
+const CommunityHomepageEmptyState: React.FunctionComponent<IProps> = props => (
     <Container>
-        <OpacityOverlay>
+        <OpacityOverlay
+            onClick={() =>
+                props.routeChangeAction(
+                    getUpdateCommunityURL({ id: props.id }).href
+                )
+            }
+        >
             <TextField placeholder="Add Section Name" />
             <TextField placeholder="Add Section Description" />
             <AddOptions>

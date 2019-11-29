@@ -121,11 +121,9 @@ const Component: React.SFC<
                     openAddMemberModal={openAddMemberModal}
                     uploadLogo={console.log}
                     setFieldValue={props.setFieldValue}
-                    errors={props.errors}
                 />
                 <Content
                     {...props}
-                    disabled={true} // disable in create/edit mode
                     openAddMemberModal={openAddMemberModal}
                     cancelInvitation={cancelInvitation}
                     formInvitations={props.values.invitations}

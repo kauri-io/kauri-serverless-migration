@@ -14,7 +14,7 @@ import anchorme from 'anchorme'
 import ShareCommunity from '../../components/Tooltip/ShareArticle'
 import Avatar from '../../components/Avatar'
 // import { Tooltip } from "react-tippy";
-import Button from '@material-ui/core/Button'
+import Button from '../../components/Button'
 import ChooseArticleModal, {
     IArticle,
 } from '../CreateCollectionForm/ChooseArticleModal'
@@ -29,14 +29,6 @@ import {
 } from './Module'
 import AddMemberButtonComponent from '../../components/Button/AddMemberButton'
 import { getUpdateCommunityURL } from '../../lib/getURLs'
-import { makeStyles, Theme } from '@material-ui/core/styles'
-
-const useStyles = makeStyles((theme: Theme) => ({
-    button: {
-        width: '200px',
-        color: theme.palette.common.white,
-    },
-}))
 
 const TooltipContainer = styled.section`
     display: flex;
@@ -256,11 +248,8 @@ const RightSide = styled.div`
     flex: 1;
     justify-content: center;
     align-items: center;
-    > *:not(:nth-last-child(-n + 2)) {
+    > *:not(:last-child) {
         margin-bottom: ${props => props.theme.space[3]}px;
-    }
-    > *:nth-last-child(-n + 2) {
-        margin-bottom: ${props => props.theme.space[1]}px;
     }
     @media (max-width: 500px) {
         padding: ${props => props.theme.space[2]}px;
@@ -396,9 +385,6 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
     //       />
     //     ),
     //   });
-
-    const classes = useStyles()
-
     const [open, setOpen] = React.useState<boolean>(false)
 
     const openAddCommunityArticleModal = () => setOpen(true)
@@ -546,7 +532,6 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                 <Button
                                     color="primary"
                                     variant="contained"
-                                    className={classes.button}
                                     onClick={() =>
                                         routeChangeAction &&
                                         routeChangeAction(
@@ -557,8 +542,6 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                     Update Community
                                 </Button>
                             )}
-                        </ActionsRow>
-                        <ActionsRow>
                             {/* {isMember && (
                 <Tooltip
                   className="suggest-content"
@@ -598,8 +581,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                 // >
                                 <Button
                                     color="primary"
-                                    variant="outlined"
-                                    className={classes.button}
+                                    variant="contained"
                                     onClick={() =>
                                         openAddCommunityArticleModal()
                                     }

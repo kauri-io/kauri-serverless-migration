@@ -9,7 +9,6 @@ interface ISocialWebsiteIconProps {
     height?: number
     socialURL?: string
     invert?: boolean
-    className?: string
 }
 
 const SocialWebsiteIcon: React.SFC<ISocialWebsiteIconProps> = ({
@@ -17,7 +16,6 @@ const SocialWebsiteIcon: React.SFC<ISocialWebsiteIconProps> = ({
     brand,
     socialURL,
     invert = true,
-    className,
 }) => {
     const getIconUrl = brand => {
         return `https://unpkg.com/simple-icons@latest/icons/${brand}.svg`
@@ -31,7 +29,6 @@ const SocialWebsiteIcon: React.SFC<ISocialWebsiteIconProps> = ({
                         height={height}
                         width={height}
                         src={getIconUrl(brand)}
-                        className={className}
                     />
                 )}
 
@@ -41,7 +38,6 @@ const SocialWebsiteIcon: React.SFC<ISocialWebsiteIconProps> = ({
                         height={height}
                         width={height}
                         src={getIconUrl(brand)}
-                        className={className}
                     />
                 )}
             </a>
