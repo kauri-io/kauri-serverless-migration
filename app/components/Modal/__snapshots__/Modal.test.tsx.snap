@@ -45,6 +45,11 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "outlined": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
         },
       },
       "palette": Object {
@@ -685,6 +690,11 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                   <WithStyles(ForwardRef(Button))
                     color="primary"
                     onClick={[Function]}
+                    style={
+                      Object {
+                        "color": "white",
+                      }
+                    }
                     variant="contained"
                   >
                     <ForwardRef(Button)
@@ -722,6 +732,11 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                       }
                       color="primary"
                       onClick={[Function]}
+                      style={
+                        Object {
+                          "color": "white",
+                        }
+                      }
                       variant="contained"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
@@ -731,6 +746,11 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                         focusRipple={true}
                         focusVisibleClassName="Mui-focusVisible"
                         onClick={[Function]}
+                        style={
+                          Object {
+                            "color": "white",
+                          }
+                        }
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
@@ -747,6 +767,11 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                           focusRipple={true}
                           focusVisibleClassName="Mui-focusVisible"
                           onClick={[Function]}
+                          style={
+                            Object {
+                              "color": "white",
+                            }
+                          }
                           type="button"
                         >
                           <button
@@ -764,6 +789,11 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                             onTouchEnd={[Function]}
                             onTouchMove={[Function]}
                             onTouchStart={[Function]}
+                            style={
+                              Object {
+                                "color": "white",
+                              }
+                            }
                             tabIndex={0}
                             type="button"
                           >
@@ -859,6 +889,11 @@ exports[`components/Modal/ChooseArticleContent should match snapshot 1`] = `
       "overrides": Object {
         "MuiButton": Object {
           "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+          "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
@@ -1487,6 +1522,11 @@ exports[`components/Modal/ChooseCollectionContent should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "outlined": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
         },
       },
       "palette": Object {
@@ -2091,6 +2131,11 @@ exports[`components/Modal/ModalView should match snapshot 1`] = `
       "overrides": Object {
         "MuiButton": Object {
           "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+          "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },

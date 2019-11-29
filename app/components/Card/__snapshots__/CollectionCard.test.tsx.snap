@@ -57,6 +57,11 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                 "backgroundColor": "#e0e0e0",
               },
             },
+            "outlined": Object {
+              "&&:disabled": Object {
+                "backgroundColor": "#e0e0e0",
+              },
+            },
           },
         },
         "palette": Object {
@@ -1194,6 +1199,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                     href="/test-username/p"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
+                                                    target="_self"
                                                   >
                                                     <div
                                                       className="makeStyles-container-197"
@@ -2265,6 +2271,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                                 href="/test-username/p"
                                                                 onClick={[Function]}
                                                                 onMouseEnter={[Function]}
+                                                                target="_self"
                                                               >
                                                                 <div
                                                                   className="makeStyles-container-200"

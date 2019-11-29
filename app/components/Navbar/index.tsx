@@ -189,7 +189,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                 anchorEl={createAnchorEl}
                 onClose={handleCreateMenuClose}
             >
-                <Link as="/write-article" href="/write-article">
+                <Link href={user ? '/write-article' : 'login?r=/write-article'}>
                     <a>
                         <MenuItem>Write Article</MenuItem>
                     </a>

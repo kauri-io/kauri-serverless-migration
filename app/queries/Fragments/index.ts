@@ -144,6 +144,7 @@ export const Link = gql`
             id
             username
             name
+            avatar
         }
         url {
             value
@@ -182,6 +183,12 @@ export const Link = gql`
         }
         authorSocial
         tags
+        voteResult {
+            sum
+            count
+            hasVoted
+            quantity
+        }
     }
     ${UserOwner}
     ${CommunityOwner}

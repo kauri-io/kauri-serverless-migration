@@ -10,6 +10,7 @@ import config from '../../config'
 import UploadIcon from '@material-ui/icons/CloudUpload'
 import { Grid } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
+import BackIcon from '@material-ui/icons/ArrowLeft'
 
 interface IProps {
     id: string | null
@@ -52,8 +53,30 @@ const Component: React.FunctionComponent<IProps> = props => {
     const classes = useStyles()
     return (
         <Grid className={classes.root}>
-            <Grid className={classes.container} container={true}>
-                <Grid sm={6}>
+            <Grid
+                className={classes.container}
+                container={true}
+                justify="flex-start"
+            >
+                <Grid sm={4}>
+                    <Button
+                        color="secondary"
+                        variant="text"
+                        data-testid={`CreateCommunityForm-back`}
+                        onClick={props.goBack}
+                    >
+                        <BackIcon />
+                        Cancel Community
+                    </Button>
+                </Grid>
+
+                <Grid
+                    sm={4}
+                    item={true}
+                    container={true}
+                    justify="center"
+                    alignContent="center"
+                >
                     <Button
                         color="secondary"
                         variant="text"
@@ -65,7 +88,7 @@ const Component: React.FunctionComponent<IProps> = props => {
                     </Button>
                 </Grid>
 
-                <Grid sm={6} item={true} container={true} justify="flex-end">
+                <Grid sm={4} item={true} container={true} justify="flex-end">
                     <Button
                         type="submit"
                         color="primary"

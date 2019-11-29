@@ -930,6 +930,10 @@ export interface getCommunityContent_getCommunityContent_content_resource_Collec
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_url {

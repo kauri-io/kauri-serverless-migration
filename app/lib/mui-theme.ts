@@ -24,6 +24,11 @@ export default createMuiTheme({
                     backgroundColor: '#e0e0e0',
                 },
             },
+            outlined: {
+                '&&:disabled': {
+                    backgroundColor: '#e0e0e0',
+                },
+            },
         },
     },
 })

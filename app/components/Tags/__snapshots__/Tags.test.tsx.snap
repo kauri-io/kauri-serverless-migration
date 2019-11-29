@@ -45,6 +45,11 @@ exports[`components/Tags/Close snapshot should match 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "outlined": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
         },
       },
       "palette": Object {
@@ -481,6 +486,11 @@ exports[`components/Tags/Plus snapshot should match 1`] = `
       "overrides": Object {
         "MuiButton": Object {
           "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+          "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
@@ -941,6 +951,11 @@ exports[`components/Tags/Tag snapshot should match 1`] = `
       "overrides": Object {
         "MuiButton": Object {
           "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+          "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
@@ -1472,6 +1487,11 @@ exports[`components/Tags/TagInput snapshot should match 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "outlined": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
         },
       },
       "palette": Object {
@@ -1964,7 +1984,7 @@ exports[`components/Tags/TagInput snapshot should match 1`] = `
                         onChange={[Function]}
                         onKeyPress={[Function]}
                         onKeyUp={[Function]}
-                        placeholder="ADD TAG"
+                        placeholder="Add Tag"
                         value=""
                       >
                         <ForwardRef(TextField)
@@ -1977,7 +1997,7 @@ exports[`components/Tags/TagInput snapshot should match 1`] = `
                           onChange={[Function]}
                           onKeyPress={[Function]}
                           onKeyUp={[Function]}
-                          placeholder="ADD TAG"
+                          placeholder="Add Tag"
                           value=""
                         >
                           <WithStyles(ForwardRef(FormControl))
@@ -2009,7 +2029,7 @@ exports[`components/Tags/TagInput snapshot should match 1`] = `
                               >
                                 <WithStyles(ForwardRef(Input))
                                   onChange={[Function]}
-                                  placeholder="ADD TAG"
+                                  placeholder="Add Tag"
                                   value=""
                                 >
                                   <ForwardRef(Input)
@@ -2030,7 +2050,7 @@ exports[`components/Tags/TagInput snapshot should match 1`] = `
                                       }
                                     }
                                     onChange={[Function]}
-                                    placeholder="ADD TAG"
+                                    placeholder="Add Tag"
                                     value=""
                                   >
                                     <WithStyles(ForwardRef(InputBase))
@@ -2054,7 +2074,7 @@ exports[`components/Tags/TagInput snapshot should match 1`] = `
                                       inputComponent="input"
                                       multiline={false}
                                       onChange={[Function]}
-                                      placeholder="ADD TAG"
+                                      placeholder="Add Tag"
                                       type="text"
                                       value=""
                                     >
@@ -2085,7 +2105,7 @@ exports[`components/Tags/TagInput snapshot should match 1`] = `
                                         inputComponent="input"
                                         multiline={false}
                                         onChange={[Function]}
-                                        placeholder="ADD TAG"
+                                        placeholder="Add Tag"
                                         type="text"
                                         value=""
                                       >
@@ -2101,7 +2121,7 @@ exports[`components/Tags/TagInput snapshot should match 1`] = `
                                             onBlur={[Function]}
                                             onChange={[Function]}
                                             onFocus={[Function]}
-                                            placeholder="ADD TAG"
+                                            placeholder="Add Tag"
                                             required={false}
                                             type="text"
                                             value=""
@@ -2170,6 +2190,11 @@ exports[`components/Tags/TagList snapshot should match 1`] = `
       "overrides": Object {
         "MuiButton": Object {
           "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+          "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
@@ -2685,6 +2710,11 @@ exports[`components/Tags/TagName snapshot should match 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "outlined": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
         },
       },
       "palette": Object {
@@ -3129,6 +3159,11 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
       "overrides": Object {
         "MuiButton": Object {
           "contained": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
+          "outlined": Object {
             "&&:disabled": Object {
               "backgroundColor": "#e0e0e0",
             },
@@ -4002,7 +4037,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                                 onChange={[Function]}
                                 onKeyPress={[Function]}
                                 onKeyUp={[Function]}
-                                placeholder="ADD TAG"
+                                placeholder="Add Tag"
                                 value=""
                               >
                                 <ForwardRef(TextField)
@@ -4015,7 +4050,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                                   onChange={[Function]}
                                   onKeyPress={[Function]}
                                   onKeyUp={[Function]}
-                                  placeholder="ADD TAG"
+                                  placeholder="Add Tag"
                                   value=""
                                 >
                                   <WithStyles(ForwardRef(FormControl))
@@ -4047,7 +4082,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                                       >
                                         <WithStyles(ForwardRef(Input))
                                           onChange={[Function]}
-                                          placeholder="ADD TAG"
+                                          placeholder="Add Tag"
                                           value=""
                                         >
                                           <ForwardRef(Input)
@@ -4068,7 +4103,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                                               }
                                             }
                                             onChange={[Function]}
-                                            placeholder="ADD TAG"
+                                            placeholder="Add Tag"
                                             value=""
                                           >
                                             <WithStyles(ForwardRef(InputBase))
@@ -4092,7 +4127,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                                               inputComponent="input"
                                               multiline={false}
                                               onChange={[Function]}
-                                              placeholder="ADD TAG"
+                                              placeholder="Add Tag"
                                               type="text"
                                               value=""
                                             >
@@ -4123,7 +4158,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                                                 inputComponent="input"
                                                 multiline={false}
                                                 onChange={[Function]}
-                                                placeholder="ADD TAG"
+                                                placeholder="Add Tag"
                                                 type="text"
                                                 value=""
                                               >
@@ -4139,7 +4174,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                                                     onBlur={[Function]}
                                                     onChange={[Function]}
                                                     onFocus={[Function]}
-                                                    placeholder="ADD TAG"
+                                                    placeholder="Add Tag"
                                                     required={false}
                                                     type="text"
                                                     value=""

@@ -41,9 +41,7 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
         floaterRight: {
             display: 'flex',
             flexDirection: 'column',
-            height: '100%',
             justifyContent: 'flex-start',
-            overflowY: 'scroll',
             padding: theme.spacing(2, 2, 20, 2),
             position: 'relative',
         },

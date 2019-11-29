@@ -45,6 +45,11 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
               "backgroundColor": "#e0e0e0",
             },
           },
+          "outlined": Object {
+            "&&:disabled": Object {
+              "backgroundColor": "#e0e0e0",
+            },
+          },
         },
       },
       "palette": Object {
@@ -1361,6 +1366,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                   },
                                   "selectionSet": undefined,
                                 },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "avatar",
+                                  },
+                                  "selectionSet": undefined,
+                                },
                               ],
                             },
                           },
@@ -1723,6 +1739,65 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "value": "tags",
                             },
                             "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "voteResult",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "sum",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "count",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "hasVoted",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "quantity",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                              ],
+                            },
                           },
                         ],
                       },
@@ -2684,7 +2759,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 5279,
+                    "end": 5405,
                     "start": 0,
                   },
                 },
@@ -3679,6 +3754,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                   },
                                   "selectionSet": undefined,
                                 },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "avatar",
+                                  },
+                                  "selectionSet": undefined,
+                                },
                               ],
                             },
                           },
@@ -4041,6 +4127,65 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "value": "tags",
                             },
                             "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "voteResult",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "sum",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "count",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "hasVoted",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "quantity",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                              ],
+                            },
                           },
                         ],
                       },
@@ -5002,7 +5147,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 5279,
+                    "end": 5405,
                     "start": 0,
                   },
                 } => Object {
@@ -6071,6 +6216,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                   "selectionSet": undefined,
                                 },
                                 Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "avatar",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
@@ -6495,6 +6651,72 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "value": "tags",
                             },
                             "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "voteResult",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "sum",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "count",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "hasVoted",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "quantity",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "__typename",
+                                  },
+                                },
+                              ],
+                            },
                           },
                           Object {
                             "kind": "Field",
@@ -7575,7 +7797,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 5279,
+                    "end": 5405,
                     "start": 0,
                   },
                 },
@@ -8645,6 +8867,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                   "selectionSet": undefined,
                                 },
                                 Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "avatar",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
@@ -9069,6 +9302,72 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "value": "tags",
                             },
                             "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "voteResult",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "sum",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "count",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "hasVoted",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "quantity",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "__typename",
+                                  },
+                                },
+                              ],
+                            },
                           },
                           Object {
                             "kind": "Field",
@@ -10149,7 +10448,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 5279,
+                    "end": 5405,
                     "start": 0,
                   },
                 } => Object {
@@ -11218,6 +11517,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                   "selectionSet": undefined,
                                 },
                                 Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "avatar",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
@@ -11642,6 +11952,72 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "value": "tags",
                             },
                             "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "voteResult",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "sum",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "count",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "hasVoted",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "quantity",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "__typename",
+                                  },
+                                },
+                              ],
+                            },
                           },
                           Object {
                             "kind": "Field",
@@ -12722,7 +13098,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 5279,
+                    "end": 5405,
                     "start": 0,
                   },
                 },
@@ -13798,6 +14174,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                     "selectionSet": undefined,
                                   },
                                   Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "avatar",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
                                     "kind": "Field",
                                     "name": Object {
                                       "kind": "Name",
@@ -14222,6 +14609,72 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "value": "tags",
                               },
                               "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "voteResult",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "sum",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "count",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "hasVoted",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "quantity",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "__typename",
+                                    },
+                                  },
+                                ],
+                              },
                             },
                             Object {
                               "kind": "Field",
@@ -15302,7 +15755,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5279,
+                      "end": 5405,
                       "start": 0,
                     },
                   },
@@ -16314,6 +16767,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                       },
                                       "selectionSet": undefined,
                                     },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "avatar",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
                                   ],
                                 },
                               },
@@ -16676,6 +17140,65 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                   "value": "tags",
                                 },
                                 "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "voteResult",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "sum",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "count",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "hasVoted",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "quantity",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
                               },
                             ],
                           },
@@ -17637,7 +18160,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5279,
+                        "end": 5405,
                         "start": 0,
                       },
                     } => Object {
@@ -18706,6 +19229,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                       "selectionSet": undefined,
                                     },
                                     Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "avatar",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
                                       "kind": "Field",
                                       "name": Object {
                                         "kind": "Name",
@@ -19130,6 +19664,72 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                   "value": "tags",
                                 },
                                 "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "voteResult",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "sum",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "count",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "hasVoted",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "quantity",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "__typename",
+                                      },
+                                    },
+                                  ],
+                                },
                               },
                               Object {
                                 "kind": "Field",
@@ -20210,7 +20810,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5279,
+                        "end": 5405,
                         "start": 0,
                       },
                     },
@@ -21280,6 +21880,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                       "selectionSet": undefined,
                                     },
                                     Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "avatar",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
                                       "kind": "Field",
                                       "name": Object {
                                         "kind": "Name",
@@ -21704,6 +22315,72 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                   "value": "tags",
                                 },
                                 "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "voteResult",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "sum",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "count",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "hasVoted",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "quantity",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "__typename",
+                                      },
+                                    },
+                                  ],
+                                },
                               },
                               Object {
                                 "kind": "Field",
@@ -22784,7 +23461,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5279,
+                        "end": 5405,
                         "start": 0,
                       },
                     } => Object {
@@ -23853,6 +24530,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                       "selectionSet": undefined,
                                     },
                                     Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "avatar",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
                                       "kind": "Field",
                                       "name": Object {
                                         "kind": "Name",
@@ -24277,6 +24965,72 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                   "value": "tags",
                                 },
                                 "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "voteResult",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "sum",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "count",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "hasVoted",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "quantity",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "__typename",
+                                      },
+                                    },
+                                  ],
+                                },
                               },
                               Object {
                                 "kind": "Field",
@@ -25357,7 +26111,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5279,
+                        "end": 5405,
                         "start": 0,
                       },
                     },
@@ -26433,6 +27187,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                         "selectionSet": undefined,
                                       },
                                       Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "avatar",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
                                         "kind": "Field",
                                         "name": Object {
                                           "kind": "Name",
@@ -26857,6 +27622,72 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                     "value": "tags",
                                   },
                                   "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "voteResult",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "sum",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "count",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "hasVoted",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "quantity",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "__typename",
+                                        },
+                                      },
+                                    ],
+                                  },
                                 },
                                 Object {
                                   "kind": "Field",
@@ -27937,7 +28768,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 5279,
+                          "end": 5405,
                           "start": 0,
                         },
                       },
@@ -29036,6 +29867,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                     "selectionSet": undefined,
                                   },
                                   Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "avatar",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
                                     "kind": "Field",
                                     "name": Object {
                                       "kind": "Name",
@@ -29460,6 +30302,72 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "value": "tags",
                               },
                               "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "voteResult",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "sum",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "count",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "hasVoted",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "quantity",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "__typename",
+                                    },
+                                  },
+                                ],
+                              },
                             },
                             Object {
                               "kind": "Field",
@@ -30540,7 +31448,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5279,
+                      "end": 5405,
                       "start": 0,
                     },
                   },
@@ -31530,6 +32438,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                         },
                                         "selectionSet": undefined,
                                       },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "avatar",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
                                     ],
                                   },
                                 },
@@ -31892,6 +32811,65 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                     "value": "tags",
                                   },
                                   "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "voteResult",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "sum",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "count",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "hasVoted",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "quantity",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                    ],
+                                  },
                                 },
                               ],
                             },
@@ -32853,7 +33831,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 5279,
+                          "end": 5405,
                           "start": 0,
                         },
                       },
@@ -33965,6 +34943,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                       "selectionSet": undefined,
                                     },
                                     Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "avatar",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
                                       "kind": "Field",
                                       "name": Object {
                                         "kind": "Name",
@@ -34389,6 +35378,72 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                   "value": "tags",
                                 },
                                 "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "voteResult",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "sum",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "count",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "hasVoted",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "quantity",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "__typename",
+                                      },
+                                    },
+                                  ],
+                                },
                               },
                               Object {
                                 "kind": "Field",
@@ -35469,7 +36524,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5279,
+                        "end": 5405,
                         "start": 0,
                       },
                     },
@@ -36491,6 +37546,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                     },
                                     "selectionSet": undefined,
                                   },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "avatar",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
                                 ],
                               },
                             },
@@ -36853,6 +37919,65 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "value": "tags",
                               },
                               "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "voteResult",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "sum",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "count",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "hasVoted",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "quantity",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
                             },
                           ],
                         },
@@ -37814,7 +38939,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5279,
+                      "end": 5405,
                       "start": 0,
                     },
                   } => Object {
@@ -38883,6 +40008,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                     "selectionSet": undefined,
                                   },
                                   Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "avatar",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
                                     "kind": "Field",
                                     "name": Object {
                                       "kind": "Name",
@@ -39307,6 +40443,72 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "value": "tags",
                               },
                               "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "voteResult",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "sum",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "count",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "hasVoted",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "quantity",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "__typename",
+                                    },
+                                  },
+                                ],
+                              },
                             },
                             Object {
                               "kind": "Field",
@@ -40387,7 +41589,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5279,
+                      "end": 5405,
                       "start": 0,
                     },
                   },
@@ -41457,6 +42659,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                     "selectionSet": undefined,
                                   },
                                   Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "avatar",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
                                     "kind": "Field",
                                     "name": Object {
                                       "kind": "Name",
@@ -41881,6 +43094,72 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "value": "tags",
                               },
                               "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "voteResult",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "sum",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "count",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "hasVoted",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "quantity",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "__typename",
+                                    },
+                                  },
+                                ],
+                              },
                             },
                             Object {
                               "kind": "Field",
@@ -42961,7 +44240,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5279,
+                      "end": 5405,
                       "start": 0,
                     },
                   } => Object {
@@ -44030,6 +45309,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                     "selectionSet": undefined,
                                   },
                                   Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "avatar",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
                                     "kind": "Field",
                                     "name": Object {
                                       "kind": "Name",
@@ -44454,6 +45744,72 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "value": "tags",
                               },
                               "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "voteResult",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "sum",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "count",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "hasVoted",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "quantity",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "__typename",
+                                    },
+                                  },
+                                ],
+                              },
                             },
                             Object {
                               "kind": "Field",
@@ -45534,7 +46890,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5279,
+                      "end": 5405,
                       "start": 0,
                     },
                   },
@@ -46610,6 +47966,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                       "selectionSet": undefined,
                                     },
                                     Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "avatar",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
                                       "kind": "Field",
                                       "name": Object {
                                         "kind": "Name",
@@ -47034,6 +48401,72 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                   "value": "tags",
                                 },
                                 "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "voteResult",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "sum",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "count",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "hasVoted",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "quantity",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "__typename",
+                                      },
+                                    },
+                                  ],
+                                },
                               },
                               Object {
                                 "kind": "Field",
@@ -48114,7 +49547,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5279,
+                        "end": 5405,
                         "start": 0,
                       },
                     },
@@ -49098,6 +50531,17 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 },
                                 "selectionSet": undefined,
                               },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "avatar",
+                                },
+                                "selectionSet": undefined,
+                              },
                             ],
                           },
                         },
@@ -49460,6 +50904,65 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "value": "tags",
                           },
                           "selectionSet": undefined,
+                        },
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "voteResult",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "sum",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "count",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "hasVoted",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "quantity",
+                                },
+                                "selectionSet": undefined,
+                              },
+                            ],
+                          },
                         },
                       ],
                     },
@@ -50421,7 +51924,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 5279,
+                  "end": 5405,
                   "start": 0,
                 },
               }

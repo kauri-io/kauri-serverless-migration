@@ -102,6 +102,10 @@ export interface searchExternalLinks_searchExternalLinks_content_submitter {
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface searchExternalLinks_searchExternalLinks_content_url {

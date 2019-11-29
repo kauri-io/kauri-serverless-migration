@@ -50,7 +50,7 @@ export const useStyles = makeStyles((theme: Theme) => {
         },
         header: {
             background: theme.palette.common.white,
-            padding: theme.spacing(0, 2),
+            padding: theme.spacing(0, 2, 2, 2),
             position: 'relative',
         },
         recommended: {},

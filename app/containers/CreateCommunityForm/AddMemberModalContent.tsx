@@ -1,8 +1,17 @@
 import styled from 'styled-components'
-import TextField from '@material-ui/core/TextField'
 import { BodyCard, Label } from '../../components/Typography'
-import Select, { TooltipContainer } from '../../components/Select'
+import { TooltipContainer } from '../../components/Select'
 import Divider from '../../components/Divider'
+import { makeStyles } from '@material-ui/styles'
+import React from 'react'
+import {
+    Theme,
+    TextField,
+    FormControl,
+    NativeSelect,
+    FormHelperText,
+} from '@material-ui/core'
+import { IField } from './AddMemberModal'
 
 export const AddMemberSection = styled.section`
     display: flex;
@@ -13,12 +22,25 @@ export const AddMemberSection = styled.section`
         ${props => props.theme.space[3]}px 0px;
 `
 
+const useStyles = makeStyles((_theme: Theme) => ({
+    input: {
+        width: '296px',
+        '& > div': {
+            '& > input': {
+                textAlign: 'center',
+            },
+        },
+    },
+    dropdown: {
+        width: '296px',
+        textAlignLast: 'center',
+    },
+}))
+
 interface IProps {
-    handleEmailChange: (e: React.ChangeEvent<HTMLInputElement>) => any
-    handleRoleChange: (role: string) => any
-    email: string
+    email: IField
+    role: IField
     currentStep: number
-    role: string
     roles: Array<{ value: string; label: string }>
 }
 
@@ -65,32 +87,55 @@ export const ChooseRoleOptions: React.FunctionComponent<{
 )
 
 const AddMemberModalContent: React.FunctionComponent<IProps> = ({
-    handleEmailChange,
-    handleRoleChange,
-    email,
     currentStep,
+    email,
     role,
     roles,
 }) => {
+    const classes = useStyles()
+
     return (
         <AddMemberSection>
             {currentStep === 1 && (
                 <StepOneContainer>
-                    <BodyCard>
-                        Enter the potential moderator or admin’s email address
-                        to invite them to join!
+                    <BodyCard textAlign="center">
+                        Invite new moderators and admins by email
+                        <br />
+                        <br />
+                        <b>Important:</b> Admins have the power to edit
+                        <br />
+                        community metadata, and invite and remove other
+                        <br />
+                        moderators and admins. Only invite those you trust!
                     </BodyCard>
                     <TextField
-                        onChange={handleEmailChange}
-                        value={email}
+                        name="email"
+                        margin="dense"
                         placeholder="EMAIL ADDRESS"
+                        error={email.hasError}
+                        helperText={email.hasError ? 'Incorrect email' : ''}
+                        onChange={e => email.handleChange(e.target.value)}
+                        className={classes.input}
+                        value={email.value}
                     />
-                    <Select value={role} placeHolder="Choose Role">
-                        <ChooseRoleOptions
-                            handleRoleChange={handleRoleChange}
-                            roles={roles}
-                        />
-                    </Select>
+                    <FormControl variant="outlined" error={role.hasError}>
+                        <NativeSelect
+                            name="role"
+                            value={role.value}
+                            onChange={e => role.handleChange(e.target.value)}
+                            className={classes.dropdown}
+                        >
+                            <option value="" disabled>
+                                Choose Role
+                            </option>
+                            {roles.map(role => (
+                                <option value={role.value}>{role.label}</option>
+                            ))}
+                        </NativeSelect>
+                        {role.hasError ? (
+                            <FormHelperText>Invalid role</FormHelperText>
+                        ) : null}
+                    </FormControl>
                 </StepOneContainer>
             )}
             {currentStep === 2 && (

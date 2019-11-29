@@ -5,19 +5,23 @@ import { OutlinedInputProps } from '@material-ui/core/OutlinedInput'
 
 interface IProps {
     id: string
-    margin: 'none' | 'normal' | 'dense' | undefined
+    margin?: 'none' | 'normal' | 'dense' | undefined
     handleChange: (
         e: ChangeEvent<
             HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
         >
     ) => void
     value: string
-    placeholder: string
-    className: string
+    placeholder?: string
+    className?: string
     InputProps?: Partial<OutlinedInputProps>
-    validate: (v: string) => string
+    validate?: (v: string) => string
     required?: boolean
     onValidation?: (k: string, e: string) => void
+    field?: any
+    multiline?: boolean
+    label?: string
+    rowsMax?: number
 }
 
 const ValidatedTextField = ({
@@ -31,39 +35,55 @@ const ValidatedTextField = ({
     InputProps,
     required,
     onValidation,
+    field,
+    rowsMax = 1,
+    label,
 }: IProps) => {
     const [error, setError] = useState('')
+    const [lastValueChange, setLastValueChange] = useState('')
 
     const doValidation = value => {
         let err = ''
-
         if (required && (!value || value == '')) {
             onValidation && onValidation(id, 'Field required: ' + id)
         } else {
-            err = validate(value)
+            err = validate ? validate(value) : ''
 
             setError(err)
             onValidation && onValidation(id, err)
         }
     }
 
+    //There are cases where the value is changed externally to the text field,
+    //so by listening for changes to the value, we can still trigger validation.
+    //Not always validating here and removing the onChange hook because that would
+    //cause a double render every time the text field is changed.
     useEffect(() => {
-        doValidation(value)
-    }, [])
+        if (value !== lastValueChange) {
+            doValidation(value)
+        }
+    }, [value])
 
     return (
         <TextField
+            name={field && field.name}
             margin={margin}
             onChange={e => {
                 doValidation(e.target.value)
-                handleChange(e)
+                setLastValueChange(e.target.value)
+                handleChange && handleChange(e)
+                field && field.onChange(e)
             }}
             value={value}
-            placeholder={placeholder + (required ? ' (Required)' : '')}
+            placeholder={
+                placeholder ? placeholder + (required ? ' (Required)' : '') : ''
+            }
             className={className}
-            label={error}
+            label={error ? error : label}
             error={error.length === 0 ? false : true}
             InputProps={InputProps}
+            multiline={rowsMax && rowsMax > 1 ? true : false}
+            rowsMax={rowsMax}
         />
     )
 }
