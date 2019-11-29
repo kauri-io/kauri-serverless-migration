@@ -19,6 +19,7 @@ interface IProps {
     required?: boolean
     onValidation?: (k: string, e: string) => void
     label?: string
+    rowsMax?: number
 }
 
 const ValidatedTextField = ({
@@ -33,6 +34,7 @@ const ValidatedTextField = ({
     required,
     onValidation,
     label,
+    rowsMax = 1,
 }: IProps) => {
     const [error, setError] = useState('')
 
@@ -68,6 +70,8 @@ const ValidatedTextField = ({
             label={error ? error : label}
             error={error.length === 0 ? false : true}
             InputProps={InputProps}
+            multiline={rowsMax && rowsMax > 1 ? true : false}
+            rowsMax={rowsMax}
         />
     )
 }
