@@ -1,39 +1,10 @@
 import React, { SyntheticEvent } from 'react'
-import styled from 'styled-components'
 import Head from 'next/head'
 import Button from '../../components/Button'
 import { IRegisterAction } from './Module'
 import { IShowNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { Typography, Grid } from '@material-ui/core'
 import Image from '../../components/Image'
-
-const Container = styled.div`
-    background: ${props => props.theme.bgPrimary};
-    color: white;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-`
-
-const LoginContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    & > * {
-        margin: ${props => props.theme.space[1]}px;
-    }
-    & #mc_embed_signup {
-        width: 400px;
-        color: ${props => props.theme.primaryTextColor};
-        padding: ${props => props.theme.space[2]}px;
-        border-radius: 4px;
-        margin-top: ${props => props.theme.space[2]}px;
-    }
-`
 
 const Web3Unavailable = () => (
     <Grid
@@ -162,7 +133,13 @@ class LoginForm extends React.Component<{
 
     render() {
         return (
-            <LoginContainer>
+            <Grid
+                style={{ height: '100%' }}
+                container={true}
+                direction="column"
+                justify="center"
+                alignItems="center"
+            >
                 <Typography
                     gutterBottom={true}
                     variant="h4"
@@ -182,7 +159,7 @@ class LoginForm extends React.Component<{
                 >
                     SIGN IN
                 </Button>
-            </LoginContainer>
+            </Grid>
         )
     }
 }
@@ -202,12 +179,12 @@ class LoginFormContainer extends React.Component<IProps> {
             return <Web3Unavailable />
         } else if (global.window && global.window.web3) {
             return (
-                <Container>
+                <Grid style={{ height: '100%', background: '#1E2428' }}>
                     <Head>
                         <title>Kauri - Login</title>
                     </Head>
                     <LoginForm {...this.props} type="register" />
-                </Container>
+                </Grid>
             )
         } else {
             return null
