@@ -690,6 +690,11 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                   <WithStyles(ForwardRef(Button))
                     color="primary"
                     onClick={[Function]}
+                    style={
+                      Object {
+                        "color": "white",
+                      }
+                    }
                     variant="contained"
                   >
                     <ForwardRef(Button)
@@ -727,6 +732,11 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                       }
                       color="primary"
                       onClick={[Function]}
+                      style={
+                        Object {
+                          "color": "white",
+                        }
+                      }
                       variant="contained"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
@@ -736,6 +746,11 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                         focusRipple={true}
                         focusVisibleClassName="Mui-focusVisible"
                         onClick={[Function]}
+                        style={
+                          Object {
+                            "color": "white",
+                          }
+                        }
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
@@ -752,6 +767,11 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                           focusRipple={true}
                           focusVisibleClassName="Mui-focusVisible"
                           onClick={[Function]}
+                          style={
+                            Object {
+                              "color": "white",
+                            }
+                          }
                           type="button"
                         >
                           <button
@@ -769,6 +789,11 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                             onTouchEnd={[Function]}
                             onTouchMove={[Function]}
                             onTouchStart={[Function]}
+                            style={
+                              Object {
+                                "color": "white",
+                              }
+                            }
                             tabIndex={0}
                             type="button"
                           >

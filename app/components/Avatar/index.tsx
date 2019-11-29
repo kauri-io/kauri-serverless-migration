@@ -19,6 +19,7 @@ interface IProps {
     color?: 'primary' | 'secondary'
     type?: string
     ignoreLink?: boolean
+    newTab?: boolean
 }
 
 const AvatarComp = ({
@@ -32,6 +33,7 @@ const AvatarComp = ({
     color,
     type,
     ignoreLink,
+    newTab,
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
@@ -99,7 +101,7 @@ const AvatarComp = ({
     if (ignoreLink) return AvatarContent
     return (
         <Link as={url.as} href={url.href}>
-            <a>{AvatarContent}</a>
+            <a target={newTab ? '_blank' : '_self'}>{AvatarContent}</a>
         </Link>
     )
 }

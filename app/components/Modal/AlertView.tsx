@@ -66,6 +66,7 @@ const AlertViewComponent: React.FunctionComponent<IProps> = props => (
                 <Button
                     color="primary"
                     variant="contained"
+                    style={{ color: 'white' }}
                     onClick={handleConfirmAction(props.confirmButtonAction)}
                 >
                     {props.confirmButtonText || 'Confirm'}

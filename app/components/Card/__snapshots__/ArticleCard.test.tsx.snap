@@ -1275,6 +1275,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                     href="/test-username/p"
                                                     onClick={[Function]}
                                                     onMouseEnter={[Function]}
+                                                    target="_self"
                                                   >
                                                     <div
                                                       className="makeStyles-container-187"
@@ -2187,6 +2188,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                                 href="/test-username/p"
                                                                 onClick={[Function]}
                                                                 onMouseEnter={[Function]}
+                                                                target="_self"
                                                               >
                                                                 <div
                                                                   className="makeStyles-container-190"
