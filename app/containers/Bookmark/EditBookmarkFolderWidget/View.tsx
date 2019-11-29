@@ -44,7 +44,12 @@ const useStyles = makeStyles((_theme: Theme) => ({
     },
     button: {
         float: 'right',
-        marginRight: '15px',
+        width: '150px',
+    },
+    buttonEnd: {
+        float: 'right',
+        marginRight: '108px',
+        width: '150px',
     },
 }))
 
@@ -98,7 +103,7 @@ export const EditBookmarkFolderWidgetComponent = ({
     return (
         <Box p={1}>
             <Grid container={true}>
-                <Grid item xs={9}>
+                <Grid item xs={6}>
                     {!showForm ? (
                         <Typography variant="h6">
                             {labelRootFolder({ folder })} &nbsp;
@@ -127,12 +132,12 @@ export const EditBookmarkFolderWidgetComponent = ({
                         />
                     )}
                 </Grid>
-                <Grid item xs={3} className={classes.rightWrapper}>
+                <Grid item xs={6} className={classes.rightWrapper}>
                     {folder !== ROOT_FOLDER && !showForm ? (
                         <Button
                             color="primary"
                             variant="text"
-                            className={classes.button}
+                            className={classes.buttonEnd}
                             onClick={() =>
                                 openModalAction({
                                     children: (
@@ -159,7 +164,7 @@ export const EditBookmarkFolderWidgetComponent = ({
                             <Button
                                 color="primary"
                                 variant="outlined"
-                                className={classes.button}
+                                className={classes.buttonEnd}
                                 onClick={update}
                             >
                                 Save

@@ -579,6 +579,10 @@ export interface HomepageComponentFragment_Featured_content_resource_CollectionD
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_url {
@@ -939,6 +943,10 @@ export interface HomepageComponentFragment_Featured_content_resource_ExternalLin
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface HomepageComponentFragment_Featured_content_resource_ExternalLinkDTO_url {
@@ -2112,6 +2120,10 @@ export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_url {
@@ -2472,6 +2484,10 @@ export interface HomepageComponentFragment_Promo_content_resource_ExternalLinkDT
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface HomepageComponentFragment_Promo_content_resource_ExternalLinkDTO_url {
@@ -3592,6 +3608,10 @@ export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_s
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_url {
@@ -3952,6 +3972,10 @@ export interface HomepageComponentFragment_LatestContent_content_ExternalLinkDTO
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface HomepageComponentFragment_LatestContent_content_ExternalLinkDTO_url {

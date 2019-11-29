@@ -560,6 +560,10 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkD
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_url {
@@ -920,6 +924,10 @@ export interface ResourceFragment_ExternalLinkDTO_submitter {
    * User full name
    */
   name: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
 }
 
 export interface ResourceFragment_ExternalLinkDTO_url {
