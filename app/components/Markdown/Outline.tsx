@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography'
 import { makeStyles, Theme } from '@material-ui/core'
 import Loading from '../Loading'
 
-const OFFSET = 80
+const OFFSET = 140
 
 const Renderer = ({ markdown, withComments, commentsCount }) => {
     const elList = document.querySelectorAll('[aria-label="title"]')
@@ -16,8 +16,8 @@ const Renderer = ({ markdown, withComments, commentsCount }) => {
         for (let i = 0; i < elList.length; i++) {
             const heading = elList[i.toString()]
             if (
-                checkpoint > heading.offsetTop - 50 &&
-                checkpoint < heading.offsetTop + 50
+                checkpoint > heading.offsetTop - 100 &&
+                checkpoint < heading.offsetTop + 100
             ) {
                 setSelected(i)
             }
@@ -49,6 +49,7 @@ const Renderer = ({ markdown, withComments, commentsCount }) => {
                 fontWeight: 400,
                 fontSize: 14,
                 marginBottom: theme.spacing(2),
+                lineHeight: '14px',
                 cursor: 'pointer',
                 borderLeft: inView
                     ? `3px solid ${theme.palette.primary.main}`

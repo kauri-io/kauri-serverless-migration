@@ -147,8 +147,8 @@ const LinkContent = ({
             {url.value.indexOf('youtube.com') === -1 &&
                 linkAttributes.background_image && (
                     <Image
-                        height={350}
-                        width="100%"
+                        height={360}
+                        width={808}
                         image={linkAttributes.background_image.value}
                     />
                 )}
