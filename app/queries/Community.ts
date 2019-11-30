@@ -5,6 +5,7 @@ import {
     CommunityOwner,
     Article,
     Collection,
+    Link
 } from './Fragments'
 
 export const getCommunity = gql`
@@ -262,12 +263,13 @@ export const getCommunityArticleContent = gql`
                 type
                 resource {
                     ... on ArticleDTO {
-                        id
-                        title
+                        ...Article
                     }
                     ... on CollectionDTO {
-                        id
-                        name
+                        ...Collection
+                    }
+                    ... on ExternalLinkDTO {
+                        ...Link
                     }
                 }
             }
@@ -275,6 +277,9 @@ export const getCommunityArticleContent = gql`
             totalElements
         }
     }
+    ${Article}
+    ${Collection}
+    ${Link}
 `
 
 export const prepareSendInvitationQuery = gql`

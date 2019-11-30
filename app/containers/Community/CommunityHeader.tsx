@@ -15,9 +15,6 @@ import ShareCommunity from '../../components/Tooltip/ShareArticle'
 import Avatar from '../../components/Avatar'
 // import { Tooltip } from "react-tippy";
 import Button from '@material-ui/core/Button'
-import ChooseArticleModal, {
-    IArticle,
-} from '../CreateCollectionForm/ChooseArticleModal'
 import {
     getCommunity_getCommunity_approved_ArticleDTO,
     getCommunity_getCommunity_approved_CollectionDTO,
@@ -30,6 +27,9 @@ import {
 import AddMemberButtonComponent from '../../components/Button/AddMemberButton'
 import { getUpdateCommunityURL } from '../../lib/getURLs'
 import { makeStyles, Theme } from '@material-ui/core/styles'
+import { ResourceIdentifierInput } from '../../__generated__/globalTypes'
+import ChooseResourceModal from '../ChooseResourceModal'
+import { globalSearchApprovedArticles } from '../../queries/Article'
 
 const useStyles = makeStyles((theme: Theme) => ({
     button: {
@@ -313,18 +313,19 @@ interface IProps {
     routeChangeAction?: (route: string) => void
     openModalAction: (children: any) => void
     closeModalAction: () => void
-    articles: Array<getCommunity_getCommunity_approved_ArticleDTO | null> | null
-    collections: Array<getCommunity_getCommunity_approved_CollectionDTO | null> | null
+    articles: Array<getCommunity_getCommunity_approved_ArticleDTO>
+    collections: Array<getCommunity_getCommunity_approved_CollectionDTO>
     // curateCommunityResourcesAction: typeof curateCommunityResources;
     transferArticleToCommunityAction: typeof transferArticleToCommunity
     acceptCommunityInvitationAction: typeof acceptCommunityInvitation
     secret: null | string
     openAddMemberModal: () => void
+    userId: string
 }
 
 const CommunityHeader: React.FunctionComponent<IProps> = ({
     articles,
-    // collections,
+    collections,
     id,
     avatar,
     name,
@@ -345,7 +346,14 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
     // curateCommunityResourcesAction,
     openAddMemberModal,
     transferArticleToCommunityAction,
+    userId
 }) => {
+
+    const existingContent = [
+        ...articles.map(article => article.resourceIdentifier as ResourceIdentifierInput),
+        ...collections.map(collection => collection.resourceIdentifier as ResourceIdentifierInput)
+    ]
+    console.log("existingContent", existingContent)
     // const suggestArticleAction = () =>
     //   openModalAction({
     //     children: (
@@ -414,7 +422,50 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                     image={background}
                 />
             )}
-            <ChooseArticleModal
+
+            <ChooseResourceModal
+                key={`add-resource-modal`}
+                open={open}
+                handleClose={closeAddCommunityArticleModal}
+                maxSelection={1}
+                handleConfirm={(selected: ResourceIdentifierInput[]) => {
+
+                    closeAddCommunityArticleModal()
+                    if(selected.length > 0) {
+                        transferArticleToCommunityAction(
+                            {
+                                id: selected[0].id,
+                                recipient: {
+                                    id,
+                                    type: 'COMMUNITY' as any,
+                                },
+                            },
+                            () => {}
+                        )
+                    }
+                }}
+                disabled={existingContent}
+                preSelected={[]}
+                title={'My Content'}
+                queryDoc={globalSearchApprovedArticles}
+                queryKey={'searchAutocomplete'}
+                pathToResourceId={['resourceIdentifier']}
+                pathToResource={['resource']}
+                queryVariables={{
+                    size: 10,
+                    filter: {
+                        types: ['ARTICLE', 'LINK', 'COLLECTION'],
+                        mustIncludeUserId: [userId],
+                    },
+                    parameter: {
+                        scoringMode: 'LAST_UPDATED',
+                    },
+                }}
+                showSearch={false}
+            />
+
+
+            {/* <ChooseArticleModal
                 hideAllArticlesTab={true}
                 open={open}
                 limit={1}
@@ -435,7 +486,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                         }
                     )
                 }}
-            />
+            /> */}
             <Container>
                 <ContentRow>
                     <LeftSide>

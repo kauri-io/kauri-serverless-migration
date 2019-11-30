@@ -8,7 +8,7 @@ interface IState {
     page: number
 }
 
-type PaginationDataQuery =
+export type PaginationDataQuery =
     | 'getCommunityContent'
     | 'searchCommunities'
     | 'searchAutocompleteCollections'
@@ -26,7 +26,7 @@ interface IProps {
 
 function withPagination(
     Paginated: React.FunctionComponent<any> | React.ComponentClass<any>,
-    key: PaginationDataQuery,
+    key: PaginationDataQuery | ((props: any) => PaginationDataQuery),
     queryName: string = 'data'
 ): React.ComponentClass<any> {
     class WithPagination extends Component<IProps, IState> {
@@ -134,11 +134,13 @@ function withPagination(
             const scrolledToBottom =
                 Math.ceil(scrollTop + clientHeight + 150) >= scrollHeight
 
+            const k = (typeof key=== 'function') ? key(this.props) : key       
+
             if (
                 scrolledToBottom &&
                 this.props[queryName] &&
-                this.props[queryName][key] &&
-                this.props[queryName][key].isLast !== true &&
+                this.props[queryName][k] &&
+                this.props[queryName][k].isLast !== true &&
                 this.state.showLoading === false
             ) {
                 const nextPage = this.state.page + 1
@@ -150,17 +152,17 @@ function withPagination(
                             return prev
                         }
                         const result = {
-                            [key]: {
-                                __typename: prev[key].__typename,
+                            [k]: {
+                                __typename: prev[k].__typename,
                                 content: [
-                                    ...prev[key].content,
-                                    ...fetchMoreResult[key].content,
+                                    ...prev[k].content,
+                                    ...fetchMoreResult[k].content,
                                 ],
-                                isLast: fetchMoreResult[key].isLast,
-                                totalElements: prev[key].totalElements,
+                                isLast: fetchMoreResult[k].isLast,
+                                totalElements: prev[k].totalElements,
                                 totalElementsBreakdown:
-                                    prev[key].totalElementsBreakdown,
-                                totalPages: prev[key].totalPages,
+                                    prev[k].totalElementsBreakdown,
+                                totalPages: prev[k].totalPages,
                             },
                         }
                         return result

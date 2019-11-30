@@ -172,6 +172,7 @@ const DisplayManagedResourcesComponent = ({
 }: IProps & { review?: boolean }) => {
     return (
         <Container>
+            <div style={{display: 'flex', justifyContent: 'center'}}>
             <Grid className={classes.grid} container spacing={3}>
                 {Array.isArray(resources) && resources.length
                     ? resources.map(
@@ -184,6 +185,7 @@ const DisplayManagedResourcesComponent = ({
                       )
                     : null}
             </Grid>
+            </div>
         </Container>
     )
 }

@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import theme from '../../lib/theme-config'
 import AddOptions from '../../components/AddOptions'
+import { IModalConfig } from './View'
 
 const TooltipContainer = styled.div`
     display: flex;
@@ -39,50 +40,33 @@ const Divider = styled.div`
 `
 
 interface IProps {
-    userId?: string
     currentSectionIndex: number
     previousSectionHasArticles: boolean
     addNewSection: () => void
     removeSection: () => void
-    chooseArticle: (filter: any) => void
+    onClick: (config: IModalConfig) => void
+    modalConfigs: IModalConfig[]
 }
 
 const Content: React.FunctionComponent<IProps> = props => (
     <TooltipContainer>
-        {props.userId && (
-            <Fragment>
-                <Label
-                    onClick={() =>
-                        props.chooseArticle({
-                            filter: {
-                                types: ['ARTICLE', 'LINK'],
-                                mustIncludeUserId: [props.userId],
-                            },
-                            title: 'My Content',
-                        })
-                    }
-                >
-                    My published content
+
+        { props.modalConfigs.map((config, index) => (
+            <Fragment key={`section-option-section-${props.currentSectionIndex}-modal-${index}`}> 
+                {index > 0 && (<Divider />)}
+                <Label onClick={() => props.onClick(config) }>
+                    {config.title}
                 </Label>
-                <Divider />
             </Fragment>
-        )}
-        <Label
-            onClick={() =>
-                props.chooseArticle({
-                    filter: { types: ['ARTICLE', 'LINK'] },
-                    title: 'Search Content',
-                })
-            }
-        >
-            Search content
-        </Label>
+        ))}
+
         {props.previousSectionHasArticles && (
             <Fragment>
                 <Divider />
                 <Label onClick={props.addNewSection}>Add New Section</Label>
             </Fragment>
         )}
+
         {props.currentSectionIndex > 0 && (
             <Fragment>
                 <Divider />
