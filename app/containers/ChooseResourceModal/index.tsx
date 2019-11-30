@@ -28,24 +28,24 @@ const query = props => {
     return props.queryDoc || DEFAULT_QUERY
 }
 
-const graphqlDynamic = (query) => {
+const graphqlDynamic = query => {
     return component => {
-      return (props) => {
-        return React.createElement(
-            graphql(query(props), {
-                name: QUERY_NAME,
-                options:{
-                    fetchPolicy: 'network-only',
-                    variables: props.queryVariables
-                },
-            })(component),
-            props
-        )
-      }
+        return props => {
+            return React.createElement(
+                graphql(query(props), {
+                    name: QUERY_NAME,
+                    options: {
+                        fetchPolicy: 'network-only',
+                        variables: props.queryVariables,
+                    },
+                })(component),
+                props
+            )
+        }
     }
 }
 
- export default compose(
+export default compose(
     withApollo,
     connect(
         mapStateToProps,
@@ -62,4 +62,4 @@ const graphqlDynamic = (query) => {
     //     }),
     // }),
     withApolloError()
-)(View);
+)(View)

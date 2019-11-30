@@ -134,7 +134,7 @@ function withPagination(
             const scrolledToBottom =
                 Math.ceil(scrollTop + clientHeight + 150) >= scrollHeight
 
-            const k = (typeof key=== 'function') ? key(this.props) : key       
+            const k = typeof key === 'function' ? key(this.props) : key
 
             if (
                 scrolledToBottom &&

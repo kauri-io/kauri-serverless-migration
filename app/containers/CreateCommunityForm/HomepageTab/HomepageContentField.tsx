@@ -24,7 +24,6 @@ import { IModalConfig } from '../../CreateCollectionForm/View'
 import { getCommunityArticleContent } from '../../../queries/Community'
 import LinkCardFormView from '../../LinkCardFormView'
 
-
 const useStyles = makeStyles((_theme: Theme) => ({
     inputSection: {
         width: '808px',
@@ -33,7 +32,7 @@ const useStyles = makeStyles((_theme: Theme) => ({
                 textAlign: 'center',
             },
         },
-    }
+    },
 }))
 
 const Section = styled.section<SpaceProps>`
@@ -79,81 +78,79 @@ const renderResourceSection = (
     values: IFormValues,
     mappingKey: string
 ) => (resource: any, resourceIndex: number) => {
-
     const type = path(
         ['homepage', index, mappingKey, resourceIndex, 'type'],
         values
     )
 
     return (
-    <ResourceSection key={resourceIndex} mt={3}>
+        <ResourceSection key={resourceIndex} mt={3}>
+            {type === 'ARTICLE' && (
+                <Draggable
+                    index={resourceIndex}
+                    draggableId={`${path(
+                        ['homepage', index, mappingKey, resourceIndex, 'id'],
+                        values
+                    )}`}
+                >
+                    {(provided): any => {
+                        return (
+                            <DraggableResourceContainer
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}
+                                ref={provided.innerRef}
+                                id="article-card"
+                            >
+                                <ArticleCard
+                                    isLoggedIn={true}
+                                    id={String(
+                                        path(
+                                            [
+                                                'homepage',
+                                                index,
+                                                mappingKey,
+                                                resourceIndex,
+                                                'id',
+                                            ],
+                                            values
+                                        )
+                                    )}
+                                    version={parseInt(
+                                        path<string>(
+                                            [
+                                                'homepage',
+                                                index,
+                                                mappingKey,
+                                                resourceIndex,
+                                                'version',
+                                            ],
+                                            values
+                                        ) || '',
+                                        2
+                                    )}
+                                />
+                                {provided.placeholder}
+                            </DraggableResourceContainer>
+                        )
+                    }}
+                </Draggable>
+            )}
 
-        {type === 'ARTICLE' && (
-            <Draggable
-                index={resourceIndex}
-                draggableId={`${path(
-                    ['homepage', index, mappingKey, resourceIndex, 'id'],
-                    values
-                )}`}
-            >
-                {(provided): any => {
-                    return (
+            {type === 'LINK' && (
+                <Draggable
+                    index={resourceIndex}
+                    draggableId={`${path(
+                        ['homepage', index, mappingKey, resourceIndex, 'id'],
+                        values
+                    )}`}
+                >
+                    {(provided): any => (
                         <DraggableResourceContainer
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                             ref={provided.innerRef}
-                            id="article-card"
+                            id="collection-card"
                         >
-                            <ArticleCard
-                                isLoggedIn={true}
-                                id={String(
-                                    path(
-                                        [
-                                            'homepage',
-                                            index,
-                                            mappingKey,
-                                            resourceIndex,
-                                            'id',
-                                        ],
-                                        values
-                                    )
-                                )}
-                                version={parseInt(
-                                    path<string>(
-                                        [
-                                            'homepage',
-                                            index,
-                                            mappingKey,
-                                            resourceIndex,
-                                            'version',
-                                        ],
-                                        values
-                                    ) || '',
-                                    2
-                                )}
-                            />
-                            {provided.placeholder}
-                        </DraggableResourceContainer>
-                    )
-                }}
-            </Draggable>
-        )}
-
-        {type === 'LINK' && (
-            <Draggable
-                index={resourceIndex}
-                draggableId={`${path(
-                    ['homepage', index, mappingKey, resourceIndex, 'id'],
-                    values
-                )}`}
-            >
-                {(provided): any => (
-                    <DraggableResourceContainer
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                        ref={provided.innerRef}
-                        id="collection-card"
-                    >
                             <LinkCardFormView
                                 id={String(
                                     path(
@@ -168,71 +165,72 @@ const renderResourceSection = (
                                     )
                                 )}
                             />
-                        {provided.placeholder}
-                    </DraggableResourceContainer>
-                )}
-            </Draggable>
-        )}
+                            {provided.placeholder}
+                        </DraggableResourceContainer>
+                    )}
+                </Draggable>
+            )}
 
-        {type === 'COLLECTION' && (
-            <Draggable
-                index={resourceIndex}
-                draggableId={`${path(
-                    ['homepage', index, mappingKey, resourceIndex, 'id'],
-                    values
-                )}`}
+            {type === 'COLLECTION' && (
+                <Draggable
+                    index={resourceIndex}
+                    draggableId={`${path(
+                        ['homepage', index, mappingKey, resourceIndex, 'id'],
+                        values
+                    )}`}
+                >
+                    {(provided): any => (
+                        <DraggableResourceContainer
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                            ref={provided.innerRef}
+                            id="collection-card"
+                        >
+                            <CollectionCard
+                                id={String(
+                                    path(
+                                        [
+                                            'homepage',
+                                            index,
+                                            mappingKey,
+                                            resourceIndex,
+                                            'id',
+                                        ],
+                                        values
+                                    )
+                                )}
+                            />
+                            {provided.placeholder}
+                        </DraggableResourceContainer>
+                    )}
+                </Draggable>
+            )}
+
+            <Button
+                color="default"
+                variant="text"
+                onClick={() =>
+                    arrayHelpers.form.setFieldValue(
+                        `homepage[${index}][${mappingKey}]`,
+                        Array.isArray(section[mappingKey]) &&
+                            (!resourceIndex
+                                ? section[mappingKey].length > 1
+                                    ? section[mappingKey].splice(1)
+                                    : []
+                                : remove(
+                                      resourceIndex,
+                                      resourceIndex,
+                                      section[mappingKey]
+                                  ))
+                    )
+                } // Remove current resource index
             >
-                {(provided): any => (
-                    <DraggableResourceContainer
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                        ref={provided.innerRef}
-                        id="collection-card"
-                    >
-                        <CollectionCard
-                            id={String(
-                                path(
-                                    [
-                                        'homepage',
-                                        index,
-                                        mappingKey,
-                                        resourceIndex,
-                                        'id',
-                                    ],
-                                    values
-                                )
-                            )}
-                        />
-                        {provided.placeholder}
-                    </DraggableResourceContainer>
-                )}
-            </Draggable>
-        )}
-
-        <Button
-            color="default"
-            variant="text"
-            onClick={() =>
-                arrayHelpers.form.setFieldValue(
-                    `homepage[${index}][${mappingKey}]`,
-                    Array.isArray(section[mappingKey]) &&
-                        (!resourceIndex
-                            ? section[mappingKey].length > 1
-                                ? section[mappingKey].splice(1)
-                                : []
-                            : remove(
-                                  resourceIndex,
-                                  resourceIndex,
-                                  section[mappingKey]
-                              ))
-                )
-            } // Remove current resource index
-        >
-            <DeleteIcon />
-            {`Remove ${resource.type}`}
-        </Button>
-    </ResourceSection>
-)}
+                <DeleteIcon />
+                {`Remove ${resource.type}`}
+            </Button>
+        </ResourceSection>
+    )
+}
 
 const ContentSection = styled.section<BackgroundProps & { bg: string }>`
     display: flex;
@@ -257,11 +255,11 @@ interface IProps {
 }
 
 const HomepageContentField: React.FunctionComponent<IProps> = ({
-    values, id
+    values,
+    id,
 }) => {
-
     const [resourceModalOpened, setResourceModalOpened] = React.useState({})
-    
+
     const [modalOptions, setModalOptions] = React.useState({
         showSearch: false,
         query: globalSearchApprovedArticles,
@@ -270,21 +268,23 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
         title: '',
     })
 
-    const modalConfigs: IModalConfig[] = [{
-        title: 'Community content',
-        showSearch: false,
-        query: {
-            name: getCommunityArticleContent,
-            key: 'getCommunityContent',
-            variables: {
-                id,
-                size: 10,
-                filter: {
-                    statusEquals: 'APPROVED'
-                }
-            }
-        }
-    }]
+    const modalConfigs: IModalConfig[] = [
+        {
+            title: 'Community content',
+            showSearch: false,
+            query: {
+                name: getCommunityArticleContent,
+                key: 'getCommunityContent',
+                variables: {
+                    id,
+                    size: 10,
+                    filter: {
+                        statusEquals: 'APPROVED',
+                    },
+                },
+            },
+        },
+    ]
 
     const classes = useStyles()
 
@@ -306,12 +306,8 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                                 {...field}
                                                 placeholder="Add Section Name"
                                                 fontWeight={500}
-                                                className={
-                                                    classes.inputSection
-                                                }
-                                                color={
-                                                    'primaryTextColor'
-                                                }
+                                                className={classes.inputSection}
+                                                color={'primaryTextColor'}
                                             />
                                         )}
                                     />
@@ -324,12 +320,8 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                                 type="text"
                                                 placeholder="Add Section Description"
                                                 fontWeight={300}
-                                                className={
-                                                    classes.inputSection
-                                                }
-                                                color={
-                                                    'primaryTextColor'
-                                                }
+                                                className={classes.inputSection}
+                                                color={'primaryTextColor'}
                                             />
                                         )}
                                     />
@@ -414,11 +406,7 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
 
                                     <ChooseResourceModal
                                         key={`choose-resource-modal-${index}`}
-                                        open={
-                                            resourceModalOpened[
-                                                index
-                                            ]
-                                        }
+                                        open={resourceModalOpened[index]}
                                         handleClose={() =>
                                             setResourceModalOpened({
                                                 ...resourceModalOpened,
@@ -441,7 +429,11 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                                 [index]: false,
                                             })
                                         }}
-                                        preSelected={path(['homepage', index, 'resourcesId'])(values)} 
+                                        preSelected={path([
+                                            'homepage',
+                                            index,
+                                            'resourcesId',
+                                        ])(values)}
                                         disabled={[]}
                                         title={modalOptions.title}
                                         queryDoc={modalOptions.query}
@@ -475,7 +467,8 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                                 showSearch: config.showSearch,
                                                 queryKey: config.query.key,
                                                 query: config.query.name,
-                                                variables: config.query.variables,
+                                                variables:
+                                                    config.query.variables,
                                                 title: config.title,
                                             })
                                             setResourceModalOpened({

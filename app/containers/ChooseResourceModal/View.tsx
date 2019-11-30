@@ -12,7 +12,10 @@ import {
     InputBase,
 } from '@material-ui/core'
 import { Close as CloseIcon, Search as SearchIcon } from '@material-ui/icons'
-import { ResourceIdentifierInput, ResourceTypeInput } from '../../__generated__/globalTypes'
+import {
+    ResourceIdentifierInput,
+    ResourceTypeInput,
+} from '../../__generated__/globalTypes'
 import CardDetails from '../../components/Card/CardComponents/CardDetails'
 import Loading from '../../components/Loading'
 import { getArticleURL, getLinkUrl, getCollectionURL } from '../../lib/getURLs'
@@ -23,7 +26,6 @@ import { Link } from '../../queries/Fragments/__generated__/Link'
 import { Collection } from '../../queries/Fragments/__generated__/Collection'
 import { UserOwner } from '../../queries/Fragments/__generated__/UserOwner'
 import { path } from 'ramda'
-
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -131,12 +133,11 @@ const ChooseResourceModalContentView = props => {
                 className={classes.body}
             >
                 {/**** LOADING ****/}
-                {!Query[queryKey] || loading ? (
-                    <Loading />
-                ) : null}
+                {!Query[queryKey] || loading ? <Loading /> : null}
 
                 {/**** EMPTY STATE ****/}
-                {Query[queryKey] && Query[queryKey].totalElements === 0 &&
+                {Query[queryKey] &&
+                Query[queryKey].totalElements === 0 &&
                 !loading ? (
                     <div className={classes.empty}>
                         <Typography variant="h6" className={classes.emptyText}>
@@ -146,11 +147,11 @@ const ChooseResourceModalContentView = props => {
                 ) : null}
 
                 {/**** CONTENT ****/}
-                {Query[queryKey] && Query[queryKey].totalElements > 0 && !loading ? Query[queryKey].content.map(
-                          (
-                              result: any,
-                              _index: number
-                          ) => {
+                {Query[queryKey] &&
+                Query[queryKey].totalElements > 0 &&
+                !loading
+                    ? Query[queryKey].content.map(
+                          (result: any, _index: number) => {
                               if (
                                   result === null ||
                                   result.resourceIdentifier === null
@@ -158,13 +159,22 @@ const ChooseResourceModalContentView = props => {
                                   return null
 
                               const resourceId: ResourceIdentifierInput = {
-                                  id: path<string>([...pathToResourceId, 'id'])(result) || '',
-                                  type: path<ResourceTypeInput>([...pathToResourceId, 'type'])(result) || ResourceTypeInput.ARTICLE,
+                                  id:
+                                      path<string>([...pathToResourceId, 'id'])(
+                                          result
+                                      ) || '',
+                                  type:
+                                      path<ResourceTypeInput>([
+                                          ...pathToResourceId,
+                                          'type',
+                                      ])(result) || ResourceTypeInput.ARTICLE,
                               }
 
                               switch (resourceId.type) {
                                   case 'ARTICLE': {
-                                     var article = path<Article>([...pathToResource])(result) as Article
+                                      var article = path<Article>([
+                                          ...pathToResource,
+                                      ])(result) as Article
 
                                       return (
                                           <div
@@ -220,7 +230,9 @@ const ChooseResourceModalContentView = props => {
                                               <Button
                                                   color="primary"
                                                   variant="text"
-                                                  disabled={isDisabled(resourceId)}
+                                                  disabled={isDisabled(
+                                                      resourceId
+                                                  )}
                                                   onClick={() =>
                                                       selectResource(resourceId)
                                                   }
@@ -236,7 +248,9 @@ const ChooseResourceModalContentView = props => {
                                   }
 
                                   case 'LINK': {
-                                     var link = path<Link>([...pathToResource])(result) as Link
+                                      var link = path<Link>([
+                                          ...pathToResource,
+                                      ])(result) as Link
 
                                       return (
                                           <div
@@ -290,7 +304,9 @@ const ChooseResourceModalContentView = props => {
                                               <Button
                                                   color="primary"
                                                   variant="text"
-                                                  disabled={isDisabled(resourceId)}
+                                                  disabled={isDisabled(
+                                                      resourceId
+                                                  )}
                                                   onClick={() =>
                                                       selectResource(resourceId)
                                                   }
@@ -304,10 +320,12 @@ const ChooseResourceModalContentView = props => {
                                   }
 
                                   case 'COLLECTION': {
-                                      var collection = path<Collection>([...pathToResource])(result) as Collection
-                                      console.log("collection", collection)
+                                      var collection = path<Collection>([
+                                          ...pathToResource,
+                                      ])(result) as Collection
+                                      console.log('collection', collection)
                                       var owner = collection.owner as UserOwner
-                                      console.log("owner", owner)
+                                      console.log('owner', owner)
 
                                       return (
                                           <div
@@ -329,11 +347,19 @@ const ChooseResourceModalContentView = props => {
                                                   <CardDetails
                                                       user={{
                                                           id: owner.id,
-                                                          username: owner.username || '',
-                                                          name: owner.publicUserName || '',
-                                                          avatar: owner.avatar || '',
+                                                          username:
+                                                              owner.username ||
+                                                              '',
+                                                          name:
+                                                              owner.publicUserName ||
+                                                              '',
+                                                          avatar:
+                                                              owner.avatar ||
+                                                              '',
                                                       }}
-                                                      date={collection.dateCreated}
+                                                      date={
+                                                          collection.dateCreated
+                                                      }
                                                   />
                                               </div>
                                               <Button
@@ -354,7 +380,9 @@ const ChooseResourceModalContentView = props => {
                                               <Button
                                                   color="primary"
                                                   variant="text"
-                                                  disabled={isDisabled(resourceId)}
+                                                  disabled={isDisabled(
+                                                      resourceId
+                                                  )}
                                                   onClick={() =>
                                                       selectResource(resourceId)
                                                   }
@@ -378,7 +406,6 @@ const ChooseResourceModalContentView = props => {
     )
 }
 
-
 export interface IProps {
     routeChangeAction: (payload: string) => IRouteChangeAction
     open: boolean
@@ -399,9 +426,9 @@ export interface IProps {
 
 const ChooseResourceModalContent = withPagination(
     ChooseResourceModalContentView,
-    ((props: IProps) => {
+    (props: IProps) => {
         return props.queryKey
-    }),
+    },
     'Query'
 )
 
@@ -411,7 +438,7 @@ export const ChooseResourceModal = ({
     handleClose,
     handleConfirm,
     title,
-    preSelected ,
+    preSelected,
     disabled = [],
     Query,
     queryKey,
@@ -420,9 +447,8 @@ export const ChooseResourceModal = ({
     showSearch = false,
     searchQuery,
     setSearchQuery,
-    maxSelection = 100
+    maxSelection = 100,
 }: IProps) => {
-
     const classes = useStyles()
     const [selected, setSelected] = React.useState(preSelected)
     const [query, setQuery] = React.useState(searchQuery)
@@ -452,13 +478,13 @@ export const ChooseResourceModal = ({
         if (index > -1) {
             setSelected(selected.filter((_, i) => i !== index))
 
-        // resource not found: select
+            // resource not found: select
         } else {
             setSelected([...selected, resourceId])
         }
 
         // If the user has selected the maximum resources allowed, we close the popup
-        if(selected.length+1 >= maxSelection) {
+        if (selected.length + 1 >= maxSelection) {
             handleConfirm([...selected, resourceId])
         }
     }
@@ -497,22 +523,24 @@ export const ChooseResourceModal = ({
                         className={classes.title}
                     >{`${title} (${Query[queryKey].totalElements})`}</Typography>
                 )}
-                { showSearch && setSearchQuery && (
-                <div className={classes.searchClass}>
-                    <InputBase
-                        placeholder="Search…"
-                        classes={{
-                            input: classes.inputInput,
-                            root: classes.inputRoot,
-                        }}
-                        inputProps={{ 'aria-label': 'search' }}
-                        onChange={e => setQuery(e.target.value)}
-                        value={query}
-                    />
-                    <div className={classes.searchIconClass}>
-                        <SearchIcon onClick={() => setSearchQuery(query || '')} />
+                {showSearch && setSearchQuery && (
+                    <div className={classes.searchClass}>
+                        <InputBase
+                            placeholder="Search…"
+                            classes={{
+                                input: classes.inputInput,
+                                root: classes.inputRoot,
+                            }}
+                            inputProps={{ 'aria-label': 'search' }}
+                            onChange={e => setQuery(e.target.value)}
+                            value={query}
+                        />
+                        <div className={classes.searchIconClass}>
+                            <SearchIcon
+                                onClick={() => setSearchQuery(query || '')}
+                            />
+                        </div>
                     </div>
-                </div>
                 )}
 
                 <IconButton aria-label="close" onClick={handleClose}>

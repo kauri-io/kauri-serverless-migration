@@ -33,7 +33,13 @@ import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Head from 'next/head'
 import { Theme, withStyles } from '@material-ui/core/styles'
-import { Dialog, DialogTitle, Typography, DialogContent, DialogContentText } from '@material-ui/core'
+import {
+    Dialog,
+    DialogTitle,
+    Typography,
+    DialogContent,
+    DialogContentText,
+} from '@material-ui/core'
 import Loading from '../../components/Loading'
 
 const styles = (theme: Theme) => ({
@@ -54,7 +60,7 @@ const styles = (theme: Theme) => ({
         margin: 0,
         padding: theme.spacing(2),
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
 })
 
@@ -244,9 +250,9 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     />
                 </Head>
 
-                { /* Dialog used to prevent the access to the community page until the community is mined (saved on-chain). 
+                {/* Dialog used to prevent the access to the community page until the community is mined (saved on-chain). 
                      After being mined, status changes to OPENED
-                */ }
+                */}
                 <Dialog
                     open={getCommunity.status === 'CREATED'}
                     aria-labelledby="alert-dialog-title"
@@ -254,13 +260,29 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     maxWidth="md"
                     fullWidth
                 >
-                    <DialogTitle disableTypography className={classes.dialogTopContainer}>
-                        <Typography variant="h6" className={classes.dialogTitle}>Creating Community</Typography>
+                    <DialogTitle
+                        disableTypography
+                        className={classes.dialogTopContainer}
+                    >
+                        <Typography
+                            variant="h6"
+                            className={classes.dialogTitle}
+                        >
+                            Creating Community
+                        </Typography>
                     </DialogTitle>
-                    <DialogContent dividers className={classes.dialogContentContainer}>
+                    <DialogContent
+                        dividers
+                        className={classes.dialogContentContainer}
+                    >
                         <DialogContentText>
-                            <Typography variant="h6" align="center">We're setting up your community.</Typography>
-                            <Typography variant="h6" align="center">In less than 10 seconds you will be able to start adding and curating content.</Typography>
+                            <Typography variant="h6" align="center">
+                                We're setting up your community.
+                            </Typography>
+                            <Typography variant="h6" align="center">
+                                In less than 10 seconds you will be able to
+                                start adding and curating content.
+                            </Typography>
                             <Loading />
                         </DialogContentText>
                     </DialogContent>

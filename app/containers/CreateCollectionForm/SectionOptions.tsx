@@ -50,11 +50,12 @@ interface IProps {
 
 const Content: React.FunctionComponent<IProps> = props => (
     <TooltipContainer>
-
-        { props.modalConfigs.map((config, index) => (
-            <Fragment key={`section-option-section-${props.currentSectionIndex}-modal-${index}`}> 
-                {index > 0 && (<Divider />)}
-                <Label onClick={() => props.onClick(config) }>
+        {props.modalConfigs.map((config, index) => (
+            <Fragment
+                key={`section-option-section-${props.currentSectionIndex}-modal-${index}`}
+            >
+                {index > 0 && <Divider />}
+                <Label onClick={() => props.onClick(config)}>
                     {config.title}
                 </Label>
             </Fragment>

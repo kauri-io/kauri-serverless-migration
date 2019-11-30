@@ -346,14 +346,18 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
     // curateCommunityResourcesAction,
     openAddMemberModal,
     transferArticleToCommunityAction,
-    userId
+    userId,
 }) => {
-
     const existingContent = [
-        ...articles.map(article => article.resourceIdentifier as ResourceIdentifierInput),
-        ...collections.map(collection => collection.resourceIdentifier as ResourceIdentifierInput)
+        ...articles.map(
+            article => article.resourceIdentifier as ResourceIdentifierInput
+        ),
+        ...collections.map(
+            collection =>
+                collection.resourceIdentifier as ResourceIdentifierInput
+        ),
     ]
-    console.log("existingContent", existingContent)
+    console.log('existingContent', existingContent)
     // const suggestArticleAction = () =>
     //   openModalAction({
     //     children: (
@@ -429,9 +433,8 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                 handleClose={closeAddCommunityArticleModal}
                 maxSelection={1}
                 handleConfirm={(selected: ResourceIdentifierInput[]) => {
-
                     closeAddCommunityArticleModal()
-                    if(selected.length > 0) {
+                    if (selected.length > 0) {
                         transferArticleToCommunityAction(
                             {
                                 id: selected[0].id,
@@ -463,7 +466,6 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                 }}
                 showSearch={false}
             />
-
 
             {/* <ChooseArticleModal
                 hideAllArticlesTab={true}

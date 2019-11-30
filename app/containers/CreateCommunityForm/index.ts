@@ -161,7 +161,9 @@ export default compose(
                           // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
                           // @ts-ignore
                           ...section,
-                          resourcesId: section.resourcesId.map(resourceId => dissocPath(['__typename'])(resourceId)),
+                          resourcesId: section.resourcesId.map(resourceId =>
+                              dissocPath(['__typename'])(resourceId)
+                          ),
                       })),
                       map(section => dissocPath(['resources'])(section)),
                       map(section => dissocPath(['__typename'])(section))

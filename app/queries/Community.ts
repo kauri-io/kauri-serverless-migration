@@ -5,7 +5,7 @@ import {
     CommunityOwner,
     Article,
     Collection,
-    Link
+    Link,
 } from './Fragments'
 
 export const getCommunity = gql`

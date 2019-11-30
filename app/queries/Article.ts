@@ -1,5 +1,11 @@
 import gql from 'graphql-tag'
-import { CommunityOwner, UserOwner, Article, Link, Collection } from './Fragments'
+import {
+    CommunityOwner,
+    UserOwner,
+    Article,
+    Link,
+    Collection,
+} from './Fragments'
 
 export const submitArticle = gql`
     mutation submitArticle(

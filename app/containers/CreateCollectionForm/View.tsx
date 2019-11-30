@@ -326,11 +326,11 @@ const renderResourceSection = (
 }
 
 export interface IModalConfig {
-    title: string;
-    showSearch: boolean;
+    title: string
+    showSearch: boolean
     query: {
-        name: DocumentNode,
-        key: PaginationDataQuery;
+        name: DocumentNode
+        key: PaginationDataQuery
         variables: any
     }
 }
@@ -400,7 +400,7 @@ const CreateCollectionForm: React.FC<
 
     const [resourceModalOpened, setResourceModalOpened] = React.useState({})
     const [validationMessages, setValidationMessages] = React.useState({})
-    
+
     const [modalOptions, setModalOptions] = React.useState({
         showSearch: false,
         query: globalSearchApprovedArticles,
@@ -409,42 +409,45 @@ const CreateCollectionForm: React.FC<
         title: '',
     })
 
-    const modalConfigs: IModalConfig[] = [{
-        title: 'My published content',
-        showSearch: true,
-        query: {
-            name: globalSearchApprovedArticles,
-            key: 'searchAutocomplete',
-            variables: {
-                size: 10,
-                query: '',
-                filter: {
-                    types: ['ARTICLE', 'LINK'],
-                    mustIncludeUserId: [userId],
+    const modalConfigs: IModalConfig[] = [
+        {
+            title: 'My published content',
+            showSearch: true,
+            query: {
+                name: globalSearchApprovedArticles,
+                key: 'searchAutocomplete',
+                variables: {
+                    size: 10,
+                    query: '',
+                    filter: {
+                        types: ['ARTICLE', 'LINK'],
+                        mustIncludeUserId: [userId],
+                    },
+                    parameter: {
+                        scoringMode: 'LAST_UPDATED',
+                    },
                 },
-                parameter: {
-                    scoringMode: 'LAST_UPDATED',
+            },
+        },
+        {
+            title: 'Search Content',
+            showSearch: true,
+            query: {
+                name: globalSearchApprovedArticles,
+                key: 'searchAutocomplete',
+                variables: {
+                    size: 10,
+                    query: '',
+                    filter: {
+                        types: ['ARTICLE', 'LINK'],
+                    },
+                    parameter: {
+                        scoringMode: 'LAST_UPDATED',
+                    },
                 },
-            }
-        }
-    }, {
-        title: 'Search Content',
-        showSearch: true,
-        query: {
-            name: globalSearchApprovedArticles,
-            key: 'searchAutocomplete',
-            variables: {
-                size: 10,
-                query: '',
-                filter: {
-                    types: ['ARTICLE', 'LINK']
-                },
-                parameter: {
-                    scoringMode: 'LAST_UPDATED',
-                },
-            }
-        }
-    }]
+            },
+        },
+    ]
 
     const validate = (name: string, value: string, maxLength: number) => {
         if (value && value.length > maxLength) {
@@ -789,26 +792,53 @@ const CreateCollectionForm: React.FC<
                                                         )
                                                         setModalOptions({
                                                             ...modalOptions,
-                                                            variables: { ...modalOptions.variables, query: '' },
+                                                            variables: {
+                                                                ...modalOptions.variables,
+                                                                query: '',
+                                                            },
                                                         })
                                                         setResourceModalOpened({
                                                             ...resourceModalOpened,
                                                             [index]: false,
                                                         })
                                                     }}
-                                                    preSelected={values.sections[index].resourcesId} 
+                                                    preSelected={
+                                                        values.sections[index]
+                                                            .resourcesId
+                                                    }
                                                     title={modalOptions.title}
-                                                    queryDoc={modalOptions.query}
-                                                    queryKey={modalOptions.queryKey}
-                                                    queryVariables={modalOptions.variables}
-                                                    pathToResourceId={['resourceIdentifier']}
-                                                    pathToResource={['resource']}
-                                                    showSearch={modalOptions.showSearch}
-                                                    searchQuery={modalOptions.variables['query']}
-                                                    setSearchQuery={(query: string) =>
+                                                    queryDoc={
+                                                        modalOptions.query
+                                                    }
+                                                    queryKey={
+                                                        modalOptions.queryKey
+                                                    }
+                                                    queryVariables={
+                                                        modalOptions.variables
+                                                    }
+                                                    pathToResourceId={[
+                                                        'resourceIdentifier',
+                                                    ]}
+                                                    pathToResource={[
+                                                        'resource',
+                                                    ]}
+                                                    showSearch={
+                                                        modalOptions.showSearch
+                                                    }
+                                                    searchQuery={
+                                                        modalOptions.variables[
+                                                            'query'
+                                                        ]
+                                                    }
+                                                    setSearchQuery={(
+                                                        query: string
+                                                    ) =>
                                                         setModalOptions({
                                                             ...modalOptions,
-                                                            variables: { ...modalOptions.variables, query },
+                                                            variables: {
+                                                                ...modalOptions.variables,
+                                                                query,
+                                                            },
                                                         })
                                                     }
                                                 />
@@ -838,12 +868,21 @@ const CreateCollectionForm: React.FC<
                                                         )
                                                     }
                                                     modalConfigs={modalConfigs}
-                                                    onClick={(config: IModalConfig) => {
+                                                    onClick={(
+                                                        config: IModalConfig
+                                                    ) => {
                                                         setModalOptions({
-                                                            showSearch: config.showSearch,
-                                                            queryKey: config.query.key,
-                                                            query: config.query.name,
-                                                            variables: config.query.variables,
+                                                            showSearch:
+                                                                config.showSearch,
+                                                            queryKey:
+                                                                config.query
+                                                                    .key,
+                                                            query:
+                                                                config.query
+                                                                    .name,
+                                                            variables:
+                                                                config.query
+                                                                    .variables,
                                                             title: config.title,
                                                         })
                                                         setResourceModalOpened({
