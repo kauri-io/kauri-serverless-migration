@@ -54,12 +54,5 @@ export default compose(
         }
     ),
     graphqlDynamic(query),
-    // graphql(globalSearchApprovedArticles, {
-    //     name: QUERY_NAME,
-    //     options: ({ queryVariables }: {queryVariables: any }) => ({
-    //         fetchPolicy: 'network-only',
-    //         variables: queryVariables,
-    //     }),
-    // }),
     withApolloError()
 )(View)

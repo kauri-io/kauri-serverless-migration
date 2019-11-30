@@ -486,7 +486,7 @@ const CreateCollectionForm: React.FC<
                             onClick={() => routeChangeAction('back')}
                         >
                             <BackIcon />
-                            Cancel Collection
+                            Go Back
                         </Button>
                     </Stack>
                     <Stack
