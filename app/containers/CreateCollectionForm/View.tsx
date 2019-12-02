@@ -424,9 +424,6 @@ const CreateCollectionForm: React.FC<
                         types: ['ARTICLE', 'LINK'],
                         mustIncludeUserId: [userId],
                     },
-                    parameter: {
-                        scoringMode: 'LAST_UPDATED',
-                    },
                 },
             },
         },
@@ -441,9 +438,6 @@ const CreateCollectionForm: React.FC<
                     query: '',
                     filter: {
                         types: ['ARTICLE', 'LINK'],
-                    },
-                    parameter: {
-                        scoringMode: 'LAST_UPDATED',
                     },
                 },
             },
