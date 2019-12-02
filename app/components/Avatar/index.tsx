@@ -49,7 +49,7 @@ const AvatarComp = ({
         },
         username: {
             textTransform: 'capitalize',
-            fontWeight: 'bold',
+            fontWeight: 500,
             [theme.breakpoints.up('xs')]: {
                 fontSize: 14,
             },

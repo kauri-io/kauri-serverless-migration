@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme: Theme) => ({
         '& > *': {
             marginBottom: theme.spacing(1),
         },
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
     },
     buttons: {
         maxWidth: 870,
@@ -25,6 +28,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     button: {
         display: 'flex',
         justifyContent: 'center',
+    },
+    title: {
+        fontWeight: 400,
+        padding: theme.spacing(2, 0),
+        lineHeight: '24px',
     },
 }))
 
@@ -36,7 +44,9 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
     const classes = useStyles()
     return (
         <Grid direction="column" container={true} className={classes.container}>
-            <Typography variant="h5">Latest Content</Typography>
+            <Typography variant="h6" component="h3" className={classes.title}>
+                Recent Content
+            </Typography>
             <Grid container={true} spacing={2}>
                 {content.map((resource: any, key) => {
                     switch (resource.__typename) {
@@ -53,7 +63,7 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
 
                         case 'CollectionDTO': {
                             return (
-                                <Grid key={key} item={true} sm={12}>
+                                <Grid key={key} item={true} xs={12}>
                                     {' '}
                                     <CollectionCard
                                         {...resource}
@@ -65,7 +75,7 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
 
                         case 'CommunityDTO':
                             return (
-                                <Grid key={key} item={true} sm={12}>
+                                <Grid key={key} item={true} xs={12}>
                                     {' '}
                                     <CommunityCard
                                         {...resource}

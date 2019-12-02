@@ -355,7 +355,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                             className={classes.navlink}
                             onClick={handleCreateMenuOpen}
                         >
-                            Create
+                            Contribute
                         </Typography>
                     </Hidden>
                     <div className={classes.sectionDesktop}>
