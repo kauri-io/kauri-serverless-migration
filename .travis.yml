@@ -15,13 +15,16 @@ before_install:
 - export AUTHOR_NAME="$(git log -1 $TRAVIS_COMMIT --pretty="%aN")"
 - yarn global add jest now
 - cd app && yarn
+- cd ..
 
 jobs:
   include:
   - stage: tests
+    install:
+      - cd app
     script:
       - yarn test
   - stage: deploy-dev
     if: "(NOT env(AUTHOR_NAME) =~ ^Travis AND (NOT type IN (pull_request)) AND (branch= development))"
     script:
-      - now --token=$NOW_TOKEN
+      - now alias --token=$NOW_TOKEN $(now -A qa.now.json --token=$NOW_TOKEN) qa.kauri.io
