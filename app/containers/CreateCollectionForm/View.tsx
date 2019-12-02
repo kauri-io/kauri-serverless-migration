@@ -423,7 +423,7 @@ const CreateCollectionForm: React.FC<
                     filter: {
                         types: ['ARTICLE', 'LINK'],
                         mustIncludeUserId: [userId],
-                    }
+                    },
                 },
             },
         },
@@ -438,7 +438,7 @@ const CreateCollectionForm: React.FC<
                     query: '',
                     filter: {
                         types: ['ARTICLE', 'LINK'],
-                    }
+                    },
                 },
             },
         },
