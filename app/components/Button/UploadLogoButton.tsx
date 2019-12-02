@@ -11,6 +11,7 @@ interface IButtonProps {
     fontSize?: number
     color?: string
     disabled?: boolean
+    hasError?: boolean
 }
 
 const UploadLogoButton = styled.button<IButtonProps>`
@@ -19,7 +20,8 @@ const UploadLogoButton = styled.button<IButtonProps>`
             theme: {
                 colors: { primary },
             },
-        }) => primary};
+            hasError,
+        }) => (hasError ? 'red' : primary)};
     border-radius: 4px;
     background: ${props =>
         props.bg ? `url(${props.bg}) center center` : 'transparent'};
@@ -51,7 +53,6 @@ const Overlay = styled.div`
     align-items: center;
     justify-content: center;
     height: 100%;
-
     > :first-child {
         height: 18px;
         width: 18px;
@@ -67,6 +68,7 @@ interface IProps extends IButtonProps {
     space?: number
     text?: string
     callback: (hash: string) => void
+    hasError?: boolean
 }
 
 let uppy
@@ -82,6 +84,7 @@ const UploadLogoButtonComponent: React.FunctionComponent<IProps> = ({
     children,
     disabled,
     callback,
+    hasError,
 }) => {
     useEffect(() => {
         uppy = initUppy({ allowGifs: false })
@@ -103,6 +106,7 @@ const UploadLogoButtonComponent: React.FunctionComponent<IProps> = ({
             color={color}
             fontSize={fontSize}
             type="button"
+            hasError={hasError}
         >
             <Overlay>
                 <img src="https://png.icons8.com/color/50/000000/upload.png" />

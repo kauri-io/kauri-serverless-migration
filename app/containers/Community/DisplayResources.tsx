@@ -172,18 +172,20 @@ const DisplayManagedResourcesComponent = ({
 }: IProps & { review?: boolean }) => {
     return (
         <Container>
-            <Grid className={classes.grid} container spacing={3}>
-                {Array.isArray(resources) && resources.length
-                    ? resources.map(
-                          RenderResources()
-                          // isMember,
-                          // communityId,
-                          // openModalAction,
-                          // closeModalAction,
-                          // removeResourceAction
-                      )
-                    : null}
-            </Grid>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Grid className={classes.grid} container spacing={3}>
+                    {Array.isArray(resources) && resources.length
+                        ? resources.map(
+                              RenderResources()
+                              // isMember,
+                              // communityId,
+                              // openModalAction,
+                              // closeModalAction,
+                              // removeResourceAction
+                          )
+                        : null}
+                </Grid>
+            </div>
         </Container>
     )
 }
