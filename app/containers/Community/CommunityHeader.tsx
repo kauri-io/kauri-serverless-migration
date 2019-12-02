@@ -457,7 +457,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                 queryVariables={{
                     size: 10,
                     filter: {
-                        types: ['ARTICLE', 'LINK', 'COLLECTION'],
+                        types: ['ARTICLE', 'LINK'],
                         mustIncludeUserId: [userId],
                     },
                     parameter: {
