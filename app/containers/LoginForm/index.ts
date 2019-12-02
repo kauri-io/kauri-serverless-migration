@@ -5,11 +5,9 @@ import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { withFormik } from 'formik'
 import View from './View'
 
-export type FormState = {
-    email: string
-}
-
-const mapStateToProps = () => ({})
+const mapStateToProps = () => ({
+    web3: global.window && !!global.window.web3,
+})
 
 interface IProps {
     registerAction: (callback?: any) => IRegisterAction
@@ -27,12 +25,7 @@ export default compose<any, IProps>(
         { registerAction, showNotificationAction }
     ),
     withFormik({
-        handleSubmit: async (
-            values: FormState,
-            { props, resetForm }: IHandleSumit
-        ) => {
-            console.log(props)
-            console.log('Received values of form: ', values)
+        handleSubmit: async (_values, { props, resetForm }: IHandleSumit) => {
             return props.registerAction(resetForm)
         },
     })

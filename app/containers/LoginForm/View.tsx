@@ -1,23 +1,37 @@
-import React, { SyntheticEvent } from 'react'
-import Head from 'next/head'
+import { makeStyles, Theme, Typography, Grid } from '@material-ui/core'
 import Button from '../../components/Button'
-import { IRegisterAction } from './Module'
-import { IShowNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
-import { Typography, Grid } from '@material-ui/core'
 import Image from '../../components/Image'
+import NoSsr from '@material-ui/core/NoSsr'
+import LoadingComponent from '../../components/Loading'
 
-const Web3Unavailable = () => (
-    <Grid
-        style={{ height: '100%' }}
-        container={true}
-        direction="column"
-        justify="center"
-        alignItems="center"
-    >
-        <Typography gutterBottom={true} variant="h4" component="h1">
-            Web3 Sign in
-        </Typography>
-        <Typography gutterBottom={true}>
+const useStyles = makeStyles((theme: Theme) => ({
+    loginContainer: {
+        background: theme.palette.common.black,
+        height: '100%',
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+    },
+    loadingContainer: {
+        background: theme.palette.common.black,
+        height: '100%',
+        flex: 1,
+        display: 'flex',
+    },
+    link: {
+        color: theme.palette.primary.main,
+        fontWeight: 600,
+        marginTop: theme.spacing(3),
+    },
+    kauriIntro: {
+        color: theme.palette.common.white,
+        marginTop: theme.spacing(3),
+    },
+}))
+
+const Web3Unavailable = ({ classes }) => (
+    <>
+        <Typography gutterBottom={true} color="secondary" variant="body1">
             You need the MetaMask extension to use Kauri. (MetaMask supports
             Chrome, Firefox, Opera)
         </Typography>
@@ -26,10 +40,10 @@ const Web3Unavailable = () => (
             height={100}
             image="/static/images/metamask/avatar.png"
         />
-        <a style={{ marginTop: 24 }} href="https://metamask.io" target="_blank">
+        <a className={classes.link} href="https://metamask.io" target="_blank">
             https://metamask.io
         </a>
-        <div style={{ marginTop: 40 }}>
+        <div className={classes.kauriIntro}>
             Here for the content? Sign up for a newsletter below and receive the
             latest Web3 tutorials, project announcements, and articles every 2
             weeks!
@@ -96,7 +110,6 @@ const Web3Unavailable = () => (
                     <div className="clear">
                         <input
                             type="submit"
-                            defaultValue="Subscribe"
                             value="Subscribe"
                             name="subscribe"
                             id="mc-embedded-subscribe"
@@ -116,80 +129,50 @@ const Web3Unavailable = () => (
                 __html: `(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);`,
             }}
         />
-    </Grid>
+    </>
 )
 
-class LoginForm extends React.Component<{
-    handleSubmit: (e?: SyntheticEvent<HTMLButtonElement>) => void
-    getFieldDecorator: any
-    type?: string
-    isSubmitting: boolean
-}> {
-    handleKeyPress = e => {
-        if (e.key === 'Enter') {
-            this.props.handleSubmit(e)
-        }
-    }
+const Web3Available = ({ handleSubmit }) => (
+    <>
+        <Typography gutterBottom={true} color="secondary" variant="body1">
+            Sign in using Web3 enabled provider. (MetaMask, Status, Coinbase
+            Wallet)
+        </Typography>
+        <Button
+            color="primary"
+            variant="contained"
+            onClick={() => handleSubmit()}
+        >
+            SIGN IN
+        </Button>
+    </>
+)
 
-    render() {
-        return (
-            <Grid
-                style={{ height: '100%' }}
-                container={true}
-                direction="column"
-                justify="center"
-                alignItems="center"
-            >
-                <Typography
-                    gutterBottom={true}
-                    variant="h4"
-                    component="h1"
-                    color="secondary"
-                >
-                    Web3 Sign in
-                </Typography>
-                <Typography gutterBottom={true} color="secondary">
-                    Sign in using Web3 enabled provider. (MetaMask, Status,
-                    Coinbase Wallet)
-                </Typography>
-                <Button
-                    color="primary"
-                    variant="contained"
-                    onClick={() => this.props.handleSubmit()}
-                >
-                    SIGN IN
-                </Button>
-            </Grid>
-        )
-    }
+export default ({ web3, handleSubmit }) => {
+    const classes = useStyles({})
+
+    return (
+        <Grid
+            container={true}
+            direction="column"
+            alignItems="center"
+            justify="center"
+            className={classes.loginContainer}
+        >
+            {!process.browser && <LoadingComponent />}
+            {process.browser && (
+                <NoSsr>
+                    <Typography
+                        gutterBottom={true}
+                        variant="h4"
+                        color="secondary"
+                    >
+                        Web3 Sign In
+                    </Typography>
+                    {web3 && <Web3Available handleSubmit={handleSubmit} />}
+                    {!web3 && <Web3Unavailable classes={classes} />}
+                </NoSsr>
+            )}
+        </Grid>
+    )
 }
-
-interface IProps {
-    form: any
-    registerAction: IRegisterAction
-    showNotificationAction: IShowNotificationAction
-    handleSubmit: (e?: SyntheticEvent<HTMLButtonElement>) => void
-    isSubmitting: boolean
-    getFieldDecorator: any
-}
-
-class LoginFormContainer extends React.Component<IProps> {
-    render() {
-        if (global.window && !global.window.web3) {
-            return <Web3Unavailable />
-        } else if (global.window && global.window.web3) {
-            return (
-                <Grid style={{ height: '100%', background: '#1E2428' }}>
-                    <Head>
-                        <title>Kauri - Login</title>
-                    </Head>
-                    <LoginForm {...this.props} type="register" />
-                </Grid>
-            )
-        } else {
-            return null
-        }
-    }
-}
-
-export default LoginFormContainer
