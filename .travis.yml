@@ -2,12 +2,6 @@ language: node_js
 node_js:
   - "10.17.0"
 
-branches:
-  only:
-  - master
-  - development
-  - dev2
-
 cache: yarn
 
 before_install:
@@ -27,4 +21,12 @@ jobs:
   - stage: deploy-dev
     if: "(NOT env(AUTHOR_NAME) =~ ^Travis AND (NOT type IN (pull_request)) AND (branch= development))"
     script:
+      - now alias --scope kauri --token=$NOW_TOKEN $(now --scope kauri --token=$NOW_TOKEN) dev.kauri.io
+  - stage: deploy-qa
+    if: "(NOT env(AUTHOR_NAME) =~ ^Travis AND (NOT type IN (pull_request)) AND (branch= qa))"
+    script:
       - now alias --scope kauri --token=$NOW_TOKEN $(now -A qa.now.json --scope kauri --token=$NOW_TOKEN) qa.kauri.io
+  - stage: deploy-prod
+    if: "(NOT env(AUTHOR_NAME) =~ ^Travis AND (NOT type IN (pull_request)) AND (branch= master))"
+    script:
+      - now alias --scope kauri --token=$NOW_TOKEN $(now -A prod.now.json --prod --scope kauri --token=$NOW_TOKEN) kauri.io
