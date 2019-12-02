@@ -134,7 +134,7 @@ const RenderResources = () =>
             return null
         }
         return (
-            <Grid key={article.id} item xs={12} sm={12} lg={6}>
+            <Grid key={article.id} item xs={12} sm={12} lg={12}>
                 {Card}
             </Grid>
         )
@@ -194,6 +194,8 @@ export const DisplayManagedResources = withStyles({
     grid: {
         paddingTop: '24px',
         paddingBottom: '24px',
+        width: 870,
+        margin: 'auto'
     },
 })(DisplayManagedResourcesComponent)
 
@@ -201,5 +203,7 @@ export default withStyles({
     grid: {
         paddingTop: '24px',
         paddingBottom: '24px',
+        width: 870,
+        margin: 'auto'
     },
 })(DisplayResources)

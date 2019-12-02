@@ -357,7 +357,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                 collection.resourceIdentifier as ResourceIdentifierInput
         ),
     ]
-    console.log('existingContent', existingContent)
+    
     // const suggestArticleAction = () =>
     //   openModalAction({
     //     children: (
