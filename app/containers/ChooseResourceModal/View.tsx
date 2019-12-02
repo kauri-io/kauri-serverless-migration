@@ -327,7 +327,9 @@ const ChooseResourceModalContentView = props => {
                                                   className={classes.cardButton}
                                               >
                                                   {' '}
-                                                  Select
+                                                  {indexOf(resourceId) > -1
+                                                      ? 'Unselect'
+                                                      : 'Select'}
                                               </Button>
                                           </div>
                                       )
@@ -410,7 +412,9 @@ const ChooseResourceModalContentView = props => {
                                                   className={classes.cardButton}
                                               >
                                                   {' '}
-                                                  Select
+                                                  {indexOf(resourceId) > -1
+                                                      ? 'Unselect'
+                                                      : 'Select'}
                                               </Button>
                                           </div>
                                       )
