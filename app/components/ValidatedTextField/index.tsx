@@ -40,7 +40,8 @@ const ValidatedTextField = ({
     label,
 }: IProps) => {
     const [error, setError] = useState('')
-    const [lastValueChange, setLastValueChange] = useState('')
+    //Setting to this value will ensure that validation runs on intial render
+    const [lastValueChange, setLastValueChange] = useState('***NOT-SET***')
 
     const doValidation = value => {
         let err = ''

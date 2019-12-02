@@ -135,8 +135,7 @@ const Web3Unavailable = ({ classes }) => (
 const Web3Available = ({ handleSubmit }) => (
     <>
         <Typography gutterBottom={true} color="secondary" variant="body1">
-            Sign in using Web3 enabled provider. (MetaMask, Status, Coinbase
-            Wallet)
+            Sign in using MetaMask.
         </Typography>
         <Button
             color="primary"

@@ -1,5 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 
+const disabledColour = '#e0e0e0'
+
 export default createMuiTheme({
     palette: {
         common: {
@@ -21,12 +23,12 @@ export default createMuiTheme({
         MuiButton: {
             contained: {
                 '&&:disabled': {
-                    backgroundColor: '#e0e0e0',
+                    backgroundColor: disabledColour,
                 },
             },
             outlined: {
                 '&&:disabled': {
-                    backgroundColor: '#e0e0e0',
+                    backgroundColor: disabledColour,
                 },
             },
         },

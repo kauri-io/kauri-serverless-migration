@@ -8,6 +8,7 @@ import Metadata from './Metadata'
 import { IOpenModalAction, ICloseModalAction } from '../Modal/Module'
 import { IAttributes } from '../../containers/WriteArticle/View'
 import Importer from '../../containers/Importer'
+import { Style } from 'jss'
 
 interface IProps {
     withTabs: boolean
@@ -23,6 +24,7 @@ interface IProps {
     onValidation?: (k: string, e: string) => void
     setTitle?: (title: string) => void
     placeholder?: string
+    focusOutline?: boolean
 }
 
 const Editor = ({
@@ -39,7 +41,17 @@ const Editor = ({
     setTitle,
     onValidation,
     placeholder,
+    focusOutline = true,
 }: IProps) => {
+    const editorStyle = (theme): Style => {
+        return {
+            fontSize: '16px',
+            resize: 'vertical',
+            border: 'none',
+            paddingTop: theme.spacing(2),
+            flex: 1,
+        }
+    }
     const useStyles = makeStyles((theme: Theme) => ({
         editorContainer: {
             background: theme.palette.common.white,
@@ -50,12 +62,12 @@ const Editor = ({
             margin: 'auto',
             minHeight: minHeight ? minHeight : 400,
         },
-        editor: {
-            fontSize: '16px',
-            resize: 'vertical',
-            border: 'none',
-            paddingTop: theme.spacing(2),
-            flex: 1,
+        editor: editorStyle(theme),
+        editorNoFocusOutline: {
+            '&&:focus': {
+                outline: 'none',
+            },
+            ...editorStyle(theme),
         },
         root: {
             width: '100%',
@@ -130,7 +142,11 @@ const Editor = ({
                         }}
                         value={text}
                         id="editor-text-area"
-                        className={classes.editor}
+                        className={
+                            focusOutline
+                                ? classes.editor
+                                : classes.editorNoFocusOutline
+                        }
                         placeholder={placeholder || 'Start writing...'}
                     />
                 )}
