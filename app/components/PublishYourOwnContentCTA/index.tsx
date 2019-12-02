@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/styles'
-import { Theme, Grid, Typography, Hidden } from '@material-ui/core'
+import { Theme, Grid, Typography } from '@material-ui/core'
 import ButtonComp from '../Button'
 import Link from 'next/link'
 
@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         borderRadius: 4,
         width: '100%',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
     },
     title: {
         fontWeight: 400,
@@ -19,14 +19,23 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     subtitle: {},
     link: {},
+    root: {
+        [theme.breakpoints.down('md')]: {
+            display: 'none',
+        },
+    },
 }))
 
 export default ({ isLoggedIn, content }) => {
     const classes = useStyles({})
 
     return (
-        <Hidden mdDown={true}>
-        <Grid container={true} direction="column" spacing={0}>
+        <Grid
+            className={classes.root}
+            container={true}
+            direction="column"
+            spacing={0}
+        >
             <Typography variant="h6" component="h3" className={classes.title}>
                 Publish Content
             </Typography>
@@ -36,14 +45,18 @@ export default ({ isLoggedIn, content }) => {
                     knowledge across the world via the Ethereum ecosystem. IPFS
                     etc etc
                 </Typography>
-                {content.map(link => <Link href={isLoggedIn
-                    ? link.link
-                    : `/login?r=${link.link}`}>
-                    <a>
-                        <ButtonComp color='primary'>{link.actionName}</ButtonComp>
-                    </a></Link>)}
+                {content.map(link => (
+                    <Link
+                        href={isLoggedIn ? link.link : `/login?r=${link.link}`}
+                    >
+                        <a>
+                            <ButtonComp color="primary">
+                                {link.actionName}
+                            </ButtonComp>
+                        </a>
+                    </Link>
+                ))}
             </Grid>
         </Grid>
-        </Hidden>
     )
 }

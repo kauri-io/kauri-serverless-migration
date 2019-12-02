@@ -7,10 +7,11 @@ import { Theme, makeStyles, Grid } from '@material-ui/core'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
+        margin: theme.spacing(2, 0),
         [theme.breakpoints.down('md')]: {
             display: 'flex',
-            flexDirection: 'column'
-        }
+            flexDirection: 'column',
+        },
     },
     link: {
         width: '100%',
@@ -31,8 +32,13 @@ const useStyles = makeStyles((theme: Theme) => ({
 const CuratedCategory = ({ content }) => {
     const classes = useStyles()
     return (
-        <Grid direction='row' container={true} className={classes.container} spacing={2}>
-            {content.map((category, key) =>
+        <Grid
+            direction="row"
+            container={true}
+            className={classes.container}
+            spacing={2}
+        >
+            {content.map((category, key) => (
                 <Grid lg={3} md={6} sm={12} item={true}>
                     <Link href={category.link} key={key}>
                         <a className={classes.link}>
@@ -68,7 +74,7 @@ const CuratedCategory = ({ content }) => {
                         </a>
                     </Link>
                 </Grid>
-            )}
+            ))}
         </Grid>
     )
 }

@@ -44,7 +44,7 @@ export const HomePageComponent = (props: {
     const useStyles = makeStyles((theme: Theme) => ({
         root: {
             width: '100%',
-            background: '#f7f7f7'
+            background: '#f7f7f7',
         },
         section: {
             maxWidth: 1224,
@@ -54,12 +54,12 @@ export const HomePageComponent = (props: {
             flexDirection: 'row',
             justifyContent: 'center',
             [theme.breakpoints.down('md')]: {
-                padding: theme.spacing(1)
-            }
+                padding: theme.spacing(1),
+            },
         },
         sidebar: {
             maxWidth: 392,
-            width: '100%'
+            width: '100%',
         },
     }))
     const classes = useStyles()
@@ -88,9 +88,7 @@ export const HomePageComponent = (props: {
                 const hasSidebar = row.sidebar !== null
                 return (
                     <div className={classes.root} key={index}>
-                        <div
-                            className={classes.section}
-                        >
+                        <div className={classes.section}>
                             {row.main.map(main => {
                                 switch (main.type) {
                                     case 'CATEGORIES':
@@ -125,9 +123,7 @@ export const HomePageComponent = (props: {
 
                             {hasSidebar && (
                                 <Hidden smDown={true}>
-                                    <div
-                                        className={classes.sidebar}
-                                    >
+                                    <div className={classes.sidebar}>
                                         {row.sidebar.map(sidebar => {
                                             switch (sidebar.__typename) {
                                                 case 'Actions': {
@@ -149,7 +145,7 @@ export const HomePageComponent = (props: {
                                                     if (
                                                         sidebar.content &&
                                                         sidebar.__typename ===
-                                                        'TopContributors'
+                                                            'TopContributors'
                                                     ) {
                                                         if (sidebar.content) {
                                                             const contributors = sidebar.content.map(
@@ -217,16 +213,13 @@ export const HomePageComponent = (props: {
                                                 )
                                             }
                                             handleError={() => {
-                                                props.showNotificationAction(
-                                                    {
-                                                        description:
-                                                            'Please enter a valid email address!',
-                                                        message:
-                                                            'Invalid Email address',
-                                                        notificationType:
-                                                            'error',
-                                                    }
-                                                )
+                                                props.showNotificationAction({
+                                                    description:
+                                                        'Please enter a valid email address!',
+                                                    message:
+                                                        'Invalid Email address',
+                                                    notificationType: 'error',
+                                                })
                                             }}
                                         />
                                     )

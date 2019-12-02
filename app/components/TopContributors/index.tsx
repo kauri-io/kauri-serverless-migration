@@ -1,4 +1,4 @@
-import { makeStyles, Theme, Hidden, Typography } from "@material-ui/core"
+import { makeStyles, Theme, Typography } from '@material-ui/core'
 import Avatar from '../Avatar'
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -15,22 +15,28 @@ const useStyles = makeStyles((theme: Theme) => ({
         display: 'flex',
         flexDirection: 'column',
         '& > *': {
-            marginBottom: theme.spacing(2)
-        }
+            marginBottom: theme.spacing(2),
+        },
     },
-    subtitle: {}
+    subtitle: {},
+    root: {
+        [theme.breakpoints.down('md')]: {
+            display: 'none',
+        },
+    },
 }))
 
 export default ({ contributors }) => {
     const classes = useStyles({})
-    console.log(contributors)
-    return <Hidden mdDown={true}>
-        <>
+    return (
+        <div className={classes.root}>
             <Typography variant="h6" component="h3" className={classes.title}>
                 Top Contributors
             </Typography>
             <div className={classes.container}>
-            <Typography className={classes.subtitle} variant="body2">Contributors of the week</Typography>
+                <Typography className={classes.subtitle} variant="body2">
+                    Contributors of the week
+                </Typography>
                 {contributors.map((contributor, index) => (
                     <Avatar
                         key={index}
@@ -41,8 +47,6 @@ export default ({ contributors }) => {
                     />
                 ))}
             </div>
-        </>
-    </Hidden>
+        </div>
+    )
 }
-
-

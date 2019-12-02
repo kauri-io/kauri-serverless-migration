@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
         width: '100%',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
     },
     buttons: {
         maxWidth: 870,
