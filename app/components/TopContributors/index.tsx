@@ -1,35 +1,48 @@
-import { Title2 } from '../Typography'
-import TopResourcesSection from '../Section/TopResourcesSection'
+import { makeStyles, Theme, Hidden, Typography } from "@material-ui/core"
 import Avatar from '../Avatar'
-import styled from 'styled-components'
 
-const ContributorsContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    > :not(:last-child) {
-        margin-bottom: ${props => props.theme.space[1]}px;
-    }
-`
+const useStyles = makeStyles((theme: Theme) => ({
+    title: {
+        fontWeight: 400,
+        padding: theme.spacing(2, 0),
+        lineHeight: '24px',
+    },
+    container: {
+        background: theme.palette.common.white,
+        padding: theme.spacing(2),
+        borderRadius: 4,
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        '& > *': {
+            marginBottom: theme.spacing(2)
+        }
+    },
+    subtitle: {}
+}))
 
-interface IProps {
-    contributors: Array<{ username: string; userId: string; avatar: string }>
+export default ({ contributors }) => {
+    const classes = useStyles({})
+    console.log(contributors)
+    return <Hidden mdDown={true}>
+        <>
+            <Typography variant="h6" component="h3" className={classes.title}>
+                Top Contributors
+            </Typography>
+            <div className={classes.container}>
+            <Typography className={classes.subtitle} variant="body2">Contributors of the week</Typography>
+                {contributors.map((contributor, index) => (
+                    <Avatar
+                        key={index}
+                        withName={true}
+                        username={contributor.username}
+                        id={contributor.userId}
+                        avatar={contributor.avatar}
+                    />
+                ))}
+            </div>
+        </>
+    </Hidden>
 }
 
-const TopContributors: React.FunctionComponent<IProps> = ({ contributors }) => (
-    <TopResourcesSection>
-        <Title2>Top Contributors</Title2>
-        <ContributorsContainer>
-            {contributors.map((contributor, index) => (
-                <Avatar
-                    key={index}
-                    withName={true}
-                    username={contributor.username}
-                    id={contributor.userId}
-                    avatar={contributor.avatar}
-                />
-            ))}
-        </ContributorsContainer>
-    </TopResourcesSection>
-)
 
-export default TopContributors

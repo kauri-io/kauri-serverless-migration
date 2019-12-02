@@ -1,60 +1,49 @@
-import styled from 'styled-components'
-import Button from '../../components/Button'
-import { Title2 } from '../Typography'
+import { makeStyles } from '@material-ui/styles'
+import { Theme, Grid, Typography, Hidden } from '@material-ui/core'
+import ButtonComp from '../Button'
 import Link from 'next/link'
-import { Grid, makeStyles } from '@material-ui/core'
 
-const Buttons = styled.div`
-    display: flex;
-    flex-direction: column;
-    > :not(:last-child) {
-        margin-bottom: ${props => props.theme.space[1]}px;
-    }
-`
+const useStyles = makeStyles((theme: Theme) => ({
+    container: {
+        background: theme.palette.common.white,
+        padding: theme.spacing(2),
+        borderRadius: 4,
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column'
+    },
+    title: {
+        fontWeight: 400,
+        padding: theme.spacing(2, 0),
+        lineHeight: '24px',
+    },
+    subtitle: {},
+    link: {},
+}))
 
-interface IProps {
-    content: Array<any | null> | null
-    isLoggedIn: boolean
-}
+export default ({ isLoggedIn, content }) => {
+    const classes = useStyles({})
 
-const PublishYourOwnContentCTA: React.FunctionComponent<IProps> = props => {
-    const useStyles = makeStyles(() => ({
-        container: {
-            maxWidth: (1272 / 12) * 3,
-            width: '100%',
-            marginRight: 'auto',
-        },
-    }))
-    const classes = useStyles()
     return (
-        <Grid className={classes.container} item={true} sm={3}>
-            <Title2>Publish your own content</Title2>
-            <Buttons>
-                {props.content &&
-                    props.content.map((content, key) => (
-                        <Link
-                            key={key}
-                            href={
-                                props.isLoggedIn
-                                    ? content.link
-                                    : `/login?r=${content.link}`
-                            }
-                        >
-                            <a>
-                                <Button
-                                    color="primary"
-                                    fullWidth={true}
-                                    variant="outlined"
-                                    key={content.actionName}
-                                >
-                                    {content.actionName}
-                                </Button>
-                            </a>
-                        </Link>
-                    ))}
-            </Buttons>
+        <Hidden mdDown={true}>
+        <Grid container={true} direction="column" spacing={0}>
+            <Typography variant="h6" component="h3" className={classes.title}>
+                Publish Content
+            </Typography>
+            <Grid className={classes.container}>
+                <Typography className={classes.subtitle} variant="body2">
+                    Welcome to Kauri, we're excited to help you share your
+                    knowledge across the world via the Ethereum ecosystem. IPFS
+                    etc etc
+                </Typography>
+                {content.map(link => <Link href={isLoggedIn
+                    ? link.link
+                    : `/login?r=${link.link}`}>
+                    <a>
+                        <ButtonComp color='primary'>{link.actionName}</ButtonComp>
+                    </a></Link>)}
+            </Grid>
         </Grid>
+        </Hidden>
     )
 }
-
-export default PublishYourOwnContentCTA

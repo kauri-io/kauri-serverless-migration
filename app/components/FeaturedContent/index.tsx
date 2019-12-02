@@ -24,15 +24,29 @@ const FeaturedContent: React.FunctionComponent<IProps> = ({ content }) => {
             maxWidth: (1272 / 12) * 9,
             marginLeft: 'auto',
             width: '100%',
-            '& > *': {
-                marginBottom: theme.spacing(2),
-            },
+            display: 'flex',
+            flexDirection: 'column'
         },
+        title: {
+            fontWeight: 400,
+            padding: theme.spacing(2, 0),
+            lineHeight: '24px',
+        },
+        cards:{
+            display: 'flex',
+            flexDirection: 'column',
+            '& > *': {
+                marginBottom: theme.spacing(2)
+            }
+        }
     }))
     const classes = useStyles()
     return (
         <Grid className={classes.container}>
-            <Typography variant="h5">Featured Content</Typography>
+            <Typography variant="h6" component="h3" className={classes.title}>
+                Featured Content
+            </Typography>
+            <div className={classes.cards}>
             {content.map(({ resource }: { resource: any }, key) => {
                 switch (resource.__typename) {
                     case 'ArticleDTO': {
@@ -72,6 +86,7 @@ const FeaturedContent: React.FunctionComponent<IProps> = ({ content }) => {
                     }
                 }
             })}
+            </div>
         </Grid>
     )
 }

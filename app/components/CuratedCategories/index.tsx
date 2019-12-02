@@ -3,17 +3,15 @@ import Image from '../Image'
 import theme from '../../lib/theme-config'
 import Link from 'next/link'
 import Typography from '@material-ui/core/Typography'
-import { Theme, makeStyles } from '@material-ui/core'
-import Grid from '@material-ui/core/Grid'
+import { Theme, makeStyles, Grid } from '@material-ui/core'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
-        maxWidth: 1272,
-        margin: 'auto',
-        width: '100%',
-        marginTop: theme.spacing(1),
+        [theme.breakpoints.down('md')]: {
+            display: 'flex',
+            flexDirection: 'column'
+        }
     },
-
     link: {
         width: '100%',
         height: 90,
@@ -33,10 +31,10 @@ const useStyles = makeStyles((theme: Theme) => ({
 const CuratedCategory = ({ content }) => {
     const classes = useStyles()
     return (
-        <Grid container={true} className={classes.container} spacing={2}>
-            {content.map((category, key) => (
-                <Grid key={key} item={true} md={3} sm={6} xs={12}>
-                    <Link href={category.link}>
+        <Grid direction='row' container={true} className={classes.container} spacing={2}>
+            {content.map((category, key) =>
+                <Grid lg={3} md={6} sm={12} item={true}>
+                    <Link href={category.link} key={key}>
                         <a className={classes.link}>
                             {category.image && (
                                 <Image
@@ -70,7 +68,7 @@ const CuratedCategory = ({ content }) => {
                         </a>
                     </Link>
                 </Grid>
-            ))}
+            )}
         </Grid>
     )
 }
