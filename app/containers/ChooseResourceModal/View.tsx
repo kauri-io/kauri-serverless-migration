@@ -11,6 +11,7 @@ import {
     IconButton,
     InputBase,
 } from '@material-ui/core'
+import Link from 'next/link'
 import { Close as CloseIcon, Search as SearchIcon } from '@material-ui/icons'
 import {
     ResourceIdentifierInput,
@@ -20,9 +21,8 @@ import CardDetails from '../../components/Card/CardComponents/CardDetails'
 import Loading from '../../components/Loading'
 import { getArticleURL, getLinkUrl, getCollectionURL } from '../../lib/getURLs'
 import withPagination, { PaginationDataQuery } from '../../lib/with-pagination'
-import { IRouteChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { Article } from '../../queries/Fragments/__generated__/Article'
-import { Link } from '../../queries/Fragments/__generated__/Link'
+import { Link as ExternalLink } from '../../queries/Fragments/__generated__/Link'
 import { Collection } from '../../queries/Fragments/__generated__/Collection'
 import { UserOwner } from '../../queries/Fragments/__generated__/UserOwner'
 import { path } from 'ramda'
@@ -108,7 +108,6 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const ChooseResourceModalContentView = props => {
     const {
-        routeChangeAction,
         indexOf,
         isDisabled,
         selectResource,
@@ -215,17 +214,25 @@ const ChooseResourceModalContentView = props => {
                                               <Button
                                                   color="primary"
                                                   variant="text"
-                                                  onClick={() =>
-                                                      routeChangeAction(
-                                                          getArticleURL({
-                                                              ...article,
-                                                          }).as
-                                                      )
-                                                  }
                                                   className={classes.cardButton}
                                               >
                                                   {' '}
-                                                  View article
+                                                  <Link
+                                                      as={
+                                                          getArticleURL({
+                                                              ...article,
+                                                          }).as
+                                                      }
+                                                      href={
+                                                          getArticleURL({
+                                                              ...article,
+                                                          }).href
+                                                      }
+                                                  >
+                                                      <a target="_blank">
+                                                          View article
+                                                      </a>
+                                                  </Link>
                                               </Button>
                                               <Button
                                                   color="primary"
@@ -248,9 +255,9 @@ const ChooseResourceModalContentView = props => {
                                   }
 
                                   case 'LINK': {
-                                      var link = path<Link>([
+                                      var link = path<ExternalLink>([
                                           ...pathToResource,
-                                      ])(result) as Link
+                                      ])(result) as ExternalLink
 
                                       return (
                                           <div
@@ -289,17 +296,24 @@ const ChooseResourceModalContentView = props => {
                                               <Button
                                                   color="primary"
                                                   variant="text"
-                                                  onClick={() =>
-                                                      routeChangeAction(
+                                                  className={classes.cardButton}
+                                              >
+                                                  <Link
+                                                      as={
                                                           getLinkUrl({
                                                               ...link,
                                                           }).as
-                                                      )
-                                                  }
-                                                  className={classes.cardButton}
-                                              >
-                                                  {' '}
-                                                  View Link
+                                                      }
+                                                      href={
+                                                          getLinkUrl({
+                                                              ...link,
+                                                          }).href
+                                                      }
+                                                  >
+                                                      <a target="_blank">
+                                                          View link
+                                                      </a>
+                                                  </Link>
                                               </Button>
                                               <Button
                                                   color="primary"
@@ -365,17 +379,24 @@ const ChooseResourceModalContentView = props => {
                                               <Button
                                                   color="primary"
                                                   variant="text"
-                                                  onClick={() =>
-                                                      routeChangeAction(
+                                                  className={classes.cardButton}
+                                              >
+                                                  <Link
+                                                      as={
                                                           getCollectionURL({
                                                               ...collection,
                                                           }).as
-                                                      )
-                                                  }
-                                                  className={classes.cardButton}
-                                              >
-                                                  {' '}
-                                                  View Collection
+                                                      }
+                                                      href={
+                                                          getCollectionURL({
+                                                              ...collection,
+                                                          }).href
+                                                      }
+                                                  >
+                                                      <a target="_blank">
+                                                          View Collection
+                                                      </a>
+                                                  </Link>
                                               </Button>
                                               <Button
                                                   color="primary"
@@ -407,7 +428,6 @@ const ChooseResourceModalContentView = props => {
 }
 
 export interface IProps {
-    routeChangeAction: (payload: string) => IRouteChangeAction
     open: boolean
     handleClose: () => void
     handleConfirm: (selected: ResourceIdentifierInput[]) => void
@@ -433,7 +453,6 @@ const ChooseResourceModalContent = withPagination(
 )
 
 export const ChooseResourceModal = ({
-    routeChangeAction,
     open,
     handleClose,
     handleConfirm,
@@ -549,7 +568,6 @@ export const ChooseResourceModal = ({
             </DialogTitle>
 
             <ChooseResourceModalContent
-                routeChangeAction={routeChangeAction}
                 indexOf={indexOf}
                 selectResource={selectResource}
                 isDisabled={isDisabled}

@@ -1,7 +1,6 @@
 import View from './View'
 import { compose, graphql, withApollo } from 'react-apollo'
 import { connect } from 'react-redux'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import withApolloError from '../../lib/with-apollo-error'
 import React from 'react'
 import { globalSearchApprovedArticles } from '../../queries/Article'
@@ -49,9 +48,7 @@ export default compose(
     withApollo,
     connect(
         mapStateToProps,
-        {
-            routeChangeAction,
-        }
+        {}
     ),
     graphqlDynamic(query),
     withApolloError()
