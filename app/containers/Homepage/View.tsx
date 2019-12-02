@@ -9,17 +9,14 @@ import Loading from '../../components/Loading'
 import { ErrorMessage } from '../../lib/with-apollo-error'
 import SignupBanner from '../../components/SignupBanner'
 import PublishYourOwnContentCTA from '../../components/PublishYourOwnContentCTA'
-import TopTags from '../../components/TopTags'
 import TopContributors from '../../components/TopContributors'
 import FeaturedContent from '../../components/FeaturedContent'
 import LatestContent from '../../components/LatestContent'
 import NewsletterBanner from '../../components/NewsletterBanner'
-import ImportYourContentBanner from '../../components/ImportYourContentBanner'
-import FeaturedResource from '../../components/FeaturedResource'
 import CuratedCategories from '../../components/CuratedCategories'
 import { IShowNotificationPayload } from '../../lib/Epics/ShowNotificationEpic'
 import Head from 'next/head'
-import { Grid, Theme, Hidden } from '@material-ui/core'
+import { Hidden, Theme } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { openModalAction } from '../../components/Modal/Module'
@@ -47,18 +44,27 @@ export const HomePageComponent = (props: {
     const useStyles = makeStyles((theme: Theme) => ({
         root: {
             width: '100%',
-            background: theme.palette.common.white,
+            background: '#f7f7f7',
         },
         section: {
-            maxWidth: 1272,
+            maxWidth: 1224,
             width: '100%',
             margin: 'auto',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            [theme.breakpoints.down('md')]: {
+                padding: theme.spacing(1),
+            },
         },
-        sidebar: {},
+        sidebar: {
+            maxWidth: 392,
+            width: '100%',
+        },
     }))
     const classes = useStyles()
     return (
-        <div>
+        <>
             <Head>
                 <title>
                     Beginner to Advanced Blockchain & Ethereum Tutorials - Kauri
@@ -81,78 +87,43 @@ export const HomePageComponent = (props: {
             {props.data.getLatestHomepageDescriptor.rows.map((row, index) => {
                 const hasSidebar = row.sidebar !== null
                 return (
-                    <Grid container={true} className={classes.root} key={index}>
-                        <Grid
-                            container={true}
-                            className={classes.section}
-                            spacing={2}
-                        >
-                            <Grid item={true} md={hasSidebar ? 9 : 12}>
-                                {row.main.map(main => {
-                                    switch (main.type) {
-                                        case 'CATEGORIES':
-                                            return (
-                                                <CuratedCategories
-                                                    content={main.content}
-                                                    key="CATEGORIES"
-                                                />
-                                            )
-                                        case 'PROMO':
-                                            const resource = main.content.map(
-                                                (content: any) => {
-                                                    if (content !== null) {
-                                                        return content.resource
-                                                    }
-                                                }
-                                            )
+                    <div className={classes.root} key={index}>
+                        <div className={classes.section}>
+                            {row.main.map(main => {
+                                switch (main.type) {
+                                    case 'CATEGORIES':
+                                        return (
+                                            <CuratedCategories
+                                                content={main.content}
+                                                key="CATEGORIES"
+                                            />
+                                        )
 
-                                            return (
-                                                <FeaturedResource
-                                                    key="featured-resource"
-                                                    {...resource[0]}
-                                                    {...resource[0].owner}
-                                                    id={resource[0].id}
-                                                    userId={
-                                                        resource[0].owner.id
-                                                    }
-                                                    resourceType={resource[0].resourceIdentifier.type.toLowerCase()}
-                                                    ownerResourceType={resource[0].owner.resourceIdentifier.type.toLowerCase()}
-                                                />
-                                            )
+                                    case 'FEATURED':
+                                        return (
+                                            <FeaturedContent
+                                                key="featured-content"
+                                                content={main.content}
+                                            />
+                                        )
 
-                                        case 'FEATURED':
-                                            return (
-                                                <FeaturedContent
-                                                    key="featured-content"
-                                                    content={main.content}
-                                                />
-                                            )
+                                    case 'LATEST_CONTENT':
+                                        const content = main.content
+                                        return (
+                                            <LatestContent
+                                                key="latest-content"
+                                                content={content}
+                                            />
+                                        )
 
-                                        case 'LATEST_CONTENT':
-                                            const content = main.content
-                                            return (
-                                                <LatestContent
-                                                    key="latest-content"
-                                                    content={content}
-                                                />
-                                            )
-
-                                        default:
-                                            return null
-                                    }
-                                })}
-                            </Grid>
+                                    default:
+                                        return null
+                                }
+                            })}
 
                             {hasSidebar && (
                                 <Hidden smDown={true}>
-                                    <Grid
-                                        className={classes.sidebar}
-                                        item={true}
-                                        sm={3}
-                                        container={true}
-                                        spacing={2}
-                                        direction="column"
-                                    >
+                                    <div className={classes.sidebar}>
                                         {row.sidebar.map(sidebar => {
                                             switch (sidebar.__typename) {
                                                 case 'Actions': {
@@ -170,30 +141,6 @@ export const HomePageComponent = (props: {
                                                         />
                                                     )
                                                 }
-
-                                                case 'TopTags': {
-                                                    if (sidebar.content) {
-                                                        const tags = sidebar.content.map(
-                                                            tag =>
-                                                                (tag &&
-                                                                    tag.tagName) ||
-                                                                ''
-                                                        )
-
-                                                        return (
-                                                            <TopTags
-                                                                key={'top tags'}
-                                                                routeChangeAction={
-                                                                    props.routeChangeAction
-                                                                }
-                                                                tags={
-                                                                    tags as string[]
-                                                                }
-                                                            />
-                                                        )
-                                                    }
-                                                }
-
                                                 case 'TopContributors': {
                                                     if (
                                                         sidebar.content &&
@@ -243,58 +190,47 @@ export const HomePageComponent = (props: {
                                                 }
                                             }
                                         })}
-                                    </Grid>
+                                    </div>
                                 </Hidden>
                             )}
-                        </Grid>
-                    </Grid>
+                        </div>
+                    </div>
                 )
             })}
 
             {props.data.getLatestHomepageDescriptor.rows.map((row, index) => {
                 return (
-                    <Grid container={true} className={classes.root} key={index}>
-                        <Grid item={true} sm={12}>
-                            {row.main.map(main => {
-                                switch (main.type) {
-                                    case 'NEWSLETTER':
-                                        return (
-                                            <NewsletterBanner
-                                                key="newsletter-banner"
-                                                handleSubmit={emailAddress =>
-                                                    props.emailSubscribeAction(
-                                                        emailAddress
-                                                    )
-                                                }
-                                                handleError={() => {
-                                                    props.showNotificationAction(
-                                                        {
-                                                            description:
-                                                                'Please enter a valid email address!',
-                                                            message:
-                                                                'Invalid Email address',
-                                                            notificationType:
-                                                                'error',
-                                                        }
-                                                    )
-                                                }}
-                                            />
-                                        )
-
-                                    case 'IMPORT':
-                                        return (
-                                            <ImportYourContentBanner key="import" />
-                                        )
-
-                                    default:
-                                        return null
-                                }
-                            })}
-                        </Grid>
-                    </Grid>
+                    <div className={classes.root} key={index}>
+                        {row.main.map(main => {
+                            switch (main.type) {
+                                case 'NEWSLETTER':
+                                    return (
+                                        <NewsletterBanner
+                                            key="newsletter-banner"
+                                            handleSubmit={emailAddress =>
+                                                props.emailSubscribeAction(
+                                                    emailAddress
+                                                )
+                                            }
+                                            handleError={() => {
+                                                props.showNotificationAction({
+                                                    description:
+                                                        'Please enter a valid email address!',
+                                                    message:
+                                                        'Invalid Email address',
+                                                    notificationType: 'error',
+                                                })
+                                            }}
+                                        />
+                                    )
+                                default:
+                                    return null
+                            }
+                        })}
+                    </div>
                 )
             })}
-        </div>
+        </>
     )
 }
 

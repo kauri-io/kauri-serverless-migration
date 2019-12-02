@@ -405,7 +405,7 @@ exports[`components/TopContributors should match snapshot 1`] = `
       }
     }
   >
-    <TopContributors
+    <_default
       contributors={
         Array [
           Object {
@@ -418,288 +418,275 @@ exports[`components/TopContributors should match snapshot 1`] = `
       linkComponent={[MockFunction]}
       routeChangeAction={[MockFunction]}
     >
-      <TopResourcesSection>
-        <StyledComponent
-          forwardedComponent={
-            Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "attrs": Array [],
-              "componentStyle": ComponentStyle {
-                "componentId": "TopResourcesSection-mr7g3s-0",
-                "isStatic": false,
-                "lastClassName": "bYCQSD",
-                "rules": Array [
-                  "display:flex;flex-direction:column;>:first-child{margin-bottom:",
-                  [Function],
-                  "px;}>:nth-child(2){margin-top:0px;}> * > *:nth-child(n + 6){display:none;}@media (max-width:",
-                  [Function],
-                  "){display:none;}",
-                ],
-              },
-              "displayName": "TopResourcesSection",
-              "foldedComponentIds": Array [],
-              "render": [Function],
-              "styledComponentId": "TopResourcesSection-mr7g3s-0",
-              "target": "section",
-              "toString": [Function],
-              "usesTheme": true,
-              "warnTooManyClasses": [Function],
-              "withComponent": [Function],
-            }
-          }
-          forwardedRef={null}
+      <div
+        className="makeStyles-root-4"
+      >
+        <WithStyles(ForwardRef(Typography))
+          className="makeStyles-title-1"
+          component="h3"
+          variant="h6"
         >
-          <section
-            className="TopResourcesSection-mr7g3s-0 bYCQSD"
+          <ForwardRef(Typography)
+            className="makeStyles-title-1"
+            classes={
+              Object {
+                "alignCenter": "MuiTypography-alignCenter",
+                "alignJustify": "MuiTypography-alignJustify",
+                "alignLeft": "MuiTypography-alignLeft",
+                "alignRight": "MuiTypography-alignRight",
+                "body1": "MuiTypography-body1",
+                "body2": "MuiTypography-body2",
+                "button": "MuiTypography-button",
+                "caption": "MuiTypography-caption",
+                "colorError": "MuiTypography-colorError",
+                "colorInherit": "MuiTypography-colorInherit",
+                "colorPrimary": "MuiTypography-colorPrimary",
+                "colorSecondary": "MuiTypography-colorSecondary",
+                "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                "displayBlock": "MuiTypography-displayBlock",
+                "displayInline": "MuiTypography-displayInline",
+                "gutterBottom": "MuiTypography-gutterBottom",
+                "h1": "MuiTypography-h1",
+                "h2": "MuiTypography-h2",
+                "h3": "MuiTypography-h3",
+                "h4": "MuiTypography-h4",
+                "h5": "MuiTypography-h5",
+                "h6": "MuiTypography-h6",
+                "noWrap": "MuiTypography-noWrap",
+                "overline": "MuiTypography-overline",
+                "paragraph": "MuiTypography-paragraph",
+                "root": "MuiTypography-root",
+                "srOnly": "MuiTypography-srOnly",
+                "subtitle1": "MuiTypography-subtitle1",
+                "subtitle2": "MuiTypography-subtitle2",
+              }
+            }
+            component="h3"
+            variant="h6"
           >
-            <Typography__styledComponent>
-              <StyledComponent
-                forwardedComponent={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "Typography__styledComponent-sc-36xkf6-5",
-                      "isStatic": false,
-                      "lastClassName": "eLGQne",
-                      "rules": Array [
-                        "color:",
-                        [Function],
-                        ";margin:0px;font-weight:",
-                        "500",
-                        ";",
-                        ";font-size:",
-                        "20",
-                        "px;text-transform:",
-                        [Function],
-                        ";text-align:",
-                        [Function],
-                        ";:hover{color:",
-                        [Function],
-                        ";cursor:",
-                        [Function],
-                        ";}",
-                      ],
-                    },
-                    "displayName": "Typography__styledComponent",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                    "target": "span",
-                    "toString": [Function],
-                    "usesTheme": true,
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
-                  }
+            <h3
+              className="MuiTypography-root makeStyles-title-1 MuiTypography-h6"
+            >
+              Top Contributors
+            </h3>
+          </ForwardRef(Typography)>
+        </WithStyles(ForwardRef(Typography))>
+        <div
+          className="makeStyles-container-2"
+        >
+          <WithStyles(ForwardRef(Typography))
+            className="makeStyles-subtitle-3"
+            variant="body2"
+          >
+            <ForwardRef(Typography)
+              className="makeStyles-subtitle-3"
+              classes={
+                Object {
+                  "alignCenter": "MuiTypography-alignCenter",
+                  "alignJustify": "MuiTypography-alignJustify",
+                  "alignLeft": "MuiTypography-alignLeft",
+                  "alignRight": "MuiTypography-alignRight",
+                  "body1": "MuiTypography-body1",
+                  "body2": "MuiTypography-body2",
+                  "button": "MuiTypography-button",
+                  "caption": "MuiTypography-caption",
+                  "colorError": "MuiTypography-colorError",
+                  "colorInherit": "MuiTypography-colorInherit",
+                  "colorPrimary": "MuiTypography-colorPrimary",
+                  "colorSecondary": "MuiTypography-colorSecondary",
+                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                  "displayBlock": "MuiTypography-displayBlock",
+                  "displayInline": "MuiTypography-displayInline",
+                  "gutterBottom": "MuiTypography-gutterBottom",
+                  "h1": "MuiTypography-h1",
+                  "h2": "MuiTypography-h2",
+                  "h3": "MuiTypography-h3",
+                  "h4": "MuiTypography-h4",
+                  "h5": "MuiTypography-h5",
+                  "h6": "MuiTypography-h6",
+                  "noWrap": "MuiTypography-noWrap",
+                  "overline": "MuiTypography-overline",
+                  "paragraph": "MuiTypography-paragraph",
+                  "root": "MuiTypography-root",
+                  "srOnly": "MuiTypography-srOnly",
+                  "subtitle1": "MuiTypography-subtitle1",
+                  "subtitle2": "MuiTypography-subtitle2",
                 }
-                forwardedRef={null}
+              }
+              variant="body2"
+            >
+              <p
+                className="MuiTypography-root makeStyles-subtitle-3 MuiTypography-body2"
               >
-                <span
-                  className="Typography__styledComponent-sc-36xkf6-5 eLGQne"
-                >
-                  Top Contributors
-                </span>
-              </StyledComponent>
-            </Typography__styledComponent>
-            <TopContributors__ContributorsContainer>
-              <StyledComponent
-                forwardedComponent={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "TopContributors__ContributorsContainer-sc-2nkhip-0",
-                      "isStatic": false,
-                      "lastClassName": "cOmYpI",
-                      "rules": Array [
-                        "display:flex;flex-direction:column;>:not(:last-child){margin-bottom:",
-                        [Function],
-                        "px;}",
-                      ],
-                    },
-                    "displayName": "TopContributors__ContributorsContainer",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "TopContributors__ContributorsContainer-sc-2nkhip-0",
-                    "target": "div",
-                    "toString": [Function],
-                    "usesTheme": true,
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
-                  }
-                }
-                forwardedRef={null}
+                Contributors of the week
+              </p>
+            </ForwardRef(Typography)>
+          </WithStyles(ForwardRef(Typography))>
+          <AvatarComp
+            avatar="test url"
+            id="test ID"
+            key="0"
+            username="test username"
+            withName={true}
+          >
+            <Link
+              as="/test username/p"
+              href="/public-profile?username=test username"
+            >
+              <a
+                href="/test username/p"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                target="_self"
               >
                 <div
-                  className="TopContributors__ContributorsContainer-sc-2nkhip-0 cOmYpI"
+                  className="makeStyles-container-35"
                 >
-                  <AvatarComp
-                    avatar="test url"
-                    id="test ID"
-                    key="0"
-                    username="test username"
-                    withName={true}
+                  <ForwardRef
+                    borderRadius="2px"
+                    className="makeStyles-avatar-36"
+                    height={24}
+                    image="test url"
+                    width={24}
                   >
-                    <Link
-                      as="/test username/p"
-                      href="/public-profile?username=test username"
+                    <InView
+                      rootMargin="200px 0px"
+                      threshold={0}
+                      triggerOnce={true}
                     >
-                      <a
-                        href="/test username/p"
-                        onClick={[Function]}
-                        onMouseEnter={[Function]}
-                        target="_self"
+                      <Image__Img
+                        borderRadius="2px"
+                        className="makeStyles-avatar-36"
+                        height={24}
+                        image="test url"
+                        inView={false}
+                        width={24}
                       >
-                        <div
-                          className="makeStyles-container-1"
+                        <StyledComponent
+                          borderRadius="2px"
+                          className="makeStyles-avatar-36"
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "Image__Img-sc-1jpuda7-0",
+                                "isStatic": false,
+                                "lastClassName": "fFzdZc",
+                                "rules": Array [
+                                  "height:",
+                                  [Function],
+                                  ";width:",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";background:",
+                                  [Function],
+                                  ";background-size:cover;opacity:",
+                                  [Function],
+                                  ";transition:opacity ",
+                                  [Function],
+                                  "s;",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";position:",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  ";",
+                                  [Function],
+                                  " ",
+                                  [Function],
+                                  ";",
+                                ],
+                              },
+                              "displayName": "Image__Img",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "Image__Img-sc-1jpuda7-0",
+                              "target": "div",
+                              "toString": [Function],
+                              "usesTheme": true,
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={[Function]}
+                          height={24}
+                          image="test url"
+                          inView={false}
+                          width={24}
                         >
-                          <ForwardRef
-                            borderRadius="2px"
-                            className="makeStyles-avatar-2"
+                          <div
+                            className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-36"
                             height={24}
-                            image="test url"
                             width={24}
-                          >
-                            <InView
-                              rootMargin="200px 0px"
-                              threshold={0}
-                              triggerOnce={true}
-                            >
-                              <Image__Img
-                                borderRadius="2px"
-                                className="makeStyles-avatar-2"
-                                height={24}
-                                image="test url"
-                                inView={false}
-                                width={24}
-                              >
-                                <StyledComponent
-                                  borderRadius="2px"
-                                  className="makeStyles-avatar-2"
-                                  forwardedComponent={
-                                    Object {
-                                      "$$typeof": Symbol(react.forward_ref),
-                                      "attrs": Array [],
-                                      "componentStyle": ComponentStyle {
-                                        "componentId": "Image__Img-sc-1jpuda7-0",
-                                        "isStatic": false,
-                                        "lastClassName": "fFzdZc",
-                                        "rules": Array [
-                                          "height:",
-                                          [Function],
-                                          ";width:",
-                                          [Function],
-                                          ";",
-                                          [Function],
-                                          ";background:",
-                                          [Function],
-                                          ";background-size:cover;opacity:",
-                                          [Function],
-                                          ";transition:opacity ",
-                                          [Function],
-                                          "s;",
-                                          [Function],
-                                          ";",
-                                          [Function],
-                                          ";position:",
-                                          [Function],
-                                          ";",
-                                          [Function],
-                                          ";",
-                                          [Function],
-                                          ";",
-                                          [Function],
-                                          " ",
-                                          [Function],
-                                          ";",
-                                        ],
-                                      },
-                                      "displayName": "Image__Img",
-                                      "foldedComponentIds": Array [],
-                                      "render": [Function],
-                                      "styledComponentId": "Image__Img-sc-1jpuda7-0",
-                                      "target": "div",
-                                      "toString": [Function],
-                                      "usesTheme": true,
-                                      "warnTooManyClasses": [Function],
-                                      "withComponent": [Function],
-                                    }
-                                  }
-                                  forwardedRef={[Function]}
-                                  height={24}
-                                  image="test url"
-                                  inView={false}
-                                  width={24}
-                                >
-                                  <div
-                                    className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-2"
-                                    height={24}
-                                    width={24}
-                                  />
-                                </StyledComponent>
-                              </Image__Img>
-                            </InView>
-                          </ForwardRef>
-                          <WithStyles(ForwardRef(Typography))
-                            className="makeStyles-username-3"
-                            variant="subtitle2"
-                          >
-                            <ForwardRef(Typography)
-                              className="makeStyles-username-3"
-                              classes={
-                                Object {
-                                  "alignCenter": "MuiTypography-alignCenter",
-                                  "alignJustify": "MuiTypography-alignJustify",
-                                  "alignLeft": "MuiTypography-alignLeft",
-                                  "alignRight": "MuiTypography-alignRight",
-                                  "body1": "MuiTypography-body1",
-                                  "body2": "MuiTypography-body2",
-                                  "button": "MuiTypography-button",
-                                  "caption": "MuiTypography-caption",
-                                  "colorError": "MuiTypography-colorError",
-                                  "colorInherit": "MuiTypography-colorInherit",
-                                  "colorPrimary": "MuiTypography-colorPrimary",
-                                  "colorSecondary": "MuiTypography-colorSecondary",
-                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                  "displayBlock": "MuiTypography-displayBlock",
-                                  "displayInline": "MuiTypography-displayInline",
-                                  "gutterBottom": "MuiTypography-gutterBottom",
-                                  "h1": "MuiTypography-h1",
-                                  "h2": "MuiTypography-h2",
-                                  "h3": "MuiTypography-h3",
-                                  "h4": "MuiTypography-h4",
-                                  "h5": "MuiTypography-h5",
-                                  "h6": "MuiTypography-h6",
-                                  "noWrap": "MuiTypography-noWrap",
-                                  "overline": "MuiTypography-overline",
-                                  "paragraph": "MuiTypography-paragraph",
-                                  "root": "MuiTypography-root",
-                                  "srOnly": "MuiTypography-srOnly",
-                                  "subtitle1": "MuiTypography-subtitle1",
-                                  "subtitle2": "MuiTypography-subtitle2",
-                                }
-                              }
-                              variant="subtitle2"
-                            >
-                              <h6
-                                className="MuiTypography-root makeStyles-username-3 MuiTypography-subtitle2"
-                              >
-                                test username
-                              </h6>
-                            </ForwardRef(Typography)>
-                          </WithStyles(ForwardRef(Typography))>
-                        </div>
-                      </a>
-                    </Link>
-                  </AvatarComp>
+                          />
+                        </StyledComponent>
+                      </Image__Img>
+                    </InView>
+                  </ForwardRef>
+                  <WithStyles(ForwardRef(Typography))
+                    className="makeStyles-username-37"
+                    variant="subtitle2"
+                  >
+                    <ForwardRef(Typography)
+                      className="makeStyles-username-37"
+                      classes={
+                        Object {
+                          "alignCenter": "MuiTypography-alignCenter",
+                          "alignJustify": "MuiTypography-alignJustify",
+                          "alignLeft": "MuiTypography-alignLeft",
+                          "alignRight": "MuiTypography-alignRight",
+                          "body1": "MuiTypography-body1",
+                          "body2": "MuiTypography-body2",
+                          "button": "MuiTypography-button",
+                          "caption": "MuiTypography-caption",
+                          "colorError": "MuiTypography-colorError",
+                          "colorInherit": "MuiTypography-colorInherit",
+                          "colorPrimary": "MuiTypography-colorPrimary",
+                          "colorSecondary": "MuiTypography-colorSecondary",
+                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                          "displayBlock": "MuiTypography-displayBlock",
+                          "displayInline": "MuiTypography-displayInline",
+                          "gutterBottom": "MuiTypography-gutterBottom",
+                          "h1": "MuiTypography-h1",
+                          "h2": "MuiTypography-h2",
+                          "h3": "MuiTypography-h3",
+                          "h4": "MuiTypography-h4",
+                          "h5": "MuiTypography-h5",
+                          "h6": "MuiTypography-h6",
+                          "noWrap": "MuiTypography-noWrap",
+                          "overline": "MuiTypography-overline",
+                          "paragraph": "MuiTypography-paragraph",
+                          "root": "MuiTypography-root",
+                          "srOnly": "MuiTypography-srOnly",
+                          "subtitle1": "MuiTypography-subtitle1",
+                          "subtitle2": "MuiTypography-subtitle2",
+                        }
+                      }
+                      variant="subtitle2"
+                    >
+                      <h6
+                        className="MuiTypography-root makeStyles-username-37 MuiTypography-subtitle2"
+                      >
+                        test username
+                      </h6>
+                    </ForwardRef(Typography)>
+                  </WithStyles(ForwardRef(Typography))>
                 </div>
-              </StyledComponent>
-            </TopContributors__ContributorsContainer>
-          </section>
-        </StyledComponent>
-      </TopResourcesSection>
-    </TopContributors>
+              </a>
+            </Link>
+          </AvatarComp>
+        </div>
+      </div>
+    </_default>
   </ThemeProvider>
 </ThemeProvider>
 `;

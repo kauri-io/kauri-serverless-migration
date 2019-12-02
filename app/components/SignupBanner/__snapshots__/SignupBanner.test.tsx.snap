@@ -405,328 +405,401 @@ exports[`components/SignupBanner should match snapshot 1`] = `
       }
     }
   >
-    <SignupBanner>
-      <SignupBanner__SignupBannerStack
-        alignItems={
-          Array [
-            "",
-          ]
-        }
-        gap={30}
-        gridAutoFlow={
-          Array [
-            "column",
-          ]
-        }
-        justifyContent={
-          Array [
-            "",
-          ]
-        }
+    <_default>
+      <WithStyles(ForwardRef(Grid))
+        className="makeStyles-container-1"
       >
-        <StyledComponent
-          alignItems={
-            Array [
-              "",
-            ]
-          }
-          forwardedComponent={
+        <ForwardRef(Grid)
+          className="makeStyles-container-1"
+          classes={
             Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "_foldedDefaultProps": Object {
-                "gap": 2,
-              },
-              "attrs": Array [],
-              "componentStyle": ComponentStyle {
-                "componentId": "SignupBanner__SignupBannerStack-sc-1hxzf8p-2",
-                "isStatic": false,
-                "lastClassName": "fiWiRJ",
-                "rules": Array [
-                  "box-sizing: border-box;",
-                  "display: grid;",
-                  [Function],
-                  [Function],
-                  [Function],
-                  [Function],
-                  [Function],
-                  "padding:",
-                  [Function],
-                  "px ",
-                  [Function],
-                  ";background:",
-                  [Function],
-                  ";@media (max-width:",
-                  [Function],
-                  "){padding:",
-                  [Function],
-                  "px ",
-                  [Function],
-                  "px;}",
-                ],
-              },
-              "displayName": "SignupBanner__SignupBannerStack",
-              "foldedComponentIds": Array [
-                "sc-bdVaJa",
-              ],
-              "propTypes": Object {
-                "alignContent": [Function],
-                "alignItems": [Function],
-                "alignSelf": [Function],
-                "display": [Function],
-                "flex": [Function],
-                "flexBasis": [Function],
-                "flexDirection": [Function],
-                "flexGrow": [Function],
-                "flexShrink": [Function],
-                "flexWrap": [Function],
-                "gap": [Function],
-                "gridArea": [Function],
-                "gridAutoColumns": [Function],
-                "gridAutoFlow": [Function],
-                "gridAutoRows": [Function],
-                "gridColumn": [Function],
-                "gridColumnGap": [Function],
-                "gridGap": [Function],
-                "gridRow": [Function],
-                "gridRowGap": [Function],
-                "gridTemplateAreas": [Function],
-                "gridTemplateColumns": [Function],
-                "gridTemplateRows": [Function],
-                "height": [Function],
-                "justifyContent": [Function],
-                "justifyItems": [Function],
-                "justifySelf": [Function],
-                "m": [Function],
-                "margin": [Function],
-                "marginBottom": [Function],
-                "marginLeft": [Function],
-                "marginRight": [Function],
-                "marginTop": [Function],
-                "marginX": [Function],
-                "marginY": [Function],
-                "maxHeight": [Function],
-                "maxWidth": [Function],
-                "mb": [Function],
-                "minHeight": [Function],
-                "minWidth": [Function],
-                "ml": [Function],
-                "mr": [Function],
-                "mt": [Function],
-                "mx": [Function],
-                "my": [Function],
-                "order": [Function],
-                "overflow": [Function],
-                "overflowX": [Function],
-                "overflowY": [Function],
-                "p": [Function],
-                "padding": [Function],
-                "paddingBottom": [Function],
-                "paddingLeft": [Function],
-                "paddingRight": [Function],
-                "paddingTop": [Function],
-                "paddingX": [Function],
-                "paddingY": [Function],
-                "pb": [Function],
-                "pl": [Function],
-                "pr": [Function],
-                "pt": [Function],
-                "px": [Function],
-                "py": [Function],
-                "size": [Function],
-                "verticalAlign": [Function],
-                "width": [Function],
-              },
-              "render": [Function],
-              "styledComponentId": "SignupBanner__SignupBannerStack-sc-1hxzf8p-2",
-              "target": "div",
-              "toString": [Function],
-              "usesTheme": true,
-              "warnTooManyClasses": [Function],
-              "withComponent": [Function],
+              "align-content-xs-center": "MuiGrid-align-content-xs-center",
+              "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end",
+              "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start",
+              "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around",
+              "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between",
+              "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline",
+              "align-items-xs-center": "MuiGrid-align-items-xs-center",
+              "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end",
+              "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start",
+              "container": "MuiGrid-container",
+              "direction-xs-column": "MuiGrid-direction-xs-column",
+              "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse",
+              "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse",
+              "grid-lg-1": "MuiGrid-grid-lg-1",
+              "grid-lg-10": "MuiGrid-grid-lg-10",
+              "grid-lg-11": "MuiGrid-grid-lg-11",
+              "grid-lg-12": "MuiGrid-grid-lg-12",
+              "grid-lg-2": "MuiGrid-grid-lg-2",
+              "grid-lg-3": "MuiGrid-grid-lg-3",
+              "grid-lg-4": "MuiGrid-grid-lg-4",
+              "grid-lg-5": "MuiGrid-grid-lg-5",
+              "grid-lg-6": "MuiGrid-grid-lg-6",
+              "grid-lg-7": "MuiGrid-grid-lg-7",
+              "grid-lg-8": "MuiGrid-grid-lg-8",
+              "grid-lg-9": "MuiGrid-grid-lg-9",
+              "grid-lg-auto": "MuiGrid-grid-lg-auto",
+              "grid-lg-true": "MuiGrid-grid-lg-true",
+              "grid-md-1": "MuiGrid-grid-md-1",
+              "grid-md-10": "MuiGrid-grid-md-10",
+              "grid-md-11": "MuiGrid-grid-md-11",
+              "grid-md-12": "MuiGrid-grid-md-12",
+              "grid-md-2": "MuiGrid-grid-md-2",
+              "grid-md-3": "MuiGrid-grid-md-3",
+              "grid-md-4": "MuiGrid-grid-md-4",
+              "grid-md-5": "MuiGrid-grid-md-5",
+              "grid-md-6": "MuiGrid-grid-md-6",
+              "grid-md-7": "MuiGrid-grid-md-7",
+              "grid-md-8": "MuiGrid-grid-md-8",
+              "grid-md-9": "MuiGrid-grid-md-9",
+              "grid-md-auto": "MuiGrid-grid-md-auto",
+              "grid-md-true": "MuiGrid-grid-md-true",
+              "grid-sm-1": "MuiGrid-grid-sm-1",
+              "grid-sm-10": "MuiGrid-grid-sm-10",
+              "grid-sm-11": "MuiGrid-grid-sm-11",
+              "grid-sm-12": "MuiGrid-grid-sm-12",
+              "grid-sm-2": "MuiGrid-grid-sm-2",
+              "grid-sm-3": "MuiGrid-grid-sm-3",
+              "grid-sm-4": "MuiGrid-grid-sm-4",
+              "grid-sm-5": "MuiGrid-grid-sm-5",
+              "grid-sm-6": "MuiGrid-grid-sm-6",
+              "grid-sm-7": "MuiGrid-grid-sm-7",
+              "grid-sm-8": "MuiGrid-grid-sm-8",
+              "grid-sm-9": "MuiGrid-grid-sm-9",
+              "grid-sm-auto": "MuiGrid-grid-sm-auto",
+              "grid-sm-true": "MuiGrid-grid-sm-true",
+              "grid-xl-1": "MuiGrid-grid-xl-1",
+              "grid-xl-10": "MuiGrid-grid-xl-10",
+              "grid-xl-11": "MuiGrid-grid-xl-11",
+              "grid-xl-12": "MuiGrid-grid-xl-12",
+              "grid-xl-2": "MuiGrid-grid-xl-2",
+              "grid-xl-3": "MuiGrid-grid-xl-3",
+              "grid-xl-4": "MuiGrid-grid-xl-4",
+              "grid-xl-5": "MuiGrid-grid-xl-5",
+              "grid-xl-6": "MuiGrid-grid-xl-6",
+              "grid-xl-7": "MuiGrid-grid-xl-7",
+              "grid-xl-8": "MuiGrid-grid-xl-8",
+              "grid-xl-9": "MuiGrid-grid-xl-9",
+              "grid-xl-auto": "MuiGrid-grid-xl-auto",
+              "grid-xl-true": "MuiGrid-grid-xl-true",
+              "grid-xs-1": "MuiGrid-grid-xs-1",
+              "grid-xs-10": "MuiGrid-grid-xs-10",
+              "grid-xs-11": "MuiGrid-grid-xs-11",
+              "grid-xs-12": "MuiGrid-grid-xs-12",
+              "grid-xs-2": "MuiGrid-grid-xs-2",
+              "grid-xs-3": "MuiGrid-grid-xs-3",
+              "grid-xs-4": "MuiGrid-grid-xs-4",
+              "grid-xs-5": "MuiGrid-grid-xs-5",
+              "grid-xs-6": "MuiGrid-grid-xs-6",
+              "grid-xs-7": "MuiGrid-grid-xs-7",
+              "grid-xs-8": "MuiGrid-grid-xs-8",
+              "grid-xs-9": "MuiGrid-grid-xs-9",
+              "grid-xs-auto": "MuiGrid-grid-xs-auto",
+              "grid-xs-true": "MuiGrid-grid-xs-true",
+              "item": "MuiGrid-item",
+              "justify-xs-center": "MuiGrid-justify-xs-center",
+              "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end",
+              "justify-xs-space-around": "MuiGrid-justify-xs-space-around",
+              "justify-xs-space-between": "MuiGrid-justify-xs-space-between",
+              "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly",
+              "root": "MuiGrid-root",
+              "spacing-xs-1": "MuiGrid-spacing-xs-1",
+              "spacing-xs-10": "MuiGrid-spacing-xs-10",
+              "spacing-xs-2": "MuiGrid-spacing-xs-2",
+              "spacing-xs-3": "MuiGrid-spacing-xs-3",
+              "spacing-xs-4": "MuiGrid-spacing-xs-4",
+              "spacing-xs-5": "MuiGrid-spacing-xs-5",
+              "spacing-xs-6": "MuiGrid-spacing-xs-6",
+              "spacing-xs-7": "MuiGrid-spacing-xs-7",
+              "spacing-xs-8": "MuiGrid-spacing-xs-8",
+              "spacing-xs-9": "MuiGrid-spacing-xs-9",
+              "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap",
+              "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse",
+              "zeroMinWidth": "MuiGrid-zeroMinWidth",
             }
-          }
-          forwardedRef={null}
-          gap={30}
-          gridAutoFlow={
-            Array [
-              "column",
-            ]
-          }
-          justifyContent={
-            Array [
-              "",
-            ]
           }
         >
           <div
-            className="sc-bdVaJa SignupBanner__SignupBannerStack-sc-1hxzf8p-2 fiWiRJ"
+            className="MuiGrid-root makeStyles-container-1"
           >
-            <SignupBanner__ResourceDetailsContainer>
-              <StyledComponent
-                forwardedComponent={
-                  Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "SignupBanner__ResourceDetailsContainer-sc-1hxzf8p-0",
-                      "isStatic": false,
-                      "lastClassName": "jkhksa",
-                      "rules": Array [
-                        "display:flex;flex-direction:column;max-width:700px;>:not(:last-child){margin-bottom:",
-                        [Function],
-                        "px;}",
-                      ],
-                    },
-                    "displayName": "SignupBanner__ResourceDetailsContainer",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "SignupBanner__ResourceDetailsContainer-sc-1hxzf8p-0",
-                    "target": "section",
-                    "toString": [Function],
-                    "usesTheme": true,
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
-                  }
-                }
-                forwardedRef={null}
+            <Link
+              href="/"
+            >
+              <a
+                className="makeStyles-link-5"
+                href="/"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
               >
-                <section
-                  className="SignupBanner__ResourceDetailsContainer-sc-1hxzf8p-0 jkhksa"
+                <img
+                  alt="Kauri logo"
+                  className="makeStyles-svg-6"
+                  src="/static/images/logo.svg"
+                />
+                <WithStyles(ForwardRef(Typography))
+                  className="makeStyles-logoText-7"
                 >
-                  <WithStyles(ForwardRef(Typography))
-                    color="secondary"
-                    component="h1"
-                    variant="h4"
-                  >
-                    <ForwardRef(Typography)
-                      classes={
-                        Object {
-                          "alignCenter": "MuiTypography-alignCenter",
-                          "alignJustify": "MuiTypography-alignJustify",
-                          "alignLeft": "MuiTypography-alignLeft",
-                          "alignRight": "MuiTypography-alignRight",
-                          "body1": "MuiTypography-body1",
-                          "body2": "MuiTypography-body2",
-                          "button": "MuiTypography-button",
-                          "caption": "MuiTypography-caption",
-                          "colorError": "MuiTypography-colorError",
-                          "colorInherit": "MuiTypography-colorInherit",
-                          "colorPrimary": "MuiTypography-colorPrimary",
-                          "colorSecondary": "MuiTypography-colorSecondary",
-                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                          "displayBlock": "MuiTypography-displayBlock",
-                          "displayInline": "MuiTypography-displayInline",
-                          "gutterBottom": "MuiTypography-gutterBottom",
-                          "h1": "MuiTypography-h1",
-                          "h2": "MuiTypography-h2",
-                          "h3": "MuiTypography-h3",
-                          "h4": "MuiTypography-h4",
-                          "h5": "MuiTypography-h5",
-                          "h6": "MuiTypography-h6",
-                          "noWrap": "MuiTypography-noWrap",
-                          "overline": "MuiTypography-overline",
-                          "paragraph": "MuiTypography-paragraph",
-                          "root": "MuiTypography-root",
-                          "srOnly": "MuiTypography-srOnly",
-                          "subtitle1": "MuiTypography-subtitle1",
-                          "subtitle2": "MuiTypography-subtitle2",
-                        }
+                  <ForwardRef(Typography)
+                    className="makeStyles-logoText-7"
+                    classes={
+                      Object {
+                        "alignCenter": "MuiTypography-alignCenter",
+                        "alignJustify": "MuiTypography-alignJustify",
+                        "alignLeft": "MuiTypography-alignLeft",
+                        "alignRight": "MuiTypography-alignRight",
+                        "body1": "MuiTypography-body1",
+                        "body2": "MuiTypography-body2",
+                        "button": "MuiTypography-button",
+                        "caption": "MuiTypography-caption",
+                        "colorError": "MuiTypography-colorError",
+                        "colorInherit": "MuiTypography-colorInherit",
+                        "colorPrimary": "MuiTypography-colorPrimary",
+                        "colorSecondary": "MuiTypography-colorSecondary",
+                        "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                        "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                        "displayBlock": "MuiTypography-displayBlock",
+                        "displayInline": "MuiTypography-displayInline",
+                        "gutterBottom": "MuiTypography-gutterBottom",
+                        "h1": "MuiTypography-h1",
+                        "h2": "MuiTypography-h2",
+                        "h3": "MuiTypography-h3",
+                        "h4": "MuiTypography-h4",
+                        "h5": "MuiTypography-h5",
+                        "h6": "MuiTypography-h6",
+                        "noWrap": "MuiTypography-noWrap",
+                        "overline": "MuiTypography-overline",
+                        "paragraph": "MuiTypography-paragraph",
+                        "root": "MuiTypography-root",
+                        "srOnly": "MuiTypography-srOnly",
+                        "subtitle1": "MuiTypography-subtitle1",
+                        "subtitle2": "MuiTypography-subtitle2",
                       }
-                      color="secondary"
-                      component="h1"
-                      variant="h4"
-                    >
-                      <h1
-                        className="MuiTypography-root MuiTypography-h4 MuiTypography-colorSecondary"
-                      >
-                        Learn to Build on Ethereum with Kauri
-                      </h1>
-                    </ForwardRef(Typography)>
-                  </WithStyles(ForwardRef(Typography))>
-                  <WithStyles(ForwardRef(Typography))
-                    color="secondary"
+                    }
                   >
-                    <ForwardRef(Typography)
-                      classes={
-                        Object {
-                          "alignCenter": "MuiTypography-alignCenter",
-                          "alignJustify": "MuiTypography-alignJustify",
-                          "alignLeft": "MuiTypography-alignLeft",
-                          "alignRight": "MuiTypography-alignRight",
-                          "body1": "MuiTypography-body1",
-                          "body2": "MuiTypography-body2",
-                          "button": "MuiTypography-button",
-                          "caption": "MuiTypography-caption",
-                          "colorError": "MuiTypography-colorError",
-                          "colorInherit": "MuiTypography-colorInherit",
-                          "colorPrimary": "MuiTypography-colorPrimary",
-                          "colorSecondary": "MuiTypography-colorSecondary",
-                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                          "displayBlock": "MuiTypography-displayBlock",
-                          "displayInline": "MuiTypography-displayInline",
-                          "gutterBottom": "MuiTypography-gutterBottom",
-                          "h1": "MuiTypography-h1",
-                          "h2": "MuiTypography-h2",
-                          "h3": "MuiTypography-h3",
-                          "h4": "MuiTypography-h4",
-                          "h5": "MuiTypography-h5",
-                          "h6": "MuiTypography-h6",
-                          "noWrap": "MuiTypography-noWrap",
-                          "overline": "MuiTypography-overline",
-                          "paragraph": "MuiTypography-paragraph",
-                          "root": "MuiTypography-root",
-                          "srOnly": "MuiTypography-srOnly",
-                          "subtitle1": "MuiTypography-subtitle1",
-                          "subtitle2": "MuiTypography-subtitle2",
-                        }
-                      }
-                      color="secondary"
+                    <p
+                      className="MuiTypography-root makeStyles-logoText-7 MuiTypography-body1"
                     >
-                      <p
-                        className="MuiTypography-root MuiTypography-body1 MuiTypography-colorSecondary"
+                      kauri
+                      <span
+                        className="makeStyles-logoAccent-8"
                       >
-                        Articles, Tutorials, Documentation and Best Practices
-                      </p>
-                    </ForwardRef(Typography)>
-                  </WithStyles(ForwardRef(Typography))>
-                </section>
-              </StyledComponent>
-            </SignupBanner__ResourceDetailsContainer>
-            <SignupBanner__ViewContainer>
-              <StyledComponent
-                forwardedComponent={
+                        .io
+                      </span>
+                    </p>
+                  </ForwardRef(Typography)>
+                </WithStyles(ForwardRef(Typography))>
+              </a>
+            </Link>
+            <WithStyles(ForwardRef(Typography))
+              className="makeStyles-title-2"
+              component="h1"
+            >
+              <ForwardRef(Typography)
+                className="makeStyles-title-2"
+                classes={
                   Object {
-                    "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
-                    "componentStyle": ComponentStyle {
-                      "componentId": "SignupBanner__ViewContainer-sc-1hxzf8p-1",
-                      "isStatic": false,
-                      "lastClassName": "iebiGj",
-                      "rules": Array [
-                        "display:flex;flex-direction:row;margin-left:auto;>:first-child{margin-right:",
-                        [Function],
-                        "px;}@media (max-width:",
-                        [Function],
-                        "){display:none;}",
-                      ],
-                    },
-                    "displayName": "SignupBanner__ViewContainer",
-                    "foldedComponentIds": Array [],
-                    "render": [Function],
-                    "styledComponentId": "SignupBanner__ViewContainer-sc-1hxzf8p-1",
-                    "target": "section",
-                    "toString": [Function],
-                    "usesTheme": true,
-                    "warnTooManyClasses": [Function],
-                    "withComponent": [Function],
+                    "alignCenter": "MuiTypography-alignCenter",
+                    "alignJustify": "MuiTypography-alignJustify",
+                    "alignLeft": "MuiTypography-alignLeft",
+                    "alignRight": "MuiTypography-alignRight",
+                    "body1": "MuiTypography-body1",
+                    "body2": "MuiTypography-body2",
+                    "button": "MuiTypography-button",
+                    "caption": "MuiTypography-caption",
+                    "colorError": "MuiTypography-colorError",
+                    "colorInherit": "MuiTypography-colorInherit",
+                    "colorPrimary": "MuiTypography-colorPrimary",
+                    "colorSecondary": "MuiTypography-colorSecondary",
+                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                    "displayBlock": "MuiTypography-displayBlock",
+                    "displayInline": "MuiTypography-displayInline",
+                    "gutterBottom": "MuiTypography-gutterBottom",
+                    "h1": "MuiTypography-h1",
+                    "h2": "MuiTypography-h2",
+                    "h3": "MuiTypography-h3",
+                    "h4": "MuiTypography-h4",
+                    "h5": "MuiTypography-h5",
+                    "h6": "MuiTypography-h6",
+                    "noWrap": "MuiTypography-noWrap",
+                    "overline": "MuiTypography-overline",
+                    "paragraph": "MuiTypography-paragraph",
+                    "root": "MuiTypography-root",
+                    "srOnly": "MuiTypography-srOnly",
+                    "subtitle1": "MuiTypography-subtitle1",
+                    "subtitle2": "MuiTypography-subtitle2",
                   }
                 }
-                forwardedRef={null}
+                component="h1"
               >
-                <section
-                  className="SignupBanner__ViewContainer-sc-1hxzf8p-1 iebiGj"
+                <h1
+                  className="MuiTypography-root makeStyles-title-2 MuiTypography-body1"
+                >
+                  Learn Web3 Best Practices with Kauri
+                </h1>
+              </ForwardRef(Typography)>
+            </WithStyles(ForwardRef(Typography))>
+            <WithStyles(ForwardRef(Typography))
+              className="makeStyles-subtitle-3"
+              component="h2"
+            >
+              <ForwardRef(Typography)
+                className="makeStyles-subtitle-3"
+                classes={
+                  Object {
+                    "alignCenter": "MuiTypography-alignCenter",
+                    "alignJustify": "MuiTypography-alignJustify",
+                    "alignLeft": "MuiTypography-alignLeft",
+                    "alignRight": "MuiTypography-alignRight",
+                    "body1": "MuiTypography-body1",
+                    "body2": "MuiTypography-body2",
+                    "button": "MuiTypography-button",
+                    "caption": "MuiTypography-caption",
+                    "colorError": "MuiTypography-colorError",
+                    "colorInherit": "MuiTypography-colorInherit",
+                    "colorPrimary": "MuiTypography-colorPrimary",
+                    "colorSecondary": "MuiTypography-colorSecondary",
+                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                    "displayBlock": "MuiTypography-displayBlock",
+                    "displayInline": "MuiTypography-displayInline",
+                    "gutterBottom": "MuiTypography-gutterBottom",
+                    "h1": "MuiTypography-h1",
+                    "h2": "MuiTypography-h2",
+                    "h3": "MuiTypography-h3",
+                    "h4": "MuiTypography-h4",
+                    "h5": "MuiTypography-h5",
+                    "h6": "MuiTypography-h6",
+                    "noWrap": "MuiTypography-noWrap",
+                    "overline": "MuiTypography-overline",
+                    "paragraph": "MuiTypography-paragraph",
+                    "root": "MuiTypography-root",
+                    "srOnly": "MuiTypography-srOnly",
+                    "subtitle1": "MuiTypography-subtitle1",
+                    "subtitle2": "MuiTypography-subtitle2",
+                  }
+                }
+                component="h2"
+              >
+                <h2
+                  className="MuiTypography-root makeStyles-subtitle-3 MuiTypography-body1"
+                >
+                  Articles, Tutorials and Technical Documentation
+                </h2>
+              </ForwardRef(Typography)>
+            </WithStyles(ForwardRef(Typography))>
+            <WithStyles(ForwardRef(Grid))>
+              <ForwardRef(Grid)
+                classes={
+                  Object {
+                    "align-content-xs-center": "MuiGrid-align-content-xs-center",
+                    "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end",
+                    "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start",
+                    "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around",
+                    "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between",
+                    "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline",
+                    "align-items-xs-center": "MuiGrid-align-items-xs-center",
+                    "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end",
+                    "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start",
+                    "container": "MuiGrid-container",
+                    "direction-xs-column": "MuiGrid-direction-xs-column",
+                    "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse",
+                    "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse",
+                    "grid-lg-1": "MuiGrid-grid-lg-1",
+                    "grid-lg-10": "MuiGrid-grid-lg-10",
+                    "grid-lg-11": "MuiGrid-grid-lg-11",
+                    "grid-lg-12": "MuiGrid-grid-lg-12",
+                    "grid-lg-2": "MuiGrid-grid-lg-2",
+                    "grid-lg-3": "MuiGrid-grid-lg-3",
+                    "grid-lg-4": "MuiGrid-grid-lg-4",
+                    "grid-lg-5": "MuiGrid-grid-lg-5",
+                    "grid-lg-6": "MuiGrid-grid-lg-6",
+                    "grid-lg-7": "MuiGrid-grid-lg-7",
+                    "grid-lg-8": "MuiGrid-grid-lg-8",
+                    "grid-lg-9": "MuiGrid-grid-lg-9",
+                    "grid-lg-auto": "MuiGrid-grid-lg-auto",
+                    "grid-lg-true": "MuiGrid-grid-lg-true",
+                    "grid-md-1": "MuiGrid-grid-md-1",
+                    "grid-md-10": "MuiGrid-grid-md-10",
+                    "grid-md-11": "MuiGrid-grid-md-11",
+                    "grid-md-12": "MuiGrid-grid-md-12",
+                    "grid-md-2": "MuiGrid-grid-md-2",
+                    "grid-md-3": "MuiGrid-grid-md-3",
+                    "grid-md-4": "MuiGrid-grid-md-4",
+                    "grid-md-5": "MuiGrid-grid-md-5",
+                    "grid-md-6": "MuiGrid-grid-md-6",
+                    "grid-md-7": "MuiGrid-grid-md-7",
+                    "grid-md-8": "MuiGrid-grid-md-8",
+                    "grid-md-9": "MuiGrid-grid-md-9",
+                    "grid-md-auto": "MuiGrid-grid-md-auto",
+                    "grid-md-true": "MuiGrid-grid-md-true",
+                    "grid-sm-1": "MuiGrid-grid-sm-1",
+                    "grid-sm-10": "MuiGrid-grid-sm-10",
+                    "grid-sm-11": "MuiGrid-grid-sm-11",
+                    "grid-sm-12": "MuiGrid-grid-sm-12",
+                    "grid-sm-2": "MuiGrid-grid-sm-2",
+                    "grid-sm-3": "MuiGrid-grid-sm-3",
+                    "grid-sm-4": "MuiGrid-grid-sm-4",
+                    "grid-sm-5": "MuiGrid-grid-sm-5",
+                    "grid-sm-6": "MuiGrid-grid-sm-6",
+                    "grid-sm-7": "MuiGrid-grid-sm-7",
+                    "grid-sm-8": "MuiGrid-grid-sm-8",
+                    "grid-sm-9": "MuiGrid-grid-sm-9",
+                    "grid-sm-auto": "MuiGrid-grid-sm-auto",
+                    "grid-sm-true": "MuiGrid-grid-sm-true",
+                    "grid-xl-1": "MuiGrid-grid-xl-1",
+                    "grid-xl-10": "MuiGrid-grid-xl-10",
+                    "grid-xl-11": "MuiGrid-grid-xl-11",
+                    "grid-xl-12": "MuiGrid-grid-xl-12",
+                    "grid-xl-2": "MuiGrid-grid-xl-2",
+                    "grid-xl-3": "MuiGrid-grid-xl-3",
+                    "grid-xl-4": "MuiGrid-grid-xl-4",
+                    "grid-xl-5": "MuiGrid-grid-xl-5",
+                    "grid-xl-6": "MuiGrid-grid-xl-6",
+                    "grid-xl-7": "MuiGrid-grid-xl-7",
+                    "grid-xl-8": "MuiGrid-grid-xl-8",
+                    "grid-xl-9": "MuiGrid-grid-xl-9",
+                    "grid-xl-auto": "MuiGrid-grid-xl-auto",
+                    "grid-xl-true": "MuiGrid-grid-xl-true",
+                    "grid-xs-1": "MuiGrid-grid-xs-1",
+                    "grid-xs-10": "MuiGrid-grid-xs-10",
+                    "grid-xs-11": "MuiGrid-grid-xs-11",
+                    "grid-xs-12": "MuiGrid-grid-xs-12",
+                    "grid-xs-2": "MuiGrid-grid-xs-2",
+                    "grid-xs-3": "MuiGrid-grid-xs-3",
+                    "grid-xs-4": "MuiGrid-grid-xs-4",
+                    "grid-xs-5": "MuiGrid-grid-xs-5",
+                    "grid-xs-6": "MuiGrid-grid-xs-6",
+                    "grid-xs-7": "MuiGrid-grid-xs-7",
+                    "grid-xs-8": "MuiGrid-grid-xs-8",
+                    "grid-xs-9": "MuiGrid-grid-xs-9",
+                    "grid-xs-auto": "MuiGrid-grid-xs-auto",
+                    "grid-xs-true": "MuiGrid-grid-xs-true",
+                    "item": "MuiGrid-item",
+                    "justify-xs-center": "MuiGrid-justify-xs-center",
+                    "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end",
+                    "justify-xs-space-around": "MuiGrid-justify-xs-space-around",
+                    "justify-xs-space-between": "MuiGrid-justify-xs-space-between",
+                    "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly",
+                    "root": "MuiGrid-root",
+                    "spacing-xs-1": "MuiGrid-spacing-xs-1",
+                    "spacing-xs-10": "MuiGrid-spacing-xs-10",
+                    "spacing-xs-2": "MuiGrid-spacing-xs-2",
+                    "spacing-xs-3": "MuiGrid-spacing-xs-3",
+                    "spacing-xs-4": "MuiGrid-spacing-xs-4",
+                    "spacing-xs-5": "MuiGrid-spacing-xs-5",
+                    "spacing-xs-6": "MuiGrid-spacing-xs-6",
+                    "spacing-xs-7": "MuiGrid-spacing-xs-7",
+                    "spacing-xs-8": "MuiGrid-spacing-xs-8",
+                    "spacing-xs-9": "MuiGrid-spacing-xs-9",
+                    "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap",
+                    "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse",
+                    "zeroMinWidth": "MuiGrid-zeroMinWidth",
+                  }
+                }
+              >
+                <div
+                  className="MuiGrid-root"
                 >
                   <Link
                     href="/login"
@@ -737,16 +810,15 @@ exports[`components/SignupBanner should match snapshot 1`] = `
                       onMouseEnter={[Function]}
                     >
                       <ButtonComp
+                        className="makeStyles-button-4"
                         color="primary"
-                        variant="contained"
                       >
                         <WithStyles(ForwardRef(Button))
-                          className="makeStyles-main-31"
+                          className=""
                           color="primary"
-                          variant="contained"
                         >
                           <ForwardRef(Button)
-                            className="makeStyles-main-31"
+                            className=""
                             classes={
                               Object {
                                 "colorInherit": "MuiButton-colorInherit",
@@ -780,10 +852,9 @@ exports[`components/SignupBanner should match snapshot 1`] = `
                               }
                             }
                             color="primary"
-                            variant="contained"
                           >
                             <WithStyles(ForwardRef(ButtonBase))
-                              className="MuiButton-root MuiButton-contained makeStyles-main-31 MuiButton-containedPrimary"
+                              className="MuiButton-root MuiButton-text MuiButton-textPrimary"
                               component="button"
                               disabled={false}
                               focusRipple={true}
@@ -791,7 +862,7 @@ exports[`components/SignupBanner should match snapshot 1`] = `
                               type="button"
                             >
                               <ForwardRef(ButtonBase)
-                                className="MuiButton-root MuiButton-contained makeStyles-main-31 MuiButton-containedPrimary"
+                                className="MuiButton-root MuiButton-text MuiButton-textPrimary"
                                 classes={
                                   Object {
                                     "disabled": "Mui-disabled",
@@ -806,7 +877,7 @@ exports[`components/SignupBanner should match snapshot 1`] = `
                                 type="button"
                               >
                                 <button
-                                  className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-main-31 MuiButton-containedPrimary"
+                                  className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
                                   disabled={false}
                                   onBlur={[Function]}
                                   onDragLeave={[Function]}
@@ -825,7 +896,7 @@ exports[`components/SignupBanner should match snapshot 1`] = `
                                   <span
                                     className="MuiButton-label"
                                   >
-                                    Sign up
+                                    Signup
                                   </span>
                                   <NoSsr>
                                     <WithStyles(undefined)
@@ -874,13 +945,12 @@ exports[`components/SignupBanner should match snapshot 1`] = `
                       onMouseEnter={[Function]}
                     >
                       <ButtonComp
+                        className="makeStyles-button-4"
                         color="primary"
-                        variant="outlined"
                       >
                         <WithStyles(ForwardRef(Button))
                           className=""
                           color="primary"
-                          variant="outlined"
                         >
                           <ForwardRef(Button)
                             className=""
@@ -917,10 +987,9 @@ exports[`components/SignupBanner should match snapshot 1`] = `
                               }
                             }
                             color="primary"
-                            variant="outlined"
                           >
                             <WithStyles(ForwardRef(ButtonBase))
-                              className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                              className="MuiButton-root MuiButton-text MuiButton-textPrimary"
                               component="button"
                               disabled={false}
                               focusRipple={true}
@@ -928,7 +997,7 @@ exports[`components/SignupBanner should match snapshot 1`] = `
                               type="button"
                             >
                               <ForwardRef(ButtonBase)
-                                className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                                className="MuiButton-root MuiButton-text MuiButton-textPrimary"
                                 classes={
                                   Object {
                                     "disabled": "Mui-disabled",
@@ -943,7 +1012,7 @@ exports[`components/SignupBanner should match snapshot 1`] = `
                                 type="button"
                               >
                                 <button
-                                  className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary"
+                                  className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
                                   disabled={false}
                                   onBlur={[Function]}
                                   onDragLeave={[Function]}
@@ -962,7 +1031,7 @@ exports[`components/SignupBanner should match snapshot 1`] = `
                                   <span
                                     className="MuiButton-label"
                                   >
-                                    Learn about kauri
+                                    Learn More
                                   </span>
                                   <NoSsr>
                                     <WithStyles(undefined)
@@ -1002,13 +1071,13 @@ exports[`components/SignupBanner should match snapshot 1`] = `
                       </ButtonComp>
                     </a>
                   </Link>
-                </section>
-              </StyledComponent>
-            </SignupBanner__ViewContainer>
+                </div>
+              </ForwardRef(Grid)>
+            </WithStyles(ForwardRef(Grid))>
           </div>
-        </StyledComponent>
-      </SignupBanner__SignupBannerStack>
-    </SignupBanner>
+        </ForwardRef(Grid)>
+      </WithStyles(ForwardRef(Grid))>
+    </_default>
   </ThemeProvider>
 </ThemeProvider>
 `;

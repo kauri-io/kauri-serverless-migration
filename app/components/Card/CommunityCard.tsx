@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         justifyContent: 'space-between',
         padding: theme.spacing(1, 0),
         '& > span': {
-            fontWeight: 600,
+            fontWeight: 500,
             marginLeft: theme.spacing(2),
         },
     },

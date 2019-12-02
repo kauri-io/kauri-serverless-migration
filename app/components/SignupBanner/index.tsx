@@ -1,72 +1,96 @@
-import styled from 'styled-components'
-import Button from '../../components/Button'
-import Stack from 'stack-styled'
+import { makeStyles } from '@material-ui/styles'
+import { Theme, Grid, Typography } from '@material-ui/core'
+import ButtonComp from '../Button'
 import Link from 'next/link'
-import { Typography } from '@material-ui/core'
 
-const ResourceDetailsContainer = styled.section`
-    display: flex;
-    flex-direction: column;
-    max-width: 700px;
-    > :not(:last-child) {
-        margin-bottom: ${props => props.theme.space[2]}px;
-    }
-`
+const useStyles = makeStyles((theme: Theme) => ({
+    container: {
+        padding: 0,
+        height: 230,
+        backgroundColor: theme.palette.common.white,
+        background:
+            'url(http://localhost:3000/static/images/HomepageBannerSVG.svg) center center no-repeat',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    title: {
+        fontSize: 26,
+        weight: 400,
+        textAlign: 'center',
+        margin: theme.spacing(1),
+    },
+    subtitle: {
+        fontSize: 14,
+        fontWeight: 400,
+        textAlign: 'center',
+    },
+    button: {
+        marginTop: theme.spacing(1),
+        fontWeight: 500,
+    },
+    link: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    svg: {
+        height: 32,
+        width: 37,
+    },
+    logoText: {
+        fontWeight: 'bold',
+        fontFamily: 'ArialMT, Arial',
+    },
+    logoAccent: {
+        fontWeight: 'bold',
+        color: theme.palette.primary.main,
+        fontFamily: 'ArialMT, Arial',
+    },
+}))
 
-const ViewContainer = styled.section`
-    display: flex;
-    flex-direction: row;
-    margin-left: auto;
-    > :first-child {
-        margin-right: ${props => props.theme.space[2]}px;
-    }
-    @media (max-width: ${props => props.theme.breakpoints[0]}) {
-        display: none;
-    }
-`
+export default () => {
+    const classes = useStyles({})
 
-const SignupBannerStack = styled(Stack)`
-    padding: ${props => props.theme.space[3]}px ${props => props.theme.padding};
-    background: ${props => props.theme.colors.bgPrimary};
-    @media (max-width: ${props => props.theme.breakpoints[0]}) {
-        padding: ${props => props.theme.space[3]}px
-            ${props => props.theme.space[2]}px;
-    }
-`
-
-const SignupBanner: React.FunctionComponent = () => (
-    <SignupBannerStack
-        alignItems={['']}
-        justifyContent={['']}
-        gridAutoFlow={['column']}
-        gap={30}
-    >
-        <ResourceDetailsContainer>
-            <Typography color="secondary" variant="h4" component="h1">
-                Learn to Build on Ethereum with Kauri
-            </Typography>
-            <Typography color="secondary">
-                Articles, Tutorials, Documentation and Best Practices
-            </Typography>
-        </ResourceDetailsContainer>
-        <ViewContainer>
-            <Link href="/login">
-                <a>
-                    <Button
-                        color="primary"
-                        variant="contained"
-                    >{`Sign up`}</Button>
+    return (
+        <Grid className={classes.container}>
+            <Link href="/">
+                <a className={classes.link}>
+                    <img
+                        alt="Kauri logo"
+                        className={classes.svg}
+                        src="/static/images/logo.svg"
+                    />
+                    <Typography className={classes.logoText}>
+                        kauri
+                        <span className={classes.logoAccent}>.io</span>
+                    </Typography>
                 </a>
             </Link>
-            <Link href="/help">
-                <a>
-                    <Button color="primary" variant="outlined">
-                        Learn about kauri
-                    </Button>
-                </a>
-            </Link>
-        </ViewContainer>
-    </SignupBannerStack>
-)
-
-export default SignupBanner
+            <Typography className={classes.title} component="h1">
+                Learn Web3 Best Practices with Kauri
+            </Typography>
+            <Typography className={classes.subtitle} component="h2">
+                Articles, Tutorials and Technical Documentation
+            </Typography>
+            <Grid>
+                <Link href="/login">
+                    <a>
+                        <ButtonComp className={classes.button} color="primary">
+                            Signup
+                        </ButtonComp>
+                    </a>
+                </Link>
+                <Link href="/help">
+                    <a>
+                        <ButtonComp className={classes.button} color="primary">
+                            Learn More
+                        </ButtonComp>
+                    </a>
+                </Link>
+            </Grid>
+        </Grid>
+    )
+}

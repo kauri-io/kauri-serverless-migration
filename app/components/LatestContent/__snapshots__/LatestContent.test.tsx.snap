@@ -544,9 +544,12 @@ exports[`components/LatestContent should match snapshot 1`] = `
             className="MuiGrid-root makeStyles-container-1 MuiGrid-container MuiGrid-direction-xs-column"
           >
             <WithStyles(ForwardRef(Typography))
-              variant="h5"
+              className="makeStyles-title-4"
+              component="h3"
+              variant="h6"
             >
               <ForwardRef(Typography)
+                className="makeStyles-title-4"
                 classes={
                   Object {
                     "alignCenter": "MuiTypography-alignCenter",
@@ -581,13 +584,14 @@ exports[`components/LatestContent should match snapshot 1`] = `
                     "subtitle2": "MuiTypography-subtitle2",
                   }
                 }
-                variant="h5"
+                component="h3"
+                variant="h6"
               >
-                <h5
-                  className="MuiTypography-root MuiTypography-h5"
+                <h3
+                  className="MuiTypography-root makeStyles-title-4 MuiTypography-h6"
                 >
-                  Latest Content
-                </h5>
+                  Recent Content
+                </h3>
               </ForwardRef(Typography)>
             </WithStyles(ForwardRef(Typography))>
             <WithStyles(ForwardRef(Grid))

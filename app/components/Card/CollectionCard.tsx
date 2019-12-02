@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     link: {
         width: '100%',
+        display: 'block',
     },
     name: {
         textTransform: 'capitalize',
