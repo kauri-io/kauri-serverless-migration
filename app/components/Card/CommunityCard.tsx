@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         alignItems: 'center',
         marginLeft: theme.spacing(2),
         '& > h6': {
-            fontWeight: '600',
+            fontWeight: 500,
         },
         '& > *': {
             marginRight: theme.spacing(1),

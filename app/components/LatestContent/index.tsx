@@ -1,6 +1,4 @@
-import Button from '../../components/Button'
-import Link from 'next/link'
-import { Grid, Typography } from '@material-ui/core'
+import { Grid, Typography, Card, Link } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import {
     getArticleURL,
@@ -33,6 +31,28 @@ const useStyles = makeStyles((theme: Theme) => ({
         fontWeight: 400,
         padding: theme.spacing(2, 0),
         lineHeight: '24px',
+    },
+    explore: {
+        maxWidth: 824,
+    },
+    card: {
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+        height: '100%',
+        padding: theme.spacing(2),
+        '& h6': {
+            fontSize: 16,
+            fontWeight: 500,
+            lineHeight: '19px',
+        },
+        '& span': {
+            fontSize: 12,
+            fontWeight: 400,
+            lineHeight: '14px',
+            textAlign: 'center',
+        },
     },
 }))
 
@@ -92,30 +112,55 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                         }
                     }
                 })}
-                <Grid
-                    justify="center"
-                    spacing={2}
-                    container={true}
-                    className={classes.buttons}
-                >
-                    <Grid sm={6} item={true} className={classes.button}>
-                        <Link href="/articles" as="/articles">
-                            <a>
-                                <Button color="primary" variant="outlined">
-                                    All Articles
-                                </Button>
-                            </a>
-                        </Link>
-                    </Grid>
-                    <Grid sm={6} item={true} className={classes.button}>
-                        <Link href="/collections" as="/collections">
-                            <a>
-                                <Button color="primary" variant="outlined">
-                                    All Collections
-                                </Button>
-                            </a>
-                        </Link>
-                    </Grid>
+            </Grid>
+            <Grid
+                container={true}
+                spacing={2}
+                item={true}
+                xs={12}
+                className={classes.explore}
+            >
+                <Grid item={true} sm={12} md={4}>
+                    <Link href="/articles">
+                        <a>
+                            <Card className={classes.card}>
+                                <Typography variant="h6" component="h6">
+                                    Articles
+                                </Typography>
+                                <Typography variant="body2">
+                                    User and Community Articles
+                                </Typography>
+                            </Card>
+                        </a>
+                    </Link>
+                </Grid>
+                <Grid item={true} sm={12} md={4}>
+                    <Link href="/articles">
+                        <a>
+                            <Card className={classes.card}>
+                                <Typography variant="h6" component="h6">
+                                    Collections
+                                </Typography>
+                                <Typography variant="body2">
+                                    User curated collections
+                                </Typography>
+                            </Card>
+                        </a>
+                    </Link>
+                </Grid>
+                <Grid item={true} sm={12} md={4}>
+                    <Link href="/articles">
+                        <a>
+                            <Card className={classes.card}>
+                                <Typography variant="h6" component="h6">
+                                    Communities
+                                </Typography>
+                                <Typography variant="body2">
+                                    Get involved with Kauri Communities
+                                </Typography>
+                            </Card>
+                        </a>
+                    </Link>
                 </Grid>
             </Grid>
         </Grid>
