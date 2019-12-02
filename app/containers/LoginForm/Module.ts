@@ -15,7 +15,6 @@ import {
     catchError,
 } from 'rxjs/operators'
 import { IReduxState, IDependencies } from '../../lib/Module'
-// import { delay } from 'rxjs-compat/operator/delay'
 
 const request = superagent.agent()
 
@@ -78,7 +77,6 @@ export const registerEpic: Epic<
                     )
                 ),
                 map(res => res.body),
-                tap(h => console.log(h)),
                 switchMap(({ sentence, id }: IInitiateLoginResponse) =>
                     loginPersonalSign(sentence).pipe(
                         map((signature: string) =>
@@ -96,14 +94,8 @@ export const registerEpic: Epic<
                                 .send(payload)
                         ),
                         map(res => res.body),
-                        tap(h => console.log(h)),
                         tap(() => callback()),
                         tap(({ token }: IFinalLoginResponse) => {
-                            console.log(token)
-                            console.log(
-                                global.window &&
-                                    global.window.web3.eth.accounts[0]
-                            )
                             document.cookie = cookie.serialize('TOKEN', token, {
                                 maxAge: 30 * 24 * 60 * 60, // 30 days,
                                 domain:
@@ -135,7 +127,6 @@ export const registerEpic: Epic<
                                 'true'
                             )
                         ),
-                        // delay(750),
                         tap(() => {
                             window.location.href =
                                 '/edit-profile' + window.location.search
@@ -149,7 +140,6 @@ export const registerEpic: Epic<
                             })
                         ),
                         catchError(err => {
-                            console.error(err)
                             if (err && err.message.includes('locked')) {
                                 return of(
                                     showNotificationAction({

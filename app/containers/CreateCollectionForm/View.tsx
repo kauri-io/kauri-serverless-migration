@@ -41,12 +41,17 @@ import { Theme, makeStyles } from '@material-ui/core/styles'
 import {
     ResourceTypeInput,
     SectionDTOInput,
+    ResourceIdentifierInput,
 } from '../../__generated__/globalTypes'
 import LinkCardFormView from '../LinkCardFormView'
 import DeleteIcon from '@material-ui/icons/Delete'
 import ValidatedTextField from '../../components/ValidatedTextField'
 import ChooseResourceModal from '../ChooseResourceModal'
 import { ICollection } from './ChooseCollectionModal'
+import { globalSearchApprovedArticles } from '../../queries/Article'
+import { DocumentNode } from 'graphql'
+import { PaginationDataQuery } from '../../lib/with-pagination'
+import { IRouteChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 const useStyles = makeStyles((theme: Theme) => ({
     input: {
@@ -320,6 +325,16 @@ const renderResourceSection = (
     )
 }
 
+export interface IModalConfig {
+    title: string
+    showSearch: boolean
+    query: {
+        name: DocumentNode
+        key: PaginationDataQuery
+        variables: any
+    }
+}
+
 export interface IProps {
     communities?: ICommunity[]
     id?: string
@@ -338,7 +353,7 @@ export interface IProps {
     showNotificationAction: (
         payload: IShowNotificationPayload
     ) => IShowNotificationAction
-    routeChangeAction: (route: string) => void
+    routeChangeAction: (payload: string) => IRouteChangeAction
     editCollectionAction: any
     createCollectionAction: any
     openModalAction: typeof openModalAction
@@ -358,7 +373,6 @@ let uppy
 const CreateCollectionForm: React.FC<
     InjectedFormikProps<IProps, IFormValues>
 > = ({
-    //id,
     touched,
     errors,
     values,
@@ -386,11 +400,54 @@ const CreateCollectionForm: React.FC<
 
     const [resourceModalOpened, setResourceModalOpened] = React.useState({})
     const [validationMessages, setValidationMessages] = React.useState({})
+
     const [modalOptions, setModalOptions] = React.useState({
-        query: '',
-        filter: {},
+        showSearch: false,
+        query: globalSearchApprovedArticles,
+        queryKey: '',
+        variables: {},
         title: '',
     })
+
+    const modalConfigs: IModalConfig[] = [
+        {
+            title: 'My published content',
+            showSearch: true,
+            query: {
+                name: globalSearchApprovedArticles,
+                key: 'searchAutocomplete',
+                variables: {
+                    size: 10,
+                    query: '',
+                    filter: {
+                        types: ['ARTICLE', 'LINK'],
+                        mustIncludeUserId: [userId],
+                    },
+                    parameter: {
+                        scoringMode: 'LAST_UPDATED',
+                    },
+                },
+            },
+        },
+        {
+            title: 'Search Content',
+            showSearch: true,
+            query: {
+                name: globalSearchApprovedArticles,
+                key: 'searchAutocomplete',
+                variables: {
+                    size: 10,
+                    query: '',
+                    filter: {
+                        types: ['ARTICLE', 'LINK'],
+                    },
+                    parameter: {
+                        scoringMode: 'LAST_UPDATED',
+                    },
+                },
+            },
+        },
+    ]
 
     const validate = (name: string, value: string, maxLength: number) => {
         if (value && value.length > maxLength) {
@@ -429,7 +486,7 @@ const CreateCollectionForm: React.FC<
                             onClick={() => routeChangeAction('back')}
                         >
                             <BackIcon />
-                            Cancel Collection
+                            Go Back
                         </Button>
                     </Stack>
                     <Stack
@@ -710,6 +767,7 @@ const CreateCollectionForm: React.FC<
                                                         )}
                                                     </Droppable>
                                                 </DragDropContext>
+
                                                 <ChooseResourceModal
                                                     key={`choose-resource-modal-${index}`}
                                                     open={
@@ -724,7 +782,7 @@ const CreateCollectionForm: React.FC<
                                                         })
                                                     }
                                                     handleConfirm={(
-                                                        selected: ResourceTypeInput[]
+                                                        selected: ResourceIdentifierInput[]
                                                     ) => {
                                                         arrayHelpers.form.setFieldValue(
                                                             `sections[${index}].resourcesId`,
@@ -734,7 +792,10 @@ const CreateCollectionForm: React.FC<
                                                         )
                                                         setModalOptions({
                                                             ...modalOptions,
-                                                            query: '',
+                                                            variables: {
+                                                                ...modalOptions.variables,
+                                                                query: '',
+                                                            },
                                                         })
                                                         setResourceModalOpened({
                                                             ...resourceModalOpened,
@@ -746,17 +807,42 @@ const CreateCollectionForm: React.FC<
                                                             .resourcesId
                                                     }
                                                     title={modalOptions.title}
-                                                    filter={modalOptions.filter}
-                                                    query={modalOptions.query}
-                                                    setQuery={(query: string) =>
+                                                    queryDoc={
+                                                        modalOptions.query
+                                                    }
+                                                    queryKey={
+                                                        modalOptions.queryKey
+                                                    }
+                                                    queryVariables={
+                                                        modalOptions.variables
+                                                    }
+                                                    pathToResourceId={[
+                                                        'resourceIdentifier',
+                                                    ]}
+                                                    pathToResource={[
+                                                        'resource',
+                                                    ]}
+                                                    showSearch={
+                                                        modalOptions.showSearch
+                                                    }
+                                                    searchQuery={
+                                                        modalOptions.variables[
+                                                            'query'
+                                                        ]
+                                                    }
+                                                    setSearchQuery={(
+                                                        query: string
+                                                    ) =>
                                                         setModalOptions({
                                                             ...modalOptions,
-                                                            query,
+                                                            variables: {
+                                                                ...modalOptions.variables,
+                                                                query,
+                                                            },
                                                         })
                                                     }
                                                 />
                                                 <SectionOptions
-                                                    userId={userId}
                                                     currentSectionIndex={index}
                                                     previousSectionHasArticles={pipe(
                                                         path<any>([
@@ -781,9 +867,23 @@ const CreateCollectionForm: React.FC<
                                                             index
                                                         )
                                                     }
-                                                    chooseArticle={options => {
+                                                    modalConfigs={modalConfigs}
+                                                    onClick={(
+                                                        config: IModalConfig
+                                                    ) => {
                                                         setModalOptions({
-                                                            ...options,
+                                                            showSearch:
+                                                                config.showSearch,
+                                                            queryKey:
+                                                                config.query
+                                                                    .key,
+                                                            query:
+                                                                config.query
+                                                                    .name,
+                                                            variables:
+                                                                config.query
+                                                                    .variables,
+                                                            title: config.title,
                                                         })
                                                         setResourceModalOpened({
                                                             ...resourceModalOpened,

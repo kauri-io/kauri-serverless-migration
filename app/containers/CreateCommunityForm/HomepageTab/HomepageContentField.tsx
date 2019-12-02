@@ -8,15 +8,32 @@ import TextField from '@material-ui/core/TextField'
 import ArticleCard from '../../ArticleCardFormView'
 import CollectionCard from '../../CollectionCardFormView'
 import { space, SpaceProps, background, BackgroundProps } from 'styled-system'
-import { path, defaultTo, pipe, filter, remove, concat } from 'ramda'
+import { path, defaultTo, pipe, remove } from 'ramda'
 import Button from '../../../components/Button'
 import SectionOptions from '../../CreateCollectionForm/SectionOptions'
 import {
     openModalAction as openModal,
     closeModalAction as closeModal,
 } from '../../../components/Modal/Module'
-import ChooseCommunityArticleModal from './ChooseCommunityArticleModal'
-import ChooseCommunityCollectionModal from './ChooseCommunityCollectionModal'
+import DeleteIcon from '@material-ui/icons/Delete'
+import { Theme, makeStyles } from '@material-ui/core/styles'
+import ChooseResourceModal from '../../ChooseResourceModal'
+import { ResourceIdentifierInput } from '../../../__generated__/globalTypes'
+import { globalSearchApprovedArticles } from '../../../queries/Article'
+import { IModalConfig } from '../../CreateCollectionForm/View'
+import { getCommunityArticleContent } from '../../../queries/Community'
+import LinkCardFormView from '../../LinkCardFormView'
+
+const useStyles = makeStyles((_theme: Theme) => ({
+    inputSection: {
+        width: '808px',
+        '& > div': {
+            '& > input': {
+                textAlign: 'center',
+            },
+        },
+    },
+}))
 
 const Section = styled.section<SpaceProps>`
     display: flex;
@@ -35,6 +52,7 @@ const Section = styled.section<SpaceProps>`
 `
 
 const ResourceSection = styled.section<SpaceProps>`
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,42 +71,87 @@ const DraggableResourceContainer = styled.div`
     }
 `
 
-const RemoveIcon = () => (
-    <img src="https://png.icons8.com/windows/50/000000/delete-sign.png" />
-)
-
 const renderResourceSection = (
     index: number,
     arrayHelpers: any,
     section: any,
     values: IFormValues,
     mappingKey: string
-) => (resource: any, resourceIndex: number) => (
-    <ResourceSection key={resourceIndex} mt={3}>
-        {path(
-            ['homepage', index, mappingKey, resourceIndex, 'version'],
-            values
-        ) ? (
-            <Draggable
-                index={resourceIndex}
-                draggableId={`${path(
-                    ['homepage', index, mappingKey, resourceIndex, 'id'],
-                    values
-                )}-${path(
-                    ['homepage', index, mappingKey, resourceIndex, 'version'],
-                    values
-                )}`}
-            >
-                {(provided): any => {
-                    return (
+) => (resource: any, resourceIndex: number) => {
+    const type = path(
+        ['homepage', index, mappingKey, resourceIndex, 'type'],
+        values
+    )
+
+    return (
+        <ResourceSection key={resourceIndex} mt={3}>
+            {type === 'ARTICLE' && (
+                <Draggable
+                    index={resourceIndex}
+                    draggableId={`${path(
+                        ['homepage', index, mappingKey, resourceIndex, 'id'],
+                        values
+                    )}`}
+                >
+                    {(provided): any => {
+                        return (
+                            <DraggableResourceContainer
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}
+                                ref={provided.innerRef}
+                                id="article-card"
+                            >
+                                <ArticleCard
+                                    isLoggedIn={true}
+                                    id={String(
+                                        path(
+                                            [
+                                                'homepage',
+                                                index,
+                                                mappingKey,
+                                                resourceIndex,
+                                                'id',
+                                            ],
+                                            values
+                                        )
+                                    )}
+                                    version={parseInt(
+                                        path<string>(
+                                            [
+                                                'homepage',
+                                                index,
+                                                mappingKey,
+                                                resourceIndex,
+                                                'version',
+                                            ],
+                                            values
+                                        ) || '',
+                                        2
+                                    )}
+                                />
+                                {provided.placeholder}
+                            </DraggableResourceContainer>
+                        )
+                    }}
+                </Draggable>
+            )}
+
+            {type === 'LINK' && (
+                <Draggable
+                    index={resourceIndex}
+                    draggableId={`${path(
+                        ['homepage', index, mappingKey, resourceIndex, 'id'],
+                        values
+                    )}`}
+                >
+                    {(provided): any => (
                         <DraggableResourceContainer
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                             ref={provided.innerRef}
-                            id="article-card"
+                            id="collection-card"
                         >
-                            <ArticleCard
-                                isLoggedIn={true}
+                            <LinkCardFormView
                                 id={String(
                                     path(
                                         [
@@ -101,27 +164,14 @@ const renderResourceSection = (
                                         values
                                     )
                                 )}
-                                version={parseInt(
-                                    path<string>(
-                                        [
-                                            'homepage',
-                                            index,
-                                            mappingKey,
-                                            resourceIndex,
-                                            'version',
-                                        ],
-                                        values
-                                    ) || '',
-                                    2
-                                )}
                             />
                             {provided.placeholder}
                         </DraggableResourceContainer>
-                    )
-                }}
-            </Draggable>
-        ) : (
-            path(['homepage', index, mappingKey, resourceIndex], values) && (
+                    )}
+                </Draggable>
+            )}
+
+            {type === 'COLLECTION' && (
                 <Draggable
                     index={resourceIndex}
                     draggableId={`${path(
@@ -154,32 +204,33 @@ const renderResourceSection = (
                         </DraggableResourceContainer>
                     )}
                 </Draggable>
-            )
-        )}
-        <Button
-            color="primary"
-            variant="text"
-            onClick={() =>
-                arrayHelpers.form.setFieldValue(
-                    `homepage[${index}][${mappingKey}]`,
-                    Array.isArray(section[mappingKey]) &&
-                        (!resourceIndex
-                            ? section[mappingKey].length > 1
-                                ? section[mappingKey].splice(1)
-                                : []
-                            : remove(
-                                  resourceIndex,
-                                  resourceIndex,
-                                  section[mappingKey]
-                              ))
-                )
-            } // Remove current resource index
-        >
-            <RemoveIcon />
-            {`Remove ${resource.type}`}
-        </Button>
-    </ResourceSection>
-)
+            )}
+
+            <Button
+                color="default"
+                variant="text"
+                onClick={() =>
+                    arrayHelpers.form.setFieldValue(
+                        `homepage[${index}][${mappingKey}]`,
+                        Array.isArray(section[mappingKey]) &&
+                            (!resourceIndex
+                                ? section[mappingKey].length > 1
+                                    ? section[mappingKey].splice(1)
+                                    : []
+                                : remove(
+                                      resourceIndex,
+                                      resourceIndex,
+                                      section[mappingKey]
+                                  ))
+                    )
+                } // Remove current resource index
+            >
+                <DeleteIcon />
+                {`Remove ${resource.type}`}
+            </Button>
+        </ResourceSection>
+    )
+}
 
 const ContentSection = styled.section<BackgroundProps & { bg: string }>`
     display: flex;
@@ -204,17 +255,38 @@ interface IProps {
 }
 
 const HomepageContentField: React.FunctionComponent<IProps> = ({
-    id,
     values,
+    id,
 }) => {
-    const [openChooseArticleModal, setOpenChooseArticleModal] = React.useState<
-        boolean
-    >(false)
+    const [resourceModalOpened, setResourceModalOpened] = React.useState({})
 
-    const [
-        openChooseCollectionModal,
-        setOpenChooseCollectionModal,
-    ] = React.useState<boolean>(false)
+    const [modalOptions, setModalOptions] = React.useState({
+        showSearch: false,
+        query: globalSearchApprovedArticles,
+        queryKey: '',
+        variables: {},
+        title: '',
+    })
+
+    const modalConfigs: IModalConfig[] = [
+        {
+            title: 'Community content',
+            showSearch: false,
+            query: {
+                name: getCommunityArticleContent,
+                key: 'getCommunityContent',
+                variables: {
+                    id,
+                    size: 10,
+                    filter: {
+                        statusEquals: 'APPROVED',
+                    },
+                },
+            },
+        },
+    ]
+
+    const classes = useStyles()
 
     return (
         <ContentSection bg="tertiaryBackgroundColor">
@@ -233,6 +305,9 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                             <TextField
                                                 {...field}
                                                 placeholder="Add Section Name"
+                                                fontWeight={500}
+                                                className={classes.inputSection}
+                                                color={'primaryTextColor'}
                                             />
                                         )}
                                     />
@@ -244,6 +319,9 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                                 {...field}
                                                 type="text"
                                                 placeholder="Add Section Description"
+                                                fontWeight={300}
+                                                className={classes.inputSection}
+                                                color={'primaryTextColor'}
                                             />
                                         )}
                                     />
@@ -283,10 +361,6 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                                 'resourcesId',
                                                 destination.index,
                                             ])(values)
-
-                                            // console.log(arrayHelpers.form);
-                                            // console.log(`homepage[${index}].resources[${destination.index}]`);
-                                            // console.log(sourceResource);
 
                                             arrayHelpers.form.setFieldValue(
                                                 `homepage[${index}].resourcesId[${destination.index}]`,
@@ -330,177 +404,43 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                         </Droppable>
                                     </DragDropContext>
 
-                                    {
-                                        // TODO: CHANGE TO CHOOSEARTICLEMODAL COMPONENT BECAUSE PHASE 2 :-1:
-                                    }
-                                    <ChooseCommunityArticleModal
-                                        open={openChooseArticleModal}
-                                        id={id}
-                                        allOtherChosenArticles={
-                                            values.homepage &&
-                                            values.homepage.filter(
-                                                (_, sectionIndex) =>
-                                                    index !== sectionIndex
-                                            )
+                                    <ChooseResourceModal
+                                        key={`choose-resource-modal-${index}`}
+                                        open={resourceModalOpened[index]}
+                                        handleClose={() =>
+                                            setResourceModalOpened({
+                                                ...resourceModalOpened,
+                                                [index]: false,
+                                            })
                                         }
-                                        chosenArticles={pipe(
-                                            path<
-                                                Array<{
-                                                    type: string
-                                                }>
-                                            >([
-                                                'homepage',
-                                                index,
-                                                'resourcesId',
-                                            ]),
-                                            defaultTo([]),
-                                            filter(
-                                                (resourceId: any) =>
-                                                    resourceId &&
-                                                    resourceId.type.toLowerCase() ===
-                                                        'article'
-                                            )
-                                        )(values)}
-                                        closeModalAction={() =>
-                                            setOpenChooseArticleModal(false)
-                                        }
-                                        confirmModal={(
-                                            chosenArticles: [
-                                                {
-                                                    id: string
-                                                    version: number
-                                                }
-                                            ]
+                                        handleConfirm={(
+                                            selected: ResourceIdentifierInput[]
                                         ) => {
                                             arrayHelpers.form.setFieldValue(
                                                 `homepage[${index}].resourcesId`,
-                                                pipe(
-                                                    path<
-                                                        Array<{
-                                                            type: string
-                                                            id: string
-                                                            version: number
-                                                        }>
-                                                    >([
-                                                        'homepage',
-                                                        index,
-                                                        'resourcesId',
-                                                    ]),
-                                                    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                                    // @ts-ignore
-                                                    defaultTo([]),
-                                                    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                                    // @ts-ignore
-                                                    filter<
-                                                        Array<{
-                                                            type: string
-                                                            id: string
-                                                            version: number
-                                                        }>
-                                                    >(
-                                                        resourceId =>
-                                                            resourceId &&
-                                                            // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                                            // @ts-ignore
-                                                            resourceId.type &&
-                                                            // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                                            // @ts-ignore
-                                                            resourceId.type.toLowerCase() ===
-                                                                'collection'
-                                                    ),
-                                                    defaultTo([]),
-                                                    concat(
-                                                        chosenArticles.map(
-                                                            article =>
-                                                                article && {
-                                                                    ...article,
-                                                                    type:
-                                                                        'ARTICLE',
-                                                                }
-                                                        )
-                                                    )
-                                                )(values)
+                                                selected
                                             )
-
-                                            setOpenChooseCollectionModal(false)
+                                            setModalOptions({
+                                                ...modalOptions,
+                                                query: '',
+                                            })
+                                            setResourceModalOpened({
+                                                ...resourceModalOpened,
+                                                [index]: false,
+                                            })
                                         }}
-                                    />
-
-                                    {/* // TODO: CHANGE TO CHOOSECOLLECTIONMODAL COMPONENT BECAUSE PHASE 2 :-1: */}
-                                    <ChooseCommunityCollectionModal
-                                        open={openChooseCollectionModal}
-                                        id={id}
-                                        currentCollectionIdIfUpdating={'1337'}
-                                        allOtherChosenCollections={
-                                            values.homepage &&
-                                            values.homepage.filter(
-                                                (_, sectionIndex) =>
-                                                    index !== sectionIndex
-                                            )
-                                        }
-                                        chosenCollections={pipe(
-                                            path([
-                                                'homepage',
-                                                index,
-                                                'resourcesId',
-                                            ]),
-                                            // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                            // @ts-ignore
-                                            defaultTo([]),
-                                            // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                            // @ts-ignore
-                                            filter<
-                                                Array<{
-                                                    type: string
-                                                    id: string
-                                                }>
-                                            >(
-                                                resourceId =>
-                                                    resourceId &&
-                                                    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                                    // @ts-ignore
-                                                    resourceId.type.toLowerCase() ===
-                                                        'collection'
-                                            )
-                                        )(values)}
-                                        closeModalAction={() =>
-                                            setOpenChooseCollectionModal(false)
-                                        }
-                                        confirmModal={(
-                                            chosenCollections: [{ id: string }]
-                                        ) => {
-                                            arrayHelpers.form.setFieldValue(
-                                                `homepage[${index}].resourcesId`,
-                                                pipe(
-                                                    path([
-                                                        'homepage',
-                                                        index,
-                                                        'resourcesId',
-                                                    ]),
-                                                    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                                    // @ts-ignore
-                                                    defaultTo([]),
-                                                    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/25581
-                                                    // @ts-ignore
-                                                    filter(
-                                                        ({ type }) =>
-                                                            type.toLowerCase() ===
-                                                            'article' // TODO: check?
-                                                    ),
-                                                    concat(
-                                                        chosenCollections.map(
-                                                            collection => ({
-                                                                ...collection,
-                                                                type:
-                                                                    'COLLECTION',
-                                                            })
-                                                        )
-                                                    )
-                                                )(values)
-                                            )
-
-                                            setOpenChooseCollectionModal(false)
-                                        }}
+                                        preSelected={path([
+                                            'homepage',
+                                            index,
+                                            'resourcesId',
+                                        ])(values)}
+                                        disabled={[]}
+                                        title={modalOptions.title}
+                                        queryDoc={modalOptions.query}
+                                        queryKey={modalOptions.queryKey}
+                                        queryVariables={modalOptions.variables}
+                                        pathToResource={['resource']}
+                                        showSearch={modalOptions.showSearch}
                                     />
 
                                     <SectionOptions
@@ -521,9 +461,21 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                         removeSection={() =>
                                             arrayHelpers.remove(index)
                                         }
-                                        chooseArticle={() =>
-                                            setOpenChooseArticleModal(true)
-                                        }
+                                        modalConfigs={modalConfigs}
+                                        onClick={(config: IModalConfig) => {
+                                            setModalOptions({
+                                                showSearch: config.showSearch,
+                                                queryKey: config.query.key,
+                                                query: config.query.name,
+                                                variables:
+                                                    config.query.variables,
+                                                title: config.title,
+                                            })
+                                            setResourceModalOpened({
+                                                ...resourceModalOpened,
+                                                [index]: true,
+                                            })
+                                        }}
                                     />
                                 </Section>
                             ))}

@@ -11,19 +11,21 @@ import {
     IconButton,
     InputBase,
 } from '@material-ui/core'
+import Link from 'next/link'
 import { Close as CloseIcon, Search as SearchIcon } from '@material-ui/icons'
-import { ResourceIdentifierInput } from '../../__generated__/globalTypes'
+import {
+    ResourceIdentifierInput,
+    ResourceTypeInput,
+} from '../../__generated__/globalTypes'
 import CardDetails from '../../components/Card/CardComponents/CardDetails'
 import Loading from '../../components/Loading'
-import {
-    searchAutocompleteArticles_searchAutocomplete,
-    searchAutocompleteArticles_searchAutocomplete_content,
-    searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO,
-    searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO,
-} from '../../queries/__generated__/searchAutocompleteArticles'
-import { getArticleURL, getLinkUrl } from '../../lib/getURLs'
-import withPagination from '../../lib/with-pagination'
-import { IRouteChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { getArticleURL, getLinkUrl, getCollectionURL } from '../../lib/getURLs'
+import withPagination, { PaginationDataQuery } from '../../lib/with-pagination'
+import { Article } from '../../queries/Fragments/__generated__/Article'
+import { Link as ExternalLink } from '../../queries/Fragments/__generated__/Link'
+import { Collection } from '../../queries/Fragments/__generated__/Collection'
+import { UserOwner } from '../../queries/Fragments/__generated__/UserOwner'
+import { path } from 'ramda'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -35,29 +37,33 @@ const useStyles = makeStyles((theme: Theme) => ({
         padding: theme.spacing(1),
         flexGrow: 1,
     },
-    search: {
-        position: 'relative',
-        borderRadius: theme.shape.borderRadius,
-        backgroundColor: '#F7F7F7',
-        margin: theme.spacing(1),
-        width: 'auto',
-    },
-    searchIcon: {
-        width: theme.spacing(7),
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
     inputInput: {
-        padding: theme.spacing(1, 1, 1, 7),
-        transition: theme.transitions.create('width'),
-        width: 120,
-        '&:focus': {
-            width: 200,
+        padding: theme.spacing(1, 2),
+    },
+    inputRoot: {
+        color: 'inherit',
+        width: '100%',
+        paddingRight: theme.spacing(2),
+    },
+    searchClass: {
+        alignItems: 'center',
+        backgroundColor: theme.palette.background.default,
+        borderRadius: theme.shape.borderRadius,
+        display: 'flex',
+        margin: theme.spacing(1),
+        width: '90%',
+        [theme.breakpoints.up('sm')]: {
+            marginLeft: theme.spacing(3),
+            width: 'auto',
         },
+    },
+    searchIconClass: {
+        alignItems: 'center',
+        display: 'flex',
+        height: '100%',
+        justifyContent: 'center',
+        cursor: 'pointer',
+        marginRight: theme.spacing(2),
     },
     body: {
         width: '100%',
@@ -85,7 +91,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         margin: theme.spacing(1),
     },
     cardButton: {
-        width: '120px',
+        width: '130px',
         padding: theme.spacing(1),
     },
     empty: {
@@ -102,10 +108,14 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const ChooseResourceModalContentView = props => {
     const {
-        routeChangeAction,
         indexOf,
+        isDisabled,
         selectResource,
-        GlobalSearchQuery,
+        Query,
+        queryKey,
+        pathToResource,
+        pathToResourceId,
+        loading,
         setRef,
     } = props
 
@@ -122,15 +132,12 @@ const ChooseResourceModalContentView = props => {
                 className={classes.body}
             >
                 {/**** LOADING ****/}
-                {!GlobalSearchQuery.searchAutocomplete ||
-                GlobalSearchQuery.loading ? (
-                    <Loading />
-                ) : null}
+                {!Query[queryKey] || loading ? <Loading /> : null}
 
                 {/**** EMPTY STATE ****/}
-                {GlobalSearchQuery.searchAutocomplete &&
-                GlobalSearchQuery.searchAutocomplete.totalElements === 0 &&
-                !GlobalSearchQuery.loading ? (
+                {Query[queryKey] &&
+                Query[queryKey].totalElements === 0 &&
+                !loading ? (
                     <div className={classes.empty}>
                         <Typography variant="h6" className={classes.emptyText}>
                             No Content Found
@@ -139,14 +146,11 @@ const ChooseResourceModalContentView = props => {
                 ) : null}
 
                 {/**** CONTENT ****/}
-                {GlobalSearchQuery.searchAutocomplete &&
-                GlobalSearchQuery.searchAutocomplete.totalElements > 0 &&
-                !GlobalSearchQuery.loading
-                    ? GlobalSearchQuery.searchAutocomplete.content.map(
-                          (
-                              result: searchAutocompleteArticles_searchAutocomplete_content | null,
-                              _index: number
-                          ) => {
+                {Query[queryKey] &&
+                Query[queryKey].totalElements > 0 &&
+                !loading
+                    ? Query[queryKey].content.map(
+                          (result: any, _index: number) => {
                               if (
                                   result === null ||
                                   result.resourceIdentifier === null
@@ -154,13 +158,22 @@ const ChooseResourceModalContentView = props => {
                                   return null
 
                               const resourceId: ResourceIdentifierInput = {
-                                  id: result.resourceIdentifier.id,
-                                  type: result.resourceIdentifier.type,
+                                  id:
+                                      path<string>([...pathToResourceId, 'id'])(
+                                          result
+                                      ) || '',
+                                  type:
+                                      path<ResourceTypeInput>([
+                                          ...pathToResourceId,
+                                          'type',
+                                      ])(result) || ResourceTypeInput.ARTICLE,
                               }
 
                               switch (resourceId.type) {
                                   case 'ARTICLE': {
-                                      var article = result.resource as searchAutocompleteArticles_searchAutocomplete_content_resource_ArticleDTO
+                                      var article = path<Article>([
+                                          ...pathToResource,
+                                      ])(result) as Article
 
                                       return (
                                           <div
@@ -201,21 +214,32 @@ const ChooseResourceModalContentView = props => {
                                               <Button
                                                   color="primary"
                                                   variant="text"
-                                                  onClick={() =>
-                                                      routeChangeAction(
-                                                          getArticleURL({
-                                                              ...article,
-                                                          }).as
-                                                      )
-                                                  }
                                                   className={classes.cardButton}
                                               >
                                                   {' '}
-                                                  View article
+                                                  <Link
+                                                      as={
+                                                          getArticleURL({
+                                                              ...article,
+                                                          }).as
+                                                      }
+                                                      href={
+                                                          getArticleURL({
+                                                              ...article,
+                                                          }).href
+                                                      }
+                                                  >
+                                                      <a target="_blank">
+                                                          View article
+                                                      </a>
+                                                  </Link>
                                               </Button>
                                               <Button
                                                   color="primary"
                                                   variant="text"
+                                                  disabled={isDisabled(
+                                                      resourceId
+                                                  )}
                                                   onClick={() =>
                                                       selectResource(resourceId)
                                                   }
@@ -231,7 +255,9 @@ const ChooseResourceModalContentView = props => {
                                   }
 
                                   case 'LINK': {
-                                      var link = result.resource as searchAutocompleteArticles_searchAutocomplete_content_resource_ExternalLinkDTO
+                                      var link = path<ExternalLink>([
+                                          ...pathToResource,
+                                      ])(result) as ExternalLink
 
                                       return (
                                           <div
@@ -270,28 +296,125 @@ const ChooseResourceModalContentView = props => {
                                               <Button
                                                   color="primary"
                                                   variant="text"
-                                                  onClick={() =>
-                                                      routeChangeAction(
+                                                  className={classes.cardButton}
+                                              >
+                                                  <Link
+                                                      as={
                                                           getLinkUrl({
                                                               ...link,
                                                           }).as
-                                                      )
-                                                  }
-                                                  className={classes.cardButton}
-                                              >
-                                                  {' '}
-                                                  View Link
+                                                      }
+                                                      href={
+                                                          getLinkUrl({
+                                                              ...link,
+                                                          }).href
+                                                      }
+                                                  >
+                                                      <a target="_blank">
+                                                          View link
+                                                      </a>
+                                                  </Link>
                                               </Button>
                                               <Button
                                                   color="primary"
                                                   variant="text"
+                                                  disabled={isDisabled(
+                                                      resourceId
+                                                  )}
                                                   onClick={() =>
                                                       selectResource(resourceId)
                                                   }
                                                   className={classes.cardButton}
                                               >
                                                   {' '}
-                                                  Select
+                                                  {indexOf(resourceId) > -1
+                                                      ? 'Unselect'
+                                                      : 'Select'}
+                                              </Button>
+                                          </div>
+                                      )
+                                  }
+
+                                  case 'COLLECTION': {
+                                      var collection = path<Collection>([
+                                          ...pathToResource,
+                                      ])(result) as Collection
+                                      console.log('collection', collection)
+                                      var owner = collection.owner as UserOwner
+                                      console.log('owner', owner)
+
+                                      return (
+                                          <div
+                                              className={
+                                                  indexOf(resourceId) > -1
+                                                      ? classes.cardSelected
+                                                      : classes.card
+                                              }
+                                          >
+                                              <div className={classes.left}>
+                                                  <Typography
+                                                      variant="subtitle1"
+                                                      className={
+                                                          classes.cardTitle
+                                                      }
+                                                  >
+                                                      {collection.name}
+                                                  </Typography>
+                                                  <CardDetails
+                                                      user={{
+                                                          id: owner.id,
+                                                          username:
+                                                              owner.username ||
+                                                              '',
+                                                          name:
+                                                              owner.publicUserName ||
+                                                              '',
+                                                          avatar:
+                                                              owner.avatar ||
+                                                              '',
+                                                      }}
+                                                      date={
+                                                          collection.dateCreated
+                                                      }
+                                                  />
+                                              </div>
+                                              <Button
+                                                  color="primary"
+                                                  variant="text"
+                                                  className={classes.cardButton}
+                                              >
+                                                  <Link
+                                                      as={
+                                                          getCollectionURL({
+                                                              ...collection,
+                                                          }).as
+                                                      }
+                                                      href={
+                                                          getCollectionURL({
+                                                              ...collection,
+                                                          }).href
+                                                      }
+                                                  >
+                                                      <a target="_blank">
+                                                          View Collection
+                                                      </a>
+                                                  </Link>
+                                              </Button>
+                                              <Button
+                                                  color="primary"
+                                                  variant="text"
+                                                  disabled={isDisabled(
+                                                      resourceId
+                                                  )}
+                                                  onClick={() =>
+                                                      selectResource(resourceId)
+                                                  }
+                                                  className={classes.cardButton}
+                                              >
+                                                  {' '}
+                                                  {indexOf(resourceId) > -1
+                                                      ? 'Unselect'
+                                                      : 'Select'}
                                               </Button>
                                           </div>
                                       )
@@ -308,40 +431,50 @@ const ChooseResourceModalContentView = props => {
     )
 }
 
-const ChooseResourceModalContent = withPagination(
-    ChooseResourceModalContentView,
-    'searchAutocomplete',
-    'GlobalSearchQuery'
-)
-
-interface IProps {
-    routeChangeAction: (payload: string) => IRouteChangeAction
+export interface IProps {
     open: boolean
     handleClose: () => void
     handleConfirm: (selected: ResourceIdentifierInput[]) => void
-    query: string
-    setQuery: (query: string) => void
+    showSearch?: boolean
+    searchQuery?: string
+    pathToResourceId?: string[]
+    pathToResource?: string[]
+    setSearchQuery?: (query: string) => void
     title: string
     preSelected: ResourceIdentifierInput[]
-    GlobalSearchQuery: {
-        loading: boolean
-        searchAutocomplete: searchAutocompleteArticles_searchAutocomplete
-    }
+    disabled?: ResourceIdentifierInput[]
+    Query: any
+    queryKey: PaginationDataQuery
+    maxSelection?: number
 }
 
+const ChooseResourceModalContent = withPagination(
+    ChooseResourceModalContentView,
+    (props: IProps) => {
+        return props.queryKey
+    },
+    'Query'
+)
+
 export const ChooseResourceModal = ({
-    routeChangeAction,
     open,
     handleClose,
     handleConfirm,
     title,
     preSelected,
-    GlobalSearchQuery,
-    query,
-    setQuery,
+    disabled = [],
+    Query,
+    queryKey,
+    pathToResourceId = [],
+    pathToResource = [],
+    showSearch = false,
+    searchQuery,
+    setSearchQuery,
+    maxSelection = 100,
 }: IProps) => {
     const classes = useStyles()
     const [selected, setSelected] = React.useState(preSelected)
+    const [query, setQuery] = React.useState(searchQuery)
 
     // Update if the section resource list is updated from the form (via remove-article button)
     React.useEffect(() => {
@@ -363,13 +496,32 @@ export const ChooseResourceModal = ({
 
     const selectResource = (resourceId: ResourceIdentifierInput) => {
         var index = indexOf(resourceId)
+
+        // resource found: unselect
         if (index > -1) {
-            // resource found: unselect
             setSelected(selected.filter((_, i) => i !== index))
-        } else {
+
             // resource not found: select
+        } else {
             setSelected([...selected, resourceId])
         }
+
+        // If the user has selected the maximum resources allowed, we close the popup
+        if (selected.length + 1 >= maxSelection) {
+            handleConfirm([...selected, resourceId])
+        }
+    }
+
+    const isDisabled = (resourceId: ResourceIdentifierInput): boolean => {
+        for (var i = 0; i < disabled.length; i++) {
+            if (
+                disabled[i].type === resourceId.type &&
+                disabled[i].id === resourceId.id
+            ) {
+                return true
+            }
+        }
+        return false
     }
 
     return (
@@ -383,7 +535,7 @@ export const ChooseResourceModal = ({
             fullWidth
         >
             <DialogTitle disableTypography className={classes.container}>
-                {!GlobalSearchQuery.searchAutocomplete ? (
+                {!Query[queryKey] ? (
                     <Typography
                         variant="h6"
                         className={classes.title}
@@ -392,22 +544,28 @@ export const ChooseResourceModal = ({
                     <Typography
                         variant="h6"
                         className={classes.title}
-                    >{`${title} (${GlobalSearchQuery.searchAutocomplete.totalElements})`}</Typography>
+                    >{`${title} (${Query[queryKey].totalElements})`}</Typography>
                 )}
-                <div className={classes.search}>
-                    <div className={classes.searchIcon}>
-                        <SearchIcon />
+                {showSearch && setSearchQuery && (
+                    <div className={classes.searchClass}>
+                        <InputBase
+                            placeholder="Search…"
+                            classes={{
+                                input: classes.inputInput,
+                                root: classes.inputRoot,
+                            }}
+                            inputProps={{ 'aria-label': 'search' }}
+                            onChange={e => setQuery(e.target.value)}
+                            value={query}
+                        />
+                        <div className={classes.searchIconClass}>
+                            <SearchIcon
+                                onClick={() => setSearchQuery(query || '')}
+                            />
+                        </div>
                     </div>
-                    <InputBase
-                        placeholder="Search…"
-                        classes={{
-                            input: classes.inputInput,
-                        }}
-                        inputProps={{ 'aria-label': 'search' }}
-                        onChange={e => setQuery(e.target.value)}
-                        value={query}
-                    />
-                </div>
+                )}
+
                 <IconButton aria-label="close" onClick={handleClose}>
                     <CloseIcon onClick={handleClose} />
                 </IconButton>
@@ -416,8 +574,12 @@ export const ChooseResourceModal = ({
             <ChooseResourceModalContent
                 indexOf={indexOf}
                 selectResource={selectResource}
-                GlobalSearchQuery={GlobalSearchQuery}
-                routeChangeAction={routeChangeAction}
+                isDisabled={isDisabled}
+                Query={Query}
+                queryKey={queryKey}
+                pathToResource={pathToResource}
+                pathToResourceId={pathToResourceId}
+                loading={Query.loading}
             />
 
             <DialogActions className={classes.container}>

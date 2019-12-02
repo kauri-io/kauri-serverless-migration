@@ -18,11 +18,15 @@ const useStyles = makeStyles((theme: Theme) => ({
         margin: 'auto',
         flex: 1,
         height: '100%',
+        flexDirection: 'column',
+        display: 'flex',
     },
     notConstrained: {
         width: '100%',
         flex: 1,
         height: '100%',
+        flexDirection: 'column',
+        display: 'flex',
     },
     root: {
         display: 'flex',
@@ -45,9 +49,15 @@ interface IProps {
     maxWidthConstrained?: boolean
     children: any
     hideNav: boolean
+    hideFooter?: boolean
 }
 
-const Layout = ({ children, maxWidthConstrained, hideNav }: IProps) => {
+const Layout = ({
+    children,
+    maxWidthConstrained,
+    hideNav,
+    hideFooter,
+}: IProps) => {
     const classes = useStyles({ hideNav })
     return (
         <Grid container={true} className={classes.root}>
@@ -69,7 +79,7 @@ const Layout = ({ children, maxWidthConstrained, hideNav }: IProps) => {
             >
                 {children}
             </Grid>
-            <StyledFooter />
+            {!hideFooter && <StyledFooter />}
         </Grid>
     )
 }

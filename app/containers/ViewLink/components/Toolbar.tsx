@@ -24,6 +24,12 @@ const Toolbar = ({
     isAuthor,
     version,
 }) => {
+    const executeOrLoginRedirect = action => {
+        return isLoggedIn && action
+            ? action()
+            : routeChangeAction && routeChangeAction(`/login`)
+    }
+
     return (
         <Grid className={classes.toolbar}>
             <a href="#comments">
@@ -37,18 +43,18 @@ const Toolbar = ({
             <Grid
                 className={classes.tool}
                 item={true}
-                onClick={() => {
-                    return isLoggedIn && openModalAction
-                        ? openModalAction({
-                              children: (
-                                  <BookmarkResource
-                                      resourceId={id}
-                                      resourceType={ResourceTypeInput[type]}
-                                  />
-                              ),
-                          })
-                        : routeChangeAction && routeChangeAction(`/login`)
-                }}
+                onClick={() =>
+                    executeOrLoginRedirect(() =>
+                        openModalAction({
+                            children: (
+                                <BookmarkResource
+                                    resourceId={id}
+                                    resourceType={ResourceTypeInput[type]}
+                                />
+                            ),
+                        })
+                    )
+                }
             >
                 {isBookmarked ? <BookmarkIcon /> : <BookmarkBorderIcon />}
                 <Typography variant="subtitle2">Bookmark</Typography>
@@ -58,11 +64,13 @@ const Toolbar = ({
                 className={classes.tool}
                 item={true}
                 onClick={() =>
-                    openModalAction({
-                        children: (
-                            <AddToCollection resourceId={id} type={type} />
-                        ),
-                    })
+                    executeOrLoginRedirect(() =>
+                        openModalAction({
+                            children: (
+                                <AddToCollection resourceId={id} type={type} />
+                            ),
+                        })
+                    )
                 }
             >
                 <FolderIcon />
@@ -72,9 +80,13 @@ const Toolbar = ({
                 <Grid
                     className={classes.tool}
                     onClick={() =>
-                        routeChangeAction(
-                            getArticleURL({ id, title: '', version }, 'update')
-                                .as
+                        executeOrLoginRedirect(() =>
+                            routeChangeAction(
+                                getArticleURL(
+                                    { id, title: '', version },
+                                    'update'
+                                ).as
+                            )
                         )
                     }
                 >

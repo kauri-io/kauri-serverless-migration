@@ -66,7 +66,7 @@ const Component: React.FunctionComponent<IProps> = props => {
                         onClick={props.goBack}
                     >
                         <BackIcon />
-                        Cancel Community
+                        Go Back
                     </Button>
                 </Grid>
 

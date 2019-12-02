@@ -5303,6 +5303,7 @@ exports[`containers/Article should match snapshot 1`] = `
                             </WithStyles(ForwardRef(Typography))>
                             <div
                               className="makeStyles-container-253"
+                              id="comments"
                             >
                               <Hidden
                                 mdDown={true}

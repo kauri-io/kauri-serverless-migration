@@ -1,5 +1,11 @@
 import gql from 'graphql-tag'
-import { CommunityOwner, UserOwner, Article, Link } from './Fragments'
+import {
+    CommunityOwner,
+    UserOwner,
+    Article,
+    Link,
+    Collection,
+} from './Fragments'
 
 export const submitArticle = gql`
     mutation submitArticle(
@@ -489,12 +495,17 @@ export const globalSearchApprovedArticles = gql`
                     ... on ExternalLinkDTO {
                         ...Link
                     }
+
+                    ... on CollectionDTO {
+                        ...Collection
+                    }
                 }
             }
         }
     }
     ${Article}
     ${Link}
+    ${Collection}
 `
 
 export const relatedArticles = gql`

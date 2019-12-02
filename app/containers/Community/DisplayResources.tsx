@@ -134,7 +134,7 @@ const RenderResources = () =>
             return null
         }
         return (
-            <Grid key={article.id} item xs={12} sm={12} lg={6}>
+            <Grid key={article.id} item xs={12} sm={12} lg={12}>
                 {Card}
             </Grid>
         )
@@ -172,18 +172,20 @@ const DisplayManagedResourcesComponent = ({
 }: IProps & { review?: boolean }) => {
     return (
         <Container>
-            <Grid className={classes.grid} container spacing={3}>
-                {Array.isArray(resources) && resources.length
-                    ? resources.map(
-                          RenderResources()
-                          // isMember,
-                          // communityId,
-                          // openModalAction,
-                          // closeModalAction,
-                          // removeResourceAction
-                      )
-                    : null}
-            </Grid>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Grid className={classes.grid} container spacing={3}>
+                    {Array.isArray(resources) && resources.length
+                        ? resources.map(
+                              RenderResources()
+                              // isMember,
+                              // communityId,
+                              // openModalAction,
+                              // closeModalAction,
+                              // removeResourceAction
+                          )
+                        : null}
+                </Grid>
+            </div>
         </Container>
     )
 }
@@ -192,6 +194,8 @@ export const DisplayManagedResources = withStyles({
     grid: {
         paddingTop: '24px',
         paddingBottom: '24px',
+        width: 870,
+        margin: 'auto',
     },
 })(DisplayManagedResourcesComponent)
 
@@ -199,5 +203,7 @@ export default withStyles({
     grid: {
         paddingTop: '24px',
         paddingBottom: '24px',
+        width: 870,
+        margin: 'auto',
     },
 })(DisplayResources)
