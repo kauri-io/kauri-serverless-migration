@@ -195,7 +195,7 @@ export const DisplayManagedResources = withStyles({
         paddingTop: '24px',
         paddingBottom: '24px',
         width: 870,
-        margin: 'auto'
+        margin: 'auto',
     },
 })(DisplayManagedResourcesComponent)
 
@@ -204,6 +204,6 @@ export default withStyles({
         paddingTop: '24px',
         paddingBottom: '24px',
         width: 870,
-        margin: 'auto'
+        margin: 'auto',
     },
 })(DisplayResources)
