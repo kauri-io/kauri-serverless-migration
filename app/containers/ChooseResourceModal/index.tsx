@@ -1,9 +1,9 @@
 import View from './View'
 import { compose, graphql, withApollo } from 'react-apollo'
-import { globalSearchApprovedArticles } from '../../queries/Article'
 import { connect } from 'react-redux'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import withApolloError from '../../lib/with-apollo-error'
+import React from 'react'
+import { globalSearchApprovedArticles } from '../../queries/Article'
 
 interface IState {
     app: {
@@ -20,29 +20,36 @@ const mapStateToProps = (state: IState) => {
     }
 }
 
-const QUERY_NAME = 'GlobalSearchQuery'
+const QUERY_NAME = 'Query'
+const DEFAULT_QUERY = globalSearchApprovedArticles
+
+const query = props => {
+    return props.queryDoc || DEFAULT_QUERY
+}
+
+const graphqlDynamic = query => {
+    return component => {
+        return props => {
+            return React.createElement(
+                graphql(query(props), {
+                    name: QUERY_NAME,
+                    options: {
+                        fetchPolicy: 'network-only',
+                        variables: props.queryVariables,
+                    },
+                })(component),
+                props
+            )
+        }
+    }
+}
 
 export default compose(
     withApollo,
     connect(
         mapStateToProps,
-        {
-            routeChangeAction,
-        }
+        {}
     ),
-    graphql(globalSearchApprovedArticles, {
-        name: QUERY_NAME,
-        options: ({ query, filter }: { query: String; filter: any }) => ({
-            fetchPolicy: 'network-only',
-            variables: {
-                size: 10,
-                query,
-                filter: { ...filter, types: ['ARTICLE', 'LINK'] },
-                parameter: {
-                    scoringMode: 'LAST_UPDATED',
-                },
-            },
-        }),
-    }),
+    graphqlDynamic(query),
     withApolloError()
 )(View)

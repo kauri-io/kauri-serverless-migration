@@ -196,7 +196,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                 </Link>
                 <Link href={user ? '/create-link' : 'login?r=/create-link'}>
                     <a>
-                        <MenuItem>Create Link</MenuItem>
+                        <MenuItem>Add External Link</MenuItem>
                     </a>
                 </Link>
 

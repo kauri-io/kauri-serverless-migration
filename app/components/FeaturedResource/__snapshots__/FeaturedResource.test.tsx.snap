@@ -1051,6 +1051,7 @@ exports[`components/FeaturedResource should match snapshot 1`] = `
                               href="/undefined/test user id/cm"
                               onClick={[Function]}
                               onMouseEnter={[Function]}
+                              target="_self"
                             >
                               <div
                                 className="makeStyles-container-136"
