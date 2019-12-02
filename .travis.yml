@@ -2,11 +2,26 @@ language: node_js
 node_js:
   - "10.17.0"
 
+branches:
+  only:
+  - master
+  - development
+  - dev2
+
 cache: yarn
 
-install:
-  - yarn global add jest now
-  - cd app && yarn
+before_install:
+- export COMMITTER_EMAIL="$(git log -1 $TRAVIS_COMMIT --pretty="%cE")"
+- export AUTHOR_NAME="$(git log -1 $TRAVIS_COMMIT --pretty="%aN")"
+- yarn global add jest now
+- cd app && yarn
 
-script:
-  - yarn test
+jobs:
+  include:
+  - stage: tests
+    script:
+      - yarn test
+  - stage: deploy-dev
+    if: "(NOT env(AUTHOR_NAME) =~ ^Travis AND (NOT type IN (pull_request)) AND (branch= development))"
+    script:
+      - now --token=$NOW_TOKEN
