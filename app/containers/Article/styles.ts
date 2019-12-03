@@ -83,7 +83,7 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             position: 'relative',
         },
         headerImage: {
-            padding: theme.spacing(0, 2),
+            padding: theme.spacing(2),
             background: theme.palette.common.white,
         },
         nameAndDate: {
