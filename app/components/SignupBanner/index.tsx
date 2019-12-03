@@ -8,8 +8,9 @@ const useStyles = makeStyles((theme: Theme) => ({
         padding: 0,
         height: 230,
         backgroundColor: theme.palette.common.white,
-        background:
-            'url(http://localhost:3000/static/images/HomepageBannerSVG.svg) center center no-repeat',
+        background: `url(${global.window &&
+            global.window.location
+                .origin}/static/images/HomepageBannerSVG.svg) center center no-repeat`,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -52,7 +53,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }))
 
 export default () => {
-    const classes = useStyles({})
+    const classes = useStyles()
 
     return (
         <Grid className={classes.container}>

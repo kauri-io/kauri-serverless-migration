@@ -1,4 +1,4 @@
-import { Grid, Typography, Card, Link } from '@material-ui/core'
+import { Grid, Typography, Card } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import {
     getArticleURL,
@@ -8,6 +8,7 @@ import {
 import ArticleCard from '../Card/ArticleCard'
 import CollectionCard from '../Card/CollectionCard'
 import CommunityCard from '../Card/CommunityCard'
+import Link from 'next/link'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -34,6 +35,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     explore: {
         maxWidth: 824,
+        '& > *': {
+            width: '100%'
+        }
     },
     card: {
         display: 'flex',
@@ -117,7 +121,6 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                 container={true}
                 spacing={2}
                 item={true}
-                xs={12}
                 className={classes.explore}
             >
                 <Grid item={true} sm={12} md={4}>
