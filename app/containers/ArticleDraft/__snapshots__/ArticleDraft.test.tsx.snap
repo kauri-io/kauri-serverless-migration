@@ -2106,6 +2106,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                   },
                                   "props": Object {
                                     "aria-label": "title",
+                                    "className": "makeStyles-h1-38",
                                     "gutterBottom": true,
                                     "variant": "h4",
                                   },
@@ -2409,6 +2410,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                   },
                                   "props": Object {
                                     "aria-label": "title",
+                                    "className": "makeStyles-h2-39",
                                     "gutterBottom": true,
                                     "variant": "h4",
                                   },
@@ -2712,6 +2714,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                   },
                                   "props": Object {
                                     "aria-label": "title",
+                                    "className": "makeStyles-h3-40",
                                     "gutterBottom": true,
                                     "variant": "h5",
                                   },
@@ -3015,8 +3018,8 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                   },
                                   "props": Object {
                                     "aria-label": "title",
+                                    "className": "makeStyles-h4-41",
                                     "gutterBottom": true,
-                                    "paragraph": true,
                                     "variant": "h6",
                                   },
                                 },
@@ -3319,8 +3322,8 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                   },
                                   "props": Object {
                                     "aria-label": "title",
+                                    "className": "makeStyles-h5-42",
                                     "gutterBottom": true,
-                                    "paragraph": true,
                                     "variant": "h6",
                                   },
                                 },
@@ -3623,8 +3626,8 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                   },
                                   "props": Object {
                                     "aria-label": "title",
+                                    "className": "makeStyles-h6-43",
                                     "gutterBottom": true,
-                                    "paragraph": true,
                                     "variant": "h6",
                                   },
                                 },

@@ -43,6 +43,30 @@ const Renderer = ({ markdown }) => {
             padding: theme.spacing(2),
             borderRadius: 4,
         },
+        h1: {
+            fontWeight: 500,
+            fontSize: 30,
+        },
+        h2: {
+            fontWeight: 500,
+            fontSize: 24,
+        },
+        h3: {
+            fontWeight: 500,
+            fontSize: 20,
+        },
+        h4: {
+            fontWeight: 500,
+            fontSize: 16,
+        },
+        h5: {
+            fontWeight: 500,
+            fontSize: 14,
+        },
+        h6: {
+            fontWeight: 500,
+            fontSize: 14,
+        },
     }))
 
     const classes = useStyles()
@@ -121,6 +145,7 @@ const Renderer = ({ markdown }) => {
                     gutterBottom: true,
                     variant: 'h4',
                     'aria-label': 'title',
+                    className: classes.h1,
                 },
             },
             h2: {
@@ -129,6 +154,7 @@ const Renderer = ({ markdown }) => {
                     gutterBottom: true,
                     variant: 'h4',
                     'aria-label': 'title',
+                    className: classes.h2,
                 },
             },
             h3: {
@@ -137,6 +163,7 @@ const Renderer = ({ markdown }) => {
                     gutterBottom: true,
                     variant: 'h5',
                     'aria-label': 'title',
+                    className: classes.h3,
                 },
             },
             h4: {
@@ -145,7 +172,7 @@ const Renderer = ({ markdown }) => {
                     gutterBottom: true,
                     variant: 'h6',
                     'aria-label': 'title',
-                    paragraph: true,
+                    className: classes.h4,
                 },
             },
             h5: {
@@ -154,7 +181,7 @@ const Renderer = ({ markdown }) => {
                     gutterBottom: true,
                     variant: 'h6',
                     'aria-label': 'title',
-                    paragraph: true,
+                    className: classes.h5,
                 },
             },
             h6: {
@@ -163,7 +190,7 @@ const Renderer = ({ markdown }) => {
                     gutterBottom: true,
                     variant: 'h6',
                     'aria-label': 'title',
-                    paragraph: true,
+                    className: classes.h6,
                 },
             },
             p: { component: Typography, props: { paragraph: true } },
