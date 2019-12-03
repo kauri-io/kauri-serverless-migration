@@ -117,6 +117,9 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                     }
                 })}
             </Grid>
+            <Typography variant="h6" component="h3" className={classes.title}>
+                Explore Content
+            </Typography>
             <Grid
                 container={true}
                 spacing={2}
