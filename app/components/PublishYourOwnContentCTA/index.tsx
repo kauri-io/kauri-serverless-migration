@@ -37,13 +37,12 @@ export default ({ isLoggedIn, content }) => {
             spacing={0}
         >
             <Typography variant="h6" component="h3" className={classes.title}>
-                Publish Content
+                Contribute
             </Typography>
             <Grid className={classes.container}>
                 <Typography className={classes.subtitle} variant="body2">
-                    Welcome to Kauri, we're excited to help you share your
-                    knowledge across the world via the Ethereum ecosystem. IPFS
-                    etc etc
+                    Kauri wants to help you share your knowledge, here's the
+                    three ways you can.
                 </Typography>
                 {content.map(link => (
                     <Link

@@ -591,7 +591,7 @@ exports[`components/PublishYourOwnContentCTA should match snapshot 1`] = `
                   <h3
                     className="MuiTypography-root makeStyles-title-2 MuiTypography-h6"
                   >
-                    Publish Content
+                    Contribute
                   </h3>
                 </ForwardRef(Typography)>
               </WithStyles(ForwardRef(Typography))>
@@ -756,7 +756,7 @@ exports[`components/PublishYourOwnContentCTA should match snapshot 1`] = `
                         <p
                           className="MuiTypography-root makeStyles-subtitle-3 MuiTypography-body2"
                         >
-                          Welcome to Kauri, we're excited to help you share your knowledge across the world via the Ethereum ecosystem. IPFS etc etc
+                          Kauri wants to help you share your knowledge, here's the three ways you can.
                         </p>
                       </ForwardRef(Typography)>
                     </WithStyles(ForwardRef(Typography))>
