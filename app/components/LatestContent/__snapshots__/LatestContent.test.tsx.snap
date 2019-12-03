@@ -1295,10 +1295,10 @@ exports[`components/LatestContent should match snapshot 1`] = `
                         className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-4"
                       >
                         <Link
-                          href="/articles"
+                          href="/collections"
                         >
                           <a
-                            href="/articles"
+                            href="/collections"
                             onClick={[Function]}
                             onMouseEnter={[Function]}
                           >
@@ -1582,10 +1582,10 @@ exports[`components/LatestContent should match snapshot 1`] = `
                         className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-4"
                       >
                         <Link
-                          href="/articles"
+                          href="/communities"
                         >
                           <a
-                            href="/articles"
+                            href="/communities"
                             onClick={[Function]}
                             onMouseEnter={[Function]}
                           >

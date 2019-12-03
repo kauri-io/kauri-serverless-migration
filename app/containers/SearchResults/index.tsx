@@ -56,8 +56,9 @@ const Search = ({ routeChangeAction, query, data: { searchAutocomplete } }) => {
             justifyContent: 'center',
             flexDirection: 'column',
             backgroundColor: 'white',
-            background:
-                'url(https://d1icd6shlvmxi6.cloudfront.net/gsc/DYTUBP/a3/f0/64/a3f0645719204d588fb5d4b0e6e49801/images/search/u21048.svg?token=327e6132512d18393b97569bd806c0c3ee20498290fd10d7f79b5b9868677d6a) center center no-repeat',
+            background: `url(${global.window &&
+                global.window.location
+                    .origin}/static/images/HomepageBannerSVG.svg) center center no-repeat`,
         },
         heading: {
             margin: theme.spacing(1),
