@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme: Theme) => ({
             fontWeight: 500,
             lineHeight: '19px',
         },
-        '& span': {
+        '& p': {
             fontSize: 12,
             fontWeight: 400,
             lineHeight: '14px',
@@ -141,7 +141,7 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                     </Link>
                 </Grid>
                 <Grid item={true} sm={12} md={4}>
-                    <Link href="/articles">
+                    <Link href="/collections">
                         <a>
                             <Card className={classes.card}>
                                 <Typography variant="h6" component="h6">
@@ -155,7 +155,7 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                     </Link>
                 </Grid>
                 <Grid item={true} sm={12} md={4}>
-                    <Link href="/articles">
+                    <Link href="/communities">
                         <a>
                             <Card className={classes.card}>
                                 <Typography variant="h6" component="h6">

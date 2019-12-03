@@ -220,9 +220,6 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                         <MenuItem>Create Community</MenuItem>
                     </a>
                 </Link>
-                <a href="https://import.kauri.io" target="__blank">
-                    <MenuItem>Import Content</MenuItem>
-                </a>
             </Menu>
 
             <Menu
