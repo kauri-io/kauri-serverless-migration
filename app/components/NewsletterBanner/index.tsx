@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) => {
             width: 1224,
             margin: 'auto',
             alignItems: 'flex-start',
-            padding: theme.spacing(2)
+            padding: theme.spacing(2),
         },
     }
 })

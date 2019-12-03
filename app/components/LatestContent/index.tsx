@@ -36,8 +36,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     explore: {
         maxWidth: 824,
         '& > *': {
-            width: '100%'
-        }
+            width: '100%',
+        },
     },
     card: {
         display: 'flex',
