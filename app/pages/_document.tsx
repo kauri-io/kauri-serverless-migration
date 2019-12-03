@@ -109,6 +109,10 @@ export default class MyDocument extends Document<IProps> {
                         name="theme-color"
                         content="#8e00d2"
                     />
+                    <link
+                        href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap"
+                        rel="stylesheet"
+                    />
                     <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver" />
                     <link
                         rel="stylesheet"
@@ -119,6 +123,9 @@ export default class MyDocument extends Document<IProps> {
                         content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
                     />
                     <style>{`
+                    html, body {
+                        font-family: 'Roboto'
+                    }
                     a { color: inherit; text-decoration: none;}
                     .uppy-DashboardTab:last-child{
                         display: none !important;

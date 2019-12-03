@@ -21,9 +21,12 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
     },
     editorWrapper: {
-        border: `2px solid ${theme.palette.primary.main}`,
+        border: `2px solid ${theme.palette.grey[300]}`,
         padding: theme.spacing(1),
         borderRadius: 4,
+        '&&:focus-within': {
+            border: `2px solid ${theme.palette.primary.main}`,
+        },
     },
     button: {
         display: 'flex',
@@ -38,6 +41,11 @@ const useStyles = makeStyles((theme: Theme) => ({
 export default ({ article, comments: { content }, user, addCommentAction }) => {
     const [comment, setComment] = useState('')
     const classes = useStyles()
+
+    const disableButton = () => {
+        return !comment || comment === ''
+    }
+
     return (
         <>
             <Typography
@@ -69,6 +77,7 @@ export default ({ article, comments: { content }, user, addCommentAction }) => {
                                         withToolbar={true}
                                         compact={true}
                                         onChange={e => setComment(e)}
+                                        focusOutline={false}
                                     />
                                 </div>
                                 <div className={classes.button}>
@@ -85,6 +94,7 @@ export default ({ article, comments: { content }, user, addCommentAction }) => {
                                                 body: comment,
                                             })
                                         }
+                                        disabled={disableButton()}
                                     >
                                         Leave Comment
                                     </Button>

@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     link: {
         width: '100%',
+        display: 'block',
     },
     name: {
         textTransform: 'capitalize',
@@ -72,11 +73,14 @@ const useStyles = makeStyles((theme: Theme) => ({
         alignItems: 'center',
         marginLeft: theme.spacing(2),
         '& > h6': {
-            fontWeight: 600,
+            fontWeight: 500,
         },
         '& > *': {
             marginRight: theme.spacing(1),
         },
+    },
+    collection: {
+        fontWeight: 500,
     },
 }))
 
@@ -127,7 +131,10 @@ const CollectionCard = ({
                                 <div className={classes.column}>
                                     <div className={classes.header}>
                                         <Icon>folder</Icon>
-                                        <Typography variant="subtitle2">
+                                        <Typography
+                                            className={classes.collection}
+                                            variant="subtitle2"
+                                        >
                                             Collection
                                         </Typography>
                                         <Typography variant="body2">

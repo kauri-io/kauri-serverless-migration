@@ -419,6 +419,7 @@ exports[`components/CuratedCategory should match snapshot 1`] = `
       <WithStyles(ForwardRef(Grid))
         className="makeStyles-container-1"
         container={true}
+        direction="row"
         spacing={2}
       >
         <ForwardRef(Grid)
@@ -531,6 +532,7 @@ exports[`components/CuratedCategory should match snapshot 1`] = `
             }
           }
           container={true}
+          direction="row"
           spacing={2}
         >
           <div
@@ -538,10 +540,9 @@ exports[`components/CuratedCategory should match snapshot 1`] = `
           >
             <WithStyles(ForwardRef(Grid))
               item={true}
-              key="0"
-              md={3}
-              sm={6}
-              xs={12}
+              lg={3}
+              md={6}
+              sm={12}
             >
               <ForwardRef(Grid)
                 classes={
@@ -652,14 +653,16 @@ exports[`components/CuratedCategory should match snapshot 1`] = `
                   }
                 }
                 item={true}
-                md={3}
-                sm={6}
-                xs={12}
+                lg={3}
+                md={6}
+                sm={12}
               >
                 <div
-                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-3"
+                  className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"
                 >
-                  <Link>
+                  <Link
+                    key="0"
+                  >
                     <a
                       className="makeStyles-link-2"
                       onClick={[Function]}

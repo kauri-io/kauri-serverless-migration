@@ -4,7 +4,6 @@ import Image from '../../components/Image'
 import NoSsr from '@material-ui/core/NoSsr'
 import LoadingComponent from '../../components/Loading'
 
-
 const useStyles = makeStyles((theme: Theme) => ({
     loginContainer: {
         background: theme.palette.common.black,
@@ -133,12 +132,10 @@ const Web3Unavailable = ({ classes }) => (
     </>
 )
 
-
 const Web3Available = ({ handleSubmit }) => (
     <>
         <Typography gutterBottom={true} color="secondary" variant="body1">
-            Sign in using Web3 enabled provider. (MetaMask, Status, Coinbase
-            Wallet)
+            Sign in using MetaMask.
         </Typography>
         <Button
             color="primary"
@@ -152,7 +149,6 @@ const Web3Available = ({ handleSubmit }) => (
 
 export default ({ web3, handleSubmit }) => {
     const classes = useStyles({})
-
 
     return (
         <Grid

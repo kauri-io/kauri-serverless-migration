@@ -1,60 +1,61 @@
-import styled from 'styled-components'
-import Button from '../../components/Button'
-import { Title2 } from '../Typography'
+import { makeStyles } from '@material-ui/styles'
+import { Theme, Grid, Typography } from '@material-ui/core'
+import ButtonComp from '../Button'
 import Link from 'next/link'
-import { Grid, makeStyles } from '@material-ui/core'
 
-const Buttons = styled.div`
-    display: flex;
-    flex-direction: column;
-    > :not(:last-child) {
-        margin-bottom: ${props => props.theme.space[1]}px;
-    }
-`
-
-interface IProps {
-    content: Array<any | null> | null
-    isLoggedIn: boolean
-}
-
-const PublishYourOwnContentCTA: React.FunctionComponent<IProps> = props => {
-    const useStyles = makeStyles(() => ({
-        container: {
-            maxWidth: (1272 / 12) * 3,
-            width: '100%',
-            marginRight: 'auto',
+const useStyles = makeStyles((theme: Theme) => ({
+    container: {
+        background: theme.palette.common.white,
+        padding: theme.spacing(2),
+        borderRadius: 4,
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+    },
+    title: {
+        fontWeight: 400,
+        padding: theme.spacing(2, 0),
+        lineHeight: '24px',
+    },
+    subtitle: {},
+    link: {},
+    root: {
+        [theme.breakpoints.down('md')]: {
+            display: 'none',
         },
-    }))
-    const classes = useStyles()
+    },
+}))
+
+export default ({ isLoggedIn, content }) => {
+    const classes = useStyles({})
+
     return (
-        <Grid className={classes.container} item={true} sm={3}>
-            <Title2>Publish your own content</Title2>
-            <Buttons>
-                {props.content &&
-                    props.content.map((content, key) => (
-                        <Link
-                            key={key}
-                            href={
-                                props.isLoggedIn
-                                    ? content.link
-                                    : `/login?r=${content.link}`
-                            }
-                        >
-                            <a>
-                                <Button
-                                    color="primary"
-                                    fullWidth={true}
-                                    variant="outlined"
-                                    key={content.actionName}
-                                >
-                                    {content.actionName}
-                                </Button>
-                            </a>
-                        </Link>
-                    ))}
-            </Buttons>
+        <Grid
+            className={classes.root}
+            container={true}
+            direction="column"
+            spacing={0}
+        >
+            <Typography variant="h6" component="h3" className={classes.title}>
+                Contribute
+            </Typography>
+            <Grid className={classes.container}>
+                <Typography className={classes.subtitle} variant="body2">
+                    Kauri wants to help you share your knowledge, here's the
+                    three ways you can.
+                </Typography>
+                {content.map(link => (
+                    <Link
+                        href={isLoggedIn ? link.link : `/login?r=${link.link}`}
+                    >
+                        <a>
+                            <ButtonComp color="primary">
+                                {link.actionName}
+                            </ButtonComp>
+                        </a>
+                    </Link>
+                ))}
+            </Grid>
         </Grid>
     )
 }
-
-export default PublishYourOwnContentCTA
