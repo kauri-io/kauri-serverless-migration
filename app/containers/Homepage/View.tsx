@@ -26,7 +26,6 @@ interface IProps {
     data: {
         getLatestHomepageDescriptor: homePageContent_getLatestHomepageDescriptor
     }
-    hostName: string
     routeChangeAction: typeof routeChangeAction
     openModalAction: typeof openModalAction
     emailSubscribeAction: (emailAddress: string, callback?: any) => void
