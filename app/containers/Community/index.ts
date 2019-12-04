@@ -17,6 +17,7 @@ import {
     removeResourceAction,
     transferArticleToCommunityAction,
 } from './Module'
+import { changeOwnerExtenalLinkAction } from '../CreateLink/Module'
 
 const mapStateToProps = (state: IReduxState, ownProps: any) => {
     return {
@@ -53,6 +54,7 @@ export default compose(
             sendCommunityInvitationAction,
             showNotificationAction,
             transferArticleToCommunityAction,
+            changeOwnerExtenalLinkAction,
         }
     ),
     graphql(getCommunityAndPendingArticles, {
