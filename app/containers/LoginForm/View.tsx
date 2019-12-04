@@ -3,6 +3,7 @@ import Button from '../../components/Button'
 import Image from '../../components/Image'
 import NoSsr from '@material-ui/core/NoSsr'
 import LoadingComponent from '../../components/Loading'
+import Link from 'next/link'
 
 const useStyles = makeStyles((theme: Theme) => ({
     loginContainer: {
@@ -32,22 +33,20 @@ const useStyles = makeStyles((theme: Theme) => ({
 const Web3Unavailable = ({ classes }) => (
     <>
         <Typography gutterBottom={true} color="secondary" variant="body1">
-            You need the MetaMask extension to use Kauri. (MetaMask supports
-            Chrome, Firefox, Opera)
+        Kauri uses the Metamask browser extension to authenticate you with the Ethereum network.
         </Typography>
         <Image
             width={100}
             height={100}
             image="/static/images/metamask/avatar.png"
         />
-        <a className={classes.link} href="https://metamask.io" target="_blank">
+        <Typography className={classes.kauriIntro}>Download it here - <a className={classes.link} href="https://metamask.io" target="_blank">
             https://metamask.io
-        </a>
+        </a></Typography>
         <div className={classes.kauriIntro}>
-            Here for the content? Sign up for a newsletter below and receive the
-            latest Web3 tutorials, project announcements, and articles every 2
-            weeks!
+        Learn more about Metamask - <Link href='/article/2a587f3962044515937a8105cfa1568c/metamask-interact-with-ethereum-in-your-browser'><a className={classes.link}>https://kauri.io/article/2a587f3962044515937a8105cfa1568c/metamask-interact-with-ethereum-in-your-browser</a></Link>
         </div>
+        
         <link
             href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css"
             rel="stylesheet"
