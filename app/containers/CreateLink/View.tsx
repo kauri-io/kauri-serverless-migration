@@ -9,8 +9,17 @@ import CardPreview from './components/Preview'
 import FullPreview from '../../containers/ViewLink/components/Content'
 import Loading from '../../components/Loading'
 import Existing from './components/Existing'
+import PublishingSelector from '../PublishingSelector';
 
-const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
+const CreateLink = ({ 
+    client, 
+    submitExtenalLinkAction, 
+    openModalAction, 
+    closeModalAction, 
+    userId, 
+    user,
+    communities 
+}) => {
     const [tab, setTab] = useState(0)
     const [description, setDescription] = useState<null | string>(null)
     const [title, setTitle] = useState<null | string>(null)
@@ -52,26 +61,53 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
         authorName &&
         (tags && tags.length > 0)
 
+    const handleSubmit = (ownerId) => {
+        console.log(JSON.stringify(ownerId))
+        return submitExtenalLinkAction({
+            title,
+            description,
+            image,
+            summary,
+            authorName,
+            authorSocial,
+            url,
+            tags: tags.map(i => i.label),
+            ownerId: ownerId,
+        })
+    }
+
     return (
         <Grid>
             <Nav
                 disabled={!hasAllData}
-                submitExtenalLinkAction={() =>
-                    submitExtenalLinkAction({
-                        title,
-                        description,
-                        image,
-                        summary,
-                        authorName,
-                        authorSocial,
-                        url,
-                        tags: tags.map(i => i.label),
-                        ownerId: {
+                submitExtenalLinkAction={() => {
+                    if (communities && communities.length > 0) {
+                        return openModalAction({
+                            children: (
+                                <PublishingSelector
+                                    userId={userId}
+                                    type="Articles"
+                                    closeModalAction={closeModalAction}
+                                    communities={communities.map(({ community }) => ({
+                                        ...community,
+                                        type: 'COMMUNITY',
+                                    }))}
+                                    handleSubmit={(destination) =>
+                                        handleSubmit({
+                                            type: destination.type,
+                                            id: destination.id,
+                                        })
+                                    }
+                                />
+                            ),
+                        })
+                    } else {
+                        return handleSubmit({
                             type: 'USER',
                             id: userId.toLowerCase(),
-                        },
-                    })
-                }
+                        })
+                    }
+                }}
             />
             <Tabs
                 centered={true}
