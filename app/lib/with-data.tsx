@@ -78,7 +78,6 @@ export default (ComposedComponent: any) =>
             let stateRedux: any = {}
 
             const parsedToken = parseCookies(context)['TOKEN']
-            // console.log(parsedToken);
 
             // Redirect on write-article if user is logged out
             if (

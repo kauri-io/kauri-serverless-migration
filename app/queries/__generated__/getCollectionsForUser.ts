@@ -674,6 +674,26 @@ export interface getCollectionsForUser_searchCollections_content_sections_resour
   totalElements: any;
 }
 
+export interface getCollectionsForUser_searchCollections_content_sections_resources_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface getCollectionsForUser_searchCollections_content_sections_resources_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -741,6 +761,10 @@ export interface getCollectionsForUser_searchCollections_content_sections_resour
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: getCollectionsForUser_searchCollections_content_sections_resources_ExternalLinkDTO_voteResult;
 }
 
 export type getCollectionsForUser_searchCollections_content_sections_resources = getCollectionsForUser_searchCollections_content_sections_resources_PublicUserDTO | getCollectionsForUser_searchCollections_content_sections_resources_ArticleDTO | getCollectionsForUser_searchCollections_content_sections_resources_ExternalLinkDTO;

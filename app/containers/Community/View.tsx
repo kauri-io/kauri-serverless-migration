@@ -41,6 +41,7 @@ import {
     DialogContentText,
 } from '@material-ui/core'
 import Loading from '../../components/Loading'
+import { changeOwnerExtenalLinkAction } from '../CreateLink/Module'
 
 const styles = (theme: Theme) => ({
     tabs: {
@@ -85,6 +86,7 @@ interface IProps {
         payload: Pick<sendInvitationVariables, 'id' | 'invitation'>
     ) => void
     transferArticleToCommunityAction: typeof transferArticleToCommunity
+    changeOwnerExtenalLinkAction: typeof changeOwnerExtenalLinkAction
     showNotificationAction: typeof showNotification
 }
 
@@ -183,14 +185,19 @@ class CommunityConnection extends React.Component<IProps, IState> {
             acceptCommunityInvitationAction,
             removeResourceAction,
             transferArticleToCommunityAction,
+            changeOwnerExtenalLinkAction,
             isCommunityAdmin,
         } = this.props
 
-        const articles =
+        const articlesAndLinks =
             getCommunity.approved &&
             getCommunity.approved.filter(
-                i => i && i.__typename === 'ArticleDTO'
+                i =>
+                    i &&
+                    (i.__typename === 'ArticleDTO' ||
+                        i.__typename === 'ExternalLinkDTO')
             )
+
         const collections =
             getCommunity.approved &&
             getCommunity.approved.filter(
@@ -292,6 +299,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     transferArticleToCommunityAction={
                         transferArticleToCommunityAction
                     }
+                    changeOwnerExtenalLinkAction={changeOwnerExtenalLinkAction}
                     secret={secret}
                     acceptCommunityInvitationAction={
                         acceptCommunityInvitationAction
@@ -310,7 +318,9 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         getCommunity.approved &&
                         (getCommunity.approved.filter(
                             resource =>
-                                resource && resource.__typename === 'ArticleDTO'
+                                resource &&
+                                (resource.__typename === 'ArticleDTO' ||
+                                    resource.__typename === 'ExternalLinkDTO')
                         ) as getCommunity_getCommunity_approved_ArticleDTO[])
                     }
                     collections={
@@ -321,7 +331,9 @@ class CommunityConnection extends React.Component<IProps, IState> {
                                 resource.__typename === 'CollectionDTO'
                         ) as getCommunity_getCommunity_approved_CollectionDTO[])
                     }
-                    articleCount={(articles && articles.length) || 0}
+                    articleCount={
+                        (articlesAndLinks && articlesAndLinks.length) || 0
+                    }
                     collectionCount={(collections && collections.length) || 0}
                     tags={getCommunity.tags}
                     members={getCommunity.members}
@@ -344,7 +356,10 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     onChange={(_e, tab) => this.setState({ tab })}
                 >
                     {canDisplayHomepage && <Tab label="Home" />}
-                    <Tab label={`Articles (${articles && articles.length})`} />
+                    <Tab
+                        label={`Articles (${articlesAndLinks &&
+                            articlesAndLinks.length})`}
+                    />
                     <Tab
                         label={`Collections (${collections &&
                             collections.length})`}
@@ -380,9 +395,9 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     <DisplayResources
                         removeResourceAction={removeResourceAction}
                         isMember={isMember}
-                        key="articles"
-                        type="articles"
-                        resources={articles}
+                        key="articlesAndLinks"
+                        type="articlesAndLinks"
+                        resources={articlesAndLinks}
                         communityId={getCommunity.id}
                     />
                 )}
