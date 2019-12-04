@@ -63,15 +63,14 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             alignItems: 'center',
             margin: theme.spacing(2),
             flexWrap: 'wrap',
+            '& svg': {
+                margin: theme.spacing(1),
+            },
         },
         tag: {
             transition: 'all 0.2s',
             cursor: 'pointer',
             margin: theme.spacing(1),
-            textTransform: 'capitalize',
-            '&.MuiChip-outlined': {
-                borderColor: 'rgba(102, 102, 102, 1)',
-            },
             '&:hover': {
                 background: theme.palette.primary.main,
                 color: theme.palette.common.white,
