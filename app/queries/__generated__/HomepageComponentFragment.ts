@@ -697,6 +697,26 @@ export interface HomepageComponentFragment_Featured_content_resource_CollectionD
   totalElements: any;
 }
 
+export interface HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -764,6 +784,10 @@ export interface HomepageComponentFragment_Featured_content_resource_CollectionD
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult;
 }
 
 export type HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources = HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_PublicUserDTO | HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO | HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO;
@@ -1061,6 +1085,26 @@ export interface HomepageComponentFragment_Featured_content_resource_ExternalLin
   totalElements: any;
 }
 
+export interface HomepageComponentFragment_Featured_content_resource_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface HomepageComponentFragment_Featured_content_resource_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -1128,6 +1172,10 @@ export interface HomepageComponentFragment_Featured_content_resource_ExternalLin
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: HomepageComponentFragment_Featured_content_resource_ExternalLinkDTO_voteResult;
 }
 
 export interface HomepageComponentFragment_Featured_content_resource_ArticleDTO_resourceIdentifier {
@@ -2238,6 +2286,26 @@ export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_
   totalElements: any;
 }
 
+export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -2305,6 +2373,10 @@ export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult;
 }
 
 export type HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources = HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_PublicUserDTO | HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO | HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO;
@@ -2602,6 +2674,26 @@ export interface HomepageComponentFragment_Promo_content_resource_ExternalLinkDT
   totalElements: any;
 }
 
+export interface HomepageComponentFragment_Promo_content_resource_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface HomepageComponentFragment_Promo_content_resource_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -2669,6 +2761,10 @@ export interface HomepageComponentFragment_Promo_content_resource_ExternalLinkDT
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: HomepageComponentFragment_Promo_content_resource_ExternalLinkDTO_voteResult;
 }
 
 export interface HomepageComponentFragment_Promo_content_resource_ArticleDTO_resourceIdentifier {
@@ -3726,6 +3822,26 @@ export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_s
   totalElements: any;
 }
 
+export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -3793,6 +3909,10 @@ export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_s
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult;
 }
 
 export type HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources = HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_PublicUserDTO | HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO | HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO;
@@ -4090,6 +4210,26 @@ export interface HomepageComponentFragment_LatestContent_content_ExternalLinkDTO
   totalElements: any;
 }
 
+export interface HomepageComponentFragment_LatestContent_content_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface HomepageComponentFragment_LatestContent_content_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -4157,6 +4297,10 @@ export interface HomepageComponentFragment_LatestContent_content_ExternalLinkDTO
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: HomepageComponentFragment_LatestContent_content_ExternalLinkDTO_voteResult;
 }
 
 export interface HomepageComponentFragment_LatestContent_content_ArticleDTO_resourceIdentifier {

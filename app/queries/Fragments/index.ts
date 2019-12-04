@@ -268,65 +268,15 @@ export const Community = gql`
             }
             resources {
                 ... on ArticleDTO {
-                    resourceIdentifier {
-                        type
-                        id
-                    }
-                    id
-                    version
-                    title
-                    content
-                    description
-                    dateCreated
-                    datePublished
-                    author {
-                        id
-                        name
-                        username
-                        avatar
-                    }
-                    owner {
-                        ...UserOwner
-                        ...CommunityOwner
-                    }
+                    ...Article
+                }
 
-                    status
-                    attributes
-                    voteResult {
-                        sum
-                    }
-                    isBookmarked
+                ... on ExternalLinkDTO {
+                    ...Link
                 }
+
                 ... on CollectionDTO {
-                    id
-                    name
-                    description
-                    background
-                    dateUpdated
-                    resourceIdentifier {
-                        type
-                        id
-                    }
-                    owner {
-                        ...UserOwner
-                        ...CommunityOwner
-                    }
-                    sections {
-                        name
-                        description
-                        resourcesId {
-                            id
-                            type
-                        }
-                    }
-                }
-                ... on CommunityDTO {
-                    id
-                    name
-                    resourceIdentifier {
-                        type
-                        id
-                    }
+                    ...Collection
                 }
             }
         }
@@ -351,6 +301,10 @@ export const Community = gql`
                 ...Article
             }
 
+            ... on ExternalLinkDTO {
+                ...Link
+            }
+
             ... on CollectionDTO {
                 ...Collection
             }
@@ -360,6 +314,10 @@ export const Community = gql`
                 ...Article
             }
 
+            ... on ExternalLinkDTO {
+                ...Link
+            }
+
             ... on CollectionDTO {
                 ...Collection
             }
@@ -367,4 +325,5 @@ export const Community = gql`
     }
     ${Article}
     ${Collection}
+    ${Link}
 `

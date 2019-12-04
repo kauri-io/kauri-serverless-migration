@@ -30,6 +30,7 @@ import { makeStyles, Theme } from '@material-ui/core/styles'
 import { ResourceIdentifierInput } from '../../__generated__/globalTypes'
 import ChooseResourceModal from '../ChooseResourceModal'
 import { globalSearchApprovedArticles } from '../../queries/Article'
+import { changeOwnerExtenalLinkAction } from '../CreateLink/Module'
 
 const useStyles = makeStyles((theme: Theme) => ({
     button: {
@@ -317,6 +318,7 @@ interface IProps {
     collections: Array<getCommunity_getCommunity_approved_CollectionDTO>
     // curateCommunityResourcesAction: typeof curateCommunityResources;
     transferArticleToCommunityAction: typeof transferArticleToCommunity
+    changeOwnerExtenalLinkAction: typeof changeOwnerExtenalLinkAction
     acceptCommunityInvitationAction: typeof acceptCommunityInvitation
     secret: null | string
     openAddMemberModal: () => void
@@ -346,6 +348,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
     // curateCommunityResourcesAction,
     openAddMemberModal,
     transferArticleToCommunityAction,
+    changeOwnerExtenalLinkAction,
     userId,
 }) => {
     const existingContent = [
@@ -435,16 +438,26 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                 handleConfirm={(selected: ResourceIdentifierInput[]) => {
                     closeAddCommunityArticleModal()
                     if (selected.length > 0) {
-                        transferArticleToCommunityAction(
-                            {
+                        if (selected[0].type === 'ARTICLE') {
+                            transferArticleToCommunityAction(
+                                {
+                                    id: selected[0].id,
+                                    recipient: {
+                                        id,
+                                        type: 'COMMUNITY' as any,
+                                    },
+                                },
+                                () => {}
+                            )
+                        } else if (selected[0].type === 'LINK') {
+                            changeOwnerExtenalLinkAction({
                                 id: selected[0].id,
-                                recipient: {
+                                ownerId: {
                                     id,
                                     type: 'COMMUNITY' as any,
                                 },
-                            },
-                            () => {}
-                        )
+                            })
+                        }
                     }
                 }}
                 disabled={existingContent}
@@ -457,7 +470,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                 queryVariables={{
                     size: 10,
                     filter: {
-                        types: ['ARTICLE', 'LINK', 'COLLECTION'],
+                        types: ['ARTICLE', 'LINK'],
                         mustIncludeUserId: [userId],
                     },
                     parameter: {

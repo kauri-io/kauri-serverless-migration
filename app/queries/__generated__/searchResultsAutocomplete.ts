@@ -236,6 +236,26 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_E
   totalElements: any;
 }
 
+export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -303,6 +323,10 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_E
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO_voteResult;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_PublicUserDTO_articles {
