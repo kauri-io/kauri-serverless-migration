@@ -205,10 +205,7 @@ const mapStateToProps = state => {
         isLoggedIn: !!(state.app && state.app.user && state.app.user.id),
     }
 }
-export default connect(
-    mapStateToProps,
-    {
-        openModalAction,
-        routeChangeAction,
-    }
-)(ArticleCard)
+export default connect(mapStateToProps, {
+    openModalAction,
+    routeChangeAction,
+})(ArticleCard)

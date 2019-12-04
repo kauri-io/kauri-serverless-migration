@@ -16,8 +16,4 @@ class ErrorPage extends React.Component {
     }
 }
 
-export default compose(
-    withData,
-    withApollo,
-    withRouter
-)(ErrorPage)
+export default compose(withData, withApollo, withRouter)(ErrorPage)

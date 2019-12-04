@@ -28,10 +28,7 @@ const mapStateToProps = (state: IState) => {
 const QUERY_NAME = 'CollectionQuery'
 
 export default compose(
-    connect(
-        mapStateToProps,
-        { routeChangeAction, openModalAction }
-    ),
+    connect(mapStateToProps, { routeChangeAction, openModalAction }),
     graphql(getLatestCollections, {
         name: QUERY_NAME,
         options: ({ scoringMode }: { scoringMode: string }) => ({

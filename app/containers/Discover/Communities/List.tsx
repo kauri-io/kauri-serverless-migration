@@ -21,10 +21,7 @@ const mapStateToProps = (state: IState) => {
 const QUERY_NAME = 'CommunityQuery'
 
 export default compose(
-    connect(
-        mapStateToProps,
-        { routeChangeAction }
-    ),
+    connect(mapStateToProps, { routeChangeAction }),
     graphql(searchResultsAutocomplete, {
         name: QUERY_NAME,
         options: () => ({

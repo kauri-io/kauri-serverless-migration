@@ -7,7 +7,10 @@ import Articles from '../containers/Discover/Articles'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const ArticlesPage = withTransaction('articles', 'page')(() => (
+const ArticlesPage = withTransaction(
+    'articles',
+    'page'
+)(() => (
     <App hideNav={false}>
         <Articles />
     </App>

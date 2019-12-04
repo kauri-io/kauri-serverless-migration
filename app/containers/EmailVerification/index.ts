@@ -7,8 +7,9 @@ import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 const mapStateToProps = () => ({})
 
 export default compose(
-    connect(
-        mapStateToProps,
-        { verifyEmailAction, resendEmailVerificationAction, routeChangeAction }
-    )
+    connect(mapStateToProps, {
+        verifyEmailAction,
+        resendEmailVerificationAction,
+        routeChangeAction,
+    })
 )(View)

@@ -4,7 +4,10 @@ import TermsOfUse from '../containers/TermsOfUse'
 import withData from '../lib/with-data'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const TermsOfUsePage = withTransaction('terms-of-use', 'page')(({}) => (
+const TermsOfUsePage = withTransaction(
+    'terms-of-use',
+    'page'
+)(({}) => (
     <App hideNav={false}>
         <TermsOfUse />
     </App>

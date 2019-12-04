@@ -24,15 +24,12 @@ const mapStateToProps = state => {
 
 export default compose(
     withApollo,
-    connect(
-        mapStateToProps,
-        {
-            openModalAction,
-            routeChangeAction,
-            labelRootFolder,
-            createBookmarkFolderAction,
-        }
-    ),
+    connect(mapStateToProps, {
+        openModalAction,
+        routeChangeAction,
+        labelRootFolder,
+        createBookmarkFolderAction,
+    }),
     graphql(getBookmarkFolders, {
         name: 'data',
         options: () => ({

@@ -7,7 +7,10 @@ import Article from '../containers/Article'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const MaterialArticle = withTransaction('article', 'page')(({ router }) => (
+const MaterialArticle = withTransaction(
+    'article',
+    'page'
+)(({ router }) => (
     <App maxWidthConstrained={true} hideNav={false}>
         <Article
             id={router.query.article_id}
@@ -16,8 +19,4 @@ const MaterialArticle = withTransaction('article', 'page')(({ router }) => (
     </App>
 ))
 
-export default compose(
-    withData,
-    withApollo,
-    withRouter
-)(MaterialArticle)
+export default compose(withData, withApollo, withRouter)(MaterialArticle)

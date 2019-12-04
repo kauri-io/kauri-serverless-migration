@@ -27,20 +27,17 @@ const mapStateToProps = (state: IReduxState) => ({
 })
 
 export default compose(
-    connect(
-        mapStateToProps,
-        {
-            closeModalAction,
-            draftArticleAction,
-            editArticleAction,
-            openModalAction,
-            publishArticleAction,
-            routeChangeAction,
-            showNotificationAction,
-            submitArticleAction,
-            submitArticleVersionAction,
-        }
-    ),
+    connect(mapStateToProps, {
+        closeModalAction,
+        draftArticleAction,
+        editArticleAction,
+        openModalAction,
+        publishArticleAction,
+        routeChangeAction,
+        showNotificationAction,
+        submitArticleAction,
+        submitArticleVersionAction,
+    }),
     graphql(getArticleQuery, {
         options: ({ id, version }: { id: string; version: string }) => ({
             variables: {

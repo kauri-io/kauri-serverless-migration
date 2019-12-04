@@ -178,10 +178,7 @@ const mapStateToProps = (state: IReduxState) => ({
 })
 
 export default compose(
-    connect(
-        mapStateToProps,
-        {}
-    ),
+    connect(mapStateToProps, {}),
     graphql(getCommunityContentQuery, {
         name: 'searchCommunityPublishedCollections',
         options: ({ id }: { id: string }) => ({

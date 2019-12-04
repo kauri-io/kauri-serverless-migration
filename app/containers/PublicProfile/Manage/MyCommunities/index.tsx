@@ -29,9 +29,10 @@ interface IProps {
     }
 }
 
-const NoCommunities: React.FunctionComponent<
-    Pick<IProps, 'routeChangeAction'>
-> = ({ routeChangeAction }) => (
+const NoCommunities: React.FunctionComponent<Pick<
+    IProps,
+    'routeChangeAction'
+>> = ({ routeChangeAction }) => (
     <Grid>
         <H3>Communities</H3>
         <BodyCard>You are not part of any communities yet.</BodyCard>

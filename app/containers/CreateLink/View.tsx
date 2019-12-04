@@ -50,7 +50,7 @@ const CreateLink = ({ client, submitExtenalLinkAction, userId, user }) => {
         image &&
         summary &&
         authorName &&
-        (tags && tags.length > 0)
+        tags && tags.length > 0
 
     return (
         <Grid>

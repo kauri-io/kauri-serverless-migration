@@ -302,12 +302,9 @@ const Search = ({ routeChangeAction, query, data: { searchAutocomplete } }) => {
 }
 
 export default compose(
-    connect(
-        () => {},
-        {
-            routeChangeAction,
-        }
-    ),
+    connect(() => {}, {
+        routeChangeAction,
+    }),
     graphql(searchResultsAutocomplete, {
         options: ({
             query,

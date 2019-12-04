@@ -168,21 +168,16 @@ class TagInput extends Component<IProps, IState> {
     public render() {
         const available =
             this.props.availableTags &&
-            this.props.availableTags.reduce(
-                (all, item) => {
-                    let match
-                    if (this.props.selectedTags) {
-                        match = this.props.selectedTags.find(
-                            i => i === item.tag
-                        )
-                    }
-                    if (!match) {
-                        all.push(item)
-                    }
-                    return all
-                },
-                [] as ITag[]
-            )
+            this.props.availableTags.reduce((all, item) => {
+                let match
+                if (this.props.selectedTags) {
+                    match = this.props.selectedTags.find(i => i === item.tag)
+                }
+                if (!match) {
+                    all.push(item)
+                }
+                return all
+            }, [] as ITag[])
         return (
             <Wrapper>
                 <div>

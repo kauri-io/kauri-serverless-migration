@@ -260,7 +260,7 @@ const renderResourceSection = (
             )}
 
             {type === 'LINK' &&
-                (path(
+                path(
                     ['sections', index, mappingKey, resourceIndex],
                     values
                 ) && (
@@ -302,7 +302,7 @@ const renderResourceSection = (
                             </DraggableResourceContainer>
                         )}
                     </Draggable>
-                ))}
+                )}
             <Button
                 color="default"
                 variant="text"
@@ -370,9 +370,10 @@ export interface IProps {
 }
 
 let uppy
-const CreateCollectionForm: React.FC<
-    InjectedFormikProps<IProps, IFormValues>
-> = ({
+const CreateCollectionForm: React.FC<InjectedFormikProps<
+    IProps,
+    IFormValues
+>> = ({
     touched,
     errors,
     values,

@@ -28,16 +28,13 @@ interface IArticleVersion {
 }
 
 export default compose(
-    connect(
-        mapStateToProps,
-        {
-            approveArticleAction,
-            closeModalAction,
-            openModalAction,
-            rejectArticleAction,
-            routeChangeAction,
-        }
-    ),
+    connect(mapStateToProps, {
+        approveArticleAction,
+        closeModalAction,
+        openModalAction,
+        rejectArticleAction,
+        routeChangeAction,
+    }),
     graphql(getArticleQuery, {
         name: 'ProposedUpdate',
         options: ({ id, version }: IArticleVersion) => ({

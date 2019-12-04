@@ -43,21 +43,18 @@ const mapStateToProps = (state: IReduxState, ownProps: any) => {
 
 export default compose(
     withApollo,
-    connect(
-        mapStateToProps,
-        {
-            acceptCommunityInvitationAction,
-            closeModalAction,
-            curateCommunityResourcesAction,
-            openModalAction,
-            removeResourceAction,
-            routeChangeAction,
-            sendCommunityInvitationAction,
-            showNotificationAction,
-            transferArticleToCommunityAction,
-            changeOwnerExtenalLinkAction,
-        }
-    ),
+    connect(mapStateToProps, {
+        acceptCommunityInvitationAction,
+        closeModalAction,
+        curateCommunityResourcesAction,
+        openModalAction,
+        removeResourceAction,
+        routeChangeAction,
+        sendCommunityInvitationAction,
+        showNotificationAction,
+        transferArticleToCommunityAction,
+        changeOwnerExtenalLinkAction,
+    }),
     graphql(getCommunityAndPendingArticles, {
         options: ({ communityId }: { communityId: string }) => ({
             variables: {

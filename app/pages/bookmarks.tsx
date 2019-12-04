@@ -6,7 +6,10 @@ import ManageBookmarkPage from '../containers/Bookmark/ManageBookmarkPage'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const BookmarksPage = withTransaction('bookmarks', 'page')(props => (
+const BookmarksPage = withTransaction(
+    'bookmarks',
+    'page'
+)(props => (
     <App hideNav={false} maxWidthConstrained={true}>
         <ManageBookmarkPage router={props.router} />
     </App>

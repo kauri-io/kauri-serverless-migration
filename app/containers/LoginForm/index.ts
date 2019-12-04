@@ -20,10 +20,7 @@ interface IHandleSumit {
 }
 
 export default compose<any, IProps>(
-    connect(
-        mapStateToProps,
-        { registerAction, showNotificationAction }
-    ),
+    connect(mapStateToProps, { registerAction, showNotificationAction }),
     withFormik({
         handleSubmit: async (_values, { props, resetForm }: IHandleSumit) => {
             return props.registerAction && props.registerAction(resetForm)

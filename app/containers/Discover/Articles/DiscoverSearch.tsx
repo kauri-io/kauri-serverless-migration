@@ -120,8 +120,5 @@ const mapStateToProps = () => {
 
 export default compose(
     withApollo,
-    connect(
-        mapStateToProps,
-        { routeChangeAction }
-    )
+    connect(mapStateToProps, { routeChangeAction })
 )(Complete)

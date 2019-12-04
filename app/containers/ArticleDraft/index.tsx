@@ -25,16 +25,13 @@ const mapStateToProps = (state: IReduxState) => {
 }
 
 export default compose(
-    connect(
-        mapStateToProps,
-        {
-            closeModalAction,
-            deleteDraftArticleAction,
-            openModalAction,
-            publishArticleAction,
-            routeChangeAction,
-        }
-    ),
+    connect(mapStateToProps, {
+        closeModalAction,
+        deleteDraftArticleAction,
+        openModalAction,
+        publishArticleAction,
+        routeChangeAction,
+    }),
     graphql(getArticleQuery, {
         name: 'data',
         options: ({ id, version }: { id: string; version: string }) => {

@@ -13,10 +13,7 @@ const validateOnSubmit: ValidateOnSubmit = (
 ) =>
     validateForm().then((errors: { [errKey: string]: string | unknown }) => {
         const capitalize = (s: string) =>
-            compose<string, string, string>(
-                toUpper,
-                head
-            )(s) + tail(s)
+            compose<string, string, string>(toUpper, head)(s) + tail(s)
 
         if (Object.keys(errors).length > 0) {
             return Object.keys(errors).map((errKey, i) => {

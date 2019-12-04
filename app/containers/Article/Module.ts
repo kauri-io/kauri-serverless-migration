@@ -40,7 +40,9 @@ export const voteEpic: Epic<IVoteAction, any, IReduxState, IDependencies> = (
                 })
             ).pipe(
                 mergeMap(({ data }) =>
-                    apolloSubscriber(path<string>(['vote', 'hash'])(data) || '')
+                    apolloSubscriber(
+                        path<string>(['vote', 'hash'])(data) || ''
+                    )
                 ),
                 tap(() =>
                     analytics.track('Vote Content', {

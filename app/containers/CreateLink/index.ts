@@ -17,12 +17,9 @@ const mapStateToProps = (
 })
 
 export default compose(
-    connect(
-        mapStateToProps,
-        {
-            submitExtenalLinkAction,
-            routeChangeAction,
-        }
-    ),
+    connect(mapStateToProps, {
+        submitExtenalLinkAction,
+        routeChangeAction,
+    }),
     withApollo
 )(View)

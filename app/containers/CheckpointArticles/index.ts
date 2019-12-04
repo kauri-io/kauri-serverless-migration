@@ -7,7 +7,4 @@ const mapStateToProps = (state: IReduxState) => ({
     hostName: state.app && state.app.hostName,
 })
 
-export default connect(
-    mapStateToProps,
-    { checkpointArticlesAction }
-)(View)
+export default connect(mapStateToProps, { checkpointArticlesAction })(View)

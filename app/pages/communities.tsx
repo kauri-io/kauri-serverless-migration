@@ -6,7 +6,10 @@ import App from '../layouts'
 import Communities from '../containers/Discover/Communities'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const CommunitiesPage = withTransaction('communities', 'page')(() => (
+const CommunitiesPage = withTransaction(
+    'communities',
+    'page'
+)(() => (
     <App hideNav={false}>
         <Communities />
     </App>

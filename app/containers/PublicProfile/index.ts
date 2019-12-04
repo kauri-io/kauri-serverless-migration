@@ -29,21 +29,18 @@ const mapStateToProps = state => {
 }
 
 export default compose(
-    connect(
-        mapStateToProps,
-        {
-            deleteDraftArticleAction,
-            closeModalAction,
-            openModalAction,
-            rejectArticleTransferAction,
-            acceptArticleTransferAction,
-            removeMemberAction,
-            saveUserDetailsAction,
-            resendEmailVerificationAction,
-            showNotificationAction,
-            routeChangeAction,
-        }
-    ),
+    connect(mapStateToProps, {
+        deleteDraftArticleAction,
+        closeModalAction,
+        openModalAction,
+        rejectArticleTransferAction,
+        acceptArticleTransferAction,
+        removeMemberAction,
+        saveUserDetailsAction,
+        resendEmailVerificationAction,
+        showNotificationAction,
+        routeChangeAction,
+    }),
     graphql(getUserByUsername, {
         name: 'UserQuery',
         options: ({ username }: { username: string }) => ({

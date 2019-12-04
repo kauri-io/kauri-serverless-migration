@@ -7,7 +7,10 @@ import Homepage from '../containers/Homepage'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const Index = withTransaction('homepage', 'page')(() => (
+const Index = withTransaction(
+    'homepage',
+    'page'
+)(() => (
     <App hideNav={false}>
         <Homepage />
     </App>

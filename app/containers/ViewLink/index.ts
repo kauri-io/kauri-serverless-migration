@@ -21,16 +21,13 @@ const mapStateToProps = (state: IReduxState) => ({
 
 export default compose(
     withApollo,
-    connect(
-        mapStateToProps,
-        {
-            closeModalAction,
-            openModalAction,
-            routeChangeAction,
-            addCommentAction,
-            voteAction,
-        }
-    ),
+    connect(mapStateToProps, {
+        closeModalAction,
+        openModalAction,
+        routeChangeAction,
+        addCommentAction,
+        voteAction,
+    }),
     graphql(getLink, {
         name: 'data',
         options: ({ id }: { id: string }) => ({

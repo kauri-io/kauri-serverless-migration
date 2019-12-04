@@ -28,9 +28,7 @@ interface IPrimaryHeaderSectionProps {
     justifyContent?: string[]
 }
 
-const PrimaryHeaderSection: React.FunctionComponent<
-    IPrimaryHeaderSectionProps
-> = ({
+const PrimaryHeaderSection: React.FunctionComponent<IPrimaryHeaderSectionProps> = ({
     bg = 'bgPrimary',
     backgroundURL,
     gridTemplateColumns = 'minmax(auto, 1fr) minmax(auto, 1fr)',

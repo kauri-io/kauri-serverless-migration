@@ -7,7 +7,10 @@ import Community from '../containers/Community'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const CommunityPage = withTransaction('community', 'page')(({ router }) => {
+const CommunityPage = withTransaction(
+    'community',
+    'page'
+)(({ router }) => {
     // console.log(router.query)
     return (
         <App hideNav={false}>
@@ -19,8 +22,4 @@ const CommunityPage = withTransaction('community', 'page')(({ router }) => {
     )
 })
 
-export default compose(
-    withData,
-    withApollo,
-    withRouter
-)(CommunityPage)
+export default compose(withData, withApollo, withRouter)(CommunityPage)

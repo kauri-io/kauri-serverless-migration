@@ -6,7 +6,10 @@ import {
 } from './getURLs'
 
 export const redirectArticle = (context, stateApollo, url) => {
-    const apolloArticleId = `${url.query.article_id}${stateApollo.apollo.data[`ResourceIdentifier:${url.query.article_id}`].version}`
+    const apolloArticleId = `${url.query.article_id}${
+        stateApollo.apollo.data[`ResourceIdentifier:${url.query.article_id}`]
+            .version
+    }`
     const title = stateApollo.apollo.data[apolloArticleId].title
     const redirectUrl = getArticleURL({
         id: url.query.article_id,

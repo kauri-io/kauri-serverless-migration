@@ -27,10 +27,7 @@ const View: React.FunctionComponent<IProps> = ({
 }
 
 export default compose(
-    connect(
-        mapStateToProps,
-        {}
-    ),
+    connect(mapStateToProps, {}),
     graphql(getLink, {
         options: ({ id }: getExternalLinkVariables) => ({
             variables: {

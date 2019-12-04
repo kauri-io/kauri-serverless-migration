@@ -50,9 +50,10 @@ const Section = styled.section`
     flex-direction: column;
 `
 
-const Component: React.SFC<
-    InjectedFormikProps<IProps, IFormValues>
-> = props => {
+const Component: React.SFC<InjectedFormikProps<
+    IProps,
+    IFormValues
+>> = props => {
     if (process.browser && !accountCheck()) {
         props.routeChangeAction(
             `/account-check?page=${window.location.pathname}`

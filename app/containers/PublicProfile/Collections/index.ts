@@ -19,13 +19,10 @@ const mapStateToProps = state => {
 const QUERY_NAME = 'CollectionQuery'
 
 export default compose(
-    connect(
-        mapStateToProps,
-        {
-            routeChangeAction,
-            openModalAction,
-        }
-    ),
+    connect(mapStateToProps, {
+        routeChangeAction,
+        openModalAction,
+    }),
     graphql(getCollectionsForUser, {
         name: QUERY_NAME,
         options: ({ userId }: { userId: string }) => ({
