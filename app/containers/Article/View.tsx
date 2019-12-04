@@ -317,7 +317,7 @@ const ArticleComp = ({
                                         key={key}
                                         href={`/search-results?q=${text}`}
                                     >
-                                        <a style={{cursor: 'pointer'}}>
+                                        <a style={{ cursor: 'pointer' }}>
                                             <Chip
                                                 className={classes.tag}
                                                 variant="outlined"
