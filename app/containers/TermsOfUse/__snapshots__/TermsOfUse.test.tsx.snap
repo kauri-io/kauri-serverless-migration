@@ -429,7 +429,6 @@ exports[`containers/TermsOfUse should match snapshot 1`] = `
                 "styledComponentId": "TermsOfUse__Content-sc-1xm92ex-0",
                 "target": "section",
                 "toString": [Function],
-                "usesTheme": true,
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
               }
@@ -462,7 +461,6 @@ exports[`containers/TermsOfUse should match snapshot 1`] = `
                       "styledComponentId": "TermsOfUse__Clause-sc-1xm92ex-4",
                       "target": "h5",
                       "toString": [Function],
-                      "usesTheme": false,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -497,7 +495,6 @@ exports[`containers/TermsOfUse should match snapshot 1`] = `
                       "styledComponentId": "TermsOfUse__PrivacyPolicyHeader-sc-1xm92ex-2",
                       "target": "h3",
                       "toString": [Function],
-                      "usesTheme": false,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -531,7 +528,6 @@ exports[`containers/TermsOfUse should match snapshot 1`] = `
                       "styledComponentId": "TermsOfUse__PrivacyPolicySecondHeader-sc-1xm92ex-3",
                       "target": "h5",
                       "toString": [Function],
-                      "usesTheme": false,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -565,7 +561,6 @@ exports[`containers/TermsOfUse should match snapshot 1`] = `
                       "styledComponentId": "TermsOfUse__PrivacyPolicySecondHeader-sc-1xm92ex-3",
                       "target": "h5",
                       "toString": [Function],
-                      "usesTheme": false,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -599,7 +594,6 @@ exports[`containers/TermsOfUse should match snapshot 1`] = `
                       "styledComponentId": "TermsOfUse__PrivacyPolicyText-sc-1xm92ex-1",
                       "target": "section",
                       "toString": [Function],
-                      "usesTheme": false,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }

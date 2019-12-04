@@ -859,7 +859,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                     "styledComponentId": "View__Container-bws0mc-0",
                     "target": "div",
                     "toString": [Function],
-                    "usesTheme": false,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -890,7 +889,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                             "styledComponentId": "ScrollIndicator__BarContainer-sc-1k4p76-0",
                             "target": "div",
                             "toString": [Function],
-                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -926,7 +924,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                   "styledComponentId": "ScrollIndicator__Fill-sc-1k4p76-1",
                                   "target": "div",
                                   "toString": [Function],
-                                  "usesTheme": true,
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -1005,7 +1002,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                             "styledComponentId": "Header__Container-sc-647imh-0",
                             "target": "div",
                             "toString": [Function],
-                            "usesTheme": true,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -1041,7 +1037,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                   "styledComponentId": "Header__Content-sc-647imh-1",
                                   "target": "div",
                                   "toString": [Function],
-                                  "usesTheme": true,
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -1073,7 +1068,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                         "styledComponentId": "Header__Actions-sc-647imh-4",
                                         "target": "div",
                                         "toString": [Function],
-                                        "usesTheme": true,
                                         "warnTooManyClasses": [Function],
                                         "withComponent": [Function],
                                       }
@@ -1103,7 +1097,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                               "styledComponentId": "Header__BGNotice-sc-647imh-6",
                                               "target": "span",
                                               "toString": [Function],
-                                              "usesTheme": false,
                                               "warnTooManyClasses": [Function],
                                               "withComponent": [Function],
                                             }
@@ -1138,7 +1131,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                         "styledComponentId": "Header__Left-sc-647imh-2",
                                         "target": "div",
                                         "toString": [Function],
-                                        "usesTheme": false,
                                         "warnTooManyClasses": [Function],
                                         "withComponent": [Function],
                                       }
@@ -1178,7 +1170,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                               "styledComponentId": "Typography__component-sc-36xkf6-0",
                                               "target": "span",
                                               "toString": [Function],
-                                              "usesTheme": true,
                                               "warnTooManyClasses": [Function],
                                               "withComponent": [Function],
                                             }
@@ -1232,7 +1223,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                               "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
                                               "target": "span",
                                               "toString": [Function],
-                                              "usesTheme": true,
                                               "warnTooManyClasses": [Function],
                                               "withComponent": [Function],
                                             }
@@ -1281,7 +1271,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                 "styledComponentId": "Header__TagContainer-sc-647imh-7",
                                                 "target": "div",
                                                 "toString": [Function],
-                                                "usesTheme": false,
                                                 "warnTooManyClasses": [Function],
                                                 "withComponent": [Function],
                                               }
@@ -1322,7 +1311,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                       "styledComponentId": "Header__TagWrap-sc-647imh-8",
                                                       "target": "span",
                                                       "toString": [Function],
-                                                      "usesTheme": false,
                                                       "warnTooManyClasses": [Function],
                                                       "withComponent": [Function],
                                                     }
@@ -1364,7 +1352,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                             "styledComponentId": "Typography__component-sc-36xkf6-0",
                                                             "target": "span",
                                                             "toString": [Function],
-                                                            "usesTheme": true,
                                                             "warnTooManyClasses": [Function],
                                                             "withComponent": [Function],
                                                           }
@@ -1413,7 +1400,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                       "styledComponentId": "Header__TagWrap-sc-647imh-8",
                                                       "target": "span",
                                                       "toString": [Function],
-                                                      "usesTheme": false,
                                                       "warnTooManyClasses": [Function],
                                                       "withComponent": [Function],
                                                     }
@@ -1455,7 +1441,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                             "styledComponentId": "Typography__component-sc-36xkf6-0",
                                                             "target": "span",
                                                             "toString": [Function],
-                                                            "usesTheme": true,
                                                             "warnTooManyClasses": [Function],
                                                             "withComponent": [Function],
                                                           }
@@ -1500,7 +1485,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                         "styledComponentId": "Header__Right-sc-647imh-3",
                                         "target": "div",
                                         "toString": [Function],
-                                        "usesTheme": false,
                                         "warnTooManyClasses": [Function],
                                         "withComponent": [Function],
                                       }
@@ -1540,7 +1524,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                               "styledComponentId": "Typography__component-sc-36xkf6-0",
                                               "target": "span",
                                               "toString": [Function],
-                                              "usesTheme": true,
                                               "warnTooManyClasses": [Function],
                                               "withComponent": [Function],
                                             }
@@ -1590,7 +1573,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                           "styledComponentId": "View__Content-bws0mc-1",
                           "target": "div",
                           "toString": [Function],
-                          "usesTheme": true,
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
                         }
@@ -1629,7 +1611,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                   "styledComponentId": "DiffViewer__Content-sc-1yaf9sg-0",
                                   "target": "div",
                                   "toString": [Function],
-                                  "usesTheme": true,
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -1786,7 +1767,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                         "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                                         "target": "span",
                                                         "toString": [Function],
-                                                        "usesTheme": false,
                                                         "warnTooManyClasses": [Function],
                                                         "withComponent": [Function],
                                                       }
@@ -1825,7 +1805,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                         "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                                         "target": "span",
                                                         "toString": [Function],
-                                                        "usesTheme": false,
                                                         "warnTooManyClasses": [Function],
                                                         "withComponent": [Function],
                                                       }
@@ -1946,7 +1925,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                         "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                                         "target": "span",
                                                         "toString": [Function],
-                                                        "usesTheme": false,
                                                         "warnTooManyClasses": [Function],
                                                         "withComponent": [Function],
                                                       }
@@ -1985,7 +1963,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                         "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                                         "target": "span",
                                                         "toString": [Function],
-                                                        "usesTheme": false,
                                                         "warnTooManyClasses": [Function],
                                                         "withComponent": [Function],
                                                       }
@@ -2035,7 +2012,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                 "styledComponentId": "View__Details-bws0mc-2",
                                 "target": "div",
                                 "toString": [Function],
-                                "usesTheme": true,
                                 "warnTooManyClasses": [Function],
                                 "withComponent": [Function],
                               }
@@ -2072,7 +2048,6 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                       "styledComponentId": "Typography__component-sc-36xkf6-0",
                                       "target": "span",
                                       "toString": [Function],
-                                      "usesTheme": true,
                                       "warnTooManyClasses": [Function],
                                       "withComponent": [Function],
                                     }

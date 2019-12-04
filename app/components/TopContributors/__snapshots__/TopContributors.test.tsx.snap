@@ -611,7 +611,6 @@ exports[`components/TopContributors should match snapshot 1`] = `
                               "styledComponentId": "Image__Img-sc-1jpuda7-0",
                               "target": "div",
                               "toString": [Function],
-                              "usesTheme": true,
                               "warnTooManyClasses": [Function],
                               "withComponent": [Function],
                             }

@@ -664,7 +664,6 @@ exports[`containers/EmailVerification should match snapshot 1`] = `
                       "styledComponentId": "View__VerifyEmailContainer-sc-1hdvbdj-0",
                       "target": "div",
                       "toString": [Function],
-                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }

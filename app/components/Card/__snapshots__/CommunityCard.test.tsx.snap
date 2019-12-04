@@ -2015,6 +2015,7 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                                                                       },
                                                                       "render": [Function],
                                                                     },
+                                                                    "defaultProps": undefined,
                                                                     "displayName": "WithStyles(ForwardRef(Backdrop))",
                                                                     "options": Object {
                                                                       "defaultTheme": Object {
@@ -2300,7 +2301,6 @@ exports[`components/Card/CommunityCard should match snapshot 1`] = `
                                                                     },
                                                                   }
                                                                 }
-                                                                aria-labelledby="share-dialog"
                                                                 className="MuiDialog-root"
                                                                 closeAfterTransition={true}
                                                                 disableBackdropClick={false}

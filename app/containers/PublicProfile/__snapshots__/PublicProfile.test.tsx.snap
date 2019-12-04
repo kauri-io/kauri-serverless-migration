@@ -22231,6 +22231,7 @@ exports[`containers/PublicProfile should match snapshot 1`] = `
                           removeMemberAction={[Function]}
                           resendEmailVerificationAction={[Function]}
                           routeChangeAction={[Function]}
+                          router={null}
                           saveUserDetailsAction={[Function]}
                           showNotificationAction={[Function]}
                         >

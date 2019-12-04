@@ -430,7 +430,6 @@ exports[`containers/Error should match snapshot 1`] = `
               "styledComponentId": "Error__ErrorContainer-sc-9zpcuf-0",
               "target": "div",
               "toString": [Function],
-              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -460,7 +459,6 @@ exports[`containers/Error should match snapshot 1`] = `
                     "styledComponentId": "Error__Code-sc-9zpcuf-1",
                     "target": "div",
                     "toString": [Function],
-                    "usesTheme": false,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -498,7 +496,6 @@ exports[`containers/Error should match snapshot 1`] = `
                     "styledComponentId": "Error__Copy-sc-9zpcuf-2",
                     "target": "div",
                     "toString": [Function],
-                    "usesTheme": true,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }

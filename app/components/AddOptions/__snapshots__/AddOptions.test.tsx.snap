@@ -476,7 +476,6 @@ exports[`components/AddOptions should match snapshot 1`] = `
                   "styledComponentId": "AddOptions__AddButton-sc-1q8xpt7-0",
                   "target": "div",
                   "toString": [Function],
-                  "usesTheme": true,
                   "warnTooManyClasses": [Function],
                   "withComponent": [Function],
                 }
@@ -554,7 +553,6 @@ exports[`components/AddOptions should match snapshot 1`] = `
                         "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
                         "target": "span",
                         "toString": [Function],
-                        "usesTheme": true,
                         "warnTooManyClasses": [Function],
                         "withComponent": [Function],
                       }

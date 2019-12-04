@@ -1265,7 +1265,6 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                                   "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                                   "target": "div",
                                                                   "toString": [Function],
-                                                                  "usesTheme": true,
                                                                   "warnTooManyClasses": [Function],
                                                                   "withComponent": [Function],
                                                                 }
@@ -2321,7 +2320,6 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                                               "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                                               "target": "div",
                                                                               "toString": [Function],
-                                                                              "usesTheme": true,
                                                                               "warnTooManyClasses": [Function],
                                                                               "withComponent": [Function],
                                                                             }
@@ -2497,9 +2495,12 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                         <ForwardRef(Tooltip)
                                                           classes={
                                                             Object {
+                                                              "arrow": "MuiTooltip-arrow",
                                                               "popper": "MuiTooltip-popper",
+                                                              "popperArrow": "MuiTooltip-popperArrow",
                                                               "popperInteractive": "MuiTooltip-popperInteractive",
                                                               "tooltip": "MuiTooltip-tooltip",
+                                                              "tooltipArrow": "MuiTooltip-tooltipArrow",
                                                               "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
                                                               "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
                                                               "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
@@ -2576,6 +2577,16 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                             id={null}
                                                             open={false}
                                                             placement="bottom"
+                                                            popperOptions={
+                                                              Object {
+                                                                "modifiers": Object {
+                                                                  "arrow": Object {
+                                                                    "element": null,
+                                                                    "enabled": false,
+                                                                  },
+                                                                },
+                                                              }
+                                                            }
                                                             transition={true}
                                                           />
                                                         </ForwardRef(Tooltip)>
@@ -2621,12 +2632,12 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                         <ShareDialogComponent
                                                           classes={
                                                             Object {
-                                                              "HNShareButton": "ShareDialogComponent-HNShareButton-227",
-                                                              "closeButton": "ShareDialogComponent-closeButton-224",
-                                                              "container": "ShareDialogComponent-container-225",
-                                                              "icon": "ShareDialogComponent-icon-226",
-                                                              "iconContainer": "ShareDialogComponent-iconContainer-228",
-                                                              "root": "ShareDialogComponent-root-223",
+                                                              "HNShareButton": "ShareDialogComponent-HNShareButton-230",
+                                                              "closeButton": "ShareDialogComponent-closeButton-227",
+                                                              "container": "ShareDialogComponent-container-228",
+                                                              "icon": "ShareDialogComponent-icon-229",
+                                                              "iconContainer": "ShareDialogComponent-iconContainer-231",
+                                                              "root": "ShareDialogComponent-root-226",
                                                             }
                                                           }
                                                           handleClose={[Function]}
@@ -2679,6 +2690,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                                       },
                                                                       "render": [Function],
                                                                     },
+                                                                    "defaultProps": undefined,
                                                                     "displayName": "WithStyles(ForwardRef(Backdrop))",
                                                                     "options": Object {
                                                                       "defaultTheme": Object {
@@ -2964,7 +2976,6 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                                     },
                                                                   }
                                                                 }
-                                                                aria-labelledby="share-dialog"
                                                                 className="MuiDialog-root"
                                                                 closeAfterTransition={true}
                                                                 disableBackdropClick={false}

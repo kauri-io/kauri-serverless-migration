@@ -886,7 +886,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                       "styledComponentId": "DraftArticleHeader__HeaderContainer-ldqftc-0",
                       "target": "div",
                       "toString": [Function],
-                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -920,7 +919,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                             "styledComponentId": "DraftArticleHeader__InfoContainer-ldqftc-1",
                             "target": "div",
                             "toString": [Function],
-                            "usesTheme": true,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -960,7 +958,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                   "styledComponentId": "Typography__component-sc-36xkf6-0",
                                   "target": "span",
                                   "toString": [Function],
-                                  "usesTheme": true,
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -1013,7 +1010,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                   "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
                                   "target": "span",
                                   "toString": [Function],
-                                  "usesTheme": true,
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -1065,7 +1061,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                     "styledComponentId": "TagList__Container-ipfhd9-0",
                                     "target": "div",
                                     "toString": [Function],
-                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -1115,7 +1110,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                           "styledComponentId": "TagList__StyledTag-ipfhd9-1",
                                           "target": "div",
                                           "toString": [Function],
-                                          "usesTheme": false,
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                         }
@@ -1173,7 +1167,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                           "styledComponentId": "TagList__StyledTag-ipfhd9-1",
                                           "target": "div",
                                           "toString": [Function],
-                                          "usesTheme": false,
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                         }
@@ -1600,7 +1593,6 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                       "styledComponentId": "DraftArticleContent__ContentContainer-sc-1x9teyd-0",
                       "target": "div",
                       "toString": [Function],
-                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -1653,6 +1645,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                       },
                                       "render": [Function],
                                     },
+                                    "defaultProps": undefined,
                                     "displayName": "WithStyles(ForwardRef(Typography))",
                                     "options": Object {
                                       "defaultTheme": Object {
@@ -1957,6 +1950,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                       },
                                       "render": [Function],
                                     },
+                                    "defaultProps": undefined,
                                     "displayName": "WithStyles(ForwardRef(Typography))",
                                     "options": Object {
                                       "defaultTheme": Object {
@@ -2261,6 +2255,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                       },
                                       "render": [Function],
                                     },
+                                    "defaultProps": undefined,
                                     "displayName": "WithStyles(ForwardRef(Typography))",
                                     "options": Object {
                                       "defaultTheme": Object {
@@ -2565,6 +2560,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                       },
                                       "render": [Function],
                                     },
+                                    "defaultProps": undefined,
                                     "displayName": "WithStyles(ForwardRef(Typography))",
                                     "options": Object {
                                       "defaultTheme": Object {
@@ -2869,6 +2865,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                       },
                                       "render": [Function],
                                     },
+                                    "defaultProps": undefined,
                                     "displayName": "WithStyles(ForwardRef(Typography))",
                                     "options": Object {
                                       "defaultTheme": Object {
@@ -3173,6 +3170,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                       },
                                       "render": [Function],
                                     },
+                                    "defaultProps": undefined,
                                     "displayName": "WithStyles(ForwardRef(Typography))",
                                     "options": Object {
                                       "defaultTheme": Object {
@@ -3477,6 +3475,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                       },
                                       "render": [Function],
                                     },
+                                    "defaultProps": undefined,
                                     "displayName": "WithStyles(ForwardRef(Typography))",
                                     "options": Object {
                                       "defaultTheme": Object {
@@ -3787,6 +3786,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                       },
                                       "render": [Function],
                                     },
+                                    "defaultProps": undefined,
                                     "displayName": "WithStyles(ForwardRef(Typography))",
                                     "options": Object {
                                       "defaultTheme": Object {

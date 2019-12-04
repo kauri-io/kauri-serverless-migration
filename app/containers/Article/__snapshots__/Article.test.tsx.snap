@@ -1613,7 +1613,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                           "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                           "target": "div",
                                                           "toString": [Function],
-                                                          "usesTheme": true,
                                                           "warnTooManyClasses": [Function],
                                                           "withComponent": [Function],
                                                         }
@@ -1860,6 +1859,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
+                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -2164,6 +2164,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
+                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -2468,6 +2469,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
+                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -2772,6 +2774,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
+                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -3076,6 +3079,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
+                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -3380,6 +3384,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
+                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -3684,6 +3689,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
+                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -3994,6 +4000,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
+                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -4388,7 +4395,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                   >
                                     <div
                                       className="MuiChip-root makeStyles-tag-12 MuiChip-outlined"
-                                      onKeyDown={[Function]}
                                       onKeyUp={[Function]}
                                     >
                                       <span
@@ -4456,7 +4462,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                   >
                                     <div
                                       className="MuiChip-root makeStyles-tag-12 MuiChip-outlined"
-                                      onKeyDown={[Function]}
                                       onKeyUp={[Function]}
                                     >
                                       <span
@@ -4898,7 +4903,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                         "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                         "target": "div",
                                                         "toString": [Function],
-                                                        "usesTheme": true,
                                                         "warnTooManyClasses": [Function],
                                                         "withComponent": [Function],
                                                       }
@@ -6470,7 +6474,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                       "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                                                       "target": "div",
                                                                                       "toString": [Function],
-                                                                                      "usesTheme": true,
                                                                                       "warnTooManyClasses": [Function],
                                                                                       "withComponent": [Function],
                                                                                     }
@@ -7418,7 +7421,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                   "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                                                                   "target": "div",
                                                                                                   "toString": [Function],
-                                                                                                  "usesTheme": true,
                                                                                                   "warnTooManyClasses": [Function],
                                                                                                   "withComponent": [Function],
                                                                                                 }
@@ -7615,9 +7617,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                             <ForwardRef(Tooltip)
                                                                               classes={
                                                                                 Object {
+                                                                                  "arrow": "MuiTooltip-arrow",
                                                                                   "popper": "MuiTooltip-popper",
+                                                                                  "popperArrow": "MuiTooltip-popperArrow",
                                                                                   "popperInteractive": "MuiTooltip-popperInteractive",
                                                                                   "tooltip": "MuiTooltip-tooltip",
+                                                                                  "tooltipArrow": "MuiTooltip-tooltipArrow",
                                                                                   "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
                                                                                   "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
                                                                                   "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
@@ -7694,6 +7699,16 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                 id={null}
                                                                                 open={false}
                                                                                 placement="bottom"
+                                                                                popperOptions={
+                                                                                  Object {
+                                                                                    "modifiers": Object {
+                                                                                      "arrow": Object {
+                                                                                        "element": null,
+                                                                                        "enabled": false,
+                                                                                      },
+                                                                                    },
+                                                                                  }
+                                                                                }
                                                                                 transition={true}
                                                                               />
                                                                             </ForwardRef(Tooltip)>
@@ -7739,12 +7754,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                             <ShareDialogComponent
                                                                               classes={
                                                                                 Object {
-                                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-302",
-                                                                                  "closeButton": "ShareDialogComponent-closeButton-299",
-                                                                                  "container": "ShareDialogComponent-container-300",
-                                                                                  "icon": "ShareDialogComponent-icon-301",
-                                                                                  "iconContainer": "ShareDialogComponent-iconContainer-303",
-                                                                                  "root": "ShareDialogComponent-root-298",
+                                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-305",
+                                                                                  "closeButton": "ShareDialogComponent-closeButton-302",
+                                                                                  "container": "ShareDialogComponent-container-303",
+                                                                                  "icon": "ShareDialogComponent-icon-304",
+                                                                                  "iconContainer": "ShareDialogComponent-iconContainer-306",
+                                                                                  "root": "ShareDialogComponent-root-301",
                                                                                 }
                                                                               }
                                                                               handleClose={[Function]}
@@ -7797,6 +7812,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                           },
                                                                                           "render": [Function],
                                                                                         },
+                                                                                        "defaultProps": undefined,
                                                                                         "displayName": "WithStyles(ForwardRef(Backdrop))",
                                                                                         "options": Object {
                                                                                           "defaultTheme": Object {
@@ -8082,7 +8098,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                         },
                                                                                       }
                                                                                     }
-                                                                                    aria-labelledby="share-dialog"
                                                                                     className="MuiDialog-root"
                                                                                     closeAfterTransition={true}
                                                                                     disableBackdropClick={false}
@@ -9930,11 +9945,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                         target="_self"
                                                                       >
                                                                         <div
-                                                                          className="makeStyles-container-323"
+                                                                          className="makeStyles-container-326"
                                                                         >
                                                                           <ForwardRef
                                                                             borderRadius="2px"
-                                                                            className="makeStyles-avatar-324"
+                                                                            className="makeStyles-avatar-327"
                                                                             height={24}
                                                                             image="test avatar 3"
                                                                             width={24}
@@ -9946,7 +9961,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                             >
                                                                               <Image__Img
                                                                                 borderRadius="2px"
-                                                                                className="makeStyles-avatar-324"
+                                                                                className="makeStyles-avatar-327"
                                                                                 height={24}
                                                                                 image="test avatar 3"
                                                                                 inView={false}
@@ -9954,7 +9969,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                               >
                                                                                 <StyledComponent
                                                                                   borderRadius="2px"
-                                                                                  className="makeStyles-avatar-324"
+                                                                                  className="makeStyles-avatar-327"
                                                                                   forwardedComponent={
                                                                                     Object {
                                                                                       "$$typeof": Symbol(react.forward_ref),
@@ -9999,7 +10014,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                       "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                                                       "target": "div",
                                                                                       "toString": [Function],
-                                                                                      "usesTheme": true,
                                                                                       "warnTooManyClasses": [Function],
                                                                                       "withComponent": [Function],
                                                                                     }
@@ -10011,7 +10025,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                   width={24}
                                                                                 >
                                                                                   <div
-                                                                                    className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-324"
+                                                                                    className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-327"
                                                                                     height={24}
                                                                                     width={24}
                                                                                   />
@@ -10020,11 +10034,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                             </InView>
                                                                           </ForwardRef>
                                                                           <WithStyles(ForwardRef(Typography))
-                                                                            className="makeStyles-username-325"
+                                                                            className="makeStyles-username-328"
                                                                             variant="subtitle2"
                                                                           >
                                                                             <ForwardRef(Typography)
-                                                                              className="makeStyles-username-325"
+                                                                              className="makeStyles-username-328"
                                                                               classes={
                                                                                 Object {
                                                                                   "alignCenter": "MuiTypography-alignCenter",
@@ -10062,7 +10076,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                               variant="subtitle2"
                                                                             >
                                                                               <h6
-                                                                                className="MuiTypography-root makeStyles-username-325 MuiTypography-subtitle2"
+                                                                                className="MuiTypography-root makeStyles-username-328 MuiTypography-subtitle2"
                                                                               >
                                                                                 test author name 3
                                                                               </h6>
@@ -10878,11 +10892,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                     target="_self"
                                                                                   >
                                                                                     <div
-                                                                                      className="makeStyles-container-326"
+                                                                                      className="makeStyles-container-329"
                                                                                     >
                                                                                       <ForwardRef
                                                                                         borderRadius="2px"
-                                                                                        className="makeStyles-avatar-327"
+                                                                                        className="makeStyles-avatar-330"
                                                                                         height={24}
                                                                                         image="test avatar 3"
                                                                                         width={24}
@@ -10894,7 +10908,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                         >
                                                                                           <Image__Img
                                                                                             borderRadius="2px"
-                                                                                            className="makeStyles-avatar-327"
+                                                                                            className="makeStyles-avatar-330"
                                                                                             height={24}
                                                                                             image="test avatar 3"
                                                                                             inView={false}
@@ -10902,7 +10916,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                           >
                                                                                             <StyledComponent
                                                                                               borderRadius="2px"
-                                                                                              className="makeStyles-avatar-327"
+                                                                                              className="makeStyles-avatar-330"
                                                                                               forwardedComponent={
                                                                                                 Object {
                                                                                                   "$$typeof": Symbol(react.forward_ref),
@@ -10947,7 +10961,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                   "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                                                                   "target": "div",
                                                                                                   "toString": [Function],
-                                                                                                  "usesTheme": true,
                                                                                                   "warnTooManyClasses": [Function],
                                                                                                   "withComponent": [Function],
                                                                                                 }
@@ -10959,7 +10972,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                               width={24}
                                                                                             >
                                                                                               <div
-                                                                                                className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-327"
+                                                                                                className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-330"
                                                                                                 height={24}
                                                                                                 width={24}
                                                                                               />
@@ -10968,11 +10981,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                         </InView>
                                                                                       </ForwardRef>
                                                                                       <WithStyles(ForwardRef(Typography))
-                                                                                        className="makeStyles-username-328"
+                                                                                        className="makeStyles-username-331"
                                                                                         variant="subtitle2"
                                                                                       >
                                                                                         <ForwardRef(Typography)
-                                                                                          className="makeStyles-username-328"
+                                                                                          className="makeStyles-username-331"
                                                                                           classes={
                                                                                             Object {
                                                                                               "alignCenter": "MuiTypography-alignCenter",
@@ -11010,7 +11023,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                           variant="subtitle2"
                                                                                         >
                                                                                           <h6
-                                                                                            className="MuiTypography-root makeStyles-username-328 MuiTypography-subtitle2"
+                                                                                            className="MuiTypography-root makeStyles-username-331 MuiTypography-subtitle2"
                                                                                           >
                                                                                             test author name 3
                                                                                           </h6>
@@ -11144,9 +11157,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                             <ForwardRef(Tooltip)
                                                                               classes={
                                                                                 Object {
+                                                                                  "arrow": "MuiTooltip-arrow",
                                                                                   "popper": "MuiTooltip-popper",
+                                                                                  "popperArrow": "MuiTooltip-popperArrow",
                                                                                   "popperInteractive": "MuiTooltip-popperInteractive",
                                                                                   "tooltip": "MuiTooltip-tooltip",
+                                                                                  "tooltipArrow": "MuiTooltip-tooltipArrow",
                                                                                   "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
                                                                                   "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
                                                                                   "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
@@ -11223,6 +11239,16 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                 id={null}
                                                                                 open={false}
                                                                                 placement="bottom"
+                                                                                popperOptions={
+                                                                                  Object {
+                                                                                    "modifiers": Object {
+                                                                                      "arrow": Object {
+                                                                                        "element": null,
+                                                                                        "enabled": false,
+                                                                                      },
+                                                                                    },
+                                                                                  }
+                                                                                }
                                                                                 transition={true}
                                                                               />
                                                                             </ForwardRef(Tooltip)>
@@ -11268,12 +11294,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                             <ShareDialogComponent
                                                                               classes={
                                                                                 Object {
-                                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-302",
-                                                                                  "closeButton": "ShareDialogComponent-closeButton-299",
-                                                                                  "container": "ShareDialogComponent-container-300",
-                                                                                  "icon": "ShareDialogComponent-icon-301",
-                                                                                  "iconContainer": "ShareDialogComponent-iconContainer-303",
-                                                                                  "root": "ShareDialogComponent-root-298",
+                                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-305",
+                                                                                  "closeButton": "ShareDialogComponent-closeButton-302",
+                                                                                  "container": "ShareDialogComponent-container-303",
+                                                                                  "icon": "ShareDialogComponent-icon-304",
+                                                                                  "iconContainer": "ShareDialogComponent-iconContainer-306",
+                                                                                  "root": "ShareDialogComponent-root-301",
                                                                                 }
                                                                               }
                                                                               handleClose={[Function]}
@@ -11326,6 +11352,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                           },
                                                                                           "render": [Function],
                                                                                         },
+                                                                                        "defaultProps": undefined,
                                                                                         "displayName": "WithStyles(ForwardRef(Backdrop))",
                                                                                         "options": Object {
                                                                                           "defaultTheme": Object {
@@ -11611,7 +11638,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                         },
                                                                                       }
                                                                                     }
-                                                                                    aria-labelledby="share-dialog"
                                                                                     className="MuiDialog-root"
                                                                                     closeAfterTransition={true}
                                                                                     disableBackdropClick={false}
@@ -12610,7 +12636,6 @@ exports[`containers/Article should match snapshot 1`] = `
                       "styledComponentId": "ScrollIndicator__BarContainer-sc-1k4p76-0",
                       "target": "div",
                       "toString": [Function],
-                      "usesTheme": false,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -12646,7 +12671,6 @@ exports[`containers/Article should match snapshot 1`] = `
                             "styledComponentId": "ScrollIndicator__Fill-sc-1k4p76-1",
                             "target": "div",
                             "toString": [Function],
-                            "usesTheme": true,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }

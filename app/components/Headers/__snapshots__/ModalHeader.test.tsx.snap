@@ -437,7 +437,6 @@ exports[`components/ModalHeader should match snapshot 1`] = `
               "styledComponentId": "ModalHeader__Container-wvclu0-0",
               "target": "div",
               "toString": [Function],
-              "usesTheme": false,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }

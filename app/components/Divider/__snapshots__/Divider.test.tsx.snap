@@ -431,7 +431,6 @@ exports[`components/Divider should match snapshot 1`] = `
             "styledComponentId": "Divider-sc-1pkt7hp-0",
             "target": "div",
             "toString": [Function],
-            "usesTheme": false,
             "warnTooManyClasses": [Function],
             "withComponent": [Function],
           }

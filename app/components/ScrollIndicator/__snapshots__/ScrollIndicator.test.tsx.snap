@@ -438,7 +438,6 @@ exports[`components/ScrollIndicator should match snapshot 1`] = `
                 "styledComponentId": "ScrollIndicator__BarContainer-sc-1k4p76-0",
                 "target": "div",
                 "toString": [Function],
-                "usesTheme": false,
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
               }
@@ -474,7 +473,6 @@ exports[`components/ScrollIndicator should match snapshot 1`] = `
                       "styledComponentId": "ScrollIndicator__Fill-sc-1k4p76-1",
                       "target": "div",
                       "toString": [Function],
-                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }

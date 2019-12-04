@@ -985,7 +985,6 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                     "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                     "target": "div",
                                                     "toString": [Function],
-                                                    "usesTheme": true,
                                                     "warnTooManyClasses": [Function],
                                                     "withComponent": [Function],
                                                   }
@@ -1339,7 +1338,6 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                                   "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                                   "target": "div",
                                                                   "toString": [Function],
-                                                                  "usesTheme": true,
                                                                   "warnTooManyClasses": [Function],
                                                                   "withComponent": [Function],
                                                                 }
@@ -2237,7 +2235,6 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                                               "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                                               "target": "div",
                                                                               "toString": [Function],
-                                                                              "usesTheme": true,
                                                                               "warnTooManyClasses": [Function],
                                                                               "withComponent": [Function],
                                                                             }
@@ -2385,9 +2382,12 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                         <ForwardRef(Tooltip)
                                                           classes={
                                                             Object {
+                                                              "arrow": "MuiTooltip-arrow",
                                                               "popper": "MuiTooltip-popper",
+                                                              "popperArrow": "MuiTooltip-popperArrow",
                                                               "popperInteractive": "MuiTooltip-popperInteractive",
                                                               "tooltip": "MuiTooltip-tooltip",
+                                                              "tooltipArrow": "MuiTooltip-tooltipArrow",
                                                               "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
                                                               "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
                                                               "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
@@ -2464,6 +2464,16 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                             id={null}
                                                             open={false}
                                                             placement="bottom"
+                                                            popperOptions={
+                                                              Object {
+                                                                "modifiers": Object {
+                                                                  "arrow": Object {
+                                                                    "element": null,
+                                                                    "enabled": false,
+                                                                  },
+                                                                },
+                                                              }
+                                                            }
                                                             transition={true}
                                                           />
                                                         </ForwardRef(Tooltip)>
@@ -2509,12 +2519,12 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                         <ShareDialogComponent
                                                           classes={
                                                             Object {
-                                                              "HNShareButton": "ShareDialogComponent-HNShareButton-225",
-                                                              "closeButton": "ShareDialogComponent-closeButton-222",
-                                                              "container": "ShareDialogComponent-container-223",
-                                                              "icon": "ShareDialogComponent-icon-224",
-                                                              "iconContainer": "ShareDialogComponent-iconContainer-226",
-                                                              "root": "ShareDialogComponent-root-221",
+                                                              "HNShareButton": "ShareDialogComponent-HNShareButton-228",
+                                                              "closeButton": "ShareDialogComponent-closeButton-225",
+                                                              "container": "ShareDialogComponent-container-226",
+                                                              "icon": "ShareDialogComponent-icon-227",
+                                                              "iconContainer": "ShareDialogComponent-iconContainer-229",
+                                                              "root": "ShareDialogComponent-root-224",
                                                             }
                                                           }
                                                           handleClose={[Function]}
@@ -2567,6 +2577,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                                       },
                                                                       "render": [Function],
                                                                     },
+                                                                    "defaultProps": undefined,
                                                                     "displayName": "WithStyles(ForwardRef(Backdrop))",
                                                                     "options": Object {
                                                                       "defaultTheme": Object {
@@ -2852,7 +2863,6 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                                     },
                                                                   }
                                                                 }
-                                                                aria-labelledby="share-dialog"
                                                                 className="MuiDialog-root"
                                                                 closeAfterTransition={true}
                                                                 disableBackdropClick={false}
@@ -3773,7 +3783,6 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                     "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                     "target": "div",
                                                     "toString": [Function],
-                                                    "usesTheme": true,
                                                     "warnTooManyClasses": [Function],
                                                     "withComponent": [Function],
                                                   }

@@ -730,7 +730,6 @@ exports[`containers/EditProfile should match snapshot 1`] = `
                     "styledComponentId": "View__Page-sc-19kw1f9-0",
                     "target": "div",
                     "toString": [Function],
-                    "usesTheme": true,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
