@@ -322,6 +322,7 @@ const ArticleComp = ({
                                                 className={classes.tag}
                                                 variant="outlined"
                                                 label={text}
+                                                style={{cursor: 'pointer'}}
                                             />
                                         </a>
                                     </Link>

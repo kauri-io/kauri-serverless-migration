@@ -4221,6 +4221,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                 <WithStyles(ForwardRef(Chip))
                                   className="makeStyles-tag-12"
                                   label="Test"
+                                  style={
+                                    Object {
+                                      "cursor": "pointer",
+                                    }
+                                  }
                                   variant="outlined"
                                 >
                                   <ForwardRef(Chip)
@@ -4260,12 +4265,22 @@ exports[`containers/Article should match snapshot 1`] = `
                                       }
                                     }
                                     label="Test"
+                                    style={
+                                      Object {
+                                        "cursor": "pointer",
+                                      }
+                                    }
                                     variant="outlined"
                                   >
                                     <div
                                       className="MuiChip-root makeStyles-tag-12 MuiChip-outlined"
                                       onKeyDown={[Function]}
                                       onKeyUp={[Function]}
+                                      style={
+                                        Object {
+                                          "cursor": "pointer",
+                                        }
+                                      }
                                     >
                                       <span
                                         className="MuiChip-label"
@@ -4294,6 +4309,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                 <WithStyles(ForwardRef(Chip))
                                   className="makeStyles-tag-12"
                                   label="test2"
+                                  style={
+                                    Object {
+                                      "cursor": "pointer",
+                                    }
+                                  }
                                   variant="outlined"
                                 >
                                   <ForwardRef(Chip)
@@ -4333,12 +4353,22 @@ exports[`containers/Article should match snapshot 1`] = `
                                       }
                                     }
                                     label="test2"
+                                    style={
+                                      Object {
+                                        "cursor": "pointer",
+                                      }
+                                    }
                                     variant="outlined"
                                   >
                                     <div
                                       className="MuiChip-root makeStyles-tag-12 MuiChip-outlined"
                                       onKeyDown={[Function]}
                                       onKeyUp={[Function]}
+                                      style={
+                                        Object {
+                                          "cursor": "pointer",
+                                        }
+                                      }
                                     >
                                       <span
                                         className="MuiChip-label"
