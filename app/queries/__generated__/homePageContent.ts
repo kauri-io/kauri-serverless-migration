@@ -697,6 +697,26 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
   totalElements: any;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -764,6 +784,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult;
 }
 
 export type homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources = homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO;
@@ -1061,6 +1085,26 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
   totalElements: any;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -1128,6 +1172,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ExternalLinkDTO_voteResult;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_resourceIdentifier {
@@ -2238,6 +2286,26 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
   totalElements: any;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -2305,6 +2373,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult;
 }
 
 export type homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources = homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO;
@@ -2602,6 +2674,26 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
   totalElements: any;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -2669,6 +2761,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ExternalLinkDTO_voteResult;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_resourceIdentifier {
@@ -3726,6 +3822,26 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
   totalElements: any;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -3793,6 +3909,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult;
 }
 
 export type homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources = homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO;
@@ -4090,6 +4210,26 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
   totalElements: any;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -4157,6 +4297,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ExternalLinkDTO_voteResult;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_resourceIdentifier {
@@ -5239,6 +5383,26 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
   totalElements: any;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -5306,6 +5470,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult;
 }
 
 export type homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources = homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO;
@@ -5603,6 +5771,26 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
   totalElements: any;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -5670,6 +5858,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ExternalLinkDTO_voteResult;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_resourceIdentifier {
@@ -6780,6 +6972,26 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
   totalElements: any;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -6847,6 +7059,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult;
 }
 
 export type homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources = homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO;
@@ -7144,6 +7360,26 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
   totalElements: any;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -7211,6 +7447,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ExternalLinkDTO_voteResult;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_resourceIdentifier {
@@ -8268,6 +8508,26 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
   totalElements: any;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -8335,6 +8595,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult;
 }
 
 export type homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources = homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_PublicUserDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO | homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO;
@@ -8632,6 +8896,26 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
   totalElements: any;
 }
 
+export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -8699,6 +8983,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ExternalLinkDTO_voteResult;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_resourceIdentifier {

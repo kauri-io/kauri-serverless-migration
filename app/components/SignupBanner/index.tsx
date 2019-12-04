@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/styles'
-import { Theme, Grid, Typography } from '@material-ui/core'
+import { Theme, Grid, Typography, Hidden } from '@material-ui/core'
 import ButtonComp from '../Button'
 import Link from 'next/link'
 
@@ -77,13 +77,18 @@ export default () => {
                 Articles, Tutorials and Technical Documentation
             </Typography>
             <Grid>
-                <Link href="/login">
-                    <a>
-                        <ButtonComp className={classes.button} color="primary">
-                            Signup
-                        </ButtonComp>
-                    </a>
-                </Link>
+                <Hidden mdDown={true}>
+                    <Link href="/login">
+                        <a>
+                            <ButtonComp
+                                className={classes.button}
+                                color="primary"
+                            >
+                                Signup
+                            </ButtonComp>
+                        </a>
+                    </Link>
+                </Hidden>
                 <Link href="/help">
                     <a>
                         <ButtonComp className={classes.button} color="primary">

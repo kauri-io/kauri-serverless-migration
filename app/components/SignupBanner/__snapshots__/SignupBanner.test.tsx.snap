@@ -801,141 +801,22 @@ exports[`components/SignupBanner should match snapshot 1`] = `
                 <div
                   className="MuiGrid-root"
                 >
-                  <Link
-                    href="/login"
+                  <Hidden
+                    mdDown={true}
                   >
-                    <a
-                      href="/login"
-                      onClick={[Function]}
-                      onMouseEnter={[Function]}
-                    >
-                      <ButtonComp
-                        className="makeStyles-button-4"
-                        color="primary"
-                      >
-                        <WithStyles(ForwardRef(Button))
-                          className=""
-                          color="primary"
-                        >
-                          <ForwardRef(Button)
-                            className=""
-                            classes={
-                              Object {
-                                "colorInherit": "MuiButton-colorInherit",
-                                "contained": "MuiButton-contained",
-                                "containedPrimary": "MuiButton-containedPrimary",
-                                "containedSecondary": "MuiButton-containedSecondary",
-                                "containedSizeLarge": "MuiButton-containedSizeLarge",
-                                "containedSizeSmall": "MuiButton-containedSizeSmall",
-                                "disabled": "Mui-disabled",
-                                "endIcon": "MuiButton-endIcon",
-                                "focusVisible": "Mui-focusVisible",
-                                "fullWidth": "MuiButton-fullWidth",
-                                "iconSizeLarge": "MuiButton-iconSizeLarge",
-                                "iconSizeMedium": "MuiButton-iconSizeMedium",
-                                "iconSizeSmall": "MuiButton-iconSizeSmall",
-                                "label": "MuiButton-label",
-                                "outlined": "MuiButton-outlined",
-                                "outlinedPrimary": "MuiButton-outlinedPrimary",
-                                "outlinedSecondary": "MuiButton-outlinedSecondary",
-                                "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
-                                "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-                                "root": "MuiButton-root",
-                                "sizeLarge": "MuiButton-sizeLarge",
-                                "sizeSmall": "MuiButton-sizeSmall",
-                                "startIcon": "MuiButton-startIcon",
-                                "text": "MuiButton-text",
-                                "textPrimary": "MuiButton-textPrimary",
-                                "textSecondary": "MuiButton-textSecondary",
-                                "textSizeLarge": "MuiButton-textSizeLarge",
-                                "textSizeSmall": "MuiButton-textSizeSmall",
-                              }
-                            }
-                            color="primary"
-                          >
-                            <WithStyles(ForwardRef(ButtonBase))
-                              className="MuiButton-root MuiButton-text MuiButton-textPrimary"
-                              component="button"
-                              disabled={false}
-                              focusRipple={true}
-                              focusVisibleClassName="Mui-focusVisible"
-                              type="button"
-                            >
-                              <ForwardRef(ButtonBase)
-                                className="MuiButton-root MuiButton-text MuiButton-textPrimary"
-                                classes={
-                                  Object {
-                                    "disabled": "Mui-disabled",
-                                    "focusVisible": "Mui-focusVisible",
-                                    "root": "MuiButtonBase-root",
-                                  }
-                                }
-                                component="button"
-                                disabled={false}
-                                focusRipple={true}
-                                focusVisibleClassName="Mui-focusVisible"
-                                type="button"
-                              >
-                                <button
-                                  className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onDragLeave={[Function]}
-                                  onFocus={[Function]}
-                                  onKeyDown={[Function]}
-                                  onKeyUp={[Function]}
-                                  onMouseDown={[Function]}
-                                  onMouseLeave={[Function]}
-                                  onMouseUp={[Function]}
-                                  onTouchEnd={[Function]}
-                                  onTouchMove={[Function]}
-                                  onTouchStart={[Function]}
-                                  tabIndex={0}
-                                  type="button"
-                                >
-                                  <span
-                                    className="MuiButton-label"
-                                  >
-                                    Signup
-                                  </span>
-                                  <NoSsr>
-                                    <WithStyles(undefined)
-                                      center={false}
-                                    >
-                                      <ForwardRef(TouchRipple)
-                                        center={false}
-                                        classes={
-                                          Object {
-                                            "child": "MuiTouchRipple-child",
-                                            "childLeaving": "MuiTouchRipple-childLeaving",
-                                            "childPulsate": "MuiTouchRipple-childPulsate",
-                                            "ripple": "MuiTouchRipple-ripple",
-                                            "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                                            "rippleVisible": "MuiTouchRipple-rippleVisible",
-                                            "root": "MuiTouchRipple-root",
-                                          }
-                                        }
-                                      >
-                                        <span
-                                          className="MuiTouchRipple-root"
-                                        >
-                                          <TransitionGroup
-                                            childFactory={[Function]}
-                                            component={null}
-                                            exit={true}
-                                          />
-                                        </span>
-                                      </ForwardRef(TouchRipple)>
-                                    </WithStyles(undefined)>
-                                  </NoSsr>
-                                </button>
-                              </ForwardRef(ButtonBase)>
-                            </WithStyles(ForwardRef(ButtonBase))>
-                          </ForwardRef(Button)>
-                        </WithStyles(ForwardRef(Button))>
-                      </ButtonComp>
-                    </a>
-                  </Link>
+                    <WithWidth(HiddenJs)
+                      lgDown={false}
+                      lgUp={false}
+                      mdDown={true}
+                      mdUp={false}
+                      smDown={false}
+                      smUp={false}
+                      xlDown={false}
+                      xlUp={false}
+                      xsDown={false}
+                      xsUp={false}
+                    />
+                  </Hidden>
                   <Link
                     href="/help"
                   >

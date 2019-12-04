@@ -23,6 +23,7 @@ describe('containers/Community/View', () => {
             curateCommunityResourcesAction: jest.fn(),
             sendCommunityInvitationAction: jest.fn(),
             transferArticleToCommunityAction: jest.fn(),
+            changeOwnerExtenalLinkAction: jest.fn(),
             showNotificationAction: jest.fn(),
             isLoggedIn: true,
         }

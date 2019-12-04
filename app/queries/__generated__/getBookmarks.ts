@@ -1048,6 +1048,26 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
   totalElements: any;
 }
 
+export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -1115,6 +1135,10 @@ export interface getBookmarks_getBookmarks_content_resource_CollectionDTO_sectio
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult;
 }
 
 export type getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources = getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_PublicUserDTO | getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ArticleDTO | getBookmarks_getBookmarks_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO;
@@ -1412,6 +1436,26 @@ export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_comm
   totalElements: any;
 }
 
+export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -1479,6 +1523,10 @@ export interface getBookmarks_getBookmarks_content_resource_ExternalLinkDTO {
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: getBookmarks_getBookmarks_content_resource_ExternalLinkDTO_voteResult;
 }
 
 export type getBookmarks_getBookmarks_content_resource = getBookmarks_getBookmarks_content_resource_PublicUserDTO | getBookmarks_getBookmarks_content_resource_ArticleDTO | getBookmarks_getBookmarks_content_resource_CollectionDTO | getBookmarks_getBookmarks_content_resource_ExternalLinkDTO;
