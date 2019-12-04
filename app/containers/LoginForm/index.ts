@@ -10,7 +10,7 @@ const mapStateToProps = () => ({
 })
 
 interface IProps {
-    registerAction: (callback?: any) => IRegisterAction
+    registerAction?: (callback?: any) => IRegisterAction
     callback?: any
 }
 
@@ -26,7 +26,7 @@ export default compose<any, IProps>(
     ),
     withFormik({
         handleSubmit: async (_values, { props, resetForm }: IHandleSumit) => {
-            return props.registerAction(resetForm)
+            return props.registerAction && props.registerAction(resetForm)
         },
     })
 )(View)

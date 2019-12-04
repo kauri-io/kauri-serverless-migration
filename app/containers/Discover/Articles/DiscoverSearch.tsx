@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { compose, withApollo } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
+import { withApollo } from 'react-apollo'
 import { connect } from 'react-redux'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import ApolloClient from 'apollo-client'

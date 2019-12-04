@@ -1,6 +1,6 @@
 import ArticleDraft from './View'
 import { mountWithRedux } from '../../setupTests'
-import { MockedProvider } from 'react-apollo/test-utils'
+import { MockedProvider } from '@apollo/react-testing'
 import { generateArticle } from '../../mocks'
 
 describe('containers/ArticleDraft', () => {

@@ -1,7 +1,7 @@
 import { mountWithRedux } from '../../setupTests'
 import Community from './View'
 import { Community as mock } from '../../mocks'
-import { MockedProvider } from 'react-apollo/test-utils'
+import { MockedProvider } from '@apollo/react-testing'
 import { getCommunity_getCommunity } from '../../queries/__generated__/getCommunity'
 
 describe('containers/Community/View', () => {

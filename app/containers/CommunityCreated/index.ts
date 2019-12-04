@@ -1,7 +1,8 @@
 import CollectionCreated from './View'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { connect } from 'react-redux'
-import { compose, graphql } from 'react-apollo'
+import { graphql } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import withLoading from '../../lib/with-loading'
 import { getCommunity as getCommunityQuery } from '../../queries/Community'
 import {

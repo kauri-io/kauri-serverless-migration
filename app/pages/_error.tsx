@@ -1,5 +1,6 @@
 import React from 'react'
-import { withApollo, compose } from 'react-apollo'
+import { withApollo } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import withData from '../lib/with-data'
 import App from '../layouts'
 import Error from '../containers/Error'
@@ -8,7 +9,7 @@ import { withRouter } from 'next/router'
 class ErrorPage extends React.Component {
     render() {
         return (
-            <App>
+            <App hideNav={false}>
                 <Error code="500" />
             </App>
         )

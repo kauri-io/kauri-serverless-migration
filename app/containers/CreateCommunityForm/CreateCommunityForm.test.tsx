@@ -2,7 +2,7 @@ import View from './index'
 import { mountWithRedux } from '../../setupTests'
 import { Community as mockData } from '../../mocks'
 import { getCommunity_getCommunity } from '../../queries/__generated__/getCommunity'
-import { MockedProvider } from 'react-apollo/test-utils'
+import { MockedProvider } from '@apollo/react-testing'
 
 describe('containers/CreateCommunityForm/View', () => {
     const props = {

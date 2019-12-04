@@ -38,7 +38,7 @@ class Notification extends React.Component<
         this.state = { open: false }
     }
 
-    componentWillReceiveProps(nextProps) {
+    componentDidUpdate(nextProps) {
         if (this.props.notification !== nextProps.notification) {
             this.setState({ open: true })
         } else {

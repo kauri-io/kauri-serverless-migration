@@ -200,6 +200,8 @@ const AddToCollectionComponent: React.FunctionComponent<IProps> = ({
                         />
                     )
                 }
+
+                return null
             }}
         </Query>
     )

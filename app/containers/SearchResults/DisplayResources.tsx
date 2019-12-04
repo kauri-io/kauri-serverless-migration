@@ -1,6 +1,7 @@
 import { Grid, Theme } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
-import { compose, graphql } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
+import { graphql } from 'react-apollo'
 import withLoading from '../../lib/with-loading'
 import withPagination from '../../lib/with-pagination'
 import { searchResultsAutocomplete } from '../../queries/Search'

@@ -74,7 +74,8 @@ export default () => {
                 Beginner to Advanced Blockchain & Ethereum Tutorials
             </Typography>
             <Typography className={classes.subtitle} component="h2">
-                Learn from technical tutorials and content created and curated by developers
+                Learn from technical tutorials and content created and curated
+                by developers
             </Typography>
             <Grid>
                 <Hidden mdDown={true}>

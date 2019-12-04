@@ -39,8 +39,8 @@ const CuratedCategory = ({ content }) => {
             spacing={2}
         >
             {content.map((category, key) => (
-                <Grid lg={3} md={6} sm={12} item={true}>
-                    <Link href={category.link} key={key}>
+                <Grid key={key} lg={3} md={6} sm={12} item={true}>
+                    <Link href={category.link}>
                         <a className={classes.link}>
                             {category.image && (
                                 <Image

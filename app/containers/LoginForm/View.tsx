@@ -33,20 +33,33 @@ const useStyles = makeStyles((theme: Theme) => ({
 const Web3Unavailable = ({ classes }) => (
     <>
         <Typography gutterBottom={true} color="secondary" variant="body1">
-        Kauri uses the Metamask browser extension to authenticate you with the Ethereum network.
+            Kauri uses the Metamask browser extension to authenticate you with
+            the Ethereum network.
         </Typography>
         <Image
             width={100}
             height={100}
             image="/static/images/metamask/avatar.png"
         />
-        <Typography className={classes.kauriIntro}>Download it here - <a className={classes.link} href="https://metamask.io" target="_blank">
-            https://metamask.io
-        </a></Typography>
+        <Typography className={classes.kauriIntro}>
+            Download it here -{' '}
+            <a
+                className={classes.link}
+                href="https://metamask.io"
+                target="_blank"
+            >
+                https://metamask.io
+            </a>
+        </Typography>
         <div className={classes.kauriIntro}>
-        Learn more about Metamask - <Link href='/article/2a587f3962044515937a8105cfa1568c/metamask-interact-with-ethereum-in-your-browser'><a className={classes.link}>https://kauri.io/article/2a587f3962044515937a8105cfa1568c/metamask-interact-with-ethereum-in-your-browser</a></Link>
+            Learn more about Metamask -{' '}
+            <Link href="/article/2a587f3962044515937a8105cfa1568c/metamask-interact-with-ethereum-in-your-browser">
+                <a className={classes.link}>
+                    https://kauri.io/article/2a587f3962044515937a8105cfa1568c/metamask-interact-with-ethereum-in-your-browser
+                </a>
+            </Link>
         </div>
-        
+
         <link
             href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css"
             rel="stylesheet"

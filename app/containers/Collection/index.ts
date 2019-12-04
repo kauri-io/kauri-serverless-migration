@@ -1,5 +1,6 @@
 import Collection from './View'
-import { compose, graphql, withApollo } from 'react-apollo'
+import { graphql, withApollo } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import { globalCollectionDetails } from '../../queries/Collection'
 import { connect } from 'react-redux'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'

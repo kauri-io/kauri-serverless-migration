@@ -5,7 +5,7 @@ import withData from '../lib/with-data'
 import { withTransaction } from '@elastic/apm-rum-react'
 
 const TermsOfUsePage = withTransaction('terms-of-use', 'page')(({}) => (
-    <App>
+    <App hideNav={false}>
         <TermsOfUse />
     </App>
 ))

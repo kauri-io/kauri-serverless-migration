@@ -1,6 +1,7 @@
 import CreateCollectionForm from '../CreateCollectionForm'
 import { connect } from 'react-redux'
-import { graphql, compose } from 'react-apollo'
+import { graphql } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import { globalCollectionDetails as getCollection } from '../../queries/Collection'
 import withLoading from '../../lib/with-loading'
 import withApolloError from '../../lib/with-apollo-error'

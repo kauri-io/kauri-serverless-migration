@@ -1,5 +1,5 @@
 import View from './View'
-import { compose } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import { connect } from 'react-redux'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 

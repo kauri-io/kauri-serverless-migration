@@ -1,6 +1,6 @@
 import NewsLetterConfirmation from './index'
 import { mountWithRedux } from '../../setupTests'
-import { MockedProvider } from 'react-apollo/test-utils'
+import { MockedProvider } from '@apollo/react-testing'
 
 jest.mock('../../lib/analytics', () => ({
     track: jest.fn(),

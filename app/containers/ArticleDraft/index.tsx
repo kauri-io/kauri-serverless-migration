@@ -1,4 +1,5 @@
-import { compose, graphql } from 'react-apollo'
+import { graphql } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import { connect } from 'react-redux'
 import { deleteDraftArticleAction } from './DeleteDraftArticleModule'
 import { publishArticleAction } from '../WriteArticle/PublishArticleModule'

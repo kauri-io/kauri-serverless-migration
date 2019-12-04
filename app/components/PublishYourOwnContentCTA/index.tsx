@@ -44,8 +44,9 @@ export default ({ isLoggedIn, content }) => {
                     Kauri wants to help you share your knowledge, here's the
                     three ways you can.
                 </Typography>
-                {content.map(link => (
+                {content.map((link, key) => (
                     <Link
+                        key={key}
                         href={isLoggedIn ? link.link : `/login?r=${link.link}`}
                     >
                         <a>

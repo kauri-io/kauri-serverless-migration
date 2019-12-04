@@ -1,5 +1,6 @@
 import Articles from './View'
-import { compose, graphql } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
+import { graphql } from 'react-apollo'
 import { searchResultsAutocomplete } from '../../../queries/Search'
 import { connect } from 'react-redux'
 import withLoading from '../../../lib/with-loading'

@@ -1,5 +1,6 @@
 import Collections from './ListView'
-import { compose, graphql } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
+import { graphql } from 'react-apollo'
 import { getLatestCollections } from '../../../queries/Collection'
 import { connect } from 'react-redux'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'

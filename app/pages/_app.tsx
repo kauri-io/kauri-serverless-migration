@@ -22,6 +22,14 @@ class MyApp extends App {
         analytics.page(this.props.router)
         apm.setInitialPageLoadName('Initial Load')
         const { Component, pageProps } = this.props
+
+        console.log(`                                                 
+        ____          _            _                  _               
+        |    \ ___ ___|_|___ ___   | |_ _ _    ___ ___| |___ ___ ___   
+        |  |  | -_|_ -| | . |   |  | . | | |  |   | -_| |_ -| . |   |  
+        |____/|___|___|_|_  |_|_|  |___|_  |  |_|_|___|_|___|___|_|_|  
+                        |___|          |___|                         
+       `)
         return (
             <>
                 <Head>

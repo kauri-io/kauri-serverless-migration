@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { compose } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import View, { IProps } from './View'
 import { IReduxState } from '../../lib/Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'

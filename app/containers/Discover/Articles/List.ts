@@ -1,5 +1,6 @@
 import Articles from './ListView'
-import { compose, graphql } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
+import { graphql } from 'react-apollo'
 import { globalSearchApprovedArticles } from '../../../queries/Article'
 import { connect } from 'react-redux'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'

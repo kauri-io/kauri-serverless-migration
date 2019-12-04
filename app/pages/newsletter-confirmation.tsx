@@ -1,5 +1,6 @@
 import React from 'react'
-import { withApollo, compose } from 'react-apollo'
+import { withApollo } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import withData from '../lib/with-data'
 import App from '../layouts'
 import NewsletterConfirmation from '../containers/NewsletterConfirmation'
@@ -10,7 +11,7 @@ const NewsletterConfirmationPage = withTransaction(
     'newsletter-confirmation',
     'page'
 )(() => (
-    <App>
+    <App hideNav={false}>
         <NewsletterConfirmation />
     </App>
 ))

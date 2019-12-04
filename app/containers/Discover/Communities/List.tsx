@@ -1,5 +1,6 @@
 import Communities from './ListView'
-import { compose, graphql } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
+import { graphql } from 'react-apollo'
 import { searchResultsAutocomplete } from '../../../queries/Search'
 import { connect } from 'react-redux'
 import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'

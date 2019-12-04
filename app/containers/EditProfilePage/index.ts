@@ -5,7 +5,8 @@ import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { IReduxState } from '../../lib/Module'
 import { saveUserDetailsAction } from '../../components/EditProfileForm/Module'
 import { getOwnProfile } from '../../queries/User'
-import { compose, graphql } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
+import { graphql } from 'react-apollo'
 import { resendEmailVerificationAction } from '../EmailVerification/Module'
 
 const mapStateToProps = (state: IReduxState) => ({

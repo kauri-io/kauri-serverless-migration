@@ -1,5 +1,6 @@
 import React from 'react'
-import { withApollo, compose } from 'react-apollo'
+import { withApollo } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import withData from '../../../lib/with-data'
 import App from '../../../layouts'
 import Community from '../../../containers/Community'
@@ -9,7 +10,7 @@ import { withTransaction } from '@elastic/apm-rum-react'
 const CommunityPage = withTransaction('community', 'page')(({ router }) => {
     // console.log(router.query)
     return (
-        <App>
+        <App hideNav={false}>
             <Community
                 secret={router.query.secret}
                 communityId={router.query['community_id']}

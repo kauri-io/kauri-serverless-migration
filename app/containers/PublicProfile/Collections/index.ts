@@ -1,5 +1,6 @@
 import View from './View'
-import { compose, graphql } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
+import { graphql } from 'react-apollo'
 import { getCollectionsForUser } from '../../../queries/Collection'
 import { connect } from 'react-redux'
 import withLoading from '../../../lib/with-loading'

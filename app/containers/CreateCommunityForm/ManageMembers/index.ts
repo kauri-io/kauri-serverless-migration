@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
-import { compose, graphql } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
+import { graphql } from 'react-apollo'
 import { IReduxState } from '../../../lib/Module'
 import {
     openModalAction,

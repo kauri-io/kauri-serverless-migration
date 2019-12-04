@@ -1,6 +1,7 @@
 import React, { ChangeEvent } from 'react'
 import ValidatedTextField from '../../components/ValidatedTextField'
-import { compose, withApollo } from 'react-apollo'
+import { withApollo } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import theme from '../../lib/theme-config'

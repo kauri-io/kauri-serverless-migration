@@ -1,4 +1,5 @@
-import { compose, graphql } from 'react-apollo'
+import { graphql } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import { getCommunityArticleContent } from '../../../queries/Community'
 import withLoading from '../../../lib/with-loading'
 import withApolloError from '../../../lib/with-apollo-error'
