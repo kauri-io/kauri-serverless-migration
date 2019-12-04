@@ -63,6 +63,9 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             alignItems: 'center',
             margin: theme.spacing(2),
             flexWrap: 'wrap',
+            '& svg': {
+                margin: theme.spacing(1),
+            },
         },
         tag: {
             transition: 'all 0.2s',
