@@ -9,16 +9,16 @@ import CardPreview from './components/Preview'
 import FullPreview from '../../containers/ViewLink/components/Content'
 import Loading from '../../components/Loading'
 import Existing from './components/Existing'
-import PublishingSelector from '../PublishingSelector';
+import PublishingSelector from '../PublishingSelector'
 
-const CreateLink = ({ 
-    client, 
-    submitExtenalLinkAction, 
-    openModalAction, 
-    closeModalAction, 
-    userId, 
+const CreateLink = ({
+    client,
+    submitExtenalLinkAction,
+    openModalAction,
+    closeModalAction,
+    userId,
     user,
-    communities 
+    communities,
 }) => {
     const [tab, setTab] = useState(0)
     const [description, setDescription] = useState<null | string>(null)
@@ -61,7 +61,7 @@ const CreateLink = ({
         authorName &&
         (tags && tags.length > 0)
 
-    const handleSubmit = (ownerId) => {
+    const handleSubmit = ownerId => {
         console.log(JSON.stringify(ownerId))
         return submitExtenalLinkAction({
             title,
@@ -88,11 +88,13 @@ const CreateLink = ({
                                     userId={userId}
                                     type="Articles"
                                     closeModalAction={closeModalAction}
-                                    communities={communities.map(({ community }) => ({
-                                        ...community,
-                                        type: 'COMMUNITY',
-                                    }))}
-                                    handleSubmit={(destination) =>
+                                    communities={communities.map(
+                                        ({ community }) => ({
+                                            ...community,
+                                            type: 'COMMUNITY',
+                                        })
+                                    )}
+                                    handleSubmit={destination =>
                                         handleSubmit({
                                             type: destination.type,
                                             id: destination.id,
