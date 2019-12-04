@@ -1,6 +1,4 @@
-import Button from '../../components/Button'
-import Link from 'next/link'
-import { Grid, Typography } from '@material-ui/core'
+import { Grid, Typography, Card } from '@material-ui/core'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import {
     getArticleURL,
@@ -10,6 +8,7 @@ import {
 import ArticleCard from '../Card/ArticleCard'
 import CollectionCard from '../Card/CollectionCard'
 import CommunityCard from '../Card/CommunityCard'
+import Link from 'next/link'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -18,6 +17,9 @@ const useStyles = makeStyles((theme: Theme) => ({
         '& > *': {
             marginBottom: theme.spacing(1),
         },
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
     },
     buttons: {
         maxWidth: 870,
@@ -25,6 +27,36 @@ const useStyles = makeStyles((theme: Theme) => ({
     button: {
         display: 'flex',
         justifyContent: 'center',
+    },
+    title: {
+        fontWeight: 400,
+        padding: theme.spacing(2, 0),
+        lineHeight: '24px',
+    },
+    explore: {
+        maxWidth: 824,
+        '& > *': {
+            width: '100%',
+        },
+    },
+    card: {
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+        height: '100%',
+        padding: theme.spacing(2),
+        '& h6': {
+            fontSize: 16,
+            fontWeight: 500,
+            lineHeight: '19px',
+        },
+        '& p': {
+            fontSize: 12,
+            fontWeight: 400,
+            lineHeight: '14px',
+            textAlign: 'center',
+        },
     },
 }))
 
@@ -36,7 +68,9 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
     const classes = useStyles()
     return (
         <Grid direction="column" container={true} className={classes.container}>
-            <Typography variant="h5">Latest Content</Typography>
+            <Typography variant="h6" component="h3" className={classes.title}>
+                Recent Content
+            </Typography>
             <Grid container={true} spacing={2}>
                 {content.map((resource: any, key) => {
                     switch (resource.__typename) {
@@ -53,7 +87,7 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
 
                         case 'CollectionDTO': {
                             return (
-                                <Grid key={key} item={true} sm={12}>
+                                <Grid key={key} item={true} xs={12}>
                                     {' '}
                                     <CollectionCard
                                         {...resource}
@@ -65,7 +99,7 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
 
                         case 'CommunityDTO':
                             return (
-                                <Grid key={key} item={true} sm={12}>
+                                <Grid key={key} item={true} xs={12}>
                                     {' '}
                                     <CommunityCard
                                         {...resource}
@@ -82,30 +116,57 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                         }
                     }
                 })}
-                <Grid
-                    justify="center"
-                    spacing={2}
-                    container={true}
-                    className={classes.buttons}
-                >
-                    <Grid sm={6} item={true} className={classes.button}>
-                        <Link href="/articles" as="/articles">
-                            <a>
-                                <Button color="primary" variant="outlined">
-                                    All Articles
-                                </Button>
-                            </a>
-                        </Link>
-                    </Grid>
-                    <Grid sm={6} item={true} className={classes.button}>
-                        <Link href="/collections" as="/collections">
-                            <a>
-                                <Button color="primary" variant="outlined">
-                                    All Collections
-                                </Button>
-                            </a>
-                        </Link>
-                    </Grid>
+            </Grid>
+            <Typography variant="h6" component="h3" className={classes.title}>
+                Explore Content
+            </Typography>
+            <Grid
+                container={true}
+                spacing={2}
+                item={true}
+                className={classes.explore}
+            >
+                <Grid item={true} sm={12} md={4}>
+                    <Link href="/articles">
+                        <a>
+                            <Card className={classes.card}>
+                                <Typography variant="h6" component="h6">
+                                    Articles
+                                </Typography>
+                                <Typography variant="body2">
+                                    User and Community Articles
+                                </Typography>
+                            </Card>
+                        </a>
+                    </Link>
+                </Grid>
+                <Grid item={true} sm={12} md={4}>
+                    <Link href="/collections">
+                        <a>
+                            <Card className={classes.card}>
+                                <Typography variant="h6" component="h6">
+                                    Collections
+                                </Typography>
+                                <Typography variant="body2">
+                                    User curated collections
+                                </Typography>
+                            </Card>
+                        </a>
+                    </Link>
+                </Grid>
+                <Grid item={true} sm={12} md={4}>
+                    <Link href="/communities">
+                        <a>
+                            <Card className={classes.card}>
+                                <Typography variant="h6" component="h6">
+                                    Communities
+                                </Typography>
+                                <Typography variant="body2">
+                                    Get involved with Kauri Communities
+                                </Typography>
+                            </Card>
+                        </a>
+                    </Link>
                 </Grid>
             </Grid>
         </Grid>
