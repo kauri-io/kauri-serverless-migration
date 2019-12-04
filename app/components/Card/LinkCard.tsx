@@ -8,7 +8,6 @@ import Link from 'next/link'
 import Details from './CardComponents/CardDetails'
 import Actions from './CardComponents/CardActions'
 import CardImage from './CardComponents/CardImage'
-import TruncateMarkup from 'react-truncate-markup'
 import LinkIcon from '@material-ui/icons/OpenInNew'
 import GroupIcon from '@material-ui/icons/GroupWork'
 
@@ -137,22 +136,21 @@ const LinkCard = ({
                             </div>
                             <Grid className={classes.row}>
                                 <Grid className={classes.column}>
-                                    <TruncateMarkup lines={2}>
                                         <Typography
                                             className={classes.title}
                                             variant="h5"
                                         >
                                             {linkTitle.value}
                                         </Typography>
-                                    </TruncateMarkup>
-                                    <TruncateMarkup lines={1}>
+                                    
+                                    
                                         <Typography
                                             color="primary"
                                             className={classes.url}
                                         >
                                             {url.value}
                                         </Typography>
-                                    </TruncateMarkup>
+                                    
                                     {owner && owner.communityName && (
                                         <Grid className={classes.community}>
                                             <GroupIcon />
@@ -183,27 +181,25 @@ const LinkCard = ({
                             </div>
                             <Grid className={classes.row}>
                                 <Grid className={classes.column}>
-                                    <TruncateMarkup lines={2}>
                                         <Typography
                                             className={classes.title}
                                             variant="h5"
                                         >
-                                            {linkTitle.value}
+                                            {linkTitle.value.substring(0,50)}... 
                                         </Typography>
-                                    </TruncateMarkup>
-                                    <TruncateMarkup lines={2}>
+                                    
                                         <Typography variant="body2">
                                             {linkDescription.value}
                                         </Typography>
-                                    </TruncateMarkup>
-                                    <TruncateMarkup lines={1}>
+                                    
+                                    
                                         <Typography
                                             color="primary"
                                             className={classes.url}
                                         >
                                             {url.value}
                                         </Typography>
-                                    </TruncateMarkup>
+                                    
                                     {owner && owner.communityName && (
                                         <Grid className={classes.community}>
                                             <GroupIcon />

@@ -195,16 +195,12 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                             user ? '/write-article' : 'login?r=/write-article'
                         }
                     >
-                        <a>
-                            Write Article
-                        </a>
+                        <a>Write Article</a>
                     </Link>
                 </MenuItem>
                 <MenuItem>
                     <Link href={user ? '/create-link' : 'login?r=/create-link'}>
-                        <a>
-                            Add External Link
-                        </a>
+                        <a>Add External Link</a>
                     </Link>
                 </MenuItem>
                 <MenuItem>
@@ -215,8 +211,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                                 : 'login?r=/create-collection'
                         }
                     >
-                        <a>Create Collection
-                        </a>
+                        <a>Create Collection</a>
                     </Link>
                 </MenuItem>
                 <MenuItem>
@@ -227,8 +222,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                                 : 'login?r=/create-community'
                         }
                     >
-                        <a>Create Community
-                        </a>
+                        <a>Create Community</a>
                     </Link>
                 </MenuItem>
             </Menu>

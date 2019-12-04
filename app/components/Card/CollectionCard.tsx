@@ -1,7 +1,6 @@
 import { Card, Typography, Theme, Grid, Hidden, Icon } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 import CardImage from './CardComponents/CardImage'
-import TruncateMarkup from 'react-truncate-markup'
 import { openModalAction } from '../Modal/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { connect } from 'react-redux'
@@ -143,14 +142,13 @@ const CollectionCard = ({
                                             )}
                                         </Typography>
                                     </div>
-                                    <TruncateMarkup lines={2}>
+                                    
                                         <Typography
                                             className={classes.name}
                                             variant="h5"
                                         >
                                             {name}
                                         </Typography>
-                                    </TruncateMarkup>
                                 </div>
                             </Grid>
                             <Grid className={classes.row}>
@@ -180,22 +178,19 @@ const CollectionCard = ({
                                         </Typography>
                                     </div>
 
-                                    <TruncateMarkup lines={2}>
+                                    
                                         <Typography
                                             className={classes.name}
                                             variant="h5"
                                         >
                                             {name}
                                         </Typography>
-                                    </TruncateMarkup>
-                                    <TruncateMarkup lines={2}>
                                         <Typography
                                             className={classes.description}
                                             variant="body2"
                                         >
                                             {description}
                                         </Typography>
-                                    </TruncateMarkup>
                                     <Grid className={classes.bottom}>
                                         <Details user={owner} />
                                         <CardStatistics

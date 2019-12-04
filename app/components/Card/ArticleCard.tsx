@@ -1,7 +1,6 @@
 import { Card, Typography, Theme, Grid, Hidden } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 import CardImage from './CardComponents/CardImage'
-import TruncateMarkup from 'react-truncate-markup'
 import { openModalAction } from '../Modal/Module'
 
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
@@ -114,14 +113,12 @@ const ArticleCard = ({
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
                                 <Grid className={classes.column}>
-                                    <TruncateMarkup lines={2}>
-                                        <Typography
-                                            className={classes.title}
-                                            variant="h5"
-                                        >
-                                            {title}
-                                        </Typography>
-                                    </TruncateMarkup>
+                                    <Typography
+                                        className={classes.title}
+                                        variant="h5"
+                                    >
+                                        {title}
+                                    </Typography>
                                     {owner && owner.communityName && (
                                         <Grid className={classes.community}>
                                             <GroupIcon />
@@ -150,19 +147,15 @@ const ArticleCard = ({
                         <Card className={classes.card}>
                             <Grid className={classes.row}>
                                 <Grid className={classes.column}>
-                                    <TruncateMarkup lines={2}>
-                                        <Typography
-                                            className={classes.title}
-                                            variant="h5"
-                                        >
-                                            {title}
+                                    <Typography
+                                        className={classes.title}
+                                        variant="h5"
+                                    >
+                                        {title}
+                                    </Typography>
+                                    <Typography variant="body2">
+                                        {description.substring(0, 160)}...
                                         </Typography>
-                                    </TruncateMarkup>
-                                    <TruncateMarkup lines={2}>
-                                        <Typography variant="body2">
-                                            {description}
-                                        </Typography>
-                                    </TruncateMarkup>
                                     {owner && owner.communityName && (
                                         <Grid className={classes.community}>
                                             <GroupIcon />
