@@ -120,13 +120,12 @@ const CommunityCard = ({
                                             )}
                                         </Typography>
                                     </div>
-                                        <Typography
-                                            className={classes.name}
-                                            variant="h5"
-                                        >
-                                            {name}
-                                        </Typography>
-                                    
+                                    <Typography
+                                        className={classes.name}
+                                        variant="h5"
+                                    >
+                                        {name}
+                                    </Typography>
                                 </div>
                             </Grid>
                             {members && (
@@ -156,20 +155,20 @@ const CommunityCard = ({
                                             )}
                                         </Typography>
                                     </div>
-                                        <Typography
-                                            className={classes.name}
-                                            variant="h5"
-                                        >
-                                            {name}
-                                        </Typography>
-                                
-                                        <Typography
-                                            className={classes.description}
-                                            variant="body2"
-                                        >
-                                            {description}
-                                        </Typography>
-                                    
+                                    <Typography
+                                        className={classes.name}
+                                        variant="h5"
+                                    >
+                                        {name}
+                                    </Typography>
+
+                                    <Typography
+                                        className={classes.description}
+                                        variant="body2"
+                                    >
+                                        {description}
+                                    </Typography>
+
                                     <Grid className={classes.bottom}>
                                         {members && (
                                             <Typography variant="caption">

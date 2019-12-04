@@ -94,16 +94,15 @@ const LinkContent = ({
             <Grid container={true} justify="space-between">
                 <Grid item={true} sm={authorName ? 6 : 12}>
                     <a href={url.value} target="__blank">
-                        
-                            <Typography
-                                className={classes.url}
-                                color="inherit"
-                                variant="subtitle2"
-                            >
-                                {url.value
-                                    .replace('https://', '')
-                                    .replace('http://', '')}
-                            </Typography>
+                        <Typography
+                            className={classes.url}
+                            color="inherit"
+                            variant="subtitle2"
+                        >
+                            {url.value
+                                .replace('https://', '')
+                                .replace('http://', '')}
+                        </Typography>
                     </a>
                 </Grid>
                 {authorName.value && (

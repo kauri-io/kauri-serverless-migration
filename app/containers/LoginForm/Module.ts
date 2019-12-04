@@ -98,6 +98,7 @@ export const registerEpic: Epic<
                         tap(({ token }: IFinalLoginResponse) => {
                             document.cookie = cookie.serialize('TOKEN', token, {
                                 maxAge: 30 * 24 * 60 * 60, // 30 days,
+                                path: '/',
                                 domain:
                                     window &&
                                     window.location.hostname.includes(
@@ -111,6 +112,7 @@ export const registerEpic: Epic<
                                 global.window.web3.eth.accounts[0],
                                 {
                                     maxAge: 30 * 24 * 60 * 60, // 30 days
+                                    path: '/',
                                     domain:
                                         window &&
                                         window.location.hostname.includes(

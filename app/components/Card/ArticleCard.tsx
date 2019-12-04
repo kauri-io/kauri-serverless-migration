@@ -155,7 +155,7 @@ const ArticleCard = ({
                                     </Typography>
                                     <Typography variant="body2">
                                         {description.substring(0, 160)}...
-                                        </Typography>
+                                    </Typography>
                                     {owner && owner.communityName && (
                                         <Grid className={classes.community}>
                                             <GroupIcon />

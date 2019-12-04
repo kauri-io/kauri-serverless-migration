@@ -142,13 +142,13 @@ const CollectionCard = ({
                                             )}
                                         </Typography>
                                     </div>
-                                    
-                                        <Typography
-                                            className={classes.name}
-                                            variant="h5"
-                                        >
-                                            {name}
-                                        </Typography>
+
+                                    <Typography
+                                        className={classes.name}
+                                        variant="h5"
+                                    >
+                                        {name}
+                                    </Typography>
                                 </div>
                             </Grid>
                             <Grid className={classes.row}>
@@ -178,19 +178,18 @@ const CollectionCard = ({
                                         </Typography>
                                     </div>
 
-                                    
-                                        <Typography
-                                            className={classes.name}
-                                            variant="h5"
-                                        >
-                                            {name}
-                                        </Typography>
-                                        <Typography
-                                            className={classes.description}
-                                            variant="body2"
-                                        >
-                                            {description}
-                                        </Typography>
+                                    <Typography
+                                        className={classes.name}
+                                        variant="h5"
+                                    >
+                                        {name}
+                                    </Typography>
+                                    <Typography
+                                        className={classes.description}
+                                        variant="body2"
+                                    >
+                                        {description}
+                                    </Typography>
                                     <Grid className={classes.bottom}>
                                         <Details user={owner} />
                                         <CardStatistics

@@ -3,13 +3,15 @@ import CollectionCard from '../../components/Card/CollectionCard'
 import {
     Community_approved_CollectionDTO,
     Community_approved_ArticleDTO,
+    Community_approved_ExternalLinkDTO,
 } from '../../queries/Fragments/__generated__/Community'
 import { Container, Grid, withStyles } from '@material-ui/core'
 import { removeResourceVariables } from '../../queries/__generated__/removeResource'
 import ArticlesEmptyState from './EmptyStates/Articles'
 import CollectionsEmptyState from './EmptyStates/Collections'
-import { getArticleURL, getCollectionURL } from '../../lib/getURLs'
+import { getArticleURL, getCollectionURL, getLinkUrl } from '../../lib/getURLs'
 import { closeModalAction } from '../../components/Modal/Module'
+import LinkCard from '../../components/Card/LinkCard'
 
 interface IProps {
     classes?: any
@@ -24,7 +26,7 @@ interface IProps {
 const RenderEmptyState: React.FunctionComponent<{ type: string }> = ({
     type,
 }) => {
-    if (type === 'articles') {
+    if (type === 'articlesAndLinks') {
         return <ArticlesEmptyState />
     }
     if (type === 'collections') {
@@ -33,112 +35,58 @@ const RenderEmptyState: React.FunctionComponent<{ type: string }> = ({
     return null
 }
 
-const RenderResources = () =>
-    // isMember: boolean,
-    // communityId: string | null,
-    // openModalAction?: (payload: { children: any }) => void,
-    // closeModalAction?: () => void,
-    // removeResourceAction?: (payload: removeResourceVariables) => void
-    (
-        article:
-            | Community_approved_ArticleDTO
-            | Community_approved_CollectionDTO
-    ) => {
-        // console.log(destination)
-        const owner =
-            article.owner && article.owner.__typename === 'PublicUserDTO'
-                ? {
-                      avatar: article.owner.avatar,
-                      id: article.owner.id || 'not_found',
-                      type: 'USER',
-                      username: article.owner.publicUserName,
-                  }
-                : article.owner && article.owner.__typename === 'CommunityDTO'
-                ? {
-                      avatar: article.owner.avatar,
-                      id: article.owner.id || 'not_found',
-                      type: 'COMMUNITY',
-                      username: article.owner.communityName,
-                  }
-                : {
-                      avatar: '',
-                      id: '',
+const RenderResources = () => (
+    resource:
+        | Community_approved_ArticleDTO
+        | Community_approved_CollectionDTO
+        | Community_approved_ExternalLinkDTO
+) => {
+    const owner =
+        resource.owner && resource.owner.__typename === 'PublicUserDTO'
+            ? {
+                  avatar: resource.owner.avatar,
+                  id: resource.owner.id || 'not_found',
+                  type: 'USER',
+                  username: resource.owner.publicUserName,
+              }
+            : resource.owner && resource.owner.__typename === 'CommunityDTO'
+            ? {
+                  avatar: resource.owner.avatar,
+                  id: resource.owner.id || 'not_found',
+                  type: 'COMMUNITY',
+                  username: resource.owner.communityName,
+              }
+            : {
+                  avatar: '',
+                  id: '',
 
-                      username: '',
-                  }
+                  username: '',
+              }
 
-        let Card: React.ReactNode = null
+    let Card: React.ReactNode = null
 
-        if (article.__typename === 'ArticleDTO') {
-            Card = <ArticleCard href={getArticleURL(article)} {...article} />
-        } else if (article.__typename === 'CollectionDTO') {
-            Card = (
-                <CollectionCard
-                    {...article}
-                    href={getCollectionURL(article)}
-                    key={String(article.id)}
-                    owner={owner}
-                    // hoverChildren={() => (
-                    //     <PrimaryButton
-                    //         onClick={() =>
-                    //             openModalAction &&
-                    //             closeModalAction &&
-                    //             removeResourceAction &&
-                    //             openModalAction({
-                    //                 children: (
-                    //                     <AlertView
-                    //                         closeModalAction={() =>
-                    //                             closeModalAction()
-                    //                         }
-                    //                         confirmButtonAction={() =>
-                    //                             removeResourceAction({
-                    //                                 id: String(communityId),
-                    //                                 resource: {
-                    //                                     id: String(
-                    //                                         article.resourceIdentifier &&
-                    //                                             article
-                    //                                                 .resourceIdentifier
-                    //                                                 .id
-                    //                                     ),
-                    //                                     type:
-                    //                                         article.resourceIdentifier &&
-                    //                                         (article
-                    //                                             .resourceIdentifier
-                    //                                             .type as any),
-                    //                                 },
-                    //                             })
-                    //                         }
-                    //                         content={
-                    //                             <div>
-                    //                                 <BodyCard>
-                    //                                     If this collection is
-                    //                                     removed, it will no longer
-                    //                                     appear in this community, or
-                    //                                     on the home page. This
-                    //                                     cannot be undone.
-                    //                                 </BodyCard>
-                    //                             </div>
-                    //                         }
-                    //                         title={'Are you sure?'}
-                    //                     />
-                    //                 ),
-                    //             })
-                    //         }
-                    //     >
-                    //         Remove Collection
-                    //     </PrimaryButton>
-                    // )}
-                />
-            )
-        } else {
-            return null
-        }
-        return (
-            <Grid key={article.id} item xs={12} sm={12} lg={12}>
-                {Card}
-            </Grid>
+    if (resource.__typename === 'ArticleDTO') {
+        Card = <ArticleCard href={getArticleURL(resource)} {...resource} />
+    } else if (resource.__typename === 'ExternalLinkDTO') {
+        Card = <LinkCard href={getLinkUrl(resource)} {...resource} />
+    } else if (resource.__typename === 'CollectionDTO') {
+        Card = (
+            <CollectionCard
+                {...resource}
+                href={getCollectionURL(resource)}
+                key={String(resource.id)}
+                owner={owner}
+            />
         )
+    } else {
+        return null
     }
+    return (
+        <Grid key={resource.id} item xs={12} sm={12} lg={12}>
+            {Card}
+        </Grid>
+    )
+}
 
 const DisplayResources = ({ resources, type, classes }: IProps) => {
     if (
