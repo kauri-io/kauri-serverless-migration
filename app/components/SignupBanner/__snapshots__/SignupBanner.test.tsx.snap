@@ -635,7 +635,7 @@ exports[`components/SignupBanner should match snapshot 1`] = `
                 <h1
                   className="MuiTypography-root makeStyles-title-2 MuiTypography-body1"
                 >
-                  Learn Web3 Best Practices with Kauri
+                  Beginner to Advanced Blockchain & Ethereum Tutorials
                 </h1>
               </ForwardRef(Typography)>
             </WithStyles(ForwardRef(Typography))>
@@ -684,7 +684,7 @@ exports[`components/SignupBanner should match snapshot 1`] = `
                 <h2
                   className="MuiTypography-root makeStyles-subtitle-3 MuiTypography-body1"
                 >
-                  Articles, Tutorials and Technical Documentation
+                  Learn from technical tutorials and content created and curated by developers
                 </h2>
               </ForwardRef(Typography)>
             </WithStyles(ForwardRef(Typography))>
