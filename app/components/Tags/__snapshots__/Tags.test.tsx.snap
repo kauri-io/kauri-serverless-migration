@@ -1329,9 +1329,9 @@ exports[`components/Tags/Tag snapshot should match 1`] = `
               "componentStyle": ComponentStyle {
                 "componentId": "Tag__Container-sc-174q8by-0",
                 "isStatic": false,
-                "lastClassName": "imVnjm",
+                "lastClassName": "fMjdLT",
                 "rules": Array [
-                  "display:flex;align-items:center;& > svg{cursor:pointer;}margin-right:",
+                  "z-index:1000;display:flex;align-items:center;& > svg{cursor:pointer;}margin-right:",
                   [Function],
                   "px;",
                 ],
@@ -1350,7 +1350,7 @@ exports[`components/Tags/Tag snapshot should match 1`] = `
           forwardedRef={null}
         >
           <div
-            className="Tag__Container-sc-174q8by-0 imVnjm"
+            className="Tag__Container-sc-174q8by-0 fMjdLT"
           >
             <Close
               onClick={[Function]}
@@ -3637,9 +3637,9 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "Tag__Container-sc-174q8by-0",
                         "isStatic": false,
-                        "lastClassName": "imVnjm",
+                        "lastClassName": "fMjdLT",
                         "rules": Array [
-                          "display:flex;align-items:center;& > svg{cursor:pointer;}margin-right:",
+                          "z-index:1000;display:flex;align-items:center;& > svg{cursor:pointer;}margin-right:",
                           [Function],
                           "px;",
                         ],
@@ -3658,7 +3658,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="Tag__Container-sc-174q8by-0 imVnjm"
+                    className="Tag__Container-sc-174q8by-0 fMjdLT"
                   >
                     <Close
                       onClick={[Function]}
@@ -3761,9 +3761,9 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "Tag__Container-sc-174q8by-0",
                         "isStatic": false,
-                        "lastClassName": "imVnjm",
+                        "lastClassName": "fMjdLT",
                         "rules": Array [
-                          "display:flex;align-items:center;& > svg{cursor:pointer;}margin-right:",
+                          "z-index:1000;display:flex;align-items:center;& > svg{cursor:pointer;}margin-right:",
                           [Function],
                           "px;",
                         ],
@@ -3782,7 +3782,7 @@ exports[`components/Tags/TagSelector snapshot should match 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="Tag__Container-sc-174q8by-0 imVnjm"
+                    className="Tag__Container-sc-174q8by-0 fMjdLT"
                   >
                     <Close
                       onClick={[Function]}
