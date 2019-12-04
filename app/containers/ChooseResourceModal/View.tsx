@@ -238,7 +238,8 @@ const ChooseResourceModalContentView = props => {
                                                   color="primary"
                                                   variant="text"
                                                   disabled={isDisabled(
-                                                      resourceId
+                                                      resourceId,
+                                                      article
                                                   )}
                                                   onClick={() =>
                                                       selectResource(resourceId)
@@ -319,7 +320,8 @@ const ChooseResourceModalContentView = props => {
                                                   color="primary"
                                                   variant="text"
                                                   disabled={isDisabled(
-                                                      resourceId
+                                                      resourceId,
+                                                      link
                                                   )}
                                                   onClick={() =>
                                                       selectResource(resourceId)
@@ -404,7 +406,8 @@ const ChooseResourceModalContentView = props => {
                                                   color="primary"
                                                   variant="text"
                                                   disabled={isDisabled(
-                                                      resourceId
+                                                      resourceId,
+                                                      collection
                                                   )}
                                                   onClick={() =>
                                                       selectResource(resourceId)
@@ -443,6 +446,7 @@ export interface IProps {
     title: string
     preSelected: ResourceIdentifierInput[]
     disabled?: ResourceIdentifierInput[]
+    disable?: (resource: any) => boolean
     Query: any
     queryKey: PaginationDataQuery
     maxSelection?: number
@@ -463,6 +467,7 @@ export const ChooseResourceModal = ({
     title,
     preSelected,
     disabled = [],
+    disable,
     Query,
     queryKey,
     pathToResourceId = [],
@@ -512,7 +517,10 @@ export const ChooseResourceModal = ({
         }
     }
 
-    const isDisabled = (resourceId: ResourceIdentifierInput): boolean => {
+    const isDisabled = (
+        resourceId: ResourceIdentifierInput,
+        resource: any
+    ): boolean => {
         for (var i = 0; i < disabled.length; i++) {
             if (
                 disabled[i].type === resourceId.type &&
@@ -521,6 +529,10 @@ export const ChooseResourceModal = ({
                 return true
             }
         }
+        if (disable && resource) {
+            return disable(resource)
+        }
+
         return false
     }
 

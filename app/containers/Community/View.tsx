@@ -1,9 +1,5 @@
 import React from 'react'
-import {
-    getCommunity_getCommunity,
-    getCommunity_getCommunity_approved_CollectionDTO,
-    getCommunity_getCommunity_approved_ArticleDTO,
-} from '../../queries/__generated__/getCommunity'
+import { getCommunity_getCommunity } from '../../queries/__generated__/getCommunity'
 import { getCommunityAndPendingArticles_searchArticles } from '../../queries/__generated__/getCommunityAndPendingArticles'
 import CommunityHeader from './CommunityHeader'
 import DisplayResources from './DisplayResources'
@@ -314,23 +310,6 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         getCommunity.attributes.background
                     }
                     social={getCommunity.social}
-                    articles={
-                        getCommunity.approved &&
-                        (getCommunity.approved.filter(
-                            resource =>
-                                resource &&
-                                (resource.__typename === 'ArticleDTO' ||
-                                    resource.__typename === 'ExternalLinkDTO')
-                        ) as getCommunity_getCommunity_approved_ArticleDTO[])
-                    }
-                    collections={
-                        getCommunity.approved &&
-                        (getCommunity.approved.filter(
-                            resource =>
-                                resource &&
-                                resource.__typename === 'CollectionDTO'
-                        ) as getCommunity_getCommunity_approved_CollectionDTO[])
-                    }
                     articleCount={
                         (articlesAndLinks && articlesAndLinks.length) || 0
                     }
@@ -343,7 +322,6 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     openModalAction={openModalAction}
                     closeModalAction={closeModalAction}
                     routeChangeAction={routeChangeAction}
-                    // curateCommunityResourcesAction={curateCommunityResourcesAction}
                     openAddMemberModal={openAddMemberModal}
                     userId={currentUser}
                 />

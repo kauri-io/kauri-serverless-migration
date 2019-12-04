@@ -13,12 +13,7 @@ import Statistics from '../../components/PublicProfile/StatisticsContainer'
 import anchorme from 'anchorme'
 import ShareCommunity from '../../components/Tooltip/ShareArticle'
 import Avatar from '../../components/Avatar'
-// import { Tooltip } from "react-tippy";
 import Button from '@material-ui/core/Button'
-import {
-    getCommunity_getCommunity_approved_ArticleDTO,
-    getCommunity_getCommunity_approved_CollectionDTO,
-} from '../../queries/__generated__/getCommunity'
 import {
     // curateCommunityResourcesAction as curateCommunityResources,
     acceptCommunityInvitationAction as acceptCommunityInvitation,
@@ -314,9 +309,6 @@ interface IProps {
     routeChangeAction?: (route: string) => void
     openModalAction: (children: any) => void
     closeModalAction: () => void
-    articles: Array<getCommunity_getCommunity_approved_ArticleDTO>
-    collections: Array<getCommunity_getCommunity_approved_CollectionDTO>
-    // curateCommunityResourcesAction: typeof curateCommunityResources;
     transferArticleToCommunityAction: typeof transferArticleToCommunity
     changeOwnerExtenalLinkAction: typeof changeOwnerExtenalLinkAction
     acceptCommunityInvitationAction: typeof acceptCommunityInvitation
@@ -326,8 +318,6 @@ interface IProps {
 }
 
 const CommunityHeader: React.FunctionComponent<IProps> = ({
-    articles,
-    collections,
     id,
     avatar,
     name,
@@ -339,79 +329,14 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
     articleCount,
     collectionCount,
     members,
-    // isCreator,
     routeChangeAction,
-    // openModalAction,
     isMember,
     isCommunityAdmin,
-    // closeModalAction,
-    // curateCommunityResourcesAction,
     openAddMemberModal,
     transferArticleToCommunityAction,
     changeOwnerExtenalLinkAction,
     userId,
 }) => {
-    const existingContent = [
-        ...articles.map(
-            article => article.resourceIdentifier as ResourceIdentifierInput
-        ),
-        ...collections.map(
-            collection =>
-                collection.resourceIdentifier as ResourceIdentifierInput
-        ),
-    ]
-
-    // const suggestArticleAction = () =>
-    //   openModalAction({
-    //     children: (
-    //       <ChooseArticleModal
-    //         allOtherChosenArticles={articles || []}
-    //         chosenArticles={[]}
-    //         closeModalAction={closeModalAction}
-    //         confirmModal={(chosenArticles: IArticle[]) => {
-    //           curateCommunityResourcesAction({
-    //             id,
-    //             resources:
-    //               chosenArticles &&
-    //               chosenArticles.map(
-    //                 article =>
-    //                   article && {
-    //                     id: article.id,
-    //                     type: "ARTICLE" as ResourceTypeInput,
-    //                     version: Number(article.version),
-    //                   }
-    //               ),
-    //           });
-    //         }}
-    //       />
-    //     ),
-    //   });
-
-    // const suggestCollectionAction = () =>
-    //   openModalAction({
-    //     children: (
-    //       <ChooseCollectionModal
-    //         allOtherChosenCollections={collections || []}
-    //         chosenCollections={[]}
-    //         closeModalAction={closeModalAction}
-    //         confirmModal={(chosenCollections: ICollection[]) => {
-    //           curateCommunityResourcesAction({
-    //             id,
-    //             resources:
-    //               chosenCollections &&
-    //               chosenCollections.map(
-    //                 article =>
-    //                   article && {
-    //                     id: article.id,
-    //                     type: "COLLECTION" as ResourceTypeInput,
-    //                   }
-    //               ),
-    //           });
-    //         }}
-    //       />
-    //     ),
-    //   });
-
     const classes = useStyles()
 
     const [open, setOpen] = React.useState<boolean>(false)
@@ -460,7 +385,9 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                         }
                     }
                 }}
-                disabled={existingContent}
+                disable={(resource: any) =>
+                    resource.owner.resourceIdentifier.id !== userId
+                }
                 preSelected={[]}
                 title={'My Content'}
                 queryDoc={globalSearchApprovedArticles}
@@ -480,28 +407,6 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                 showSearch={false}
             />
 
-            {/* <ChooseArticleModal
-                hideAllArticlesTab={true}
-                open={open}
-                limit={1}
-                allOtherChosenArticles={articles || []}
-                chosenArticles={[]}
-                closeModalAction={closeAddCommunityArticleModal}
-                confirmModal={(chosenArticles: IArticle[]) => {
-                    transferArticleToCommunityAction(
-                        {
-                            id: chosenArticles[0].id,
-                            recipient: {
-                                id,
-                                type: 'COMMUNITY' as any,
-                            },
-                        },
-                        () => {
-                            closeAddCommunityArticleModal()
-                        }
-                    )
-                }}
-            /> */}
             <Container>
                 <ContentRow>
                     <LeftSide>
