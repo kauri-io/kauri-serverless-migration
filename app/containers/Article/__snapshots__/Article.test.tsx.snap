@@ -4212,6 +4212,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                 href="/search-results?q=Test"
                                 onClick={[Function]}
                                 onMouseEnter={[Function]}
+                                style={
+                                  Object {
+                                    "cursor": "pointer",
+                                  }
+                                }
                               >
                                 <WithStyles(ForwardRef(Chip))
                                   className="makeStyles-tag-12"
@@ -4280,6 +4285,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                 href="/search-results?q=test2"
                                 onClick={[Function]}
                                 onMouseEnter={[Function]}
+                                style={
+                                  Object {
+                                    "cursor": "pointer",
+                                  }
+                                }
                               >
                                 <WithStyles(ForwardRef(Chip))
                                   className="makeStyles-tag-12"
