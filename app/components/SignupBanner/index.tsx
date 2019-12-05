@@ -5,8 +5,8 @@ import Link from 'next/link'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
-        padding: 0,
-        height: 230,
+        padding: theme.spacing(2),
+        hminHight: 230,
         backgroundColor: theme.palette.common.white,
         background: `url(/static/images/HomepageBannerSVG.svg) center center no-repeat`,
         display: 'flex',
