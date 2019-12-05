@@ -21,7 +21,8 @@ jobs:
   - stage: deploy-dev
     if: "(NOT env(AUTHOR_NAME) =~ ^Travis AND (NOT type IN (pull_request)) AND (branch= development))"
     script:
-      - now alias --scope kauri --token=$NOW_TOKEN $(now --scope kauri --token=$NOW_TOKEN) dev.kauri.io
+      - DEPLOYMENT=$(now --scope kauri --token=$NOW_TOKEN)
+      - now alias --scope kauri --token=$NOW_TOKEN $DEPLOYMENT dev.kauri.io
   - stage: deploy-qa
     if: "(NOT env(AUTHOR_NAME) =~ ^Travis AND (NOT type IN (pull_request)) AND (branch= qa))"
     script:
