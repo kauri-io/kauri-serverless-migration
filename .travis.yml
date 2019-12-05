@@ -23,6 +23,7 @@ jobs:
     script:
       - DEPLOYMENT=$(now --scope kauri --token=$NOW_TOKEN)
       - retVal=$?
+      - echo $retVal
       - if [ "$retVal" -eq 0 ]; then now alias --scope kauri --token=$NOW_TOKEN $DEPLOYMENT dev.kauri.io; fi
   - stage: deploy-qa
     if: "(NOT env(AUTHOR_NAME) =~ ^Travis AND (NOT type IN (pull_request)) AND (branch= qa))"
