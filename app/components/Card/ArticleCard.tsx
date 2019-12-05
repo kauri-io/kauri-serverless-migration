@@ -7,7 +7,6 @@ import { openModalAction } from '../Modal/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 import { connect } from 'react-redux'
-import { getArticleURL } from '../../lib/getURLs'
 import Link from 'next/link'
 import Details from './CardComponents/CardDetails'
 import GroupIcon from '@material-ui/icons/GroupWork'
@@ -101,13 +100,13 @@ const ArticleCard = ({
     isLoggedIn,
     datePublished,
     owner,
+    href,
 }: any) => {
     const minutes = content && estimateTime(content)
     const classes = useStyles({})
-    const articleURL = getArticleURL({ id, title })
 
     return (
-        <Link href={articleURL.href} as={articleURL.as}>
+        <Link href={href.href} as={href.as}>
             <a className={classes.link}>
                 <>
                     <Hidden implementation="css" smUp={true}>
@@ -189,7 +188,7 @@ const ArticleCard = ({
                                             addArticleToCollectionAction={
                                                 addArticleToCollectionAction
                                             }
-                                            url={articleURL}
+                                            url={href}
                                             type="ARTICLE"
                                         />
                                     </Grid>

@@ -7,7 +7,7 @@ import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
 const ArticleDraftPage = withTransaction('draft', 'page')(({ router }) => (
-    <App>
+    <App maxWidthConstrained={true} hideNav={false}>
         <ArticleDraft id={router.query.id} version={router.query.version} />
     </App>
 ))
