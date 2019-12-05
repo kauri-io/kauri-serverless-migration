@@ -44,6 +44,36 @@ export const submitExternalLink = gql`
     }
 `
 
+export const editExternalLink = gql`
+    mutation editExternalLink(
+        $id: String!
+        $url: String!
+        $title: String!
+        $description: String
+        $summary: String
+        $attributes: Map_String_StringScalar
+        $authorName: String
+        $authorSocial: Map_String_StringScalar
+        $ownerId: ResourceIdentifierInput
+        $tags: [String]
+    ) {
+        editExternalLink(
+            id: $id
+            url: $url
+            title: $title
+            description: $description
+            summary: $summary
+            attributes: $attributes
+            authorName: $authorName
+            authorSocial: $authorSocial
+            ownerId: $ownerId
+            tags: $tags
+        ) {
+            hash
+        }
+    }
+`
+
 export const searchExternalLinks = gql`
     query searchExternalLinks(
         $page: Int = 0

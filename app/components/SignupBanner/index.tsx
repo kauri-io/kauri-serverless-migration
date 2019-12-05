@@ -69,10 +69,11 @@ export default () => {
                 </a>
             </Link>
             <Typography className={classes.title} component="h1">
-                Learn Web3 Best Practices with Kauri
+                Beginner to Advanced Blockchain & Ethereum Tutorials
             </Typography>
             <Typography className={classes.subtitle} component="h2">
-                Articles, Tutorials and Technical Documentation
+                Learn from technical tutorials and content created and curated
+                by developers
             </Typography>
             <Grid>
                 <Hidden mdDown={true}>
@@ -82,7 +83,7 @@ export default () => {
                                 className={classes.button}
                                 color="primary"
                             >
-                                Signup
+                                Get Involved
                             </ButtonComp>
                         </a>
                     </Link>

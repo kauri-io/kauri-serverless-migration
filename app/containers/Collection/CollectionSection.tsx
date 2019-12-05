@@ -75,6 +75,7 @@ const CollectionSection: React.SFC<IProps> = props => {
                             )
                         } else if (resource.__typename === 'ExternalLinkDTO') {
                             const link = resource
+
                             const ownerResource =
                                 link.owner &&
                                 link.owner.__typename === 'PublicUserDTO'

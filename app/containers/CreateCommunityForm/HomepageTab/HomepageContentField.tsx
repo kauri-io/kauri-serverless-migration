@@ -64,6 +64,9 @@ const ResourceSection = styled.section<SpaceProps>`
 `
 
 const DraggableResourceContainer = styled.div`
+    width: 100%;
+    max-width: 808px;
+    margin: auto;
     :hover {
         > :first-child {
             box-shadow: 0 0 0 2px ${props => props.theme.hoverTextColor};
