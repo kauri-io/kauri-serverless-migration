@@ -9,6 +9,7 @@ import PublicProfileCard from '../../components/Card/PublicProfileCard'
 import CollectionCard from '../../components/Card/CollectionCard'
 import CommunityCard from '../../components/Card/CommunityCard'
 import ArticleCard from '../../components/Card/ArticleCard'
+import { getArticleURL, getCollectionURL, getCommunityURL, getProfileURL } from '../../lib/getURLs'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -36,13 +37,13 @@ const Search = ({ loading, data: { searchAutocomplete } }) => {
                         i.resourceIdentifier && i.resourceIdentifier.type
                     switch (type) {
                         case 'ARTICLE':
-                            return <ArticleCard {...resource} />
+                            return <ArticleCard {...resource} href={getArticleURL({...resource})} />
                         case 'COLLECTION':
-                            return <CollectionCard {...resource} />
+                            return <CollectionCard {...resource} href={getCollectionURL({...resource})}  />
                         case 'COMMUNITY':
-                            return <CommunityCard {...resource} />
+                            return <CommunityCard {...resource} href={getCommunityURL({...resource})}  />
                         case 'USER':
-                            return <PublicProfileCard {...resource} />
+                            return <PublicProfileCard {...resource} href={getProfileURL({...resource})}  />
                         default:
                             return null
                     }
