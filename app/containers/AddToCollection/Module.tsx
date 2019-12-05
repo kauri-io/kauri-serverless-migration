@@ -18,9 +18,14 @@ import {
 import { switchMap, mergeMap, map, tap, catchError } from 'rxjs/operators'
 import { from, of, merge } from 'rxjs'
 import { path } from 'ramda'
-import { getCollectionTitle } from '../../queries/__generated__/getCollectionTitle'
-import { getArticleTitleVariables } from '../ArticleDraft/__generated__/getArticleTitle'
-import { getArticleTitle } from '../../queries/__generated__/getArticleTitle'
+import {
+    getCollectionTitle,
+    getCollectionTitleVariables,
+} from '../../queries/__generated__/getCollectionTitle'
+import {
+    getArticleTitle,
+    getArticleTitleVariables,
+} from '../../queries/__generated__/getArticleTitle'
 
 export interface IAddArticleToCollectionAction {
     callback: () => void
@@ -153,7 +158,7 @@ export const addResourceToCollectionEpic: Epic<
                         query: getArticleTitleQuery,
                         variables: {
                             id: payload.resourceId.id,
-                            version: payload.resourceId.version,
+                            version: Number(payload.resourceId.version),
                         },
                     })
                 ),
@@ -165,11 +170,11 @@ export const addResourceToCollectionEpic: Epic<
                     from(
                         apolloClient.query<
                             getCollectionTitle,
-                            getArticleTitleVariables
+                            getCollectionTitleVariables
                         >({
                             query: getCollectionTitleQuery,
                             variables: {
-                                id: payload.id,
+                                id: String(payload.id),
                             },
                         })
                     ).pipe(

@@ -9,6 +9,7 @@ import VoteWidget from '../Article/components/VoteWidget'
 import ShareWidget from '../Article/components/ShareWidget'
 import { getLinkUrl } from '../../lib/getURLs'
 import slugify from 'slugify'
+import { ResourceTypeInput } from '../../__generated__/globalTypes'
 
 const ViewLink = ({
     openModalAction,
@@ -93,7 +94,7 @@ const ViewLink = ({
                                 routeChangeAction={routeChangeAction}
                                 isBookmarked={getExternalLink.isBookmarked}
                                 isLoggedIn={!!userId}
-                                type="LINK"
+                                type={ResourceTypeInput.LINK}
                                 isAuthor={false}
                                 version={0}
                             />
