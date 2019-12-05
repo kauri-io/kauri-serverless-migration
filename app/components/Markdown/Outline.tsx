@@ -150,14 +150,17 @@ const Renderer = ({ markdown, withComments, commentsCount }) => {
                 <Loading />
             ) : (
                 <>
-                    <Typography
-                        className={classes.heading}
-                        align="left"
-                        variant="h6"
-                    >
+                    {markdown.includes("##") && ([
+                        <Typography
+                            className={classes.heading}
+                            align="left"
+                            variant="h6"
+                            >
                         Contents
-                    </Typography>
-                    <ReactMarkdown options={options}>{markdown}</ReactMarkdown>
+                        </Typography>,
+                        <ReactMarkdown options={options}>{markdown}</ReactMarkdown>
+                    ])}
+
                     {withComments && (
                         <Heading indent={0}>Comments ({commentsCount})</Heading>
                     )}
