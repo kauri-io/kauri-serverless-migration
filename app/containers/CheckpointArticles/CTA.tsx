@@ -3,7 +3,7 @@ import Loading from '../../components/Loading'
 import Button from '../../components/Button'
 export const CheckpointArticlesIcon = () => (
     <svg
-        style={{ marginRight: 16}}
+        style={{ marginRight: 16 }}
         width="20"
         height="20"
         viewBox="0 0 20 20"
