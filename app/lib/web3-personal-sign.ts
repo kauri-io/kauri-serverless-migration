@@ -15,8 +15,7 @@ const personalSign = (data: string) =>
             if (accounts.length >= 1) {
                 console.log('More than one account')
                 global.window.ethereum &&
-                    global.window.ethereum
-                        .enable()
+                    global.window.ethereum.enable()
                         .then(result => {
                             if (
                                 !result ||
