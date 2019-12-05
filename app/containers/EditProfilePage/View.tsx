@@ -94,17 +94,31 @@ interface IState {
         totalElements: number
     }
     validationMessages: object
+    hasData: boolean
 }
 
 class OnboardingEditProfile extends Component<IProps, IState> {
     constructor(props) {
         super(props)
         const profile = props.OwnProfile.getMyProfile
+
+        let hasData = false
+        if (
+            profile &&
+            profile.username != null &&
+            profile.username.length > 0 &&
+            profile.email != null &&
+            profile.email.length > 0
+        ) {
+            hasData = true
+        }
+
         this.state = {
             pendingSubmit: false,
             subscriptions: { newsletter: false },
             validationMessages: {},
             ...profile,
+            hasData,
         }
     }
 
@@ -142,21 +156,19 @@ class OnboardingEditProfile extends Component<IProps, IState> {
     }
 
     componentDidMount() {
-        if (!this.props.OwnProfile || !this.props.OwnProfile.getMyProfile)
-            return null
-        const {
-            username,
-            email,
-            dateCreated,
-        } = this.props.OwnProfile.getMyProfile
+        if (!this.state.hasData) {
+            return
+        }
 
-        const hasData = username && email
         const loginTrackingPending = window.localStorage.getItem(
             'login-tracking-pending'
         )
 
         if (loginTrackingPending) {
-            const daysCreated = moment().diff(moment(dateCreated), 'minutes')
+            const daysCreated = moment().diff(
+                moment(this.props.OwnProfile.getMyProfile.dateCreated),
+                'minutes'
+            )
             if (!daysCreated || daysCreated <= 5) {
                 analytics.signup(this.props.OwnProfile.getMyProfile)
             } else {
@@ -164,19 +176,18 @@ class OnboardingEditProfile extends Component<IProps, IState> {
             }
             window.localStorage.removeItem('login-tracking-pending')
         }
-        if (hasData) {
-            let newRedirectURL
-            if (typeof this.props.router.query.r === 'string') {
-                newRedirectURL =
-                    this.props.router.query.r.indexOf('https://') !== -1 ||
-                    this.props.router.query.redirected
-                        ? this.props.router.query.r + '?redirected=true'
-                        : this.props.router.query.r
-            } else {
-                newRedirectURL = getProfileURL(this.props.user as any).href
-            }
-            return this.props.routeChangeAction(newRedirectURL)
+
+        let newRedirectURL
+        if (typeof this.props.router.query.r === 'string') {
+            newRedirectURL =
+                this.props.router.query.r.indexOf('https://') !== -1 ||
+                this.props.router.query.redirected
+                    ? this.props.router.query.r + '?redirected=true'
+                    : this.props.router.query.r
+        } else {
+            newRedirectURL = getProfileURL(this.props.user as any).href
         }
+        return this.props.routeChangeAction(newRedirectURL)
     }
 
     updateState(
@@ -204,8 +215,9 @@ class OnboardingEditProfile extends Component<IProps, IState> {
             subscriptions,
             status,
             validationMessages,
+            hasData,
         } = this.state
-        const hasData = name && username && email
+
         if (hasData) {
             return (
                 <Page>

@@ -36,6 +36,7 @@ import { Chip } from '@material-ui/core'
 import Link from 'next/link'
 import CheckpointArticles from '../CheckpointArticles'
 import config from '../../config'
+import { ResourceTypeInput } from '../../__generated__/globalTypes'
 
 const IPFSIcon = () => (
     <svg width="12px" height="14px" viewBox="0 0 12 14" version="1.1">
@@ -143,6 +144,8 @@ const ArticleComp = ({
         },
     },
 }: IProps) => {
+    attributes = attributes !== null ? attributes : {}
+
     const classes = ArticleStyles({})
     const author = contributors && contributors[0]
     const canonicalUrl = attributes.canonical
@@ -245,7 +248,7 @@ const ArticleComp = ({
                                 routeChangeAction={routeChangeAction}
                                 isBookmarked={isBookmarked}
                                 isLoggedIn={!!userId}
-                                type="ARTICLE"
+                                type={ResourceTypeInput.ARTICLE}
                                 isAuthor={author && userId === author.id}
                                 version={version}
                             />
@@ -254,17 +257,19 @@ const ArticleComp = ({
                             direction="row"
                             container={true}
                             justify="space-between"
+                            alignItems="center"
                         >
                             <Grid className={classes.nameAndDate}>
                                 {author && (
                                     <Avatar
+                                        size={40}
                                         avatar={author.avatar}
                                         username={author.username}
                                         id={author.id}
                                         withName={true}
                                     />
                                 )}
-                                <Typography gutterBottom={true}>
+                                <Typography gutterBottom={true} variant="body2">
                                     {content && estimateTime(content)} min read
                                     - Posted{' '}
                                     {moment(datePublished).format('DD MMM YY')}
@@ -317,11 +322,12 @@ const ArticleComp = ({
                                         key={key}
                                         href={`/search-results?q=${text}`}
                                     >
-                                        <a>
+                                        <a style={{ cursor: 'pointer' }}>
                                             <Chip
                                                 className={classes.tag}
                                                 variant="outlined"
                                                 label={text}
+                                                style={{ cursor: 'pointer' }}
                                             />
                                         </a>
                                     </Link>

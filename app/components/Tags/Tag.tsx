@@ -3,6 +3,7 @@ import Close from './Close'
 import TagName from './TagName'
 
 const Container = styled.div`
+    z-index: 1000;
     display: flex;
     align-items: center;
     & > svg {

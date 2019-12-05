@@ -678,6 +678,26 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkD
   totalElements: any;
 }
 
+export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -745,6 +765,10 @@ export interface ResourceFragment_CollectionDTO_sections_resources_ExternalLinkD
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult;
 }
 
 export type ResourceFragment_CollectionDTO_sections_resources = ResourceFragment_CollectionDTO_sections_resources_PublicUserDTO | ResourceFragment_CollectionDTO_sections_resources_ArticleDTO | ResourceFragment_CollectionDTO_sections_resources_ExternalLinkDTO;
@@ -1042,6 +1066,26 @@ export interface ResourceFragment_ExternalLinkDTO_comments {
   totalElements: any;
 }
 
+export interface ResourceFragment_ExternalLinkDTO_voteResult {
+  __typename: "VoteResultDTO";
+  /**
+   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   */
+  sum: number;
+  /**
+   * Vote count: Number of votes
+   */
+  count: any;
+  /**
+   * Returns true if a logged user has already voted
+   */
+  hasVoted: boolean | null;
+  /**
+   * Count per vote
+   */
+  quantity: any;
+}
+
 export interface ResourceFragment_ExternalLinkDTO {
   __typename: "ExternalLinkDTO";
   /**
@@ -1109,6 +1153,10 @@ export interface ResourceFragment_ExternalLinkDTO {
    * Tags associated with the link
    */
   tags: (string | null)[] | null;
+  /**
+   * Get vote result for the external link
+   */
+  voteResult: ResourceFragment_ExternalLinkDTO_voteResult;
 }
 
 export interface ResourceFragment_ArticleDTO_resourceIdentifier {

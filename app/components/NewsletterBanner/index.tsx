@@ -3,35 +3,40 @@ import Button from '../../components/Button'
 import * as Yup from 'yup'
 import { useState, FunctionComponent } from 'react'
 import { Grid, makeStyles, Theme, Typography } from '@material-ui/core'
-import EmailIcon from '@material-ui/icons/EmailOutlined'
 
-const useStyles = makeStyles((theme: Theme) => ({
-    container: {
-        background: theme.palette.common.black,
-        padding: theme.spacing(4),
-    },
-    button: {
-        color: theme.palette.common.white,
-    },
-    input: {
-        color: theme.palette.common.white,
-        '&:hover': {
-            '&:before': {
-                borderBottomColor: 'rgba(255,255,255,0.6) !important',
-            },
+const useStyles = makeStyles((theme: Theme) => {
+    return {
+        container: {
+            display: 'flex',
+            backgroundColor: 'white',
         },
-        '&:before': {
-            borderBottomColor: 'rgba(255,255,255,0.3)',
+        title: {
+            fontSize: 20,
+            fontWeight: 500,
+            lineHeight: '24px',
         },
-        margin: theme.spacing(2),
-    },
-    icon: {
-        fill: theme.palette.primary.main,
-        width: 64,
-        height: 64,
-        marginBottom: theme.spacing(2),
-    },
-}))
+        subtitle: {
+            fontSize: 14,
+            fontWeight: 400,
+            maxWidth: 400,
+        },
+        button: {},
+        input: {
+            maxWidth: 400,
+            width: '100%',
+        },
+        newsletterSignup: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            background: `url(/static/images/NewsletterSVG.svg) no-repeat`,
+            width: 1224,
+            margin: 'auto',
+            alignItems: 'flex-start',
+            padding: theme.spacing(2),
+        },
+    }
+})
 
 interface IProps {
     handleSubmit: (emailAddress: string) => void
@@ -42,19 +47,26 @@ interface IState {
     emailAddress: string | null
 }
 
-const handleEmailAddress = (props: IProps, state: IState) => async () => {
+const handleEmailAddress = (
+    handleError: () => void,
+    handleSubmit: (emailAddress: string) => void,
+    state: IState
+) => async () => {
     const validate = Yup.string()
         .email()
         .required()
     const result = await validate.isValid(state.emailAddress)
     if (result && state.emailAddress) {
-        return props.handleSubmit(state.emailAddress)
+        return handleSubmit(state.emailAddress)
     } else {
-        props.handleError()
+        handleError()
     }
 }
 
-const NewsletterBanner: FunctionComponent<IProps> = props => {
+const NewsletterBanner: FunctionComponent<IProps> = ({
+    handleError,
+    handleSubmit,
+}) => {
     const [state, setState] = useState<IState>({
         emailAddress: '',
     })
@@ -62,49 +74,51 @@ const NewsletterBanner: FunctionComponent<IProps> = props => {
     const classes = useStyles()
 
     return (
-        <Grid
-            className={classes.container}
-            container={true}
-            alignItems="center"
-            justify="center"
-            direction="column"
-        >
-            <EmailIcon className={classes.icon} />
-            <Typography color="secondary" variant="h4">
-                Kauri Newsletter
-            </Typography>
-            >
-            <Typography color="secondary" variant="body1">
-                Subscribe below and receive the latest Ethereum tutorials and
-                project announcements every 2 weeks!
-            </Typography>
-            <TextField
-                margin="normal"
-                placeholder={'Enter your email address'}
-                onChange={({ target: { value: emailAddress } }) =>
-                    setState({ emailAddress })
-                }
-                onKeyPress={(e: React.KeyboardEvent) => {
-                    if (e.key === 'Enter') {
-                        handleEmailAddress(props, state)().catch(_ => {
-                            return
-                        })
+        <div className={classes.container}>
+            <Grid container={true} className={classes.newsletterSignup}>
+                <Typography variant="h4" className={classes.title}>
+                    Kauri Newsletter
+                </Typography>
+                <Typography variant="body1" className={classes.subtitle}>
+                    Subscribe below and receive the latest Ethereum tutorials
+                    and project announcements every 2 weeks!
+                </Typography>
+                <TextField
+                    fullWidth={true}
+                    margin="normal"
+                    placeholder={'Enter your email address'}
+                    onChange={({ target: { value: emailAddress } }) =>
+                        setState({ emailAddress })
                     }
-                }}
-                InputProps={{
-                    className: classes.input,
-                }}
-                value={state.emailAddress}
-            />
-            <Button
-                color="primary"
-                variant="contained"
-                onClick={handleEmailAddress(props, state)}
-                className={classes.button}
-            >
-                Subscribe
-            </Button>
-        </Grid>
+                    onKeyPress={(e: React.KeyboardEvent) => {
+                        if (e.key === 'Enter') {
+                            handleEmailAddress(
+                                handleError,
+                                handleSubmit,
+                                state
+                            )().catch(_ => {
+                                return
+                            })
+                        }
+                    }}
+                    InputProps={{
+                        className: classes.input,
+                    }}
+                    value={state.emailAddress}
+                />
+                <Button
+                    color="primary"
+                    onClick={handleEmailAddress(
+                        handleError,
+                        handleSubmit,
+                        state
+                    )}
+                    className={classes.button}
+                >
+                    Subscribe
+                </Button>
+            </Grid>
+        </div>
     )
 }
 
