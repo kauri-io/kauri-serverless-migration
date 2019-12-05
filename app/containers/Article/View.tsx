@@ -262,13 +262,14 @@ const ArticleComp = ({
                             <Grid className={classes.nameAndDate}>
                                 {author && (
                                     <Avatar
+                                        size={40}
                                         avatar={author.avatar}
                                         username={author.username}
                                         id={author.id}
                                         withName={true}
                                     />
                                 )}
-                                <Typography gutterBottom={true}>
+                                <Typography gutterBottom={true} variant="body2">
                                     {content && estimateTime(content)} min read
                                     - Posted{' '}
                                     {moment(datePublished).format('DD MMM YY')}
