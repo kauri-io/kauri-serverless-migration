@@ -1,5 +1,6 @@
 import { getLink } from '../../../queries/Link'
-import { compose, graphql } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
+import { graphql } from 'react-apollo'
 import LinkCard from '../../../components/Card/LinkCard'
 import Loading from '../../../components/Loading'
 import { getLinkUrl } from '../../../lib/getURLs'

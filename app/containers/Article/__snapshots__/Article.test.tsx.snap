@@ -423,7 +423,6 @@ exports[`containers/Article should match snapshot 1`] = `
         <ApolloProvider
           client={
             ApolloClient {
-              "__operations_cache__": Map {},
               "cache": InMemoryCache {
                 "addTypename": true,
                 "cacheKeyRoot": KeyTrie {
@@ -457,19 +456,148 @@ exports[`containers/Article should match snapshot 1`] = `
                 "watches": Set {},
               },
               "clearStoreCallbacks": Array [],
-              "clientAwareness": Object {},
               "defaultOptions": Object {},
               "disableNetworkFetches": false,
-              "link": ApolloLink {
-                "request": [Function],
+              "link": MockLink {
+                "addTypename": true,
+                "mockedResponsesByKey": Object {},
+              },
+              "localState": LocalState {
+                "cache": InMemoryCache {
+                  "addTypename": true,
+                  "cacheKeyRoot": KeyTrie {
+                    "weakness": true,
+                  },
+                  "config": Object {
+                    "addTypename": true,
+                    "dataIdFromObject": [Function],
+                    "fragmentMatcher": HeuristicFragmentMatcher {},
+                    "freezeResults": false,
+                    "resultCaching": true,
+                  },
+                  "data": DepTrackingCache {
+                    "data": Object {},
+                    "depend": [Function],
+                  },
+                  "maybeBroadcastWatch": [Function],
+                  "optimisticData": DepTrackingCache {
+                    "data": Object {},
+                    "depend": [Function],
+                  },
+                  "silenceBroadcast": false,
+                  "storeReader": StoreReader {
+                    "executeSelectionSet": [Function],
+                    "executeStoreQuery": [Function],
+                    "executeSubSelectedArray": [Function],
+                    "freezeResults": false,
+                  },
+                  "storeWriter": StoreWriter {},
+                  "typenameDocumentCache": Map {},
+                  "watches": Set {},
+                },
+                "client": [Circular],
               },
               "mutate": [Function],
               "query": [Function],
               "queryDeduplication": true,
+              "queryManager": QueryManager {
+                "assumeImmutableResults": false,
+                "clientAwareness": Object {
+                  "name": undefined,
+                  "version": undefined,
+                },
+                "dataStore": DataStore {
+                  "cache": InMemoryCache {
+                    "addTypename": true,
+                    "cacheKeyRoot": KeyTrie {
+                      "weakness": true,
+                    },
+                    "config": Object {
+                      "addTypename": true,
+                      "dataIdFromObject": [Function],
+                      "fragmentMatcher": HeuristicFragmentMatcher {},
+                      "freezeResults": false,
+                      "resultCaching": true,
+                    },
+                    "data": DepTrackingCache {
+                      "data": Object {},
+                      "depend": [Function],
+                    },
+                    "maybeBroadcastWatch": [Function],
+                    "optimisticData": DepTrackingCache {
+                      "data": Object {},
+                      "depend": [Function],
+                    },
+                    "silenceBroadcast": false,
+                    "storeReader": StoreReader {
+                      "executeSelectionSet": [Function],
+                      "executeStoreQuery": [Function],
+                      "executeSubSelectedArray": [Function],
+                      "freezeResults": false,
+                    },
+                    "storeWriter": StoreWriter {},
+                    "typenameDocumentCache": Map {},
+                    "watches": Set {},
+                  },
+                },
+                "fetchQueryRejectFns": Map {},
+                "idCounter": 1,
+                "inFlightLinkObservables": Map {},
+                "link": MockLink {
+                  "addTypename": true,
+                  "mockedResponsesByKey": Object {},
+                },
+                "localState": LocalState {
+                  "cache": InMemoryCache {
+                    "addTypename": true,
+                    "cacheKeyRoot": KeyTrie {
+                      "weakness": true,
+                    },
+                    "config": Object {
+                      "addTypename": true,
+                      "dataIdFromObject": [Function],
+                      "fragmentMatcher": HeuristicFragmentMatcher {},
+                      "freezeResults": false,
+                      "resultCaching": true,
+                    },
+                    "data": DepTrackingCache {
+                      "data": Object {},
+                      "depend": [Function],
+                    },
+                    "maybeBroadcastWatch": [Function],
+                    "optimisticData": DepTrackingCache {
+                      "data": Object {},
+                      "depend": [Function],
+                    },
+                    "silenceBroadcast": false,
+                    "storeReader": StoreReader {
+                      "executeSelectionSet": [Function],
+                      "executeStoreQuery": [Function],
+                      "executeSubSelectedArray": [Function],
+                      "freezeResults": false,
+                    },
+                    "storeWriter": StoreWriter {},
+                    "typenameDocumentCache": Map {},
+                    "watches": Set {},
+                  },
+                  "client": [Circular],
+                },
+                "mutationStore": MutationStore {
+                  "store": Object {},
+                },
+                "onBroadcast": [Function],
+                "pollingInfoByQueryId": Map {},
+                "queries": Map {},
+                "queryDeduplication": true,
+                "queryStore": QueryStore {
+                  "store": Object {},
+                },
+                "ssrMode": false,
+                "transformCache": WeakMap {},
+              },
               "reFetchObservableQueries": [Function],
               "resetStore": [Function],
               "resetStoreCallbacks": Array [],
-              "ssrMode": false,
               "store": DataStore {
                 "cache": InMemoryCache {
                   "addTypename": true,
@@ -504,7 +632,8 @@ exports[`containers/Article should match snapshot 1`] = `
                   "watches": Set {},
                 },
               },
-              "version": "2.4.13",
+              "typeDefs": undefined,
+              "version": "2.6.4",
               "watchQuery": [Function],
             }
           }
@@ -1487,7 +1616,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                           "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                           "target": "div",
                                                           "toString": [Function],
-                                                          "usesTheme": true,
                                                           "warnTooManyClasses": [Function],
                                                           "withComponent": [Function],
                                                         }
@@ -1736,6 +1864,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
+                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -2040,6 +2169,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
+                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -2344,6 +2474,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
+                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -2648,6 +2779,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
+                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -2952,6 +3084,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
+                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -3256,6 +3389,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
+                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -3560,6 +3694,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
+                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -3870,6 +4005,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                             },
                                             "render": [Function],
                                           },
+                                          "defaultProps": undefined,
                                           "displayName": "WithStyles(ForwardRef(Typography))",
                                           "options": Object {
                                             "defaultTheme": Object {
@@ -4279,7 +4415,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                   >
                                     <div
                                       className="MuiChip-root makeStyles-tag-12 MuiChip-outlined"
-                                      onKeyDown={[Function]}
                                       onKeyUp={[Function]}
                                       style={
                                         Object {
@@ -4367,7 +4502,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                   >
                                     <div
                                       className="MuiChip-root makeStyles-tag-12 MuiChip-outlined"
-                                      onKeyDown={[Function]}
                                       onKeyUp={[Function]}
                                       style={
                                         Object {
@@ -4814,7 +4948,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                         "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                         "target": "div",
                                                         "toString": [Function],
-                                                        "usesTheme": true,
                                                         "warnTooManyClasses": [Function],
                                                         "withComponent": [Function],
                                                       }
@@ -5991,13 +6124,55 @@ exports[`containers/Article should match snapshot 1`] = `
                                                               <div
                                                                 className="MuiGrid-root makeStyles-column-268"
                                                               >
-                                                                <TruncateMarkup
-                                                                  ellipsis="..."
-                                                                  lineHeight=""
-                                                                  lines={2}
-                                                                  onTruncate={[Function]}
-                                                                  tokenize="characters"
-                                                                />
+                                                                <WithStyles(ForwardRef(Typography))
+                                                                  className="makeStyles-title-265"
+                                                                  variant="h5"
+                                                                >
+                                                                  <ForwardRef(Typography)
+                                                                    className="makeStyles-title-265"
+                                                                    classes={
+                                                                      Object {
+                                                                        "alignCenter": "MuiTypography-alignCenter",
+                                                                        "alignJustify": "MuiTypography-alignJustify",
+                                                                        "alignLeft": "MuiTypography-alignLeft",
+                                                                        "alignRight": "MuiTypography-alignRight",
+                                                                        "body1": "MuiTypography-body1",
+                                                                        "body2": "MuiTypography-body2",
+                                                                        "button": "MuiTypography-button",
+                                                                        "caption": "MuiTypography-caption",
+                                                                        "colorError": "MuiTypography-colorError",
+                                                                        "colorInherit": "MuiTypography-colorInherit",
+                                                                        "colorPrimary": "MuiTypography-colorPrimary",
+                                                                        "colorSecondary": "MuiTypography-colorSecondary",
+                                                                        "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                        "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                        "displayBlock": "MuiTypography-displayBlock",
+                                                                        "displayInline": "MuiTypography-displayInline",
+                                                                        "gutterBottom": "MuiTypography-gutterBottom",
+                                                                        "h1": "MuiTypography-h1",
+                                                                        "h2": "MuiTypography-h2",
+                                                                        "h3": "MuiTypography-h3",
+                                                                        "h4": "MuiTypography-h4",
+                                                                        "h5": "MuiTypography-h5",
+                                                                        "h6": "MuiTypography-h6",
+                                                                        "noWrap": "MuiTypography-noWrap",
+                                                                        "overline": "MuiTypography-overline",
+                                                                        "paragraph": "MuiTypography-paragraph",
+                                                                        "root": "MuiTypography-root",
+                                                                        "srOnly": "MuiTypography-srOnly",
+                                                                        "subtitle1": "MuiTypography-subtitle1",
+                                                                        "subtitle2": "MuiTypography-subtitle2",
+                                                                      }
+                                                                    }
+                                                                    variant="h5"
+                                                                  >
+                                                                    <h5
+                                                                      className="MuiTypography-root makeStyles-title-265 MuiTypography-h5"
+                                                                    >
+                                                                      test title 2
+                                                                    </h5>
+                                                                  </ForwardRef(Typography)>
+                                                                </WithStyles(ForwardRef(Typography))>
                                                               </div>
                                                             </ForwardRef(Grid)>
                                                           </WithStyles(ForwardRef(Grid))>
@@ -6344,7 +6519,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                       "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                                                       "target": "div",
                                                                                       "toString": [Function],
-                                                                                      "usesTheme": true,
                                                                                       "warnTooManyClasses": [Function],
                                                                                       "withComponent": [Function],
                                                                                     }
@@ -6863,20 +7037,103 @@ exports[`containers/Article should match snapshot 1`] = `
                                                               <div
                                                                 className="MuiGrid-root makeStyles-column-268"
                                                               >
-                                                                <TruncateMarkup
-                                                                  ellipsis="..."
-                                                                  lineHeight=""
-                                                                  lines={2}
-                                                                  onTruncate={[Function]}
-                                                                  tokenize="characters"
-                                                                />
-                                                                <TruncateMarkup
-                                                                  ellipsis="..."
-                                                                  lineHeight=""
-                                                                  lines={2}
-                                                                  onTruncate={[Function]}
-                                                                  tokenize="characters"
-                                                                />
+                                                                <WithStyles(ForwardRef(Typography))
+                                                                  className="makeStyles-title-265"
+                                                                  variant="h5"
+                                                                >
+                                                                  <ForwardRef(Typography)
+                                                                    className="makeStyles-title-265"
+                                                                    classes={
+                                                                      Object {
+                                                                        "alignCenter": "MuiTypography-alignCenter",
+                                                                        "alignJustify": "MuiTypography-alignJustify",
+                                                                        "alignLeft": "MuiTypography-alignLeft",
+                                                                        "alignRight": "MuiTypography-alignRight",
+                                                                        "body1": "MuiTypography-body1",
+                                                                        "body2": "MuiTypography-body2",
+                                                                        "button": "MuiTypography-button",
+                                                                        "caption": "MuiTypography-caption",
+                                                                        "colorError": "MuiTypography-colorError",
+                                                                        "colorInherit": "MuiTypography-colorInherit",
+                                                                        "colorPrimary": "MuiTypography-colorPrimary",
+                                                                        "colorSecondary": "MuiTypography-colorSecondary",
+                                                                        "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                        "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                        "displayBlock": "MuiTypography-displayBlock",
+                                                                        "displayInline": "MuiTypography-displayInline",
+                                                                        "gutterBottom": "MuiTypography-gutterBottom",
+                                                                        "h1": "MuiTypography-h1",
+                                                                        "h2": "MuiTypography-h2",
+                                                                        "h3": "MuiTypography-h3",
+                                                                        "h4": "MuiTypography-h4",
+                                                                        "h5": "MuiTypography-h5",
+                                                                        "h6": "MuiTypography-h6",
+                                                                        "noWrap": "MuiTypography-noWrap",
+                                                                        "overline": "MuiTypography-overline",
+                                                                        "paragraph": "MuiTypography-paragraph",
+                                                                        "root": "MuiTypography-root",
+                                                                        "srOnly": "MuiTypography-srOnly",
+                                                                        "subtitle1": "MuiTypography-subtitle1",
+                                                                        "subtitle2": "MuiTypography-subtitle2",
+                                                                      }
+                                                                    }
+                                                                    variant="h5"
+                                                                  >
+                                                                    <h5
+                                                                      className="MuiTypography-root makeStyles-title-265 MuiTypography-h5"
+                                                                    >
+                                                                      test title 2
+                                                                    </h5>
+                                                                  </ForwardRef(Typography)>
+                                                                </WithStyles(ForwardRef(Typography))>
+                                                                <WithStyles(ForwardRef(Typography))
+                                                                  variant="body2"
+                                                                >
+                                                                  <ForwardRef(Typography)
+                                                                    classes={
+                                                                      Object {
+                                                                        "alignCenter": "MuiTypography-alignCenter",
+                                                                        "alignJustify": "MuiTypography-alignJustify",
+                                                                        "alignLeft": "MuiTypography-alignLeft",
+                                                                        "alignRight": "MuiTypography-alignRight",
+                                                                        "body1": "MuiTypography-body1",
+                                                                        "body2": "MuiTypography-body2",
+                                                                        "button": "MuiTypography-button",
+                                                                        "caption": "MuiTypography-caption",
+                                                                        "colorError": "MuiTypography-colorError",
+                                                                        "colorInherit": "MuiTypography-colorInherit",
+                                                                        "colorPrimary": "MuiTypography-colorPrimary",
+                                                                        "colorSecondary": "MuiTypography-colorSecondary",
+                                                                        "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                        "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                        "displayBlock": "MuiTypography-displayBlock",
+                                                                        "displayInline": "MuiTypography-displayInline",
+                                                                        "gutterBottom": "MuiTypography-gutterBottom",
+                                                                        "h1": "MuiTypography-h1",
+                                                                        "h2": "MuiTypography-h2",
+                                                                        "h3": "MuiTypography-h3",
+                                                                        "h4": "MuiTypography-h4",
+                                                                        "h5": "MuiTypography-h5",
+                                                                        "h6": "MuiTypography-h6",
+                                                                        "noWrap": "MuiTypography-noWrap",
+                                                                        "overline": "MuiTypography-overline",
+                                                                        "paragraph": "MuiTypography-paragraph",
+                                                                        "root": "MuiTypography-root",
+                                                                        "srOnly": "MuiTypography-srOnly",
+                                                                        "subtitle1": "MuiTypography-subtitle1",
+                                                                        "subtitle2": "MuiTypography-subtitle2",
+                                                                      }
+                                                                    }
+                                                                    variant="body2"
+                                                                  >
+                                                                    <p
+                                                                      className="MuiTypography-root MuiTypography-body2"
+                                                                    >
+                                                                      test description 2
+                                                                      ...
+                                                                    </p>
+                                                                  </ForwardRef(Typography)>
+                                                                </WithStyles(ForwardRef(Typography))>
                                                                 <WithStyles(ForwardRef(Grid))
                                                                   className="makeStyles-bottom-269"
                                                                 >
@@ -7209,7 +7466,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                   "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                                                                   "target": "div",
                                                                                                   "toString": [Function],
-                                                                                                  "usesTheme": true,
                                                                                                   "warnTooManyClasses": [Function],
                                                                                                   "withComponent": [Function],
                                                                                                 }
@@ -7406,9 +7662,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                             <ForwardRef(Tooltip)
                                                                               classes={
                                                                                 Object {
+                                                                                  "arrow": "MuiTooltip-arrow",
                                                                                   "popper": "MuiTooltip-popper",
+                                                                                  "popperArrow": "MuiTooltip-popperArrow",
                                                                                   "popperInteractive": "MuiTooltip-popperInteractive",
                                                                                   "tooltip": "MuiTooltip-tooltip",
+                                                                                  "tooltipArrow": "MuiTooltip-tooltipArrow",
                                                                                   "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
                                                                                   "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
                                                                                   "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
@@ -7485,6 +7744,16 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                 id={null}
                                                                                 open={false}
                                                                                 placement="bottom"
+                                                                                popperOptions={
+                                                                                  Object {
+                                                                                    "modifiers": Object {
+                                                                                      "arrow": Object {
+                                                                                        "element": null,
+                                                                                        "enabled": false,
+                                                                                      },
+                                                                                    },
+                                                                                  }
+                                                                                }
                                                                                 transition={true}
                                                                               />
                                                                             </ForwardRef(Tooltip)>
@@ -7530,12 +7799,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                             <ShareDialogComponent
                                                                               classes={
                                                                                 Object {
-                                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-302",
-                                                                                  "closeButton": "ShareDialogComponent-closeButton-299",
-                                                                                  "container": "ShareDialogComponent-container-300",
-                                                                                  "icon": "ShareDialogComponent-icon-301",
-                                                                                  "iconContainer": "ShareDialogComponent-iconContainer-303",
-                                                                                  "root": "ShareDialogComponent-root-298",
+                                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-305",
+                                                                                  "closeButton": "ShareDialogComponent-closeButton-302",
+                                                                                  "container": "ShareDialogComponent-container-303",
+                                                                                  "icon": "ShareDialogComponent-icon-304",
+                                                                                  "iconContainer": "ShareDialogComponent-iconContainer-306",
+                                                                                  "root": "ShareDialogComponent-root-301",
                                                                                 }
                                                                               }
                                                                               handleClose={[Function]}
@@ -7588,6 +7857,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                           },
                                                                                           "render": [Function],
                                                                                         },
+                                                                                        "defaultProps": undefined,
                                                                                         "displayName": "WithStyles(ForwardRef(Backdrop))",
                                                                                         "options": Object {
                                                                                           "defaultTheme": Object {
@@ -7873,7 +8143,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                         },
                                                                                       }
                                                                                     }
-                                                                                    aria-labelledby="share-dialog"
                                                                                     className="MuiDialog-root"
                                                                                     closeAfterTransition={true}
                                                                                     disableBackdropClick={false}
@@ -9395,13 +9664,55 @@ exports[`containers/Article should match snapshot 1`] = `
                                                               <div
                                                                 className="MuiGrid-root makeStyles-column-268"
                                                               >
-                                                                <TruncateMarkup
-                                                                  ellipsis="..."
-                                                                  lineHeight=""
-                                                                  lines={2}
-                                                                  onTruncate={[Function]}
-                                                                  tokenize="characters"
-                                                                />
+                                                                <WithStyles(ForwardRef(Typography))
+                                                                  className="makeStyles-title-265"
+                                                                  variant="h5"
+                                                                >
+                                                                  <ForwardRef(Typography)
+                                                                    className="makeStyles-title-265"
+                                                                    classes={
+                                                                      Object {
+                                                                        "alignCenter": "MuiTypography-alignCenter",
+                                                                        "alignJustify": "MuiTypography-alignJustify",
+                                                                        "alignLeft": "MuiTypography-alignLeft",
+                                                                        "alignRight": "MuiTypography-alignRight",
+                                                                        "body1": "MuiTypography-body1",
+                                                                        "body2": "MuiTypography-body2",
+                                                                        "button": "MuiTypography-button",
+                                                                        "caption": "MuiTypography-caption",
+                                                                        "colorError": "MuiTypography-colorError",
+                                                                        "colorInherit": "MuiTypography-colorInherit",
+                                                                        "colorPrimary": "MuiTypography-colorPrimary",
+                                                                        "colorSecondary": "MuiTypography-colorSecondary",
+                                                                        "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                        "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                        "displayBlock": "MuiTypography-displayBlock",
+                                                                        "displayInline": "MuiTypography-displayInline",
+                                                                        "gutterBottom": "MuiTypography-gutterBottom",
+                                                                        "h1": "MuiTypography-h1",
+                                                                        "h2": "MuiTypography-h2",
+                                                                        "h3": "MuiTypography-h3",
+                                                                        "h4": "MuiTypography-h4",
+                                                                        "h5": "MuiTypography-h5",
+                                                                        "h6": "MuiTypography-h6",
+                                                                        "noWrap": "MuiTypography-noWrap",
+                                                                        "overline": "MuiTypography-overline",
+                                                                        "paragraph": "MuiTypography-paragraph",
+                                                                        "root": "MuiTypography-root",
+                                                                        "srOnly": "MuiTypography-srOnly",
+                                                                        "subtitle1": "MuiTypography-subtitle1",
+                                                                        "subtitle2": "MuiTypography-subtitle2",
+                                                                      }
+                                                                    }
+                                                                    variant="h5"
+                                                                  >
+                                                                    <h5
+                                                                      className="MuiTypography-root makeStyles-title-265 MuiTypography-h5"
+                                                                    >
+                                                                      test title 3
+                                                                    </h5>
+                                                                  </ForwardRef(Typography)>
+                                                                </WithStyles(ForwardRef(Typography))>
                                                               </div>
                                                             </ForwardRef(Grid)>
                                                           </WithStyles(ForwardRef(Grid))>
@@ -9679,11 +9990,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                         target="_self"
                                                                       >
                                                                         <div
-                                                                          className="makeStyles-container-323"
+                                                                          className="makeStyles-container-326"
                                                                         >
                                                                           <ForwardRef
                                                                             borderRadius="2px"
-                                                                            className="makeStyles-avatar-324"
+                                                                            className="makeStyles-avatar-327"
                                                                             height={24}
                                                                             image="test avatar 3"
                                                                             width={24}
@@ -9695,7 +10006,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                             >
                                                                               <Image__Img
                                                                                 borderRadius="2px"
-                                                                                className="makeStyles-avatar-324"
+                                                                                className="makeStyles-avatar-327"
                                                                                 height={24}
                                                                                 image="test avatar 3"
                                                                                 inView={false}
@@ -9703,7 +10014,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                               >
                                                                                 <StyledComponent
                                                                                   borderRadius="2px"
-                                                                                  className="makeStyles-avatar-324"
+                                                                                  className="makeStyles-avatar-327"
                                                                                   forwardedComponent={
                                                                                     Object {
                                                                                       "$$typeof": Symbol(react.forward_ref),
@@ -9748,7 +10059,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                       "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                                                       "target": "div",
                                                                                       "toString": [Function],
-                                                                                      "usesTheme": true,
                                                                                       "warnTooManyClasses": [Function],
                                                                                       "withComponent": [Function],
                                                                                     }
@@ -9760,7 +10070,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                   width={24}
                                                                                 >
                                                                                   <div
-                                                                                    className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-324"
+                                                                                    className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-327"
                                                                                     height={24}
                                                                                     width={24}
                                                                                   />
@@ -9769,11 +10079,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                             </InView>
                                                                           </ForwardRef>
                                                                           <WithStyles(ForwardRef(Typography))
-                                                                            className="makeStyles-username-325"
+                                                                            className="makeStyles-username-328"
                                                                             variant="subtitle2"
                                                                           >
                                                                             <ForwardRef(Typography)
-                                                                              className="makeStyles-username-325"
+                                                                              className="makeStyles-username-328"
                                                                               classes={
                                                                                 Object {
                                                                                   "alignCenter": "MuiTypography-alignCenter",
@@ -9811,7 +10121,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                               variant="subtitle2"
                                                                             >
                                                                               <h6
-                                                                                className="MuiTypography-root makeStyles-username-325 MuiTypography-subtitle2"
+                                                                                className="MuiTypography-root makeStyles-username-328 MuiTypography-subtitle2"
                                                                               >
                                                                                 test author name 3
                                                                               </h6>
@@ -10267,20 +10577,103 @@ exports[`containers/Article should match snapshot 1`] = `
                                                               <div
                                                                 className="MuiGrid-root makeStyles-column-268"
                                                               >
-                                                                <TruncateMarkup
-                                                                  ellipsis="..."
-                                                                  lineHeight=""
-                                                                  lines={2}
-                                                                  onTruncate={[Function]}
-                                                                  tokenize="characters"
-                                                                />
-                                                                <TruncateMarkup
-                                                                  ellipsis="..."
-                                                                  lineHeight=""
-                                                                  lines={2}
-                                                                  onTruncate={[Function]}
-                                                                  tokenize="characters"
-                                                                />
+                                                                <WithStyles(ForwardRef(Typography))
+                                                                  className="makeStyles-title-265"
+                                                                  variant="h5"
+                                                                >
+                                                                  <ForwardRef(Typography)
+                                                                    className="makeStyles-title-265"
+                                                                    classes={
+                                                                      Object {
+                                                                        "alignCenter": "MuiTypography-alignCenter",
+                                                                        "alignJustify": "MuiTypography-alignJustify",
+                                                                        "alignLeft": "MuiTypography-alignLeft",
+                                                                        "alignRight": "MuiTypography-alignRight",
+                                                                        "body1": "MuiTypography-body1",
+                                                                        "body2": "MuiTypography-body2",
+                                                                        "button": "MuiTypography-button",
+                                                                        "caption": "MuiTypography-caption",
+                                                                        "colorError": "MuiTypography-colorError",
+                                                                        "colorInherit": "MuiTypography-colorInherit",
+                                                                        "colorPrimary": "MuiTypography-colorPrimary",
+                                                                        "colorSecondary": "MuiTypography-colorSecondary",
+                                                                        "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                        "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                        "displayBlock": "MuiTypography-displayBlock",
+                                                                        "displayInline": "MuiTypography-displayInline",
+                                                                        "gutterBottom": "MuiTypography-gutterBottom",
+                                                                        "h1": "MuiTypography-h1",
+                                                                        "h2": "MuiTypography-h2",
+                                                                        "h3": "MuiTypography-h3",
+                                                                        "h4": "MuiTypography-h4",
+                                                                        "h5": "MuiTypography-h5",
+                                                                        "h6": "MuiTypography-h6",
+                                                                        "noWrap": "MuiTypography-noWrap",
+                                                                        "overline": "MuiTypography-overline",
+                                                                        "paragraph": "MuiTypography-paragraph",
+                                                                        "root": "MuiTypography-root",
+                                                                        "srOnly": "MuiTypography-srOnly",
+                                                                        "subtitle1": "MuiTypography-subtitle1",
+                                                                        "subtitle2": "MuiTypography-subtitle2",
+                                                                      }
+                                                                    }
+                                                                    variant="h5"
+                                                                  >
+                                                                    <h5
+                                                                      className="MuiTypography-root makeStyles-title-265 MuiTypography-h5"
+                                                                    >
+                                                                      test title 3
+                                                                    </h5>
+                                                                  </ForwardRef(Typography)>
+                                                                </WithStyles(ForwardRef(Typography))>
+                                                                <WithStyles(ForwardRef(Typography))
+                                                                  variant="body2"
+                                                                >
+                                                                  <ForwardRef(Typography)
+                                                                    classes={
+                                                                      Object {
+                                                                        "alignCenter": "MuiTypography-alignCenter",
+                                                                        "alignJustify": "MuiTypography-alignJustify",
+                                                                        "alignLeft": "MuiTypography-alignLeft",
+                                                                        "alignRight": "MuiTypography-alignRight",
+                                                                        "body1": "MuiTypography-body1",
+                                                                        "body2": "MuiTypography-body2",
+                                                                        "button": "MuiTypography-button",
+                                                                        "caption": "MuiTypography-caption",
+                                                                        "colorError": "MuiTypography-colorError",
+                                                                        "colorInherit": "MuiTypography-colorInherit",
+                                                                        "colorPrimary": "MuiTypography-colorPrimary",
+                                                                        "colorSecondary": "MuiTypography-colorSecondary",
+                                                                        "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                        "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                        "displayBlock": "MuiTypography-displayBlock",
+                                                                        "displayInline": "MuiTypography-displayInline",
+                                                                        "gutterBottom": "MuiTypography-gutterBottom",
+                                                                        "h1": "MuiTypography-h1",
+                                                                        "h2": "MuiTypography-h2",
+                                                                        "h3": "MuiTypography-h3",
+                                                                        "h4": "MuiTypography-h4",
+                                                                        "h5": "MuiTypography-h5",
+                                                                        "h6": "MuiTypography-h6",
+                                                                        "noWrap": "MuiTypography-noWrap",
+                                                                        "overline": "MuiTypography-overline",
+                                                                        "paragraph": "MuiTypography-paragraph",
+                                                                        "root": "MuiTypography-root",
+                                                                        "srOnly": "MuiTypography-srOnly",
+                                                                        "subtitle1": "MuiTypography-subtitle1",
+                                                                        "subtitle2": "MuiTypography-subtitle2",
+                                                                      }
+                                                                    }
+                                                                    variant="body2"
+                                                                  >
+                                                                    <p
+                                                                      className="MuiTypography-root MuiTypography-body2"
+                                                                    >
+                                                                      test description 3
+                                                                      ...
+                                                                    </p>
+                                                                  </ForwardRef(Typography)>
+                                                                </WithStyles(ForwardRef(Typography))>
                                                                 <WithStyles(ForwardRef(Grid))
                                                                   className="makeStyles-bottom-269"
                                                                 >
@@ -10544,11 +10937,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                     target="_self"
                                                                                   >
                                                                                     <div
-                                                                                      className="makeStyles-container-326"
+                                                                                      className="makeStyles-container-329"
                                                                                     >
                                                                                       <ForwardRef
                                                                                         borderRadius="2px"
-                                                                                        className="makeStyles-avatar-327"
+                                                                                        className="makeStyles-avatar-330"
                                                                                         height={24}
                                                                                         image="test avatar 3"
                                                                                         width={24}
@@ -10560,7 +10953,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                         >
                                                                                           <Image__Img
                                                                                             borderRadius="2px"
-                                                                                            className="makeStyles-avatar-327"
+                                                                                            className="makeStyles-avatar-330"
                                                                                             height={24}
                                                                                             image="test avatar 3"
                                                                                             inView={false}
@@ -10568,7 +10961,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                           >
                                                                                             <StyledComponent
                                                                                               borderRadius="2px"
-                                                                                              className="makeStyles-avatar-327"
+                                                                                              className="makeStyles-avatar-330"
                                                                                               forwardedComponent={
                                                                                                 Object {
                                                                                                   "$$typeof": Symbol(react.forward_ref),
@@ -10613,7 +11006,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                   "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                                                                   "target": "div",
                                                                                                   "toString": [Function],
-                                                                                                  "usesTheme": true,
                                                                                                   "warnTooManyClasses": [Function],
                                                                                                   "withComponent": [Function],
                                                                                                 }
@@ -10625,7 +11017,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                               width={24}
                                                                                             >
                                                                                               <div
-                                                                                                className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-327"
+                                                                                                className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-330"
                                                                                                 height={24}
                                                                                                 width={24}
                                                                                               />
@@ -10634,11 +11026,11 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                         </InView>
                                                                                       </ForwardRef>
                                                                                       <WithStyles(ForwardRef(Typography))
-                                                                                        className="makeStyles-username-328"
+                                                                                        className="makeStyles-username-331"
                                                                                         variant="subtitle2"
                                                                                       >
                                                                                         <ForwardRef(Typography)
-                                                                                          className="makeStyles-username-328"
+                                                                                          className="makeStyles-username-331"
                                                                                           classes={
                                                                                             Object {
                                                                                               "alignCenter": "MuiTypography-alignCenter",
@@ -10676,7 +11068,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                           variant="subtitle2"
                                                                                         >
                                                                                           <h6
-                                                                                            className="MuiTypography-root makeStyles-username-328 MuiTypography-subtitle2"
+                                                                                            className="MuiTypography-root makeStyles-username-331 MuiTypography-subtitle2"
                                                                                           >
                                                                                             test author name 3
                                                                                           </h6>
@@ -10810,9 +11202,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                             <ForwardRef(Tooltip)
                                                                               classes={
                                                                                 Object {
+                                                                                  "arrow": "MuiTooltip-arrow",
                                                                                   "popper": "MuiTooltip-popper",
+                                                                                  "popperArrow": "MuiTooltip-popperArrow",
                                                                                   "popperInteractive": "MuiTooltip-popperInteractive",
                                                                                   "tooltip": "MuiTooltip-tooltip",
+                                                                                  "tooltipArrow": "MuiTooltip-tooltipArrow",
                                                                                   "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
                                                                                   "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
                                                                                   "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
@@ -10889,6 +11284,16 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                 id={null}
                                                                                 open={false}
                                                                                 placement="bottom"
+                                                                                popperOptions={
+                                                                                  Object {
+                                                                                    "modifiers": Object {
+                                                                                      "arrow": Object {
+                                                                                        "element": null,
+                                                                                        "enabled": false,
+                                                                                      },
+                                                                                    },
+                                                                                  }
+                                                                                }
                                                                                 transition={true}
                                                                               />
                                                                             </ForwardRef(Tooltip)>
@@ -10934,12 +11339,12 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                             <ShareDialogComponent
                                                                               classes={
                                                                                 Object {
-                                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-302",
-                                                                                  "closeButton": "ShareDialogComponent-closeButton-299",
-                                                                                  "container": "ShareDialogComponent-container-300",
-                                                                                  "icon": "ShareDialogComponent-icon-301",
-                                                                                  "iconContainer": "ShareDialogComponent-iconContainer-303",
-                                                                                  "root": "ShareDialogComponent-root-298",
+                                                                                  "HNShareButton": "ShareDialogComponent-HNShareButton-305",
+                                                                                  "closeButton": "ShareDialogComponent-closeButton-302",
+                                                                                  "container": "ShareDialogComponent-container-303",
+                                                                                  "icon": "ShareDialogComponent-icon-304",
+                                                                                  "iconContainer": "ShareDialogComponent-iconContainer-306",
+                                                                                  "root": "ShareDialogComponent-root-301",
                                                                                 }
                                                                               }
                                                                               handleClose={[Function]}
@@ -10992,6 +11397,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                           },
                                                                                           "render": [Function],
                                                                                         },
+                                                                                        "defaultProps": undefined,
                                                                                         "displayName": "WithStyles(ForwardRef(Backdrop))",
                                                                                         "options": Object {
                                                                                           "defaultTheme": Object {
@@ -11277,7 +11683,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                         },
                                                                                       }
                                                                                     }
-                                                                                    aria-labelledby="share-dialog"
                                                                                     className="MuiDialog-root"
                                                                                     closeAfterTransition={true}
                                                                                     disableBackdropClick={false}
@@ -12276,7 +12681,6 @@ exports[`containers/Article should match snapshot 1`] = `
                       "styledComponentId": "ScrollIndicator__BarContainer-sc-1k4p76-0",
                       "target": "div",
                       "toString": [Function],
-                      "usesTheme": false,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -12312,7 +12716,6 @@ exports[`containers/Article should match snapshot 1`] = `
                             "styledComponentId": "ScrollIndicator__Fill-sc-1k4p76-1",
                             "target": "div",
                             "toString": [Function],
-                            "usesTheme": true,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }

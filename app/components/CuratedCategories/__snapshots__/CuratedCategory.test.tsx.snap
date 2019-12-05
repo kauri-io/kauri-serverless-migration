@@ -540,6 +540,7 @@ exports[`components/CuratedCategory should match snapshot 1`] = `
           >
             <WithStyles(ForwardRef(Grid))
               item={true}
+              key="0"
               lg={3}
               md={6}
               sm={12}
@@ -660,9 +661,7 @@ exports[`components/CuratedCategory should match snapshot 1`] = `
                 <div
                   className="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"
                 >
-                  <Link
-                    key="0"
-                  >
+                  <Link>
                     <a
                       className="makeStyles-link-2"
                       onClick={[Function]}

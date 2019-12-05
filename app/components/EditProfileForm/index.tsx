@@ -167,7 +167,7 @@ const EditProfileForm = ({
                         }}
                     />
                 )}
-                {(!usernameReadOnly || (!username || username == '')) && (
+                {(!usernameReadOnly || !username || username == '') && (
                     <ValidatedTextField
                         id="username"
                         margin="dense"

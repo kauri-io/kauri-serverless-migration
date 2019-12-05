@@ -1,6 +1,6 @@
 import AddToCollection from './View'
 import { mountWithTheme } from '../../setupTests'
-import { MockedProvider } from 'react-apollo/test-utils'
+import { MockedProvider } from '@apollo/react-testing'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
 
 describe('containers/AddToCollection', () => {

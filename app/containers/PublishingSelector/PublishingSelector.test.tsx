@@ -1,6 +1,8 @@
 import PublishingSelector from './index'
 import { mountWithRedux } from '../../setupTests'
-import { MockedProvider } from 'react-apollo/test-utils'
+
+import { MockedProvider } from '@apollo/react-testing'
+
 describe('containers/PublishingSelector', () => {
     it('should match snapshot', () => {
         const props = {

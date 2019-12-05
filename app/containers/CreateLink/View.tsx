@@ -59,7 +59,8 @@ const CreateLink = ({
         image &&
         summary &&
         authorName &&
-        (tags && tags.length > 0)
+        tags &&
+        tags.length > 0
 
     const handleSubmit = ownerId => {
         console.log(JSON.stringify(ownerId))

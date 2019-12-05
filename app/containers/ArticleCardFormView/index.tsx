@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { graphql, compose } from 'react-apollo'
+import { graphql } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import { getArticleQuery } from '../../queries/Article'
 import withLoading from '../../lib/with-loading'
 import withApolloError from '../../lib/with-apollo-error'

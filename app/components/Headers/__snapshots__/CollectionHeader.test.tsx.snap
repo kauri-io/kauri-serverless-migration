@@ -453,7 +453,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
               "styledComponentId": "CollectionHeader__CollectionHeaderSection-sc-5lmo96-0",
               "target": "section",
               "toString": [Function],
-              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -498,7 +497,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                     "styledComponentId": "CollectionHeader__LeftSide-sc-5lmo96-1",
                     "target": "div",
                     "toString": [Function],
-                    "usesTheme": true,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -699,7 +697,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                             "styledComponentId": "TagList__Container-ipfhd9-0",
                             "target": "div",
                             "toString": [Function],
-                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -749,7 +746,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                                   "styledComponentId": "TagList__StyledTag-ipfhd9-1",
                                   "target": "div",
                                   "toString": [Function],
-                                  "usesTheme": false,
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -807,7 +803,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                                   "styledComponentId": "TagList__StyledTag-ipfhd9-1",
                                   "target": "div",
                                   "toString": [Function],
-                                  "usesTheme": false,
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -849,7 +844,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                           "styledComponentId": "CollectionHeader__ShareContainer-sc-5lmo96-3",
                           "target": "div",
                           "toString": [Function],
-                          "usesTheme": false,
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
                         }
@@ -886,7 +880,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                                   "styledComponentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
                                   "target": "section",
                                   "toString": [Function],
-                                  "usesTheme": false,
                                   "warnTooManyClasses": [Function],
                                   "withComponent": [Function],
                                 }
@@ -1041,7 +1034,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                     "styledComponentId": "CollectionHeader__RightSide-sc-5lmo96-2",
                     "target": "div",
                     "toString": [Function],
-                    "usesTheme": true,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -1088,7 +1080,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                             "styledComponentId": "StatisticsContainer-sc-18atadq-0",
                             "target": "section",
                             "toString": [Function],
-                            "usesTheme": true,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -1126,7 +1117,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                                     "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
                                     "target": "section",
                                     "toString": [Function],
-                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -1166,7 +1156,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                                           "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
                                           "target": "h3",
                                           "toString": [Function],
-                                          "usesTheme": true,
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                         }
@@ -1209,7 +1198,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                                           "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
                                           "target": "span",
                                           "toString": [Function],
-                                          "usesTheme": true,
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                         }
@@ -1256,7 +1244,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                                     "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
                                     "target": "section",
                                     "toString": [Function],
-                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -1296,7 +1283,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                                           "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
                                           "target": "h3",
                                           "toString": [Function],
-                                          "usesTheme": true,
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                         }
@@ -1339,7 +1325,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                                           "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
                                           "target": "span",
                                           "toString": [Function],
-                                          "usesTheme": true,
                                           "warnTooManyClasses": [Function],
                                           "withComponent": [Function],
                                         }
@@ -1498,7 +1483,6 @@ exports[`components/CollectionHeader should match snapshot 1`] = `
                                       "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                       "target": "div",
                                       "toString": [Function],
-                                      "usesTheme": true,
                                       "warnTooManyClasses": [Function],
                                       "withComponent": [Function],
                                     }

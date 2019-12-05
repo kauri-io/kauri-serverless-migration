@@ -449,7 +449,6 @@ exports[`components/PublicProfile/SocialWebsiteIcon should match snapshot 1`] = 
                   "styledComponentId": "SocialWebsiteIcon__InvertSocialIcon-uzfa04-0",
                   "target": "img",
                   "toString": [Function],
-                  "usesTheme": false,
                   "warnTooManyClasses": [Function],
                   "withComponent": [Function],
                 }
@@ -919,7 +918,6 @@ exports[`components/PublicProfile/StatisticCount should match snapshot 1`] = `
                 "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
                 "target": "section",
                 "toString": [Function],
-                "usesTheme": false,
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
               }
@@ -959,7 +957,6 @@ exports[`components/PublicProfile/StatisticCount should match snapshot 1`] = `
                       "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
                       "target": "h3",
                       "toString": [Function],
-                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -1002,7 +999,6 @@ exports[`components/PublicProfile/StatisticCount should match snapshot 1`] = `
                       "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
                       "target": "span",
                       "toString": [Function],
-                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -1481,7 +1477,6 @@ exports[`components/PublicProfile/StatisticsContainer should match snapshot 1`] 
                 "styledComponentId": "StatisticsContainer-sc-18atadq-0",
                 "target": "section",
                 "toString": [Function],
-                "usesTheme": true,
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
               }
@@ -1519,7 +1514,6 @@ exports[`components/PublicProfile/StatisticsContainer should match snapshot 1`] 
                         "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
                         "target": "section",
                         "toString": [Function],
-                        "usesTheme": false,
                         "warnTooManyClasses": [Function],
                         "withComponent": [Function],
                       }
@@ -1559,7 +1553,6 @@ exports[`components/PublicProfile/StatisticsContainer should match snapshot 1`] 
                               "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
                               "target": "h3",
                               "toString": [Function],
-                              "usesTheme": true,
                               "warnTooManyClasses": [Function],
                               "withComponent": [Function],
                             }
@@ -1602,7 +1595,6 @@ exports[`components/PublicProfile/StatisticsContainer should match snapshot 1`] 
                               "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
                               "target": "span",
                               "toString": [Function],
-                              "usesTheme": true,
                               "warnTooManyClasses": [Function],
                               "withComponent": [Function],
                             }
@@ -1649,7 +1641,6 @@ exports[`components/PublicProfile/StatisticsContainer should match snapshot 1`] 
                         "styledComponentId": "StatisticCount__SectionContainer-sc-1xyux9h-1",
                         "target": "section",
                         "toString": [Function],
-                        "usesTheme": false,
                         "warnTooManyClasses": [Function],
                         "withComponent": [Function],
                       }
@@ -1689,7 +1680,6 @@ exports[`components/PublicProfile/StatisticsContainer should match snapshot 1`] 
                               "styledComponentId": "StatisticCount__Count-sc-1xyux9h-0",
                               "target": "h3",
                               "toString": [Function],
-                              "usesTheme": true,
                               "warnTooManyClasses": [Function],
                               "withComponent": [Function],
                             }
@@ -1732,7 +1722,6 @@ exports[`components/PublicProfile/StatisticsContainer should match snapshot 1`] 
                               "styledComponentId": "StatisticCount__Name-sc-1xyux9h-2",
                               "target": "span",
                               "toString": [Function],
-                              "usesTheme": true,
                               "warnTooManyClasses": [Function],
                               "withComponent": [Function],
                             }

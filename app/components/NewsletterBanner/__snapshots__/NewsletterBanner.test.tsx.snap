@@ -673,6 +673,9 @@ exports[`components/NewsletterBanner should match snapshot 1`] = `
                   >
                     <WithStyles(ForwardRef(FormControl))
                       className="MuiTextField-root"
+                      color="primary"
+                      disabled={false}
+                      error={false}
                       fullWidth={true}
                       margin="normal"
                       onKeyPress={[Function]}
@@ -689,6 +692,9 @@ exports[`components/NewsletterBanner should match snapshot 1`] = `
                             "root": "MuiFormControl-root",
                           }
                         }
+                        color="primary"
+                        disabled={false}
+                        error={false}
                         fullWidth={true}
                         margin="normal"
                         onKeyPress={[Function]}
@@ -700,16 +706,20 @@ exports[`components/NewsletterBanner should match snapshot 1`] = `
                           onKeyPress={[Function]}
                         >
                           <WithStyles(ForwardRef(Input))
+                            autoFocus={false}
                             className="makeStyles-input-5"
                             fullWidth={true}
+                            multiline={false}
                             onChange={[Function]}
                             placeholder="Enter your email address"
                             value=""
                           >
                             <ForwardRef(Input)
+                              autoFocus={false}
                               className="makeStyles-input-5"
                               classes={
                                 Object {
+                                  "colorSecondary": "MuiInput-colorSecondary",
                                   "disabled": "Mui-disabled",
                                   "error": "Mui-error",
                                   "focused": "Mui-focused",
@@ -725,14 +735,17 @@ exports[`components/NewsletterBanner should match snapshot 1`] = `
                                 }
                               }
                               fullWidth={true}
+                              multiline={false}
                               onChange={[Function]}
                               placeholder="Enter your email address"
                               value=""
                             >
                               <WithStyles(ForwardRef(InputBase))
+                                autoFocus={false}
                                 className="makeStyles-input-5"
                                 classes={
                                   Object {
+                                    "colorSecondary": "MuiInput-colorSecondary",
                                     "disabled": "Mui-disabled",
                                     "error": "Mui-error",
                                     "focused": "Mui-focused",
@@ -756,11 +769,13 @@ exports[`components/NewsletterBanner should match snapshot 1`] = `
                                 value=""
                               >
                                 <ForwardRef(InputBase)
+                                  autoFocus={false}
                                   className="makeStyles-input-5"
                                   classes={
                                     Object {
                                       "adornedEnd": "MuiInputBase-adornedEnd",
                                       "adornedStart": "MuiInputBase-adornedStart",
+                                      "colorSecondary": "MuiInputBase-colorSecondary MuiInput-colorSecondary",
                                       "disabled": "Mui-disabled Mui-disabled",
                                       "error": "Mui-error Mui-error",
                                       "focused": "Mui-focused Mui-focused",
@@ -772,7 +787,6 @@ exports[`components/NewsletterBanner should match snapshot 1`] = `
                                       "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
                                       "inputMarginDense": "MuiInputBase-inputMarginDense MuiInput-inputMarginDense",
                                       "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
-                                      "inputSelect": "MuiInputBase-inputSelect",
                                       "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
                                       "marginDense": "MuiInputBase-marginDense",
                                       "multiline": "MuiInputBase-multiline MuiInput-multiline",
@@ -793,6 +807,7 @@ exports[`components/NewsletterBanner should match snapshot 1`] = `
                                   >
                                     <input
                                       aria-invalid={false}
+                                      autoFocus={false}
                                       className="MuiInputBase-input MuiInput-input"
                                       disabled={false}
                                       onAnimationStart={[Function]}

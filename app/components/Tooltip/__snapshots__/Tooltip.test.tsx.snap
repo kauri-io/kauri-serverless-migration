@@ -432,7 +432,6 @@ exports[`components/Tooltip/ShareArticle should match snapshot 1`] = `
               "styledComponentId": "ShareArticle__ReferenceContainer-sc-1qj1dsq-0",
               "target": "section",
               "toString": [Function],
-              "usesTheme": false,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -972,7 +971,6 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
               "styledComponentId": "ShareButtons__Container-sc-1pgq0v7-0",
               "target": "div",
               "toString": [Function],
-              "usesTheme": false,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -1208,7 +1206,6 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
                             "styledComponentId": "ShareButtons__ShareSocialIcon-sc-1pgq0v7-2",
                             "target": "div",
                             "toString": [Function],
-                            "usesTheme": false,
                             "warnTooManyClasses": [Function],
                             "withComponent": [Function],
                           }
@@ -1281,7 +1278,6 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
                       "styledComponentId": "ShareButtons__HNShareButton-sc-1pgq0v7-1",
                       "target": "div",
                       "toString": [Function],
-                      "usesTheme": false,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -1318,7 +1314,6 @@ exports[`components/Tooltip/ShareButtons should match snapshot 1`] = `
                               "styledComponentId": "ShareButtons__ShareSocialIcon-sc-1pgq0v7-2",
                               "target": "div",
                               "toString": [Function],
-                              "usesTheme": false,
                               "warnTooManyClasses": [Function],
                               "withComponent": [Function],
                             }
@@ -1824,7 +1819,6 @@ exports[`components/Tooltip/Tooltip should match snapshot 1`] = `
               "styledComponentId": "Tooltip__Container-yd5128-0",
               "target": "div",
               "toString": [Function],
-              "usesTheme": false,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -1857,7 +1851,6 @@ exports[`components/Tooltip/Tooltip should match snapshot 1`] = `
                     "styledComponentId": "Tooltip__UpArrow-yd5128-1",
                     "target": "div",
                     "toString": [Function],
-                    "usesTheme": false,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -1892,7 +1885,6 @@ exports[`components/Tooltip/Tooltip should match snapshot 1`] = `
                     "styledComponentId": "Tooltip__TooltipBody-yd5128-2",
                     "target": "div",
                     "toString": [Function],
-                    "usesTheme": false,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }

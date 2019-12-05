@@ -472,7 +472,6 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
                 "styledComponentId": "ActionsSection__ActionsSectionStack-sc-1me8cd-0",
                 "target": [Function],
                 "toString": [Function],
-                "usesTheme": true,
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
               }
@@ -648,7 +647,6 @@ exports[`components/Section/ActionsSection should match snapshot 1`] = `
                       "styledComponentId": "sc-bdVaJa",
                       "target": "div",
                       "toString": [Function],
-                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -1126,7 +1124,6 @@ exports[`components/Section/CardContentSection should match snapshot 1`] = `
               "styledComponentId": "CardContentSection-ygx7u9-0",
               "target": "section",
               "toString": [Function],
-              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -1584,7 +1581,6 @@ exports[`components/Section/CardContentSection should match snapshot 2`] = `
               "styledComponentId": "CardContentSection-ygx7u9-0",
               "target": "section",
               "toString": [Function],
-              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -2040,7 +2036,6 @@ exports[`components/Section/CategorySection should match snapshot 1`] = `
               "styledComponentId": "CategorySection-kutg7g-0",
               "target": "section",
               "toString": [Function],
-              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -2529,7 +2524,6 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                 "styledComponentId": "ContentSection__ContentSectionStack-sc-1mwbgto-0",
                 "target": [Function],
                 "toString": [Function],
-                "usesTheme": true,
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
               }
@@ -2699,7 +2693,6 @@ exports[`components/Section/ContentSection should match snapshot 1`] = `
                       "styledComponentId": "sc-bdVaJa",
                       "target": "div",
                       "toString": [Function],
-                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -3173,7 +3166,6 @@ exports[`components/Section/PadContentSection should match snapshot 1`] = `
               "styledComponentId": "PadContentSection-sc-3ifiv7-0",
               "target": "section",
               "toString": [Function],
-              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -3665,7 +3657,6 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
                 "styledComponentId": "PrimaryHeaderSection__PrimaryHeaderSectionStack-e7ewr3-0",
                 "target": [Function],
                 "toString": [Function],
-                "usesTheme": true,
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
               }
@@ -3838,7 +3829,6 @@ exports[`components/Section/PrimaryHeaderSection should match snapshot 1`] = `
                       "styledComponentId": "sc-bdVaJa",
                       "target": "div",
                       "toString": [Function],
-                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -4314,7 +4304,6 @@ exports[`components/Section/TopResourcesSection should match snapshot 1`] = `
               "styledComponentId": "TopResourcesSection-mr7g3s-0",
               "target": "section",
               "toString": [Function],
-              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }

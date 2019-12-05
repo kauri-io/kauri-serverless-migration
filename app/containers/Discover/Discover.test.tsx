@@ -2,7 +2,7 @@ import Articles from './Articles/index'
 import Collections from './Collections/index'
 import Communities from './Communities/index'
 import { mountWithRedux } from '../../setupTests'
-import { MockedProvider } from 'react-apollo/test-utils'
+import { MockedProvider } from '@apollo/react-testing'
 
 describe('containers/Discover/Articles', () => {
     it('should match snapshot', () => {

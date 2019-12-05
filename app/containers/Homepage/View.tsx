@@ -23,7 +23,7 @@ import { openModalAction } from '../../components/Modal/Module'
 
 interface IProps {
     isLoggedIn: boolean
-    data: {
+    data?: {
         getLatestHomepageDescriptor: homePageContent_getLatestHomepageDescriptor
     }
     routeChangeAction: typeof routeChangeAction
@@ -83,119 +83,126 @@ export const HomePageComponent = (props: {
 
             {!props.isLoggedIn && <SignupBanner />}
 
-            {props.data.getLatestHomepageDescriptor.rows.map((row, index) => {
-                const hasSidebar = row.sidebar !== null
-                return (
-                    <div className={classes.root} key={index}>
-                        <div className={classes.section}>
-                            {row.main.map(main => {
-                                switch (main.type) {
-                                    case 'CATEGORIES':
-                                        return (
-                                            <CuratedCategories
-                                                content={main.content}
-                                                key="CATEGORIES"
-                                            />
-                                        )
+            {props.data &&
+                props.data.getLatestHomepageDescriptor.rows.map(
+                    (row, index) => {
+                        const hasSidebar = row.sidebar !== null
+                        return (
+                            <div className={classes.root} key={index}>
+                                <div className={classes.section}>
+                                    {row.main.map(main => {
+                                        switch (main.type) {
+                                            case 'CATEGORIES':
+                                                return (
+                                                    <CuratedCategories
+                                                        content={main.content}
+                                                        key="CATEGORIES"
+                                                    />
+                                                )
 
-                                    case 'FEATURED':
-                                        return (
-                                            <FeaturedContent
-                                                key="featured-content"
-                                                content={main.content}
-                                            />
-                                        )
+                                            case 'FEATURED':
+                                                return (
+                                                    <FeaturedContent
+                                                        key="featured-content"
+                                                        content={main.content}
+                                                    />
+                                                )
 
-                                    case 'LATEST_CONTENT':
-                                        const content = main.content
-                                        return (
-                                            <LatestContent
-                                                key="latest-content"
-                                                content={content}
-                                            />
-                                        )
+                                            case 'LATEST_CONTENT':
+                                                const content = main.content
+                                                return (
+                                                    <LatestContent
+                                                        key="latest-content"
+                                                        content={content}
+                                                    />
+                                                )
 
-                                    default:
-                                        return null
-                                }
-                            })}
+                                            default:
+                                                return null
+                                        }
+                                    })}
 
-                            {hasSidebar && (
-                                <Hidden smDown={true}>
-                                    <div className={classes.sidebar}>
-                                        {row.sidebar.map(sidebar => {
-                                            switch (sidebar.__typename) {
-                                                case 'Actions': {
-                                                    return (
-                                                        <PublishYourOwnContentCTA
-                                                            isLoggedIn={
-                                                                props.isLoggedIn
-                                                            }
-                                                            key={
-                                                                sidebar.__typename
-                                                            }
-                                                            content={
-                                                                sidebar.content
-                                                            }
-                                                        />
-                                                    )
-                                                }
-                                                case 'TopContributors': {
-                                                    if (
-                                                        sidebar.content &&
-                                                        sidebar.__typename ===
-                                                            'TopContributors'
+                                    {hasSidebar && (
+                                        <Hidden smDown={true}>
+                                            <div className={classes.sidebar}>
+                                                {row.sidebar.map(sidebar => {
+                                                    switch (
+                                                        sidebar.__typename
                                                     ) {
-                                                        if (sidebar.content) {
-                                                            const contributors = sidebar.content.map(
-                                                                contributor =>
-                                                                    (contributor &&
-                                                                        contributor.user && {
-                                                                            avatar:
-                                                                                contributor
-                                                                                    .user
-                                                                                    .avatar,
-                                                                            userId: String(
-                                                                                contributor
-                                                                                    .user
-                                                                                    .id
-                                                                            ),
-                                                                            username:
-                                                                                contributor
-                                                                                    .user
-                                                                                    .username,
-                                                                        }) || {
-                                                                        avatar:
-                                                                            '',
-                                                                        userId:
-                                                                            '',
-                                                                        username:
-                                                                            '',
-                                                                    }
-                                                            )
-
+                                                        case 'Actions': {
                                                             return (
-                                                                <TopContributors
-                                                                    key={
-                                                                        'top contributors'
+                                                                <PublishYourOwnContentCTA
+                                                                    isLoggedIn={
+                                                                        props.isLoggedIn
                                                                     }
-                                                                    contributors={
-                                                                        contributors
+                                                                    key={
+                                                                        sidebar.__typename
+                                                                    }
+                                                                    content={
+                                                                        sidebar.content
                                                                     }
                                                                 />
                                                             )
                                                         }
+                                                        case 'TopContributors': {
+                                                            if (
+                                                                sidebar.content &&
+                                                                sidebar.__typename ===
+                                                                    'TopContributors'
+                                                            ) {
+                                                                if (
+                                                                    sidebar.content
+                                                                ) {
+                                                                    const contributors = sidebar.content.map(
+                                                                        contributor =>
+                                                                            (contributor &&
+                                                                                contributor.user && {
+                                                                                    avatar:
+                                                                                        contributor
+                                                                                            .user
+                                                                                            .avatar,
+                                                                                    userId: String(
+                                                                                        contributor
+                                                                                            .user
+                                                                                            .id
+                                                                                    ),
+                                                                                    username:
+                                                                                        contributor
+                                                                                            .user
+                                                                                            .username,
+                                                                                }) || {
+                                                                                avatar:
+                                                                                    '',
+                                                                                userId:
+                                                                                    '',
+                                                                                username:
+                                                                                    '',
+                                                                            }
+                                                                    )
+
+                                                                    return (
+                                                                        <TopContributors
+                                                                            key={
+                                                                                'top contributors'
+                                                                            }
+                                                                            contributors={
+                                                                                contributors
+                                                                            }
+                                                                        />
+                                                                    )
+                                                                }
+                                                            }
+                                                        }
                                                     }
-                                                }
-                                            }
-                                        })}
-                                    </div>
-                                </Hidden>
-                            )}
-                        </div>
-                    </div>
-                )
-            })}
+                                                })}
+                                            </div>
+                                        </Hidden>
+                                    )}
+                                </div>
+                            </div>
+                        )
+                    }
+                )}
 
             {props.data.getLatestHomepageDescriptor.rows.map((row, index) => {
                 return (

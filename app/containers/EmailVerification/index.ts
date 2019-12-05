@@ -1,6 +1,6 @@
 import View from './View'
 import { connect } from 'react-redux'
-import { compose } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import { verifyEmailAction, resendEmailVerificationAction } from './Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
@@ -9,6 +9,10 @@ const mapStateToProps = () => ({})
 export default compose(
     connect(
         mapStateToProps,
-        { verifyEmailAction, resendEmailVerificationAction, routeChangeAction }
+        {
+            verifyEmailAction,
+            resendEmailVerificationAction,
+            routeChangeAction,
+        }
     )
 )(View)

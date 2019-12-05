@@ -260,7 +260,7 @@ const renderResourceSection = (
             )}
 
             {type === 'LINK' &&
-                (path(
+                path(
                     ['sections', index, mappingKey, resourceIndex],
                     values
                 ) && (
@@ -302,7 +302,7 @@ const renderResourceSection = (
                             </DraggableResourceContainer>
                         )}
                     </Draggable>
-                ))}
+                )}
             <Button
                 color="default"
                 variant="text"

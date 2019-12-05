@@ -1,4 +1,5 @@
-import { compose, graphql, withApollo } from 'react-apollo'
+import { graphql } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import { connect } from 'react-redux'
 import { getArticleQuery } from '../../queries/Article'
 import withLoading from '../../lib/with-loading'
@@ -20,16 +21,16 @@ const mapStateToProps = (state: IReduxState) => ({
 })
 
 export default compose(
-    withApollo,
     connect(
         mapStateToProps,
         {
             closeModalAction,
+            deleteDraftArticleAction,
             openModalAction,
             routeChangeAction,
-            deleteDraftArticleAction,
         }
     ),
+
     graphql(getArticleQuery, {
         name: 'data',
         options: ({ id, version }: { id: string; version: string }) => {

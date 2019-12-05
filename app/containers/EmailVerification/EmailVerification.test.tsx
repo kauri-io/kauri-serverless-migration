@@ -1,6 +1,6 @@
 import EmailVerification from './index'
 import { mountWithRedux } from '../../setupTests'
-import { MockedProvider } from 'react-apollo/test-utils'
+import { MockedProvider } from '@apollo/react-testing'
 describe('containers/EmailVerification', () => {
     it('should match snapshot', () => {
         const props = {}

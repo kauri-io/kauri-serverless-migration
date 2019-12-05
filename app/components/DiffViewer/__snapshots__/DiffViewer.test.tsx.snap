@@ -434,7 +434,6 @@ exports[`components/DiffViewer should match snapshot 1`] = `
               "styledComponentId": "DiffViewer__Content-sc-1yaf9sg-0",
               "target": "div",
               "toString": [Function],
-              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -606,7 +605,6 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
-                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -645,7 +643,6 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
-                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -684,7 +681,6 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
-                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -723,7 +719,6 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
-                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -865,7 +860,6 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
-                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -904,7 +898,6 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
-                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -943,7 +936,6 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
-                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -982,7 +974,6 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
-                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }
@@ -1021,7 +1012,6 @@ exports[`components/DiffViewer should match snapshot 1`] = `
                                     "styledComponentId": "DiffViewer__Line-sc-1yaf9sg-1",
                                     "target": "span",
                                     "toString": [Function],
-                                    "usesTheme": false,
                                     "warnTooManyClasses": [Function],
                                     "withComponent": [Function],
                                   }

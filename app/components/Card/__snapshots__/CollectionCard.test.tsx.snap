@@ -883,63 +883,55 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                             </ForwardRef(Typography)>
                                           </WithStyles(ForwardRef(Typography))>
                                         </div>
-                                        <TruncateMarkup
-                                          ellipsis="..."
-                                          lineHeight=""
-                                          lines={2}
-                                          onTruncate={[Function]}
-                                          tokenize="characters"
+                                        <WithStyles(ForwardRef(Typography))
+                                          className="makeStyles-name-3"
+                                          variant="h5"
                                         >
-                                          <WithStyles(ForwardRef(Typography))
+                                          <ForwardRef(Typography)
                                             className="makeStyles-name-3"
+                                            classes={
+                                              Object {
+                                                "alignCenter": "MuiTypography-alignCenter",
+                                                "alignJustify": "MuiTypography-alignJustify",
+                                                "alignLeft": "MuiTypography-alignLeft",
+                                                "alignRight": "MuiTypography-alignRight",
+                                                "body1": "MuiTypography-body1",
+                                                "body2": "MuiTypography-body2",
+                                                "button": "MuiTypography-button",
+                                                "caption": "MuiTypography-caption",
+                                                "colorError": "MuiTypography-colorError",
+                                                "colorInherit": "MuiTypography-colorInherit",
+                                                "colorPrimary": "MuiTypography-colorPrimary",
+                                                "colorSecondary": "MuiTypography-colorSecondary",
+                                                "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                "displayBlock": "MuiTypography-displayBlock",
+                                                "displayInline": "MuiTypography-displayInline",
+                                                "gutterBottom": "MuiTypography-gutterBottom",
+                                                "h1": "MuiTypography-h1",
+                                                "h2": "MuiTypography-h2",
+                                                "h3": "MuiTypography-h3",
+                                                "h4": "MuiTypography-h4",
+                                                "h5": "MuiTypography-h5",
+                                                "h6": "MuiTypography-h6",
+                                                "noWrap": "MuiTypography-noWrap",
+                                                "overline": "MuiTypography-overline",
+                                                "paragraph": "MuiTypography-paragraph",
+                                                "root": "MuiTypography-root",
+                                                "srOnly": "MuiTypography-srOnly",
+                                                "subtitle1": "MuiTypography-subtitle1",
+                                                "subtitle2": "MuiTypography-subtitle2",
+                                              }
+                                            }
                                             variant="h5"
                                           >
-                                            <ForwardRef(Typography)
-                                              className="makeStyles-name-3"
-                                              classes={
-                                                Object {
-                                                  "alignCenter": "MuiTypography-alignCenter",
-                                                  "alignJustify": "MuiTypography-alignJustify",
-                                                  "alignLeft": "MuiTypography-alignLeft",
-                                                  "alignRight": "MuiTypography-alignRight",
-                                                  "body1": "MuiTypography-body1",
-                                                  "body2": "MuiTypography-body2",
-                                                  "button": "MuiTypography-button",
-                                                  "caption": "MuiTypography-caption",
-                                                  "colorError": "MuiTypography-colorError",
-                                                  "colorInherit": "MuiTypography-colorInherit",
-                                                  "colorPrimary": "MuiTypography-colorPrimary",
-                                                  "colorSecondary": "MuiTypography-colorSecondary",
-                                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                                  "displayBlock": "MuiTypography-displayBlock",
-                                                  "displayInline": "MuiTypography-displayInline",
-                                                  "gutterBottom": "MuiTypography-gutterBottom",
-                                                  "h1": "MuiTypography-h1",
-                                                  "h2": "MuiTypography-h2",
-                                                  "h3": "MuiTypography-h3",
-                                                  "h4": "MuiTypography-h4",
-                                                  "h5": "MuiTypography-h5",
-                                                  "h6": "MuiTypography-h6",
-                                                  "noWrap": "MuiTypography-noWrap",
-                                                  "overline": "MuiTypography-overline",
-                                                  "paragraph": "MuiTypography-paragraph",
-                                                  "root": "MuiTypography-root",
-                                                  "srOnly": "MuiTypography-srOnly",
-                                                  "subtitle1": "MuiTypography-subtitle1",
-                                                  "subtitle2": "MuiTypography-subtitle2",
-                                                }
-                                              }
-                                              variant="h5"
+                                            <h5
+                                              className="MuiTypography-root makeStyles-name-3 MuiTypography-h5"
                                             >
-                                              <h5
-                                                className="MuiTypography-root makeStyles-name-3 MuiTypography-h5"
-                                              >
-                                                Collection
-                                              </h5>
-                                            </ForwardRef(Typography)>
-                                          </WithStyles(ForwardRef(Typography))>
-                                        </TruncateMarkup>
+                                              Collection
+                                            </h5>
+                                          </ForwardRef(Typography)>
+                                        </WithStyles(ForwardRef(Typography))>
                                       </div>
                                     </div>
                                   </ForwardRef(Grid)>
@@ -1273,7 +1265,6 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                                   "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                                   "target": "div",
                                                                   "toString": [Function],
-                                                                  "usesTheme": true,
                                                                   "warnTooManyClasses": [Function],
                                                                   "withComponent": [Function],
                                                                 }
@@ -1902,120 +1893,104 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                 </ForwardRef(Typography)>
                                               </WithStyles(ForwardRef(Typography))>
                                             </div>
-                                            <TruncateMarkup
-                                              ellipsis="..."
-                                              lineHeight=""
-                                              lines={2}
-                                              onTruncate={[Function]}
-                                              tokenize="characters"
+                                            <WithStyles(ForwardRef(Typography))
+                                              className="makeStyles-name-3"
+                                              variant="h5"
                                             >
-                                              <WithStyles(ForwardRef(Typography))
+                                              <ForwardRef(Typography)
                                                 className="makeStyles-name-3"
+                                                classes={
+                                                  Object {
+                                                    "alignCenter": "MuiTypography-alignCenter",
+                                                    "alignJustify": "MuiTypography-alignJustify",
+                                                    "alignLeft": "MuiTypography-alignLeft",
+                                                    "alignRight": "MuiTypography-alignRight",
+                                                    "body1": "MuiTypography-body1",
+                                                    "body2": "MuiTypography-body2",
+                                                    "button": "MuiTypography-button",
+                                                    "caption": "MuiTypography-caption",
+                                                    "colorError": "MuiTypography-colorError",
+                                                    "colorInherit": "MuiTypography-colorInherit",
+                                                    "colorPrimary": "MuiTypography-colorPrimary",
+                                                    "colorSecondary": "MuiTypography-colorSecondary",
+                                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                    "displayBlock": "MuiTypography-displayBlock",
+                                                    "displayInline": "MuiTypography-displayInline",
+                                                    "gutterBottom": "MuiTypography-gutterBottom",
+                                                    "h1": "MuiTypography-h1",
+                                                    "h2": "MuiTypography-h2",
+                                                    "h3": "MuiTypography-h3",
+                                                    "h4": "MuiTypography-h4",
+                                                    "h5": "MuiTypography-h5",
+                                                    "h6": "MuiTypography-h6",
+                                                    "noWrap": "MuiTypography-noWrap",
+                                                    "overline": "MuiTypography-overline",
+                                                    "paragraph": "MuiTypography-paragraph",
+                                                    "root": "MuiTypography-root",
+                                                    "srOnly": "MuiTypography-srOnly",
+                                                    "subtitle1": "MuiTypography-subtitle1",
+                                                    "subtitle2": "MuiTypography-subtitle2",
+                                                  }
+                                                }
                                                 variant="h5"
                                               >
-                                                <ForwardRef(Typography)
-                                                  className="makeStyles-name-3"
-                                                  classes={
-                                                    Object {
-                                                      "alignCenter": "MuiTypography-alignCenter",
-                                                      "alignJustify": "MuiTypography-alignJustify",
-                                                      "alignLeft": "MuiTypography-alignLeft",
-                                                      "alignRight": "MuiTypography-alignRight",
-                                                      "body1": "MuiTypography-body1",
-                                                      "body2": "MuiTypography-body2",
-                                                      "button": "MuiTypography-button",
-                                                      "caption": "MuiTypography-caption",
-                                                      "colorError": "MuiTypography-colorError",
-                                                      "colorInherit": "MuiTypography-colorInherit",
-                                                      "colorPrimary": "MuiTypography-colorPrimary",
-                                                      "colorSecondary": "MuiTypography-colorSecondary",
-                                                      "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                                      "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                                      "displayBlock": "MuiTypography-displayBlock",
-                                                      "displayInline": "MuiTypography-displayInline",
-                                                      "gutterBottom": "MuiTypography-gutterBottom",
-                                                      "h1": "MuiTypography-h1",
-                                                      "h2": "MuiTypography-h2",
-                                                      "h3": "MuiTypography-h3",
-                                                      "h4": "MuiTypography-h4",
-                                                      "h5": "MuiTypography-h5",
-                                                      "h6": "MuiTypography-h6",
-                                                      "noWrap": "MuiTypography-noWrap",
-                                                      "overline": "MuiTypography-overline",
-                                                      "paragraph": "MuiTypography-paragraph",
-                                                      "root": "MuiTypography-root",
-                                                      "srOnly": "MuiTypography-srOnly",
-                                                      "subtitle1": "MuiTypography-subtitle1",
-                                                      "subtitle2": "MuiTypography-subtitle2",
-                                                    }
-                                                  }
-                                                  variant="h5"
+                                                <h5
+                                                  className="MuiTypography-root makeStyles-name-3 MuiTypography-h5"
                                                 >
-                                                  <h5
-                                                    className="MuiTypography-root makeStyles-name-3 MuiTypography-h5"
-                                                  >
-                                                    Collection
-                                                  </h5>
-                                                </ForwardRef(Typography)>
-                                              </WithStyles(ForwardRef(Typography))>
-                                            </TruncateMarkup>
-                                            <TruncateMarkup
-                                              ellipsis="..."
-                                              lineHeight=""
-                                              lines={2}
-                                              onTruncate={[Function]}
-                                              tokenize="characters"
+                                                  Collection
+                                                </h5>
+                                              </ForwardRef(Typography)>
+                                            </WithStyles(ForwardRef(Typography))>
+                                            <WithStyles(ForwardRef(Typography))
+                                              className="makeStyles-description-4"
+                                              variant="body2"
                                             >
-                                              <WithStyles(ForwardRef(Typography))
+                                              <ForwardRef(Typography)
                                                 className="makeStyles-description-4"
+                                                classes={
+                                                  Object {
+                                                    "alignCenter": "MuiTypography-alignCenter",
+                                                    "alignJustify": "MuiTypography-alignJustify",
+                                                    "alignLeft": "MuiTypography-alignLeft",
+                                                    "alignRight": "MuiTypography-alignRight",
+                                                    "body1": "MuiTypography-body1",
+                                                    "body2": "MuiTypography-body2",
+                                                    "button": "MuiTypography-button",
+                                                    "caption": "MuiTypography-caption",
+                                                    "colorError": "MuiTypography-colorError",
+                                                    "colorInherit": "MuiTypography-colorInherit",
+                                                    "colorPrimary": "MuiTypography-colorPrimary",
+                                                    "colorSecondary": "MuiTypography-colorSecondary",
+                                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                    "displayBlock": "MuiTypography-displayBlock",
+                                                    "displayInline": "MuiTypography-displayInline",
+                                                    "gutterBottom": "MuiTypography-gutterBottom",
+                                                    "h1": "MuiTypography-h1",
+                                                    "h2": "MuiTypography-h2",
+                                                    "h3": "MuiTypography-h3",
+                                                    "h4": "MuiTypography-h4",
+                                                    "h5": "MuiTypography-h5",
+                                                    "h6": "MuiTypography-h6",
+                                                    "noWrap": "MuiTypography-noWrap",
+                                                    "overline": "MuiTypography-overline",
+                                                    "paragraph": "MuiTypography-paragraph",
+                                                    "root": "MuiTypography-root",
+                                                    "srOnly": "MuiTypography-srOnly",
+                                                    "subtitle1": "MuiTypography-subtitle1",
+                                                    "subtitle2": "MuiTypography-subtitle2",
+                                                  }
+                                                }
                                                 variant="body2"
                                               >
-                                                <ForwardRef(Typography)
-                                                  className="makeStyles-description-4"
-                                                  classes={
-                                                    Object {
-                                                      "alignCenter": "MuiTypography-alignCenter",
-                                                      "alignJustify": "MuiTypography-alignJustify",
-                                                      "alignLeft": "MuiTypography-alignLeft",
-                                                      "alignRight": "MuiTypography-alignRight",
-                                                      "body1": "MuiTypography-body1",
-                                                      "body2": "MuiTypography-body2",
-                                                      "button": "MuiTypography-button",
-                                                      "caption": "MuiTypography-caption",
-                                                      "colorError": "MuiTypography-colorError",
-                                                      "colorInherit": "MuiTypography-colorInherit",
-                                                      "colorPrimary": "MuiTypography-colorPrimary",
-                                                      "colorSecondary": "MuiTypography-colorSecondary",
-                                                      "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                                      "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                                      "displayBlock": "MuiTypography-displayBlock",
-                                                      "displayInline": "MuiTypography-displayInline",
-                                                      "gutterBottom": "MuiTypography-gutterBottom",
-                                                      "h1": "MuiTypography-h1",
-                                                      "h2": "MuiTypography-h2",
-                                                      "h3": "MuiTypography-h3",
-                                                      "h4": "MuiTypography-h4",
-                                                      "h5": "MuiTypography-h5",
-                                                      "h6": "MuiTypography-h6",
-                                                      "noWrap": "MuiTypography-noWrap",
-                                                      "overline": "MuiTypography-overline",
-                                                      "paragraph": "MuiTypography-paragraph",
-                                                      "root": "MuiTypography-root",
-                                                      "srOnly": "MuiTypography-srOnly",
-                                                      "subtitle1": "MuiTypography-subtitle1",
-                                                      "subtitle2": "MuiTypography-subtitle2",
-                                                    }
-                                                  }
-                                                  variant="body2"
+                                                <p
+                                                  className="MuiTypography-root makeStyles-description-4 MuiTypography-body2"
                                                 >
-                                                  <p
-                                                    className="MuiTypography-root makeStyles-description-4 MuiTypography-body2"
-                                                  >
-                                                    test description
-                                                  </p>
-                                                </ForwardRef(Typography)>
-                                              </WithStyles(ForwardRef(Typography))>
-                                            </TruncateMarkup>
+                                                  test description
+                                                </p>
+                                              </ForwardRef(Typography)>
+                                            </WithStyles(ForwardRef(Typography))>
                                             <WithStyles(ForwardRef(Grid))
                                               className="makeStyles-bottom-8"
                                             >
@@ -2345,7 +2320,6 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                                               "styledComponentId": "Image__Img-sc-1jpuda7-0",
                                                                               "target": "div",
                                                                               "toString": [Function],
-                                                                              "usesTheme": true,
                                                                               "warnTooManyClasses": [Function],
                                                                               "withComponent": [Function],
                                                                             }
@@ -2521,9 +2495,12 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                         <ForwardRef(Tooltip)
                                                           classes={
                                                             Object {
+                                                              "arrow": "MuiTooltip-arrow",
                                                               "popper": "MuiTooltip-popper",
+                                                              "popperArrow": "MuiTooltip-popperArrow",
                                                               "popperInteractive": "MuiTooltip-popperInteractive",
                                                               "tooltip": "MuiTooltip-tooltip",
+                                                              "tooltipArrow": "MuiTooltip-tooltipArrow",
                                                               "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
                                                               "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
                                                               "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
@@ -2600,6 +2577,16 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                             id={null}
                                                             open={false}
                                                             placement="bottom"
+                                                            popperOptions={
+                                                              Object {
+                                                                "modifiers": Object {
+                                                                  "arrow": Object {
+                                                                    "element": null,
+                                                                    "enabled": false,
+                                                                  },
+                                                                },
+                                                              }
+                                                            }
                                                             transition={true}
                                                           />
                                                         </ForwardRef(Tooltip)>
@@ -2645,12 +2632,12 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                         <ShareDialogComponent
                                                           classes={
                                                             Object {
-                                                              "HNShareButton": "ShareDialogComponent-HNShareButton-227",
-                                                              "closeButton": "ShareDialogComponent-closeButton-224",
-                                                              "container": "ShareDialogComponent-container-225",
-                                                              "icon": "ShareDialogComponent-icon-226",
-                                                              "iconContainer": "ShareDialogComponent-iconContainer-228",
-                                                              "root": "ShareDialogComponent-root-223",
+                                                              "HNShareButton": "ShareDialogComponent-HNShareButton-230",
+                                                              "closeButton": "ShareDialogComponent-closeButton-227",
+                                                              "container": "ShareDialogComponent-container-228",
+                                                              "icon": "ShareDialogComponent-icon-229",
+                                                              "iconContainer": "ShareDialogComponent-iconContainer-231",
+                                                              "root": "ShareDialogComponent-root-226",
                                                             }
                                                           }
                                                           handleClose={[Function]}
@@ -2703,6 +2690,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                                       },
                                                                       "render": [Function],
                                                                     },
+                                                                    "defaultProps": undefined,
                                                                     "displayName": "WithStyles(ForwardRef(Backdrop))",
                                                                     "options": Object {
                                                                       "defaultTheme": Object {
@@ -2988,7 +2976,6 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                                     },
                                                                   }
                                                                 }
-                                                                aria-labelledby="share-dialog"
                                                                 className="MuiDialog-root"
                                                                 closeAfterTransition={true}
                                                                 disableBackdropClick={false}

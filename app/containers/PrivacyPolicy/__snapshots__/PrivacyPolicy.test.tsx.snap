@@ -445,7 +445,6 @@ exports[`containers/PrivacyPolicy should match snapshot 1`] = `
                       "styledComponentId": "View__Content-sc-1jhb3py-0",
                       "target": "section",
                       "toString": [Function],
-                      "usesTheme": false,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }

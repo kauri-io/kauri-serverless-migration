@@ -434,7 +434,6 @@ exports[`components/AddMemberButton should match snapshot 1`] = `
               "styledComponentId": "AddMemberButton-sc-1817umg-0",
               "target": "img",
               "toString": [Function],
-              "usesTheme": false,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -908,7 +907,6 @@ exports[`components/AddTagButton should match snapshot 1`] = `
               "styledComponentId": "AddTagButton-oghske-0",
               "target": "button",
               "toString": [Function],
-              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -1990,7 +1988,6 @@ exports[`components/MediumImportButton should match snapshot 1`] = `
                               "styledComponentId": "MediumImportButton__Icon-sc-1nnwman-0",
                               "target": "svg",
                               "toString": [Function],
-                              "usesTheme": false,
                               "warnTooManyClasses": [Function],
                               "withComponent": [Function],
                             }
@@ -3583,7 +3580,6 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
               "styledComponentId": "UploadLogoButton-t7p33i-0",
               "target": "button",
               "toString": [Function],
-              "usesTheme": true,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -3625,7 +3621,6 @@ exports[`components/UploadLogoButton should match snapshot 1`] = `
                     "styledComponentId": "UploadLogoButton__Overlay-t7p33i-1",
                     "target": "div",
                     "toString": [Function],
-                    "usesTheme": true,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }

@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         flexDirection: 'column',
         display: 'flex',
     },
-    root: {
+    root: (props: any) => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-start',
@@ -37,12 +37,12 @@ const useStyles = makeStyles((theme: Theme) => ({
         minHeight: `calc(100vh)`,
         overflow: 'hidden',
         [theme.breakpoints.up('lg')]: {
-            paddingTop: (props: any) => (props.hideNav ? 0 : 64),
+            paddingTop: props.hideNav ? 0 : 64,
         },
         [theme.breakpoints.down('lg')]: {
             paddingTop: 56,
         },
-    },
+    }),
 }))
 
 interface IProps {

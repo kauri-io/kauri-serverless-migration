@@ -30,6 +30,7 @@
         "queries/__generated__/*.ts",
         "components",
         "containers",
+        "pages",
         "lib",
         "types",
         "../api",

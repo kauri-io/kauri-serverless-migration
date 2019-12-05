@@ -430,6 +430,7 @@ exports[`components/Navbar should match snapshot 1`] = `
         >
           <PrimarySearchAppBar
             dispatch={[Function]}
+            router={null}
             user={
               Object {
                 "communities": Array [],
@@ -483,6 +484,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                           },
                           "render": [Function],
                         },
+                        "defaultProps": undefined,
                         "displayName": "WithStyles(ForwardRef(Backdrop))",
                         "options": Object {
                           "defaultTheme": Object {
@@ -930,6 +932,7 @@ exports[`components/Navbar should match snapshot 1`] = `
                                       Object {
                                         "adornedEnd": "MuiInputBase-adornedEnd",
                                         "adornedStart": "MuiInputBase-adornedStart",
+                                        "colorSecondary": "MuiInputBase-colorSecondary",
                                         "disabled": "Mui-disabled",
                                         "error": "Mui-error",
                                         "focused": "Mui-focused",
@@ -941,7 +944,6 @@ exports[`components/Navbar should match snapshot 1`] = `
                                         "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
                                         "inputMarginDense": "MuiInputBase-inputMarginDense",
                                         "inputMultiline": "MuiInputBase-inputMultiline",
-                                        "inputSelect": "MuiInputBase-inputSelect",
                                         "inputTypeSearch": "MuiInputBase-inputTypeSearch",
                                         "marginDense": "MuiInputBase-marginDense",
                                         "multiline": "MuiInputBase-multiline",

@@ -455,7 +455,6 @@ exports[`components/ResourceCategory should match snapshot 1`] = `
                 "styledComponentId": "ResourceCategory__Container-sc-16n9x0y-0",
                 "target": "div",
                 "toString": [Function],
-                "usesTheme": true,
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
               }
@@ -505,7 +504,6 @@ exports[`components/ResourceCategory should match snapshot 1`] = `
                       "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
                       "target": "span",
                       "toString": [Function],
-                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }
@@ -555,7 +553,6 @@ exports[`components/ResourceCategory should match snapshot 1`] = `
                       "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
                       "target": "span",
                       "toString": [Function],
-                      "usesTheme": true,
                       "warnTooManyClasses": [Function],
                       "withComponent": [Function],
                     }

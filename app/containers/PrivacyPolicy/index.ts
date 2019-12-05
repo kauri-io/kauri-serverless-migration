@@ -1,4 +1,4 @@
-import { compose } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import { connect } from 'react-redux'
 import withLoading from '../../lib/with-loading'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'

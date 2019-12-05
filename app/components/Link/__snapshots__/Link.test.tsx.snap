@@ -469,7 +469,6 @@ exports[`components/Link should match snapshot 1`] = `
                   "styledComponentId": "View__A-uck808-0",
                   "target": "a",
                   "toString": [Function],
-                  "usesTheme": true,
                   "warnTooManyClasses": [Function],
                   "withComponent": [Function],
                 }

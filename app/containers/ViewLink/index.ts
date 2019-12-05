@@ -1,4 +1,5 @@
-import { compose, graphql, withApollo } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
+import { graphql, withApollo } from 'react-apollo'
 import { connect } from 'react-redux'
 import withLoading from '../../lib/with-loading'
 import withApolloError from '../../lib/with-apollo-error'

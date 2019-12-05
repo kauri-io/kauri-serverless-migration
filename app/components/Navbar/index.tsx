@@ -189,37 +189,42 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                 anchorEl={createAnchorEl}
                 onClose={handleCreateMenuClose}
             >
-                <Link href={user ? '/write-article' : 'login?r=/write-article'}>
-                    <a>
-                        <MenuItem>Write Article</MenuItem>
-                    </a>
-                </Link>
-                <Link href={user ? '/create-link' : 'login?r=/create-link'}>
-                    <a>
-                        <MenuItem>Add External Link</MenuItem>
-                    </a>
-                </Link>
-
-                <Link
-                    href={
-                        user
-                            ? '/create-collection'
-                            : 'login?r=/create-collection'
-                    }
-                >
-                    <a>
-                        <MenuItem>Create Collection</MenuItem>
-                    </a>
-                </Link>
-                <Link
-                    href={
-                        user ? '/create-community' : 'login?r=/create-community'
-                    }
-                >
-                    <a>
-                        <MenuItem>Create Community</MenuItem>
-                    </a>
-                </Link>
+                <MenuItem>
+                    <Link
+                        href={
+                            user ? '/write-article' : 'login?r=/write-article'
+                        }
+                    >
+                        <a>Write Article</a>
+                    </Link>
+                </MenuItem>
+                <MenuItem>
+                    <Link href={user ? '/create-link' : 'login?r=/create-link'}>
+                        <a>Add External Link</a>
+                    </Link>
+                </MenuItem>
+                <MenuItem>
+                    <Link
+                        href={
+                            user
+                                ? '/create-collection'
+                                : 'login?r=/create-collection'
+                        }
+                    >
+                        <a>Create Collection</a>
+                    </Link>
+                </MenuItem>
+                <MenuItem>
+                    <Link
+                        href={
+                            user
+                                ? '/create-community'
+                                : 'login?r=/create-community'
+                        }
+                    >
+                        <a>Create Community</a>
+                    </Link>
+                </MenuItem>
             </Menu>
 
             <Menu
@@ -230,21 +235,23 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                 onClose={handleMenuClose}
                 className={classes.menu}
             >
-                {user && [
-                    <Link
-                        href={getProfileURL(user).href}
-                        as={getProfileURL(user).as}
-                    >
-                        <a>
-                            <MenuItem>My Profile</MenuItem>
-                        </a>
-                    </Link>,
-                    <Link href={'/bookmarks'}>
-                        <a>
-                            <MenuItem>My Bookmarks</MenuItem>
-                        </a>
-                    </Link>,
-                ]}
+                {user && (
+                    <MenuItem>
+                        <Link
+                            href={getProfileURL(user).href}
+                            as={getProfileURL(user).as}
+                        >
+                            <a>My Profile</a>
+                        </Link>
+                    </MenuItem>
+                )}
+                {user && (
+                    <MenuItem>
+                        <Link href={'/bookmarks'}>
+                            <a>My Bookmarks</a>
+                        </Link>
+                    </MenuItem>
+                )}
 
                 <MenuItem className={classes.padded} onClick={logout}>
                     Logout

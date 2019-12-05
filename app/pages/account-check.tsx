@@ -7,7 +7,7 @@ import { withTransaction } from '@elastic/apm-rum-react'
 
 const AccountCheckPage = withTransaction('account-check', 'page')(
     ({ router }) => (
-        <App>
+        <App hideNav={false}>
             <AccountCheck page={router.query.page} router={router} />
         </App>
     )

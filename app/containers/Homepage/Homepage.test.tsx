@@ -1,6 +1,6 @@
 import { HomePageComponent } from './View'
 import { mountWithRedux } from '../../setupTests'
-import { MockedProvider } from 'react-apollo/test-utils'
+import { MockedProvider } from '@apollo/react-testing'
 import wait from 'waait'
 
 import mockData from './mock'

@@ -435,7 +435,6 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
               "styledComponentId": "AlertView__Container-sc-3bl8oo-0",
               "target": "div",
               "toString": [Function],
-              "usesTheme": false,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -465,7 +464,6 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                     "styledComponentId": "AlertView__TitleContainer-sc-3bl8oo-1",
                     "target": "div",
                     "toString": [Function],
-                    "usesTheme": false,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -510,7 +508,6 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                           "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
                           "target": "span",
                           "toString": [Function],
-                          "usesTheme": true,
                           "warnTooManyClasses": [Function],
                           "withComponent": [Function],
                         }
@@ -552,7 +549,6 @@ exports[`components/Moda/AlertView should match snapshot 1`] = `
                     "styledComponentId": "AlertView__Footer-sc-3bl8oo-2",
                     "target": "div",
                     "toString": [Function],
-                    "usesTheme": true,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -1309,7 +1305,6 @@ exports[`components/Modal/ChooseArticleContent should match snapshot 1`] = `
               "styledComponentId": "ChooseArticleContent__Content-sc-19pnn7n-0",
               "target": "section",
               "toString": [Function],
-              "usesTheme": false,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -1440,7 +1435,6 @@ exports[`components/Modal/ChooseArticleContent should match snapshot 1`] = `
                     "styledComponentId": "sc-bdVaJa",
                     "target": "div",
                     "toString": [Function],
-                    "usesTheme": true,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -1939,7 +1933,6 @@ exports[`components/Modal/ChooseCollectionContent should match snapshot 1`] = `
               "styledComponentId": "ChooseCollectionContent__Content-f9cvh5-0",
               "target": "section",
               "toString": [Function],
-              "usesTheme": false,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -2056,7 +2049,6 @@ exports[`components/Modal/ChooseCollectionContent should match snapshot 1`] = `
                     "styledComponentId": "sc-bdVaJa",
                     "target": "div",
                     "toString": [Function],
-                    "usesTheme": true,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
@@ -2533,7 +2525,6 @@ exports[`components/Modal/ModalView should match snapshot 1`] = `
               "styledComponentId": "View__ModalContainer-etmbqn-0",
               "target": "div",
               "toString": [Function],
-              "usesTheme": false,
               "warnTooManyClasses": [Function],
               "withComponent": [Function],
             }
@@ -2573,7 +2564,6 @@ exports[`components/Modal/ModalView should match snapshot 1`] = `
                     "styledComponentId": "View__ModalBox-etmbqn-1",
                     "target": "div",
                     "toString": [Function],
-                    "usesTheme": true,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }

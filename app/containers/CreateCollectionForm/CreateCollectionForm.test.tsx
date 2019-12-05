@@ -1,6 +1,6 @@
 import View from './View'
 import { mountWithRedux } from '../../setupTests'
-import { MockedProvider } from 'react-apollo/test-utils'
+import { MockedProvider } from '@apollo/react-testing'
 import Button from '../../components/Button'
 import { Formik } from 'formik'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'

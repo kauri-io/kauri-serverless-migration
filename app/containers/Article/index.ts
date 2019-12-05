@@ -1,4 +1,5 @@
-import { compose, graphql, withApollo } from 'react-apollo'
+import { graphql, withApollo } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import { connect } from 'react-redux'
 import { getArticleQuery, relatedArticles } from '../../queries/Article'
 import withLoading from '../../lib/with-loading'

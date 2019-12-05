@@ -1,5 +1,6 @@
 import View from './View'
-import { compose, graphql, withApollo } from 'react-apollo'
+import { graphql, withApollo } from 'react-apollo'
+import { flowRight as compose } from 'lodash'
 import { connect } from 'react-redux'
 import withApolloError from '../../lib/with-apollo-error'
 import React from 'react'

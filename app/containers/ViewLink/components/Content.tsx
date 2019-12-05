@@ -9,7 +9,6 @@ import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import Link from 'next/link'
 import { useStyles } from '../style'
-import TruncateMarkup from 'react-truncate-markup'
 // import CardActions from '../../../components/Card/CardComponents/CardActions'
 // import { getLinkUrl } from '../../../lib/getURLs'
 import { Hidden } from '@material-ui/core'
@@ -95,17 +94,15 @@ const LinkContent = ({
             <Grid container={true} justify="space-between">
                 <Grid item={true} sm={authorName ? 6 : 12}>
                     <a href={url.value} target="__blank">
-                        <TruncateMarkup lines={1}>
-                            <Typography
-                                className={classes.url}
-                                color="inherit"
-                                variant="subtitle2"
-                            >
-                                {url.value
-                                    .replace('https://', '')
-                                    .replace('http://', '')}
-                            </Typography>
-                        </TruncateMarkup>
+                        <Typography
+                            className={classes.url}
+                            color="inherit"
+                            variant="subtitle2"
+                        >
+                            {url.value
+                                .replace('https://', '')
+                                .replace('http://', '')}
+                        </Typography>
                     </a>
                 </Grid>
                 {authorName.value && (
