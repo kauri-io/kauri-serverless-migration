@@ -20,8 +20,8 @@ const Renderer = ({ markdown }) => {
             borderRadius: 4,
             margin: 'auto',
             maxWidth: '100%',
-            background: theme.palette.common.black,
-            color: theme.palette.common.white,
+            background: theme.palette.grey[200],
+            color: theme.palette.common.black,
             padding: theme.spacing(0, 1),
             fontSize: 16,
             overflowX: 'auto',
@@ -36,6 +36,8 @@ const Renderer = ({ markdown }) => {
         rendered: {
             '& pre code': {
                 display: 'block',
+                background: theme.palette.common.black,
+                color: theme.palette.common.white,
             },
         },
         katex: {
@@ -107,15 +109,22 @@ const Renderer = ({ markdown }) => {
                 />
             )
         } else {
+            let html = props.children
+
+            //Non inline code blocks have a className set, so highlight in this case.
+            if (props.className) {
+                html = Prism.highlight(
+                    props.children,
+                    Prism.languages.javascript,
+                    'javascript'
+                )
+            }
+
             return (
                 <code
                     className={classes.code}
                     dangerouslySetInnerHTML={{
-                        __html: Prism.highlight(
-                            props.children,
-                            Prism.languages.javascript,
-                            'javascript'
-                        ),
+                        __html: html,
                     }}
                 />
             )
