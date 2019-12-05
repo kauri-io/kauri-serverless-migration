@@ -52,11 +52,8 @@ const Web3Unavailable = ({ classes }) => (
             </a>
         </Typography>
         <div className={classes.kauriIntro}>
-            
             <Link href="/article/2a587f3962044515937a8105cfa1568c/metamask-interact-with-ethereum-in-your-browser">
-                <a className={classes.link}>
-                Learn more about Metamask
-                </a>
+                <a className={classes.link}>Learn more about Metamask</a>
             </Link>
         </div>
 

@@ -1,8 +1,8 @@
 import uppyConfig from './uppy'
 
 export default {
-  gateway: 'api.dev.kauri.io',
-  KauriCommunityId: '5d2c6edefe402500014349f5',
+    gateway: 'api.dev.kauri.io',
+    KauriCommunityId: '5d2c6edefe402500014349f5',
     uppyConfig,
     analyticsTokens: {
         mixpanel: '7d83001be784f09b212b9b3274e41530',
