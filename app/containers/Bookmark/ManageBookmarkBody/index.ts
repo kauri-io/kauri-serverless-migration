@@ -21,14 +21,17 @@ const QUERY_NAME = 'BookmarkQuery'
 
 export default compose(
     withApollo,
-    connect(null, {
-        openModalAction,
-        closeModalAction,
-        routeChangeAction,
-        labelRootFolder,
-        editBookmarkFolderAction,
-        deleteBookmarkFolderAction,
-    }),
+    connect(
+        null,
+        {
+            openModalAction,
+            closeModalAction,
+            routeChangeAction,
+            labelRootFolder,
+            editBookmarkFolderAction,
+            deleteBookmarkFolderAction,
+        }
+    ),
     graphql(getBookmarks, {
         name: QUERY_NAME,
         options: ({ folder }: { folder: string }) => ({

@@ -19,7 +19,6 @@ import SocialWebsiteIcon from '../../../components/Social/SocialWebsiteIcon'
 
 const LinkContent = ({
     // id,
-    owner,
     dateCreated,
     linkTitle,
     authorName,
@@ -29,6 +28,7 @@ const LinkContent = ({
     url,
     linkDescription,
     summary,
+    submitter,
     // isBookmarked,
     // openModalAction,
     // routeChangeAction,
@@ -48,12 +48,12 @@ const LinkContent = ({
                 justify="space-between"
             >
                 <div className={classes.nameAndDate}>
-                    {owner && (
+                    {submitter && (
                         <Avatar
                             size={40}
-                            avatar={owner.avatar}
-                            username={owner.username}
-                            id={owner.id}
+                            avatar={submitter.avatar}
+                            username={submitter.username}
+                            id={submitter.id}
                             withName={true}
                         />
                     )}

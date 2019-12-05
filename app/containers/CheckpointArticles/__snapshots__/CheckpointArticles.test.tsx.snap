@@ -652,7 +652,7 @@ exports[`containers/CheckpointArticles should match snapshot 1`] = `
                     "componentStyle": ComponentStyle {
                       "componentId": "View__CheckpointedArticlesContainer-sc-1eullvd-0",
                       "isStatic": false,
-                      "lastClassName": "cmijia",
+                      "lastClassName": "dIJWGf",
                       "rules": Array [
                         "display:flex;>:first-child{margin-right:",
                         [Function],
@@ -662,7 +662,7 @@ exports[`containers/CheckpointArticles should match snapshot 1`] = `
                         [Function],
                         "px;font-weight:",
                         [Function],
-                        ";text-transform:uppercase;align-items:center;",
+                        ";text-transform:uppercase;align-items:center;justify-content:center;width:100%;",
                       ],
                     },
                     "displayName": "View__CheckpointedArticlesContainer",
@@ -678,7 +678,7 @@ exports[`containers/CheckpointArticles should match snapshot 1`] = `
                 forwardedRef={null}
               >
                 <div
-                  className="View__CheckpointedArticlesContainer-sc-1eullvd-0 cmijia"
+                  className="View__CheckpointedArticlesContainer-sc-1eullvd-0 dIJWGf"
                 >
                   <AllArticlesOnMainnet>
                     <View__CheckpointedArticlesContainer>
@@ -690,7 +690,7 @@ exports[`containers/CheckpointArticles should match snapshot 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "View__CheckpointedArticlesContainer-sc-1eullvd-0",
                               "isStatic": false,
-                              "lastClassName": "cmijia",
+                              "lastClassName": "dIJWGf",
                               "rules": Array [
                                 "display:flex;>:first-child{margin-right:",
                                 [Function],
@@ -700,7 +700,7 @@ exports[`containers/CheckpointArticles should match snapshot 1`] = `
                                 [Function],
                                 "px;font-weight:",
                                 [Function],
-                                ";text-transform:uppercase;align-items:center;",
+                                ";text-transform:uppercase;align-items:center;justify-content:center;width:100%;",
                               ],
                             },
                             "displayName": "View__CheckpointedArticlesContainer",
@@ -716,7 +716,7 @@ exports[`containers/CheckpointArticles should match snapshot 1`] = `
                         forwardedRef={null}
                       >
                         <div
-                          className="View__CheckpointedArticlesContainer-sc-1eullvd-0 cmijia"
+                          className="View__CheckpointedArticlesContainer-sc-1eullvd-0 dIJWGf"
                         >
                           <CheckpointArticlesIcon>
                             <svg

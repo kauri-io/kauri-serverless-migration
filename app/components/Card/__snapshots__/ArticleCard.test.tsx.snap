@@ -518,12 +518,12 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
           }
         >
           <Link
-            as="/article/0x12.../a"
-            href="/article?article_id=0x12..."
+            as="h6"
+            href="https://kauri.io"
           >
             <a
               className="makeStyles-link-2"
-              href="/article/0x12.../a"
+              href="h6"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -2367,8 +2367,8 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                     type="ARTICLE"
                                                     url={
                                                       Object {
-                                                        "as": "/article/0x12.../a",
-                                                        "href": "/article?article_id=0x12...",
+                                                        "as": "h6",
+                                                        "href": "https://kauri.io",
                                                       }
                                                     }
                                                   >
@@ -2512,7 +2512,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                       </div>
                                                       <WithStyles(ShareDialogComponent)
                                                         handleClose={[Function]}
-                                                        href="/article/0x12.../a"
+                                                        href="h6"
                                                         name="Article"
                                                         open={false}
                                                       >
@@ -2528,7 +2528,7 @@ exports[`components/Card/ArticleCard should match snapshot 1`] = `
                                                             }
                                                           }
                                                           handleClose={[Function]}
-                                                          href="/article/0x12.../a"
+                                                          href="h6"
                                                           name="Article"
                                                           open={false}
                                                         >

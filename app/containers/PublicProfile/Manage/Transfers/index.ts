@@ -16,9 +16,12 @@ const mapStateToProps = state => {
 }
 
 export default compose(
-    connect(mapStateToProps, {
-        routeChangeAction,
-    }),
+    connect(
+        mapStateToProps,
+        {
+            routeChangeAction,
+        }
+    ),
     graphql(getArticleTransfers, {
         name: 'PendingTransfersQuery',
         options: ({ userId }: { userId: string }) => ({

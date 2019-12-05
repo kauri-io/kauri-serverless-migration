@@ -9,6 +9,10 @@ describe('containers/ArticleDraft', () => {
         const props = {
             id: '123',
             userId: '234',
+            user: {
+                id: '234',
+                username: 'test-username',
+            },
             classes: {},
             data: {
                 getArticle: article1,

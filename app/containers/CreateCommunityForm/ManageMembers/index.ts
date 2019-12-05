@@ -36,15 +36,18 @@ const mapStateToProps = (
 })
 
 export default compose(
-    connect(mapStateToProps, {
-        changeMemberRoleAction,
-        closeModalAction,
-        openModalAction,
-        removeMemberAction,
-        resendInvitationAction,
-        sendCommunityInvitationAction,
-        revokeInvitationAction,
-    }),
+    connect(
+        mapStateToProps,
+        {
+            changeMemberRoleAction,
+            closeModalAction,
+            openModalAction,
+            removeMemberAction,
+            resendInvitationAction,
+            sendCommunityInvitationAction,
+            revokeInvitationAction,
+        }
+    ),
     graphql(getCommunityInvitationsQuery, {
         options: ({ id }: { id: string | null }) => ({
             variables: {

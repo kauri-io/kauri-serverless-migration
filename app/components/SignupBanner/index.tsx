@@ -5,12 +5,10 @@ import Link from 'next/link'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
-        padding: 0,
-        height: 230,
+        padding: theme.spacing(2),
+        hminHight: 230,
         backgroundColor: theme.palette.common.white,
-        background: `url(${global.window &&
-            global.window.location
-                .origin}/static/images/HomepageBannerSVG.svg) center center no-repeat`,
+        background: `url(/static/images/HomepageBannerSVG.svg) center center no-repeat`,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -53,7 +51,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }))
 
 export default () => {
-    const classes = useStyles()
+    const classes = useStyles({})
 
     return (
         <Grid className={classes.container}>

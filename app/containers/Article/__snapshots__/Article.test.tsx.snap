@@ -1292,11 +1292,13 @@ exports[`containers/Article should match snapshot 1`] = `
                             />
                           </Hidden>
                           <WithStyles(ForwardRef(Grid))
+                            alignItems="center"
                             container={true}
                             direction="row"
                             justify="space-between"
                           >
                             <ForwardRef(Grid)
+                              alignItems="center"
                               classes={
                                 Object {
                                   "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -1409,7 +1411,7 @@ exports[`containers/Article should match snapshot 1`] = `
                               justify="space-between"
                             >
                               <div
-                                className="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-space-between"
+                                className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
                               >
                                 <WithStyles(ForwardRef(Grid))
                                   className="makeStyles-nameAndDate-15"
@@ -1530,6 +1532,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                       <AvatarComp
                                         avatar="test avatar 1"
                                         id="6791"
+                                        size={40}
                                         username="test-author-username-1"
                                         withName={true}
                                       >
@@ -1549,9 +1552,9 @@ exports[`containers/Article should match snapshot 1`] = `
                                               <ForwardRef
                                                 borderRadius="2px"
                                                 className="makeStyles-avatar-126"
-                                                height={24}
+                                                height={40}
                                                 image="test avatar 1"
-                                                width={24}
+                                                width={40}
                                               >
                                                 <InView
                                                   rootMargin="200px 0px"
@@ -1561,10 +1564,10 @@ exports[`containers/Article should match snapshot 1`] = `
                                                   <Image__Img
                                                     borderRadius="2px"
                                                     className="makeStyles-avatar-126"
-                                                    height={24}
+                                                    height={40}
                                                     image="test avatar 1"
                                                     inView={false}
-                                                    width={24}
+                                                    width={40}
                                                   >
                                                     <StyledComponent
                                                       borderRadius="2px"
@@ -1618,15 +1621,15 @@ exports[`containers/Article should match snapshot 1`] = `
                                                         }
                                                       }
                                                       forwardedRef={[Function]}
-                                                      height={24}
+                                                      height={40}
                                                       image="test avatar 1"
                                                       inView={false}
-                                                      width={24}
+                                                      width={40}
                                                     >
                                                       <div
-                                                        className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-126"
-                                                        height={24}
-                                                        width={24}
+                                                        className="Image__Img-sc-1jpuda7-0 kOssdn makeStyles-avatar-126"
+                                                        height={40}
+                                                        width={40}
                                                       />
                                                     </StyledComponent>
                                                   </Image__Img>
@@ -1687,6 +1690,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                       </AvatarComp>
                                       <WithStyles(ForwardRef(Typography))
                                         gutterBottom={true}
+                                        variant="body2"
                                       >
                                         <ForwardRef(Typography)
                                           classes={
@@ -1724,9 +1728,10 @@ exports[`containers/Article should match snapshot 1`] = `
                                             }
                                           }
                                           gutterBottom={true}
+                                          variant="body2"
                                         >
                                           <p
-                                            className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+                                            className="MuiTypography-root MuiTypography-body2 MuiTypography-gutterBottom"
                                           >
                                             1
                                              min read - Posted
@@ -4348,10 +4353,20 @@ exports[`containers/Article should match snapshot 1`] = `
                                 href="/search-results?q=Test"
                                 onClick={[Function]}
                                 onMouseEnter={[Function]}
+                                style={
+                                  Object {
+                                    "cursor": "pointer",
+                                  }
+                                }
                               >
                                 <WithStyles(ForwardRef(Chip))
                                   className="makeStyles-tag-12"
                                   label="Test"
+                                  style={
+                                    Object {
+                                      "cursor": "pointer",
+                                    }
+                                  }
                                   variant="outlined"
                                 >
                                   <ForwardRef(Chip)
@@ -4391,11 +4406,21 @@ exports[`containers/Article should match snapshot 1`] = `
                                       }
                                     }
                                     label="Test"
+                                    style={
+                                      Object {
+                                        "cursor": "pointer",
+                                      }
+                                    }
                                     variant="outlined"
                                   >
                                     <div
                                       className="MuiChip-root makeStyles-tag-12 MuiChip-outlined"
                                       onKeyUp={[Function]}
+                                      style={
+                                        Object {
+                                          "cursor": "pointer",
+                                        }
+                                      }
                                     >
                                       <span
                                         className="MuiChip-label"
@@ -4415,10 +4440,20 @@ exports[`containers/Article should match snapshot 1`] = `
                                 href="/search-results?q=test2"
                                 onClick={[Function]}
                                 onMouseEnter={[Function]}
+                                style={
+                                  Object {
+                                    "cursor": "pointer",
+                                  }
+                                }
                               >
                                 <WithStyles(ForwardRef(Chip))
                                   className="makeStyles-tag-12"
                                   label="test2"
+                                  style={
+                                    Object {
+                                      "cursor": "pointer",
+                                    }
+                                  }
                                   variant="outlined"
                                 >
                                   <ForwardRef(Chip)
@@ -4458,11 +4493,21 @@ exports[`containers/Article should match snapshot 1`] = `
                                       }
                                     }
                                     label="test2"
+                                    style={
+                                      Object {
+                                        "cursor": "pointer",
+                                      }
+                                    }
                                     variant="outlined"
                                   >
                                     <div
                                       className="MuiChip-root makeStyles-tag-12 MuiChip-outlined"
                                       onKeyUp={[Function]}
+                                      style={
+                                        Object {
+                                          "cursor": "pointer",
+                                        }
+                                      }
                                     >
                                       <span
                                         className="MuiChip-label"

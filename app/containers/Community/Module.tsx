@@ -360,7 +360,10 @@ interface IInitiateArticleTransferCommandOutput {
 }
 
 export const capitalize = (s: string) =>
-    compose<string, string, string>(toUpper, head)(s) + tail(s)
+    compose<string, string, string>(
+        toUpper,
+        head
+    )(s) + tail(s)
 
 export const curateCommunityResourcesEpic: Epic<
     ICurateCommunityResourcesAction,
@@ -880,35 +883,17 @@ export const removeMemberEpic: Epic<
                     )
                 ),
                 tap(() => apolloClient.resetStore()),
-                switchMap(
-                    ({
-                        data: {
-                            getEvent: {
-                                output: { error },
-                            },
-                        },
-                    }) => {
-                        if (error) {
-                            console.log(error)
-                            if (error.includes('cannot be removed')) {
-                                return merge(
-                                    of(closeModalAction()),
-                                    of(
-                                        showNotificationAction({
-                                            description: `You cannot leave the community`,
-                                            message:
-                                                'You are the last remaining admin of the community!',
-                                            notificationType: 'error',
-                                        })
-                                    )
-                                )
-                            }
+                switchMap(({ data: { getEvent: { output: { error } } } }) => {
+                    if (error) {
+                        console.log(error)
+                        if (error.includes('cannot be removed')) {
                             return merge(
                                 of(closeModalAction()),
                                 of(
                                     showNotificationAction({
-                                        description: `Please try again`,
-                                        message: 'Something went wrong',
+                                        description: `You cannot leave the community`,
+                                        message:
+                                            'You are the last remaining admin of the community!',
                                         notificationType: 'error',
                                     })
                                 )
@@ -918,15 +903,25 @@ export const removeMemberEpic: Epic<
                             of(closeModalAction()),
                             of(
                                 showNotificationAction({
-                                    description: `That user has been successfully removed from the community`,
-                                    message: 'Member removed',
-                                    notificationType: 'success',
+                                    description: `Please try again`,
+                                    message: 'Something went wrong',
+                                    notificationType: 'error',
                                 })
-                            ),
-                            of(memberRemovedAction())
+                            )
                         )
                     }
-                ),
+                    return merge(
+                        of(closeModalAction()),
+                        of(
+                            showNotificationAction({
+                                description: `That user has been successfully removed from the community`,
+                                message: 'Member removed',
+                                notificationType: 'success',
+                            })
+                        ),
+                        of(memberRemovedAction())
+                    )
+                }),
                 catchError(err => {
                     console.error(err)
                     return of(

@@ -147,11 +147,11 @@ export const publishArticleEpic: Epic<any, any, IReduxState, IDependencies> = (
                             ),
                             of(
                                 routeChangeAction(
-                                    getProfileURL(
-                                        path(['value', 'app', 'user'])(
-                                            state$
-                                        ) as IProfileLinkProps
-                                    ).as
+                                    getProfileURL(path([
+                                        'value',
+                                        'app',
+                                        'user',
+                                    ])(state$) as IProfileLinkProps).as
                                 )
                             )
                         )

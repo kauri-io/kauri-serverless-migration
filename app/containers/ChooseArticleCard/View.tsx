@@ -112,7 +112,8 @@ const ChooseArticleCardComponent = props => {
             props.searchPublishedArticles.loading) ||
         (props.searchPersonalPublishedArticles &&
             props.searchPersonalPublishedArticles.loading) ||
-        !props.searchPersonalPublishedArticles || !props.searchPublishedArticles
+        !props.searchPersonalPublishedArticles ||
+        !props.searchPublishedArticles
     ) {
         return <Loading />
     }

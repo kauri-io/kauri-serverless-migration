@@ -57,9 +57,7 @@ const Search = ({ routeChangeAction, query, data: { searchAutocomplete } }) => {
             justifyContent: 'center',
             flexDirection: 'column',
             backgroundColor: 'white',
-            background: `url(${global.window &&
-                global.window.location
-                    .origin}/static/images/HomepageBannerSVG.svg) center center no-repeat`,
+            background: `url(/static/images/HomepageBannerSVG.svg) center center no-repeat`,
         },
         heading: {
             margin: theme.spacing(1),
@@ -302,9 +300,12 @@ const Search = ({ routeChangeAction, query, data: { searchAutocomplete } }) => {
 }
 
 export default compose(
-    connect(() => {}, {
-        routeChangeAction,
-    }),
+    connect(
+        () => {},
+        {
+            routeChangeAction,
+        }
+    ),
     graphql(searchResultsAutocomplete, {
         options: ({
             query,

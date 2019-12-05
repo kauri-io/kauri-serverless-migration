@@ -7,4 +7,9 @@ const mapStateToProps = ({}, {}) => {
     return {}
 }
 
-export default compose(connect(mapStateToProps, { routeChangeAction }))(View)
+export default compose(
+    connect(
+        mapStateToProps,
+        { routeChangeAction }
+    )
+)(View)

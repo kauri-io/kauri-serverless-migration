@@ -19,11 +19,14 @@ const mapStateToProps = state => {
 
 export default compose(
     withApollo,
-    connect(mapStateToProps, {
-        routeChangeAction,
-        openModalAction,
-        approveResourceAction,
-    }),
+    connect(
+        mapStateToProps,
+        {
+            routeChangeAction,
+            openModalAction,
+            approveResourceAction,
+        }
+    ),
     graphql(globalCollectionDetails, {
         options: ({ id }: { id: string }) => ({
             variables: {

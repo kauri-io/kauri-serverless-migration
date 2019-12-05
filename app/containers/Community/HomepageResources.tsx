@@ -12,15 +12,17 @@ const ContentContainer = styled.div`
     padding: 0 ${props => props.theme.padding};
 `
 
-const CommunityHomepageContent: React.FunctionComponent<Pick<
-    IProps,
-    | 'homepage'
-    | 'isCommunityAdmin'
-    | 'isLoggedIn'
-    | 'userId'
-    | 'openModalAction'
-    | 'routeChangeAction'
->> = ({
+const CommunityHomepageContent: React.FunctionComponent<
+    Pick<
+        IProps,
+        | 'homepage'
+        | 'isCommunityAdmin'
+        | 'isLoggedIn'
+        | 'userId'
+        | 'openModalAction'
+        | 'routeChangeAction'
+    >
+> = ({
     homepage,
     isCommunityAdmin,
     isLoggedIn,

@@ -6,10 +6,7 @@ import Collection from '../containers/Collection'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const CollectionPage = withTransaction(
-    'collection',
-    'page'
-)(({ router }) => (
+const CollectionPage = withTransaction('collection', 'page')(({ router }) => (
     <App hideNav={false}>
         <Collection
             proposedCommunityId={router.query['proposed-community-id']}
@@ -18,4 +15,7 @@ const CollectionPage = withTransaction(
     </App>
 ))
 
-export default compose(withData, withRouter)(CollectionPage)
+export default compose(
+    withData,
+    withRouter
+)(CollectionPage)

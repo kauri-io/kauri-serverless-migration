@@ -5,6 +5,10 @@ import { IReduxState } from '../../lib/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import View from './View'
 import { submitExtenalLinkAction } from './Module'
+import {
+    closeModalAction,
+    openModalAction,
+} from '../../components/Modal/Module'
 
 const mapStateToProps = (
     state: IReduxState,
@@ -17,9 +21,14 @@ const mapStateToProps = (
 })
 
 export default compose(
-    connect(mapStateToProps, {
-        submitExtenalLinkAction,
-        routeChangeAction,
-    }),
+    connect(
+        mapStateToProps,
+        {
+            submitExtenalLinkAction,
+            routeChangeAction,
+            openModalAction,
+            closeModalAction,
+        }
+    ),
     withApollo
 )(View)

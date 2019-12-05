@@ -59,7 +59,10 @@ const View: React.FunctionComponent<IProps> = ({ data }) => {
 }
 
 export default compose(
-    connect(mapStateToProps, {}),
+    connect(
+        mapStateToProps,
+        {}
+    ),
     graphql(getCollectionQuery, {
         options: ({ id }: getCollectionVariables) => ({
             variables: {

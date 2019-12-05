@@ -44,14 +44,17 @@ export const emptySection = {
 }
 
 export default compose(
-    connect(mapStateToProps, {
-        closeModalAction,
-        createCommunityAction,
-        openModalAction,
-        routeChangeAction,
-        showNotificationAction,
-        updateCommunityAction,
-    }),
+    connect(
+        mapStateToProps,
+        {
+            closeModalAction,
+            createCommunityAction,
+            openModalAction,
+            routeChangeAction,
+            showNotificationAction,
+            updateCommunityAction,
+        }
+    ),
     // id: null, "invitations" | "name" | "social" | "website"
     withFormik<
         IProps,

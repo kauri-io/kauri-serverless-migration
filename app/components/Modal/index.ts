@@ -13,4 +13,7 @@ const mapStateToProps = ({
     isModalOpen,
 })
 
-export default connect(mapStateToProps, { closeModalAction })(Modal)
+export default connect(
+    mapStateToProps,
+    { closeModalAction }
+)(Modal)

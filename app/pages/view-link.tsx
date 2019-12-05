@@ -12,4 +12,8 @@ const LinkPage = ({ router }) => (
     </App>
 )
 
-export default compose(withData, withApollo, withRouter)(LinkPage)
+export default compose(
+    withData,
+    withApollo,
+    withRouter
+)(LinkPage)

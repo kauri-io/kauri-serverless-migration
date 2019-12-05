@@ -71,23 +71,17 @@ export const saveUserDetailsEpic: Epic<
                         )
                     ),
                     tap(console.log),
-                    mergeMap(
-                        ({
-                            data: {
-                                getEvent: { output },
-                            },
-                        }) => {
-                            if (typeof output.error === 'string') {
-                                return throwError(output.error)
-                            } else {
-                                return apolloClient.query<getMyProfile>({
-                                    query: getOwnProfile,
-                                    variables: {},
-                                    fetchPolicy: 'network-only',
-                                })
-                            }
+                    mergeMap(({ data: { getEvent: { output } } }) => {
+                        if (typeof output.error === 'string') {
+                            return throwError(output.error)
+                        } else {
+                            return apolloClient.query<getMyProfile>({
+                                query: getOwnProfile,
+                                variables: {},
+                                fetchPolicy: 'network-only',
+                            })
                         }
-                    ),
+                    }),
                     tap(() =>
                         analytics.track('Edit Profile', {
                             category: 'user_actions',

@@ -7,13 +7,14 @@ import EditProfilePage from '../containers/EditProfilePage'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const EditProfile = withTransaction(
-    'edit-profile',
-    'page'
-)(({ router }) => (
+const EditProfile = withTransaction('edit-profile', 'page')(({ router }) => (
     <App hideNav={true} hideFooter={true}>
         <EditProfilePage router={router} />
     </App>
 ))
 
-export default compose(withData, withApollo, withRouter)(EditProfile)
+export default compose(
+    withData,
+    withApollo,
+    withRouter
+)(EditProfile)

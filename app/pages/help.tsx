@@ -8,12 +8,13 @@ import { withRouter } from 'next/router'
 import config from '../config'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const HelpPage = withTransaction(
-    'help',
-    'page'
-)(() => (
+const HelpPage = withTransaction('help', 'page')(() => (
     <App hideNav={false}>
         <Community communityId={config.KauriCommunityId} />
     </App>
 ))
-export default compose(withData, withApollo, withRouter)(HelpPage)
+export default compose(
+    withData,
+    withApollo,
+    withRouter
+)(HelpPage)

@@ -18,9 +18,12 @@ const mapStateToProps = state => {
 const QUERY_NAME = 'DraftsQuery'
 
 export default compose(
-    connect(mapStateToProps, {
-        routeChangeAction,
-    }),
+    connect(
+        mapStateToProps,
+        {
+            routeChangeAction,
+        }
+    ),
     graphql(searchPersonalDrafts, {
         name: QUERY_NAME,
         options: ({ userId }: { userId: string }) => ({

@@ -31,12 +31,15 @@ const mapStateToProps = (state: IState) => {
 const QUERY_NAME = 'ArticlesQuery'
 
 export default compose(
-    connect(mapStateToProps, {
-        routeChangeAction,
-        openModalAction,
-        addResourceToCollectionAction,
-        closeModalAction,
-    }),
+    connect(
+        mapStateToProps,
+        {
+            routeChangeAction,
+            openModalAction,
+            addResourceToCollectionAction,
+            closeModalAction,
+        }
+    ),
     graphql(globalSearchApprovedArticles, {
         name: QUERY_NAME,
         options: ({ scoringMode }: { scoringMode: string }) => ({

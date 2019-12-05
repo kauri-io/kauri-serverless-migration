@@ -19,10 +19,13 @@ const mapStateToProps = state => {
 const QUERY_NAME = 'PublishedQuery'
 
 export default compose(
-    connect(mapStateToProps, {
-        routeChangeAction,
-        openModalAction,
-    }),
+    connect(
+        mapStateToProps,
+        {
+            routeChangeAction,
+            openModalAction,
+        }
+    ),
     graphql(searchResultsAutocomplete, {
         name: QUERY_NAME,
         options: ({ userId }: { userId: string }) => ({

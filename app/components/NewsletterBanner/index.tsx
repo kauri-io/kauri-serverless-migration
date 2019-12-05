@@ -29,9 +29,7 @@ const useStyles = makeStyles((theme: Theme) => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'flex-start',
-            background: `url(${global.window &&
-                global.window.location
-                    .origin}/static/images/NewsletterSVG.svg) no-repeat`,
+            background: `url(/static/images/NewsletterSVG.svg) no-repeat`,
             width: 1224,
             margin: 'auto',
             alignItems: 'flex-start',

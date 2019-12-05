@@ -170,5 +170,8 @@ const mapStateToProps = () => {
 
 export default compose(
     withApollo,
-    connect(mapStateToProps, {})
+    connect(
+        mapStateToProps,
+        {}
+    )
 )(withStyles(styles)(EmailField))

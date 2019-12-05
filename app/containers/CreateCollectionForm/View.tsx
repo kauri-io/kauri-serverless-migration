@@ -370,10 +370,9 @@ export interface IProps {
 }
 
 let uppy
-const CreateCollectionForm: React.FC<InjectedFormikProps<
-    IProps,
-    IFormValues
->> = ({
+const CreateCollectionForm: React.FC<
+    InjectedFormikProps<IProps, IFormValues>
+> = ({
     touched,
     errors,
     values,

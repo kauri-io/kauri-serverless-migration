@@ -7,14 +7,13 @@ import SearchResults from '../containers/SearchResults'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const SearchResultsPage = withTransaction(
-    'search-results',
-    'page'
-)(({ router }) => (
-    <App hideNav={false}>
-        <SearchResults query={router && router.query} router={router} />
-    </App>
-))
+const SearchResultsPage = withTransaction('search-results', 'page')(
+    ({ router }) => (
+        <App hideNav={false}>
+            <SearchResults query={router && router.query} router={router} />
+        </App>
+    )
+)
 
 export default compose(
     // withData gives us server-side graphql queries before rendering

@@ -12,9 +12,12 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {
-    routeChangeAction,
-    emailSubscribeAction,
-    showNotificationAction,
-    openModalAction,
-})(Homepage)
+export default connect(
+    mapStateToProps,
+    {
+        routeChangeAction,
+        emailSubscribeAction,
+        showNotificationAction,
+        openModalAction,
+    }
+)(Homepage)

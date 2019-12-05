@@ -15,7 +15,10 @@ const mapStateToProps = () => {
 }
 
 export default compose(
-    connect(mapStateToProps, { routeChangeAction }),
+    connect(
+        mapStateToProps,
+        { routeChangeAction }
+    ),
     graphql<getCommunity_getCommunity, getCommunityVariables>(
         getCommunityQuery,
         {

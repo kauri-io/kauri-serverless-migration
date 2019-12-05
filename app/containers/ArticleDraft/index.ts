@@ -1,37 +1,36 @@
 import { graphql } from 'react-apollo'
 import { flowRight as compose } from 'lodash'
 import { connect } from 'react-redux'
-import { deleteDraftArticleAction } from './DeleteDraftArticleModule'
-import { publishArticleAction } from '../WriteArticle/PublishArticleModule'
 import { getArticleQuery } from '../../queries/Article'
-import { IReduxState } from '../../lib/Module'
-import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import withLoading from '../../lib/with-loading'
 import withApolloError from '../../lib/with-apollo-error'
 import View from './View'
+import { IReduxState } from '../../lib/Module'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import {
     closeModalAction,
     openModalAction,
 } from '../../components/Modal/Module'
+import { deleteDraftArticleAction } from './DeleteDraftArticleModule'
 
-const mapStateToProps = (state: IReduxState) => {
-    return {
-        communities: state.app.user && state.app.user.communities,
-        hostName: state.app && state.app.hostName,
-        personalUsername:
-            state.app && state.app.user && state.app.user.username,
-        userId: state.app && state.app.user && state.app.user.id,
-    }
-}
+const mapStateToProps = (state: IReduxState) => ({
+    hostName: state.app && state.app.hostName,
+    personalUsername: state.app && state.app.user && state.app.user.username,
+    userId: state.app && state.app.user && state.app.user.id,
+    user: state.app && state.app.user,
+})
 
 export default compose(
-    connect(mapStateToProps, {
-        closeModalAction,
-        deleteDraftArticleAction,
-        openModalAction,
-        publishArticleAction,
-        routeChangeAction,
-    }),
+    connect(
+        mapStateToProps,
+        {
+            closeModalAction,
+            deleteDraftArticleAction,
+            openModalAction,
+            routeChangeAction,
+        }
+    ),
+
     graphql(getArticleQuery, {
         name: 'data',
         options: ({ id, version }: { id: string; version: string }) => {

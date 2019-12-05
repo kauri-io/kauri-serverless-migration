@@ -5,6 +5,9 @@ import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import PrivacyPolicy from './View'
 
 export default compose(
-    connect(() => ({}), { routeChangeAction }),
+    connect(
+        () => ({}),
+        { routeChangeAction }
+    ),
     withLoading()
 )(PrivacyPolicy)

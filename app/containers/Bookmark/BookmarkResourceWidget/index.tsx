@@ -16,13 +16,16 @@ import {
 
 export default compose(
     withApollo,
-    connect(null, {
-        closeModalAction,
-        bookmarkAction,
-        unbookmarkAction,
-        labelRootFolder,
-        createBookmarkFolderAction,
-    }),
+    connect(
+        null,
+        {
+            closeModalAction,
+            bookmarkAction,
+            unbookmarkAction,
+            labelRootFolder,
+            createBookmarkFolderAction,
+        }
+    ),
     graphql(getBookmarkFolders, {
         name: 'data',
         options: ({

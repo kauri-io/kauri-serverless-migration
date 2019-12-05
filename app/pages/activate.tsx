@@ -7,12 +7,15 @@ import EmailVerification from '../containers/EmailVerification'
 import { withRouter } from 'next/router'
 import { withTransaction } from '@elastic/apm-rum-react'
 
-const EmailVerificationPage = withTransaction(
-    'activate',
-    'page'
-)(({ router }) => (
-    <App hideNav={false}>
-        <EmailVerification uuid={router.query.uuid} />
-    </App>
-))
-export default compose(withData, withApollo, withRouter)(EmailVerificationPage)
+const EmailVerificationPage = withTransaction('activate', 'page')(
+    ({ router }) => (
+        <App hideNav={false}>
+            <EmailVerification uuid={router.query.uuid} />
+        </App>
+    )
+)
+export default compose(
+    withData,
+    withApollo,
+    withRouter
+)(EmailVerificationPage)

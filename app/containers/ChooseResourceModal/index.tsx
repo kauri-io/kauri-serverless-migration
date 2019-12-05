@@ -47,7 +47,10 @@ const graphqlDynamic = query => {
 
 export default compose(
     withApollo,
-    connect(mapStateToProps, {}),
+    connect(
+        mapStateToProps,
+        {}
+    ),
     graphqlDynamic(query),
     withApolloError()
 )(View)
