@@ -170,7 +170,7 @@ const LinkContent = ({
             >
                 {linkDescription.value}
             </Typography>
-            <Grid container={true} justify="center" className={classes.tags}>
+            <Grid justify="center" className={classes.tags}>
                 {tags &&
                     tags.map((text, key) => (
                         <Link key={key} href={`/search-results?q=${text}`}>
