@@ -83,7 +83,7 @@ const ArticleEditor = props => {
                                     'community-publishing-modal',
                                     Date.now().toString()
                                 )
-                                closeModalAction()
+                                routeChangeAction(`/help`)
                             }}
                             closeModalAction={() => {
                                 window.localStorage.setItem(
@@ -92,7 +92,7 @@ const ArticleEditor = props => {
                                 )
                                 closeModalAction()
                             }}
-                            closeButtonText="Understood"
+                            closeButtonText="Close"
                             confirmButtonText="Learn More"
                         />
                     ),
