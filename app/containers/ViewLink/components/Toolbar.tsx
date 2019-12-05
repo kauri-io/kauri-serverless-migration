@@ -8,6 +8,7 @@ import { ResourceTypeInput } from '../../../__generated__/globalTypes'
 import BookmarkResource from '../../../containers/Bookmark/BookmarkResourceWidget'
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
 import BookmarkIcon from '@material-ui/icons/Bookmark'
+import DeleteIcon from '@material-ui/icons/Delete'
 import PencilIcon from '@material-ui/icons/Edit'
 import { getArticleURL } from '../../../lib/getURLs'
 import { BodyCard } from '../../../components/Typography'
@@ -160,7 +161,7 @@ const Toolbar = ({
                             })
                         }
                     >
-                        <PencilIcon />
+                        <DeleteIcon />
                         <Typography variant="subtitle2">
                             Delete Draft
                         </Typography>
