@@ -144,6 +144,8 @@ const ArticleComp = ({
         },
     },
 }: IProps) => {
+    attributes = (attributes !== null) ? attributes : {};
+
     const classes = ArticleStyles({})
     const author = contributors && contributors[0]
     const canonicalUrl = attributes.canonical
