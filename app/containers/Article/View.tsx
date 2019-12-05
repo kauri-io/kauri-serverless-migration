@@ -144,7 +144,7 @@ const ArticleComp = ({
         },
     },
 }: IProps) => {
-    attributes = (attributes !== null) ? attributes : {};
+    attributes = attributes !== null ? attributes : {}
 
     const classes = ArticleStyles({})
     const author = contributors && contributors[0]
