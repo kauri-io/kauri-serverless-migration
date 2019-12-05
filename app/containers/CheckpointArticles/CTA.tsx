@@ -45,7 +45,6 @@ class CTA extends Component<IProps, IState> {
     }
 
     async loadWeb3() {
-        console.log(' Loading web3')
         const sm = await import('../../lib/init-smart-contracts')
         sm.initSmartContracts(global.window.web3, (result, err) => {
             if (err) {
@@ -67,8 +66,8 @@ class CTA extends Component<IProps, IState> {
                 color="primary"
                 variant="text"
                 onClick={() => this.props.checkpointArticlesAction()}
+                startIcon={<CheckpointArticlesIcon />}
             >
-                <CheckpointArticlesIcon />
                 {this.props.pageType === 'public-profile'
                     ? 'Submit Articles On-chain'
                     : 'Submit Article On-chain'}
