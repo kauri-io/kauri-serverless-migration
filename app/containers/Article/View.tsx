@@ -254,6 +254,7 @@ const ArticleComp = ({
                             direction="row"
                             container={true}
                             justify="space-between"
+                            alignItems="center"
                         >
                             <Grid className={classes.nameAndDate}>
                                 {author && (

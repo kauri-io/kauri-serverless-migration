@@ -1163,11 +1163,13 @@ exports[`containers/Article should match snapshot 1`] = `
                             />
                           </Hidden>
                           <WithStyles(ForwardRef(Grid))
+                            alignItems="center"
                             container={true}
                             direction="row"
                             justify="space-between"
                           >
                             <ForwardRef(Grid)
+                              alignItems="center"
                               classes={
                                 Object {
                                   "align-content-xs-center": "MuiGrid-align-content-xs-center",
@@ -1280,7 +1282,7 @@ exports[`containers/Article should match snapshot 1`] = `
                               justify="space-between"
                             >
                               <div
-                                className="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-space-between"
+                                className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
                               >
                                 <WithStyles(ForwardRef(Grid))
                                   className="makeStyles-nameAndDate-15"
