@@ -1403,6 +1403,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                       <AvatarComp
                                         avatar="test avatar 1"
                                         id="6791"
+                                        size={40}
                                         username="test-author-username-1"
                                         withName={true}
                                       >
@@ -1422,9 +1423,9 @@ exports[`containers/Article should match snapshot 1`] = `
                                               <ForwardRef
                                                 borderRadius="2px"
                                                 className="makeStyles-avatar-126"
-                                                height={24}
+                                                height={40}
                                                 image="test avatar 1"
-                                                width={24}
+                                                width={40}
                                               >
                                                 <InView
                                                   rootMargin="200px 0px"
@@ -1434,10 +1435,10 @@ exports[`containers/Article should match snapshot 1`] = `
                                                   <Image__Img
                                                     borderRadius="2px"
                                                     className="makeStyles-avatar-126"
-                                                    height={24}
+                                                    height={40}
                                                     image="test avatar 1"
                                                     inView={false}
-                                                    width={24}
+                                                    width={40}
                                                   >
                                                     <StyledComponent
                                                       borderRadius="2px"
@@ -1492,15 +1493,15 @@ exports[`containers/Article should match snapshot 1`] = `
                                                         }
                                                       }
                                                       forwardedRef={[Function]}
-                                                      height={24}
+                                                      height={40}
                                                       image="test avatar 1"
                                                       inView={false}
-                                                      width={24}
+                                                      width={40}
                                                     >
                                                       <div
-                                                        className="Image__Img-sc-1jpuda7-0 fFzdZc makeStyles-avatar-126"
-                                                        height={24}
-                                                        width={24}
+                                                        className="Image__Img-sc-1jpuda7-0 kOssdn makeStyles-avatar-126"
+                                                        height={40}
+                                                        width={40}
                                                       />
                                                     </StyledComponent>
                                                   </Image__Img>
@@ -1561,6 +1562,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                       </AvatarComp>
                                       <WithStyles(ForwardRef(Typography))
                                         gutterBottom={true}
+                                        variant="body2"
                                       >
                                         <ForwardRef(Typography)
                                           classes={
@@ -1598,9 +1600,10 @@ exports[`containers/Article should match snapshot 1`] = `
                                             }
                                           }
                                           gutterBottom={true}
+                                          variant="body2"
                                         >
                                           <p
-                                            className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+                                            className="MuiTypography-root MuiTypography-body2 MuiTypography-gutterBottom"
                                           >
                                             1
                                              min read - Posted

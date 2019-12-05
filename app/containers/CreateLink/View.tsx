@@ -191,7 +191,7 @@ const CreateLink = ({
             {tab === 1 && (
                 <Grid className={classes.fullPreview}>
                     <FullPreview
-                        owner={user}
+                        submitter={user}
                         dateCreated={Date.now()}
                         linkTitle={{ value: title }}
                         linkAttributes={{
