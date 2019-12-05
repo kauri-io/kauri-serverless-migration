@@ -33,7 +33,7 @@ export const useStyles = makeStyles((theme: Theme) => {
         linkInputContainer: {
             padding: theme.spacing(2),
             maxWidth: 870,
-            margin: 'auto',
+            margin: '32px auto',
         },
         linkInput: {},
         preview: {

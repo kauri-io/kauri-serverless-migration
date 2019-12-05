@@ -1,5 +1,4 @@
 import Button from '../../../components/Button'
-import MediumImportButton from '../../../components/Button/MediumImportButton'
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
 import Link from 'next/link'
 import { Grid, Typography } from '@material-ui/core'
@@ -29,9 +28,6 @@ export default ({ isLoggedIn, isOwner }) => (
                 )
             }
             title="No Articles Published"
-            secondaryButton={
-                isOwner ? <MediumImportButton border /> : <div></div>
-            }
             primaryButton={
                 isOwner ? (
                     <Link href="/write-article">

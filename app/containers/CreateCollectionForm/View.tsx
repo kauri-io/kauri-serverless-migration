@@ -400,6 +400,7 @@ const CreateCollectionForm: React.FC<
 
     const [resourceModalOpened, setResourceModalOpened] = React.useState({})
     const [validationMessages, setValidationMessages] = React.useState({})
+    const [disableSave, setDisableSave] = React.useState(false)
 
     const [modalOptions, setModalOptions] = React.useState({
         showSearch: false,
@@ -423,9 +424,6 @@ const CreateCollectionForm: React.FC<
                         types: ['ARTICLE', 'LINK'],
                         mustIncludeUserId: [userId],
                     },
-                    parameter: {
-                        scoringMode: 'LAST_UPDATED',
-                    },
                 },
             },
         },
@@ -440,9 +438,6 @@ const CreateCollectionForm: React.FC<
                     query: '',
                     filter: {
                         types: ['ARTICLE', 'LINK'],
-                    },
-                    parameter: {
-                        scoringMode: 'LAST_UPDATED',
                     },
                 },
             },
@@ -459,11 +454,26 @@ const CreateCollectionForm: React.FC<
     const onValidation = (id, message) => {
         if (!message || message == '') {
             delete validationMessages[id]
-            return
+        } else {
+            validationMessages[id] = message
         }
-        validationMessages[id] = message
+
         setValidationMessages(validationMessages)
+        checkDisableSave()
     }
+
+    const checkDisableSave = () => {
+        setDisableSave(
+            (validationMessages &&
+                Object.keys(validationMessages).length > 0) ||
+                (errors && Object.keys(errors).length > 0)
+        )
+    }
+
+    //Check if we should disable saving any time errors are updated
+    useEffect(() => {
+        checkDisableSave()
+    }, [errors])
 
     return (
         <Section>
@@ -512,7 +522,7 @@ const CreateCollectionForm: React.FC<
                         <Button
                             variant="contained"
                             color="primary"
-                            disabled={isSubmitting}
+                            disabled={isSubmitting || disableSave}
                             type="submit"
                             onClick={() =>
                                 showFormValidationErrors(

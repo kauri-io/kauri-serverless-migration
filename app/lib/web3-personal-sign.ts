@@ -12,19 +12,20 @@ const personalSign = (data: string) =>
         console.log('********** PERSONAL SIGN ********')
 
         web3Provider.listAccounts().then(accounts => {
-            if (accounts.length > 1) {
+            if (accounts.length >= 1) {
+                console.log('More than one account')
                 global.window.ethereum &&
-                    global.window.ethereum
-                        .enable()
+                    global.window.ethereum.enable()
                         .then(result => {
-                            if (process.env.NODE_ENV !== 'test')
-                                console.log('result', result)
                             if (
-                                web3.eth.accounts &&
-                                web3.eth.accounts.length < 1
+                                !result ||
+                                (web3.eth.accounts &&
+                                    web3.eth.accounts.length < 1)
                             ) {
                                 reject(new Error('Metamask locked!'))
                             }
+
+                            console.log(web3.eth.accounts)
 
                             web3.currentProvider.sendAsync(
                                 {
@@ -38,8 +39,6 @@ const personalSign = (data: string) =>
                                 },
                                 (err, { result }) => {
                                     if (err) console.error('err', err)
-                                    if (process.env.NODE_ENV !== 'test')
-                                        console.log('result', result)
                                     return err || !result
                                         ? reject(err)
                                         : resolve(result)
@@ -51,20 +50,27 @@ const personalSign = (data: string) =>
                             reject(new Error('Metamask locked!'))
                         })
             } else {
-                web3.currentProvider.sendAsync(
-                    {
-                        id: new Date().getTime(),
-                        jsonrpc: '2.0',
-                        method: 'personal_sign',
-                        params: [web3.eth.accounts[0], web3.toHex(data)],
-                    },
-                    (err, { result }) => {
-                        if (err) console.error('err', err)
-                        if (process.env.NODE_ENV !== 'test')
-                            console.log('result', result)
-                        return err || !result ? reject(err) : resolve(result)
-                    }
-                )
+                global.window.ethereum &&
+                    global.window.ethereum.enable().then(() => {
+                        console.log('Enabled')
+                        web3.currentProvider.sendAsync(
+                            {
+                                id: new Date().getTime(),
+                                jsonrpc: '2.0',
+                                method: 'personal_sign',
+                                params: [
+                                    web3.eth.accounts[0],
+                                    web3.toHex(data),
+                                ],
+                            },
+                            (err, { result }) => {
+                                if (err) console.error('err', err)
+                                return err || !result
+                                    ? reject(err)
+                                    : resolve(result)
+                            }
+                        )
+                    })
             }
         })
     })

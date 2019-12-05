@@ -20,8 +20,8 @@ const Renderer = ({ markdown }) => {
             borderRadius: 4,
             margin: 'auto',
             maxWidth: '100%',
-            background: theme.palette.common.black,
-            color: theme.palette.common.white,
+            background: theme.palette.grey[200],
+            color: theme.palette.common.black,
             padding: theme.spacing(0, 1),
             fontSize: 16,
             overflowX: 'auto',
@@ -36,12 +36,38 @@ const Renderer = ({ markdown }) => {
         rendered: {
             '& pre code': {
                 display: 'block',
+                background: theme.palette.common.black,
+                color: theme.palette.common.white,
             },
         },
         katex: {
             fontSize: '2em',
             padding: theme.spacing(2),
             borderRadius: 4,
+        },
+        h1: {
+            fontWeight: 500,
+            fontSize: 30,
+        },
+        h2: {
+            fontWeight: 500,
+            fontSize: 24,
+        },
+        h3: {
+            fontWeight: 500,
+            fontSize: 20,
+        },
+        h4: {
+            fontWeight: 500,
+            fontSize: 16,
+        },
+        h5: {
+            fontWeight: 500,
+            fontSize: 14,
+        },
+        h6: {
+            fontWeight: 500,
+            fontSize: 14,
         },
     }))
 
@@ -83,15 +109,22 @@ const Renderer = ({ markdown }) => {
                 />
             )
         } else {
+            let html = props.children
+
+            //Non inline code blocks have a className set, so highlight in this case.
+            if (props.className) {
+                html = Prism.highlight(
+                    props.children,
+                    Prism.languages.javascript,
+                    'javascript'
+                )
+            }
+
             return (
                 <code
                     className={classes.code}
                     dangerouslySetInnerHTML={{
-                        __html: Prism.highlight(
-                            props.children,
-                            Prism.languages.javascript,
-                            'javascript'
-                        ),
+                        __html: html,
                     }}
                 />
             )
@@ -121,6 +154,7 @@ const Renderer = ({ markdown }) => {
                     gutterBottom: true,
                     variant: 'h4',
                     'aria-label': 'title',
+                    className: classes.h1,
                 },
             },
             h2: {
@@ -129,6 +163,7 @@ const Renderer = ({ markdown }) => {
                     gutterBottom: true,
                     variant: 'h4',
                     'aria-label': 'title',
+                    className: classes.h2,
                 },
             },
             h3: {
@@ -137,6 +172,7 @@ const Renderer = ({ markdown }) => {
                     gutterBottom: true,
                     variant: 'h5',
                     'aria-label': 'title',
+                    className: classes.h3,
                 },
             },
             h4: {
@@ -145,7 +181,7 @@ const Renderer = ({ markdown }) => {
                     gutterBottom: true,
                     variant: 'h6',
                     'aria-label': 'title',
-                    paragraph: true,
+                    className: classes.h4,
                 },
             },
             h5: {
@@ -154,7 +190,7 @@ const Renderer = ({ markdown }) => {
                     gutterBottom: true,
                     variant: 'h6',
                     'aria-label': 'title',
-                    paragraph: true,
+                    className: classes.h5,
                 },
             },
             h6: {
@@ -163,7 +199,7 @@ const Renderer = ({ markdown }) => {
                     gutterBottom: true,
                     variant: 'h6',
                     'aria-label': 'title',
-                    paragraph: true,
+                    className: classes.h6,
                 },
             },
             p: { component: Typography, props: { paragraph: true } },

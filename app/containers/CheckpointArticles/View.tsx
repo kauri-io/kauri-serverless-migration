@@ -24,6 +24,8 @@ const CheckpointedArticlesContainer = styled.div`
     font-weight: ${props => props.theme.fontWeight[3]};
     text-transform: uppercase;
     align-items: center;
+    justify-content: center;
+    width: 100%;
 `
 
 export interface IProps {
