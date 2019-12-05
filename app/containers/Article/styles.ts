@@ -84,6 +84,9 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
         headerImage: {
             padding: theme.spacing(2),
             background: theme.palette.common.white,
+            '& > *': {
+                width: '100%',
+            },
         },
         nameAndDate: {
             display: 'flex',
