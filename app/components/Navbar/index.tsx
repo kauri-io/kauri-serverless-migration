@@ -19,6 +19,7 @@ import Avatar from '../../components/Avatar'
 import MenuIcon from '@material-ui/icons/Menu'
 import { Hidden } from '@material-ui/core'
 import Drawer from '@material-ui/core/Drawer'
+import NoSsr from '@material-ui/core/NoSsr'
 
 const useStyles = makeStyles((theme: Theme) => {
     return {
@@ -355,36 +356,38 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                             Contribute
                         </Typography>
                     </Hidden>
-                    <div className={classes.sectionDesktop}>
-                        <IconButton
-                            edge="end"
-                            aria-owns={
-                                isMenuOpen ? 'material-appbar' : undefined
-                            }
-                            aria-haspopup="true"
-                            onClick={
-                                user
-                                    ? handleProfileMenuOpen
-                                    : () => router.push('/login')
-                            }
-                            color="inherit"
-                        >
-                            {!user ? (
-                                <AccountCircle className={classes.avatar} />
-                            ) : (
-                                <Avatar
-                                    className={classes.avatar}
-                                    avatar={user.avatar}
-                                    id={user.id}
-                                    withName={false}
-                                    ignoreLink={true}
-                                />
-                            )}
-                        </IconButton>
-                    </div>
+                    <NoSsr>
+                        <div className={classes.sectionDesktop}>
+                            <IconButton
+                                edge="end"
+                                aria-owns={
+                                    isMenuOpen ? 'material-appbar' : undefined
+                                }
+                                aria-haspopup="true"
+                                onClick={
+                                    user
+                                        ? handleProfileMenuOpen
+                                        : () => router.push('/login')
+                                }
+                                color="inherit"
+                            >
+                                {!user ? (
+                                    <AccountCircle className={classes.avatar} />
+                                ) : (
+                                    <Avatar
+                                        className={classes.avatar}
+                                        avatar={user.avatar}
+                                        id={user.id}
+                                        withName={false}
+                                        ignoreLink={true}
+                                    />
+                                )}
+                            </IconButton>
+                        </div>
+                    </NoSsr>
                 </Toolbar>
             </AppBar>
-            {renderMenu}
+            <NoSsr>{renderMenu}</NoSsr>
         </div>
     )
 }
