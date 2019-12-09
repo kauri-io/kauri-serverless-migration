@@ -107,3 +107,13 @@ export const getLink = gql`
     }
     ${Link}
 `
+
+export const getLinkTitleQuery = gql`
+    query getExternalLinkTitle($id: String!) {
+        getExternalLink(id: $id) {
+            title {
+                value
+            }
+        }
+    }
+`

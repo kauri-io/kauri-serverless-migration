@@ -94,7 +94,6 @@ const ArticleCard = ({
     isBookmarked,
     openModalAction,
     routeChangeAction,
-    addArticleToCollectionAction,
     // version,
     description,
     isLoggedIn,
@@ -184,9 +183,6 @@ const ArticleCard = ({
                                             openModalAction={openModalAction}
                                             routeChangeAction={
                                                 routeChangeAction
-                                            }
-                                            addArticleToCollectionAction={
-                                                addArticleToCollectionAction
                                             }
                                             url={href}
                                             type="ARTICLE"

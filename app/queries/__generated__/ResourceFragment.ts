@@ -1466,6 +1466,10 @@ export interface ResourceFragment_CommunityDTO {
    */
   id: string;
   /**
+   * Community Name
+   */
+  name: string;
+  /**
    * Community date created
    */
   dateCreated: any;

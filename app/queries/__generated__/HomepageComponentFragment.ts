@@ -1485,6 +1485,10 @@ export interface HomepageComponentFragment_Featured_content_resource_CommunityDT
    */
   id: string;
   /**
+   * Community Name
+   */
+  name: string;
+  /**
    * Community date created
    */
   dateCreated: any;
@@ -3074,6 +3078,10 @@ export interface HomepageComponentFragment_Promo_content_resource_CommunityDTO {
    */
   id: string;
   /**
+   * Community Name
+   */
+  name: string;
+  /**
    * Community date created
    */
   dateCreated: any;
@@ -4609,6 +4617,10 @@ export interface HomepageComponentFragment_LatestContent_content_CommunityDTO {
    * Community ID
    */
   id: string;
+  /**
+   * Community Name
+   */
+  name: string;
   /**
    * Community date created
    */
