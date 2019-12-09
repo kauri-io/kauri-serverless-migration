@@ -134,6 +134,10 @@
       "dest": "/app/login"
     },
     {
+      "src": "/",
+      "dest": "/app/"
+    },
+    {
       "src": "/.*",
       "status": 404,
       "dest": "/app/404"
