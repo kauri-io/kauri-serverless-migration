@@ -387,7 +387,9 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                     </NoSsr>
                 </Toolbar>
             </AppBar>
+            <NoSsr>
             {renderMenu}
+            </NoSsr>
         </div>
     )
 }
