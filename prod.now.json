@@ -132,8 +132,16 @@
       "dest": "/app/activate?uuid=$1"
     },
     {
-      "src": "/(.*)",
+      "src": "/login",
+      "dest": "/app/login"
+    },
+    {
+      "src": "/",
       "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
+      "dest": "/app/"
+    },
+    {
+      "src": "/(.*)",
       "dest": "/app/$1"
     },
     {
