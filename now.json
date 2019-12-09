@@ -38,7 +38,7 @@
     },
     {
       "src": "/(.*)/(.*)/l",
-      "headers": {"cache-control": "private" "s-maxage=1, stale-while-revalidate"},
+      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
       "dest": "/app/view-link?id=$2"
     },
     {
@@ -47,27 +47,27 @@
     },
     {
       "src": "/(.*)/(.*)/a",
-      "headers": {"cache-control": "private" "s-maxage=1, stale-while-revalidate"},
+      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
       "dest": "/app/article?article_id=$2&slug=$1"
     },
     {
       "src": "/article/(.*)/(.*)/(.*)",
-      "headers": {"cache-control": "private" "s-maxage=1, stale-while-revalidate"},
+      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
       "dest": "/app/article?article_id=$1"
     },
     {
       "src": "/article/(.*)/(.*)",
-      "headers": {"cache-control": "private" "s-maxage=1, stale-while-revalidate"},
+      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
       "dest": "/app/article?article_id=$1"
     },
     {
       "src": "/article/(.*)",
-      "headers": {"cache-control": "private" "s-maxage=1, stale-while-revalidate"},
+      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
       "dest": "/app/article?article_id=$1"
     },
     {
       "src": "/(.*)/(.*)/cm",
-      "headers": {"cache-control": "private" "s-maxage=1, stale-while-revalidate"},
+      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
       "dest": "/app/community?community_id=$2&slug=$1"
     },
     {
@@ -76,12 +76,12 @@
     },
     {
       "src": "/community/(.*)/(.*)",
-      "headers": {"cache-control": "private" "s-maxage=1, stale-while-revalidate"},
+      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
       "dest": "/app/community?community_id=$1"
     },
     {
       "src": "/community/(.*)",
-      "headers": {"cache-control": "private" "s-maxage=1, stale-while-revalidate"},
+      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
       "dest": "/app/community?community_id=$1"
     },
     {
@@ -90,32 +90,31 @@
     },
     {
       "src": "/collection/(.*)/(.*)",
-      "headers": {"cache-control": "private" "s-maxage=1, stale-while-revalidate"},
+      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
       "dest": "/app/collection?collection_id=$1"
     },
     {
       "src": "/collection/(.*)",
-      "headers": {"cache-control": "private" "s-maxage=1, stale-while-revalidate"},
+      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
       "dest": "/app/collection?collection_id=$1"
     },
     {
       "src": "/community/(.*)/update-community",
-      "headers": {"cache-control": "private" "s-maxage=1, stale-while-revalidate"},
+      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
       "dest": "/app/update-community?community_id=$1"
     },
     {
       "src": "/collection/(.*)/update-collection",
-      "headers": {"cache-control": "private" "s-maxage=1, stale-while-revalidate"},
+      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
       "dest": "/app/update-collection?collection_id=$1"
     },
     {
       "src": "/(.*)/p",
-      "headers": {"cache-control": "private" "s-maxage=1, stale-while-revalidate"},
+      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
       "dest": "/app/public-profile?username=$1"
     },
     {
       "src": "/public-profile/(.*)",
-      "headers": {"cache-control": "private" "s-maxage=1, stale-while-revalidate"},
       "dest": "/app/public-profile?user_id=$1"
     },
     {
@@ -131,8 +130,12 @@
       "dest": "/app/activate?uuid=$1"
     },
     {
+      "src": "/login",
+      "dest": "/app/login"
+    },
+    {
       "src": "/(.*)",
-      "headers": {"cache-control": "private" "s-maxage=1, stale-while-revalidate"},
+      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
       "dest": "/app/$1"
     },
     {
