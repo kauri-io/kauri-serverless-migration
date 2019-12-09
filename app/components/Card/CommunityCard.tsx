@@ -191,9 +191,7 @@ const CommunityCard = ({
                                             routeChangeAction={
                                                 routeChangeAction
                                             }
-                                            // addArticleToCollectionAction={
-                                            //     addArticleToCollectionAction
-                                            // }
+                                            hideAddtoCollection={true}
                                             hideBookmark={true}
                                             type="COMMUNITY"
                                             url={collectionURL}

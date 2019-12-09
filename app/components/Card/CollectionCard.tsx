@@ -93,7 +93,6 @@ const CollectionCard = ({
     sections,
     openModalAction,
     routeChangeAction,
-    // addArticleToCollectionAction,
     description,
     isLoggedIn,
     dateUpdated,
@@ -210,11 +209,9 @@ const CollectionCard = ({
                                             routeChangeAction={
                                                 routeChangeAction
                                             }
-                                            // addArticleToCollectionAction={
-                                            //     addArticleToCollectionAction
-                                            // }
                                             url={collectionURL}
                                             type="COLLECTION"
+                                            hideAddtoCollection={true}
                                         />
                                     </Grid>
                                 </Grid>

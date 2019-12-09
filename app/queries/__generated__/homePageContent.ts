@@ -1485,6 +1485,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
    */
   id: string;
   /**
+   * Community Name
+   */
+  name: string;
+  /**
    * Community date created
    */
   dateCreated: any;
@@ -3074,6 +3078,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
    */
   id: string;
   /**
+   * Community Name
+   */
+  name: string;
+  /**
    * Community date created
    */
   dateCreated: any;
@@ -4609,6 +4617,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
    * Community ID
    */
   id: string;
+  /**
+   * Community Name
+   */
+  name: string;
   /**
    * Community date created
    */
@@ -6170,6 +6182,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
    * Community ID
    */
   id: string;
+  /**
+   * Community Name
+   */
+  name: string;
   /**
    * Community date created
    */
@@ -7760,6 +7776,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
    */
   id: string;
   /**
+   * Community Name
+   */
+  name: string;
+  /**
    * Community date created
    */
   dateCreated: any;
@@ -9295,6 +9315,10 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
    * Community ID
    */
   id: string;
+  /**
+   * Community Name
+   */
+  name: string;
   /**
    * Community date created
    */
