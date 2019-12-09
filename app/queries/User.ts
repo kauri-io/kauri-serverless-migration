@@ -27,6 +27,9 @@ export const getUserByUsername = gql`
             articles(page: 0, size: 1, filter: { latestVersion: true }) {
                 totalElements
             }
+            links(page: 0, size: 1) {
+                totalElements
+            }
             collections(page: 0, size: 1) {
                 totalElements
             }

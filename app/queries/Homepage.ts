@@ -56,6 +56,7 @@ export const homePageContentQuery = gql`
         }
         ... on CommunityDTO {
             id
+            name
             dateCreated
             dateUpdated
             creatorId

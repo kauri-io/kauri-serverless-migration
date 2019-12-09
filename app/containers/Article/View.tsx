@@ -144,6 +144,8 @@ const ArticleComp = ({
         },
     },
 }: IProps) => {
+    attributes = attributes !== null ? attributes : {}
+
     const classes = ArticleStyles({})
     const author = contributors && contributors[0]
     const canonicalUrl = attributes.canonical
@@ -255,17 +257,19 @@ const ArticleComp = ({
                             direction="row"
                             container={true}
                             justify="space-between"
+                            alignItems="center"
                         >
                             <Grid className={classes.nameAndDate}>
                                 {author && (
                                     <Avatar
+                                        size={40}
                                         avatar={author.avatar}
                                         username={author.username}
                                         id={author.id}
                                         withName={true}
                                     />
                                 )}
-                                <Typography gutterBottom={true}>
+                                <Typography gutterBottom={true} variant="body2">
                                     {content && estimateTime(content)} min read
                                     - Posted{' '}
                                     {moment(datePublished).format('DD MMM YY')}

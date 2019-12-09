@@ -3,6 +3,7 @@ import Loading from '../../components/Loading'
 import Button from '../../components/Button'
 export const CheckpointArticlesIcon = () => (
     <svg
+        style={{ marginRight: 16 }}
         width="20"
         height="20"
         viewBox="0 0 20 20"
@@ -66,8 +67,8 @@ class CTA extends Component<IProps, IState> {
                 color="primary"
                 variant="text"
                 onClick={() => this.props.checkpointArticlesAction()}
-                startIcon={<CheckpointArticlesIcon />}
             >
+                <CheckpointArticlesIcon />
                 {this.props.pageType === 'public-profile'
                     ? 'Submit Articles On-chain'
                     : 'Submit Article On-chain'}

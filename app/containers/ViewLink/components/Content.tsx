@@ -20,7 +20,6 @@ import SocialWebsiteIcon from '../../../components/Social/SocialWebsiteIcon'
 
 const LinkContent = ({
     // id,
-    owner,
     dateCreated,
     linkTitle,
     authorName,
@@ -30,6 +29,7 @@ const LinkContent = ({
     url,
     linkDescription,
     summary,
+    submitter,
     // isBookmarked,
     // openModalAction,
     // routeChangeAction,
@@ -49,12 +49,12 @@ const LinkContent = ({
                 justify="space-between"
             >
                 <div className={classes.nameAndDate}>
-                    {owner && (
+                    {submitter && (
                         <Avatar
                             size={40}
-                            avatar={owner.avatar}
-                            username={owner.username}
-                            id={owner.id}
+                            avatar={submitter.avatar}
+                            username={submitter.username}
+                            id={submitter.id}
                             withName={true}
                         />
                     )}
@@ -170,7 +170,7 @@ const LinkContent = ({
             >
                 {linkDescription.value}
             </Typography>
-            <Grid container={true} justify="center" className={classes.tags}>
+            <Grid justify="center" className={classes.tags}>
                 {tags &&
                     tags.map((text, key) => (
                         <Link key={key} href={`/search-results?q=${text}`}>
