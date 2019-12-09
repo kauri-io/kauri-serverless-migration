@@ -66,9 +66,9 @@ const Layout = ({
             <Notification />
             {!hideNav && (
                 <NoSsr>
-                  <Grid sm={12} item={true}>
-                      <Navbar />
-                  </Grid>
+                    <Grid sm={12} item={true}>
+                        <Navbar />
+                    </Grid>
                 </NoSsr>
             )}
             <Grid

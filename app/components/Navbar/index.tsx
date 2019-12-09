@@ -356,34 +356,33 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                         </Typography>
                     </Hidden>
 
-                        <div className={classes.sectionDesktop}>
-                            <IconButton
-                                edge="end"
-                                aria-owns={
-                                    isMenuOpen ? 'material-appbar' : undefined
-                                }
-                                aria-haspopup="true"
-                                onClick={
-                                    user
-                                        ? handleProfileMenuOpen
-                                        : () => router.push('/login')
-                                }
-                                color="inherit"
-                            >
-                                {!user ? (
-                                    <AccountCircle className={classes.avatar} />
-                                ) : (
-                                    <Avatar
-                                        className={classes.avatar}
-                                        avatar={user.avatar}
-                                        id={user.id}
-                                        withName={false}
-                                        ignoreLink={true}
-                                    />
-                                )}
-                            </IconButton>
-                        </div>
-
+                    <div className={classes.sectionDesktop}>
+                        <IconButton
+                            edge="end"
+                            aria-owns={
+                                isMenuOpen ? 'material-appbar' : undefined
+                            }
+                            aria-haspopup="true"
+                            onClick={
+                                user
+                                    ? handleProfileMenuOpen
+                                    : () => router.push('/login')
+                            }
+                            color="inherit"
+                        >
+                            {!user ? (
+                                <AccountCircle className={classes.avatar} />
+                            ) : (
+                                <Avatar
+                                    className={classes.avatar}
+                                    avatar={user.avatar}
+                                    id={user.id}
+                                    withName={false}
+                                    ignoreLink={true}
+                                />
+                            )}
+                        </IconButton>
+                    </div>
                 </Toolbar>
             </AppBar>
             {renderMenu}
