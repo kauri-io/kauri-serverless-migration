@@ -19,7 +19,6 @@ import Avatar from '../../components/Avatar'
 import MenuIcon from '@material-ui/icons/Menu'
 import { Hidden } from '@material-ui/core'
 import Drawer from '@material-ui/core/Drawer'
-import NoSsr from '@material-ui/core/NoSsr'
 
 const useStyles = makeStyles((theme: Theme) => {
     return {
@@ -356,7 +355,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                             Contribute
                         </Typography>
                     </Hidden>
-                    <NoSsr>
+
                         <div className={classes.sectionDesktop}>
                             <IconButton
                                 edge="end"
@@ -384,10 +383,10 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                                 )}
                             </IconButton>
                         </div>
-                    </NoSsr>
+
                 </Toolbar>
             </AppBar>
-            <NoSsr>{renderMenu}</NoSsr>
+            {renderMenu}
         </div>
     )
 }
