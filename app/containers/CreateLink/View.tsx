@@ -143,8 +143,7 @@ const CreateLink = ({
                                 variant="subtitle1"
                                 className={classes.error}
                             >
-                                This link already exists on Kauri! Check the
-                                below card*
+                                This link already exists,you can add it to your collections below
                             </Typography>
                         )}
                     </Paper>
