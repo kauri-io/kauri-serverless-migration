@@ -53,11 +53,9 @@ const CreateLink = ({
     }
 
     const hasSomeData = title || description || image
-    const hasAllData =
+    const hasAllRequiredData =
         title &&
-        description &&
-        image &&
-        summary &&
+        (description || summary) &&
         authorName &&
         (tags && tags.length > 0)
 
@@ -79,7 +77,7 @@ const CreateLink = ({
     return (
         <Grid>
             <Nav
-                disabled={!hasAllData}
+                disabled={!hasAllRequiredData}
                 submitExtenalLinkAction={() => {
                     if (communities && communities.length > 0) {
                         return openModalAction({
