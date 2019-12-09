@@ -134,11 +134,6 @@
       "dest": "/app/login"
     },
     {
-      "src": "/(.*)",
-      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
-      "dest": "/app/$1"
-    },
-    {
       "src": "/.*",
       "status": 404,
       "dest": "/app/404"
