@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     title: {
         marginBottom: 0,
         textAlign: 'center',
-        fontWeight: 600,
+        fontWeight: 500,
     },
     description: {
         fontWeight: 400,
