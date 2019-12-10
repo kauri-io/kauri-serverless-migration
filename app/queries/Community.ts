@@ -1,20 +1,14 @@
 import gql from 'graphql-tag'
-import {
-    Community,
-    UserOwner,
-    CommunityOwner,
-    Article,
-    Collection,
-    Link,
-} from './Fragments'
+import { CommunityView } from './Fragments'
+import { ArticleCard, LinkCard, CollectionCard, CommunityCard } from './Fragments/cards'
 
 export const getCommunity = gql`
     query getCommunity($id: String!) {
         getCommunity(id: $id) {
-            ...Community
+            ...CommunityView
         }
     }
-    ${Community}
+    ${CommunityView}
 `
 
 export const getCommunityAndPendingArticles = gql`
@@ -24,7 +18,7 @@ export const getCommunityAndPendingArticles = gql`
         $page: Int = 0
     ) {
         getCommunity(id: $id) {
-            ...Community
+            ...CommunityView
         }
         searchArticles(
             size: $size
@@ -36,54 +30,12 @@ export const getCommunityAndPendingArticles = gql`
             totalElements
             isLast
             content {
-                id
-                version
-                title
-                description
-                tags
-                dateCreated
-                datePublished
-                author {
-                    id
-                    name
-                    username
-                    avatar
-                }
-                owner {
-                    ...UserOwner
-                    ...CommunityOwner
-                }
-                status
-                attributes
-                contentHash
-                checkpoint
-                voteResult {
-                    sum
-                }
-                comments {
-                    content {
-                        posted
-                        author {
-                            id
-                            name
-                        }
-                        body
-                    }
-                    totalPages
-                    totalElements
-                }
-                resourceIdentifier {
-                    type
-                    id
-                    version
-                }
-                isBookmarked
+                ...ArticleCard
             }
         }
     }
-    ${Community}
-    ${UserOwner}
-    ${CommunityOwner}
+    ${CommunityView}
+    ${ArticleCard}
 `
 
 export const getAllCommunities = gql`
@@ -102,34 +54,12 @@ export const getAllCommunities = gql`
             dir: $dir
         ) {
             content {
-                id
-                dateCreated
-                dateUpdated
-                members {
-                    id
-                    avatar
-                    username
-                    name
-                }
-                attributes
-                approvedId {
-                    type
-                }
-                creatorId
-                name
-                description
-                status
-                website
-                avatar
-                tags
-                social
-                approvedId {
-                    type
-                }
+                ...CommunityCard
             }
             isLast
         }
     }
+    ${CommunityCard}
 `
 
 export const prepareCreateCommunityQuery = gql`
@@ -246,7 +176,7 @@ export const removeResourceMutation = gql`
 `
 
 export const getCommunityArticleContent = gql`
-    query getCommunityContent(
+    query getCommunityArticleContent(
         $id: String!
         $page: Int = 0
         $size: Int = 12
@@ -263,13 +193,13 @@ export const getCommunityArticleContent = gql`
                 type
                 resource {
                     ... on ArticleDTO {
-                        ...Article
+                        ...ArticleCard
                     }
                     ... on CollectionDTO {
-                        ...Collection
+                        ...CollectionCard
                     }
                     ... on ExternalLinkDTO {
-                        ...Link
+                        ...LinkCard
                     }
                 }
             }
@@ -277,9 +207,9 @@ export const getCommunityArticleContent = gql`
             totalElements
         }
     }
-    ${Article}
-    ${Collection}
-    ${Link}
+    ${ArticleCard}
+    ${CollectionCard}
+    ${LinkCard}
 `
 
 export const prepareSendInvitationQuery = gql`
@@ -457,7 +387,7 @@ export const initiateArticleTransferMutation = gql`
     }
 `
 
-export const getCommunityContentQuery = gql`
+export const getCommunityContent = gql`
     query getCommunityContent(
         $id: String!
         $page: Int = 0
@@ -475,10 +405,10 @@ export const getCommunityContentQuery = gql`
                 type
                 resource {
                     ... on ArticleDTO {
-                        ...Article
+                        ...ArticleCard
                     }
                     ... on CollectionDTO {
-                        ...Collection
+                        ...CollectionCard
                     }
                 }
             }
@@ -487,6 +417,6 @@ export const getCommunityContentQuery = gql`
         }
     }
 
-    ${Article}
-    ${Collection}
+    ${ArticleCard}
+    ${CollectionCard}
 `

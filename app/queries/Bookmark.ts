@@ -1,5 +1,5 @@
 import gql from 'graphql-tag'
-import { Article, Collection, Link } from './Fragments'
+import { ArticleCard, CollectionCard, LinkCard } from './Fragments/cards'
 
 export const getBookmarkFolders = gql`
     query getBookmarkFolders($resourceId: ResourceIdentifierInput) {
@@ -22,22 +22,22 @@ export const getBookmarks = gql`
                 type
                 resource {
                     ... on ArticleDTO {
-                        ...Article
+                        ...ArticleCard
                     }
                     ... on CollectionDTO {
-                        ...Collection
+                        ...CollectionCard
                     }
                     ... on ExternalLinkDTO {
-                        ...Link
+                        ...LinkCard
                     }
                 }
             }
         }
     }
 
-    ${Article}
-    ${Collection}
-    ${Link}
+    ${ArticleCard}
+    ${CollectionCard}
+    ${LinkCard}
 `
 
 export const bookmark = gql`

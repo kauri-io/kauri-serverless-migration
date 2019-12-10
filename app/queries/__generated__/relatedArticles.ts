@@ -2,7 +2,7 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { ResourceIdentifierInput, SearchFilterInput, ResourceTypeInput, ArticleStatusInput } from "./../../__generated__/globalTypes";
+import { ResourceIdentifierInput, SearchFilterInput, ResourceTypeInput, ArticleStatusInput, CommunityPermissionInput, UserStatusInput } from "./../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: relatedArticles
@@ -24,44 +24,93 @@ export interface relatedArticles_searchMoreLikeThis_content_resource_PublicUserD
   __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
-export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_author {
+export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource version (article)
+   */
+  version: number | null;
+}
+
+export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_owner_ArticleDTO {
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+}
+
+export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_owner_PublicUserDTO {
   __typename: "PublicUserDTO";
-  /**
-   * User full name
-   */
-  name: string | null;
-  /**
-   * Username
-   */
-  username: string | null;
   /**
    * User ID (Ethereum account address)
    */
   id: string;
   /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
    * User avatar URI
    */
   avatar: string | null;
+  resourceIdentifier: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier | null;
 }
 
-export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_comments {
-  __typename: "ResponsePage_CommentDTO";
+export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
   /**
-   * Total amount of elements.
+   * Resource ID
    */
-  totalElements: any;
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
 }
 
-export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_voteResult {
-  __typename: "VoteResultDTO";
+export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_owner_CommunityDTO {
+  __typename: "CommunityDTO";
   /**
-   * Vote sum: Sum of the vote (-1,+1,+1=+1)
+   * Community ID
    */
-  sum: number;
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
+  avatar: string | null;
+  resourceIdentifier: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_owner_CommunityDTO_resourceIdentifier | null;
 }
+
+export type relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_owner = relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_owner_ArticleDTO | relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_owner_PublicUserDTO | relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_owner_CommunityDTO;
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO {
   __typename: "ArticleDTO";
+  resourceIdentifier: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_resourceIdentifier | null;
   /**
    * Article ID
    */
@@ -79,10 +128,6 @@ export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO 
    */
   description: string | null;
   /**
-   * Article author (full profile)
-   */
-  author: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_author;
-  /**
    * Date created
    */
   dateCreated: any;
@@ -95,29 +140,17 @@ export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO 
    */
   status: ArticleStatusInput;
   /**
-   * Set of optional attributes fields
-   */
-  attributes: any | null;
-  /**
-   * IPFS Content hash
-   */
-  contentHash: string;
-  /**
    * Checkpoint file (null if the article is not escalated on-chain)
    */
   checkpoint: string | null;
   /**
-   * Tags list
+   * Set of optional attributes fields
    */
-  tags: (string | null)[] | null;
+  attributes: any | null;
   /**
-   * Get a paginated list of comments for this article
+   * load the article owner (user or community resource type)
    */
-  comments: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_comments;
-  /**
-   * Get vote result for the article
-   */
-  voteResult: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_voteResult;
+  owner: relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_owner | null;
   /**
    * Check if the article is already bookmarked by the current user
    */
@@ -136,8 +169,97 @@ export interface relatedArticles_searchMoreLikeThis_content_resource_CollectionD
   id: string;
 }
 
+export interface relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_owner_ArticleDTO {
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+}
+
+export interface relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_owner_PublicUserDTO {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  resourceIdentifier: relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier | null;
+}
+
+export interface relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_owner_CommunityDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_owner_CommunityDTO {
+  __typename: "CommunityDTO";
+  /**
+   * Community ID
+   */
+  id: string;
+  /**
+   * Community Name
+   */
+  communityName: string;
+  /**
+   * Community avatar image URI
+   */
+  avatar: string | null;
+  resourceIdentifier: relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_owner_CommunityDTO_resourceIdentifier | null;
+}
+
+export type relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_owner = relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_owner_ArticleDTO | relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_owner_PublicUserDTO | relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_owner_CommunityDTO;
+
+export interface relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_sections_resourcesId {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_sections {
+  __typename: "SectionDTO";
+  /**
+   * List of resource identifiers
+   */
+  resourcesId: (relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_sections_resourcesId | null)[] | null;
+}
+
 export interface relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO {
   __typename: "CollectionDTO";
+  resourceIdentifier: relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_resourceIdentifier | null;
   /**
    * Collection ID
    */
@@ -145,32 +267,77 @@ export interface relatedArticles_searchMoreLikeThis_content_resource_CollectionD
   /**
    * Collection name
    */
-  name: string;
+  collecionName: string;
   /**
    * Collection description
    */
   description: string | null;
   /**
-   * Tags
+   * Date created
    */
-  tags: (string | null)[] | null;
+  dateCreated: any;
+  /**
+   * Last date updated
+   */
+  dateUpdated: any;
   /**
    *  Background image
    */
   background: string | null;
   /**
-   * Last date updated
+   * load the collection owner (user or community resource type)
    */
-  dateUpdated: any;
-  resourceIdentifier: relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_resourceIdentifier | null;
+  owner: relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_owner | null;
   /**
    * Check if the collection is already bookmarked by the current user
    */
   isBookmarked: boolean;
+  /**
+   * Sections of the collections
+   */
+  sections: (relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO_sections | null)[] | null;
+}
+
+export interface relatedArticles_searchMoreLikeThis_content_resource_CommunityDTO_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
+}
+
+export interface relatedArticles_searchMoreLikeThis_content_resource_CommunityDTO_members {
+  __typename: "CommunityMemberDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  name: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+  role: CommunityPermissionInput | null;
+  /**
+   * User status
+   */
+  status: UserStatusInput | null;
 }
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_CommunityDTO {
   __typename: "CommunityDTO";
+  resourceIdentifier: relatedArticles_searchMoreLikeThis_content_resource_CommunityDTO_resourceIdentifier | null;
   /**
    * Community ID
    */
@@ -184,29 +351,25 @@ export interface relatedArticles_searchMoreLikeThis_content_resource_CommunityDT
    */
   dateUpdated: any;
   /**
-   * Community ID
-   */
-  creatorId: string;
-  /**
    * Community Name
    */
-  name: string;
+  communityName: string;
   /**
    * Community Description
    */
   description: string | null;
   /**
-   * Community Website
-   */
-  website: string | null;
-  /**
    * Community avatar image URI
    */
   avatar: string | null;
   /**
-   * Community social data (twitter, github, etc.)
+   * Community custom attribtes
    */
-  social: any | null;
+  attributes: any | null;
+  /**
+   * Community members list (full profile)
+   */
+  members: (relatedArticles_searchMoreLikeThis_content_resource_CommunityDTO_members | null)[];
 }
 
 export type relatedArticles_searchMoreLikeThis_content_resource = relatedArticles_searchMoreLikeThis_content_resource_PublicUserDTO | relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO | relatedArticles_searchMoreLikeThis_content_resource_CollectionDTO | relatedArticles_searchMoreLikeThis_content_resource_CommunityDTO;

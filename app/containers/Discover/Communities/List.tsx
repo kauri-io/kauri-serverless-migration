@@ -29,7 +29,7 @@ export default compose(
         options: () => ({
             variables: {
                 page: 0,
-                size: 10,
+                size: 6,
                 filter: {
                     type: 'COMMUNITY',
                     mustNotIncludeUserId: config.testingAccounts,

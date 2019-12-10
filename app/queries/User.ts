@@ -1,74 +1,30 @@
 import gql from 'graphql-tag'
+import { PublicUserView, PrivateUserView } from './Fragments'
 
 export const getUserDetails = gql`
     query getUser($userId: String!) {
         getUser(id: $userId) {
-            id
-            username
-            name
-            title
-            website
-            avatar
-            social
+            ...PublicUserView
         }
     }
+    ${PublicUserView}
 `
 
 export const getUserByUsername = gql`
     query getUserByUsername($username: String!) {
         getUserByUsername(username: $username) {
-            id
-            username
-            name
-            title
-            website
-            avatar
-            social
-            articles(page: 0, size: 1, filter: { latestVersion: true }) {
-                totalElements
-            }
-            links(page: 0, size: 1) {
-                totalElements
-            }
-            collections(page: 0, size: 1) {
-                totalElements
-            }
+            ...PublicUserView
         }
     }
+    ${PublicUserView}
 `
 export const getOwnProfile = gql`
     query getMyProfile {
         getMyProfile {
-            id
-            email
-            username
-            name
-            title
-            website
-            avatar
-            social
-            status
-            communities {
-                role
-                community {
-                    id
-                    name
-                    members {
-                        id
-                        role
-                    }
-                }
-            }
-            subscriptions
-            dateCreated
-            articles(page: 0, size: 1, filter: { latestVersion: true }) {
-                totalElements
-            }
-            collections(page: 0, size: 1) {
-                totalElements
-            }
+            ...PrivateUserView
         }
     }
+    ${PrivateUserView}
 `
 
 export const saveUserMutation = gql`

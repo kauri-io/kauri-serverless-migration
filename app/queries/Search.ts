@@ -1,5 +1,5 @@
 import gql from 'graphql-tag'
-import { UserOwner, CommunityOwner, Link } from './Fragments'
+import { LinkCard, ArticleCard, CollectionCard, CommunityCard, UserCard } from './Fragments/cards'
 
 export const searchAutocomplete = gql`
     query searchAutocomplete(
@@ -31,26 +31,6 @@ export const searchAutocomplete = gql`
     }
 `
 
-export const searchResultsAutocompleteTotalElementsBreakdown = gql`
-    query searchAutocomplete(
-        $page: Int
-        $size: Int
-        $query: String
-        $filter: SearchFilterInput
-    ) {
-        searchAutocomplete(
-            page: $page
-            size: $size
-            query: $query
-            filter: $filter
-        ) {
-            totalElements
-            totalPages
-            totalElementsBreakdown
-        }
-    }
-`
-
 export const searchResultsAutocomplete = gql`
     query searchResultsAutocomplete(
         $page: Int
@@ -75,140 +55,28 @@ export const searchResultsAutocomplete = gql`
                 }
                 resource {
                     ... on ExternalLinkDTO {
-                        ...Link
+                        ...LinkCard
                     }
                     ... on PublicUserDTO {
-                        id
-                        username
-                        publicUserName: name
-                        avatar
-                        social
-                        userTitle: title
-                        articles(
-                            page: 0
-                            size: 1
-                            filter: { latestVersion: true }
-                        ) {
-                            totalElements
-                        }
-                        collections(page: 0, size: 1) {
-                            totalElements
-                        }
-                        links(page: 0, size: 1) {
-                            totalElements
-                        }
-                        communities {
-                            community {
-                                id
-                                name
-                            }
-                        }
+                        ...UserCard
                     }
                     ... on ArticleDTO {
-                        id
-                        version
-                        title
-                        description
-                        authorId
-                        dateCreated
-                        datePublished
-                        status
-                        attributes
-                        contentHash
-                        checkpoint
-                        tags
-                        voteResult {
-                            sum
-                        }
-                        author {
-                            id
-                            name
-                            username
-                            avatar
-                        }
-                        owner {
-                            ...UserOwner
-                            ...CommunityOwner
-                        }
-                        comments {
-                            content {
-                                author {
-                                    id
-                                    name
-                                    username
-                                    avatar
-                                }
-                                posted
-                                body
-                            }
-                            totalPages
-                            totalElements
-                        }
-                        isBookmarked
+                        ...ArticleCard
                     }
-
                     ... on CollectionDTO {
-                        id
-                        name
-                        description
-                        tags
-                        background
-                        dateUpdated
-                        owner {
-                            ...UserOwner
-                            ...CommunityOwner
-                        }
-                        resourceIdentifier {
-                            type
-                            id
-                        }
-                        sections {
-                            id
-                            name
-                            description
-                            resourcesId {
-                                id
-                                type
-                            }
-                            resources {
-                                ... on ArticleDTO {
-                                    id
-                                    version
-                                }
-                            }
-                        }
-                        isBookmarked
+                        ...CollectionCard
                     }
                     ... on CommunityDTO {
-                        id
-                        dateCreated
-                        dateUpdated
-                        creatorId
-                        name
-                        description
-                        website
-                        avatar
-                        social
-                        attributes
-                        members {
-                            id
-                            name
-                            username
-                            avatar
-                            role
-                            status
-                        }
-                        approvedId {
-                            id
-                            type
-                        }
+                        ...CommunityCard
                     }
                 }
             }
         }
     }
 
-    ${UserOwner}
-    ${CommunityOwner}
-    ${Link}
+    ${LinkCard}
+    ${UserCard}
+    ${ArticleCard}
+    ${CollectionCard}
+    ${CommunityCard}
 `

@@ -8,7 +8,7 @@ import CollectionIcon from '@material-ui/icons/Folder'
 import CommunityIcon from '@material-ui/icons/GroupWork'
 import { getProfileURL } from '../../lib/getURLs'
 import Link from 'next/link'
-import { Article_contributors } from '../../queries/Fragments/__generated__/Article'
+import { ArticleView_contributors } from '../../queries/Fragments/__generated__/ArticleView'
 
 const useStyles = makeStyles((theme: Theme) => ({
     card: {
@@ -69,19 +69,19 @@ const getURL = (string, type) => {
 
 export default ({
     id,
-    name,
+    fullName,
     username,
     avatar,
-    title,
+    userTitle,
     social,
     articles,
     links,
     collections,
     communities,
-}: Article_contributors) => {
+}: ArticleView_contributors) => {
     const classes = useStyles({})
     const url = getProfileURL({ id, username })
-    console.log(id, username, name)
+
     return (
         <Link href={url.href} as={url.as}>
             <a className={classes.link}>
@@ -101,9 +101,9 @@ export default ({
                                 className={classes.name}
                                 variant="body2"
                             >
-                                {name || username}
+                                {fullName || username}
                             </Typography>
-                            <Typography variant="body2">{title}</Typography>
+                            <Typography variant="body2">{userTitle}</Typography>
                             <div className={classes.bottom}>
                                 {social && (social.twitter || social.github) && (
                                     <div

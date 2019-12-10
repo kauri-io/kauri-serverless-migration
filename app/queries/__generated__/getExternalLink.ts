@@ -88,6 +88,18 @@ export interface getExternalLink_getExternalLink_owner_CommunityDTO {
 
 export type getExternalLink_getExternalLink_owner = getExternalLink_getExternalLink_owner_ArticleDTO | getExternalLink_getExternalLink_owner_PublicUserDTO | getExternalLink_getExternalLink_owner_CommunityDTO;
 
+export interface getExternalLink_getExternalLink_submitter_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface getExternalLink_getExternalLink_submitter {
   __typename: "PublicUserDTO";
   /**
@@ -95,17 +107,18 @@ export interface getExternalLink_getExternalLink_submitter {
    */
   id: string;
   /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
    * Username
    */
   username: string | null;
   /**
-   * User full name
-   */
-  name: string | null;
-  /**
    * User avatar URI
    */
   avatar: string | null;
+  resourceIdentifier: getExternalLink_getExternalLink_submitter_resourceIdentifier | null;
 }
 
 export interface getExternalLink_getExternalLink_url {
@@ -168,6 +181,18 @@ export interface getExternalLink_getExternalLink_authorName {
   isEditable: boolean | null;
 }
 
+export interface getExternalLink_getExternalLink_comments_content_author_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
 export interface getExternalLink_getExternalLink_comments_content_author {
   __typename: "PublicUserDTO";
   /**
@@ -177,7 +202,7 @@ export interface getExternalLink_getExternalLink_comments_content_author {
   /**
    * User full name
    */
-  name: string | null;
+  publicUserName: string | null;
   /**
    * Username
    */
@@ -186,6 +211,7 @@ export interface getExternalLink_getExternalLink_comments_content_author {
    * User avatar URI
    */
   avatar: string | null;
+  resourceIdentifier: getExternalLink_getExternalLink_comments_content_author_resourceIdentifier | null;
 }
 
 export interface getExternalLink_getExternalLink_comments_content {
@@ -242,11 +268,11 @@ export interface getExternalLink_getExternalLink_voteResult {
 
 export interface getExternalLink_getExternalLink {
   __typename: "ExternalLinkDTO";
+  resourceIdentifier: getExternalLink_getExternalLink_resourceIdentifier | null;
   /**
    * External link ID
    */
   id: string;
-  resourceIdentifier: getExternalLink_getExternalLink_resourceIdentifier | null;
   /**
    * The date that this external link was created
    */
@@ -259,10 +285,6 @@ export interface getExternalLink_getExternalLink {
    * The external link submitter user id
    */
   submitterId: string;
-  /**
-   * Check if the external link is already bookmarked by the current user
-   */
-  isBookmarked: boolean;
   /**
    * load the external link owner (user or community resource type)
    */
@@ -296,10 +318,6 @@ export interface getExternalLink_getExternalLink {
    */
   authorName: getExternalLink_getExternalLink_authorName;
   /**
-   * Get a paginated list of comments for this external link
-   */
-  comments: getExternalLink_getExternalLink_comments;
-  /**
    * The link content author
    */
   authorSocial: any | null;
@@ -308,9 +326,17 @@ export interface getExternalLink_getExternalLink {
    */
   tags: (string | null)[] | null;
   /**
+   * Get a paginated list of comments for this external link
+   */
+  comments: getExternalLink_getExternalLink_comments;
+  /**
    * Get vote result for the external link
    */
   voteResult: getExternalLink_getExternalLink_voteResult;
+  /**
+   * Check if the external link is already bookmarked by the current user
+   */
+  isBookmarked: boolean;
 }
 
 export interface getExternalLink {

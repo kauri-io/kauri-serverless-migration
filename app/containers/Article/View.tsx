@@ -7,7 +7,7 @@ import Avatar from '../../components/Avatar'
 import ArticleCard from '../../components/Card/ArticleCard'
 import { relatedArticles } from '../../queries/__generated__/relatedArticles'
 import MDRenderer from '../../components/Markdown/Renderer'
-import { Article } from '../../queries/Fragments/__generated__/Article'
+import { ArticleView } from '../../queries/Fragments/__generated__/ArticleView'
 import Hidden from '@material-ui/core/Hidden'
 import { ArticleStyles } from './styles'
 import VoteWidget from './components/VoteWidget'
@@ -99,7 +99,7 @@ interface IProps {
     id: string
     classes: any
     data: {
-        getArticle: Article
+        getArticle: ArticleView
     }
     RelatedArticles: relatedArticles
     router: any

@@ -1,11 +1,6 @@
 import gql from 'graphql-tag'
-import {
-    CommunityOwner,
-    UserOwner,
-    Article,
-    Link,
-    Collection,
-} from './Fragments'
+import { ArticleView } from './Fragments'
+import { LinkCard, ArticleCard, CollectionCard, CommunityCard } from './Fragments/cards'
 
 export const submitArticle = gql`
     mutation submitArticle(
@@ -50,43 +45,11 @@ export const submitNewArticleMutation = gql`
 export const getArticleQuery = gql`
     query getArticle($id: String!, $version: Int, $published: Boolean = true) {
         getArticle(id: $id, version: $version, published: $published) {
-            ...Article
+            ...ArticleView
         }
     }
 
-    ${Article}
-`
-
-export const getArticleForAnalytics = gql`
-    query getArticle(
-        $id: String!
-        $version: Int!
-        $published: Boolean = false
-    ) {
-        getArticle(id: $id, version: $version, published: $published) {
-            id
-            version
-            title
-            dateCreated
-            datePublished
-            status
-            attributes
-            contentHash
-            checkpoint
-            voteResult {
-                sum
-            }
-            author {
-                id
-                name
-            }
-            resourceIdentifier {
-                id
-                type
-                version
-            }
-        }
-    }
+    ${ArticleView}
 `
 
 export const editArticle = gql`
@@ -132,7 +95,7 @@ export const searchApprovedArticles = gql`
             }
         ) {
             content {
-                ...Article
+                ...ArticleCard
             }
             isLast
             totalElements
@@ -140,7 +103,7 @@ export const searchApprovedArticles = gql`
         }
     }
 
-    ${Article}
+    ${ArticleCard}
 `
 
 export const searchPersonalSubmittedArticles = gql`
@@ -155,24 +118,24 @@ export const searchPersonalSubmittedArticles = gql`
             }
         ) {
             content {
-                ...Article
+                ...ArticleCard
             }
         }
     }
 
-    ${Article}
+    ${ArticleCard}
 `
 
 export const searchPendingArticles = gql`
     query searchPendingArticles($size: Int = 500, $filter: ArticleFilterInput) {
         searchArticles(size: $size, dir: DESC, filter: $filter) {
             content {
-                ...Article
+                ...ArticleCard
             }
             totalElements
         }
     }
-    ${Article}
+    ${ArticleCard}
 `
 
 export const getTotalArticlesCount = gql`
@@ -215,17 +178,17 @@ export const searchPersonalArticles = gql`
             totalElements
             isLast
             content {
-                ...Article
+                ...ArticleCard
             }
             totalPages
             totalElements
         }
     }
-    ${Article}
+    ${ArticleCard}
 `
 
 export const searchPersonalDrafts = gql`
-    query searchArticles($userId: String, $size: Int = 8, $page: Int = 0) {
+    query searchPersonalDrafts($userId: String, $size: Int = 8, $page: Int = 0) {
         searchArticles(
             size: $size
             page: $page
@@ -236,56 +199,11 @@ export const searchPersonalDrafts = gql`
             totalElements
             isLast
             content {
-                id
-                version
-                title
-                description
-                tags
-                dateCreated
-                datePublished
-                author {
-                    id
-                    username
-                    name
-                    avatar
-                }
-                owner {
-                    ...UserOwner
-                    ...CommunityOwner
-                }
-                status
-                attributes
-                contentHash
-                checkpoint
-                voteResult {
-                    sum
-                }
-                comments {
-                    content {
-                        posted
-                        author {
-                            id
-                            name
-                            username
-                            avatar
-                        }
-                        body
-                    }
-                    totalPages
-                    totalElements
-                }
-                resourceIdentifier {
-                    type
-                    id
-                    version
-                }
-                isBookmarked
+                ...ArticleView
             }
         }
     }
-
-    ${UserOwner}
-    ${CommunityOwner}
+    ${ArticleView}
 `
 
 export const submitArticleVersionMutation = gql`
@@ -317,7 +235,7 @@ export const addCommentMutation = gql`
 `
 
 export const searchAwaitingApproval = gql`
-    query searchArticles($size: Int = 8, $page: Int = 0, $owners: [String]) {
+    query searchAwaitingApproval($size: Int = 8, $page: Int = 0, $owners: [String]) {
         searchArticles(
             size: $size
             page: $page
@@ -328,58 +246,15 @@ export const searchAwaitingApproval = gql`
             totalElements
             isLast
             content {
-                id
-                version
-                title
-                description
-                tags
-                dateCreated
-                datePublished
-                author {
-                    id
-                    name
-                    username
-                    avatar
-                }
-                owner {
-                    ...UserOwner
-                    ...CommunityOwner
-                }
-                status
-                attributes
-                contentHash
-                checkpoint
-                voteResult {
-                    sum
-                }
-                comments {
-                    content {
-                        posted
-                        author {
-                            id
-                            name
-                        }
-                        body
-                    }
-                    totalPages
-                    totalElements
-                }
-                resourceIdentifier {
-                    type
-                    id
-                    version
-                }
-                isBookmarked
+                ...ArticleCard
             }
         }
     }
-
-    ${UserOwner}
-    ${CommunityOwner}
+    ${ArticleCard}
 `
 
 export const searchPending = gql`
-    query searchArticles($size: Int = 666, $page: Int = 0, $author: String) {
+    query searchPending($size: Int = 666, $page: Int = 0, $author: String) {
         searchArticles(
             size: $size
             page: $page
@@ -390,54 +265,11 @@ export const searchPending = gql`
             totalElements
             isLast
             content {
-                id
-                version
-                title
-                description
-                tags
-                dateCreated
-                datePublished
-                author {
-                    id
-                    name
-                    username
-                    avatar
-                }
-                owner {
-                    ...UserOwner
-                    ...CommunityOwner
-                }
-                status
-                attributes
-                contentHash
-                checkpoint
-                voteResult {
-                    sum
-                }
-                comments {
-                    content {
-                        posted
-                        author {
-                            id
-                            name
-                        }
-                        body
-                    }
-                    totalPages
-                    totalElements
-                }
-                resourceIdentifier {
-                    type
-                    id
-                    version
-                }
-                isBookmarked
+                ...ArticleCard
             }
         }
     }
-
-    ${UserOwner}
-    ${CommunityOwner}
+    ${ArticleCard}
 `
 
 export const approveArticleMutation = gql`
@@ -467,7 +299,7 @@ export const checkpointArticles = gql`
 export const globalSearchApprovedArticles = gql`
     query searchAutocompleteArticles(
         $page: Int = 0
-        $size: Int = 12
+        $size: Int = 6
         $query: String
         $filter: SearchFilterInput
         $parameter: SearchParameterInput
@@ -489,23 +321,23 @@ export const globalSearchApprovedArticles = gql`
                 }
                 resource {
                     ... on ArticleDTO {
-                        ...Article
+                        ...ArticleCard
                     }
 
                     ... on ExternalLinkDTO {
-                        ...Link
+                        ...LinkCard
                     }
 
                     ... on CollectionDTO {
-                        ...Collection
+                        ...CollectionCard
                     }
                 }
             }
         }
     }
-    ${Article}
-    ${Link}
-    ${Collection}
+    ${ArticleCard}
+    ${LinkCard}
+    ${CollectionCard}
 `
 
 export const relatedArticles = gql`
@@ -531,60 +363,22 @@ export const relatedArticles = gql`
                 }
                 resource {
                     ... on ArticleDTO {
-                        id
-                        version
-                        title
-                        description
-                        author {
-                            name
-                            username
-                            id
-                            avatar
-                        }
-                        dateCreated
-                        datePublished
-                        status
-                        attributes
-                        contentHash
-                        checkpoint
-                        tags
-                        comments {
-                            totalElements
-                        }
-                        voteResult {
-                            sum
-                        }
-                        isBookmarked
+                        ...ArticleCard
                     }
 
                     ... on CollectionDTO {
-                        id
-                        name
-                        description
-                        tags
-                        background
-                        dateUpdated
-                        resourceIdentifier {
-                            type
-                            id
-                        }
-                        isBookmarked
+                        ...CollectionCard
                     }
                     ... on CommunityDTO {
-                        id
-                        dateCreated
-                        dateUpdated
-                        creatorId
-                        name
-                        description
-                        website
-                        avatar
-                        social
+                        ...CommunityCard
                     }
                 }
             }
         }
     }
+    ${ArticleCard}
+    ${CollectionCard}
+    ${CommunityCard}
 `
 
 export const vote = gql`
@@ -614,7 +408,7 @@ export const getArticleTransfers = gql`
                 id
                 article {
                     ... on ArticleDTO {
-                        ...Article
+                        ...ArticleCard
                     }
                 }
                 transferrer {
@@ -632,7 +426,7 @@ export const getArticleTransfers = gql`
             totalElements
         }
     }
-    ${Article}
+    ${ArticleCard}
 `
 
 export const rejectArticleTransferMutation = gql`

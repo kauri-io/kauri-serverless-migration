@@ -1,72 +1,12 @@
 import gql from 'graphql-tag'
+import { UserCard, ArticleCard, LinkCard, CollectionCard, UserAvatarLink, CommunityAvatarLink } from './cards'
 
-export const User = gql`
-    fragment User on PublicUserDTO {
-        id
-        publicUserName: name
-    }
-`
-
-export const UserOwner = gql`
-    fragment UserOwner on PublicUserDTO {
-        id
-        publicUserName: name
-        username
-        avatar
+export const ArticleView = gql`
+    fragment ArticleView on ArticleDTO {
         resourceIdentifier {
             id
             type
-        }
-    }
-`
-
-export const CommunityOwner = gql`
-    fragment CommunityOwner on CommunityDTO {
-        id
-        communityName: name
-        avatar
-        resourceIdentifier {
-            id
-            type
-        }
-    }
-`
-
-export const Article = gql`
-    fragment Article on ArticleDTO {
-        associatedNfts {
-            tokenType
-            contractAddress
-            name
-            image
-            externalUrl
-        }
-        resourceIdentifier {
-            id
-            type
-        }
-        contributors {
-            id
-            name
-            username
-            avatar
-            title
-            social
-            articles(page: 0, size: 1, filter: { latestVersion: true }) {
-                totalElements
-            }
-            collections(page: 0, size: 1) {
-                totalElements
-            }
-            links(page: 0, size: 1) {
-                totalElements
-            }
-            communities {
-                community {
-                    id
-                    name
-                }
-            }
+            version
         }
         isRead
         description
@@ -83,29 +23,26 @@ export const Article = gql`
         contentHash
         checkpoint
         tags
+        author {
+            ...UserAvatarLink
+        }
+        owner {
+            ...UserAvatarLink
+            ...CommunityAvatarLink
+        }
+        contributors {
+            ...UserCard
+        }        
         voteResult {
             sum
             count
             hasVoted
             quantity
         }
-        author {
-            id
-            name
-            username
-            avatar
-        }
-        owner {
-            ...UserOwner
-            ...CommunityOwner
-        }
         comments {
             content {
                 author {
-                    id
-                    name
-                    username
-                    avatar
+                    ...UserAvatarLink
                 }
                 posted
                 body
@@ -113,38 +50,32 @@ export const Article = gql`
             totalPages
             totalElements
         }
-        resourceIdentifier {
-            id
-            type
-            version
-        }
         updateComment
         isBookmarked
     }
 
-    ${UserOwner}
-    ${CommunityOwner}
+    ${UserAvatarLink}
+    ${UserAvatarLink}
+    ${CommunityAvatarLink}
+    ${UserCard}
+    ${UserAvatarLink}
 `
-export const Link = gql`
-    fragment Link on ExternalLinkDTO {
-        id
+export const LinkView = gql`
+    fragment LinkView on ExternalLinkDTO {
         resourceIdentifier {
             type
             id
         }
+        id
         dateCreated
         dateUpdated
         submitterId
-        isBookmarked
         owner {
-            ...UserOwner
-            ...CommunityOwner
+            ...UserAvatarLink
+            ...CommunityAvatarLink
         }
         submitter {
-            id
-            username
-            name
-            avatar
+            ...UserAvatarLink
         }
         url {
             value
@@ -167,13 +98,12 @@ export const Link = gql`
             value
             isEditable
         }
+        authorSocial
+        tags
         comments {
             content {
                 author {
-                    id
-                    name
-                    username
-                    avatar
+                    ...UserAvatarLink
                 }
                 posted
                 body
@@ -181,21 +111,26 @@ export const Link = gql`
             totalPages
             totalElements
         }
-        authorSocial
-        tags
         voteResult {
             sum
             count
             hasVoted
             quantity
         }
+        isBookmarked
     }
-    ${UserOwner}
-    ${CommunityOwner}
+    ${UserAvatarLink}
+    ${UserAvatarLink}
+    ${CommunityAvatarLink}
+    ${UserAvatarLink}
 `
 
-export const Collection = gql`
-    fragment Collection on CollectionDTO {
+export const CollectionView = gql`
+    fragment CollectionView on CollectionDTO {
+        resourceIdentifier {
+            type
+            id
+        }
         id
         name
         description
@@ -204,8 +139,8 @@ export const Collection = gql`
         background
         dateUpdated
         owner {
-            ...UserOwner
-            ...CommunityOwner
+            ...UserAvatarLink
+            ...CommunityAvatarLink
         }
         sections {
             id
@@ -217,35 +152,33 @@ export const Collection = gql`
             }
             resources {
                 ... on ArticleDTO {
-                    ...Article
+                    ...ArticleCard
                 }
                 ... on ExternalLinkDTO {
-                    ...Link
+                    ...LinkCard
                 }
             }
         }
+        isBookmarked
+    }
+    ${UserAvatarLink}
+    ${CommunityAvatarLink}
+    ${ArticleCard}
+    ${LinkCard}
+`
+
+export const CommunityView = gql`
+    fragment CommunityView on CommunityDTO {
         resourceIdentifier {
             type
             id
         }
-        isBookmarked
-    }
-    ${UserOwner}
-    ${CommunityOwner}
-    ${Link}
-    ${Article}
-`
-
-export const Community = gql`
-    fragment Community on CommunityDTO {
         id
         dateCreated
         dateUpdated
         creatorId
         creator {
-            id
-            username
-            name
+            ...UserAvatarLink
         }
         name
         description
@@ -254,10 +187,6 @@ export const Community = gql`
         avatar
         social
         tags
-        resourceIdentifier {
-            type
-            id
-        }
         attributes
         homepage {
             name
@@ -268,15 +197,15 @@ export const Community = gql`
             }
             resources {
                 ... on ArticleDTO {
-                    ...Article
+                    ...ArticleCard
                 }
 
                 ... on ExternalLinkDTO {
-                    ...Link
+                    ...LinkCard
                 }
 
                 ... on CollectionDTO {
-                    ...Collection
+                    ...CollectionCard
                 }
             }
         }
@@ -298,32 +227,93 @@ export const Community = gql`
         }
         approved {
             ... on ArticleDTO {
-                ...Article
+                ...ArticleCard
             }
 
             ... on ExternalLinkDTO {
-                ...Link
+                ...LinkCard
             }
 
             ... on CollectionDTO {
-                ...Collection
+                ...CollectionCard
             }
         }
         pending {
             ... on ArticleDTO {
-                ...Article
+                ...ArticleCard
             }
 
             ... on ExternalLinkDTO {
-                ...Link
+                ...LinkCard
             }
 
             ... on CollectionDTO {
-                ...Collection
+                ...CollectionCard
             }
         }
     }
-    ${Article}
-    ${Collection}
-    ${Link}
+    ${UserAvatarLink}
+    ${ArticleCard}
+    ${LinkCard}
+    ${CollectionCard}
+    ${ArticleCard}
+    ${LinkCard}
+    ${CollectionCard}
+    ${ArticleCard}
+    ${LinkCard}
+    ${CollectionCard}
+`
+
+export const PublicUserView = gql`
+    fragment PublicUserView on PublicUserDTO {
+        id
+        username
+        name
+        title
+        website
+        avatar
+        social
+        articles(page: 0, size: 1, filter: { latestVersion: true }) {
+            totalElements
+        }
+        links(page: 0, size: 1) {
+            totalElements
+        }
+        collections(page: 0, size: 1) {
+            totalElements
+        }        
+    }
+`
+
+export const PrivateUserView = gql`
+    fragment PrivateUserView on UserDTO {
+        id
+        email
+        username
+        name
+        title
+        website
+        avatar
+        social
+        status
+        communities {
+            role
+            community {
+                id
+                name
+                members {
+                    id
+                    role
+                }
+            }
+        }
+        subscriptions
+        dateCreated
+        articles(page: 0, size: 1, filter: { latestVersion: true }) {
+            totalElements
+        }
+        collections(page: 0, size: 1) {
+            totalElements
+        }        
+    }
 `

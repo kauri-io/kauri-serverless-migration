@@ -1,114 +1,31 @@
 import gql from 'graphql-tag'
-import { Collection, CommunityOwner, UserOwner, Link } from './Fragments'
+import { ArticleCard, LinkCard, CollectionCard, CommunityCard, UserAvatarLink } from './Fragments/cards'
 
-export const homePageContentQuery = gql`
+export const ResourceFragment = gql`
     fragment ResourceFragment on AbstractResourceDTO {
-        ... on CollectionDTO {
-            ...Collection
+        ...on CollectionDTO {
+            ...CollectionCard
         }
-        ... on ExternalLinkDTO {
-            ...Link
+        ...on ExternalLinkDTO {
+            ...LinkCard
         }
-        ... on ArticleDTO {
-            resourceIdentifier {
-                id
-                type
-            }
-            description
-            id
-            version
-            title
-            content
-            description
-            authorId
-            dateCreated
-            datePublished
-            attributes
-            contentHash
-            checkpoint
-            tags
-            comments {
-                totalElements
-            }
-            voteResult {
-                sum
-                count
-                hasVoted
-                quantity
-            }
-            author {
-                id
-                publicUserName: name
-                username
-                avatar
-            }
-            owner {
-                ...UserOwner
-                ...CommunityOwner
-            }
-            resourceIdentifier {
-                id
-                type
-                version
-            }
-            updateComment
-            isBookmarked
+        ...on ArticleDTO {
+            ...ArticleCard
         }
-        ... on CommunityDTO {
-            id
-            name
-            dateCreated
-            dateUpdated
-            creatorId
-            creator {
-                id
-                username
-                publicUserName: name
-            }
-            communityName: name
-            description
-            website
-            members {
-                id
-                name
-                username
-                avatar
-                role
-                status
-            }
-            avatar
-            social
-            tags
-            attributes
-            approvedId {
-                id
-                type
-            }
-            pendingId {
-                id
-                type
-            }
-            approved {
-                ... on ArticleDTO {
-                    id
-                    version
-                }
-
-                ... on CollectionDTO {
-                    id
-                }
-            }
+        ...on CommunityDTO {
+            ...CommunityCard
         }
     }
 
-    fragment UserFragment on PublicUserDTO {
-        id
-        username
-        avatar
-    }
+    ${CollectionCard}
+    ${LinkCard}
+    ${ArticleCard}
+    ${CommunityCard}
+`
 
+export const HomepageComponentFragment = gql`
     fragment HomepageComponentFragment on HomepageComponentDTO {
-        ... on Categories {
+        ...on Categories {
             type
             properties
             content {
@@ -118,7 +35,7 @@ export const homePageContentQuery = gql`
                 link
             }
         }
-        ... on Featured {
+        ...on Featured {
             type
             properties
             content {
@@ -127,7 +44,7 @@ export const homePageContentQuery = gql`
                 }
             }
         }
-        ... on Actions {
+        ...on Actions {
             type
             properties
             content {
@@ -135,23 +52,23 @@ export const homePageContentQuery = gql`
                 link
             }
         }
-        ... on TopTags {
+        ...on TopTags {
             type
             properties
             content {
                 tagName: name
             }
         }
-        ... on TopContributors {
+        ...on TopContributors {
             type
             properties
             content {
                 user {
-                    ...UserFragment
+                    ...UserAvatarLink
                 }
             }
         }
-        ... on Promo {
+        ...on Promo {
             type
             properties
             content {
@@ -160,22 +77,30 @@ export const homePageContentQuery = gql`
                 }
             }
         }
-        ... on LatestContent {
+        ...on LatestContent {
             type
             properties
             content {
                 ...ResourceFragment
             }
         }
-        ... on Newsletter {
+        ...on Newsletter {
             type
             properties
         }
-        ... on Import {
+        ...on Import {
             type
             properties
         }
     }
+
+    ${ResourceFragment}
+    ${UserAvatarLink}
+    ${ResourceFragment}
+    ${ResourceFragment}
+`
+
+export const homePageContentQuery = gql`
 
     query homePageContent($populate: Boolean = true) {
         getLatestHomepageDescriptor(populate: $populate) {
@@ -190,8 +115,5 @@ export const homePageContentQuery = gql`
         }
     }
 
-    ${Collection}
-    ${CommunityOwner}
-    ${UserOwner}
-    ${Link}
+    ${HomepageComponentFragment}
 `

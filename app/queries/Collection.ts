@@ -1,14 +1,15 @@
 import gql from 'graphql-tag'
-import { CommunityOwner, UserOwner, Collection } from './Fragments'
+import { CollectionView } from './Fragments'
+import { CollectionCard } from './Fragments/cards'
 
 export const globalCollectionDetails = gql`
     query getCollection($id: String!) {
         getCollection(id: $id) {
-            ...Collection
+            ...CollectionView
         }
     }
 
-    ${Collection}
+    ${CollectionView}
 `
 
 export const getCollectionQuery = globalCollectionDetails
@@ -65,7 +66,7 @@ export const composeCollectionMutation = gql`
 export const getLatestCollections = gql`
     query searchAutocompleteCollections(
         $page: Int = 0
-        $size: Int = 12
+        $size: Int = 6
         $query: String
         $filter: SearchFilterInput
         $parameter: SearchParameterInput
@@ -86,51 +87,24 @@ export const getLatestCollections = gql`
                     type
                 }
                 resource {
-                    ... on CollectionDTO {
-                        id
-                        name
-                        description
-                        tags
-                        background
-                        dateUpdated
-                        owner {
-                            ...UserOwner
-                            ...CommunityOwner
-                        }
-                        sections {
-                            id
-                            name
-                            description
-                            resourcesId {
-                                version
-                                id
-                                type
-                            }
-                        }
-                        resourceIdentifier {
-                            type
-                            id
-                        }
-                        isBookmarked
-                    }
+                    ...CollectionCard
                 }
             }
         }
     }
 
-    ${UserOwner}
-    ${CommunityOwner}
+    ${CollectionCard}
 `
 
 export const searchCollections = gql`
     query searchCollections($filter: CollectionFilterInput) {
         searchCollections(size: 10, filter: $filter) {
             content {
-                ...Collection
+                ...CollectionCard
             }
         }
     }
-    ${Collection}
+    ${CollectionCard}
 `
 
 export const addResourceToCollectionMutation = gql`
@@ -168,10 +142,10 @@ export const getCollectionsForUser = gql`
         ) {
             totalElements
             content {
-                ...Collection
+                ...CollectionCard
             }
             isLast
         }
     }
-    ${Collection}
+    ${CollectionCard}
 `

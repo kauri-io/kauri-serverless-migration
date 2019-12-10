@@ -1,5 +1,6 @@
 import gql from 'graphql-tag'
-import { Link } from './Fragments'
+import { LinkView } from './Fragments'
+import { LinkCard } from './Fragments/cards'
 
 export const extractLinkMetadata = gql`
     query extractLinkMetadata($url: String!) {
@@ -90,20 +91,20 @@ export const searchExternalLinks = gql`
             filter: $filter
         ) {
             content {
-                ...Link
+                ...LinkCard
             }
             totalPages
             totalElements
         }
     }
-    ${Link}
+    ${LinkCard}
 `
 
 export const getLink = gql`
     query getExternalLink($id: String!) {
         getExternalLink(id: $id) {
-            ...Link
+            ...LinkView
         }
     }
-    ${Link}
+    ${LinkView}
 `

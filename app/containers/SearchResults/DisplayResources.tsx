@@ -86,7 +86,7 @@ export default compose(
                 },
                 page: 0,
                 query,
-                size: 20,
+                size: 6,
             }
             return {
                 variables,

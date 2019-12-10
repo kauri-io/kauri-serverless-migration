@@ -2,11 +2,44 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { SearchFilterInput } from "./../../__generated__/globalTypes";
+import { SearchFilterInput, ResourceTypeInput } from "./../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: searchAutocomplete
 // ====================================================
+
+export interface searchAutocomplete_searchAutocomplete_content_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource ID
+   */
+  id: string;
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+}
+
+export interface searchAutocomplete_searchAutocomplete_content {
+  __typename: "SearchResultDTO";
+  resourceIdentifier: searchAutocomplete_searchAutocomplete_content_resourceIdentifier | null;
+  /**
+   * Resource tags
+   */
+  tags: (string | null)[] | null;
+  /**
+   * Resource name
+   */
+  name: string;
+  /**
+   * Resource description
+   */
+  description: string | null;
+  /**
+   * Search score
+   */
+  score: number;
+}
 
 export interface searchAutocomplete_searchAutocomplete {
   __typename: "ResponseBreakdownPage_SearchResultDTO";
@@ -22,6 +55,10 @@ export interface searchAutocomplete_searchAutocomplete {
    * Total amount of elements per type.
    */
   totalElementsBreakdown: any | null;
+  /**
+   * Returns the page content.
+   */
+  content: (searchAutocomplete_searchAutocomplete_content | null)[];
 }
 
 export interface searchAutocomplete {

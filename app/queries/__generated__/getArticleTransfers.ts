@@ -8,15 +8,6 @@ import { DirectionInput, ResourceTypeInput, ArticleStatusInput } from "./../../_
 // GraphQL query operation: getArticleTransfers
 // ====================================================
 
-export interface getArticleTransfers_getArticleTransfers_content_article_associatedNfts {
-  __typename: "NftTokenDTO";
-  tokenType: string | null;
-  contractAddress: string | null;
-  name: string | null;
-  image: string | null;
-  externalUrl: string | null;
-}
-
 export interface getArticleTransfers_getArticleTransfers_content_article_resourceIdentifier {
   __typename: "ResourceIdentifier";
   /**
@@ -31,137 +22,6 @@ export interface getArticleTransfers_getArticleTransfers_content_article_resourc
    * Resource version (article)
    */
   version: number | null;
-}
-
-export interface getArticleTransfers_getArticleTransfers_content_article_contributors_articles {
-  __typename: "ResponsePage_ArticleDTO";
-  /**
-   * Total amount of elements.
-   */
-  totalElements: any;
-}
-
-export interface getArticleTransfers_getArticleTransfers_content_article_contributors_collections {
-  __typename: "ResponsePage_CollectionDTO";
-  /**
-   * Total amount of elements.
-   */
-  totalElements: any;
-}
-
-export interface getArticleTransfers_getArticleTransfers_content_article_contributors_links {
-  __typename: "ResponsePage_ExternalLinkDTO";
-  /**
-   * Total amount of elements.
-   */
-  totalElements: any;
-}
-
-export interface getArticleTransfers_getArticleTransfers_content_article_contributors_communities_community {
-  __typename: "CommunityDTO";
-  /**
-   * Community ID
-   */
-  id: string;
-  /**
-   * Community Name
-   */
-  name: string;
-}
-
-export interface getArticleTransfers_getArticleTransfers_content_article_contributors_communities {
-  __typename: "MemberRoleCommunityDTO";
-  /**
-   * Community
-   */
-  community: getArticleTransfers_getArticleTransfers_content_article_contributors_communities_community;
-}
-
-export interface getArticleTransfers_getArticleTransfers_content_article_contributors {
-  __typename: "PublicUserDTO";
-  /**
-   * User ID (Ethereum account address)
-   */
-  id: string;
-  /**
-   * User full name
-   */
-  name: string | null;
-  /**
-   * Username
-   */
-  username: string | null;
-  /**
-   * User avatar URI
-   */
-  avatar: string | null;
-  /**
-   * User title
-   */
-  title: string | null;
-  /**
-   * User social links (twitter, github, etc.)
-   */
-  social: any | null;
-  /**
-   * Returns a page of ArticleDTO authored by this PublicUserDTO.
-   * This operation can only be performed by logged user
-   */
-  articles: getArticleTransfers_getArticleTransfers_content_article_contributors_articles;
-  /**
-   * Returns a page of CollectionDTO owned by this PublicUserDTO.
-   * This operation can only be performed by logged user
-   */
-  collections: getArticleTransfers_getArticleTransfers_content_article_contributors_collections;
-  /**
-   * Returns a page of ExternalLinkDTO owned by this PublicUserDTO.
-   * This operation can only be performed by logged user
-   */
-  links: getArticleTransfers_getArticleTransfers_content_article_contributors_links;
-  /**
-   * Get communities the user is member of mapped by role
-   */
-  communities: (getArticleTransfers_getArticleTransfers_content_article_contributors_communities | null)[];
-}
-
-export interface getArticleTransfers_getArticleTransfers_content_article_voteResult {
-  __typename: "VoteResultDTO";
-  /**
-   * Vote sum: Sum of the vote (-1,+1,+1=+1)
-   */
-  sum: number;
-  /**
-   * Vote count: Number of votes
-   */
-  count: any;
-  /**
-   * Returns true if a logged user has already voted
-   */
-  hasVoted: boolean | null;
-  /**
-   * Count per vote
-   */
-  quantity: any;
-}
-
-export interface getArticleTransfers_getArticleTransfers_content_article_author {
-  __typename: "PublicUserDTO";
-  /**
-   * User ID (Ethereum account address)
-   */
-  id: string;
-  /**
-   * User full name
-   */
-  name: string | null;
-  /**
-   * Username
-   */
-  username: string | null;
-  /**
-   * User avatar URI
-   */
-  avatar: string | null;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article_owner_ArticleDTO {
@@ -232,78 +92,9 @@ export interface getArticleTransfers_getArticleTransfers_content_article_owner_C
 
 export type getArticleTransfers_getArticleTransfers_content_article_owner = getArticleTransfers_getArticleTransfers_content_article_owner_ArticleDTO | getArticleTransfers_getArticleTransfers_content_article_owner_PublicUserDTO | getArticleTransfers_getArticleTransfers_content_article_owner_CommunityDTO;
 
-export interface getArticleTransfers_getArticleTransfers_content_article_comments_content_author {
-  __typename: "PublicUserDTO";
-  /**
-   * User ID (Ethereum account address)
-   */
-  id: string;
-  /**
-   * User full name
-   */
-  name: string | null;
-  /**
-   * Username
-   */
-  username: string | null;
-  /**
-   * User avatar URI
-   */
-  avatar: string | null;
-}
-
-export interface getArticleTransfers_getArticleTransfers_content_article_comments_content {
-  __typename: "CommentDTO";
-  /**
-   * Comment author (full profile)
-   */
-  author: getArticleTransfers_getArticleTransfers_content_article_comments_content_author;
-  /**
-   * Date the comment was published
-   */
-  posted: any;
-  /**
-   * Comment
-   */
-  body: string;
-}
-
-export interface getArticleTransfers_getArticleTransfers_content_article_comments {
-  __typename: "ResponsePage_CommentDTO";
-  /**
-   * Returns the page content.
-   */
-  content: (getArticleTransfers_getArticleTransfers_content_article_comments_content | null)[];
-  /**
-   * Number of total pages.
-   */
-  totalPages: number;
-  /**
-   * Total amount of elements.
-   */
-  totalElements: any;
-}
-
 export interface getArticleTransfers_getArticleTransfers_content_article {
   __typename: "ArticleDTO";
-  /**
-   * NFTs associated with this article
-   */
-  associatedNfts: (getArticleTransfers_getArticleTransfers_content_article_associatedNfts | null)[] | null;
   resourceIdentifier: getArticleTransfers_getArticleTransfers_content_article_resourceIdentifier | null;
-  /**
-   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
-   * This operation can only be performed by logged user
-   */
-  contributors: (getArticleTransfers_getArticleTransfers_content_article_contributors | null)[];
-  /**
-   * Check if the article was already read by the current user
-   */
-  isRead: boolean;
-  /**
-   * Description of the article - First 500 characters of the plaintext content)
-   */
-  description: string | null;
   /**
    * Article ID
    */
@@ -317,13 +108,9 @@ export interface getArticleTransfers_getArticleTransfers_content_article {
    */
   title: string;
   /**
-   * Content of the article (most likely to be plain markdown text)
+   * Description of the article - First 500 characters of the plaintext content)
    */
-  content: string;
-  /**
-   * Author of the article (USER only)
-   */
-  authorId: string;
+  description: string | null;
   /**
    * Date created
    */
@@ -337,41 +124,17 @@ export interface getArticleTransfers_getArticleTransfers_content_article {
    */
   status: ArticleStatusInput;
   /**
-   * Set of optional attributes fields
-   */
-  attributes: any | null;
-  /**
-   * IPFS Content hash
-   */
-  contentHash: string;
-  /**
    * Checkpoint file (null if the article is not escalated on-chain)
    */
   checkpoint: string | null;
   /**
-   * Tags list
+   * Set of optional attributes fields
    */
-  tags: (string | null)[] | null;
-  /**
-   * Get vote result for the article
-   */
-  voteResult: getArticleTransfers_getArticleTransfers_content_article_voteResult;
-  /**
-   * Article author (full profile)
-   */
-  author: getArticleTransfers_getArticleTransfers_content_article_author;
+  attributes: any | null;
   /**
    * load the article owner (user or community resource type)
    */
   owner: getArticleTransfers_getArticleTransfers_content_article_owner | null;
-  /**
-   * Get a paginated list of comments for this article
-   */
-  comments: getArticleTransfers_getArticleTransfers_content_article_comments;
-  /**
-   * The comment describing this version update of the article
-   */
-  updateComment: string | null;
   /**
    * Check if the article is already bookmarked by the current user
    */

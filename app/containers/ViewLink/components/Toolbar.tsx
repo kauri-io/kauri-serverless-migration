@@ -13,12 +13,12 @@ import PencilIcon from '@material-ui/icons/Edit'
 import { getArticleURL } from '../../../lib/getURLs'
 import { BodyCard } from '../../../components/Typography'
 import AlertView from '../../../components/Modal/AlertView'
-import { Article_comments } from '../../../queries/Fragments/__generated__/Article'
+import { ArticleView_comments } from '../../../queries/Fragments/__generated__/ArticleView'
 // import { useEffect } from 'react'
 
 interface IProps {
     classes: any
-    comments?: Article_comments
+    comments?: ArticleView_comments
     openModalAction: (children?: any) => void
     closeModalAction?: () => void
     isBookmarked

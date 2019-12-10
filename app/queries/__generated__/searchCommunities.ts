@@ -2,11 +2,23 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { CommunityFilterInput, DirectionInput, ResourceTypeInput, CommunityStatusInput } from "./../../__generated__/globalTypes";
+import { CommunityFilterInput, DirectionInput, ResourceTypeInput, CommunityPermissionInput, UserStatusInput } from "./../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: searchCommunities
 // ====================================================
+
+export interface searchCommunities_searchCommunities_content_resourceIdentifier {
+  __typename: "ResourceIdentifier";
+  /**
+   * Resource type
+   */
+  type: ResourceTypeInput;
+  /**
+   * Resource ID
+   */
+  id: string;
+}
 
 export interface searchCommunities_searchCommunities_content_members {
   __typename: "CommunityMemberDTO";
@@ -15,29 +27,27 @@ export interface searchCommunities_searchCommunities_content_members {
    */
   id: string;
   /**
-   * User avatar URI
+   * User full name
    */
-  avatar: string | null;
+  name: string | null;
   /**
    * Username
    */
   username: string | null;
   /**
-   * User full name
+   * User avatar URI
    */
-  name: string | null;
-}
-
-export interface searchCommunities_searchCommunities_content_approvedId {
-  __typename: "ResourceIdentifier";
+  avatar: string | null;
+  role: CommunityPermissionInput | null;
   /**
-   * Resource type
+   * User status
    */
-  type: ResourceTypeInput;
+  status: UserStatusInput | null;
 }
 
 export interface searchCommunities_searchCommunities_content {
   __typename: "CommunityDTO";
+  resourceIdentifier: searchCommunities_searchCommunities_content_resourceIdentifier | null;
   /**
    * Community ID
    */
@@ -51,49 +61,25 @@ export interface searchCommunities_searchCommunities_content {
    */
   dateUpdated: any;
   /**
-   * Community members list (full profile)
-   */
-  members: (searchCommunities_searchCommunities_content_members | null)[];
-  /**
-   * Community custom attribtes
-   */
-  attributes: any | null;
-  /**
-   * List of approved curated content
-   */
-  approvedId: (searchCommunities_searchCommunities_content_approvedId | null)[] | null;
-  /**
-   * Community ID
-   */
-  creatorId: string;
-  /**
    * Community Name
    */
-  name: string;
+  communityName: string;
   /**
    * Community Description
    */
   description: string | null;
   /**
-   * Community status
-   */
-  status: CommunityStatusInput;
-  /**
-   * Community Website
-   */
-  website: string | null;
-  /**
    * Community avatar image URI
    */
   avatar: string | null;
   /**
-   * Community tags
+   * Community custom attribtes
    */
-  tags: (string | null)[] | null;
+  attributes: any | null;
   /**
-   * Community social data (twitter, github, etc.)
+   * Community members list (full profile)
    */
-  social: any | null;
+  members: (searchCommunities_searchCommunities_content_members | null)[];
 }
 
 export interface searchCommunities_searchCommunities {
