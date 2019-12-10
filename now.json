@@ -115,6 +115,7 @@
     },
     {
       "src": "/public-profile/(.*)",
+      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
       "dest": "/app/public-profile?user_id=$1"
     },
     {
