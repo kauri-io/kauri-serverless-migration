@@ -2925,7 +2925,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                           "useStyles": [Function],
                                         },
                                         "props": Object {
-                                          "aria-label": "title",
                                           "className": "makeStyles-h3-165",
                                           "gutterBottom": true,
                                           "variant": "h5",
@@ -3229,7 +3228,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                           "useStyles": [Function],
                                         },
                                         "props": Object {
-                                          "aria-label": "title",
                                           "className": "makeStyles-h4-166",
                                           "gutterBottom": true,
                                           "variant": "h6",
@@ -3533,7 +3531,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                           "useStyles": [Function],
                                         },
                                         "props": Object {
-                                          "aria-label": "title",
                                           "className": "makeStyles-h5-167",
                                           "gutterBottom": true,
                                           "variant": "h6",
@@ -3837,7 +3834,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                           "useStyles": [Function],
                                         },
                                         "props": Object {
-                                          "aria-label": "title",
                                           "className": "makeStyles-h6-168",
                                           "gutterBottom": true,
                                           "variant": "h6",
