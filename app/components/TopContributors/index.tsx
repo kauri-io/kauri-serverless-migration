@@ -31,12 +31,9 @@ export default ({ contributors }) => {
     return (
         <div className={classes.root}>
             <Typography variant="h6" component="h3" className={classes.title}>
-                Top Contributors
+                Most active contributors
             </Typography>
             <div className={classes.container}>
-                <Typography className={classes.subtitle} variant="body2">
-                    Contributors of the week
-                </Typography>
                 {contributors.map((contributor, index) => (
                     <Avatar
                         key={index}
