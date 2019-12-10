@@ -171,7 +171,7 @@ const Renderer = ({ markdown }) => {
                 props: {
                     gutterBottom: true,
                     variant: 'h5',
-                    'aria-label': 'title',
+                    //'aria-label': 'title',
                     className: classes.h3,
                 },
             },
@@ -180,7 +180,7 @@ const Renderer = ({ markdown }) => {
                 props: {
                     gutterBottom: true,
                     variant: 'h6',
-                    'aria-label': 'title',
+                    //'aria-label': 'title',
                     className: classes.h4,
                 },
             },
@@ -189,7 +189,7 @@ const Renderer = ({ markdown }) => {
                 props: {
                     gutterBottom: true,
                     variant: 'h6',
-                    'aria-label': 'title',
+                    //'aria-label': 'title',
                     className: classes.h5,
                 },
             },
@@ -198,7 +198,7 @@ const Renderer = ({ markdown }) => {
                 props: {
                     gutterBottom: true,
                     variant: 'h6',
-                    'aria-label': 'title',
+                    //'aria-label': 'title',
                     className: classes.h6,
                 },
             },
