@@ -135,7 +135,7 @@
     },
     {
       "src": "/",
-      "headers": {"cache-control": "s-maxage=1, stale-while-revalidate"},
+      "headers": {"cache-control": "private, s-maxage=1, stale-while-revalidate"},
       "dest": "/app/"
     },
     {
