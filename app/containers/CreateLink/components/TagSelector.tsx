@@ -212,6 +212,8 @@ export default function IntegrationReactSelect({ tags, client, setTags }) {
                     onChange={val => setTags(val)}
                     loadOptions={inputValue =>
                         new Promise(resolve => {
+                            inputValue = inputValue.toLowerCase()
+
                             client
                                 .query({
                                     fetchPolicy: 'no-cache',
@@ -224,9 +226,9 @@ export default function IntegrationReactSelect({ tags, client, setTags }) {
                                 })
                                 .then(res => {
                                     resolve([
-                                        ...res.data.searchTags.content.map(
-                                            i => ({ label: i.tag })
-                                        ),
+                                        ...res.data.searchTags.content
+                                            .filter(i => i.tag !== inputValue)
+                                            .map(i => ({ label: i.tag })),
                                         ...[{ label: inputValue }],
                                     ])
                                 })
