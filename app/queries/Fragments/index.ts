@@ -52,7 +52,7 @@ export const Article = gql`
             avatar
             title
             social
-            articles(page: 0, size: 1, filter: { latestVersion: true }) {
+            articles(page: 0, size: 1, filter: { statusIn: [PUBLISHED] }) {
                 totalElements
             }
             collections(page: 0, size: 1) {

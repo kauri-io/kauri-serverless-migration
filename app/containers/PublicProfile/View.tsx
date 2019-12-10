@@ -139,9 +139,7 @@ class PublicProfile extends Component<IProps, IState> {
                     />
                 ) : (
                     <Header
-                        articles={
-                            UserQuery.getUserByUsername.articles.totalElements
-                        }
+                        articles={getNumberOfArticles()}
                         collections={
                             UserQuery.getUserByUsername.collections
                                 .totalElements
