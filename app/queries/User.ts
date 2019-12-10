@@ -24,7 +24,7 @@ export const getUserByUsername = gql`
             website
             avatar
             social
-            articles(page: 0, size: 1, filter: { latestVersion: true }) {
+            articles(page: 0, size: 1) {
                 totalElements
             }
             links(page: 0, size: 1) {
@@ -61,7 +61,7 @@ export const getOwnProfile = gql`
             }
             subscriptions
             dateCreated
-            articles(page: 0, size: 1, filter: { latestVersion: true }) {
+            articles(page: 0, size: 1) {
                 totalElements
             }
             collections(page: 0, size: 1) {
