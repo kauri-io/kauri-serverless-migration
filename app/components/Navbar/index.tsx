@@ -190,12 +190,12 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                 onClose={handleCreateMenuClose}
                 className={classes.menu}
             >
-                <Link href={user ? '/write-article' : 'login?r=/write-article'}>
+                <Link href={user ? '/write-article' : '/login?r=/write-article'}>
                     <a>
                         <MenuItem>Write Article</MenuItem>
                     </a>
                 </Link>
-                <Link href={user ? '/create-link' : 'login?r=/create-link'}>
+                <Link href={user ? '/create-link' : '/login?r=/create-link'}>
                     <a>
                         <MenuItem>Add External Link</MenuItem>
                     </a>
@@ -205,7 +205,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                     href={
                         user
                             ? '/create-collection'
-                            : 'login?r=/create-collection'
+                            : '/login?r=/create-collection'
                     }
                 >
                     <a>
@@ -214,7 +214,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                 </Link>
                 <Link
                     href={
-                        user ? '/create-community' : 'login?r=/create-community'
+                        user ? '/create-community' : '/login?r=/create-community'
                     }
                 >
                     <a>
@@ -347,7 +347,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                             <SearchIcon />
                         </div>
                     </div>
-                    <Hidden smDown={true}> 
+                    <Hidden smDown={true}>
                         <Button
                             onClick={handleCreateMenuOpen}
                             variant="outlined"
