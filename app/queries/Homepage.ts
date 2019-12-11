@@ -42,6 +42,12 @@ export const homePageContentQuery = gql`
                 username
                 avatar
             }
+            contributors {
+                id
+                publicUserName: name
+                username
+                avatar
+            }
             owner {
                 ...UserOwner
                 ...CommunityOwner
