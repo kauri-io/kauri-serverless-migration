@@ -4,7 +4,8 @@ import { ServerStyleSheet } from 'styled-components'
 import { ServerStyleSheets } from '@material-ui/styles'
 import flush from 'styled-jsx/server'
 
-// const isProduction = process.env.config === 'production'
+const isProduction = process.env.config === 'production'
+const isBrowser = typeof window !== 'undefined'; // replace global.process.browser
 
 interface IProps {
     styleTags: any
@@ -45,29 +46,34 @@ export default class MyDocument extends Document<IProps> {
         return (
             <Html lang="en">
                 <Head>
-                    {/* {isProduction && global.process.browser && (
-            <script>
-              `${(function(h, o, t, j, a, r) {
-                h.hj =
-                  h.hj ||
-                  function() {
-                    (h.hj.q = h.hj.q || []).push(arguments);
-                  };
-                h._hjSettings = { hjid: 734967, hjsv: 6 };
-                a = o.getElementsByTagName("head")[0];
-                r = o.createElement("script");
-                r.async = 1;
-                r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-                a.appendChild(r);
-              })(
-                window,
-                document,
-                "https://static.hotjar.com/c/hotjar-",
-                ".js?sv="
-              )}
-              `
-            </script>
-          )} */}
+                    {isProduction && isBrowser && (
+                        <script>
+                        `${(function(h, o, t, j, a, r) {
+                            // @ts-ignore
+                            h.hj =
+                            // @ts-ignore
+                            h.hj ||
+                            function() {
+                                // @ts-ignore
+                                (h.hj.q = h.hj.q || []).push(arguments);
+                            };
+                            // @ts-ignore
+                            h._hjSettings = { hjid: 734967, hjsv: 6 };
+                            a = o.getElementsByTagName("head")[0];
+                            r = o.createElement("script");
+                            r.async = 1;
+                            // @ts-ignore
+                            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+                            a.appendChild(r);
+                        })(
+                            window,
+                            document,
+                            "https://static.hotjar.com/c/hotjar-",
+                            ".js?sv="
+                        )}
+                        `
+                        </script>
+                    )}
                     <meta charSet="UTF-8" />
                     <link
                         key="icon-apple"
