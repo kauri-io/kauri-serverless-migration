@@ -1242,6 +1242,26 @@ export interface HomepageComponentFragment_Featured_content_resource_ArticleDTO_
   avatar: string | null;
 }
 
+export interface HomepageComponentFragment_Featured_content_resource_ArticleDTO_contributors {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
 export interface HomepageComponentFragment_Featured_content_resource_ArticleDTO_owner_ArticleDTO {
   __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
@@ -1373,6 +1393,11 @@ export interface HomepageComponentFragment_Featured_content_resource_ArticleDTO 
    * Article author (full profile)
    */
   author: HomepageComponentFragment_Featured_content_resource_ArticleDTO_author;
+  /**
+   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
+   * This operation can only be performed by logged user
+   */
+  contributors: (HomepageComponentFragment_Featured_content_resource_ArticleDTO_contributors | null)[];
   /**
    * load the article owner (user or community resource type)
    */
@@ -2835,6 +2860,26 @@ export interface HomepageComponentFragment_Promo_content_resource_ArticleDTO_aut
   avatar: string | null;
 }
 
+export interface HomepageComponentFragment_Promo_content_resource_ArticleDTO_contributors {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
 export interface HomepageComponentFragment_Promo_content_resource_ArticleDTO_owner_ArticleDTO {
   __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
@@ -2966,6 +3011,11 @@ export interface HomepageComponentFragment_Promo_content_resource_ArticleDTO {
    * Article author (full profile)
    */
   author: HomepageComponentFragment_Promo_content_resource_ArticleDTO_author;
+  /**
+   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
+   * This operation can only be performed by logged user
+   */
+  contributors: (HomepageComponentFragment_Promo_content_resource_ArticleDTO_contributors | null)[];
   /**
    * load the article owner (user or community resource type)
    */
@@ -4375,6 +4425,26 @@ export interface HomepageComponentFragment_LatestContent_content_ArticleDTO_auth
   avatar: string | null;
 }
 
+export interface HomepageComponentFragment_LatestContent_content_ArticleDTO_contributors {
+  __typename: "PublicUserDTO";
+  /**
+   * User ID (Ethereum account address)
+   */
+  id: string;
+  /**
+   * User full name
+   */
+  publicUserName: string | null;
+  /**
+   * Username
+   */
+  username: string | null;
+  /**
+   * User avatar URI
+   */
+  avatar: string | null;
+}
+
 export interface HomepageComponentFragment_LatestContent_content_ArticleDTO_owner_ArticleDTO {
   __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
@@ -4506,6 +4576,11 @@ export interface HomepageComponentFragment_LatestContent_content_ArticleDTO {
    * Article author (full profile)
    */
   author: HomepageComponentFragment_LatestContent_content_ArticleDTO_author;
+  /**
+   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
+   * This operation can only be performed by logged user
+   */
+  contributors: (HomepageComponentFragment_LatestContent_content_ArticleDTO_contributors | null)[];
   /**
    * load the article owner (user or community resource type)
    */
