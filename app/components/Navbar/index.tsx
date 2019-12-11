@@ -347,7 +347,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                             <SearchIcon />
                         </div>
                     </div>
-                    <Hidden smDown={true}>
+                    <Hidden smDown={true}> 
                         <Button
                             onClick={handleCreateMenuOpen}
                             variant="outlined"
