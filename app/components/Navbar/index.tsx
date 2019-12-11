@@ -17,7 +17,7 @@ import { withRouter, Router } from 'next/router'
 import { getProfileURL } from '../../lib/getURLs'
 import Avatar from '../../components/Avatar'
 import MenuIcon from '@material-ui/icons/Menu'
-import { Hidden } from '@material-ui/core'
+import { Hidden, Button } from '@material-ui/core'
 import Drawer from '@material-ui/core/Drawer'
 
 const useStyles = makeStyles((theme: Theme) => {
@@ -188,6 +188,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                 open={isCreateMenuOpen}
                 anchorEl={createAnchorEl}
                 onClose={handleCreateMenuClose}
+                className={classes.menu}
             >
                 <Link href={user ? '/write-article' : 'login?r=/write-article'}>
                     <a>
@@ -347,13 +348,14 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                         </div>
                     </div>
                     <Hidden smDown={true}>
-                        <Typography
-                            variant="button"
-                            className={classes.navlink}
+
+                        <Button
                             onClick={handleCreateMenuOpen}
+                            variant="outlined"
+                            color="primary"
                         >
-                            Contribute
-                        </Typography>
+                            Create
+                        </Button>
                     </Hidden>
 
                     <div className={classes.sectionDesktop}>
