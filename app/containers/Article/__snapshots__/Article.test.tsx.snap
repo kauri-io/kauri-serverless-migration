@@ -6995,9 +6995,27 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                         user={
                                                                           Object {
                                                                             "__typename": "PublicUserDTO",
+                                                                            "articles": Object {
+                                                                              "__typename": "ResponsePage_ArticleDTO",
+                                                                              "totalElements": 3,
+                                                                            },
                                                                             "avatar": "test avatar 2",
+                                                                            "collections": Object {
+                                                                              "__typename": "ResponsePage_CollectionDTO",
+                                                                              "totalElements": 3,
+                                                                            },
+                                                                            "communities": Array [],
                                                                             "id": "6792",
+                                                                            "links": Object {
+                                                                              "__typename": "ResponsePage_ExternalLinkDTO",
+                                                                              "totalElements": 3,
+                                                                            },
                                                                             "name": "test author name 2",
+                                                                            "social": Object {
+                                                                              "github": "test github",
+                                                                              "twitter": "twst twitter",
+                                                                            },
+                                                                            "title": "test title",
                                                                             "username": "test-author-username-2",
                                                                           }
                                                                         }
@@ -10399,9 +10417,27 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                         user={
                                                                           Object {
                                                                             "__typename": "PublicUserDTO",
+                                                                            "articles": Object {
+                                                                              "__typename": "ResponsePage_ArticleDTO",
+                                                                              "totalElements": 3,
+                                                                            },
                                                                             "avatar": "test avatar 3",
+                                                                            "collections": Object {
+                                                                              "__typename": "ResponsePage_CollectionDTO",
+                                                                              "totalElements": 3,
+                                                                            },
+                                                                            "communities": Array [],
                                                                             "id": "6793",
+                                                                            "links": Object {
+                                                                              "__typename": "ResponsePage_ExternalLinkDTO",
+                                                                              "totalElements": 3,
+                                                                            },
                                                                             "name": "test author name 3",
+                                                                            "social": Object {
+                                                                              "github": "test github",
+                                                                              "twitter": "twst twitter",
+                                                                            },
+                                                                            "title": "test title",
                                                                             "username": "test-author-username-3",
                                                                           }
                                                                         }
