@@ -1350,7 +1350,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                           </ForwardRef(Grid)>
                                         </WithStyles(ForwardRef(Grid))>
                                       </_default>
-                                      <_default
+                                      <CardStatistics
                                         articleCount={2}
                                       >
                                         <WithStyles(ForwardRef(Icon))>
@@ -1378,7 +1378,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                           </ForwardRef(Icon)>
                                         </WithStyles(ForwardRef(Icon))>
                                         <WithStyles(ForwardRef(Typography))
-                                          variant="subtitle1"
+                                          variant="subtitle2"
                                         >
                                           <ForwardRef(Typography)
                                             classes={
@@ -1415,16 +1415,16 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                 "subtitle2": "MuiTypography-subtitle2",
                                               }
                                             }
-                                            variant="subtitle1"
+                                            variant="subtitle2"
                                           >
                                             <h6
-                                              className="MuiTypography-root MuiTypography-subtitle1"
+                                              className="MuiTypography-root MuiTypography-subtitle2"
                                             >
                                               2
                                             </h6>
                                           </ForwardRef(Typography)>
                                         </WithStyles(ForwardRef(Typography))>
-                                      </_default>
+                                      </CardStatistics>
                                     </div>
                                   </ForwardRef(Grid)>
                                 </WithStyles(ForwardRef(Grid))>
@@ -2422,7 +2422,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                       </ForwardRef(Grid)>
                                                     </WithStyles(ForwardRef(Grid))>
                                                   </_default>
-                                                  <_default
+                                                  <CardStatistics
                                                     articleCount={2}
                                                   >
                                                     <WithStyles(ForwardRef(Icon))>
@@ -2450,7 +2450,7 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                       </ForwardRef(Icon)>
                                                     </WithStyles(ForwardRef(Icon))>
                                                     <WithStyles(ForwardRef(Typography))
-                                                      variant="subtitle1"
+                                                      variant="subtitle2"
                                                     >
                                                       <ForwardRef(Typography)
                                                         classes={
@@ -2487,16 +2487,16 @@ exports[`components/Card/CollectionCard should match snapshot 1`] = `
                                                             "subtitle2": "MuiTypography-subtitle2",
                                                           }
                                                         }
-                                                        variant="subtitle1"
+                                                        variant="subtitle2"
                                                       >
                                                         <h6
-                                                          className="MuiTypography-root MuiTypography-subtitle1"
+                                                          className="MuiTypography-root MuiTypography-subtitle2"
                                                         >
                                                           2
                                                         </h6>
                                                       </ForwardRef(Typography)>
                                                     </WithStyles(ForwardRef(Typography))>
-                                                  </_default>
+                                                  </CardStatistics>
                                                   <_default
                                                     hideAddtoCollection={true}
                                                     id="1234567890"
