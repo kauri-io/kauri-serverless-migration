@@ -348,7 +348,6 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                         </div>
                     </div>
                     <Hidden smDown={true}>
-
                         <Button
                             onClick={handleCreateMenuOpen}
                             variant="outlined"
