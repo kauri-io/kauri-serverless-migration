@@ -473,7 +473,7 @@ const ArticleEditor = props => {
                     />
                 )}
                 <Actions
-                    owner={article && article.owner.id}
+                    owner={article && article.owner && article.owner.id}
                     status={article && article.status}
                     selectDestination={selectDestination}
                     handleSubmit={handleSubmit}
