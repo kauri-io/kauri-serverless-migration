@@ -2050,7 +2050,7 @@ exports[`components/Footer should match snapshot 1`] = `
                                   <h6
                                     className="MuiTypography-root makeStyles-text-6 MuiTypography-subtitle2"
                                   >
-                                    Consensys Formation
+                                    A Consensys Formation
                                   </h6>
                                 </ForwardRef(Typography)>
                               </WithStyles(ForwardRef(Typography))>
