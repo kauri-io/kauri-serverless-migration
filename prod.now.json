@@ -34,6 +34,10 @@
       "dest": "https://api.kauri.io/sitemap"
     },
     {
+      "src": "/feed",
+      "dest": "https://api.kauri.io/feed"
+    },
+    {
       "src": "/favicon.ico",
       "dest": "/app/static/favicon/favicon.ico"
     },
