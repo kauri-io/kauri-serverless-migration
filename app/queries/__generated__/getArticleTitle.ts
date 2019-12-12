@@ -27,5 +27,5 @@ export interface getArticleTitle {
 
 export interface getArticleTitleVariables {
   id: string;
-  version: number;
+  version?: number | null;
 }

@@ -56,9 +56,14 @@ const useStyles = makeStyles((theme: Theme) => ({
     column: {
         display: 'flex',
         flexDirection: 'column',
-        height: '100%',
         width: '100%',
         overflow: 'hidden',
+        [theme.breakpoints.up('sm')]: {
+            height: 150,
+        },
+        [theme.breakpoints.down('sm')]: {
+            height: 90,
+        },
     },
     bottom: {
         marginTop: 'auto',
@@ -93,7 +98,6 @@ const CollectionCard = ({
     sections,
     openModalAction,
     routeChangeAction,
-    // addArticleToCollectionAction,
     description,
     isLoggedIn,
     dateUpdated,
@@ -210,11 +214,9 @@ const CollectionCard = ({
                                             routeChangeAction={
                                                 routeChangeAction
                                             }
-                                            // addArticleToCollectionAction={
-                                            //     addArticleToCollectionAction
-                                            // }
                                             url={collectionURL}
                                             type="COLLECTION"
+                                            hideAddtoCollection={true}
                                         />
                                     </Grid>
                                 </Grid>

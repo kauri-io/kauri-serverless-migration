@@ -5,7 +5,6 @@ import {
     openAddArticleToCollectionConfirmationModalAction,
 } from './Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
-import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { closeModalAction } from '../../components/Modal/Module'
 
 jest.mock('../../lib/analytics', () => ({
@@ -31,17 +30,6 @@ describe('addResourceToCollectionEpic', () => {
         const mockApolloSubscriber = () => Promise.resolve(true)
         const id = '1234567890-'
         const version = 123
-        const mockGetArticle = {
-            id,
-            version,
-            contentHash: 'LJLREW68184',
-            contributor: 'abc',
-            authorId: id,
-            dateCreated: '2019',
-            owner: { id: '123', name: 'Alice', type: 'USER' },
-            author: { id: '123', name: 'Alice' },
-            title,
-        }
         const getCollection: any = { title, id }
         const mockApolloClient = {
             query: () =>
@@ -74,11 +62,6 @@ describe('addResourceToCollectionEpic', () => {
             () => {}
         )
         const expectedAction = [
-            showNotificationAction({
-                description: `The article "${mockGetArticle.title}" has been added to your collection!`,
-                message: 'Article added to collection',
-                notificationType: 'success',
-            }),
             openAddArticleToCollectionConfirmationModalAction({
                 getCollection,
                 routeChangeAction: routeChangeAction,

@@ -53,11 +53,9 @@ const CreateLink = ({
     }
 
     const hasSomeData = title || description || image
-    const hasAllData =
+    const hasAllRequiredData =
         title &&
-        description &&
-        image &&
-        summary &&
+        (description || summary) &&
         authorName &&
         (tags && tags.length > 0)
 
@@ -79,7 +77,7 @@ const CreateLink = ({
     return (
         <Grid>
             <Nav
-                disabled={!hasAllData}
+                disabled={!hasAllRequiredData}
                 submitExtenalLinkAction={() => {
                     if (communities && communities.length > 0) {
                         return openModalAction({
@@ -143,8 +141,8 @@ const CreateLink = ({
                                 variant="subtitle1"
                                 className={classes.error}
                             >
-                                This link already exists on Kauri! Check the
-                                below card*
+                                This link already exists,you can add it to your
+                                collections below
                             </Typography>
                         )}
                     </Paper>

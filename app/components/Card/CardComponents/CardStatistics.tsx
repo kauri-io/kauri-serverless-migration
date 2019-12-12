@@ -1,10 +1,12 @@
 import { Typography, Icon } from '@material-ui/core'
 
-export default ({ articleCount }) => {
+const CardStatistics = ({ articleCount }) => {
     return (
         <>
             <Icon>insert_drive_file</Icon>
-            <Typography variant="subtitle1">{articleCount}</Typography>
+            <Typography variant="subtitle2">{articleCount}</Typography>
         </>
     )
 }
+
+export default CardStatistics
