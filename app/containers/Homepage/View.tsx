@@ -72,7 +72,7 @@ export const HomePageComponent = (props: {
                 <meta property="og:url" content="https://kauri.io" />
                 <meta
                     property="og:image"
-                    content="https://api.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY"
+                    content="https://kauri.io/static/images/kauri_ioLogo.png"
                 />
                 <meta
                     name="description"
@@ -241,7 +241,7 @@ const HomePageComponentWrapper: React.FunctionComponent<IProps> = props => {
                 <meta property="og:url" content="https://kauri.io" />
                 <meta
                     property="og:image"
-                    content="https://api.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY"
+                    content="https://kauri.io/static/images/kauri_ioLogo.png"
                 />
                 <meta
                     name="description"
