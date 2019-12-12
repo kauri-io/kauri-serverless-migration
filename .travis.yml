@@ -36,5 +36,5 @@ jobs:
   - stage: deploy-prod
     if: "(NOT env(AUTHOR_NAME) =~ ^Travis AND (NOT type IN (pull_request)) AND (branch= master))"
     script:
-      - DEPLOYMENT=$(now -A prod.now.json --prod --scope kauri --token=$NOW_TOKEN); exitVal=$?
+      - DEPLOYMENT=$(now -A prod.now.json --scope kauri --token=$NOW_TOKEN); exitVal=$?
       - if [ "$exitVal" -eq 0 ]; then now alias --scope kauri --token=$NOW_TOKEN $DEPLOYMENT kauri.io; fi
