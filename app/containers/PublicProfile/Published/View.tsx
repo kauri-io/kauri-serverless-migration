@@ -48,10 +48,16 @@ const Articles: React.FC<IArticlesProps> = ({
     }))
     const classes = useStyles()
 
-    const articles = results.filter(
-        i =>
-            i && i.resourceIdentifier && i.resourceIdentifier.type === 'ARTICLE'
-    ) as (searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO | null)[]
+    const articles = results
+        .filter(
+            i =>
+                i &&
+                i.resourceIdentifier &&
+                i.resourceIdentifier.type === 'ARTICLE'
+        )
+        .map(
+            resource => resource && resource.resource
+        ) as (searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO | null)[]
 
     if (results) {
         return results.length > 0 ? (
