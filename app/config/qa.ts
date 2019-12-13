@@ -5,8 +5,8 @@ export default {
     KauriCommunityId: '5d2c6edefe402500014349f5',
     uppyConfig,
     analyticsTokens: {
-        mixpanel: '7d83001be784f09b212b9b3274e41530',
-        ga: 'UA-112179323-1',
+        mixpanel: '627c5ccb5bf7da1d079aef2efaa807c2',
+        ga: 'UA-112179323-4',
     },
     testingAccounts: [
         'b282635ffc0ea4d6984f6b50e9dab90de1d03ce2',
