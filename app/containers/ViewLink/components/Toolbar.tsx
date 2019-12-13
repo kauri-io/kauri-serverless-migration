@@ -13,12 +13,10 @@ import PencilIcon from '@material-ui/icons/Edit'
 import { getArticleURL } from '../../../lib/getURLs'
 import { BodyCard } from '../../../components/Typography'
 import AlertView from '../../../components/Modal/AlertView'
-import { Article_comments } from '../../../queries/Fragments/__generated__/Article'
-// import { useEffect } from 'react'
 
 interface IProps {
     classes: any
-    comments?: Article_comments
+    comments?: number
     openModalAction: (children?: any) => void
     closeModalAction?: () => void
     isBookmarked
@@ -70,9 +68,9 @@ const Toolbar = ({
                             <CommentIcon />
                             <Typography variant="subtitle2">
                                 {comments} Comment
-                                {comments && comments.totalElements !== 1
-                                    ? 's'
-                                    : ''}
+                                {comments === 1
+                                    ? ''
+                                    : 's'}
                             </Typography>
                         </Grid>
                     </a>
