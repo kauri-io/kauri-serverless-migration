@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import {
-    Title1,
     BodyCard,
     PageDescription,
     Label,
 } from '../../components/Typography'
+import { Typography } from '@material-ui/core'
 import Image from '../../components/Image'
 import { TagList } from '../../components/Tags'
 import SocialWebsiteIcon from '../../components/Social/SocialWebsiteIcon'
@@ -420,7 +420,13 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                 />
                             )}
                             <LeftSide>
-                                <Title1 color="white">{name}</Title1>
+                                <Typography
+                                    variant="h4"
+                                    component="h1"
+                                    color="secondary"
+                                >
+                                    {name}
+                                </Typography>
                                 {website && (
                                     <a
                                         target="_blank"
