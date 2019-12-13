@@ -25,6 +25,9 @@ const Renderer = ({ markdown }) => {
             padding: theme.spacing(0, 1),
             fontSize: 16,
             overflowX: 'auto',
+            '& .token.punctuation': {
+                color: theme.palette.common.black,
+            },
         },
         quote: {
             padding: theme.spacing(1),
@@ -38,6 +41,9 @@ const Renderer = ({ markdown }) => {
                 display: 'block',
                 background: theme.palette.common.black,
                 color: theme.palette.common.white,
+                '& .token.punctuation': {
+                    color: theme.palette.common.white,
+                },
             },
         },
         katex: {
@@ -119,7 +125,7 @@ const Renderer = ({ markdown }) => {
                 />
             )
         } else {
-            let html = props.children
+            let html
 
             //Non inline code blocks have a className set, so highlight in this case.
             if (props.className) {
@@ -127,6 +133,12 @@ const Renderer = ({ markdown }) => {
                     props.children,
                     Prism.languages.javascript,
                     'javascript'
+                )
+            } else {
+                html = Prism.highlight(
+                    props.children,
+                    Prism.languages.markup,
+                    'markup'
                 )
             }
 
