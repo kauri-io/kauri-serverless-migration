@@ -77,8 +77,8 @@ const Renderer = ({ markdown }) => {
             msHyphens: 'auto',
             MozHyphens: 'auto',
             WebkitHyphens: 'auto',
-            hyphens: 'auto'
-        }
+            hyphens: 'auto',
+        },
     }))
 
     const classes = useStyles()
@@ -145,7 +145,7 @@ const Renderer = ({ markdown }) => {
         if (props.href.indexOf('https://gist.github.com') !== -1) {
             return <Gist id={props.href.split('/')[4]} />
         } else {
-            return <Link {...props} target="_blank"  rel="noopener" />
+            return <Link {...props} target="_blank" rel="noopener" />
         }
     }
 
@@ -213,10 +213,10 @@ const Renderer = ({ markdown }) => {
                 },
             },
             p: { component: Typography, props: { paragraph: true } },
-            a: { 
+            a: {
                 component: LinkOrGist,
                 props: {
-                    className: classes.link
+                    className: classes.link,
                 },
             },
             li: {
