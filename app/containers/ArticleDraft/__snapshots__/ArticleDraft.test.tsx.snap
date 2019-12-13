@@ -1490,6 +1490,9 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                                     "overrides": Object {
                                       "a": Object {
                                         "component": [Function],
+                                        "props": Object {
+                                          "className": "makeStyles-link-169",
+                                        },
                                       },
                                       "blockquote": Object {
                                         "component": Object {

@@ -69,6 +69,16 @@ const Renderer = ({ markdown }) => {
             fontWeight: 500,
             fontSize: 14,
         },
+        link: {
+            overflowWrap: 'break-word',
+            wordWrap: 'break-word',
+            msWordBreak: 'break-all',
+            wordBreak: 'break-all',
+            msHyphens: 'auto',
+            MozHyphens: 'auto',
+            WebkitHyphens: 'auto',
+            hyphens: 'auto'
+        }
     }))
 
     const classes = useStyles()
@@ -135,7 +145,7 @@ const Renderer = ({ markdown }) => {
         if (props.href.indexOf('https://gist.github.com') !== -1) {
             return <Gist id={props.href.split('/')[4]} />
         } else {
-            return <Link {...props} />
+            return <Link {...props} target="_blank"  rel="noopener" />
         }
     }
 
@@ -203,7 +213,12 @@ const Renderer = ({ markdown }) => {
                 },
             },
             p: { component: Typography, props: { paragraph: true } },
-            a: { component: LinkOrGist },
+            a: { 
+                component: LinkOrGist,
+                props: {
+                    className: classes.link
+                },
+            },
             li: {
                 component: ({ ...props }) => (
                     <li>
