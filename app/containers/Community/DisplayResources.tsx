@@ -97,18 +97,24 @@ const DisplayResources = ({ resources, type, classes }: IProps) => {
         return <RenderEmptyState type={type} />
     }
     return (
-        <Grid className={classes.grid}>
-            {Array.isArray(resources) && resources.length
-                ? resources.map(
-                      RenderResources()
-                      // isMember,
-                      // communityId,
-                      // openModalAction,
-                      // closeModalAction,
-                      // removeResourceAction
-                  )
-                : null}
-        </Grid>
+        <div className={classes.root}>
+                <Grid
+                    className={classes.grid}
+                    container
+                    spacing={2}
+                >
+                {Array.isArray(resources) && resources.length
+                    ? resources.map(
+                        RenderResources()
+                        // isMember,
+                        // communityId,
+                        // openModalAction,
+                        // closeModalAction,
+                        // removeResourceAction
+                    )
+                    : null}
+            </Grid>
+        </div>
     )
 }
 
@@ -117,17 +123,23 @@ const DisplayManagedResourcesComponent = ({
     classes,
 }: IProps & { review?: boolean }) => {
     return (
-        <div className={classes.grid}>
-            {Array.isArray(resources) && resources.length
-                ? resources.map(
-                      RenderResources()
-                      // isMember,
-                      // communityId,
-                      // openModalAction,
-                      // closeModalAction,
-                      // removeResourceAction
-                  )
-                : null}
+        <div className={classes.root}>
+                <Grid
+                    className={classes.grid}
+                    container
+                    spacing={2}
+                >
+                {Array.isArray(resources) && resources.length
+                    ? resources.map(
+                        RenderResources()
+                        // isMember,
+                        // communityId,
+                        // openModalAction,
+                        // closeModalAction,
+                        // removeResourceAction
+                    )
+                    : null}
+            </Grid>
         </div>
     )
 }
@@ -137,10 +149,10 @@ export const DisplayManagedResources = withStyles((theme: Theme) => ({
         padding: theme.spacing(1),
         maxWidth: 870,
         margin: 'auto',
-        '& > *': {
-            marginBottom: theme.spacing(2),
-            display: 'block',
-        },
+    },
+    root: {
+        display: 'flex',
+        paddingTop: theme.spacing(4),
     },
 }))(DisplayManagedResourcesComponent)
 
@@ -149,9 +161,11 @@ export default withStyles((theme: Theme) => ({
         padding: theme.spacing(1),
         maxWidth: 870,
         margin: 'auto',
-        '& > *': {
-            marginBottom: theme.spacing(2),
-            display: 'block',
-        },
+    },
+    root: {
+        display: 'flex',
+        paddingTop: theme.spacing(4),
     },
 }))(DisplayResources)
+
+
