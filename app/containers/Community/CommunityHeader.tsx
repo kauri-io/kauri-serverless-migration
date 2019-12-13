@@ -1,10 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {
-    BodyCard,
-    PageDescription,
-    Label,
-} from '../../components/Typography'
+import { BodyCard, PageDescription, Label } from '../../components/Typography'
 import { Typography } from '@material-ui/core'
 import Image from '../../components/Image'
 import { TagList } from '../../components/Tags'
