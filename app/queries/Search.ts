@@ -63,6 +63,7 @@ export const searchResultsAutocomplete = gql`
             size: $size
             query: $query
             filter: $filter
+            parameter: { scoringMode: LAST_POSTED }
         ) {
             totalElements
             totalPages
