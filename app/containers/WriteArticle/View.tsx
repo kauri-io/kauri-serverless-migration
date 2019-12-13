@@ -206,6 +206,16 @@ const ArticleEditor = props => {
         }
     }
 
+    const memberOfArticleCommunity = (communities, articleOwner) => {
+        return (
+            Array.isArray(communities) &&
+            (communities.includes(articleOwner) ||
+                communities.find(
+                    communityRole => communityRole.community.id === articleOwner
+                ))
+        )
+    }
+
     // // this saves edits to a given article version (or an unsaved article) to local storage
     useEffect(() => {
         setArticleCacheItem(key, subject, tags, content, attributes, article)
@@ -303,8 +313,7 @@ const ArticleEditor = props => {
                     // OWNER'S UPDATE
                 } else if (
                     ((owner && userId === owner.id) ||
-                        (Array.isArray(communities) &&
-                            communities.includes(owner.id))) &&
+                        memberOfArticleCommunity(communities, owner.id)) &&
                     submissionType === 'submit/update'
                 ) {
                     return submitArticleVersionAction({
