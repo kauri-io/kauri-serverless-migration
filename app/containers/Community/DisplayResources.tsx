@@ -97,18 +97,18 @@ const DisplayResources = ({ resources, type, classes }: IProps) => {
         return <RenderEmptyState type={type} />
     }
     return (
-            <Grid className={classes.grid}>
-                {Array.isArray(resources) && resources.length
-                    ? resources.map(
-                          RenderResources()
-                          // isMember,
-                          // communityId,
-                          // openModalAction,
-                          // closeModalAction,
-                          // removeResourceAction
-                      )
-                    : null}
-            </Grid>
+        <Grid className={classes.grid}>
+            {Array.isArray(resources) && resources.length
+                ? resources.map(
+                      RenderResources()
+                      // isMember,
+                      // communityId,
+                      // openModalAction,
+                      // closeModalAction,
+                      // removeResourceAction
+                  )
+                : null}
+        </Grid>
     )
 }
 
@@ -117,18 +117,18 @@ const DisplayManagedResourcesComponent = ({
     classes,
 }: IProps & { review?: boolean }) => {
     return (
-            <div className={classes.grid}>
-                {Array.isArray(resources) && resources.length
-                    ? resources.map(
-                            RenderResources()
-                            // isMember,
-                            // communityId,
-                            // openModalAction,
-                            // closeModalAction,
-                            // removeResourceAction
-                        )
-                    : null}
-            </div>
+        <div className={classes.grid}>
+            {Array.isArray(resources) && resources.length
+                ? resources.map(
+                      RenderResources()
+                      // isMember,
+                      // communityId,
+                      // openModalAction,
+                      // closeModalAction,
+                      // removeResourceAction
+                  )
+                : null}
+        </div>
     )
 }
 
