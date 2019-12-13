@@ -54,7 +54,7 @@ const Editor = ({
     }
     const useStyles = makeStyles((theme: Theme) => ({
         editorContainer: {
-            //background: theme.palette.common.white,
+            background: theme.palette.common.white,
             display: 'flex',
             flexDirection: 'column',
             maxWidth: 1272,
@@ -71,7 +71,7 @@ const Editor = ({
         },
         root: {
             width: '100%',
-            //background: theme.palette.common.white,
+            background: theme.palette.common.white,
         },
     }))
     const classes = useStyles()
