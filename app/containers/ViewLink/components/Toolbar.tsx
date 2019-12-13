@@ -68,9 +68,7 @@ const Toolbar = ({
                             <CommentIcon />
                             <Typography variant="subtitle2">
                                 {comments} Comment
-                                {comments === 1
-                                    ? ''
-                                    : 's'}
+                                {comments === 1 ? '' : 's'}
                             </Typography>
                         </Grid>
                     </a>
