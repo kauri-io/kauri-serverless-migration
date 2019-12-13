@@ -98,20 +98,16 @@ const DisplayResources = ({ resources, type, classes }: IProps) => {
     }
     return (
         <div className={classes.root}>
-                <Grid
-                    className={classes.grid}
-                    container
-                    spacing={2}
-                >
+            <Grid className={classes.grid} container spacing={2}>
                 {Array.isArray(resources) && resources.length
                     ? resources.map(
-                        RenderResources()
-                        // isMember,
-                        // communityId,
-                        // openModalAction,
-                        // closeModalAction,
-                        // removeResourceAction
-                    )
+                          RenderResources()
+                          // isMember,
+                          // communityId,
+                          // openModalAction,
+                          // closeModalAction,
+                          // removeResourceAction
+                      )
                     : null}
             </Grid>
         </div>
@@ -124,20 +120,16 @@ const DisplayManagedResourcesComponent = ({
 }: IProps & { review?: boolean }) => {
     return (
         <div className={classes.root}>
-                <Grid
-                    className={classes.grid}
-                    container
-                    spacing={2}
-                >
+            <Grid className={classes.grid} container spacing={2}>
                 {Array.isArray(resources) && resources.length
                     ? resources.map(
-                        RenderResources()
-                        // isMember,
-                        // communityId,
-                        // openModalAction,
-                        // closeModalAction,
-                        // removeResourceAction
-                    )
+                          RenderResources()
+                          // isMember,
+                          // communityId,
+                          // openModalAction,
+                          // closeModalAction,
+                          // removeResourceAction
+                      )
                     : null}
             </Grid>
         </div>
@@ -167,5 +159,3 @@ export default withStyles((theme: Theme) => ({
         paddingTop: theme.spacing(4),
     },
 }))(DisplayResources)
-
-
