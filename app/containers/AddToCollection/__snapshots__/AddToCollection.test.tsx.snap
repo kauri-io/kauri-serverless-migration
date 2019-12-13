@@ -627,7 +627,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                           "defaultValue": Object {
                             "block": false,
                             "kind": "StringValue",
-                            "value": "dateUpdated",
+                            "value": "dateCreated",
                           },
                           "directives": Array [],
                           "kind": "VariableDefinition",
@@ -3020,7 +3020,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                           "defaultValue": Object {
                             "block": false,
                             "kind": "StringValue",
-                            "value": "dateUpdated",
+                            "value": "dateCreated",
                           },
                           "directives": Array [],
                           "kind": "VariableDefinition",
@@ -5388,7 +5388,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                           "defaultValue": Object {
                             "block": false,
                             "kind": "StringValue",
-                            "value": "dateUpdated",
+                            "value": "dateCreated",
                           },
                           "directives": Array [],
                           "kind": "VariableDefinition",
@@ -8044,7 +8044,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                           "defaultValue": Object {
                             "block": false,
                             "kind": "StringValue",
-                            "value": "dateUpdated",
+                            "value": "dateCreated",
                           },
                           "directives": Array [],
                           "kind": "VariableDefinition",
@@ -10699,7 +10699,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                           "defaultValue": Object {
                             "block": false,
                             "kind": "StringValue",
-                            "value": "dateUpdated",
+                            "value": "dateCreated",
                           },
                           "directives": Array [],
                           "kind": "VariableDefinition",
@@ -13361,7 +13361,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "defaultValue": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "dateUpdated",
+                              "value": "dateCreated",
                             },
                             "directives": Array [],
                             "kind": "VariableDefinition",
@@ -15795,7 +15795,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     },
                     "page": 0,
                     "size": 8,
-                    "sort": "dateUpdated",
+                    "sort": "dateCreated",
                   },
                 },
               },
@@ -16058,7 +16058,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "defaultValue": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "dateUpdated",
+                                "value": "dateCreated",
                               },
                               "directives": Array [],
                               "kind": "VariableDefinition",
@@ -18426,7 +18426,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "defaultValue": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "dateUpdated",
+                                "value": "dateCreated",
                               },
                               "directives": Array [],
                               "kind": "VariableDefinition",
@@ -21082,7 +21082,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "defaultValue": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "dateUpdated",
+                                "value": "dateCreated",
                               },
                               "directives": Array [],
                               "kind": "VariableDefinition",
@@ -23737,7 +23737,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "defaultValue": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "dateUpdated",
+                                "value": "dateCreated",
                               },
                               "directives": Array [],
                               "kind": "VariableDefinition",
@@ -26399,7 +26399,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "defaultValue": Object {
                                   "block": false,
                                   "kind": "StringValue",
-                                  "value": "dateUpdated",
+                                  "value": "dateCreated",
                                 },
                                 "directives": Array [],
                                 "kind": "VariableDefinition",
@@ -28833,7 +28833,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                         },
                         "page": 0,
                         "size": 8,
-                        "sort": "dateUpdated",
+                        "sort": "dateCreated",
                       },
                     },
                   },
@@ -29084,7 +29084,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "defaultValue": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "dateUpdated",
+                              "value": "dateCreated",
                             },
                             "directives": Array [],
                             "kind": "VariableDefinition",
@@ -31759,7 +31759,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "defaultValue": Object {
                                   "block": false,
                                   "kind": "StringValue",
-                                  "value": "dateUpdated",
+                                  "value": "dateCreated",
                                 },
                                 "directives": Array [],
                                 "kind": "VariableDefinition",
@@ -33906,7 +33906,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                         },
                         "page": 0,
                         "size": 8,
-                        "sort": "dateUpdated",
+                        "sort": "dateCreated",
                       },
                     },
                     "queryId": "1",
@@ -33927,7 +33927,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       },
                       "page": 0,
                       "size": 8,
-                      "sort": "dateUpdated",
+                      "sort": "dateCreated",
                     },
                   },
                   "subscriptions": Array [],
@@ -34170,7 +34170,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "defaultValue": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "dateUpdated",
+                                "value": "dateCreated",
                               },
                               "directives": Array [],
                               "kind": "VariableDefinition",
@@ -36613,7 +36613,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       },
                       "page": 0,
                       "size": 8,
-                      "sort": "dateUpdated",
+                      "sort": "dateCreated",
                     },
                   },
                 },
@@ -36877,7 +36877,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "defaultValue": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "dateUpdated",
+                              "value": "dateCreated",
                             },
                             "directives": Array [],
                             "kind": "VariableDefinition",
@@ -39245,7 +39245,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "defaultValue": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "dateUpdated",
+                              "value": "dateCreated",
                             },
                             "directives": Array [],
                             "kind": "VariableDefinition",
@@ -41901,7 +41901,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "defaultValue": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "dateUpdated",
+                              "value": "dateCreated",
                             },
                             "directives": Array [],
                             "kind": "VariableDefinition",
@@ -44556,7 +44556,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "defaultValue": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "dateUpdated",
+                              "value": "dateCreated",
                             },
                             "directives": Array [],
                             "kind": "VariableDefinition",
@@ -47218,7 +47218,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "defaultValue": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "dateUpdated",
+                                "value": "dateCreated",
                               },
                               "directives": Array [],
                               "kind": "VariableDefinition",
@@ -49652,7 +49652,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       },
                       "page": 0,
                       "size": 8,
-                      "sort": "dateUpdated",
+                      "sort": "dateCreated",
                     },
                   },
                 },
@@ -49887,7 +49887,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                         "defaultValue": Object {
                           "block": false,
                           "kind": "StringValue",
-                          "value": "dateUpdated",
+                          "value": "dateCreated",
                         },
                         "directives": Array [],
                         "kind": "VariableDefinition",
