@@ -15,11 +15,12 @@ export default ({ isLoggedIn, isOwner }) => (
                             here.
                         </Typography>
                         <Typography>
-                            Get started by creating a new article, importing
-                            from an exiting one, or adding an external link.
+                            Get started by creating a new draft below, or
+                            importing one you've written on Medium!
                         </Typography>
                         <Typography>
-                            You draft articles will appear under the manage tab
+                            Your draft articles will be shown in the next tab
+                            until you publish them.
                         </Typography>
                     </Grid>
                 ) : (

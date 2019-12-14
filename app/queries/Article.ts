@@ -677,7 +677,7 @@ export const deleteDraftArticleMutation = gql`
 `
 
 export const getArticleTitleQuery = gql`
-    query getArticleTitle($id: String!, $version: Int) {
+    query getArticleTitle($id: String!, $version: Int!) {
         getArticle(id: $id, version: $version) {
             title
         }

@@ -69,11 +69,6 @@ const TagContainer = styled.div`
     flex-direction: row;
 `
 
-const TitleContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-`
-
 const TagWrap = styled.span<{ type?: string }>`
     display: flex;
     align-items: center;
@@ -259,9 +254,7 @@ const Header: React.FunctionComponent<IProps> = props => (
                 <Label color="white">
                     SUBMITTED - {moment(props.date).format('DD MMM YYYY HH:mm')}
                 </Label>
-                <TitleContainer>
-                    <Title1 color="white">{props.title}</Title1>
-                </TitleContainer>
+                <Title1 color="white">{props.title}</Title1>
                 <DiffTagList oldTags={props.oldTags} newTags={props.newTags} />
             </Left>
             <Right>

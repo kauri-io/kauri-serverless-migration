@@ -9,12 +9,6 @@ import PublicProfileCard from '../../components/Card/PublicProfileCard'
 import CollectionCard from '../../components/Card/CollectionCard'
 import CommunityCard from '../../components/Card/CommunityCard'
 import ArticleCard from '../../components/Card/ArticleCard'
-import {
-    getArticleURL,
-    getCollectionURL,
-    getCommunityURL,
-    getProfileURL,
-} from '../../lib/getURLs'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -42,33 +36,13 @@ const Search = ({ loading, data: { searchAutocomplete } }) => {
                         i.resourceIdentifier && i.resourceIdentifier.type
                     switch (type) {
                         case 'ARTICLE':
-                            return (
-                                <ArticleCard
-                                    {...resource}
-                                    href={getArticleURL({ ...resource })}
-                                />
-                            )
+                            return <ArticleCard {...resource} />
                         case 'COLLECTION':
-                            return (
-                                <CollectionCard
-                                    {...resource}
-                                    href={getCollectionURL({ ...resource })}
-                                />
-                            )
+                            return <CollectionCard {...resource} />
                         case 'COMMUNITY':
-                            return (
-                                <CommunityCard
-                                    {...resource}
-                                    href={getCommunityURL({ ...resource })}
-                                />
-                            )
+                            return <CommunityCard {...resource} />
                         case 'USER':
-                            return (
-                                <PublicProfileCard
-                                    {...resource}
-                                    href={getProfileURL({ ...resource })}
-                                />
-                            )
+                            return <PublicProfileCard {...resource} />
                         default:
                             return null
                     }

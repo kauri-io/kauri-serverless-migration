@@ -21,6 +21,7 @@ interface IProps {
 const FeaturedContent: React.FunctionComponent<IProps> = ({ content }) => {
     const useStyles = makeStyles((theme: Theme) => ({
         container: {
+            maxWidth: (1272 / 12) * 9,
             marginLeft: 'auto',
             width: '100%',
             display: 'flex',

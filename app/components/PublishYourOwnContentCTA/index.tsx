@@ -17,9 +17,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         padding: theme.spacing(2, 0),
         lineHeight: '24px',
     },
-    subtitle: {
-        padding: theme.spacing(0, 0, 1, 0),
-    },
+    subtitle: {},
     link: {},
     root: {
         [theme.breakpoints.down('md')]: {

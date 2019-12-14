@@ -2925,6 +2925,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                           "useStyles": [Function],
                                         },
                                         "props": Object {
+                                          "aria-label": "title",
                                           "className": "makeStyles-h3-165",
                                           "gutterBottom": true,
                                           "variant": "h5",
@@ -3228,6 +3229,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                           "useStyles": [Function],
                                         },
                                         "props": Object {
+                                          "aria-label": "title",
                                           "className": "makeStyles-h4-166",
                                           "gutterBottom": true,
                                           "variant": "h6",
@@ -3531,6 +3533,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                           "useStyles": [Function],
                                         },
                                         "props": Object {
+                                          "aria-label": "title",
                                           "className": "makeStyles-h5-167",
                                           "gutterBottom": true,
                                           "variant": "h6",
@@ -3834,6 +3837,7 @@ exports[`containers/Article should match snapshot 1`] = `
                                           "useStyles": [Function],
                                         },
                                         "props": Object {
+                                          "aria-label": "title",
                                           "className": "makeStyles-h6-168",
                                           "gutterBottom": true,
                                           "variant": "h6",
@@ -6995,27 +6999,9 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                         user={
                                                                           Object {
                                                                             "__typename": "PublicUserDTO",
-                                                                            "articles": Object {
-                                                                              "__typename": "ResponsePage_ArticleDTO",
-                                                                              "totalElements": 3,
-                                                                            },
                                                                             "avatar": "test avatar 2",
-                                                                            "collections": Object {
-                                                                              "__typename": "ResponsePage_CollectionDTO",
-                                                                              "totalElements": 3,
-                                                                            },
-                                                                            "communities": Array [],
                                                                             "id": "6792",
-                                                                            "links": Object {
-                                                                              "__typename": "ResponsePage_ExternalLinkDTO",
-                                                                              "totalElements": 3,
-                                                                            },
                                                                             "name": "test author name 2",
-                                                                            "social": Object {
-                                                                              "github": "test github",
-                                                                              "twitter": "twst twitter",
-                                                                            },
-                                                                            "title": "test title",
                                                                             "username": "test-author-username-2",
                                                                           }
                                                                         }
@@ -8025,34 +8011,8 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                   <li
                                                                                                     aria-disabled="false"
                                                                                                     class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                                    data-testid="ArticleCard-1232-addToCollectionButton"
                                                                                                     role="menuitem"
                                                                                                     tabindex="0"
-                                                                                                  >
-                                                                                                    <div
-                                                                                                      class="MuiListItemIcon-root"
-                                                                                                    >
-                                                                                                      <span
-                                                                                                        aria-hidden="true"
-                                                                                                        class="material-icons MuiIcon-root"
-                                                                                                      >
-                                                                                                        folder
-                                                                                                      </span>
-                                                                                                    </div>
-                                                                                                    <span
-                                                                                                      class="MuiTypography-root"
-                                                                                                    >
-                                                                                                      Add To Collection
-                                                                                                    </span>
-                                                                                                    <span
-                                                                                                      class="MuiTouchRipple-root"
-                                                                                                    />
-                                                                                                  </li>
-                                                                                                  <li
-                                                                                                    aria-disabled="false"
-                                                                                                    class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                                    role="menuitem"
-                                                                                                    tabindex="-1"
                                                                                                   >
                                                                                                     <div
                                                                                                       class="MuiListItemIcon-root"
@@ -8068,6 +8028,32 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                       class="MuiTypography-root"
                                                                                                     >
                                                                                                       Share
+                                                                                                    </span>
+                                                                                                    <span
+                                                                                                      class="MuiTouchRipple-root"
+                                                                                                    />
+                                                                                                  </li>
+                                                                                                  <li
+                                                                                                    aria-disabled="false"
+                                                                                                    class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                                                                    data-testid="ArticleCard-1232-addToCollectionButton"
+                                                                                                    role="menuitem"
+                                                                                                    tabindex="-1"
+                                                                                                  >
+                                                                                                    <div
+                                                                                                      class="MuiListItemIcon-root"
+                                                                                                    >
+                                                                                                      <span
+                                                                                                        aria-hidden="true"
+                                                                                                        class="material-icons MuiIcon-root"
+                                                                                                      >
+                                                                                                        folder
+                                                                                                      </span>
+                                                                                                    </div>
+                                                                                                    <span
+                                                                                                      class="MuiTypography-root"
+                                                                                                    >
+                                                                                                      Add To Collection
                                                                                                     </span>
                                                                                                     <span
                                                                                                       class="MuiTouchRipple-root"
@@ -8104,34 +8090,8 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                   <li
                                                                                                     aria-disabled="false"
                                                                                                     class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                                    data-testid="ArticleCard-1233-addToCollectionButton"
                                                                                                     role="menuitem"
                                                                                                     tabindex="0"
-                                                                                                  >
-                                                                                                    <div
-                                                                                                      class="MuiListItemIcon-root"
-                                                                                                    >
-                                                                                                      <span
-                                                                                                        aria-hidden="true"
-                                                                                                        class="material-icons MuiIcon-root"
-                                                                                                      >
-                                                                                                        folder
-                                                                                                      </span>
-                                                                                                    </div>
-                                                                                                    <span
-                                                                                                      class="MuiTypography-root"
-                                                                                                    >
-                                                                                                      Add To Collection
-                                                                                                    </span>
-                                                                                                    <span
-                                                                                                      class="MuiTouchRipple-root"
-                                                                                                    />
-                                                                                                  </li>
-                                                                                                  <li
-                                                                                                    aria-disabled="false"
-                                                                                                    class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                                    role="menuitem"
-                                                                                                    tabindex="-1"
                                                                                                   >
                                                                                                     <div
                                                                                                       class="MuiListItemIcon-root"
@@ -8147,6 +8107,32 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                       class="MuiTypography-root"
                                                                                                     >
                                                                                                       Share
+                                                                                                    </span>
+                                                                                                    <span
+                                                                                                      class="MuiTouchRipple-root"
+                                                                                                    />
+                                                                                                  </li>
+                                                                                                  <li
+                                                                                                    aria-disabled="false"
+                                                                                                    class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                                                                    data-testid="ArticleCard-1233-addToCollectionButton"
+                                                                                                    role="menuitem"
+                                                                                                    tabindex="-1"
+                                                                                                  >
+                                                                                                    <div
+                                                                                                      class="MuiListItemIcon-root"
+                                                                                                    >
+                                                                                                      <span
+                                                                                                        aria-hidden="true"
+                                                                                                        class="material-icons MuiIcon-root"
+                                                                                                      >
+                                                                                                        folder
+                                                                                                      </span>
+                                                                                                    </div>
+                                                                                                    <span
+                                                                                                      class="MuiTypography-root"
+                                                                                                    >
+                                                                                                      Add To Collection
                                                                                                     </span>
                                                                                                     <span
                                                                                                       class="MuiTouchRipple-root"
@@ -8334,7 +8320,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                               tabIndex={-1}
                                                                                                             >
                                                                                                               <WithStyles(ForwardRef(MenuItem))
-                                                                                                                data-testid="ArticleCard-1232-addToCollectionButton"
                                                                                                                 key=".$.0"
                                                                                                                 onClick={[Function]}
                                                                                                                 tabIndex={0}
@@ -8348,7 +8333,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                                       "selected": "Mui-selected",
                                                                                                                     }
                                                                                                                   }
-                                                                                                                  data-testid="ArticleCard-1232-addToCollectionButton"
                                                                                                                   onClick={[Function]}
                                                                                                                   tabIndex={0}
                                                                                                                 >
@@ -8361,7 +8345,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                                       }
                                                                                                                     }
                                                                                                                     component="li"
-                                                                                                                    data-testid="ArticleCard-1232-addToCollectionButton"
                                                                                                                     disableGutters={false}
                                                                                                                     onClick={[Function]}
                                                                                                                     role="menuitem"
@@ -8386,7 +8369,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                                         }
                                                                                                                       }
                                                                                                                       component="li"
-                                                                                                                      data-testid="ArticleCard-1232-addToCollectionButton"
                                                                                                                       disableGutters={false}
                                                                                                                       onClick={[Function]}
                                                                                                                       role="menuitem"
@@ -8395,7 +8377,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                                       <WithStyles(ForwardRef(ButtonBase))
                                                                                                                         className="MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
                                                                                                                         component="li"
-                                                                                                                        data-testid="ArticleCard-1232-addToCollectionButton"
                                                                                                                         disabled={false}
                                                                                                                         focusVisibleClassName="Mui-focusVisible"
                                                                                                                         onClick={[Function]}
@@ -8412,7 +8393,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                                             }
                                                                                                                           }
                                                                                                                           component="li"
-                                                                                                                          data-testid="ArticleCard-1232-addToCollectionButton"
                                                                                                                           disabled={false}
                                                                                                                           focusVisibleClassName="Mui-focusVisible"
                                                                                                                           onClick={[Function]}
@@ -8422,7 +8402,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                                           <li
                                                                                                                             aria-disabled={false}
                                                                                                                             className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                                                            data-testid="ArticleCard-1232-addToCollectionButton"
                                                                                                                             onBlur={[Function]}
                                                                                                                             onClick={[Function]}
                                                                                                                             onDragLeave={[Function]}
@@ -8437,228 +8416,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                                             onTouchStart={[Function]}
                                                                                                                             role="menuitem"
                                                                                                                             tabIndex={0}
-                                                                                                                          >
-                                                                                                                            <WithStyles(ForwardRef(ListItemIcon))
-                                                                                                                              key=".0"
-                                                                                                                            >
-                                                                                                                              <ForwardRef(ListItemIcon)
-                                                                                                                                classes={
-                                                                                                                                  Object {
-                                                                                                                                    "alignItemsFlexStart": "MuiListItemIcon-alignItemsFlexStart",
-                                                                                                                                    "root": "MuiListItemIcon-root",
-                                                                                                                                  }
-                                                                                                                                }
-                                                                                                                              >
-                                                                                                                                <div
-                                                                                                                                  className="MuiListItemIcon-root"
-                                                                                                                                >
-                                                                                                                                  <WithStyles(ForwardRef(Icon))>
-                                                                                                                                    <ForwardRef(Icon)
-                                                                                                                                      classes={
-                                                                                                                                        Object {
-                                                                                                                                          "colorAction": "MuiIcon-colorAction",
-                                                                                                                                          "colorDisabled": "MuiIcon-colorDisabled",
-                                                                                                                                          "colorError": "MuiIcon-colorError",
-                                                                                                                                          "colorPrimary": "MuiIcon-colorPrimary",
-                                                                                                                                          "colorSecondary": "MuiIcon-colorSecondary",
-                                                                                                                                          "fontSizeInherit": "MuiIcon-fontSizeInherit",
-                                                                                                                                          "fontSizeLarge": "MuiIcon-fontSizeLarge",
-                                                                                                                                          "fontSizeSmall": "MuiIcon-fontSizeSmall",
-                                                                                                                                          "root": "MuiIcon-root",
-                                                                                                                                        }
-                                                                                                                                      }
-                                                                                                                                    >
-                                                                                                                                      <span
-                                                                                                                                        aria-hidden={true}
-                                                                                                                                        className="material-icons MuiIcon-root"
-                                                                                                                                      >
-                                                                                                                                        folder
-                                                                                                                                      </span>
-                                                                                                                                    </ForwardRef(Icon)>
-                                                                                                                                  </WithStyles(ForwardRef(Icon))>
-                                                                                                                                </div>
-                                                                                                                              </ForwardRef(ListItemIcon)>
-                                                                                                                            </WithStyles(ForwardRef(ListItemIcon))>
-                                                                                                                            <WithStyles(ForwardRef(Typography))
-                                                                                                                              key=".1"
-                                                                                                                              variant="inherit"
-                                                                                                                            >
-                                                                                                                              <ForwardRef(Typography)
-                                                                                                                                classes={
-                                                                                                                                  Object {
-                                                                                                                                    "alignCenter": "MuiTypography-alignCenter",
-                                                                                                                                    "alignJustify": "MuiTypography-alignJustify",
-                                                                                                                                    "alignLeft": "MuiTypography-alignLeft",
-                                                                                                                                    "alignRight": "MuiTypography-alignRight",
-                                                                                                                                    "body1": "MuiTypography-body1",
-                                                                                                                                    "body2": "MuiTypography-body2",
-                                                                                                                                    "button": "MuiTypography-button",
-                                                                                                                                    "caption": "MuiTypography-caption",
-                                                                                                                                    "colorError": "MuiTypography-colorError",
-                                                                                                                                    "colorInherit": "MuiTypography-colorInherit",
-                                                                                                                                    "colorPrimary": "MuiTypography-colorPrimary",
-                                                                                                                                    "colorSecondary": "MuiTypography-colorSecondary",
-                                                                                                                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                                                                                                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                                                                                                                    "displayBlock": "MuiTypography-displayBlock",
-                                                                                                                                    "displayInline": "MuiTypography-displayInline",
-                                                                                                                                    "gutterBottom": "MuiTypography-gutterBottom",
-                                                                                                                                    "h1": "MuiTypography-h1",
-                                                                                                                                    "h2": "MuiTypography-h2",
-                                                                                                                                    "h3": "MuiTypography-h3",
-                                                                                                                                    "h4": "MuiTypography-h4",
-                                                                                                                                    "h5": "MuiTypography-h5",
-                                                                                                                                    "h6": "MuiTypography-h6",
-                                                                                                                                    "noWrap": "MuiTypography-noWrap",
-                                                                                                                                    "overline": "MuiTypography-overline",
-                                                                                                                                    "paragraph": "MuiTypography-paragraph",
-                                                                                                                                    "root": "MuiTypography-root",
-                                                                                                                                    "srOnly": "MuiTypography-srOnly",
-                                                                                                                                    "subtitle1": "MuiTypography-subtitle1",
-                                                                                                                                    "subtitle2": "MuiTypography-subtitle2",
-                                                                                                                                  }
-                                                                                                                                }
-                                                                                                                                variant="inherit"
-                                                                                                                              >
-                                                                                                                                <span
-                                                                                                                                  className="MuiTypography-root"
-                                                                                                                                >
-                                                                                                                                  Add To Collection
-                                                                                                                                </span>
-                                                                                                                              </ForwardRef(Typography)>
-                                                                                                                            </WithStyles(ForwardRef(Typography))>
-                                                                                                                            <NoSsr>
-                                                                                                                              <WithStyles(undefined)
-                                                                                                                                center={false}
-                                                                                                                              >
-                                                                                                                                <ForwardRef(TouchRipple)
-                                                                                                                                  center={false}
-                                                                                                                                  classes={
-                                                                                                                                    Object {
-                                                                                                                                      "child": "MuiTouchRipple-child",
-                                                                                                                                      "childLeaving": "MuiTouchRipple-childLeaving",
-                                                                                                                                      "childPulsate": "MuiTouchRipple-childPulsate",
-                                                                                                                                      "ripple": "MuiTouchRipple-ripple",
-                                                                                                                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                                                                                                                                      "rippleVisible": "MuiTouchRipple-rippleVisible",
-                                                                                                                                      "root": "MuiTouchRipple-root",
-                                                                                                                                    }
-                                                                                                                                  }
-                                                                                                                                >
-                                                                                                                                  <span
-                                                                                                                                    className="MuiTouchRipple-root"
-                                                                                                                                  >
-                                                                                                                                    <TransitionGroup
-                                                                                                                                      childFactory={[Function]}
-                                                                                                                                      component={null}
-                                                                                                                                      exit={true}
-                                                                                                                                    />
-                                                                                                                                  </span>
-                                                                                                                                </ForwardRef(TouchRipple)>
-                                                                                                                              </WithStyles(undefined)>
-                                                                                                                            </NoSsr>
-                                                                                                                          </li>
-                                                                                                                        </ForwardRef(ButtonBase)>
-                                                                                                                      </WithStyles(ForwardRef(ButtonBase))>
-                                                                                                                    </ForwardRef(ListItem)>
-                                                                                                                  </WithStyles(ForwardRef(ListItem))>
-                                                                                                                </ForwardRef(MenuItem)>
-                                                                                                              </WithStyles(ForwardRef(MenuItem))>
-                                                                                                              <WithStyles(ForwardRef(MenuItem))
-                                                                                                                key=".$.1"
-                                                                                                                onClick={[Function]}
-                                                                                                              >
-                                                                                                                <ForwardRef(MenuItem)
-                                                                                                                  classes={
-                                                                                                                    Object {
-                                                                                                                      "dense": "MuiMenuItem-dense",
-                                                                                                                      "gutters": "MuiMenuItem-gutters",
-                                                                                                                      "root": "MuiMenuItem-root",
-                                                                                                                      "selected": "Mui-selected",
-                                                                                                                    }
-                                                                                                                  }
-                                                                                                                  onClick={[Function]}
-                                                                                                                >
-                                                                                                                  <WithStyles(ForwardRef(ListItem))
-                                                                                                                    button={true}
-                                                                                                                    className="MuiMenuItem-root MuiMenuItem-gutters"
-                                                                                                                    classes={
-                                                                                                                      Object {
-                                                                                                                        "dense": "MuiMenuItem-dense",
-                                                                                                                      }
-                                                                                                                    }
-                                                                                                                    component="li"
-                                                                                                                    disableGutters={false}
-                                                                                                                    onClick={[Function]}
-                                                                                                                    role="menuitem"
-                                                                                                                    tabIndex={-1}
-                                                                                                                  >
-                                                                                                                    <ForwardRef(ListItem)
-                                                                                                                      button={true}
-                                                                                                                      className="MuiMenuItem-root MuiMenuItem-gutters"
-                                                                                                                      classes={
-                                                                                                                        Object {
-                                                                                                                          "alignItemsFlexStart": "MuiListItem-alignItemsFlexStart",
-                                                                                                                          "button": "MuiListItem-button",
-                                                                                                                          "container": "MuiListItem-container",
-                                                                                                                          "dense": "MuiListItem-dense MuiMenuItem-dense",
-                                                                                                                          "disabled": "Mui-disabled",
-                                                                                                                          "divider": "MuiListItem-divider",
-                                                                                                                          "focusVisible": "Mui-focusVisible",
-                                                                                                                          "gutters": "MuiListItem-gutters",
-                                                                                                                          "root": "MuiListItem-root",
-                                                                                                                          "secondaryAction": "MuiListItem-secondaryAction",
-                                                                                                                          "selected": "Mui-selected",
-                                                                                                                        }
-                                                                                                                      }
-                                                                                                                      component="li"
-                                                                                                                      disableGutters={false}
-                                                                                                                      onClick={[Function]}
-                                                                                                                      role="menuitem"
-                                                                                                                      tabIndex={-1}
-                                                                                                                    >
-                                                                                                                      <WithStyles(ForwardRef(ButtonBase))
-                                                                                                                        className="MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                                                        component="li"
-                                                                                                                        disabled={false}
-                                                                                                                        focusVisibleClassName="Mui-focusVisible"
-                                                                                                                        onClick={[Function]}
-                                                                                                                        role="menuitem"
-                                                                                                                        tabIndex={-1}
-                                                                                                                      >
-                                                                                                                        <ForwardRef(ButtonBase)
-                                                                                                                          className="MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                                                          classes={
-                                                                                                                            Object {
-                                                                                                                              "disabled": "Mui-disabled",
-                                                                                                                              "focusVisible": "Mui-focusVisible",
-                                                                                                                              "root": "MuiButtonBase-root",
-                                                                                                                            }
-                                                                                                                          }
-                                                                                                                          component="li"
-                                                                                                                          disabled={false}
-                                                                                                                          focusVisibleClassName="Mui-focusVisible"
-                                                                                                                          onClick={[Function]}
-                                                                                                                          role="menuitem"
-                                                                                                                          tabIndex={-1}
-                                                                                                                        >
-                                                                                                                          <li
-                                                                                                                            aria-disabled={false}
-                                                                                                                            className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                                                            onBlur={[Function]}
-                                                                                                                            onClick={[Function]}
-                                                                                                                            onDragLeave={[Function]}
-                                                                                                                            onFocus={[Function]}
-                                                                                                                            onKeyDown={[Function]}
-                                                                                                                            onKeyUp={[Function]}
-                                                                                                                            onMouseDown={[Function]}
-                                                                                                                            onMouseLeave={[Function]}
-                                                                                                                            onMouseUp={[Function]}
-                                                                                                                            onTouchEnd={[Function]}
-                                                                                                                            onTouchMove={[Function]}
-                                                                                                                            onTouchStart={[Function]}
-                                                                                                                            role="menuitem"
-                                                                                                                            tabIndex={-1}
                                                                                                                           >
                                                                                                                             <WithStyles(ForwardRef(ListItemIcon))
                                                                                                                               key=".0"
@@ -8746,6 +8503,235 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                                                   className="MuiTypography-root"
                                                                                                                                 >
                                                                                                                                   Share
+                                                                                                                                </span>
+                                                                                                                              </ForwardRef(Typography)>
+                                                                                                                            </WithStyles(ForwardRef(Typography))>
+                                                                                                                            <NoSsr>
+                                                                                                                              <WithStyles(undefined)
+                                                                                                                                center={false}
+                                                                                                                              >
+                                                                                                                                <ForwardRef(TouchRipple)
+                                                                                                                                  center={false}
+                                                                                                                                  classes={
+                                                                                                                                    Object {
+                                                                                                                                      "child": "MuiTouchRipple-child",
+                                                                                                                                      "childLeaving": "MuiTouchRipple-childLeaving",
+                                                                                                                                      "childPulsate": "MuiTouchRipple-childPulsate",
+                                                                                                                                      "ripple": "MuiTouchRipple-ripple",
+                                                                                                                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                                                                                                      "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                                                                                                      "root": "MuiTouchRipple-root",
+                                                                                                                                    }
+                                                                                                                                  }
+                                                                                                                                >
+                                                                                                                                  <span
+                                                                                                                                    className="MuiTouchRipple-root"
+                                                                                                                                  >
+                                                                                                                                    <TransitionGroup
+                                                                                                                                      childFactory={[Function]}
+                                                                                                                                      component={null}
+                                                                                                                                      exit={true}
+                                                                                                                                    />
+                                                                                                                                  </span>
+                                                                                                                                </ForwardRef(TouchRipple)>
+                                                                                                                              </WithStyles(undefined)>
+                                                                                                                            </NoSsr>
+                                                                                                                          </li>
+                                                                                                                        </ForwardRef(ButtonBase)>
+                                                                                                                      </WithStyles(ForwardRef(ButtonBase))>
+                                                                                                                    </ForwardRef(ListItem)>
+                                                                                                                  </WithStyles(ForwardRef(ListItem))>
+                                                                                                                </ForwardRef(MenuItem)>
+                                                                                                              </WithStyles(ForwardRef(MenuItem))>
+                                                                                                              <WithStyles(ForwardRef(MenuItem))
+                                                                                                                data-testid="ArticleCard-1232-addToCollectionButton"
+                                                                                                                key=".$.1"
+                                                                                                                onClick={[Function]}
+                                                                                                              >
+                                                                                                                <ForwardRef(MenuItem)
+                                                                                                                  classes={
+                                                                                                                    Object {
+                                                                                                                      "dense": "MuiMenuItem-dense",
+                                                                                                                      "gutters": "MuiMenuItem-gutters",
+                                                                                                                      "root": "MuiMenuItem-root",
+                                                                                                                      "selected": "Mui-selected",
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                  data-testid="ArticleCard-1232-addToCollectionButton"
+                                                                                                                  onClick={[Function]}
+                                                                                                                >
+                                                                                                                  <WithStyles(ForwardRef(ListItem))
+                                                                                                                    button={true}
+                                                                                                                    className="MuiMenuItem-root MuiMenuItem-gutters"
+                                                                                                                    classes={
+                                                                                                                      Object {
+                                                                                                                        "dense": "MuiMenuItem-dense",
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                    component="li"
+                                                                                                                    data-testid="ArticleCard-1232-addToCollectionButton"
+                                                                                                                    disableGutters={false}
+                                                                                                                    onClick={[Function]}
+                                                                                                                    role="menuitem"
+                                                                                                                    tabIndex={-1}
+                                                                                                                  >
+                                                                                                                    <ForwardRef(ListItem)
+                                                                                                                      button={true}
+                                                                                                                      className="MuiMenuItem-root MuiMenuItem-gutters"
+                                                                                                                      classes={
+                                                                                                                        Object {
+                                                                                                                          "alignItemsFlexStart": "MuiListItem-alignItemsFlexStart",
+                                                                                                                          "button": "MuiListItem-button",
+                                                                                                                          "container": "MuiListItem-container",
+                                                                                                                          "dense": "MuiListItem-dense MuiMenuItem-dense",
+                                                                                                                          "disabled": "Mui-disabled",
+                                                                                                                          "divider": "MuiListItem-divider",
+                                                                                                                          "focusVisible": "Mui-focusVisible",
+                                                                                                                          "gutters": "MuiListItem-gutters",
+                                                                                                                          "root": "MuiListItem-root",
+                                                                                                                          "secondaryAction": "MuiListItem-secondaryAction",
+                                                                                                                          "selected": "Mui-selected",
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                      component="li"
+                                                                                                                      data-testid="ArticleCard-1232-addToCollectionButton"
+                                                                                                                      disableGutters={false}
+                                                                                                                      onClick={[Function]}
+                                                                                                                      role="menuitem"
+                                                                                                                      tabIndex={-1}
+                                                                                                                    >
+                                                                                                                      <WithStyles(ForwardRef(ButtonBase))
+                                                                                                                        className="MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                                                                                        component="li"
+                                                                                                                        data-testid="ArticleCard-1232-addToCollectionButton"
+                                                                                                                        disabled={false}
+                                                                                                                        focusVisibleClassName="Mui-focusVisible"
+                                                                                                                        onClick={[Function]}
+                                                                                                                        role="menuitem"
+                                                                                                                        tabIndex={-1}
+                                                                                                                      >
+                                                                                                                        <ForwardRef(ButtonBase)
+                                                                                                                          className="MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                                                                                          classes={
+                                                                                                                            Object {
+                                                                                                                              "disabled": "Mui-disabled",
+                                                                                                                              "focusVisible": "Mui-focusVisible",
+                                                                                                                              "root": "MuiButtonBase-root",
+                                                                                                                            }
+                                                                                                                          }
+                                                                                                                          component="li"
+                                                                                                                          data-testid="ArticleCard-1232-addToCollectionButton"
+                                                                                                                          disabled={false}
+                                                                                                                          focusVisibleClassName="Mui-focusVisible"
+                                                                                                                          onClick={[Function]}
+                                                                                                                          role="menuitem"
+                                                                                                                          tabIndex={-1}
+                                                                                                                        >
+                                                                                                                          <li
+                                                                                                                            aria-disabled={false}
+                                                                                                                            className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                                                                                            data-testid="ArticleCard-1232-addToCollectionButton"
+                                                                                                                            onBlur={[Function]}
+                                                                                                                            onClick={[Function]}
+                                                                                                                            onDragLeave={[Function]}
+                                                                                                                            onFocus={[Function]}
+                                                                                                                            onKeyDown={[Function]}
+                                                                                                                            onKeyUp={[Function]}
+                                                                                                                            onMouseDown={[Function]}
+                                                                                                                            onMouseLeave={[Function]}
+                                                                                                                            onMouseUp={[Function]}
+                                                                                                                            onTouchEnd={[Function]}
+                                                                                                                            onTouchMove={[Function]}
+                                                                                                                            onTouchStart={[Function]}
+                                                                                                                            role="menuitem"
+                                                                                                                            tabIndex={-1}
+                                                                                                                          >
+                                                                                                                            <WithStyles(ForwardRef(ListItemIcon))
+                                                                                                                              key=".0"
+                                                                                                                            >
+                                                                                                                              <ForwardRef(ListItemIcon)
+                                                                                                                                classes={
+                                                                                                                                  Object {
+                                                                                                                                    "alignItemsFlexStart": "MuiListItemIcon-alignItemsFlexStart",
+                                                                                                                                    "root": "MuiListItemIcon-root",
+                                                                                                                                  }
+                                                                                                                                }
+                                                                                                                              >
+                                                                                                                                <div
+                                                                                                                                  className="MuiListItemIcon-root"
+                                                                                                                                >
+                                                                                                                                  <WithStyles(ForwardRef(Icon))>
+                                                                                                                                    <ForwardRef(Icon)
+                                                                                                                                      classes={
+                                                                                                                                        Object {
+                                                                                                                                          "colorAction": "MuiIcon-colorAction",
+                                                                                                                                          "colorDisabled": "MuiIcon-colorDisabled",
+                                                                                                                                          "colorError": "MuiIcon-colorError",
+                                                                                                                                          "colorPrimary": "MuiIcon-colorPrimary",
+                                                                                                                                          "colorSecondary": "MuiIcon-colorSecondary",
+                                                                                                                                          "fontSizeInherit": "MuiIcon-fontSizeInherit",
+                                                                                                                                          "fontSizeLarge": "MuiIcon-fontSizeLarge",
+                                                                                                                                          "fontSizeSmall": "MuiIcon-fontSizeSmall",
+                                                                                                                                          "root": "MuiIcon-root",
+                                                                                                                                        }
+                                                                                                                                      }
+                                                                                                                                    >
+                                                                                                                                      <span
+                                                                                                                                        aria-hidden={true}
+                                                                                                                                        className="material-icons MuiIcon-root"
+                                                                                                                                      >
+                                                                                                                                        folder
+                                                                                                                                      </span>
+                                                                                                                                    </ForwardRef(Icon)>
+                                                                                                                                  </WithStyles(ForwardRef(Icon))>
+                                                                                                                                </div>
+                                                                                                                              </ForwardRef(ListItemIcon)>
+                                                                                                                            </WithStyles(ForwardRef(ListItemIcon))>
+                                                                                                                            <WithStyles(ForwardRef(Typography))
+                                                                                                                              key=".1"
+                                                                                                                              variant="inherit"
+                                                                                                                            >
+                                                                                                                              <ForwardRef(Typography)
+                                                                                                                                classes={
+                                                                                                                                  Object {
+                                                                                                                                    "alignCenter": "MuiTypography-alignCenter",
+                                                                                                                                    "alignJustify": "MuiTypography-alignJustify",
+                                                                                                                                    "alignLeft": "MuiTypography-alignLeft",
+                                                                                                                                    "alignRight": "MuiTypography-alignRight",
+                                                                                                                                    "body1": "MuiTypography-body1",
+                                                                                                                                    "body2": "MuiTypography-body2",
+                                                                                                                                    "button": "MuiTypography-button",
+                                                                                                                                    "caption": "MuiTypography-caption",
+                                                                                                                                    "colorError": "MuiTypography-colorError",
+                                                                                                                                    "colorInherit": "MuiTypography-colorInherit",
+                                                                                                                                    "colorPrimary": "MuiTypography-colorPrimary",
+                                                                                                                                    "colorSecondary": "MuiTypography-colorSecondary",
+                                                                                                                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                                                                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                                                                                    "displayBlock": "MuiTypography-displayBlock",
+                                                                                                                                    "displayInline": "MuiTypography-displayInline",
+                                                                                                                                    "gutterBottom": "MuiTypography-gutterBottom",
+                                                                                                                                    "h1": "MuiTypography-h1",
+                                                                                                                                    "h2": "MuiTypography-h2",
+                                                                                                                                    "h3": "MuiTypography-h3",
+                                                                                                                                    "h4": "MuiTypography-h4",
+                                                                                                                                    "h5": "MuiTypography-h5",
+                                                                                                                                    "h6": "MuiTypography-h6",
+                                                                                                                                    "noWrap": "MuiTypography-noWrap",
+                                                                                                                                    "overline": "MuiTypography-overline",
+                                                                                                                                    "paragraph": "MuiTypography-paragraph",
+                                                                                                                                    "root": "MuiTypography-root",
+                                                                                                                                    "srOnly": "MuiTypography-srOnly",
+                                                                                                                                    "subtitle1": "MuiTypography-subtitle1",
+                                                                                                                                    "subtitle2": "MuiTypography-subtitle2",
+                                                                                                                                  }
+                                                                                                                                }
+                                                                                                                                variant="inherit"
+                                                                                                                              >
+                                                                                                                                <span
+                                                                                                                                  className="MuiTypography-root"
+                                                                                                                                >
+                                                                                                                                  Add To Collection
                                                                                                                                 </span>
                                                                                                                               </ForwardRef(Typography)>
                                                                                                                             </WithStyles(ForwardRef(Typography))>
@@ -10417,27 +10403,9 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                         user={
                                                                           Object {
                                                                             "__typename": "PublicUserDTO",
-                                                                            "articles": Object {
-                                                                              "__typename": "ResponsePage_ArticleDTO",
-                                                                              "totalElements": 3,
-                                                                            },
                                                                             "avatar": "test avatar 3",
-                                                                            "collections": Object {
-                                                                              "__typename": "ResponsePage_CollectionDTO",
-                                                                              "totalElements": 3,
-                                                                            },
-                                                                            "communities": Array [],
                                                                             "id": "6793",
-                                                                            "links": Object {
-                                                                              "__typename": "ResponsePage_ExternalLinkDTO",
-                                                                              "totalElements": 3,
-                                                                            },
                                                                             "name": "test author name 3",
-                                                                            "social": Object {
-                                                                              "github": "test github",
-                                                                              "twitter": "twst twitter",
-                                                                            },
-                                                                            "title": "test title",
                                                                             "username": "test-author-username-3",
                                                                           }
                                                                         }
@@ -11447,34 +11415,8 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                   <li
                                                                                                     aria-disabled="false"
                                                                                                     class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                                    data-testid="ArticleCard-1232-addToCollectionButton"
                                                                                                     role="menuitem"
                                                                                                     tabindex="0"
-                                                                                                  >
-                                                                                                    <div
-                                                                                                      class="MuiListItemIcon-root"
-                                                                                                    >
-                                                                                                      <span
-                                                                                                        aria-hidden="true"
-                                                                                                        class="material-icons MuiIcon-root"
-                                                                                                      >
-                                                                                                        folder
-                                                                                                      </span>
-                                                                                                    </div>
-                                                                                                    <span
-                                                                                                      class="MuiTypography-root"
-                                                                                                    >
-                                                                                                      Add To Collection
-                                                                                                    </span>
-                                                                                                    <span
-                                                                                                      class="MuiTouchRipple-root"
-                                                                                                    />
-                                                                                                  </li>
-                                                                                                  <li
-                                                                                                    aria-disabled="false"
-                                                                                                    class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                                    role="menuitem"
-                                                                                                    tabindex="-1"
                                                                                                   >
                                                                                                     <div
                                                                                                       class="MuiListItemIcon-root"
@@ -11490,6 +11432,32 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                       class="MuiTypography-root"
                                                                                                     >
                                                                                                       Share
+                                                                                                    </span>
+                                                                                                    <span
+                                                                                                      class="MuiTouchRipple-root"
+                                                                                                    />
+                                                                                                  </li>
+                                                                                                  <li
+                                                                                                    aria-disabled="false"
+                                                                                                    class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                                                                    data-testid="ArticleCard-1232-addToCollectionButton"
+                                                                                                    role="menuitem"
+                                                                                                    tabindex="-1"
+                                                                                                  >
+                                                                                                    <div
+                                                                                                      class="MuiListItemIcon-root"
+                                                                                                    >
+                                                                                                      <span
+                                                                                                        aria-hidden="true"
+                                                                                                        class="material-icons MuiIcon-root"
+                                                                                                      >
+                                                                                                        folder
+                                                                                                      </span>
+                                                                                                    </div>
+                                                                                                    <span
+                                                                                                      class="MuiTypography-root"
+                                                                                                    >
+                                                                                                      Add To Collection
                                                                                                     </span>
                                                                                                     <span
                                                                                                       class="MuiTouchRipple-root"
@@ -11526,34 +11494,8 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                   <li
                                                                                                     aria-disabled="false"
                                                                                                     class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                                    data-testid="ArticleCard-1233-addToCollectionButton"
                                                                                                     role="menuitem"
                                                                                                     tabindex="0"
-                                                                                                  >
-                                                                                                    <div
-                                                                                                      class="MuiListItemIcon-root"
-                                                                                                    >
-                                                                                                      <span
-                                                                                                        aria-hidden="true"
-                                                                                                        class="material-icons MuiIcon-root"
-                                                                                                      >
-                                                                                                        folder
-                                                                                                      </span>
-                                                                                                    </div>
-                                                                                                    <span
-                                                                                                      class="MuiTypography-root"
-                                                                                                    >
-                                                                                                      Add To Collection
-                                                                                                    </span>
-                                                                                                    <span
-                                                                                                      class="MuiTouchRipple-root"
-                                                                                                    />
-                                                                                                  </li>
-                                                                                                  <li
-                                                                                                    aria-disabled="false"
-                                                                                                    class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                                    role="menuitem"
-                                                                                                    tabindex="-1"
                                                                                                   >
                                                                                                     <div
                                                                                                       class="MuiListItemIcon-root"
@@ -11569,6 +11511,32 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                       class="MuiTypography-root"
                                                                                                     >
                                                                                                       Share
+                                                                                                    </span>
+                                                                                                    <span
+                                                                                                      class="MuiTouchRipple-root"
+                                                                                                    />
+                                                                                                  </li>
+                                                                                                  <li
+                                                                                                    aria-disabled="false"
+                                                                                                    class="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                                                                    data-testid="ArticleCard-1233-addToCollectionButton"
+                                                                                                    role="menuitem"
+                                                                                                    tabindex="-1"
+                                                                                                  >
+                                                                                                    <div
+                                                                                                      class="MuiListItemIcon-root"
+                                                                                                    >
+                                                                                                      <span
+                                                                                                        aria-hidden="true"
+                                                                                                        class="material-icons MuiIcon-root"
+                                                                                                      >
+                                                                                                        folder
+                                                                                                      </span>
+                                                                                                    </div>
+                                                                                                    <span
+                                                                                                      class="MuiTypography-root"
+                                                                                                    >
+                                                                                                      Add To Collection
                                                                                                     </span>
                                                                                                     <span
                                                                                                       class="MuiTouchRipple-root"
@@ -11756,7 +11724,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                               tabIndex={-1}
                                                                                                             >
                                                                                                               <WithStyles(ForwardRef(MenuItem))
-                                                                                                                data-testid="ArticleCard-1233-addToCollectionButton"
                                                                                                                 key=".$.0"
                                                                                                                 onClick={[Function]}
                                                                                                                 tabIndex={0}
@@ -11770,7 +11737,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                                       "selected": "Mui-selected",
                                                                                                                     }
                                                                                                                   }
-                                                                                                                  data-testid="ArticleCard-1233-addToCollectionButton"
                                                                                                                   onClick={[Function]}
                                                                                                                   tabIndex={0}
                                                                                                                 >
@@ -11783,7 +11749,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                                       }
                                                                                                                     }
                                                                                                                     component="li"
-                                                                                                                    data-testid="ArticleCard-1233-addToCollectionButton"
                                                                                                                     disableGutters={false}
                                                                                                                     onClick={[Function]}
                                                                                                                     role="menuitem"
@@ -11808,7 +11773,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                                         }
                                                                                                                       }
                                                                                                                       component="li"
-                                                                                                                      data-testid="ArticleCard-1233-addToCollectionButton"
                                                                                                                       disableGutters={false}
                                                                                                                       onClick={[Function]}
                                                                                                                       role="menuitem"
@@ -11817,7 +11781,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                                       <WithStyles(ForwardRef(ButtonBase))
                                                                                                                         className="MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
                                                                                                                         component="li"
-                                                                                                                        data-testid="ArticleCard-1233-addToCollectionButton"
                                                                                                                         disabled={false}
                                                                                                                         focusVisibleClassName="Mui-focusVisible"
                                                                                                                         onClick={[Function]}
@@ -11834,7 +11797,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                                             }
                                                                                                                           }
                                                                                                                           component="li"
-                                                                                                                          data-testid="ArticleCard-1233-addToCollectionButton"
                                                                                                                           disabled={false}
                                                                                                                           focusVisibleClassName="Mui-focusVisible"
                                                                                                                           onClick={[Function]}
@@ -11844,7 +11806,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                                           <li
                                                                                                                             aria-disabled={false}
                                                                                                                             className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                                                            data-testid="ArticleCard-1233-addToCollectionButton"
                                                                                                                             onBlur={[Function]}
                                                                                                                             onClick={[Function]}
                                                                                                                             onDragLeave={[Function]}
@@ -11859,228 +11820,6 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                                             onTouchStart={[Function]}
                                                                                                                             role="menuitem"
                                                                                                                             tabIndex={0}
-                                                                                                                          >
-                                                                                                                            <WithStyles(ForwardRef(ListItemIcon))
-                                                                                                                              key=".0"
-                                                                                                                            >
-                                                                                                                              <ForwardRef(ListItemIcon)
-                                                                                                                                classes={
-                                                                                                                                  Object {
-                                                                                                                                    "alignItemsFlexStart": "MuiListItemIcon-alignItemsFlexStart",
-                                                                                                                                    "root": "MuiListItemIcon-root",
-                                                                                                                                  }
-                                                                                                                                }
-                                                                                                                              >
-                                                                                                                                <div
-                                                                                                                                  className="MuiListItemIcon-root"
-                                                                                                                                >
-                                                                                                                                  <WithStyles(ForwardRef(Icon))>
-                                                                                                                                    <ForwardRef(Icon)
-                                                                                                                                      classes={
-                                                                                                                                        Object {
-                                                                                                                                          "colorAction": "MuiIcon-colorAction",
-                                                                                                                                          "colorDisabled": "MuiIcon-colorDisabled",
-                                                                                                                                          "colorError": "MuiIcon-colorError",
-                                                                                                                                          "colorPrimary": "MuiIcon-colorPrimary",
-                                                                                                                                          "colorSecondary": "MuiIcon-colorSecondary",
-                                                                                                                                          "fontSizeInherit": "MuiIcon-fontSizeInherit",
-                                                                                                                                          "fontSizeLarge": "MuiIcon-fontSizeLarge",
-                                                                                                                                          "fontSizeSmall": "MuiIcon-fontSizeSmall",
-                                                                                                                                          "root": "MuiIcon-root",
-                                                                                                                                        }
-                                                                                                                                      }
-                                                                                                                                    >
-                                                                                                                                      <span
-                                                                                                                                        aria-hidden={true}
-                                                                                                                                        className="material-icons MuiIcon-root"
-                                                                                                                                      >
-                                                                                                                                        folder
-                                                                                                                                      </span>
-                                                                                                                                    </ForwardRef(Icon)>
-                                                                                                                                  </WithStyles(ForwardRef(Icon))>
-                                                                                                                                </div>
-                                                                                                                              </ForwardRef(ListItemIcon)>
-                                                                                                                            </WithStyles(ForwardRef(ListItemIcon))>
-                                                                                                                            <WithStyles(ForwardRef(Typography))
-                                                                                                                              key=".1"
-                                                                                                                              variant="inherit"
-                                                                                                                            >
-                                                                                                                              <ForwardRef(Typography)
-                                                                                                                                classes={
-                                                                                                                                  Object {
-                                                                                                                                    "alignCenter": "MuiTypography-alignCenter",
-                                                                                                                                    "alignJustify": "MuiTypography-alignJustify",
-                                                                                                                                    "alignLeft": "MuiTypography-alignLeft",
-                                                                                                                                    "alignRight": "MuiTypography-alignRight",
-                                                                                                                                    "body1": "MuiTypography-body1",
-                                                                                                                                    "body2": "MuiTypography-body2",
-                                                                                                                                    "button": "MuiTypography-button",
-                                                                                                                                    "caption": "MuiTypography-caption",
-                                                                                                                                    "colorError": "MuiTypography-colorError",
-                                                                                                                                    "colorInherit": "MuiTypography-colorInherit",
-                                                                                                                                    "colorPrimary": "MuiTypography-colorPrimary",
-                                                                                                                                    "colorSecondary": "MuiTypography-colorSecondary",
-                                                                                                                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                                                                                                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                                                                                                                    "displayBlock": "MuiTypography-displayBlock",
-                                                                                                                                    "displayInline": "MuiTypography-displayInline",
-                                                                                                                                    "gutterBottom": "MuiTypography-gutterBottom",
-                                                                                                                                    "h1": "MuiTypography-h1",
-                                                                                                                                    "h2": "MuiTypography-h2",
-                                                                                                                                    "h3": "MuiTypography-h3",
-                                                                                                                                    "h4": "MuiTypography-h4",
-                                                                                                                                    "h5": "MuiTypography-h5",
-                                                                                                                                    "h6": "MuiTypography-h6",
-                                                                                                                                    "noWrap": "MuiTypography-noWrap",
-                                                                                                                                    "overline": "MuiTypography-overline",
-                                                                                                                                    "paragraph": "MuiTypography-paragraph",
-                                                                                                                                    "root": "MuiTypography-root",
-                                                                                                                                    "srOnly": "MuiTypography-srOnly",
-                                                                                                                                    "subtitle1": "MuiTypography-subtitle1",
-                                                                                                                                    "subtitle2": "MuiTypography-subtitle2",
-                                                                                                                                  }
-                                                                                                                                }
-                                                                                                                                variant="inherit"
-                                                                                                                              >
-                                                                                                                                <span
-                                                                                                                                  className="MuiTypography-root"
-                                                                                                                                >
-                                                                                                                                  Add To Collection
-                                                                                                                                </span>
-                                                                                                                              </ForwardRef(Typography)>
-                                                                                                                            </WithStyles(ForwardRef(Typography))>
-                                                                                                                            <NoSsr>
-                                                                                                                              <WithStyles(undefined)
-                                                                                                                                center={false}
-                                                                                                                              >
-                                                                                                                                <ForwardRef(TouchRipple)
-                                                                                                                                  center={false}
-                                                                                                                                  classes={
-                                                                                                                                    Object {
-                                                                                                                                      "child": "MuiTouchRipple-child",
-                                                                                                                                      "childLeaving": "MuiTouchRipple-childLeaving",
-                                                                                                                                      "childPulsate": "MuiTouchRipple-childPulsate",
-                                                                                                                                      "ripple": "MuiTouchRipple-ripple",
-                                                                                                                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                                                                                                                                      "rippleVisible": "MuiTouchRipple-rippleVisible",
-                                                                                                                                      "root": "MuiTouchRipple-root",
-                                                                                                                                    }
-                                                                                                                                  }
-                                                                                                                                >
-                                                                                                                                  <span
-                                                                                                                                    className="MuiTouchRipple-root"
-                                                                                                                                  >
-                                                                                                                                    <TransitionGroup
-                                                                                                                                      childFactory={[Function]}
-                                                                                                                                      component={null}
-                                                                                                                                      exit={true}
-                                                                                                                                    />
-                                                                                                                                  </span>
-                                                                                                                                </ForwardRef(TouchRipple)>
-                                                                                                                              </WithStyles(undefined)>
-                                                                                                                            </NoSsr>
-                                                                                                                          </li>
-                                                                                                                        </ForwardRef(ButtonBase)>
-                                                                                                                      </WithStyles(ForwardRef(ButtonBase))>
-                                                                                                                    </ForwardRef(ListItem)>
-                                                                                                                  </WithStyles(ForwardRef(ListItem))>
-                                                                                                                </ForwardRef(MenuItem)>
-                                                                                                              </WithStyles(ForwardRef(MenuItem))>
-                                                                                                              <WithStyles(ForwardRef(MenuItem))
-                                                                                                                key=".$.1"
-                                                                                                                onClick={[Function]}
-                                                                                                              >
-                                                                                                                <ForwardRef(MenuItem)
-                                                                                                                  classes={
-                                                                                                                    Object {
-                                                                                                                      "dense": "MuiMenuItem-dense",
-                                                                                                                      "gutters": "MuiMenuItem-gutters",
-                                                                                                                      "root": "MuiMenuItem-root",
-                                                                                                                      "selected": "Mui-selected",
-                                                                                                                    }
-                                                                                                                  }
-                                                                                                                  onClick={[Function]}
-                                                                                                                >
-                                                                                                                  <WithStyles(ForwardRef(ListItem))
-                                                                                                                    button={true}
-                                                                                                                    className="MuiMenuItem-root MuiMenuItem-gutters"
-                                                                                                                    classes={
-                                                                                                                      Object {
-                                                                                                                        "dense": "MuiMenuItem-dense",
-                                                                                                                      }
-                                                                                                                    }
-                                                                                                                    component="li"
-                                                                                                                    disableGutters={false}
-                                                                                                                    onClick={[Function]}
-                                                                                                                    role="menuitem"
-                                                                                                                    tabIndex={-1}
-                                                                                                                  >
-                                                                                                                    <ForwardRef(ListItem)
-                                                                                                                      button={true}
-                                                                                                                      className="MuiMenuItem-root MuiMenuItem-gutters"
-                                                                                                                      classes={
-                                                                                                                        Object {
-                                                                                                                          "alignItemsFlexStart": "MuiListItem-alignItemsFlexStart",
-                                                                                                                          "button": "MuiListItem-button",
-                                                                                                                          "container": "MuiListItem-container",
-                                                                                                                          "dense": "MuiListItem-dense MuiMenuItem-dense",
-                                                                                                                          "disabled": "Mui-disabled",
-                                                                                                                          "divider": "MuiListItem-divider",
-                                                                                                                          "focusVisible": "Mui-focusVisible",
-                                                                                                                          "gutters": "MuiListItem-gutters",
-                                                                                                                          "root": "MuiListItem-root",
-                                                                                                                          "secondaryAction": "MuiListItem-secondaryAction",
-                                                                                                                          "selected": "Mui-selected",
-                                                                                                                        }
-                                                                                                                      }
-                                                                                                                      component="li"
-                                                                                                                      disableGutters={false}
-                                                                                                                      onClick={[Function]}
-                                                                                                                      role="menuitem"
-                                                                                                                      tabIndex={-1}
-                                                                                                                    >
-                                                                                                                      <WithStyles(ForwardRef(ButtonBase))
-                                                                                                                        className="MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                                                        component="li"
-                                                                                                                        disabled={false}
-                                                                                                                        focusVisibleClassName="Mui-focusVisible"
-                                                                                                                        onClick={[Function]}
-                                                                                                                        role="menuitem"
-                                                                                                                        tabIndex={-1}
-                                                                                                                      >
-                                                                                                                        <ForwardRef(ButtonBase)
-                                                                                                                          className="MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                                                          classes={
-                                                                                                                            Object {
-                                                                                                                              "disabled": "Mui-disabled",
-                                                                                                                              "focusVisible": "Mui-focusVisible",
-                                                                                                                              "root": "MuiButtonBase-root",
-                                                                                                                            }
-                                                                                                                          }
-                                                                                                                          component="li"
-                                                                                                                          disabled={false}
-                                                                                                                          focusVisibleClassName="Mui-focusVisible"
-                                                                                                                          onClick={[Function]}
-                                                                                                                          role="menuitem"
-                                                                                                                          tabIndex={-1}
-                                                                                                                        >
-                                                                                                                          <li
-                                                                                                                            aria-disabled={false}
-                                                                                                                            className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
-                                                                                                                            onBlur={[Function]}
-                                                                                                                            onClick={[Function]}
-                                                                                                                            onDragLeave={[Function]}
-                                                                                                                            onFocus={[Function]}
-                                                                                                                            onKeyDown={[Function]}
-                                                                                                                            onKeyUp={[Function]}
-                                                                                                                            onMouseDown={[Function]}
-                                                                                                                            onMouseLeave={[Function]}
-                                                                                                                            onMouseUp={[Function]}
-                                                                                                                            onTouchEnd={[Function]}
-                                                                                                                            onTouchMove={[Function]}
-                                                                                                                            onTouchStart={[Function]}
-                                                                                                                            role="menuitem"
-                                                                                                                            tabIndex={-1}
                                                                                                                           >
                                                                                                                             <WithStyles(ForwardRef(ListItemIcon))
                                                                                                                               key=".0"
@@ -12168,6 +11907,235 @@ exports[`containers/Article should match snapshot 1`] = `
                                                                                                                                   className="MuiTypography-root"
                                                                                                                                 >
                                                                                                                                   Share
+                                                                                                                                </span>
+                                                                                                                              </ForwardRef(Typography)>
+                                                                                                                            </WithStyles(ForwardRef(Typography))>
+                                                                                                                            <NoSsr>
+                                                                                                                              <WithStyles(undefined)
+                                                                                                                                center={false}
+                                                                                                                              >
+                                                                                                                                <ForwardRef(TouchRipple)
+                                                                                                                                  center={false}
+                                                                                                                                  classes={
+                                                                                                                                    Object {
+                                                                                                                                      "child": "MuiTouchRipple-child",
+                                                                                                                                      "childLeaving": "MuiTouchRipple-childLeaving",
+                                                                                                                                      "childPulsate": "MuiTouchRipple-childPulsate",
+                                                                                                                                      "ripple": "MuiTouchRipple-ripple",
+                                                                                                                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                                                                                                      "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                                                                                                      "root": "MuiTouchRipple-root",
+                                                                                                                                    }
+                                                                                                                                  }
+                                                                                                                                >
+                                                                                                                                  <span
+                                                                                                                                    className="MuiTouchRipple-root"
+                                                                                                                                  >
+                                                                                                                                    <TransitionGroup
+                                                                                                                                      childFactory={[Function]}
+                                                                                                                                      component={null}
+                                                                                                                                      exit={true}
+                                                                                                                                    />
+                                                                                                                                  </span>
+                                                                                                                                </ForwardRef(TouchRipple)>
+                                                                                                                              </WithStyles(undefined)>
+                                                                                                                            </NoSsr>
+                                                                                                                          </li>
+                                                                                                                        </ForwardRef(ButtonBase)>
+                                                                                                                      </WithStyles(ForwardRef(ButtonBase))>
+                                                                                                                    </ForwardRef(ListItem)>
+                                                                                                                  </WithStyles(ForwardRef(ListItem))>
+                                                                                                                </ForwardRef(MenuItem)>
+                                                                                                              </WithStyles(ForwardRef(MenuItem))>
+                                                                                                              <WithStyles(ForwardRef(MenuItem))
+                                                                                                                data-testid="ArticleCard-1233-addToCollectionButton"
+                                                                                                                key=".$.1"
+                                                                                                                onClick={[Function]}
+                                                                                                              >
+                                                                                                                <ForwardRef(MenuItem)
+                                                                                                                  classes={
+                                                                                                                    Object {
+                                                                                                                      "dense": "MuiMenuItem-dense",
+                                                                                                                      "gutters": "MuiMenuItem-gutters",
+                                                                                                                      "root": "MuiMenuItem-root",
+                                                                                                                      "selected": "Mui-selected",
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                  data-testid="ArticleCard-1233-addToCollectionButton"
+                                                                                                                  onClick={[Function]}
+                                                                                                                >
+                                                                                                                  <WithStyles(ForwardRef(ListItem))
+                                                                                                                    button={true}
+                                                                                                                    className="MuiMenuItem-root MuiMenuItem-gutters"
+                                                                                                                    classes={
+                                                                                                                      Object {
+                                                                                                                        "dense": "MuiMenuItem-dense",
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                    component="li"
+                                                                                                                    data-testid="ArticleCard-1233-addToCollectionButton"
+                                                                                                                    disableGutters={false}
+                                                                                                                    onClick={[Function]}
+                                                                                                                    role="menuitem"
+                                                                                                                    tabIndex={-1}
+                                                                                                                  >
+                                                                                                                    <ForwardRef(ListItem)
+                                                                                                                      button={true}
+                                                                                                                      className="MuiMenuItem-root MuiMenuItem-gutters"
+                                                                                                                      classes={
+                                                                                                                        Object {
+                                                                                                                          "alignItemsFlexStart": "MuiListItem-alignItemsFlexStart",
+                                                                                                                          "button": "MuiListItem-button",
+                                                                                                                          "container": "MuiListItem-container",
+                                                                                                                          "dense": "MuiListItem-dense MuiMenuItem-dense",
+                                                                                                                          "disabled": "Mui-disabled",
+                                                                                                                          "divider": "MuiListItem-divider",
+                                                                                                                          "focusVisible": "Mui-focusVisible",
+                                                                                                                          "gutters": "MuiListItem-gutters",
+                                                                                                                          "root": "MuiListItem-root",
+                                                                                                                          "secondaryAction": "MuiListItem-secondaryAction",
+                                                                                                                          "selected": "Mui-selected",
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                      component="li"
+                                                                                                                      data-testid="ArticleCard-1233-addToCollectionButton"
+                                                                                                                      disableGutters={false}
+                                                                                                                      onClick={[Function]}
+                                                                                                                      role="menuitem"
+                                                                                                                      tabIndex={-1}
+                                                                                                                    >
+                                                                                                                      <WithStyles(ForwardRef(ButtonBase))
+                                                                                                                        className="MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                                                                                        component="li"
+                                                                                                                        data-testid="ArticleCard-1233-addToCollectionButton"
+                                                                                                                        disabled={false}
+                                                                                                                        focusVisibleClassName="Mui-focusVisible"
+                                                                                                                        onClick={[Function]}
+                                                                                                                        role="menuitem"
+                                                                                                                        tabIndex={-1}
+                                                                                                                      >
+                                                                                                                        <ForwardRef(ButtonBase)
+                                                                                                                          className="MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                                                                                          classes={
+                                                                                                                            Object {
+                                                                                                                              "disabled": "Mui-disabled",
+                                                                                                                              "focusVisible": "Mui-focusVisible",
+                                                                                                                              "root": "MuiButtonBase-root",
+                                                                                                                            }
+                                                                                                                          }
+                                                                                                                          component="li"
+                                                                                                                          data-testid="ArticleCard-1233-addToCollectionButton"
+                                                                                                                          disabled={false}
+                                                                                                                          focusVisibleClassName="Mui-focusVisible"
+                                                                                                                          onClick={[Function]}
+                                                                                                                          role="menuitem"
+                                                                                                                          tabIndex={-1}
+                                                                                                                        >
+                                                                                                                          <li
+                                                                                                                            aria-disabled={false}
+                                                                                                                            className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button"
+                                                                                                                            data-testid="ArticleCard-1233-addToCollectionButton"
+                                                                                                                            onBlur={[Function]}
+                                                                                                                            onClick={[Function]}
+                                                                                                                            onDragLeave={[Function]}
+                                                                                                                            onFocus={[Function]}
+                                                                                                                            onKeyDown={[Function]}
+                                                                                                                            onKeyUp={[Function]}
+                                                                                                                            onMouseDown={[Function]}
+                                                                                                                            onMouseLeave={[Function]}
+                                                                                                                            onMouseUp={[Function]}
+                                                                                                                            onTouchEnd={[Function]}
+                                                                                                                            onTouchMove={[Function]}
+                                                                                                                            onTouchStart={[Function]}
+                                                                                                                            role="menuitem"
+                                                                                                                            tabIndex={-1}
+                                                                                                                          >
+                                                                                                                            <WithStyles(ForwardRef(ListItemIcon))
+                                                                                                                              key=".0"
+                                                                                                                            >
+                                                                                                                              <ForwardRef(ListItemIcon)
+                                                                                                                                classes={
+                                                                                                                                  Object {
+                                                                                                                                    "alignItemsFlexStart": "MuiListItemIcon-alignItemsFlexStart",
+                                                                                                                                    "root": "MuiListItemIcon-root",
+                                                                                                                                  }
+                                                                                                                                }
+                                                                                                                              >
+                                                                                                                                <div
+                                                                                                                                  className="MuiListItemIcon-root"
+                                                                                                                                >
+                                                                                                                                  <WithStyles(ForwardRef(Icon))>
+                                                                                                                                    <ForwardRef(Icon)
+                                                                                                                                      classes={
+                                                                                                                                        Object {
+                                                                                                                                          "colorAction": "MuiIcon-colorAction",
+                                                                                                                                          "colorDisabled": "MuiIcon-colorDisabled",
+                                                                                                                                          "colorError": "MuiIcon-colorError",
+                                                                                                                                          "colorPrimary": "MuiIcon-colorPrimary",
+                                                                                                                                          "colorSecondary": "MuiIcon-colorSecondary",
+                                                                                                                                          "fontSizeInherit": "MuiIcon-fontSizeInherit",
+                                                                                                                                          "fontSizeLarge": "MuiIcon-fontSizeLarge",
+                                                                                                                                          "fontSizeSmall": "MuiIcon-fontSizeSmall",
+                                                                                                                                          "root": "MuiIcon-root",
+                                                                                                                                        }
+                                                                                                                                      }
+                                                                                                                                    >
+                                                                                                                                      <span
+                                                                                                                                        aria-hidden={true}
+                                                                                                                                        className="material-icons MuiIcon-root"
+                                                                                                                                      >
+                                                                                                                                        folder
+                                                                                                                                      </span>
+                                                                                                                                    </ForwardRef(Icon)>
+                                                                                                                                  </WithStyles(ForwardRef(Icon))>
+                                                                                                                                </div>
+                                                                                                                              </ForwardRef(ListItemIcon)>
+                                                                                                                            </WithStyles(ForwardRef(ListItemIcon))>
+                                                                                                                            <WithStyles(ForwardRef(Typography))
+                                                                                                                              key=".1"
+                                                                                                                              variant="inherit"
+                                                                                                                            >
+                                                                                                                              <ForwardRef(Typography)
+                                                                                                                                classes={
+                                                                                                                                  Object {
+                                                                                                                                    "alignCenter": "MuiTypography-alignCenter",
+                                                                                                                                    "alignJustify": "MuiTypography-alignJustify",
+                                                                                                                                    "alignLeft": "MuiTypography-alignLeft",
+                                                                                                                                    "alignRight": "MuiTypography-alignRight",
+                                                                                                                                    "body1": "MuiTypography-body1",
+                                                                                                                                    "body2": "MuiTypography-body2",
+                                                                                                                                    "button": "MuiTypography-button",
+                                                                                                                                    "caption": "MuiTypography-caption",
+                                                                                                                                    "colorError": "MuiTypography-colorError",
+                                                                                                                                    "colorInherit": "MuiTypography-colorInherit",
+                                                                                                                                    "colorPrimary": "MuiTypography-colorPrimary",
+                                                                                                                                    "colorSecondary": "MuiTypography-colorSecondary",
+                                                                                                                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                                                                                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                                                                                                    "displayBlock": "MuiTypography-displayBlock",
+                                                                                                                                    "displayInline": "MuiTypography-displayInline",
+                                                                                                                                    "gutterBottom": "MuiTypography-gutterBottom",
+                                                                                                                                    "h1": "MuiTypography-h1",
+                                                                                                                                    "h2": "MuiTypography-h2",
+                                                                                                                                    "h3": "MuiTypography-h3",
+                                                                                                                                    "h4": "MuiTypography-h4",
+                                                                                                                                    "h5": "MuiTypography-h5",
+                                                                                                                                    "h6": "MuiTypography-h6",
+                                                                                                                                    "noWrap": "MuiTypography-noWrap",
+                                                                                                                                    "overline": "MuiTypography-overline",
+                                                                                                                                    "paragraph": "MuiTypography-paragraph",
+                                                                                                                                    "root": "MuiTypography-root",
+                                                                                                                                    "srOnly": "MuiTypography-srOnly",
+                                                                                                                                    "subtitle1": "MuiTypography-subtitle1",
+                                                                                                                                    "subtitle2": "MuiTypography-subtitle2",
+                                                                                                                                  }
+                                                                                                                                }
+                                                                                                                                variant="inherit"
+                                                                                                                              >
+                                                                                                                                <span
+                                                                                                                                  className="MuiTypography-root"
+                                                                                                                                >
+                                                                                                                                  Add To Collection
                                                                                                                                 </span>
                                                                                                                               </ForwardRef(Typography)>
                                                                                                                             </WithStyles(ForwardRef(Typography))>

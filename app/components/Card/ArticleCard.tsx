@@ -89,12 +89,12 @@ const ArticleCard = ({
     id,
     title,
     author,
-    contributors,
     attributes,
     content,
     isBookmarked,
     openModalAction,
     routeChangeAction,
+    addArticleToCollectionAction,
     // version,
     description,
     isLoggedIn,
@@ -172,11 +172,7 @@ const ArticleCard = ({
                                     )}
                                     <Grid className={classes.bottom}>
                                         <Details
-                                            user={
-                                                contributors
-                                                    ? contributors[0]
-                                                    : author
-                                            }
+                                            user={author}
                                             minutes={minutes}
                                             date={datePublished}
                                         />
@@ -188,6 +184,9 @@ const ArticleCard = ({
                                             openModalAction={openModalAction}
                                             routeChangeAction={
                                                 routeChangeAction
+                                            }
+                                            addArticleToCollectionAction={
+                                                addArticleToCollectionAction
                                             }
                                             url={href}
                                             type="ARTICLE"

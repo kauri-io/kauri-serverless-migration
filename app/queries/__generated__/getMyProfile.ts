@@ -53,14 +53,6 @@ export interface getMyProfile_getMyProfile_articles {
   totalElements: any;
 }
 
-export interface getMyProfile_getMyProfile_links {
-  __typename: "ResponsePage_ExternalLinkDTO";
-  /**
-   * Total amount of elements.
-   */
-  totalElements: any;
-}
-
 export interface getMyProfile_getMyProfile_collections {
   __typename: "ResponsePage_CollectionDTO";
   /**
@@ -124,11 +116,6 @@ export interface getMyProfile_getMyProfile {
    * This operation can only be performed by logged user
    */
   articles: getMyProfile_getMyProfile_articles;
-  /**
-   * Returns a page of ExternalLinkDTO owned by this UserDTO.
-   * This operation can only be performed by logged user
-   */
-  links: getMyProfile_getMyProfile_links;
   /**
    * Returns a page of CollectionDTO owned by this UserDTO.
    * This operation can only be performed by logged user

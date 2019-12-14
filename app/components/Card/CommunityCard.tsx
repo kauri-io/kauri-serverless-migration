@@ -55,14 +55,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     column: {
         display: 'flex',
         flexDirection: 'column',
+        height: '100%',
         width: '100%',
         overflow: 'hidden',
-        [theme.breakpoints.up('sm')]: {
-            height: 150,
-        },
-        [theme.breakpoints.down('sm')]: {
-            height: 90,
-        },
     },
     bottom: {
         marginTop: 'auto',
@@ -196,7 +191,9 @@ const CommunityCard = ({
                                             routeChangeAction={
                                                 routeChangeAction
                                             }
-                                            hideAddtoCollection={true}
+                                            // addArticleToCollectionAction={
+                                            //     addArticleToCollectionAction
+                                            // }
                                             hideBookmark={true}
                                             type="COMMUNITY"
                                             url={collectionURL}

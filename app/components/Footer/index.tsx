@@ -133,7 +133,7 @@ export default () => {
                             variant="subtitle2"
                             className={classes.text}
                         >
-                            A Consensys Formation
+                            Consensys Formation
                         </Typography>
                     </Grid>
                     <Grid className={classes.strip}>

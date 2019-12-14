@@ -12,7 +12,7 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             alignItems: 'center',
             padding: theme.spacing(2),
             '& > *': {
-                fontWeight: 500,
+                fontWeight: 600,
                 marginBottom: theme.spacing(2),
             },
         },
@@ -111,7 +111,7 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             cursor: 'pointer',
             '& > *': {
                 marginRight: theme.spacing(1),
-                fontWeight: 500,
+                fontWeight: 600,
             },
         },
         toolbar: {

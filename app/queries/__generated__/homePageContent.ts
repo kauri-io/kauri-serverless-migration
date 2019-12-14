@@ -1242,26 +1242,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
   avatar: string | null;
 }
 
-export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_contributors {
-  __typename: "PublicUserDTO";
-  /**
-   * User ID (Ethereum account address)
-   */
-  id: string;
-  /**
-   * User full name
-   */
-  publicUserName: string | null;
-  /**
-   * Username
-   */
-  username: string | null;
-  /**
-   * User avatar URI
-   */
-  avatar: string | null;
-}
-
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_owner_ArticleDTO {
   __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
@@ -1394,11 +1374,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
    */
   author: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_author;
   /**
-   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
-   * This operation can only be performed by logged user
-   */
-  contributors: (homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_contributors | null)[];
-  /**
    * load the article owner (user or community resource type)
    */
   owner: homePageContent_getLatestHomepageDescriptor_rows_main_Featured_content_resource_ArticleDTO_owner | null;
@@ -1509,10 +1484,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Featured_
    * Community ID
    */
   id: string;
-  /**
-   * Community Name
-   */
-  name: string;
   /**
    * Community date created
    */
@@ -2860,26 +2831,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
   avatar: string | null;
 }
 
-export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_contributors {
-  __typename: "PublicUserDTO";
-  /**
-   * User ID (Ethereum account address)
-   */
-  id: string;
-  /**
-   * User full name
-   */
-  publicUserName: string | null;
-  /**
-   * Username
-   */
-  username: string | null;
-  /**
-   * User avatar URI
-   */
-  avatar: string | null;
-}
-
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_owner_ArticleDTO {
   __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
@@ -3012,11 +2963,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
    */
   author: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_author;
   /**
-   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
-   * This operation can only be performed by logged user
-   */
-  contributors: (homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_contributors | null)[];
-  /**
    * load the article owner (user or community resource type)
    */
   owner: homePageContent_getLatestHomepageDescriptor_rows_main_Promo_content_resource_ArticleDTO_owner | null;
@@ -3127,10 +3073,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Promo_con
    * Community ID
    */
   id: string;
-  /**
-   * Community Name
-   */
-  name: string;
   /**
    * Community date created
    */
@@ -4425,26 +4367,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
   avatar: string | null;
 }
 
-export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_contributors {
-  __typename: "PublicUserDTO";
-  /**
-   * User ID (Ethereum account address)
-   */
-  id: string;
-  /**
-   * User full name
-   */
-  publicUserName: string | null;
-  /**
-   * Username
-   */
-  username: string | null;
-  /**
-   * User avatar URI
-   */
-  avatar: string | null;
-}
-
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_owner_ArticleDTO {
   __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
@@ -4577,11 +4499,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
    */
   author: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_author;
   /**
-   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
-   * This operation can only be performed by logged user
-   */
-  contributors: (homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_contributors | null)[];
-  /**
    * load the article owner (user or community resource type)
    */
   owner: homePageContent_getLatestHomepageDescriptor_rows_main_LatestContent_content_ArticleDTO_owner | null;
@@ -4692,10 +4609,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_LatestCon
    * Community ID
    */
   id: string;
-  /**
-   * Community Name
-   */
-  name: string;
   /**
    * Community date created
    */
@@ -6015,26 +5928,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
   avatar: string | null;
 }
 
-export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_contributors {
-  __typename: "PublicUserDTO";
-  /**
-   * User ID (Ethereum account address)
-   */
-  id: string;
-  /**
-   * User full name
-   */
-  publicUserName: string | null;
-  /**
-   * Username
-   */
-  username: string | null;
-  /**
-   * User avatar URI
-   */
-  avatar: string | null;
-}
-
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_owner_ArticleDTO {
   __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
@@ -6167,11 +6060,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
    */
   author: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_author;
   /**
-   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
-   * This operation can only be performed by logged user
-   */
-  contributors: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_contributors | null)[];
-  /**
    * load the article owner (user or community resource type)
    */
   owner: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featured_content_resource_ArticleDTO_owner | null;
@@ -6282,10 +6170,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Featur
    * Community ID
    */
   id: string;
-  /**
-   * Community Name
-   */
-  name: string;
   /**
    * Community date created
    */
@@ -7633,26 +7517,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
   avatar: string | null;
 }
 
-export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_contributors {
-  __typename: "PublicUserDTO";
-  /**
-   * User ID (Ethereum account address)
-   */
-  id: string;
-  /**
-   * User full name
-   */
-  publicUserName: string | null;
-  /**
-   * Username
-   */
-  username: string | null;
-  /**
-   * User avatar URI
-   */
-  avatar: string | null;
-}
-
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_owner_ArticleDTO {
   __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
@@ -7785,11 +7649,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
    */
   author: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_author;
   /**
-   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
-   * This operation can only be performed by logged user
-   */
-  contributors: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_contributors | null)[];
-  /**
    * load the article owner (user or community resource type)
    */
   owner: homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_content_resource_ArticleDTO_owner | null;
@@ -7900,10 +7759,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Promo_
    * Community ID
    */
   id: string;
-  /**
-   * Community Name
-   */
-  name: string;
   /**
    * Community date created
    */
@@ -9198,26 +9053,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
   avatar: string | null;
 }
 
-export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_contributors {
-  __typename: "PublicUserDTO";
-  /**
-   * User ID (Ethereum account address)
-   */
-  id: string;
-  /**
-   * User full name
-   */
-  publicUserName: string | null;
-  /**
-   * Username
-   */
-  username: string | null;
-  /**
-   * User avatar URI
-   */
-  avatar: string | null;
-}
-
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_owner_ArticleDTO {
   __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
@@ -9350,11 +9185,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
    */
   author: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_author;
   /**
-   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
-   * This operation can only be performed by logged user
-   */
-  contributors: (homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_contributors | null)[];
-  /**
    * load the article owner (user or community resource type)
    */
   owner: homePageContent_getLatestHomepageDescriptor_rows_sidebar_LatestContent_content_ArticleDTO_owner | null;
@@ -9465,10 +9295,6 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Latest
    * Community ID
    */
   id: string;
-  /**
-   * Community Name
-   */
-  name: string;
   /**
    * Community date created
    */

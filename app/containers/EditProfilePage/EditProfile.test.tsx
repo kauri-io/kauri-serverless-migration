@@ -5,7 +5,6 @@ import {
     getMyProfile_getMyProfile,
     getMyProfile_getMyProfile_articles,
     getMyProfile_getMyProfile_collections,
-    getMyProfile_getMyProfile_links,
 } from '../../queries/__generated__/getMyProfile'
 import { UserStatusInput } from '../../__generated__/globalTypes'
 
@@ -45,10 +44,6 @@ describe('containers/EditProfile', () => {
                     articles: {
                         __typename: 'ResponsePage_ArticleDTO' as getMyProfile_getMyProfile_articles['__typename'],
                         totalElements: 5,
-                    },
-                    links: {
-                        __typename: 'ResponsePage_ExternalLinkDTO' as getMyProfile_getMyProfile_links['__typename'],
-                        totalElements: 3,
                     },
                     collections: {
                         __typename: 'ResponsePage_CollectionDTO' as getMyProfile_getMyProfile_collections['__typename'],

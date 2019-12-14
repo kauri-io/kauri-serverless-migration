@@ -162,7 +162,7 @@ class TagInput extends Component<IProps, IState> {
     }
 
     updateState(e: React.ChangeEvent<HTMLInputElement>) {
-        this.setState({ value: e.target.value.toLowerCase() })
+        this.setState({ value: e.target.value })
     }
 
     public render() {

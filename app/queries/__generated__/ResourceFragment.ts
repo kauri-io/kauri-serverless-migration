@@ -1223,26 +1223,6 @@ export interface ResourceFragment_ArticleDTO_author {
   avatar: string | null;
 }
 
-export interface ResourceFragment_ArticleDTO_contributors {
-  __typename: "PublicUserDTO";
-  /**
-   * User ID (Ethereum account address)
-   */
-  id: string;
-  /**
-   * User full name
-   */
-  publicUserName: string | null;
-  /**
-   * Username
-   */
-  username: string | null;
-  /**
-   * User avatar URI
-   */
-  avatar: string | null;
-}
-
 export interface ResourceFragment_ArticleDTO_owner_ArticleDTO {
   __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
@@ -1375,11 +1355,6 @@ export interface ResourceFragment_ArticleDTO {
    */
   author: ResourceFragment_ArticleDTO_author;
   /**
-   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
-   * This operation can only be performed by logged user
-   */
-  contributors: (ResourceFragment_ArticleDTO_contributors | null)[];
-  /**
    * load the article owner (user or community resource type)
    */
   owner: ResourceFragment_ArticleDTO_owner | null;
@@ -1490,10 +1465,6 @@ export interface ResourceFragment_CommunityDTO {
    * Community ID
    */
   id: string;
-  /**
-   * Community Name
-   */
-  name: string;
   /**
    * Community date created
    */

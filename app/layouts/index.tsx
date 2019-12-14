@@ -6,7 +6,6 @@ import Modal from '../components/Modal'
 import Notification from '../components/Notification'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { IReduxState } from '../lib/Module'
-import NoSsr from '@material-ui/core/NoSsr'
 
 const mapStateToProps = (state: IReduxState) => ({
     isModalOpen: state.modal.isModalOpen,
@@ -65,11 +64,9 @@ const Layout = ({
             <Modal />
             <Notification />
             {!hideNav && (
-                <NoSsr>
-                    <Grid sm={12} item={true}>
-                        <Navbar />
-                    </Grid>
-                </NoSsr>
+                <Grid sm={12} item={true}>
+                    <Navbar />
+                </Grid>
             )}
             <Grid
                 sm={12}

@@ -428,26 +428,6 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_A
   sum: number;
 }
 
-export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_contributors {
-  __typename: "PublicUserDTO";
-  /**
-   * User ID (Ethereum account address)
-   */
-  id: string;
-  /**
-   * User full name
-   */
-  name: string | null;
-  /**
-   * Username
-   */
-  username: string | null;
-  /**
-   * User avatar URI
-   */
-  avatar: string | null;
-}
-
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_author {
   __typename: "PublicUserDTO";
   /**
@@ -642,11 +622,6 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_A
    * Get vote result for the article
    */
   voteResult: searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_voteResult;
-  /**
-   * Returns a list of contributors (PublicUserDTO) for this ArticleDTO
-   * This operation can only be performed by logged user
-   */
-  contributors: (searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_contributors | null)[];
   /**
    * Article author (full profile)
    */

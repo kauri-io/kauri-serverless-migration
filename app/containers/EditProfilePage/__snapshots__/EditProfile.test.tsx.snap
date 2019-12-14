@@ -527,10 +527,6 @@ exports[`containers/EditProfile should match snapshot 1`] = `
                   "dateCreated": "2019-01-01",
                   "email": "test@test.com",
                   "id": "123",
-                  "links": Object {
-                    "__typename": "ResponsePage_ExternalLinkDTO",
-                    "totalElements": 3,
-                  },
                   "name": "test name",
                   "social": Object {
                     "github": "github",

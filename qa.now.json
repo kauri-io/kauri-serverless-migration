@@ -114,12 +114,8 @@
             "dest": "/app/activate?uuid=$1"
         },
         {
-          "src": "/login",
-          "dest": "/app/login"
-        },
-        {
-          "src": "/(.*)",
-          "dest": "/app/$1"
+            "src": "/(.*)",
+            "dest": "/app/$1"
         },
         {
             "handle": "filesystem"

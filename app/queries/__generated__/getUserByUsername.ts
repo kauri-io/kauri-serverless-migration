@@ -14,14 +14,6 @@ export interface getUserByUsername_getUserByUsername_articles {
   totalElements: any;
 }
 
-export interface getUserByUsername_getUserByUsername_links {
-  __typename: "ResponsePage_ExternalLinkDTO";
-  /**
-   * Total amount of elements.
-   */
-  totalElements: any;
-}
-
 export interface getUserByUsername_getUserByUsername_collections {
   __typename: "ResponsePage_CollectionDTO";
   /**
@@ -65,11 +57,6 @@ export interface getUserByUsername_getUserByUsername {
    * This operation can only be performed by logged user
    */
   articles: getUserByUsername_getUserByUsername_articles;
-  /**
-   * Returns a page of ExternalLinkDTO owned by this PublicUserDTO.
-   * This operation can only be performed by logged user
-   */
-  links: getUserByUsername_getUserByUsername_links;
   /**
    * Returns a page of CollectionDTO owned by this PublicUserDTO.
    * This operation can only be performed by logged user

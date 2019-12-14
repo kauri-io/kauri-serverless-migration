@@ -120,12 +120,6 @@ export const searchResultsAutocomplete = gql`
                         voteResult {
                             sum
                         }
-                        contributors {
-                            id
-                            name
-                            username
-                            avatar
-                        }
                         author {
                             id
                             name
