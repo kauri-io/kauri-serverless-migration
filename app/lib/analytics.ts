@@ -1,12 +1,8 @@
 import mixpanel from 'mixpanel-browser'
 import ga from 'react-ga'
-import devConfig from '../config/development'
-import prodConfig from '../config/production'
+import config from '../config'
 
-const tokens =
-    process.env.monolithApi && process.env.monolithApi.includes('uat')
-        ? prodConfig.analyticsTokens
-        : devConfig.analyticsTokens
+const tokens = config.analyticsTokens
 
 let KauriMXP: any
 
