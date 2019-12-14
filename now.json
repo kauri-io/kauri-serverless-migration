@@ -121,6 +121,10 @@
       "dest": "/app/draft?id=$1&version=$2"
     },
     {
+      "src": "submitted-update/(.*)/(.*)",
+      "dest": "/app/submitted-update?id=$1&version=$2"
+    },
+    {
       "src": "/activate/(.*)",
       "dest": "/app/activate?uuid=$1"
     },

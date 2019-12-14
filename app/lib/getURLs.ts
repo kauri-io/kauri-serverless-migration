@@ -20,6 +20,11 @@ export const getArticleURL = (
                 as: `/draft/${id}/${version}`,
                 href: `/draft?id=${id}&version=${version}`,
             }
+        case 'submitted-update':
+            return {
+                as: `/submitted-update/${id}/${version}`,
+                href: `/submitted-update?id=${id}&version=${version}`,
+            }
         case 'review':
             return {
                 as: `/review/${id}/${version}`,
