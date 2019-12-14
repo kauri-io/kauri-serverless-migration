@@ -49,7 +49,10 @@ const Articles = ({ data, type, isOwner }: IArticlesProps) => {
                                     justify="center"
                                 >
                                     <ArticleCard
-                                        href={getArticleURL(article)}
+                                        href={getArticleURL(
+                                            article,
+                                            'submitted-update'
+                                        )}
                                         {...article}
                                     />
                                 </Grid>

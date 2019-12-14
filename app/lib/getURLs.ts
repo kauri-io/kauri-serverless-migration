@@ -25,6 +25,11 @@ export const getArticleURL = (
                 as: `/review/${id}/${version}`,
                 href: `/article-review?id=${id}&version=${version}`,
             }
+        case 'submitted-update':
+            return {
+                as: `/submitted-update/${id}/${version}`,
+                href: `/submitted-update?id=${id}&version=${version}`,
+            }
         default:
             return {
                 as: `/${slugify(title, { lower: true })}/${id}/a`,
