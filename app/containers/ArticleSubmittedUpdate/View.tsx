@@ -16,11 +16,31 @@ import {
 import Schema from '../../lib/with-schema'
 import estimateTime from '../../lib/estimateTime'
 import moment from 'moment-mini'
-import Toolbar from '../ViewLink/components/Toolbar'
-import { Chip } from '@material-ui/core'
+import { Chip, makeStyles, Theme } from '@material-ui/core'
 import Link from 'next/link'
-import { ResourceTypeInput } from '../../__generated__/globalTypes'
 
+const useStyles = makeStyles((theme: Theme) => {
+    return {
+        nameAndDate: {
+            display: 'flex',
+            [theme.breakpoints.up('lg')]: {
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                width: '100%',
+                marginBottom: theme.spacing(2),
+                paddingTop: theme.spacing(1),
+            },
+            [theme.breakpoints.down('md')]: {
+                paddingTop: theme.spacing(2),
+                flexDirection: 'column',
+                '& > *': {
+                    marginBottom: theme.spacing(1),
+                },
+            },
+        },
+    }
+})
 interface IProps {
     id: string
     classes: any
@@ -31,25 +51,13 @@ interface IProps {
     routeChangeAction: typeof routeChangeAction
     openModalAction: typeof openModalAction
     closeModalAction: typeof closeModalAction
-    deleteDraftArticleAction: ({
-        id,
-        version,
-    }: {
-        id: string
-        version: number
-    }) => void
     userId: string
     user: any
     hostName: string
 }
 
-const ArticleComp = ({
+const ArticleSubmittedUpdate = ({
     hostName,
-    openModalAction,
-    closeModalAction,
-    routeChangeAction,
-    deleteDraftArticleAction,
-    userId,
     data: {
         getArticle: {
             dateCreated,
@@ -61,15 +69,15 @@ const ArticleComp = ({
             title,
             tags,
             version,
-            author,
         },
     },
 }: IProps) => {
-    const classes = ArticleStyles({})
+    const commonClasses = ArticleStyles({})
+    const classes = useStyles({})
     const originalAuthor = contributors && contributors[0]
     const canonicalUrl = attributes.canonical
 
-    const url = getArticleURL({ id, title }, 'draft')
+    const url = getArticleURL({ title, id, version }, 'submitted-update')
 
     return (
         <>
@@ -87,7 +95,7 @@ const ArticleComp = ({
                 hostName={hostName}
             />
             <Grid
-                className={classes.root}
+                className={commonClasses.root}
                 container={true}
                 justify="center"
                 spacing={3}
@@ -96,36 +104,19 @@ const ArticleComp = ({
                     <Grid
                         item={true}
                         sm={2}
-                        className={classes.floaterContainer}
+                        className={commonClasses.floaterContainer}
                     >
-                        <div className={classes.floaterLeft}></div>
+                        <div className={commonClasses.floaterLeft}></div>
                     </Grid>
                 </Hidden>
                 <Grid
-                    className={classes.centralColumn}
+                    className={commonClasses.centralColumn}
                     item={true}
                     xs={12}
                     sm={8}
                     md={8}
                 >
-                    <div className={classes.header}>
-                        <Hidden mdDown={true}>
-                            <Toolbar
-                                id={id}
-                                openModalAction={openModalAction}
-                                closeModalAction={closeModalAction}
-                                classes={classes}
-                                routeChangeAction={routeChangeAction}
-                                deleteDraftArticleAction={
-                                    deleteDraftArticleAction
-                                }
-                                isBookmarked={false}
-                                isLoggedIn={!!userId}
-                                type={ResourceTypeInput.ARTICLE}
-                                isAuthor={author && userId === author.id}
-                                version={version}
-                            />
-                        </Hidden>
+                    <div className={commonClasses.header}>
                         <Grid
                             direction="row"
                             container={true}
@@ -142,7 +133,7 @@ const ArticleComp = ({
                                 )}
                                 <Typography gutterBottom={true}>
                                     {content && estimateTime(content)} min read
-                                    - Drafted{' '}
+                                    - Submitted{' '}
                                     {moment(dateCreated).format('DD MMM YY')}
                                 </Typography>
                             </Grid>
@@ -151,7 +142,7 @@ const ArticleComp = ({
                             {title}
                         </Typography>
                     </div>
-                    <div className={classes.headerImage}>
+                    <div className={commonClasses.headerImage}>
                         {attributes.background && (
                             <Image
                                 height={360}
@@ -160,9 +151,9 @@ const ArticleComp = ({
                             />
                         )}
                     </div>
-                    <div id="content" className={classes.content}>
+                    <div id="content" className={commonClasses.content}>
                         <MDRenderer markdown={JSON.parse(content).markdown} />
-                        <div className={classes.tags}>
+                        <div className={commonClasses.tags}>
                             {tags &&
                                 tags.map((text, key) => (
                                     <Link
@@ -171,7 +162,7 @@ const ArticleComp = ({
                                     >
                                         <a>
                                             <Chip
-                                                className={classes.tag}
+                                                className={commonClasses.tag}
                                                 variant="outlined"
                                                 label={text}
                                             />
@@ -183,7 +174,7 @@ const ArticleComp = ({
                 </Grid>
                 <Hidden smDown={true}>
                     <Grid item={true} xs={false} sm={2}>
-                        <div className={classes.floaterRight}>
+                        <div className={commonClasses.floaterRight}>
                             {process.browser && (
                                 <ArticleOutline
                                     markdown={JSON.parse(content).markdown}
@@ -198,4 +189,4 @@ const ArticleComp = ({
         </>
     )
 }
-export default ArticleComp
+export default ArticleSubmittedUpdate
