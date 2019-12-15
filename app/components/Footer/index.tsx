@@ -1,4 +1,4 @@
-import { Grid, makeStyles, Theme, Typography } from '@material-ui/core'
+import { Grid, makeStyles, Theme, Typography, Hidden } from '@material-ui/core'
 import Consensys from './Consensys'
 import Link from 'next/link'
 import MailIcon from '@material-ui/icons/Mail'
@@ -98,44 +98,51 @@ export default () => {
                         </a>
                     </Link>
                 </Grid>
-                <Grid
-                    className={classes.column}
-                    container={true}
-                    justify="center"
-                >
-                    <a className={classes.link} href="mailto:info@kauri.io">
-                        <MailIcon color="primary" />
-                        <Typography
-                            variant="subtitle2"
-                            className={classes.text}
+                <Hidden smDown>
+                    <Grid
+                        className={classes.column}
+                        container={true}
+                        justify="center"
+                    >
+                        <a className={classes.link} href="mailto:info@kauri.io">
+                            <MailIcon color="primary" />
+                            <Typography
+                                variant="subtitle2"
+                                className={classes.text}
+                            >
+                                info@kauri.io
+                            </Typography>
+                        </a>
+                        <a
+                            className={classes.link}
+                            href="https://kauri.io/feed"
                         >
-                            info@kauri.io
-                        </Typography>
-                    </a>
-                    <a className={classes.link} href="https://kauri.io/feed">
-                        <RSSIcon className={classes.rss} />
-                        <Typography
-                            variant="subtitle2"
-                            className={classes.text}
-                        >
-                            RSS Feed
-                        </Typography>
-                    </a>
-                </Grid>
+                            <RSSIcon className={classes.rss} />
+                            <Typography
+                                variant="subtitle2"
+                                className={classes.text}
+                            >
+                                RSS Feed
+                            </Typography>
+                        </a>
+                    </Grid>
+                </Hidden>
                 <Grid
                     className={classes.column}
                     container={true}
                     justify="flex-end"
                 >
-                    <Grid className={classes.strip}>
-                        <Consensys className={classes.consensys} />
-                        <Typography
-                            variant="subtitle2"
-                            className={classes.text}
-                        >
-                            A Consensys Formation
-                        </Typography>
-                    </Grid>
+                    <Hidden smDown>
+                        <Grid className={classes.strip}>
+                            <Consensys className={classes.consensys} />
+                            <Typography
+                                variant="subtitle2"
+                                className={classes.text}
+                            >
+                                A Consensys Formation
+                            </Typography>
+                        </Grid>
+                    </Hidden>
                     <Grid className={classes.strip}>
                         <Link href="/privacy-policy">
                             <a className={classes.text}>Privacy Policy</a>
