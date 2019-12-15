@@ -6,7 +6,7 @@ import Avatar from '../../components/Avatar'
 import MDRenderer from '../../components/Markdown/Renderer'
 import { Article } from '../../queries/Fragments/__generated__/Article'
 import Hidden from '@material-ui/core/Hidden'
-import { ArticleStyles } from './styles'
+import { ArticleStyles } from '../Article/styles'
 import { getArticleURL } from '../../lib/getURLs'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import {
@@ -16,11 +16,31 @@ import {
 import Schema from '../../lib/with-schema'
 import estimateTime from '../../lib/estimateTime'
 import moment from 'moment-mini'
-import Toolbar from '../ViewLink/components/Toolbar'
-import { Chip } from '@material-ui/core'
+import { Chip, makeStyles, Theme } from '@material-ui/core'
 import Link from 'next/link'
-import { ResourceTypeInput } from '../../__generated__/globalTypes'
 
+const useStyles = makeStyles((theme: Theme) => {
+    return {
+        nameAndDate: {
+            display: 'flex',
+            [theme.breakpoints.up('lg')]: {
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                width: '100%',
+                marginBottom: theme.spacing(2),
+                paddingTop: theme.spacing(1),
+            },
+            [theme.breakpoints.down('md')]: {
+                paddingTop: theme.spacing(2),
+                flexDirection: 'column',
+                '& > *': {
+                    marginBottom: theme.spacing(1),
+                },
+            },
+        },
+    }
+})
 interface IProps {
     id: string
     classes: any
@@ -38,10 +58,6 @@ interface IProps {
 
 const ArticleSubmittedUpdate = ({
     hostName,
-    openModalAction,
-    closeModalAction,
-    routeChangeAction,
-    userId,
     data: {
         getArticle: {
             dateCreated,
@@ -56,8 +72,9 @@ const ArticleSubmittedUpdate = ({
         },
     },
 }: IProps) => {
-    const classes = ArticleStyles({})
-    const author = contributors && contributors[0]
+    const commonClasses = ArticleStyles({})
+    const classes = useStyles({})
+    const originalAuthor = contributors && contributors[0]
     const canonicalUrl = attributes.canonical
 
     const url = getArticleURL({ title, id, version }, 'submitted-update')
@@ -74,11 +91,11 @@ const ArticleSubmittedUpdate = ({
                 datePublished={dateCreated}
                 tags={tags}
                 attributes={attributes}
-                author={author}
+                author={originalAuthor}
                 hostName={hostName}
             />
             <Grid
-                className={classes.root}
+                className={commonClasses.root}
                 container={true}
                 justify="center"
                 spacing={3}
@@ -87,44 +104,30 @@ const ArticleSubmittedUpdate = ({
                     <Grid
                         item={true}
                         sm={2}
-                        className={classes.floaterContainer}
+                        className={commonClasses.floaterContainer}
                     >
-                        <div className={classes.floaterLeft}></div>
+                        <div className={commonClasses.floaterLeft}></div>
                     </Grid>
                 </Hidden>
                 <Grid
-                    className={classes.centralColumn}
+                    className={commonClasses.centralColumn}
                     item={true}
                     xs={12}
                     sm={8}
                     md={8}
                 >
-                    <div className={classes.header}>
-                        <Hidden mdDown={true}>
-                            <Toolbar
-                                id={id}
-                                openModalAction={openModalAction}
-                                closeModalAction={closeModalAction}
-                                classes={classes}
-                                routeChangeAction={routeChangeAction}
-                                isBookmarked={false}
-                                isLoggedIn={!!userId}
-                                type={ResourceTypeInput.ARTICLE}
-                                isAuthor={author && userId === author.id}
-                                version={version}
-                            />
-                        </Hidden>
+                    <div className={commonClasses.header}>
                         <Grid
                             direction="row"
                             container={true}
                             justify="space-between"
                         >
                             <Grid className={classes.nameAndDate}>
-                                {author && (
+                                {originalAuthor && (
                                     <Avatar
-                                        avatar={author.avatar}
-                                        username={author.username}
-                                        id={author.id}
+                                        avatar={originalAuthor.avatar}
+                                        username={originalAuthor.username}
+                                        id={originalAuthor.id}
                                         withName={true}
                                     />
                                 )}
@@ -139,7 +142,7 @@ const ArticleSubmittedUpdate = ({
                             {title}
                         </Typography>
                     </div>
-                    <div className={classes.headerImage}>
+                    <div className={commonClasses.headerImage}>
                         {attributes.background && (
                             <Image
                                 height={360}
@@ -148,9 +151,9 @@ const ArticleSubmittedUpdate = ({
                             />
                         )}
                     </div>
-                    <div id="content" className={classes.content}>
+                    <div id="content" className={commonClasses.content}>
                         <MDRenderer markdown={JSON.parse(content).markdown} />
-                        <div className={classes.tags}>
+                        <div className={commonClasses.tags}>
                             {tags &&
                                 tags.map((text, key) => (
                                     <Link
@@ -159,7 +162,7 @@ const ArticleSubmittedUpdate = ({
                                     >
                                         <a>
                                             <Chip
-                                                className={classes.tag}
+                                                className={commonClasses.tag}
                                                 variant="outlined"
                                                 label={text}
                                             />
@@ -171,7 +174,7 @@ const ArticleSubmittedUpdate = ({
                 </Grid>
                 <Hidden smDown={true}>
                     <Grid item={true} xs={false} sm={2}>
-                        <div className={classes.floaterRight}>
+                        <div className={commonClasses.floaterRight}>
                             {process.browser && (
                                 <ArticleOutline
                                     markdown={JSON.parse(content).markdown}
