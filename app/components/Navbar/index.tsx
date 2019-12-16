@@ -331,6 +331,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                             onKeyUp={e => {
                                 if (e.key === 'Enter') {
                                     router.push(`/search-results?q=${search}`)
+                                    setSearch("")
                                 }
                             }}
                             onChange={e => setSearch(e.target.value)}
