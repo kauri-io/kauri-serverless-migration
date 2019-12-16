@@ -10,9 +10,11 @@ import {
     getArticleURL,
     getCollectionURL,
     getCommunityURL,
+    getLinkUrl,
 } from '../../lib/getURLs'
 import CommunityCard from '../Card/CommunityCard'
 import { makeStyles } from '@material-ui/styles'
+import LinkCard from '../Card/LinkCard'
 
 interface IProps {
     content: any[]
@@ -78,6 +80,20 @@ const FeaturedContent: React.FunctionComponent<IProps> = ({ content }) => {
                                         id: resource.id,
                                     })}
                                 />
+                            )
+
+                        case 'ExternalLinkDTO':
+                            return (
+                                <Grid key={key} item={true} xs={12}>
+                                    {' '}
+                                    <LinkCard
+                                        {...resource}
+                                        href={getLinkUrl({
+                                            linkTitle: resource.title.value,
+                                            id: resource.id,
+                                        })}
+                                    />
+                                </Grid>
                             )
 
                         default: {
