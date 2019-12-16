@@ -153,7 +153,8 @@ const ArticleComp = ({
     const [shareDialogOpen, setShareDialogOpen] = useState(false)
 
     const markAsRead = () => {
-        userId && client &&
+        userId &&
+            client &&
             client.mutate({
                 fetchPolicy: 'no-cache',
                 mutation: markAsreadMutation,
