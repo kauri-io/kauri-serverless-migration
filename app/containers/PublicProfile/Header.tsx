@@ -5,6 +5,7 @@ import StatisticsContainer from '../../components/PublicProfile/StatisticsContai
 import SocialWebsiteIcon from '../../components/Social/SocialWebsiteIcon'
 import Head from 'next/head'
 import Avatar from '../../components/Avatar'
+import { getProfileURL } from '../../lib/getURLs'
 import { Grid, Typography, makeStyles, Theme } from '@material-ui/core'
 
 const getURL = (string, type) => {
@@ -51,7 +52,6 @@ const ProfileHeader = ({
     collections,
     articles,
     toggleEditing,
-    hostName,
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
         root: {
@@ -102,6 +102,7 @@ const ProfileHeader = ({
         },
     }))
     const classes = useStyles()
+    const url = getProfileURL({ username }).as
     return (
         <Grid className={classes.root}>
             <Grid container={true} className={classes.container}>
@@ -110,6 +111,7 @@ const ProfileHeader = ({
                         (username && `@${username}`) ||
                         id}`}</title>
                     <meta name="description" content={`${title}`} />
+                    <link rel="canonical" href={url} />
                     <meta
                         property="og:title"
                         content={`Kauri - ${name ||
@@ -117,18 +119,12 @@ const ProfileHeader = ({
                             id}`}
                     />
                     <meta property="og:site_name" content="kauri.io" />
-                    <meta
-                        property="og:url"
-                        content={`https://${hostName}/public-profile/${id}`}
-                    />
+                    <meta property="og:url" content={url} />
                     <meta property="og:description" content={`${title}`} />
                     <meta property="og:type" content="public profile" />
                     <meta property="og:image" content={avatar} />
                     <meta name="twitter:card" content="summary" />
-                    <meta
-                        name="twitter:site"
-                        content={`https://${hostName}/public-profile/${id}`}
-                    />
+                    <meta name="twitter:site" content={url} />
                     <meta name="twitter:title" content={name} />
                     <meta name="twitter:description" content={title} />
                     <meta name="twitter:creator" content="@kauri_io" />
