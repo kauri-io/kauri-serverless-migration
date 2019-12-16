@@ -74,7 +74,7 @@ const Editor = ({
             width: '100%',
             background: theme.palette.common.white,
             flexGrow: 1,
-            display: 'flex' 
+            display: 'flex',
         },
     }))
     const classes = useStyles()
