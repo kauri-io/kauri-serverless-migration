@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 import SearchIcon from '@material-ui/icons/Search'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import { compose, graphql } from 'react-apollo'
 import { searchResultsAutocomplete } from '../../queries/Search'
@@ -29,6 +29,11 @@ const debouncedRoute = debounce((query, routeChangeAction) => {
 
 const Search = ({ routeChangeAction, query, data: { searchAutocomplete } }) => {
     const [tab, setTab] = useState(0)
+    const [q, setQ] = useState(query.q)
+
+    useEffect(() => {
+        setQ(query.q)
+    }, [query])
 
     const [createAnchorEl, setCreateAnchorEl] = useState<
         HTMLLIElement | HTMLButtonElement | null
@@ -145,16 +150,22 @@ const Search = ({ routeChangeAction, query, data: { searchAutocomplete } }) => {
                 <div className={classes.searchClass}>
                     <InputBase
                         placeholder="Search…"
-                        onChange={e =>
-                            debouncedRoute(e.target.value, routeChangeAction)
-                        }
+                        onKeyUp={e => {
+                            if (e.key === 'Enter') {
+                                debouncedRoute(q, routeChangeAction)
+                            }
+                        }}
+                        onChange={e => setQ(e.target.value)}
                         classes={{
                             input: classes.inputInput,
                             root: classes.inputRoot,
                         }}
-                        defaultValue={query.q}
+                        value={q}
                     />
-                    <div className={classes.searchIconClass}>
+                    <div
+                        className={classes.searchIconClass}
+                        onClick={() => debouncedRoute(q, routeChangeAction)}
+                    >
                         <SearchIcon />
                     </div>
                 </div>
