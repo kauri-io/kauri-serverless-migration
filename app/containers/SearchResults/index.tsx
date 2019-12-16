@@ -152,7 +152,7 @@ const Search = ({ routeChangeAction, query, data: { searchAutocomplete } }) => {
                             input: classes.inputInput,
                             root: classes.inputRoot,
                         }}
-                        defaultValue={query.q}
+                        value={query.q}
                     />
                     <div className={classes.searchIconClass}>
                         <SearchIcon />
