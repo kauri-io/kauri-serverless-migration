@@ -28,7 +28,6 @@ const debouncedRoute = debounce((query, routeChangeAction) => {
 }, 500)
 
 const Search = ({ routeChangeAction, query, data: { searchAutocomplete } }) => {
-
     const [tab, setTab] = useState(0)
     const [q, setQ] = useState(query.q)
 
@@ -163,12 +162,12 @@ const Search = ({ routeChangeAction, query, data: { searchAutocomplete } }) => {
                         }}
                         value={q}
                     />
-                        <div
-                            className={classes.searchIconClass}
-                            onClick={() =>  debouncedRoute(q, routeChangeAction)}
-                        >
-                            <SearchIcon />
-                        </div>
+                    <div
+                        className={classes.searchIconClass}
+                        onClick={() => debouncedRoute(q, routeChangeAction)}
+                    >
+                        <SearchIcon />
+                    </div>
                 </div>
             </Grid>
 
