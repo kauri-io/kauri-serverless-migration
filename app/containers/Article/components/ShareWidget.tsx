@@ -68,18 +68,18 @@ export default ({ url, name }) => {
     return (
         <div className={classes.container}>
             <div className={classes.iconContainer}>
-                <LinkedinShareButton url={url.as} title={name}>
+                <LinkedinShareButton url={url.href} title={name}>
                     <LinkedIn />
                 </LinkedinShareButton>
             </div>
             <div className={classes.iconContainer}>
-                <TwitterShareButton url={url.as} title={name}>
+                <TwitterShareButton url={url.href} title={name}>
                     <Twitter />
                 </TwitterShareButton>
             </div>
 
             <div className={classes.iconContainer}>
-                <RedditShareButton url={url.as} title={name}>
+                <RedditShareButton url={url.href} title={name}>
                     <Reddit />
                 </RedditShareButton>
             </div>
