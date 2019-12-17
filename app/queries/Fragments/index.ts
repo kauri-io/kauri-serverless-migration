@@ -296,32 +296,6 @@ export const Community = gql`
             id
             type
         }
-        approved {
-            ... on ArticleDTO {
-                ...Article
-            }
-
-            ... on ExternalLinkDTO {
-                ...Link
-            }
-
-            ... on CollectionDTO {
-                ...Collection
-            }
-        }
-        pending {
-            ... on ArticleDTO {
-                ...Article
-            }
-
-            ... on ExternalLinkDTO {
-                ...Link
-            }
-
-            ... on CollectionDTO {
-                ...Collection
-            }
-        }
     }
     ${Article}
     ${Collection}

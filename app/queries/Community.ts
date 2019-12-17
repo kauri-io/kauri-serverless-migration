@@ -1,12 +1,5 @@
 import gql from 'graphql-tag'
-import {
-    Community,
-    UserOwner,
-    CommunityOwner,
-    Article,
-    Collection,
-    Link,
-} from './Fragments'
+import { Community, Article, Collection, Link } from './Fragments'
 
 export const getCommunity = gql`
     query getCommunity($id: String!) {
@@ -16,76 +9,6 @@ export const getCommunity = gql`
     }
     ${Community}
 `
-
-export const getCommunityAndPendingArticles = gql`
-    query getCommunityAndPendingArticles(
-        $id: String!
-        $size: Int = 8
-        $page: Int = 0
-    ) {
-        getCommunity(id: $id) {
-            ...Community
-        }
-        searchArticles(
-            size: $size
-            page: $page
-            sort: "dateCreated"
-            dir: DESC
-            filter: { ownerIdEquals: $id, statusIn: [PENDING] }
-        ) {
-            totalElements
-            isLast
-            content {
-                id
-                version
-                title
-                description
-                tags
-                dateCreated
-                datePublished
-                author {
-                    id
-                    name
-                    username
-                    avatar
-                }
-                owner {
-                    ...UserOwner
-                    ...CommunityOwner
-                }
-                status
-                attributes
-                contentHash
-                checkpoint
-                voteResult {
-                    sum
-                }
-                comments {
-                    content {
-                        posted
-                        author {
-                            id
-                            name
-                        }
-                        body
-                    }
-                    totalPages
-                    totalElements
-                }
-                resourceIdentifier {
-                    type
-                    id
-                    version
-                }
-                isBookmarked
-            }
-        }
-    }
-    ${Community}
-    ${UserOwner}
-    ${CommunityOwner}
-`
-
 export const getAllCommunities = gql`
     query searchCommunities(
         $size: Int = 12
@@ -244,44 +167,6 @@ export const removeResourceMutation = gql`
         }
     }
 `
-
-export const getCommunityArticleContent = gql`
-    query getCommunityContent(
-        $id: String!
-        $page: Int = 0
-        $size: Int = 12
-        $filter: CommunityResourceFilterInput
-    ) {
-        getCommunityContent(
-            id: $id
-            page: $page
-            size: $size
-            filter: $filter
-        ) {
-            content {
-                id
-                type
-                resource {
-                    ... on ArticleDTO {
-                        ...Article
-                    }
-                    ... on CollectionDTO {
-                        ...Collection
-                    }
-                    ... on ExternalLinkDTO {
-                        ...Link
-                    }
-                }
-            }
-            totalPages
-            totalElements
-        }
-    }
-    ${Article}
-    ${Collection}
-    ${Link}
-`
-
 export const prepareSendInvitationQuery = gql`
     query prepareSendInvitation($id: String!, $invitation: InvitationInput!) {
         prepareSendInvitation(id: $id, invitation: $invitation) {
@@ -457,7 +342,7 @@ export const initiateArticleTransferMutation = gql`
     }
 `
 
-export const getCommunityContentQuery = gql`
+export const getCommunityContent = gql`
     query getCommunityContent(
         $id: String!
         $page: Int = 0
@@ -480,6 +365,9 @@ export const getCommunityContentQuery = gql`
                     ... on CollectionDTO {
                         ...Collection
                     }
+                    ... on ExternalLinkDTO {
+                        ...Link
+                    }
                 }
             }
             totalPages
@@ -489,4 +377,5 @@ export const getCommunityContentQuery = gql`
 
     ${Article}
     ${Collection}
+    ${Link}
 `
