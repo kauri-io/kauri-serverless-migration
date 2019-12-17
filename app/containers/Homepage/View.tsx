@@ -22,6 +22,7 @@ import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { openModalAction } from '../../components/Modal/Module'
 
 interface IProps {
+    hostName: string
     isLoggedIn: boolean
     data: {
         getLatestHomepageDescriptor: homePageContent_getLatestHomepageDescriptor
@@ -33,6 +34,7 @@ interface IProps {
 }
 
 export const HomePageComponent = (props: {
+    hostName: string
     data: any
     isLoggedIn: boolean
     emailSubscribeAction: (emailAddress: string, callback?: any) => void
@@ -72,7 +74,7 @@ export const HomePageComponent = (props: {
                 <meta property="og:url" content="https://kauri.io" />
                 <meta
                     property="og:image"
-                    content="https://api.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY"
+                    content={`${props.hostName}/static/images/kauri_ioLogo.png`}
                 />
                 <meta
                     name="description"
@@ -241,7 +243,7 @@ const HomePageComponentWrapper: React.FunctionComponent<IProps> = props => {
                 <meta property="og:url" content="https://kauri.io" />
                 <meta
                     property="og:image"
-                    content="https://api.kauri.io:443/ipfs/QmRVCyQ3ng5AWGmjodzXcxg1LK9CRvePmd6ciDXY1mLofY"
+                    content={`${props.hostName}/static/images/kauri_ioLogo.png`}
                 />
                 <meta
                     name="description"
