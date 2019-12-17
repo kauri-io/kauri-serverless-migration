@@ -76,9 +76,7 @@ const VoteWidget = ({
                 />
             </div>
             <Typography variant="h6">
-                {voteResult && voteResult.sum
-                    ? voteResult.sum
-                    : 0}
+                {voteResult && voteResult.sum ? voteResult.sum : 0}
             </Typography>
             <Typography variant="caption">Votes</Typography>
             <div
