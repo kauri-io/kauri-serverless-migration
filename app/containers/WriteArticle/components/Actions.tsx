@@ -99,6 +99,9 @@ export default ({
                 canonical: attributes.canonical,
             })
         })
+        uppy.on('complete', function() {
+            uppy.reset()
+        })
     }, [])
 
     const classes = useStyles()
