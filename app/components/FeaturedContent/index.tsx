@@ -89,7 +89,7 @@ const FeaturedContent: React.FunctionComponent<IProps> = ({ content }) => {
                                     <LinkCard
                                         {...resource}
                                         href={getLinkUrl({
-                                            linkTitle: resource.title.value,
+                                            linkTitle: resource.linkTitle,
                                             id: resource.id,
                                         })}
                                     />
