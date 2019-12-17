@@ -74,7 +74,7 @@ export const HomePageComponent = (props: {
                 <meta property="og:url" content="https://kauri.io" />
                 <meta
                     property="og:image"
-                    content={`${props.hostName}/static/images/kauri_ioLogo.png`}
+                    content={`https://${props.hostName}/static/images/kauri_ioLogo.png`}
                 />
                 <meta
                     name="description"
@@ -243,7 +243,7 @@ const HomePageComponentWrapper: React.FunctionComponent<IProps> = props => {
                 <meta property="og:url" content="https://kauri.io" />
                 <meta
                     property="og:image"
-                    content={`${props.hostName}/static/images/kauri_ioLogo.png`}
+                    content={`https://${props.hostName}/static/images/kauri_ioLogo.png`}
                 />
                 <meta
                     name="description"

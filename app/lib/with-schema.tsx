@@ -64,7 +64,7 @@ const withSchema = ({
                     (attributes &&
                         attributes.background &&
                         attributes.background) ||
-                    `${hostName}/static/images/kauri_ioLogo.png`
+                    `https://${hostName}/static/images/kauri_ioLogo.png`
                 }
             />
             <meta name="twitter:card" content="summary" />
@@ -78,7 +78,7 @@ const withSchema = ({
                     (attributes &&
                         attributes.background &&
                         attributes.background) ||
-                    `${hostName}/static/images/kauri_ioLogo.png`
+                    `https://${hostName}/static/images/kauri_ioLogo.png`
                 }
             />
         </Head>
