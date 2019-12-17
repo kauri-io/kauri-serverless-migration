@@ -70,7 +70,6 @@ const Manage: React.FunctionComponent<IProps> = ({
     openAddMemberModal,
     data,
 }) => {
-
     const classes = useStyles()
 
     const [tabIndex, setTabIndex] = useState(isCommunityAdmin ? 0 : 1)
@@ -136,9 +135,8 @@ const Manage: React.FunctionComponent<IProps> = ({
                         <div className={classes.root}>
                             <Grid container={true} spacing={2}>
                                 {data.searchArticles.content &&
-                                data.searchArticles.totalElements >
-                                    0 ? (
-                                        data.searchArticles.content.map(
+                                data.searchArticles.totalElements > 0 ? (
+                                    data.searchArticles.content.map(
                                         (resource: any, key) => {
                                             switch (resource.__typename) {
                                                 case 'ArticleDTO': {
@@ -153,7 +151,8 @@ const Manage: React.FunctionComponent<IProps> = ({
                                                             <ArticleCard
                                                                 {...resource}
                                                                 href={getArticleURL(
-                                                                    resource, 'review'
+                                                                    resource,
+                                                                    'review'
                                                                 )}
                                                             />
                                                         </Grid>
