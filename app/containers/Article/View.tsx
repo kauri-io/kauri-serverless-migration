@@ -185,7 +185,7 @@ const ArticleComp = ({
     }, [])
 
     const url = getArticleURL({ title, id })
-    console.log("url", url)
+    console.log('url', url)
     return (
         <>
             <Schema
