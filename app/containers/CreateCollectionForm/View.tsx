@@ -394,7 +394,7 @@ const CreateCollectionForm: React.FC<
             const url = `https://${config.gateway}:443/ipfs/${data2.body.hash}`
             setFieldValue('background', url)
         })
-        uppy.on('complete', function () {
+        uppy.on('complete', function() {
             uppy.reset()
         })
     }, [])

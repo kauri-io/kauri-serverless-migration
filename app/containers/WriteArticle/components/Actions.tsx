@@ -99,7 +99,7 @@ export default ({
                 canonical: attributes.canonical,
             })
         })
-        uppy.on('complete', function () {
+        uppy.on('complete', function() {
             uppy.reset()
         })
     }, [])

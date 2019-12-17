@@ -34,7 +34,7 @@ const Toolbar = ({ format, compact, openModalAction, closeModalAction }) => {
                 const url = `https://${config.gateway}:443/ipfs/${data2.body.hash}`
                 format('image', url)
             })
-            uppy.on('complete', function () {
+            uppy.on('complete', function() {
                 uppy.reset()
             })
             return () => {

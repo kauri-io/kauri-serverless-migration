@@ -49,7 +49,7 @@ const Component: React.FunctionComponent<IProps> = props => {
             const url = `https://${config.gateway}:443/ipfs/${data2.body.hash}`
             props.setFieldValue('attributes', { background: url })
         })
-        uppy.on('complete', function () {
+        uppy.on('complete', function() {
             uppy.reset()
         })
     }, [])
