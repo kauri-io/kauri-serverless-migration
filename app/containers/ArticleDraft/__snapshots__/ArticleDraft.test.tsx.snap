@@ -531,6 +531,7 @@ exports[`containers/ArticleDraft should match snapshot 1`] = `
                   "comments": Object {
                     "__typename": "ResponsePage_CommentDTO",
                     "content": Array [],
+                    "isLast": true,
                     "totalElements": 0,
                     "totalPages": 0,
                   },

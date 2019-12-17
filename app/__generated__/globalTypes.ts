@@ -130,6 +130,7 @@ export interface CommunityInvitationFilterInput {
 
 export interface CommunityResourceFilterInput {
   resourceTypeEquals?: ResourceTypeInput | null;
+  resourceTypeIn?: (ResourceTypeInput | null)[] | null;
   statusEquals?: CommunityResourceStatusInput | null;
 }
 

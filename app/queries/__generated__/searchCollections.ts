@@ -366,6 +366,10 @@ export interface searchCollections_searchCollections_content_sections_resources_
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface searchCollections_searchCollections_content_sections_resources_ArticleDTO {
@@ -672,6 +676,10 @@ export interface searchCollections_searchCollections_content_sections_resources_
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface searchCollections_searchCollections_content_sections_resources_ExternalLinkDTO_voteResult {

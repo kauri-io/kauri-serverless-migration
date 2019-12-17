@@ -33,6 +33,10 @@ export interface searchTags_searchTags {
    */
   totalPages: number;
   /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
+  /**
    * Returns the page content.
    */
   content: (searchTags_searchTags_content | null)[];

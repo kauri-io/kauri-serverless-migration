@@ -282,6 +282,10 @@ export interface searchPendingArticles_searchArticles_content_comments {
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface searchPendingArticles_searchArticles_content {

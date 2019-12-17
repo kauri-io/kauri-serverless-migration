@@ -112,6 +112,7 @@ export const Article = gql`
             }
             totalPages
             totalElements
+            isLast
         }
         resourceIdentifier {
             id
@@ -180,6 +181,7 @@ export const Link = gql`
             }
             totalPages
             totalElements
+            isLast
         }
         authorSocial
         tags

@@ -234,6 +234,10 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_E
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO_voteResult {
@@ -586,6 +590,10 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_A
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO {

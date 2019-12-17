@@ -286,6 +286,10 @@ export interface getCommunityContent_getCommunityContent_content_resource_Articl
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface getCommunityContent_getCommunityContent_content_resource_ArticleDTO {
@@ -740,6 +744,10 @@ export interface getCommunityContent_getCommunityContent_content_resource_Collec
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ArticleDTO {
@@ -1046,6 +1054,10 @@ export interface getCommunityContent_getCommunityContent_content_resource_Collec
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface getCommunityContent_getCommunityContent_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult {
@@ -1434,6 +1446,10 @@ export interface getCommunityContent_getCommunityContent_content_resource_Extern
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface getCommunityContent_getCommunityContent_content_resource_ExternalLinkDTO_voteResult {
@@ -1561,6 +1577,10 @@ export interface getCommunityContent_getCommunityContent {
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface getCommunityContent {
