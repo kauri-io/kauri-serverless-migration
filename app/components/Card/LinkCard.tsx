@@ -191,11 +191,13 @@ const LinkCard = ({
                                             {linkTitle.value}
                                         </Typography>
                                     </TruncateMarkup>
-                                    <TruncateMarkup lines={2}>
-                                        <Typography variant="body2">
-                                            {linkDescription.value}
-                                        </Typography>
-                                    </TruncateMarkup>
+                                    {owner && !owner.communityName && (
+                                        <TruncateMarkup lines={2}>
+                                            <Typography variant="body2">
+                                                {linkDescription.value}
+                                            </Typography>
+                                        </TruncateMarkup>
+                                    )}
                                     <TruncateMarkup lines={1}>
                                         <Typography
                                             color="primary"
