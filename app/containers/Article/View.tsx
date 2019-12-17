@@ -184,7 +184,7 @@ const ArticleComp = ({
             })
     }, [])
 
-    const url = getArticleURL({ id, title })
+    const url = getArticleURL({ title, id })
 
     return (
         <>
@@ -228,7 +228,7 @@ const ArticleComp = ({
                                     )
                                 }
                             />
-                            <ShareWidget url={url} name={title} />
+                            <ShareWidget href={url.as} name={title} />
                         </div>
                     </Grid>
                 </Hidden>
@@ -360,7 +360,7 @@ const ArticleComp = ({
                             </div>
                         </div>
                         <Hidden mdUp={true}>
-                            <ShareWidget url={url} name={title} />
+                            <ShareWidget href={url.as} name={title} />
                         </Hidden>
                     </div>
                     {author && (
