@@ -41,6 +41,10 @@
       "dest": "https://api.dev.kauri.io/feed"
     },
     {
+      "src": "/feed/(.*)/(.*)",
+      "dest": "https://api.dev.kauri.io/feed/$1/$2"
+    },
+    {
       "src": "/favicon.ico",
       "dest": "/app/static/favicon/favicon.ico"
     },
