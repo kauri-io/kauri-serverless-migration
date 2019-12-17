@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-const Web3Unavailable = ({ classes }) => (
+const Web3Unavailable = ({ classes, hostName }) => (
     <>
         <Typography gutterBottom={true} color="secondary" variant="body1">
             Kauri uses the Metamask browser extension to authenticate you with
@@ -39,7 +39,7 @@ const Web3Unavailable = ({ classes }) => (
         <Image
             width={100}
             height={100}
-            image="/static/images/metamask/avatar.png"
+            image={`https://${hostName}/static/images/metamask/avatar.png`}
         />
         <Typography className={classes.kauriIntro}>
             Download it here -{' '}
@@ -156,7 +156,7 @@ const Web3Available = ({ handleSubmit }) => (
     </>
 )
 
-export default ({ web3, handleSubmit }) => {
+export default ({ web3, handleSubmit, hostName }) => {
     const classes = useStyles({})
 
     return (
@@ -178,7 +178,7 @@ export default ({ web3, handleSubmit }) => {
                         Web3 Sign In
                     </Typography>
                     {web3 && <Web3Available handleSubmit={handleSubmit} />}
-                    {!web3 && <Web3Unavailable classes={classes} />}
+                    {!web3 && <Web3Unavailable hostName={hostName} classes={classes} />}
                 </NoSsr>
             )}
         </Grid>

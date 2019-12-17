@@ -5,11 +5,13 @@ import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { withFormik } from 'formik'
 import View from './View'
 
-const mapStateToProps = () => ({
+const mapStateToProps = state => ({
+    hostName: state.app && state.app.hostName,
     web3: global.window && !!global.window.web3,
 })
 
 interface IProps {
+    hostName: string
     registerAction: (callback?: any) => IRegisterAction
     callback?: any
 }
