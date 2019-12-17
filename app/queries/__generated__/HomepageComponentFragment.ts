@@ -389,6 +389,10 @@ export interface HomepageComponentFragment_Featured_content_resource_CollectionD
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ArticleDTO {
@@ -695,6 +699,10 @@ export interface HomepageComponentFragment_Featured_content_resource_CollectionD
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface HomepageComponentFragment_Featured_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult {
@@ -1083,6 +1091,10 @@ export interface HomepageComponentFragment_Featured_content_resource_ExternalLin
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface HomepageComponentFragment_Featured_content_resource_ExternalLinkDTO_voteResult {
@@ -2007,6 +2019,10 @@ export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ArticleDTO {
@@ -2313,6 +2329,10 @@ export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface HomepageComponentFragment_Promo_content_resource_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult {
@@ -2701,6 +2721,10 @@ export interface HomepageComponentFragment_Promo_content_resource_ExternalLinkDT
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface HomepageComponentFragment_Promo_content_resource_ExternalLinkDTO_voteResult {
@@ -3572,6 +3596,10 @@ export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_s
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ArticleDTO {
@@ -3878,6 +3906,10 @@ export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_s
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface HomepageComponentFragment_LatestContent_content_CollectionDTO_sections_resources_ExternalLinkDTO_voteResult {
@@ -4266,6 +4298,10 @@ export interface HomepageComponentFragment_LatestContent_content_ExternalLinkDTO
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface HomepageComponentFragment_LatestContent_content_ExternalLinkDTO_voteResult {

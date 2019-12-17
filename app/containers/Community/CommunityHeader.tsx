@@ -351,57 +351,59 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                 />
             )}
 
-            <ChooseResourceModal
-                key={`add-resource-modal`}
-                open={open}
-                handleClose={closeAddCommunityArticleModal}
-                maxSelection={1}
-                handleConfirm={(selected: ResourceIdentifierInput[]) => {
-                    closeAddCommunityArticleModal()
-                    if (selected.length > 0) {
-                        if (selected[0].type === 'ARTICLE') {
-                            transferArticleToCommunityAction(
-                                {
+            {open && (
+                <ChooseResourceModal
+                    key={`add-resource-modal`}
+                    open={open}
+                    handleClose={closeAddCommunityArticleModal}
+                    maxSelection={1}
+                    handleConfirm={(selected: ResourceIdentifierInput[]) => {
+                        closeAddCommunityArticleModal()
+                        if (selected.length > 0) {
+                            if (selected[0].type === 'ARTICLE') {
+                                transferArticleToCommunityAction(
+                                    {
+                                        id: selected[0].id,
+                                        recipient: {
+                                            id,
+                                            type: 'COMMUNITY' as any,
+                                        },
+                                    },
+                                    () => {}
+                                )
+                            } else if (selected[0].type === 'LINK') {
+                                changeOwnerExtenalLinkAction({
                                     id: selected[0].id,
-                                    recipient: {
+                                    ownerId: {
                                         id,
                                         type: 'COMMUNITY' as any,
                                     },
-                                },
-                                () => {}
-                            )
-                        } else if (selected[0].type === 'LINK') {
-                            changeOwnerExtenalLinkAction({
-                                id: selected[0].id,
-                                ownerId: {
-                                    id,
-                                    type: 'COMMUNITY' as any,
-                                },
-                            })
+                                })
+                            }
                         }
+                    }}
+                    disable={(resource: any) =>
+                        resource.owner.resourceIdentifier.id !== userId
                     }
-                }}
-                disable={(resource: any) =>
-                    resource.owner.resourceIdentifier.id !== userId
-                }
-                preSelected={[]}
-                title={'My Content'}
-                queryDoc={globalSearchApprovedArticles}
-                queryKey={'searchAutocomplete'}
-                pathToResourceId={['resourceIdentifier']}
-                pathToResource={['resource']}
-                queryVariables={{
-                    size: 10,
-                    filter: {
-                        types: ['ARTICLE', 'LINK'],
-                        mustIncludeUserId: [userId],
-                    },
-                    parameter: {
-                        scoringMode: 'LAST_UPDATED',
-                    },
-                }}
-                showSearch={false}
-            />
+                    preSelected={[]}
+                    title={'My Content'}
+                    queryDoc={globalSearchApprovedArticles}
+                    queryKey={'searchAutocomplete'}
+                    pathToResourceId={['resourceIdentifier']}
+                    pathToResource={['resource']}
+                    queryVariables={{
+                        size: 10,
+                        filter: {
+                            types: ['ARTICLE', 'LINK'],
+                            mustIncludeUserId: [userId],
+                        },
+                        parameter: {
+                            scoringMode: 'LAST_UPDATED',
+                        },
+                    }}
+                    showSearch={false}
+                />
+            )}
 
             <Container>
                 <ContentRow>

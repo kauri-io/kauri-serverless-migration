@@ -255,6 +255,7 @@ export const getCommunityInvitationsQuery = gql`
         ) {
             totalElements
             totalPages
+            isLast
             content {
                 invitationId
                 communityId
@@ -372,6 +373,7 @@ export const getCommunityContent = gql`
             }
             totalPages
             totalElements
+            isLast
         }
     }
 

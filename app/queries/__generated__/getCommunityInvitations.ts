@@ -55,6 +55,10 @@ export interface getCommunityInvitations_getCommunityInvitations {
    */
   totalPages: number;
   /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
+  /**
    * Returns the page content.
    */
   content: (getCommunityInvitations_getCommunityInvitations_content | null)[];
