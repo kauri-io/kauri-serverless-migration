@@ -63,6 +63,7 @@ export const searchResultsAutocomplete = gql`
             size: $size
             query: $query
             filter: $filter
+            parameter: { scoringMode: LAST_POSTED }
         ) {
             totalElements
             totalPages
@@ -119,6 +120,12 @@ export const searchResultsAutocomplete = gql`
                         tags
                         voteResult {
                             sum
+                        }
+                        contributors {
+                            id
+                            name
+                            username
+                            avatar
                         }
                         author {
                             id

@@ -97,8 +97,11 @@ export const publishArticleEpic: Epic<any, any, IReduxState, IDependencies> = (
                 const canPublish =
                     !articleOwner ||
                     (articleOwner && articleOwner.id === contributor) ||
-                    userCommunities.map(({ community }) => community.id)
-                        .length > 0
+                    (Array.isArray(userCommunities) &&
+                        userCommunities.find(
+                            community =>
+                                community.community.id === articleOwner.id
+                        ))
 
                 return from(personalSign(signatureToSign)).pipe(
                     mergeMap(signature =>

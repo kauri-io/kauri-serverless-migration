@@ -4,11 +4,13 @@ import {
     getArticleURL,
     getCollectionURL,
     getCommunityURL,
+    getLinkUrl,
 } from '../../lib/getURLs'
 import ArticleCard from '../Card/ArticleCard'
 import CollectionCard from '../Card/CollectionCard'
 import CommunityCard from '../Card/CommunityCard'
 import Link from 'next/link'
+import LinkCard from '../Card/LinkCard'
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -105,6 +107,19 @@ const LatestContent: React.FunctionComponent<IProps> = ({ content }) => {
                                         {...resource}
                                         href={getCommunityURL({
                                             name: resource.communityName,
+                                            id: resource.id,
+                                        })}
+                                    />
+                                </Grid>
+                            )
+                        case 'ExternalLinkDTO':
+                            return (
+                                <Grid key={key} item={true} xs={12}>
+                                    {' '}
+                                    <LinkCard
+                                        {...resource}
+                                        href={getLinkUrl({
+                                            linkTitle: resource.title.value,
                                             id: resource.id,
                                         })}
                                     />

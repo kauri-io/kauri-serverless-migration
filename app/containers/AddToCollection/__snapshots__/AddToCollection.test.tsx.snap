@@ -627,7 +627,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                           "defaultValue": Object {
                             "block": false,
                             "kind": "StringValue",
-                            "value": "dateUpdated",
+                            "value": "dateCreated",
                           },
                           "directives": Array [],
                           "kind": "VariableDefinition",
@@ -2041,11 +2041,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                             "kind": "ObjectField",
                                             "name": Object {
                                               "kind": "Name",
-                                              "value": "latestVersion",
+                                              "value": "statusIn",
                                             },
                                             "value": Object {
-                                              "kind": "BooleanValue",
-                                              "value": true,
+                                              "kind": "ListValue",
+                                              "values": Array [
+                                                Object {
+                                                  "kind": "EnumValue",
+                                                  "value": "PUBLISHED",
+                                                },
+                                              ],
                                             },
                                           },
                                         ],
@@ -2759,7 +2764,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 5405,
+                    "end": 5407,
                     "start": 0,
                   },
                 },
@@ -3015,7 +3020,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                           "defaultValue": Object {
                             "block": false,
                             "kind": "StringValue",
-                            "value": "dateUpdated",
+                            "value": "dateCreated",
                           },
                           "directives": Array [],
                           "kind": "VariableDefinition",
@@ -4429,11 +4434,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                             "kind": "ObjectField",
                                             "name": Object {
                                               "kind": "Name",
-                                              "value": "latestVersion",
+                                              "value": "statusIn",
                                             },
                                             "value": Object {
-                                              "kind": "BooleanValue",
-                                              "value": true,
+                                              "kind": "ListValue",
+                                              "values": Array [
+                                                Object {
+                                                  "kind": "EnumValue",
+                                                  "value": "PUBLISHED",
+                                                },
+                                              ],
                                             },
                                           },
                                         ],
@@ -5147,7 +5157,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 5405,
+                    "end": 5407,
                     "start": 0,
                   },
                 } => Object {
@@ -5378,7 +5388,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                           "defaultValue": Object {
                             "block": false,
                             "kind": "StringValue",
-                            "value": "dateUpdated",
+                            "value": "dateCreated",
                           },
                           "directives": Array [],
                           "kind": "VariableDefinition",
@@ -6981,11 +6991,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                             "kind": "ObjectField",
                                             "name": Object {
                                               "kind": "Name",
-                                              "value": "latestVersion",
+                                              "value": "statusIn",
                                             },
                                             "value": Object {
-                                              "kind": "BooleanValue",
-                                              "value": true,
+                                              "kind": "ListValue",
+                                              "values": Array [
+                                                Object {
+                                                  "kind": "EnumValue",
+                                                  "value": "PUBLISHED",
+                                                },
+                                              ],
                                             },
                                           },
                                         ],
@@ -7797,7 +7812,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 5405,
+                    "end": 5407,
                     "start": 0,
                   },
                 },
@@ -8029,7 +8044,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                           "defaultValue": Object {
                             "block": false,
                             "kind": "StringValue",
-                            "value": "dateUpdated",
+                            "value": "dateCreated",
                           },
                           "directives": Array [],
                           "kind": "VariableDefinition",
@@ -9632,11 +9647,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                             "kind": "ObjectField",
                                             "name": Object {
                                               "kind": "Name",
-                                              "value": "latestVersion",
+                                              "value": "statusIn",
                                             },
                                             "value": Object {
-                                              "kind": "BooleanValue",
-                                              "value": true,
+                                              "kind": "ListValue",
+                                              "values": Array [
+                                                Object {
+                                                  "kind": "EnumValue",
+                                                  "value": "PUBLISHED",
+                                                },
+                                              ],
                                             },
                                           },
                                         ],
@@ -10448,7 +10468,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 5405,
+                    "end": 5407,
                     "start": 0,
                   },
                 } => Object {
@@ -10679,7 +10699,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                           "defaultValue": Object {
                             "block": false,
                             "kind": "StringValue",
-                            "value": "dateUpdated",
+                            "value": "dateCreated",
                           },
                           "directives": Array [],
                           "kind": "VariableDefinition",
@@ -12282,11 +12302,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                             "kind": "ObjectField",
                                             "name": Object {
                                               "kind": "Name",
-                                              "value": "latestVersion",
+                                              "value": "statusIn",
                                             },
                                             "value": Object {
-                                              "kind": "BooleanValue",
-                                              "value": true,
+                                              "kind": "ListValue",
+                                              "values": Array [
+                                                Object {
+                                                  "kind": "EnumValue",
+                                                  "value": "PUBLISHED",
+                                                },
+                                              ],
                                             },
                                           },
                                         ],
@@ -13098,7 +13123,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 5405,
+                    "end": 5407,
                     "start": 0,
                   },
                 },
@@ -13336,7 +13361,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "defaultValue": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "dateUpdated",
+                              "value": "dateCreated",
                             },
                             "directives": Array [],
                             "kind": "VariableDefinition",
@@ -14939,11 +14964,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                               "kind": "ObjectField",
                                               "name": Object {
                                                 "kind": "Name",
-                                                "value": "latestVersion",
+                                                "value": "statusIn",
                                               },
                                               "value": Object {
-                                                "kind": "BooleanValue",
-                                                "value": true,
+                                                "kind": "ListValue",
+                                                "values": Array [
+                                                  Object {
+                                                    "kind": "EnumValue",
+                                                    "value": "PUBLISHED",
+                                                  },
+                                                ],
                                               },
                                             },
                                           ],
@@ -15755,7 +15785,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5405,
+                      "end": 5407,
                       "start": 0,
                     },
                   },
@@ -15765,7 +15795,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     },
                     "page": 0,
                     "size": 8,
-                    "sort": "dateUpdated",
+                    "sort": "dateCreated",
                   },
                 },
               },
@@ -16028,7 +16058,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "defaultValue": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "dateUpdated",
+                                "value": "dateCreated",
                               },
                               "directives": Array [],
                               "kind": "VariableDefinition",
@@ -17442,11 +17472,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                                 "kind": "ObjectField",
                                                 "name": Object {
                                                   "kind": "Name",
-                                                  "value": "latestVersion",
+                                                  "value": "statusIn",
                                                 },
                                                 "value": Object {
-                                                  "kind": "BooleanValue",
-                                                  "value": true,
+                                                  "kind": "ListValue",
+                                                  "values": Array [
+                                                    Object {
+                                                      "kind": "EnumValue",
+                                                      "value": "PUBLISHED",
+                                                    },
+                                                  ],
                                                 },
                                               },
                                             ],
@@ -18160,7 +18195,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5405,
+                        "end": 5407,
                         "start": 0,
                       },
                     } => Object {
@@ -18391,7 +18426,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "defaultValue": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "dateUpdated",
+                                "value": "dateCreated",
                               },
                               "directives": Array [],
                               "kind": "VariableDefinition",
@@ -19994,11 +20029,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                                 "kind": "ObjectField",
                                                 "name": Object {
                                                   "kind": "Name",
-                                                  "value": "latestVersion",
+                                                  "value": "statusIn",
                                                 },
                                                 "value": Object {
-                                                  "kind": "BooleanValue",
-                                                  "value": true,
+                                                  "kind": "ListValue",
+                                                  "values": Array [
+                                                    Object {
+                                                      "kind": "EnumValue",
+                                                      "value": "PUBLISHED",
+                                                    },
+                                                  ],
                                                 },
                                               },
                                             ],
@@ -20810,7 +20850,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5405,
+                        "end": 5407,
                         "start": 0,
                       },
                     },
@@ -21042,7 +21082,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "defaultValue": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "dateUpdated",
+                                "value": "dateCreated",
                               },
                               "directives": Array [],
                               "kind": "VariableDefinition",
@@ -22645,11 +22685,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                                 "kind": "ObjectField",
                                                 "name": Object {
                                                   "kind": "Name",
-                                                  "value": "latestVersion",
+                                                  "value": "statusIn",
                                                 },
                                                 "value": Object {
-                                                  "kind": "BooleanValue",
-                                                  "value": true,
+                                                  "kind": "ListValue",
+                                                  "values": Array [
+                                                    Object {
+                                                      "kind": "EnumValue",
+                                                      "value": "PUBLISHED",
+                                                    },
+                                                  ],
                                                 },
                                               },
                                             ],
@@ -23461,7 +23506,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5405,
+                        "end": 5407,
                         "start": 0,
                       },
                     } => Object {
@@ -23692,7 +23737,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "defaultValue": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "dateUpdated",
+                                "value": "dateCreated",
                               },
                               "directives": Array [],
                               "kind": "VariableDefinition",
@@ -25295,11 +25340,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                                 "kind": "ObjectField",
                                                 "name": Object {
                                                   "kind": "Name",
-                                                  "value": "latestVersion",
+                                                  "value": "statusIn",
                                                 },
                                                 "value": Object {
-                                                  "kind": "BooleanValue",
-                                                  "value": true,
+                                                  "kind": "ListValue",
+                                                  "values": Array [
+                                                    Object {
+                                                      "kind": "EnumValue",
+                                                      "value": "PUBLISHED",
+                                                    },
+                                                  ],
                                                 },
                                               },
                                             ],
@@ -26111,7 +26161,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5405,
+                        "end": 5407,
                         "start": 0,
                       },
                     },
@@ -26349,7 +26399,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "defaultValue": Object {
                                   "block": false,
                                   "kind": "StringValue",
-                                  "value": "dateUpdated",
+                                  "value": "dateCreated",
                                 },
                                 "directives": Array [],
                                 "kind": "VariableDefinition",
@@ -27952,11 +28002,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                                   "kind": "ObjectField",
                                                   "name": Object {
                                                     "kind": "Name",
-                                                    "value": "latestVersion",
+                                                    "value": "statusIn",
                                                   },
                                                   "value": Object {
-                                                    "kind": "BooleanValue",
-                                                    "value": true,
+                                                    "kind": "ListValue",
+                                                    "values": Array [
+                                                      Object {
+                                                        "kind": "EnumValue",
+                                                        "value": "PUBLISHED",
+                                                      },
+                                                    ],
                                                   },
                                                 },
                                               ],
@@ -28768,7 +28823,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 5405,
+                          "end": 5407,
                           "start": 0,
                         },
                       },
@@ -28778,7 +28833,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                         },
                         "page": 0,
                         "size": 8,
-                        "sort": "dateUpdated",
+                        "sort": "dateCreated",
                       },
                     },
                   },
@@ -29029,7 +29084,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "defaultValue": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "dateUpdated",
+                              "value": "dateCreated",
                             },
                             "directives": Array [],
                             "kind": "VariableDefinition",
@@ -30632,11 +30687,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                               "kind": "ObjectField",
                                               "name": Object {
                                                 "kind": "Name",
-                                                "value": "latestVersion",
+                                                "value": "statusIn",
                                               },
                                               "value": Object {
-                                                "kind": "BooleanValue",
-                                                "value": true,
+                                                "kind": "ListValue",
+                                                "values": Array [
+                                                  Object {
+                                                    "kind": "EnumValue",
+                                                    "value": "PUBLISHED",
+                                                  },
+                                                ],
                                               },
                                             },
                                           ],
@@ -31448,7 +31508,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5405,
+                      "end": 5407,
                       "start": 0,
                     },
                   },
@@ -31699,7 +31759,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                 "defaultValue": Object {
                                   "block": false,
                                   "kind": "StringValue",
-                                  "value": "dateUpdated",
+                                  "value": "dateCreated",
                                 },
                                 "directives": Array [],
                                 "kind": "VariableDefinition",
@@ -33113,11 +33173,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                                   "kind": "ObjectField",
                                                   "name": Object {
                                                     "kind": "Name",
-                                                    "value": "latestVersion",
+                                                    "value": "statusIn",
                                                   },
                                                   "value": Object {
-                                                    "kind": "BooleanValue",
-                                                    "value": true,
+                                                    "kind": "ListValue",
+                                                    "values": Array [
+                                                      Object {
+                                                        "kind": "EnumValue",
+                                                        "value": "PUBLISHED",
+                                                      },
+                                                    ],
                                                   },
                                                 },
                                               ],
@@ -33831,7 +33896,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                         ],
                         "kind": "Document",
                         "loc": Object {
-                          "end": 5405,
+                          "end": 5407,
                           "start": 0,
                         },
                       },
@@ -33841,7 +33906,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                         },
                         "page": 0,
                         "size": 8,
-                        "sort": "dateUpdated",
+                        "sort": "dateCreated",
                       },
                     },
                     "queryId": "1",
@@ -33862,7 +33927,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       },
                       "page": 0,
                       "size": 8,
-                      "sort": "dateUpdated",
+                      "sort": "dateCreated",
                     },
                   },
                   "subscriptions": Array [],
@@ -34105,7 +34170,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "defaultValue": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "dateUpdated",
+                                "value": "dateCreated",
                               },
                               "directives": Array [],
                               "kind": "VariableDefinition",
@@ -35708,11 +35773,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                                 "kind": "ObjectField",
                                                 "name": Object {
                                                   "kind": "Name",
-                                                  "value": "latestVersion",
+                                                  "value": "statusIn",
                                                 },
                                                 "value": Object {
-                                                  "kind": "BooleanValue",
-                                                  "value": true,
+                                                  "kind": "ListValue",
+                                                  "values": Array [
+                                                    Object {
+                                                      "kind": "EnumValue",
+                                                      "value": "PUBLISHED",
+                                                    },
+                                                  ],
                                                 },
                                               },
                                             ],
@@ -36524,7 +36594,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5405,
+                        "end": 5407,
                         "start": 0,
                       },
                     },
@@ -36543,7 +36613,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       },
                       "page": 0,
                       "size": 8,
-                      "sort": "dateUpdated",
+                      "sort": "dateCreated",
                     },
                   },
                 },
@@ -36807,7 +36877,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "defaultValue": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "dateUpdated",
+                              "value": "dateCreated",
                             },
                             "directives": Array [],
                             "kind": "VariableDefinition",
@@ -38221,11 +38291,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                               "kind": "ObjectField",
                                               "name": Object {
                                                 "kind": "Name",
-                                                "value": "latestVersion",
+                                                "value": "statusIn",
                                               },
                                               "value": Object {
-                                                "kind": "BooleanValue",
-                                                "value": true,
+                                                "kind": "ListValue",
+                                                "values": Array [
+                                                  Object {
+                                                    "kind": "EnumValue",
+                                                    "value": "PUBLISHED",
+                                                  },
+                                                ],
                                               },
                                             },
                                           ],
@@ -38939,7 +39014,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5405,
+                      "end": 5407,
                       "start": 0,
                     },
                   } => Object {
@@ -39170,7 +39245,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "defaultValue": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "dateUpdated",
+                              "value": "dateCreated",
                             },
                             "directives": Array [],
                             "kind": "VariableDefinition",
@@ -40773,11 +40848,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                               "kind": "ObjectField",
                                               "name": Object {
                                                 "kind": "Name",
-                                                "value": "latestVersion",
+                                                "value": "statusIn",
                                               },
                                               "value": Object {
-                                                "kind": "BooleanValue",
-                                                "value": true,
+                                                "kind": "ListValue",
+                                                "values": Array [
+                                                  Object {
+                                                    "kind": "EnumValue",
+                                                    "value": "PUBLISHED",
+                                                  },
+                                                ],
                                               },
                                             },
                                           ],
@@ -41589,7 +41669,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5405,
+                      "end": 5407,
                       "start": 0,
                     },
                   },
@@ -41821,7 +41901,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "defaultValue": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "dateUpdated",
+                              "value": "dateCreated",
                             },
                             "directives": Array [],
                             "kind": "VariableDefinition",
@@ -43424,11 +43504,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                               "kind": "ObjectField",
                                               "name": Object {
                                                 "kind": "Name",
-                                                "value": "latestVersion",
+                                                "value": "statusIn",
                                               },
                                               "value": Object {
-                                                "kind": "BooleanValue",
-                                                "value": true,
+                                                "kind": "ListValue",
+                                                "values": Array [
+                                                  Object {
+                                                    "kind": "EnumValue",
+                                                    "value": "PUBLISHED",
+                                                  },
+                                                ],
                                               },
                                             },
                                           ],
@@ -44240,7 +44325,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5405,
+                      "end": 5407,
                       "start": 0,
                     },
                   } => Object {
@@ -44471,7 +44556,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                             "defaultValue": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "dateUpdated",
+                              "value": "dateCreated",
                             },
                             "directives": Array [],
                             "kind": "VariableDefinition",
@@ -46074,11 +46159,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                               "kind": "ObjectField",
                                               "name": Object {
                                                 "kind": "Name",
-                                                "value": "latestVersion",
+                                                "value": "statusIn",
                                               },
                                               "value": Object {
-                                                "kind": "BooleanValue",
-                                                "value": true,
+                                                "kind": "ListValue",
+                                                "values": Array [
+                                                  Object {
+                                                    "kind": "EnumValue",
+                                                    "value": "PUBLISHED",
+                                                  },
+                                                ],
                                               },
                                             },
                                           ],
@@ -46890,7 +46980,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 5405,
+                      "end": 5407,
                       "start": 0,
                     },
                   },
@@ -47128,7 +47218,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                               "defaultValue": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "dateUpdated",
+                                "value": "dateCreated",
                               },
                               "directives": Array [],
                               "kind": "VariableDefinition",
@@ -48731,11 +48821,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                                 "kind": "ObjectField",
                                                 "name": Object {
                                                   "kind": "Name",
-                                                  "value": "latestVersion",
+                                                  "value": "statusIn",
                                                 },
                                                 "value": Object {
-                                                  "kind": "BooleanValue",
-                                                  "value": true,
+                                                  "kind": "ListValue",
+                                                  "values": Array [
+                                                    Object {
+                                                      "kind": "EnumValue",
+                                                      "value": "PUBLISHED",
+                                                    },
+                                                  ],
                                                 },
                                               },
                                             ],
@@ -49547,7 +49642,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 5405,
+                        "end": 5407,
                         "start": 0,
                       },
                     },
@@ -49557,7 +49652,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                       },
                       "page": 0,
                       "size": 8,
-                      "sort": "dateUpdated",
+                      "sort": "dateCreated",
                     },
                   },
                 },
@@ -49792,7 +49887,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                         "defaultValue": Object {
                           "block": false,
                           "kind": "StringValue",
-                          "value": "dateUpdated",
+                          "value": "dateCreated",
                         },
                         "directives": Array [],
                         "kind": "VariableDefinition",
@@ -51206,11 +51301,16 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                                           "kind": "ObjectField",
                                           "name": Object {
                                             "kind": "Name",
-                                            "value": "latestVersion",
+                                            "value": "statusIn",
                                           },
                                           "value": Object {
-                                            "kind": "BooleanValue",
-                                            "value": true,
+                                            "kind": "ListValue",
+                                            "values": Array [
+                                              Object {
+                                                "kind": "EnumValue",
+                                                "value": "PUBLISHED",
+                                              },
+                                            ],
                                           },
                                         },
                                       ],
@@ -51924,7 +52024,7 @@ exports[`containers/AddToCollection should match snapshot 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 5405,
+                  "end": 5407,
                   "start": 0,
                 },
               }

@@ -19,6 +19,7 @@ import { recordViewMutation } from '../../queries/Utils'
 import ApolloClient from 'apollo-client'
 import HomepageResources from './HomepageResources'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { getCommunityURL } from '../../lib/getURLs'
 import { showNotificationAction as showNotification } from '../../lib/Epics/ShowNotificationEpic'
 import {
     openModalAction,
@@ -204,6 +205,9 @@ class CommunityConnection extends React.Component<IProps, IState> {
             isCreator ||
             any(propEq('id', currentUser), getCommunity.members || [])
         const homepage = getCommunity.homepage
+        const name = getCommunity.name
+        const id = getCommunity.id
+        const url = getCommunityURL({ name, id }).as
 
         const openAddMemberModal = () =>
             this.props.openModalAction({
@@ -249,11 +253,43 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     />
                     <meta
                         name="description"
-                        content={String(getCommunity.description)}
+                        content={`${getCommunity.description &&
+                            getCommunity.description.slice(0, 151)}...`}
                     />
+                    <link rel="canonical" href={url} />
+                    <meta property="og:title" content={getCommunity.name} />
+                    <meta property="og:site_name" content="kauri.io" />
+                    <meta property="og:url" content={url} />
+                    <meta
+                        property="og:description"
+                        content={`${getCommunity.description &&
+                            getCommunity.description.substring(0, 100)}...`}
+                    />
+                    <meta property="og:type" content="article" />
+                    {typeof getCommunity.avatar === 'string' && (
+                        <meta
+                            property="og:image"
+                            content={getCommunity.avatar}
+                        />
+                    )}
+                    <meta name="twitter:card" content="summary" />
+                    <meta name="twitter:site" content={url} />
+                    <meta name="twitter:title" content={getCommunity.name} />
+                    <meta
+                        name="twitter:description"
+                        content={`${getCommunity.description &&
+                            getCommunity.description.substring(0, 100)}...`}
+                    />
+                    <meta name="twitter:creator" content="@kauri_io" />
+                    {typeof getCommunity.avatar === 'string' && (
+                        <meta
+                            property="twitter:image"
+                            content={getCommunity.avatar}
+                        />
+                    )}
                 </Head>
 
-                {/* Dialog used to prevent the access to the community page until the community is mined (saved on-chain). 
+                {/* Dialog used to prevent the access to the community page until the community is mined (saved on-chain).
                      After being mined, status changes to OPENED
                 */}
                 <Dialog

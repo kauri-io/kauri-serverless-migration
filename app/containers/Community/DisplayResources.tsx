@@ -5,7 +5,7 @@ import {
     Community_approved_ArticleDTO,
     Community_approved_ExternalLinkDTO,
 } from '../../queries/Fragments/__generated__/Community'
-import { Container, Grid, withStyles } from '@material-ui/core'
+import { Grid, withStyles, Theme } from '@material-ui/core'
 import { removeResourceVariables } from '../../queries/__generated__/removeResource'
 import ArticlesEmptyState from './EmptyStates/Articles'
 import CollectionsEmptyState from './EmptyStates/Collections'
@@ -97,8 +97,8 @@ const DisplayResources = ({ resources, type, classes }: IProps) => {
         return <RenderEmptyState type={type} />
     }
     return (
-        <Container>
-            <Grid className={classes.grid} container spacing={3}>
+        <div className={classes.root}>
+            <Grid className={classes.grid} container spacing={2}>
                 {Array.isArray(resources) && resources.length
                     ? resources.map(
                           RenderResources()
@@ -110,7 +110,7 @@ const DisplayResources = ({ resources, type, classes }: IProps) => {
                       )
                     : null}
             </Grid>
-        </Container>
+        </div>
     )
 }
 
@@ -119,39 +119,43 @@ const DisplayManagedResourcesComponent = ({
     classes,
 }: IProps & { review?: boolean }) => {
     return (
-        <Container>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <Grid className={classes.grid} container spacing={3}>
-                    {Array.isArray(resources) && resources.length
-                        ? resources.map(
-                              RenderResources()
-                              // isMember,
-                              // communityId,
-                              // openModalAction,
-                              // closeModalAction,
-                              // removeResourceAction
-                          )
-                        : null}
-                </Grid>
-            </div>
-        </Container>
+        <div className={classes.root}>
+            <Grid className={classes.grid} container spacing={2}>
+                {Array.isArray(resources) && resources.length
+                    ? resources.map(
+                          RenderResources()
+                          // isMember,
+                          // communityId,
+                          // openModalAction,
+                          // closeModalAction,
+                          // removeResourceAction
+                      )
+                    : null}
+            </Grid>
+        </div>
     )
 }
 
-export const DisplayManagedResources = withStyles({
+export const DisplayManagedResources = withStyles((theme: Theme) => ({
     grid: {
-        paddingTop: '24px',
-        paddingBottom: '24px',
-        width: 870,
+        padding: theme.spacing(1),
+        maxWidth: 870,
         margin: 'auto',
     },
-})(DisplayManagedResourcesComponent)
+    root: {
+        display: 'flex',
+        paddingTop: theme.spacing(4),
+    },
+}))(DisplayManagedResourcesComponent)
 
-export default withStyles({
+export default withStyles((theme: Theme) => ({
     grid: {
-        paddingTop: '24px',
-        paddingBottom: '24px',
-        width: 870,
+        padding: theme.spacing(1),
+        maxWidth: 870,
         margin: 'auto',
     },
-})(DisplayResources)
+    root: {
+        display: 'flex',
+        paddingTop: theme.spacing(4),
+    },
+}))(DisplayResources)

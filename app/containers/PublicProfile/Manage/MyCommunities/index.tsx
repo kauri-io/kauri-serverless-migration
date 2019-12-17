@@ -58,7 +58,7 @@ const MyCommunities: React.FunctionComponent<IProps> = props => {
         <Grid className={classes.table} container={true} direction="column">
             <H3>Communities</H3>
             <BodyCard>
-                The communities you manage and moderate are displayed below;
+                The communities you manage and moderate are displayed below:
             </BodyCard>
             <Table
                 removeMemberAction={props.removeMemberAction}

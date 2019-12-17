@@ -36,8 +36,8 @@ export default ({ onFetch, attributes, setAttributes }) => {
             <Grid>
                 <Typography>
                     Please enter the url of the article you would like to import
-                    here. This is a beta feature, if you have feedback or
-                    recommendation{' '}
+                    . This is a beta feature, if you have feedback or
+                    recommendations{' '}
                     <a className={classes.helpLink} href="mailto:info@kauri.io">
                         let us know
                     </a>{' '}

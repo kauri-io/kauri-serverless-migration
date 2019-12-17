@@ -51,12 +51,25 @@ const isOwner = (
     status: string,
     owner: string,
     userId: string,
-    communities: string[] | null
-) =>
-    (Array.isArray(communities) && communities.includes(owner)) ||
-    !status ||
-    !owner ||
-    owner === userId
+    communities: any[] | null
+) => {
+    return (
+        memberOfArticleCommunity(communities, owner) ||
+        !status ||
+        !owner ||
+        owner === userId
+    )
+}
+
+const memberOfArticleCommunity = (communities, articleOwner) => {
+    return (
+        Array.isArray(communities) &&
+        (communities.includes(articleOwner) ||
+            communities.find(
+                communityRole => communityRole.community.id === articleOwner
+            ))
+    )
+}
 
 let uppy
 

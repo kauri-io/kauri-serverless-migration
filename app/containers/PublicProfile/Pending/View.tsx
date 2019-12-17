@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import ArticleCard from '../../../components/Card/ArticleCard'
 import withLoading from '../../../lib/with-loading'
 import withApolloError from '../../../lib/with-apollo-error'
-import CheckpointArticles from '../../CheckpointArticles'
 import withPagination from '../../../lib/with-pagination'
 import PublicProfileEmptyState from '../../../components/PublicProfileEmptyState'
 import { searchPending } from '../../../queries/Article'
@@ -16,28 +15,17 @@ import { routeChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 
 interface IArticlesProps {
     data: searchPersonalArticles
-    type: string
     routeChangeAction: typeof routeChangeAction
     openModalAction: typeof openModalAction
     isLoggedIn: boolean
-    isOwner: boolean
 }
 
-const Articles = ({ data, type, isOwner }: IArticlesProps) => {
+const Articles = ({ data }: IArticlesProps) => {
     const articles = data.searchArticles && data.searchArticles.content
 
     if (articles) {
         return articles.length > 0 ? (
             <Fragment>
-                {typeof type === 'string' &&
-                    type === 'published' &&
-                    isOwner && (
-                        <CheckpointArticles
-                            pageType={'public-profile'}
-                            isOwner={isOwner}
-                            articles={articles}
-                        />
-                    )}
                 <Grid container={true} spacing={2} justify="center">
                     {articles.map(
                         article =>
@@ -49,7 +37,10 @@ const Articles = ({ data, type, isOwner }: IArticlesProps) => {
                                     justify="center"
                                 >
                                     <ArticleCard
-                                        href={getArticleURL(article)}
+                                        href={getArticleURL(
+                                            article,
+                                            'submitted-update'
+                                        )}
                                         {...article}
                                     />
                                 </Grid>
