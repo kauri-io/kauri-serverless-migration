@@ -6,6 +6,9 @@ import { getCommunity_getCommunity_members } from '../../../queries/__generated_
 import { IInvitation } from '../../CreateCommunityForm/ManageMembers/FormInviteMembersPanel'
 import { searchArticles_searchArticles } from '../../../queries/__generated__/searchArticles'
 import Loading from '../../../components/Loading'
+import { makeStyles, Theme, Grid } from '@material-ui/core'
+import ArticleCard from '../../../components/Card/ArticleCard'
+import { getArticleURL } from '../../../lib/getURLs'
 
 const Container = styled.div`
     display: flex;
@@ -26,6 +29,23 @@ const Column = styled.div`
         flex: 1;
     }
 `
+
+const useStyles = makeStyles((theme: Theme) => ({
+    grid: {
+        padding: theme.spacing(1),
+        maxWidth: 870,
+        margin: 'auto',
+    },
+    root: {
+        paddingBotton: theme.spacing(4),
+        width: '100%',
+        maxWidth: 808,
+    },
+    container: {
+        display: 'flex',
+        padding: theme.spacing(0, 1),
+    },
+}))
 
 interface IProps {
     cancelInvitation?: (payload: { index: number }) => void
@@ -50,6 +70,9 @@ const Manage: React.FunctionComponent<IProps> = ({
     openAddMemberModal,
     data,
 }) => {
+
+    const classes = useStyles()
+
     const [tabIndex, setTabIndex] = useState(isCommunityAdmin ? 0 : 1)
 
     if (!data.searchArticles) {
@@ -109,7 +132,48 @@ const Manage: React.FunctionComponent<IProps> = ({
                     <div></div>
                 )} */}
                 {tabIndex === 3 && pageType !== 'CreateCommunityForm' && (
-                    <div></div>
+                    <div className={classes.container}>
+                        <div className={classes.root}>
+                            <Grid container={true} spacing={2}>
+                                {data.searchArticles.content &&
+                                data.searchArticles.totalElements >
+                                    0 ? (
+                                        data.searchArticles.content.map(
+                                        (resource: any, key) => {
+                                            switch (resource.__typename) {
+                                                case 'ArticleDTO': {
+                                                    return (
+                                                        <Grid
+                                                            key={key}
+                                                            item
+                                                            xs={12}
+                                                            sm={12}
+                                                            lg={12}
+                                                        >
+                                                            <ArticleCard
+                                                                {...resource}
+                                                                href={getArticleURL(
+                                                                    resource, 'review'
+                                                                )}
+                                                            />
+                                                        </Grid>
+                                                    )
+                                                }
+
+                                                default: {
+                                                    return null
+                                                }
+                                            }
+                                        }
+                                    )
+                                ) : (
+                                    <div style={{ width: '100%' }}>
+                                        <p>No Pending articles</p>
+                                    </div>
+                                )}
+                            </Grid>
+                        </div>
+                    </div>
                 )}
             </Column>
         </Container>
