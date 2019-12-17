@@ -63,23 +63,25 @@ const Reddit = () => (
     </svg>
 )
 
-export default ({ url, name }) => {
+export default ({ href, name }) => {
+    const url = `${global.window && global.window.location.origin}${href}`
+
     const classes = useStyles({})
     return (
         <div className={classes.container}>
             <div className={classes.iconContainer}>
-                <LinkedinShareButton url={url.href} title={name}>
+                <LinkedinShareButton url={url} title={name}>
                     <LinkedIn />
                 </LinkedinShareButton>
             </div>
             <div className={classes.iconContainer}>
-                <TwitterShareButton url={url.href} title={name}>
+                <TwitterShareButton url={url} title={name}>
                     <Twitter />
                 </TwitterShareButton>
             </div>
 
             <div className={classes.iconContainer}>
-                <RedditShareButton url={url.href} title={name}>
+                <RedditShareButton url={url} title={name}>
                     <Reddit />
                 </RedditShareButton>
             </div>
