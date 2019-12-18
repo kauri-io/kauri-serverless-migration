@@ -178,7 +178,12 @@ export default ({ web3, handleSubmit, hostName }) => {
                         Web3 Sign In
                     </Typography>
                     {web3 && <Web3Available handleSubmit={handleSubmit} />}
-                    {!web3 && <Web3Unavailable hostName={hostName} classes={classes} />}
+                    {!web3 && (
+                        <Web3Unavailable
+                            hostName={hostName}
+                            classes={classes}
+                        />
+                    )}
                 </NoSsr>
             )}
         </Grid>
