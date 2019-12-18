@@ -47,9 +47,14 @@ function withPagination(
             if (this.childRef) {
                 const childRefElement = findDOMNode(this.childRef)
                 this.childRefElement = childRefElement as Element
-
-                ;(childRefElement as Element).addEventListener('touchend', this.handleOnScroll)
-                ;(childRefElement as Element).addEventListener('scroll', this.handleOnScroll)
+                ;(childRefElement as Element).addEventListener(
+                    'touchend',
+                    this.handleOnScroll
+                )
+                ;(childRefElement as Element).addEventListener(
+                    'scroll',
+                    this.handleOnScroll
+                )
                 return
             }
             window.addEventListener('touchend', this.handleOnScroll)
@@ -58,8 +63,16 @@ function withPagination(
 
         componentWillUnmount() {
             if (this.childRefElement) {
-                ;(this.childRefElement as Element).removeEventListener('touchend', this.handleOnScroll, false)
-                ;(this.childRefElement as Element).removeEventListener('scroll', this.handleOnScroll, false)
+                ;(this.childRefElement as Element).removeEventListener(
+                    'touchend',
+                    this.handleOnScroll,
+                    false
+                )
+                ;(this.childRefElement as Element).removeEventListener(
+                    'scroll',
+                    this.handleOnScroll,
+                    false
+                )
                 return
             }
             window.removeEventListener('touchend', this.handleOnScroll, false)
