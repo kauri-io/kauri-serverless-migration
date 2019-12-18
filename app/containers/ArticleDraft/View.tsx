@@ -6,7 +6,7 @@ import Avatar from '../../components/Avatar'
 import MDRenderer from '../../components/Markdown/Renderer'
 import { Article } from '../../queries/Fragments/__generated__/Article'
 import Hidden from '@material-ui/core/Hidden'
-import { ArticleStyles } from './styles'
+import { ArticleStyles } from '../Article/styles'
 import { getArticleURL } from '../../lib/getURLs'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import {
@@ -61,11 +61,12 @@ const ArticleComp = ({
             title,
             tags,
             version,
+            author,
         },
     },
 }: IProps) => {
     const classes = ArticleStyles({})
-    const author = contributors && contributors[0]
+    const originalAuthor = contributors && contributors[0]
     const canonicalUrl = attributes.canonical
 
     const url = getArticleURL({ id, title }, 'draft')
@@ -82,7 +83,7 @@ const ArticleComp = ({
                 datePublished={dateCreated}
                 tags={tags}
                 attributes={attributes}
-                author={author}
+                author={originalAuthor}
                 hostName={hostName}
             />
             <Grid
@@ -131,11 +132,11 @@ const ArticleComp = ({
                             justify="space-between"
                         >
                             <Grid className={classes.nameAndDate}>
-                                {author && (
+                                {originalAuthor && (
                                     <Avatar
-                                        avatar={author.avatar}
-                                        username={author.username}
-                                        id={author.id}
+                                        avatar={originalAuthor.avatar}
+                                        username={originalAuthor.username}
+                                        id={originalAuthor.id}
                                         withName={true}
                                     />
                                 )}

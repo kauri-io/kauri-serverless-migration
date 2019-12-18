@@ -282,6 +282,10 @@ export interface getArticleTransfers_getArticleTransfers_content_article_comment
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface getArticleTransfers_getArticleTransfers_content_article {

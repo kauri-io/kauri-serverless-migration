@@ -73,9 +73,10 @@ const ArticleEditor = props => {
                             title="Publish to Community"
                             content={
                                 <div>
-                                    You can publish articles to your personal
-                                    profile or communities you are a member of
-                                    you click <i>Publish Article</i>
+                                    Choose to publish articles to your profile
+                                    or directly to a community, which you are a
+                                    member of, when you click{' '}
+                                    <i>Publish Article</i>.
                                 </div>
                             }
                             confirmButtonAction={() => {
@@ -205,6 +206,16 @@ const ArticleEditor = props => {
         }
     }
 
+    const memberOfArticleCommunity = (communities, articleOwner) => {
+        return (
+            Array.isArray(communities) &&
+            (communities.includes(articleOwner) ||
+                communities.find(
+                    communityRole => communityRole.community.id === articleOwner
+                ))
+        )
+    }
+
     // // this saves edits to a given article version (or an unsaved article) to local storage
     useEffect(() => {
         setArticleCacheItem(key, subject, tags, content, attributes, article)
@@ -302,8 +313,7 @@ const ArticleEditor = props => {
                     // OWNER'S UPDATE
                 } else if (
                     ((owner && userId === owner.id) ||
-                        (Array.isArray(communities) &&
-                            communities.includes(owner.id))) &&
+                        memberOfArticleCommunity(communities, owner.id)) &&
                     submissionType === 'submit/update'
                 ) {
                     return submitArticleVersionAction({

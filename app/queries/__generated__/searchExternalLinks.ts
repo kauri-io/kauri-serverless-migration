@@ -218,6 +218,10 @@ export interface searchExternalLinks_searchExternalLinks_content_comments {
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface searchExternalLinks_searchExternalLinks_content_voteResult {
@@ -327,6 +331,10 @@ export interface searchExternalLinks_searchExternalLinks {
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface searchExternalLinks {

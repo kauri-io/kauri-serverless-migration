@@ -394,6 +394,9 @@ const CreateCollectionForm: React.FC<
             const url = `https://${config.gateway}:443/ipfs/${data2.body.hash}`
             setFieldValue('background', url)
         })
+        uppy.on('complete', function() {
+            uppy.reset()
+        })
     }, [])
 
     const classes = useStyles()
@@ -778,80 +781,92 @@ const CreateCollectionForm: React.FC<
                                                     </Droppable>
                                                 </DragDropContext>
 
-                                                <ChooseResourceModal
-                                                    key={`choose-resource-modal-${index}`}
-                                                    open={
-                                                        resourceModalOpened[
-                                                            index
-                                                        ]
-                                                    }
-                                                    handleClose={() =>
-                                                        setResourceModalOpened({
-                                                            ...resourceModalOpened,
-                                                            [index]: false,
-                                                        })
-                                                    }
-                                                    handleConfirm={(
-                                                        selected: ResourceIdentifierInput[]
-                                                    ) => {
-                                                        arrayHelpers.form.setFieldValue(
-                                                            `sections[${index}].resourcesId`,
-                                                            selected.map(
-                                                                res => res
+                                                {resourceModalOpened[index] ===
+                                                    true && (
+                                                    <ChooseResourceModal
+                                                        key={`choose-resource-modal-${index}`}
+                                                        open={
+                                                            resourceModalOpened[
+                                                                index
+                                                            ]
+                                                        }
+                                                        handleClose={() =>
+                                                            setResourceModalOpened(
+                                                                {
+                                                                    ...resourceModalOpened,
+                                                                    [index]: false,
+                                                                }
                                                             )
-                                                        )
-                                                        setModalOptions({
-                                                            ...modalOptions,
-                                                            variables: {
-                                                                ...modalOptions.variables,
-                                                                query: '',
-                                                            },
-                                                        })
-                                                        setResourceModalOpened({
-                                                            ...resourceModalOpened,
-                                                            [index]: false,
-                                                        })
-                                                    }}
-                                                    preSelected={
-                                                        values.sections[index]
-                                                            .resourcesId
-                                                    }
-                                                    title={modalOptions.title}
-                                                    queryDoc={
-                                                        modalOptions.query
-                                                    }
-                                                    queryKey={
-                                                        modalOptions.queryKey
-                                                    }
-                                                    queryVariables={
-                                                        modalOptions.variables
-                                                    }
-                                                    pathToResourceId={[
-                                                        'resourceIdentifier',
-                                                    ]}
-                                                    pathToResource={[
-                                                        'resource',
-                                                    ]}
-                                                    showSearch={
-                                                        modalOptions.showSearch
-                                                    }
-                                                    searchQuery={
-                                                        modalOptions.variables[
-                                                            'query'
-                                                        ]
-                                                    }
-                                                    setSearchQuery={(
-                                                        query: string
-                                                    ) =>
-                                                        setModalOptions({
-                                                            ...modalOptions,
-                                                            variables: {
-                                                                ...modalOptions.variables,
-                                                                query,
-                                                            },
-                                                        })
-                                                    }
-                                                />
+                                                        }
+                                                        handleConfirm={(
+                                                            selected: ResourceIdentifierInput[]
+                                                        ) => {
+                                                            arrayHelpers.form.setFieldValue(
+                                                                `sections[${index}].resourcesId`,
+                                                                selected.map(
+                                                                    res => res
+                                                                )
+                                                            )
+                                                            setModalOptions({
+                                                                ...modalOptions,
+                                                                variables: {
+                                                                    ...modalOptions.variables,
+                                                                    query: '',
+                                                                },
+                                                            })
+                                                            setResourceModalOpened(
+                                                                {
+                                                                    ...resourceModalOpened,
+                                                                    [index]: false,
+                                                                }
+                                                            )
+                                                        }}
+                                                        preSelected={
+                                                            values.sections[
+                                                                index
+                                                            ].resourcesId
+                                                        }
+                                                        title={
+                                                            modalOptions.title
+                                                        }
+                                                        queryDoc={
+                                                            modalOptions.query
+                                                        }
+                                                        queryKey={
+                                                            modalOptions.queryKey
+                                                        }
+                                                        queryVariables={
+                                                            modalOptions.variables
+                                                        }
+                                                        pathToResourceId={[
+                                                            'resourceIdentifier',
+                                                        ]}
+                                                        pathToResource={[
+                                                            'resource',
+                                                        ]}
+                                                        showSearch={
+                                                            modalOptions.showSearch
+                                                        }
+                                                        searchQuery={
+                                                            modalOptions
+                                                                .variables[
+                                                                'query'
+                                                            ]
+                                                        }
+                                                        setSearchQuery={(
+                                                            query: string
+                                                        ) =>
+                                                            setModalOptions({
+                                                                ...modalOptions,
+                                                                variables: {
+                                                                    ...modalOptions.variables,
+                                                                    query,
+                                                                },
+                                                            })
+                                                        }
+                                                    />
+                                                )}
+
                                                 <SectionOptions
                                                     currentSectionIndex={index}
                                                     previousSectionHasArticles={pipe(

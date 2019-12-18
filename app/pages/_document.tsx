@@ -115,12 +115,12 @@ export default class MyDocument extends Document<IProps> {
                     <meta
                         key="ms-name"
                         name="msapplication-TileColor"
-                        content="#da532c"
+                        content="#f5f5f5"
                     />
                     <meta
                         key="theme-color"
                         name="theme-color"
-                        content="#8e00d2"
+                        content="#0BA986"
                     />
                     <link
                         href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap"

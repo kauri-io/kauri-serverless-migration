@@ -39,5 +39,4 @@ jobs:
       - DEPLOYMENT=$(now -A prod.now.json --scope kauri --token=$NOW_TOKEN); exitVal=$?
       - if [ "$exitVal" -eq 0 ]; then
         now alias --scope kauri --token=$NOW_TOKEN $DEPLOYMENT kauri.io;
-        now alias --scope kauri --token=$NOW_TOKEN $DEPLOYMENT www.kauri.io;
         fi

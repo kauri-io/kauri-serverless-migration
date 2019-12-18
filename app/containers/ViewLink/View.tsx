@@ -69,7 +69,7 @@ const ViewLink = ({
                                 }
                             />
                             <ShareWidget
-                                url={url}
+                                href={url.as}
                                 name={getExternalLink.linkTitle.value}
                             />
                         </div>

@@ -16,6 +16,7 @@ export const searchAutocomplete = gql`
         ) {
             totalElements
             totalPages
+            isLast
             totalElementsBreakdown
             content {
                 resourceIdentifier {
@@ -46,6 +47,7 @@ export const searchResultsAutocompleteTotalElementsBreakdown = gql`
         ) {
             totalElements
             totalPages
+            isLast
             totalElementsBreakdown
         }
     }
@@ -63,6 +65,7 @@ export const searchResultsAutocomplete = gql`
             size: $size
             query: $query
             filter: $filter
+            parameter: { scoringMode: LAST_POSTED }
         ) {
             totalElements
             totalPages
@@ -149,6 +152,7 @@ export const searchResultsAutocomplete = gql`
                             }
                             totalPages
                             totalElements
+                            isLast
                         }
                         isBookmarked
                     }

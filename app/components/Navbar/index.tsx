@@ -190,7 +190,9 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                 onClose={handleCreateMenuClose}
                 className={classes.menu}
             >
-                <Link href={user ? '/write-article' : '/login?r=/write-article'}>
+                <Link
+                    href={user ? '/write-article' : '/login?r=/write-article'}
+                >
                     <a>
                         <MenuItem>Write Article</MenuItem>
                     </a>
@@ -214,7 +216,9 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                 </Link>
                 <Link
                     href={
-                        user ? '/create-community' : '/login?r=/create-community'
+                        user
+                            ? '/create-community'
+                            : '/login?r=/create-community'
                     }
                 >
                     <a>
@@ -327,6 +331,7 @@ const PrimarySearchAppBar: React.FC<IProps> = ({ user, router }) => {
                             onKeyUp={e => {
                                 if (e.key === 'Enter') {
                                     router.push(`/search-results?q=${search}`)
+                                    setSearch('')
                                 }
                             }}
                             onChange={e => setSearch(e.target.value)}
