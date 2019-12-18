@@ -63,7 +63,7 @@ export default (ComposedComponent: any) =>
 
             const hostName =
                 (context.req && context.req.headers.host) ||
-                (window.location.hostname + ':' + window.location.port)
+                window.location.hostname + ':' + window.location.port
             const ua =
                 context && context.req
                     ? context.req.headers['user-agent']
