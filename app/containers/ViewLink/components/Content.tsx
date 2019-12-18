@@ -145,7 +145,8 @@ const LinkContent = ({
             </Grid>
 
             {url.value.indexOf('youtube.com') === -1 &&
-                linkAttributes.background_image && (
+                linkAttributes.background_image &&
+                linkAttributes.background_image.value && (
                     <Image
                         height={360}
                         width={808}
@@ -170,7 +171,7 @@ const LinkContent = ({
             >
                 {linkDescription.value}
             </Typography>
-            <Grid container={true} justify="center" className={classes.tags}>
+            <Grid justify="center" className={classes.tags}>
                 {tags &&
                     tags.map((text, key) => (
                         <Link key={key} href={`/search-results?q=${text}`}>

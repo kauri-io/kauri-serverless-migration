@@ -14,6 +14,7 @@ import { ResourceTypeInput } from '../../../__generated__/globalTypes'
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder'
 import BookmarkIcon from '@material-ui/icons/Bookmark'
 import { useState } from 'react'
+import AddToCollection from '../../../containers/AddToCollection'
 
 const useStyles = makeStyles((theme: Theme) => ({
     actions: {
@@ -44,7 +45,6 @@ interface IProps {
         as: string
         href: string
     }
-    addArticleToCollectionAction?: any
     type: string
     hideAddtoCollection?: boolean
     hideBookmark?: boolean
@@ -59,7 +59,6 @@ export default ({
     openModalAction,
     routeChangeAction,
     url,
-    addArticleToCollectionAction,
     hideAddtoCollection,
     hideShare,
     type,
@@ -148,21 +147,19 @@ export default ({
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                {!hideShare && (
-                    <MenuItem onClick={handleClickShareDialogOpen}>
-                        <ListItemIcon>
-                            <Icon>share</Icon>
-                        </ListItemIcon>
-                        <Typography variant="inherit">Share</Typography>
-                    </MenuItem>
-                )}
                 {isLoggedIn && !hideAddtoCollection && (
                     <MenuItem
                         data-testid={`ArticleCard-${id}-addToCollectionButton`}
-                        onClick={() => {
-                            addArticleToCollectionAction &&
-                                addArticleToCollectionAction()
-                        }}
+                        onClick={() =>
+                            openModalAction({
+                                children: (
+                                    <AddToCollection
+                                        resourceId={id || ''}
+                                        type={ResourceTypeInput[type]}
+                                    />
+                                ),
+                            })
+                        }
                     >
                         <ListItemIcon>
                             <Icon>folder</Icon>
@@ -170,6 +167,14 @@ export default ({
                         <Typography variant="inherit">
                             Add To Collection
                         </Typography>
+                    </MenuItem>
+                )}
+                {!hideShare && (
+                    <MenuItem onClick={handleClickShareDialogOpen}>
+                        <ListItemIcon>
+                            <Icon>share</Icon>
+                        </ListItemIcon>
+                        <Typography variant="inherit">Share</Typography>
                     </MenuItem>
                 )}
             </Menu>

@@ -468,62 +468,13 @@ exports[`components/TopContributors should match snapshot 1`] = `
             <h3
               className="MuiTypography-root makeStyles-title-1 MuiTypography-h6"
             >
-              Top Contributors
+              Most active contributors
             </h3>
           </ForwardRef(Typography)>
         </WithStyles(ForwardRef(Typography))>
         <div
           className="makeStyles-container-2"
         >
-          <WithStyles(ForwardRef(Typography))
-            className="makeStyles-subtitle-3"
-            variant="body2"
-          >
-            <ForwardRef(Typography)
-              className="makeStyles-subtitle-3"
-              classes={
-                Object {
-                  "alignCenter": "MuiTypography-alignCenter",
-                  "alignJustify": "MuiTypography-alignJustify",
-                  "alignLeft": "MuiTypography-alignLeft",
-                  "alignRight": "MuiTypography-alignRight",
-                  "body1": "MuiTypography-body1",
-                  "body2": "MuiTypography-body2",
-                  "button": "MuiTypography-button",
-                  "caption": "MuiTypography-caption",
-                  "colorError": "MuiTypography-colorError",
-                  "colorInherit": "MuiTypography-colorInherit",
-                  "colorPrimary": "MuiTypography-colorPrimary",
-                  "colorSecondary": "MuiTypography-colorSecondary",
-                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                  "displayBlock": "MuiTypography-displayBlock",
-                  "displayInline": "MuiTypography-displayInline",
-                  "gutterBottom": "MuiTypography-gutterBottom",
-                  "h1": "MuiTypography-h1",
-                  "h2": "MuiTypography-h2",
-                  "h3": "MuiTypography-h3",
-                  "h4": "MuiTypography-h4",
-                  "h5": "MuiTypography-h5",
-                  "h6": "MuiTypography-h6",
-                  "noWrap": "MuiTypography-noWrap",
-                  "overline": "MuiTypography-overline",
-                  "paragraph": "MuiTypography-paragraph",
-                  "root": "MuiTypography-root",
-                  "srOnly": "MuiTypography-srOnly",
-                  "subtitle1": "MuiTypography-subtitle1",
-                  "subtitle2": "MuiTypography-subtitle2",
-                }
-              }
-              variant="body2"
-            >
-              <p
-                className="MuiTypography-root makeStyles-subtitle-3 MuiTypography-body2"
-              >
-                Contributors of the week
-              </p>
-            </ForwardRef(Typography)>
-          </WithStyles(ForwardRef(Typography))>
           <AvatarComp
             avatar="test url"
             id="test ID"

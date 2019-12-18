@@ -3,10 +3,7 @@ import styled from 'styled-components'
 import { IReduxState, IDependencies } from '../../lib/Module'
 import analytics from '../../lib/analytics'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
-import {
-    getArticleTitleQuery,
-    getCollectionTitleQuery,
-} from '../../queries/Article'
+import { getCollectionTitleQuery } from '../../queries/Article'
 import { addResourceToCollectionMutation } from '../../queries/Collection'
 import { openModalAction } from '../../components/Modal/Module'
 import AlertViewComponent from '../../components/Modal/AlertView'
@@ -15,17 +12,13 @@ import {
     addResourceToCollectionVariables,
     addResourceToCollection,
 } from '../../queries/__generated__/addResourceToCollection'
-import { switchMap, mergeMap, map, tap, catchError } from 'rxjs/operators'
+import { switchMap, mergeMap, tap, catchError } from 'rxjs/operators'
 import { from, of, merge } from 'rxjs'
 import { path } from 'ramda'
 import {
     getCollectionTitle,
     getCollectionTitleVariables,
 } from '../../queries/__generated__/getCollectionTitle'
-import {
-    getArticleTitle,
-    getArticleTitleVariables,
-} from '../../queries/__generated__/getArticleTitle'
 
 export interface IAddArticleToCollectionAction {
     callback: () => void
@@ -150,23 +143,7 @@ export const addResourceToCollectionEpic: Epic<
                             ''
                     )
                 ),
-                mergeMap(() =>
-                    apolloClient.query<
-                        getArticleTitle,
-                        getArticleTitleVariables
-                    >({
-                        query: getArticleTitleQuery,
-                        variables: {
-                            id: payload.resourceId.id,
-                            version: Number(payload.resourceId.version),
-                        },
-                    })
-                ),
-                map(
-                    ({ data: { getArticle } }) =>
-                        (getArticle && getArticle.title) || ''
-                ),
-                switchMap(title =>
+                switchMap(() =>
                     from(
                         apolloClient.query<
                             getCollectionTitle,
@@ -180,13 +157,6 @@ export const addResourceToCollectionEpic: Epic<
                     ).pipe(
                         mergeMap(({ data: { getCollection } }) =>
                             merge(
-                                of(
-                                    showNotificationAction({
-                                        description: `The article "${title}" has been added to your collection!`,
-                                        message: 'Article added to collection',
-                                        notificationType: 'success',
-                                    })
-                                ),
                                 of(
                                     openAddArticleToCollectionConfirmationModalAction(
                                         {

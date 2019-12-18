@@ -1065,59 +1065,92 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                           </span>
                                         </StyledComponent>
                                       </Typography__component>
-                                      <Typography__styledComponent
-                                        color="white"
-                                      >
+                                      <Header__TitleContainer>
                                         <StyledComponent
-                                          color="white"
                                           forwardedComponent={
                                             Object {
                                               "$$typeof": Symbol(react.forward_ref),
                                               "attrs": Array [],
                                               "componentStyle": ComponentStyle {
-                                                "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                "componentId": "Header__TitleContainer-sc-647imh-8",
                                                 "isStatic": false,
-                                                "lastClassName": "iLJkHN",
+                                                "lastClassName": "gqhOTv",
                                                 "rules": Array [
-                                                  "color:",
-                                                  [Function],
-                                                  ";margin:0px;font-weight:",
-                                                  "500",
-                                                  ";",
-                                                  ";font-size:",
-                                                  "28",
-                                                  "px;text-transform:",
-                                                  [Function],
-                                                  ";text-align:",
-                                                  [Function],
-                                                  ";:hover{color:",
-                                                  [Function],
-                                                  ";cursor:",
-                                                  [Function],
-                                                  ";}",
+                                                  "display:flex;flex-direction:row;",
                                                 ],
                                               },
-                                              "displayName": "Typography__styledComponent",
+                                              "displayName": "Header__TitleContainer",
                                               "foldedComponentIds": Array [],
                                               "render": [Function],
-                                              "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
-                                              "target": "span",
+                                              "styledComponentId": "Header__TitleContainer-sc-647imh-8",
+                                              "target": "div",
                                               "toString": [Function],
-                                              "usesTheme": true,
+                                              "usesTheme": false,
                                               "warnTooManyClasses": [Function],
                                               "withComponent": [Function],
                                             }
                                           }
                                           forwardedRef={null}
                                         >
-                                          <span
-                                            className="Typography__styledComponent-sc-36xkf6-5 iLJkHN"
-                                            color="white"
+                                          <div
+                                            className="Header__TitleContainer-sc-647imh-8 gqhOTv"
                                           >
-                                            test title 2
-                                          </span>
+                                            <Typography__styledComponent
+                                              color="white"
+                                            >
+                                              <StyledComponent
+                                                color="white"
+                                                forwardedComponent={
+                                                  Object {
+                                                    "$$typeof": Symbol(react.forward_ref),
+                                                    "attrs": Array [],
+                                                    "componentStyle": ComponentStyle {
+                                                      "componentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                      "isStatic": false,
+                                                      "lastClassName": "iLJkHN",
+                                                      "rules": Array [
+                                                        "color:",
+                                                        [Function],
+                                                        ";margin:0px;font-weight:",
+                                                        "500",
+                                                        ";",
+                                                        ";font-size:",
+                                                        "28",
+                                                        "px;text-transform:",
+                                                        [Function],
+                                                        ";text-align:",
+                                                        [Function],
+                                                        ";:hover{color:",
+                                                        [Function],
+                                                        ";cursor:",
+                                                        [Function],
+                                                        ";}",
+                                                      ],
+                                                    },
+                                                    "displayName": "Typography__styledComponent",
+                                                    "foldedComponentIds": Array [],
+                                                    "render": [Function],
+                                                    "styledComponentId": "Typography__styledComponent-sc-36xkf6-5",
+                                                    "target": "span",
+                                                    "toString": [Function],
+                                                    "usesTheme": true,
+                                                    "warnTooManyClasses": [Function],
+                                                    "withComponent": [Function],
+                                                  }
+                                                }
+                                                forwardedRef={null}
+                                              >
+                                                <span
+                                                  className="Typography__styledComponent-sc-36xkf6-5 iLJkHN"
+                                                  color="white"
+                                                >
+                                                  test title 2
+                                                </span>
+                                              </StyledComponent>
+                                            </Typography__styledComponent>
+                                          </div>
                                         </StyledComponent>
-                                      </Typography__styledComponent>
+                                      </Header__TitleContainer>
                                       <DiffTagList
                                         newTags={
                                           Array [
@@ -1172,9 +1205,9 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                       "$$typeof": Symbol(react.forward_ref),
                                                       "attrs": Array [],
                                                       "componentStyle": ComponentStyle {
-                                                        "componentId": "Header__TagWrap-sc-647imh-8",
+                                                        "componentId": "Header__TagWrap-sc-647imh-9",
                                                         "isStatic": false,
-                                                        "lastClassName": "iEZHGJ",
+                                                        "lastClassName": "YODMj",
                                                         "rules": Array [
                                                           "display:flex;align-items:center;& > span{",
                                                           [Function],
@@ -1190,7 +1223,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                       "displayName": "Header__TagWrap",
                                                       "foldedComponentIds": Array [],
                                                       "render": [Function],
-                                                      "styledComponentId": "Header__TagWrap-sc-647imh-8",
+                                                      "styledComponentId": "Header__TagWrap-sc-647imh-9",
                                                       "target": "span",
                                                       "toString": [Function],
                                                       "usesTheme": false,
@@ -1202,7 +1235,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                   type="unchanged"
                                                 >
                                                   <span
-                                                    className="Header__TagWrap-sc-647imh-8 iEZHGJ"
+                                                    className="Header__TagWrap-sc-647imh-9 YODMj"
                                                     type="unchanged"
                                                   >
                                                     <Typography__component
@@ -1263,9 +1296,9 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                       "$$typeof": Symbol(react.forward_ref),
                                                       "attrs": Array [],
                                                       "componentStyle": ComponentStyle {
-                                                        "componentId": "Header__TagWrap-sc-647imh-8",
+                                                        "componentId": "Header__TagWrap-sc-647imh-9",
                                                         "isStatic": false,
-                                                        "lastClassName": "iEZHGJ",
+                                                        "lastClassName": "YODMj",
                                                         "rules": Array [
                                                           "display:flex;align-items:center;& > span{",
                                                           [Function],
@@ -1281,7 +1314,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                       "displayName": "Header__TagWrap",
                                                       "foldedComponentIds": Array [],
                                                       "render": [Function],
-                                                      "styledComponentId": "Header__TagWrap-sc-647imh-8",
+                                                      "styledComponentId": "Header__TagWrap-sc-647imh-9",
                                                       "target": "span",
                                                       "toString": [Function],
                                                       "usesTheme": false,
@@ -1293,7 +1326,7 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                                                   type="unchanged"
                                                 >
                                                   <span
-                                                    className="Header__TagWrap-sc-647imh-8 iEZHGJ"
+                                                    className="Header__TagWrap-sc-647imh-9 YODMj"
                                                     type="unchanged"
                                                   >
                                                     <Typography__component

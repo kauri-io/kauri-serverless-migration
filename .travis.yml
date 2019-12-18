@@ -4,9 +4,40 @@ node_js:
 
 cache: yarn
 
-install:
-  - yarn global add jest now
-  - cd app && yarn
+before_install:
+- export COMMITTER_EMAIL="$(git log -1 $TRAVIS_COMMIT --pretty="%cE")"
+- export AUTHOR_NAME="$(git log -1 $TRAVIS_COMMIT --pretty="%aN")"
+- yarn global add jest now
+- cd app && yarn
+- cd ..
 
-script:
-  - yarn test
+jobs:
+  include:
+  - stage: tests
+    install:
+      - cd app
+    script:
+      - yarn test
+  - stage: deploy-dev
+    if: "(NOT env(AUTHOR_NAME) =~ ^Travis AND (NOT type IN (pull_request)) AND (branch= development))"
+    script:
+      - DEPLOYMENT=$(now --scope kauri --token=$NOW_TOKEN); exitVal=$?
+      - if [ "$exitVal" -eq 0 ]; then now alias --scope kauri --token=$NOW_TOKEN $DEPLOYMENT dev.kauri.io; fi
+  - stage: deploy-qa
+    if: "(NOT env(AUTHOR_NAME) =~ ^Travis AND (NOT type IN (pull_request)) AND (branch= qa))"
+    script:
+      - DEPLOYMENT=$(now -A qa.now.json --scope kauri --token=$NOW_TOKEN); exitVal=$?
+      - if [ "$exitVal" -eq 0 ]; then now alias --scope kauri --token=$NOW_TOKEN $DEPLOYMENT qa.kauri.io; fi
+  - stage: deploy-dev2
+    if: "(NOT env(AUTHOR_NAME) =~ ^Travis AND (NOT type IN (pull_request)) AND (branch= dev2))"
+    script:
+      - DEPLOYMENT=$(now -A dev2.now.json --scope kauri --token=$NOW_TOKEN); exitVal=$?
+      - if [ "$exitVal" -eq 0 ]; then now alias --scope kauri --token=$NOW_TOKEN $DEPLOYMENT dev2.kauri.io; fi
+  - stage: deploy-prod
+    if: "(NOT env(AUTHOR_NAME) =~ ^Travis AND (NOT type IN (pull_request)) AND (branch= master))"
+    script:
+      - DEPLOYMENT=$(now -A prod.now.json --scope kauri --token=$NOW_TOKEN); exitVal=$?
+      - if [ "$exitVal" -eq 0 ]; then
+        now alias --scope kauri --token=$NOW_TOKEN $DEPLOYMENT kauri.io;
+        now alias --scope kauri --token=$NOW_TOKEN $DEPLOYMENT www.kauri.io;
+        fi

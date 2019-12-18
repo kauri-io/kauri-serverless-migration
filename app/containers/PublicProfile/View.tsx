@@ -113,6 +113,14 @@ class PublicProfile extends Component<IProps, IState> {
             )(UserQuery)
         }
 
+        const getNumberOfArticles = () => {
+            console.log(JSON.stringify(UserQuery.getUserByUsername))
+            return (
+                UserQuery.getUserByUsername.articles.totalElements +
+                UserQuery.getUserByUsername.links.totalElements
+            )
+        }
+
         return (
             <React.Fragment>
                 {!isHeaderLoaded ? (
@@ -131,9 +139,7 @@ class PublicProfile extends Component<IProps, IState> {
                     />
                 ) : (
                     <Header
-                        articles={
-                            UserQuery.getUserByUsername.articles.totalElements
-                        }
+                        articles={getNumberOfArticles()}
                         collections={
                             UserQuery.getUserByUsername.collections
                                 .totalElements
@@ -181,7 +187,7 @@ class PublicProfile extends Component<IProps, IState> {
                             onChange={(_e, tab) => this.setState({ tab })}
                         >
                             <Tab
-                                label={`Articles (${UserQuery.getUserByUsername.articles.totalElements})`}
+                                label={`Articles (${getNumberOfArticles()})`}
                             />
                             <Tab
                                 label={`Collections (${UserQuery.getUserByUsername.collections.totalElements})`}

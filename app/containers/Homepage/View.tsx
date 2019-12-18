@@ -16,7 +16,7 @@ import NewsletterBanner from '../../components/NewsletterBanner'
 import CuratedCategories from '../../components/CuratedCategories'
 import { IShowNotificationPayload } from '../../lib/Epics/ShowNotificationEpic'
 import Head from 'next/head'
-import { Hidden, Theme } from '@material-ui/core'
+import { Theme } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 import { openModalAction } from '../../components/Modal/Module'
@@ -59,6 +59,7 @@ export const HomePageComponent = (props: {
         sidebar: {
             maxWidth: 392,
             width: '100%',
+            [theme.breakpoints.down('md')]: { display: 'none' },
         },
     }))
     const classes = useStyles()
@@ -121,76 +122,70 @@ export const HomePageComponent = (props: {
                             })}
 
                             {hasSidebar && (
-                                <Hidden smDown={true}>
-                                    <div className={classes.sidebar}>
-                                        {row.sidebar.map(sidebar => {
-                                            switch (sidebar.__typename) {
-                                                case 'Actions': {
-                                                    return (
-                                                        <PublishYourOwnContentCTA
-                                                            isLoggedIn={
-                                                                props.isLoggedIn
-                                                            }
-                                                            key={
-                                                                sidebar.__typename
-                                                            }
-                                                            content={
-                                                                sidebar.content
-                                                            }
-                                                        />
-                                                    )
-                                                }
-                                                case 'TopContributors': {
-                                                    if (
-                                                        sidebar.content &&
-                                                        sidebar.__typename ===
-                                                            'TopContributors'
-                                                    ) {
-                                                        if (sidebar.content) {
-                                                            const contributors = sidebar.content.map(
-                                                                contributor =>
-                                                                    (contributor &&
-                                                                        contributor.user && {
-                                                                            avatar:
-                                                                                contributor
-                                                                                    .user
-                                                                                    .avatar,
-                                                                            userId: String(
-                                                                                contributor
-                                                                                    .user
-                                                                                    .id
-                                                                            ),
-                                                                            username:
-                                                                                contributor
-                                                                                    .user
-                                                                                    .username,
-                                                                        }) || {
-                                                                        avatar:
-                                                                            '',
-                                                                        userId:
-                                                                            '',
-                                                                        username:
-                                                                            '',
-                                                                    }
-                                                            )
-
-                                                            return (
-                                                                <TopContributors
-                                                                    key={
-                                                                        'top contributors'
-                                                                    }
-                                                                    contributors={
-                                                                        contributors
-                                                                    }
-                                                                />
-                                                            )
+                                <div className={classes.sidebar}>
+                                    {row.sidebar.map(sidebar => {
+                                        switch (sidebar.__typename) {
+                                            case 'Actions': {
+                                                return (
+                                                    <PublishYourOwnContentCTA
+                                                        isLoggedIn={
+                                                            props.isLoggedIn
                                                         }
+                                                        key={sidebar.__typename}
+                                                        content={
+                                                            sidebar.content
+                                                        }
+                                                    />
+                                                )
+                                            }
+                                            case 'TopContributors': {
+                                                if (
+                                                    sidebar.content &&
+                                                    sidebar.__typename ===
+                                                        'TopContributors'
+                                                ) {
+                                                    if (sidebar.content) {
+                                                        const contributors = sidebar.content.map(
+                                                            contributor =>
+                                                                (contributor &&
+                                                                    contributor.user && {
+                                                                        avatar:
+                                                                            contributor
+                                                                                .user
+                                                                                .avatar,
+                                                                        userId: String(
+                                                                            contributor
+                                                                                .user
+                                                                                .id
+                                                                        ),
+                                                                        username:
+                                                                            contributor
+                                                                                .user
+                                                                                .username,
+                                                                    }) || {
+                                                                    avatar: '',
+                                                                    userId: '',
+                                                                    username:
+                                                                        '',
+                                                                }
+                                                        )
+
+                                                        return (
+                                                            <TopContributors
+                                                                key={
+                                                                    'top contributors'
+                                                                }
+                                                                contributors={
+                                                                    contributors
+                                                                }
+                                                            />
+                                                        )
                                                     }
                                                 }
                                             }
-                                        })}
-                                    </div>
-                                </Hidden>
+                                        }
+                                    })}
+                                </div>
                             )}
                         </div>
                     </div>
