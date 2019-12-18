@@ -60,15 +60,15 @@ export default (ComposedComponent: any) =>
         apollo: ApolloClient<NormalizedCacheObject>
         static async getInitialProps(context) {
             const url = { query: context.query, pathname: context.pathname }
+
             const hostName =
                 (context.req && context.req.headers.host) ||
-                process.env.monolithExternalApi
+                (window.location.hostname + ':' + window.location.port)
             const ua =
                 context && context.req
                     ? context.req.headers['user-agent']
                     : navigator.userAgent
 
-            // console.log(hostName)
             let stateApollo = {
                 apollo: {
                     data: {},
