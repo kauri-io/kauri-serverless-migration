@@ -138,7 +138,9 @@ const ArticleCard = ({
                             </Grid>
                             <Grid className={classes.row}>
                                 <Details
-                                    user={author}
+                                    user={contributors
+                                        ? contributors[0]
+                                        : author}
                                     minutes={minutes}
                                     date={datePublished}
                                 />
