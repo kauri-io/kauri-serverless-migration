@@ -34,6 +34,7 @@ interface IProps {
     checkpointArticlesAction: () => void
     isLoggedIn: boolean
     routeChangeAction: typeof routeChangeAction
+    url?: string
 }
 
 class CTA extends Component<IProps, IState> {
@@ -68,7 +69,11 @@ class CTA extends Component<IProps, IState> {
                 onClick={() => {
                     return this.props.isLoggedIn && this.state.activated
                         ? this.props.checkpointArticlesAction()
-                        : this.props.routeChangeAction(`/login`)
+                        : this.props.routeChangeAction(
+                              `/login${
+                                  this.props.url ? `?r=${this.props.url}` : ''
+                              }`
+                          )
                 }}
             >
                 <CheckpointArticlesIcon />

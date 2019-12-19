@@ -11,8 +11,8 @@ const mapStateToProps = (state: IReduxState) => ({
 
 export default connect(
     mapStateToProps,
-    { 
+    {
         checkpointArticlesAction,
-        routeChangeAction 
+        routeChangeAction,
     }
 )(View)

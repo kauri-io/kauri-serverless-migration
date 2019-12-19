@@ -37,6 +37,7 @@ export interface IProps {
     isOwner: boolean
     isLoggedIn: boolean
     routeChangeAction: typeof routeChangeAction
+    url?: string
 }
 
 const CheckpointArticles: React.FC<IProps> = ({
@@ -46,7 +47,8 @@ const CheckpointArticles: React.FC<IProps> = ({
     checkpointArticlesAction,
     pageType = 'public-profile',
     isLoggedIn,
-    routeChangeAction
+    routeChangeAction,
+    url,
 }) => {
     if (pageType === 'public-profile') {
         return (
@@ -75,6 +77,7 @@ const CheckpointArticles: React.FC<IProps> = ({
                     pageType={pageType}
                     isLoggedIn={isLoggedIn}
                     routeChangeAction={routeChangeAction}
+                    url={url}
                 />
             )
         } else {
