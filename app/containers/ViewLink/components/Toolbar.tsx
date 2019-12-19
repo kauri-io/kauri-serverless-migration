@@ -13,12 +13,10 @@ import PencilIcon from '@material-ui/icons/Edit'
 import { getArticleURL } from '../../../lib/getURLs'
 import { BodyCard } from '../../../components/Typography'
 import AlertView from '../../../components/Modal/AlertView'
-import { Article_comments } from '../../../queries/Fragments/__generated__/Article'
-// import { useEffect } from 'react'
 
 interface IProps {
     classes: any
-    comments?: Article_comments
+    comments?: number
     openModalAction: (children?: any) => void
     closeModalAction?: () => void
     isBookmarked
@@ -35,6 +33,7 @@ interface IProps {
     id: string
     isAuthor: boolean | null
     version: number
+    context?: 'draft' | 'submitted-update'
 }
 
 const Toolbar = ({
@@ -50,6 +49,7 @@ const Toolbar = ({
     id,
     isAuthor,
     version,
+    context,
 }: IProps) => {
     const executeOrLoginRedirect = action => {
         return isLoggedIn && action
@@ -58,21 +58,35 @@ const Toolbar = ({
     }
 
     const isDraft = () => {
-        return deleteDraftArticleAction
+        return context === 'draft' || deleteDraftArticleAction
+    }
+
+    const isSubmittedUpdate = () => {
+        return context === 'submitted-update'
+    }
+
+    const getEditTitle = () => {
+        if (isAuthor && isDraft()) {
+            return 'Edit Draft'
+        }
+
+        if (isAuthor && isSubmittedUpdate()) {
+            return 'Edit Update'
+        }
+
+        return isAuthor ? 'Edit Article' : 'Suggest Edit'
     }
 
     return (
         <Grid className={classes.toolbar}>
-            {!isDraft() && (
+            {!isDraft() && !isSubmittedUpdate() && (
                 <>
                     <a href="#comments">
                         <Grid className={classes.tool} item={true}>
                             <CommentIcon />
                             <Typography variant="subtitle2">
                                 {comments} Comment
-                                {comments && comments.totalElements !== 1
-                                    ? 's'
-                                    : ''}
+                                {comments === 1 ? '' : 's'}
                             </Typography>
                         </Grid>
                     </a>
@@ -126,65 +140,43 @@ const Toolbar = ({
                 </>
             )}
             {isDraft() && isAuthor && (
-                <>
-                    <Grid
-                        className={classes.tool}
-                        onClick={() =>
-                            openModalAction({
-                                children: (
-                                    <AlertView
-                                        closeModalAction={() =>
-                                            closeModalAction &&
-                                            closeModalAction()
-                                        }
-                                        confirmButtonAction={() => {
-                                            deleteDraftArticleAction &&
-                                                deleteDraftArticleAction({
-                                                    id,
-                                                    version,
-                                                })
-                                            closeModalAction &&
-                                                closeModalAction()
-                                        }}
-                                        content={
-                                            <div>
-                                                <BodyCard>
-                                                    You won't be able to
-                                                    retrieve the draft article
-                                                    after deleting.
-                                                </BodyCard>
-                                            </div>
-                                        }
-                                        title={'Are you sure?'}
-                                    />
-                                ),
-                            })
-                        }
-                    >
-                        <DeleteIcon />
-                        <Typography variant="subtitle2">
-                            Delete Draft
-                        </Typography>
-                    </Grid>
-                    <Grid
-                        className={classes.tool}
-                        onClick={() =>
-                            executeOrLoginRedirect(() =>
-                                routeChangeAction(
-                                    getArticleURL(
-                                        { id, title: '', version },
-                                        'update'
-                                    ).as
-                                )
-                            )
-                        }
-                    >
-                        <PencilIcon />
-                        <Typography variant="subtitle2">Edit Draft</Typography>
-                    </Grid>
-                </>
+                <Grid
+                    className={classes.tool}
+                    onClick={() =>
+                        openModalAction({
+                            children: (
+                                <AlertView
+                                    closeModalAction={() =>
+                                        closeModalAction && closeModalAction()
+                                    }
+                                    confirmButtonAction={() => {
+                                        deleteDraftArticleAction &&
+                                            deleteDraftArticleAction({
+                                                id,
+                                                version,
+                                            })
+                                        closeModalAction && closeModalAction()
+                                    }}
+                                    content={
+                                        <div>
+                                            <BodyCard>
+                                                You won't be able to retrieve
+                                                the draft article after
+                                                deleting.
+                                            </BodyCard>
+                                        </div>
+                                    }
+                                    title={'Are you sure?'}
+                                />
+                            ),
+                        })
+                    }
+                >
+                    <DeleteIcon />
+                    <Typography variant="subtitle2">Delete Draft</Typography>
+                </Grid>
             )}
-            {type === 'ARTICLE' && !isDraft() && (
+            {type === 'ARTICLE' && (
                 <Grid
                     className={classes.tool}
                     onClick={() =>
@@ -200,7 +192,7 @@ const Toolbar = ({
                 >
                     <PencilIcon />
                     <Typography variant="subtitle2">
-                        {isAuthor ? 'Edit Article' : 'Suggest Edit'}
+                        {getEditTitle()}
                     </Typography>
                 </Grid>
             )}

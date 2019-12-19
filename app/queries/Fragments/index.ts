@@ -112,6 +112,7 @@ export const Article = gql`
             }
             totalPages
             totalElements
+            isLast
         }
         resourceIdentifier {
             id
@@ -180,6 +181,7 @@ export const Link = gql`
             }
             totalPages
             totalElements
+            isLast
         }
         authorSocial
         tags
@@ -295,32 +297,6 @@ export const Community = gql`
         pendingId {
             id
             type
-        }
-        approved {
-            ... on ArticleDTO {
-                ...Article
-            }
-
-            ... on ExternalLinkDTO {
-                ...Link
-            }
-
-            ... on CollectionDTO {
-                ...Collection
-            }
-        }
-        pending {
-            ... on ArticleDTO {
-                ...Article
-            }
-
-            ... on ExternalLinkDTO {
-                ...Link
-            }
-
-            ... on CollectionDTO {
-                ...Collection
-            }
         }
     }
     ${Article}

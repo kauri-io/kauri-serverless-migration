@@ -218,6 +218,10 @@ export interface Link_comments {
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Returns true if this is the last page.
+   */
+  isLast: boolean;
 }
 
 export interface Link_voteResult {

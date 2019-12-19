@@ -33,6 +33,18 @@
       "dest": "/app/static/development/robots.txt"
     },
     {
+      "src": "/sitemap",
+      "dest": "https://api.dev.kauri.io/sitemap"
+    },
+    {
+      "src": "/feed",
+      "dest": "https://api.dev.kauri.io/feed"
+    },
+    {
+      "src": "/feed/(.*)/(.*)",
+      "dest": "https://api.dev.kauri.io/feed/$1/$2"
+    },
+    {
       "src": "/favicon.ico",
       "dest": "/app/static/favicon/favicon.ico"
     },
@@ -111,6 +123,10 @@
     {
       "src": "draft/(.*)/(.*)",
       "dest": "/app/draft?id=$1&version=$2"
+    },
+    {
+      "src": "submitted-update/(.*)/(.*)",
+      "dest": "/app/submitted-update?id=$1&version=$2"
     },
     {
       "src": "/activate/(.*)",

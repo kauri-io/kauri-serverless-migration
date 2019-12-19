@@ -24,7 +24,7 @@ const withSchema = ({
         "genre": "development tutorial",
         "headline": "${title}",
         "image": "${(attributes && attributes.background) ||
-            `${hostName}/static/images/logo.png`}",
+            `${hostName}/static/images/kauri_ioLogo.png`}",
         "keywords": "${tags}",
         "mainEntityOfPage": {
             "@id": "${id}",
@@ -34,7 +34,7 @@ const withSchema = ({
             "@type": "Organization",
             "logo": {
                 "@type": "ImageObject",
-                "url": "${hostName}/static/images/logo.png"
+                "url": "${hostName}/static/images/kauri_ioLogo.png'"
             },
             "name": "Kauri"
         },
@@ -64,7 +64,7 @@ const withSchema = ({
                     (attributes &&
                         attributes.background &&
                         attributes.background) ||
-                    'https://kauri.io/static/images/logo.png'
+                    `https://${hostName}/static/images/kauri_ioLogo.png`
                 }
             />
             <meta name="twitter:card" content="summary" />
@@ -78,7 +78,7 @@ const withSchema = ({
                     (attributes &&
                         attributes.background &&
                         attributes.background) ||
-                    'https://kauri.io/static/images/logo.png'
+                    `https://${hostName}/static/images/kauri_ioLogo.png`
                 }
             />
         </Head>

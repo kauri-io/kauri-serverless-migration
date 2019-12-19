@@ -16,6 +16,8 @@ const mockData = {
                                         'https://api.kauri.io:443/ipfs/QmQTsd7FhCLBQVJCYNP8a5Vf1G68AsxLPyDtWP3gToc7g4',
                                     link:
                                         '/collection/5cb55c871325f2000141df73/getting-started',
+                                    linkhref:
+                                        '/collection?5cb55c871325f2000141df73',
                                     __typename: 'StaticContentElementDTO',
                                 },
                                 {
@@ -26,6 +28,8 @@ const mockData = {
                                         'https://api.kauri.io:443/ipfs/QmZvzPDAnub5AVC3KZwoQMiRfBrT8qLtRDvnitbuKz7yhV',
                                     link:
                                         '/collection/5cab3a8c4e04590001eccfa2/open-finance-(defi)',
+                                    linkhref:
+                                        '/collection?5cab3a8c4e04590001eccfa2',
                                     __typename: 'StaticContentElementDTO',
                                 },
                                 {
@@ -36,6 +40,8 @@ const mockData = {
                                         'https://api.kauri.io:443/ipfs/QmWjyPLTDyyjUo5DAYU1WpqBVRNC72772pPoHfEktJvTBt',
                                     link:
                                         '/collection/5cb71c026b976600014a78ac/scaling',
+                                    linkhref:
+                                        '/collection?5cb71c026b976600014a78ac',
                                     __typename: 'StaticContentElementDTO',
                                 },
                                 {
@@ -46,6 +52,8 @@ const mockData = {
                                         'https://api.kauri.io:443/ipfs/QmbFww3miWhxYQgT79L3LCh2EFBibBaRxRDcygCH86HVzV',
                                     link:
                                         '/collection/5cb71d136b976600014a78ad/privacy',
+                                    linkhref:
+                                        '/collection?5cb71c026b976600014a78ac',
                                     __typename: 'StaticContentElementDTO',
                                 },
                             ],

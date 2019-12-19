@@ -8,7 +8,11 @@ import { IRouteChangeAction } from '../../../lib/Epics/RouteChangeEpic'
 import { Grid, Box } from '@material-ui/core'
 import { getBookmarks_getBookmarks } from '../../../queries/__generated__/getBookmarks'
 import CollectionCard from '../../../components/Card/CollectionCard'
-import { getCollectionURL, getArticleURL } from '../../../lib/getURLs'
+import {
+    getCollectionURL,
+    getArticleURL,
+    getLinkUrl,
+} from '../../../lib/getURLs'
 import EditBookmarkFolderWidget from '../EditBookmarkFolderWidget/View'
 import ArticleCard from '../../../components/Card/ArticleCard'
 import Loading from '../../../components/Loading'
@@ -105,9 +109,7 @@ export const ManageBookmarkBody = ({
                                         {' '}
                                         <LinkCard
                                             {...res.resource}
-                                            href={getCollectionURL(
-                                                res.resource
-                                            )}
+                                            href={getLinkUrl(res.resource)}
                                             isLoggedIn={isLoggedIn}
                                             routeChangeAction={
                                                 routeChangeAction

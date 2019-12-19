@@ -94,6 +94,7 @@ export const searchExternalLinks = gql`
             }
             totalPages
             totalElements
+            isLast
         }
     }
     ${Link}

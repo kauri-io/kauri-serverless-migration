@@ -21,7 +21,7 @@ import ChooseResourceModal from '../../ChooseResourceModal'
 import { ResourceIdentifierInput } from '../../../__generated__/globalTypes'
 import { globalSearchApprovedArticles } from '../../../queries/Article'
 import { IModalConfig } from '../../CreateCollectionForm/View'
-import { getCommunityArticleContent } from '../../../queries/Community'
+import { getCommunityContent } from '../../../queries/Community'
 import LinkCardFormView from '../../LinkCardFormView'
 
 const useStyles = makeStyles((_theme: Theme) => ({
@@ -276,7 +276,7 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
             title: 'Community content',
             showSearch: false,
             query: {
-                name: getCommunityArticleContent,
+                name: getCommunityContent,
                 key: 'getCommunityContent',
                 variables: {
                     id,
@@ -407,44 +407,48 @@ const HomepageContentField: React.FunctionComponent<IProps> = ({
                                         </Droppable>
                                     </DragDropContext>
 
-                                    <ChooseResourceModal
-                                        key={`choose-resource-modal-${index}`}
-                                        open={resourceModalOpened[index]}
-                                        handleClose={() =>
-                                            setResourceModalOpened({
-                                                ...resourceModalOpened,
-                                                [index]: false,
-                                            })
-                                        }
-                                        handleConfirm={(
-                                            selected: ResourceIdentifierInput[]
-                                        ) => {
-                                            arrayHelpers.form.setFieldValue(
-                                                `homepage[${index}].resourcesId`,
-                                                selected
-                                            )
-                                            setModalOptions({
-                                                ...modalOptions,
-                                                query: '',
-                                            })
-                                            setResourceModalOpened({
-                                                ...resourceModalOpened,
-                                                [index]: false,
-                                            })
-                                        }}
-                                        preSelected={path([
-                                            'homepage',
-                                            index,
-                                            'resourcesId',
-                                        ])(values)}
-                                        disabled={[]}
-                                        title={modalOptions.title}
-                                        queryDoc={modalOptions.query}
-                                        queryKey={modalOptions.queryKey}
-                                        queryVariables={modalOptions.variables}
-                                        pathToResource={['resource']}
-                                        showSearch={modalOptions.showSearch}
-                                    />
+                                    {resourceModalOpened[index] === true && (
+                                        <ChooseResourceModal
+                                            key={`choose-resource-modal-${index}`}
+                                            open={resourceModalOpened[index]}
+                                            handleClose={() =>
+                                                setResourceModalOpened({
+                                                    ...resourceModalOpened,
+                                                    [index]: false,
+                                                })
+                                            }
+                                            handleConfirm={(
+                                                selected: ResourceIdentifierInput[]
+                                            ) => {
+                                                arrayHelpers.form.setFieldValue(
+                                                    `homepage[${index}].resourcesId`,
+                                                    selected
+                                                )
+                                                setModalOptions({
+                                                    ...modalOptions,
+                                                    query: '',
+                                                })
+                                                setResourceModalOpened({
+                                                    ...resourceModalOpened,
+                                                    [index]: false,
+                                                })
+                                            }}
+                                            preSelected={path([
+                                                'homepage',
+                                                index,
+                                                'resourcesId',
+                                            ])(values)}
+                                            disabled={[]}
+                                            title={modalOptions.title}
+                                            queryDoc={modalOptions.query}
+                                            queryKey={modalOptions.queryKey}
+                                            queryVariables={
+                                                modalOptions.variables
+                                            }
+                                            pathToResource={['resource']}
+                                            showSearch={modalOptions.showSearch}
+                                        />
+                                    )}
 
                                     <SectionOptions
                                         currentSectionIndex={index}

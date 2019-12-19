@@ -25,6 +25,9 @@ const Renderer = ({ markdown }) => {
             padding: theme.spacing(0, 1),
             fontSize: 16,
             overflowX: 'auto',
+            '& .token.punctuation': {
+                color: theme.palette.common.black,
+            },
         },
         quote: {
             padding: theme.spacing(1),
@@ -38,6 +41,9 @@ const Renderer = ({ markdown }) => {
                 display: 'block',
                 background: theme.palette.common.black,
                 color: theme.palette.common.white,
+                '& .token.punctuation': {
+                    color: theme.palette.common.white,
+                },
             },
         },
         katex: {
@@ -68,6 +74,16 @@ const Renderer = ({ markdown }) => {
         h6: {
             fontWeight: 500,
             fontSize: 14,
+        },
+        link: {
+            overflowWrap: 'break-word',
+            wordWrap: 'break-word',
+            msWordBreak: 'break-all',
+            wordBreak: 'break-all',
+            msHyphens: 'auto',
+            MozHyphens: 'auto',
+            WebkitHyphens: 'auto',
+            hyphens: 'auto',
         },
     }))
 
@@ -109,7 +125,7 @@ const Renderer = ({ markdown }) => {
                 />
             )
         } else {
-            let html = props.children
+            let html
 
             //Non inline code blocks have a className set, so highlight in this case.
             if (props.className) {
@@ -117,6 +133,12 @@ const Renderer = ({ markdown }) => {
                     props.children,
                     Prism.languages.javascript,
                     'javascript'
+                )
+            } else {
+                html = Prism.highlight(
+                    props.children,
+                    Prism.languages.markup,
+                    'markup'
                 )
             }
 
@@ -135,7 +157,7 @@ const Renderer = ({ markdown }) => {
         if (props.href.indexOf('https://gist.github.com') !== -1) {
             return <Gist id={props.href.split('/')[4]} />
         } else {
-            return <Link {...props} />
+            return <Link {...props} target="_blank" rel="noopener" />
         }
     }
 
@@ -203,7 +225,12 @@ const Renderer = ({ markdown }) => {
                 },
             },
             p: { component: Typography, props: { paragraph: true } },
-            a: { component: LinkOrGist },
+            a: {
+                component: LinkOrGist,
+                props: {
+                    className: classes.link,
+                },
+            },
             li: {
                 component: ({ ...props }) => (
                     <li>

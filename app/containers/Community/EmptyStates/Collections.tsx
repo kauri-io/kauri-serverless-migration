@@ -8,6 +8,7 @@ const Container = styled.div`
     align-items: center;
     padding: ${props => props.theme.space[3]}px;
     height: 100%;
+    width: 100%;
     & > svg {
         margin-bottom: ${props => props.theme.space[2]}px;
     }

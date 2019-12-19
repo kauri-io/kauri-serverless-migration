@@ -31,9 +31,11 @@ const Collections = ({
 }: IProps) => {
     const useStyles = makeStyles((theme: Theme) => ({
         grid: {
+            paddingBottom: theme.spacing(2),
             paddingTop: theme.spacing(2),
             maxWidth: 870,
-            margin: 'auto',
+            marginLeft: 'auto',
+            marginRight: 'auto',
             width: '100%',
         },
     }))

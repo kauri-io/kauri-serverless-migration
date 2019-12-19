@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import { compose, graphql } from 'react-apollo'
 import withApolloError from '../../../lib/with-apollo-error'
 import { IReduxState } from '../../../lib/Module'
-import { getCommunityContentQuery } from '../../../queries/Community'
+import { getCommunityContent } from '../../../queries/Community'
 import CloseIcon from '@material-ui/icons/Close'
 import {
     Dialog,
@@ -181,7 +181,7 @@ export default compose(
         mapStateToProps,
         {}
     ),
-    graphql(getCommunityContentQuery, {
+    graphql(getCommunityContent, {
         name: 'searchCommunityPublishedCollections',
         options: ({ id }: { id: string }) => ({
             variables: {
