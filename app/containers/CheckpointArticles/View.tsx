@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import CTA, { CheckpointArticlesIcon } from './CTA'
 import { searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO } from '../../queries/__generated__/searchResultsAutocomplete'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 
 export const AllArticlesOnMainnet = ({
     text = 'All Articles On-chain',
@@ -34,6 +35,8 @@ export interface IProps {
     checkpointArticlesAction: () => void
     pageType: 'public-profile' | 'approved-article'
     isOwner: boolean
+    isLoggedIn: boolean
+    routeChangeAction: typeof routeChangeAction
 }
 
 const CheckpointArticles: React.FC<IProps> = ({
@@ -42,6 +45,8 @@ const CheckpointArticles: React.FC<IProps> = ({
     articleCheckpointed,
     checkpointArticlesAction,
     pageType = 'public-profile',
+    isLoggedIn,
+    routeChangeAction
 }) => {
     if (pageType === 'public-profile') {
         return (
@@ -52,6 +57,8 @@ const CheckpointArticles: React.FC<IProps> = ({
                         <CTA
                             checkpointArticlesAction={checkpointArticlesAction}
                             pageType={pageType}
+                            isLoggedIn={isLoggedIn}
+                            routeChangeAction={routeChangeAction}
                         />
                     )
                 ) : (
@@ -66,6 +73,8 @@ const CheckpointArticles: React.FC<IProps> = ({
                 <CTA
                     checkpointArticlesAction={checkpointArticlesAction}
                     pageType={pageType}
+                    isLoggedIn={isLoggedIn}
+                    routeChangeAction={routeChangeAction}
                 />
             )
         } else {
