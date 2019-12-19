@@ -59,8 +59,9 @@ const Editor = ({
             flexDirection: 'column',
             maxWidth: 1272,
             width: '100%',
-            margin: 'auto',
+            margin: '0 auto',
             minHeight: minHeight ? minHeight : 400,
+            flexGrow: 1,
         },
         editor: editorStyle(theme),
         editorNoFocusOutline: {
@@ -72,6 +73,8 @@ const Editor = ({
         root: {
             width: '100%',
             background: theme.palette.common.white,
+            flexGrow: 1,
+            display: 'flex',
         },
     }))
     const classes = useStyles()

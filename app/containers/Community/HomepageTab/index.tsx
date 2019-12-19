@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { getCommunity_getCommunity_homepage } from '../../queries/__generated__/getCommunity'
-import CommunityHomepageEmptyState from './EmptyStates/Homepage'
-import { routeChangeAction as routeChange } from '../../lib/Epics/RouteChangeEpic'
-import CollectionSection from '../Collection/CollectionSection'
-import { openModalAction } from '../../components/Modal/Module'
+import { getCommunity_getCommunity_homepage } from '../../../queries/__generated__/getCommunity'
+import CommunityHomepageEmptyState from '../EmptyStates/Homepage'
+import { routeChangeAction as routeChange } from '../../../lib/Epics/RouteChangeEpic'
+import CollectionSection from '../../Collection/CollectionSection'
+import { openModalAction } from '../../../components/Modal/Module'
 
 const ContentContainer = styled.div`
     display: flex;

@@ -96,6 +96,7 @@ export const generateArticle = (mod: number) => ({
         content: [],
         totalPages: 0,
         totalElements: 0,
+        isLast: true,
         __typename: 'ResponsePage_CommentDTO' as Article_comments['__typename'],
     },
     updateComment: `test update comment${mod}`,

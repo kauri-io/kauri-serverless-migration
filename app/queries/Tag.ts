@@ -5,6 +5,7 @@ export const searchTags = gql`
         searchTags(page: $page, size: $size, query: $query) {
             totalElements
             totalPages
+            isLast
             content {
                 tag
                 count

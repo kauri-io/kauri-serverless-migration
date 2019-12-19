@@ -148,8 +148,8 @@ export const emailSubscribeEpic: Epic<
                 ? of(
                       showNotificationAction({
                           description:
-                              'Please check your email inbox and confirm email newsletter subscription!',
-                          message: 'Confirm your email newsletter subscription',
+                              'Check your inbox to confirm your newsletter subscription.',
+                          message: 'Confirm newsletter subscription',
                           notificationType: 'success',
                       })
                   )

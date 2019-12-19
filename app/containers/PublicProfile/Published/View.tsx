@@ -40,18 +40,26 @@ const Articles: React.FC<IArticlesProps> = ({
         PublishedQuery.searchAutocomplete.content
     const useStyles = makeStyles((theme: Theme) => ({
         grid: {
+            paddingBottom: theme.spacing(2),
             paddingTop: theme.spacing(2),
             maxWidth: 870,
-            margin: 'auto',
+            marginLeft: 'auto',
+            marginRight: 'auto',
             width: '100%',
         },
     }))
     const classes = useStyles()
 
-    const articles = results.filter(
-        i =>
-            i && i.resourceIdentifier && i.resourceIdentifier.type === 'ARTICLE'
-    ) as (searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO | null)[]
+    const articles = results
+        .filter(
+            i =>
+                i &&
+                i.resourceIdentifier &&
+                i.resourceIdentifier.type === 'ARTICLE'
+        )
+        .map(
+            resource => resource && resource.resource
+        ) as (searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO | null)[]
 
     if (results) {
         return results.length > 0 ? (

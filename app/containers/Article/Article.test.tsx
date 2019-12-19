@@ -31,6 +31,7 @@ describe('containers/Article', () => {
                 searchMoreLikeThis: {
                     totalElements: 2,
                     totalPages: 1,
+                    isLast: true,
                     totalElementsBreakdown: {},
                     content: [
                         {

@@ -1,7 +1,7 @@
 import View from './View'
 import { connect } from 'react-redux'
 import { graphql, compose, withApollo } from 'react-apollo'
-import { getCommunityAndPendingArticles } from '../../queries/Community'
+import { getCommunity } from '../../queries/Community'
 import withLoading from '../../lib/with-loading'
 import {
     openModalAction,
@@ -57,7 +57,7 @@ export default compose(
             changeOwnerExtenalLinkAction,
         }
     ),
-    graphql(getCommunityAndPendingArticles, {
+    graphql(getCommunity, {
         options: ({ communityId }: { communityId: string }) => ({
             variables: {
                 id: communityId,
