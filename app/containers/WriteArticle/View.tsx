@@ -413,6 +413,7 @@ const ArticleEditor = props => {
                         tags: tags || articleData.tags,
                         text,
                         version,
+                        destination,
                     })
                 } else {
                     return createErrorNotificationAction(
@@ -439,11 +440,17 @@ const ArticleEditor = props => {
             data,
         } = props
 
+        const version = Number(path(['getArticle', 'version'])(data))
+        const status = data && data.getArticle && data.getArticle.status
+
         // Updating article from a community I am in
-        if (Number(path(['getArticle', 'version'])(data)) >= 1) {
+        if (
+            (status === 'DRAFT' && version > 1) ||
+            (status !== 'DRAFT' && version >= 1)
+        ) {
             return handleSubmit('submit/update')(null)
         }
-        // Submitting fresh article and I potentially want to choose a community?
+        // Submitting fresh article or submitting v1 article draft and I potentially want to choose a community?
         else if (communities && communities.length > 0) {
             return openModalAction({
                 children: (

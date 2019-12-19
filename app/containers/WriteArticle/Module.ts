@@ -93,6 +93,7 @@ export interface IEditArticlePayload {
     tags: string[]
     attributes?: IAttributesPayload
     selfPublish?: boolean
+    destination?: IOption
 }
 
 export interface ISubmitArticleAction {
@@ -400,6 +401,7 @@ export const editArticleEpic: Epic<
                     tags,
                     attributes,
                     selfPublish,
+                    destination,
                 },
             }) =>
                 from(
@@ -448,7 +450,15 @@ export const editArticleEpic: Epic<
                                       contributor: getArticle.authorId,
                                       dateCreated: getArticle.dateCreated,
                                       id: getArticle.id,
-                                      owner: getArticle.owner,
+                                      owner:
+                                          destination &&
+                                          destination.__typename ===
+                                              'CommunityDTO'
+                                              ? {
+                                                    type: 'COMMUNITY',
+                                                    id: destination.id,
+                                                }
+                                              : (getArticle as any).owner,
                                       version: getArticle.version,
                                   })
                               )
