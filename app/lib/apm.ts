@@ -2,6 +2,7 @@ import { init as initApm } from '@elastic/apm-rum'
 import config from '../config'
 
 const apm = initApm({
+    enabled: config.enableAPM,
     // Set required service name (allowed characters: a-z, A-Z, 0-9, -, _, and space)
     serviceName: 'kauri-serverless',
 

@@ -19,4 +19,5 @@ export default {
     cloudImageId: 'asdgvdoyen',
     useCloudImage: false,
     debug: true,
+    enableAPM: true,
 }
