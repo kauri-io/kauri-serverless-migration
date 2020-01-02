@@ -576,9 +576,12 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                             return (
                                                 routeChangeAction &&
                                                 routeChangeAction(
-                                                    `/login?r=${getCommunityURL(
-                                                        { id, name }
-                                                    ).as}`
+                                                    `/login?r=${
+                                                        getCommunityURL({
+                                                            id,
+                                                            name,
+                                                        }).as
+                                                    }`
                                                 )
                                             )
                                         }
