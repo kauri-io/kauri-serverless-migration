@@ -1625,8 +1625,14 @@ export interface Community_members_content_user {
 
 export interface Community_members_content {
   __typename: "CommunityMemberDTO";
-  id: string | null;
-  role: CommunityPermissionInput | null;
+  /**
+   * Community Member ID
+   */
+  id: string;
+  /**
+   * Community Member Role
+   */
+  role: CommunityPermissionInput;
   /**
    * Community member (full profile)
    */
@@ -1634,11 +1640,15 @@ export interface Community_members_content {
 }
 
 export interface Community_members {
-  __typename: "ResponsePage_CommunityMemberDTO";
+  __typename: "ResponseBreakdownPage_CommunityMemberDTO";
   /**
    * Total amount of elements.
    */
   totalElements: any;
+  /**
+   * Total amount of elements per type.
+   */
+  totalElementsBreakdown: any | null;
   /**
    * Returns the page content.
    */

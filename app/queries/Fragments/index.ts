@@ -282,7 +282,7 @@ export const Community = gql`
                 }
             }
         }
-        members(size: 10, sort: 'role', dir: DESC) {
+        members(size: 10, sort: "role", dir: ASC) {
             totalElements
             totalElementsBreakdown
             content {

@@ -1423,12 +1423,18 @@ export interface ResourceFragment_CommunityDTO_creator {
 
 export interface ResourceFragment_CommunityDTO_members_content {
   __typename: "CommunityMemberDTO";
-  id: string | null;
-  role: CommunityPermissionInput | null;
+  /**
+   * Community Member ID
+   */
+  id: string;
+  /**
+   * Community Member Role
+   */
+  role: CommunityPermissionInput;
 }
 
 export interface ResourceFragment_CommunityDTO_members {
-  __typename: "ResponsePage_CommunityMemberDTO";
+  __typename: "ResponseBreakdownPage_CommunityMemberDTO";
   /**
    * Total amount of elements.
    */

@@ -1,8 +1,8 @@
 import testEpic from '../../lib/test-epic'
 import {
-    removeMemberEpic,
-    removeMemberAction,
-    memberRemovedAction,
+    removeGrantedMemberEpic,
+    removeGrantedMemberAction,
+    grantedMemberRemovedAction,
 } from './Module'
 import { showNotificationAction } from '../../lib/Epics/ShowNotificationEpic'
 import { closeModalAction } from '../../components/Modal/Module'
@@ -65,7 +65,7 @@ describe('removeMemberEpic', () => {
 
         const communityInvitationId = 'Community ID'
 
-        const sourceAction = (removeMemberAction as any)({
+        const sourceAction = (removeGrantedMemberAction as any)({
             id,
             invitationId: communityInvitationId,
         })
@@ -77,11 +77,11 @@ describe('removeMemberEpic', () => {
                 message: 'Member removed',
                 notificationType: 'success',
             }),
-            memberRemovedAction(),
+            grantedMemberRemovedAction(),
         ]
 
         const resultingActions = await testEpic(
-            removeMemberEpic,
+            removeGrantedMemberEpic,
             sourceAction,
             {},
             {

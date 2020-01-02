@@ -4,16 +4,19 @@ import InviteMembersPanel from './InviteMembersPanel'
 import FormInviteMembersPanel, { IInvitation } from './FormInviteMembersPanel'
 import styled from 'styled-components'
 import {
-    changeMemberRoleAction as changeMemberRole,
+    changeGrantedMemberRoleAction as changeMemberRole,
     resendInvitationAction as resendInvitation,
     sendCommunityInvitationAction as sendCommunityInvitation,
+    removeMemberAction,
+    banMemberAction,
+    unbanMemberAction,
+    removeGrantedMemberAction,
 } from '../../Community/Module'
 import { prepareChangeMemberRoleVariables } from '../../../queries/__generated__/prepareChangeMemberRole'
 import { openModalAction as openModal } from '../../../components/Modal/Module'
 import AlertViewComponent from '../../../components/Modal/AlertView'
 import ChangeMemberRoleModalContent from './ChangeMemberRoleModalContent'
 import { Component } from 'react'
-import { removeMemberVariables } from '../../../queries/__generated__/removeMember'
 import { revokeInvitationVariables } from '../../../queries/__generated__/revokeInvitation'
 import { Community_members } from '../../../queries/Fragments/__generated__/Community'
 
@@ -31,9 +34,7 @@ interface IProps {
     members: Community_members
     openAddMemberModal: () => void
     closeModalAction: () => void
-    removeMemberAction: (
-        payload: Pick<removeMemberVariables, 'account' | 'id'>
-    ) => void
+    removeGrantedMemberAction: typeof removeGrantedMemberAction
     revokeInvitationAction: (
         payload: Pick<revokeInvitationVariables, 'invitationId' | 'id'>
     ) => void
@@ -44,9 +45,12 @@ interface IProps {
     }
     isCommunityAdmin: boolean
     openModalAction: typeof openModal
-    changeMemberRoleAction: typeof changeMemberRole
+    changeGrantedMemberRoleAction: typeof changeMemberRole
     resendInvitationAction: typeof resendInvitation
     sendCommunityInvitationAction: typeof sendCommunityInvitation
+    removeMemberAction: typeof removeMemberAction
+    banMemberAction: typeof banMemberAction
+    unbanMemberAction: typeof unbanMemberAction
 }
 
 interface IRole {
@@ -58,7 +62,7 @@ class ManageMembers extends Component<IProps, IRole> {
         role: null,
     }
 
-    openChangeMemberRoleModal = (
+    openChangeGrantedMemberRoleModal = (
         payload: Pick<prepareChangeMemberRoleVariables, 'id' | 'account'>
     ) => {
         this.props.openModalAction({
@@ -66,8 +70,9 @@ class ManageMembers extends Component<IProps, IRole> {
                 <AlertViewComponent
                     closeModalAction={() => this.props.closeModalAction()}
                     confirmButtonAction={() => {
-                        this.props.changeMemberRoleAction({
+                        this.props.changeGrantedMemberRoleAction({
                             ...payload,
+                            signature: '',
                             role: this.state.role as any,
                         })
                     }}
@@ -95,15 +100,20 @@ class ManageMembers extends Component<IProps, IRole> {
                             Array.isArray(props.members.content) &&
                             props.members.totalElements >= 1 && (
                                 <MembersPanel
-                                    openChangeMemberRoleModal={
-                                        this.openChangeMemberRoleModal
+                                    openChangeGrantedMemberRoleModal={
+                                        this.openChangeGrantedMemberRoleModal
                                     }
                                     userId={props.userId}
                                     isCommunityAdmin={props.isCommunityAdmin}
                                     id={String(props.id)}
+                                    removeGrantedMemberAction={
+                                        props.removeGrantedMemberAction
+                                    }
                                     removeMemberAction={
                                         props.removeMemberAction
                                     }
+                                    banMemberAction={props.banMemberAction}
+                                    unbanMemberAction={props.unbanMemberAction}
                                     openAddMemberModal={() =>
                                         props.openAddMemberModal()
                                     }
@@ -159,15 +169,20 @@ class ManageMembers extends Component<IProps, IRole> {
                             Array.isArray(props.members.content) &&
                             props.members.totalElements >= 1 && (
                                 <MembersPanel
-                                    openChangeMemberRoleModal={
-                                        this.openChangeMemberRoleModal
+                                    openChangeGrantedMemberRoleModal={
+                                        this.openChangeGrantedMemberRoleModal
                                     }
                                     userId={props.userId}
                                     isCommunityAdmin={props.isCommunityAdmin}
                                     id={String(props.id)}
+                                    removeGrantedMemberAction={
+                                        props.removeGrantedMemberAction
+                                    }
                                     removeMemberAction={
                                         props.removeMemberAction
                                     }
+                                    banMemberAction={props.banMemberAction}
+                                    unbanMemberAction={props.unbanMemberAction}
                                     openAddMemberModal={() =>
                                         props.openAddMemberModal()
                                     }
@@ -215,11 +230,16 @@ class ManageMembers extends Component<IProps, IRole> {
             props.members.totalElements >= 1 ? (
             <ManageMembersContainer>
                 <MembersPanel
-                    openChangeMemberRoleModal={this.openChangeMemberRoleModal}
+                    openChangeGrantedMemberRoleModal={
+                        this.openChangeGrantedMemberRoleModal
+                    }
                     userId={props.userId}
                     isCommunityAdmin={props.isCommunityAdmin}
                     id={String(props.id)}
+                    removeGrantedMemberAction={props.removeGrantedMemberAction}
                     removeMemberAction={props.removeMemberAction}
+                    banMemberAction={props.banMemberAction}
+                    unbanMemberAction={props.unbanMemberAction}
                     openAddMemberModal={() => props.openAddMemberModal()}
                     members={props.members}
                 />

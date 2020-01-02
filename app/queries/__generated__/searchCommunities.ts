@@ -10,12 +10,18 @@ import { CommunityFilterInput, DirectionInput, CommunityPermissionInput, Resourc
 
 export interface searchCommunities_searchCommunities_content_members_content {
   __typename: "CommunityMemberDTO";
-  id: string | null;
-  role: CommunityPermissionInput | null;
+  /**
+   * Community Member ID
+   */
+  id: string;
+  /**
+   * Community Member Role
+   */
+  role: CommunityPermissionInput;
 }
 
 export interface searchCommunities_searchCommunities_content_members {
-  __typename: "ResponsePage_CommunityMemberDTO";
+  __typename: "ResponseBreakdownPage_CommunityMemberDTO";
   /**
    * Total amount of elements.
    */

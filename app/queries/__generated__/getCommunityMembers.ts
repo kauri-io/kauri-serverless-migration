@@ -2,7 +2,7 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { CommunityMemberFilterInput, CommunityPermissionInput } from "./../../__generated__/globalTypes";
+import { DirectionInput, CommunityMemberFilterInput, CommunityPermissionInput } from "./../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: getCommunityMembers
@@ -101,8 +101,14 @@ export interface getCommunityMembers_getCommunityMembers_content_user {
 
 export interface getCommunityMembers_getCommunityMembers_content {
   __typename: "CommunityMemberDTO";
-  id: string | null;
-  role: CommunityPermissionInput | null;
+  /**
+   * Community Member ID
+   */
+  id: string;
+  /**
+   * Community Member Role
+   */
+  role: CommunityPermissionInput;
   /**
    * Community member (full profile)
    */
@@ -110,7 +116,7 @@ export interface getCommunityMembers_getCommunityMembers_content {
 }
 
 export interface getCommunityMembers_getCommunityMembers {
-  __typename: "ResponsePage_CommunityMemberDTO";
+  __typename: "ResponseBreakdownPage_CommunityMemberDTO";
   /**
    * Returns the page content.
    */
@@ -141,5 +147,7 @@ export interface getCommunityMembersVariables {
   id: string;
   page?: number | null;
   size?: number | null;
+  sort?: string | null;
+  dir?: DirectionInput | null;
   filter?: CommunityMemberFilterInput | null;
 }

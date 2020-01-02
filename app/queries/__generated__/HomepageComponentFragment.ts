@@ -1442,12 +1442,18 @@ export interface HomepageComponentFragment_Featured_content_resource_CommunityDT
 
 export interface HomepageComponentFragment_Featured_content_resource_CommunityDTO_members_content {
   __typename: "CommunityMemberDTO";
-  id: string | null;
-  role: CommunityPermissionInput | null;
+  /**
+   * Community Member ID
+   */
+  id: string;
+  /**
+   * Community Member Role
+   */
+  role: CommunityPermissionInput;
 }
 
 export interface HomepageComponentFragment_Featured_content_resource_CommunityDTO_members {
-  __typename: "ResponsePage_CommunityMemberDTO";
+  __typename: "ResponseBreakdownPage_CommunityMemberDTO";
   /**
    * Total amount of elements.
    */
@@ -3065,12 +3071,18 @@ export interface HomepageComponentFragment_Promo_content_resource_CommunityDTO_c
 
 export interface HomepageComponentFragment_Promo_content_resource_CommunityDTO_members_content {
   __typename: "CommunityMemberDTO";
-  id: string | null;
-  role: CommunityPermissionInput | null;
+  /**
+   * Community Member ID
+   */
+  id: string;
+  /**
+   * Community Member Role
+   */
+  role: CommunityPermissionInput;
 }
 
 export interface HomepageComponentFragment_Promo_content_resource_CommunityDTO_members {
-  __typename: "ResponsePage_CommunityMemberDTO";
+  __typename: "ResponseBreakdownPage_CommunityMemberDTO";
   /**
    * Total amount of elements.
    */
@@ -4635,12 +4647,18 @@ export interface HomepageComponentFragment_LatestContent_content_CommunityDTO_cr
 
 export interface HomepageComponentFragment_LatestContent_content_CommunityDTO_members_content {
   __typename: "CommunityMemberDTO";
-  id: string | null;
-  role: CommunityPermissionInput | null;
+  /**
+   * Community Member ID
+   */
+  id: string;
+  /**
+   * Community Member Role
+   */
+  role: CommunityPermissionInput;
 }
 
 export interface HomepageComponentFragment_LatestContent_content_CommunityDTO_members {
-  __typename: "ResponsePage_CommunityMemberDTO";
+  __typename: "ResponseBreakdownPage_CommunityMemberDTO";
   /**
    * Total amount of elements.
    */

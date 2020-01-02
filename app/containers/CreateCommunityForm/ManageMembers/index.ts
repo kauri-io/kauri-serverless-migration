@@ -11,10 +11,13 @@ import withLoading from '../../../lib/with-loading'
 import withApolloError from '../../../lib/with-apollo-error'
 import {
     revokeInvitationAction,
-    removeMemberAction,
-    changeMemberRoleAction,
+    removeGrantedMemberAction,
+    changeGrantedMemberRoleAction,
     resendInvitationAction,
     sendCommunityInvitationAction,
+    removeMemberAction,
+    banMemberAction,
+    unbanMemberAction,
 } from '../../Community/Module'
 
 const mapStateToProps = (
@@ -38,13 +41,16 @@ export default compose(
     connect(
         mapStateToProps,
         {
-            changeMemberRoleAction,
+            changeGrantedMemberRoleAction,
             closeModalAction,
             openModalAction,
-            removeMemberAction,
+            removeGrantedMemberAction,
             resendInvitationAction,
             sendCommunityInvitationAction,
             revokeInvitationAction,
+            removeMemberAction,
+            banMemberAction,
+            unbanMemberAction,
         }
     ),
     graphql(getCommunityInvitationsQuery, {

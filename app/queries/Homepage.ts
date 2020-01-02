@@ -75,8 +75,11 @@ export const homePageContentQuery = gql`
             description
             website
             members {
-                totalElements,
-                content { id role }
+                totalElements
+                content {
+                    id
+                    role
+                }
             }
             avatar
             social

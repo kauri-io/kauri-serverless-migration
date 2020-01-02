@@ -14,9 +14,11 @@ import {
     // curateCommunityResourcesAction as curateCommunityResources,
     acceptCommunityInvitationAction as acceptCommunityInvitation,
     transferArticleToCommunityAction as transferArticleToCommunity,
+    joinCommunityAction,
+    leaveCommunityAction,
 } from './Module'
 import AddMemberButtonComponent from '../../components/Button/AddMemberButton'
-import { getUpdateCommunityURL } from '../../lib/getURLs'
+import { getUpdateCommunityURL, getCommunityURL } from '../../lib/getURLs'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { ResourceIdentifierInput } from '../../__generated__/globalTypes'
 import ChooseResourceModal from '../ChooseResourceModal'
@@ -296,12 +298,15 @@ interface IProps {
     isMember?: boolean
     isCreator?: boolean
     isCommunityAdmin?: boolean
+    isCommunityModerator: boolean
     routeChangeAction?: (route: string) => void
     openModalAction: (children: any) => void
     closeModalAction: () => void
     transferArticleToCommunityAction: typeof transferArticleToCommunity
     changeOwnerExtenalLinkAction: typeof changeOwnerExtenalLinkAction
     acceptCommunityInvitationAction: typeof acceptCommunityInvitation
+    joinCommunityAction: typeof joinCommunityAction
+    leaveCommunityAction: typeof leaveCommunityAction
     secret: null | string
     openAddMemberModal: () => void
     userId: string
@@ -325,6 +330,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
     openAddMemberModal,
     transferArticleToCommunityAction,
     changeOwnerExtenalLinkAction,
+    joinCommunityAction,
     userId,
 }) => {
     const classes = useStyles()
@@ -480,23 +486,39 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                                 Moderators
                                             </Label>
                                             <Row>
-                                                {members.content.map(i =>
-                                                    i ? (
-                                                        <Avatar
-                                                            key={String(i.id)}
-                                                            id={String(i.id)}
-                                                            username={
-                                                                i.user.username ||
-                                                                null
-                                                            }
-                                                            avatar={
-                                                                i.user.avatar || null
-                                                            }
-                                                            color="secondary"
-                                                            withName={false}
-                                                        />
-                                                    ) : null
-                                                )}
+                                                {members.content
+                                                    .filter(
+                                                        i =>
+                                                            i !== null &&
+                                                            (i.role ===
+                                                                'ADMIN' ||
+                                                                i.role ===
+                                                                    'CURATOR')
+                                                    )
+                                                    .map(i =>
+                                                        i ? (
+                                                            <Avatar
+                                                                key={String(
+                                                                    i.id
+                                                                )}
+                                                                id={String(
+                                                                    i.id
+                                                                )}
+                                                                username={
+                                                                    i.user
+                                                                        .username ||
+                                                                    null
+                                                                }
+                                                                avatar={
+                                                                    i.user
+                                                                        .avatar ||
+                                                                    null
+                                                                }
+                                                                color="secondary"
+                                                                withName={false}
+                                                            />
+                                                        ) : null
+                                                    )}
                                                 {isCommunityAdmin && (
                                                     <AddMemberButtonComponent
                                                         onClick={() =>
@@ -510,18 +532,6 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                 </Moderators>
                             </RightSide>
                         </Row>
-                        {!isMember && (
-                            <ActionsRow>
-                                    <Button
-                                        color="primary"
-                                        variant="contained"
-                                        className={classes.button}
-                                        onClick={() => console.log("do something")}
-                                    >
-                                        Join community
-                                    </Button>
-                            </ActionsRow>
-                        )}
                         {isCommunityAdmin && (
                             <ActionsRow>
                                 <Button
@@ -541,16 +551,41 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                         )}
                         {isMember && (
                             <ActionsRow>
-                                    <Button
-                                        color="primary"
-                                        variant="outlined"
-                                        className={classes.button}
-                                        onClick={() =>
-                                            openAddCommunityArticleModal()
+                                <Button
+                                    color="primary"
+                                    variant="outlined"
+                                    className={classes.button}
+                                    onClick={() =>
+                                        openAddCommunityArticleModal()
+                                    }
+                                >
+                                    Add Content
+                                </Button>
+                            </ActionsRow>
+                        )}
+                        {!isMember && (
+                            <ActionsRow>
+                                <Button
+                                    color="primary"
+                                    variant="contained"
+                                    className={classes.button}
+                                    onClick={() => {
+                                        if (!!userId) {
+                                            return joinCommunityAction({ id })
+                                        } else {
+                                            return (
+                                                routeChangeAction &&
+                                                routeChangeAction(
+                                                    `/login?r=${getCommunityURL(
+                                                        { id, name }
+                                                    )}`
+                                                )
+                                            )
                                         }
-                                    >
-                                        Add Content
-                                    </Button>
+                                    }}
+                                >
+                                    Join community
+                                </Button>
                             </ActionsRow>
                         )}
                     </RightSide>

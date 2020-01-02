@@ -1,8 +1,6 @@
 import React from 'react'
 import { makeStyles, Theme } from '@material-ui/core'
-interface IProps {
-
-}
+interface IProps {}
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -13,11 +11,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 export const Discussion = ({  }: IProps) => {
     const classes = useStyles()
 
-    return (
-        <div className={classes.root}>
-            Under construction
-        </div>
-    )
+    return <div className={classes.root}>Under construction</div>
 }
 
 export default Discussion

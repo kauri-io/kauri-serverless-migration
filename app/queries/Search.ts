@@ -201,8 +201,11 @@ export const searchResultsAutocomplete = gql`
                         social
                         attributes
                         members {
-                            totalElements,
-                            content { id role }
+                            totalElements
+                            content {
+                                id
+                                role
+                            }
                         }
                         approvedId {
                             id

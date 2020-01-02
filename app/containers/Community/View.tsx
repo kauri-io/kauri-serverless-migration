@@ -7,6 +7,8 @@ import {
     curateCommunityResourcesAction as curateCommunityResources,
     acceptCommunityInvitationAction as acceptCommunityInvitation,
     transferArticleToCommunityAction as transferArticleToCommunity,
+    leaveCommunityAction,
+    joinCommunityAction,
 } from './Module'
 import AlertViewComponent from '../../components/Modal/AlertView'
 import AcceptCommunityInvitationModalContent from './AcceptCommunityInvitationModalContent'
@@ -69,6 +71,7 @@ interface IProps {
     acceptCommunityInvitationAction: typeof acceptCommunityInvitation
     currentUser: string
     isCommunityAdmin: boolean
+    isCommunityModerator: boolean
     secret: null | string
     communityId: string
     data: {
@@ -86,6 +89,8 @@ interface IProps {
     transferArticleToCommunityAction: typeof transferArticleToCommunity
     changeOwnerExtenalLinkAction: typeof changeOwnerExtenalLinkAction
     showNotificationAction: typeof showNotification
+    joinCommunityAction: typeof joinCommunityAction
+    leaveCommunityAction: typeof leaveCommunityAction
 }
 
 interface IState {
@@ -165,6 +170,9 @@ class CommunityConnection extends React.Component<IProps, IState> {
             transferArticleToCommunityAction,
             changeOwnerExtenalLinkAction,
             isCommunityAdmin,
+            isCommunityModerator,
+            joinCommunityAction,
+            leaveCommunityAction,
         } = this.props
 
         const articlesCount =
@@ -334,11 +342,14 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     isMember={isMember}
                     isCreator={isCreator}
                     isCommunityAdmin={isCommunityAdmin}
+                    isCommunityModerator={isCommunityModerator}
                     openModalAction={openModalAction}
                     closeModalAction={closeModalAction}
                     routeChangeAction={routeChangeAction}
                     openAddMemberModal={openAddMemberModal}
                     userId={currentUser}
+                    joinCommunityAction={joinCommunityAction}
+                    leaveCommunityAction={leaveCommunityAction}
                 />
                 <Tabs
                     TabIndicatorProps={{ style: { height: 3 } }}
@@ -349,10 +360,16 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     onChange={(_e, tab) => this.setState({ tab })}
                 >
                     {canDisplayHomepage && <Tab label="Home" />}
-                    <Tab label={`Content (${articlesCount+collectionsCount})`} />
+                    <Tab
+                        label={`Content (${articlesCount + collectionsCount})`}
+                    />
                     <Tab label={`Discussions (${0})`} />
-                    <Tab label={`Members (${getCommunity.members.totalElements})`} />
-                    {(isCreator || isMember) && (
+                    <Tab
+                        label={`Members (${getCommunity.members.totalElements})`}
+                    />
+                    {(isCreator ||
+                        isCommunityAdmin ||
+                        isCommunityModerator) && (
                         <Tab label="Manage Community" />
                     )}
                 </Tabs>
@@ -374,14 +391,9 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         types={['ARTICLE', 'LINK', 'COLLECTION']}
                     />
                 )}
-                {this.state.tab === getActualTabId(2) && (
-                    <Discussion
-                    />
-                )}
+                {this.state.tab === getActualTabId(2) && <Discussion />}
                 {this.state.tab === getActualTabId(3) && (
-                    <MembersTab
-                        id={getCommunity.id}
-                    />
+                    <MembersTab id={getCommunity.id} />
                 )}
                 {this.state.tab === getActualTabId(4) && (
                     <Manage

@@ -104,7 +104,7 @@ const CommunityCard = ({
 }: any) => {
     const classes = useStyles({})
     const collectionURL = getCommunityURL({ id, name: name })
-    
+
     return (
         <Link href={collectionURL.href} as={collectionURL.as}>
             <a className={classes.link}>
@@ -184,7 +184,8 @@ const CommunityCard = ({
                                         {members && (
                                             <Typography variant="caption">
                                                 {members.totalElements} member
-                                                {members.totalElements !== 1 && 's'}
+                                                {members.totalElements !== 1 &&
+                                                    's'}
                                             </Typography>
                                         )}
                                         <Actions

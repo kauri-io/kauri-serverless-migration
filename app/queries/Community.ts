@@ -29,8 +29,11 @@ export const getAllCommunities = gql`
                 dateCreated
                 dateUpdated
                 members {
-                    totalElements,
-                    content { id role }
+                    totalElements
+                    content {
+                        id
+                        role
+                    }
                 }
                 attributes
                 approvedId {
@@ -268,7 +271,7 @@ export const getCommunityInvitationsQuery = gql`
     }
 `
 
-export const prepareRemoveMemberQuery = gql`
+export const prepareRemoveGrantedMemberQuery = gql`
     query prepareRemoveGrantedMember($id: String!, $account: String!) {
         prepareRemoveGrantedMember(id: $id, account: $account) {
             messageHash
@@ -276,7 +279,7 @@ export const prepareRemoveMemberQuery = gql`
     }
 `
 
-export const removeMemberMutation = gql`
+export const removeGrantedMemberMutation = gql`
     mutation removeGrantedMember(
         $signature: String!
         $id: String!
@@ -288,19 +291,23 @@ export const removeMemberMutation = gql`
     }
 `
 
-export const prepareChangeMemberRoleQuery = gql`
+export const prepareChangeGrantedMemberRoleQuery = gql`
     query prepareChangeGrantedMemberRole(
         $id: String!
         $account: String!
         $role: CommunityPermissionInput!
     ) {
-        prepareChangeGrantedMemberRole(id: $id, account: $account, role: $role) {
+        prepareChangeGrantedMemberRole(
+            id: $id
+            account: $account
+            role: $role
+        ) {
             messageHash
         }
     }
 `
 
-export const changeMemberRoleMutation = gql`
+export const changeGrantedMemberRoleMutation = gql`
     mutation changeGrantedMemberRole(
         $signature: String!
         $id: String!
@@ -385,12 +392,16 @@ export const getCommunityMembers = gql`
         $id: String!
         $page: Int = 0
         $size: Int
+        $sort: String
+        $dir: DirectionInput
         $filter: CommunityMemberFilterInput
     ) {
         getCommunityMembers(
             id: $id
             page: $page
             size: $size
+            sort: $sort
+            dir: $dir
             filter: $filter
         ) {
             content {
@@ -427,6 +438,46 @@ export const getCommunityMembers = gql`
             totalPages
             totalElements
             isLast
+        }
+    }
+`
+
+export const joinCommunityMutation = gql`
+    mutation joinCommunity($id: String!) {
+        joinCommunity(communityId: $id) {
+            hash
+        }
+    }
+`
+
+export const leaveCommunityMutation = gql`
+    mutation leaveCommunity($id: String!) {
+        leaveCommunity(communityId: $id) {
+            hash
+        }
+    }
+`
+
+export const removeMemberMutation = gql`
+    mutation removeMember($id: String!, $userId: String!) {
+        removeMember(communityId: $id, userId: $userId) {
+            hash
+        }
+    }
+`
+
+export const banMemberMutation = gql`
+    mutation banMember($id: String!, $userId: String!) {
+        banMember(communityId: $id, userId: $userId) {
+            hash
+        }
+    }
+`
+
+export const unbanMemberMutation = gql`
+    mutation unbanMember($id: String!, $userId: String!) {
+        unbanMember(communityId: $id, userId: $userId) {
+            hash
         }
     }
 `

@@ -850,12 +850,18 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_C
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO_members_content {
   __typename: "CommunityMemberDTO";
-  id: string | null;
-  role: CommunityPermissionInput | null;
+  /**
+   * Community Member ID
+   */
+  id: string;
+  /**
+   * Community Member Role
+   */
+  role: CommunityPermissionInput;
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO_members {
-  __typename: "ResponsePage_CommunityMemberDTO";
+  __typename: "ResponseBreakdownPage_CommunityMemberDTO";
   /**
    * Total amount of elements.
    */

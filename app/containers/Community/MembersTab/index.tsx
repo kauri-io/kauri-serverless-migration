@@ -14,16 +14,14 @@ export default compose(
     ),
     graphql(getCommunityMembers, {
         name: QUERY_NAME,
-        options: ({
-            id,
-        }: {
-            id: string
-        }) => ({
+        options: ({ id }: { id: string }) => ({
             fetchPolicy: 'network-only',
             variables: {
                 id,
-                filter: {  },
+                filter: {},
                 size: 10,
+                sort: 'role',
+                dir: 'ASC',
             },
         }),
     }),

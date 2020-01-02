@@ -93,7 +93,7 @@ export default () => (
         <SVG />
         <Title2>No Member</Title2>
         <BodyCard>
-            All members belonging to the community will appear here. 
+            All members belonging to the community will appear here.
         </BodyCard>
     </Container>
 )

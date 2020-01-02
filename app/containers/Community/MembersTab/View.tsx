@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles, Theme, Grid } from '@material-ui/core'
 import Loading from '../../../components/Loading'
-import { getProfileURL} from '../../../lib/getURLs'
+import { getProfileURL } from '../../../lib/getURLs'
 import NoUser from '../EmptyStates/NoUser'
 import { getCommunityMembers_getCommunityMembers } from '../../../queries/__generated__/getCommunityMembers'
 import PublicProfileCard from '../../../components/Card/PublicProfileCard'
@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme: Theme) => ({
 }))
 
 export const ResourceTab = ({ getCommunityMembersQuery }: IProps) => {
-
     const classes = useStyles()
 
     if (getCommunityMembersQuery.loading) {
@@ -47,9 +46,9 @@ export const ResourceTab = ({ getCommunityMembersQuery }: IProps) => {
                     {getCommunityMembersQuery.getCommunityMembers.content &&
                     getCommunityMembersQuery.getCommunityMembers.totalElements >
                         0 ? (
-                            getCommunityMembersQuery.getCommunityMembers.content.map(
+                        getCommunityMembersQuery.getCommunityMembers.content.map(
                             (obj: any, key) => {
-                                return(
+                                return (
                                     <Grid
                                         key={key}
                                         item
@@ -59,7 +58,9 @@ export const ResourceTab = ({ getCommunityMembersQuery }: IProps) => {
                                     >
                                         <PublicProfileCard
                                             {...obj.user}
-                                            href={getProfileURL({ ...obj.user })}
+                                            href={getProfileURL({
+                                                ...obj.user,
+                                            })}
                                         />
                                     </Grid>
                                 )
