@@ -2,13 +2,13 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { InvitationInput } from "./../../__generated__/globalTypes";
+import { CommunityPermissionInput } from "./../../__generated__/globalTypes";
 
 // ====================================================
-// GraphQL mutation operation: sendInvitation
+// GraphQL mutation operation: changeGrantedMemberRole
 // ====================================================
 
-export interface sendInvitation_sendInvitation {
+export interface changeGrantedMemberRole_changeGrantedMemberRole {
   __typename: "MutationResponse";
   /**
    * hash associated to the mutation/command sent. Should be used to subscribe to the event
@@ -16,16 +16,17 @@ export interface sendInvitation_sendInvitation {
   hash: string | null;
 }
 
-export interface sendInvitation {
+export interface changeGrantedMemberRole {
   /**
-   * Send an invitation to join te community as a granted member [admin/moderator]  (execute call).
+   * Change a granted member role within the community (execute call).
    * This operation can only be performed by a community admin
    */
-  sendInvitation: sendInvitation_sendInvitation;
+  changeGrantedMemberRole: changeGrantedMemberRole_changeGrantedMemberRole;
 }
 
-export interface sendInvitationVariables {
+export interface changeGrantedMemberRoleVariables {
   signature: string;
   id: string;
-  invitation: InvitationInput;
+  account: string;
+  role: CommunityPermissionInput;
 }

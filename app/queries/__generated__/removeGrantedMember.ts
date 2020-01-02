@@ -2,13 +2,11 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { InvitationInput } from "./../../__generated__/globalTypes";
-
 // ====================================================
-// GraphQL mutation operation: sendInvitation
+// GraphQL mutation operation: removeGrantedMember
 // ====================================================
 
-export interface sendInvitation_sendInvitation {
+export interface removeGrantedMember_removeGrantedMember {
   __typename: "MutationResponse";
   /**
    * hash associated to the mutation/command sent. Should be used to subscribe to the event
@@ -16,16 +14,16 @@ export interface sendInvitation_sendInvitation {
   hash: string | null;
 }
 
-export interface sendInvitation {
+export interface removeGrantedMember {
   /**
-   * Send an invitation to join te community as a granted member [admin/moderator]  (execute call).
+   * Remove a member from the community (execute call).
    * This operation can only be performed by a community admin
    */
-  sendInvitation: sendInvitation_sendInvitation;
+  removeGrantedMember: removeGrantedMember_removeGrantedMember;
 }
 
-export interface sendInvitationVariables {
+export interface removeGrantedMemberVariables {
   signature: string;
   id: string;
-  invitation: InvitationInput;
+  account: string;
 }

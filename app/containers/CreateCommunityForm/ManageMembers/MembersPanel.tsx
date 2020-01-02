@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
-import { getCommunity_getCommunity_members } from '../../../queries/__generated__/getCommunity'
 import styled from 'styled-components'
 import { Title2, BodyCard, Label } from '../../../components/Typography'
 import Button from '../../../components/Button'
 import theme from '../../../lib/theme-config'
 import { prepareChangeMemberRoleVariables } from '../../../queries/__generated__/prepareChangeMemberRole'
 import { removeMemberVariables } from '../../../queries/__generated__/removeMember'
+import { Community_members } from '../../../queries/Fragments/__generated__/Community'
 
 const Header = styled.div`
     display: flex;
@@ -129,7 +129,7 @@ const MemberRow: React.FunctionComponent<IMemberRowProps> = ({
             <Label>{String(member.role).replace('_', ' ')}</Label>
             <MemberContent>
                 <BodyCard>
-                    {String(member.username || member.name || member.id)}
+                    {String(member.user.username || member.user.name || member.id)}
                 </BodyCard>
                 {isCommunityAdmin && member.id !== userId && (
                     <Label
@@ -159,7 +159,7 @@ const MemberRow: React.FunctionComponent<IMemberRowProps> = ({
 
 interface IProps {
     id: string
-    members: Array<getCommunity_getCommunity_members | null> | null
+    members: Community_members
     openAddMemberModal: () => void
     removeMemberAction: (
         payload: Pick<removeMemberVariables, 'account' | 'id'>
@@ -181,9 +181,9 @@ const MembersPanel: React.SFC<IProps> = props => {
                 </BodyCard>
             </Header>
             <Content>
-                {props.members &&
-                    Array.isArray(props.members) &&
-                    props.members.map(
+                {props.members.content &&
+                    Array.isArray(props.members.content) &&
+                    props.members.content.map(
                         member =>
                             member &&
                             props.members && (
@@ -191,7 +191,7 @@ const MembersPanel: React.SFC<IProps> = props => {
                                     <MemberRow
                                         openChangeMemberRoleModal={() =>
                                             props.openChangeMemberRoleModal({
-                                                account: member.id,
+                                                account: member.id || '',
                                                 id: props.id,
                                             })
                                         }
@@ -199,7 +199,7 @@ const MembersPanel: React.SFC<IProps> = props => {
                                         removeMemberAction={() =>
                                             props.removeMemberAction &&
                                             props.removeMemberAction({
-                                                account: member.id,
+                                                account: member.id || '',
                                                 id: props.id,
                                             })
                                         }

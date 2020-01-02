@@ -104,7 +104,7 @@ const CommunityCard = ({
 }: any) => {
     const classes = useStyles({})
     const collectionURL = getCommunityURL({ id, name: name })
-
+    
     return (
         <Link href={collectionURL.href} as={collectionURL.as}>
             <a className={classes.link}>
@@ -139,8 +139,8 @@ const CommunityCard = ({
                             {members && (
                                 <Grid className={classes.bottom}>
                                     <Typography variant="caption">
-                                        {members.length} member
-                                        {members.length !== 1 && 's'}
+                                        {members.totalElements} member
+                                        {members.totalElements !== 1 && 's'}
                                     </Typography>
                                 </Grid>
                             )}
@@ -183,8 +183,8 @@ const CommunityCard = ({
                                     <Grid className={classes.bottom}>
                                         {members && (
                                             <Typography variant="caption">
-                                                {members.length} member
-                                                {members.length !== 1 && 's'}
+                                                {members.totalElements} member
+                                                {members.totalElements !== 1 && 's'}
                                             </Typography>
                                         )}
                                         <Actions

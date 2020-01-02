@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import ResourceCategory from '../../../components/ResourceCategory'
 import ManageMembers from '../../CreateCommunityForm/ManageMembers'
-import { getCommunity_getCommunity_members } from '../../../queries/__generated__/getCommunity'
 import { IInvitation } from '../../CreateCommunityForm/ManageMembers/FormInviteMembersPanel'
 import { searchArticles_searchArticles } from '../../../queries/__generated__/searchArticles'
 import Loading from '../../../components/Loading'
 import { makeStyles, Theme, Grid } from '@material-ui/core'
 import ArticleCard from '../../../components/Card/ArticleCard'
 import { getArticleURL } from '../../../lib/getURLs'
+import { Community_members } from '../../../queries/Fragments/__generated__/Community'
 
 const Container = styled.div`
     display: flex;
@@ -51,7 +51,7 @@ interface IProps {
     cancelInvitation?: (payload: { index: number }) => void
     communityId: string | null
     isCommunityAdmin: boolean
-    members: Array<getCommunity_getCommunity_members | null> | null
+    members: Community_members
     openAddMemberModal: () => void
     pageType?: string // CreateCommunityForm
     formInvitations?: IInvitation[] | null | undefined
@@ -85,7 +85,7 @@ const Manage: React.FunctionComponent<IProps> = ({
                     <ResourceCategory
                         active={tabIndex === 0}
                         category="Manage Members"
-                        amount={members ? members.length : 0}
+                        amount={members ? members.totalElements : 0}
                         onClick={() => setTabIndex(0)}
                     />
                 )}

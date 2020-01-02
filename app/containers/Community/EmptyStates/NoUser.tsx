@@ -91,10 +91,9 @@ const SVG = () => (
 export default () => (
     <Container>
         <SVG />
-        <Title2>No Collections Created</Title2>
+        <Title2>No Member</Title2>
         <BodyCard>
-            All collections created by a community will appear here. Go ahead
-            and create one!
+            All members belonging to the community will appear here. 
         </BodyCard>
     </Container>
 )

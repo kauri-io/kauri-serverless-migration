@@ -21,7 +21,7 @@ export interface relatedArticles_searchMoreLikeThis_content_resourceIdentifier {
 }
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CommunityInvitationDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface relatedArticles_searchMoreLikeThis_content_resource_ArticleDTO_author {

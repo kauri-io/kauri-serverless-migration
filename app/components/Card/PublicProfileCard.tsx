@@ -81,7 +81,7 @@ export default ({
 }: Article_contributors) => {
     const classes = useStyles({})
     const url = getProfileURL({ id, username })
-    console.log(id, username, name)
+
     return (
         <Link href={url.href} as={url.as}>
             <a className={classes.link}>

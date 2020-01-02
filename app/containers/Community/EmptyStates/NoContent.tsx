@@ -68,7 +68,7 @@ const SVG = () => (
 export default () => (
     <Container>
         <SVG />
-        <Title2>No Article Published</Title2>
+        <Title2>No Content Published</Title2>
         <BodyCard>
             All articles owned by a community will appear here. Go ahead and
             write one!

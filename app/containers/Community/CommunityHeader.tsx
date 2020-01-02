@@ -22,6 +22,7 @@ import { ResourceIdentifierInput } from '../../__generated__/globalTypes'
 import ChooseResourceModal from '../ChooseResourceModal'
 import { globalSearchApprovedArticles } from '../../queries/Article'
 import { changeOwnerExtenalLinkAction } from '../CreateLink/Module'
+import { Community_members } from '../../queries/Fragments/__generated__/Community'
 
 const useStyles = makeStyles((theme: Theme) => ({
     button: {
@@ -277,13 +278,6 @@ const getURL = (value: string, type: string) => {
     }
 }
 
-interface ICommunityMember {
-    id: string | null
-    username: string | null
-    role: string | null
-    avatar: string | null
-}
-
 interface IProps {
     id: string
     avatar: string | null
@@ -295,7 +289,7 @@ interface IProps {
         github?: string
         twitter?: string
     } | null
-    members: Array<ICommunityMember | null> | null
+    members: Community_members
     articleCount: number
     collectionCount: number
     background?: string
@@ -477,7 +471,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                         <Row>
                             <RightSide>
                                 <Moderators>
-                                    {members && members.length > 0 && (
+                                    {members && members.totalElements > 0 && (
                                         <>
                                             <Label
                                                 className="moderators"
@@ -486,17 +480,17 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                                 Moderators
                                             </Label>
                                             <Row>
-                                                {members.map(i =>
+                                                {members.content.map(i =>
                                                     i ? (
                                                         <Avatar
                                                             key={String(i.id)}
                                                             id={String(i.id)}
                                                             username={
-                                                                i.username ||
+                                                                i.user.username ||
                                                                 null
                                                             }
                                                             avatar={
-                                                                i.avatar || null
+                                                                i.user.avatar || null
                                                             }
                                                             color="secondary"
                                                             withName={false}
@@ -516,8 +510,20 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                 </Moderators>
                             </RightSide>
                         </Row>
-                        <ActionsRow>
-                            {isCommunityAdmin && (
+                        {!isMember && (
+                            <ActionsRow>
+                                    <Button
+                                        color="primary"
+                                        variant="contained"
+                                        className={classes.button}
+                                        onClick={() => console.log("do something")}
+                                    >
+                                        Join community
+                                    </Button>
+                            </ActionsRow>
+                        )}
+                        {isCommunityAdmin && (
+                            <ActionsRow>
                                 <Button
                                     color="primary"
                                     variant="contained"
@@ -531,59 +537,22 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                 >
                                     Update Community
                                 </Button>
-                            )}
-                        </ActionsRow>
-                        <ActionsRow>
-                            {/* {isMember && (
-                <Tooltip
-                  className="suggest-content"
-                  position="bottom"
-                  trigger="mouseenter"
-                  html={
-                    <SuggestContent
-                      curateCommunityResourcesAction={
-                        curateCommunityResourcesAction
-                      }
-                      id={id}
-                      articles={articles}
-                      collections={collections}
-                      suggestArticleAction={suggestArticleAction}
-                      suggestCollectionAction={suggestCollectionAction}
-                      closeModalAction={closeModalAction}
-                      openModalAction={openModalAction}
-                    />
-                  }
-                  interactive={true}
-                >
-                  <SuggestIcon />
-                  <Label color="white">Suggest Content</Label>
-                </Tooltip>
-              )} */}
-                            {isMember && (
-                                // <Tooltip
-                                //   className="add-content"
-                                //   position="bottom"
-                                //   trigger="mouseenter"
-                                //   html={
-                                //     <AddCommunityContent
-                                //       addCommunityArticleAction={addCommunityArticleAction}
-                                //     />
-                                //   }
-                                //   interactive={true}
-                                // >
-                                <Button
-                                    color="primary"
-                                    variant="outlined"
-                                    className={classes.button}
-                                    onClick={() =>
-                                        openAddCommunityArticleModal()
-                                    }
-                                >
-                                    Add Content
-                                </Button>
-                                // </Tooltip>
-                            )}
-                        </ActionsRow>
+                            </ActionsRow>
+                        )}
+                        {isMember && (
+                            <ActionsRow>
+                                    <Button
+                                        color="primary"
+                                        variant="outlined"
+                                        className={classes.button}
+                                        onClick={() =>
+                                            openAddCommunityArticleModal()
+                                        }
+                                    >
+                                        Add Content
+                                    </Button>
+                            </ActionsRow>
+                        )}
                     </RightSide>
                 </ContentRow>
             </Container>

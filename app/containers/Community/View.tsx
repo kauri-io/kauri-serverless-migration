@@ -38,6 +38,8 @@ import Loading from '../../components/Loading'
 import { changeOwnerExtenalLinkAction } from '../CreateLink/Module'
 import ResourceTab from './ResourceTab'
 import Manage from './Manage/'
+import MembersTab from './MembersTab'
+import Discussion from './Discussion/View'
 
 const styles = (theme: Theme) => ({
     tabs: {
@@ -121,7 +123,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
 
         const isMember =
             isCreator ||
-            any(propEq('id', currentUser), getCommunity.members || [])
+            any(propEq('id', currentUser), getCommunity.members.content || [])
 
         if (typeof this.props.secret === 'string' && !isMember) {
             // AcceptCommunityInviteModal
@@ -182,7 +184,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
         const isCreator = getCommunity.creatorId === currentUser
         const isMember =
             isCreator ||
-            any(propEq('id', currentUser), getCommunity.members || [])
+            any(propEq('id', currentUser), getCommunity.members.content || [])
         const homepage = getCommunity.homepage
         const name = getCommunity.name
         const id = getCommunity.id
@@ -347,8 +349,9 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     onChange={(_e, tab) => this.setState({ tab })}
                 >
                     {canDisplayHomepage && <Tab label="Home" />}
-                    <Tab label={`Articles (${articlesCount})`} />
-                    <Tab label={`Collections (${collectionsCount})`} />
+                    <Tab label={`Content (${articlesCount+collectionsCount})`} />
+                    <Tab label={`Discussions (${0})`} />
+                    <Tab label={`Members (${getCommunity.members.totalElements})`} />
                     {(isCreator || isMember) && (
                         <Tab label="Manage Community" />
                     )}
@@ -368,13 +371,19 @@ class CommunityConnection extends React.Component<IProps, IState> {
                 {this.state.tab === getActualTabId(1) && (
                     <ResourceTab
                         id={getCommunity.id}
-                        types={['ARTICLE', 'LINK']}
+                        types={['ARTICLE', 'LINK', 'COLLECTION']}
                     />
                 )}
                 {this.state.tab === getActualTabId(2) && (
-                    <ResourceTab id={getCommunity.id} types={['COLLECTION']} />
+                    <Discussion
+                    />
                 )}
                 {this.state.tab === getActualTabId(3) && (
+                    <MembersTab
+                        id={getCommunity.id}
+                    />
+                )}
+                {this.state.tab === getActualTabId(4) && (
                     <Manage
                         openAddMemberModal={openAddMemberModal}
                         communityId={getCommunity.id}

@@ -1,5 +1,4 @@
 import ManageMemberEmptyState from './ManageMemberEmptyState'
-import { getCommunity_getCommunity_members } from '../../../queries/__generated__/getCommunity'
 import MembersPanel from './MembersPanel'
 import InviteMembersPanel from './InviteMembersPanel'
 import FormInviteMembersPanel, { IInvitation } from './FormInviteMembersPanel'
@@ -16,6 +15,7 @@ import ChangeMemberRoleModalContent from './ChangeMemberRoleModalContent'
 import { Component } from 'react'
 import { removeMemberVariables } from '../../../queries/__generated__/removeMember'
 import { revokeInvitationVariables } from '../../../queries/__generated__/revokeInvitation'
+import { Community_members } from '../../../queries/Fragments/__generated__/Community'
 
 const ManageMembersContainer = styled.section`
     display: flex;
@@ -28,7 +28,7 @@ interface IProps {
     userId: string
     invitations: IInvitation[] | null
     formInvitations?: IInvitation[] | null
-    members: Array<getCommunity_getCommunity_members | null> | null
+    members: Community_members
     openAddMemberModal: () => void
     closeModalAction: () => void
     removeMemberAction: (
@@ -92,8 +92,8 @@ class ManageMembers extends Component<IProps, IRole> {
                 return (
                     <ManageMembersContainer>
                         {props.members &&
-                            Array.isArray(props.members) &&
-                            props.members.length >= 1 && (
+                            Array.isArray(props.members.content) &&
+                            props.members.totalElements >= 1 && (
                                 <MembersPanel
                                     openChangeMemberRoleModal={
                                         this.openChangeMemberRoleModal
@@ -156,8 +156,8 @@ class ManageMembers extends Component<IProps, IRole> {
                 return (
                     <ManageMembersContainer>
                         {props.members &&
-                            Array.isArray(props.members) &&
-                            props.members.length >= 1 && (
+                            Array.isArray(props.members.content) &&
+                            props.members.totalElements >= 1 && (
                                 <MembersPanel
                                     openChangeMemberRoleModal={
                                         this.openChangeMemberRoleModal
@@ -211,8 +211,8 @@ class ManageMembers extends Component<IProps, IRole> {
         }
         // console.log(props.members);
         return props.members &&
-            Array.isArray(props.members) &&
-            props.members.length >= 1 ? (
+            Array.isArray(props.members.content) &&
+            props.members.totalElements >= 1 ? (
             <ManageMembersContainer>
                 <MembersPanel
                     openChangeMemberRoleModal={this.openChangeMemberRoleModal}

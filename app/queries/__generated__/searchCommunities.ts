@@ -2,30 +2,28 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { CommunityFilterInput, DirectionInput, ResourceTypeInput, CommunityStatusInput } from "./../../__generated__/globalTypes";
+import { CommunityFilterInput, DirectionInput, CommunityPermissionInput, ResourceTypeInput, CommunityStatusInput } from "./../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: searchCommunities
 // ====================================================
 
-export interface searchCommunities_searchCommunities_content_members {
+export interface searchCommunities_searchCommunities_content_members_content {
   __typename: "CommunityMemberDTO";
+  id: string | null;
+  role: CommunityPermissionInput | null;
+}
+
+export interface searchCommunities_searchCommunities_content_members {
+  __typename: "ResponsePage_CommunityMemberDTO";
   /**
-   * User ID (Ethereum account address)
+   * Total amount of elements.
    */
-  id: string;
+  totalElements: any;
   /**
-   * User avatar URI
+   * Returns the page content.
    */
-  avatar: string | null;
-  /**
-   * Username
-   */
-  username: string | null;
-  /**
-   * User full name
-   */
-  name: string | null;
+  content: (searchCommunities_searchCommunities_content_members_content | null)[];
 }
 
 export interface searchCommunities_searchCommunities_content_approvedId {
@@ -51,9 +49,9 @@ export interface searchCommunities_searchCommunities_content {
    */
   dateUpdated: any;
   /**
-   * Community members list (full profile)
+   * Get community members list with filter, sorting and pagination.
    */
-  members: (searchCommunities_searchCommunities_content_members | null)[];
+  members: searchCommunities_searchCommunities_content_members;
   /**
    * Community custom attribtes
    */

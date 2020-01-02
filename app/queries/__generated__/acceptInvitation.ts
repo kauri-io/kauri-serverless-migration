@@ -16,7 +16,7 @@ export interface acceptInvitation_acceptInvitation {
 
 export interface acceptInvitation {
   /**
-   * Accept an invitation (execute call).
+   * Accept an invitation (execute call) to be a granted member (admin, moderator).
    * This operation can only be performed by a community admin
    */
   acceptInvitation: acceptInvitation_acceptInvitation;

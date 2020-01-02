@@ -29,10 +29,8 @@ export const getAllCommunities = gql`
                 dateCreated
                 dateUpdated
                 members {
-                    id
-                    avatar
-                    username
-                    name
+                    totalElements,
+                    content { id role }
                 }
                 attributes
                 approvedId {
@@ -271,45 +269,45 @@ export const getCommunityInvitationsQuery = gql`
 `
 
 export const prepareRemoveMemberQuery = gql`
-    query prepareRemoveMember($id: String!, $account: String!) {
-        prepareRemoveMember(id: $id, account: $account) {
+    query prepareRemoveGrantedMember($id: String!, $account: String!) {
+        prepareRemoveGrantedMember(id: $id, account: $account) {
             messageHash
         }
     }
 `
 
 export const removeMemberMutation = gql`
-    mutation removeMember(
+    mutation removeGrantedMember(
         $signature: String!
         $id: String!
         $account: String!
     ) {
-        removeMember(signature: $signature, id: $id, account: $account) {
+        removeGrantedMember(signature: $signature, id: $id, account: $account) {
             hash
         }
     }
 `
 
 export const prepareChangeMemberRoleQuery = gql`
-    query prepareChangeMemberRole(
+    query prepareChangeGrantedMemberRole(
         $id: String!
         $account: String!
         $role: CommunityPermissionInput!
     ) {
-        prepareChangeMemberRole(id: $id, account: $account, role: $role) {
+        prepareChangeGrantedMemberRole(id: $id, account: $account, role: $role) {
             messageHash
         }
     }
 `
 
 export const changeMemberRoleMutation = gql`
-    mutation changeMemberRole(
+    mutation changeGrantedMemberRole(
         $signature: String!
         $id: String!
         $account: String!
         $role: CommunityPermissionInput!
     ) {
-        changeMemberRole(
+        changeGrantedMemberRole(
             signature: $signature
             id: $id
             account: $account
@@ -380,4 +378,55 @@ export const getCommunityContent = gql`
     ${Article}
     ${Collection}
     ${Link}
+`
+
+export const getCommunityMembers = gql`
+    query getCommunityMembers(
+        $id: String!
+        $page: Int = 0
+        $size: Int
+        $filter: CommunityMemberFilterInput
+    ) {
+        getCommunityMembers(
+            id: $id
+            page: $page
+            size: $size
+            filter: $filter
+        ) {
+            content {
+                id
+                role
+                user {
+                    id
+                    username
+                    publicUserName: name
+                    avatar
+                    social
+                    userTitle: title
+                    articles(
+                        page: 0
+                        size: 1
+                        filter: { latestVersion: true }
+                    ) {
+                        totalElements
+                    }
+                    collections(page: 0, size: 1) {
+                        totalElements
+                    }
+                    links(page: 0, size: 1) {
+                        totalElements
+                    }
+                    communities {
+                        community {
+                            id
+                            name
+                        }
+                    }
+                }
+            }
+            totalPages
+            totalElements
+            isLast
+        }
+    }
 `

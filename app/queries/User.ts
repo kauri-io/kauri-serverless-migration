@@ -54,8 +54,8 @@ export const getOwnProfile = gql`
                     id
                     name
                     members {
-                        id
-                        role
+                        totalElements,
+                        content { id role }
                     }
                 }
             }
