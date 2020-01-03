@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         '& svg': {
-            margin: theme.spacing(1,1,0,1),
+            margin: theme.spacing(1, 1, 0, 1),
         },
     },
     column: {
@@ -52,8 +52,8 @@ const useStyles = makeStyles((theme: Theme) => ({
         justifyContent: 'space-between',
     },
     counter: {
-        marginTop: theme.spacing(1)
-    }
+        marginTop: theme.spacing(1),
+    },
 }))
 
 const getURL = (string, type) => {
