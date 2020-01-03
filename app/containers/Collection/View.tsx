@@ -18,6 +18,7 @@ import { getCollectionURL, getProfileURL } from '../../lib/getURLs'
 import Link from 'next/link'
 import { openModalAction } from '../../components/Modal/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
+import { ResourceTypeInput } from '../../__generated__/globalTypes'
 
 export const Overlay = styled.div`
     position: absolute;
@@ -264,6 +265,13 @@ class CollectionPage extends Component<IProps> {
                                     ? owner.communityName
                                     : (owner as Article_owner_PublicUserDTO)
                                           .username)
+                            }
+                            type={
+                                owner
+                                    ? owner.__typename === 'CommunityDTO'
+                                        ? ResourceTypeInput.COMMUNITY
+                                        : ResourceTypeInput.USER
+                                    : ResourceTypeInput.USER
                             }
                             ownerId={(owner && (owner as any).id) || ''}
                             userId={userId || ''}
