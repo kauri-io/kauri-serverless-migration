@@ -339,7 +339,8 @@ const ArticleComp = ({
                                 <IPFSIcon />
                                 <a
                                     className={classes.contentLink}
-                                    href={`https://${config.gateway}/ipfs/${contentHash}`}
+                                    href={`${config.ipfsGateway}/${contentHash}`}
+                                    target="_blank"
                                 >
                                     Content
                                 </a>

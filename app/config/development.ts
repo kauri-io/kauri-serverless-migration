@@ -19,4 +19,5 @@ export default {
     cloudImageId: 'asdgvdoyen',
     useCloudImage: false,
     debug: true,
+    ipfsGateway: 'https://ipfs.infura.io/ipfs/',
 }

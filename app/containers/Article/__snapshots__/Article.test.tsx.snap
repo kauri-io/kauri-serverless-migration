@@ -4466,7 +4466,8 @@ exports[`containers/Article should match snapshot 1`] = `
                               </IPFSIcon>
                               <a
                                 className="makeStyles-contentLink-21"
-                                href="https://api.dev.kauri.io/ipfs/hash1"
+                                href="https://ipfs.infura.io/ipfs//hash1"
+                                target="_blank"
                               >
                                 Content
                               </a>
