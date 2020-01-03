@@ -18,6 +18,7 @@ export interface HomepageComponentFragment_Categories_content {
   description: string | null;
   image: string | null;
   link: string | null;
+  linkhref: string | null;
 }
 
 export interface HomepageComponentFragment_Categories {

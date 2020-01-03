@@ -121,6 +121,7 @@ export const homePageContentQuery = gql`
                 description
                 image
                 link
+                linkhref
             }
         }
         ... on Featured {
