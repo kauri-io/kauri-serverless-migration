@@ -49,11 +49,13 @@ export const ArticleStyles = makeStyles((theme: Theme) => {
             [theme.breakpoints.down('lg')]: {
                 display: 'flex',
                 flexDirection: 'column',
+                alignItems: 'center',
             },
             [theme.breakpoints.up('lg')]: {
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'space-between',
+                alignItems: 'center',
             },
         },
         tags: {

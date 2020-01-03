@@ -335,7 +335,7 @@ const ArticleComp = ({
                                 ))}
                         </div>
                         <div className={classes.checkpointAndIPFS}>
-                            <div className={classes.tags}>
+                            <div>
                                 <IPFSIcon />
                                 <a
                                     className={classes.contentLink}
@@ -350,9 +350,10 @@ const ArticleComp = ({
                                     href={
                                         'https://creativecommons.org/licenses/by-sa/4.0/'
                                     }
+                                    target="_blank"
                                 >{`"CC-BY-SA 4.0" licensed`}</a>
                             </div>
-                            <div className={classes.tags}>
+                            <div>
                                 <CheckpointArticles
                                     isOwner={true}
                                     articleCheckpointed={!!checkpoint}

@@ -4392,9 +4392,7 @@ exports[`containers/Article should match snapshot 1`] = `
                           <div
                             className="makeStyles-checkpointAndIPFS-10"
                           >
-                            <div
-                              className="makeStyles-tags-11"
-                            >
+                            <div>
                               <IPFSIcon>
                                 <svg
                                   height="14px"
@@ -4477,13 +4475,12 @@ exports[`containers/Article should match snapshot 1`] = `
                               <a
                                 className="makeStyles-contentLink-21"
                                 href="https://creativecommons.org/licenses/by-sa/4.0/"
+                                target="_blank"
                               >
                                 "CC-BY-SA 4.0" licensed
                               </a>
                             </div>
-                            <div
-                              className="makeStyles-tags-11"
-                            >
+                            <div>
                               <Connect(CheckpointArticles)
                                 articleCheckpointed={false}
                                 isOwner={true}
