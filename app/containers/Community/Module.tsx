@@ -1650,7 +1650,7 @@ export const unbanMemberEpic: Epic<
                               of(closeModalAction()),
                               of(
                                   showNotificationAction({
-                                      description: `User banned from the community`,
+                                      description: `User unbanned from the community`,
                                       message: 'Success',
                                       notificationType: 'success',
                                   })
