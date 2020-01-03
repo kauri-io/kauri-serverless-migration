@@ -667,6 +667,9 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                         <div
                           className="makeStyles-bottom-7"
                         >
+                          <div
+                            onClick={[Function]}
+                          />
                           <Hidden
                             implementation="css"
                             smDown={true}
@@ -686,21 +689,21 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                               <HiddenCss
                                 classes={
                                   Object {
-                                    "lgDown": "PrivateHiddenCss-lgDown-77",
-                                    "lgUp": "PrivateHiddenCss-lgUp-76",
-                                    "mdDown": "PrivateHiddenCss-mdDown-74",
-                                    "mdUp": "PrivateHiddenCss-mdUp-73",
-                                    "onlyLg": "PrivateHiddenCss-onlyLg-75",
-                                    "onlyMd": "PrivateHiddenCss-onlyMd-72",
-                                    "onlySm": "PrivateHiddenCss-onlySm-69",
-                                    "onlyXl": "PrivateHiddenCss-onlyXl-78",
-                                    "onlyXs": "PrivateHiddenCss-onlyXs-66",
-                                    "smDown": "PrivateHiddenCss-smDown-71",
-                                    "smUp": "PrivateHiddenCss-smUp-70",
-                                    "xlDown": "PrivateHiddenCss-xlDown-80",
-                                    "xlUp": "PrivateHiddenCss-xlUp-79",
-                                    "xsDown": "PrivateHiddenCss-xsDown-68",
-                                    "xsUp": "PrivateHiddenCss-xsUp-67",
+                                    "lgDown": "PrivateHiddenCss-lgDown-78",
+                                    "lgUp": "PrivateHiddenCss-lgUp-77",
+                                    "mdDown": "PrivateHiddenCss-mdDown-75",
+                                    "mdUp": "PrivateHiddenCss-mdUp-74",
+                                    "onlyLg": "PrivateHiddenCss-onlyLg-76",
+                                    "onlyMd": "PrivateHiddenCss-onlyMd-73",
+                                    "onlySm": "PrivateHiddenCss-onlySm-70",
+                                    "onlyXl": "PrivateHiddenCss-onlyXl-79",
+                                    "onlyXs": "PrivateHiddenCss-onlyXs-67",
+                                    "smDown": "PrivateHiddenCss-smDown-72",
+                                    "smUp": "PrivateHiddenCss-smUp-71",
+                                    "xlDown": "PrivateHiddenCss-xlDown-81",
+                                    "xlUp": "PrivateHiddenCss-xlUp-80",
+                                    "xsDown": "PrivateHiddenCss-xsDown-69",
+                                    "xsUp": "PrivateHiddenCss-xsUp-68",
                                   }
                                 }
                                 lgDown={false}
@@ -715,7 +718,7 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                                 xsUp={false}
                               >
                                 <div
-                                  className="PrivateHiddenCss-smDown-71"
+                                  className="PrivateHiddenCss-smDown-72"
                                 >
                                   <div
                                     className="makeStyles-row-3"
@@ -751,8 +754,11 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                                         </ForwardRef(SvgIcon)>
                                       </WithStyles(ForwardRef(SvgIcon))>
                                     </ForwardRef>
-                                    <WithStyles(ForwardRef(Typography))>
+                                    <WithStyles(ForwardRef(Typography))
+                                      className="makeStyles-counter-8"
+                                    >
                                       <ForwardRef(Typography)
+                                        className="makeStyles-counter-8"
                                         classes={
                                           Object {
                                             "alignCenter": "MuiTypography-alignCenter",
@@ -789,7 +795,7 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                                         }
                                       >
                                         <p
-                                          className="MuiTypography-root MuiTypography-body1"
+                                          className="MuiTypography-root makeStyles-counter-8 MuiTypography-body1"
                                         />
                                       </ForwardRef(Typography)>
                                     </WithStyles(ForwardRef(Typography))>
@@ -824,8 +830,11 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                                         </ForwardRef(SvgIcon)>
                                       </WithStyles(ForwardRef(SvgIcon))>
                                     </ForwardRef>
-                                    <WithStyles(ForwardRef(Typography))>
+                                    <WithStyles(ForwardRef(Typography))
+                                      className="makeStyles-counter-8"
+                                    >
                                       <ForwardRef(Typography)
+                                        className="makeStyles-counter-8"
                                         classes={
                                           Object {
                                             "alignCenter": "MuiTypography-alignCenter",
@@ -862,7 +871,7 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                                         }
                                       >
                                         <p
-                                          className="MuiTypography-root MuiTypography-body1"
+                                          className="MuiTypography-root makeStyles-counter-8 MuiTypography-body1"
                                         />
                                       </ForwardRef(Typography)>
                                     </WithStyles(ForwardRef(Typography))>
@@ -897,8 +906,11 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                                         </ForwardRef(SvgIcon)>
                                       </WithStyles(ForwardRef(SvgIcon))>
                                     </ForwardRef>
-                                    <WithStyles(ForwardRef(Typography))>
+                                    <WithStyles(ForwardRef(Typography))
+                                      className="makeStyles-counter-8"
+                                    >
                                       <ForwardRef(Typography)
+                                        className="makeStyles-counter-8"
                                         classes={
                                           Object {
                                             "alignCenter": "MuiTypography-alignCenter",
@@ -935,7 +947,7 @@ exports[`components/Card/PublicProfileCard should match snapshot 1`] = `
                                         }
                                       >
                                         <p
-                                          className="MuiTypography-root MuiTypography-body1"
+                                          className="MuiTypography-root makeStyles-counter-8 MuiTypography-body1"
                                         />
                                       </ForwardRef(Typography)>
                                     </WithStyles(ForwardRef(Typography))>
