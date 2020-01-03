@@ -535,10 +535,10 @@ export const relatedArticles = gql`
                         version
                         title
                         description
-                        author {
+                        contributors {
+                            id
                             name
                             username
-                            id
                             avatar
                         }
                         dateCreated
