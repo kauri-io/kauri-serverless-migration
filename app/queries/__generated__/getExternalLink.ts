@@ -21,7 +21,7 @@ export interface getExternalLink_getExternalLink_resourceIdentifier {
 }
 
 export interface getExternalLink_getExternalLink_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface getExternalLink_getExternalLink_owner_PublicUserDTO_resourceIdentifier {

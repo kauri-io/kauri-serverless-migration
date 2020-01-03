@@ -282,13 +282,18 @@ export const Community = gql`
                 }
             }
         }
-        members {
-            id
-            name
-            username
-            avatar
-            role
-            status
+        members(size: 10, sort: "role", dir: ASC) {
+            totalElements
+            totalElementsBreakdown
+            content {
+                id
+                role
+                user {
+                    id
+                    username
+                    avatar
+                }
+            }
         }
         approvedId {
             id

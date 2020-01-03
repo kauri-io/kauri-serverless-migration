@@ -8,12 +8,14 @@ import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import { Grid } from '@material-ui/core'
+import {
+    leaveCommunityAction,
+    removeGrantedMemberAction,
+} from '../../../Community/Module'
 
 interface IProps {
-    removeMemberAction: (payload: {
-        id?: string | null
-        account?: string | null
-    }) => void
+    removeGrantedMemberAction: typeof removeGrantedMemberAction
+    leaveCommunityAction: typeof leaveCommunityAction
     userId: string
     data: ICommunity[]
 }
@@ -30,19 +32,11 @@ const TableComp: React.FunctionComponent<IProps> = props => {
             </TableHead>
             <TableBody>
                 {props.data &&
-                    props.data.map(({ community }) => {
-                        const currentCommunityUser = community.members.find(
-                            ({ id }) => id === props.userId
-                        )
-                        let currentCommunityUserRole = ''
-                        if (community.members && currentCommunityUser) {
-                            currentCommunityUserRole = currentCommunityUser.role
-                        }
-
+                    props.data.map(({ role, community }) => {
                         return (
                             <TableRow key={community.id}>
                                 <TableCell>
-                                    <Label>{currentCommunityUserRole}</Label>
+                                    <Label>{role}</Label>
                                 </TableCell>
                                 <TableCell>
                                     <Label>{community.name}</Label>
@@ -54,12 +48,32 @@ const TableComp: React.FunctionComponent<IProps> = props => {
                                     >
                                         <Grid item={true}>
                                             <Label
-                                                onClick={() =>
-                                                    props.removeMemberAction({
-                                                        account: props.userId,
-                                                        id: community.id,
-                                                    })
-                                                }
+                                                onClick={() => {
+                                                    if (
+                                                        role === 'ADMIN' ||
+                                                        role === 'CURATOR'
+                                                    ) {
+                                                        return props.removeGrantedMemberAction(
+                                                            {
+                                                                account:
+                                                                    props.userId,
+                                                                id:
+                                                                    community.id,
+                                                            }
+                                                        )
+                                                    } else if (
+                                                        role === 'BASIC'
+                                                    ) {
+                                                        return props.leaveCommunityAction(
+                                                            {
+                                                                id:
+                                                                    community.id,
+                                                            }
+                                                        )
+                                                    } else {
+                                                        //do nothing
+                                                    }
+                                                }}
                                                 hoverColor={'hoverTextColor'}
                                             >
                                                 Leave Community

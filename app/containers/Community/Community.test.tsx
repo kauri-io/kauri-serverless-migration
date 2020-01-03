@@ -10,6 +10,7 @@ describe('containers/Community/View', () => {
             acceptCommunityInvitationAction: jest.fn(),
             currentUser: '123',
             isCommunityAdmin: false,
+            isCommunityModerator: true,
             secret: null,
             communityId: '234',
             data: {
@@ -25,6 +26,8 @@ describe('containers/Community/View', () => {
             transferArticleToCommunityAction: jest.fn(),
             changeOwnerExtenalLinkAction: jest.fn(),
             showNotificationAction: jest.fn(),
+            joinCommunityAction: jest.fn(),
+            leaveCommunityAction: jest.fn(),
             isLoggedIn: true,
         }
         const wrapper = mountWithRedux(

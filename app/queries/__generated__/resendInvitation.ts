@@ -16,7 +16,7 @@ export interface resendInvitation_resendInvitation {
 
 export interface resendInvitation {
   /**
-   * Resend a pending invitation.
+   * Resend a pending invitation to be a granted member (admin, moderator)
    * This operation can only be performed by a community admin
    */
   resendInvitation: resendInvitation_resendInvitation;

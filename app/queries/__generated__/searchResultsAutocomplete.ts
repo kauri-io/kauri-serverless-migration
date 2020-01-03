@@ -2,7 +2,7 @@
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
-import { SearchFilterInput, ResourceTypeInput, ArticleStatusInput, CommunityPermissionInput, UserStatusInput } from "./../../__generated__/globalTypes";
+import { SearchFilterInput, ResourceTypeInput, ArticleStatusInput, CommunityPermissionInput } from "./../../__generated__/globalTypes";
 
 // ====================================================
 // GraphQL query operation: searchResultsAutocomplete
@@ -21,7 +21,7 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resourceId
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityInvitationDTO {
-  __typename: "CommunityInvitationDTO" | "CommunityMemberDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "CommunityInvitationDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO_resourceIdentifier {
@@ -37,7 +37,7 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_E
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ExternalLinkDTO_owner_PublicUserDTO_resourceIdentifier {
@@ -473,7 +473,7 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_A
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_ArticleDTO_owner_PublicUserDTO_resourceIdentifier {
@@ -674,7 +674,7 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_A
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_ArticleDTO {
-  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "ArticleDTO" | "CollectionDTO" | "CommunityInvitationDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_owner_PublicUserDTO_resourceIdentifier {
@@ -766,7 +766,7 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_C
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_sections_resources_PublicUserDTO {
-  __typename: "PublicUserDTO" | "CollectionDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "CommunityMemberDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
+  __typename: "PublicUserDTO" | "CollectionDTO" | "CommunityDTO" | "CommunityInvitationDTO" | "ExternalLinkDTO" | "CommentDTO" | "SeriesDTO" | "UserDTO" | "TemplateDTO" | "SearchResultDTO" | "CuratedListDTO";
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CollectionDTO_sections_resources_ArticleDTO {
@@ -848,29 +848,28 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_C
   isBookmarked: boolean;
 }
 
-export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO_members {
+export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO_members_content {
   __typename: "CommunityMemberDTO";
   /**
-   * User ID (Ethereum account address)
+   * Community Member ID
    */
   id: string;
   /**
-   * User full name
+   * Community Member Role
    */
-  name: string | null;
+  role: CommunityPermissionInput;
+}
+
+export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO_members {
+  __typename: "ResponseBreakdownPage_CommunityMemberDTO";
   /**
-   * Username
+   * Total amount of elements.
    */
-  username: string | null;
+  totalElements: any;
   /**
-   * User avatar URI
+   * Returns the page content.
    */
-  avatar: string | null;
-  role: CommunityPermissionInput | null;
-  /**
-   * User status
-   */
-  status: UserStatusInput | null;
+  content: (searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO_members_content | null)[];
 }
 
 export interface searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO_approvedId {
@@ -928,9 +927,9 @@ export interface searchResultsAutocomplete_searchAutocomplete_content_resource_C
    */
   attributes: any | null;
   /**
-   * Community members list (full profile)
+   * Get community members list with filter, sorting and pagination.
    */
-  members: (searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO_members | null)[];
+  members: searchResultsAutocomplete_searchAutocomplete_content_resource_CommunityDTO_members;
   /**
    * List of approved curated content
    */

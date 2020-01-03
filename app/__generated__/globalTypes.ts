@@ -25,6 +25,8 @@ export enum CommunityInvitationStatusInput {
 
 export enum CommunityPermissionInput {
   ADMIN = "ADMIN",
+  BANNED = "BANNED",
+  BASIC = "BASIC",
   CURATOR = "CURATOR",
 }
 
@@ -126,6 +128,10 @@ export interface CommunityInvitationFilterInput {
   dateAddedLessThan?: any | null;
   deduplicateByEmail?: boolean | null;
   statusIn?: (CommunityInvitationStatusInput | null)[] | null;
+}
+
+export interface CommunityMemberFilterInput {
+  roleIn?: (CommunityPermissionInput | null)[] | null;
 }
 
 export interface CommunityResourceFilterInput {

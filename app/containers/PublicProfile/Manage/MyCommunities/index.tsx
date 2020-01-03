@@ -2,25 +2,23 @@ import Table from './Table'
 import { H3, BodyCard } from '../../../../components/Typography'
 import Button from '../../../../components/Button'
 import { Grid, makeStyles, Theme } from '@material-ui/core'
+import {
+    leaveCommunityAction,
+    removeGrantedMemberAction,
+} from '../../../Community/Module'
 
 export interface ICommunity {
     role: string
     community: {
         id: string
         name: string
-        members: Array<{
-            id: string
-            role: string
-        }>
     }
 }
 
 interface IProps {
-    removeMemberAction: (payload: {
-        id?: string | null
-        account?: string | null
-    }) => void
+    removeGrantedMemberAction: typeof removeGrantedMemberAction
     routeChangeAction: (route: string) => void
+    leaveCommunityAction: typeof leaveCommunityAction
     data: ICommunity[]
     ownProfile: {
         getMyProfile: {
@@ -61,7 +59,8 @@ const MyCommunities: React.FunctionComponent<IProps> = props => {
                 The communities you manage and moderate are displayed below:
             </BodyCard>
             <Table
-                removeMemberAction={props.removeMemberAction}
+                removeGrantedMemberAction={props.removeGrantedMemberAction}
+                leaveCommunityAction={props.leaveCommunityAction}
                 userId={props.ownProfile.getMyProfile.id}
                 data={props.data}
             />

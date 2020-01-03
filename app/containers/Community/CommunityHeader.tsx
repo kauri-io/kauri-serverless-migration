@@ -14,14 +14,17 @@ import {
     // curateCommunityResourcesAction as curateCommunityResources,
     acceptCommunityInvitationAction as acceptCommunityInvitation,
     transferArticleToCommunityAction as transferArticleToCommunity,
+    joinCommunityAction,
+    leaveCommunityAction,
 } from './Module'
 import AddMemberButtonComponent from '../../components/Button/AddMemberButton'
-import { getUpdateCommunityURL } from '../../lib/getURLs'
+import { getUpdateCommunityURL, getCommunityURL } from '../../lib/getURLs'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import { ResourceIdentifierInput } from '../../__generated__/globalTypes'
 import ChooseResourceModal from '../ChooseResourceModal'
 import { globalSearchApprovedArticles } from '../../queries/Article'
 import { changeOwnerExtenalLinkAction } from '../CreateLink/Module'
+import { Community_members } from '../../queries/Fragments/__generated__/Community'
 
 const useStyles = makeStyles((theme: Theme) => ({
     button: {
@@ -277,13 +280,6 @@ const getURL = (value: string, type: string) => {
     }
 }
 
-interface ICommunityMember {
-    id: string | null
-    username: string | null
-    role: string | null
-    avatar: string | null
-}
-
 interface IProps {
     id: string
     avatar: string | null
@@ -295,19 +291,22 @@ interface IProps {
         github?: string
         twitter?: string
     } | null
-    members: Array<ICommunityMember | null> | null
+    members: Community_members
     articleCount: number
     collectionCount: number
     background?: string
     isMember?: boolean
     isCreator?: boolean
     isCommunityAdmin?: boolean
+    isCommunityModerator: boolean
     routeChangeAction?: (route: string) => void
     openModalAction: (children: any) => void
     closeModalAction: () => void
     transferArticleToCommunityAction: typeof transferArticleToCommunity
     changeOwnerExtenalLinkAction: typeof changeOwnerExtenalLinkAction
     acceptCommunityInvitationAction: typeof acceptCommunityInvitation
+    joinCommunityAction: typeof joinCommunityAction
+    leaveCommunityAction: typeof leaveCommunityAction
     secret: null | string
     openAddMemberModal: () => void
     userId: string
@@ -331,6 +330,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
     openAddMemberModal,
     transferArticleToCommunityAction,
     changeOwnerExtenalLinkAction,
+    joinCommunityAction,
     userId,
 }) => {
     const classes = useStyles()
@@ -477,7 +477,7 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                         <Row>
                             <RightSide>
                                 <Moderators>
-                                    {members && members.length > 0 && (
+                                    {members && members.totalElements > 0 && (
                                         <>
                                             <Label
                                                 className="moderators"
@@ -486,23 +486,39 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                                 Moderators
                                             </Label>
                                             <Row>
-                                                {members.map(i =>
-                                                    i ? (
-                                                        <Avatar
-                                                            key={String(i.id)}
-                                                            id={String(i.id)}
-                                                            username={
-                                                                i.username ||
-                                                                null
-                                                            }
-                                                            avatar={
-                                                                i.avatar || null
-                                                            }
-                                                            color="secondary"
-                                                            withName={false}
-                                                        />
-                                                    ) : null
-                                                )}
+                                                {members.content
+                                                    .filter(
+                                                        i =>
+                                                            i !== null &&
+                                                            (i.role ===
+                                                                'ADMIN' ||
+                                                                i.role ===
+                                                                    'CURATOR')
+                                                    )
+                                                    .map(i =>
+                                                        i ? (
+                                                            <Avatar
+                                                                key={String(
+                                                                    i.id
+                                                                )}
+                                                                id={String(
+                                                                    i.id
+                                                                )}
+                                                                username={
+                                                                    i.user
+                                                                        .username ||
+                                                                    null
+                                                                }
+                                                                avatar={
+                                                                    i.user
+                                                                        .avatar ||
+                                                                    null
+                                                                }
+                                                                color="secondary"
+                                                                withName={false}
+                                                            />
+                                                        ) : null
+                                                    )}
                                                 {isCommunityAdmin && (
                                                     <AddMemberButtonComponent
                                                         onClick={() =>
@@ -516,8 +532,8 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                 </Moderators>
                             </RightSide>
                         </Row>
-                        <ActionsRow>
-                            {isCommunityAdmin && (
+                        {isCommunityAdmin && (
+                            <ActionsRow>
                                 <Button
                                     color="primary"
                                     variant="contained"
@@ -531,46 +547,10 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                 >
                                     Update Community
                                 </Button>
-                            )}
-                        </ActionsRow>
-                        <ActionsRow>
-                            {/* {isMember && (
-                <Tooltip
-                  className="suggest-content"
-                  position="bottom"
-                  trigger="mouseenter"
-                  html={
-                    <SuggestContent
-                      curateCommunityResourcesAction={
-                        curateCommunityResourcesAction
-                      }
-                      id={id}
-                      articles={articles}
-                      collections={collections}
-                      suggestArticleAction={suggestArticleAction}
-                      suggestCollectionAction={suggestCollectionAction}
-                      closeModalAction={closeModalAction}
-                      openModalAction={openModalAction}
-                    />
-                  }
-                  interactive={true}
-                >
-                  <SuggestIcon />
-                  <Label color="white">Suggest Content</Label>
-                </Tooltip>
-              )} */}
-                            {isMember && (
-                                // <Tooltip
-                                //   className="add-content"
-                                //   position="bottom"
-                                //   trigger="mouseenter"
-                                //   html={
-                                //     <AddCommunityContent
-                                //       addCommunityArticleAction={addCommunityArticleAction}
-                                //     />
-                                //   }
-                                //   interactive={true}
-                                // >
+                            </ActionsRow>
+                        )}
+                        {isMember && (
+                            <ActionsRow>
                                 <Button
                                     color="primary"
                                     variant="outlined"
@@ -581,9 +561,36 @@ const CommunityHeader: React.FunctionComponent<IProps> = ({
                                 >
                                     Add Content
                                 </Button>
-                                // </Tooltip>
-                            )}
-                        </ActionsRow>
+                            </ActionsRow>
+                        )}
+                        {!isMember && (
+                            <ActionsRow>
+                                <Button
+                                    color="primary"
+                                    variant="contained"
+                                    className={classes.button}
+                                    onClick={() => {
+                                        if (!!userId) {
+                                            return joinCommunityAction({ id })
+                                        } else {
+                                            return (
+                                                routeChangeAction &&
+                                                routeChangeAction(
+                                                    `/login?r=${
+                                                        getCommunityURL({
+                                                            id,
+                                                            name,
+                                                        }).as
+                                                    }`
+                                                )
+                                            )
+                                        }
+                                    }}
+                                >
+                                    Join community
+                                </Button>
+                            </ActionsRow>
+                        )}
                     </RightSide>
                 </ContentRow>
             </Container>

@@ -10,8 +10,7 @@ import {
 import ArticleCard from '../../../components/Card/ArticleCard'
 import LinkCard from '../../../components/Card/LinkCard'
 import CollectionCard from '../../../components/Card/CollectionCard'
-import ArticlesEmptyState from '../EmptyStates/Articles'
-import CollectionsEmptyState from '../EmptyStates/Collections'
+import NoContent from '../EmptyStates/NoContent'
 import { ResourceTypeInput } from '../../../__generated__/globalTypes'
 
 interface IProps {
@@ -41,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }))
 
-export const ResourceTab = ({ types, getCommunityContentQuery }: IProps) => {
+export const ResourceTab = ({ getCommunityContentQuery }: IProps) => {
     const classes = useStyles()
     if (getCommunityContentQuery.loading) {
         return <Loading />
@@ -120,11 +119,7 @@ export const ResourceTab = ({ types, getCommunityContentQuery }: IProps) => {
                         )
                     ) : (
                         <div style={{ width: '100%' }}>
-                            {types.includes(ResourceTypeInput.COLLECTION) ? (
-                                <CollectionsEmptyState />
-                            ) : (
-                                <ArticlesEmptyState />
-                            )}
+                            <NoContent />
                         </div>
                     )}
                 </Grid>
