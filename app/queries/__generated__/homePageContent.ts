@@ -18,6 +18,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_main_Categorie
   description: string | null;
   image: string | null;
   link: string | null;
+  linkhref: string | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_main_Categories {
@@ -4824,6 +4825,7 @@ export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Catego
   description: string | null;
   image: string | null;
   link: string | null;
+  linkhref: string | null;
 }
 
 export interface homePageContent_getLatestHomepageDescriptor_rows_sidebar_Categories {
