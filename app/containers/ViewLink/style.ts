@@ -44,7 +44,7 @@ export const useStyles = makeStyles((theme: Theme) => {
             flexDirection: 'column',
             height: '100%',
             justifyContent: 'flex-start',
-            overflowY: 'scroll',
+            //overflowY: 'scroll',
             padding: theme.spacing(2, 2, 20, 2),
             position: 'fixed',
         },
