@@ -450,7 +450,18 @@ exports[`components/Select should match snapshot 1`] = `
           onRequestClose={[Function]}
           onShow={[Function]}
           onShown={[Function]}
-          popperOptions={Object {}}
+          popperOptions={
+            Object {
+              "modifiers": Object {
+                "flip": Object {
+                  "enabled": false,
+                },
+                "offset": Object {
+                  "offset": "-150px,-40px",
+                },
+              },
+            }
+          }
           position="bottom"
           size="regular"
           sticky={false}
