@@ -1,7 +1,4 @@
 {
-  "engines": {
-    "node": "10.x"
-  },
   "scripts": {
     "deploy-prod": "now -A prod.now.json --prod",
     "deploy-qa": "now -A qa.now.json",
