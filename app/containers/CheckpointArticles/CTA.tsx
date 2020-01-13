@@ -1,6 +1,6 @@
 import { Component } from 'react'
-import Loading from '../../components/Loading'
 import Button from '../../components/Button'
+import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
 export const CheckpointArticlesIcon = () => (
     <svg
         style={{ marginRight: 16 }}
@@ -32,6 +32,9 @@ interface IState {
 interface IProps {
     pageType: string
     checkpointArticlesAction: () => void
+    isLoggedIn: boolean
+    routeChangeAction: typeof routeChangeAction
+    url?: string
 }
 
 class CTA extends Component<IProps, IState> {
@@ -59,14 +62,19 @@ class CTA extends Component<IProps, IState> {
     }
 
     render() {
-        if (this.state.activated === false) {
-            return <Loading />
-        }
         return (
             <Button
                 color="primary"
                 variant="text"
-                onClick={() => this.props.checkpointArticlesAction()}
+                onClick={() => {
+                    return this.props.isLoggedIn && this.state.activated
+                        ? this.props.checkpointArticlesAction()
+                        : this.props.routeChangeAction(
+                              `/login${
+                                  this.props.url ? `?r=${this.props.url}` : ''
+                              }`
+                          )
+                }}
             >
                 <CheckpointArticlesIcon />
                 {this.props.pageType === 'public-profile'
