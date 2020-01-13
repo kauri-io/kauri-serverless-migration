@@ -158,6 +158,12 @@ export default ({ children, placeHolder, value }: IProps) => {
             position="bottom"
             trigger="click"
             unmountHTMLWhenHide={true}
+            popperOptions={{
+                modifiers: {
+                    offset: { offset: '-150px,-40px' },
+                    flip: { enabled: false },
+                },
+            }}
         >
             <Select>
                 <Label textTransform="uppercase">{value || placeHolder}</Label>

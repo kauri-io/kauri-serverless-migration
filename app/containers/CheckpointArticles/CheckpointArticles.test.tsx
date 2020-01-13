@@ -8,6 +8,8 @@ describe('containers/CheckpointArticles', () => {
             checkpointArticlesAction: jest.fn(),
             pageType: 'public-profile' as IProps['pageType'],
             isOwner: true,
+            isLoggedIn: true,
+            routeChangeAction: jest.fn(),
         }
         const wrapper = mountWithRedux(
             <MockedProvider>

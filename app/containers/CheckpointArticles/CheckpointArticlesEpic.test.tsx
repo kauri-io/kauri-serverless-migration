@@ -9,7 +9,9 @@ jest.mock('../../lib/analytics', () => ({
 
 describe('checkpointArticlesEpic', () => {
     beforeAll(() => {
-        // global.window = {}
+        global.window.ethereum = {
+            enable: () => from(Promise.resolve(true)),
+        }
         global.window.web3 = {
             toHex: () => ({ slice: () => 'abc' }),
             padLeft: () => 'abc',

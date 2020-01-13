@@ -44,6 +44,7 @@ export const checkpointArticlesEpic: Epic<
         ofType(CHECKPOINT_ARTICLES),
         switchMap(() =>
             web3GetNetwork().pipe(
+                mergeMap(() => global.window.ethereum.enable()),
                 mergeMap(() =>
                     apolloClient.mutate({
                         mutation: checkpointArticles,

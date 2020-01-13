@@ -511,8 +511,10 @@ exports[`containers/CheckpointArticles should match snapshot 1`] = `
         >
           <CheckpointArticles
             checkpointArticlesAction={[MockFunction]}
+            isLoggedIn={true}
             isOwner={true}
             pageType="public-profile"
+            routeChangeAction={[MockFunction]}
           >
             <View__CheckpointedArticlesContainer>
               <StyledComponent
