@@ -66,7 +66,7 @@ const memberOfArticleCommunity = (communities, articleOwner) => {
         Array.isArray(communities) &&
         (communities.includes(articleOwner) ||
             communities.find(
-                communityRole => communityRole.community.id === articleOwner
+                communityRole => (communityRole === "ADMIN" || communityRole === "CURATOR" ) && communityRole.community.id === articleOwner
             ))
     )
 }

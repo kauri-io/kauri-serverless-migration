@@ -3711,7 +3711,6 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                 articleCount={4}
                 avatar="https://api.dev.kauri.io:443/ipfs/QmNcLPRxnB895dstAuRKewvUmVC8uTaSX4Htsz7asvNQma"
                 background={null}
-                changeOwnerExtenalLinkAction={[MockFunction]}
                 closeModalAction={
                   [MockFunction] {
                     "calls": Array [
@@ -3726,6 +3725,7 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                   }
                 }
                 collectionCount={1}
+                curateCommunityResourcesAction={[MockFunction]}
                 description="fdsfdsfds"
                 id="5df81fc59c39750001a48158"
                 isCommunityAdmin={false}
@@ -3733,7 +3733,6 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                 isCreator={false}
                 isMember={false}
                 joinCommunityAction={[MockFunction]}
-                leaveCommunityAction={[MockFunction]}
                 members={
                   Object {
                     "__typename": "ResponseBreakdownPage_CommunityMemberDTO",
@@ -3782,7 +3781,6 @@ exports[`containers/Community/View should match the snapshot 1`] = `
                     "testing",
                   ]
                 }
-                transferArticleToCommunityAction={[MockFunction]}
                 userId="123"
                 website=""
               >

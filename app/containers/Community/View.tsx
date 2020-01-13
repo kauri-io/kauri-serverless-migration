@@ -6,7 +6,6 @@ import { propEq, path, any } from 'ramda'
 import {
     curateCommunityResourcesAction as curateCommunityResources,
     acceptCommunityInvitationAction as acceptCommunityInvitation,
-    transferArticleToCommunityAction as transferArticleToCommunity,
     leaveCommunityAction,
     joinCommunityAction,
 } from './Module'
@@ -37,11 +36,10 @@ import {
     DialogContentText,
 } from '@material-ui/core'
 import Loading from '../../components/Loading'
-import { changeOwnerExtenalLinkAction } from '../CreateLink/Module'
 import ResourceTab from './ResourceTab'
-import Manage from './Manage/'
+import ManageTab from './ManageTab'
 import MembersTab from './MembersTab'
-import Discussion from './Discussion/View'
+import DiscussionTab from './DiscussionTab/View'
 
 const styles = (theme: Theme) => ({
     tabs: {
@@ -86,8 +84,6 @@ interface IProps {
     sendCommunityInvitationAction: (
         payload: Pick<sendInvitationVariables, 'id' | 'invitation'>
     ) => void
-    transferArticleToCommunityAction: typeof transferArticleToCommunity
-    changeOwnerExtenalLinkAction: typeof changeOwnerExtenalLinkAction
     showNotificationAction: typeof showNotification
     joinCommunityAction: typeof joinCommunityAction
     leaveCommunityAction: typeof leaveCommunityAction
@@ -165,14 +161,11 @@ class CommunityConnection extends React.Component<IProps, IState> {
             closeModalAction,
             openModalAction,
             routeChangeAction,
-            // curateCommunityResourcesAction,
+            curateCommunityResourcesAction,
             acceptCommunityInvitationAction,
-            transferArticleToCommunityAction,
-            changeOwnerExtenalLinkAction,
             isCommunityAdmin,
             isCommunityModerator,
             joinCommunityAction,
-            leaveCommunityAction,
         } = this.props
 
         const articlesCount =
@@ -317,10 +310,6 @@ class CommunityConnection extends React.Component<IProps, IState> {
                 </Dialog>
 
                 <CommunityHeader
-                    transferArticleToCommunityAction={
-                        transferArticleToCommunityAction
-                    }
-                    changeOwnerExtenalLinkAction={changeOwnerExtenalLinkAction}
                     secret={secret}
                     acceptCommunityInvitationAction={
                         acceptCommunityInvitationAction
@@ -349,7 +338,7 @@ class CommunityConnection extends React.Component<IProps, IState> {
                     openAddMemberModal={openAddMemberModal}
                     userId={currentUser}
                     joinCommunityAction={joinCommunityAction}
-                    leaveCommunityAction={leaveCommunityAction}
+                    curateCommunityResourcesAction={curateCommunityResourcesAction}
                 />
                 <Tabs
                     TabIndicatorProps={{ style: { height: 3 } }}
@@ -391,14 +380,14 @@ class CommunityConnection extends React.Component<IProps, IState> {
                         types={['ARTICLE', 'LINK', 'COLLECTION']}
                     />
                 )}
-                {this.state.tab === getActualTabId(2) && <Discussion />}
+                {this.state.tab === getActualTabId(2) && <DiscussionTab />}
                 {this.state.tab === getActualTabId(3) && (
                     <MembersTab id={getCommunity.id} />
                 )}
                 {this.state.tab === getActualTabId(4) && (
-                    <Manage
+                    <ManageTab
                         openAddMemberModal={openAddMemberModal}
-                        communityId={getCommunity.id}
+                        communityId={getCommunity.id || ''}
                         key="manage"
                         isCommunityAdmin={isCommunityAdmin}
                         members={getCommunity.members}

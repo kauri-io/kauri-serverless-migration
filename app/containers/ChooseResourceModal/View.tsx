@@ -175,6 +175,8 @@ const ChooseResourceModalContentView = props => {
                                           ...pathToResource,
                                       ])(result) as Article
 
+                                      var author = article.contributors[0] ? article.contributors[0] : article.author
+
                                       return (
                                           <div
                                               className={
@@ -194,17 +196,10 @@ const ChooseResourceModalContentView = props => {
                                                   </Typography>
                                                   <CardDetails
                                                       user={{
-                                                          id: article.author.id,
-                                                          username:
-                                                              article.author
-                                                                  .username ||
-                                                              '',
-                                                          name:
-                                                              article.author
-                                                                  .name || '',
-                                                          avatar:
-                                                              article.author
-                                                                  .avatar || '',
+                                                          id: author.id,
+                                                          username:author.username || '',
+                                                          name: author.name || '',
+                                                          avatar: author.avatar || '',
                                                       }}
                                                       date={
                                                           article.datePublished
@@ -341,9 +336,7 @@ const ChooseResourceModalContentView = props => {
                                       var collection = path<Collection>([
                                           ...pathToResource,
                                       ])(result) as Collection
-                                      console.log('collection', collection)
                                       var owner = collection.owner as UserOwner
-                                      console.log('owner', owner)
 
                                       return (
                                           <div

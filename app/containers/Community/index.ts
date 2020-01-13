@@ -15,11 +15,9 @@ import {
     acceptCommunityInvitationAction,
     sendCommunityInvitationAction,
     removeResourceAction,
-    transferArticleToCommunityAction,
     joinCommunityAction,
     leaveCommunityAction,
 } from './Module'
-import { changeOwnerExtenalLinkAction } from '../CreateLink/Module'
 
 const mapStateToProps = (state: IReduxState, ownProps: any) => {
     return {
@@ -68,8 +66,6 @@ export default compose(
             routeChangeAction,
             sendCommunityInvitationAction,
             showNotificationAction,
-            transferArticleToCommunityAction,
-            changeOwnerExtenalLinkAction,
             joinCommunityAction,
             leaveCommunityAction,
         }
