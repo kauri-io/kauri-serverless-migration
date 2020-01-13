@@ -20,4 +20,5 @@ export default {
     useCloudImage: true,
     debug: false,
     ipfsGateway: 'https://ipfs.infura.io/ipfs/',
+    enableAPM: true,
 }
