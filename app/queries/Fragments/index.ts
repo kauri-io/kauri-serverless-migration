@@ -121,6 +121,9 @@ export const Article = gql`
         }
         updateComment
         isBookmarked
+        tips {
+            totals
+        }
     }
 
     ${UserOwner}

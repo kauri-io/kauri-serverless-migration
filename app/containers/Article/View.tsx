@@ -37,6 +37,8 @@ import Link from 'next/link'
 import CheckpointArticles from '../CheckpointArticles'
 import config from '../../config'
 import { ResourceTypeInput } from '../../__generated__/globalTypes'
+import TipWidget from './components/TipWidget'
+import { ITipAction } from './Module'
 
 const IPFSIcon = () => (
     <svg width="12px" height="14px" viewBox="0 0 12 14" version="1.1">
@@ -106,6 +108,7 @@ interface IProps {
     voteAction: any
     routeChangeAction: typeof routeChangeAction
     openModalAction: typeof openModalAction
+    tipAction: ITipAction
     userId: string
     user: any
     hostName: string
@@ -119,6 +122,7 @@ const ArticleComp = ({
     voteAction,
     routeChangeAction,
     addCommentAction,
+    tipAction,
     userId,
     user,
     RelatedArticles: { searchMoreLikeThis },
@@ -141,6 +145,7 @@ const ArticleComp = ({
             version,
             contentHash,
             checkpoint,
+            tips,
         },
     },
 }: IProps) => {
@@ -151,6 +156,8 @@ const ArticleComp = ({
     const canonicalUrl = attributes.canonical
 
     const [shareDialogOpen, setShareDialogOpen] = useState(false)
+
+    console.log('TIPS:' + JSON.stringify(tips))
 
     const markAsRead = () => {
         userId &&
@@ -227,6 +234,12 @@ const ArticleComp = ({
                                         })}/${id}/a`
                                     )
                                 }
+                            />
+                            <TipWidget
+                                resourceId={String(id)}
+                                resourceType="ARTICLE"
+                                tipAction={tipAction}
+                                tips={tips}
                             />
                             <ShareWidget href={url.as} name={title} />
                         </div>

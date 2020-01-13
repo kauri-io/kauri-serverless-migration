@@ -61,6 +61,11 @@ describe('containers/Article', () => {
             routeChangeAction: jest.fn(),
             openModalAction: jest.fn(),
             hostName: 'test hostname',
+            tipAction: {
+                type: 'TIP',
+                payload: {},
+                setTransactionState: jest.fn(),
+            },
         }
 
         const wrapper = mountWithRedux(

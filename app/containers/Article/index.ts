@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { getArticleQuery, relatedArticles } from '../../queries/Article'
 import withLoading from '../../lib/with-loading'
 import withApolloError from '../../lib/with-apollo-error'
-import { voteAction, addCommentAction } from './Module'
+import { voteAction, addCommentAction, tipAction } from './Module'
 import View from './View'
 import { IReduxState } from '../../lib/Module'
 import { routeChangeAction } from '../../lib/Epics/RouteChangeEpic'
@@ -29,6 +29,7 @@ export default compose(
             openModalAction,
             routeChangeAction,
             voteAction,
+            tipAction,
         }
     ),
     graphql(getArticleQuery, {

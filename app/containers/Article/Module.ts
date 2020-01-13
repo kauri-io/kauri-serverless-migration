@@ -11,6 +11,12 @@ import {
     addCommentVariables,
     addComment,
 } from '../../queries/__generated__/addComment'
+import { stageTip as stageTipMutation, getTipAddress } from '../../queries/Tip'
+import { ethers } from 'ethers'
+import {
+    stageTip,
+    stageTipVariables,
+} from '../../queries/__generated__/stageTip'
 
 export interface IVoteAction {
     type: string
@@ -142,5 +148,127 @@ export const addCommentEpic: Epic<
                     )
                 })
             )
+        )
+    )
+
+export interface ITipAction {
+    type: string
+    payload: any
+    setTransactionState: (number) => void
+}
+
+interface IGetTipAddressResult {
+    getTipAddress: {
+        address: string
+    }
+}
+
+const TIP = 'TIP'
+
+export const tipAction = (
+    payload: { resourceId: string; resourceType: string; amount: string },
+    setTransactionState
+): ITipAction => ({
+    payload,
+    setTransactionState,
+    type: TIP,
+})
+
+export const tipEpic: Epic<ITipAction, any, IReduxState, IDependencies> = (
+    action$,
+    _,
+    { apolloClient, apolloSubscriber }
+) =>
+    action$.pipe(
+        ofType(TIP),
+        switchMap(
+            ({
+                payload: { resourceId, resourceType, amount },
+                setTransactionState,
+            }) =>
+                from(
+                    apolloClient.query<IGetTipAddressResult>({
+                        fetchPolicy: 'network-only',
+                        query: getTipAddress,
+                        variables: {
+                            resource: { id: resourceId, type: resourceType },
+                        },
+                    })
+                ).pipe(
+                    switchMap(({ data: { getTipAddress: { address } } }) =>
+                        from(global.window.ethereum.enable()).pipe(
+                            switchMap((accounts: any) => {
+                                const provider = new ethers.providers.Web3Provider(
+                                    global.window.web3.currentProvider
+                                )
+
+                                const params = [
+                                    {
+                                        from: accounts[0],
+                                        to: address,
+                                        value: ethers.utils
+                                            .parseUnits(amount, 'ether')
+                                            .toHexString(),
+                                    },
+                                ]
+
+                                return provider.send(
+                                    'eth_sendTransaction',
+                                    params
+                                )
+                            }),
+                            tap(_ => setTransactionState(1)),
+                            tap(transactionHash => {
+                                console.log('TX HASH: ' + transactionHash)
+                            }),
+                            mergeMap(transactionHash =>
+                                from(
+                                    apolloClient.mutate<
+                                        stageTip,
+                                        stageTipVariables
+                                    >({
+                                        mutation: stageTipMutation,
+                                        variables: {
+                                            transactionHash,
+                                            recipientResourceId: {
+                                                id: resourceId,
+                                                type: resourceType,
+                                            },
+                                        },
+                                    })
+                                ).pipe(
+                                    tap(({ data }) =>
+                                        console.log(JSON.stringify(data))
+                                    ),
+                                    mergeMap(({ data }) =>
+                                        apolloSubscriber(
+                                            path<string>(['stageTip', 'hash'])(
+                                                data
+                                            ) || ''
+                                        )
+                                    ),
+                                    tap(() => console.log('Waiting for tx')),
+                                    mergeMap(() =>
+                                        apolloSubscriber(transactionHash)
+                                    ),
+                                    tap(() => setTransactionState(3)),
+                                    tap(() => console.log('Got tx')),
+                                    tap(() => apolloClient.resetStore())
+                                )
+                            )
+                        )
+                    ),
+
+                    catchError(err => {
+                        console.error(err)
+                        return of(
+                            showNotificationAction({
+                                description: 'Please try again!',
+                                message: 'Tipping error',
+                                notificationType: 'error',
+                            })
+                        )
+                    })
+                )
         )
     )

@@ -57,6 +57,9 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                 "backgroundColor": "#e0e0e0",
               },
             },
+            "containedPrimary": Object {
+              "color": "#fff",
+            },
             "outlined": Object {
               "&&:disabled": Object {
                 "backgroundColor": "#e0e0e0",
@@ -591,6 +594,10 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                     "Test",
                     "test2",
                   ],
+                  "tips": Object {
+                    "__typename": "TipTotalsDTO",
+                    "totals": Object {},
+                  },
                   "title": "test title 1",
                   "updateComment": "test update comment1",
                   "version": 1,
@@ -685,6 +692,10 @@ exports[`containers/ArticleReview should match snapshot 1`] = `
                     "Test",
                     "test2",
                   ],
+                  "tips": Object {
+                    "__typename": "TipTotalsDTO",
+                    "totals": Object {},
+                  },
                   "title": "test title 2",
                   "updateComment": "test update comment2",
                   "version": 1,

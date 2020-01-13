@@ -9,6 +9,7 @@ import {
     Article_contributors_articles,
     Article_contributors_links,
     Article_contributors_collections,
+    Article_tips,
 } from '../queries/Fragments/__generated__/Article'
 import {
     ResourceTypeInput,
@@ -101,6 +102,10 @@ export const generateArticle = (mod: number) => ({
     },
     updateComment: `test update comment${mod}`,
     isBookmarked: true,
+    tips: {
+        __typename: 'TipTotalsDTO' as Article_tips['__typename'],
+        totals: {},
+    },
 })
 
 export const Community = {
