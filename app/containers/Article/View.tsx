@@ -371,6 +371,7 @@ const ArticleComp = ({
                                     isOwner={true}
                                     articleCheckpointed={!!checkpoint}
                                     pageType={'approved-article'}
+                                    url={url.as}
                                 />
                             </div>
                         </div>
